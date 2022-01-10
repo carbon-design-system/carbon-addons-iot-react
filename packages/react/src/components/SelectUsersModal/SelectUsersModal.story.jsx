@@ -1,7 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import floor from 'lodash/floor';
+import { floor } from 'lodash-es';
 
 import SelectUsersModal from './SelectUsersModal';
 

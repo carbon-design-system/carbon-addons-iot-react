@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -13,6 +13,7 @@ import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDrop
 import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -143,7 +144,7 @@ const VirtualListContent = ({
   toggleExpansion,
   virtualListRef: virtualListRefProp,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const rowSize = isLargeRow ? 96 : 40;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
@@ -288,9 +289,14 @@ const VirtualListContent = ({
                 name={item.value}
                 data-testid={`${item.id}-checkbox`}
                 labelText=""
-                onClick={() => handleSelect(item.id, parentId)}
+                onChange={() => handleSelect(item.id, parentId)}
+                onClick={(event) => {
+                  // This is needed as a workaround for a carbon checkbox bug
+                  // https://github.com/carbon-design-system/carbon/issues/10122#issuecomment-984692702
+                  event.stopPropagation();
+                }}
                 checked={isSelected}
-                disabled={isLocked}
+                disabled={disabled || isLocked}
                 indeterminate={isIndeterminate}
               />
             ) : (

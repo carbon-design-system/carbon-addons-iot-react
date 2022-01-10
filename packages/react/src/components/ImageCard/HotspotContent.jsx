@@ -7,9 +7,8 @@
  * trade secrets, irrespective of what has been deposited with the U.S. Copyright
  * Office.
  */
-import React, { useRef, useState, useMemo } from 'react';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
+import React, { useRef, useState } from 'react';
+import { isNil, isEmpty } from 'lodash-es';
 import { Edit20 } from '@carbon/icons-react';
 
 import {
@@ -19,6 +18,7 @@ import {
 import { settings } from '../../constants/Settings';
 import { TextInput } from '../TextInput';
 import { HotspotContentPropTypes } from '../../constants/SharedPropTypes';
+import useMerged from '../../hooks/useMerged';
 
 import CardIcon from './CardIcon';
 
@@ -67,7 +67,7 @@ const HotspotContent = ({
     titleInputFocusRef.current.focus();
   }
 
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { titlePlaceholderText, titleEditableHintText } = mergedI18n;
   const renderTitle = () => {
     const titleEditableTextVersion = (

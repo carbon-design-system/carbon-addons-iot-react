@@ -6,7 +6,6 @@
  */
 
 import React from 'react';
-import { iconAddSolid, iconSearch } from 'carbon-icons';
 import { AddFilled16, Search16 } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
@@ -29,8 +28,6 @@ const icons = {
 };
 
 const iconMap = {
-  iconAddSolid,
-  iconSearch,
   // eslint-disable-next-line react/display-name
   AddFilled16: (props) => <AddFilled16 className={`${prefix}--btn__icon`} {...props} />,
   // eslint-disable-next-line react/display-name

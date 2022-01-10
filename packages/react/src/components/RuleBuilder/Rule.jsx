@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
+import useMerged from '../../hooks/useMerged';
 
 import GroupLogic from './GroupLogic';
 import {
@@ -87,13 +88,7 @@ const propTypes = {
 const Rule = ({ rule, onAddRule, onRemoveRule, onChange, columns, i18n }) => {
   const { id: ruleId, operand, columnId, groupLogic, rules } = rule;
 
-  const mergedI18n = React.useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...(i18n ?? {}),
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const defaultOperands = React.useMemo(
     () => [

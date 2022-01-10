@@ -96,7 +96,7 @@ export const WithCallbacksImplemented = () => {
     page: currentPageNumber,
     onPage,
     maxPage: Math.ceil(filteredViews.length / rowPerPage),
-    pageOfPagesText: (pageNumber) => `Page ${pageNumber}`,
+    i18n: { pageOfPagesText: (pageNumber) => `Page ${pageNumber}` },
   };
 
   return (
@@ -195,7 +195,7 @@ WithCallbacksImplemented.parameters = {
           page: currentPageNumber,
           onPage,
           maxPage: Math.ceil(filteredViews.length / rowPerPage),
-          pageOfPagesText: pageNumber => 'Page ' + pageNumber,
+          i18n: { pageOfPagesText: pageNumber => 'Page ' + pageNumber },
         };
 
         return (

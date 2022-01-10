@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { mount } from '@cypress/react';
 import { onlyOn } from '@cypress/skip-test';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 import { Bee16, Close16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import { gray20 } from '@carbon/colors';

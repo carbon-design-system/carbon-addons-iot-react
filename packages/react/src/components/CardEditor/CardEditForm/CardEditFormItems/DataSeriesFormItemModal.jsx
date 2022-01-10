@@ -18,8 +18,7 @@ import {
 import { WarningAlt32 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import omit from 'lodash/omit';
+import { isEmpty, omit } from 'lodash-es';
 
 import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
@@ -28,6 +27,7 @@ import { TextInput } from '../../../TextInput';
 import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
+import useMerged from '../../../../hooks/useMerged';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -208,7 +208,7 @@ const DataSeriesFormItemModal = ({
   i18n,
   isLarge,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const { id, type, content } = cardConfig;
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -369,12 +369,13 @@ const DataSeriesFormItemModal = ({
             <div className={`${baseClassName}--input-group--item`}>
               <ColorDropdown
                 id={`${id}_color-dropdown`}
-                label=""
-                titleText={
-                  type === CARD_TYPES.TIMESERIES
-                    ? mergedI18n.dataItemEditorLineColor
-                    : mergedI18n.dataItemEditorBarColor
-                }
+                i18n={{
+                  label: '',
+                  titleText:
+                    type === CARD_TYPES.TIMESERIES
+                      ? mergedI18n.dataItemEditorLineColor
+                      : mergedI18n.dataItemEditorBarColor,
+                }}
                 selectedColor={DATAITEM_COLORS_OPTIONS.find(
                   ({ carbonColor }) => carbonColor === editDataItem.color
                 )}
@@ -606,7 +607,9 @@ const DataSeriesFormItemModal = ({
               setShowEditor(false);
               setEditDataItem({});
             }}
-            iconDescription={mergedI18n.closeButtonLabelText}
+            i18n={{
+              closeButtonLabel: mergedI18n.closeButtonLabelText,
+            }}
             onClose={() => {
               setShowEditor(false);
               setEditDataItem({});

@@ -6,6 +6,7 @@ import { settings } from '../../../constants/Settings';
 import { Modal } from '../../Modal';
 import IdleTimer from '../util/IdleTimer';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
+import useMerged from '../../../hooks/useMerged';
 
 export const IdleLogoutConfirmationModalIdleTimeoutPropTypes = {
   /** User inactivity timeout, in seconds */
@@ -74,7 +75,7 @@ const IdleLogoutConfirmationModal = ({
   onStayLoggedIn,
   i18n,
 }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const translate = useCallback(
     (string, substitutions) =>
@@ -123,11 +124,11 @@ const IdleLogoutConfirmationModal = ({
       data-testid="idle-logout-confirmation"
       className={classnames(`${settings.iotPrefix}--session-timeout-modal`, className)}
       size="sm"
-      closeButtonLabel={mergedI18N.closeButtonLabel}
+      closeButtonLabel={mergedI18n.closeButtonLabel}
       open={logoutConfirmationCountdown > 0}
-      modalHeading={mergedI18N.sessionTimeoutModalHeading}
-      primaryButtonText={mergedI18N.sessionTimeoutModalStayLoggedInButton}
-      secondaryButtonText={mergedI18N.sessionTimeoutModalLogoutButton}
+      modalHeading={mergedI18n.sessionTimeoutModalHeading}
+      primaryButtonText={mergedI18n.sessionTimeoutModalStayLoggedInButton}
+      secondaryButtonText={mergedI18n.sessionTimeoutModalLogoutButton}
       onSecondarySubmit={async () => {
         const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout);
         if (result) {
@@ -140,7 +141,7 @@ const IdleLogoutConfirmationModal = ({
         onStayLoggedIn();
       }}
     >
-      {translate(mergedI18N.sessionTimeoutModalBody, [
+      {translate(mergedI18n.sessionTimeoutModalBody, [
         ['{countdown}', logoutConfirmationCountdown],
       ])}
     </Modal>

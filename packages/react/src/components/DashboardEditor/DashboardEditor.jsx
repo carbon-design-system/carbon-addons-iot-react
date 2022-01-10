@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { InlineNotification, SkeletonText, ErrorBoundary } from 'carbon-components-react';
 import classnames from 'classnames';
@@ -9,6 +9,7 @@ import { DASHBOARD_EDITOR_CARD_TYPES, CARD_TYPES } from '../../constants/LayoutC
 import DashboardGrid from '../Dashboard/DashboardGrid';
 import CardEditor from '../CardEditor/CardEditor';
 import ImageGalleryModal, { ImagePropTypes } from '../ImageGalleryModal/ImageGalleryModal';
+import useMerged from '../../hooks/useMerged';
 
 import DashboardEditorHeader from './DashboardEditorHeader/DashboardEditorHeader';
 import DashboardEditorCardRenderer from './DashboardEditorCardRenderer';
@@ -447,7 +448,7 @@ const DashboardEditor = ({
       );
     }
   }, []);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   // Need to keep track of whether the image gallery is open or not
   const [isImageGalleryModalOpen, setIsImageGalleryModalOpen] = useState(false);
   // Keep track of whether we need to scroll for new card or not
@@ -718,18 +719,21 @@ const DashboardEditor = ({
                   onClose={handleClose}
                   onSubmit={handleImageSelection}
                   onDelete={onImageDelete}
-                  gridButtonText={i18n.imageGalleryGridButtonText}
-                  instructionText={i18n.imageGalleryInstructionText}
-                  listButtonText={i18n.imageGalleryListButtonText}
-                  modalLabelText={i18n.imageGalleryModalLabelText}
-                  modalTitleText={i18n.imageGalleryModalTitleText}
-                  modalPrimaryButtonLabelText={i18n.imageGalleryModalPrimaryButtonLabelText}
-                  modalSecondaryButtonLabelText={i18n.imageGalleryModalSecondaryButtonLabelText}
-                  modalCloseIconDescriptionText={i18n.imageGalleryModalCloseIconDescriptionText}
-                  searchPlaceHolderText={i18n.imageGallerySearchPlaceHolderText}
-                  deleteLabelText={i18n.imageGalleryDeleteLabelText}
-                  deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
-                  deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
+                  i18n={{
+                    gridButtonText: i18n.imageGalleryGridButtonText,
+                    instructionText: i18n.imageGalleryInstructionText,
+                    listButtonText: i18n.imageGalleryListButtonText,
+                    modalLabelText: i18n.imageGalleryModalLabelText,
+                    modalTitleText: i18n.imageGalleryModalTitleText,
+                    modalPrimaryButtonLabelText: i18n.imageGalleryModalPrimaryButtonLabelText,
+                    modalSecondaryButtonLabelText: i18n.imageGalleryModalSecondaryButtonLabelText,
+                    modalCloseIconDescriptionText: i18n.imageGalleryModalCloseIconDescriptionText,
+                    searchPlaceHolderText: i18n.imageGallerySearchPlaceHolderText,
+                    deleteLabelText: i18n.imageGalleryDeleteLabelText,
+                    deleteModalLabelText: i18n.imageGalleryDeleteModalLabelText,
+                    deleteModalTitleText: i18n.imageGalleryDeleteModalTitleText,
+                  }}
+
                   // TODO: pass testId in v3 to override defaults
                   // testId={`${testId}-image-gallery-modal`}
                 />

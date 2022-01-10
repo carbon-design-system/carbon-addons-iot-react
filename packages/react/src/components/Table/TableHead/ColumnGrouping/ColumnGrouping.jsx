@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import uniqWith from 'lodash/uniqWith';
-import isEqual from 'lodash/isEqual';
+import { uniqWith, isEqual } from 'lodash-es';
 import { DataTable } from 'carbon-components-react';
 import classNames from 'classnames';
 

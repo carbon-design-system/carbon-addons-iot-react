@@ -8,6 +8,7 @@ import List from '../../List/List';
 import Button from '../../Button/Button';
 import { settings } from '../../../constants/Settings';
 import deprecate from '../../../internal/deprecate';
+import useMerged from '../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -112,7 +113,7 @@ const HotspotEditorDataSourceTab = ({
   testId,
   translateWithId,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});

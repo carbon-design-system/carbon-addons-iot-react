@@ -5,6 +5,7 @@ import { gray10, gray80, white } from '@carbon/colors';
 
 import { settings } from '../../../../../constants/Settings';
 import ColorDropdown from '../../../../ColorDropdown/ColorDropdown';
+import useMerged from '../../../../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -62,7 +63,7 @@ const colors = [
 ];
 
 const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   // Hiding until the UX for this form item is figured out.
   // const [zoom, setZoom] = useState(cardConfig.content.zoomLevel || 0);
 
@@ -112,10 +113,9 @@ const ImageCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
       <div className={`${baseClassName}--input`}>
         <ColorDropdown
           data-testid={`${baseClassName}--input-color-dropdown`}
-          titleText={mergedI18n.colorTitleText}
+          i18n={{ titleText: mergedI18n.colorTitleText, label: mergedI18n.selectAColor }}
           light
           title={mergedI18n.selectAColor}
-          label={mergedI18n.selectAColor}
           colors={colors}
           id={`${baseClassName}--input-color`}
           selectedColor={colors.find(

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import omit from 'lodash/omit';
+import { omit } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 
@@ -136,7 +136,7 @@ describe('ImageGalleryModal', () => {
     expect(onSubmit).toHaveBeenCalledWith(omit(content[0], 'title'));
   });
 
-  it('disables select (sumit) button when no image is selected', () => {
+  it('disables select (submit) button when no image is selected', () => {
     const content = getTestContent();
     const onSubmit = jest.fn();
     render(<ImageGalleryModal content={content} onSubmit={onSubmit} onClose={() => {}} />);

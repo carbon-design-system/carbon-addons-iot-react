@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import { PieChart } from '@carbon/charts-react';
 import classNames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, defaultsDeep } from 'lodash-es';
 
 import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -15,6 +14,7 @@ import {
 import { csvDownloadHandler, getOverrides } from '../../utils/componentUtilityFunctions';
 import Card from '../Card/Card';
 import Table from '../Table/Table';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -128,7 +128,7 @@ const PieChartCard = ({
   const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
     content,
   ]);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const {
     title,

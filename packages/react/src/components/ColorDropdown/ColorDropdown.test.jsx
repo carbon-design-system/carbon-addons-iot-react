@@ -58,9 +58,7 @@ describe('ColorDropdown', () => {
   it('renders custom labels', () => {
     const label = 'my label';
     const titleText = 'My title text';
-    render(
-      <ColorDropdown id="myColorDropdown" label={label} titleText={titleText} onChange={() => {}} />
-    );
+    render(<ColorDropdown id="myColorDropdown" i18n={{ label, titleText }} onChange={() => {}} />);
 
     expect(within(screen.getByRole('button')).getByText(label)).toBeTruthy();
     expect(screen.getByText(titleText)).toBeVisible();

@@ -1,10 +1,9 @@
 import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import omit from 'lodash/omit';
+import { omit, keyBy } from 'lodash-es';
 import { Close16, Popup16, Settings16 } from '@carbon/icons-react';
 import { OverflowMenu, OverflowMenuItem } from 'carbon-components-react';
 import classnames from 'classnames';
-import keyBy from 'lodash/keyBy';
 import { useLangDirection } from 'use-lang-direction';
 
 import { settings } from '../../constants/Settings';
@@ -15,6 +14,7 @@ import DateTimePicker, {
 } from '../DateTimePicker/DateTimePickerV2';
 import Button from '../Button';
 import { PRESET_VALUES } from '../../constants/DateConstants';
+import useMerged from '../../hooks/useMerged';
 
 import CardRangePicker, { CardRangePickerPropTypes } from './CardRangePicker';
 
@@ -127,7 +127,7 @@ const CardToolbar = ({
   dateTimeMask,
   extraActions,
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const langDir = useLangDirection();
   const overflowMenuPosition = React.useMemo(() => langDir === 'ltr', [langDir]);
   // maps the timebox internal label to a translated string

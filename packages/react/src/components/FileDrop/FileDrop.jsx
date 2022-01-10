@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Filename, FileUploaderButton } from 'carbon-components-react';
+import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
+import { deprecateString } from '../../internal/deprecate';
 
 const { iotPrefix, prefix } = settings;
 
@@ -21,26 +23,31 @@ const propTypes = {
   /** Optionally show the uploaded files */
   showFiles: PropTypes.bool,
   /** Button label  */
-  buttonLabel: PropTypes.string,
+  buttonLabel: deprecateString(),
   /** can multiple files be uploaded */
   multiple: PropTypes.bool,
   /** File types that are accepted */
   accept: PropTypes.arrayOf(PropTypes.string),
-  /** Componet is drag/drop */
+  /** Component is drag/drop */
   kind: PropTypes.oneOf(['browse', 'drag-and-drop']),
   /** Callback to return the loaded file(s) data */
   onData: PropTypes.func,
   /** Callback for file load errors */
   onError: PropTypes.func,
-  dragAndDropLabel: PropTypes.string,
+  dragAndDropLabel: deprecateString(),
   /** file type either TEXT or BINARY to determine the correct encoding */
   fileType: PropTypes.oneOf(Object.values(FILE_TYPES)),
   testId: PropTypes.string,
+  i18n: PropTypes.shape({
+    /** Button label  */
+    buttonLabel: PropTypes.string,
+    dragAndDropLabel: PropTypes.string,
+  }),
 };
 /* istanbul ignore next */
 const defaultProps = {
   id: 'FileUploader',
-  buttonLabel: 'Add files',
+  buttonLabel: undefined,
   title: null,
   description: null,
   kind: 'browse',
@@ -49,9 +56,13 @@ const defaultProps = {
   accept: [],
   onData: () => {},
   onError: () => {},
-  dragAndDropLabel: 'Drag and drop your file here or ',
+  dragAndDropLabel: undefined,
   fileType: FILE_TYPES.BINARY,
   testId: 'file-drop',
+  i18n: {
+    buttonLabel: 'Add files',
+    dragAndDropLabel: 'Drag and drop your file here or ',
+  },
 };
 
 /**
@@ -219,12 +230,14 @@ class FileDrop extends React.Component {
       className,
       dragAndDropLabel,
       testId,
+      i18n,
     } = this.props;
+    const mergedI18n = merge({}, defaultProps.i18n, i18n);
     const { hover } = this.state;
 
     const linkElement = (
       <div>
-        {dragAndDropLabel}
+        {dragAndDropLabel || mergedI18n.dragAndDropLabel}
         <span
           onClick={() => {
             if (this.fileInput) {
@@ -243,7 +256,7 @@ class FileDrop extends React.Component {
             type="button"
             className={`${iotPrefix}--file-drop__link-button`}
           >
-            {buttonLabel}
+            {buttonLabel || mergedI18n.buttonLabel}
           </button>
         </span>
         <div>{description}</div>
@@ -323,7 +336,7 @@ class FileDrop extends React.Component {
           </p>
         ) : null}
         <FileUploaderButton
-          labelText={buttonLabel}
+          labelText={buttonLabel || mergedI18n.buttonLabel}
           multiple={multiple}
           buttonKind="secondary"
           onChange={this.handleChange}

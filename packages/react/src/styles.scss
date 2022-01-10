@@ -128,12 +128,14 @@
 @use 'components/RuleBuilder/rulebuilder';
 @use 'components/SelectUsersModal/select-users-modal';
 @use 'components/SideNav/side-nav';
+@use 'components/SidePanel/side-panel';
 @use 'components/SimplePagination/simple-pagination';
 @use 'components/SuiteHeader/suite-header';
 @use 'components/Table/pagination' as table-pagination;
 @use 'components/Table/table';
 @use 'components/Table/TableBody/RowActionsCell/row-actions-cell';
 @use 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
+@use 'components/Table/TableColumnCustomizationModal/table-column-customization-modal';
 @use 'components/Table/TableManageViewsModal/table-manage-views-list';
 @use 'components/Table/TableManageViewsModal/table-manage-views-modal';
 @use 'components/Table/TableSaveViewModal/table-save-view-modal';
@@ -141,6 +143,7 @@
 @use 'components/Table/TableViewDropdown/table-view-dropdown';
 @use 'components/TableCard/table-card';
 @use 'components/TableCard/threshold-icon';
+@use 'components/TableMultiline/table';
 @use 'components/TearSheet/tear-sheet-wrapper';
 @use 'components/TearSheet/tear-sheet';
 @use 'components/TileCatalog/catalog-content';

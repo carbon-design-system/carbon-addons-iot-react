@@ -77,18 +77,20 @@ export const WithI18n = () => {
         onSubmit={action('onSubmit')}
         onClose={action('onClose')}
         content={content}
-        gridButtonText={text('gridButtonText', 'Grid')}
-        instructionText={text(
-          'instructionText',
-          'Select the image that you want to display on this card.'
-        )}
-        listButtonText={text('listButtonText', 'List')}
-        modalLabelText={text('modalLabelText', 'New image card')}
-        modalTitleText={text('modalTitleText', 'Image gallery')}
-        modalPrimaryButtonLabelText={text('modalPrimaryButtonLabelText', 'Select')}
-        modalSecondaryButtonLabelText={text('modalSecondaryButtonLabelText', 'Cancel')}
-        modalCloseIconDescriptionText={text('modalCloseIconDescriptionText', 'Close')}
-        searchPlaceHolderText={text('searchPlaceHolderText', 'Search image by file name')}
+        i18n={{
+          gridButtonText: text('i18n.gridButtonText', 'Grid'),
+          instructionText: text(
+            'i18n.instructionText',
+            'Select the image that you want to display on this card.'
+          ),
+          listButtonText: text('i18n.listButtonText', 'List'),
+          modalLabelText: text('i18n.modalLabelText', 'New image card'),
+          modalTitleText: text('i18n.modalTitleText', 'Image gallery'),
+          modalPrimaryButtonLabelText: text('i18n.modalPrimaryButtonLabelText', 'Select'),
+          modalSecondaryButtonLabelText: text('i18n.modalSecondaryButtonLabelText', 'Cancel'),
+          modalCloseIconDescriptionText: text('i18n.modalCloseIconDescriptionText', 'Close'),
+          searchPlaceHolderText: text('i18n.searchPlaceHolderText', 'Search image by file name'),
+        }}
       />
     </div>
   );

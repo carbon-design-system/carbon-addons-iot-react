@@ -10,6 +10,8 @@ import Button from '../Button';
 import FilterTags from '../FilterTags/FilterTags';
 import SelectUsersModal from '../SelectUsersModal/SelectUsersModal';
 import StatefulTable from '../Table/StatefulTable';
+import { deprecateString } from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 import RuleBuilderTags from './RuleBuilderTags';
 import RuleBuilderEditor from './RuleBuilderEditor';
@@ -19,8 +21,8 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   className: PropTypes.string,
-  /** Text for main tilte of page */
-  defaultTitleText: PropTypes.string,
+  /** Text for main title of page */
+  defaultTitleText: deprecateString(),
   /** Text for metadata for the filter */
   // metaText: PropTypes.string,
   /** Unique id for particular filter */
@@ -56,6 +58,7 @@ const propTypes = {
 
   onChange: PropTypes.func,
   i18n: PropTypes.shape({
+    defaultTitleText: PropTypes.string,
     addUsers: PropTypes.string,
     editorAccess: PropTypes.string,
     readOnlyAccess: PropTypes.string,
@@ -77,7 +80,7 @@ const defaultProps = {
     filterUsers: [],
   },
   className: null,
-  defaultTitleText: 'Undefined',
+  defaultTitleText: undefined,
   // metaText: null,
   // id: null,
   ruleEditor: null,
@@ -85,6 +88,7 @@ const defaultProps = {
   footerButtons: null,
   onChange: () => {},
   i18n: {
+    defaultTitleText: 'Undefined',
     addUsersButtonLabel: 'Add users',
     editorAccessLabel: 'Editor access',
     readOnlyAccessLabel: 'Read only access',
@@ -128,13 +132,7 @@ const RuleBuilder = ({
     isOpen: false,
     access: 'READ',
   });
-  const mergedI18n = useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...i18n,
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, { defaultTitleText }, i18n);
 
   const Editor = useMemo(() => RuleEditor || RuleBuilderEditor, [RuleEditor]);
   const actions = useMemo(
@@ -255,7 +253,7 @@ const RuleBuilder = ({
       <header className={`${baseClass}--header`}>
         <div>
           <h1 className={`${baseClass}--header-title`} data-testid={`${testId}-title`}>
-            {currentFilter?.filterTitleText || defaultTitleText}
+            {currentFilter?.filterTitleText || mergedI18n.defaultTitleText}
           </h1>
           {currentFilter?.filterMetaText && (
             <p data-testid={`${testId}-metatext`} className={`${baseClass}--header-metatext`}>

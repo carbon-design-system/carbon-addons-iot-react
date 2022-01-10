@@ -7,7 +7,9 @@ import FileDrop from './FileDrop';
 const FileDropProps = {
   title: 'Upload Files',
   description: 'Any file can be uploaded.  Feel free to upload more than one!',
-  buttonLabel: 'Try it out!',
+  i18n: {
+    buttonLabel: 'Try it out!',
+  },
   kind: 'browse',
   onData: action('onData'),
   onError: action('onError'),

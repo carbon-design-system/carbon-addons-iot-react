@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { TrashCan32, InformationFilled24 } from '@carbon/icons-react';
 
 import Dropdown from '../../Dropdown/Dropdown';
@@ -184,12 +184,14 @@ const HotspotEditorTooltipTab = ({
         selectedColor={getSelectedColorItem(formValues.color, hotspotIconFillColors)}
         id="tooltip-form-color"
         colors={hotspotIconFillColors}
-        label={colorDropdownLabelText}
+        i18n={{
+          label: colorDropdownLabelText,
+          titleText: colorDropdownTitleText,
+        }}
         light
         onChange={(selectedColorItem) => {
           onChange({ color: selectedColorItem.color?.carbonColor });
         }}
-        titleText={colorDropdownTitleText}
         translateWithId={translateWithId}
       />
     </div>

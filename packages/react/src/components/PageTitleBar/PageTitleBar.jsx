@@ -3,7 +3,7 @@ import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react'
 import classnames from 'classnames';
 import { Information16, Edit16 } from '@carbon/icons-react';
 import { Breadcrumb, BreadcrumbItem, Tooltip, SkeletonText, Tabs } from 'carbon-components-react';
-import throttle from 'lodash/throttle';
+import { throttle } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
@@ -157,7 +157,8 @@ const PageTitleBar = ({
   */
   const hasTabs =
     titleBarContent?.type === Tabs ||
-    [].concat(titleBarContent?.props?.children ?? []).filter(({ type }) => type === Tabs).length;
+    [].concat(titleBarContent?.props?.children ?? []).filter((child) => child?.type === Tabs)
+      .length;
 
   const renderContentOutside =
     (hasTabs && headerMode === HEADER_MODES.DYNAMIC) ||

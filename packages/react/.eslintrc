@@ -82,14 +82,22 @@
     "import/prefer-default-export": 0,
     // https://nolanlawson.com/2018/03/20/smaller-lodash-bundles-with-webpack-and-babel/
     "lodash/chaining": [2, "never"],
-    "lodash/import-scope": [2, "method"],
+    "lodash/import-scope": "off",
     "react/destructuring-assignment": [2, "always", { "ignoreClassFields": true }],
     "jest/expect-expect": "error",
     "jest/prefer-hooks-on-top": "error",
     "jest/consistent-test-it": ["error", { "fn": "test", "withinDescribe": "it" }],
     "unicorn/no-abusive-eslint-disable": "error",
     "testing-library/prefer-screen-queries": "error",
-    "testing-library/prefer-wait-for": "error"
+    "testing-library/prefer-wait-for": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        // use lodash-es instead because it's used by other dependencies and we can drop
+        // package size by ~30KB by using lodash-es instead of lodash
+        "patterns": ["lodash", "lodash/*"]
+      }
+    ]
   },
   // Testcases have less eslint rules applied to them
   "overrides": [

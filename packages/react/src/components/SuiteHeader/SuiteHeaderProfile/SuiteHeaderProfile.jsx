@@ -6,6 +6,7 @@ import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import useMerged from '../../../hooks/useMerged';
 
 const defaultProps = {
   username: '',
@@ -40,7 +41,7 @@ const SuiteHeaderProfile = ({
   i18n,
   testId,
 }) => {
-  const mergedI18N = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const baseClassName = `${settings.iotPrefix}--suite-header-profile`;
   const chipText = (displayName || '')
     .split(' ')
@@ -48,7 +49,7 @@ const SuiteHeaderProfile = ({
     .join('');
   return (
     <div data-testid={testId} className={baseClassName}>
-      <h5>{mergedI18N.profileTitle}</h5>
+      <h5>{mergedI18n.profileTitle}</h5>
       {username ? (
         <>
           <div className={`${baseClassName}--user`}>
@@ -72,13 +73,13 @@ const SuiteHeaderProfile = ({
               onClick={onProfileClick}
               onKeyDown={handleSpecificKeyDown(['Enter', ' '], onProfileClick)}
             >
-              {mergedI18N.profileButton}
+              {mergedI18n.profileButton}
             </Button>
           </div>
           {onRequestLogout && (
             <div className={`${baseClassName}--logout`}>
               <Button kind="secondary" testId={`${testId}--logout`} onClick={onRequestLogout}>
-                {mergedI18N.logoutButton}
+                {mergedI18n.logoutButton}
               </Button>
             </div>
           )}

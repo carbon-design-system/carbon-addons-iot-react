@@ -1,5 +1,5 @@
 const { isValidElementType } = require('react-is');
-const isNil = require('lodash/isNil');
+const { isNil } = require('lodash-es');
 
 /**
  * In our Public API test, we try to identify each component and its

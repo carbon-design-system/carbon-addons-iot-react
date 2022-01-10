@@ -186,16 +186,19 @@ const menuItems = [
 
 ## Props
 
-| Name                 | Type           | Default             | Description                                                                                                                       |
-| :------------------- | :------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------- |
-| testId               | string         | 'menu-button'       |                                                                                                                                   |
-| onPrimaryActionClick | (event) => {}  | null                | Use by a split menu button to fire the event for clicking on the main button, not the chevron to open the additional menu actions |
-| label                | string         | null                | The label on the primary button in a split button, or the whole button on a single menu button                                    |
-| renderOpenIcon       | function, node | ChevronDown16       | Optional prop to change the open icon on the button Can be a React component class                                                |
-| renderCloseIcon      | function, node | ChevronUp16         | Optional prop to change the closed state icon on the button Can be a React component class                                        |
-| closeIconDescription | string         | 'close menu button' | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
-| openIconDescription  | string         | 'open menu button'  | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
-| children             |                |                     |                                                                                                                                   |
+| Name                              | Type           | Default             | Description                                                                                                                       |
+| :-------------------------------- | :------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------- |
+| testId                            | string         | 'menu-button'       |                                                                                                                                   |
+| onPrimaryActionClick              | (event) => {}  | null                | Use by a split menu button to fire the event for clicking on the main button, not the chevron to open the additional menu actions |
+| label                             | string         | null                | The label on the primary button in a split button, or the whole button on a single menu button                                    |
+| renderOpenIcon                    | function, node | ChevronDown16       | Optional prop to change the open icon on the button Can be a React component class                                                |
+| renderCloseIcon                   | function, node | ChevronUp16         | Optional prop to change the closed state icon on the button Can be a React component class                                        |
+| closeIconDescription (deprecated) | string         | undefined           | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
+| openIconDescription (deprecated)  | string         | undefined           | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
+| children                          |                |                     |                                                                                                                                   |
+| i18n                              | object         |                     |                                                                                                                                   |
+| i18n.closeIconDescription         | string         | 'close menu button' | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
+| i18n.openIconDescription          | string         | 'open menu button'  | If specifying the `renderIcon` prop, provide a description for that icon that can be read by screen readers                       |
 
 ## Feedback
 

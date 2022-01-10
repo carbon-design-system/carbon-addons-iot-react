@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
-import omit from 'lodash/omit';
-import isEmpty from 'lodash/isEmpty';
+import { omit, isEmpty } from 'lodash-es';
 import uuid from 'uuid';
 import hash from 'object-hash';
 
@@ -19,6 +18,7 @@ import { Dropdown } from '../../../../Dropdown';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';
+import useMerged from '../../../../../hooks/useMerged';
 
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
@@ -249,7 +249,7 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const [showEditor, setShowEditor] = useState(false);
   const [editDataItem, setEditDataItem] = useState({});

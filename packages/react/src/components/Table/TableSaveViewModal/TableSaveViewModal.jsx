@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 
 import ComposedModal from '../../ComposedModal/ComposedModal';
 import { settings } from '../../../constants/Settings';
@@ -152,7 +152,9 @@ const TableSaveViewModal = ({
         ...i18nFooter,
         isPrimaryButtonDisabled: formValues.title === '',
       }}
-      iconDescription={closeIconDescription}
+      i18n={{
+        closeButtonLabel: closeIconDescription,
+      }}
       // TODO: remove deprecated 'testID' in v3
       testID={testID || testId}
       error={error}

@@ -1,6 +1,5 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
-import { ButtonModule, IconModule } from 'carbon-components-angular';
 import { ContextMenuModule } from 'carbon-components-angular/context-menu';
 
 import { ButtonMenuModule } from './button-menu.module';
@@ -8,7 +7,7 @@ import { ButtonMenuModule } from './button-menu.module';
 storiesOf('Components/Button menu', module)
   .addDecorator(
     moduleMetadata({
-      imports: [ButtonMenuModule, ButtonModule, ContextMenuModule, IconModule],
+      imports: [ButtonMenuModule, ContextMenuModule],
     })
   )
   .addDecorator(withKnobs)

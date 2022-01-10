@@ -1,4 +1,4 @@
-import filter from 'lodash/filter';
+import { filter } from 'lodash-es';
 import warning from 'warning';
 
 import { CARD_LAYOUTS, CARD_SIZES } from '../../constants/LayoutConstants';

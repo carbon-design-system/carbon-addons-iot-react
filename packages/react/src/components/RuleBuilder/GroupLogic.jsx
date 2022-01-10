@@ -3,6 +3,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 import { settings } from '../../constants/Settings';
+import useMerged from '../../hooks/useMerged';
 
 const { iotPrefix } = settings;
 
@@ -28,13 +29,7 @@ const propTypes = {
 };
 
 const GroupLogic = ({ id, i18n, selected, onChange }) => {
-  const mergedI18n = React.useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...(i18n ?? {}),
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const groupLogic = React.useMemo(
     () => [

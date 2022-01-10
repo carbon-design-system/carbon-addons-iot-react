@@ -16,6 +16,7 @@ const propTypes = {
   }),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
   }),
   testId: PropTypes.string,
 };
@@ -45,6 +46,7 @@ const ListHeader = ({ title, buttons, search, i18n, testId }) => {
       {search ? (
         <div className={`${iotPrefix}--list-header--search`}>
           <Search
+            closeButtonLabelText={i18n.clearSearchIconDescription}
             id={search.id || `${iotPrefix}--list-header--search`}
             placeholder={i18n.searchPlaceHolderText}
             onChange={search.onChange}

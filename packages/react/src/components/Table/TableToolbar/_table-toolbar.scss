@@ -91,3 +91,22 @@ html[dir='rtl'] {
   height: initial;
   width: initial;
 }
+
+.#{$iot-prefix}--table-toolbar-aggregations__overflow-menu-content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+
+  [dir='rtl'] & {
+    text-align: right;
+  }
+
+  svg {
+    margin-right: $spacing-03;
+
+    [dir='rtl'] & {
+      margin-right: 0;
+      margin-left: $spacing-03;
+    }
+  }
+}

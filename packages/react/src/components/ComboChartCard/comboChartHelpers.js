@@ -1,10 +1,5 @@
 import { useMemo } from 'react';
-import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
-import merge from 'lodash/merge';
-import omit from 'lodash/omit';
-import filter from 'lodash/filter';
-import capitalize from 'lodash/capitalize';
+import { isEmpty, isNil, merge, omit, filter, capitalize } from 'lodash-es';
 
 import {
   chartValueFormatter,

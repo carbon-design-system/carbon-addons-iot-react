@@ -21,3 +21,8 @@
   align-self: stretch;
   padding: $spacing-02;
 }
+
+html[dir='rtl'] .#{$iot-prefix}--list-builder__reset-button .#{$prefix}--btn__icon {
+  margin-left: 0;
+  margin-right: $spacing-03;
+}

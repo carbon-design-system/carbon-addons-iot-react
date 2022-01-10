@@ -1,10 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import styled from 'styled-components';
-import isNil from 'lodash/isNil';
-import uniqBy from 'lodash/uniqBy';
-import cloneDeep from 'lodash/cloneDeep';
-import capitalize from 'lodash/capitalize';
+import { isNil, uniqBy, cloneDeep, capitalize } from 'lodash-es';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import { spacing01, spacing05 } from '@carbon/layout';
 import classnames from 'classnames';
@@ -25,8 +22,10 @@ import {
   findMatchingThresholds,
 } from '../../utils/cardUtilityFunctions';
 import icons from '../../utils/bundledIcons';
+import useMerged from '../../hooks/useMerged';
 
 import {
+  determineFilterFunction,
   createColumnsWithFormattedLinks,
   determinePrecisionAndValue,
   handleExpandedItemLinks,
@@ -179,7 +178,7 @@ const TableCard = ({
   className,
   ...others
 }) => {
-  const mergedI18n = { ...defaultProps.i18n, ...i18n };
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   // Set the locale
   dayjs.locale(locale);
@@ -385,9 +384,7 @@ const TableCard = ({
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
-          filter: i.filter
-            ? i.filter
-            : { placeholderText: mergedI18n.defaultFilterStringPlaceholdText }, // if filter not send we send empty object
+          filter: determineFilterFunction(i, mergedI18n.defaultFilterStringPlaceholdText),
           renderDataFunction: i.renderDataFunction // use the default render function of the column
             ? i.renderDataFunction
             : (

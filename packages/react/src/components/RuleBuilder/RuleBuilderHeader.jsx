@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
+import useMerged from '../../hooks/useMerged';
 
 import GroupLogic from './GroupLogic';
 import { GroupLogicPropType } from './RuleBuilderPropTypes';
@@ -40,13 +41,7 @@ const propTypes = {
 };
 
 const RuleBuilderHeader = ({ id, onAddRule, onChange, i18n, groupLogic, testID, testId }) => {
-  const mergedI18n = React.useMemo(
-    () => ({
-      ...defaultProps.i18n,
-      ...(i18n ?? {}),
-    }),
-    [i18n]
-  );
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
   const handleChangeGroupLogic = React.useCallback(
     ({ selectedItem }) => {

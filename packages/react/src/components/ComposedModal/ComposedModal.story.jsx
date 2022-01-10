@@ -157,7 +157,9 @@ export const ComposedModalWithOverflowAndTooltip = () => (
       label: 'Translated bottom buttons',
       title: 'Dialog with bottom buttons and close button flyover translated',
     }}
-    iconDescription="My Close Button"
+    i18n={{
+      closeButtonLabel: 'My Close Button',
+    }}
     footer={{
       primaryButtonLabel: 'My Submit',
       secondaryButtonLabel: 'My Cancel',

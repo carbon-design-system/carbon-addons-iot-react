@@ -1,9 +1,7 @@
 import React, { useCallback, useMemo, useRef } from 'react';
 import { SimpleBarChart, StackedBarChart, GroupedBarChart } from '@carbon/charts-react';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import isNil from 'lodash/isNil';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, isNil, defaultsDeep } from 'lodash-es';
 
 import { BarChartCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import {
@@ -24,6 +22,7 @@ import StatefulTable from '../Table/StatefulTable';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import dayjs from '../../utils/dayjs';
 import { formatGraphTick } from '../TimeSeriesCard/timeSeriesUtils';
+import useMerged from '../../hooks/useMerged';
 
 import {
   generateSampleValues,
@@ -95,7 +94,7 @@ const BarChartCard = ({
   const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
     content,
   ]);
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const {
     title,
     content: {

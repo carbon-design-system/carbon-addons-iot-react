@@ -14,6 +14,7 @@ module.exports = {
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
     '!src/components/Table/Table.test.helpers.jsx',
+    '!src/components/Table/TableColumnCustomizationModal/tableColumnCustomizationTestUtils.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
   coverageReporters: ['html', 'text-summary', 'lcov', 'json'],
@@ -26,7 +27,7 @@ module.exports = {
       lines: 90,
     },
     // set coverage to 90 for all items except those who are covered by e2e cypress tests
-    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow|TableColumnCustomizationModal|ListBuilder).jsx': {
       statements: 90,
       branches: 90,
       functions: 90,
@@ -62,7 +63,7 @@ module.exports = {
       statements: 51,
       branches: 20,
       lines: 50,
-      functions: 56,
+      functions: 53,
     },
     './src/components/DashboardEditor/DashboardEditorCardRenderer.jsx': {
       branches: 87,
@@ -81,6 +82,12 @@ module.exports = {
       branches: 18,
       lines: 46,
       functions: 71,
+    },
+    './src/components/Table/TableColumnCustomizationModal/TableColumnCustomizationModal.jsx': {
+      functions: 86,
+    },
+    './src/components/ListBuilder/ListBuilder.jsx': {
+      functions: 88,
     },
   },
   globals: {
@@ -104,7 +111,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ['/config/', '/lib/'],
   transformIgnorePatterns: [
-    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs)).+(.jsx?)',
+    '/node_modules/(?!(@carbon/charts|@storybook/addon-docs|lodash-es)).+(.jsx?)',
     '/__mocks__/.+(.jsx?)',
   ],
   watchPathIgnorePatterns: ['/coverage/', '/results/', '/.git/'],
