@@ -202,6 +202,135 @@ describe('MenuButton', () => {
     expect(screen.getAllByRole('menu')[0]).not.toHaveClass(`${prefix}--menu--lg`);
   });
 
+  it('should render the correct default kind for buttons', () => {
+    // Single button
+    const { rerender } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+
+    // Split button
+    rerender(
+      <MenuButton onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--primary`
+    );
+
+    // Icon only button
+    rerender(<MenuButton renderOpenIcon={ChevronDown16}>{menuItems}</MenuButton>);
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render primary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+
+    // Split button
+    rerender(
+      <MenuButton onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--primary`
+    );
+
+    // Icon only button is always ghost
+    rerender(<MenuButton renderOpenIcon={ChevronDown16}>{menuItems}</MenuButton>);
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render seondary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="secondary" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--secondary`);
+
+    // Split button
+    rerender(
+      <MenuButton kind="secondary" onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--secondary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--secondary`
+    );
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="secondary" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render tertiary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="tertiary" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--tertiary`);
+
+    // Split button
+    rerender(
+      <MenuButton kind="tertiary" onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--tertiary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--tertiary`
+    );
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="tertiary" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render ghost kind for single button, split button & icon button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="ghost" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--ghost`);
+
+    // Split button
+    rerender(
+      <MenuButton kind="ghost" onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--ghost`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--ghost`
+    );
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="ghost" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
   it('should be open the menu when clicking the button in single button mode', () => {
     render(<MenuButton label="Create">{menuItems}</MenuButton>);
 

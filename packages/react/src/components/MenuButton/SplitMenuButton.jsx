@@ -42,6 +42,11 @@ const propTypes = {
    * The size of the button and the dropdown items
    */
   size: PropTypes.oneOf(['sm', 'md', 'default']).isRequired,
+
+  /**
+   * The kind of button to render
+   */
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary']).isRequired,
 };
 
 export const SplitMenuButton = React.forwardRef(
@@ -54,6 +59,7 @@ export const SplitMenuButton = React.forwardRef(
       onSecondaryActionClick,
       size,
       testId,
+      kind,
     },
     ref
   ) => {
@@ -64,6 +70,7 @@ export const SplitMenuButton = React.forwardRef(
           onClick={onPrimaryActionClick}
           testId={`${testId}-primary`}
           size={size}
+          kind={kind}
         >
           {label}
         </Button>
@@ -79,6 +86,7 @@ export const SplitMenuButton = React.forwardRef(
           onClick={onSecondaryActionClick}
           testId={`${testId}-secondary`}
           size={size}
+          kind={kind}
         />
       </>
     );

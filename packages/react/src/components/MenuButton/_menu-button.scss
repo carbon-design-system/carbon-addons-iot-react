@@ -12,7 +12,20 @@
 
   &--open {
     .#{$iot-prefix}--menu-button__trigger {
-      background-color: $active-primary;
+      &.#{$prefix}--btn--primary {
+        background-color: $active-primary;
+      }
+      &.#{$prefix}--btn--secondary {
+        background-color: $active-secondary;
+      }
+      &.#{$prefix}--btn--tertiary {
+        background-color: $active-tertiary;
+        color: $text-04;
+      }
+      &.#{$prefix}--btn--ghost {
+        background-color: $active-ui; // There is no $active-ghost sass variable
+        color: $link-02;
+      }
     }
 
     .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {

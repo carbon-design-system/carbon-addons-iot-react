@@ -52,12 +52,17 @@ export const menuItems = [
 ];
 
 const sizes = ['sm', 'md', 'default'];
+const kinds = ['primary', 'secondary', 'tertiary', 'ghost'];
 
 export const Experimental = () => <StoryNotice componentName="MenuButton" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
 const SingleButton = () => (
-  <MenuButton size={select('Button size (size)', sizes, 'default')} label="Actions">
+  <MenuButton
+    size={select('Button size (size)', sizes, 'default')}
+    kind={select('Button kind (kind)', kinds, 'primary')}
+    label="Actions"
+  >
     {menuItems}
   </MenuButton>
 );
@@ -76,6 +81,11 @@ SingleMenuButton.storyName = 'menu button';
 const SplitButton = () => (
   <MenuButton
     size={select('Button size (size)', sizes, 'default')}
+    kind={select(
+      'Button kind (kind)',
+      kinds.filter((kind) => kind !== 'ghost'),
+      'primary'
+    )}
     onPrimaryActionClick={action('onPrimaryActionClick')}
     label="Create"
   >

@@ -77,6 +77,11 @@ const propTypes = {
    * The size of the button and the dropdown items
    */
   size: PropTypes.oneOf(['sm', 'md', 'default']),
+
+  /**
+   * The kind of button
+   */
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']),
 };
 
 const defaultProps = {
@@ -88,6 +93,7 @@ const defaultProps = {
   renderOpenIcon: ChevronDown16,
   renderCloseIcon: ChevronUp16,
   size: 'default',
+  kind: 'primary',
 };
 
 const MenuButton = ({
@@ -102,6 +108,7 @@ const MenuButton = ({
   renderCloseIcon,
   children,
   size: buttonSize,
+  kind,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -229,6 +236,7 @@ const MenuButton = ({
         // TODO: remove deprecated 'testID' in v3.
         testId={testID || testId}
         size={buttonSize}
+        kind={kind}
       />
       <Menu size={menuSize} open={isMenuOpen} {...position}>
         {contextMenuItems}
