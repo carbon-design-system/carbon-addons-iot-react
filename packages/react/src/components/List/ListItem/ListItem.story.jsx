@@ -331,3 +331,19 @@ export const WithTags = () => (
 );
 
 WithTags.storyName = 'with Tags';
+
+export const WithSecondaryValueObject = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      secondaryValue={{
+        value: () => <div>Secondary value object</div>,
+        label: 'Secondary value object',
+      }}
+    />
+  </div>
+);
+
+WithSecondaryValueObject.storyName = 'with secondary value an object';

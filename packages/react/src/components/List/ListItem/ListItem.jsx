@@ -38,7 +38,14 @@ const ListItemPropTypes = {
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   /** string value or callback render function */
-  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  secondaryValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.shape({
+      value: PropTypes.func,
+      label: PropTypes.string,
+    }),
+  ]),
   /** either a callback render function or a node */
   rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
   icon: PropTypes.node,
@@ -308,6 +315,8 @@ const ListItem = ({
                   title={
                     typeof secondaryValue === 'function'
                       ? `${value}--secondary-value`
+                      : typeof secondaryValue === 'object' && secondaryValue !== null
+                      ? secondaryValue.label
                       : secondaryValue
                   }
                   className={classnames(
@@ -319,7 +328,11 @@ const ListItem = ({
                     }
                   )}
                 >
-                  {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
+                  {typeof secondaryValue === 'function'
+                    ? secondaryValue()
+                    : typeof secondaryValue === 'object' && secondaryValue !== null
+                    ? secondaryValue.value()
+                    : secondaryValue}
                 </div>
               ) : null}
             </>
@@ -341,6 +354,8 @@ const ListItem = ({
                     title={
                       typeof secondaryValue === 'function'
                         ? `${value}--secondary-value`
+                        : typeof secondaryValue === 'object' && secondaryValue !== null
+                        ? secondaryValue.label
                         : secondaryValue
                     }
                     className={classnames(`${iotPrefix}--list-item--content--values--value`, {
@@ -348,7 +363,11 @@ const ListItem = ({
                       [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
                     })}
                   >
-                    {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
+                    {typeof secondaryValue === 'function'
+                      ? secondaryValue()
+                      : typeof secondaryValue === 'object' && secondaryValue !== null
+                      ? secondaryValue.value()
+                      : secondaryValue}
                   </div>
                 ) : null}
                 {renderTags()}
