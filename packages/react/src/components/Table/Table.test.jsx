@@ -2658,8 +2658,8 @@ describe('Table', () => {
         />
       );
 
-      // one for the header, one for the empty row
-      expect(container.querySelectorAll('tr')).toHaveLength(2);
+      // one for the header, 10 for the data
+      expect(container.querySelectorAll('tr')).toHaveLength(11);
     });
 
     it('should render only visible rows when shouldLazyRender:true', () => {
@@ -2696,8 +2696,8 @@ describe('Table', () => {
         />
       );
 
-      // one for the header, one for the visibility placeholder, 20 for the data
-      expect(container.querySelectorAll('tr')).toHaveLength(22);
+      // one for the header, 20 for the data
+      expect(container.querySelectorAll('tr')).toHaveLength(21);
     });
   });
 

@@ -359,6 +359,7 @@ describe('Table visual regression tests', () => {
 
     mount(
       <Table
+        id="test-table"
         columns={columns}
         data={tableData}
         options={{
@@ -366,9 +367,13 @@ describe('Table visual regression tests', () => {
         }}
       />
     );
-    cy.get('tr').should('have.length', 22);
+    // 50 for rows, 1 for header
+    cy.get('tr').should('have.length', 51);
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 42);
+    cy.get('tr').eq(10).scrollIntoView({ duration: 500 });
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 32);
     cy.get('tr').last().scrollIntoView({ duration: 500 });
-    cy.get('tr').should('have.length', 42);
+    cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
     // reset back to default
     cy.viewport(1680, 900);

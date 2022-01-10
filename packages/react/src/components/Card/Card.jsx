@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
-import useVisibilityLoader from '../../hooks/useVisibilityLoader';
+import useVisibilityObserver from '../../hooks/useVisibilityObserver';
 import { settings } from '../../constants/Settings';
 import {
   CARD_TITLE_HEIGHT,
@@ -388,7 +388,7 @@ const Card = (props) => {
   const subTitleRef = useRef();
   const hasTitleTooltip = useHasTextOverflow(titleRef);
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
-  const [isVisible] = useVisibilityLoader(cardRef);
+  const [isVisible] = useVisibilityObserver(cardRef);
   const { resizeHandles, isResizing } = useCardResizing(
     wrappingCardResizeHandles,
     children,

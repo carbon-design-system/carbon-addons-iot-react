@@ -7,7 +7,6 @@ import { settings } from '../../constants/Settings';
 import SimplePagination, { SimplePaginationPropTypes } from '../SimplePagination/SimplePagination';
 import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 import { OverridePropTypes } from '../../constants/SharedPropTypes';
-import experimental from '../../internal/experimental';
 
 import DefaultListHeader from './ListHeader/ListHeader';
 import DefaultListContent from './ListContent/ListContent';
@@ -93,12 +92,6 @@ const propTypes = {
   handleLoadMore: PropTypes.func,
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
-  /** does this list use infinite scrolling */
-  isInfiniteScroll: experimental(PropTypes.bool),
-  /** callback to fire when the last element in an infinite scroll list is visible */
-  onInfiniteScroll: experimental(PropTypes.func),
-  /** is the application currently loading more infinite data */
-  isInfiniteLoading: experimental(PropTypes.bool),
 };
 
 const defaultProps = {
@@ -137,9 +130,6 @@ const defaultProps = {
   emptyState: 'No list items to show',
   testId: 'list',
   handleLoadMore: () => {},
-  isInfiniteScroll: false,
-  onInfiniteScroll: () => {},
-  isInfiniteLoading: false,
 };
 
 const List = forwardRef((props, ref) => {
@@ -173,9 +163,6 @@ const List = forwardRef((props, ref) => {
     testId,
     handleLoadMore,
     loadingMoreIds,
-    isInfiniteScroll,
-    onInfiniteScroll,
-    isInfiniteLoading,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -226,9 +213,6 @@ const List = forwardRef((props, ref) => {
           selectedItemRef={ref}
           i18n={mergedI18n}
           lockedIds={lockedIds}
-          isInfiniteScroll={isInfiniteScroll}
-          onInfiniteScroll={onInfiniteScroll}
-          isInfiniteLoading={isInfiniteLoading}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (

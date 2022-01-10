@@ -29299,10 +29299,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                  aria-labelledby="downshift-3-label downshift-3-toggle-button"
                   className="bx--list-box__field"
                   disabled={false}
-                  id="downshift-0-toggle-button"
+                  id="downshift-3-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   title={
@@ -29400,9 +29400,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </button>
                 <div
-                  aria-labelledby="downshift-0-label"
+                  aria-labelledby="downshift-3-label"
                   className="bx--list-box__menu"
-                  id="downshift-0-menu"
+                  id="downshift-3-menu"
                   onBlur={[Function]}
                   onKeyDown={[Function]}
                   onMouseLeave={[Function]}

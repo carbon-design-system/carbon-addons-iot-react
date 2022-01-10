@@ -42799,10 +42799,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   aria-disabled={false}
                   aria-expanded={false}
                   aria-haspopup="listbox"
-                  aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                  aria-labelledby="downshift-2-label downshift-2-toggle-button"
                   className="bx--list-box__field"
                   disabled={false}
-                  id="downshift-0-toggle-button"
+                  id="downshift-2-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
                   title={
@@ -42895,9 +42895,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </div>
                 </button>
                 <div
-                  aria-labelledby="downshift-0-label"
+                  aria-labelledby="downshift-2-label"
                   className="bx--list-box__menu"
-                  id="downshift-0-menu"
+                  id="downshift-2-menu"
                   onBlur={[Function]}
                   onKeyDown={[Function]}
                   onMouseLeave={[Function]}
@@ -79599,7 +79599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T556"
+            data-handler-id="T536"
             style={
               Object {
                 "opacity": 1,
@@ -79869,7 +79869,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </div>
           <div
             className="iot--table-multi-sort-row"
-            data-handler-id="T558"
+            data-handler-id="T538"
             style={
               Object {
                 "opacity": 1,

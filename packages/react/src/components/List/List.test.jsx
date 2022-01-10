@@ -447,41 +447,6 @@ describe('List', () => {
     expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
-  it('should trigger onInfiniteScroll callback when the last row is visible', () => {
-    const onInfiniteScroll = jest.fn();
-    window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
-      const obj = {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
-      };
-      callback([{ isIntersecting: true }], obj);
-
-      return obj;
-    });
-
-    render(<List items={getListItems(1)} isInfiniteScroll onInfiniteScroll={onInfiniteScroll} />);
-    expect(onInfiniteScroll).toHaveBeenCalled();
-    jest.resetAllMocks();
-  });
-
-  it('should trigger show the loading skeleton at the bottom of the list when isInfiniteScroll:true', () => {
-    window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
-      const obj = {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
-      };
-      callback([{ isIntersecting: true }], obj);
-
-      return obj;
-    });
-
-    const { container } = render(<List items={getListItems(1)} isInfiniteScroll />);
-    expect(container.querySelectorAll(`.${iotPrefix}--list--skeleton`)).toHaveLength(1);
-    jest.resetAllMocks();
-  });
-
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -993,31 +958,6 @@ describe('List', () => {
         <List items={getListItems(1)} isVirtualList isCheckboxMultiSelect lockedIds={['1']} />
       );
       expect(screen.getByRole('checkbox')).toBeDisabled();
-    });
-
-    it('should trigger onInfiniteScroll callback when the last row is visible', () => {
-      const onInfiniteScroll = jest.fn();
-      window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
-        const obj = {
-          observe: jest.fn(),
-          unobserve: jest.fn(),
-          disconnect: jest.fn(),
-        };
-        callback([{ isIntersecting: true }], obj);
-
-        return obj;
-      });
-
-      render(
-        <List
-          items={getListItems(1)}
-          isVirtualList
-          isInfiniteScroll
-          onInfiniteScroll={onInfiniteScroll}
-        />
-      );
-      expect(onInfiniteScroll).toHaveBeenCalled();
-      jest.resetAllMocks();
     });
   });
 });

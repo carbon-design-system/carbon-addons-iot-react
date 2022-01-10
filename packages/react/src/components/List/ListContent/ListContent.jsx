@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -11,7 +11,6 @@ import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
-import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 
 const { iotPrefix } = settings;
 
@@ -69,12 +68,6 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   selectedItemRef: HtmlElementRefProp,
-  /** does this list use infinite scrolling */
-  isInfiniteScroll: PropTypes.bool,
-  /** callback to fire when the last element in an infinite scroll list is visible */
-  onInfiniteScroll: PropTypes.func,
-  /** is the application currently loading more infinite data */
-  isInfiniteLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -107,9 +100,6 @@ const defaultProps = {
   selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
-  isInfiniteScroll: false,
-  onInfiniteScroll: () => {},
-  isInfiniteLoading: false,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -140,17 +130,8 @@ const ListContent = ({
   handleLoadMore,
   i18n,
   selectedItemRef,
-  isInfiniteScroll,
-  onInfiniteScroll,
-  isInfiniteLoading,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const lastListItemRef = useRef(null);
-  useVisibilityLoader(lastListItemRef, {
-    isLoading: isInfiniteLoading,
-    hasMoreToLoad: isInfiniteScroll,
-    onVisible: onInfiniteScroll,
-  });
 
   const renderItemAndChildren = (item, index, parentId, level) => {
     const hasChildren = item?.children && item.children.length > 0;
@@ -299,26 +280,7 @@ const ListContent = ({
       )}
     >
       {!isLoading ? (
-        <>
-          {listItems.length ? (
-            isInfiniteScroll ? (
-              <>
-                {listItems}
-                <div ref={lastListItemRef}>
-                  <SkeletonText
-                    className={`${iotPrefix}--list--skeleton`}
-                    width="90%"
-                    data-testid={`${testId}-loading`}
-                  />
-                </div>
-              </>
-            ) : (
-              listItems
-            )
-          ) : (
-            emptyContent
-          )}
-        </>
+        <>{listItems.length ? listItems : emptyContent}</>
       ) : (
         <SkeletonText
           className={`${iotPrefix}--list--skeleton`}

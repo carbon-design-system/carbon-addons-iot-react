@@ -6,8 +6,9 @@ import { useEffect, useRef } from 'react';
  * @param {*} value something you want to store the value of between renders to do comparisons against
  * @returns * the value passed to the hook on the previous render
  */
-export function usePrevious(value) {
-  const ref = useRef();
+export function usePrevious(value, initialValue) {
+  const ref = useRef(initialValue);
+
   useEffect(() => {
     ref.current = value;
   });

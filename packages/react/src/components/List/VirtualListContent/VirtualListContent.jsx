@@ -13,7 +13,6 @@ import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDrop
 import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
-import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 
 const { iotPrefix } = settings;
 
@@ -81,12 +80,6 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   virtualListRef: HtmlElementRefProp,
-  /** does this list use infinite scrolling */
-  isInfiniteScroll: PropTypes.bool,
-  /** callback to fire when the last element in an infinite scroll list is visible */
-  onInfiniteScroll: PropTypes.func,
-  /** is the application currently loading more infinite data */
-  isInfiniteLoading: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -118,10 +111,7 @@ const defaultProps = {
   selectedIds: [],
   testId: 'list',
   toggleExpansion: () => {},
-  virtualListRef: undefined,
-  isInfiniteScroll: false,
-  onInfiniteScroll: () => {},
-  isInfiniteLoading: false,
+  virtualListRef: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -152,9 +142,6 @@ const VirtualListContent = ({
   testId,
   toggleExpansion,
   virtualListRef: virtualListRefProp,
-  isInfiniteScroll,
-  onInfiniteScroll,
-  isInfiniteLoading,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const rowSize = isLargeRow ? 96 : 40;
@@ -163,16 +150,10 @@ const VirtualListContent = ({
   const didScrollRef = useRef(false);
   const internalVirtualListRef = useRef(null);
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
-  const lastListItemRef = useRef(null);
-  useVisibilityLoader(lastListItemRef, {
-    isLoading: isInfiniteLoading,
-    hasMoreToLoad: isInfiniteScroll,
-    onVisible: onInfiniteScroll,
-  });
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
-      return initialItems.reduce((carry, item, index) => {
+      return initialItems.reduce((carry, item) => {
         let tmp = carry;
         const isExpanded = expandedIds.filter((rowId) => rowId === item.id).length > 0;
         const parentIsExpanded = expandedIds.some((rowId) => parentId === rowId);
@@ -212,18 +193,10 @@ const VirtualListContent = ({
           ]);
         }
 
-        // if infinite scrolling is being used, we need to add a placeholder for the loading
-        // row at the end of all the items
-        if (isInfiniteScroll && currentLevel === 0 && index === initialItems.length - 1) {
-          tmp = tmp.concat({
-            level: currentLevel,
-          });
-        }
-
         return tmp;
       }, []);
     },
-    [expandedIds, isInfiniteScroll]
+    [expandedIds]
   );
 
   const flattenHelper = useCallback(() => {
@@ -359,16 +332,8 @@ const VirtualListContent = ({
     ];
   };
 
-  const showLoadingSkeleton = (index) => {
-    return isInfiniteScroll && index === flattened?.items.length - 1;
-  };
-
   const getItemSize = (index) => {
     const item = flattened?.items?.[index];
-
-    if (showLoadingSkeleton(index)) {
-      return rowSize;
-    }
 
     if (!item) {
       return 0;
@@ -390,18 +355,6 @@ const VirtualListContent = ({
   // eslint-disable-next-line react/prop-types
   const ListRow = ({ index, style }) => {
     const item = flattened?.items?.[index];
-
-    if (showLoadingSkeleton(index)) {
-      return (
-        <div ref={lastListItemRef} style={style}>
-          <SkeletonText
-            className={`${iotPrefix}--list--skeleton`}
-            width="90%"
-            data-testid={`${testId}-loading`}
-          />
-        </div>
-      );
-    }
 
     if (!item || !item?.content) {
       return null;
@@ -442,7 +395,7 @@ const VirtualListContent = ({
     if (parentList) {
       const rect = parentList.getBoundingClientRect();
       const { height } = rect;
-      setListHeight(isInfiniteScroll ? height + rowSize : height);
+      setListHeight(height);
     }
 
     if (didScrollRef.current === false && selectedIds?.length > 0 && virtualListRef.current) {
@@ -452,7 +405,7 @@ const VirtualListContent = ({
         didScrollRef.current = true;
       }
     }
-  }, [flattened.items, isInfiniteScroll, listOuterRef, rowSize, selectedIds, virtualListRef]);
+  }, [flattened.items, listOuterRef, selectedIds, virtualListRef]);
 
   if (!isLoading && flattened.items.length) {
     return (

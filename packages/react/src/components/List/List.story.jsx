@@ -1,16 +1,14 @@
-import React, { createElement, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, object, number } from '@storybook/addon-knobs';
+import { boolean, text, object } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import { cloneDeep } from 'lodash-es';
-import { ToastNotification } from 'carbon-components-react';
 
 import Button from '../Button';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
-import { DragAndDrop, EditingStyle } from '../../utils/DragAndDropUtils';
-import StoryNotice from '../../internal/StoryNotice';
+import { EditingStyle } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -816,99 +814,3 @@ export const WithReorderAndDropTargetRestrictions = () => {
 };
 
 WithReorderAndDropTargetRestrictions.storyName = 'with reorder and drop target restrictions';
-
-export const WithInfiniteScroll = () => {
-  const numberOfItems = number('number of items to render', 20);
-
-  const generateItems = (startIndex = 0) =>
-    [...Array(numberOfItems)].map((_, i) => {
-      const index = i + startIndex;
-      return {
-        id: `item-${index}`,
-        content: {
-          value: `Item ${index}`,
-          secondaryValue: `Item ${index} Subvalue`,
-        },
-      };
-    });
-  const [items, setItems] = useState(generateItems());
-  const [isInfiniteLoading, setIsInfiniteLoading] = useState(false);
-  const [isInfiniteScroll, setIsInfiniteScroll] = useState(boolean('isInfiniteScroll', true));
-  const [showError, setShowError] = useState(false);
-  const attemptRef = useRef(0);
-  return (
-    <>
-      <StoryNotice componentName="List with infinite loading" experimental />
-      {showError && (
-        <ToastNotification
-          title="Data error"
-          subtitle="The data failed to be fetched"
-          kind="error"
-          caption={
-            <Button
-              onClick={() => {
-                setShowError(false);
-                setIsInfiniteScroll(true);
-              }}
-            >
-              Retry
-            </Button>
-          }
-        />
-      )}
-      <p style={{ margin: '1rem 0' }}>
-        This infinite loading is experimental and may change. It is published for feedback purposes
-        only. As an example error flow, your second attempt at loading will fail, and the data will
-        stop loading after 100 items as an example of reaching the end of the data and turning off
-        the infinite scroll loading.
-      </p>
-      <div style={{ height: 300, overflow: 'auto', width: 400 }}>
-        <List
-          title={text('title', 'Infinite scrolling list')}
-          items={items}
-          isLoading={boolean('isLoading', false)}
-          isVirtualList={boolean('isVirtualList', false)}
-          isFullHeight={boolean('isFullHeight', true)}
-          isLargeRow={boolean('isLargeRow', false)}
-          isInfiniteScroll={isInfiniteScroll}
-          isInfiniteLoading={isInfiniteLoading}
-          onInfiniteScroll={async () => {
-            action('onInfiniteScroll')();
-            setIsInfiniteLoading(true);
-
-            try {
-              const [data, hasMore] = await new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  attemptRef.current += 1;
-                  const nextRows = generateItems(items.length);
-                  const dataAvailable = items.length + nextRows.length < 100;
-                  if (attemptRef.current === 2) {
-                    return reject(new Error('api failure'));
-                  }
-                  return resolve([nextRows, dataAvailable]);
-                }, 1500);
-              });
-              setItems([...items, ...data]);
-              setIsInfiniteScroll(hasMore);
-            } catch (error) {
-              setIsInfiniteScroll(false);
-              setShowError(true);
-            }
-
-            setIsInfiniteLoading(false);
-          }}
-        />
-      </div>
-    </>
-  );
-};
-
-WithInfiniteScroll.storyName = '☢️ with infinite scrolling';
-WithInfiniteScroll.decorators = [
-  createElement,
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];

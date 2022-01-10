@@ -1,25 +1,22 @@
-import React, { useMemo, useRef, useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody as CarbonTableBody } from 'carbon-components-react';
-import { pick } from 'lodash-es';
 
-import useVisibilityLoader from '../../../hooks/useVisibilityLoader';
 import {
   ExpandedRowsPropTypes,
-  TableRowPropTypes,
+  TableRowsPropTypes,
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
 import { findRow, tableTraverser } from '../tableUtilities';
 
-import TableBodyRow from './TableBodyRow/TableBodyRow';
-import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
+import TableBodyRowRenderer from './TableBodyRowRenderer';
 
 const propTypes = {
   /** The unique id of the table */
   tableId: PropTypes.string.isRequired,
-  rows: TableRowPropTypes,
+  rows: TableRowsPropTypes,
   expandedRows: ExpandedRowsPropTypes,
   columns: TableColumnsPropTypes,
   expandedIds: PropTypes.arrayOf(PropTypes.string),
@@ -176,18 +173,6 @@ const TableBody = ({
   preserveCellWhiteSpace,
   size,
 }) => {
-  const visibleCheckerRef = useRef(null);
-  const [visibleRowIndex, setVisibleRowIndex] = useState(0);
-  useVisibilityLoader(visibleCheckerRef, {
-    hasMoreToLoad: visibleRowIndex < rows.length,
-    onVisible: () => {
-      const batchSize = 20;
-      const rowsLeftToLoad = rows.length - visibleRowIndex;
-      const nextBatchSize = Math.max(0, Math.min(batchSize, rowsLeftToLoad));
-      setVisibleRowIndex((prev) => prev + nextBatchSize);
-    },
-  });
-
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
     () =>
@@ -270,99 +255,52 @@ const TableBody = ({
     return result;
   };
 
-  const someRowHasSingleRowEditMode = rowActionsState.some((rowAction) => rowAction.isEditMode);
-  const indeterminateSelectionIds = getIndeterminateRowSelectionIds(rows, selectedIds);
-
-  const renderRow = (row, nestingLevel = 0) => {
-    const isRowExpanded = expandedIds.includes(row.id);
-    const shouldShowChildren =
-      hasRowNesting && isRowExpanded && row.children && row.children.length > 0;
-    const myRowActionState = rowActionsState.find((rowAction) => rowAction.rowId === row.id);
-    const rowHasSingleRowEditMode = !!(myRowActionState && myRowActionState.isEditMode);
-    const isSelectable = rowEditMode || someRowHasSingleRowEditMode ? false : row.isSelectable;
-
-    const rowElement = !row.isLoadMoreRow ? (
-      <TableBodyRow
-        langDir={langDir}
-        key={row.id}
-        isExpanded={isRowExpanded}
-        isSelectable={isSelectable}
-        isSelected={selectedIds.includes(row.id)}
-        isIndeterminate={indeterminateSelectionIds.includes(row.id)}
-        rowEditMode={rowEditMode}
-        singleRowEditMode={rowHasSingleRowEditMode}
-        singleRowEditButtons={singleRowEditButtons}
-        rowDetails={
-          isRowExpanded && expandedRows.find((j) => j.rowId === row.id)
-            ? expandedRows.find((j) => j.rowId === row.id).content
-            : null
-        }
-        rowActionsError={myRowActionState ? myRowActionState.error : null}
-        isRowActionRunning={myRowActionState ? myRowActionState.isRunning : null}
-        ordering={orderingMap}
-        selectRowAria={selectRowAria}
-        overflowMenuAria={overflowMenuAria}
-        clickToCollapseAria={clickToCollapseAria}
-        clickToExpandAria={clickToExpandAria}
-        inProgressText={inProgressText}
-        actionFailedText={actionFailedText}
-        learnMoreText={learnMoreText}
-        dismissText={dismissText}
-        columns={columns}
-        tableId={tableId}
-        id={row.id}
-        locale={locale}
-        totalColumns={totalColumns}
-        options={{
-          hasRowSelection,
-          hasRowExpansion,
-          hasRowNesting,
-          hasRowActions,
-          shouldExpandOnRowClick,
-          wrapCellText,
-          truncateCellText,
-          preserveCellWhiteSpace,
-        }}
-        nestingLevel={nestingLevel}
-        nestingChildCount={row.children ? row.children.length : 0}
-        tableActions={{
-          ...pick(actions, 'onApplyRowAction', 'onRowExpanded', 'onRowClicked', 'onClearRowError'),
-          onRowSelected,
-        }}
-        rowActions={row.rowActions}
-        values={row.values}
-        showExpanderColumn={showExpanderColumn}
-        size={size}
-      />
-    ) : (
-      <TableBodyLoadMoreRow
-        id={row.id}
-        key={`${row.id}--load-more`}
-        tableId={tableId}
-        testId={testId}
-        loadMoreText={loadMoreText}
-        totalColumns={totalColumns}
-        onRowLoadMore={actions?.onRowLoadMore}
-        isLoadingMore={loadingMoreIds.includes(row.id)}
-      />
-    );
-    return shouldShowChildren
-      ? [rowElement]
-          .concat(row.children.map((childRow) => renderRow(childRow, nestingLevel + 1)))
-          .concat(
-            row.hasLoadMore && row.children.length > 0
-              ? renderRow({ id: row.id, isLoadMoreRow: true }, nestingLevel)
-              : []
-          )
-      : rowElement;
-  };
-
   return (
     <CarbonTableBody data-testid={testID || testId}>
-      {shouldLazyRender
-        ? rows.slice(0, visibleRowIndex).map((row) => renderRow(row))
-        : rows.map((row) => renderRow(row))}
-      {shouldLazyRender && visibleRowIndex < rows.length ? <tr ref={visibleCheckerRef} /> : null}
+      {rows.map((row) => (
+        <TableBodyRowRenderer
+          key={row.id}
+          actionFailedText={actionFailedText}
+          actions={actions}
+          clickToCollapseAria={clickToCollapseAria}
+          clickToExpandAria={clickToExpandAria}
+          columns={columns}
+          dismissText={dismissText}
+          expandedIds={expandedIds}
+          expandedRows={expandedRows}
+          hasRowActions={hasRowActions}
+          hasRowExpansion={hasRowExpansion}
+          hasRowNesting={hasRowNesting}
+          hasRowSelection={hasRowSelection}
+          indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
+          inProgressText={inProgressText}
+          langDir={langDir}
+          learnMoreText={learnMoreText}
+          loadingMoreIds={loadingMoreIds}
+          loadMoreText={loadMoreText}
+          locale={locale}
+          onRowSelected={onRowSelected}
+          ordering={orderingMap}
+          overflowMenuAria={overflowMenuAria}
+          preserveCellWhiteSpace={preserveCellWhiteSpace}
+          row={row}
+          rowActionsState={rowActionsState}
+          rowEditMode={rowEditMode}
+          selectedIds={selectedIds}
+          selectRowAria={selectRowAria}
+          shouldExpandOnRowClick={shouldExpandOnRowClick}
+          shouldLazyRender={shouldLazyRender}
+          showExpanderColumn={showExpanderColumn}
+          singleRowEditButtons={singleRowEditButtons}
+          size={size}
+          someRowHasSingleRowEditMode={rowActionsState.some((rowAction) => rowAction.isEditMode)}
+          tableId={tableId}
+          testId={testID || testId}
+          totalColumns={totalColumns}
+          truncateCellText={truncateCellText}
+          wrapCellText={wrapCellText}
+        />
+      ))}
     </CarbonTableBody>
   );
 };
