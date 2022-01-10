@@ -395,6 +395,45 @@ describe('SimpleList', () => {
     expect(screen.getAllByTitle(/Item /)).toHaveLength(5);
   });
 
+  it('should show custom empty search state when given', () => {
+    const { searchPlaceHolderText } = SimpleList.defaultProps.i18n;
+    const { rerender } = render(
+      <SimpleList
+        hasSearch
+        items={[]}
+        title="Empty List"
+        emptySearchState="__custom-empty-search-state__"
+        search={{
+          onChange: () => {},
+        }}
+        isVirtualList
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+      target: { value: 'a-search-resulting-in-empty' },
+    });
+    expect(screen.getByText('__custom-empty-search-state__')).toBeVisible();
+
+    rerender(
+      <SimpleList
+        hasSearch
+        items={[]}
+        title="Empty List"
+        emptySearchState={<div>A CUSTOM EMPTY SEARCH NODE</div>}
+        search={{
+          onChange: () => {},
+        }}
+        isVirtualList
+      />
+    );
+
+    fireEvent.change(screen.getByPlaceholderText(searchPlaceHolderText), {
+      target: { value: 'a-search-resulting-in-empty' },
+    });
+    expect(screen.getByText('A CUSTOM EMPTY SEARCH NODE')).toBeVisible();
+  });
+
   it('should not render pagination when hasPagination:false even when pageSize given', () => {
     render(
       <SimpleList

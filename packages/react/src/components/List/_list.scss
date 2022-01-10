@@ -1,4 +1,5 @@
 @import '../../globals/vars';
+@import './list-vars';
 
 .#{$iot-prefix}--list {
   display: flex;
@@ -24,15 +25,21 @@
 
   &--page {
     position: relative;
-    div[class^='SimplePagination__StyledContainer'] {
-      border-top: $ui-03;
-      background: $ui-01;
-      height: rem(40px);
-      border: none;
-    }
-    div > span {
-      padding-left: $spacing-05;
-      margin-right: auto;
+    .#{$iot-prefix}-simple-pagination-container {
+      border-width: 1px 0 0 0;
+      height: $list-item-height;
+      box-sizing: content-box;
+
+      .#{$iot-prefix}-simple-pagination-page-bar {
+        margin-left: unset;
+        justify-content: space-between;
+        width: 100%;
+        height: $spacing-08;
+
+        .#{$iot-prefix}-simple-pagination-page-label {
+          flex-grow: 2;
+        }
+      }
     }
   }
 
@@ -40,43 +47,36 @@
     padding: $spacing-05 0 $spacing-05;
     display: flex;
     flex-flow: column;
-    align-items: center;
-    justify-content: center;
 
     &__full-height {
       height: 100%;
       padding: 0;
     }
+  }
 
-    svg {
-      margin-bottom: $spacing-06;
+  .#{$iot-prefix}--load-more-row {
+    min-height: $list-item-height;
+    cursor: pointer;
+    min-width: 100%;
+    background: $ui-01;
+    &--content {
+      color: $interactive-01;
     }
+    .#{prefix}--loading__stroke {
+      stroke: $interactive-01;
+    }
+    &.#{$prefix}--btn--disabled,
+    .#{$prefix}--btn--disabled:focus,
+    .#{$prefix}--btn--disabled:hover {
+      border-bottom: 1px solid $decorative-01;
+    }
+  }
 
-    .explore-button {
-      margin-top: $spacing-06;
-    }
+  .#{$iot-prefix}--list--load-more-skeleton {
+    margin: $spacing-03 0;
   }
 }
 
 .#{$iot-prefix}--list--skeleton {
   margin: $spacing-03 0 $spacing-03 $spacing-05;
-}
-
-.#{$iot-prefix}--load-more-row {
-  justify-content: center;
-  cursor: pointer;
-  min-width: 100%;
-  border: none;
-  background: $ui-01;
-  &--content {
-    color: $interactive-01;
-  }
-  .#{prefix}--loading__stroke {
-    stroke: $interactive-01;
-  }
-  &.#{$prefix}--btn--disabled,
-  .#{$prefix}--btn--disabled:focus,
-  .#{$prefix}--btn--disabled:hover {
-    border-bottom: 1px solid $decorative-01;
-  }
 }
