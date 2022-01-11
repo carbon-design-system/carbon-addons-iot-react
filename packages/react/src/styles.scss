@@ -143,7 +143,7 @@
 @use 'components/Table/TableViewDropdown/table-view-dropdown';
 @use 'components/TableCard/table-card';
 @use 'components/TableCard/threshold-icon';
-@use 'components/TableMultiline/table';
+@use 'components/TableMultiline/table' as multi-line-table;
 @use 'components/TearSheet/tear-sheet-wrapper';
 @use 'components/TearSheet/tear-sheet';
 @use 'components/TileCatalog/catalog-content';

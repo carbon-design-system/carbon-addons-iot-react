@@ -125,8 +125,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "@carbon/charts": "0.50.4",
-    "@carbon/charts-react": "0.50.4",
+    "@carbon/charts": "0.54.5",
+    "@carbon/charts-react": "0.54.5",
     "@carbon/styles": "0.11.0",
     "@carbon/type": "10.39.0",
     "@carbon/colors": "10.34.0",

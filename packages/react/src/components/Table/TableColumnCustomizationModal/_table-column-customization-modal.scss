@@ -1,4 +1,7 @@
-@import '../../../globals/vars';
+@use '../../../globals/vars' as *;
+@use '../../../globals/spacing' as *;
+@use '../../../globals/colors' as *;
+@use '../../../globals/theme' as *;
 
 .#{$iot-prefix}--column-customization-modal {
   .#{$prefix}--modal-header__label {
@@ -13,7 +16,7 @@
     height: 100%;
     min-height: 60vh;
     // Can't use $ui-01 beacuse it becomes white in the modal
-    background-color: $carbon--gray-10;
+    background-color: $gray-10;
     padding: $spacing-05;
     padding-bottom: $spacing-09;
     margin-bottom: 0;

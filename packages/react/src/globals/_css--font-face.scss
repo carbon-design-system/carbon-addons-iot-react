@@ -1,1 +1,5 @@
-@forward '@carbon/styles/scss/font-face';
+@forward '@carbon/styles/scss/fonts' with (
+  $fonts: (
+    IBM-Plex-Sans-Arabic: false,
+  ),
+);

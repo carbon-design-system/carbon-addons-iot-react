@@ -1,4 +1,6 @@
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 
 /* stylelint-disable-next-line */
 ai-table {
