@@ -39,13 +39,13 @@
   opacity: var(--iot-menu-button-menu-opacity);
 }
 
-html[dir='rtl'] .#{$iot-prefix}--menu-button {
-  .#{$prefix}--context-menu-option__icon {
+html[dir='rtl'] .#{$iot-prefix}--menu-button__menu {
+  .#{$prefix}--menu-option__icon {
     margin-right: 0;
     margin-left: $spacing-03;
   }
 
-  .#{$prefix}--context-menu-option__info {
+  .#{$prefix}--menu-option__info {
     margin-left: 0;
     margin-right: $spacing-05;
     transform: rotate(180deg);

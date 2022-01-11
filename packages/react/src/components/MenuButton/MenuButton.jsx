@@ -238,7 +238,12 @@ const MenuButton = ({
         size={buttonSize}
         kind={kind}
       />
-      <Menu size={menuSize} open={isMenuOpen} {...position}>
+      <Menu
+        className={`${iotPrefix}--menu-button__menu`}
+        size={menuSize}
+        open={isMenuOpen}
+        {...position}
+      >
         {contextMenuItems}
       </Menu>
     </div>
