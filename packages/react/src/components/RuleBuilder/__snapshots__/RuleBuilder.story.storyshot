@@ -552,7 +552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="rsiru4rjba-value-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue=""
@@ -750,7 +750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="rule-builder-title-input-helper-text"
+                        aria-describedby=""
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         disabled={false}
@@ -786,7 +786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby="rule-builder-tags-input-helper-text"
+                          aria-describedby=""
                           className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
@@ -3227,7 +3227,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="rsiru4rjba-value-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue="45"
@@ -3503,7 +3503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="34bvyub9jq-value-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       data-testid="34bvyub9jq-value"
                       defaultValue="14"
@@ -3856,7 +3856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="ewc2z5kyfu-value-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         data-testid="ewc2z5kyfu-value"
                         defaultValue="46"
@@ -4132,7 +4132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="hks7h2zin4-value-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         data-testid="hks7h2zin4-value"
                         defaultValue="45"
@@ -4485,7 +4485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby="wg9hlv197c-value-helper-text"
+                          aria-describedby=""
                           className="bx--text-input bx--text-input--light"
                           data-testid="wg9hlv197c-value"
                           defaultValue=""
@@ -4838,7 +4838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby="7kadk2wfv8-value-helper-text"
+                            aria-describedby=""
                             className="bx--text-input bx--text-input--light"
                             data-testid="7kadk2wfv8-value"
                             defaultValue="44"
@@ -5114,7 +5114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby="49mf09vjhn-value-helper-text"
+                            aria-describedby=""
                             className="bx--text-input bx--text-input--light"
                             data-testid="49mf09vjhn-value"
                             defaultValue="46"
@@ -5315,7 +5315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="rule-builder-title-input-helper-text"
+                        aria-describedby=""
                         className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         defaultValue="My Filter"
@@ -5352,7 +5352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby="rule-builder-tags-input-helper-text"
+                          aria-describedby=""
                           className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
