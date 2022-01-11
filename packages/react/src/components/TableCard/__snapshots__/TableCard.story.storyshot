@@ -53,7 +53,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -92,6 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -1479,7 +1482,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -1518,6 +1523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -2950,7 +2956,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -2989,6 +2997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -4649,7 +4658,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -5549,7 +5560,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -5588,6 +5601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -6779,7 +6793,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -6818,6 +6834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -9231,7 +9248,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -9270,6 +9289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -11517,7 +11537,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -11556,6 +11578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -13323,7 +13346,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -13362,6 +13387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -15468,7 +15494,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -15507,6 +15535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}

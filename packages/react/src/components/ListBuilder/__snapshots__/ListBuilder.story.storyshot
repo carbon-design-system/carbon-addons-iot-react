@@ -995,7 +995,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -1004,6 +1003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         disabled={false}
                         id="1-checkbox"
                         onChange={[Function]}
+                        onClick={[Function]}
                         type="checkbox"
                       />
                       <label
@@ -1066,7 +1066,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -1075,6 +1074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         disabled={false}
                         id="2-checkbox"
                         onChange={[Function]}
+                        onClick={[Function]}
                         type="checkbox"
                       />
                       <label
@@ -1137,7 +1137,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -1146,6 +1145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         disabled={false}
                         id="3-checkbox"
                         onChange={[Function]}
+                        onClick={[Function]}
                         type="checkbox"
                       />
                       <label
