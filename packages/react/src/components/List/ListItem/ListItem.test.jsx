@@ -469,7 +469,7 @@ describe('ListItem', () => {
     expect(screen.getByTitle('secondary')).toBeVisible();
     expect(container.querySelectorAll(`.${iotPrefix}--list-item--nesting-offset`)).toHaveLength(1);
     expect(container.querySelector(`.${iotPrefix}--list-item--nesting-offset`)).toHaveStyle(
-      'width:32px'
+      'width:16px' // 32 - column gap of 16px
     );
   });
 
