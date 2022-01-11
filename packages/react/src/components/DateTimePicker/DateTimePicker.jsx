@@ -707,7 +707,9 @@ const DateTimePicker = ({
           absolute.end = dayjs(absolute.endDate).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
+        absolute.startTime = dayjs(absolute.start).format('HH:mm');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
+        absolute.endTime = dayjs(absolute.end).format('HH:mm');
         setAbsoluteValue(absolute);
       }
     } else {
