@@ -101,7 +101,11 @@ SplitMenuButton.storyName = 'split menu button';
  * if no label is given then it assumes it's an icon only menu.
  */
 const IconOnlyButton = () => (
-  <MenuButton renderOpenIcon={OverflowMenuVertical16} renderCloseIcon={OverflowMenuVertical16}>
+  <MenuButton
+    size={select('Button size (size)', sizes, 'default')}
+    renderOpenIcon={OverflowMenuVertical16}
+    renderCloseIcon={OverflowMenuVertical16}
+  >
     {menuItems}
   </MenuButton>
 );

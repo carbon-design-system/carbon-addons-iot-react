@@ -39,7 +39,7 @@ const propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'default']).isRequired,
 
   /**
-   * The kind of button
+   * The kind of button to render
    */
   kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']).isRequired,
 };
@@ -72,7 +72,7 @@ export const SingleMenuButton = React.forwardRef(
         iconDescription={iconDescription}
         renderIcon={renderIcon}
         hasIconOnly={!label}
-        kind={!label ? 'ghost' : kind}
+        kind={kind}
         testId={label ? `${testId}-single` : `${testId}-icon`}
         size={size}
       >

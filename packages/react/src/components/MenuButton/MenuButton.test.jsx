@@ -168,7 +168,7 @@ describe('MenuButton', () => {
 
     userEvent.click(screen.getByRole('button', { name: 'Create' }));
 
-    // The menu will by default get the size lg which mathces the size "default" of
+    // The menu will by default get the size lg which matches the size "default" of
     // the triggering button
     expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--lg`);
   });
@@ -416,6 +416,217 @@ describe('MenuButton', () => {
         `Failed prop type: The prop \`iconDescription\` is marked as required in \`ForwardRef\`, but its value is \`null\`.`
       )
     );
+  });
+
+  describe('getShadowBlockerConfig', () => {
+    const MENU_HEIGHT = 236;
+    beforeEach(() => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 768,
+      });
+    });
+
+    afterEach(() => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 0,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 0,
+      });
+    });
+
+    it('get the correct height of the menu', () => {
+      const button = generateMenuButton({
+        bottom: 747,
+        height: 48,
+        left: 930,
+        right: 978,
+        top: 699,
+        width: 48,
+        x: 930,
+        y: 699,
+      });
+
+      const { menuHeight } = MenuButtonUtils.getShadowBlockerConfig({ current: button });
+      expect(menuHeight).toEqual(MENU_HEIGHT);
+    });
+
+    it('should set openHorizontally when menu overflows to both top and bottom', () => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 384,
+      });
+
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 200,
+        width: 48,
+        x: 912.984375,
+        y: 768,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(true);
+    });
+
+    it('should generate correct config when overflow is right', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 408,
+        width: 48,
+        x: 912.984375,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top-right', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 48,
+        width: 48,
+        x: 912.984375,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 48,
+        width: 48,
+        x: 480.484375,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when there is no overflow in any direction', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 408,
+        width: 48,
+        x: 480.484375,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is left', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 408,
+        width: 48,
+        x: 48,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top-left', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 48,
+        width: 48,
+        x: 48,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is bottom-left', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 768,
+        width: 48,
+        x: 48,
+        y: 768,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(true);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
   });
 
   describe('getMenuPosition', () => {

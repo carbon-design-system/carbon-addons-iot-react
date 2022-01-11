@@ -1,5 +1,6 @@
 @import '~carbon-components/scss/components/menu/menu';
 @import '../../globals/vars';
+@import './menu-button-shadow-blocker';
 
 .#{$iot-prefix}--menu-button {
   .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
