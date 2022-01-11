@@ -105,6 +105,7 @@ class IdleTimer {
     window.addEventListener('mousedown', this.eventHandler);
     window.addEventListener('scroll', this.eventHandler);
     window.addEventListener('keydown', this.eventHandler);
+    window.addEventListener('clientTimerEvent', this.eventHandler, true);
     // Listen for mobile (touch) events
     window.addEventListener('touchstart', this.eventHandler);
     window.addEventListener('touchend', this.eventHandler);
@@ -118,6 +119,7 @@ class IdleTimer {
     window.removeEventListener('mousedown', this.eventHandler);
     window.removeEventListener('scroll', this.eventHandler);
     window.removeEventListener('keydown', this.eventHandler);
+    window.removeEventListener('clientTimerEvent', this.eventHandler);
     window.removeEventListener('touchstart', this.eventHandler);
     window.removeEventListener('touchend', this.eventHandler);
     window.removeEventListener('touchmove', this.eventHandler);
