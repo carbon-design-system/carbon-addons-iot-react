@@ -356,10 +356,17 @@ const TableToolbar = ({
                   : handleSpecificKeyDown(['Enter'], (e) => onApplySearch(e.target.value))
               }
               onClear={() => onApplySearch('')}
-              // This can't be used yet b/c it prevents the search box from automatically
-              // closing on blur.
-              // https://github.com/carbon-design-system/carbon/issues/10077
-              // onBlur={!hasFastSearch ? (e) => onApplySearch(e.target.value) : undefined}
+              onBlur={
+                !hasFastSearch
+                  ? (e, handleExpand) => {
+                      const { value } = e.target;
+                      onApplySearch(value);
+                      if (!value) {
+                        handleExpand(e, false);
+                      }
+                    }
+                  : undefined
+              }
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}

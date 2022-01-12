@@ -149,7 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="table card_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
@@ -515,91 +515,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Timestamp"
                               >
                                 Timestamp
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -622,91 +622,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Campus"
                               >
                                 Campus
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -729,91 +729,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="People"
                               >
                                 People
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -836,91 +836,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Headcount"
                               >
                                 Headcount
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -943,91 +943,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="capacity"
                               >
                                 capacity
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -1482,7 +1482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 aria-labelledby="iot--list-header--search-search"
-                className="bx--search bx--search--sm"
+                className="bx--search bx--search--lg"
                 role="search"
               >
                 <div
@@ -2053,7 +2053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="calculated_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -2674,7 +2674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="table card_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="table card_title"
@@ -3115,91 +3115,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Timestamp"
                               >
                                 Timestamp
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -3222,91 +3222,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Campus"
                               >
                                 Campus
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -3329,91 +3329,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="People"
                               >
                                 People
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -3436,91 +3436,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="Headcount"
                               >
                                 Headcount
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -3543,91 +3543,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="iot--list-item--content--values--main"
                             >
                               <div
-                                className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                                className="iot--list-item--content--values--value"
                                 title="capacity"
                               >
                                 capacity
                               </div>
-                              <div
-                                className="iot--list-item--content--row-actions"
+                            </div>
+                            <div
+                              className="iot--list-item--content--row-actions"
+                              onClick={[Function]}
+                              onKeyPress={[Function]}
+                            >
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
                                 onClick={[Function]}
-                                onKeyPress={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
                               >
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Edit
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Edit"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                    />
-                                  </svg>
-                                </button>
-                                <button
-                                  aria-describedby={null}
-                                  className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                  data-testid="Button"
-                                  disabled={false}
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
+                                  Edit
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Edit"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                aria-describedby={null}
+                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                                data-testid="Button"
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onFocus={[Function]}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                tabIndex={0}
+                                type="button"
+                              >
+                                <div
+                                  className="bx--assistive-text"
                                   onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
-                                  tabIndex={0}
-                                  type="button"
                                 >
-                                  <div
-                                    className="bx--assistive-text"
-                                    onMouseEnter={[Function]}
-                                  >
-                                    Remove
-                                  </div>
-                                  <svg
-                                    aria-hidden="true"
-                                    aria-label="Remove"
-                                    className="bx--btn__icon"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height={16}
-                                    preserveAspectRatio="xMidYMid meet"
-                                    role="img"
-                                    viewBox="0 0 32 32"
-                                    width={16}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <path
-                                      d="M8 15H24V17H8z"
-                                    />
-                                  </svg>
-                                </button>
-                              </div>
+                                  Remove
+                                </div>
+                                <svg
+                                  aria-hidden="true"
+                                  aria-label="Remove"
+                                  className="bx--btn__icon"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  role="img"
+                                  viewBox="0 0 32 32"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 15H24V17H8z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -4189,7 +4189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="calculated_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -4601,7 +4601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="custom-content-textinput-helper-text"
+                      aria-describedby=""
                       className="bx--text-input"
                       disabled={false}
                       id="custom-content-textinput"
@@ -4642,7 +4642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="calculated_title-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_title"
@@ -4674,7 +4674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="calculated_y-axis-label-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_y-axis-label"
@@ -4706,7 +4706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="calculated_unit-selection-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_unit-selection"
@@ -4738,7 +4738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="calculated_decimal-precision-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_decimal-precision"
@@ -5119,7 +5119,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="calculated_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="calculated_title"
@@ -5740,7 +5740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="image_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="image_title"
@@ -6573,7 +6573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby="timeseries_title-helper-text"
+                        aria-describedby=""
                         className="bx--text-input bx--text-input--light"
                         disabled={false}
                         id="timeseries_title"
@@ -6948,91 +6948,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Torque Max"
                             >
                               Torque Max
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                data-testid="Button"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Edit
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Edit"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                data-testid="Button"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Edit
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Edit"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 15H24V17H8z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 15H24V17H8z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -7067,91 +7067,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Torque Mean"
                             >
                               Torque Mean
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                data-testid="Button"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Edit
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Edit"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                                  />
-                                </svg>
-                              </button>
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                                data-testid="Button"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                                Edit
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Edit"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M8 15H24V17H8z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 15H24V17H8z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -7188,7 +7188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="timeseries_title-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_title"
@@ -7221,7 +7221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="timeseries_y-axis-label-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_y-axis-label"
@@ -7254,7 +7254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="timeseries_unit-selection-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_unit-selection"
@@ -7287,7 +7287,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="timeseries_decimal-precision-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_decimal-precision"
@@ -7685,7 +7685,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby="card-1_title-helper-text"
+                          aria-describedby=""
                           className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="card-1_title"
@@ -8200,7 +8200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               <div
                 aria-labelledby="iot--list-header--search-search"
-                className="bx--search bx--search--sm"
+                className="bx--search bx--search--lg"
                 role="search"
               >
                 <div

@@ -2897,6 +2897,7 @@ Map {
       "shouldLazyRender": false,
       "showExpanderColumn": false,
       "singleRowEditButtons": null,
+      "size": undefined,
       "testId": "",
       "totalColumns": 0,
     },
@@ -3384,6 +3385,18 @@ Map {
       },
       "singleRowEditButtons": Object {
         "type": "element",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
       },
       "tableId": Object {
         "isRequired": true,
@@ -6093,6 +6106,7 @@ Map {
       "defaultExpandedIds": Array [],
       "defaultSelectedId": null,
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -6164,6 +6178,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -6301,6 +6328,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6321,6 +6379,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -6376,6 +6437,7 @@ Map {
   "ListContent" => Object {
     "defaultProps": Object {
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -6384,12 +6446,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -6416,6 +6479,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -6486,6 +6562,9 @@ Map {
       "isCheckboxMultiSelect": Object {
         "type": "bool",
       },
+      "isFiltering": Object {
+        "type": "bool",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -6517,6 +6596,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6537,6 +6647,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -6613,6 +6726,7 @@ Map {
   "VirtualListContent" => Object {
     "defaultProps": Object {
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -6621,12 +6735,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more...",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -6651,6 +6766,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -6721,6 +6849,9 @@ Map {
       "isCheckboxMultiSelect": Object {
         "type": "bool",
       },
+      "isFiltering": Object {
+        "type": "bool",
+      },
       "isFullHeight": [Function],
       "isLargeRow": Object {
         "type": "bool",
@@ -6750,6 +6881,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6770,6 +6932,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -10024,6 +10189,7 @@ Map {
         "openMenu": "Open menu",
       },
       "isActionItemVisible": [Function],
+      "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
       "skipto": "#main-content",
@@ -10134,6 +10300,9 @@ Map {
       },
       "isActionItemVisible": Object {
         "type": "func",
+      },
+      "isSideNavExpanded": Object {
+        "type": "bool",
       },
       "onClickSideNavExpand": Object {
         "type": "func",
@@ -23821,6 +23990,7 @@ Map {
       "buttons": Array [],
       "className": null,
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "emptyState": "No list items to show",
       "expandedIds": Array [],
       "getAllowedDropIds": null,
@@ -23829,12 +23999,13 @@ Map {
       "i18n": Object {
         "close": "Close",
         "expand": "Expand",
-        "loadMore": "Load more...",
+        "loadMore": "View more",
         "searchPlaceHolderText": "Enter a value",
       },
       "iconPosition": "left",
       "indeterminateIds": Array [],
       "isCheckboxMultiSelect": false,
+      "isFiltering": false,
       "isFullHeight": false,
       "isLargeRow": false,
       "isLoading": false,
@@ -23874,6 +24045,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "emptyState": Object {
         "args": Array [
@@ -23947,6 +24131,9 @@ Map {
       "isCheckboxMultiSelect": Object {
         "type": "bool",
       },
+      "isFiltering": Object {
+        "type": "bool",
+      },
       "isFullHeight": Object {
         "type": "bool",
       },
@@ -23981,6 +24168,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -24001,6 +24219,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -24185,6 +24406,7 @@ Map {
     "defaultProps": Object {
       "buttons": Array [],
       "editingStyle": null,
+      "emptySearchState": "No results found",
       "hasPagination": true,
       "hasSearch": false,
       "i18n": Object {
@@ -24219,6 +24441,19 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "emptySearchState": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasPagination": Object {
         "type": "bool",
@@ -31038,6 +31273,9 @@ Map {
         "labelText": Object {
           "type": "string",
         },
+        "onBlur": Object {
+          "type": "func",
+        },
         "onChange": Object {
           "type": "func",
         },
@@ -31045,6 +31283,9 @@ Map {
           "type": "func",
         },
         "onExpand": Object {
+          "type": "func",
+        },
+        "onFocus": Object {
           "type": "func",
         },
         "persistant": [Function],

@@ -249,7 +249,9 @@ export const ComplexNestedExample = () => {
   };
 
   const handleAdd = (row) => {
-    setSelectedUsers([row].concat(...selectedUsers));
+    const userIdsInRow = row.users ? row.users.map(({ id }) => id) : [row.id];
+    const filteredSelectedUsers = selectedUsers.filter(({ id }) => !userIdsInRow.includes(id));
+    setSelectedUsers([row].concat(...filteredSelectedUsers));
   };
 
   const displayAllUsersList = (unmodifiedUsers, selection = []) => {
