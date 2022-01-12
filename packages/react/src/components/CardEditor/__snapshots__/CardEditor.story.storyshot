@@ -4770,7 +4770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="calculated_maximum_data_points-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="calculated_maximum_data_points"
@@ -7319,7 +7319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby="timeseries_maximum_data_points-helper-text"
+                      aria-describedby=""
                       className="bx--text-input bx--text-input--light"
                       disabled={false}
                       id="timeseries_maximum_data_points"

@@ -30,8 +30,12 @@ const propTypes = {
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
       showLegend: PropTypes.bool,
-      /** maximum amounts of data points to render in the graph */
-      maximumDataPoints: PropTypes.bool,
+      /**
+       * maximum amounts of data points to render in the graph
+       * The data point limitation doesn't actually affect the cards themselves. It is only stored
+       * in the JSON and up to the downstream consumers to use when they fetch their data.
+       */
+      maximumDataPoints: PropTypes.number,
     }),
     interval: PropTypes.string,
   }),
