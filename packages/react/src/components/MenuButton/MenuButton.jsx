@@ -233,7 +233,7 @@ const MenuButton = ({
     [`${iotPrefix}--menu-button--flip-x`]: flippedX,
     [`${iotPrefix}--menu-button--opens-horizontally`]: opensHorizontally,
   };
-  const showShadowBlocker = buttonKind === GHOST && isMenuOpen;
+  const showShadowBlocker = buttonKind === GHOST && isMenuOpen && !label;
   const shadowBlocker = showShadowBlocker ? (
     <div
       style={{ [`--menu-height`]: `${menuHeight}px` }}
