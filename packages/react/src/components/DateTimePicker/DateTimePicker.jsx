@@ -701,10 +701,10 @@ const DateTimePicker = ({
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
-          absolute.start = dayjs(absolute.startDate).valueOf();
+          absolute.start = dayjs(`${absolute.startDate} ${absolute.startTime}`).valueOf();
         }
         if (!absolute.hasOwnProperty('end')) {
-          absolute.end = dayjs(absolute.endDate).valueOf();
+          absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
         absolute.startTime = dayjs(absolute.start).format('HH:mm');
