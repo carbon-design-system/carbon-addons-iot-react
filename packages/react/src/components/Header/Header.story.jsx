@@ -1,9 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
-import NotificationOn from '@carbon/icons-react/lib/notification/16';
-import HeaderHelp from '@carbon/icons-react/lib/help/16';
-import Avatar from '@carbon/icons-react/lib/user--avatar/16';
+import NotificationOn from '@carbon/icons-react/es/notification/16';
+import HeaderHelp from '@carbon/icons-react/es/help/16';
+import Avatar from '@carbon/icons-react/es/user--avatar/16';
 import { Bullhorn16, Checkbox16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
@@ -11,7 +11,7 @@ import { Tag } from '../Tag';
 
 import Header from './Header';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -38,7 +38,7 @@ const HeaderProps = {
         <HeaderHelp
           fill="white"
           description="Icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       childContent: [
@@ -271,7 +271,7 @@ export const HeaderComponentSubtitle = () => (
       className={`${iotPrefix}--header--story-test-class`}
       subtitle={
         <div>
-          {'Monitor'}
+          Monitor
           <span style={{ marginLeft: '1rem' }}>
             <Tag>Admin Mode</Tag>
           </span>

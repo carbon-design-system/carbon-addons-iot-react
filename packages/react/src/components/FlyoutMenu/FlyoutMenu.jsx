@@ -38,7 +38,8 @@ const getTooltipDirection = (direction) => {
 };
 
 // No need to do prop checks since these are alredy done in flyout
-// eslint-disable-next-line  react/prop-types
+
+/* eslint-disable react/prop-types */
 const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
   <>
     <Button
@@ -75,6 +76,7 @@ const DefaultFooter = ({ setIsOpen, onCancel, onApply, i18n }) => (
     </Button>
   </>
 );
+/* eslint-enable react/prop-types */
 
 const FlyoutMenu = ({
   buttonProps,
@@ -398,8 +400,8 @@ const propTypes = {
 
   /** Set of internationalized button names */
   i18n: PropTypes.shape({
-    cancelButton: PropTypes.string,
-    applyButton: PropTypes.string,
+    cancelButtonText: PropTypes.string,
+    applyButtonText: PropTypes.string,
   }),
 
   /**
@@ -423,6 +425,7 @@ const propTypes = {
   /** classes that can be passed to the button used for the flyout menu */
   buttonProps: PropTypes.shape({
     className: PropTypes.string,
+    onClick: PropTypes.func,
   }),
 
   isOpen: PropTypes.bool,

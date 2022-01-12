@@ -1,6 +1,7 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { gray60 } from '@carbon/colors';
 
 import { CARD_DATA_STATE, CARD_SIZES } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -12,6 +13,8 @@ const { iotPrefix } = settings;
 
 describe('ValueCard', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { rerender } = render(
       <ValueCard
         id="myIdTest"
@@ -26,6 +29,10 @@ describe('ValueCard', () => {
     expect(screen.getByTestId('VALUE_CARD-attribute-0-threshold-label')).toBeDefined();
     expect(screen.getByTestId('VALUE_CARD-attribute-0-value')).toBeDefined();
     expect(screen.getByTestId('VALUE_CARD-title')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     rerender(
       <ValueCard
         id="myIdTest"
@@ -189,6 +196,6 @@ describe('ValueCard', () => {
     const previewData = screen.getAllByText(PREVIEW_DATA);
     expect(previewData).toHaveLength(2);
     expect(previewData[1]).toHaveClass(`${iotPrefix}--value-card__attribute-secondary-value`);
-    expect(previewData[1]).toHaveStyle('--secondary-value-color:red');
+    expect(previewData[1]).toHaveStyle(`--secondary-value-color:${gray60}`);
   });
 });

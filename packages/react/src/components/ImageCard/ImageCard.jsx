@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import isNil from 'lodash/isNil';
-import pick from 'lodash/pick';
+import { isNil, pick } from 'lodash-es';
 import { Image32, Warning24 } from '@carbon/icons-react';
 
 import { ImageCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
@@ -162,69 +161,65 @@ const ImageCard = ({
             { width, height } // eslint-disable-line react/prop-types
           ) => (
             <div className={`${iotPrefix}--image-card__wrapper`}>
-              {supportedSize ? (
-                isEditable && !imgContent.src ? (
-                  <ImageUploader
-                    onBrowseClick={onBrowseClick}
-                    width={width}
-                    height={height}
-                    maxFileSizeInBytes={maxFileSizeInBytes}
-                    onUpload={handleOnUpload}
-                    i18n={pick(
-                      mergedI18n,
-                      'dropContainerLabelText',
-                      'dropContainerDescText',
-                      'uploadByURLCancel',
-                      'uploadByURLButton',
-                      'browseImages',
-                      'insertUrl',
-                      'urlInput',
-                      'fileTooLarge',
-                      'errorTitle',
-                      'wrongFileType'
-                    )}
-                    hasInsertFromUrl={hasInsertFromUrl}
-                    validateUploadedImage={validateUploadedImage}
-                    // TODO: remove deprecated testID prop in v3.
-                    testId={`${testID || testId}-image-uploader`}
-                  />
-                ) : imgContent.src ? (
-                  <ImageHotspots
-                    // Key regen needed for stories that modifies the displayOption
-                    key={imgContent?.displayOption}
-                    {...imgContent}
-                    // Adjust for side padding of iot-image-card__wrapper + border of iot-card--wrapper
-                    width={width - (16 * 2 + 4)}
-                    // Adjust for bottom padding of iot-image-card__wrapper + border of iot-card--wrapper
-                    height={height - (16 + 4)}
-                    isExpanded={isExpanded}
-                    hotspots={hotspots}
-                    isHotspotDataLoading={isLoading}
-                    loadingHotspotsLabel={loadingDataLabel}
-                    renderIconByName={renderIconByName}
-                    locale={locale}
-                    i18n={pick(
-                      mergedI18n,
-                      'zoomIn',
-                      'zoomOut',
-                      'zoomToFit',
-                      'titlePlaceholderText',
-                      'titleEditableHintText'
-                    )}
-                    // TODO: remove deprecated testID prop in v3.
-                    testId={`${testID || testId}-image-hotspots`}
-                  />
-                ) : (
-                  <div
-                    // TODO: remove deprecated testID prop in v3.
-                    data-testid={`${testID || testId}-empty`}
-                    className={`${iotPrefix}--image-card__empty`}
-                  >
-                    <Image32 width={250} height={250} fill="gray" />
-                  </div>
-                )
+              {isEditable && !imgContent.src ? (
+                <ImageUploader
+                  onBrowseClick={onBrowseClick}
+                  width={width}
+                  height={height}
+                  maxFileSizeInBytes={maxFileSizeInBytes}
+                  onUpload={handleOnUpload}
+                  i18n={pick(
+                    mergedI18n,
+                    'dropContainerLabelText',
+                    'dropContainerDescText',
+                    'uploadByURLCancel',
+                    'uploadByURLButton',
+                    'browseImages',
+                    'insertUrl',
+                    'urlInput',
+                    'fileTooLarge',
+                    'errorTitle',
+                    'wrongFileType'
+                  )}
+                  hasInsertFromUrl={hasInsertFromUrl}
+                  validateUploadedImage={validateUploadedImage}
+                  // TODO: remove deprecated testID prop in v3.
+                  testId={`${testID || testId}-image-uploader`}
+                />
+              ) : imgContent.src ? (
+                <ImageHotspots
+                  // Key regen needed for stories that modifies the displayOption
+                  key={imgContent?.displayOption}
+                  {...imgContent}
+                  // Adjust for side padding of iot-image-card__wrapper + border of iot-card--wrapper
+                  width={width - (16 * 2 + 4)}
+                  // Adjust for bottom padding of iot-image-card__wrapper + border of iot-card--wrapper
+                  height={height - (16 + 4)}
+                  isExpanded={isExpanded}
+                  hotspots={hotspots}
+                  isHotspotDataLoading={isLoading}
+                  loadingHotspotsLabel={loadingDataLabel}
+                  renderIconByName={renderIconByName}
+                  locale={locale}
+                  i18n={pick(
+                    mergedI18n,
+                    'zoomIn',
+                    'zoomOut',
+                    'zoomToFit',
+                    'titlePlaceholderText',
+                    'titleEditableHintText'
+                  )}
+                  // TODO: remove deprecated testID prop in v3.
+                  testId={`${testID || testId}-image-hotspots`}
+                />
               ) : (
-                <p>Size not supported.</p>
+                <div
+                  // TODO: remove deprecated testID prop in v3.
+                  data-testid={`${testID || testId}-empty`}
+                  className={`${iotPrefix}--image-card__empty`}
+                >
+                  <Image32 width={250} height={250} fill="gray" />
+                </div>
               )}
             </div>
           )

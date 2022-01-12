@@ -59,7 +59,7 @@ const ListTarget = ({ connectDropTarget, targetPosition, targetSize, isOver }) =
 const rowTarget = {
   drop(hoverProps, monitor) {
     const hoverId = hoverProps.id;
-    const dragId = monitor.getItem().props.id;
+    const dragId = monitor.getItem().id;
     const target = hoverProps.targetOverride ?? hoverProps.targetPosition;
 
     // Check if drop is allowed

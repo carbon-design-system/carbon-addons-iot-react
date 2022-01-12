@@ -3,11 +3,12 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { User20, Help20 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
-import { keyCodes } from '../../constants/KeyCodeConstants';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
-import Header, { APP_SWITCHER } from './Header';
+import Header from './Header';
+import { APP_SWITCHER } from './headerConstants';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 React.Fragment = ({ children }) => children;
 
@@ -28,7 +29,7 @@ describe('Header', () => {
           <Help20
             fill="white"
             description="Icon"
-            className="bx--header__menu-item bx--header__menu-title"
+            className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
           />
         ),
         childContent: [
@@ -146,11 +147,11 @@ describe('Header', () => {
     render(<Header {...HeaderProps} />);
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -160,7 +161,7 @@ describe('Header', () => {
     fireEvent.focus(screen.getByText('This is a link'));
     fireEvent.blur(screen.getByText('This is a link'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -168,11 +169,11 @@ describe('Header', () => {
     render(<Header {...HeaderProps} />);
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     fireEvent.blur(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -181,12 +182,12 @@ describe('Header', () => {
 
     fireEvent.click(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded action-btn__headerpanel'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     // focus leaves the first button
     fireEvent.blur(screen.getByTitle('help'));
     expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
-      'bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed'
+      `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
@@ -205,12 +206,12 @@ describe('Header', () => {
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
     expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--header-panel--expanded bx--app-switcher'
+      `${prefix}--header-panel ${prefix}--header-panel--expanded ${prefix}--app-switcher`
     );
 
     fireEvent.click(screen.getByTitle(APP_SWITCHER));
     expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      'bx--header-panel bx--app-switcher'
+      `${prefix}--header-panel ${prefix}--app-switcher`
     );
   });
 
@@ -243,11 +244,11 @@ describe('Header', () => {
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.HOME });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.HOME });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -264,9 +265,9 @@ describe('Header', () => {
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuTrigger = screen.getByTitle('help');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.SPACE });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -284,9 +285,9 @@ describe('Header', () => {
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
     const menuParent = screen.getByRole('menu');
     const menuTrigger = screen.getByTestId('menuitem');
-    fireEvent.keyDown(menuTrigger, { keyCode: keyCodes.ENTER });
+    fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
-    fireEvent.keyDown(menuParent, { keyCode: keyCodes.ESCAPE });
+    fireEvent.keyDown(menuParent, { key: keyboardKeys.ESCAPE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('false');
   });
 
@@ -297,10 +298,17 @@ describe('Header', () => {
     expect(screen.getByLabelText('user')).toBeTruthy();
   });
   it('should not display the shortname if none given', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { container } = render(
       <Header {...HeaderPropsWithoutOnClick} shortAppName={undefined} appName={undefined} />
     );
     expect(container.querySelectorAll(`.${iotPrefix}--header__short-name`)).toHaveLength(0);
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Failed prop type: The prop `appName` is marked as required in `Header`'
+      )
+    );
+    console.error.mockReset();
   });
 
   it('should not display an action item if isActionItemVisible returns false', () => {
@@ -322,5 +330,23 @@ describe('Header', () => {
   it('should render if actionItems is empty', () => {
     render(<Header {...HeaderPropsWithoutOnClick} actionItems={[]} />);
     expect(screen.getByText('IBM')).toBeVisible();
+  });
+  it('should change side-nav menu button label when isSideNavExpanded change', () => {
+    const { rerender } = render(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded />);
+    expect(screen.getByLabelText('Close menu')).toBeVisible();
+    rerender(<Header {...HeaderPropsWithoutOnClick} isSideNavExpanded={false} />);
+    expect(screen.getByLabelText('Open menu')).toBeVisible();
+    rerender(
+      <Header
+        {...HeaderPropsWithoutOnClick}
+        isSideNavExpanded={false}
+        i18n={{ openMenu: '__open__' }}
+      />
+    );
+    expect(screen.getByLabelText('__open__')).toBeVisible();
+    rerender(
+      <Header {...HeaderPropsWithoutOnClick} isSideNavExpanded i18n={{ closeMenu: '__close__' }} />
+    );
+    expect(screen.getByLabelText('__close__')).toBeVisible();
   });
 });

@@ -9,6 +9,8 @@ import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
 import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
+import StatefulTable from '../Table/StatefulTable';
+import { initialState } from '../Table/Table.story';
 
 import PageTitleBar from './PageTitleBar';
 import PageTitleBarREADME from './PageTitleBar.mdx';
@@ -79,19 +81,28 @@ export default {
 
 export const Base = () => {
   return (
-    <PageTitleBar
-      title={text('title', commonPageTitleBarProps.title)}
-      headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
-      description={text('description', '')}
-      breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
-        display: 'select',
-      })}
-      stickyHeaderOffset={number('stickyHeaderOffset', 0)}
-      collapsed={boolean('collapsed', false)}
-      editable={boolean('editable', false)}
-      isLoading={boolean('isLoading', false)}
-      forceContentOutside={boolean('forceContentOutside', false)}
-    />
+    <div style={{ minHeight: '200vh' }}>
+      <PageTitleBar
+        title={text('title', commonPageTitleBarProps.title)}
+        headerMode={select('headerMode', ['CONDENSED', 'DYNAMIC', 'STATIC', 'STICKY'], 'STATIC')}
+        description={text('description', '')}
+        breadcrumb={optionsKnob('breadcrumb', breadcrumbKnobOptions, breadcrumbDefaultValue, {
+          display: 'select',
+        })}
+        stickyHeaderOffset={number('stickyHeaderOffset', 0)}
+        collapsed={boolean('collapsed', false)}
+        editable={boolean('editable', false)}
+        isLoading={boolean('isLoading', false)}
+        forceContentOutside={boolean('forceContentOutside', false)}
+        content={
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
+            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
+          </div>
+        }
+        stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
+      />
+    </div>
   );
 };
 
@@ -111,6 +122,7 @@ export const WithTooltipDescriptionWithNode = () => (
       editable={boolean('editable', false)}
       isLoading={boolean('isLoading', false)}
       forceContentOutside={boolean('forceContentOutside', false)}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -127,6 +139,7 @@ export const WithStatusDescriptionAndCrumbs = () => (
       })}
       collapsed={boolean('collapse description', false)}
       headerMode={select('headerMode', ['DYNAMIC', 'STATIC', 'STICKY', 'CONDENSED'], 'STATIC')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -144,6 +157,7 @@ export const WithEditableTitleBar = () => (
       collapsed={boolean('collapse description', false)}
       editable={boolean('editable', true)}
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -205,6 +219,7 @@ export const WithSelect = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -281,6 +296,7 @@ export const WithEverything = () => (
         </Tabs>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -322,6 +338,7 @@ export const WithCondensedHeader = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -341,6 +358,7 @@ export const WithCustomRenderFunction = () => (
         display: 'select',
       })}
       extraContent={commonPageTitleBarProps.extraContent}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -399,6 +417,7 @@ export const WithDynamicScrolling = () => (
         </div>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );
@@ -449,27 +468,26 @@ export const WithDynamicScrollingAndTabs = () => (
         </div>
       }
       content={
-        <div style={{ marginLeft: '-16px', marginRight: '-16px' }}>
-          <Tabs>
-            <Tab label="Tab 1">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-            <Tab label="Tab 2">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-            <Tab label="Tab 3">
-              <div style={{ height: '100rem', marginTop: '-16px' }}>
-                <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
-              </div>
-            </Tab>
-          </Tabs>
-        </div>
+        <Tabs>
+          <Tab label="Tab 1">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(3)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+          <Tab label="Tab 2">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+          <Tab label="Tab 3">
+            <div style={{ height: '100rem', marginTop: '-16px' }}>
+              <TileCatalogNew tiles={getTiles(5)} numColumns={2} numRows={2} />
+            </div>
+          </Tab>
+        </Tabs>
       }
       onEdit={action('edit')}
+      stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
     />
   </div>
 );

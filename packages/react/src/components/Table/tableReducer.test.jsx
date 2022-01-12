@@ -1,6 +1,5 @@
 import React from 'react';
-import merge from 'lodash/merge';
-import omit from 'lodash/omit';
+import { merge, omit } from 'lodash-es';
 import { Add20 } from '@carbon/icons-react';
 
 import { tableReducer, filterData, searchData, filterSearchAndSort } from './tableReducer';
@@ -106,6 +105,40 @@ describe('table reducer', () => {
     it('TABLE_PAGE_CHANGE with invalid page', () => {
       const updatedState = tableReducer(initialState, tablePageChange({ page: 65, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(1);
+    });
+    it('TABLE_PAGE_CHANGE pageSize change resets page', () => {
+      const state1 = tableReducer(
+        {
+          view: {
+            pagination: {
+              pageSize: 10,
+              pageSizes: [10, 20, 30],
+              page: 1,
+              totalItems: 100,
+            },
+          },
+        },
+        tablePageChange({ page: 4, pageSize: 10 })
+      );
+      expect(state1.view.pagination.page).toEqual(4);
+
+      const state2 = tableReducer(state1, tablePageChange({ pageSize: 30 }));
+      expect(state2.view.pagination.page).toEqual(1);
+
+      const state3 = tableReducer(
+        {
+          view: {
+            pagination: {
+              pageSize: 30,
+              pageSizes: [10, 20, 30],
+              page: 3,
+              totalItems: 100,
+            },
+          },
+        },
+        tablePageChange({ pageSize: 10 })
+      );
+      expect(state3.view.pagination.page).toEqual(1);
     });
   });
   describe('toolbar actions', () => {
@@ -422,11 +455,73 @@ describe('table reducer', () => {
       // Expanded row
       const tableWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
       expect(tableWithExpandedRow.view.table.expandedIds).toEqual(['row-1']);
+      const tableWith2ExpandedRows = tableReducer(
+        tableWithExpandedRow,
+        tableRowExpand('row-2', true)
+      );
+      expect(tableWith2ExpandedRows.view.table.expandedIds).toEqual(['row-1', 'row-2']);
+
       // Collapsed row
       const tableWithCollapsedRow = tableReducer(initialState, tableRowExpand('row-1', false));
       expect(tableWithCollapsedRow.view.table.expandedIds).toEqual([]);
+
+      // With expandRowsExclusively
+      const tableSingleWithExpandedRow = tableReducer(initialState, tableRowExpand('row-1', true));
+      const newTableSingleWithExpandedRow = tableReducer(
+        tableSingleWithExpandedRow,
+        tableRowExpand('row-2', true, null, { expandRowsExclusively: true })
+      );
+      expect(newTableSingleWithExpandedRow.view.table.expandedIds).toEqual(['row-2']);
     });
     it('REGISTER_TABLE', () => {
+      const tableWithDataSizeChanges = tableReducer(
+        initialState,
+        tableRegister({ view: { table: { pagination: { pageSize: 10 } } } })
+      );
+
+      expect(tableWithDataSizeChanges.view.pagination).toEqual({
+        pageSize: 10,
+        pageSizes: undefined,
+        page: 1,
+        totalItems: 100,
+      });
+      const changePagesState = tableReducer(
+        tableWithDataSizeChanges,
+        tablePageChange({ page: 3, pageSize: 10 })
+      );
+      expect(changePagesState.data.length).toEqual(100);
+      expect(changePagesState.view.pagination.page).toEqual(3);
+
+      const reduceDataLength = tableReducer(
+        changePagesState,
+        tableRegister({ data: changePagesState.data.slice(0, 10) })
+      );
+      expect(reduceDataLength.data.length).toEqual(10);
+      expect(reduceDataLength.view.pagination.page).toEqual(1);
+
+      const changePageSizeState = tableReducer(reduceDataLength, tablePageChange({ pageSize: 3 }));
+      expect(changePageSizeState.data.length).toEqual(10);
+      expect(changePageSizeState.view.pagination.page).toEqual(1);
+
+      const movePageState = tableReducer(
+        changePageSizeState,
+        tablePageChange({ page: 3, pageSize: 3 })
+      );
+      expect(movePageState.data.length).toEqual(10);
+      expect(movePageState.view.pagination.page).toEqual(3);
+
+      const increaseDataLength = tableReducer(
+        movePageState,
+        tableRegister({ data: changePagesState.data })
+      );
+      expect(increaseDataLength.data.length).toEqual(100);
+      expect(increaseDataLength.view.pagination).toEqual({
+        pageSize: 3,
+        page: 1,
+        pageSizes: undefined,
+        totalItems: 100,
+      });
+
       // Data should be filtered once table registers
       expect(initialState.view.table.filteredData).toBeUndefined();
       const tableWithFilteredData = tableReducer(
@@ -473,6 +568,155 @@ describe('table reducer', () => {
       // is Loading should be set false and rowCount should be correct
       expect(tableWithSortedData.view.table.loadingState.isLoading).toEqual(false);
       expect(tableWithSortedData.view.table.loadingState.rowCount).toEqual(0);
+
+      // load more
+      const initialStateLoadMore = {
+        ...initialState,
+        data: [
+          {
+            ...initialState.data[0],
+            hasLoadMore: true,
+            children: [initialState.data[1], initialState.data[2], initialState.data[3]],
+          },
+          {
+            ...initialState.data[4],
+            hasLoadMore: true,
+            children: [initialState.data[5], initialState.data[6], initialState.data[7]],
+          },
+          {
+            ...initialState.data[8],
+            hasLoadMore: true,
+            children: [initialState.data[9], initialState.data[10], initialState.data[11]],
+          },
+          {
+            ...initialState.data[12],
+            hasLoadMore: true,
+            children: [initialState.data[13], initialState.data[14], initialState.data[15]],
+          },
+        ],
+        view: {
+          ...initialState.view,
+          table: {
+            ...initialState.table,
+            loadingMoreIds: ['row-0', 'row-4', 'row-12'],
+          },
+        },
+      };
+
+      // with loading more data
+      const tableWithLoadingMoreData = tableReducer(
+        initialStateLoadMore,
+        tableRegister({ data: initialStateLoadMore.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreData.view.table.loadingMoreIds).toHaveLength(3);
+
+      // after loaded data is completely loaded
+      const initialStateWithLoadMoreComplete = {
+        ...initialStateLoadMore,
+        data: initialStateLoadMore.data.map((i, idx) =>
+          idx === 0
+            ? {
+                ...i,
+                hasLoadMore: false,
+                children: [...i.children, initialState.data[16], initialState.data[17]],
+              }
+            : i
+        ),
+      };
+
+      const tableWithLoadingMoreDataComplete = tableReducer(
+        initialStateLoadMore,
+        tableRegister({ data: initialStateWithLoadMoreComplete.data, isLoading: false })
+      );
+
+      expect(tableWithLoadingMoreDataComplete.view.table.loadingMoreIds).toHaveLength(2);
+
+      const addTableRowActionsFromProps = tableReducer(
+        initialState,
+        tableRegister({
+          view: {
+            table: { rowActions: [{ rowId: 'row-0', isEditMode: true }] },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(addTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+      ]);
+      expect(addTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const addSecondTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [
+                { rowId: 'row-0', isEditMode: true },
+                { rowId: 'row-1', isEditMode: true },
+              ],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toHaveLength(2);
+      expect(addSecondTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-0',
+          isEditMode: true,
+        },
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(addSecondTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const removeOneTableRowActionsFromProps = tableReducer(
+        addTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            table: {
+              rowActions: [{ rowId: 'row-1', isEditMode: true }],
+            },
+            toolbar: { activeBar: 'rowEdit' },
+          },
+        })
+      );
+
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toHaveLength(1);
+      expect(removeOneTableRowActionsFromProps.view.table.rowActions).toEqual([
+        {
+          rowId: 'row-1',
+          isEditMode: true,
+        },
+      ]);
+      expect(removeOneTableRowActionsFromProps.view.toolbar.activeBar).toEqual('rowEdit');
+
+      const turnOffRowEditActiveBar = tableReducer(
+        removeOneTableRowActionsFromProps,
+        tableRegister({
+          view: {
+            toolbar: {
+              activeBar: undefined,
+            },
+            table: {
+              rowActions: [],
+            },
+          },
+        })
+      );
+
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
+      expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
+      expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
     });
   });
 });

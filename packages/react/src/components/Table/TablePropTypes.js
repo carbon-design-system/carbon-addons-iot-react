@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+import { SvgPropType } from '../../constants/SharedPropTypes';
 import deprecate from '../../internal/deprecate';
 import { bundledIconNames } from '../../utils/bundledIcons';
 
@@ -13,7 +14,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
         width: PropTypes.string,
         height: PropTypes.string,
         viewBox: PropTypes.string.isRequired,
-        svgData: PropTypes.object.isRequired,
+        svgData: SvgPropType.isRequired,
       }),
       PropTypes.oneOf(bundledIconNames),
       PropTypes.node,
@@ -84,6 +85,8 @@ export const TableRowPropTypes = PropTypes.arrayOf(
     rowActions: RowActionPropTypes,
     /** is this particular row selectable */
     isSelectable: PropTypes.bool,
+    /** boolean to define load more row */
+    hasLoadMore: PropTypes.bool,
   })
 );
 
@@ -130,7 +133,7 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
     /**
      * If omitted, column overflow menu will not render
      */
-    options: PropTypes.arrayOf(
+    overflowMenuItems: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.bool]).isRequired,
         text: PropTypes.string.isRequired,
@@ -170,6 +173,7 @@ export const I18NPropTypes = PropTypes.shape({
   closeMenuAria: PropTypes.string,
   clearSelectionAria: PropTypes.string,
   batchCancel: PropTypes.string,
+  toolbarLabelAria: PropTypes.string,
   /** String 'items selected' or function receiving the selectedCount as param:
    * (selectedCount) => `${selectedCount} items selected` */
   itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -193,6 +197,7 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortModalTitle: PropTypes.string,
   multiSortModalPrimaryLabel: PropTypes.string,
   multiSortModalSecondaryLabel: PropTypes.string,
+  multiSortModalClearLabel: PropTypes.string,
   multiSortSelectColumnLabel: PropTypes.string,
   multiSortSelectColumnSortByTitle: PropTypes.string,
   multiSortSelectColumnThenByTitle: PropTypes.string,
@@ -203,9 +208,13 @@ export const I18NPropTypes = PropTypes.shape({
   multiSortAscending: PropTypes.string,
   multiSortDescending: PropTypes.string,
   multiSortCloseModal: PropTypes.string,
-  multiSortClearAll: PropTypes.string,
   multiSortOpenMenu: PropTypes.string,
   multiSortCloseMenu: PropTypes.string,
+  multiSortDragHandle: PropTypes.string,
+  /** I18N label for load more row */
+  loadMoreText: PropTypes.string,
+  /** aria-label applied to the tooltip in the toolbar (if given) */
+  toolbarTooltipLabel: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
@@ -270,6 +279,8 @@ export const defaultI18NPropTypes = {
   multiSortCloseModal: 'Close',
   multiSortOpenMenu: 'Open menu',
   multiSortCloseMenu: 'Close menu',
+  multiSortDragHandle: 'Drag handle',
+  toolbarTooltipLabel: 'Toolbar tooltip',
 };
 
 export const TableSearchPropTypes = PropTypes.shape({
@@ -290,3 +301,71 @@ export const TableSortPropType = PropTypes.shape({
   columnId: PropTypes.string,
   direction: PropTypes.oneOf(['NONE', 'ASC', 'DESC']),
 });
+
+/** Specify the properties of each column group in the table */
+export const TableColumnGroupPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+  })
+);
+
+/** Specify the order, visibility and group belonging of the table columns */
+export const TableOrderingPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    columnId: PropTypes.string.isRequired,
+    /* Visibility of column in table, defaults to false */
+    isHidden: PropTypes.bool,
+    /* The id of the column group this column belongs to if any */
+    columnGroupId: PropTypes.string,
+  })
+);
+
+export const TableFiltersPropType = PropTypes.arrayOf(
+  PropTypes.shape({
+    columnId: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.bool,
+      PropTypes.arrayOf(PropTypes.string),
+    ]).isRequired,
+  })
+);
+
+export const TableToolbarActionsPropType = PropTypes.oneOfType([
+  /** allow the actions to be generated dynamically by a callback */
+  PropTypes.func,
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      /** the item is displayed, but disabled */
+      disabled: PropTypes.bool,
+      /** the text for the option */
+      labelText: PropTypes.string.isRequired,
+      /** filters out the option so it isn't displayed */
+      hidden: PropTypes.bool,
+      /** displays the option in red */
+      isDelete: PropTypes.bool,
+      /** the icon to render for this action */
+      renderIcon: PropTypes.oneOfType([
+        PropTypes.shape({
+          width: PropTypes.string,
+          height: PropTypes.string,
+          viewBox: PropTypes.string.isRequired,
+          svgData: SvgPropType.isRequired,
+        }),
+        PropTypes.oneOf(bundledIconNames),
+        PropTypes.node,
+        PropTypes.object,
+        PropTypes.func,
+      ]),
+      /** show a divider above this item */
+      hasDivider: PropTypes.bool,
+      /** should this action be shown in the overflow menu */
+      isOverflow: PropTypes.bool,
+      /** only used for actions in the toolbar (not overflow menu) to show when they are active */
+      isActive: PropTypes.bool,
+    })
+  ),
+]);

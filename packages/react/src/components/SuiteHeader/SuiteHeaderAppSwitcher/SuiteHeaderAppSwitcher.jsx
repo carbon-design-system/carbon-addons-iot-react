@@ -9,7 +9,9 @@ import { ButtonSkeleton } from 'carbon-components-react';
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
 import { SkeletonText } from '../../SkeletonText';
-import SuiteHeader, { SuiteHeaderApplicationPropTypes } from '../SuiteHeader';
+import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
+import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
+import { SuiteHeaderApplicationPropTypes } from '../SuiteHeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
@@ -58,12 +60,13 @@ const SuiteHeaderAppSwitcher = ({
     : null;
 
   const handleRouteChange = useCallback(
-    ({ href, id, isExternal }) => async () => {
-      const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.APPLICATION, href, {
+    ({ href, id, isExternal }) => async (e) => {
+      const newWindow = shouldOpenInNewWindow(e);
+      const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, {
         appId: id,
       });
       if (result) {
-        if (isExternal) {
+        if (isExternal || newWindow) {
           window.open(href, '_blank', 'noopener noreferrer');
         } else {
           window.location.href = href;
@@ -73,12 +76,20 @@ const SuiteHeaderAppSwitcher = ({
     [onRouteChange]
   );
 
-  const handleAllApplicationRoute = useCallback(async () => {
-    const result = await onRouteChange(SuiteHeader.ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
-    if (result) {
-      window.location.href = allApplicationsLink;
-    }
-  }, [allApplicationsLink, onRouteChange]);
+  const handleAllApplicationRoute = useCallback(
+    async (e) => {
+      const newWindow = shouldOpenInNewWindow(e);
+      const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
+      if (result) {
+        if (newWindow) {
+          window.open(allApplicationsLink, '_blank', 'noopener noreferrer');
+        } else {
+          window.location.href = allApplicationsLink;
+        }
+      }
+    },
+    [allApplicationsLink, onRouteChange]
+  );
 
   return (
     <ul data-testid={testId} className={baseClassName}>
@@ -143,7 +154,7 @@ const SuiteHeaderAppSwitcher = ({
             data-testid="suite-header-app-switcher--no-access"
             onClick={async () => {
               const result = await onRouteChange(
-                SuiteHeader.ROUTE_TYPES.DOCUMENTATION,
+                SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
                 noAccessLink
               );
               if (result) {

@@ -42,6 +42,7 @@ describe('MapCards', () => {
   };
 
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(
       <MapCard
         id="map-card"
@@ -76,7 +77,10 @@ describe('MapCards', () => {
         ]}
       />
     );
-
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('MAP_CARD')).toBeDefined();
     expect(screen.getByTestId('MAP_CARD-map-controls')).toBeDefined();
     expect(screen.getByTestId('MAP_CARD-zoom-control')).toBeDefined();
@@ -441,10 +445,10 @@ describe('MapCards', () => {
     const triggerButton = screen.getByRole('button', {
       name: 'Layered controls',
     });
-    expect(triggerButton.closest('.iot--map-controls-layers--open')).toBe(null);
+    expect(triggerButton.closest(`.${iotPrefix}--map-controls-layers--open`)).toBe(null);
 
     userEvent.click(triggerButton);
-    expect(triggerButton.closest('.iot--map-controls-layers--open')).not.toBe(null);
+    expect(triggerButton.closest(`.${iotPrefix}--map-controls-layers--open`)).not.toBe(null);
 
     const rainyButton = screen.getByRole('button', {
       name: 'Rainy',
@@ -931,8 +935,8 @@ describe('MapCards', () => {
       />
     );
 
-    expect(mapRef.current).toHaveClass('iot--map__container');
-    expect(dropRef.current).toHaveClass('iot--map__container');
+    expect(mapRef.current).toHaveClass(`${iotPrefix}--map__container`);
+    expect(dropRef.current).toHaveClass(`${iotPrefix}--map__container`);
   });
 
   it('disabled scroll down button when at the bottom', () => {

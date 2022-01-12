@@ -80,7 +80,7 @@ html[dir='rtl'] {
     }
   }
 
-  // override padding on chexkbox cells, so that it aligns with cell content in tables with xl size prop
+  // override padding on checkbox cells, so that it aligns with cell content in tables with xl size prop
   &.#{$prefix}--data-table--xl {
     .#{$prefix}--checkbox-table-cell {
       padding-top: $spacing-05;

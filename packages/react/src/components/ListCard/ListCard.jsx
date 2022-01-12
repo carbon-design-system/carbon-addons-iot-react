@@ -9,9 +9,9 @@ import {
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
+import { isEmpty } from 'lodash-es';
 
-import { CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
+import { CARD_SIZES, CARD_CONTENT_PADDING } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import { getResizeHandles } from '../../utils/cardUtilityFunctions';
@@ -125,6 +125,27 @@ ListCard.propTypes = {
   hasMoreData: PropTypes.bool,
   loadData: PropTypes.func.isRequired,
   layout: PropTypes.string,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the lists will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
   testID: deprecate(
@@ -139,6 +160,7 @@ ListCard.defaultProps = {
   hasMoreData: false,
   layout: '',
   data: [],
+  size: CARD_SIZES.MEDIUM,
   // TODO: replace with 'list-card' in v3. to set better defaults instead of inheriting from Card
   testId: 'Card',
 };

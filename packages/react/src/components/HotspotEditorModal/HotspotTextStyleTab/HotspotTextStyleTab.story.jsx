@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import merge from 'lodash/merge';
+import { merge } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
-import { withKnobs } from '@storybook/addon-knobs';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 import {
   purple70,
   cyan50,
@@ -50,6 +50,7 @@ const colors = [
 ];
 
 export const Default = () => {
+  const isLight = boolean('light', true);
   const WithState = () => {
     const [formValues, setFormValues] = useState({});
 
@@ -73,6 +74,7 @@ export const Default = () => {
           action('onDelete')(change);
         }}
         translateWithId={() => {}}
+        light={isLight}
       />
     );
   };

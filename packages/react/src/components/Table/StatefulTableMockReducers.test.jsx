@@ -4,8 +4,10 @@ import React from 'react';
 import StatefulTable from './StatefulTable';
 import EmptyTable from './EmptyTable/EmptyTable';
 import Table from './Table';
-import { mockActions } from './Table.test.helpers';
+import { getMockActions } from './Table.test.helpers';
 import { initialState } from './Table.story';
+
+const mockActions = getMockActions(jest.fn);
 
 const mockDispatch = jest.fn();
 // Need to mock the useReducer hook so the real reducer doesn't run
@@ -23,7 +25,13 @@ describe('StatefulTable tests with Mock reducer', () => {
     jest.resetModules();
   });
   it('check renders nested table', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const statefulTable = mount(<StatefulTable {...initialState} actions={mockActions} />);
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
+    console.error.mockReset();
     expect(statefulTable.find(Table)).toHaveLength(1);
   });
   it('check renders nested table passthrough props', () => {

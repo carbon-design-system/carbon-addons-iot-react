@@ -2,8 +2,12 @@ import { mount } from 'enzyme';
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
+import { settings } from '../../constants/Settings';
+
 import { itemsAndComponents } from './WizardInline.story';
 import StatefulWizardInline from './StatefulWizardInline';
+
+const { prefix, iotPrefix } = settings;
 
 const commonWizardProps = {
   title: 'My Wizard',
@@ -43,7 +47,7 @@ describe('StatefulWizardInline', () => {
   it('onNext', () => {
     const mockNext = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onNext={mockNext} />);
-    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    const cancelAndNextButtons = wrapper.find(`.${prefix}--btn`);
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(2).simulate('click');
     expect(mockNext).toHaveBeenCalled();
@@ -72,7 +76,7 @@ describe('StatefulWizardInline', () => {
         onClearError={mockClearError}
       />
     );
-    const clearErrorButton = wrapper.find('.bx--inline-notification__close-button');
+    const clearErrorButton = wrapper.find(`.${prefix}--inline-notification__close-button`);
     expect(clearErrorButton).toHaveLength(1);
     clearErrorButton.simulate('click');
     expect(mockClearError).toHaveBeenCalled();
@@ -102,7 +106,7 @@ describe('StatefulWizardInline', () => {
         setItem={mockSetItem}
       />
     );
-    const progressIndicatorButtons = wrapper.find('.iot--progress-step-button');
+    const progressIndicatorButtons = wrapper.find(`.${iotPrefix}--progress-step-button`);
     expect(progressIndicatorButtons).toHaveLength(2);
     progressIndicatorButtons.at(1).simulate('click');
     expect(mockSetItem).not.toHaveBeenCalled();
@@ -131,7 +135,7 @@ describe('StatefulWizardInline', () => {
         onNext={mockNext}
       />
     );
-    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    const cancelAndNextButtons = wrapper.find(`.${prefix}--btn`);
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockNext).not.toHaveBeenCalled();
@@ -140,7 +144,7 @@ describe('StatefulWizardInline', () => {
   it('onClose', () => {
     const mockClose = jest.fn();
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} onClose={mockClose} />);
-    const cancelAndNextButtons = wrapper.find('.bx--btn');
+    const cancelAndNextButtons = wrapper.find(`.${prefix}--btn`);
     expect(cancelAndNextButtons).toHaveLength(3);
     cancelAndNextButtons.at(1).simulate('click');
     expect(mockClose).toHaveBeenCalled();
@@ -155,7 +159,7 @@ describe('StatefulWizardInline', () => {
         onBack={mockBack}
       />
     );
-    const backAndNextButtons = wrapper.find('.bx--btn');
+    const backAndNextButtons = wrapper.find(`.${prefix}--btn`);
     expect(backAndNextButtons).toHaveLength(3);
     backAndNextButtons.at(1).simulate('click');
     expect(mockBack).toHaveBeenCalled();
@@ -178,7 +182,7 @@ describe('StatefulWizardInline', () => {
   });
   it('handleNext advances to next with no onNext callback', () => {
     const wrapper = mount(<StatefulWizardInline {...commonWizardProps} />);
-    const nextButton = wrapper.find('.bx--btn').at(2);
+    const nextButton = wrapper.find(`.${prefix}--btn`).at(2);
     nextButton.simulate('click');
     expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[1].id);
     expect(error).toHaveBeenCalledTimes(2);
@@ -187,7 +191,7 @@ describe('StatefulWizardInline', () => {
     const wrapper = mount(
       <StatefulWizardInline {...commonWizardProps} currentItemId={itemsAndComponents[2].id} />
     );
-    const backButton = wrapper.find('.bx--btn').at(1);
+    const backButton = wrapper.find(`.${prefix}--btn`).at(1);
     backButton.simulate('click');
     expect(wrapper.find('WizardInline').props().currentItemId).toBe(itemsAndComponents[1].id);
     expect(error).toHaveBeenCalledTimes(2);

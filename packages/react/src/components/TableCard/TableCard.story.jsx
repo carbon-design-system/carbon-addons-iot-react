@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { Bee16 } from '@carbon/icons-react';
 import { spacing05 } from '@carbon/layout';
 
+import dayjs from '../../utils/dayjs';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { tableColumns, tableData, actions1 } from '../../utils/sample';
@@ -551,6 +552,21 @@ export const WithCustomFilters = () => {
   const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
+  const tableColumnsWithCustomFilters = tableColumns.map((column) =>
+    column.type !== 'TIMESTAMP'
+      ? column
+      : {
+          ...column,
+          filter: {
+            ...column.filter,
+            filterFunction: (cellValue, filterValue) => {
+              const dateString = dayjs(cellValue).format('L HH:mm');
+              return dateString.includes(filterValue);
+            },
+          },
+        }
+  );
+
   return (
     <div
       style={{
@@ -561,7 +577,7 @@ export const WithCustomFilters = () => {
       <TableCard
         title="Open Alerts"
         content={{
-          columns: tableColumns,
+          columns: tableColumnsWithCustomFilters,
         }}
         values={boolean('no data', false) ? [] : tableData}
         filters={[{ columnId: 'alert', value: 'failure' }]}

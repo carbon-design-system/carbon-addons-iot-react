@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import dayjs from '../../utils/dayjs';
 import { settings } from '../../constants/Settings';
 
 import DateTimePicker, { PICKER_KINDS } from './DateTimePicker';
@@ -48,6 +49,48 @@ describe('DateTimePicker', () => {
           },
         });
       });
+  });
+
+  it('should disable apply button when absolute TimePickerSpinner inputs are invalid ', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    cy.findByLabelText(i18n.startTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+
+    cy.findByLabelText(i18n.endTimeLabel).type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:61'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    // set time to 11:00
+    cy.findByLabelText(i18n.endTimeLabel).type('{backspace}{backspace}00');
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
   });
 
   it('should be able to navigate by keyboard', () => {
@@ -229,5 +272,44 @@ describe('DateTimePicker', () => {
     cy.get('body').realPress('Tab');
     cy.focused().click().type('{downarrow}');
     cy.findAllByRole('button').eq(0).should('be.focused');
+  });
+
+  it('should pick ranges across months', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    // the calendar in Flatpickr does not respect MockDate or cy.clock, so we must resort to using
+    // the current date, but picking specific days to test and format the dynamic output as expected
+    const now = dayjs();
+    const thisMonthLabel = now.format(`MMMM [12], YYYY`);
+    const lastMonth = now.subtract(1, 'month');
+    const lastMonthLabel = lastMonth.format(`MMMM [20], YYYY`);
+    mount(
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput={false} />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).should('be.visible').click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get(`.flatpickr-prev-month`).click();
+    cy.findByLabelText(lastMonthLabel).click();
+    cy.findByLabelText(lastMonthLabel).should('have.class', 'selected');
+    cy.get(`.flatpickr-next-month`).click();
+    cy.findByLabelText(thisMonthLabel).click();
+    cy.findByLabelText(thisMonthLabel).should('have.class', 'selected');
+    cy.findByText('Apply')
+      .click()
+      .should(() => {
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'ABSOLUTE',
+          timeRangeValue: {
+            end: Cypress.sinon.match.any,
+            endDate: now.format(`MM/[12]/YYYY`),
+            endTime: '00:00',
+            start: Cypress.sinon.match.any,
+            startDate: lastMonth.format(`MM/[20]/YYYY`),
+            startTime: '00:00',
+          },
+        });
+      });
   });
 });

@@ -59,7 +59,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -74,8 +74,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -200,6 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
               data-testid="my table-table-toolbar-batch-actions"
+              onScroll={[Function]}
             >
               <div
                 className="bx--batch-summary"
@@ -258,7 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     aria-expanded={false}
                     aria-haspopup={true}
                     aria-label="open and close list of options"
-                    className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                    className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                     data-testid="Card-toolbar-range-picker"
                     onClick={[Function]}
                     onClose={[Function]}
@@ -273,8 +272,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
                       preserveAspectRatio="xMidYMid meet"
                       role="img"
                       viewBox="0 0 32 32"
@@ -422,7 +419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -441,7 +438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                       >
                         <span
                           className=""
@@ -581,7 +578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -596,8 +593,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -697,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -712,8 +707,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -813,7 +806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -828,8 +821,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -929,7 +920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -944,8 +935,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1045,7 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -1060,8 +1049,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1161,7 +1148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -1176,8 +1163,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1277,7 +1262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -1292,8 +1277,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1393,7 +1376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -1408,8 +1391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1513,7 +1494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -1528,8 +1509,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"
@@ -1748,6 +1727,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             Card Title
           </div>
+          <div
+            className="iot--card--subtitle--text"
+            data-testid="Card-subtitle"
+          >
+            2018-10-28 13:10 to 2018-10-28 13:30
+          </div>
         </span>
         <div
           className="iot--card--toolbar"
@@ -1762,24 +1747,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             role="button"
             style={
               Object {
-                "--wrapper-width": "20rem",
+                "--wrapper-width": "3rem",
               }
             }
             tabIndex="0"
           >
             <div
-              className="iot--date-time-picker__box--full"
+              className=""
             >
-              <div
-                className="iot--date-time-picker__field"
-                data-testid="date-time-picker__field"
-              >
-                <span
-                  title="2018-10-28 13:10 to 2018-10-28 13:30"
-                >
-                  2018-10-28 13:10 to 2018-10-28 13:30
-                </span>
-              </div>
               <div
                 className="iot--flyout-menu iot--flyout-menu__bottom"
                 data-testid="date-time-picker-datepicker-flyout-container"
@@ -1792,7 +1767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <button
                   aria-describedby={null}
                   aria-label="Calendar"
-                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                  className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                   data-testid="date-time-picker-datepicker-flyout-button"
                   disabled={false}
                   onBlur={[Function]}
@@ -1991,6 +1966,39 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               />
             </svg>
           </button>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-extra-single-action"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Action Label"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Action Label"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+              />
+            </svg>
+          </button>
         </div>
       </div>
       <div
@@ -2151,7 +2159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -2166,8 +2174,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 fill="currentColor"
                 focusable="false"
                 height={16}
-                onClick={[Function]}
-                onKeyDown={[Function]}
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
                 viewBox="0 0 32 32"

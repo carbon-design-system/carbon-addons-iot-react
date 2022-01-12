@@ -55,7 +55,7 @@
       margin-right: $spacing-05;
     }
     &.#{$iot-prefix}--time-picker__wrapper--with-spinner {
-      .bx--time-picker__input-field {
+      .#{$prefix}--time-picker__input-field {
         width: 8.5rem;
         padding-right: $spacing-07;
       }
@@ -166,7 +166,7 @@
 
         .#{$iot-prefix}--date-time-picker__fields-wrapper {
           display: flex;
-          align-items: flex-end;
+          align-items: flex-start;
 
           &--with-gap {
             gap: $spacing-05;

@@ -1,9 +1,8 @@
 import React, { useReducer } from 'react';
 import useDeepCompareEffect from 'use-deep-compare-effect';
-import merge from 'lodash/merge';
-import get from 'lodash/get';
+import { merge, get } from 'lodash-es';
 
-import { getRowAction } from './statefulTableUtilities';
+import { getRowAction } from './tableUtilities';
 import { tableReducer } from './tableReducer';
 import {
   tableRegister,
@@ -36,6 +35,7 @@ import {
   tableAddMultiSortColumn,
   tableRemoveMultiSortColumn,
   tableClearMultiSortColumns,
+  tableRowLoadMore,
 } from './tableActionCreators';
 import Table, { defaultProps } from './Table';
 
@@ -117,6 +117,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       return nonElements;
     }),
     initialState.table.expandedIds,
+    initialState.table.loadingMoreIds,
     initialState.table.loadingState,
   ]);
 
@@ -147,6 +148,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onRowClicked,
     onSelectAll,
     onRowExpanded,
+    onRowLoadMore,
     onApplyRowAction,
     onClearRowError,
     onEmptyStateAction,
@@ -247,8 +249,14 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         callbackParent(onSelectAll, isSelected);
       },
       onRowExpanded: (rowId, isExpanded) => {
-        dispatch(tableRowExpand(rowId, isExpanded));
+        const expansionOptions =
+          typeof options.hasRowExpansion === 'object' ? options.hasRowExpansion : {};
+        dispatch(tableRowExpand(rowId, isExpanded, null, expansionOptions));
         callbackParent(onRowExpanded, rowId, isExpanded);
+      },
+      onRowLoadMore: (rowId) => {
+        dispatch(tableRowLoadMore(rowId));
+        callbackParent(onRowLoadMore, rowId);
       },
       onApplyRowAction: async (actionId, rowId) => {
         const action = state.data && getRowAction(state.data, actionId, rowId);
@@ -284,11 +292,11 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         }
         callbackParent(onColumnResize, resizedColumns);
       },
-      onOverflowItemClicked: (id) => {
+      onOverflowItemClicked: (id, meta) => {
         if (id === 'multi-sort') {
-          dispatch(tableMultiSortToggleModal());
+          dispatch(tableMultiSortToggleModal(meta));
         }
-        callbackParent(onOverflowItemClicked, id);
+        callbackParent(onOverflowItemClicked, id, meta);
       },
       onSaveMultiSortColumns: (sortColumns) => {
         dispatch(tableSaveMultiSortColumns(sortColumns));

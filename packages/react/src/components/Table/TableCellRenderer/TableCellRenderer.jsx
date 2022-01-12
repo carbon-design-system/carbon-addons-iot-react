@@ -26,6 +26,8 @@ const propTypes = {
   row: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
   ),
+  /** use white-space: pre; css when true */
+  preserveCellWhiteSpace: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -36,6 +38,7 @@ const defaultProps = {
   renderDataFunction: null,
   columnId: null,
   rowId: null,
+  preserveCellWhiteSpace: false,
 };
 
 const isElementTruncated = (element) => element.offsetWidth < element.scrollWidth;
@@ -66,11 +69,13 @@ const TableCellRenderer = ({
   sortFunction,
   isFilterable,
   filterFunction,
+  preserveCellWhiteSpace,
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
     [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--preserve`]: preserveCellWhiteSpace,
   });
 
   const [useTooltip, setUseTooltip] = useState(false);
@@ -131,7 +136,9 @@ const TableCellRenderer = ({
     <span
       className={myClasses}
       title={
-        typeof children === 'number' && locale
+        useTooltip || tooltip
+          ? undefined
+          : typeof children === 'number' && locale
           ? children.toLocaleString(locale, { maximumFractionDigits: 20 })
           : children
       }
@@ -142,7 +149,7 @@ const TableCellRenderer = ({
         : children}
     </span>
   ) : typeof children === 'boolean' ? ( // handle booleans
-    <span className={myClasses} title={children.toString()}>
+    <span className={myClasses} title={useTooltip || tooltip ? undefined : children.toString()}>
       {children.toString()}
     </span>
   ) : typeof children === 'object' && !React.isValidElement(children) ? null : (

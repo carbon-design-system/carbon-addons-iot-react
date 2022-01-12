@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
 import { PieChart } from '@carbon/charts-react';
 import classNames from 'classnames';
-import isEmpty from 'lodash/isEmpty';
-import defaultsDeep from 'lodash/defaultsDeep';
+import { isEmpty, defaultsDeep } from 'lodash-es';
 
 import { PieCardPropTypes, CardPropTypes, CHART_COLORS } from '../../constants/CardPropTypes';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
@@ -95,6 +94,7 @@ const defaultProps = {
   content: {
     colors: undefined,
     groupDataSourceId: 'group',
+    legendAlignment: 'left',
     legendPosition: 'bottom',
     truncation: {
       type: 'end_line',
@@ -136,6 +136,7 @@ const PieChartCard = ({
       customTooltip,
       groupDataSourceId,
       labelsFormatter,
+      legendAlignment,
       legendPosition,
       truncation,
     },
@@ -170,7 +171,7 @@ const PieChartCard = ({
       getFillColor: (...args) => getColor(colors, ...args),
       getStrokeColor: (...args) => getColor(colors, ...args),
       legend: {
-        alignment: 'center',
+        alignment: legendAlignment,
         position: legendPosition,
         enabled: values.length > 1,
         clickable: !isEditable,
@@ -185,6 +186,9 @@ const PieChartCard = ({
       resizable: true,
       tooltip: {
         customHTML: customTooltip,
+      },
+      toolbar: {
+        enabled: false,
       },
     },
   };

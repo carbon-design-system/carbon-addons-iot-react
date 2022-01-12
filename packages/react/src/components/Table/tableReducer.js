@@ -1,8 +1,5 @@
 import update from 'immutability-helper';
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import get from 'lodash/get';
-import find from 'lodash/find';
+import { isNil, isEmpty, get, find } from 'lodash-es';
 import { firstBy } from 'thenby';
 
 import {
@@ -43,8 +40,10 @@ import {
   TABLE_MULTI_SORT_ADD_COLUMN,
   TABLE_MULTI_SORT_REMOVE_COLUMN,
   TABLE_MULTI_SORT_CLEAR,
+  TABLE_ROW_LOAD_MORE,
 } from './tableActionCreators';
 import { baseTableReducer } from './baseTableReducer';
+import { findRow } from './tableUtilities';
 
 /**
  * Default function to compare value 1 and 2
@@ -479,8 +478,19 @@ export const tableReducer = (state = {}, action) => {
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
       const updatedData = action.payload.data || state.data;
+
+      // The only thing that changes after additional child rows have been loaded is the
+      // actual data, so we use that diff to find out which ids in loadingMoreIds that
+      // we should keep.
+      const loadingMoreIds =
+        state.view?.table?.loadingMoreIds?.filter((loadMoreRowId) => {
+          const oldChildCount = findRow(loadMoreRowId, state.data)?.children?.length;
+          const newChildCount = findRow(loadMoreRowId, action.payload.data)?.children?.length;
+          return oldChildCount === newChildCount;
+        }) ?? [];
+
       const { view, totalItems, hasUserViewManagement } = action.payload;
-      const { pageSize, pageSizes } = get(view, 'pagination') || {};
+      const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
@@ -498,11 +508,15 @@ export const tableReducer = (state = {}, action) => {
         ? searchFromState?.defaultValue
         : searchFromState?.value;
 
+      const nextPageSize = paginationFromState.pageSize || pageSize;
+      const nextTotalItems = totalItems || updatedData.length;
+      const nextPage = page || 1;
       const pagination = get(state, 'view.pagination')
         ? {
-            totalItems: { $set: totalItems || updatedData.length },
-            pageSize: { $set: paginationFromState.pageSize || pageSize },
+            totalItems: { $set: nextTotalItems },
+            pageSize: { $set: nextPageSize },
             pageSizes: { $set: pageSizes },
+            page: { $set: nextPage },
           }
         : {};
 
@@ -512,6 +526,20 @@ export const tableReducer = (state = {}, action) => {
       const selectedAdvancedFilters = advancedFilters.filter((advFilter) =>
         selectedAdvancedFilterIds.includes(advFilter.filterId)
       );
+
+      const rowActionsFromState = get(state, 'view.table.rowActions', []);
+      const rowActionsFromProps = view?.table?.rowActions ?? [];
+      const rowActions = rowActionsFromState
+        // filter actions from state that have been removed from props
+        .filter(({ rowId }) => rowActionsFromProps.some((row) => row.rowId === rowId))
+        .concat(
+          // add actions from props that aren't in state
+          rowActionsFromProps.filter(({ rowId }) =>
+            rowActionsFromState.every((row) => row.rowId !== rowId)
+          )
+        );
+
+      const activeBar = view?.toolbar?.activeBar;
       return update(state, {
         data: {
           $set: updatedData,
@@ -524,6 +552,9 @@ export const tableReducer = (state = {}, action) => {
           toolbar: {
             initialDefaultSearch: { $set: initialDefaultSearch },
             search: { $set: searchFromState },
+            activeBar: {
+              $set: activeBar,
+            },
           },
           table: {
             ordering: { $set: ordering },
@@ -544,6 +575,9 @@ export const tableReducer = (state = {}, action) => {
                 columnCount: get(state, 'view.table.loadingState.columnCount') || 0,
               },
             },
+            rowActions: {
+              $set: rowActions,
+            },
             // Reset the selection to the previous values
             selectedIds: {
               $set: view ? view.table.selectedIds : [],
@@ -553,6 +587,9 @@ export const tableReducer = (state = {}, action) => {
             },
             isSelectAllSelected: {
               $set: view ? view.table.isSelectAllSelected : false,
+            },
+            loadingMoreIds: {
+              $set: loadingMoreIds,
             },
           },
         },
@@ -663,11 +700,27 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_TOGGLE_MODAL: {
+      const { columnId } = action.payload;
+      const { sort: currentSort } = state.view.table;
+
+      const arrayifiedSort = Array.isArray(currentSort)
+        ? currentSort
+        : currentSort !== undefined
+        ? [currentSort]
+        : [];
+
+      const alreadySortedBy = arrayifiedSort.some((by) => by.columnId === columnId);
+
       return update(state, {
         view: {
           table: {
             showMultiSortModal: {
               $set: !state.view.table.showMultiSortModal,
+            },
+            multiSortModal: {
+              $set: {
+                anticipatedColumn: !alreadySortedBy ? { columnId, direction: 'ASC' } : undefined,
+              },
             },
           },
         },
@@ -735,6 +788,18 @@ export const tableReducer = (state = {}, action) => {
 
     case TABLE_MULTI_SORT_REMOVE_COLUMN: {
       return state;
+    }
+
+    case TABLE_ROW_LOAD_MORE: {
+      return update(state, {
+        view: {
+          table: {
+            loadingMoreIds: {
+              $set: [...state.view.table.loadingMoreIds, action.payload],
+            },
+          },
+        },
+      });
     }
 
     // Actions that are handled by the base reducer

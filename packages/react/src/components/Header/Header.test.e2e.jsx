@@ -2,7 +2,11 @@ import React from 'react';
 import { mount } from '@cypress/react';
 import { Checkbox16, Help20, User20 } from '@carbon/icons-react';
 
+import { settings } from '../../constants/Settings';
+
 import Header from './Header';
+
+const { prefix } = settings;
 
 const commonProps = {
   user: 'JohnDoe@ibm.com',
@@ -37,7 +41,7 @@ const commonProps = {
         <Help20
           fill="white"
           description="Help icon"
-          className="bx--header__menu-item bx--header__menu-title"
+          className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
         />
       ),
       childContent: [
@@ -131,6 +135,34 @@ describe(
           .should('not.exist');
       });
 
+      it('should show header action icons at a large enough viewport in RTL', () => {
+        cy.viewport(607, viewportHeight);
+        cy.window().then((win) => {
+          win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+        });
+        mount(<Header {...commonProps} />);
+
+        cy.findByLabelText('Announcements').should('be.visible');
+        cy.findByRole('button', { name: 'help' })
+          .should('be.visible')
+          .click()
+          .find('svg')
+          .invoke('attr', 'description')
+          .should('eq', 'Help icon');
+        cy.findByLabelText('Header Panel')
+          .should('be.visible')
+          .findByText('JohnDoe@ibm.com')
+          .should('be.visible');
+        cy.findByRole('button', { name: 'help' })
+          .click()
+          .findByLabelText('Header Panel')
+          .should('not.exist');
+
+        cy.window().then((win) => {
+          win.document.querySelectorAll('html')[0].setAttribute('dir', 'ltr');
+        });
+      });
+
       it('should only hide header action actions in a small viewport when visible buttons intersect', () => {
         cy.viewport(607, viewportHeight);
         mount(
@@ -220,6 +252,43 @@ describe(
           force: true,
         });
         cy.findByRole('menuitem', { name: 'Announcements' }).should('be.visible');
+      });
+
+      it('should hide header action actions in a small viewport in RTL', () => {
+        cy.viewport(500, viewportHeight);
+        const onClick = cy.stub();
+        cy.window().then((win) => {
+          win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+        });
+        mount(
+          <Header
+            {...commonProps}
+            actionItems={commonProps.actionItems.map((item, index) => {
+              if (index === 0) {
+                return {
+                  ...item,
+                  onClick,
+                };
+              }
+
+              return item;
+            })}
+          />
+        );
+
+        cy.findByLabelText('Announcements').should('not.exist');
+        cy.findByRole('button', { name: 'help' }).should('not.exist');
+        cy.findByRole('button', { name: 'open and close list of options' }).click();
+        cy.findByRole('menuitem', { name: 'Announcements' })
+          .should('be.visible')
+          .click()
+          .should(() => {
+            expect(onClick).to.have.been.called;
+          });
+
+        cy.window().then((win) => {
+          win.document.querySelectorAll('html')[0].setAttribute('dir', 'ltr');
+        });
       });
 
       it('should not show action items in overflow menu when isActionItemVisible returned false', () => {

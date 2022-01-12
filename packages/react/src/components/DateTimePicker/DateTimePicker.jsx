@@ -24,6 +24,8 @@ import dayjs from '../../utils/dayjs';
 import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
 
+import { parseValue } from './dateTimePickerUtils';
+
 const { iotPrefix } = settings;
 
 export const PICKER_KINDS = {
@@ -99,6 +101,10 @@ const propTypes = {
       timeRangeValue: PropTypes.exact({
         startDate: PropTypes.string.isRequired,
         startTime: PropTypes.string.isRequired,
+        /** Can be a full parseable DateTime string or a Date object */
+        start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+        /** Can be a full parseable DateTime string or a Date object */
+        end: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
         endDate: PropTypes.string.isRequired,
         endTime: PropTypes.string.isRequired,
       }).isRequired,
@@ -111,6 +117,7 @@ const propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       offset: PropTypes.number,
+      id: PropTypes.string,
     })
   ),
   /** a list of options to put on the 'Last' interval dropdown */
@@ -170,6 +177,7 @@ const propTypes = {
     decrement: PropTypes.string,
     hours: PropTypes.string,
     minutes: PropTypes.string,
+    number: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -309,6 +317,9 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
   const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
+  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
+  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
+  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -366,6 +377,7 @@ const DateTimePicker = ({
         }
 
         // if we were focused on the Absolute radio button previously, restore focus to it.
+        /* istanbul ignore if */
         if (previousActiveElement.current) {
           previousActiveElement.current.focus();
           previousActiveElement.current = null;
@@ -376,81 +388,6 @@ const DateTimePicker = ({
       clearTimeout(timeout);
     };
   }, [datePickerElem, id]);
-
-  /**
-   * Parses a value object into a human readable value
-   * @param {Object} value - the currently selected value
-   * @param {string} value.kind - preset/relative/absolute
-   * @param {Object} value.preset - the preset selection
-   * @param {Object} value.relative - the relative time selection
-   * @param {Object} value.absolute - the absolute time selection
-   * @returns {Object} a human readable value and a furtherly augmented value object
-   */
-  const parseValue = (value) => {
-    setCurrentValue(value);
-    let readableValue = '';
-    const returnValue = { ...value };
-    switch (value.kind) {
-      case PICKER_KINDS.RELATIVE: {
-        let endDate = dayjs();
-        if (value.relative.relativeToWhen !== '') {
-          endDate =
-            value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
-              ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
-              : dayjs();
-          // wait to parse it until fully typed
-          if (value.relative.relativeToTime.length === 5) {
-            endDate = endDate.hour(Number(value.relative.relativeToTime.split(':')[0]));
-            endDate = endDate.minute(Number(value.relative.relativeToTime.split(':')[1]));
-          }
-
-          const startDate = endDate
-            .clone()
-            .subtract(
-              value.relative.lastNumber,
-              value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
-            );
-          returnValue.relative.start = new Date(startDate.valueOf());
-          returnValue.relative.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      case PICKER_KINDS.ABSOLUTE: {
-        let startDate = dayjs(value.absolute.start);
-        // wait to parse it until fully typed
-        if (value.absolute.startTime && value.absolute.startTime.length === 5) {
-          startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
-          startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
-        }
-        returnValue.absolute.start = new Date(startDate.valueOf());
-        if (value.absolute.end) {
-          let endDate = dayjs(value.absolute.end);
-          // wait to parse it until fully typed
-          if (value.absolute.endTime && value.absolute.endTime.length === 5) {
-            endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
-            endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
-          }
-          returnValue.absolute.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        } else {
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            startDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      default:
-        readableValue = value.preset.label;
-        break;
-    }
-    setHumanValue(readableValue);
-    return { readableValue, ...returnValue };
-  };
 
   /**
    * Transforms a default or selected value into a full blown returnable object
@@ -483,9 +420,13 @@ const DateTimePicker = ({
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
     }
+    setCurrentValue(value);
+    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    setHumanValue(parsedValue.readableValue);
+
     return {
       ...value,
-      ...parseValue(value),
+      ...parsedValue,
     };
   };
 
@@ -500,6 +441,7 @@ const DateTimePicker = ({
   );
 
   const getFocusableSiblings = () => {
+    /* istanbul ignore else */
     if (presetListRef?.current) {
       const siblings = presetListRef.current.querySelectorAll('[tabindex]');
       return Array.from(siblings).filter(
@@ -518,8 +460,10 @@ const DateTimePicker = ({
       // if the input box is focused and a down arrow is pressed this
       // moves focus to the first item in the preset list that has a tabindex
       case 'ArrowDown':
+        /* istanbul ignore else */
         if (presetListRef?.current) {
           const listItems = getFocusableSiblings();
+          /* istanbul ignore else */
           if (listItems?.[0]?.focus) {
             listItems[0].focus();
           }
@@ -601,20 +545,51 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
-  const onDatePickerChange = ([start, end]) => {
+  const onDatePickerChange = ([start, end], _, flatpickr) => {
+    const calendarInFocus = document.activeElement.closest(
+      `.${iotPrefix}--date-time-picker__datepicker`
+    );
+
+    const daysDidntChange =
+      dayjs(absoluteValue.start).isSame(dayjs(start)) &&
+      dayjs(absoluteValue.end).isSame(dayjs(end));
+
+    if (daysDidntChange || !calendarInFocus) {
+      // jump back to start to fix bug where flatpickr will change the month to the start
+      // after it loses focus if you click outside the calendar
+      if (focusOnFirstField) {
+        flatpickr.jumpToDate(start);
+      } else {
+        flatpickr.jumpToDate(end);
+      }
+
+      // In some situations, when the calendar loses focus flatpickr is firing the onChange event
+      // twice, but the dates reset to where both start and end are the same. This fixes that.
+      if (!calendarInFocus && dayjs(start).isSame(dayjs(end))) {
+        flatpickr.setDate([absoluteValue.start, absoluteValue.end]);
+      }
+      return;
+    }
+
     const newAbsolute = { ...absoluteValue };
+    newAbsolute.start = start;
+    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
+    const prevFocusOnFirstField = focusOnFirstField;
     if (end) {
       setFocusOnFirstField(!focusOnFirstField);
       newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+      if (prevFocusOnFirstField) {
+        flatpickr.jumpToDate(newAbsolute.start);
+      } else {
+        flatpickr.jumpToDate(newAbsolute.end);
+      }
     } else {
       setFocusOnFirstField(false);
+      flatpickr.jumpToDate(newAbsolute.start);
     }
-
-    newAbsolute.start = start;
-    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
   };
@@ -800,7 +775,8 @@ const DateTimePicker = ({
   const onRelativeToWhenChange = (event) => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-  const onRelativeToTimeChange = (pickerValue) => {
+  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
+    setRelativeToTimeInvalid(meta.invalid);
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
@@ -812,16 +788,30 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue) => {
+  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteStartTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-  const onAbsoluteEndTimeChange = (pickerValue) => {
+  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteEndTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
+
+  const disableRelativeApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.RELATIVE &&
+    (relativeLastNumberInvalid || relativeToTimeInvalid);
+
+  const disableAbsoluteApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.ABSOLUTE &&
+    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
+
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   /**
    * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when
@@ -1065,7 +1055,9 @@ const DateTimePicker = ({
                         </Select>
                         {hasTimeInput ? (
                           <TimePickerSpinner
+                            key={`${id}-relative-to-time`}
                             id={`${id}-relative-to-time`}
+                            invalid={relativeToTimeInvalid}
                             value={relativeValue ? relativeValue.relativeToTime : ''}
                             i18n={i18n}
                             light
@@ -1111,6 +1103,7 @@ const DateTimePicker = ({
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <TimePickerSpinner
                             id={`${id}-start-time`}
+                            invalid={absoluteStartTimeInvalid}
                             labelText={strings.startTimeLabel}
                             value={absoluteValue ? absoluteValue.startTime : '00:00'}
                             i18n={i18n}
@@ -1121,6 +1114,7 @@ const DateTimePicker = ({
                           />
                           <TimePickerSpinner
                             id={`${id}-end-time`}
+                            invalid={absoluteEndTimeInvalid}
                             labelText={strings.endTimeLabel}
                             value={absoluteValue ? absoluteValue.endTime : '00:00'}
                             i18n={i18n}
@@ -1173,11 +1167,7 @@ const DateTimePicker = ({
               /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
               onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
               size="field"
-              disabled={
-                isCustomRange &&
-                customRangeKind === PICKER_KINDS.RELATIVE &&
-                relativeLastNumberInvalid
-              }
+              disabled={disableApply}
             >
               {strings.applyBtnLabel}
             </Button>

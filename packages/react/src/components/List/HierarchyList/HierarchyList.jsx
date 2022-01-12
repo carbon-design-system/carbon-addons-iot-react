@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
-import debounce from 'lodash/debounce';
-import isNil from 'lodash/isNil';
-import isEqual from 'lodash/isEqual';
+import { debounce, isNil, isEqual } from 'lodash-es';
 import scrollIntoView from 'scroll-into-view-if-needed';
 
 import { caseInsensitiveSearch } from '../../../utils/componentUtilityFunctions';
-import List, { ListItemPropTypes } from '../List';
+import List from '../List';
+import { ListItemPropTypes } from '../ListPropTypes';
 import {
   EditingStyle,
   handleEditModeSelect,
   moveItemsInList,
   DropLocation,
+  handleEditModeIndeterminateIds,
 } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { usePrevious } from '../../../hooks/usePrevious';
@@ -29,6 +29,8 @@ const propTypes = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** an array of user controlled expanded ids */
+  expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** List heading */
   title: PropTypes.string,
   /** Determines whether the search function is enabled */
@@ -40,6 +42,8 @@ const propTypes = {
   /** Determines if items can be deselected, meaning once an item is selected,
    * it can only be deselected by selecting another item */
   hasDeselection: PropTypes.bool,
+  /** optional prop to use a virtualized version of the list instead of rendering all items */
+  isVirtualList: PropTypes.bool,
   /** Buttons to be presented in List header */
   buttons: PropTypes.arrayOf(PropTypes.node),
   /** ListItems to be displayed */
@@ -48,6 +52,7 @@ const propTypes = {
   i18n: PropTypes.shape({
     /** Text displayed in search bar */
     searchPlaceHolderText: PropTypes.string,
+    clearSearchIconDescription: PropTypes.string,
     expand: PropTypes.string,
     close: PropTypes.string,
     itemSelected: PropTypes.string,
@@ -72,12 +77,19 @@ const propTypes = {
   isLoading: PropTypes.bool,
   /** optionally makings each list item a large / fat row */
   isLargeRow: PropTypes.bool,
+  /** the ids of locked items that cannot be reordered */
+  lockedIds: PropTypes.arrayOf(PropTypes.string),
   /** Determines the number of rows per page */
   pageSize: PropTypes.string,
   /** Item id to be pre-selected */
   defaultSelectedId: PropTypes.string,
   /** Item ids to be pre-expanded */
   defaultExpandedIds: PropTypes.arrayOf(PropTypes.string),
+  /** callback used to limit which items that should get drop targets rendered.
+   * receives the id of the item that is being dragged and returns a list of ids. */
+  getAllowedDropIds: PropTypes.func,
+  /** a callback used to notify when the expanded items in the list change. */
+  onExpandedChange: PropTypes.func,
   /** Optional function to be called when item is selected */
   onSelect: PropTypes.func,
   /** callback function returned a modified list */
@@ -92,10 +104,15 @@ const propTypes = {
   className: PropTypes.string,
   /** an optional id string passed to the list search field */
   searchId: PropTypes.string,
+  /** content shown if list is empty */
+  emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
   editingStyle: null,
+  expandedIds: [],
   title: null,
   hasSearch: false,
   hasPagination: true,
@@ -118,19 +135,23 @@ const defaultProps = {
   isFullHeight: false,
   isLoading: false,
   isLargeRow: false,
+  isVirtualList: false,
+  lockedIds: [],
   pageSize: null,
   defaultSelectedId: null,
   defaultExpandedIds: [],
   onSelect: null,
   sendingData: null,
+  getAllowedDropIds: null,
   onListUpdated: () => {},
   cancelMoveClicked: () => {},
-  itemWillMove: () => {
-    return true;
-  },
+  onExpandedChange: () => {},
+  itemWillMove: () => true,
   className: null,
   items: [],
   searchId: null,
+  emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
 };
 
 /**
@@ -211,6 +232,7 @@ const reduceItems = (items) =>
 
 const HierarchyList = ({
   editingStyle,
+  expandedIds: expandedIdsProp,
   title,
   hasSearch,
   hasPagination,
@@ -222,9 +244,13 @@ const HierarchyList = ({
   isFullHeight,
   isLoading,
   isLargeRow,
+  isVirtualList,
+  lockedIds,
   pageSize,
   defaultSelectedId,
   defaultExpandedIds,
+  getAllowedDropIds,
+  onExpandedChange,
   onSelect,
   onListUpdated,
   itemWillMove,
@@ -232,40 +258,86 @@ const HierarchyList = ({
   sendingData,
   className,
   searchId,
+  emptyState,
+  emptySearchState,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-
-  const [expandedIds, setExpandedIds] = useState(defaultExpandedIds);
+  const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
+  const [expandedIds, setExpandedIds] = useState(initialExpandedIds);
   const [searchValue, setSearchValue] = useState('');
   const [filteredItems, setFilteredItems] = useState(items);
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [selectedIds, setSelectedIds] = useState([]);
   const [editModeSelectedIds, setEditModeSelectedIds] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const isFirstRender = useRef(true);
+  const [indeterminateIds, setIndeterminateIds] = useState([]);
+
   // these are used in filtering, and since items may contain nodes or react elements
   // we don't want to do equality checks against those, so we strip the items down to
   // the basics need for filtering checks and memoize them for use in the useEffect below
   const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
+  const previousExpandedIds = usePrevious(expandedIds);
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
+      setSearchValue('');
+      setCurrentPageNumber(1);
     }
   }, [items, previousItems]);
 
-  const selectedItemRef = useCallback((node) => {
-    if (node && node.parentNode) {
-      scrollIntoView(node.parentNode, {
-        scrollMode: 'if-needed',
-        block: 'nearest',
-        inline: 'nearest',
-      });
+  /**
+   * Effect to change the currently expanded hierarchies. Ignore it on the first render to allow
+   * defaultExpandedIds to work, but fire it on all other changes
+   */
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      setExpandedIds(expandedIdsProp);
     }
-  }, []);
+    isFirstRender.current = false;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expandedIdsProp]);
+
+  /**
+   * effect to trigger calling the onExpandedChange callback. Ignore it on the initial render
+   * when previousExpandedIds is undefined, but fire it on every change afterward
+   */
+  useEffect(() => {
+    if (previousExpandedIds !== undefined && !isEqual(previousExpandedIds, expandedIds)) {
+      onExpandedChange(expandedIds);
+    }
+  }, [expandedIds, onExpandedChange, previousExpandedIds]);
+
+  /**
+   * Effect to handle indeterminate state for parent checkboxes. If we're in an editMode and
+   * the selected ids changes, fire this effect to determine the currently indeterminate ids
+   * in the list.
+   */
+  useEffect(() => {
+    if (editingStyle) {
+      setIndeterminateIds(handleEditModeIndeterminateIds(items, editModeSelectedIds));
+    }
+  }, [editModeSelectedIds, editingStyle, items]);
+
+  const selectedItemRef = useCallback(
+    (node) => {
+      if (node && node.parentNode && !isVirtualList) {
+        scrollIntoView(node.parentNode, {
+          scrollMode: 'if-needed',
+          block: 'nearest',
+          inline: 'nearest',
+        });
+      }
+    },
+    [isVirtualList]
+  );
 
   const setSelected = (id, parentId = null) => {
     if (editingStyle) {
-      setEditModeSelectedIds(handleEditModeSelect(items, editModeSelectedIds, id, parentId));
+      setEditModeSelectedIds(
+        handleEditModeSelect(items, editModeSelectedIds, id, parentId, lockedIds)
+      );
     } else if (selectedIds.includes(id) && hasDeselection) {
       setSelectedIds(selectedIds.filter((item) => item !== id));
       // else, no-op because the item can't be deselected
@@ -290,31 +362,28 @@ const HierarchyList = ({
     cancelMoveClicked();
   };
 
-  useEffect(
-    () => {
-      // Expand the parent elements of the defaultSelectedId
-      if (defaultSelectedId) {
-        const tempFilteredItems = searchForNestedItemIds(
-          itemsStrippedOfNodeElements,
-          defaultSelectedId
-        );
-        const tempExpandedIds = [...expandedIds];
-        // Expand the categories that have found results
-        tempFilteredItems.forEach((categoryItem) => {
-          tempExpandedIds.push(categoryItem.id);
-        });
-        setExpandedIds(tempExpandedIds);
-
-        /* istanbul ignore else */
-        if (!isEqual(selectedIds, [defaultSelectedId])) {
-          // If the defaultSelectedId prop is updated from the outside, we need to use it
-          setSelected(defaultSelectedId);
-        }
-      }
-    },
+  useEffect(() => {
+    // Expand the parent elements of the defaultSelectedId
+    if (defaultSelectedId) {
+      const tempFilteredItems = searchForNestedItemIds(
+        itemsStrippedOfNodeElements,
+        defaultSelectedId
+      );
+      const tempExpandedIds = [...expandedIds];
+      // Expand the categories that have found results
+      tempFilteredItems.forEach((categoryItem) => {
+        tempExpandedIds.push(categoryItem.id);
+      });
+      setExpandedIds(tempExpandedIds);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defaultSelectedId, itemsStrippedOfNodeElements]
-  );
+  }, [defaultSelectedId, itemsStrippedOfNodeElements]);
+
+  useEffect(() => {
+    // If the defaultSelectedId prop is updated from the outside, we need to use it
+    setSelected(defaultSelectedId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultSelectedId]);
 
   const numberOfItems = filteredItems.length;
   let rowsPerPage;
@@ -336,20 +405,40 @@ const HierarchyList = ({
 
   // Needed for updates to the filteredItems state on pageSize change
   useEffect(() => {
-    setItemsToShow(filteredItems.slice(0, rowsPerPage));
-  }, [filteredItems, rowsPerPage]);
+    const startIndex = (currentPageNumber - 1) * rowsPerPage;
+    setItemsToShow(filteredItems.slice(startIndex, startIndex + rowsPerPage));
+  }, [currentPageNumber, filteredItems, rowsPerPage]);
 
-  const onPage = (page) => {
-    const rowUpperLimit = page * rowsPerPage;
-    const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
-    setCurrentPageNumber(page);
-    setItemsToShow(currentItemsOnPage);
-  };
+  const maxPage = !Number.isNaN(Math.ceil(numberOfItems / rowsPerPage))
+    ? Math.ceil(numberOfItems / rowsPerPage)
+    : 1;
+
+  const onPage = useCallback(
+    (page) => {
+      const rowUpperLimit = page * rowsPerPage;
+      const currentItemsOnPage = filteredItems.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
+      setCurrentPageNumber(page);
+      setItemsToShow(currentItemsOnPage);
+    },
+    [filteredItems, rowsPerPage]
+  );
+
+  /**
+   * If we were on a higher page and the number of items drop, we need to ensure we
+   * reset to the first page when the number of items drops below our previous max page.
+   */
+  useEffect(() => {
+    if (currentPageNumber > maxPage) {
+      onPage(1);
+    } else {
+      onPage(currentPageNumber);
+    }
+  }, [currentPageNumber, maxPage, onPage, pageSize]);
 
   const pagination = {
     page: currentPageNumber,
     onPage,
-    maxPage: Math.ceil(numberOfItems / rowsPerPage),
+    maxPage,
     pageOfPagesText: (page) => `Page ${page}`,
   };
 
@@ -359,9 +448,11 @@ const HierarchyList = ({
    * the total filtered array. The next category's children then needs to
    * be searched in the same fashion.
    * @param {String} text keyed values from search input
+   * @param {Array} searchItems the current state of items. Used to maintain state when the list
+   *     is updated (drag and drop) and there's a current search value
    */
-  const handleSearch = (text) => {
-    const tempFilteredItems = searchForNestedItemValues(items, text);
+  const handleSearch = (text, searchItems) => {
+    const tempFilteredItems = searchForNestedItemValues(searchItems, text);
     const tempExpandedIds = [];
     // Expand the categories that have found results
     tempFilteredItems.forEach((categoryItem) => {
@@ -380,7 +471,7 @@ const HierarchyList = ({
    * be typed.
    */
   const delayedSearch = useCallback(
-    debounce((textInput) => handleSearch(textInput), 150),
+    debounce((textInput) => handleSearch(textInput, items), 150),
     [items]
   );
 
@@ -389,6 +480,9 @@ const HierarchyList = ({
 
     onListUpdated(updatedList);
     setFilteredItems(updatedList);
+    if (searchValue) {
+      handleSearch(searchValue, updatedList);
+    }
   };
 
   const handleDrag = (dragId, hoverId, target) => {
@@ -404,7 +498,7 @@ const HierarchyList = ({
 
   return (
     <>
-      {editingStyle ? (
+      {editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
         <HierarchyListReorderModal
           open={showModal}
           items={items}
@@ -466,15 +560,22 @@ const HierarchyList = ({
         }}
         i18n={mergedI18n}
         pagination={hasPagination ? pagination : null}
+        indeterminateIds={indeterminateIds}
+        isFiltering={!!searchValue}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
+        isVirtualList={isVirtualList}
         itemWillMove={itemWillMove}
+        lockedIds={lockedIds}
         selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
+        getAllowedDropIds={getAllowedDropIds}
         handleSelect={handleSelect}
         ref={selectedItemRef}
         onItemMoved={handleDrag}
         className={className}
+        emptyState={emptyState}
+        emptySearchState={emptySearchState}
       />
     </>
   );

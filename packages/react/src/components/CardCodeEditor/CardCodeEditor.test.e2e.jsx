@@ -39,12 +39,14 @@ describe('CardCodeEditor loaded editor test', () => {
     cy.findByTitle(/Copy to clipboard/)
       .should('be.visible')
       .click()
+      .realClick()
       .then(() => {
         expect(onCopy).to.be.called;
       });
   });
 
-  it('should load intial value into editor', () => {
+  it('should load initial value into editor', () => {
+    cy.viewport(1680, 900);
     mount(
       <CardCodeEditor
         open

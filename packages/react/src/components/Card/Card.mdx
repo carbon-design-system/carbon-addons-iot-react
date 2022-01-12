@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Getting started](#getting-started)
+- [DateTime range](#datetime-range)
 - [Custom card content](#custom-card-content)
 - [Props](#props)
 - [External links](#external-links)
@@ -15,6 +16,34 @@ The `Card` component is the foundation of all cards in the library.
 
 ```jsx
 import { Card } from 'carbon-addons-iot-react';
+```
+
+## DateTime range
+
+You can use the full DateTimePicker on a Card by passing 'iconOnly' to the range actions. The date chosen will be displayed in the subtitle of the card.
+The `onCardAction` callback will fire with the `CHANGE_TIME_RANGE` action and include the values from the DateTimePicker when apply is clicked. See the actions tab in StoryBook for examples.
+
+```jsx
+// onCardAction CHANGE_TIME_RANGE results with DateTimePicker.
+{
+  timeRangeKind: "PRESET",
+  timeRangeValue: {
+    id: "last48Hours",
+    label: "Last 48 Hours",
+    offset: 2880,
+    tooltipValue: "2021-10-06 14:08 to Now",
+  }
+}
+```
+
+```jsx
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  tooltip={tooltipElement}
+  onCardAction={mockOnCardAction}
+  availableActions={{ expand: true, range: DATE_PICKER_OPTIONS.ICON_ONLY }}
+/>
 ```
 
 ## Implementing a custom card
@@ -514,6 +543,81 @@ const isEditable = true;
 </Card>;
 ```
 
+## Extra actions
+
+You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, or a three-dot icon with many custom actions inside of it.
+
+```jsx
+// Card with single icon extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={{
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: undefined,
+  }}
+/>
+```
+
+```jsx
+// Card with single disabled extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={{
+    id: 'extrasingleaction',
+    icon: Add16,
+    callback: undefined,
+    disabled: true,
+  }}
+/>
+```
+
+```jsx
+// Card with multiple extra action.
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={{
+    id: 'extramultiaction',
+    children: [
+      {
+        id: 'firstItem',
+        itemText: 'Item1',
+        callback: undefined,
+      },
+      {
+        id: 'secondItem',
+        itemText: 'Item2',
+        callback: undefined,
+      },
+      {
+        id: 'thirdItem',
+        itemText: 'Item3',
+        callback: undefined,
+        hidden: true,
+      },
+      {
+        id: 'fourthItem',
+        itemText: 'Item4',
+        callback: undefined,
+        disabled: true,
+      },
+    ],
+  }}
+/>
+```
+
 ## Props
 
 | Name                            | Type                                                                                                                                                  | Default                                                                   | Description                                                                                                                                        |
@@ -538,6 +642,7 @@ const isEditable = true;
 | availableActions.delete         | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | availableActions.expand         | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | availableActions.range          | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
+| availableActions.extra          | bool                                                                                                                                                  |                                                                           |                                                                                                                                                    |
 | renderExpandIcon                | function, node                                                                                                                                        | undefined                                                                 |                                                                                                                                                    |
 | footerContent                   | elementType                                                                                                                                           | undefined                                                                 | footer content is limited to 2.5rem (40px)                                                                                                         |
 | rowHeight                       | shape                                                                                                                                                 |                                                                           | Row height in pixels for each layout                                                                                                               |
@@ -557,6 +662,7 @@ const isEditable = true;
 | dashboardColumns.sm             | number                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | dashboardColumns.xs             | number                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | cardDimensions                  | shape [see cardDimensions Prop](#carddimensions-prop)                                                                                                 |                                                                           | array of configurable sizes to dimensions. The numbered sizes represent the number of columns and rows the card spans at that size and breakpoint. |
+| extraActions                    | shape                                                                                                                                                 |                                                                           | extra action object to either display single icon or array of items to be displayed as overflow items.                                                |
 | i18n                            | shape                                                                                                                                                 |                                                                           |                                                                                                                                                    |
 | i18n.noDataLabel                | string                                                                                                                                                | 'No data is available for this time range.'                               |                                                                                                                                                    |
 | i18n.noDataShortLabel           | string                                                                                                                                                | 'No data'                                                                 |                                                                                                                                                    |
@@ -585,6 +691,7 @@ const isEditable = true;
 | i18n.closeLabel                 | string                                                                                                                                                | 'Close'                                                                   |                                                                                                                                                    |
 | i18n.loadingDataLabel           | string                                                                                                                                                |                                                                           |                                                                                                                                                    |
 | i18n.overflowMenuDescription    | string                                                                                                                                                | 'Open and close list of options'                                          |                                                                                                                                                    |
+| i18n.toLabel                    | string                                                                                                                                                | 'to'                                                                      | The 'to' used in the subtitle of a date string. ie. '2021-10-11 12:00 to 2021-10-12 12:00'                                                         |
 | onMouseDown                     | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | onMouseUp                       | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |
 | onTouchEnd                      | function                                                                                                                                              | undefined                                                                 |                                                                                                                                                    |

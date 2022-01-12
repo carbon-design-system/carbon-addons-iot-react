@@ -39,10 +39,15 @@ const icons = {
 
 describe('EmptyState', () => {
   it('should be selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<EmptyState {...commonProps} testID="EMPTY_STATE" />);
     expect(screen.getByTestId(`EMPTY_STATE-title`).textContent).toEqual(title);
     expect(screen.getByTestId(`EMPTY_STATE-body`).textContent).toEqual(body);
     expect(screen.queryByTestId(`EMPTY_STATE-icon`)).toBeNull();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`The 'testID' prop has been deprecated. Please use 'testId' instead.`)
+    );
+    jest.resetAllMocks();
     rerender(<EmptyState {...commonProps} testId="empty_state" />);
     expect(screen.getByTestId(`empty_state-title`).textContent).toEqual(title);
     expect(screen.getByTestId(`empty_state-body`).textContent).toEqual(body);
@@ -129,5 +134,14 @@ describe('EmptyState', () => {
 
     expect(actionOnClick).toHaveBeenCalled();
     expect(secondaryActionOnClick).toHaveBeenCalled();
+  });
+
+  it('should render a node as body', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<EmptyState {...commonProps} body={<div>This is a node body</div>} />);
+
+    expect(screen.getByText('This is a node body')).toBeVisible();
+    expect(console.error).not.toHaveBeenCalled();
+    jest.resetAllMocks();
   });
 });

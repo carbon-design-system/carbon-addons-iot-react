@@ -16,7 +16,6 @@ import {
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import uuid from 'uuid';
-import cloneDeep from 'lodash/cloneDeep';
 import warning from 'warning';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
@@ -30,6 +29,8 @@ import {
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+
+import { parseValue } from './dateTimePickerUtils';
 
 const { iotPrefix } = settings;
 
@@ -57,6 +58,10 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
     timeRangeValue: PropTypes.exact({
       startDate: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
+      /** Can be a full parseable DateTime string or a Date object */
+      start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+      /** Can be a full parseable DateTime string or a Date object */
+      end: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
       endDate: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
     }).isRequired,
@@ -134,6 +139,7 @@ const propTypes = {
     decrement: PropTypes.string,
     hours: PropTypes.string,
     minutes: PropTypes.string,
+    number: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -283,6 +289,9 @@ const DateTimePicker = ({
   const [relativeValue, setRelativeValue] = useState(null);
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
+  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
+  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
+  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
   // Refs
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -329,79 +338,6 @@ const DateTimePicker = ({
   }, [datePickerElem, id]);
 
   /**
-   * Parses a value object into a human readable value
-   * @param {Object} value - the currently selected value
-   * @param {string} value.kind - preset/relative/absolute
-   * @param {Object} value.preset - the preset selection
-   * @param {Object} value.relative - the relative time selection
-   * @param {Object} value.absolute - the absolute time selection
-   * @returns {Object} a human readable value and a furtherly augmented value object
-   */
-  const parseValue = (value) => {
-    setCurrentValue(value);
-    let readableValue = '';
-    const returnValue = cloneDeep(value);
-    switch (value.kind) {
-      case PICKER_KINDS.RELATIVE: {
-        let endDate = dayjs();
-        if (value.relative.relativeToWhen !== '') {
-          endDate =
-            value.relative.relativeToWhen === RELATIVE_VALUES.YESTERDAY
-              ? dayjs().add(-1, INTERVAL_VALUES.DAYS)
-              : dayjs();
-          // wait to parse it until fully typed
-          if (value.relative.relativeToTime.length === 5) {
-            endDate = endDate.hour(Number(value.relative.relativeToTime.split(':')[0]));
-            endDate = endDate.minute(Number(value.relative.relativeToTime.split(':')[1]));
-          }
-
-          const startDate = endDate
-            .clone()
-            .subtract(
-              value.relative.lastNumber,
-              value.relative.lastInterval ? value.relative.lastInterval : INTERVAL_VALUES.MINUTES
-            );
-          returnValue.relative.start = new Date(startDate.valueOf());
-          returnValue.relative.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      case PICKER_KINDS.ABSOLUTE: {
-        let startDate = dayjs(value.absolute.start);
-        if (value.absolute.startTime) {
-          startDate = startDate.hours(value.absolute.startTime.split(':')[0]);
-          startDate = startDate.minutes(value.absolute.startTime.split(':')[1]);
-        }
-        returnValue.absolute.start = new Date(startDate.valueOf());
-        if (value.absolute.end) {
-          let endDate = dayjs(value.absolute.end);
-          if (value.absolute.endTime) {
-            endDate = endDate.hours(value.absolute.endTime.split(':')[0]);
-            endDate = endDate.minutes(value.absolute.endTime.split(':')[1]);
-          }
-          returnValue.absolute.end = new Date(endDate.valueOf());
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            endDate
-          ).format(dateTimeMask)}`;
-        } else {
-          readableValue = `${dayjs(startDate).format(dateTimeMask)} ${strings.toLabel} ${dayjs(
-            startDate
-          ).format(dateTimeMask)}`;
-        }
-        break;
-      }
-      default:
-        readableValue = value.preset.label;
-        break;
-    }
-    setHumanValue(readableValue);
-    return { readableValue, ...returnValue };
-  };
-
-  /**
    * Transforms a default or selected value into a full blown returnable object
    * @param {Object} [preset] clicked preset
    * @param {string} preset.label preset label
@@ -432,9 +368,13 @@ const DateTimePicker = ({
       value.preset = preset;
       value.kind = PICKER_KINDS.PRESET;
     }
+    setCurrentValue(value);
+    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    setHumanValue(parsedValue.readableValue);
+
     return {
       ...value,
-      ...parseValue(value),
+      ...parsedValue,
     };
   };
 
@@ -458,18 +398,51 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
-  const onDatePickerChange = ([start, end]) => {
+  const onDatePickerChange = ([start, end], _, flatpickr) => {
+    const calendarInFocus = document?.activeElement?.closest(
+      `.${iotPrefix}--date-time-picker__datepicker`
+    );
+
+    const daysDidntChange =
+      dayjs(absoluteValue.start).isSame(dayjs(start)) &&
+      dayjs(absoluteValue.end).isSame(dayjs(end));
+
+    if (daysDidntChange || !calendarInFocus) {
+      // jump back to start to fix bug where flatpickr will change the month to the start
+      // after it loses focus if you click outside the calendar
+      if (focusOnFirstField) {
+        flatpickr.jumpToDate(start);
+      } else {
+        flatpickr.jumpToDate(end);
+      }
+
+      // In some situations, when the calendar loses focus flatpickr is firing the onChange event
+      // again, but the dates reset to where both start and end are the same. This fixes that.
+      if (!calendarInFocus && dayjs(start).isSame(dayjs(end))) {
+        flatpickr.setDate([absoluteValue.start, absoluteValue.end]);
+      }
+      return;
+    }
+
     const newAbsolute = { ...absoluteValue };
+    newAbsolute.start = start;
+    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
+    const prevFocusOnFirstField = focusOnFirstField;
     if (end) {
       setFocusOnFirstField(!focusOnFirstField);
       newAbsolute.start = start;
       newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
       newAbsolute.end = end;
       newAbsolute.endDate = dayjs(newAbsolute.end).format('MM/DD/YYYY');
+      if (prevFocusOnFirstField) {
+        flatpickr.jumpToDate(newAbsolute.start, true);
+      } else {
+        flatpickr.jumpToDate(newAbsolute.end, true);
+      }
+    } else {
+      setFocusOnFirstField(false);
+      flatpickr.jumpToDate(newAbsolute.start, true);
     }
-
-    newAbsolute.start = start;
-    newAbsolute.startDate = dayjs(newAbsolute.start).format('MM/DD/YYYY');
 
     setAbsoluteValue(newAbsolute);
   };
@@ -617,7 +590,8 @@ const DateTimePicker = ({
   const onRelativeToWhenChange = (event) => {
     changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
   };
-  const onRelativeToTimeChange = (pickerValue) => {
+  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
+    setRelativeToTimeInvalid(meta.invalid);
     changeRelativePropertyValue('relativeToTime', pickerValue);
   };
 
@@ -629,16 +603,28 @@ const DateTimePicker = ({
   };
 
   // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue) => {
+  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteStartTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
-  const onAbsoluteEndTimeChange = (pickerValue) => {
+  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
+    setAbsoluteEndTimeInvalid(meta.invalid);
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
     : getIntervalValue();
+
+  const disableRelativeApply =
+    isCustomRange && customRangeKind === PICKER_KINDS.RELATIVE && relativeToTimeInvalid;
+
+  const disableAbsoluteApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.ABSOLUTE &&
+    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
+
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   // eslint-disable-next-line react/prop-types
   const CustomFooter = ({ setIsOpen }) => {
@@ -652,13 +638,24 @@ const DateTimePicker = ({
       };
       switch (value.kind) {
         case PICKER_KINDS.ABSOLUTE:
-          returnValue.timeRangeValue = value.absolute;
+          returnValue.timeRangeValue = {
+            ...value.absolute,
+            humanValue,
+            tooltipValue,
+          };
           break;
         case PICKER_KINDS.RELATIVE:
-          returnValue.timeRangeValue = value.relative;
+          returnValue.timeRangeValue = {
+            ...value.relative,
+            humanValue,
+            tooltipValue,
+          };
           break;
         default:
-          returnValue.timeRangeValue = value.preset;
+          returnValue.timeRangeValue = {
+            ...value.preset,
+            tooltipValue,
+          };
           break;
       }
 
@@ -706,6 +703,7 @@ const DateTimePicker = ({
           size="field"
           {...others}
           onClick={onApplyClick}
+          disabled={disableApply}
         >
           {strings.applyBtnLabel}
         </Button>
@@ -932,6 +930,7 @@ const DateTimePicker = ({
                           {hasTimeInput ? (
                             <TimePickerSpinner
                               id={`${id}-relative-to-time`}
+                              invalid={relativeToTimeInvalid}
                               value={relativeValue ? relativeValue.relativeToTime : ''}
                               i18n={i18n}
                               onChange={onRelativeToTimeChange}
@@ -980,6 +979,7 @@ const DateTimePicker = ({
                           <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                             <TimePickerSpinner
                               id={`${id}-start-time`}
+                              invalid={absoluteStartTimeInvalid}
                               labelText={strings.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : '00:00'}
                               i18n={i18n}
@@ -990,6 +990,7 @@ const DateTimePicker = ({
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
+                              invalid={absoluteEndTimeInvalid}
                               labelText={strings.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : '00:00'}
                               i18n={i18n}

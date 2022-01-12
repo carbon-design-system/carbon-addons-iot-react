@@ -2,8 +2,7 @@ import React, { createElement, useMemo, useRef, useState } from 'react';
 import { boolean, text, select, array, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { SettingsAdjust16, TrashCan16 } from '@carbon/icons-react';
-import isEqual from 'lodash/isEqual';
-import assign from 'lodash/assign';
+import { isEqual, assign } from 'lodash-es';
 
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
@@ -11,6 +10,7 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
@@ -65,6 +65,11 @@ export const StatefulTableWithNestedRowItems = (props) => {
           ]
         : undefined,
   }));
+
+  const hasAggregations = boolean(
+    'Aggregates column values and displays in a footer row (options.hasAggregations)',
+    false
+  );
   return (
     <div style={{ width: select('table container width', ['auto', '300px', '800px'], 'auto') }}>
       <MyTable
@@ -83,6 +88,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
         )}
         options={{
           ...initialState.options,
+          hasAggregations,
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
@@ -94,13 +100,24 @@ export const StatefulTableWithNestedRowItems = (props) => {
         }}
         view={{
           ...initialState.view,
+          aggregations: hasAggregations
+            ? {
+                label: 'Total:',
+                columns: [
+                  {
+                    id: 'number',
+                    align: 'center',
+                    isSortable: false,
+                  },
+                ],
+              }
+            : undefined,
           filters: [],
           toolbar: {
             activeBar: null,
           },
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         {...props}
       />
     </div>
@@ -129,27 +146,56 @@ export default {
 
 export const SimpleStatefulExample = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
+  const demoInitialColumnSizes = boolean('Demo initial columns sizes', false);
+  const demoColumnGroupAssignments = boolean('Demo assigning columns to groups', false);
+  const demoColumnTooltips = boolean('Demo column tooltips', false);
+
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   return (
     <MyTable
       id="table"
+      key={`table${demoInitialColumnSizes}`}
       {...initialState}
+      data={initialState.data.slice(
+        0,
+        select(
+          'number of data items in table',
+          [initialState.data.length, 50, 20, 5],
+          initialState.data.length
+        )
+      )}
       actions={tableActions}
-      columns={initialState.columns.map((column) => {
-        if (column.filter) {
-          return {
-            ...column,
-            filter: {
-              ...column.filter,
-              isMultiselect: !!column.filter?.options,
-            },
-          };
-        }
-        return column;
-      })}
+      columns={initialState.columns
+        .map((column) => {
+          if (column.filter) {
+            return {
+              ...column,
+              filter: {
+                ...column.filter,
+                isMultiselect: boolean('force MultiSelect filter', !!column.filter?.options),
+              },
+            };
+          }
+          return column;
+        })
+        .map((col, i) => ({
+          ...col,
+          width: demoInitialColumnSizes ? (i % 2 === 0 ? '100px' : '200px') : undefined,
+          tooltip: demoColumnTooltips
+            ? col.id === 'select'
+              ? `This tooltip displays extra information about the select box. You can choose from a variety of options. Pick one today!`
+              : `A tooltip for ${col.name} here`
+            : undefined,
+        }))}
+      columnGroups={object('Column groups definition (columnGroups)', [
+        {
+          id: 'groupA',
+          name: 'Group A that has a very long name that should be truncated',
+        },
+        { id: 'groupB', name: 'Group B' },
+      ])}
       style={{ maxWidth: select('table width', ['auto', '300px'], 'auto') }}
       useZebraStyles={boolean('Alternate colors in table rows (useZebraStyles)', false)}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -171,8 +217,14 @@ export const SimpleStatefulExample = () => {
         ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
-        hasRowExpansion: boolean(
+        hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
+        hasRowExpansion: select(
           'Enables expanding rows to show additional content (options.hasRowExpansion)',
+          {
+            true: true,
+            false: false,
+            '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+          },
           false
         ),
         hasRowNesting: boolean(
@@ -183,6 +235,10 @@ export const SimpleStatefulExample = () => {
           'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
           ['multi', 'single', false],
           'multi'
+        ),
+        hasFastSearch: boolean(
+          "Enable search as typing (default) or only on 'Enter' (options.hasFastSearch).",
+          true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
         hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
@@ -215,6 +271,15 @@ export const SimpleStatefulExample = () => {
           ],
         },
         table: {
+          ordering: demoColumnGroupAssignments
+            ? defaultOrdering.map((col, index) =>
+                index === 1 || index === 2
+                  ? { ...col, columnGroupId: 'groupA' }
+                  : index === 5 || index === 6 || index === 7
+                  ? { ...col, columnGroupId: 'groupB' }
+                  : col
+              )
+            : defaultOrdering,
           selectedIds: array('An array of selected table ids (view.table.selectedIds)', []),
         },
         toolbar: {
@@ -336,7 +401,6 @@ export const StatefulExampleWithSingleNestedHierarchy = () => {
           ),
         }}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
       />
     </div>
   );
@@ -408,7 +472,6 @@ export const SimpleStatefulExampleWithColumnOverflowMenu = () => {
           width: '150px',
         }))}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -492,7 +555,6 @@ export const SimpleStatefulExampleWithAlignment = () => {
           'lg'
         )}
         actions={tableActions}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         options={{
           hasRowSelection: select(
             'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
@@ -544,7 +606,6 @@ export const StatefulExampleWithEveryThirdRowUnselectable = () => {
         isSelectable: index % 3 !== 0,
       }))}
       actions={tableActions}
-      lightweight={boolean('Show an alternate header style (lightweight)', false)}
       size={select(
         'Sets the height of the table rows (size)',
         ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -620,7 +681,6 @@ export const StatefulExampleWithExpansionMaxPagesAndColumnResize = () => {
             onDownloadCSV: (filteredData) => csvDownloadHandler(filteredData, 'my table data'),
           },
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -1104,7 +1164,6 @@ export const StatefulExampleWithCreateSaveViews = () => {
           ...tableActions,
           onUserViewModified,
         }}
-        lightweight={boolean('Show an alternate header style (lightweight)', false)}
         size={select(
           'Sets the height of the table rows (size)',
           ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -1545,3 +1604,10 @@ export const WithMultiSorting = () => {
 };
 
 WithMultiSorting.storyName = 'with multi-sorting';
+WithMultiSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

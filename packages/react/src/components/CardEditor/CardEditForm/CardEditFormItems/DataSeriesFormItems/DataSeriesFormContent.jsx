@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
-import omit from 'lodash/omit';
-import isEmpty from 'lodash/isEmpty';
+import { omit, isEmpty } from 'lodash-es';
 import uuid from 'uuid';
 import hash from 'object-hash';
 
@@ -12,7 +11,10 @@ import {
   handleDataSeriesChange,
   DataItemsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
-import { Button, List, ComboBox, Dropdown } from '../../../../../index';
+import Button from '../../../../Button';
+import List from '../../../../List/List';
+import ComboBox from '../../../../ComboBox';
+import { Dropdown } from '../../../../Dropdown';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import { CARD_TYPES, BAR_CHART_TYPES } from '../../../../../constants/LayoutConstants';
 import ContentFormItemTitle from '../ContentFormItemTitle';

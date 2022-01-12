@@ -57,10 +57,10 @@ yarn add carbon-addons-iot-react d3@">=5.0.0 <=5.14.2"
 
 ```
 # with npm
-npm install carbon-addons-iot-react@next d3@">=5.0.0 <=5.14.2"
+npm install carbon-addons-iot-react@next d3@"^7.0.0"
 
 # with yarn
-yarn add carbon-addons-iot-react@next d3@">=5.0.0 <=5.14.2"
+yarn add carbon-addons-iot-react@next d3@"^7.0.0"
 ```
 
 > _`d3` is a peer dependency due to the usage of `@carbon/charts` in various

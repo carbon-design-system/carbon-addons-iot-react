@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Table } from 'carbon-components-angular';
 
 /**
@@ -19,7 +19,7 @@ import { Table } from 'carbon-components-angular';
       [striped]="striped"
       [skeleton]="skeleton"
       [ngClass]="{ 'bx--data-table--sticky-header': stickyHeader }"
-      class="ai-table"
+      class="iot-table"
     >
       <thead
         aiTableHead
@@ -39,7 +39,7 @@ import { Table } from 'carbon-components-angular';
         [stickyHeader]="stickyHeader"
       ></thead>
       <tbody
-        ibmTableBody
+        aiTableBody
         (deselectRow)="onSelectRow($event)"
         (rowClick)="onRowClick($event)"
         (scroll)="onScroll($event)"
@@ -53,7 +53,7 @@ import { Table } from 'carbon-components-angular';
         [selectionLabelColumn]="selectionLabelColumn"
         [showSelectionColumn]="showSelectionColumn"
         [skeleton]="skeleton"
-        *ngIf="!noData; else noDataTemplate"
+        *ngIf="model.totalDataLength; else noDataTemplate"
       ></tbody>
       <ng-template #noDataTemplate><ng-content></ng-content></ng-template>
       <tfoot>
@@ -78,7 +78,8 @@ import { Table } from 'carbon-components-angular';
       </tfoot>
     </table>
   `,
-  styleUrls: ['./table.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AITableComponent extends Table {}
+export class AITableComponent extends Table {
+  @Input() model: any;
+}

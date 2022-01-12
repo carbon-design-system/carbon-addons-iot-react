@@ -70,6 +70,23 @@ storiesOf('Components/DateTime Picker', module)
         DAYS: '天',
         HOURS: '小时',
         MINUTES: '分钟',
+        RANGE_SEPARATOR: '至',
+      },
+    }),
+  }))
+  .add('With blocked dates', () => ({
+    template: `
+      <ai-date-time-picker
+        [theme]="(theme ? 'light' : null)"
+        [flatpickrOptions]="flatpickrOptions"
+        (selectedChange)="selectedChange($event)"
+        (apply)="apply($event)"
+        (cancel)="cancel($event)">
+      </ai-date-time-picker>
+		`,
+    props: getProps({
+      flatpickrOptions: {
+        maxDate: 'today',
       },
     }),
   }))

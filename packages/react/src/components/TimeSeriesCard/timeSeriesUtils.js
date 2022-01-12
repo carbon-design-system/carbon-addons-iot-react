@@ -1,8 +1,4 @@
-import isNil from 'lodash/isNil';
-import isEmpty from 'lodash/isEmpty';
-import filter from 'lodash/filter';
-import find from 'lodash/find';
-import orderBy from 'lodash/orderBy';
+import { isNil, isEmpty, filter, find, orderBy } from 'lodash-es';
 
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { findMatchingAlertRange } from '../../utils/cardUtilityFunctions';

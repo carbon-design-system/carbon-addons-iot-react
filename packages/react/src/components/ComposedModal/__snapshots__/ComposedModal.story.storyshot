@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           Cancel
         </button>
         <button
-          aria-describedby="danger-description-95"
+          aria-describedby="danger-description-96"
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--danger"
           data-testid="ComposedModal-modal-danger-button"
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <span
             className="bx--visually-hidden"
-            id="danger-description-95"
+            id="danger-description-96"
           >
             danger
           </span>
@@ -561,8 +561,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             fill="currentColor"
             focusable="false"
             height={16}
-            onClick={[Function]}
-            onKeyDown={[Function]}
             preserveAspectRatio="xMidYMid meet"
             role="img"
             viewBox="0 0 32 32"

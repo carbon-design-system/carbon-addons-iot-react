@@ -154,10 +154,7 @@ export class AITableModel implements PaginationModel {
 
     // only create a fresh header if necessary (header doesn't exist or differs in length)
     // this will only create a single level of headers (it will destroy any existing header items)
-    if (
-      this.header == null ||
-      (this.header[0].length !== this._data[0].length && this._data[0].length > 0)
-    ) {
+    if (this.header == null) {
       const newHeader = [[]];
       // disable this tslint here since we don't actually want to
       // loop the contents of the data
@@ -166,6 +163,19 @@ export class AITableModel implements PaginationModel {
         newHeader[0].push(new TableHeaderItem());
       }
       this.header = newHeader;
+    } else {
+      this.header.forEach((headerRow, rowIndex) => {
+        const projectedRowLength = this.projectedRowLength(headerRow, rowIndex, this.header);
+        if (projectedRowLength < this._data[0].length && this._data[0].length > 0) {
+          const difference = this._data[0].length - projectedRowLength;
+          // disable this tslint here since we don't actually want to
+          // loop the difference between contents of data and projected header row length
+          // tslint:disable-next-line: prefer-for-of
+          for (let i = 0; i < difference; i++) {
+            headerRow.push(new TableHeaderItem());
+          }
+        }
+      });
     }
 
     this.dataChange.next();
@@ -329,6 +339,15 @@ export class AITableModel implements PaginationModel {
   }
 
   /**
+   * Returns all the rows.
+   *
+   * Use `row()` instead.
+   */
+  rows(): TableItem[][] {
+    return this._data;
+  }
+
+  /**
    * Adds a row to the `index`th row or appends to table if index not provided.
    *
    * If row is shorter than other rows or not provided, it will be padded with
@@ -371,7 +390,7 @@ export class AITableModel implements PaginationModel {
       }
     } else if (realRow.length > columnCount) {
       // extend the length of header
-      let difference = realRow.length - this.effectiveRowLength(this.header[0]);
+      let difference = realRow.length - this.projectedRowLength(this.header[0], 0, this.header);
       for (let j = 0; j < difference; j++) {
         // add to the first header row and row-span to fill the height of the header
         const headerItem = new TableHeaderItem();
@@ -688,12 +707,23 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    const headerFrom = this.header[0][indexFrom];
+    // ignore everything above rowIndex
+    // find the "projected indices" of the header column we're moving
+    const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
+    // based on those indices, find the "actual indices" of child rows
+    for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
+      const actualIndices = this.projectedIndicesToActualIndices(
+        projectedIndices,
+        this.header[nextRowIndex]
+      );
+      // move them to the right place (based on the "projected indexTo")
+      this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
+    }
 
-    this.addColumn(this.column(indexFrom), indexTo);
-    this.deleteColumn(indexFrom + (indexTo < indexFrom ? 1 : 0));
-
-    this.header[0][indexTo + (indexTo > indexFrom ? -1 : 0)] = headerFrom;
+    // move the data columns as well
+    for (let dataRowIndex = 0; dataRowIndex < this._data.length; dataRowIndex++) {
+      this.moveMultipleToIndex(projectedIndices, indexTo, this._data[dataRowIndex]);
+    }
   }
 
   /**
@@ -870,12 +900,104 @@ export class AITableModel implements PaginationModel {
     }
   }
 
+  protected projectedRowLengthSimple(itemArray: any[]) {
+    return itemArray.reduce((len, item) => len + (item ? item.colSpan || 1 : 0), 0);
+  }
+
   /**
    * @param itemArray TableItem[] | TableHeaderItem[]
    * @returns the number of columns as if now cells were merged
    */
-  protected effectiveRowLength(itemArray: any[]) {
+  protected projectedRowLength(itemArray: any[], rowIndex?: number, matrix?: any[][]) {
     // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
-    return itemArray.reduce((len, item) => len + (item.colSpan || 1), 0);
+    if (rowIndex === undefined || matrix === undefined) {
+      return this.projectedRowLengthSimple(itemArray);
+    }
+
+    // the rest of the function takes into account row spans
+    const rowLengths = matrix.map((row) => this.projectedRowLengthSimple(row));
+
+    for (let index = 0; index < rowIndex; index++) {
+      const row = matrix[index];
+      row.forEach((item) => {
+        if (item && item.rowSpan) {
+          // increment all row lengths that the span covers
+          for (let i = index + 1; i < index + 1 + item.rowSpan; i++) {
+            rowLengths[i]++;
+          }
+        }
+      });
+    }
+    return rowLengths[rowIndex];
+  }
+
+  /**
+   * Convert a projected index to actual index, where actual index is the index in the list
+   * that's passed in
+   * @param projectedIndex index of a column if none of the cells were merged
+   * @param list a row of the header or the body
+   */
+  protected projectedIndexToActualIndex(
+    projectedIndex: number,
+    list: TableHeaderItem[] | TableItem[]
+  ) {
+    let index = 0;
+    for (let i = 0; i < list.length; i++) {
+      const item = list[i];
+      index += item?.colSpan || 1;
+      if (index > projectedIndex) {
+        return i;
+      }
+    }
+    return list.length - 1;
+  }
+
+  /**
+   * Convert an actual index to a projected indices array
+   * @param actualIndex index of a column as-is
+   * @param list a row of the header or the body
+   */
+  protected actualIndexToProjectedIndices(
+    actualIndex: number,
+    list: TableHeaderItem[] | TableItem[]
+  ) {
+    // find the starting projected index
+    let startingIndex = 0;
+    for (let i = 0; i < actualIndex; i++) {
+      const item = list[i];
+      startingIndex += item.colSpan || 1;
+    }
+
+    return new Array(list[actualIndex].colSpan).fill(0).map((_, index) => startingIndex + index);
+  }
+
+  protected projectedIndicesToActualIndices(
+    projectedIndices: number[],
+    list: TableHeaderItem[] | TableItem[]
+  ) {
+    const actualIndicesSet = new Set();
+
+    for (let projectedIndex of projectedIndices) {
+      actualIndicesSet.add(this.projectedIndexToActualIndex(projectedIndex, list));
+    }
+
+    return Array.from(actualIndicesSet).sort() as number[];
+  }
+
+  protected moveMultipleToIndex(indices: number[], index, list: TableHeaderItem[] | TableItem[]) {
+    // assumes indices is sorted low to high and continuous
+    // NOTE might need to generalize it
+    const blockStart = indices[0];
+    const blockEnd = indices[indices.length - 1];
+    // if moving to left
+    if (blockStart > index) {
+      const block = list.splice(blockStart, blockEnd - blockStart + 1);
+      list.splice.apply(list, [index, 0].concat(block));
+    } else {
+      // if moving to right
+      const block = list.slice(blockStart, blockEnd + 1);
+      list.splice.apply(list, [index, 0].concat(block));
+      list.splice(blockStart, blockEnd - blockStart + 1);
+    }
   }
 }

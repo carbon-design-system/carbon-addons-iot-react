@@ -2,6 +2,9 @@ import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-story
 import ReactDOM from 'react-dom';
 import MockDate from 'mockdate';
 
+import { settings } from '../constants/Settings';
+
+const { iotPrefix, prefix } = settings;
 const realFindDOMNode = ReactDOM.findDOMNode;
 
 const realScrollIntoView = window.HTMLElement.prototype.scrollIntoView;
@@ -35,7 +38,12 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
     spy.consoleWarn = jest.spyOn(console, 'warn').mockImplementation((w) => {
       const message = w.toString();
-      if (!message.includes('This page appears to be missing CSS declarations for Mapbox GL JS')) {
+      if (
+        !message.includes('This page appears to be missing CSS declarations for Mapbox GL JS') &&
+        !message.includes(
+          'The prop `wrapperClassName` for Checkbox will be deprecated in V11 in favor of `className`. `className` will then be placed on the outer wrapper.'
+        )
+      ) {
         done.fail(w);
       }
     });
@@ -99,7 +107,7 @@ describe(`Storybook Snapshot tests and console checks`, () => {
         // needed for HierarchyList ref
         if (
           element.props?.className?.includes(
-            'iot--list-item--content iot--list-item--content__selected'
+            `${iotPrefix}--list-item--content ${iotPrefix}--list-item--content__selected`
           )
         ) {
           return {
@@ -110,11 +118,11 @@ describe(`Storybook Snapshot tests and console checks`, () => {
 
         // needed for menubutton using carbon menu
         if (
-          element.props?.className?.includes('bx--menu-option') ||
-          element.props?.className?.includes('bx--menu-divider')
+          element.props?.className?.includes(`${prefix}--menu-option`) ||
+          element.props?.className?.includes(`${prefix}--menu-divider`)
         ) {
           const parentNode = document.createElement('div');
-          parentNode.classList.add('bx--menu');
+          parentNode.classList.add(`${prefix}--menu`);
           return {
             ...element,
             parentNode,

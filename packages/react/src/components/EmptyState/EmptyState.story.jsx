@@ -154,6 +154,22 @@ export const WithCustomIcon = () => (
   />
 );
 
+export const WithCustomBody = () => (
+  <EmptyState
+    icon={DashboardIcon}
+    title="Empty state with a custom body"
+    body={
+      <div>
+        This is a <strong>custom body node</strong>.
+      </div>
+    }
+    action={{
+      label: 'Action',
+      onClick: action('action onClick'),
+    }}
+  />
+);
+
 export const TabsWithEmptyState = () => {
   return (
     <Tabs selected={1} light={boolean('light', false)}>
@@ -185,7 +201,7 @@ export const TabsWithEmptyState = () => {
 export const Playground = () => (
   <EmptyState
     icon={select(
-      'image',
+      'icon',
       ['error', 'error404', 'empty', 'not-authorized', 'no-result', 'success', null],
       'empty'
     )}

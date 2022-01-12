@@ -3,7 +3,6 @@ import './polyfills.js';
 import '@storybook/addon-storysource/register';
 import '@storybook/addon-actions/register';
 import '@storybook/addon-links/register';
-import '@storybook/addon-knobs/register';
 
 import { addons } from '@storybook/addons';
 import { STORY_CHANGED, STORY_ERRORED, STORY_MISSING } from '@storybook/core-events';

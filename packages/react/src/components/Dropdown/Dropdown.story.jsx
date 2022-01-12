@@ -15,7 +15,7 @@ import {
 
 import Dropdown from './Dropdown';
 
-import { DropdownSkeleton } from './index';
+import { DropdownSkeleton } from '.';
 
 export const items = [
   {

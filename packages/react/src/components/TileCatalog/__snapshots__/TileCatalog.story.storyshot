@@ -753,7 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       />
     </div>
     <div
-      className="iot-simple-pagination-container"
+      className="iot-simple-pagination-container bx--pagination--lg"
       data-testid="iot-simple-pagination"
     >
       <span
@@ -1416,7 +1416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       />
     </div>
     <div
-      className="iot-simple-pagination-container"
+      className="iot-simple-pagination-container bx--pagination--lg"
       data-testid="iot-simple-pagination"
     >
       <span
@@ -2109,7 +2109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       />
     </div>
     <div
-      className="iot-simple-pagination-container"
+      className="iot-simple-pagination-container bx--pagination--lg"
       data-testid="iot-simple-pagination"
     >
       <span
@@ -2777,7 +2777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       />
     </div>
     <div
-      className="iot-simple-pagination-container"
+      className="iot-simple-pagination-container bx--pagination--lg"
       data-testid="iot-simple-pagination"
     >
       <span

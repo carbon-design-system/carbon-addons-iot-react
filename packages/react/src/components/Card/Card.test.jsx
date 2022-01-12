@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Tree16 } from '@carbon/icons-react';
+import { Tree16, Add16 } from '@carbon/icons-react';
 
 import { CARD_SIZES, CARD_TITLE_HEIGHT, CARD_ACTIONS } from '../../constants/LayoutConstants';
 import { settings } from '../../constants/Settings';
@@ -22,9 +22,15 @@ const cardProps = {
 
 describe('Card', () => {
   it('is selectable by testID or testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<Card {...cardProps} size={CARD_SIZES.SMALL} testID="CARD_TEST" />);
 
     expect(screen.getByTestId('CARD_TEST')).toBeTruthy();
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(`The 'testID' prop has been deprecated. Please use 'testId' instead.`)
+    );
+    jest.resetAllMocks();
+
     rerender(
       <Card
         {...cardProps}
@@ -224,6 +230,64 @@ describe('Card', () => {
       range: 'last24Hours',
     });
   });
+
+  it('card actions for default range picker using datetimepicker format', () => {
+    const mockOnCardAction = jest.fn();
+    const { rerender } = render(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true, range: true }}
+        timeRangeOptions={{
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        }}
+      />
+    );
+
+    expect(screen.getByText('Default')).toBeVisible();
+
+    rerender(
+      <Card
+        {...cardProps}
+        isExpanded
+        size={CARD_SIZES.LARGE}
+        tooltip={tooltipElement}
+        onCardAction={mockOnCardAction}
+        availableActions={{ expand: true, range: true }}
+        timeRange="last2Hours"
+        timeRangeOptions={{
+          last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+          last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+          last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+          last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+          last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+          lastHour: { label: 'Last Hour', offset: 60 * 60 },
+        }}
+      />
+    );
+
+    expect(screen.getByText('Last 2 Hours')).toBeVisible();
+
+    // pop out the calendar
+    userEvent.click(screen.getAllByTitle(`Select time range`)[0]);
+
+    // select a default range
+    userEvent.click(screen.getByText(`Last 24 Hours`));
+
+    expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
+      range: 'last24Hours',
+    });
+    expect(screen.getByText('Last 24 Hours')).toBeVisible();
+  });
+
   it('card actions for dateTime range picker', () => {
     const mockOnCardAction = jest.fn();
     render(
@@ -249,8 +313,15 @@ describe('Card', () => {
 
     expect(mockOnCardAction).toHaveBeenCalledWith(cardProps.id, CARD_ACTIONS.CHANGE_TIME_RANGE, {
       timeRangeKind: PICKER_KINDS.PRESET,
-      timeRangeValue: { id: 'item-05', label: hourLabel, offset: 24 * 60 },
+      timeRangeValue: {
+        id: 'item-05',
+        label: hourLabel,
+        offset: 24 * 60,
+        tooltipValue: '2018-09-20 08:57 to Now',
+      },
     });
+
+    expect(screen.getByTestId('Card-subtitle')).toHaveTextContent('2018-09-20 08:57 to Now');
   });
   it('card toolbar renders in header only when there are actions', () => {
     const { container, rerender } = render(
@@ -350,7 +421,7 @@ describe('Card', () => {
 
     it('should put the subtitle in a tooltip if it overflows', () => {
       const aLongSubTitle =
-        'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+        'A very very long subtitle which will almost certainly overflow and require a tooltip and we must test these things, you know.';
       render(<Card {...cardProps} title="A Very Modest Title" subtitle={aLongSubTitle} />);
       const tooltipButton = screen.getByRole('button', {
         name: aLongSubTitle,
@@ -406,5 +477,127 @@ describe('Card', () => {
     expect(screen.getByText('ven')).toBeVisible();
     expect(screen.getByText('sam')).toBeVisible();
     expect(screen.getByText('dim')).toBeVisible();
+  });
+
+  it('card extra actions(single/multiple)', async () => {
+    const mockExtraSingle = jest.fn();
+    const mockExtraMultiple = jest.fn();
+    const singleExtraAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      callback: mockExtraSingle,
+    };
+    const singleExtraDisabledAction = {
+      id: 'extrasingleaction',
+      icon: Add16,
+      disabled: true,
+      callback: mockExtraSingle,
+    };
+    const multiExtraAction = {
+      id: 'extramultiaction',
+      children: [
+        {
+          id: 'firstItem',
+          itemText: 'Item1',
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'secondItem',
+          itemText: 'Item2',
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'thirdItem',
+          itemText: 'Item3',
+          disabled: true,
+          callback: mockExtraMultiple,
+        },
+        {
+          id: 'fourthItem',
+          itemText: 'Item4',
+          hidden: true,
+          callback: mockExtraMultiple,
+        },
+      ],
+    };
+
+    // Test single icon button action
+    const { rerender } = render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test disabled icon button action
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraDisabledAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    expect(screen.getAllByTitle('Action Label')[0]).toBeDisabled();
+    expect(mockExtraSingle).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test extra action when card isExpanded
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={singleExtraAction}
+        isExpanded
+        availableActions={{
+          extra: true,
+          expand: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    // Test multiple extra actions
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={multiExtraAction}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const firstItem = await screen.findByText('Item1');
+    fireEvent.click(firstItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // Reopen menu
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    mockExtraMultiple.mockClear();
+    const secondItem = await screen.findByText('Item2');
+    fireEvent.click(secondItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
+
+    // Reopen menu to verify disabled item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    const thirdItem = await screen.findByText('Item3');
+    expect(thirdItem.closest('button')).toBeDisabled();
+
+    // Reopen menu to verify hidden item
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    expect(screen.queryByText('Item4')).not.toBeInTheDocument();
   });
 });

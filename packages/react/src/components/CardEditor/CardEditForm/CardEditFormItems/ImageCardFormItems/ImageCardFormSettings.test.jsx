@@ -2,7 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { settings } from '../../../../../constants/Settings';
+
 import ImageCardFormSettings from './ImageCardFormSettings';
+
+const { iotPrefix } = settings;
 
 const cardConfig = {
   id: 'ImageCard',
@@ -35,7 +39,7 @@ describe('ImageCardFormSettings', () => {
       />
     );
 
-    userEvent.click(screen.getByTestId('iot--card-edit-form--input-radio1'));
+    userEvent.click(screen.getByTestId(`${iotPrefix}--card-edit-form--input-radio1`));
 
     expect(actions.onChange).toHaveBeenCalledWith({
       ...cardConfig,
@@ -49,7 +53,7 @@ describe('ImageCardFormSettings', () => {
       },
     });
     actions.onChange.mockReset();
-    userEvent.click(screen.getByTestId('iot--card-edit-form--input-toggle1'));
+    userEvent.click(screen.getByTestId(`${iotPrefix}--card-edit-form--input-toggle1`));
     expect(actions.onChange).toHaveBeenCalledWith({
       ...cardConfig,
       content: {
@@ -63,7 +67,7 @@ describe('ImageCardFormSettings', () => {
     });
     actions.onChange.mockReset();
 
-    userEvent.click(screen.getByTestId('iot--card-edit-form--input-toggle2'));
+    userEvent.click(screen.getByTestId(`${iotPrefix}--card-edit-form--input-toggle2`));
     expect(actions.onChange).toHaveBeenCalledWith({
       ...cardConfig,
       content: {

@@ -4,8 +4,12 @@ import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Chip from '@carbon/icons-react/es/chip/24';
 
+import { settings } from '../../constants/Settings';
+
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
+
+const { prefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
@@ -15,28 +19,28 @@ const commonProps = {
   isAdminView: true,
   onRouteChange: async () => true,
   routes: {
-    profile: 'https://www.ibm.com',
-    navigator: 'https://www.ibm.com',
-    admin: 'https://www.ibm.com',
-    logout: 'https://www.ibm.com',
-    logoutInactivity: 'https://www.ibm.com',
-    whatsNew: 'https://www.ibm.com',
-    gettingStarted: 'https://www.ibm.com',
-    documentation: 'https://www.ibm.com',
-    requestEnhancement: 'https://www.ibm.com',
-    support: 'https://www.ibm.com',
-    about: 'https://www.ibm.com',
+    profile: 'https://www.ibm.com/profile',
+    navigator: 'https://www.ibm.com/navigator',
+    admin: 'https://www.ibm.com/admin',
+    logout: 'https://www.ibm.com/logout',
+    logoutInactivity: 'https://www.ibm.com/inactivity',
+    whatsNew: 'https://www.ibm.com/whatsnew',
+    gettingStarted: 'https://www.ibm.com/gettingstarted',
+    documentation: 'https://www.ibm.com/documentation',
+    requestEnhancement: 'https://www.ibm.com/request',
+    support: 'https://www.ibm.com/support',
+    about: 'https://www.ibm.com/about',
   },
   applications: [
     {
       id: 'monitor',
       name: 'Monitor',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/monitor',
     },
     {
       id: 'health',
       name: 'Health',
-      href: 'https://www.ibm.com',
+      href: 'https://www.ibm.com/health',
       isExternal: true,
     },
   ],
@@ -67,6 +71,7 @@ describe('SuiteHeader', () => {
   });
 
   it('should be selectable with testId', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <SuiteHeader
         {...commonProps}
@@ -88,6 +93,14 @@ describe('SuiteHeader', () => {
         testId="suite_header"
       />
     );
+    expect(console.error).toHaveBeenCalledWith(
+      expect.stringContaining(
+        'Warning: A future version of React will block javascript: URLs as a security precaution.'
+      ),
+      `"javascript:void(0)"`,
+      expect.stringContaining('SuiteHeader')
+    );
+    console.error.mockReset();
     expect(screen.getByTestId('suite_header')).toBeDefined();
     expect(screen.getByTestId('suite_header-name')).toBeDefined();
     expect(screen.getByTestId('suite_header-menu-button')).toBeDefined();
@@ -396,7 +409,7 @@ describe('SuiteHeader', () => {
       <SuiteHeader
         {...commonProps}
         onRouteChange={async () => false}
-        dleTimeoutData={idleTimeoutDataProp}
+        idleTimeoutData={idleTimeoutDataProp}
       />
     );
     // Simulate a timestamp cookie that is in the past
@@ -494,14 +507,14 @@ describe('SuiteHeader', () => {
     render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', 'https://www.ibm.com');
-    expect(window.location.href).toBe('https://www.ibm.com');
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
+    expect(window.location.href).toBe(commonProps.routes.profile);
   });
 
   it('should handle keyboard navigation for actionItems and panel links', async () => {
@@ -519,7 +532,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -565,7 +578,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -612,7 +625,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -658,7 +671,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -904,7 +917,7 @@ describe('SuiteHeader', () => {
                 <Chip
                   fill="white"
                   description="chip-icon"
-                  className="bx--header__menu-item bx--header__menu-title"
+                  className={`${prefix}--header__menu-item ${prefix}--header__menu-title`}
                 />
               </span>
             ),
@@ -936,5 +949,95 @@ describe('SuiteHeader', () => {
     expect(onRouteChange).not.toHaveBeenCalled();
     expect(onKeyDown).toHaveBeenCalled();
     jest.resetAllMocks();
+  });
+
+  describe('opening in new window', () => {
+    let fakeUserAgent = '';
+    beforeAll(() => {
+      const { userAgent } = global.navigator;
+      Object.defineProperty(global.navigator, 'userAgent', {
+        get() {
+          return fakeUserAgent === '' ? userAgent : fakeUserAgent;
+        },
+      });
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+      fakeUserAgent = '';
+    });
+
+    it('should open built-in routes in new window when holding cmd', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Mac';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { metaKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
+      expect(window.open).toHaveBeenCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+    });
+
+    it('should open built-in routes in new window when holding ctrl', async () => {
+      const onRouteChange = jest.fn().mockImplementation(() => true);
+      fakeUserAgent = 'Win';
+      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByLabelText('Administration'), { ctrlKey: true });
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(1);
+      userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
+      await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }), {
+        ctrlKey: true,
+      });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.profile,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(2);
+
+      userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
+      await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.about,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(3);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.routes.navigator,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(4);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.applications[0].href,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(5);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        commonProps.applications[1].href,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(6);
+    });
   });
 });

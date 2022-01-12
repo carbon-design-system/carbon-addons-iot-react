@@ -239,11 +239,16 @@ describe('DashboardGrid', () => {
         expect(resizeHandle).toBeVisible();
       };
 
+      jest.spyOn(console, 'error').mockImplementation(() => {});
       const { rerender } = render(
         <DashboardGrid {...callbackMocks} layouts={getLayouts()} breakpoint={BREAKPOINT}>
           {getCards({ isResizable: true })}
         </DashboardGrid>
       );
+      expect(console.error).toHaveBeenCalledWith(
+        `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+      );
+      console.error.mockReset();
 
       // We test all cards
       expectToBeResizable('test-card');

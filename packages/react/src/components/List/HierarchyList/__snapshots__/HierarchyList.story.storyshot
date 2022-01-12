@@ -76,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -414,7 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -497,411 +497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
     }
   >
     <div
-      className="bx--modal iot--hierarchy-list-bulk-modal iot--composed-modal"
-      data-floating-menu-container={true}
-      data-testid="ComposedModal"
-      onBlur={[Function]}
-      onClick={[Function]}
-      onClose={[Function]}
-      onKeyDown={[Function]}
-      open={false}
-      role="presentation"
-    >
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-      <div
-        aria-modal="true"
-        className="bx--modal-container"
-        role="dialog"
-      >
-        <div
-          className="bx--modal-header"
-        >
-          <h3
-            className="bx--modal-header__heading bx--type-beta"
-          >
-            Move 1 item underneath
-          </h3>
-          <button
-            aria-label="Close"
-            className="bx--modal-close"
-            onClick={[Function]}
-            title="Close"
-            type="button"
-          >
-            <svg
-              aria-hidden={true}
-              className="bx--modal-close__icon"
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="bx--modal-content"
-        >
-          <div
-            className="iot--hierarchy-list-bulk-modal--title"
-          >
-            Select a destination
-          </div>
-          <div
-            className="breadcrumb--container"
-            data-testid="overflow"
-          >
-            <nav
-              aria-label="Breadcrumb"
-              className={null}
-              data-testid="modal-breadcrumb"
-            >
-              <ol
-                className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
-              >
-                <li
-                  className="bx--breadcrumb-item bx--breadcrumb-item--current iot--hierarchy-list-bulk-modal--breadcrumb"
-                  title="All rows"
-                >
-                  <button
-                    className="bx--link iot--hierarchy-list-bulk-modal--breadcrumb-button"
-                    kind="ghost"
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    All rows
-                  </button>
-                </li>
-              </ol>
-            </nav>
-          </div>
-          <div
-            className="iot--hierarchy-list-bulk-modal--list"
-          >
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id18"
-                  name="Chicago White Sox"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="Chicago White Sox"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id18"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    Chicago White Sox
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  Chicago White Sox
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id19"
-                  name="New York Yankees"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="New York Yankees"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id19"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    New York Yankees
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  New York Yankees
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id20"
-                  name="Houston Astros"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="Houston Astros"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id20"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    Houston Astros
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  Houston Astros
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id21"
-                  name="Atlanta Braves"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="Atlanta Braves"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id21"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    Atlanta Braves
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  Atlanta Braves
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id22"
-                  name="New York Mets"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="New York Mets"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id22"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    New York Mets
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  New York Mets
-                </div>
-              </div>
-            </div>
-            <div
-              className="iot--hierarchy-list-bulk-modal--list-item"
-            >
-              <div
-                className="iot--hierarchy-list-bulk-modal--radio bx--radio-button-wrapper"
-              >
-                <input
-                  checked={false}
-                  className="bx--radio-button"
-                  id="id23"
-                  name="Washington Nationals"
-                  onChange={[Function]}
-                  tabIndex={0}
-                  type="radio"
-                  value="Washington Nationals"
-                />
-                <label
-                  className="bx--radio-button__label"
-                  htmlFor="id23"
-                >
-                  <span
-                    className="bx--radio-button__appearance"
-                  />
-                  <span
-                    className="bx--visually-hidden"
-                  >
-                    Washington Nationals
-                  </span>
-                </label>
-              </div>
-              <div
-                className="iot--hierarchy-list-bulk-modal--list-item-button"
-                onClick={[Function]}
-                onKeyPress={[Function]}
-                role="button"
-                tabIndex={0}
-              >
-                <div
-                  className="iot--hierarchy-list-bulk-modal--list-item-value"
-                >
-                  Washington Nationals
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
-        >
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--secondary"
-            data-testid="ComposedModal-modal-secondary-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Cancel
-          </button>
-          <button
-            aria-describedby={null}
-            aria-pressed={null}
-            className="iot--btn bx--btn bx--btn--primary"
-            data-testid="ComposedModal-modal-primary-button"
-            disabled={false}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-            type="button"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-      <span
-        className="bx--visually-hidden"
-        role="link"
-        tabIndex="0"
-      >
-        Focus sentinel
-      </span>
-    </div>
-    <div
       className="iot--list"
       data-testid="list"
     >
@@ -926,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -1414,60 +1009,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           data-floating-menu-container={true}
         >
           <div
-            className="iot--list-item-editable--drag-container"
-            role="listitem"
+            className="iot--list-item"
           >
+            <svg
+              aria-hidden={true}
+              className="iot--list-item--lock"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24,14H22V8A6,6,0,0,0,10,8v6H8a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H24a2,2,0,0,0,2-2V16A2,2,0,0,0,24,14ZM12,8a4,4,0,0,1,8,0v6H12ZM24,28H8V16H24Z"
+              />
+            </svg>
             <div
-              className="iot--list-item iot--list-item-editable"
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
             >
               <div
-                className="iot--list-item-editable--drag-preview"
-              >
-                Jeff McNeil
-              </div>
-              <div
-                title="Drag handle"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="iot--list-item--handle"
-                  data-testid="list-item-editable"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="iot--list-item--nesting-offset"
-                style={
-                  Object {
-                    "width": "32px",
-                  }
-                }
-              />
-              <div
-                className="iot--list-item--content"
+                className="iot--list-item--content--values"
               >
                 <div
-                  className="iot--list-item--content--values"
+                  className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--main"
+                    className="iot--list-item--content--values--value"
+                    title="Jeff McNeil"
                   >
-                    <div
-                      className="iot--list-item--content--values--value"
-                      title="Jeff McNeil"
-                    >
-                      Jeff McNeil
-                    </div>
+                    Jeff McNeil
                   </div>
                 </div>
               </div>
@@ -1514,7 +1094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1579,7 +1159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1644,7 +1224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1709,7 +1289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1774,7 +1354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1839,7 +1419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1904,7 +1484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -1969,7 +1549,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 className="iot--list-item--nesting-offset"
                 style={
                   Object {
-                    "width": "32px",
+                    "width": "48px",
                   }
                 }
               />
@@ -2082,7 +1662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2102,7 +1682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With OverflowMenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With OverflowMenu and controlled expandedIds 1`] = `
 <div
   className="storybook-container"
 >
@@ -2139,7 +1719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -2215,17 +1795,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             className="iot--list-item"
           >
             <div
-              aria-label="Expand"
+              aria-label="Close"
               className="iot--list-item--expand-icon"
               data-testid="expand-icon"
               onClick={[Function]}
               onKeyPress={[Function]}
               role="button"
               tabIndex={0}
-              title="Expand"
+              title="Close"
             >
               <svg
-                aria-label="Expand-icon"
+                aria-label="Close-icon"
                 fill="currentColor"
                 focusable="false"
                 height={16}
@@ -2236,7 +1816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  d="M8 5L13 10 12.3 10.7 8 6.4 3.7 10.7 3 10z"
                 />
               </svg>
             </div>
@@ -2255,6 +1835,816 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   >
                     Chicago White Sox
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Leury Garcia"
+                  >
+                    Leury Garcia
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Yoan Moncada"
+                  >
+                    Yoan Moncada
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Jose Abreu"
+                  >
+                    Jose Abreu
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Welington Castillo"
+                  >
+                    Welington Castillo
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Eloy Jimenez"
+                  >
+                    Eloy Jimenez
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Charlie Tilson"
+                  >
+                    Charlie Tilson
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Tim Anderson"
+                  >
+                    Tim Anderson
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Yolmer Sanchez"
+                  >
+                    Yolmer Sanchez
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item iot--list-item__selectable"
+            data-testid={null}
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <div
+              className="iot--list-item--nesting-offset"
+              style={
+                Object {
+                  "width": "48px",
+                }
+              }
+            />
+            <div
+              className="iot--list-item--content"
+            >
+              <div
+                className="iot--list-item--content--values"
+              >
+                <div
+                  className="iot--list-item--content--values--main"
+                >
+                  <div
+                    className="iot--list-item--content--values--value"
+                    title="Dylan Covey"
+                  >
+                    Dylan Covey
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    title="data-item-menu"
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -2530,7 +2920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2587,7 +2977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -2724,7 +3114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2764,7 +3154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2804,7 +3194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2844,7 +3234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2884,7 +3274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2924,7 +3314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -2964,7 +3354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3004,7 +3394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3044,7 +3434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3137,7 +3527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3177,7 +3567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3217,7 +3607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3257,7 +3647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3297,7 +3687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3337,7 +3727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3377,7 +3767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3417,7 +3807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3457,7 +3847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3497,7 +3887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -3738,7 +4128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -3795,7 +4185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -4144,7 +4534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4184,7 +4574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4224,7 +4614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4264,7 +4654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4304,7 +4694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4344,7 +4734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4384,7 +4774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4424,7 +4814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4464,7 +4854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4546,7 +4936,635 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
+          data-testid="iot-simple-pagination"
+        >
+          <div
+            className="iot-simple-pagination-page-bar"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
+            >
+              Page 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With nested reordering restricted 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Preserve team compositions
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+        <div
+          className="iot--list-header--search"
+        >
+          <div
+            aria-labelledby="iot--list-header--search-search"
+            className="bx--search bx--search--lg"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="iot--list-header--search"
+              id="iot--list-header--search-search"
+            >
+              Enter a value
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="list-header-search-input"
+              id="iot--list-header--search"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Enter a value"
+              role="searchbox"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content"
+      >
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Chicago White Sox
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Chicago White Sox"
+                    >
+                      Chicago White Sox
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                New York Yankees
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="New York Yankees"
+                    >
+                      New York Yankees
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Houston Astros
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Houston Astros"
+                    >
+                      Houston Astros
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Atlanta Braves
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Atlanta Braves"
+                    >
+                      Atlanta Braves
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                New York Mets
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="New York Mets"
+                    >
+                      New York Mets
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="iot--list-item-parent"
+          data-floating-menu-container={true}
+        >
+          <div
+            className="iot--list-item-editable--drag-container"
+            role="listitem"
+          >
+            <div
+              className="iot--list-item iot--list-item-editable"
+            >
+              <div
+                className="iot--list-item-editable--drag-preview"
+              >
+                Washington Nationals
+              </div>
+              <div
+                title="Drag handle"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="iot--list-item--handle"
+                  data-testid="list-item-editable"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                  />
+                </svg>
+              </div>
+              <div
+                aria-label="Expand"
+                className="iot--list-item--expand-icon"
+                data-testid="expand-icon"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                role="button"
+                tabIndex={0}
+                title="Expand"
+              >
+                <svg
+                  aria-label="Expand-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                  />
+                </svg>
+              </div>
+              <div
+                className="iot--list-item--content"
+              >
+                <div
+                  className="iot--list-item--content--values"
+                >
+                  <div
+                    className="iot--list-item--content--values--main"
+                  >
+                    <div
+                      className="iot--list-item--content--values--value iot--list-item--category"
+                      title="Washington Nationals"
+                    >
+                      Washington Nationals
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--page"
+      >
+        <div
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -4603,7 +5621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -4745,7 +5763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4785,7 +5803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4825,7 +5843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4865,7 +5883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4905,7 +5923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4945,7 +5963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -4985,7 +6003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -5025,7 +6043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -5065,7 +6083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "48px",
                 }
               }
             />
@@ -5369,7 +6387,407 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
+          data-testid="iot-simple-pagination"
+        >
+          <div
+            className="iot-simple-pagination-page-bar"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
+            >
+              Page 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with empty state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list__full-height"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Big List
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+        <div
+          className="iot--list-header--search"
+        >
+          <div
+            aria-labelledby="iot--list-header--search-search"
+            className="bx--search bx--search--lg"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="iot--list-header--search"
+              id="iot--list-header--search-search"
+            >
+              Search
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="list-header-search-input"
+              id="iot--list-header--search"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Search"
+              role="searchbox"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content__full-height iot--list--content"
+      >
+        <div
+          className="iot--list--empty-state iot--list--empty-state__full-height"
+        >
+          <div
+            className="iot--empty-state"
+            data-testid="EmptyState"
+          >
+            <div
+              className="iot--empty-state--content"
+            >
+              <svg
+                alt=""
+                className="iot--empty-state--icon"
+                data-testid="EmptyState-icon"
+                height={80}
+                width={80}
+              >
+                <defs>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__a-defaultIcon"
+                    x1="37.502%"
+                    x2="55.959%"
+                    y1="34.928%"
+                    y2="57.808%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopOpacity={0.04}
+                    />
+                    <stop
+                      offset="100%"
+                      stopOpacity={0.04}
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__b-defaultIcon"
+                    x1="-63.062%"
+                    x2="101.194%"
+                    y1="77.587%"
+                    y2="37.496%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#767676"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#929292"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__c-defaultIcon"
+                    x1="73.167%"
+                    x2="44.204%"
+                    y1="89.948%"
+                    y2="39.998%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#969696"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#E8E8E8"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__d-defaultIcon"
+                    x1="-23.114%"
+                    x2="57.391%"
+                    y1="-11.496%"
+                    y2="56.197%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#393939"
+                    />
+                    <stop
+                      offset="99%"
+                      stopColor="#525252"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__e-defaultIcon"
+                    x1="5.255%"
+                    x2="56.521%"
+                    y1="115.2%"
+                    y2="40.489%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#9C9C9C"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#C5C5C5"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__f-defaultIcon"
+                    x1="45.625%"
+                    x2="61.212%"
+                    y1="38.922%"
+                    y2="78.234%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#8A8A8A"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#B5B5B5"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__g-defaultIcon"
+                    x1="57.243%"
+                    x2="41.531%"
+                    y1="31.727%"
+                    y2="71.327%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#A4A4A4"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#BEBEBE"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__h-defaultIcon"
+                    x1="27.599%"
+                    x2="45.796%"
+                    y1="69.394%"
+                    y2="53.639%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#C2C2C2"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#E8E8E8"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__i-defaultIcon"
+                    x1="62.356%"
+                    x2="31.337%"
+                    y1="64.634%"
+                    y2="27.889%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#C6C6C6"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#E8E8E8"
+                    />
+                  </linearGradient>
+                  <linearGradient
+                    id="emptystate-Default-icon_svg__j-defaultIcon"
+                    x1="62.354%"
+                    x2="43.81%"
+                    y1="114.244%"
+                    y2="17.782%"
+                  >
+                    <stop
+                      offset="0%"
+                      stopColor="#B7B7B7"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="#EEE"
+                    />
+                  </linearGradient>
+                </defs>
+                <g
+                  fill="none"
+                  fillRule="nonzero"
+                >
+                  <path
+                    d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
+                    fill="#A8A8A8"
+                  />
+                  <path
+                    d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
+                    fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
+                    transform="translate(11.724 43)"
+                  />
+                  <path
+                    d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
+                    fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
+                    transform="translate(12.414 7.138)"
+                  />
+                  <path
+                    d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
+                    fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
+                    transform="translate(0 4.38)"
+                  />
+                  <path
+                    d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
+                    fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
+                    transform="translate(12.414 31.276)"
+                  />
+                  <path
+                    d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
+                    fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
+                    transform="translate(40 7.138)"
+                  />
+                  <path
+                    d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
+                    fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
+                    transform="translate(40 23)"
+                  />
+                  <path
+                    d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
+                    fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
+                    transform="translate(12.414 23)"
+                  />
+                  <path
+                    d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
+                    fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
+                    transform="translate(40 3)"
+                  />
+                  <path
+                    d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
+                    fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
+                    transform="translate(40 23)"
+                  />
+                  <path
+                    d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
+                    fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
+                    transform="translate(2.069 23)"
+                  />
+                  <path
+                    d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
+                    fill="#FFF"
+                  />
+                  <path
+                    d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
+                    fill="#FFF"
+                  />
+                  <path
+                    d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
+                    fill="#999"
+                  />
+                  <path
+                    d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
+                    fill="#FFF"
+                  />
+                </g>
+              </svg>
+              <h3
+                className="iot--empty-state--title"
+                data-testid="EmptyState-title"
+              >
+                __a custom empty state__
+              </h3>
+              <p
+                className="iot--empty-state--text"
+                data-testid="EmptyState-body"
+              >
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--page"
+      >
+        <div
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -5425,7 +6843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -5536,7 +6954,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--category"
+                    className="iot--list-item--content--values--value"
                     title="Tasks"
                   >
                     Tasks
@@ -5562,7 +6980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               className="iot--list-item--nesting-offset"
               style={
                 Object {
-                  "width": "32px",
+                  "width": "16px",
                 }
               }
             />
@@ -5585,52 +7003,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                     className="iot--list-item--content--values--value"
                     title="My Reports--secondary-value"
                   >
-                    <div
-                      aria-live="assertive"
-                      className="bx--inline-loading"
-                    >
-                      <div
-                        className="bx--inline-loading__animation"
-                      >
-                        <div
-                          aria-atomic="true"
-                          aria-labelledby="loading-id-7"
-                          aria-live="assertive"
-                          className="bx--loading bx--loading--small"
-                        >
-                          <label
-                            className="bx--visually-hidden"
-                            id="loading-id-7"
-                          >
-                            Active loading indicator
-                          </label>
-                          <svg
-                            className="bx--loading__svg"
-                            viewBox="0 0 100 100"
-                          >
-                            <title>
-                              Active loading indicator
-                            </title>
-                            <circle
-                              className="bx--loading__background"
-                              cx="50%"
-                              cy="50%"
-                              r="42"
-                            />
-                            <circle
-                              className="bx--loading__stroke"
-                              cx="50%"
-                              cy="50%"
-                              r="42"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                      <div
-                        className="bx--inline-loading__text"
-                      >
-                        Loading data..
-                      </div>
+                    <div>
+                       SecondaryValue 
                     </div>
                   </div>
                 </div>
@@ -5681,7 +7055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--category"
+                    className="iot--list-item--content--values--value"
                     title="Requests"
                   >
                     Requests
@@ -5696,7 +7070,375 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container"
+          className="iot-simple-pagination-container bx--pagination--md"
+          data-testid="iot-simple-pagination"
+        >
+          <div
+            className="iot-simple-pagination-page-bar"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={1}
+            >
+              Page 1
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with virtual list and large number of items 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list--virtual"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            Big List
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          />
+        </div>
+        <div
+          className="iot--list-header--search"
+        >
+          <div
+            aria-labelledby="iot--list-header--search-search"
+            className="bx--search bx--search--lg"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="iot--list-header--search"
+              id="iot--list-header--search-search"
+            >
+              Search
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="list-header-search-input"
+              id="iot--list-header--search"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Search"
+              role="searchbox"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content iot--list--content--virtual"
+        onScroll={[Function]}
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "direction": "ltr",
+            "height": 0,
+            "overflow": "auto",
+            "position": "relative",
+            "width": undefined,
+            "willChange": "transform",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "height": 49970,
+              "pointerEvents": undefined,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 0,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item-editable--drag-container"
+              role="listitem"
+            >
+              <div
+                className="iot--list-item iot--list-item-editable"
+              >
+                <div
+                  className="iot--list-item-editable--drag-preview"
+                >
+                  Item 0
+                </div>
+                <div
+                  title="Drag handle"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 0"
+                      >
+                        Item 0
+                      </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 0 Subvalue"
+                      >
+                        Item 0 Subvalue
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 40,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item-editable--drag-container"
+              role="listitem"
+            >
+              <div
+                className="iot--list-item iot--list-item-editable"
+              >
+                <div
+                  className="iot--list-item-editable--drag-preview"
+                >
+                  Item 1
+                </div>
+                <div
+                  title="Drag handle"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 1"
+                      >
+                        Item 1
+                      </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 1 Subvalue"
+                      >
+                        Item 1 Subvalue
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--list-item-parent"
+            style={
+              Object {
+                "height": 40,
+                "left": 0,
+                "position": "absolute",
+                "right": undefined,
+                "top": 80,
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--list-item-editable--drag-container"
+              role="listitem"
+            >
+              <div
+                className="iot--list-item iot--list-item-editable"
+              >
+                <div
+                  className="iot--list-item-editable--drag-preview"
+                >
+                  Item 2
+                </div>
+                <div
+                  title="Drag handle"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="iot--list-item--handle"
+                    data-testid="list-item-editable"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10 6H14V10H10zM18 6H22V10H18zM10 14H14V18H10zM18 14H22V18H18zM10 22H14V26H10zM18 22H22V26H18z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 2"
+                      >
+                        Item 2
+                      </div>
+                      <div
+                        className="iot--list-item--content--values--value"
+                        title="Item 2 Subvalue"
+                      >
+                        Item 2 Subvalue
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--page"
+      >
+        <div
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
