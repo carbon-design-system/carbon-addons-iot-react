@@ -545,6 +545,7 @@ const TableHead = ({
 
               {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled) ? (
                 <OverflowMenu
+                  size="lg"
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
                   data-testid="table-head--overflow"
