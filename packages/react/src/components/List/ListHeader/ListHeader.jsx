@@ -50,7 +50,7 @@ const ListHeader = ({ title, buttons, search, i18n, testId }) => {
             id={search.id || `${iotPrefix}--list-header--search`}
             placeholder={i18n.searchPlaceHolderText}
             onChange={search.onChange}
-            size="sm"
+            size="lg"
             value={search.value}
             labelText={i18n.searchPlaceHolderText}
             data-testid={`${testId}-search-input`}

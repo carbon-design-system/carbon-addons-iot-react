@@ -122,6 +122,10 @@ const propTypes = {
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
   /** shows an additional column that can expand/shrink as the table is resized  */
   showExpanderColumn: PropTypes.bool,
+  /**
+   * the size passed to the table to set row height
+   */
+  size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
 };
 
 const defaultProps = {
@@ -150,6 +154,7 @@ const defaultProps = {
   langDir: 'ltr',
   locale: 'en',
   isSelectable: undefined,
+  size: undefined,
 };
 
 const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
@@ -381,6 +386,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${(props) => props.nestingOffset}px;
+  max-width: calc(100% - ${(props) => props.nestingOffset}px);
   display: block;
 `;
 
@@ -426,6 +432,7 @@ const TableBodyRow = ({
   singleRowEditMode,
   singleRowEditButtons,
   showExpanderColumn,
+  size,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -542,6 +549,7 @@ const TableBodyRow = ({
           dismissText={dismissText}
           rowActionsError={rowActionsError}
           onClearError={onClearRowError ? () => onClearRowError(id) : null}
+          size={size}
         />
       ) : nestingLevel > 0 && hasRowActions ? (
         <TableCell key={`${tableId}-${id}-row-actions-cell`} />
