@@ -204,14 +204,23 @@ export class AITableModel implements PaginationModel {
    *
    * Make sure all rows are the same length to keep the column count accurate.
    */
-  setHeader(newHeader: AITableHeaderItem[][] | AITableHeaderItem[]) {
+  setHeader(
+    newHeader: TableHeaderItem[][] | TableHeaderItem[] | AITableHeaderItem[][] | AITableHeaderItem[]
+  ) {
     if (!newHeader) {
       newHeader = [[]];
     } else if (Array.isArray(newHeader) && newHeader.length > 0 && !Array.isArray(newHeader[0])) {
-      newHeader = [newHeader as AITableHeaderItem[]];
+      newHeader = [newHeader as any];
     } else if (Array.isArray(newHeader) && newHeader.length === 0) {
       newHeader = [[]];
     }
+
+    newHeader = (newHeader as any).map((row: any): AITableHeaderItem[] =>
+      row.map(
+        (col: any): AITableHeaderItem =>
+          col.constructor.name === 'AITableHeaderItem' ? col : new AITableHeaderItem(col)
+      )
+    );
 
     this.header = newHeader as AITableHeaderItem[][];
 

@@ -9,21 +9,57 @@ import { AITableModule } from './table.module';
 import { EmptyStateModule } from '../empty-state-index';
 
 const simpleModel = new AITableModel();
+const simpleMultiHeaderModel = new AITableModel();
 const emptyDataModel = new AITableModel();
 
 simpleModel.setHeader([
   [
+    new AITableHeaderItem({ data: 'hwer1', alignment: 'center' }),
+    new AITableHeaderItem({ data: 'hwer2', alignment: 'center' }),
+    new AITableHeaderItem({ data: 'hwer3', alignment: 'center' }),
+    new AITableHeaderItem({ data: 'hwer4', alignment: 'center' }),
+  ],
+]);
+
+simpleModel.setData([
+  [
+    new TableItem({ data: 'Name 1' }),
+    new TableItem({ data: 'qwer' }),
+    new TableItem({ data: 'qwer1' }),
+    new TableItem({ data: 'qwer2' }),
+  ],
+  [
+    new TableItem({ data: 'Name 3' }),
+    new TableItem({ data: 'zwer' }),
+    new TableItem({ data: 'qwer' }),
+    new TableItem({ data: 'qwer2' }),
+  ],
+  [
+    new TableItem({ data: 'Name 2' }),
+    new TableItem({ data: 'swer' }),
+    new TableItem({ data: 'swer1' }),
+    new TableItem({ data: 'qwer2' }),
+  ],
+  [
+    new TableItem({ data: 'Name 4' }),
+    new TableItem({ data: 'twer' }),
+    new TableItem({ data: 'twer1' }),
+    new TableItem({ data: 'qwer2' }),
+  ],
+]);
+
+simpleMultiHeaderModel.setHeader([
+  [
     new AITableHeaderItem({
       data: 'Name',
       rowSpan: 2,
-      alignment: 'center',
     }),
     new AITableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false }),
   ],
   [new AITableHeaderItem({ data: 'hwer1' }), new AITableHeaderItem({ data: 'hwer2' })],
 ]);
 
-simpleModel.setData([
+simpleMultiHeaderModel.setData([
   [
     new TableItem({ data: 'Name 1' }),
     new TableItem({ data: 'qwer' }),
@@ -89,13 +125,47 @@ storiesOf('Components/Table', module)
         skeleton: boolean('Skeleton mode', false),
         rowClick: action('row clicked'),
         customSort: (index: number) => {
-          if (simpleModel.getClosestHeader(index).sorted) {
+          if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
             // if already sorted flip sorting direction
-            simpleModel.getClosestHeader(index).ascending = simpleModel.getClosestHeader(
+            simpleMultiHeaderModel.getClosestHeader(
               index
-            ).descending;
+            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
           }
-          simpleModel.sort(index);
+          simpleMultiHeaderModel.sort(index);
+        },
+      },
+    };
+  })
+  .add('Basic multiheader', () => {
+    return {
+      template: `
+			<ai-table
+				[model]="model"
+				[size]="size"
+				[showSelectionColumn]="showSelectionColumn"
+				[striped]="striped"
+				[skeleton]="skeleton"
+				[isDataGrid]="isDataGrid"
+				(sort)="customSort($event)"
+				(rowClick)="rowClick($event)">
+			</ai-table>
+		`,
+      props: {
+        model: simpleMultiHeaderModel,
+        size: select('size', { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }, 'md'),
+        showSelectionColumn: boolean('showSelectionColumn', true),
+        striped: boolean('striped', true),
+        isDataGrid: boolean('Data grid keyboard interactions', true),
+        skeleton: boolean('Skeleton mode', false),
+        rowClick: action('row clicked'),
+        customSort: (index: number) => {
+          if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
+            // if already sorted flip sorting direction
+            simpleMultiHeaderModel.getClosestHeader(
+              index
+            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
+          }
+          simpleMultiHeaderModel.sort(index);
         },
       },
     };
