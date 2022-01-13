@@ -476,7 +476,7 @@ describe('DashboardEditor', () => {
     render(<DashboardEditor {...commonProps} getDefaultCard={getDefaultCard} />);
 
     userEvent.click(screen.getByRole('button', { name: 'Image' }));
-    expect(getDefaultCard).toHaveBeenCalledWith(CARD_TYPES.IMAGE);
+    expect(getDefaultCard).toHaveBeenCalledWith(CARD_TYPES.IMAGE, expect.anything());
   });
 
   it('default onFetchDynamicDemoHotspots should return correctly', async () => {
