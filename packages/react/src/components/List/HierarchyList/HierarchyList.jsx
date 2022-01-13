@@ -107,6 +107,8 @@ const propTypes = {
   searchId: PropTypes.string,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 const defaultProps = {
@@ -150,6 +152,7 @@ const defaultProps = {
   items: [],
   searchId: null,
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
 };
 
 /**
@@ -257,6 +260,7 @@ const HierarchyList = ({
   className,
   searchId,
   emptyState,
+  emptySearchState,
 }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
@@ -558,6 +562,7 @@ const HierarchyList = ({
         i18n={mergedI18n}
         pagination={hasPagination ? pagination : null}
         indeterminateIds={indeterminateIds}
+        isFiltering={!!searchValue}
         isFullHeight={isFullHeight}
         isLoading={isLoading}
         isLargeRow={isLargeRow}
@@ -571,6 +576,7 @@ const HierarchyList = ({
         onItemMoved={handleDrag}
         className={className}
         emptyState={emptyState}
+        emptySearchState={emptySearchState}
       />
     </>
   );

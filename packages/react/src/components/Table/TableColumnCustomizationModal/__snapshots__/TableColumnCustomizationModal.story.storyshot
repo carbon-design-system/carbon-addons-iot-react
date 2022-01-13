@@ -433,17 +433,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           className="iot--list-item--content--values--main"
                         >
                           <div
-                            className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                            className="iot--list-item--content--values--value"
                             title="String"
                           >
                             String
                           </div>
-                          <div
-                            className="iot--list-item--content--row-actions"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                          />
                         </div>
+                        <div
+                          className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
+                        />
                       </div>
                     </div>
                   </div>
@@ -494,57 +494,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Date"
                             >
                               Date
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-date"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-date"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -597,57 +597,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Select"
                             >
                               Select
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-select"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-select"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -700,57 +700,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Secret Information"
                             >
                               Secret Information
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -803,57 +803,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Status"
                             >
                               Status
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-status"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-status"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -906,57 +906,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Number"
                             >
                               Number
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-number"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-number"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1507,7 +1507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -1586,7 +1586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -1746,7 +1746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "16px",
                           }
                         }
                       />
@@ -1760,57 +1760,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="String"
                             >
                               String
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-string"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-string"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1889,57 +1889,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value iot--list-item--category"
                               title="Group A"
                             >
                               Group A
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-groupA"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-groupA"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1986,7 +1986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -2000,57 +2000,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Date"
                             >
                               Date
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-date"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-date"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2097,7 +2097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -2111,57 +2111,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Select"
                             >
                               Select
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-select"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-select"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2240,57 +2240,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--category iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value iot--list-item--category"
                               title="Group B"
                             >
                               Group B
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-groupB"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-groupB"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2337,7 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -2351,57 +2351,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Secret Information"
                             >
                               Secret Information
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-secretField"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2448,7 +2448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -2462,57 +2462,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Status"
                             >
                               Status
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-status"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-status"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2559,7 +2559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         className="iot--list-item--nesting-offset"
                         style={
                           Object {
-                            "width": "32px",
+                            "width": "48px",
                           }
                         }
                       />
@@ -2573,57 +2573,57 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             className="iot--list-item--content--values--main"
                           >
                             <div
-                              className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                              className="iot--list-item--content--values--value"
                               title="Number"
                             >
                               Number
                             </div>
-                            <div
-                              className="iot--list-item--content--row-actions"
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                              data-testid="table-column-customization-modal-list-builder-remove-button-number"
+                              disabled={false}
+                              onBlur={[Function]}
                               onClick={[Function]}
-                              onKeyPress={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
                             >
-                              <button
-                                aria-describedby={null}
-                                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-                                data-testid="table-column-customization-modal-list-builder-remove-button-number"
-                                disabled={false}
-                                onBlur={[Function]}
-                                onClick={[Function]}
-                                onFocus={[Function]}
+                              <div
+                                className="bx--assistive-text"
                                 onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                tabIndex={0}
-                                type="button"
                               >
-                                <div
-                                  className="bx--assistive-text"
-                                  onMouseEnter={[Function]}
-                                >
-                                  Remove from list
-                                </div>
-                                <svg
-                                  aria-hidden="true"
-                                  aria-label="Remove from list"
-                                  className="bx--btn__icon"
-                                  fill="currentColor"
-                                  focusable="false"
-                                  height={16}
-                                  preserveAspectRatio="xMidYMid meet"
-                                  role="img"
-                                  viewBox="0 0 32 32"
-                                  width={16}
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
-                                  />
-                                  <path
-                                    d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
-                                  />
-                                </svg>
-                              </button>
-                            </div>
+                                Remove from list
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove from list"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M16,2C8.2,2,2,8.2,2,16s6.2,14,14,14s14-6.2,14-14S23.8,2,16,2z M16,28C9.4,28,4,22.6,4,16S9.4,4,16,4s12,5.4,12,12	S22.6,28,16,28z"
+                                />
+                                <path
+                                  d="M21.4 23L16 17.6 10.6 23 9 21.4 14.4 16 9 10.6 10.6 9 16 14.4 21.4 9 23 10.6 17.6 16 23 21.4z"
+                                />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -2790,7 +2790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     aria-labelledby="iot--list-header--search-search"
-                    className="bx--search bx--search--sm"
+                    className="bx--search bx--search--lg"
                     role="search"
                   >
                     <div
@@ -3160,23 +3160,272 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 <div
                   className="iot--list--empty-state"
                 >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={32}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={32}
-                    xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    className="iot--empty-state"
+                    data-testid="EmptyState"
                   >
-                    <path
-                      d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-                    />
-                  </svg>
-                  <p>
-                    No columns selected
-                  </p>
+                    <div
+                      className="iot--empty-state--content"
+                    >
+                      <svg
+                        alt=""
+                        className="iot--empty-state--icon"
+                        data-testid="EmptyState-icon"
+                        height={80}
+                        width={80}
+                      >
+                        <defs>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__a-defaultIcon"
+                            x1="37.502%"
+                            x2="55.959%"
+                            y1="34.928%"
+                            y2="57.808%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopOpacity={0.04}
+                            />
+                            <stop
+                              offset="100%"
+                              stopOpacity={0.04}
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__b-defaultIcon"
+                            x1="-63.062%"
+                            x2="101.194%"
+                            y1="77.587%"
+                            y2="37.496%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#767676"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#929292"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__c-defaultIcon"
+                            x1="73.167%"
+                            x2="44.204%"
+                            y1="89.948%"
+                            y2="39.998%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#969696"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#E8E8E8"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__d-defaultIcon"
+                            x1="-23.114%"
+                            x2="57.391%"
+                            y1="-11.496%"
+                            y2="56.197%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#393939"
+                            />
+                            <stop
+                              offset="99%"
+                              stopColor="#525252"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__e-defaultIcon"
+                            x1="5.255%"
+                            x2="56.521%"
+                            y1="115.2%"
+                            y2="40.489%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#9C9C9C"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#C5C5C5"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__f-defaultIcon"
+                            x1="45.625%"
+                            x2="61.212%"
+                            y1="38.922%"
+                            y2="78.234%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#8A8A8A"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#B5B5B5"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__g-defaultIcon"
+                            x1="57.243%"
+                            x2="41.531%"
+                            y1="31.727%"
+                            y2="71.327%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#A4A4A4"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#BEBEBE"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__h-defaultIcon"
+                            x1="27.599%"
+                            x2="45.796%"
+                            y1="69.394%"
+                            y2="53.639%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#C2C2C2"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#E8E8E8"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__i-defaultIcon"
+                            x1="62.356%"
+                            x2="31.337%"
+                            y1="64.634%"
+                            y2="27.889%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#C6C6C6"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#E8E8E8"
+                            />
+                          </linearGradient>
+                          <linearGradient
+                            id="emptystate-Default-icon_svg__j-defaultIcon"
+                            x1="62.354%"
+                            x2="43.81%"
+                            y1="114.244%"
+                            y2="17.782%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#B7B7B7"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#EEE"
+                            />
+                          </linearGradient>
+                        </defs>
+                        <g
+                          fill="none"
+                          fillRule="nonzero"
+                        >
+                          <path
+                            d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
+                            fill="#A8A8A8"
+                          />
+                          <path
+                            d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
+                            fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
+                            transform="translate(11.724 43)"
+                          />
+                          <path
+                            d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
+                            fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
+                            transform="translate(12.414 7.138)"
+                          />
+                          <path
+                            d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
+                            fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
+                            transform="translate(0 4.38)"
+                          />
+                          <path
+                            d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
+                            fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
+                            transform="translate(12.414 31.276)"
+                          />
+                          <path
+                            d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
+                            fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
+                            transform="translate(40 7.138)"
+                          />
+                          <path
+                            d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
+                            fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
+                            transform="translate(40 23)"
+                          />
+                          <path
+                            d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
+                            fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
+                            transform="translate(12.414 23)"
+                          />
+                          <path
+                            d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
+                            fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
+                            transform="translate(40 3)"
+                          />
+                          <path
+                            d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
+                            fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
+                            transform="translate(40 23)"
+                          />
+                          <path
+                            d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
+                            fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
+                            transform="translate(2.069 23)"
+                          />
+                          <path
+                            d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
+                            fill="#FFF"
+                          />
+                          <path
+                            d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
+                            fill="#FFF"
+                          />
+                          <path
+                            d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
+                            fill="#999"
+                          />
+                          <path
+                            d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
+                            fill="#FFF"
+                          />
+                        </g>
+                      </svg>
+                      <h3
+                        className="iot--empty-state--title"
+                        data-testid="EmptyState-title"
+                      >
+                        No columns selected
+                      </h3>
+                      <p
+                        className="iot--empty-state--text"
+                        data-testid="EmptyState-body"
+                      >
+                        
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3664,17 +3913,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           className="iot--list-item--content--values--main"
                         >
                           <div
-                            className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                            className="iot--list-item--content--values--value"
                             title="String"
                           >
                             String
                           </div>
-                          <div
-                            className="iot--list-item--content--row-actions"
-                            onClick={[Function]}
-                            onKeyPress={[Function]}
-                          />
                         </div>
+                        <div
+                          className="iot--list-item--content--row-actions"
+                          onClick={[Function]}
+                          onKeyPress={[Function]}
+                        />
                       </div>
                     </div>
                   </div>

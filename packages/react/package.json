@@ -168,8 +168,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.2",
-    "@carbon/charts": "0.50.4",
-    "@carbon/charts-react": "0.50.4",
+    "@carbon/charts": "0.54.2",
+    "@carbon/charts-react": "0.54.2",
     "@carbon/colors": "10.34.0",
     "@carbon/icons-react": "10.44.0",
     "@carbon/layout": "10.34.0",
@@ -340,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.147.0-next.81",
+  "version": "2.147.0-next.91",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2"

@@ -52,6 +52,8 @@ const propTypes = {
   testId: PropTypes.string,
   /** Returns true, if the icon should be shown. (actionItem) => {} */
   isActionItemVisible: PropTypes.func,
+  /** allows setting aria-label on side-nav menu button correctly */
+  isSideNavExpanded: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -71,6 +73,7 @@ const defaultProps = {
   },
   testId: 'header',
   isActionItemVisible: () => true,
+  isSideNavExpanded: false,
 };
 
 /**
@@ -92,6 +95,7 @@ const Header = ({
   i18n,
   testId,
   isActionItemVisible,
+  isSideNavExpanded,
 }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const theShortAppName = shortAppName || appName;
@@ -127,7 +131,7 @@ const Header = ({
       {hasSideNav && (
         <HeaderMenuButton
           data-testid={`${testId}-menu-button`}
-          aria-label={mergedI18n.openMenu}
+          aria-label={isSideNavExpanded ? mergedI18n.closeMenu : mergedI18n.openMenu}
           onClick={onClickSideNavExpand}
         />
       )}
