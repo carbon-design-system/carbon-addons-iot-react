@@ -302,7 +302,7 @@ describe('MenuButton', () => {
     expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
   });
 
-  it('should render ghost kind for single button, split button & icon button', () => {
+  it('should render ghost kind for single button & icon button', () => {
     // Single button
     const { rerender } = render(
       <MenuButton kind="ghost" label="Create">
@@ -310,17 +310,6 @@ describe('MenuButton', () => {
       </MenuButton>
     );
     expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--ghost`);
-
-    // Split button
-    rerender(
-      <MenuButton kind="ghost" onPrimaryActionClick={() => {}} label="Create">
-        {menuItems}
-      </MenuButton>
-    );
-    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--ghost`);
-    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
-      `${prefix}--btn--ghost`
-    );
 
     // Icon only button is always ghost
     rerender(
