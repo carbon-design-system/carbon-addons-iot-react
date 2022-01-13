@@ -30,6 +30,12 @@ const propTypes = {
       includeZeroOnYaxis: PropTypes.bool,
       timeDataSourceId: PropTypes.string,
       showLegend: PropTypes.bool,
+      /**
+       * maximum amounts of data points to render in the graph
+       * The data point limitation doesn't actually affect the cards themselves. It is only stored
+       * in the JSON and up to the downstream consumers to use when they fetch their data.
+       */
+      maximumDataPoints: PropTypes.number,
     }),
     interval: PropTypes.string,
   }),
@@ -40,6 +46,7 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
+    maximumDataPointsLabel: PropTypes.string,
   }),
 };
 
@@ -52,6 +59,7 @@ const defaultProps = {
     includeZeroOnYaxis: 'Include zero on y-axis',
     unitLabel: 'Unit',
     decimalPrecisionLabel: 'Decimal precision',
+    maximumDataPoints: 'Maximum data points',
   },
 };
 
@@ -120,6 +128,23 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
             })
           }
           value={content?.decimalPrecision}
+        />
+      </div>
+      <div className={`${baseClassName}--input`}>
+        <TextInput
+          id={`${id}_maximum_data_points`}
+          labelText={mergedI18n.maximumDataPoints}
+          light
+          type="number"
+          onChange={(evt) => {
+            const maximumDataPointsString = evt.target.value;
+            const maximumDataPoints = Number.parseInt(maximumDataPointsString, 10);
+            onChange({
+              ...cardConfig,
+              content: { ...cardConfig.content, maximumDataPoints },
+            });
+          }}
+          value={content?.maximumDataPoints}
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
