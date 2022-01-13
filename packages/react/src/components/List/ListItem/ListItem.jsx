@@ -242,8 +242,10 @@ const ListItem = ({
     secondaryValue ? (
       <div
         title={
-          typeof secondaryValue === 'function'
-            ? `${value}--secondary-value`
+          typeof secondaryValue === 'function' && typeof secondaryValue() === 'string'
+            ? secondaryValue()
+            : typeof secondaryValue === 'function'
+            ? ''
             : typeof secondaryValue === 'object' && secondaryValue !== null
             ? secondaryValue.label
             : secondaryValue

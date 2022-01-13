@@ -253,27 +253,6 @@ export const WithSecondaryValue = () => (
 
 WithSecondaryValue.storyName = 'with secondaryValue';
 
-export const WithSecondaryValueAsObject = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key, value]) => ({
-          id: key,
-          content: {
-            value: key,
-            secondaryValue: { label: value, value: () => <div>{value}</div> },
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', false)}
-      isVirtualList={boolean('isVirtualList', false)}
-    />
-  </div>
-);
-
-WithSecondaryValueAsObject.storyName = 'with secondaryValue as object';
-
 export const WithIsLargeRowAndIcon = () => (
   <div style={{ width: 400 }}>
     <List
