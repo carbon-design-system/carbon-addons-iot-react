@@ -36,6 +36,13 @@
   }
 }
 
+.#{$iot-prefix}--menu-button__menu {
+  padding: 0;
+  .#{$prefix}--menu-divider {
+    margin: 0;
+  }
+}
+
 .#{$prefix}--menu.#{$prefix}--menu--open.#{$prefix}--menu--root {
   opacity: var(--iot-menu-button-menu-opacity);
 }
