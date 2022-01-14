@@ -2,7 +2,7 @@
 
 ### _last updated:_ 01/05/2022
 
-The following is a brief breakdown into the technolgies used to develop, test, and ship components in the AI Application's Pattern Asset Library. This is not meant to be an exhaustive intro into these technologies but a good "crash course" overview with links to more information.
+The following is a brief breakdown into the technolgies used to develop, test, and ship components in the AI Application's Pattern Asset Library. This isn't meant to be an exhaustive intro into these technologies but a good "crash course" overview with links to more information.
 
 ### Table of Contents
 
@@ -24,8 +24,9 @@ Javscript is used to run our development server, run test, author markup, and ma
 
 I won't go deeply into every aspect of JavaScript but there are a few features of the language that you will use often when building React components.
 
-1. [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-   You will see destructring used throughout the codebase. Whether using them to destructure our props from the prop object passed to components
+### [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+You will see destructring used throughout the codebase. Whether destructuring our props from the prop object passed to components
 
 ```js
 function Component({ propOne, propTwo }) {
@@ -58,6 +59,135 @@ const value3 = this.props.obj.deepNestedObj.evenDeeperObj.value3;
 ```
 
 destructuring is a great addtion to the language that cleans up the code base.
+
+## [Spread snytax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) (...)
+
+allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+
+```js
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+sum(...numbers);
+// expected return: 6
+```
+
+In the PAL project the most common use is adding items to an array. Instead of mutating an original array we can create a new one and simply spread the old.
+
+```js
+const arr = [1, 2, 3];
+
+const newArr = [...arr, 4, 5, 6];
+// expected return: 6
+```
+
+Another common use is to remove items from an object before passing it on to another component.
+
+```js
+const obj = { one: 1, two: 2, three: 3 };
+
+const { one, ...rest } = obj;
+...
+<div value={rest}>
+
+// rest being { two: 2, three: 3 }
+```
+
+## [Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) () => {}
+
+are used through out the project when their compact style makes it much easier to read the code.
+
+```js
+// if only one argument you can even drop the parens
+setState((prevState) => !prevState);
+// vs
+setState(function (prevState) {
+  return !prevState;
+});
+```
+
+Information to keep in mind when dealing with Arrow functions:
+
+- basic syntax `() => {}`. The parens are always needed except...
+- When only one argument is used you can drop the parens. ex. `argument => { return argument++}`
+- Implicit return: Arrow functions can have either a "concise body" or the usual "block body". In a concise body, only an expression is specified, which becomes the implicit return value. ex. `argument => argument++`
+- Can not use `this` keyword like you would with traditional functions.
+- They do not have an `arguments` object. Both `arguments` and `this` reference the value of the enclosing lexical scope.
+
+There are crucial differences between arrow functions and traditional functional expressions so be aware and know [when to not use an arrow function](https://www.javascripttutorial.net/es6/when-you-should-not-use-arrow-functions/). With the above information in mind, I would lean towards using function delcaration for most instances and arrow functions when used as an argument in another function.
+
+When writing a functional component it is best practice to use a regular function declaration
+
+```js
+function MyComponent(props) {
+  return <div>Hello World</div>;
+}
+```
+
+but you will definitely see them defined using arrow functions both in our library and in the wild.
+
+```js
+const MyComponent = (props) => <div>Hello World</div>;
+```
+
+## [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+
+are literals delimited with backticks (`), allowing embedded expressions called substitutions.
+
+```js
+const myString = `This is a string with ${variables}.`;
+```
+
+It can make strings with variable or expression iterpolation more readable and easier to write. Notice the `\n` is not needed because white space is not folded into one space as with string literals.
+
+```js
+const str1 = 'Fifteen is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.';
+const str2 = `Fifteen is ${a + b} and
+not ${2 * a + b}.`;
+```
+
+## [Tertiary conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. This operator is frequently used as an alternative to an if...else statement.
+
+In react there will be times when you want to conditionally render an element. Like the content of an accordion.
+
+```js
+<AccordionItem>{isOpen ? <AccordionItemContent>Hey</AccordionItemContent> : null}</AccordionItem>
+```
+
+## [Optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (?)
+
+enables you to read the value of a property located deep within a chain of connected objects without having to check that each reference in the chain is valid. The following would normally throw an error
+
+```js
+const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah',
+  },
+};
+
+const dogName = adventurer.dog.name;
+```
+
+and to prevent you would have to check for the existence of each property before using it. Optional chaining allows us to do that in place
+
+```js
+const dogName = adventurer.dog?.name;
+adventurer.dog?.someNonExistentMethod?.();
+
+// vs
+
+if (adventurer.dog && adventurer.dog.someNonExistentMethod) {
+  const dogName = adventurer.dog.name;
+  adventurer.dog.someNonExistentMethod.();
+}
+
+```
 
 Additional Resources:
 
