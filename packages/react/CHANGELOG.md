@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.0...v2.148.0-next.1) (2022-01-14)
+
+
+### Bug Fixes
+
+* **feedback:** fixes from feedback ([c3e943b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c3e943ba588e93f7006c2134b1699c1c057b93c9))
+* **listitem:** support secondary value obj with custom label when func ([73611f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73611f0c5d1e055eed8dae5c6fde9a6b52de0406))
+* **mdx:** fix in list.mdx extra column ([8bae147](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bae147fa35ece4deec67f41386a9c65e0e54e41))
+
+
+
+
+
 # [2.148.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.1-next.0...v2.148.0-next.0) (2022-01-13)
 
 
