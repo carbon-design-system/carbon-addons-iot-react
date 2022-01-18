@@ -2922,5 +2922,30 @@ describe('Table', () => {
       );
       expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
     });
+
+    it('should not render the overflow actions if all actions are hidden', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: toolbarActions.map((action) => ({ ...action, hidden: true })),
+            },
+          }}
+        />
+      );
+
+      expect(screen.queryByRole('button', { name: 'Do something' })).toBeNull();
+      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
+    });
   });
 });

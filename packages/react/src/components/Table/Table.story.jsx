@@ -2045,6 +2045,7 @@ export const WithFilters = () => {
 
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const demoToolbarOverflowItemsHidden = boolean('demo all toolbar overflow items hidden', false);
   return (
     <MyTable
       id="table"
@@ -2075,7 +2076,16 @@ export const WithFilters = () => {
               labelText: 'toolbarAction shown in toolbar instead of overflow',
               renderIcon: ViewOff16,
             },
-          ],
+          ].map((action) => {
+            if (action.id === 'hidden') {
+              return action;
+            }
+
+            return {
+              ...action,
+              hidden: demoToolbarOverflowItemsHidden,
+            };
+          }),
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content
