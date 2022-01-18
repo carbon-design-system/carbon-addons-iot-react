@@ -161,7 +161,7 @@ In react there will be times when you want to conditionally render an element. L
 <AccordionItem>{isOpen ? <AccordionItemContent>Hey</AccordionItemContent> : null}</AccordionItem>
 ```
 
-While this is more readible, if you're rendering logic is too complex it can have the opposite affect on readiblity. Then it is suggested to use an tradition if statement.
+While under normal circumstances this is more readable, if you're rendering logic is too complex it can have the opposite affect on readiblity. Then it is suggested to use an tradition if statement.
 
 ```js
 let accordionItemContent;
