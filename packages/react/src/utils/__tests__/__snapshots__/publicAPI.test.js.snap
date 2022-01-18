@@ -4174,6 +4174,19 @@ Map {
                             Object {
                               "type": "func",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
                           ],
                         ],
                         "type": "oneOfType",
@@ -4441,6 +4454,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -4726,6 +4752,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -22044,6 +22083,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],

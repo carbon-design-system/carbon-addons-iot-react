@@ -40,7 +40,14 @@ const ListItemPropTypes = {
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
   /** string value or callback render function */
-  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  secondaryValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.func,
+    PropTypes.shape({
+      value: PropTypes.func,
+      label: PropTypes.string,
+    }),
+  ]),
   /** either a callback render function or a node */
   rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
   icon: PropTypes.node,
@@ -235,13 +242,25 @@ const ListItem = ({
   const renderSecondaryValue = () =>
     secondaryValue ? (
       <div
-        title={typeof secondaryValue === 'function' ? `${value}--secondary-value` : secondaryValue}
+        title={
+          typeof secondaryValue === 'function' && typeof secondaryValue() === 'string'
+            ? secondaryValue()
+            : typeof secondaryValue === 'function'
+            ? ''
+            : typeof secondaryValue === 'object' && secondaryValue !== null
+            ? secondaryValue.label
+            : secondaryValue
+        }
         className={classnames(`${iotPrefix}--list-item--content--values--value`, {
           [`${iotPrefix}--list-item--content--values--value__large`]: isLargeRow,
           [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
         })}
       >
-        {typeof secondaryValue === 'function' ? secondaryValue() : secondaryValue}
+        {typeof secondaryValue === 'function'
+          ? secondaryValue()
+          : typeof secondaryValue === 'object' && secondaryValue !== null
+          ? secondaryValue.value()
+          : secondaryValue}
       </div>
     ) : null;
 
