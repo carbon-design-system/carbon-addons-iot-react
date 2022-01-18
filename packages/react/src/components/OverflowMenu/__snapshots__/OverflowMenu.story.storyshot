@@ -37,7 +37,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -145,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -209,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -263,7 +263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -317,7 +317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -381,7 +381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -435,7 +435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -489,7 +489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="Menu"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           data-testid="overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
@@ -542,7 +542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Menu"
-    className="bx--overflow-menu"
+    className="bx--overflow-menu bx--overflow-menu--md"
     data-testid="overflow-menu"
     onClick={[Function]}
     onClose={[Function]}
@@ -592,7 +592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
     aria-expanded={false}
     aria-haspopup={true}
     aria-label={null}
-    className="bx--overflow-menu"
+    className="bx--overflow-menu bx--overflow-menu--md"
     data-testid="overflow-menu"
     onClick={[Function]}
     onClose={[Function]}
@@ -627,7 +627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/O
     aria-expanded={false}
     aria-haspopup={true}
     aria-label="Menu"
-    className="bx--overflow-menu"
+    className="bx--overflow-menu bx--overflow-menu--md"
     data-testid="overflow-menu"
     onClick={[Function]}
     onClose={[Function]}

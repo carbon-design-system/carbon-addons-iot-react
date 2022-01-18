@@ -128,13 +128,6 @@ TogglePasswordVisibility.parameters = {
 };
 
 export const FullyControlledTogglePasswordVisibility = () => {
-  ControlledPasswordInputApp.__docgenInfo = {
-    ...TextInput.PasswordInput.__docgenInfo,
-    props: {
-      ...TextInput.PasswordInput.__docgenInfo.props,
-    },
-  };
-
   return (
     <ControlledPasswordInputApp
       {...props.TextInputProps()} // eslint-disable-line react/destructuring-assignment
