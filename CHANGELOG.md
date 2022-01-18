@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.1...v2.148.0-next.2) (2022-01-18)
+
+
+### Bug Fixes
+
+* handle both nesting and expansion when firing onRowExpanded ([b85cec9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b85cec903a48cf4c17a781d9623e87dacbffa20a))
+* **table:** fix icon flip with no children ([098f038](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/098f0388b3c15632dee57361e6a18af4bfc741f2))
+
+
+
+
+
 # [2.148.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.0...v2.148.0-next.1) (2022-01-14)
 
 
