@@ -71,18 +71,13 @@ const defaultOptions = {
 
 /**
  * A simple hook to return a bool telling if the given element is visible on the screen. It can be
- * used to load a single item or multiple items. If maxToLoad is greater than 1, the first item in
- * the returned array will be an array of booleans telling how many of the items are to be loaded. The
- * loadBatchSize prop determines how many new items to mark as visible each time the reference element
- * is visible on screen. For example, if the loadBatchSize is 20 and you're scrolling down a table,
- * when the reference row becomes visible it will update the isVisible array to contain 20 new true
- * booleans.
+ * used to load a single item or multiple items.
  *
  * @param {*} elementRef html element to check if it's visible
  * @param {object} options see defaultOptions above
  * @returns Array an array containing [isVisible: bool]
  */
-const useVisibilityObserver = (element, options) => {
+const useVisibilityObserver = (elementRef, options) => {
   if (!browserSupports('IntersectionObserver')) {
     warning(
       !__DEV__,
@@ -108,7 +103,7 @@ const useVisibilityObserver = (element, options) => {
   }, [isVisible, onChange, previousIsVisible]);
 
   useEffect(() => {
-    const { current: elementToObserve } = element;
+    const { current: elementToObserve } = elementRef;
     if (elementToObserve) {
       observerRef.current = getObserver(elementToObserve, {
         setIsVisible,
@@ -126,7 +121,7 @@ const useVisibilityObserver = (element, options) => {
         removeObserver(elementToObserve);
       }
     };
-  }, [container, element, padding, threshold, unobserveAfterVisible]);
+  }, [container, elementRef, padding, threshold, unobserveAfterVisible]);
   /* eslint-enable react-hooks/rules-of-hooks */
 
   return [isVisible];

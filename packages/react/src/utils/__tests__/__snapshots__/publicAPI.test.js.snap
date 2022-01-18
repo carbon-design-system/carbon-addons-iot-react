@@ -6743,7 +6743,7 @@ Map {
       "selectedIds": Array [],
       "testId": "list",
       "toggleExpansion": [Function],
-      "virtualListRef": null,
+      "virtualListRef": undefined,
     },
     "propTypes": Object {
       "editingStyle": Object {

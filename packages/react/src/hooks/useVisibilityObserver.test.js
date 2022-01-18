@@ -54,8 +54,8 @@ describe('useVisibilityObserver', () => {
     expect(result.current).toEqual([false]);
     expect(onChange).not.toHaveBeenCalled();
 
-    // // mock the observer calling the callback when the element is visible,
-    // // in testing this triggers the useEffect cleanup, so observe will be called again
+    // mock the observer calling the callback when the element is visible,
+    // in testing this triggers the useEffect cleanup, so observe will be called again
     act(() => {
       isIntersecting = true;
       observerCallback([{ isIntersecting }], observer);
@@ -135,6 +135,7 @@ describe('useVisibilityObserver', () => {
     rerender([newRef, initialProps[1]]);
 
     expect(observer.unobserve).not.toHaveBeenCalled();
+    // once for each ref
     expect(observer.observe).toHaveBeenCalledTimes(2);
     expect(observer.disconnect).toHaveBeenCalledTimes(2);
   });

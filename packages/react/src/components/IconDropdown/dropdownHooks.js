@@ -7,7 +7,6 @@ const { prefix } = settings;
 /**
  * hacky work-around to set the title on Dropdowns that are overriding itemToString to display
  * elements instead
- * @param {HtmlElement} ref
  * @returns updateTitle function
  */
 export const useDropdownTitleFixer = () => {

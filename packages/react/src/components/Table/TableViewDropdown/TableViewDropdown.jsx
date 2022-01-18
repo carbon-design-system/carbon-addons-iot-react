@@ -131,16 +131,15 @@ const TableViewDropdown = ({
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
   const [containerSize, containerRef] = useSizeObserver({ initialWidth: 200 });
-  // destructure the array as an object by index
-  const [ref, updateTitle] = useDropdownTitleFixer();
+  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
 
   useEffect(() => {
-    if (mySelectedItem?.text && ref?.current) {
+    if (mySelectedItem?.text && dropdownRef?.current) {
       updateTitle(
         selectedViewEdited ? `${mySelectedItem.text} - ${i18n.edited}` : mySelectedItem.text
       );
     }
-  }, [ref, i18n.edited, mySelectedItem, selectedViewEdited, updateTitle]);
+  }, [dropdownRef, i18n.edited, mySelectedItem, selectedViewEdited, updateTitle]);
 
   const onSelectionChange = (change) => {
     const item = change.selectedItem;
@@ -156,7 +155,7 @@ const TableViewDropdown = ({
   return (
     <div ref={containerRef} className={`${iotPrefix}--view-dropdown__container`} style={style}>
       <MyDropDown
-        ref={ref}
+        ref={dropdownRef}
         label={i18n.tableViewMenu}
         data-testid={testID}
         selectedItem={mySelectedItem}

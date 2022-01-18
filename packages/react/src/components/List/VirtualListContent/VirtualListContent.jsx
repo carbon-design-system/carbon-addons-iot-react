@@ -124,7 +124,7 @@ const defaultProps = {
   selectedIds: [],
   testId: 'list',
   toggleExpansion: () => {},
-  virtualListRef: null,
+  virtualListRef: undefined,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
