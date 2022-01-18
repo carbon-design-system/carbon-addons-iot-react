@@ -198,7 +198,7 @@ storiesOf('Components/Table', module)
           ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
           'default'
         ),
-        title: text('title', 'You don’t have any [variable] yet'),
+        title: text('title', 'No data to display'),
         body: text('body', 'Optional extra sentence or sentences'),
         actionOnClick: () => {
           console.log('Action button clicked');

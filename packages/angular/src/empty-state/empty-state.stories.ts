@@ -40,7 +40,7 @@ storiesOf('Components/EmptyState', module)
         ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
         'default'
       ),
-      title: text('title', 'You don’t have any [variable] yet'),
+      title: text('title', 'No data to display'),
       body: text(
         'body',
         'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
@@ -69,7 +69,7 @@ storiesOf('Components/EmptyState', module)
         ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
         'default'
       ),
-      title: text('title', 'You don’t have any [variable] yet'),
+      title: text('title', 'No data to display'),
       body: text(
         'body',
         'Optional extra sentence or sentences to describe the resource and how to create it or the action a first-time user needs to take.'
