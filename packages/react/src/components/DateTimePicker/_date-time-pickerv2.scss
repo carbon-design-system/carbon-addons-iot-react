@@ -55,6 +55,8 @@
       padding-left: $spacing-05;
       overflow: hidden;
       text-overflow: ellipsis;
+      position: relative;
+
       & span {
         white-space: nowrap;
       }
@@ -70,6 +72,15 @@
       // tooltip has default left outline
       .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
         outline: unset;
+      }
+
+      .#{$iot-prefix}--date-time-picker__tooltip-trigger {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
       }
     }
   }
