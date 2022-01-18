@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.0...v2.148.0-next.1) (2022-01-14)
+
+
+### Bug Fixes
+
+* **feedback:** fixes from feedback ([c3e943b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c3e943ba588e93f7006c2134b1699c1c057b93c9))
+* **listitem:** support secondary value obj with custom label when func ([73611f0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73611f0c5d1e055eed8dae5c6fde9a6b52de0406))
+* **mdx:** fix in list.mdx extra column ([8bae147](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bae147fa35ece4deec67f41386a9c65e0e54e41))
+
+
+
+
+
+# [2.148.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.1-next.0...v2.148.0-next.0) (2022-01-13)
+
+
+### Bug Fixes
+
+* **data-series-form-item:** clarify comment on maximumDataPoints ([dc0c835](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dc0c83575f8382dec9de9ce5d510242913e226d0))
+* bug causing e2e test to break with new time checks ([259f751](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/259f7510a4eef3412346ba668e72de449f0c009d))
+* include start/end times in parsing, fix test to include them ([0dd04c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dd04c7965b8f2145cf23ba33e540fde9b63fdb4))
+* **dataseries:** remove unnecessary check ([3f0a46c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3f0a46c63565bf29a681fbd960bf585e0cbbf82f))
+
+
+### Features
+
+* **cardeditor:** collect maximum data points ([617475c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/617475c558b39e371aacec5038d592b6d3ff32c5))
+
+
+
+
+
 ## [2.147.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0...v2.147.1-next.0) (2022-01-12)
 
 **Note:** Version bump only for package ibm-ai-applications
