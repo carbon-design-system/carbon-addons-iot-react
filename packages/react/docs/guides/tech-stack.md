@@ -81,7 +81,8 @@ In the PAL project the most common use is adding items to an array. Instead of m
 const arr = [1, 2, 3];
 
 const newArr = [...arr, 4, 5, 6];
-// expected return: 6
+
+// newArr === [1, 2, 3, 4, 5, 6]
 ```
 
 Another common use is to remove items from an object before passing it on to another component.
@@ -102,6 +103,7 @@ are used through out the project when their compact style makes it much easier t
 
 ```js
 // if only one argument you can even drop the parens
+
 setState((prevState) => !prevState);
 // vs
 setState(function (prevState) {
@@ -127,10 +129,10 @@ function MyComponent(props) {
 }
 ```
 
-but you will definitely see them defined using arrow functions both in our library and in the wild.
+but you will definitely see them defined using arrow functions both in our library and in the wild. A good example is when using an Higher Order Component (HOC)
 
 ```js
-const MyComponent = (props) => <div>Hello World</div>;
+const MyComponent = observer((props) => <div>Hello World</div>);
 ```
 
 ## [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
@@ -149,7 +151,7 @@ const str2 = `Fifteen is ${a + b} and
 not ${2 * a + b}.`;
 ```
 
-## [Tertiary conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+## [Ternary conditional](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
 
 is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy. This operator is frequently used as an alternative to an if...else statement.
 
@@ -157,6 +159,16 @@ In react there will be times when you want to conditionally render an element. L
 
 ```js
 <AccordionItem>{isOpen ? <AccordionItemContent>Hey</AccordionItemContent> : null}</AccordionItem>
+```
+
+While this is more readible, if you're rendering logic is too complex it can have the opposite affect on readiblity. Then it is suggested to use an tradition if statement.
+
+```js
+let accordionItemContent;
+if (isOpen && anotherCondition) {
+  accordionItemContent = <AccordionItemContent>Hey</AccordionItemContent>;
+}
+return <AccordionItem>{accordionItemContent}</AccordionItem>;
 ```
 
 ## [Optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (?)
@@ -184,9 +196,8 @@ adventurer.dog?.someNonExistentMethod?.();
 
 if (adventurer.dog && adventurer.dog.someNonExistentMethod) {
   const dogName = adventurer.dog.name;
-  adventurer.dog.someNonExistentMethod.();
+  adventurer.dog.someNonExistentMethod();
 }
-
 ```
 
 Additional Resources:
