@@ -1,6 +1,9 @@
 import React from 'react';
 
+import { settings } from '../../constants/Settings';
 import icons from '../../utils/bundledIcons';
+
+const { prefix } = settings;
 
 /**
  * Use this function to traverse the tree structure of a set of table rows using Depth-first search (DFS)
@@ -72,14 +75,18 @@ export const renderBundledIconUsingName = (iconName, label) => {
  */
 export const renderTableOverflowItemText = ({ action, className }) => {
   return action.renderIcon ? (
-    <div className={className} title={action.labelText}>
-      {typeof action.renderIcon === 'string' ? (
-        renderBundledIconUsingName(action.renderIcon, action.labelText)
-      ) : (
-        <action.renderIcon description={action.labelText} />
-      )}
-      {action.labelText}
-    </div>
+    <>
+      <div className={className} title={action.labelText}>
+        {typeof action.renderIcon === 'string' ? (
+          renderBundledIconUsingName(action.renderIcon, action.labelText)
+        ) : (
+          <action.renderIcon description={action.labelText} />
+        )}
+      </div>
+      <div className={`${prefix}--overflow-menu-options__option-content`} title={action.labelText}>
+        {action.labelText}
+      </div>
+    </>
   ) : (
     action.labelText
   );

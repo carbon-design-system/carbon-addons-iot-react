@@ -5,7 +5,7 @@ import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, Column20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { Add20, BeeBat16, Column20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
 import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
 import uuid from 'uuid';
@@ -566,6 +566,19 @@ const tableToolbarActions = [
     labelText: 'Edit',
     renderIcon: 'edit',
     disabled: true,
+    isOverflow: true,
+  },
+  {
+    id: 'long',
+    labelText: 'A really long text that should be truncated',
+    disabled: false,
+    isOverflow: true,
+  },
+  {
+    id: 'long-icon',
+    labelText: 'A really long text that should be truncated with an icon',
+    renderIcon: () => <BeeBat16 />,
+    disabled: false,
     isOverflow: true,
   },
   {
