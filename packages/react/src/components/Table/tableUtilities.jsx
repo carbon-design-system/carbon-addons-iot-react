@@ -75,8 +75,8 @@ export const renderBundledIconUsingName = (iconName, label) => {
  */
 export const renderTableOverflowItemText = ({ action, className }) => {
   return action.renderIcon ? (
-    <div title={action.labelText}>
-      <div className={className}>
+    <>
+      <div className={className} title={action.labelText}>
         {typeof action.renderIcon === 'string' ? (
           renderBundledIconUsingName(action.renderIcon, action.labelText)
         ) : (
@@ -84,7 +84,7 @@ export const renderTableOverflowItemText = ({ action, className }) => {
         )}
       </div>
       <div className={`${prefix}--overflow-menu-options__option-content`}>{action.labelText}</div>
-    </div>
+    </>
   ) : (
     action.labelText
   );
