@@ -2913,13 +2913,12 @@ describe('Table', () => {
       expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
       expect(screen.getByTitle('View off')).toBeVisible();
       expect(screen.getByTitle('View off').firstChild).toBeVisible();
-      expect(screen.getByTitle('View off').firstChild).toHaveAttribute('aria-label', 'View off');
+      expect(within(screen.getByTitle('View off')).getByLabelText('View off')).toBeVisible();
       expect(screen.getByTitle('Arrow right')).toBeVisible();
       expect(screen.getByTitle('Arrow right').firstChild).toBeVisible();
-      expect(screen.getByTitle('Arrow right').firstChild).toHaveAttribute(
-        'description',
-        'Arrow right'
-      );
+      expect(
+        screen.getByTitle('Arrow right').querySelector('[description="Arrow right"]')
+      ).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
     });
 
