@@ -21,9 +21,7 @@ export const menuItems = [
     initialChecked={false}
     onChange={action('Publish')}
   />,
-  <MenuDivider key="div-1" />,
   <MenuItem key="duplicate" renderIcon={Copy16} label="Duplicate" onClick={action('Duplicate')} />,
-  <MenuDivider key="div-2" />,
   <MenuItem key="share" label="Share with">
     <MenuRadioGroup
       label="Shared with"
@@ -32,7 +30,6 @@ export const menuItems = [
       onChange={action('Share')}
     />
   </MenuItem>,
-  <MenuDivider key="div-3" />,
   <MenuItem key="export" label="Export">
     <MenuItem label="CSV" onClick={action('Export CSV')} />
     <MenuItem label="JSON" onClick={action('Export JSON')} />
@@ -42,7 +39,7 @@ export const menuItems = [
     label={<span title="You must have proper credentials to use this option.">Disabled</span>}
     disabled
   />,
-  <MenuDivider key="div-4" />,
+  <MenuDivider key="div-1" />,
   <MenuItem
     key="delete"
     label="Delete"
@@ -54,10 +51,22 @@ export const menuItems = [
   />,
 ];
 
+const sizes = ['sm', 'md', 'default'];
+const kinds = ['primary', 'secondary', 'tertiary', 'ghost'];
+
 export const Experimental = () => <StoryNotice componentName="MenuButton" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
-const SingleButton = () => <MenuButton label="Actions">{menuItems}</MenuButton>;
+const SingleButton = () => (
+  <MenuButton
+    size={select('Button size (size)', sizes, 'default')}
+    kind={select('Button kind (kind)', kinds, 'primary')}
+    label="Actions"
+  >
+    {menuItems}
+  </MenuButton>
+);
+
 /**
  * If no primary action is given, but has a label we assume it's a single menu button.
  */
@@ -70,7 +79,16 @@ SingleMenuButton.storyName = 'menu button';
  */
 
 const SplitButton = () => (
-  <MenuButton onPrimaryActionClick={action('onPrimaryActionClick')} label="Create">
+  <MenuButton
+    size={select('Button size (size)', sizes, 'default')}
+    kind={select(
+      'Button kind (kind)',
+      kinds.filter((kind) => kind !== 'ghost'),
+      'primary'
+    )}
+    onPrimaryActionClick={action('onPrimaryActionClick')}
+    label="Create"
+  >
     {menuItems}
   </MenuButton>
 );
@@ -83,7 +101,11 @@ SplitMenuButton.storyName = 'split menu button';
  * if no label is given then it assumes it's an icon only menu.
  */
 const IconOnlyButton = () => (
-  <MenuButton renderOpenIcon={OverflowMenuVertical16} renderCloseIcon={OverflowMenuVertical16}>
+  <MenuButton
+    size={select('Button size (size)', sizes, 'default')}
+    renderOpenIcon={OverflowMenuVertical16}
+    renderCloseIcon={OverflowMenuVertical16}
+  >
     {menuItems}
   </MenuButton>
 );
