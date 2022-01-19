@@ -4928,12 +4928,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     Instance
                   </span>
                 </li>
-                <span
-                  className="page-title-bar-breadcrumb-current"
-                  title="Page title"
+                <li
+                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
                 >
-                  Page title
-                </span>
+                  <span
+                    className="bx--link"
+                  >
+                    Page title
+                  </span>
+                </li>
               </ol>
             </nav>
           </div>
@@ -5382,12 +5385,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     Instance
                   </span>
                 </li>
-                <span
-                  className="page-title-bar-breadcrumb-current"
-                  title="Page title"
+                <li
+                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
                 >
-                  Page title
-                </span>
+                  <span
+                    className="bx--link"
+                  >
+                    Page title
+                  </span>
+                </li>
               </ol>
             </nav>
           </div>
@@ -5728,12 +5734,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     Instance
                   </span>
                 </li>
-                <span
-                  className="page-title-bar-breadcrumb-current"
-                  title="Page title"
+                <li
+                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
                 >
-                  Page title
-                </span>
+                  <span
+                    className="bx--link"
+                  >
+                    Page title
+                  </span>
+                </li>
               </ol>
             </nav>
           </div>
@@ -6806,12 +6815,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     Instance
                   </span>
                 </li>
-                <span
-                  className="page-title-bar-breadcrumb-current"
-                  title="A page title could be really long, you never know"
+                <li
+                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
                 >
-                  A page title could be really long, you never know
-                </span>
+                  <span
+                    className="bx--link"
+                  >
+                    A page title could be really long, you never know
+                  </span>
+                </li>
               </ol>
             </nav>
           </div>

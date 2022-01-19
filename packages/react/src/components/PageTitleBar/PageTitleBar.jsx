@@ -372,9 +372,12 @@ const PageTitleBar = ({
                       ))
                     : null}
                   {headerMode === HEADER_MODES.DYNAMIC || headerMode === HEADER_MODES.CONDENSED ? (
-                    <span className="page-title-bar-breadcrumb-current" title={title}>
+                    <BreadcrumbItem
+                      key="breadcrumb-current"
+                      className="page-title-bar-breadcrumb-current"
+                    >
                       {title}
-                    </span>
+                    </BreadcrumbItem>
                   ) : null}
                 </Breadcrumb>
               </div>
