@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.2...v2.148.0-next.3) (2022-01-19)
+
+
+### Bug Fixes
+
+* **menubutton:** add support for button kinds ([8e03a25](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e03a255c79586fccdc37cfebd7c96fef979fb30)), closes [#3044](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3044)
+* **menubutton:** add support for sizes ([82eda03](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82eda0375c6237d5fe2f3234ee5eb768cb38a6d6))
+* **menubutton:** fix rtl issues ([b353f5b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b353f5b0e46b1ac6ce888cb4eaf1c76b24e4c104))
+* **menubutton:** hide menu shadow covering button ([12b4b77](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/12b4b77da6b961ece5ba483dd84fd0cf116e7660))
+* **menubutton:** only block shadow for icon only button ([99eba4e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/99eba4ef1fb82f13253770a507300f7913d79b8b)), closes [#3044](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3044)
+* **menubutton:** remove menu and divider padding ([981fdd7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/981fdd70260c22c2f67fa99fcf44cdd5641adf6b)), closes [#3044](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3044)
+
+
+
+
+
 # [2.148.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.1...v2.148.0-next.2) (2022-01-18)
 
 
