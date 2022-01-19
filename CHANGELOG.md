@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.3...v2.148.0-next.4) (2022-01-19)
+
+
+### Bug Fixes
+
+* **storybook:** fix leaking knobs ([5dd6a0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5dd6a0fb9f3a695219cf3df461b1728dc8ef0fb3)), closes [#3194](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3194)
+* **table:** incorporated review comments ([e89f411](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e89f41150d6edb54cd21eb02172db16c2ad2e925))
+* **table:** margin between trash icon and delete on toolbar ([c20780b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c20780b85e36c6f7eb472006274266e41a1f04d0))
+
+
+
+
+
 # [2.148.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.2...v2.148.0-next.3) (2022-01-19)
 
 
