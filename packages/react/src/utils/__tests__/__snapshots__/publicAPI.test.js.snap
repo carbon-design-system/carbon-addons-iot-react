@@ -4174,6 +4174,19 @@ Map {
                             Object {
                               "type": "func",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
                           ],
                         ],
                         "type": "oneOfType",
@@ -4441,6 +4454,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -4726,6 +4752,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -10776,6 +10815,9 @@ Map {
             "layoutInfoXl": Object {
               "type": "string",
             },
+            "maximumDataPointsLabel": Object {
+              "type": "string",
+            },
             "modalHelpText": Object {
               "type": "string",
             },
@@ -10996,6 +11038,7 @@ Map {
       },
     },
   },
+  "getDefaultCard" => Object {},
   "DashboardEditorDefaultCardRenderer" => Object {
     "defaultProps": Object {
       "availableDimensions": undefined,
@@ -22040,6 +22083,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
