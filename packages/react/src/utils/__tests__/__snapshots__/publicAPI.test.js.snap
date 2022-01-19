@@ -6345,6 +6345,19 @@ Map {
                             Object {
                               "type": "func",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
                           ],
                         ],
                         "type": "oneOfType",
@@ -6612,6 +6625,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -6897,6 +6923,19 @@ Map {
                             },
                             Object {
                               "type": "func",
+                            },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
                             },
                           ],
                         ],
@@ -12916,6 +12955,9 @@ Map {
             "layoutInfoXl": Object {
               "type": "string",
             },
+            "maximumDataPointsLabel": Object {
+              "type": "string",
+            },
             "modalHelpText": Object {
               "type": "string",
             },
@@ -13136,6 +13178,7 @@ Map {
       },
     },
   },
+  "getDefaultCard" => Object {},
   "DashboardEditorDefaultCardRenderer" => Object {
     "defaultProps": Object {
       "availableDimensions": undefined,
@@ -24182,6 +24225,19 @@ Map {
                             Object {
                               "type": "func",
                             },
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "label": Object {
+                                    "type": "string",
+                                  },
+                                  "value": Object {
+                                    "type": "func",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
                           ],
                         ],
                         "type": "oneOfType",
@@ -27088,6 +27144,7 @@ Map {
   "MenuButton" => Object {
     "defaultProps": Object {
       "closeIconDescription": "close menu button",
+      "kind": "primary",
       "label": null,
       "onPrimaryActionClick": null,
       "openIconDescription": "open menu button",
@@ -27099,6 +27156,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
+      "size": "default",
       "testId": "menu-button",
     },
     "propTypes": Object {
@@ -27122,6 +27180,17 @@ Map {
         "type": "oneOfType",
       },
       "closeIconDescription": [Function],
+      "kind": Object {
+        "args": Array [
+          Array [
+            "primary",
+            "secondary",
+            "tertiary",
+            "ghost",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "label": Object {
         "type": "string",
       },
@@ -27154,6 +27223,16 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "default",
+          ],
+        ],
+        "type": "oneOf",
       },
       "testID": [Function],
       "testId": Object {

@@ -5,7 +5,14 @@ export const ListItemPropTypes = {
   content: PropTypes.shape({
     icon: PropTypes.node,
     rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
-    secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+    secondaryValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.shape({
+        value: PropTypes.func,
+        label: PropTypes.string,
+      }),
+    ]),
     /** The nodes should be Carbon Tags components */
     tags: PropTypes.arrayOf(PropTypes.node),
     value: PropTypes.string,
