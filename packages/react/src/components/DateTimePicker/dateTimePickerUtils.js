@@ -102,6 +102,12 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
   return { readableValue, ...returnValue };
 };
 
+/**
+ * A hook to set the ref to the current date time pick and re-parent it based on V1/V2.
+ *
+ * @param {Object} object contains the ID of the current picker, and a bool if it's v2
+ * @returns An array containing: [dateTimePickerRef (object ref to the picker), function (a callback for setting the element)]
+ */
 export const useDateTimePickerRef = ({ id, v2 = false }) => {
   const previousActiveElement = useRef(null);
   const [datePickerElem, setDatePickerElem] = useState(null);
@@ -158,6 +164,12 @@ export const useDateTimePickerRef = ({ id, v2 = false }) => {
   return [datePickerElem, handleDatePickerRef];
 };
 
+/**
+ * A helper to switch focus between start and end times when choosing absolute date/times in the calendar
+ *
+ * @param {Object} datePickerElem ref to current dateTimePicker element
+ * @returns An array containing [bool (is the start date in focus), function (set the focus on the start field)]
+ */
 export const useDateTimePickerFocus = (datePickerElem) => {
   const [focusOnFirstField, setFocusOnFirstField] = useState(true);
 
@@ -174,11 +186,25 @@ export const useDateTimePickerFocus = (datePickerElem) => {
   return [focusOnFirstField, setFocusOnFirstField];
 };
 
+/**
+ * Simple date/time validator
+ *
+ * @param {Date} date The date to check
+ * @param {string} time The time string to check
+ * @returns bool
+ */
 export const isValidDate = (date, time) => {
   const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
   return date instanceof Date && !Number.isNaN(date) && isValid24HoursRegex.test(time);
 };
 
+/**
+ * Simple function to handle keeping flatpickr open when it would normally close
+ *
+ * @param {*} range unused
+ * @param {*} single unused
+ * @param {class} flatpickr The flatpickr instance
+ */
 export const onDatePickerClose = (range, single, flatpickr) => {
   // force it to stay open
   /* istanbul ignore else */
@@ -203,7 +229,13 @@ export const invalidStartDate = (startTime, endTime, absoluteValues) => {
   return true;
 };
 
-// Validates absolute end date
+/**
+ *
+ * @param {*} startTime
+ * @param {*} endTime
+ * @param {*} absoluteValues
+ * @returns
+ */
 export const invalidEndDate = (startTime, endTime, absoluteValues) => {
   // If start and end date have been selected
   if (
@@ -219,6 +251,20 @@ export const invalidEndDate = (startTime, endTime, absoluteValues) => {
   return true;
 };
 
+/**
+ * A DateTimePicker hook for handling all absolute time values
+ *
+ * @returns Object an object containing:
+ *    absoluteValue (object): The currently selected absolute value
+ *    setAbsoluteValue (function): Set the current absolute value
+ *    absoluteStartTimeInvalid (bool): Is the start time invalid
+ *    setAbsoluteStartTimeInvalid (function): Set the start time invalid
+ *    absoluteEndTimeInvalid (bool): Is the end time invalid
+ *    setAbsoluteEndTimeInvalid (function): Set the end time invalid
+ *    onAbsoluteStartTimeChange (function): handles changes to start time
+ *    onAbsoluteEndTimeChange (function): handles changes to end time
+ *    resetAbsoluteValue (function): reset absolute value to empty defaults
+ */
 export const useAbsoluteDateTimeValue = () => {
   const [absoluteValue, setAbsoluteValue] = useState(null);
   const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
@@ -273,6 +319,23 @@ export const useAbsoluteDateTimeValue = () => {
   };
 };
 
+/**
+ * A DateTimePicker hook for handling all relative time values
+ *
+ * @param {object} object an object containing the interval and default relativeTo values for relative times
+ * @returns Object an object containing:
+ *    relativeValue (object): The currently set relative value object
+ *    setRelativeValue (function): Set the current relative value
+ *    relativeToTimeInvalid (bool): Is the current relative time invalid
+ *    setRelativeToTimeInvalid (function): Set the current relative time invalid
+ *    relativeLastNumberInvalid (bool): Is the relative last number invalid
+ *    setRelativeLastNumberInvalid (function): Set the relative last number
+ *    resetRelativeValue (function): Resets the relative value to empty defaults
+ *    onRelativeLastNumberChange (function): handles changes to last number
+ *    onRelativeLastIntervalChange (function): handles changes to interval
+ *    onRelativeToWhenChange (function): handles changes to relative to when
+ *    onRelativeToTimeChange (function): handles changes to relative to time
+ */
 export const useRelativeDateTimeValue = ({ defaultInterval, defaultRelativeTo }) => {
   const [relativeValue, setRelativeValue] = useState(null);
   const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
@@ -329,6 +392,12 @@ export const useRelativeDateTimeValue = ({ defaultInterval, defaultRelativeTo })
   };
 };
 
+/**
+ * Simple hook to change the type of DateTimePicker we're working with (relative or absolute)
+ *
+ * @param {boolean} showRelativeOption Are the relative options shown by default
+ * @returns an array containing [string (current kind), function (set the current range type), function (handles changing the range kind)]
+ */
 export const useDateTimePickerRangeKind = (showRelativeOption) => {
   const [customRangeKind, setCustomRangeKind] = useState(
     showRelativeOption ? PICKER_KINDS.RELATIVE : PICKER_KINDS.ABSOLUTE
@@ -341,6 +410,20 @@ export const useDateTimePickerRangeKind = (showRelativeOption) => {
   return [customRangeKind, setCustomRangeKind, onCustomRangeChange];
 };
 
+/**
+ * A hook handling interactions related to keyboard navigation and changing of the currently selected
+ * DateTimePicker kind (relative/absolute)
+ *
+ * @param {boolean} showRelativeOption boolean determining if relative options are shown
+ * @returns Object An object containing:
+ *    presetListRef (Object): the ref to the preset div element
+ *    isExpanded (boolean): is the DateTimePicker expanded
+ *    setIsExpanded (function): set the isExpanded state
+ *    getFocusableSiblings (function): return other focusable siblings from the presetListRef
+ *    onFieldInteraction (function): handles changing expanded or focus state on different key presses
+ *    onNavigateRadioButton (function): handles changing the focus state of the current radio button (relative/absolute)
+ *    onNavigatePresets (function): handles changing the currently focuses preset as keyboard navigates
+ */
 export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeKind }) => {
   const [isExpanded, setIsExpanded] = useState(expanded);
   const presetListRef = useRef(null);
@@ -454,6 +537,12 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
 /**
  * Get an alternative human readable value for a preset to show in tooltips and dropdown
  * ie. 'Last 30 minutes' displays '2020-04-01 11:30 to Now' on the tooltip
+ * @param {Object} object an object containing:
+ *    currentValue: the current picker value
+ *    strings: i18n translation strings
+ *    dateTimeMask: the current date/time string mask
+ *    humanValue: the human readable string value for the current time
+ *
  * @returns {string} an interval string, starting point in time to now
  */
 export const getIntervalValue = ({ currentValue, strings, dateTimeMask, humanValue }) => {
@@ -469,6 +558,12 @@ export const getIntervalValue = ({ currentValue, strings, dateTimeMask, humanVal
   return '';
 };
 
+/**
+ * Helper hook to open and close the tooltip as the DateTimePicker is opened and closed
+ *
+ * @param {Object} object An object telling the current state of the DateTimePicker being open
+ * @returns Array an array containing [bool (is the tooltip open), func (function to toggle tooltip state)]
+ */
 export const useDateTimePickerTooltip = ({ isExpanded }) => {
   const [isTooltipOpen, setIsTooltipOpen] = useState(false);
 
