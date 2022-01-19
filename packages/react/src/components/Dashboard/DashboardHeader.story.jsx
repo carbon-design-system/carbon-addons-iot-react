@@ -47,7 +47,6 @@ export const WithFilter = () => {
               pattern="d{1,2}/d{4}"
               placeholder="mm/dd/yyyy"
               invalidText="A valid value is required"
-              iconDescription="Icon description"
               onClick={action('onClickDate')}
               onChange={action('onTextChange')}
             />
@@ -96,7 +95,6 @@ export const WithFilterAndCustomActions = () => {
               pattern="d{1,2}/d{4}"
               placeholder="mm/dd/yyyy"
               invalidText="A valid value is required"
-              iconDescription="Icon description"
               onClick={action('onClickDate')}
               onChange={action('onTextChange')}
             />
