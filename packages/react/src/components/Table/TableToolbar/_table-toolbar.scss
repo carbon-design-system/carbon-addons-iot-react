@@ -101,7 +101,7 @@ html[dir='rtl'] {
 
   svg {
     margin-right: $spacing-03;
-    min-width: $spacing-05;
+    flex-shrink: 0;
 
     [dir='rtl'] & {
       margin-right: 0;
