@@ -372,7 +372,7 @@ describe('Table visual regression tests', () => {
     cy.findAllByTestId(/lazy-row/i).should('have.length', 42);
     cy.get('tr').eq(10).scrollIntoView({ duration: 500 });
     cy.findAllByTestId(/lazy-row/i).should('have.length', 32);
-    cy.get('tr').last().scrollIntoView({ duration: 500 });
+    cy.get('tr').last().scrollIntoView({ duration: 1000 });
     cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
     // reset back to default
