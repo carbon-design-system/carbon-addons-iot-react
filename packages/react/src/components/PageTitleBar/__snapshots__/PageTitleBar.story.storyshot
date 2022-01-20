@@ -4929,7 +4929,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </span>
                 </li>
                 <li
-                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
+                  className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
                 >
                   <span
                     className="bx--link"
@@ -5386,7 +5386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </span>
                 </li>
                 <li
-                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
+                  className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
                 >
                   <span
                     className="bx--link"
@@ -5735,7 +5735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </span>
                 </li>
                 <li
-                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
+                  className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
                 >
                   <span
                     className="bx--link"
@@ -6816,7 +6816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                   </span>
                 </li>
                 <li
-                  className="bx--breadcrumb-item page-title-bar-breadcrumb-current"
+                  className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
                 >
                   <span
                     className="bx--link"
