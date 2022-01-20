@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox } from 'carbon-components-react';
+import { TableRow, TableExpandRow, TableCell, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
@@ -15,7 +15,6 @@ import {
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 import { COLORS } from '../../../../styles/styles';
 
-const { TableRow, TableExpandRow, TableCell } = DataTable;
 const { prefix, iotPrefix } = settings;
 
 const propTypes = {
