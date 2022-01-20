@@ -25023,6 +25023,7 @@ Map {
         "closeIconDescription": "close menu button",
         "openIconDescription": "open menu button",
       },
+      "kind": "primary",
       "label": null,
       "onPrimaryActionClick": null,
       "openIconDescription": undefined,
@@ -25034,6 +25035,7 @@ Map {
         "$$typeof": Symbol(react.forward_ref),
         "render": [Function],
       },
+      "size": "default",
       "testID": undefined,
       "testId": "menu-button",
     },
@@ -25059,6 +25061,17 @@ Map {
       },
       "closeIconDescription": [Function],
       "i18n": [Function],
+      "kind": Object {
+        "args": Array [
+          Array [
+            "primary",
+            "secondary",
+            "tertiary",
+            "ghost",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "label": Object {
         "type": "string",
       },
@@ -25091,6 +25104,16 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "default",
+          ],
+        ],
+        "type": "oneOf",
       },
       "testID": [Function],
       "testId": Object {
