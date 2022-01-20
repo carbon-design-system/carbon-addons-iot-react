@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable } from 'carbon-components-react';
+import { TableRow, TableCell } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
 import Button from '../../../Button';
 
-const { TableRow, TableCell } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {

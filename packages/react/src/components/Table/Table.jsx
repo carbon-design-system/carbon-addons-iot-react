@@ -1153,7 +1153,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
-          carbonSize={paginationProps.size}
+          size={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

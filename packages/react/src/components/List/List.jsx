@@ -237,6 +237,7 @@ const List = forwardRef((props, ref) => {
   );
 });
 
+List.displayName = 'List';
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 

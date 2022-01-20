@@ -50,7 +50,7 @@ const propTypes = {
   /** callback function of select */
   handleSelect: PropTypes.func,
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** call back function of expansion */
   toggleExpansion: PropTypes.func,
