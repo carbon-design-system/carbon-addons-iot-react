@@ -73,8 +73,13 @@
     right: initial;
   }
 
+  // The padding $spacing-05 was added globally to all ghost button sizes at some point,
+  // but it should probably only be applied to the default size so we have added exceptions here
+  // once we found they were needed in order not to break any existing functionality.
+  // For Carbon v.11 when the button sizes are adjusted we should take the oportunity to
+  // see if we can remove this global ghost padding.
   .#{$iot-prefix}--btn.#{$prefix}--btn--ghost {
-    &:not(.#{$prefix}--btn--sm.#{$prefix}--btn--icon-only) {
+    &:not(.#{$prefix}--btn--sm.#{$prefix}--btn--icon-only):not(.#{$iot-prefix}--menu-button__trigger) {
       padding-left: $spacing-05;
       padding-right: $spacing-05;
     }

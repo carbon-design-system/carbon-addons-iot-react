@@ -507,11 +507,6 @@ export const initialState = {
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
     hasRowEdit: true,
-    wrapCellText: select(
-      'Choose how text should wrap witin columns (options.wrapCellText)',
-      selectTextWrapping,
-      'always'
-    ),
   },
   view: {
     filters: [
