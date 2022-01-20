@@ -198,6 +198,14 @@
       transition: opacity $duration--fast-01 linear, transform $duration--fast-01 linear;
       margin-left: 0;
 
+      // adding the current page as a breadcrumb makes it appear with the bx--link class, so we need
+      // to re-style it to not look like a link.
+      > .#{$prefix}--link {
+        color: unset;
+        text-decoration: none;
+      }
+
+      // hide the `/` after the breadcrumb for the current item
       &::after {
         display: none;
       }
