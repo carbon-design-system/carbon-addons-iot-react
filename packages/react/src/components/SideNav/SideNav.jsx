@@ -17,6 +17,12 @@ import { SideNavMetaDataPropType } from './sideNavPropTypes';
 
 const { iotPrefix, prefix } = settings;
 
+CarbonSideNav.displayName = 'SideNav';
+SideNavItems.displayName = 'SideNavItems';
+SideNavLink.displayName = 'SideNavLink';
+SideNavMenu.displayName = 'SideNavMenu';
+SideNavMenuItem.displayName = 'SideNavMenuItem';
+
 export const SideNavPropTypes = {
   /** Specify whether the side navigation is expanded or collapsed */
   defaultExpanded: PropTypes.bool,
