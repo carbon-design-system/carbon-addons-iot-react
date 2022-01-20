@@ -450,7 +450,7 @@ export const originalCards = [
   },
 ];
 
-const commonDashboardProps = {
+const getCommonDashboardProps = () => ({
   title: text('title', 'Munich Building'),
   cards: originalCards,
   lastUpdated: new Date('2019-10-22T00:00:00').toUTCString(),
@@ -463,7 +463,7 @@ const commonDashboardProps = {
   onFetchData: (card) => {
     return new Promise((resolve) => setTimeout(() => resolve(card), 5000));
   },
-};
+});
 
 export default {
   title: '1 - Watson IoT/🚫 Dashboard',
@@ -476,7 +476,7 @@ Deprecated.storyName = deprecatedStoryTitle;
 export const BasicDashboard = () => {
   return (
     <FullWidthWrapper>
-      <Dashboard {...commonDashboardProps} isLoading={boolean('isLoading', false)} />
+      <Dashboard {...getCommonDashboardProps()} isLoading={boolean('isLoading', false)} />
     </FullWidthWrapper>
   );
 };
@@ -504,7 +504,7 @@ BasicDashboard.parameters = {
 export const BasicWithoutLastUpdatedHeader = () => {
   return (
     <FullWidthWrapper>
-      <Dashboard {...commonDashboardProps} hasLastUpdated={false} />
+      <Dashboard {...getCommonDashboardProps()} hasLastUpdated={false} />
     </FullWidthWrapper>
   );
 };
@@ -515,7 +515,7 @@ export const CustomActions = () => {
   return (
     <FullWidthWrapper>
       <Dashboard
-        {...commonDashboardProps}
+        {...getCommonDashboardProps()}
         actions={[{ id: 'edit', labelText: 'Edit', icon: 'edit' }]}
         onDashboardAction={action('onDashboardAction')}
       />
@@ -529,7 +529,7 @@ export const Sidebar = () => {
   return (
     <FullWidthWrapper>
       <Dashboard
-        {...commonDashboardProps}
+        {...getCommonDashboardProps()}
         sidebar={
           <div style={{ width: 300 }}>
             <h1>Sidebar content</h1>
@@ -548,7 +548,7 @@ export const I18NLabels = () => {
   return (
     <FullWidthWrapper>
       <Dashboard
-        {...commonDashboardProps}
+        {...getCommonDashboardProps()}
         i18n={{
           lastUpdatedLabel: text('lastUpdatedLabel', 'Last updated: '),
           noDataLabel: text('noDataLabel', 'No data is available for this time range.'),

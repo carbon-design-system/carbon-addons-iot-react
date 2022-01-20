@@ -324,8 +324,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }
@@ -579,8 +579,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 75,
               "--y-pos": 10,
             }
@@ -620,8 +620,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 75,
               "--y-pos": 40,
             }
@@ -1065,8 +1065,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }
@@ -1693,8 +1693,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }
@@ -2321,8 +2321,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }
@@ -2949,8 +2949,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }
@@ -3577,8 +3577,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           icon={null}
           style={
             Object {
-              "--height": undefined,
-              "--width": undefined,
+              "--height": 500,
+              "--width": 500,
               "--x-pos": 26,
               "--y-pos": 75,
             }

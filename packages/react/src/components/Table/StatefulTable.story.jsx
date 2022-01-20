@@ -217,6 +217,10 @@ export const SimpleStatefulExample = () => {
           false
         ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
+        shouldLazyRender: boolean(
+          'Enables only loading table rows as they become visible (options.shouldLazyRender)',
+          false
+        ),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
         hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
         hasRowExpansion: select(

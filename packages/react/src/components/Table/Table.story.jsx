@@ -507,11 +507,6 @@ export const initialState = {
     hasColumnSelection: true,
     shouldExpandOnRowClick: false,
     hasRowEdit: true,
-    wrapCellText: select(
-      'Choose how text should wrap witin columns (options.wrapCellText)',
-      selectTextWrapping,
-      'always'
-    ),
   },
   view: {
     filters: [
@@ -663,6 +658,10 @@ export const BasicDumbTable = () => {
           'Enables filtering columns by value (options.hasFilter)',
           ['onKeyPress', 'onEnterAndBlur', true, false],
           true
+        ),
+        shouldLazyRender: boolean(
+          'Enables only loading table rows as they become visible (options.shouldLazyRender)',
+          false
         ),
         hasMultiSort,
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
