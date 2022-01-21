@@ -177,6 +177,13 @@ export const BasicSingleColumn = () => {
   return <BasicSingleColumn />;
 };
 BasicSingleColumn.storyName = 'basic (single column)';
+BasicSingleColumn.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const BasicSingleColumnWithSearch = () => {
   const ListWithSearch = () => {
@@ -212,8 +219,15 @@ export const BasicSingleColumnWithSearch = () => {
 };
 
 BasicSingleColumnWithSearch.storyName = 'basic (single column) with search';
+BasicSingleColumnWithSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
-export const BasicSingleColumnWithAsyncLoadingAndSearch = () => {
+export const WithAsyncLoadingAndSearch = () => {
   const numberOfItems = number('number of items to render', 100);
   const generateItems = (number = numberOfItems) =>
     [...Array(number)].map((_, i) => ({
@@ -253,7 +267,7 @@ export const BasicSingleColumnWithAsyncLoadingAndSearch = () => {
     return (
       <div style={{ width: 400 }}>
         <List
-          title={text('title', 'NY Yankees')}
+          title={text('title', 'Async loading and search')}
           items={items}
           isFiltering={!!searchValue}
           isLoading={isLoading}
@@ -270,7 +284,14 @@ export const BasicSingleColumnWithAsyncLoadingAndSearch = () => {
   return <ListWithAsyncLoadingAndSearch />;
 };
 
-BasicSingleColumnWithAsyncLoadingAndSearch.storyName = 'with async loading and search';
+WithAsyncLoadingAndSearch.storyName = 'with async loading and search';
+WithAsyncLoadingAndSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const SelectableItems = () => {
   const ListWithSelectableItems = () => {

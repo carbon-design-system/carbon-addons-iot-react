@@ -715,7 +715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
           <div
             className="iot--list-header--title"
           >
-            NY Yankees
+            Async loading and search
           </div>
           <div
             className="iot--list-header--btn-container"
