@@ -11,7 +11,10 @@ import Table from './Table';
 import StatefulTable from './StatefulTable';
 import TableColumnCustomizationModal from './TableColumnCustomizationModal/TableColumnCustomizationModal';
 import TableColumnCustomizationREADME from './mdx/TableColumnCustomization.mdx';
-import { tableData, tableColumns } from './Table.story';
+import { getTableData, getTableColumns } from './Table.story.helpers';
+
+const tableData = getTableData();
+const tableColumns = getTableColumns();
 
 export default {
   title: '1 - Watson IoT/Table/Column customization',
