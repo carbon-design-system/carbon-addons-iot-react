@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal playground with knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal Playground 1`] = `
 <div
   className="storybook-container"
 >
@@ -1016,7 +1016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with async data and loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal With async data and loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -1258,7 +1258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with column groups 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal With column groups 1`] = `
 <div
   className="storybook-container"
 >
@@ -2683,7 +2683,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with many columns and "Load more" 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal With many columns and "Load more" 1`] = `
 <div
   className="storybook-container"
 >
@@ -3480,7 +3480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal with pinned first column 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal With pinned first column 1`] = `
 <div
   className="storybook-container"
 >
@@ -3981,7 +3981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/☢️ TableColumnCustomizationModal ️⚠️ Experimental Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal ️⚠️ Experimental Notice  1`] = `
 <div
   className="storybook-container"
 >
