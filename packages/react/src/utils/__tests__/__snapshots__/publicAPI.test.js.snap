@@ -24421,6 +24421,9 @@ Map {
       "search": Object {
         "args": Array [
           Object {
+            "hasFastSearch": Object {
+              "type": "bool",
+            },
             "id": Object {
               "type": "string",
             },

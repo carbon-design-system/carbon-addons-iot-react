@@ -478,6 +478,34 @@ describe('List', () => {
     expect(screen.getByRole('checkbox')).toBeDisabled();
   });
 
+  it('should not trigger search onChange when hasFastSearch:false', () => {
+    let value;
+    const onChange = jest.fn().mockImplementation((e) => {
+      // eslint-disable-next-line prefer-destructuring
+      value = e.target.value;
+    });
+    render(<List items={getListItems(1)} search={{ onChange, hasFastSearch: false }} />);
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), 'item 1');
+    expect(onChange).not.toHaveBeenCalled();
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), '{enter}');
+    expect(onChange).toHaveBeenCalled();
+    expect(value).toEqual('item 1');
+  });
+
+  it('should trigger onChange when the clear search button is clicked', () => {
+    const values = [];
+    const onChange = jest.fn().mockImplementation((e) => {
+      values.push(e.target.value);
+    });
+    render(<List items={getListItems(1)} search={{ onChange, hasFastSearch: false }} />);
+    userEvent.type(screen.getByPlaceholderText('Enter a value'), 'item 1{enter}');
+    expect(onChange).toHaveBeenCalledTimes(1);
+    expect(values[0]).toEqual('item 1');
+    userEvent.click(screen.getByLabelText('Clear search input'));
+    expect(onChange).toHaveBeenCalledTimes(2);
+    expect(values[1]).toEqual('');
+  });
+
   describe('isVirtualList', () => {
     beforeEach(() => {
       jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
@@ -1012,6 +1040,38 @@ describe('List', () => {
         <List items={getListItems(1)} isVirtualList isCheckboxMultiSelect lockedIds={['1']} />
       );
       expect(screen.getByRole('checkbox')).toBeDisabled();
+    });
+
+    it('should not trigger search onChange when hasFastSearch:false', () => {
+      let value;
+      const onChange = jest.fn().mockImplementation((e) => {
+        // eslint-disable-next-line prefer-destructuring
+        value = e.target.value;
+      });
+      render(
+        <List items={getListItems(1)} search={{ onChange, hasFastSearch: false }} isVirtualList />
+      );
+      userEvent.type(screen.getByPlaceholderText('Enter a value'), 'item 1');
+      expect(onChange).not.toHaveBeenCalled();
+      userEvent.type(screen.getByPlaceholderText('Enter a value'), '{enter}');
+      expect(onChange).toHaveBeenCalled();
+      expect(value).toEqual('item 1');
+    });
+
+    it('should trigger onChange when the clear search button is clicked', () => {
+      const values = [];
+      const onChange = jest.fn().mockImplementation((e) => {
+        values.push(e.target.value);
+      });
+      render(
+        <List items={getListItems(1)} search={{ onChange, hasFastSearch: false }} isVirtualList />
+      );
+      userEvent.type(screen.getByPlaceholderText('Enter a value'), 'item 1{enter}');
+      expect(onChange).toHaveBeenCalledTimes(1);
+      expect(values[0]).toEqual('item 1');
+      userEvent.click(screen.getByLabelText('Clear search input'));
+      expect(onChange).toHaveBeenCalledTimes(2);
+      expect(values[1]).toEqual('');
     });
   });
 });
