@@ -133,7 +133,10 @@ export const BasicSingleColumn = () => {
   const BasicSingleColumn = () => {
     const [searchValue, setSearchValue] = useState(null);
     const useSearch = boolean('use search (search)', false);
-    const hasFastSearch = boolean('Trigger search onChange (true) or onBlur/Enter (false)', true);
+    const hasFastSearch = boolean(
+      'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+      true
+    );
     const demoEmptyList = boolean('demo empty list', false);
 
     return (
@@ -194,6 +197,10 @@ export const BasicSingleColumnWithSearch = () => {
           isLoading={boolean('isLoading', false)}
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),
+            hasFastSearch: boolean(
+              'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+              true
+            ),
           }}
           isVirtualList={boolean('isVirtualList', false)}
         />
