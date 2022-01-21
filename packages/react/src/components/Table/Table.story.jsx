@@ -5,10 +5,9 @@ import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, Column20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
 import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
-import uuid from 'uuid';
 
 import { TextInput } from '../TextInput';
 import { Checkbox } from '../Checkbox';
@@ -20,9 +19,8 @@ import { getSortedData } from '../../utils/componentUtilityFunctions';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import StoryNotice from '../../internal/StoryNotice';
 import EmptyState from '../EmptyState';
-import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
-import TableREADME from './Table.mdx';
+import TableREADME from './mdx/Table.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -30,7 +28,6 @@ import MockApiClient from './AsyncTable/MockApiClient';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
-import TableColumnCustomizationModal from './TableColumnCustomizationModal/TableColumnCustomizationModal';
 
 const selectData = [
   {
@@ -602,6 +599,7 @@ export default {
     'tableData',
     'tableColumns',
     'defaultOrdering',
+    'WithOptionsToExploreColumnSettings',
   ],
 };
 
@@ -759,123 +757,10 @@ export const BasicDumbTable = () => {
 BasicDumbTable.storyName = 'basic `dumb` table';
 
 BasicDumbTable.parameters = {
-  info: {
-    text: `
-
-    For basic table support, you can render the functional <Table/> component with only the columns and data props.  This table does not have any state management built in.  If you want that, use the <StatefulTable/> component or you will need to implement your own listeners and state management.  You can reuse our tableReducer and tableActions with the useReducer hook to update state.
-
-    <br />
-
-    To enable simple search on a table, simply set the prop options.hasSearch=true.  We wouldn't recommend enabling column filters on a table and simple search for UX reasons, but it is supported.
-
-    <br />
-
-    Warning: Searching, filtering, and sorting is only enabled for strings, numbers, and booleans.
-
-    <br />
-
-    ~~~js
-    import { tableReducer, tableActions } from 'carbon-addons-iot-react';
-
-    const [state, dispatch] = useReducer(tableReducer, { data: initialData, view: initialState });
-
-    const actions = {
-      table: {
-        onChangeSort: column => {
-          dispatch(tableActions.tableColumnSort(column));
-        },
-      }
-    }
-
-    <Table
-      {...state}
-      ...
-    ~~~
-
-    <br />
-    `,
+  docs: {
+    page: TableREADME,
   },
 };
-
-export const TableWithColumnGrouping = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const useZebraStyles = boolean('Alternate colors in table rows (useZebraStyles)', false);
-  const ordering = object('Ordering (view.table.ordering)', [
-    {
-      columnId: 'string',
-      columnGroupId: 'groupA',
-    },
-    {
-      columnId: 'date',
-      columnGroupId: 'groupA',
-    },
-    {
-      columnId: 'select',
-      columnGroupId: 'groupB',
-    },
-    {
-      columnId: 'secretField',
-      columnGroupId: 'groupB',
-    },
-  ]);
-  const options = {
-    hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
-    hasRowExpansion: boolean(
-      'Enables expanding rows to show additional content (options.hasRowExpansion)',
-      false
-    ),
-    hasRowNesting: boolean(
-      'Enables rows to have nested rows within (options.hasRowNesting)',
-      false
-    ),
-    hasRowSelection: select(
-      'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
-      ['multi', 'single', false],
-      false
-    ),
-  };
-
-  return (
-    <MyTable
-      id="table"
-      useZebraStyles={useZebraStyles}
-      columns={tableColumns.slice(0, 4)}
-      columnGroups={object('Column groups (columnGroups)', [
-        {
-          id: 'groupA',
-          name: 'Group A',
-        },
-        {
-          id: 'groupB',
-          name: 'Group B',
-        },
-      ])}
-      data={tableData.slice(0, 10).map((i) => ({
-        ...i,
-        rowActions: [
-          {
-            id: 'textOnly',
-            labelText: 'Text only sample action',
-            isOverflow: true,
-          },
-        ],
-      }))}
-      options={options}
-      actions={tableActions}
-      size={select(
-        'Sets the height of the table rows (size)',
-        ['xs', 'sm', 'md', 'lg', 'xl'],
-        'lg'
-      )}
-      view={{
-        table: { ordering },
-      }}
-    />
-  );
-};
-
-TableWithColumnGrouping.storyName = 'with column grouping';
 
 export const TableExampleWithCreateSaveViews = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
@@ -2390,6 +2275,7 @@ export const WithTableStates = () => {
 
 WithTableStates.storyName = 'with custom states states: no data, custom empty, error, and loading';
 
+// This story was created for debugging purposes and is not exported.
 export const WithOptionsToExploreColumnSettings = () => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
@@ -2845,132 +2731,3 @@ export const RowExpansionAndLoadMore = () => {
 };
 
 RowExpansionAndLoadMore.storyName = 'row expansion: with load more ';
-
-export const WithColumnCustomizationModal = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const demoGroupExample = boolean('demo grouping example', true);
-  const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
-  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
-  const hasVisibilityToggle = boolean('Allow toggling visibility (hasVisibilityToggle)', true);
-  const primaryValue = select(
-    'Column key used for primary value (primaryValue)',
-    ['id', 'name'],
-    'name'
-  );
-  const secondaryValue = select(
-    'Column key used for secondary value (secondaryValue)',
-    ['id', 'name', 'NONE'],
-    'NONE'
-  );
-
-  const smallDataSet = tableData.slice(0, 5);
-  const allAvailableColumns = tableColumns;
-  const initialActiveColumns = allAvailableColumns.slice(0, 6);
-  const initialOrdering = [
-    { columnId: 'string' },
-    { columnId: 'date' },
-    { columnId: 'select' },
-    { columnId: 'secretField', isHidden: true },
-    { columnId: 'status' },
-    { columnId: 'number' },
-  ];
-
-  const columnGroupMapping = [
-    { id: 'groupA', name: 'Group A', columnIds: ['date', 'select'] },
-    { id: 'groupB', name: 'Group B', columnIds: ['status', 'secretField', 'number', 'boolean'] },
-  ];
-  const columnGroups = [
-    { id: 'groupA', name: 'Group A' },
-    { id: 'groupB', name: 'Group B' },
-  ];
-
-  const appendGrouping = (col) => {
-    const group = columnGroupMapping.find((group) => group.columnIds.includes(col.columnId));
-    return group
-      ? {
-          ...col,
-          columnGroupId: group.id,
-        }
-      : col;
-  };
-
-  const [showModal, setShowModal] = useState(true);
-  const [loadedColumns, setLoadedColumns] = useState(allAvailableColumns.slice(0, 7));
-  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
-  const [canLoadMore, setCanLoadMore] = useState(true);
-  const [activeColumns, setActiveColumns] = useState(initialActiveColumns);
-  const [ordering, setOrdering] = useState(initialOrdering);
-  const [modalKey, setModalKey] = useState('initial-key');
-
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  return (
-    <>
-      <MyTable
-        columns={activeColumns}
-        columnGroups={demoGroupExample ? columnGroups : undefined}
-        data={smallDataSet}
-        view={{
-          table: { ordering: demoGroupExample ? ordering.map(appendGrouping) : ordering },
-          toolbar: {
-            customToolbarContent: (
-              <Button
-                kind="ghost"
-                renderIcon={Column20}
-                iconDescription="Customize columns"
-                hasIconOnly
-                onClick={() => setShowModal(true)}
-              />
-            ),
-          },
-        }}
-      />
-
-      <TableColumnCustomizationModal
-        key={modalKey}
-        groupMapping={demoGroupExample ? columnGroupMapping : []}
-        hasLoadMore={demoHasLoadMore && canLoadMore}
-        hasVisibilityToggle={hasVisibilityToggle}
-        availableColumns={loadedColumns}
-        initialOrdering={ordering}
-        loadingMoreIds={loadingMoreIds}
-        onClose={() => {
-          setShowModal(false);
-          action('onClose');
-        }}
-        onChange={action('onChange')}
-        onLoadMore={(id) => {
-          setLoadingMoreIds([id]);
-          setTimeout(() => {
-            setLoadedColumns(allAvailableColumns);
-            setLoadingMoreIds([]);
-            setCanLoadMore(false);
-          }, 2000);
-          action('onLoadMore')(id);
-        }}
-        onReset={() => {
-          setModalKey(uuid.v4());
-          action('onReset');
-        }}
-        onSave={(updatedOrdering, updatedColumns) => {
-          setOrdering(updatedOrdering);
-          setActiveColumns(updatedColumns);
-          setShowModal(false);
-          action('onSave')(updatedOrdering, updatedColumns);
-        }}
-        open={showModal}
-        pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
-        primaryValue={primaryValue}
-        secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
-      />
-    </>
-  );
-};
-
-WithColumnCustomizationModal.storyName = '☢️ with column customization modal';
-WithColumnCustomizationModal.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];
