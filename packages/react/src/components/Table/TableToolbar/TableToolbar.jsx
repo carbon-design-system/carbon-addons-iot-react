@@ -7,14 +7,7 @@ import {
   Edit20,
   OverflowMenuVertical20,
 } from '@carbon/icons-react';
-import {
-  TableToolbar as CarbonTableToolbar,
-  TableToolbarContent,
-  TableToolbarSearch,
-  TableBatchActions,
-  TableBatchAction,
-  Tooltip,
-} from 'carbon-components-react';
+import { DataTable, Tooltip } from 'carbon-components-react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import { isNil, pick } from 'lodash-es';
@@ -45,6 +38,14 @@ import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
 const { iotPrefix } = settings;
+
+const {
+  TableToolbar: CarbonTableToolbar,
+  TableToolbarContent,
+  TableToolbarSearch,
+  TableBatchActions,
+  TableBatchAction,
+} = DataTable;
 
 const propTypes = {
   /** id of table */

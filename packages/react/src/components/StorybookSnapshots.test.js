@@ -63,15 +63,6 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     });
     window.document = new Document();
     window.HTMLCanvasElement.prototype.getContext = jest.fn();
-    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
-      callback([{ contentRect: { width: 500, height: 500 } }]);
-
-      return {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
-      };
-    });
   });
   initStoryshots({
     storyKindRegex: /Watson\sIoT.*$|.*Getting\sStarted/g,
@@ -153,6 +144,5 @@ describe(`Storybook Snapshot tests and console checks`, () => {
     window.HTMLElement.prototype.scrollIntoView = realScrollIntoView;
     window.HTMLElement.prototype.scrollTo = realScrollTo;
     window.HTMLCanvasElement.prototype.getContext = realGetContext;
-    jest.resetAllMocks();
   });
 });

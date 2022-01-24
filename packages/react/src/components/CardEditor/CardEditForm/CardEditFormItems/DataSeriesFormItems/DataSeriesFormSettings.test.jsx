@@ -68,24 +68,4 @@ describe('DataSeriesFormSettings', () => {
       type: 'TIMESERIES',
     });
   });
-
-  it('handles maximumDataPoints onChange', () => {
-    render(<DataSeriesFormSettings cardConfig={timeSeriesConfig} onChange={mockOnChange} />);
-    const maximumDataPointsInput = screen.getByLabelText('Maximum data points');
-    expect(maximumDataPointsInput).toBeInTheDocument();
-    userEvent.type(maximumDataPointsInput, '2');
-
-    expect(mockOnChange).toHaveBeenCalledWith({
-      content: {
-        maximumDataPoints: 2,
-        series: [{ color: 'red', dataSourceId: 'temperature', label: 'Temperature' }],
-        xLabel: 'Time',
-        yLabel: 'Temperature (˚F)',
-      },
-      id: 'timeSeries',
-      size: 'MEDIUM',
-      title: 'TimeSeries',
-      type: 'TIMESERIES',
-    });
-  });
 });

@@ -71,6 +71,7 @@ describe('Card', () => {
       {
         width: 0,
         height: -CARD_TITLE_HEIGHT,
+        position: null,
       },
       expect.anything()
     );
@@ -82,6 +83,7 @@ describe('Card', () => {
       {
         width: 0,
         height: 0,
+        position: null,
       },
       expect.anything()
     );

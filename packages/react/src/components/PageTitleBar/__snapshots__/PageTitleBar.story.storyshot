@@ -1979,7 +1979,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </table>
                   </div>
                 </div>
-                <div />
                 <div
                   className="bx--pagination iot--pagination bx--pagination--lg"
                   data-testid="null-table-pagination"
@@ -4084,7 +4083,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </table>
                   </div>
                 </div>
-                <div />
                 <div
                   className="bx--pagination iot--pagination bx--pagination--lg"
                   data-testid="null-table-pagination"

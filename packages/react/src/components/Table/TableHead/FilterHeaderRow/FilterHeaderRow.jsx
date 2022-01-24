@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TableHeader,
-  TableRow,
-  FormItem,
-  TextInput,
-  FilterableMultiSelect,
-} from 'carbon-components-react';
+import { DataTable, FormItem, TextInput, FilterableMultiSelect } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import { memoize, debounce, isEqual } from 'lodash-es';
 import classnames from 'classnames';
@@ -17,6 +11,7 @@ import { settings } from '../../../../constants/Settings';
 import ComboBox from '../../../ComboBox/ComboBox';
 
 const { iotPrefix, prefix } = settings;
+const { TableHeader, TableRow } = DataTable;
 
 class FilterHeaderRow extends Component {
   static propTypes = {

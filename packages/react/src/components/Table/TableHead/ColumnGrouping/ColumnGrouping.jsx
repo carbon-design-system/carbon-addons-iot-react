@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { uniqWith, isEqual } from 'lodash-es';
-import { TableRow } from 'carbon-components-react';
+import { DataTable } from 'carbon-components-react';
 import classNames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -37,6 +37,7 @@ const containsLastVisibleColumn = (groupId, visibleColumns) => {
 };
 
 const ColumnGrouping = ({ appendedColumns, columnGroups, ordering, prependedColumns, testId }) => {
+  const { TableRow } = DataTable;
   const visibleColumns = ordering.filter((col) => !col.isHidden);
 
   const groups = uniqWith(

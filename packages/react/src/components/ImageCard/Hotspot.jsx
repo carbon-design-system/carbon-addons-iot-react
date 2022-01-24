@@ -2,11 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 import { Tooltip } from 'carbon-components-react';
 import { g10 } from '@carbon/themes';
+import withSize from 'react-sizeme';
 
 import { settings } from '../../constants/Settings';
 import { hexToRgb } from '../../utils/componentUtilityFunctions';
 import { HotspotPropTypes } from '../../constants/SharedPropTypes';
-import useSizeObserver from '../../hooks/useSizeObserver';
 
 import CardIcon from './CardIcon';
 
@@ -64,8 +64,6 @@ const Hotspot = ({
   borderWidth,
   ...others
 }) => {
-  const [containerSize, containerRef] = useSizeObserver();
-
   const defaultIcon = (
     <svg width={width} height={height}>
       <circle
@@ -106,64 +104,68 @@ const Hotspot = ({
   const opacity = backgroundOpacity / 100;
   const isTextType = type === 'text';
 
-  const containerWidth = isTextType ? containerSize.width : width;
-  const containerHeight = isTextType ? containerSize.height : height;
-
   return (
-    <div
-      ref={containerRef}
-      data-testid={id}
-      style={{
-        '--x-pos': x,
-        '--y-pos': y,
-        '--width': containerWidth,
-        '--height': containerHeight,
+    <withSize.SizeMe monitorHeight={isTextType}>
+      {({ size: measuredSize }) => {
+        const containerWidth = isTextType ? measuredSize.width : width;
+        const containerHeight = isTextType ? measuredSize.height : height;
+        return (
+          <div
+            data-testid={id}
+            style={{
+              '--x-pos': x,
+              '--y-pos': y,
+              '--width': containerWidth,
+              '--height': containerHeight,
+            }}
+            className={classnames(`${iotPrefix}--hotspot-container`, {
+              [`${iotPrefix}--hotspot-container--selected`]: isSelected,
+              [`${iotPrefix}--hotspot-container--has-icon`]: icon,
+              [`${iotPrefix}--hotspot-container--is-text`]: isTextType,
+              [`${iotPrefix}--hotspot-container--is-fixed`]: type === 'fixed',
+              [`${iotPrefix}--hotspot-container--is-dynamic`]: type === 'dynamic',
+            })}
+            icon={icon}
+          >
+            {type === 'fixed' || type === 'dynamic' ? (
+              <Tooltip
+                {...others}
+                triggerText={iconToRender}
+                showIcon={false}
+                triggerId={id}
+                tooltipId={id}
+                onChange={(evt) => {
+                  if (evt.type === 'click' && onClick) {
+                    onClick(evt, { x, y });
+                  }
+                }}
+              >
+                {content}
+              </Tooltip>
+            ) : isTextType ? (
+              // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
+              <div
+                role="complementary"
+                style={{
+                  '--background-color': `rgba( ${r}, ${g}, ${b}, ${opacity})`,
+                  '--border-color': borderColor,
+                  '--border-width': borderWidth,
+                  '--title-font-weight': bold ? 'bold' : 'normal',
+                  '--title-font-style': italic ? 'italic' : 'normal',
+                  '--title-text-decoration-line': underline ? 'underline' : 'none',
+                  '--title-font-color': fontColor,
+                  '--title-font-size': fontSize,
+                }}
+                className={`${iotPrefix}--text-hotspot`}
+                onClick={(evt) => onClick(evt, { x, y })}
+              >
+                {content}
+              </div>
+            ) : null}
+          </div>
+        );
       }}
-      className={classnames(`${iotPrefix}--hotspot-container`, {
-        [`${iotPrefix}--hotspot-container--selected`]: isSelected,
-        [`${iotPrefix}--hotspot-container--has-icon`]: icon,
-        [`${iotPrefix}--hotspot-container--is-text`]: isTextType,
-        [`${iotPrefix}--hotspot-container--is-fixed`]: type === 'fixed',
-        [`${iotPrefix}--hotspot-container--is-dynamic`]: type === 'dynamic',
-      })}
-      icon={icon}
-    >
-      {type === 'fixed' || type === 'dynamic' ? (
-        <Tooltip
-          {...others}
-          triggerText={iconToRender}
-          showIcon={false}
-          triggerId={id}
-          tooltipId={id}
-          onChange={(evt) => {
-            if (evt.type === 'click' && onClick) {
-              onClick(evt, { x, y });
-            }
-          }}
-        >
-          {content}
-        </Tooltip>
-      ) : isTextType ? (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions
-        <div
-          role="complementary"
-          style={{
-            '--background-color': `rgba( ${r}, ${g}, ${b}, ${opacity})`,
-            '--border-color': borderColor,
-            '--border-width': borderWidth,
-            '--title-font-weight': bold ? 'bold' : 'normal',
-            '--title-font-style': italic ? 'italic' : 'normal',
-            '--title-text-decoration-line': underline ? 'underline' : 'none',
-            '--title-font-color': fontColor,
-            '--title-font-size': fontSize,
-          }}
-          className={`${iotPrefix}--text-hotspot`}
-          onClick={(evt) => onClick(evt, { x, y })}
-        >
-          {content}
-        </div>
-      ) : null}
-    </div>
+    </withSize.SizeMe>
   );
 };
 

@@ -1,61 +1,20 @@
 import { settings } from '../../constants/Settings';
 
 const { prefix } = settings;
-
-const getBoundingClientRects = (buttonRef, isSplitButton) => {
+export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDir }) => {
+  const isSplitButton = label && typeof onPrimaryActionClick === 'function';
   const buttonRect = buttonRef.current.getBoundingClientRect();
   const primaryButtonRect = isSplitButton
     ? buttonRef?.current?.previousSibling?.getBoundingClientRect()
     : null;
-  // Once the menuButton can accept a target for the react portal, we can
-  // use this method again once the menu is placed within the same div as the
-  // button.
-  // const menuRect = buttonRef.current.nextSibling?.getBoundingClientRect();
   const node =
     buttonRef.current?.nextSibling ??
     document.querySelector(`.${prefix}--menu.${prefix}--menu--open.${prefix}--menu--root`);
   const menuRect = node?.getBoundingClientRect();
-
-  return { buttonRect, primaryButtonRect, menuRect };
-};
-
-const getMenuDimensions = (menuRect) => ({
-  menuHeight: menuRect?.height ?? 0,
-  menuWidth: menuRect?.width ?? 0,
-});
-
-const getOverflow = (menuRect, buttonRect) => {
-  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const { menuHeight, menuWidth } = getMenuDimensions(menuRect);
-  const offTop = buttonRect.top - menuHeight < 0;
-  const offLeft = buttonRect.left - menuWidth < 0;
-  const offRight = buttonRect.right + menuWidth > windowWidth;
-  const offBottom = buttonRect.bottom + menuHeight > windowHeight;
-  const T = offTop ? 'top' : '';
-  const R = offRight ? 'right' : '';
-  const B = offBottom ? 'bottom' : '';
-  const L = offLeft ? 'left' : '';
-
-  return [T, R, B, L].filter(Boolean).join('-');
-};
-
-export const getShadowBlockerConfig = (buttonRef) => {
-  const { buttonRect, menuRect } = getBoundingClientRects(buttonRef);
-  const { menuHeight } = getMenuDimensions(menuRect);
-  const overflow = getOverflow(menuRect, buttonRect);
-  const flippedX = overflow?.includes('bottom') && !overflow?.includes('top');
-  const flippedY = overflow?.includes('right');
-  const opensHorizontally = overflow?.includes('top') && overflow?.includes('bottom');
-  return { menuHeight, flippedX, flippedY, opensHorizontally };
-};
-
-export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDir }) => {
-  const isSplitButton = label && typeof onPrimaryActionClick === 'function';
-  const { buttonRect, primaryButtonRect, menuRect } = getBoundingClientRects(
-    buttonRef,
-    isSplitButton
-  );
+  // Once the menuButton can accept a target for the react portal, we can
+  // use this method again once the menu is placed within the same div as the
+  // button.
+  // const menuRect = buttonRef.current.nextSibling?.getBoundingClientRect();
   const isRtl = langDir === 'rtl';
   const { x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight } = buttonRect;
   const { clientHeight: bodyHeight } = document.body;
@@ -68,8 +27,20 @@ export const getMenuPosition = ({ label, buttonRef, onPrimaryActionClick, langDi
   let y = buttonY + buttonHeight;
   let x = isSplitButton ? buttonX + primaryButtonWidth : buttonX;
 
-  const { menuHeight, menuWidth } = getMenuDimensions(menuRect);
-  const overflow = getOverflow(menuRect, buttonRect);
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const menuHeight = menuRect?.height ?? 0;
+  const menuWidth = menuRect?.width ?? 0;
+  const offTop = buttonRect.top - menuHeight < 0;
+  const offLeft = buttonRect.left - menuWidth < 0;
+  const offRight = buttonRect.right + menuWidth > windowWidth;
+  const offBottom = buttonRect.bottom + menuHeight > windowHeight;
+  const T = offTop ? 'top' : '';
+  const R = offRight ? 'right' : '';
+  const B = offBottom ? 'bottom' : '';
+  const L = offLeft ? 'left' : '';
+
+  const overflow = [T, R, B, L].filter(Boolean).join('-');
 
   /* istanbul ignore else */
   if (menuRect) {

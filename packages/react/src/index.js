@@ -1,3 +1,8 @@
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
+
+sizeMe.noPlaceholders = true;
+
 // Settings
 export { settings } from './constants/Settings';
 
@@ -72,7 +77,6 @@ export { default as Dashboard } from './components/Dashboard/Dashboard';
 export { default as DashboardHeader } from './components/Dashboard/DashboardHeader';
 export { default as DashboardGrid } from './components/Dashboard/DashboardGrid';
 export { default as DashboardEditor } from './components/DashboardEditor/DashboardEditor';
-export { getDefaultCard } from './components/DashboardEditor/editorUtils';
 export { default as DashboardEditorDefaultCardRenderer } from './components/DashboardEditor/DashboardEditorDefaultCardRenderer';
 export { default as CardEditor } from './components/CardEditor/CardEditor';
 export { default as Card } from './components/Card/Card';

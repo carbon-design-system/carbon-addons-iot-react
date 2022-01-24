@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Select,
-  SelectItem,
-  TableToolbarSearch,
-  SkeletonText,
-  Tile,
-} from 'carbon-components-react';
+import { Select, SelectItem, DataTable, SkeletonText, Tile } from 'carbon-components-react';
 import { Bee32 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 
@@ -13,6 +7,7 @@ import { settings } from '../../constants/Settings';
 
 import TilePagination from './TilePagination/TilePagination';
 
+const { TableToolbarSearch } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {

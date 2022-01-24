@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TableHeader, TableRow, Button } from 'carbon-components-react';
+import { DataTable, Button } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
 
 import { settings } from '../../../../constants/Settings';
@@ -9,6 +9,7 @@ import { defaultI18NPropTypes } from '../../TablePropTypes';
 import ColumnHeaderSelect from '../ColumnHeaderSelect/ColumnHeaderSelect';
 import { DragAndDrop } from '../../../../utils/DragAndDropUtils';
 
+const { TableHeader, TableRow } = DataTable;
 const { iotPrefix } = settings;
 
 class ColumnHeaderRow extends Component {

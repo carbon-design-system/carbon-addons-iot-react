@@ -1,20 +1,32 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import sizeMe from 'react-sizeme';
 
 import Pagination from './Pagination';
 
+sizeMe.noPlaceholders = true;
+
+const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+
+const mockGetBoundingClientRect = jest.fn();
+
 describe('Pagination', () => {
-  afterEach(() => {
-    jest.resetAllMocks();
+  beforeAll(() => {
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+  });
+  afterAll(() => {
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
   it('Pagination display hides', () => {
-    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
-      callback([{ contentRect: { width: 400, height: 400 } }]);
-
+    // Need to mock getBoundingClientRect for react-sizeme
+    mockGetBoundingClientRect.mockImplementation(() => {
       return {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
+        width: 400,
+        height: 0,
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
       };
     });
 
@@ -24,13 +36,15 @@ describe('Pagination', () => {
     expect(screen.queryByText('Items per page')).toBeNull();
   });
   it('Pagination page display shows', () => {
-    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
-      callback([{ contentRect: { width: 600, height: 600 } }]);
-
+    // at wider widths it should show
+    mockGetBoundingClientRect.mockImplementation(() => {
       return {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
+        width: 600,
+        height: 0,
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
       };
     });
     const { rerender } = render(<Pagination pageSizes={[10, 20, 30]} />);

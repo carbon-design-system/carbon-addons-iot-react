@@ -3058,11 +3058,205 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           </span>
                         </td>
                       </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="alert"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-8-alert"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="AHI001 proccess need to optimize adjust Y variables"
+                            >
+                              AHI001 proccess need to optimize adjust Y variables
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="hour"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-8-hour"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="07/23/2019 03:30"
+                            >
+                              07/23/2019 03:30
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-8-pressure"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="0"
+                            >
+                              0
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="alert"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-9-alert"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="AHI001 proccess need to optimize adjust Y variables"
+                            >
+                              AHI001 proccess need to optimize adjust Y variables
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="hour"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-9-hour"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="07/23/2019 04:26"
+                            >
+                              07/23/2019 04:26
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-9-pressure"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="0"
+                            >
+                              0
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr
+                        className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                        onClick={[Function]}
+                      >
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="alert"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-5-alert"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="AHI001 proccess need to optimize"
+                            >
+                              AHI001 proccess need to optimize
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="hour"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-5-hour"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="07/23/2019 04:30"
+                            >
+                              07/23/2019 04:30
+                            </span>
+                          </span>
+                        </td>
+                        <td
+                          align="start"
+                          className="data-table-start iot--table__cell--sortable"
+                          data-column="pressure"
+                          data-offset={0}
+                          id="cell-table-for-card-tableCard-row-5-pressure"
+                          offset={0}
+                          width=""
+                        >
+                          <span
+                            className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          >
+                            <span
+                              className=""
+                              title="10"
+                            >
+                              10
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
-              <div />
               <div
                 className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
@@ -3099,15 +3293,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             className="bx--select-input"
                             id="bx-pagination-select-3"
                             onChange={[Function]}
-                            value={7}
+                            value={10}
                           >
                             <option
                               className="bx--select-option"
                               disabled={false}
                               hidden={false}
-                              value={7}
+                              value={10}
                             >
-                              7
+                              10
                             </option>
                             <option
                               className="bx--select-option"
@@ -3148,7 +3342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   <span
                     className="bx--pagination__text bx--pagination__items-count"
                   >
-                    1–7 of 11 items
+                    1–10 of 11 items
                   </span>
                 </div>
                 <div

@@ -2,10 +2,10 @@ import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
+import withSize from 'react-sizeme';
 
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
-import useSizeObserver from '../../../hooks/useSizeObserver';
 import { useDropdownTitleFixer } from '../../IconDropdown/dropdownHooks';
 
 import TableViewItemPropType from './TableViewItemPropTypes';
@@ -130,7 +130,6 @@ const TableViewDropdown = ({
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
-  const [containerSize, containerRef] = useSizeObserver({ initialWidth: 200 });
   const [dropdownRef, updateTitle] = useDropdownTitleFixer();
 
   useEffect(() => {
@@ -153,37 +152,43 @@ const TableViewDropdown = ({
   };
 
   return (
-    <div ref={containerRef} className={`${iotPrefix}--view-dropdown__container`} style={style}>
-      <MyDropDown
-        ref={dropdownRef}
-        label={i18n.tableViewMenu}
-        data-testid={testID}
-        selectedItem={mySelectedItem}
-        ariaLabel={i18n.ariaLabel}
-        disabled={disabled}
-        id={`${iotPrefix}--view-dropdown`}
-        // We are using itemToString instead of itemToElement since we need the custom
-        // rendering to also happen when the item is selected. See closed PR
-        // https://github.com/carbon-design-system/carbon/pull/5578
-        itemToString={(itemData) => {
-          return (
-            <MyTableViewDropDownItem
-              testID={`TableViewDropdownItem-${itemData.id}`}
-              isCompact={containerSize.width < 200}
-              item={itemData}
-              isSelected={itemData.id === mySelectedItem.id}
-              activeViewEdited={selectedViewEdited}
-              i18n={i18n}
-              {...overrides?.dropdownItem?.props}
+    <withSize.SizeMe>
+      {({ size: measuredSize }) => {
+        return (
+          <div className={`${iotPrefix}--view-dropdown__container`} style={style}>
+            <MyDropDown
+              ref={dropdownRef}
+              label={i18n.tableViewMenu}
+              data-testid={testID}
+              selectedItem={mySelectedItem}
+              ariaLabel={i18n.ariaLabel}
+              disabled={disabled}
+              id={`${iotPrefix}--view-dropdown`}
+              // We are using itemToString instead of itemToElement since we need the custom
+              // rendering to also happen when the item is selected. See closed PR
+              // https://github.com/carbon-design-system/carbon/pull/5578
+              itemToString={(itemData) => {
+                return (
+                  <MyTableViewDropDownItem
+                    testID={`TableViewDropdownItem-${itemData.id}`}
+                    isCompact={measuredSize?.width < 200}
+                    item={itemData}
+                    isSelected={itemData.id === mySelectedItem.id}
+                    activeViewEdited={selectedViewEdited}
+                    i18n={i18n}
+                    {...overrides?.dropdownItem?.props}
+                  />
+                );
+              }}
+              items={allItems}
+              light={false}
+              onChange={onSelectionChange}
+              {...overrides?.dropdown?.props}
             />
-          );
-        }}
-        items={allItems}
-        light={false}
-        onChange={onSelectionChange}
-        {...overrides?.dropdown?.props}
-      />
-    </div>
+          </div>
+        );
+      }}
+    </withSize.SizeMe>
   );
 };
 

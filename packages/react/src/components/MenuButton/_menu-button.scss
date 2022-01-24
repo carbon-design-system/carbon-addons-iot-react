@@ -1,6 +1,5 @@
 @import '~carbon-components/scss/components/menu/menu';
 @import '../../globals/vars';
-@import './menu-button-shadow-blocker';
 
 .#{$iot-prefix}--menu-button {
   .#{$iot-prefix}--menu-button__primary + .#{$iot-prefix}--menu-button__secondary {
@@ -13,20 +12,7 @@
 
   &--open {
     .#{$iot-prefix}--menu-button__trigger {
-      &.#{$prefix}--btn--primary {
-        background-color: $active-primary;
-      }
-      &.#{$prefix}--btn--secondary {
-        background-color: $active-secondary;
-      }
-      &.#{$prefix}--btn--tertiary {
-        background-color: $active-tertiary;
-        color: $text-04;
-      }
-      &.#{$prefix}--btn--ghost {
-        background-color: $active-ui; // There is no $active-ghost sass variable
-        color: $link-02;
-      }
+      background-color: $active-primary;
     }
 
     .#{$prefix}--btn--ghost.#{$prefix}--btn--icon-only {
@@ -36,24 +22,17 @@
   }
 }
 
-.#{$iot-prefix}--menu-button__menu {
-  padding: 0;
-  .#{$prefix}--menu-divider {
-    margin: 0;
-  }
-}
-
 .#{$prefix}--menu.#{$prefix}--menu--open.#{$prefix}--menu--root {
   opacity: var(--iot-menu-button-menu-opacity);
 }
 
-html[dir='rtl'] .#{$iot-prefix}--menu-button__menu {
-  .#{$prefix}--menu-option__icon {
+html[dir='rtl'] .#{$iot-prefix}--menu-button {
+  .#{$prefix}--context-menu-option__icon {
     margin-right: 0;
     margin-left: $spacing-03;
   }
 
-  .#{$prefix}--menu-option__info {
+  .#{$prefix}--context-menu-option__info {
     margin-left: 0;
     margin-right: $spacing-05;
     transform: rotate(180deg);

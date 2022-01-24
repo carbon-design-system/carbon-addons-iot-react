@@ -71,7 +71,7 @@ export const Experimental = () => (
 Experimental.storyName = experimentalStoryTitle;
 
 export default {
-  title: '1 - Watson IoT/Table/Column customization/☢️ TableColumnCustomizationModal',
+  title: '1 - Watson IoT/Table/☢️ TableColumnCustomizationModal',
 
   parameters: {
     component: TableColumnCustomizationModal,
@@ -81,13 +81,10 @@ export default {
   },
 };
 
-export const Playground = () => {
-  const hasVisibilityToggle = boolean(
-    'Enable toggling column visibility (hasVisibilityToggle)',
-    false
-  );
-  const demoGroupMapping = boolean('Demo column groups', false);
-  const demoPinnedColumn = boolean('Demo pinned column (pinnedColumnId)', true);
+export const PlaygroundWithKnobs = () => {
+  const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
+  const demoGroupMapping = boolean('demo column groups', false);
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
   const primaryValue = select(
     'Column key used for primary value (primaryValue)',
     ['id', 'name'],
@@ -102,19 +99,15 @@ export const Playground = () => {
   return (
     <TableColumnCustomizationModal
       key={`table-column-customization-modal${hasVisibilityToggle}}`} // Make sure component reloaded
-      groupMapping={
-        demoGroupMapping
-          ? object('The mapping of colums to groups (groupMapping)', getColumnGroupMapping())
-          : []
-      }
+      groupMapping={demoGroupMapping ? object('groupMapping', getColumnGroupMapping()) : []}
       hasVisibilityToggle={hasVisibilityToggle}
-      availableColumns={object('All the available columns (availableColumns)', getColumns())}
-      initialOrdering={object('Initial ordering (initialOrdering)', getOrdering())}
+      availableColumns={object('availableColumns', getColumns())}
+      initialOrdering={object('initialOrdering', getOrdering())}
       onClose={action('onClose')}
       onChange={action('onChange')}
       onReset={action('onReset')}
       onSave={action('onSave')}
-      open={boolean('Modal is open (open)', true)}
+      open={boolean('open', true)}
       primaryValue={primaryValue}
       secondaryValue={secondaryValue === 'NONE' ? undefined : secondaryValue}
       pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
@@ -140,8 +133,68 @@ export const Playground = () => {
   );
 };
 
-Playground.storyName = 'Playground';
-Playground.decorators = [
+PlaygroundWithKnobs.storyName = 'playground with knobs';
+PlaygroundWithKnobs.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const AsyncWithLoadingState = () => {
+  const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
+  const demoGroupMapping = boolean('demo column groups', false);
+  const demoPinnedColumn = boolean('demo pinned column (pinnedColumnId)', true);
+  const demoHasLoadMore = boolean('demo load more example (hasLoadMore)', true);
+  const demoLoadError = boolean('demo load error', false);
+  const errorText = text('text in error', 'There was a problem loading the columns.');
+  const [canLoadMore, setCanLoadMore] = useState(true);
+
+  const [storyColumns, setStoryColumns] = useState(
+    new Promise((resolve, reject) => {
+      setTimeout(
+        () => (demoLoadError ? reject(new Error(errorText)) : resolve(getColumns().slice(0, 7))),
+        3000
+      );
+    })
+  );
+
+  return (
+    <AsyncTableColumnCustomizationModal
+      groupMapping={demoGroupMapping ? object('groupMapping', getColumnGroupMapping()) : []}
+      hasVisibilityToggle={hasVisibilityToggle}
+      availableColumns={storyColumns}
+      initialOrdering={getOrdering()}
+      i18n={{
+        modalBody:
+          'This modal is the AsyncTableColumnCustomizationModal which accepts a Promise for the prop availableColumns. It also and manages the loading state and errors.',
+      }}
+      onClearError={action('onClearError')}
+      onClose={action('onClose')}
+      onChange={action('onChange')}
+      onReset={action('onReset')}
+      onSave={action('onSave')}
+      open={boolean('open', true)}
+      pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
+      hasLoadMore={demoHasLoadMore && canLoadMore}
+      onLoadMore={() => {
+        setStoryColumns(
+          new Promise((resolve) => {
+            setTimeout(() => {
+              console.info('reloaded');
+              setCanLoadMore(false);
+              resolve(getColumns());
+            }, 2000);
+          })
+        );
+      }}
+    />
+  );
+};
+
+AsyncWithLoadingState.storyName = 'with async data and loading state';
+AsyncWithLoadingState.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />
@@ -152,10 +205,10 @@ Playground.decorators = [
 export const WithPinnedFirstColumn = () => {
   return (
     <TableColumnCustomizationModal
-      pinnedColumnId={text('Pinned column id (pinnedColumnId)', 'string')}
+      pinnedColumnId={text('pinnedColumnId', 'string')}
       availableColumns={getColumns()}
       initialOrdering={object(
-        'Initial ordering (initialOrdering)',
+        'initialOrdering',
         getOrdering().filter((col) => col.columnId === 'string')
       )}
       onClose={action('onClose')}
@@ -167,8 +220,32 @@ export const WithPinnedFirstColumn = () => {
   );
 };
 
-WithPinnedFirstColumn.storyName = 'With pinned first column';
+WithPinnedFirstColumn.storyName = 'with pinned first column';
 WithPinnedFirstColumn.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithColumnGroups = () => {
+  return (
+    <TableColumnCustomizationModal
+      groupMapping={object('groupMapping', getColumnGroupMapping())}
+      availableColumns={object('availableColumns', getColumns())}
+      initialOrdering={object('initialOrdering', getOrdering())}
+      onClose={action('onClose')}
+      onChange={action('onChange')}
+      onReset={action('onReset')}
+      onSave={action('onSave')}
+      open
+    />
+  );
+};
+
+WithColumnGroups.storyName = 'with column groups';
+WithColumnGroups.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />
@@ -187,11 +264,8 @@ export const WithManyColumnsAndLoadMore = () => {
     ['id', 'name', 'NONE'],
     'NONE'
   );
-  const hasVisibilityToggle = boolean(
-    'Enable toggling column visibility (hasVisibilityToggle)',
-    false
-  );
-  const demoGroupMapping = boolean('Demo column groups', false);
+  const hasVisibilityToggle = boolean('hasVisibilityToggle', false);
+  const demoGroupMapping = boolean('demo column groups', false);
   const groupMapping = [
     {
       id: 'groupA',
@@ -240,98 +314,8 @@ export const WithManyColumnsAndLoadMore = () => {
   );
 };
 
-WithManyColumnsAndLoadMore.storyName = 'With many columns and "Load more"';
+WithManyColumnsAndLoadMore.storyName = 'with many columns and "Load more"';
 WithManyColumnsAndLoadMore.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];
-
-export const WithColumnGroups = () => {
-  return (
-    <TableColumnCustomizationModal
-      groupMapping={object(
-        'The mapping of colums to groups (groupMapping)',
-        getColumnGroupMapping()
-      )}
-      availableColumns={object('All the available columns (availableColumns)', getColumns())}
-      initialOrdering={object('Initial ordering (initialOrdering)', getOrdering())}
-      onClose={action('onClose')}
-      onChange={action('onChange')}
-      onReset={action('onReset')}
-      onSave={action('onSave')}
-      open
-    />
-  );
-};
-
-WithColumnGroups.storyName = 'With column groups';
-WithColumnGroups.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];
-
-export const WithAsyncDataAndLoadingState = () => {
-  const hasVisibilityToggle = boolean(
-    'Enable toggling column visibility (hasVisibilityToggle)',
-    false
-  );
-  const demoGroupMapping = boolean('Demo column groups', false);
-  const demoPinnedColumn = boolean('Demo pinned column (pinnedColumnId)', true);
-  const demoHasLoadMore = boolean('Demo load more example (hasLoadMore)', true);
-  const demoLoadError = boolean('Demo load error', false);
-  const errorText = text('Text in error', 'There was a problem loading the columns.');
-  const [canLoadMore, setCanLoadMore] = useState(true);
-
-  const [storyColumns, setStoryColumns] = useState(
-    new Promise((resolve, reject) => {
-      setTimeout(
-        () => (demoLoadError ? reject(new Error(errorText)) : resolve(getColumns().slice(0, 7))),
-        3000
-      );
-    })
-  );
-
-  return (
-    <AsyncTableColumnCustomizationModal
-      groupMapping={demoGroupMapping ? object('groupMapping', getColumnGroupMapping()) : []}
-      hasVisibilityToggle={hasVisibilityToggle}
-      availableColumns={storyColumns}
-      initialOrdering={getOrdering()}
-      i18n={{
-        modalBody:
-          'This modal is the AsyncTableColumnCustomizationModal which accepts a Promise for the prop availableColumns. It also and manages the loading state and errors.',
-      }}
-      onClearError={action('onClearError')}
-      onClose={action('onClose')}
-      onChange={action('onChange')}
-      onReset={action('onReset')}
-      onSave={action('onSave')}
-      open={boolean('Modal is open (open)', true)}
-      pinnedColumnId={demoPinnedColumn ? 'string' : undefined}
-      hasLoadMore={demoHasLoadMore && canLoadMore}
-      onLoadMore={() => {
-        setStoryColumns(
-          new Promise((resolve) => {
-            setTimeout(() => {
-              console.info('reloaded');
-              setCanLoadMore(false);
-              resolve(getColumns());
-            }, 2000);
-          })
-        );
-      }}
-    />
-  );
-};
-
-WithAsyncDataAndLoadingState.storyName = 'With async data and loading state';
-WithAsyncDataAndLoadingState.decorators = [
   (Story) => (
     <DragAndDrop>
       <Story />

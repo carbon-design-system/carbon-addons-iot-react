@@ -1164,7 +1164,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
-          size={paginationProps.size}
+          carbonSize={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

@@ -6,7 +6,7 @@ import { red60 } from '@carbon/colors';
 
 import HotspotContent from './HotspotContent';
 
-const getMockValues = () => object('values', { temperature: 35.35, humidity: 99 });
+const mockValues = object('values', { temperature: 35.35, humidity: 99 });
 
 export default {
   title: '1 - Watson IoT/HotspotContent',
@@ -24,7 +24,7 @@ export const Basic = () => {
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
-        values={getMockValues()}
+        values={mockValues}
         attributes={object('attributes', [
           { dataSourceId: 'temperature', label: 'Temperature' },
           { dataSourceId: 'humidity', label: 'Humidity' },
@@ -42,7 +42,7 @@ export const BasicWithUnitsAndPrecision = () => {
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
-        values={getMockValues()}
+        values={mockValues}
         attributes={object('attributes', [
           {
             dataSourceId: 'temperature',
@@ -70,7 +70,7 @@ export const WithThresholds = () => {
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
-        values={getMockValues()}
+        values={mockValues}
         attributes={object('attributes', [
           {
             dataSourceId: 'temperature',
@@ -119,7 +119,7 @@ export const Locale = () => {
       <HotspotContent
         title={text('title', 'Hotspot title')}
         description={text('description', 'description')}
-        values={getMockValues()}
+        values={mockValues}
         attributes={object('attributes', [
           {
             dataSourceId: 'temperature',

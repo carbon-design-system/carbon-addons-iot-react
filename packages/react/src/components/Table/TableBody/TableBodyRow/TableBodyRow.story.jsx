@@ -1,10 +1,12 @@
 import React from 'react';
 import { actions } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import { Table, TableContainer, TableBody } from 'carbon-components-react';
+import { DataTable } from 'carbon-components-react';
 import { Add32, Edit16, Stop16, TrashCan16 } from '@carbon/icons-react';
 
 import TableBodyRow from './TableBodyRow';
+
+const { Table, TableContainer, TableBody } = DataTable;
 
 const tableBodyRowProps = {
   ordering: [{ columnId: 'string' }],

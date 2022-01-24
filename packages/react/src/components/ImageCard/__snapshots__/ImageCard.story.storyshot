@@ -1060,13 +1060,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               >
                 <div
                   aria-atomic="true"
-                  aria-labelledby="loading-id-7"
+                  aria-labelledby="loading-id-5"
                   aria-live="assertive"
                   className="bx--loading bx--loading--small"
                 >
                   <label
                     className="bx--visually-hidden"
-                    id="loading-id-7"
+                    id="loading-id-5"
                   >
                     Active loading indicator
                   </label>
@@ -1212,7 +1212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           className="iot--image-card__wrapper"
         >
           <div
-            className="iot--image-uploader iot--image-uploader__medium"
+            className="iot--image-uploader"
             data-testid="Card-image-uploader"
           >
             <div
@@ -1284,7 +1284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
                 onBlur={[Function]}
@@ -1300,7 +1300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
                 onBlur={[Function]}
@@ -1379,7 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
           className="iot--image-card__wrapper"
         >
           <div
-            className="iot--image-uploader iot--image-uploader__medium"
+            className="iot--image-uploader"
             data-testid="Card-image-uploader"
           >
             <div
@@ -1451,7 +1451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
                 onBlur={[Function]}
@@ -1467,7 +1467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <button
                 aria-describedby={null}
                 aria-pressed={null}
-                className="iot--btn bx--btn bx--btn--sm bx--btn--tertiary"
+                className="iot--btn bx--btn bx--btn--tertiary"
                 data-testid="Button"
                 disabled={false}
                 onBlur={[Function]}

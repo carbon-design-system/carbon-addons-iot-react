@@ -5,6 +5,9 @@ import MockDate from 'mockdate';
 // To support storybooks inside jest
 import registerRequireContextHook from 'babel-plugin-require-context-hook/register';
 
+// Needed so that any component that uses sizeme can be jest tested
+import sizeMe from 'react-sizeme';
+
 import dayjs from '../../src/utils/dayjs';
 
 addons.setChannel(mockChannel());
@@ -45,6 +48,8 @@ if (typeof window !== 'undefined') {
   // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
 }
+
+sizeMe.noPlaceholders = true;
 
 // Force the timezone to be the same everywhere
 dayjs.tz.setDefault('America/Chicago');

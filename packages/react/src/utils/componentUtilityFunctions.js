@@ -368,8 +368,6 @@ export const browserSupports = (api) => {
   switch (api) {
     case 'ResizeObserver':
       return typeof ResizeObserver !== 'undefined';
-    case 'IntersectionObserver':
-      return typeof IntersectionObserver !== 'undefined';
     default:
       // There is no assigned value by default, so return undefined
       return undefined;

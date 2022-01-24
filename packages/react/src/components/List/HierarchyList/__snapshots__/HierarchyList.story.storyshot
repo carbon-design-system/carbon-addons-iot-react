@@ -7001,7 +7001,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
                   </div>
                   <div
                     className="iot--list-item--content--values--value"
-                    title=""
+                    title="My Reports--secondary-value"
                   >
                     <div>
                        SecondaryValue 

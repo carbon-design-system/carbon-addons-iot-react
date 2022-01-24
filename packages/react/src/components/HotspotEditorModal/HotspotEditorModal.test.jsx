@@ -2,6 +2,7 @@ import React from 'react';
 import { render, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import { InformationSquareFilled24, InformationFilled24 } from '@carbon/icons-react';
+import sizeMe from 'react-sizeme';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
@@ -10,6 +11,9 @@ import landscape from './landscape.jpg';
 import HotspotEditorModal from './HotspotEditorModal';
 import { hotspotTypes } from './hooks/hotspotStateHook';
 
+sizeMe.noPlaceholders = true;
+const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+const mockGetBoundingClientRect = jest.fn();
 const getHotspots = () => [
   {
     x: 75,
@@ -118,18 +122,15 @@ const loading = HotspotEditorModal.defaultProps.i18n.loadingDynamicHotspotsText;
 
 describe('HotspotEditorModal', () => {
   beforeAll(() => {
-    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
-      callback([{ contentRect: { width: 1000, height: 1000 } }]);
-
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect.mockImplementation(() => {
       return {
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn(),
+        width: 1000,
+        height: 1000,
       };
     });
   });
   afterAll(() => {
-    jest.resetAllMocks();
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
   it('shows correct content when the main  tab is clicked', async () => {

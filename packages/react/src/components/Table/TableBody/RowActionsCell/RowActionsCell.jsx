@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { TableCell, Loading } from 'carbon-components-react';
+import { DataTable, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import { omit } from 'lodash-es';
 
@@ -13,6 +13,7 @@ import { renderTableOverflowItemText } from '../../tableUtilities';
 
 import RowActionsError from './RowActionsError';
 
+const { TableCell } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {
