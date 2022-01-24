@@ -31,7 +31,7 @@ const overflowComponent = (
   </OverflowMenu>
 );
 
-export const content = (
+const getContent = () => (
   <Fragment>
     <TileGallerySection
       title={select('Select with/without section', { Title: 'Section 1', None: null }, 'Title')}
@@ -149,7 +149,7 @@ export default {
     component: TileGallery,
   },
 
-  excludeStories: ['content', 'galleryData'],
+  excludeStories: ['galleryData'],
 };
 
 export const _StatefulTileGallery = () => (
@@ -167,7 +167,7 @@ _StatefulTileGallery.storyName = 'Stateful TileGallery';
 
 export const BasicExample = () => (
   <FullWidthWrapper>
-    <TileGallery>{content}</TileGallery>
+    <TileGallery>{getContent()}</TileGallery>
   </FullWidthWrapper>
 );
 
@@ -207,7 +207,7 @@ export const _TileGalleryViewSwitcher = () => <TileGalleryViewSwitcher />;
 _TileGalleryViewSwitcher.storyName = 'TileGalleryViewSwitcher';
 
 export const TileGallerySectionWithTileGalleryItemGrid = () => (
-  <FullWidthWrapper>{content}</FullWidthWrapper>
+  <FullWidthWrapper>{getContent()}</FullWidthWrapper>
 );
 
 TileGallerySectionWithTileGalleryItemGrid.storyName =

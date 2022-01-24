@@ -63,7 +63,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
@@ -247,16 +247,25 @@ const VirtualListContent = ({
         return tmp;
       }, []);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [expandedIds]
   );
 
-  const [flattened, setFlattened] = useState(() => {
+  const flattenHelper = useCallback(() => {
     const flattenedItems = flatten(items);
     const parents = flattenedItems.filter(
       (item) =>
         item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
     ).length;
+
+    return {
+      flattenedItems,
+      parents,
+    };
+  }, [expandedIds, flatten, items]);
+
+  const [flattened, setFlattened] = useState(() => {
+    const { flattenedItems, parents } = flattenHelper();
+
     return {
       items: flattenedItems,
       parents,
@@ -271,18 +280,14 @@ const VirtualListContent = ({
   }, [expandedIds, flattened, virtualListRef, rowSize]);
 
   useEffect(() => {
-    const flattenedItems = flatten(items);
-    const parents = flattenedItems.filter(
-      (item) =>
-        item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
-    ).length;
+    const { flattenedItems, parents } = flattenHelper();
 
     setFlattened({
       items: flattenedItems,
       parents,
       height: parents * rowSize,
     });
-  }, [expandedIds, flatten, items, rowSize]);
+  }, [flattenHelper, rowSize]);
 
   const renderItemAndChildren = (item, index, parentId, level, style) => {
     const hasChildren = item?.children && item.children.length > 0;
@@ -369,6 +374,7 @@ const VirtualListContent = ({
 
   const getItemSize = (index) => {
     const item = flattened?.items?.[index];
+
     if (!item) {
       return 0;
     }
@@ -386,9 +392,11 @@ const VirtualListContent = ({
     return 0;
   };
 
+  // eslint-disable-next-line react/prop-types
   const ListRow = ({ index, style }) => {
     const item = flattened?.items?.[index];
-    if (!item) {
+
+    if (!item || !item?.content) {
       return null;
     }
 

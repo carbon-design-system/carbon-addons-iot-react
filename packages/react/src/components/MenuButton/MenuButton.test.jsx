@@ -135,6 +135,191 @@ describe('MenuButton', () => {
     expect(create).toBeCalled();
   });
 
+  it('should use default size for buttons and menu items', () => {
+    render(<MenuButton label="Create">{menuItems}</MenuButton>);
+
+    // The "default" size does not have a specific class, so we make sure that the
+    // other size classed have not been added.
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--sm`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--md`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--lg`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--xl`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+
+    // The menu will by default get the size lg which mathces the size "default" of
+    // the triggering button
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--lg`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "default"', () => {
+    render(
+      <MenuButton size="default" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    // The "default" size does not have a specific class, so we make sure that the
+    // other size classed have not been added.
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--sm`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--md`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--lg`);
+    expect(screen.getByRole('button', { name: 'Create' })).not.toHaveClass(`${prefix}--btn--xl`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+
+    // The menu will by default get the size lg which matches the size "default" of
+    // the triggering button
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--lg`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "md"', () => {
+    render(
+      <MenuButton size="md" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--md`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+    expect(screen.getAllByRole('menu')[0]).toHaveClass(`${prefix}--menu--md`);
+  });
+
+  it('should render the correct sizes for buttons and menu items for size "sm"', () => {
+    render(
+      <MenuButton size="sm" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--sm`);
+
+    userEvent.click(screen.getByRole('button', { name: 'Create' }));
+    // The size "sm" will not get an explicit class, so we check that the other classes
+    // are not present
+    expect(screen.getAllByRole('menu')[0]).not.toHaveClass(`${prefix}--menu--md`);
+    expect(screen.getAllByRole('menu')[0]).not.toHaveClass(`${prefix}--menu--lg`);
+  });
+
+  it('should render the correct default kind for buttons', () => {
+    // Single button
+    const { rerender } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+
+    // Split button
+    rerender(
+      <MenuButton onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--primary`
+    );
+
+    // Icon only button
+    rerender(<MenuButton renderOpenIcon={ChevronDown16}>{menuItems}</MenuButton>);
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render primary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(<MenuButton label="Create">{menuItems}</MenuButton>);
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+
+    // Split button
+    rerender(
+      <MenuButton onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--primary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--primary`
+    );
+
+    // Icon only button is always ghost
+    rerender(<MenuButton renderOpenIcon={ChevronDown16}>{menuItems}</MenuButton>);
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render seondary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="secondary" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--secondary`);
+
+    // Split button
+    rerender(
+      <MenuButton kind="secondary" onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--secondary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--secondary`
+    );
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="secondary" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render tertiary kind for single button and split button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="tertiary" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--tertiary`);
+
+    // Split button
+    rerender(
+      <MenuButton kind="tertiary" onPrimaryActionClick={() => {}} label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--tertiary`);
+    expect(screen.getByRole('button', { name: 'open menu button' })).toHaveClass(
+      `${prefix}--btn--tertiary`
+    );
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="tertiary" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
+  it('should render ghost kind for single button & icon button', () => {
+    // Single button
+    const { rerender } = render(
+      <MenuButton kind="ghost" label="Create">
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button', { name: 'Create' })).toHaveClass(`${prefix}--btn--ghost`);
+
+    // Icon only button is always ghost
+    rerender(
+      <MenuButton kind="ghost" renderOpenIcon={ChevronDown16}>
+        {menuItems}
+      </MenuButton>
+    );
+    expect(screen.getByRole('button')).toHaveClass(`${prefix}--btn--ghost`);
+  });
+
   it('should be open the menu when clicking the button in single button mode', () => {
     render(<MenuButton label="Create">{menuItems}</MenuButton>);
 
@@ -220,6 +405,217 @@ describe('MenuButton', () => {
         `Failed prop type: The prop \`iconDescription\` is marked as required in \`ForwardRef\`, but its value is \`null\`.`
       )
     );
+  });
+
+  describe('getShadowBlockerConfig', () => {
+    const MENU_HEIGHT = 236;
+    beforeEach(() => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 768,
+      });
+    });
+
+    afterEach(() => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 0,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 0,
+      });
+    });
+
+    it('get the correct height of the menu', () => {
+      const button = generateMenuButton({
+        bottom: 747,
+        height: 48,
+        left: 930,
+        right: 978,
+        top: 699,
+        width: 48,
+        x: 930,
+        y: 699,
+      });
+
+      const { menuHeight } = MenuButtonUtils.getShadowBlockerConfig({ current: button });
+      expect(menuHeight).toEqual(MENU_HEIGHT);
+    });
+
+    it('should set openHorizontally when menu overflows to both top and bottom', () => {
+      Object.defineProperty(document.body, 'clientWidth', {
+        writable: true,
+        value: 1024,
+      });
+      Object.defineProperty(document.body, 'clientHeight', {
+        writable: true,
+        value: 384,
+      });
+
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 200,
+        width: 48,
+        x: 912.984375,
+        y: 768,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(true);
+    });
+
+    it('should generate correct config when overflow is right', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 408,
+        width: 48,
+        x: 912.984375,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top-right', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 912.984375,
+        right: 960.984375,
+        top: 48,
+        width: 48,
+        x: 912.984375,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(true);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 48,
+        width: 48,
+        x: 480.484375,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when there is no overflow in any direction', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 480.484375,
+        right: 528.484375,
+        top: 408,
+        width: 48,
+        x: 480.484375,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is left', () => {
+      const button = generateMenuButton({
+        bottom: 456,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 408,
+        width: 48,
+        x: 48,
+        y: 408,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is top-left', () => {
+      const button = generateMenuButton({
+        bottom: 96,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 48,
+        width: 48,
+        x: 48,
+        y: 48,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(false);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
+
+    it('should generate correct config when overflow is bottom-left', () => {
+      const button = generateMenuButton({
+        bottom: 816,
+        height: 48,
+        left: 48,
+        right: 96,
+        top: 768,
+        width: 48,
+        x: 48,
+        y: 768,
+      });
+
+      const { flippedX, flippedY, opensHorizontally } = MenuButtonUtils.getShadowBlockerConfig({
+        current: button,
+      });
+      expect(flippedX).toEqual(true);
+      expect(flippedY).toEqual(false);
+      expect(opensHorizontally).toEqual(false);
+    });
   });
 
   describe('getMenuPosition', () => {

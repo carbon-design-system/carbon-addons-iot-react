@@ -2574,6 +2574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </table>
               </div>
             </div>
+            <div />
             <div
               className="bx--pagination iot--pagination bx--pagination--lg"
               data-testid="TimeSeries-table-table-pagination"
@@ -2588,8 +2589,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <label
                   className="bx--pagination__text"
-                  htmlFor="bx-pagination-select-34"
-                  id="bx-pagination-select-34-count-label"
+                  htmlFor="bx-pagination-select-33"
+                  id="bx-pagination-select-33-count-label"
                 >
                   Items per page:
                 </label>
@@ -2608,7 +2609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-34"
+                          id="bx-pagination-select-33"
                           onChange={[Function]}
                           value={10}
                         >
@@ -2673,7 +2674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <label
                       className="bx--label bx--visually-hidden"
-                      htmlFor="bx-pagination-select-34-right"
+                      htmlFor="bx-pagination-select-33-right"
                     >
                       Page number, of 1 pages
                     </label>
@@ -2686,7 +2687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <select
                           className="bx--select-input"
-                          id="bx-pagination-select-34-right"
+                          id="bx-pagination-select-33-right"
                           onChange={[Function]}
                           value={1}
                         >
