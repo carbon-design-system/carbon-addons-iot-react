@@ -197,11 +197,15 @@ const TableBodyRowRenderer = (props) => {
         ref={rowVisibilityRef}
         data-testid={`${tableId}-lazy-row-${row.id}`}
       >
-        {[...Array(totalColumns)].map((c, colIndex) => (
+        {hasRowSelection === 'multi' ? <TableCell /> : null}
+        {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
+        {columns.map((v, colIndex) => (
           <TableCell key={`empty-cell-${colIndex}`}>
             <SkeletonText />
           </TableCell>
         ))}
+        {showExpanderColumn ? <TableCell /> : null}
+        {hasRowActions ? <TableCell /> : null}
       </tr>
     );
   }
