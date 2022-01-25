@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.147.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.6...v2.147.1) (2022-01-24)
+
+
+### Bug Fixes
+
+* **table:** adjust toolbar tests for new output ([aec9723](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aec97237846d50ead5ae4a2b4db76809c13f1a34))
+* **table:** truncate long text in table toolbar actions overflow ([2c90d0e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2c90d0e0346876910cc68bbc9ac9803bf94d9fdc))
+* **table:** update vrt snapshot ([ed814cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ed814cfa5cffad6bf461fb5c09a549424216192f))
+* **table-toolbar:** adjust text truncation, again ([b5f465a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b5f465ab410cf3589990a59153105762c1f0a35a))
+* adjust tests to handle truncation changes ([40211c5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/40211c5a80318490bf802e5bb7787e8df7a34bf8))
+* **table-toolbar:** hide overflow actions menu if all actions hidden ([9432504](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/94325048e1fdd6d617aadc1e46803b6396589069))
+
+
+
+
+
 # [2.147.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.91...v2.147.0) (2022-01-12)
 
 **Note:** Version bump only for package carbon-addons-iot-react

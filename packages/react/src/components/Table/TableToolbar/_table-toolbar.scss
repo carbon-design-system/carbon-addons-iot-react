@@ -93,6 +93,7 @@ html[dir='rtl'] {
   display: flex;
   align-items: center;
   text-align: left;
+  min-width: 0;
 
   [dir='rtl'] & {
     text-align: right;
@@ -100,6 +101,7 @@ html[dir='rtl'] {
 
   svg {
     margin-right: $spacing-03;
+    flex-shrink: 0;
 
     [dir='rtl'] & {
       margin-right: 0;
