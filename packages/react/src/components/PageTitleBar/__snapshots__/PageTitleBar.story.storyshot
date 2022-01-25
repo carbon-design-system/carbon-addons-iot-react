@@ -4930,6 +4930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
+                  title="Page title"
                 >
                   <span
                     className="bx--link"
@@ -5387,6 +5388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
+                  title="Page title"
                 >
                   <span
                     className="bx--link"
@@ -5736,6 +5738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
+                  title="Page title"
                 >
                   <span
                     className="bx--link"
@@ -6817,6 +6820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                 </li>
                 <li
                   className="bx--breadcrumb-item bx--breadcrumb-item--current page-title-bar-breadcrumb-current"
+                  title="A page title could be really long, you never know"
                 >
                   <span
                     className="bx--link"

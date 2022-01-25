@@ -376,6 +376,7 @@ const PageTitleBar = ({
                       key="breadcrumb-current"
                       className="page-title-bar-breadcrumb-current"
                       isCurrentPage
+                      title={title}
                     >
                       {title}
                     </BreadcrumbItem>
