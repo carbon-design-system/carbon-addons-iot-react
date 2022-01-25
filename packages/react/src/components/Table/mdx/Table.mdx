@@ -1,3 +1,5 @@
+import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
+
 # `Table` component
 
 ## Table of Contents
@@ -21,15 +23,7 @@
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
 - [Column customization](#column-customization)
-  - [Programmatic ordering and visibility](#programmatic-ordering-and-visibility)
-  - [Column grouping](#column-grouping)
-  - [The column customization modal](#the-column-customization-modal)
-    - [Visibility toggle](#visibility-toggle)
-    - [Pinned column](#pinned-column)
-    - [Load more columns](#load-more-columns)
-    - [Use predefined column grouping](#use-predefined-column-grouping)
-    - [TableColumnCustomizationModal Props](#tablecolumncustomizationmodal-props)
-  - [Async column customization modal](#async-column-customization-modal)
+  <TableColumnCustomizationTOC />
 - [Props](#props)
   - [Column Prop](#column-prop)
   - [Data Prop](#data-prop)
@@ -1155,128 +1149,13 @@ See the table story code for a complete example.
 
 ## Column customization
 
-The table columns can be customized when it comes to order of appearance, visibility, width and grouping.
+import TableColumnCustomizationContent from './TableColumnCustomizationContent.mdx';
 
-### Programmatic ordering and visibility
-
-In the simplest form the presence and order of a column is determined by the `columns` prop. By updating the prop it is possible to add, remove and
-reorder columns. The following simplified example will render a table with 4 columns in the order col1, col2, col3 and col4.
-
-```jsx
-<table
-  columns={[
-    {id: 'col1', name: 'Column 1'}
-    {id: 'col2', name: 'Column 2'}
-    {id: 'col3', name: 'Column 3'}
-    {id: 'col4', name: 'Column 4'}
-  ]}
-  data={tableData}
-/>
-```
-
-But the order and the visibility of the columns can also be controlled by the view prop `view.table.ordering`.
-The order of the objects in the ordering prop will override the `columns` prop and determine the order the columns will have in the table.
-It is possible to have columns referenced in the ordering prop without having them visible in the table
-by using the `isHidden` attribute. The following simplified example will render a table with 3 columns in the order col4, col1 and col3.
-
-```jsx
-<table
-  columns={[
-    {id: 'col1', name: 'Column 1'}
-    {id: 'col2', name: 'Column 2'}
-    {id: 'col3', name: 'Column 3'}
-    {id: 'col4', name: 'Column 4'}
-  ]}
-  data={tableData}
-  view={{
-    table: {
-      ordering: [
-        { columnId: 'col4' },
-        { columnId: 'col1' },
-        { columnId: 'col2', isHidden: true },
-        { columnId: 'col3' },
-      ],
-    },
-  }}
-/>
-```
-
-If the table has the prop `options.hasResize` the width of the columns can be programmatically controlled by the `columns` prop.
-Each column object in the columns array can have a width defined in `px`. The minimum column width is 62px and the default value
-is 150px if no column width is given.
-
-```jsx
-columns={[
-  {
-    id: 'string',
-    name: 'String',
-    width: '200px'
-  },
-
-  {
-    id: 'date',
-    name: 'Date',
-    width: '100px'
-  },
-  {
-    id: 'select',
-    name: 'Select',
-    width: '100px'
-  },
-  {
-    id: 'secretField',
-    name: 'Secret Information',
-  }
-]}
-```
-
-### Column grouping
-
-The table columns can be grouped into any number of groups. Each column group has an id, a name and can include any number of columns. The column groups will be displayed in a dedicated row above the normal column headers.
-The column grouping can be combined with any other table functionality except with the StatefulTable's column toggle and reordering functionality (`hasColumnSelection`).
-
-A group is defined by adding an object containing the id and name to the `ColumnGroups` prop. A column is matched to a group by setting the `columnGroupId` prop of the column object in `view.table.ordering`.
-The order of the column groups is implicitly defined by the order they are referenced in the `view.table.ordering` and that order must be sequential.
-E.g. this ordering is valid since the columns belonging to groupA appear in sequence in the array.
-
-```jsx
-ordering: [
-  { columnId: 'col0' },
-  { columnId: 'col1', columnGroupId: 'groupA' },
-  { columnId: 'col2', columnGroupId: 'groupA' },
-  { columnId: 'col3' },
-];
-```
-
-A complete example of how to use the column grouping could look like this:
-
-```jsx
-<Table
-  columns={[
-    { id: 'col0', name: 'column 0' },
-    { id: 'col1', name: 'column 1' },
-    { id: 'col2', name: 'column 2' },
-    { id: 'col3', name: 'column 3' },
-  ]}
-  // Column groups are defined here
-  columnGroups={[{ id: 'groupA', name: 'Group A' }]}
-  view={{
-    table: {
-      ordering: [
-        { columnId: 'col0' },
-        // Columns are matched to to groups here
-        { columnId: 'col1', columnGroupId: 'groupA' },
-        { columnId: 'col2', columnGroupId: 'groupA' },
-        { columnId: 'col3' },
-      ],
-    },
-  }}
-/>
-```
+<TableColumnCustomizationContent />
 
 ### The column customization modal
 
-import TableColumnCustomizationModalContent from './TableColumnCustomizationModal/TableColumnCustomizationModalContent.mdx';
+import TableColumnCustomizationModalContent from '../TableColumnCustomizationModal/TableColumnCustomizationModalContent.mdx';
 
 <TableColumnCustomizationModalContent />
 
