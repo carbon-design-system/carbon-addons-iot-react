@@ -2615,13 +2615,114 @@ describe('Table', () => {
     // 5 * 1.5 = 7.5, rounded is 8 items.
     expect(screen.getByText('1–5 of 8 items')).toBeVisible();
 
-    expect(console.error).toHaveBeenLastCalledWith(
+    expect(console.error).toHaveBeenCalledWith(
       expect.stringContaining(
         'Warning: Failed prop type: Invalid prop `maxPages` supplied to `Table`. `maxPages` must be a positive integer.'
       )
     );
     global.__DEV__ = __DEV__;
     jest.resetAllMocks();
+  });
+
+  describe('shouldLazyRender', () => {
+    beforeEach(() => {
+      window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
+        callback([{ isIntersecting: false }]);
+
+        return {
+          observe: jest.fn(),
+          unobserve: jest.fn(),
+          disconnect: jest.fn(),
+        };
+      });
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should render only visible rows when shouldLazyRender:true', () => {
+      let isIntersecting = true;
+      const observer = {
+        observe: jest.fn().mockImplementation(() => {
+          isIntersecting = false;
+        }),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+      window.IntersectionObserver.mockReset();
+      window.IntersectionObserver.mockImplementation((callback) => {
+        callback([{ isIntersecting }], observer);
+
+        return observer;
+      });
+
+      const { container } = render(
+        <Table
+          columns={tableColumns}
+          data={tableData}
+          expandedData={expandedData}
+          actions={mockActions}
+          options={{
+            hasRowExpansion: true,
+            hasRowActions: true,
+            shouldLazyRender: true,
+            hasRowSelection: 'multi',
+          }}
+          view={{
+            ...view,
+          }}
+        />
+      );
+      // 20 for data, 1 for header
+      expect(container.querySelectorAll('tr')).toHaveLength(21);
+      // only the first row is marked as visible by the mocked intersection observer above
+      const lazyRows = screen.getAllByTestId(/lazy-row/i);
+      expect(lazyRows).toHaveLength(19);
+      // plus 3 for hasRowExpansion, hasRowActions, and hasRowSelection
+      expect(lazyRows[0].querySelectorAll('td')).toHaveLength(tableColumns.length + 3);
+    });
+
+    it('should match the correct number of columns when lazy rendering', () => {
+      let isIntersecting = true;
+      const observer = {
+        observe: jest.fn().mockImplementation(() => {
+          isIntersecting = false;
+        }),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+      window.IntersectionObserver.mockReset();
+      window.IntersectionObserver.mockImplementation((callback) => {
+        callback([{ isIntersecting }], observer);
+
+        return observer;
+      });
+
+      const { container } = render(
+        <Table
+          columns={tableColumns}
+          data={tableData}
+          expandedData={expandedData}
+          actions={mockActions}
+          options={{
+            hasRowExpansion: false,
+            hasRowActions: false,
+            shouldLazyRender: true,
+            hasRowSelection: false,
+          }}
+          view={{
+            ...view,
+          }}
+        />
+      );
+      // 20 for data, 1 for header
+      expect(container.querySelectorAll('tr')).toHaveLength(21);
+      // only the first row is marked as visible by the mocked intersection observer above
+      const lazyRows = screen.getAllByTestId(/lazy-row/i);
+      expect(lazyRows).toHaveLength(19);
+      expect(lazyRows[0].querySelectorAll('td')).toHaveLength(tableColumns.length);
+    });
   });
 
   describe('toolbarActions in toolbar', () => {

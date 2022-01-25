@@ -1,8 +1,3 @@
-// Needed so that any component that uses sizeme can be jest tested
-import sizeMe from 'react-sizeme';
-
-sizeMe.noPlaceholders = true;
-
 // Settings
 export { settings } from './constants/Settings';
 

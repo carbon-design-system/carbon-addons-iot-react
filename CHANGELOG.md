@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.5...v2.148.0-next.6) (2022-01-21)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.148.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.4...v2.148.0-next.5) (2022-01-20)
+
+
+### Bug Fixes
+
+* **use-visibility-loader:** remove useCallback ([b8b0c84](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b8b0c84468bdd4242a349f2930555379688cc2fc))
+
+
+### Features
+
+* add initial height/width to useSizeObserver hook, optional ref ([9aca41f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9aca41f3abd54bcf954f1072726a9ca80db5fbad))
+* rework useVisibilityObserver ([6f193fd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6f193fd39d9052753522f8d76fc84c985af5b330))
+* **list:** add infinite loader experimental example to List ([737cde3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/737cde3b4b220d057c8d3f341450defb93016187))
+* **repo:** remove react-sizeme and replace with custom hook ([29c6219](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29c6219a11a5cc37775736c52ae8281911582c8c))
+* **use-visibility-loader:** refactor and use example in list ([814b099](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/814b099aa109ebc0bac42a9a6537b6ffda78228f))
+* remove react-sizeme from index.js ([c4aa14f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c4aa14fbf3f606c155ca03d7794e539f8a5a78cb))
+* remove react-visibility-sensor and replace with custom hook ([4a2c775](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4a2c775381181d23aba8e50e71bbb7b4eef297a3))
+
+
+
+
+
 # [2.148.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.3...v2.148.0-next.4) (2022-01-19)
 
 
