@@ -7,7 +7,7 @@ import {
   InlineNotification,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import warning from 'warning';
 
@@ -15,6 +15,7 @@ import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
 import deprecate from '../../internal/deprecate';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const { iotPrefix, prefix } = settings;
 
@@ -87,6 +88,26 @@ export const ComposedModalPropTypes = {
   testId: PropTypes.string,
 };
 
+const defaultProps = {
+  open: true,
+  error: null,
+  isFetchingData: false,
+  sendingData: null,
+  onClearError: null,
+  type: null,
+  footer: null,
+  isFullScreen: false,
+  isLarge: false,
+  submitFailed: false,
+  onSubmit: null,
+  invalid: false,
+  children: null,
+  header: {},
+  iconDescription: 'Close',
+  passiveModal: false,
+  testId: 'ComposedModal',
+};
+
 /**
  * Renders a carbon modal dialog.  This dialog adds these additional features on top of the base carbon dialog:
  *  adds header.helpText prop to explain dialog
@@ -101,90 +122,96 @@ export const ComposedModalPropTypes = {
  * We also prevent the dialog from closing if you click outside it.
  *
  */
-class ComposedModal extends React.Component {
-  static propTypes = ComposedModalPropTypes;
-
-  static defaultProps = {
-    open: true,
-    error: null,
-    isFetchingData: false,
-    sendingData: null,
-    onClearError: null,
-    type: null,
-    footer: null,
-    isFullScreen: false,
-    isLarge: false,
-    submitFailed: false,
-    onSubmit: null,
-    invalid: false,
-    children: null,
-    header: {},
-    iconDescription: 'Close',
-    passiveModal: false,
-    testId: 'ComposedModal',
-  };
-
-  componentDidUpdate(prevProps) {
-    const { submitFailed, invalid } = this.props;
-    if (invalid && submitFailed !== prevProps.submitFailed) {
-      scrollErrorIntoView(true);
-    }
-  }
-
-  handleClearError = () => {
-    const { onClearError } = this.props;
-    if (onClearError) {
-      onClearError();
-    }
-  };
-
-  /** TODO: This is needed to keep the ComposedModal from closing if you click outside it this supports our dialogs on top of dialogs issue */
-  doNotClose = () => false;
-
-  render() {
-    const {
-      header,
-      error,
-      sendingData,
-      children,
-      footer,
-      open,
-      className,
-      type,
-      onClose,
-      isFetchingData,
-      isFullScreen,
-      isLarge,
-      onSubmit,
-      iconDescription,
-      onClearError,
-      submitFailed,
-      invalid,
-      passiveModal,
-      // TODO: remove deprecated testID in v3.
-      testID,
-      testId,
-      ...props
-    } = this.props;
-    const { label, title, helpText } = header;
-    // First check for dataErrors as they are worse than form errors
-
+const ComposedModal = ({
+  header,
+  error,
+  sendingData,
+  children,
+  footer,
+  open,
+  className,
+  type,
+  onClose,
+  isFetchingData,
+  isFullScreen,
+  isLarge,
+  onSubmit,
+  iconDescription,
+  onClearError,
+  submitFailed,
+  invalid,
+  passiveModal,
+  // TODO: remove deprecated testID in v3.
+  testID,
+  testId,
+  ...props
+}) => {
+  useEffect(() => {
     if (__DEV__ && passiveModal && (footer || onSubmit)) {
       warning(
         false,
         'You have set passiveModal to true, but also passed a footer or onSubmit handler.  Your footer will not be rendered.'
       );
     }
+  }, [footer, onSubmit, passiveModal]);
 
-    return isFetchingData ? (
-      <Loading />
-    ) : (
+  useEffect(() => {
+    if (invalid && submitFailed) {
+      scrollErrorIntoView(true);
+    }
+  }, [invalid, submitFailed]);
+
+  const handleClearError = () => {
+    if (onClearError) {
+      onClearError();
+    }
+  };
+  const { height: windowHeight } = useWindowSize();
+  const [maxContentHeight, setMaxContentHeight] = useState();
+
+  /** TODO: This is needed to keep the ComposedModal from closing if you click outside it this supports our dialogs on top of dialogs issue */
+  const doNotClose = () => false;
+
+  const modalWrapperRef = useRef(null);
+
+  useEffect(() => {
+    if (modalWrapperRef.current) {
+      const modalEl = modalWrapperRef.current.querySelector(`.${prefix}--modal-container`);
+      const headerEl = modalWrapperRef.current.querySelector(`.${prefix}--modal-header`);
+      const footerEl = modalWrapperRef.current.querySelector(
+        `.${iotPrefix}--composed-modal-footer`
+      );
+      // get the css max-height
+      const modalStyles = window?.getComputedStyle(modalEl) ?? { maxHeight: undefined };
+      const fallback = { height: 0 };
+      const { height: modalHeight } = modalEl?.getBoundingClientRect() ?? fallback;
+      const { height: headerHeight } = headerEl?.getBoundingClientRect() ?? fallback;
+      const { height: footerHeight } = footerEl?.getBoundingClientRect() ?? fallback;
+
+      // if the maximum height is a percentage (default), convert that back into an integer
+      // and use that value to calculate the content height by subtracting the header/footer space
+      const modalMaxHeight = /%/.test(modalStyles.maxHeight)
+        ? (parseInt(modalStyles.maxHeight, 10) / 100) * windowHeight
+        : // otherwise, just use the current calculated height of the modal, since it can get very
+          // complicated with different units for the maxHeight
+          modalHeight;
+
+      setMaxContentHeight(Math.floor(modalMaxHeight - footerHeight - headerHeight));
+    }
+  }, [windowHeight]);
+
+  const { label, title, helpText } = header;
+  // First check for dataErrors as they are worse than form errors
+  return isFetchingData ? (
+    <Loading />
+  ) : (
+    <div ref={modalWrapperRef}>
       <CarbonComposedModal
         {...props}
         // TODO: remove deprecated testID in v3.
         data-testid={testID || testId}
         open={open}
-        onClose={this.doNotClose}
+        onClose={doNotClose}
         data-floating-menu-container // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
         className={classnames(
           className,
@@ -210,6 +237,8 @@ class ComposedModal extends React.Component {
               // Prevent double scrollbars
               [`${iotPrefix}--composed-modal__body--small-margin-bottom`]: error,
             })}
+            // subtracting 4rem for padding/margin
+            style={{ [isLarge ? 'height' : 'maxHeight']: `calc(${maxContentHeight}px - 3rem)` }}
           >
             {children}
           </ModalBody>
@@ -219,7 +248,7 @@ class ComposedModal extends React.Component {
             title={error}
             subtitle=""
             kind="error"
-            onCloseButtonClick={this.handleClearError}
+            onCloseButtonClick={handleClearError}
             className={`${iotPrefix}--composed-modal--inline-notification`}
             data-testid={`${testID || testId}-notification`}
           />
@@ -258,8 +287,10 @@ class ComposedModal extends React.Component {
           </ModalFooter>
         ) : null}
       </CarbonComposedModal>
-    );
-  }
-}
+    </div>
+  );
+};
 
+ComposedModal.propTypes = ComposedModalPropTypes;
+ComposedModal.defaultProps = defaultProps;
 export default ComposedModal;
