@@ -6328,6 +6328,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6348,6 +6379,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -6562,6 +6596,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6582,6 +6647,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -6813,6 +6881,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -6833,6 +6932,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -24062,6 +24164,37 @@ Map {
                       "icon": Object {
                         "type": "node",
                       },
+                      "rowActions": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "type": "node",
+                                },
+                              ],
+                              "type": "arrayOf",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
                       "tags": Object {
                         "args": Array [
                           Object {
@@ -24082,6 +24215,9 @@ Map {
                 },
                 "id": Object {
                   "type": "string",
+                },
+                "isCategory": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
