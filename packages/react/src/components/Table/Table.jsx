@@ -926,6 +926,7 @@ const Table = (props) => {
                     }}
                     // TODO: remove id in V3.
                     data-testid={`${id || testId}-filter-tag-${advancedFilter.filterId}`}
+                    type="blue"
                   >
                     {advancedFilter.filterTitleText}
                   </Tag>

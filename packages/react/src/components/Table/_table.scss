@@ -99,11 +99,6 @@ html[dir='rtl'] {
   background-color: $ui-01;
   padding: $spacing-02 $spacing-04;
   border-top: 1px solid $ui-03;
-
-  .#{$prefix}--tag {
-    color: $active-primary;
-    background-color: $highlight;
-  }
 }
 
 // needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
