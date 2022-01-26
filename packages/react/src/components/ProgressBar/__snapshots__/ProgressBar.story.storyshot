@@ -102,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="progress-bar-icon"
         >
           <svg
-            aria-label="progress bar icon"
+            aria-label="Progress bar icon"
             fill="#0f62fe"
             focusable="false"
             height={16}
@@ -198,7 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           data-testid="progress-bar-icon"
         >
           <svg
-            aria-label="progress bar icon"
+            aria-label="Progress bar icon"
             fill="#f1c21b"
             focusable="false"
             height={16}

@@ -71,12 +71,12 @@ describe('ProgressBar', () => {
     const { rerender } = render(
       <ProgressBar label="A progress label" value={33} thresholds={thresholds} />
     );
-    expect(screen.getByLabelText('progress bar icon')).toBeVisible();
-    expect(screen.getByLabelText('progress bar icon')).toHaveAttribute('fill', 'green');
+    expect(screen.getByLabelText('Progress bar icon')).toBeVisible();
+    expect(screen.getByLabelText('Progress bar icon')).toHaveAttribute('fill', 'green');
 
     rerender(<ProgressBar label="A progress label" value={51} thresholds={thresholds} />);
-    expect(screen.getByLabelText('progress bar icon')).toBeVisible();
-    expect(screen.getByLabelText('progress bar icon')).toHaveAttribute('fill', 'yellow');
+    expect(screen.getByLabelText('Progress bar icon')).toBeVisible();
+    expect(screen.getByLabelText('Progress bar icon')).toHaveAttribute('fill', 'yellow');
 
     rerender(<ProgressBar label="A progress label" value={80} thresholds={thresholds} />);
     expect(screen.getByLabelText('warning-filled-16')).toBeVisible();
@@ -102,8 +102,8 @@ describe('ProgressBar', () => {
     ];
 
     render(<ProgressBar label="A progress label" value={101} thresholds={thresholds} max={100} />);
-    expect(screen.getByLabelText('progress bar icon')).toBeVisible();
-    expect(screen.getByLabelText('progress bar icon')).toHaveAttribute('fill', 'red');
+    expect(screen.getByLabelText('Progress bar icon')).toBeVisible();
+    expect(screen.getByLabelText('Progress bar icon')).toHaveAttribute('fill', 'red');
     expect(screen.getByTestId('progress-bar-container')).toHaveStyle(
       '--progress-bar-fill-color:red'
     );

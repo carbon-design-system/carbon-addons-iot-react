@@ -29623,7 +29623,7 @@ Map {
       "helperText": "",
       "hideLabel": false,
       "i18n": Object {
-        "iconLabel": "progress bar icon",
+        "iconLabel": "Progress bar icon",
       },
       "max": 100,
       "renderIcon": undefined,

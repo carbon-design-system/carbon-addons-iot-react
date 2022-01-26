@@ -16,15 +16,31 @@ import {
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /* the label show above the bar */
   label: PropTypes.string.isRequired,
+  /* the text shown below the bar */
   helperText: PropTypes.string,
+  /* if true, hide the label  */
   hideLabel: PropTypes.bool,
+  /* the number used to fill the bar */
   value: PropTypes.number.isRequired,
+  /* the unit shown beside the value label text */
   valueUnit: PropTypes.string,
+  /**
+   * the maximum value this bar supports, values higher trigger the `over` class to style the
+   * value label text differently
+   */
   max: PropTypes.number,
+  /**
+   * An array of threshold objects to compare the value against and change the icon and/or
+   * bar colors based on matching criteria
+   */
   thresholds: PropTypes.arrayOf(
     PropTypes.oneOfType([ThresholdComparisonPropType, ThresholdComparisonFunctionPropType])
   ),
+  /**
+   * renders an icon beside the value label text
+   */
   renderIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.string]),
   /**
    * Callback called when a threshold determines what icon to render based on a string for the icon
@@ -32,6 +48,9 @@ const propTypes = {
    */
   renderIconByName: PropTypes.func,
 
+  /**
+   * i18n prop for adding an aria label to the icon
+   */
   i18n: PropTypes.shape({
     iconLabel: PropTypes.string,
   }),
@@ -46,7 +65,7 @@ const defaultProps = {
   renderIcon: undefined,
   renderIconByName: undefined,
   i18n: {
-    iconLabel: 'progress bar icon',
+    iconLabel: 'Progress bar icon',
   },
 };
 
@@ -97,6 +116,7 @@ const ProgressBar = ({
         ) : null}
         <span
           className={classnames(`${iotPrefix}--progress-bar__value-label`, {
+            // allow styling the value label differently when above max
             [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
           })}
         >{`${value}${valueUnit}`}</span>
