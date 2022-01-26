@@ -10,7 +10,7 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 
 import GaugeCard from './GaugeCard';
 
-const content = {
+const getContent = () => ({
   gauges: [
     {
       dataSourceId: 'usage',
@@ -48,7 +48,7 @@ const content = {
       ],
     },
   ],
-};
+});
 
 export default {
   title: '1 - Watson IoT/GaugeCard',
@@ -79,7 +79,7 @@ export const Basic = () => {
           usage: number('Gauge value', 81),
           usageTrend: '12%',
         }}
-        content={content}
+        content={getContent()}
       />
     </div>
   );
@@ -250,7 +250,7 @@ export const BasicWithExpand = () => {
         availableActions={{
           expand: true,
         }}
-        content={content}
+        content={getContent()}
         onCardAction={action('Expand button clicked')}
       />
     </div>

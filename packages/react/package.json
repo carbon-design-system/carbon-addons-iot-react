@@ -55,7 +55,7 @@
     "test:e2e": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct --browser=chrome --headed --config video=false,screenshotOnRunFailure=false",
     "test:e2e:interactive": "cross-env BABEL_ENV='e2e' NODE_ENV='e2e' cypress open-ct --browser=chrome --config video=false,screenshotOnRunFailure=false",
     "test:e2e:ci": "cross-env HEIGHT=1680 WIDTH=1680 BABEL_ENV='e2e' NODE_ENV='e2e' cypress run-ct  --browser=chrome --config watchForFileChanges=false --record video=false,screenshotOnRunFailure=false",
-    "test:e2e:images": "cd ../.. && docker-compose run --no-deps --rm react-visual-regression-tests bash -c 'cd /@ai-apps/packages/react && pwd && yarn cypress install && yarn test:e2e:ci --record=false video=false,screenshotOnRunFailure=false'",
+    "test:e2e:images": "cd ../.. && docker-compose run --no-deps --rm react-visual-regression-tests bash -c 'cd /@ai-apps/packages/react && pwd && yarn cypress install && yarn test:e2e:ci --record=false --config video=false,screenshotOnRunFailure=false'",
     "test:e2e:docker:build": "cd ../.. && docker-compose up --build",
     "test:e2e:docker:clean": "docker system prune",
     "test:sandbox": "cypress run --spec cypress/integration/codesandbox.spec.js --config supportFile=cypress/support/codesandbox.js,testFiles=*.spec.js,chromeWebSecurity=false",
@@ -193,15 +193,13 @@
     "react-dnd-html5-backend": "14.0.0",
     "react-grid-layout": "1.2.2",
     "react-helmet-async": "^1.0.9",
-    "react-sizeme": "2.6.3",
-    "react-visibility-sensor": "^5.0.2",
     "react-window": "^1.8.6",
     "scroll-into-view-if-needed": "^2.2.26",
     "styled-components": "^4.1.3",
     "thenby": "^1.3.4",
     "use-deep-compare-effect": "^1.2.0",
     "use-lang-direction": "^0.1.11",
-    "use-resize-observer": "^6.1.0",
+    "use-resize-observer": "^8.0.0",
     "uuid": "^3.3.2",
     "warning": "^4.0.3"
   },
@@ -340,7 +338,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.147.0",
+  "version": "2.148.0-next.7",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2"

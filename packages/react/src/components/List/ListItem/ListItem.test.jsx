@@ -412,6 +412,16 @@ describe('ListItem', () => {
     expect(rowActions).toHaveBeenCalled();
   });
 
+  it('should render secondaryValue when passed a function with string return', () => {
+    const secondaryValue = jest.fn().mockReturnValue('Test title item');
+    render(
+      <UnconnectedListItem id="test-item" value="Test item" secondaryValue={secondaryValue} />
+    );
+
+    expect(secondaryValue).toHaveBeenCalled();
+    expect(screen.getByTitle('Test title item')).toBeVisible();
+  });
+
   it('should render secondaryValue when passed a function', () => {
     const secondaryValue = jest.fn();
     render(
@@ -419,7 +429,6 @@ describe('ListItem', () => {
     );
 
     expect(secondaryValue).toHaveBeenCalled();
-    expect(screen.getByTitle('Test item--secondary-value')).toBeVisible();
   });
 
   it('should render secondaryValue when passed a function in a large row', () => {
@@ -434,7 +443,6 @@ describe('ListItem', () => {
     );
 
     expect(secondaryValue).toHaveBeenCalled();
-    expect(screen.getByTitle('Test item--secondary-value')).toBeVisible();
   });
 
   it('should render a large row without secondary value', () => {

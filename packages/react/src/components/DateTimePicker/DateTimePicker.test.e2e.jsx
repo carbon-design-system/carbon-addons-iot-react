@@ -44,8 +44,10 @@ describe('DateTimePicker', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
+            endTime: '10:49',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
+            startTime: '12:34',
           },
         });
       });
