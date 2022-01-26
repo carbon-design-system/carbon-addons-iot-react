@@ -29618,6 +29618,272 @@ Map {
       },
     },
   },
+  "ProgressBar" => Object {
+    "defaultProps": Object {
+      "helperText": "",
+      "hideLabel": false,
+      "i18n": Object {
+        "iconLabel": "progress bar icon",
+      },
+      "max": 100,
+      "renderIcon": undefined,
+      "renderIconByName": undefined,
+      "thresholds": Array [],
+      "valueUnit": "%",
+    },
+    "propTypes": Object {
+      "helperText": Object {
+        "type": "string",
+      },
+      "hideLabel": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "iconLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "label": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "max": Object {
+        "type": "number",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
+      "thresholds": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "fill": Object {
+                                    "type": "string",
+                                  },
+                                  "stroke": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "comparison": Object {
+                        "args": Array [
+                          Array [
+                            "<",
+                            ">",
+                            "=",
+                            "<=",
+                            ">=",
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOf",
+                      },
+                      "icon": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "height": Object {
+                                    "type": "string",
+                                  },
+                                  "svgData": Object {
+                                    "args": Array [
+                                      Object {
+                                        "type": Object {
+                                          "args": Array [
+                                            Array [
+                                              "svg",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                      },
+                                    ],
+                                    "isRequired": true,
+                                    "type": "shape",
+                                  },
+                                  "viewBox": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "width": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "fill": Object {
+                                    "type": "string",
+                                  },
+                                  "stroke": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "comparison": Object {
+                        "isRequired": true,
+                        "type": "func",
+                      },
+                      "icon": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "height": Object {
+                                    "type": "string",
+                                  },
+                                  "svgData": Object {
+                                    "args": Array [
+                                      Object {
+                                        "type": Object {
+                                          "args": Array [
+                                            Array [
+                                              "svg",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                      },
+                                    ],
+                                    "isRequired": true,
+                                    "type": "shape",
+                                  },
+                                  "viewBox": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "width": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "value": Object {
+        "isRequired": true,
+        "type": "number",
+      },
+      "valueUnit": Object {
+        "type": "string",
+      },
+    },
+  },
   "useDNDProviderElement" => Object {},
   "hotspotActionTypes" => Object {
     "currentTypeSwitch": "CURRENT_TYPE_SWITCH",
