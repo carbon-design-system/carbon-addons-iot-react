@@ -158,6 +158,7 @@
       "src/components/Dashboard/CardRenderer.jsx",
       "src/components/MapCard/storyFiles/*.jsx",
       "src/components/Table/Table.test.helpers.jsx",
+      "src/components/Table/Table.story.helpers.jsx",
       "src/components/Table/TablePropTypes.js",
       "src/components/Table/TableColumnCustomizationModal/tableColumnCustomizationTestUtils.js"
     ],
