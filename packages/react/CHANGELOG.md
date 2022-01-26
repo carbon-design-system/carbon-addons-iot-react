@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.6...v2.148.0-next.7) (2022-01-26)
+
+
+### Bug Fixes
+
+* **page-title-bar:** fix accessibility error for `span` in `ol` ([f3f0e3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3f0e3ee61552f89d516b2105bc801bbeecef6a0))
+* **page-title-bar:** update styles to current breadcrumb ([4cfd954](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cfd95413e1451e86de8a4dc1fc25fffc8316438))
+
+
+
+
+
 # [2.148.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.5...v2.148.0-next.6) (2022-01-21)
 
 **Note:** Version bump only for package carbon-addons-iot-react
