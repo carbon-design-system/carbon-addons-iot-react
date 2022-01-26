@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.147.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.1...v2.147.2) (2022-01-26)
+
+
+### Bug Fixes
+
+* **side-nav:** attempted fix to override carbon ([70baffd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/70baffd1199cfcbe8f6bea015cfaa08036e5f3ca))
+
+
+
+
+
 ## [2.147.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.6...v2.147.1) (2022-01-24)
 
 
