@@ -472,6 +472,18 @@ export const initialState = {
         disabled: true,
       },
       {
+        id: 'hiddenOverflow',
+        labelText: 'Hidden overflow',
+        isOverflow: true,
+        hidden: true,
+      },
+      {
+        id: 'hidden',
+        labelText: 'Hidden',
+        isOverflow: false,
+        hidden: true,
+      },
+      {
         id: 'Add',
         renderIcon: Add,
         iconDescription: 'Add',

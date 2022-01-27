@@ -156,14 +156,31 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
-      data={initialState.data.slice(
-        0,
-        select(
-          'number of data items in table',
-          [initialState.data.length, 50, 20, 5],
-          initialState.data.length
+      data={initialState.data
+        .slice(
+          0,
+          select(
+            'number of data items in table',
+            [initialState.data.length, 50, 20, 5],
+            initialState.data.length
+          )
         )
-      )}
+        .map((row, index) => ({
+          ...row,
+          rowActions:
+            index === 1
+              ? [
+                  {
+                    id: 'Add',
+                    iconDescription: 'Add',
+                    labelText: 'Add',
+                    isOverflow: false,
+                    hasDivider: true,
+                    hidden: true,
+                  },
+                ]
+              : row.rowActions,
+        }))}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
