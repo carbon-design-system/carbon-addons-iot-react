@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.7...v2.148.0-next.8) (2022-01-27)
+
+
+### Bug Fixes
+
+* **table:** add skeleton column for nesting rows when lazy loading ([992a368](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/992a3684c3d3c6f9b969445da309ded370b76264))
+
+
+### Reverts
+
+* Revert "chore(table): pr feedback for skeleton rows for lazy loading" ([f0efc54](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f0efc540eef63d26b0a0ffb998bdb80710c65e9b))
+
+
+
+
+
 # [2.148.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.6...v2.148.0-next.7) (2022-01-26)
 
 
