@@ -10,9 +10,10 @@ import deprecate from '../../internal/deprecate';
 
 import { SplitMenuButton } from './SplitMenuButton';
 import { SingleMenuButton } from './SingleMenuButton';
-import { getMenuPosition } from './utils';
+import { getMenuPosition, getShadowBlockerConfig } from './utils';
 
 const { iotPrefix } = settings;
+const GHOST = 'ghost';
 
 const propTypes = {
   // eslint-disable-next-line react/require-default-props
@@ -72,6 +73,16 @@ const propTypes = {
   },
 
   children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+
+  /**
+   * The size of the button and the dropdown items
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'default']),
+
+  /**
+   * The kind of button.
+   */
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']),
 };
 
 const defaultProps = {
@@ -82,6 +93,8 @@ const defaultProps = {
   closeIconDescription: 'close menu button',
   renderOpenIcon: ChevronDown16,
   renderCloseIcon: ChevronUp16,
+  size: 'default',
+  kind: 'primary',
 };
 
 const MenuButton = ({
@@ -95,23 +108,27 @@ const MenuButton = ({
   renderOpenIcon,
   renderCloseIcon,
   children,
+  size: buttonSize,
+  kind,
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [shadowBlockerConf, setShadowBlockerConf] = useState({});
+
   const buttonRef = useRef(null);
   const langDir = useLangDirection();
   const handleResize = useCallback(() => {
     /* istanbul ignore else */
     if (buttonRef.current) {
       const { x, y } = getMenuPosition({ label, buttonRef, onPrimaryActionClick, langDir });
-
       setPosition({
         x,
         y,
       });
+      setShadowBlockerConf(getShadowBlockerConfig(buttonRef));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [label, langDir, onPrimaryActionClick, isMenuOpen]);
+  }, [label, langDir, onPrimaryActionClick, isMenuOpen, buttonSize]);
 
   /**
    * This is a hacky work-around, because the current Menu (7.42.1) won't allow us
@@ -200,6 +217,38 @@ const MenuButton = ({
     [children, handleChildClick]
   );
 
+  const menuSize = buttonSize === 'default' ? 'lg' : buttonSize;
+  const buttonKind = !label ? GHOST : kind;
+
+  /**
+   * This shadow-blocker is needed to remove the menu shadow covering the button.
+   * We can't use a pure CSS solution (like ::after) for this since the shadow-blocker styling
+   * needs to get the position and dimensions of the menu and it is not possible to
+   * pass that info as css attributes (vars) to the menu since the component internally use
+   * the style attribute to set the x & y attributes.
+   */
+  const { menuHeight, flippedX, flippedY, opensHorizontally } = shadowBlockerConf;
+  const shadowBlockerButtonClasses = {
+    [`${iotPrefix}--menu-button--flip-y`]: flippedY,
+    [`${iotPrefix}--menu-button--flip-x`]: flippedX,
+    [`${iotPrefix}--menu-button--opens-horizontally`]: opensHorizontally,
+  };
+  const showShadowBlocker = buttonKind === GHOST && isMenuOpen && !label;
+  const shadowBlocker = showShadowBlocker ? (
+    <div
+      style={{ [`--menu-height`]: `${menuHeight}px` }}
+      className={classnames(
+        {
+          [`${iotPrefix}--menu__shadow-blocker--flip-y`]: flippedY,
+          [`${iotPrefix}--menu__shadow-blocker--flip-x`]: flippedX,
+          [`${iotPrefix}--menu__shadow-blocker--opens-horizontally`]: opensHorizontally,
+        },
+        `${iotPrefix}--menu__shadow-blocker`,
+        `${iotPrefix}--menu__shadow-blocker--${menuSize}`
+      )}
+    />
+  ) : null;
+
   const ButtonComponent =
     typeof onPrimaryActionClick === 'function' && label ? SplitMenuButton : SingleMenuButton;
   return (
@@ -208,6 +257,7 @@ const MenuButton = ({
       data-testid={`${testID || testId}-wrapper`}
       className={classnames(`${iotPrefix}--menu-button`, {
         [`${iotPrefix}--menu-button--open`]: isMenuOpen,
+        ...shadowBlockerButtonClasses,
       })}
     >
       <ButtonComponent
@@ -219,9 +269,22 @@ const MenuButton = ({
         label={label}
         // TODO: remove deprecated 'testID' in v3.
         testId={testID || testId}
+        size={buttonSize}
+        kind={buttonKind}
       />
-      <Menu open={isMenuOpen} {...position}>
+      <Menu
+        className={classnames(
+          {
+            [`${iotPrefix}--menu-button--icon-only`]: buttonKind === GHOST,
+          },
+          `${iotPrefix}--menu-button__menu`
+        )}
+        size={menuSize}
+        open={isMenuOpen}
+        {...position}
+      >
         {contextMenuItems}
+        {shadowBlocker}
       </Menu>
     </div>
   );
