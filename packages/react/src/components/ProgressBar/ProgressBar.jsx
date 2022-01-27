@@ -13,7 +13,7 @@ import {
   ThresholdComparisonFunctionPropType,
 } from './thresholdPropTypes';
 
-const { iotPrefix } = settings;
+const { prefix, iotPrefix } = settings;
 
 const propTypes = {
   /* the label show above the bar */
@@ -100,7 +100,11 @@ const ProgressBar = ({
         '--progress-bar-stroke-color': strokeColor,
       }}
     >
-      <div className={`${iotPrefix}--progress-bar__label--right`}>
+      <div
+        className={classnames(`${iotPrefix}--progress-bar__label--right`, {
+          [`${prefix}--visually-hidden`]: hideLabel,
+        })}
+      >
         {Icon ? (
           <span className={`${iotPrefix}--progress-bar__icon`} data-testid="progress-bar-icon">
             {renderIconByName && typeof Icon === 'string' ? (

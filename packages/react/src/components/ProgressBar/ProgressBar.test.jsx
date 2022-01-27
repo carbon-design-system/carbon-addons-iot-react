@@ -6,7 +6,7 @@ import { settings } from '../../constants/Settings';
 
 import ProgressBar from './ProgressBar';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('ProgressBar', () => {
   it('should render by default without an icon', () => {
@@ -111,5 +111,11 @@ describe('ProgressBar', () => {
       '--progress-bar-stroke-color:white'
     );
     expect(screen.getByText('101%')).toHaveClass(`${iotPrefix}--progress-bar__value-label--over`);
+  });
+
+  it('should hide the label and value label when hideLabel:true', () => {
+    render(<ProgressBar label="A progress label" value={34} hideLabel max={100} />);
+    expect(screen.getByText('A progress label')).toHaveClass(`${prefix}--visually-hidden`);
+    expect(screen.getByText('34%').parentNode).toHaveClass(`${prefix}--visually-hidden`);
   });
 });
