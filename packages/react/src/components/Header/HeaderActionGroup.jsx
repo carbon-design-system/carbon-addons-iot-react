@@ -126,7 +126,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
                      * know whether the OverflowMenu is open and adjust the icons accordingly. This double-click
                      * only occurs when changing the icon. If the same icon is always used it works as expected.
                      * My guess is this is because of the outsideClickClosing that the overflow menu does. WHen the
-                     * icon is change it is "outside" of the element for a momemnt and causes a close--that or a re-render that
+                     * icon is change it is "outside" of the element for a moment and causes a close--that or a re-render that
                      * is triggered when the icon changes.
                      */
                     const button = target.closest('button');

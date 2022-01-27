@@ -11152,6 +11152,7 @@ Map {
         "myApplications": "My applications",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "isExpanded": false,
       "onRouteChange": [Function],
       "testId": "suite-header-app-switcher",
     },
@@ -11228,6 +11229,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isExpanded": Object {
+        "type": "bool",
       },
       "noAccessLink": Object {
         "isRequired": true,

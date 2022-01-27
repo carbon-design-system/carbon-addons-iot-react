@@ -143,7 +143,7 @@ const headerPanel = {
   className: 'header-panel',
 
   content: React.forwardRef((props, ref) => (
-    <button type="button" ref={ref} {...props}>
+    <button type="button" ref={ref}>
       Header panel content
     </button>
   )),
