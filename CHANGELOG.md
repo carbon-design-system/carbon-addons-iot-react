@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.8...v2.148.0-next.9) (2022-01-27)
+
+
+### Bug Fixes
+
+* **progress-bar:** hide value label and icon when hideLabel:true ([6421299](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6421299f7f830c448db10528942e9181093f903d))
+
+
+### Features
+
+* **progress-bar:** initial addition of new progress bar component ([d35d124](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d35d124ba84b885c691b35f2fde7273f99d7ed1a))
+
+
+
+
+
 # [2.148.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.7...v2.148.0-next.8) (2022-01-27)
 
 
