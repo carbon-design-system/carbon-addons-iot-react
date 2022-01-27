@@ -112,6 +112,7 @@ export const Playground = () => {
     demoCustomEmptyState,
     demoCustomErrorState,
     locale,
+    demoBatchActions,
   } = getTableKnobs(enableAllKnobs);
 
   // CUSTOM DEMO JSX
@@ -214,15 +215,21 @@ export const Playground = () => {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
   });
-  const batchActions = [
-    {
-      id: 'delete',
-      labelText: 'Delete',
-      renderIcon: TrashCan16,
-      iconDescription: 'Delete Item',
-    },
-  ];
-  const advancedFilters = getAdvancedFilters();
+  const batchActions = demoBatchActions
+    ? [
+        {
+          id: 'delete',
+          labelText: 'Delete',
+          renderIcon: TrashCan16,
+          iconDescription: 'Delete Item',
+        },
+        {
+          id: 'process',
+          labelText: 'Process',
+        },
+      ]
+    : [];
+  const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
   const emptyState = demoCustomEmptyState ? customEmptyState : undefined;
   const errorState = demoCustomErrorState ? customErrorState : undefined;
   const error = demoCustomErrorState ? 'Error!' : undefined;

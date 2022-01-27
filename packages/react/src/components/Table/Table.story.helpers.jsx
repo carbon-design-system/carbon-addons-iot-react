@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { boolean, text, number, select, object } from '@storybook/addon-knobs';
+import { boolean, text, select, object } from '@storybook/addon-knobs';
 import { Add20, TrashCan16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
@@ -637,266 +637,445 @@ export const getAdvancedFilters = () => [
   },
 ];
 
-export const getTableKnobs = (enableAllKnobs) => ({
-  selectedTableType: select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable'),
-  tableMaxWidth: select('Demo table max-width', ['300px', '600px', '900px', 'none'], 'none'),
+export const getTableKnobs = (enableAllKnobs, useGroups = true) => {
+  const TABLE_GROUP = useGroups ? 'Table general' : undefined;
+  const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
+  const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
+  const ROW_EDIT_GROUP = useGroups ? 'Data editing' : undefined;
+  const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
+  const SEARCH_GROUP = useGroups ? 'Search' : undefined;
+  const COLUMN_GROUP = useGroups ? 'Column configuration' : undefined;
+  const AGGREGATION_GROUP = useGroups ? 'Aggregation' : undefined;
+  const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
+  const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
+  const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
+  const STATES_GROUP = useGroups ? 'States' : undefined;
 
-  // Header
-  secondaryTitle: text('Title shown in bar above header row (secondaryTitle)', 'Table playground'),
-  tableTooltipText: text(
-    'Table title toltip (tooltip)',
-    enableAllKnobs ? 'I must be wrapped in a react node' : ''
-  ),
-  stickyHeader: boolean('Sticky header ☢️ (stickyHeader)', false),
+  return {
+    // TABLE_GROUP
+    selectedTableType: select(
+      'Type of Table',
+      ['Table', 'StatefulTable'],
+      'StatefulTable',
+      TABLE_GROUP
+    ),
+    tableMaxWidth: select(
+      'Demo table max-width',
+      ['300px', '600px', '900px', 'none'],
+      'none',
+      TABLE_GROUP
+    ),
+    size: select('Row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg', TABLE_GROUP),
+    numerOfRows: select('Demo number of rows in data', [100, 50, 20, 5], 100, TABLE_GROUP),
+    hasUserViewManagement: boolean(
+      'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
+      false,
+      TABLE_GROUP
+    ),
 
-  // Toolbar
-  demoToolbarActions: boolean(
-    'Demo toolbar actions on row selection (view.toolbar.toolbarActions)',
-    enableAllKnobs
-  ),
-  demoCustomToolbarContent: boolean(
-    'Demo custom toolbar content (view.toolbar.customToolbarContent) (',
-    enableAllKnobs
-  ),
-  toolbarIsDisabled: boolean('Disable the table toolbar (view.toolbar.isDisabled)', false),
+    // TITLE_TOOLBAR_GROUP
+    secondaryTitle: text(
+      'Title shown in bar above header row (secondaryTitle)',
+      'Table playground',
+      TITLE_TOOLBAR_GROUP
+    ),
+    tableTooltipText: text(
+      'Table title toltip (tooltip)',
+      enableAllKnobs ? 'I must be wrapped in a react node' : '',
+      TITLE_TOOLBAR_GROUP
+    ),
+    stickyHeader: boolean('Sticky header ☢️ (stickyHeader)', false, TITLE_TOOLBAR_GROUP),
+    demoToolbarActions: boolean(
+      'Demo toolbar actions (view.toolbar.toolbarActions)',
+      enableAllKnobs,
+      TITLE_TOOLBAR_GROUP
+    ),
+    demoCustomToolbarContent: boolean(
+      'Demo custom toolbar content (view.toolbar.customToolbarContent)',
+      enableAllKnobs,
+      TITLE_TOOLBAR_GROUP
+    ),
+    toolbarIsDisabled: boolean(
+      'Disable the table toolbar (view.toolbar.isDisabled)',
+      false,
+      TITLE_TOOLBAR_GROUP
+    ),
 
-  // Row data rendering
-  numerOfRows: select('Demo number of rows in data', [100, 50, 20, 5], 100),
-  useZebraStyles: boolean('Alternate colors in table rows (useZebraStyles)', enableAllKnobs),
-  size: select('Set row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg'),
-  wrapCellText: select(
-    'Cell text overflow strategy (options.wrapCellText)',
-    getSelectTextWrappingOptions(),
-    'always'
-  ),
-  cellTextAlignment: select(
-    'Align cell text (columns[i].align)',
-    ['start', 'center', 'end'],
-    'start'
-  ),
-  locale: text('Locale used to format table values (locale)', ''),
-  preserveCellWhiteSpace: boolean(
-    'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
-    false
-  ),
-  demoRenderDataFunction: boolean(
-    'Demo custom data render function (columns[i].renderDataFunction)',
-    true
-  ),
+    // SORT_FILTER_GROUP
+    demoSingleSort: boolean(
+      'Single dimension sorting (columns[i].isSortable)',
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
+    hasMultiSort: boolean(
+      'Enable multiple dimension sorting (options.hasMultiSort)',
+      false,
+      SORT_FILTER_GROUP
+    ),
+    hasFilter: select(
+      'Enable filtering by column value (options.hasFilter)',
+      ['onKeyPress', 'onEnterAndBlur', true, false],
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
+    hasAdvancedFilter: boolean(
+      'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
 
-  // Sorting
-  demoSingleSort: boolean('Single dimension sorting (columns[i].isSortable)', enableAllKnobs),
-  hasMultiSort: boolean('Enable multiple dimension sorting (options.hasMultiSort)', false),
+    // SEARCH_GROUP
+    hasSearch: boolean(
+      'Enable searching on the table values (options.hasSearch)',
+      enableAllKnobs,
+      SEARCH_GROUP
+    ),
+    hasFastSearch: boolean(
+      'Trigger search while typing (options.hasFastSearch)',
+      enableAllKnobs,
+      SEARCH_GROUP
+    ),
 
-  // Search
-  hasSearch: boolean('Enable searching on the table values (options.hasSearch)', enableAllKnobs),
-  hasFastSearch: boolean('Trigger search while typing (options.hasFastSearch)', enableAllKnobs),
+    // AGGREGATION_GROUP
+    hasAggregations: boolean(
+      'Aggregate column values in footer (options.hasAggregations)',
+      enableAllKnobs,
+      AGGREGATION_GROUP
+    ),
+    aggregationLabel: text(
+      'Aggregation label (view.aggregations.label)',
+      'Total',
+      AGGREGATION_GROUP
+    ),
+    aggregationsColumns: object(
+      'Aggregations columns settings',
+      [
+        {
+          id: 'number',
+          align: 'start',
+          isSortable: false,
+        },
+      ],
+      AGGREGATION_GROUP
+    ),
 
-  // Column resize
-  demoInitialColumnSizes: boolean('Demo initial columns sizes', false),
-  hasResize: boolean('Enable resizing of column widths (options.hasResize)', enableAllKnobs),
-  preserveColumnWidths: boolean(
-    'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
-    enableAllKnobs
-  ),
-  useAutoTableLayoutForResize: boolean(
-    'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
-    false
-  ),
+    // PAGINATION_GROUP
+    hasPagination: boolean(
+      'Enable pagination (options.hasPagination)',
+      enableAllKnobs,
+      PAGINATION_GROUP
+    ),
+    pageSizes: object(
+      'Selectable page sizes (view.pagination.pageSizes)',
+      [10, 20, 30, 50],
+      PAGINATION_GROUP
+    ),
+    maxPages: parseInt(
+      text(
+        'Upper limit for number of pages (view.pagination.maxPages)',
+        '100', // use text and string instead of number since number() does not work with knob groups
+        PAGINATION_GROUP
+      ),
+      10
+    ),
+    isItemPerPageHidden: boolean(
+      'Hide items per page selection (options.pagination.isItemPerPageHidden)',
+      false,
+      PAGINATION_GROUP
+    ),
+    paginationSize: select(
+      'Size of pagination buttons (options.pagination.size)',
+      ['sm', 'md', 'lg'],
+      'lg',
+      PAGINATION_GROUP
+    ),
+    hasOnlyPageData: boolean(
+      'Data prop only represents the currently visible page (options.hasOnlyPageData)',
+      enableAllKnobs,
+      PAGINATION_GROUP
+    ),
 
-  // Column configuration
-  demoColumnTooltips: boolean('Demo column tooltips', enableAllKnobs),
-  demoColumnGroupAssignments: boolean('Demo assigning columns to groups', enableAllKnobs),
-  columnGroups: object('Column groups definition (columnGroups)', [
-    {
-      id: 'groupA',
-      name: 'Group A that has a very long name that should be truncated',
-    },
-    { id: 'groupB', name: 'Group B' },
-  ]),
+    // COLUMN_GROUP
+    demoInitialColumnSizes: boolean('Demo initial columns sizes', false, COLUMN_GROUP),
+    hasResize: boolean(
+      'Enable resizing of column widths (options.hasResize)',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    preserveColumnWidths: boolean(
+      'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    useAutoTableLayoutForResize: boolean(
+      'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
+      false,
+      COLUMN_GROUP
+    ),
+    demoColumnTooltips: boolean('Demo column tooltips', enableAllKnobs, COLUMN_GROUP),
+    demoColumnGroupAssignments: boolean(
+      'Demo assigning columns to groups',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    columnGroups: object(
+      'Column groups definition (columnGroups)',
+      [
+        {
+          id: 'groupA',
+          name: 'Group A that has a very long name that should be truncated',
+        },
+        { id: 'groupB', name: 'Group B' },
+      ],
+      COLUMN_GROUP
+    ),
 
-  hasColumnSelection: boolean(
-    'Enable legacy column management (options.hasColumnSelection)',
-    false
-  ),
-  hasColumnSelectionConfig: boolean(
-    'Show config button in legacy column management (options.hasColumnSelectionConfig)',
-    false
-  ),
+    hasColumnSelection: boolean(
+      'Enable legacy column management (options.hasColumnSelection)',
+      false,
+      COLUMN_GROUP
+    ),
+    hasColumnSelectionConfig: boolean(
+      'Show config button in legacy column management (options.hasColumnSelectionConfig)',
+      false,
+      COLUMN_GROUP
+    ),
 
-  // Aggregation
-  hasAggregations: boolean(
-    'Aggregate column values in footer (options.hasAggregations)',
-    enableAllKnobs
-  ),
-  aggregationLabel: text('Aggregation label (view.aggregations.label)', 'Total'),
-  aggregationsColumns: object('Aggregations columns settings', [
-    {
-      id: 'number',
-      align: 'start',
-      isSortable: false,
-    },
-  ]),
+    // SELECTIONS_ACTIONS_GROUP
+    hasRowSelection: select(
+      'Enable row selection type (options.hasRowSelection)',
+      ['multi', 'single', false],
+      enableAllKnobs ? 'multi' : false.valueOf,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    selectionCheckboxEnabled: boolean(
+      'Row checkbox selectable (data[i].isSelectable)',
+      true,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    demoBatchActions: boolean(
+      'Demo batch actions for selected rows (view.toolbar.batchActions)',
+      true,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    hasRowActions: boolean(
+      'Demo row actions (options.hasRowActions)',
+      enableAllKnobs,
+      SELECTIONS_ACTIONS_GROUP
+    ),
 
-  // Filtering
-  hasFilter: select(
-    'Enable filtering by column value (options.hasFilter)',
-    ['onKeyPress', 'onEnterAndBlur', true, false],
-    enableAllKnobs
-  ),
-  hasAdvancedFilter: boolean(
-    'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
-    enableAllKnobs
-  ),
+    // NESTING_EXPANSION_GROUP
+    hasRowExpansion: select(
+      'Demo rows with additional expandable content (options.hasRowExpansion)',
+      {
+        true: true,
+        false: false,
+        '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+      },
+      false,
+      NESTING_EXPANSION_GROUP
+    ),
+    hasRowNesting: select(
+      'Demo nested rows (options.hasRowNesting)',
+      {
+        true: true,
+        false: false,
+        '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
+      },
+      enableAllKnobs,
+      NESTING_EXPANSION_GROUP
+    ),
+    shouldExpandOnRowClick: boolean(
+      'Expand row on click (options.shouldExpandOnRowClick)',
+      enableAllKnobs,
+      NESTING_EXPANSION_GROUP
+    ),
 
-  // Pagination
-  hasPagination: boolean('Enable pagination (options.hasPagination)', enableAllKnobs),
-  pageSizes: object('Selectable page sizes (view.pagination.pageSizes)', [10, 20, 30, 50]),
-  maxPages: number('Upper limit for number of pages (view.pagination.maxPages)', 100),
-  isItemPerPageHidden: boolean(
-    'Hide items per page selection (options.pagination.isItemPerPageHidden)',
-    false
-  ),
-  paginationSize: select(
-    'Size of pagination buttons (options.pagination.size)',
-    ['sm', 'md', 'lg'],
-    'lg'
-  ),
-  hasOnlyPageData: boolean(
-    'Data prop only represents the currently visible page (options.hasOnlyPageData)',
-    enableAllKnobs
-  ),
+    // ROW_RENDER_GROUP
+    shouldLazyRender: boolean(
+      'Enable only loading table rows as they become visible (options.shouldLazyRender)',
+      false,
+      ROW_RENDER_GROUP
+    ),
+    useZebraStyles: boolean(
+      'Alternate colors in table rows (useZebraStyles)',
+      enableAllKnobs,
+      ROW_RENDER_GROUP
+    ),
+    wrapCellText: select(
+      'Cell text overflow strategy (options.wrapCellText)',
+      getSelectTextWrappingOptions(),
+      'always',
+      ROW_RENDER_GROUP
+    ),
+    cellTextAlignment: select(
+      'Align cell text (columns[i].align)',
+      ['start', 'center', 'end'],
+      'start',
+      ROW_RENDER_GROUP
+    ),
+    locale: text('Locale used to format table values (locale)', '', ROW_RENDER_GROUP),
+    preserveCellWhiteSpace: boolean(
+      'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+      false,
+      ROW_RENDER_GROUP
+    ),
+    demoRenderDataFunction: boolean(
+      'Demo custom data render function (columns[i].renderDataFunction)',
+      true,
+      ROW_RENDER_GROUP
+    ),
 
-  // Nesting / Expansion
-  hasRowExpansion: select(
-    'Demo rows with additional expandable content (options.hasRowExpansion)',
-    {
-      true: true,
-      false: false,
-      '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
-    },
-    false
-  ),
-  hasRowNesting: select(
-    'Demo nested rows (options.hasRowNesting)',
-    {
-      true: true,
-      false: false,
-      '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
-    },
-    enableAllKnobs
-  ),
-  shouldExpandOnRowClick: boolean(
-    'Expand row on click (options.shouldExpandOnRowClick)',
-    enableAllKnobs
-  ),
+    // ROW_EDIT_GROUP
+    hasRowEdit: boolean(
+      'Enables row editing for the entire table (options.hasRowEdit)',
+      enableAllKnobs,
+      ROW_EDIT_GROUP
+    ),
+    hasSingleRowEdit: boolean(
+      'Enables row editing for a single row (options.hasSingleRowEdit)',
+      enableAllKnobs,
+      ROW_EDIT_GROUP
+    ),
 
-  // Row selection
-  hasRowSelection: select(
-    'Enable row selection type (options.hasRowSelection)',
-    ['multi', 'single', false],
-    enableAllKnobs ? 'multi' : false
-  ),
-  selectionCheckboxEnabled: boolean('Row checkbox selectable (data[i].isSelectable)', true),
+    // STATES_GROUP
+    tableIsLoading: boolean(
+      'Show table loading state (view.table.loadingState.isLoading)',
+      false,
+      STATES_GROUP
+    ),
+    demoEmptyColumns: boolean('Demo empty columns in loading state (columns)', false, STATES_GROUP),
+    loadingRowCount: parseInt(
+      text(
+        'Number of additional rows in loading state (view.table.loadingState.rowCount)',
+        '7', // use text and string instead of number since number() does not work with knob groups
+        STATES_GROUP
+      ),
+      10
+    ),
+    loadingColumnCount: parseInt(
+      text(
+        'Number of columns in loading state (view.table.loadingState.columnCount)',
+        '6', // use text and string instead of number since number() does not work with knob groups
+        STATES_GROUP
+      ),
+      10
+    ),
+    demoEmptyState: boolean('Demo empty state (view.table.emptyState)', false, STATES_GROUP),
+    demoCustomEmptyState: boolean(
+      'Demo custom empty state (view.table.emptyState)',
+      false,
+      STATES_GROUP
+    ),
+    demoCustomErrorState: boolean(
+      'Demo custom error state (view.table.errorState)',
+      false,
+      STATES_GROUP
+    ),
+  };
+};
 
-  // Row actions
-  hasRowActions: boolean('Demo row actions (options.hasRowActions)', enableAllKnobs),
+export const getI18nKnobs = (useGroup = true) => {
+  const I18N_GROUP = useGroup ? 'i18n' : undefined;
 
-  // Data edit
-  hasRowEdit: boolean(
-    'Enables row editing for the entire table (options.hasRowEdit)',
-    enableAllKnobs
-  ),
-  hasSingleRowEdit: boolean(
-    'Enables row editing for a single row (options.hasSingleRowEdit)',
-    enableAllKnobs
-  ),
-
-  // Loading and states
-  shouldLazyRender: boolean(
-    'Enable only loading table rows as they become visible (options.shouldLazyRender)',
-    false
-  ),
-  tableIsLoading: boolean('Show table loading state (view.table.loadingState.isLoading)', false),
-  demoEmptyColumns: boolean('Demo empty columns in loading state (columns)', false),
-  loadingRowCount: number(
-    'Number of additional rows in loading state (view.table.loadingState.rowCount)',
-    7
-  ),
-  loadingColumnCount: number(
-    'Number of columns in loading state (view.table.loadingState.columnCount)',
-    6
-  ),
-  demoEmptyState: boolean('Demo empty state (view.table.emptyState)', false),
-  demoCustomEmptyState: boolean('Demo custom empty state (view.table.emptyState)', false),
-  demoCustomErrorState: boolean('Demo custom error state (view.table.errorState)', false),
-
-  hasUserViewManagement: boolean(
-    'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
-    false
-  ),
-});
-
-export const getI18nKnobs = () => ({
-  pageBackwardAria: text('i18n.pageBackwardAria', 'Previous page'),
-  pageForwardAria: text('i18n.pageForwardAria', 'Next page'),
-  pageNumberAria: text('i18n.pageNumberAria', 'Page Number'),
-  itemsPerPage: text('i18n.itemsPerPage', 'Items per page:'),
-  overflowMenuAria: text('i18n.overflowMenuAria', 'More actions'),
-  clickToExpandAria: text('i18n.clickToExpandAria', 'Click to expand content'),
-  clickToCollapseAria: text('i18n.clickToCollapseAria', 'Click to collapse content'),
-  selectAllAria: text('i18n.selectAllAria', 'Select all items'),
-  selectRowAria: text('i18n.selectRowAria', 'Select row'),
-  /** toolbar */
-  clearAllFilters: text('i18n.clearAllFilters', 'Clear all filters'),
-  columnSelectionButtonAria: text('i18n.columnSelectionButtonAria', 'Column Selection'),
-  columnSelectionConfig: text('i18n.columnSelectionConfig', 'Manage columns'),
-  filterButtonAria: text('i18n.filterButtonAria', 'Filters'),
-  editButtonAria: text('i18n.editButtonAria', 'Edit rows'),
-  searchLabel: text('i18n.searchLabel', 'Search'),
-  searchPlaceholder: text('i18n.searchPlaceholder', 'Search'),
-  clearFilterAria: text('i18n.clearFilterAria', 'Clear filter'),
-  filterAria: text('i18n.filterAria', 'Filter'),
-  openMenuAria: text('i18n.openMenuAria', 'Open menu'),
-  closeMenuAria: text('i18n.closeMenuAria', 'Close menu'),
-  clearSelectionAria: text('i18n.clearSelectionAria', 'Clear selection'),
-  batchCancel: text('i18n.batchCancel', 'Cancel'),
-  applyButtonText: text('i18n.applyButtonText', 'Apply filters'),
-  cancelButtonText: text('i18n.cancelButtonText', 'Cancel'),
-  advancedFilterLabelText: text('i18n.advancedFilterLabelText', 'Select an existing filter or'),
-  createNewAdvancedFilterText: text(
-    'i18n.createNewAdvancedFilterText',
-    'create a new advanced filter'
-  ),
-  advancedFilterPlaceholderText: text('i18n.advancedFilterPlaceholderText', 'Select a filter'),
-  simpleFiltersTabLabel: text('i18n.simpleFiltersTabLabel', 'Simple filters'),
-  advancedFiltersTabLabel: text('i18n.advancedFiltersTabLabel', 'Advanced filters'),
-  emptyMessage: text('i18n.emptyMessage', 'There is no data'),
-  emptyMessageWithFilters: text(
-    'i18n.emptyMessageWithFilters',
-    'No results match the current filters'
-  ),
-  emptyButtonLabel: text('i18n.emptyButtonLabel', 'Create some data'),
-  emptyButtonLabelWithFilters: text('i18n.emptyButtonLabelWithFilters', 'Clear all filters'),
-  filterNone: text('i18n.filterNone', 'Unsort rows by this header'),
-  filterAscending: text('i18n.filterAscending', 'Sort rows by this header in ascending order'),
-  filterDescending: text('i18n.filterDescending', 'Sort rows by this header in descending order'),
-  toggleAggregations: text('i18n.toggleAggregations', 'Toggle aggregations'),
-  multiSortModalTitle: text('i18n.multiSortModalTitle', 'Select columns to sort'),
-  multiSortModalPrimaryLabel: text('i18n.multiSortModalPrimaryLabel', 'Sort'),
-  multiSortModalSecondaryLabel: text('i18n.multiSortModalSecondaryLabel', 'Cancel'),
-  multiSortSelectColumnLabel: text('i18n.multiSortSelectColumnLabel', 'Select a column'),
-  multiSortSelectColumnSortByTitle: text('i18n.multiSortSelectColumnSortByTitle', 'Sort by'),
-  multiSortSelectColumnThenByTitle: text('i18n.multiSortSelectColumnThenByTitle', 'Then by'),
-  multiSortDirectionLabel: text('i18n.multiSortDirectionLabel', 'Select a direction'),
-  multiSortDirectionTitle: text('i18n.multiSortDirectionTitle', 'Sort order'),
-  multiSortAddColumn: text('i18n.multiSortAddColumn', 'Add column'),
-  multiSortRemoveColumn: text('i18n.multiSortRemoveColumn', 'Remove column'),
-  multiSortAscending: text('i18n.multiSortAscending', 'Ascending'),
-  multiSortDescending: text('i18n.multiSortDescending', 'Descending'),
-  multiSortCloseModal: text('i18n.multiSortCloseModal', 'Close'),
-  multiSortOpenMenu: text('i18n.multiSortOpenMenu', 'Open menu'),
-  multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu'),
-  multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle'),
-  toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip'),
-});
+  return {
+    pageBackwardAria: text('i18n.pageBackwardAria', 'Previous page', I18N_GROUP),
+    pageForwardAria: text('i18n.pageForwardAria', 'Next page', I18N_GROUP),
+    pageNumberAria: text('i18n.pageNumberAria', 'Page Number', I18N_GROUP),
+    itemsPerPage: text('i18n.itemsPerPage', 'Items per page:', I18N_GROUP),
+    overflowMenuAria: text('i18n.overflowMenuAria', 'More actions', I18N_GROUP),
+    clickToExpandAria: text('i18n.clickToExpandAria', 'Click to expand content', I18N_GROUP),
+    clickToCollapseAria: text('i18n.clickToCollapseAria', 'Click to collapse content', I18N_GROUP),
+    selectAllAria: text('i18n.selectAllAria', 'Select all items', I18N_GROUP),
+    selectRowAria: text('i18n.selectRowAria', 'Select row', I18N_GROUP),
+    clearAllFilters: text('i18n.clearAllFilters', 'Clear all filters', I18N_GROUP),
+    columnSelectionButtonAria: text(
+      'i18n.columnSelectionButtonAria',
+      'Column Selection',
+      I18N_GROUP
+    ),
+    columnSelectionConfig: text('i18n.columnSelectionConfig', 'Manage columns', I18N_GROUP),
+    filterButtonAria: text('i18n.filterButtonAria', 'Filters', I18N_GROUP),
+    editButtonAria: text('i18n.editButtonAria', 'Edit rows', I18N_GROUP),
+    searchLabel: text('i18n.searchLabel', 'Search', I18N_GROUP),
+    searchPlaceholder: text('i18n.searchPlaceholder', 'Search', I18N_GROUP),
+    clearFilterAria: text('i18n.clearFilterAria', 'Clear filter', I18N_GROUP),
+    filterAria: text('i18n.filterAria', 'Filter', I18N_GROUP),
+    openMenuAria: text('i18n.openMenuAria', 'Open menu', I18N_GROUP),
+    closeMenuAria: text('i18n.closeMenuAria', 'Close menu', I18N_GROUP),
+    clearSelectionAria: text('i18n.clearSelectionAria', 'Clear selection', I18N_GROUP),
+    batchCancel: text('i18n.batchCancel', 'Cancel', I18N_GROUP),
+    applyButtonText: text('i18n.applyButtonText', 'Apply filters', I18N_GROUP),
+    cancelButtonText: text('i18n.cancelButtonText', 'Cancel', I18N_GROUP),
+    advancedFilterLabelText: text(
+      'i18n.advancedFilterLabelText',
+      'Select an existing filter or',
+      I18N_GROUP
+    ),
+    createNewAdvancedFilterText: text(
+      'i18n.createNewAdvancedFilterText',
+      'create a new advanced filter',
+      I18N_GROUP
+    ),
+    advancedFilterPlaceholderText: text(
+      'i18n.advancedFilterPlaceholderText',
+      'Select a filter',
+      I18N_GROUP
+    ),
+    simpleFiltersTabLabel: text('i18n.simpleFiltersTabLabel', 'Simple filters', I18N_GROUP),
+    advancedFiltersTabLabel: text('i18n.advancedFiltersTabLabel', 'Advanced filters', I18N_GROUP),
+    emptyMessage: text('i18n.emptyMessage', 'There is no data', I18N_GROUP),
+    emptyMessageWithFilters: text(
+      'i18n.emptyMessageWithFilters',
+      'No results match the current filters',
+      I18N_GROUP
+    ),
+    emptyButtonLabel: text('i18n.emptyButtonLabel', 'Create some data', I18N_GROUP),
+    emptyButtonLabelWithFilters: text(
+      'i18n.emptyButtonLabelWithFilters',
+      'Clear all filters',
+      I18N_GROUP
+    ),
+    filterNone: text('i18n.filterNone', 'Unsort rows by this header', I18N_GROUP),
+    filterAscending: text(
+      'i18n.filterAscending',
+      'Sort rows by this header in ascending order',
+      I18N_GROUP
+    ),
+    filterDescending: text(
+      'i18n.filterDescending',
+      'Sort rows by this header in descending order',
+      I18N_GROUP
+    ),
+    toggleAggregations: text('i18n.toggleAggregations', 'Toggle aggregations', I18N_GROUP),
+    multiSortModalTitle: text('i18n.multiSortModalTitle', 'Select columns to sort', I18N_GROUP),
+    multiSortModalPrimaryLabel: text('i18n.multiSortModalPrimaryLabel', 'Sort', I18N_GROUP),
+    multiSortModalSecondaryLabel: text('i18n.multiSortModalSecondaryLabel', 'Cancel', I18N_GROUP),
+    multiSortSelectColumnLabel: text(
+      'i18n.multiSortSelectColumnLabel',
+      'Select a column',
+      I18N_GROUP
+    ),
+    multiSortSelectColumnSortByTitle: text(
+      'i18n.multiSortSelectColumnSortByTitle',
+      'Sort by',
+      I18N_GROUP
+    ),
+    multiSortSelectColumnThenByTitle: text(
+      'i18n.multiSortSelectColumnThenByTitle',
+      'Then by',
+      I18N_GROUP
+    ),
+    multiSortDirectionLabel: text('i18n.multiSortDirectionLabel', 'Select a direction', I18N_GROUP),
+    multiSortDirectionTitle: text('i18n.multiSortDirectionTitle', 'Sort order', I18N_GROUP),
+    multiSortAddColumn: text('i18n.multiSortAddColumn', 'Add column', I18N_GROUP),
+    multiSortRemoveColumn: text('i18n.multiSortRemoveColumn', 'Remove column', I18N_GROUP),
+    multiSortAscending: text('i18n.multiSortAscending', 'Ascending', I18N_GROUP),
+    multiSortDescending: text('i18n.multiSortDescending', 'Descending', I18N_GROUP),
+    multiSortCloseModal: text('i18n.multiSortCloseModal', 'Close', I18N_GROUP),
+    multiSortOpenMenu: text('i18n.multiSortOpenMenu', 'Open menu', I18N_GROUP),
+    multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
+    multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
+    toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+  };
+};
