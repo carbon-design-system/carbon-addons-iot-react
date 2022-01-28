@@ -3,6 +3,67 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.9...v2.148.0-next.10) (2022-01-28)
+
+
+### Bug Fixes
+
+* **table:** added type to the JSX file ([5fcedc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5fcedc5484f8a576aae51f6c9261fca7eef21912))
+* **table:** filter tag has wrong color on hover ([de46d6b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de46d6b401354b18a3415760f305cbd073542994))
+* **table:** fixed text color ([44138ff](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/44138ff2080002e94f02faaf05e4110f8ed55a01))
+* **table:** fixed visual regressions tests ([cec7c13](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cec7c13ee942ae6f4f7a7443a0fc8777cfbe2b7e))
+* **table:** merged with next ([e185499](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e185499fb4c787675e6cd4c5d6aefb7c1bbd1cbb))
+* **table:** merged with next ([1f45454](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f4545442e15601d3b5b53171db281ac91a7f3d3))
+* **table:** reverted style changes ([c12a038](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c12a0386e417b593f04515869514fe9a4997a255))
+
+
+
+
+
+# [2.148.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.8...v2.148.0-next.9) (2022-01-27)
+
+
+### Bug Fixes
+
+* **progress-bar:** hide value label and icon when hideLabel:true ([6421299](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6421299f7f830c448db10528942e9181093f903d))
+
+
+### Features
+
+* **progress-bar:** initial addition of new progress bar component ([d35d124](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d35d124ba84b885c691b35f2fde7273f99d7ed1a))
+
+
+
+
+
+# [2.148.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.7...v2.148.0-next.8) (2022-01-27)
+
+
+### Bug Fixes
+
+* **table:** add skeleton column for nesting rows when lazy loading ([992a368](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/992a3684c3d3c6f9b969445da309ded370b76264))
+
+
+### Reverts
+
+* Revert "chore(table): pr feedback for skeleton rows for lazy loading" ([f0efc54](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f0efc540eef63d26b0a0ffb998bdb80710c65e9b))
+
+
+
+
+
+# [2.148.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.6...v2.148.0-next.7) (2022-01-26)
+
+
+### Bug Fixes
+
+* **page-title-bar:** fix accessibility error for `span` in `ol` ([f3f0e3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f3f0e3ee61552f89d516b2105bc801bbeecef6a0))
+* **page-title-bar:** update styles to current breadcrumb ([4cfd954](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4cfd95413e1451e86de8a4dc1fc25fffc8316438))
+
+
+
+
+
 # [2.148.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.5...v2.148.0-next.6) (2022-01-21)
 
 **Note:** Version bump only for package carbon-addons-iot-react

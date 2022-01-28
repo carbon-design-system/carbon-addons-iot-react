@@ -113,6 +113,7 @@ export { default as TearSheet } from './components/TearSheet/TearSheet';
 export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWrapper';
 export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
+export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

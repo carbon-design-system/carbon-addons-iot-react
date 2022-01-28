@@ -198,6 +198,11 @@
       transition: opacity $duration--fast-01 linear, transform $duration--fast-01 linear;
       margin-left: 0;
 
+      // hide the `/` after the breadcrumb for the current item
+      &::after {
+        display: none;
+      }
+
       [dir='rtl'] & {
         text-align: right;
         margin-right: $spacing-03;
