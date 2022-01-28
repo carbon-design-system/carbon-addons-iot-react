@@ -1,15 +1,25 @@
 import PropTypes from 'prop-types';
 
 export const ListItemPropTypes = {
-  id: PropTypes.string,
+  children: PropTypes.arrayOf(PropTypes.object),
   content: PropTypes.shape({
-    value: PropTypes.string,
     icon: PropTypes.node,
+    rowActions: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.func]),
+    secondaryValue: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func,
+      PropTypes.shape({
+        value: PropTypes.func,
+        label: PropTypes.string,
+      }),
+    ]),
     /** The nodes should be Carbon Tags components */
     tags: PropTypes.arrayOf(PropTypes.node),
+    value: PropTypes.string,
   }),
-  children: PropTypes.arrayOf(PropTypes.object),
-  isSelectable: PropTypes.bool,
   /** boolean to define load more row is needed */
   hasLoadMore: PropTypes.bool,
+  id: PropTypes.string,
+  isCategory: PropTypes.bool,
+  isSelectable: PropTypes.bool,
 };

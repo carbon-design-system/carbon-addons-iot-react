@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Loading } from 'carbon-components-react';
+import { TableCell, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import { omit } from 'lodash-es';
 
@@ -13,7 +13,6 @@ import { renderTableOverflowItemText } from '../../tableUtilities';
 
 import RowActionsError from './RowActionsError';
 
-const { TableCell } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {
@@ -187,7 +186,7 @@ class RowActionsCell extends React.Component {
                     onOpen={this.handleOpen}
                     onClose={this.handleClose}
                     // compact or xs rows need the `sm` overflow menu, everything else is default (md)
-                    size={['compact', 'xs'].includes(size) ? 'sm' : undefined}
+                    size={['compact', 'xs'].includes(size) ? 'sm' : 'md'}
                     className={`${iotPrefix}--row-actions-cell--overflow-menu`}
                     selectorPrimaryFocus={`.${iotPrefix}--action-overflow-item--initialFocus`}
                     useAutoPositioning

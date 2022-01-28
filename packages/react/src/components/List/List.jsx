@@ -45,6 +45,8 @@ const propTypes = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -88,6 +90,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
@@ -105,6 +109,7 @@ const defaultProps = {
   getAllowedDropIds: null,
   overrides: null,
   indeterminateIds: [],
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -114,7 +119,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more',
   },
   iconPosition: 'left',
   lockedIds: [],
@@ -130,6 +135,7 @@ const defaultProps = {
     return true;
   },
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   testId: 'list',
   handleLoadMore: () => {},
 };
@@ -157,11 +163,13 @@ const List = forwardRef((props, ref) => {
     indeterminateIds,
     isLargeRow,
     isLoading,
+    isFiltering,
     isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
     emptyState,
+    emptySearchState,
     testId,
     handleLoadMore,
     loadingMoreIds,
@@ -194,10 +202,12 @@ const List = forwardRef((props, ref) => {
         />
         <ListContent
           emptyState={emptyState}
+          emptySearchState={emptySearchState}
           items={items}
           isFullHeight={isFullHeight}
           testId={testId}
           indeterminateIds={indeterminateIds}
+          isFiltering={isFiltering}
           isLoading={isLoading}
           isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
@@ -219,7 +229,7 @@ const List = forwardRef((props, ref) => {
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
-            <SimplePagination {...pagination} />
+            <SimplePagination {...pagination} size="md" />
           </div>
         ) : null}
       </div>
@@ -227,6 +237,7 @@ const List = forwardRef((props, ref) => {
   );
 });
 
+List.displayName = 'List';
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 

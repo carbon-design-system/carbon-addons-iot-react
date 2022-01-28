@@ -3,12 +3,12 @@ name: codesandbox
 on: [push, pull_request]
 
 jobs:
-  test-codesandbox:
-    name: Test Codesandbox
-    runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node16.5.0-chrome94-ff93
-      options: --privileged
+test-codesandbox:
+name: Test Codesandbox
+runs-on: ubuntu-latest
+container:
+image: cypress/browsers:node16.5.0-chrome94-ff93
+options: --privileged
 
     steps:
       - name: Upgrade git

@@ -1,8 +1,3 @@
-// Needed so that any component that uses sizeme can be jest tested
-import sizeMe from 'react-sizeme';
-
-sizeMe.noPlaceholders = true;
-
 // Settings
 export { settings } from './constants/Settings';
 
@@ -72,6 +67,7 @@ export { default as Dashboard } from './components/Dashboard/Dashboard';
 export { default as DashboardHeader } from './components/Dashboard/DashboardHeader';
 export { default as DashboardGrid } from './components/Dashboard/DashboardGrid';
 export { default as DashboardEditor } from './components/DashboardEditor/DashboardEditor';
+export { getDefaultCard } from './components/DashboardEditor/editorUtils';
 export { default as DashboardEditorDefaultCardRenderer } from './components/DashboardEditor/DashboardEditorDefaultCardRenderer';
 export { default as CardEditor } from './components/CardEditor/CardEditor';
 export { default as Card } from './components/Card/Card';
@@ -117,6 +113,7 @@ export { default as TearSheet } from './components/TearSheet/TearSheet';
 export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWrapper';
 export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
+export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

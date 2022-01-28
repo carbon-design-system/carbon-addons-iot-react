@@ -102,11 +102,6 @@ html[dir='rtl'] {
   background-color: $ui-01;
   padding: $spacing-02 $spacing-04;
   border-top: 1px solid $ui-03;
-
-  .#{$prefix}--tag {
-    color: $interactive-01;
-    background-color: $blue-20;
-  }
 }
 
 // needed specificity to override .iot--tooltip-svg-wrapper and allow flyout to align
@@ -119,7 +114,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
-// regression fix for tiny expand chrevron on some expandable table rows
+// regression fix for tiny expand chevron on some expandable table rows
 .#{$prefix}--data-table thead th.#{$prefix}--table-expand,
 .#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
   height: $spacing-07;

@@ -1474,7 +1474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -1808,7 +1808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -2443,7 +2443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -4416,7 +4416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -4750,7 +4750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -5385,7 +5385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -7393,7 +7393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -7727,7 +7727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -8362,7 +8362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -9787,7 +9787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -10189,7 +10189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10209,7 +10209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10229,7 +10229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10249,7 +10249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10269,7 +10269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10294,7 +10294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10314,7 +10314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10334,7 +10334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10354,7 +10354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10374,7 +10374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10399,7 +10399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10419,7 +10419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10439,7 +10439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10459,7 +10459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10479,7 +10479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10504,7 +10504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10524,7 +10524,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10544,7 +10544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10564,7 +10564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10584,7 +10584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10609,7 +10609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10629,7 +10629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10649,7 +10649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10669,7 +10669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10689,7 +10689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10714,7 +10714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10734,7 +10734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10754,7 +10754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10774,7 +10774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10794,7 +10794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10819,7 +10819,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10839,7 +10839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10859,7 +10859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10879,7 +10879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -10899,322 +10899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="300"
-                                >
-                                  300
-                                </span>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                            onClick={[Function]}
-                          >
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="timestamp"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-7-timestamp"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="09/30/2019 00:00"
-                                >
-                                  09/30/2019 00:00
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="Campus_EGL"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-7-Campus_EGL"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title=""
-                                >
-                                  
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="peopleCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-7-peopleCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="150.5335383714"
-                                >
-                                  150.5335383714
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="headCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-7-headCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="240"
-                                >
-                                  240
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="capacity_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-7-capacity_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="300"
-                                >
-                                  300
-                                </span>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                            onClick={[Function]}
-                          >
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="timestamp"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-8-timestamp"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="09/30/2019 00:00"
-                                >
-                                  09/30/2019 00:00
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="Campus_EGL"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-8-Campus_EGL"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title=""
-                                >
-                                  
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="peopleCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-8-peopleCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="150.5335383714"
-                                >
-                                  150.5335383714
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="headCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-8-headCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="240"
-                                >
-                                  240
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="capacity_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-8-capacity_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="300"
-                                >
-                                  300
-                                </span>
-                              </span>
-                            </td>
-                          </tr>
-                          <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                            onClick={[Function]}
-                          >
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="timestamp"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-9-timestamp"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="09/30/2019 00:00"
-                                >
-                                  09/30/2019 00:00
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="Campus_EGL"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-9-Campus_EGL"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title=""
-                                >
-                                  
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="peopleCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-9-peopleCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="150.5335383714"
-                                >
-                                  150.5335383714
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="headCount_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-9-headCount_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
-                              >
-                                <span
-                                  className=""
-                                  title="240"
-                                >
-                                  240
-                                </span>
-                              </span>
-                            </td>
-                            <td
-                              align="start"
-                              className="data-table-start iot--table__cell--sortable"
-                              data-column="capacity_EnterpriseBuilding_mean"
-                              data-offset={0}
-                              id="cell-table-for-card-expandedcard-row-9-capacity_EnterpriseBuilding_mean"
-                              offset={0}
-                              width=""
-                            >
-                              <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 YBqdC"
+                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
                               >
                                 <span
                                   className=""
@@ -11229,6 +10914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       </table>
                     </div>
                   </div>
+                  <div />
                   <div
                     className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                     data-testid="table-for-card-expandedcard-table-pagination"
@@ -11265,15 +10951,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                                 className="bx--select-input"
                                 id="bx-pagination-select-2"
                                 onChange={[Function]}
-                                value={10}
+                                value={7}
                               >
                                 <option
                                   className="bx--select-option"
                                   disabled={false}
                                   hidden={false}
-                                  value={10}
+                                  value={7}
                                 >
-                                  10
+                                  7
                                 </option>
                                 <option
                                   className="bx--select-option"
@@ -11314,7 +11000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       <span
                         className="bx--pagination__text bx--pagination__items-count"
                       >
-                        __1â€“10 of 35 items__
+                        __1â€“7 of 35 items__
                       </span>
                     </div>
                     <div
@@ -11330,7 +11016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             className="bx--label bx--visually-hidden"
                             htmlFor="bx-pagination-select-2-right"
                           >
-                            Page number, of 4 pages
+                            Page number, of 5 pages
                           </label>
                           <div
                             className="bx--select-input--inline__wrapper"
@@ -11377,6 +11063,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                                 >
                                   4
                                 </option>
+                                <option
+                                  className="bx--select-option"
+                                  disabled={false}
+                                  hidden={false}
+                                  value={5}
+                                >
+                                  5
+                                </option>
                               </select>
                               <svg
                                 aria-hidden={true}
@@ -11400,7 +11094,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       <span
                         className="bx--pagination__text"
                       >
-                        __1 of 4 pages__
+                        __1 of 5 pages__
                       </span>
                       <div
                         className="bx--pagination__control-buttons"
@@ -12972,7 +12666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -13306,7 +13000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -13941,7 +13635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -30654,7 +30348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}
@@ -30988,7 +30682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                            className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                             data-testid="card-toolbar-range-picker"
                             onClick={[Function]}
                             onClose={[Function]}
@@ -31623,7 +31317,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ğ
                       aria-expanded={false}
                       aria-haspopup={true}
                       aria-label="open and close list of options"
-                      className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                      className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                       data-testid="Card-toolbar-range-picker"
                       onClick={[Function]}
                       onClose={[Function]}

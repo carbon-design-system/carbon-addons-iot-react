@@ -26,7 +26,7 @@ import {
   tableColumnsWithAlignment,
 } from './Table.story';
 import Table from './Table';
-import TableREADME from './Table.mdx';
+import TableREADME from './mdx/Table.mdx';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
@@ -92,6 +92,7 @@ export const StatefulTableWithNestedRowItems = (props) => {
           hasRowNesting: true,
           hasFilter: true,
           hasResize: true,
+          shouldExpandOnRowClick: true,
           wrapCellText: select(
             'Choose how text should wrap witin columns (options.wrapCellText)',
             selectTextWrapping,
@@ -216,6 +217,10 @@ export const SimpleStatefulExample = () => {
           false
         ),
         hasPagination: boolean('Enables pagination for the table (options.hasPagination)', false),
+        shouldLazyRender: boolean(
+          'Enables only loading table rows as they become visible (options.shouldLazyRender)',
+          false
+        ),
         hasResize: boolean('Enables resizing of column widths (options.hasResize)', false),
         hasRowActions: boolean('Enables row actions (options.hasRowActions)', false),
         hasRowExpansion: select(

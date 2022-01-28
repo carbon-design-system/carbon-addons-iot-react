@@ -37,11 +37,30 @@ const propTypes = {
    * be read by screen readers
    */
   iconDescription: PropTypes.string.isRequired,
+
+  /**
+   * The size of the button and the dropdown items
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'default']).isRequired,
+
+  /**
+   * The kind of button to render
+   */
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary']).isRequired,
 };
 
 export const SplitMenuButton = React.forwardRef(
   (
-    { label, iconDescription, renderIcon, onPrimaryActionClick, onSecondaryActionClick, testId },
+    {
+      label,
+      iconDescription,
+      renderIcon,
+      onPrimaryActionClick,
+      onSecondaryActionClick,
+      size,
+      testId,
+      kind,
+    },
     ref
   ) => {
     return (
@@ -50,6 +69,8 @@ export const SplitMenuButton = React.forwardRef(
           className={classnames(`${iotPrefix}--menu-button__primary`)}
           onClick={onPrimaryActionClick}
           testId={`${testId}-primary`}
+          size={size}
+          kind={kind}
         >
           {label}
         </Button>
@@ -64,6 +85,8 @@ export const SplitMenuButton = React.forwardRef(
           renderIcon={renderIcon}
           onClick={onSecondaryActionClick}
           testId={`${testId}-secondary`}
+          size={size}
+          kind={kind}
         />
       </>
     );

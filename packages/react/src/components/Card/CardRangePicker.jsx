@@ -74,6 +74,7 @@ const CardRangePicker = ({
         </div>
 
         <OverflowMenu
+          size="lg"
           className={classnames(`${iotPrefix}--card--toolbar-date-range-action`)}
           flipped
           title={i18n.selectTimeRangeLabel}

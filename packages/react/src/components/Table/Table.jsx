@@ -917,6 +917,7 @@ const Table = (props) => {
                     }}
                     // TODO: remove id in V3.
                     data-testid={`${id || testId}-filter-tag-${advancedFilter.filterId}`}
+                    type="blue"
                   >
                     {advancedFilter.filterTitleText}
                   </Tag>
@@ -1153,7 +1154,7 @@ const Table = (props) => {
           pageRangeText={i18n.pageRange}
           preventInteraction={rowEditMode || singleRowEditMode}
           testId={`${id || testId}-table-pagination`}
-          carbonSize={paginationProps.size}
+          size={paginationProps.size}
         />
       ) : null}
       {options.hasMultiSort && (

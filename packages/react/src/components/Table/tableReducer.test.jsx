@@ -106,6 +106,40 @@ describe('table reducer', () => {
       const updatedState = tableReducer(initialState, tablePageChange({ page: 65, pageSize: 10 }));
       expect(updatedState.view.pagination.page).toEqual(1);
     });
+    it('TABLE_PAGE_CHANGE pageSize change resets page', () => {
+      const state1 = tableReducer(
+        {
+          view: {
+            pagination: {
+              pageSize: 10,
+              pageSizes: [10, 20, 30],
+              page: 1,
+              totalItems: 100,
+            },
+          },
+        },
+        tablePageChange({ page: 4, pageSize: 10 })
+      );
+      expect(state1.view.pagination.page).toEqual(4);
+
+      const state2 = tableReducer(state1, tablePageChange({ pageSize: 30 }));
+      expect(state2.view.pagination.page).toEqual(1);
+
+      const state3 = tableReducer(
+        {
+          view: {
+            pagination: {
+              pageSize: 30,
+              pageSizes: [10, 20, 30],
+              page: 3,
+              totalItems: 100,
+            },
+          },
+        },
+        tablePageChange({ pageSize: 10 })
+      );
+      expect(state3.view.pagination.page).toEqual(1);
+    });
   });
   describe('toolbar actions', () => {
     it('TABLE_TOOLBAR_TOGGLE ', () => {

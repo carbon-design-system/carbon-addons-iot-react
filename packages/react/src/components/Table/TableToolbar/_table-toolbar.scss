@@ -66,6 +66,10 @@ html[dir='rtl'] {
     .#{$prefix}--action-list {
       left: 0;
       right: auto;
+      .#{$prefix}--btn .#{$prefix}--btn__icon {
+        margin-left: 0;
+        margin-right: $spacing-03;
+      }
     }
 
     .#{$prefix}--batch-summary {

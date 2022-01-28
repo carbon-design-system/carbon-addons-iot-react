@@ -3,14 +3,16 @@
 @use '../../../globals/vars' as *;
 @use '../../../globals/layout' as *;
 @use '../../../globals/typography' as *;
+@use '../list-vars' as *;
 
 .#{$iot-prefix}--list-header {
   display: flex;
   align-items: center;
   background: $ui-01;
-  padding: $spacing-04;
+  padding: $spacing-04 $spacing-05;
   border-bottom: 1px solid $ui-03;
   height: rem(56px);
+  column-gap: $spacing-05;
   &--title {
     @include type-style('productive-heading-02');
     flex: 1;
@@ -18,33 +20,26 @@
 
   &--btn-container {
     display: flex;
-    padding: $spacing-03;
     align-items: center;
-    & > * {
-      margin-left: $spacing-05;
+    column-gap: $spacing-05;
+    // Negative margin needed to have the buttons
+    // closer to the edge than than the padding allows
+    margin-right: -($spacing-03);
+    [dir='rtl'] & {
+      margin-right: unset;
+      margin-left: -($spacing-03);
     }
   }
 
   &--search {
-    padding: 0 $spacing-05;
-    height: rem(56px);
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: $ui-01;
-    & > div {
-      flex: 1;
+    .#{$prefix}--search .#{$prefix}--search-magnifier-icon {
+      left: $spacing-05;
     }
-  }
 
-  &--search__expanded {
-    background: $ui-01;
-    width: 80%;
-    left: 1.5rem;
-    position: absolute;
-  }
-
-  &--add {
-    padding: $spacing-03;
+    .#{$prefix}--search .#{$prefix}--search-input {
+      background: $ui-01;
+      border-bottom-color: $list-item-border-color;
+      padding: 0 $spacing-09;
+    }
   }
 }

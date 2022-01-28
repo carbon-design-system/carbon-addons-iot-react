@@ -2,7 +2,6 @@ import React, { useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { ContentSwitcher, Switch, Tabs, Tab, InlineNotification } from 'carbon-components-react';
 import { pick, sortBy } from 'lodash-es';
-import withSize from 'react-sizeme';
 import update from 'immutability-helper';
 import { gray50, red50, green50, blue50 } from '@carbon/colors';
 import warning from 'warning';
@@ -18,6 +17,7 @@ import {
   validHotspotIcons,
 } from '../DashboardEditor/editorUtils';
 import useMerged from '../../hooks/useMerged';
+import useSizeObserver from '../../hooks/useSizeObserver';
 
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab/HotspotEditorTooltipTab';
 import HotspotTextStyleTab from './HotspotTextStyleTab/HotspotTextStyleTab';
@@ -127,7 +127,7 @@ const propTypes = {
   /** Callback for modal cancel button and close icon button */
   onClose: PropTypes.func.isRequired,
   /**
-   * Callback to fetch dynamic hotstpots. Should returns a Promise that resolves to an array of demo hotspots
+   * Callback to fetch dynamic hotspots. Should returns a Promise that resolves to an array of demo hotspots
    * matching the x & y source.  Called with one param, an object with 3 values
    * {
    *  maxHotspots: maximum number to return,
@@ -304,6 +304,7 @@ const HotspotEditorModal = ({
 
   const hasNonEditableContent = React.isValidElement(selectedHotspot?.content);
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  const [modalContentSize, modelContentRef] = useSizeObserver();
 
   const {
     backgroundLabelText,
@@ -587,43 +588,39 @@ const HotspotEditorModal = ({
         isPrimaryButtonDisabled: dynamicHotspotsLoading,
       }}
     >
-      <withSize.SizeMe monitorHeight>
-        {({ size }) => (
-          <div>
-            {size.height && size.width && (
-              <ImageHotspots
-                onHotspotContentChanged={updateTextHotspotContent}
-                height={size.height}
-                hotspots={hotspots}
-                icons={imageHotspotsIcons}
-                imageZoomMax={imageZoomMax}
-                isEditable
-                i18n={pick(
-                  mergedI18n,
-                  'zoomIn',
-                  'zoomOut',
-                  'zoomToFit',
-                  'titlePlaceholderText',
-                  'titleEditableHintText'
-                )}
-                isHotspotDataLoading={dynamicHotspotsLoading}
-                onAddHotspotPosition={(position) => {
-                  addHotspot({
-                    position,
-                    hotspotDefaults,
-                  });
-                }}
-                onSelectHotspot={setSelectedHotspot}
-                selectedHotspots={getSelectedHotspotsList(selectedHotspot, hotspots)}
-                src={cardConfig.content.src}
-                id={imageId}
-                width={size.width}
-                displayOption={displayOption}
-              />
+      <div ref={modelContentRef}>
+        {modalContentSize.height && modalContentSize.width && (
+          <ImageHotspots
+            onHotspotContentChanged={updateTextHotspotContent}
+            height={modalContentSize.height}
+            hotspots={hotspots}
+            icons={imageHotspotsIcons}
+            imageZoomMax={imageZoomMax}
+            isEditable
+            i18n={pick(
+              mergedI18n,
+              'zoomIn',
+              'zoomOut',
+              'zoomToFit',
+              'titlePlaceholderText',
+              'titleEditableHintText'
             )}
-          </div>
+            isHotspotDataLoading={dynamicHotspotsLoading}
+            onAddHotspotPosition={(position) => {
+              addHotspot({
+                position,
+                hotspotDefaults,
+              });
+            }}
+            onSelectHotspot={setSelectedHotspot}
+            selectedHotspots={getSelectedHotspotsList(selectedHotspot, hotspots)}
+            src={cardConfig.content.src}
+            id={imageId}
+            width={modalContentSize.width}
+            displayOption={displayOption}
+          />
         )}
-      </withSize.SizeMe>
+      </div>
       <div>
         <ContentSwitcher
           onChange={(e) => {

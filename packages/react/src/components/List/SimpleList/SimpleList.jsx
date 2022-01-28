@@ -58,8 +58,9 @@ const propTypes = {
    * OnSelect(itemId, parentItemId)
    */
   onSelect: PropTypes.func,
-
   testId: PropTypes.string,
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
 };
 
 /* istanbul ignore next */
@@ -80,6 +81,7 @@ const defaultProps = {
   hasPagination: true,
   onSelect: null,
   testId: 'simple-list',
+  emptySearchState: 'No results found',
 };
 
 const SimpleList = ({
@@ -97,6 +99,7 @@ const SimpleList = ({
   onSelect,
   title,
   testId,
+  emptySearchState,
 }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
 
@@ -255,11 +258,13 @@ const SimpleList = ({
       }
       selectedIds={editingStyle ? editModeSelectedIds : selectedIds}
       handleSelect={handleSelect}
+      isFiltering={!!searchValue}
       isLargeRow={isLargeRow}
       isLoading={isLoading}
       editingStyle={editingStyle}
       onItemMoved={onItemMoved}
       testId={testId}
+      emptySearchState={emptySearchState}
     />
   );
 };

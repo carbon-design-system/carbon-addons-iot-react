@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox } from 'carbon-components-react';
+import { TableRow, TableExpandRow, TableCell, Checkbox } from 'carbon-components-react';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
@@ -17,7 +17,6 @@ import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFu
 import { COLORS } from '../../../../styles/styles';
 import { CELL_TEXT_OVERFLOW } from '../../tableConstants';
 
-const { TableRow, TableExpandRow, TableCell } = DataTable;
 const { prefix, iotPrefix } = settings;
 
 const propTypes = {
@@ -387,6 +386,7 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
 const StyledNestedSpan = styled.span`
   position: relative;
   left: ${(props) => props.nestingOffset}px;
+  max-width: calc(100% - ${(props) => props.nestingOffset}px);
   display: block;
 `;
 
@@ -568,7 +568,10 @@ const TableBodyRow = ({
           data-nesting-offset={nestingOffset}
           onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, false)}
           onClick={() => {
-            if (shouldExpandOnRowClick) {
+            if (
+              shouldExpandOnRowClick &&
+              ((hasRowNesting && nestingChildCount) || hasRowExpansion)
+            ) {
               onRowExpanded(id, false);
             }
             if (hasRowSelection === 'single' && isSelectable !== false) {
@@ -601,9 +604,10 @@ const TableBodyRow = ({
         hasRowSelection={hasRowSelection}
         onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
-          if (shouldExpandOnRowClick) {
+          if (shouldExpandOnRowClick && ((hasRowNesting && nestingChildCount) || hasRowExpansion)) {
             onRowExpanded(id, true);
           }
+
           if (hasRowSelection === 'single' && isSelectable !== false) {
             onRowSelected(id, true);
           }

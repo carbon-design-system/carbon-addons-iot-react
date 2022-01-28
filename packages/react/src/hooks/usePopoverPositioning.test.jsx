@@ -88,7 +88,7 @@ describe('usePopoverPositioning', () => {
     userEvent.click(button);
     const menu = screen.getByTestId(testId);
 
-    expect(menu).toHaveClass(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftEnd}`);
+    expect(menu).toHaveClass(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftStart}`);
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
