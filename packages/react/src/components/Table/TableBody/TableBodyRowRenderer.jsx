@@ -200,7 +200,7 @@ const TableBodyRowRenderer = (props) => {
         data-testid={`${tableId}-lazy-row-${row.id}`}
       >
         {hasRowSelection === 'multi' ? <TableCell /> : null}
-        {hasRowExpansion ? <TableCell /> : null}
+        {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
         {columns.map((v, colIndex) => (
           <TableCell key={`empty-cell-${colIndex}`}>
             <SkeletonText />
