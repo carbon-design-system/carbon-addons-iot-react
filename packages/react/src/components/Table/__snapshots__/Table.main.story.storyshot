@@ -10,7 +10,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     style={null}
   >
     <section
-      aria-label="data table toolbar"
+      aria-label="Table playground Toolbar"
       className="bx--table-toolbar"
       data-testid="table-table-toolbar"
     >
