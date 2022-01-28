@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, SkeletonText, TableRow, TableCell } from 'carbon-components-react';
-
+import { SkeletonText, TableRow, TableCell } from 'carbon-components-react';
 
 import { settings } from '../../../../constants/Settings';
 import Button from '../../../Button';
