@@ -69,6 +69,7 @@ class FilterHeaderRow extends Component {
     tableOptions: PropTypes.shape({
       hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
+      hasRowNesting: PropTypes.bool,
       hasRowActions: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
@@ -245,7 +246,7 @@ class FilterHeaderRow extends Component {
       ordering,
       clearFilterText,
       filterText,
-      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
+      tableOptions: { hasRowSelection, hasRowExpansion, hasRowNesting, hasRowActions },
       isVisible,
       lightweight,
       isDisabled,
@@ -265,7 +266,7 @@ class FilterHeaderRow extends Component {
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
-        {hasRowExpansion ? (
+        {hasRowExpansion || hasRowNesting ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
         {visibleColumns.map((c, i) => {

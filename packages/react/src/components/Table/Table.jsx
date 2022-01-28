@@ -745,7 +745,7 @@ const Table = (props) => {
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
-    (options.hasRowExpansion ? 1 : 0) +
+    (options.hasRowExpansion || options.hasRowNesting ? 1 : 0) +
     (options.hasRowActions ? 1 : 0) +
     (showExpanderColumn ? 1 : 0);
 
