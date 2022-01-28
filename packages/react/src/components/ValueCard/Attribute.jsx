@@ -7,6 +7,7 @@ import { gray60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
+import useMatchingThreshold from '../../hooks/useMatchingThreshold';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -84,37 +85,16 @@ const Attribute = ({
   testId,
   onValueClick,
 }) => {
+  const matchedThreshold = useMatchingThreshold({ thresholds, value });
+
   // matching threshold will be the first match in the list, or a value of null if not isEditable
-  const matchingThreshold = thresholds
-    ? isEditable
-      ? thresholds[0]
-      : thresholds
-          .filter((t) => {
-            switch (t.comparison) {
-              case '<':
-                return !isNil(value) && value < t.value;
-              case '>':
-                return value > t.value;
-              case '=':
-                return value === t.value;
-              case '<=':
-                return !isNil(value) && value <= t.value;
-              case '>=':
-                return value >= t.value;
-              default:
-                return false;
-            }
-          })
-          .concat([null])[0]
-    : null;
+  const matchingThreshold = thresholds ? (isEditable ? thresholds[0] : matchedThreshold) : null;
 
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
 
-  // need to reduce the width size to fit multiple attributs when card layout is horizontal
+  // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
-
-  // const shouldWrap =
 
   return (
     <>

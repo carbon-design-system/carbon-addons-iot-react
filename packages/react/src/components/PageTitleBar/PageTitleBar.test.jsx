@@ -34,25 +34,26 @@ describe('PageTitleBar', () => {
   });
 
   it('renders current breadcrumb if header is dynamic or condensed', () => {
-    let wrapper = mount(
+    const { container, rerender } = render(
       <PageTitleBar
         {...commonPageTitleBarProps}
         breadcrumb={pageTitleBarBreadcrumb}
         headerMode="CONDENSED"
       />
     );
-    expect(wrapper.find('.page-title-bar-breadcrumb')).toHaveLength(1);
-    expect(wrapper.find('.page-title-bar-breadcrumb-current')).toHaveLength(1);
 
-    wrapper = mount(
+    expect(container.querySelectorAll('.page-title-bar-breadcrumb')).toHaveLength(1);
+    expect(container.querySelectorAll('.page-title-bar-breadcrumb-current')).toHaveLength(1);
+
+    rerender(
       <PageTitleBar
         {...commonPageTitleBarProps}
         breadcrumb={pageTitleBarBreadcrumb}
         headerMode="DYNAMIC"
       />
     );
-    expect(wrapper.find('.page-title-bar-breadcrumb')).toHaveLength(1);
-    expect(wrapper.find('.page-title-bar-breadcrumb-current')).toHaveLength(1);
+    expect(container.querySelectorAll('.page-title-bar-breadcrumb')).toHaveLength(1);
+    expect(container.querySelectorAll('.page-title-bar-breadcrumb-current')).toHaveLength(1);
   });
 
   it('renders tooltip node if collapsed', () => {
@@ -238,6 +239,11 @@ describe('PageTitleBar', () => {
       </div>
     );
     expect(screen.getByLabelText('Breadcrumb')).toHaveTextContent('testTitle');
-    expect(screen.getByLabelText('Breadcrumb').querySelectorAll('li')).toHaveLength(0);
+    // the current page is rendered as a breadcrumb (even though not supplied) when in DYNAMIC mode
+    // (so that it can be made visible in the collapsed view, so there will be one LI tag.
+    expect(screen.getByLabelText('Breadcrumb').querySelectorAll('li')).toHaveLength(1);
+    expect(screen.getByLabelText('Breadcrumb').querySelector('li')).toHaveClass(
+      `page-title-bar-breadcrumb-current`
+    );
   });
 });
