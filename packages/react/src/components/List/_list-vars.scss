@@ -1,3 +1,6 @@
+@use '../../globals/typography' as *;
+@use '../../globals/theme' as *;
+
 $list-item-height: rem(40px);
 $list-item-height-large: rem(64px);
 $list-item-border-color: $ui-03;

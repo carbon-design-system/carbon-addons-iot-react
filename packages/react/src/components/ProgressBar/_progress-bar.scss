@@ -1,12 +1,15 @@
 @use '~@carbon/styles/scss/components/progress-bar';
 @use '../../globals/vars' as *;
+@use '../../globals/typography' as *;
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 
 .#{$iot-prefix}--progress-bar-container {
   position: relative;
 }
 
 .#{$prefix}--progress-bar__label {
-  @include carbon--type-style('productive-heading-01');
+  @include type-style('productive-heading-01');
   color: $text-01;
 }
 
@@ -29,7 +32,7 @@
 }
 
 .#{$iot-prefix}--progress-bar__value-label {
-  @include carbon--type-style('body-short-01');
+  @include type-style('body-short-01');
   color: $text-01;
 }
 
