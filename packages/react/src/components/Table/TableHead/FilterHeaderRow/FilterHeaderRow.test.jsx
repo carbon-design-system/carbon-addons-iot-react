@@ -587,6 +587,27 @@ describe('FilterHeaderRow', () => {
     expect(container.querySelectorAll('th')).toHaveLength(4);
   });
 
+  it('should display an extra header when hasRowNesting', () => {
+    const { container } = render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[
+          { id: 'col1', isFilterable: true },
+          { id: 'col2', isFilterable: true },
+        ]}
+        tableOptions={{
+          hasRowSelection: 'single',
+          hasRowNesting: true,
+        }}
+        isVisible
+      />
+    );
+
+    expect(container.querySelectorAll('th')).toHaveLength(4);
+  });
+
   it('should display an extra header when hasRowActions', () => {
     const { container } = render(
       <FilterHeaderRow

@@ -17,7 +17,6 @@ import deprecate from '../../internal/deprecate';
 import { CELL_TEXT_OVERFLOW } from './tableConstants';
 import {
   TableColumnsPropTypes,
-  TableRowPropTypes,
   ExpandedRowsPropTypes,
   EmptyStatePropTypes,
   TableSearchPropTypes,
@@ -29,6 +28,7 @@ import {
   TableOrderingPropType,
   TableFiltersPropType,
   TableToolbarActionsPropType,
+  TableRowsPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -61,7 +61,7 @@ const propTypes = {
   /** Specify the properties of each column group in the table. Defaults to empty array. */
   columnGroups: TableColumnGroupPropType,
   /** Row value data for the body of the table */
-  data: TableRowPropTypes.isRequired,
+  data: TableRowsPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
 
@@ -736,7 +736,7 @@ const Table = (props) => {
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
-    (options.hasRowExpansion ? 1 : 0) +
+    (options.hasRowExpansion || options.hasRowNesting ? 1 : 0) +
     (options.hasRowActions ? 1 : 0) +
     (showExpanderColumn ? 1 : 0);
 
