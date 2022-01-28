@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.9...v2.148.0-next.10) (2022-01-28)
+
+
+### Bug Fixes
+
+* **table:** added type to the JSX file ([5fcedc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5fcedc5484f8a576aae51f6c9261fca7eef21912))
+* **table:** filter tag has wrong color on hover ([de46d6b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de46d6b401354b18a3415760f305cbd073542994))
+* **table:** fixed text color ([44138ff](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/44138ff2080002e94f02faaf05e4110f8ed55a01))
+* **table:** fixed visual regressions tests ([cec7c13](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cec7c13ee942ae6f4f7a7443a0fc8777cfbe2b7e))
+* **table:** merged with next ([e185499](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e185499fb4c787675e6cd4c5d6aefb7c1bbd1cbb))
+* **table:** merged with next ([1f45454](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f4545442e15601d3b5b53171db281ac91a7f3d3))
+* **table:** reverted style changes ([c12a038](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c12a0386e417b593f04515869514fe9a4997a255))
+
+
+
+
+
 # [2.148.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.8...v2.148.0-next.9) (2022-01-27)
 
 
