@@ -3,10 +3,12 @@ import { render, screen } from '@testing-library/react';
 import { Add16, Add20, ArrowRight16 } from '@carbon/icons-react';
 
 import { settings } from '../../../constants/Settings';
-import { tableColumns } from '../Table.story';
+import { getTableColumns } from '../Table.story.helpers';
 import Table from '../Table';
 
 import TableFoot from './TableFoot';
+
+const tableColumns = getTableColumns();
 
 const { iotPrefix } = settings;
 

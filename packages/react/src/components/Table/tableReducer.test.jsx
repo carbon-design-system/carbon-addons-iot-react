@@ -32,7 +32,10 @@ import {
   tableCancelMultiSortColumns,
   tableClearMultiSortColumns,
 } from './tableActionCreators';
-import { initialState, tableColumns } from './Table.story';
+import { getTableColumns } from './Table.story.helpers';
+import { initialState } from './Table.story';
+
+const tableColumns = getTableColumns();
 
 describe('table reducer', () => {
   it('nothing', () => {

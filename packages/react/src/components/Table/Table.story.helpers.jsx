@@ -1,0 +1,1081 @@
+import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { action } from '@storybook/addon-actions';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { boolean, text, select, object } from '@storybook/addon-knobs';
+import { Add20, TrashCan16 } from '@carbon/icons-react';
+import Arrow from '@carbon/icons-react/es/arrow--right/16';
+import Add from '@carbon/icons-react/es/add/16';
+import Edit from '@carbon/icons-react/es/edit/16';
+
+import { Checkbox } from '../Checkbox';
+import { TextInput } from '../TextInput';
+
+const STATUS = {
+  RUNNING: 'RUNNING',
+  NOT_RUNNING: 'NOT_RUNNING',
+  BROKEN: 'BROKEN',
+};
+
+const words = [
+  'toyota',
+  'helping',
+  'whiteboard',
+  'as',
+  'can',
+  'bottle',
+  'eat',
+  'chocolate',
+  'pinocchio',
+  'scott',
+];
+const getLetter = (index) =>
+  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
+const getWord = (index, step = 1) => words[(step * index) % words.length];
+const getSentence = (index) =>
+  `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
+const getString = (index, length) =>
+  Array(length)
+    .fill(0)
+    .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
+    .join('');
+
+const getStatus = (idx) => {
+  const modStatus = idx % 3;
+  switch (modStatus) {
+    case 1:
+      return STATUS.NOT_RUNNING;
+    case 2:
+      return STATUS.BROKEN;
+    case 0:
+    default:
+      return STATUS.RUNNING;
+  }
+};
+
+const getBoolean = (index) => {
+  return index % 2 === 0;
+};
+
+export const getSelectTextWrappingOptions = () => ['always', 'never', 'auto', 'alwaysTruncate'];
+
+export const getSelectDataOptions = () => [
+  {
+    id: 'option-A',
+    text: 'option-A',
+  },
+  {
+    id: 'option-B',
+    text: 'option-B',
+  },
+  {
+    id: 'option-C',
+    text: 'option-C',
+  },
+  {
+    id: 'option-D',
+    text: 'option-D',
+  },
+  {
+    id: 'option-E',
+    text: 'option-E',
+  },
+  {
+    id: 'option-F',
+    text: 'option-F',
+  },
+];
+
+export const getTableActions = () => ({
+  pagination: {
+    /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
+    onChangePage: action('onChangePage'),
+  },
+  toolbar: {
+    onApplyFilter: action('onApplyFilter'),
+    onToggleFilter: action('onToggleFilter'),
+    onShowRowEdit: action('onShowRowEdit'),
+    onToggleColumnSelection: action('onToggleColumnSelection'),
+    /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
+    onClearAllFilters: action('onClearAllFilters'),
+    onCancelBatchAction: action('onCancelBatchAction'),
+    onApplyBatchAction: action('onApplyBatchAction'),
+    onApplySearch: action('onApplySearch'),
+    /** advanced filter actions */
+    onCancelAdvancedFilter: action('onCancelAdvancedFilter'),
+    onRemoveAdvancedFilter: action('onRemoveAdvancedFilter'),
+    onCreateAdvancedFilter: action('onCreateAdvancedFilter'),
+    onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
+    onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
+    onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    // TODO: removed to mimic the current state of consumers in the wild
+    // since they won't be adding this prop to any of their components
+    // can be readded in V3.
+    // onToggleAggregations: action('onToggleAggregations'),
+    onApplyToolbarAction: action('onApplyToolbarAction'),
+  },
+  table: {
+    onRowClicked: action('onRowClicked'),
+    onRowSelected: action('onRowSelected'),
+    onSelectAll: action('onSelectAll'),
+    onEmptyStateAction: action('onEmptyStateAction'),
+    onErrorStateAction: action('onErrorStateAction'),
+    onApplyRowAction: action('onApplyRowAction'),
+    onRowExpanded: action('onRowExpanded'),
+    onChangeOrdering: action('onChangeOrdering'),
+    onColumnSelectionConfig: action('onColumnSelectionConfig'),
+    onChangeSort: action('onChangeSort'),
+    onColumnResize: action('onColumnResize'),
+    onOverflowItemClicked: action('onOverflowItemClicked'),
+    onSaveMultiSortColumns: action('onSaveMultiSortColumns'),
+    onCancelMultiSortColumns: action('onCancelMultiSortColumns'),
+    onAddMultiSortColumn: action('onAddMultiSortColumn'),
+    onRemoveMultiSortColumn: action('onRemoveMultiSortColumn'),
+  },
+});
+
+export const renderStatusIcon = ({ value: status }) => {
+  switch (status) {
+    case STATUS.NOT_RUNNING:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="gray" />
+        </svg>
+      );
+    case STATUS.BROKEN:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
+        </svg>
+      );
+
+    case STATUS.RUNNING:
+    default:
+      return (
+        <svg height="10" width="10">
+          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
+        </svg>
+      );
+  }
+};
+
+// Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
+export const customColumnSort = ({ data, columnId, direction }) => {
+  // clone inputData because sort mutates the array
+  const sortedData = data.map((i) => i);
+  sortedData.sort((a, b) => {
+    let compare = -1;
+    // same status
+    if (a.values[columnId] === b.values[columnId]) {
+      compare = 0;
+    } else if (a.values[columnId] === STATUS.RUNNING && b.values[columnId] === STATUS.NOT_RUNNING) {
+      compare = -1;
+    } else if (a.values[columnId] === STATUS.NOT_RUNNING && b.values[columnId] === STATUS.RUNNING) {
+      compare = 1;
+    } else if (b.values[columnId] === STATUS.BROKEN) {
+      compare = 1;
+    } else if (a.values[columnId] === STATUS.BROKEN) {
+      compare = -1;
+    }
+
+    return direction === 'ASC' ? compare : -compare;
+  });
+  return sortedData;
+};
+
+export const getTableColumns = () => [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    filter: { placeholderText: 'enter a date' },
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: getSelectDataOptions() },
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    renderDataFunction: renderStatusIcon,
+    sortFunction: customColumnSort,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    filter: { placeholderText: 'enter a number' },
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    filter: { placeholderText: 'true or false' },
+  },
+  {
+    id: 'node',
+    name: 'React Node',
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      return value?.id;
+    },
+    sortFunction: ({ data, columnId, direction }) => {
+      // clone inputData because sort mutates the array
+      const sortedData = data.map((i) => i);
+      sortedData.sort((a, b) => {
+        const aId = a.values[columnId].id;
+        const bId = b.values[columnId].id;
+        const compare = aId.localeCompare(bId);
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+
+      return sortedData;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        return columnValue.id.includes(filterValue);
+      },
+    },
+  },
+];
+
+export const getTableToolbarActions = () => [
+  {
+    id: 'edit',
+    labelText: 'Edit',
+    renderIcon: 'edit',
+    disabled: true,
+    isOverflow: true,
+  },
+  {
+    id: 'delete',
+    labelText: 'Delete',
+    isDelete: true,
+    hasDivider: true,
+    isOverflow: true,
+    renderIcon: () => <TrashCan16 />,
+  },
+  {
+    id: 'hidden',
+    labelText: 'Hidden',
+    hidden: true,
+    isOverflow: true,
+  },
+];
+
+export const getNewRow = (idx, suffix = '', withActions = false) => ({
+  id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
+  values: {
+    string: getSentence(idx) + suffix,
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+    select: getSelectDataOptions()[idx % 3].id,
+    secretField: getString(idx, 10) + suffix,
+    number: idx % 3 === 0 ? null : idx * idx,
+    status: getStatus(idx),
+    boolean: getBoolean(idx),
+    node: <Add20 />,
+    object: { id: getString(idx, 5) },
+  },
+  rowActions: withActions
+    ? [
+        {
+          id: 'drilldown',
+          renderIcon: Arrow,
+          iconDescription: 'Drill in',
+          labelText: 'Drill in',
+        },
+        {
+          id: 'Add',
+          renderIcon: Add,
+          iconDescription: 'Add',
+          labelText: 'Add',
+          isOverflow: true,
+        },
+      ]
+    : undefined,
+});
+
+export const getTableData = () =>
+  Array(100)
+    .fill(0)
+    .map((i, idx) => getNewRow(idx));
+
+export const getRowActions = (index) =>
+  [
+    index % 4 !== 0
+      ? {
+          id: 'drilldown',
+          renderIcon: Arrow,
+          iconDescription: 'Drill in',
+          labelText: 'Drill in to find out more after observing',
+        }
+      : null,
+    {
+      id: 'edit',
+      renderIcon: Edit,
+      labelText: 'Edit',
+      isOverflow: true,
+      iconDescription: 'Edit',
+      isDelete: false,
+      isEdit: true,
+      disabled: true,
+    },
+    {
+      id: 'Add',
+      renderIcon: Add,
+      iconDescription: 'Add',
+      labelText: 'Add',
+      isOverflow: true,
+      hasDivider: true,
+    },
+    {
+      id: 'delete',
+      renderIcon: TrashCan16,
+      labelText: 'Delete',
+      isOverflow: true,
+      iconDescription: 'Delete',
+      isDelete: true,
+    },
+    {
+      id: 'textOnly',
+      labelText: 'Text only sample action',
+      isOverflow: true,
+    },
+  ].filter((i) => i);
+
+export const addRowAction = (row, hasSingleRowEdit, index) => ({
+  ...row,
+  rowActions: getRowActions(index).map((rowAction) =>
+    rowAction.id === 'edit' && hasSingleRowEdit
+      ? {
+          ...rowAction,
+          disabled: false,
+        }
+      : rowAction
+  ),
+});
+
+export const addChildRows = (row, idx) => ({
+  ...row,
+  children:
+    idx % 4 !== 0
+      ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
+      : idx === 4
+      ? [
+          getNewRow(idx, 'A', true),
+          {
+            ...getNewRow(idx, 'B'),
+            children: [
+              getNewRow(idx, 'B-1', true),
+              {
+                ...getNewRow(idx, 'B-2'),
+                children: [getNewRow(idx, 'B-2-A', true), getNewRow(idx, 'B-2-B', true)],
+              },
+              getNewRow(idx, 'B-3', true),
+            ],
+          },
+          getNewRow(idx, 'C', true),
+          {
+            ...getNewRow(idx, 'D', true),
+            children: [
+              getNewRow(idx, 'D-1', true),
+              getNewRow(idx, 'D-2', true),
+              getNewRow(idx, 'D-3', true),
+            ],
+          },
+        ]
+      : undefined,
+});
+
+export const getExpandedData = (data) =>
+  data.map((row) => ({
+    rowId: row.id,
+    content: <div style={{ marginLeft: '64px' }}>Expanded demo content {row.id}</div>,
+  }));
+
+export const getDefaultOrdering = (tableColumns) =>
+  tableColumns.map(({ id }) => ({
+    columnId: id,
+    isHidden: id === 'secretField',
+  }));
+
+export const getRowActionStates = () => [
+  {
+    rowId: 'row-1',
+    isRunning: true,
+  },
+  {
+    rowId: 'row-3',
+    error: {
+      title: 'Import failed',
+      message: 'Contact your administrator',
+    },
+  },
+];
+
+// eslint-disable-next-line react/prop-types
+export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
+  const id = `${columnId}-${rowId}`;
+  return React.isValidElement(value) ? (
+    value
+  ) : typeof value === 'boolean' ? (
+    <Checkbox
+      defaultChecked={value}
+      id={id}
+      labelText=""
+      hideLabel
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+    />
+  ) : (
+    <TextInput
+      id={id}
+      onChange={(e) => onDataChange(e, columnId, rowId)}
+      type="text"
+      light
+      defaultValue={value}
+      labelText=""
+      hideLabel
+    />
+  );
+};
+
+export const addColumnGroupIds = (col, index) => {
+  return index === 1 || index === 2
+    ? { ...col, columnGroupId: 'groupA' }
+    : index === 5 || index === 6 || index === 7
+    ? { ...col, columnGroupId: 'groupB' }
+    : col;
+};
+
+export const getAdvancedFilters = () => [
+  {
+    filterId: 'story-filter',
+    /** Text for main tilte of page */
+    filterTitleText: 'date CONTAINS 19, boolean=true',
+    /** Text for metadata for the filter */
+    filterMetaText: `last updated: 2021-03-11 15:34:01`,
+    /** tags associated with particular filter */
+    filterTags: ['fav', 'other-tag'],
+    /** users that have access to particular filter */
+    filterAccess: [
+      {
+        username: 'Example-User',
+        email: 'example@pal.com',
+        name: 'Example User',
+        access: 'edit',
+      },
+      {
+        username: 'Other-User',
+        email: 'other@pal.com',
+        name: 'Other User',
+        access: 'read',
+      },
+    ],
+    /** All possible users that can be granted access */
+    filterUsers: [
+      {
+        id: 'teams',
+        name: 'Teams',
+        groups: [
+          {
+            id: 'team-a',
+            name: 'Team A',
+            users: [
+              {
+                username: '@tpeck',
+                email: 'tpeck@pal.com',
+                name: 'Templeton Peck',
+              },
+              {
+                username: '@jsmith',
+                email: 'jsmith@pal.com',
+                name: 'John Smith',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        username: 'Example-User',
+        email: 'example@pal.com',
+        name: 'Example User',
+      },
+      {
+        username: 'Test-User',
+        email: 'test@pal.com',
+        name: 'Test User',
+      },
+      {
+        username: 'Other-User',
+        email: 'other@pal.com',
+        name: 'Other User',
+      },
+    ],
+    /**
+     * the rules passed into the component. The RuleBuilder is a controlled component, so
+     * this works the same as passing defaultValue to a controlled input component.
+     */
+    filterRules: {
+      id: '14p5ho3pcu',
+      groupLogic: 'ALL',
+      rules: [
+        {
+          id: 'rsiru4rjba',
+          columnId: 'date',
+          operand: 'CONTAINS',
+          value: '19',
+        },
+        {
+          id: '34bvyub9jq',
+          columnId: 'boolean',
+          operand: 'EQ',
+          value: 'true',
+        },
+      ],
+    },
+    filterColumns: getTableColumns(),
+  },
+  {
+    filterId: 'next-filter',
+    /** Text for main tilte of page */
+    filterTitleText: 'select=Option c, boolean=false',
+    /** Text for metadata for the filter */
+    filterMetaText: `last updated: 2021-03-11 15:34:01`,
+    /** tags associated with particular filter */
+    filterTags: ['fav', 'other-tag'],
+    /** users that have access to particular filter */
+    filterAccess: [
+      {
+        username: 'Example-User',
+        email: 'example@pal.com',
+        name: 'Example User',
+        access: 'edit',
+      },
+      {
+        username: 'Other-User',
+        email: 'other@pal.com',
+        name: 'Other User',
+        access: 'read',
+      },
+    ],
+    /** All possible users that can be granted access */
+    filterUsers: [
+      {
+        id: 'teams',
+        name: 'Teams',
+        groups: [
+          {
+            id: 'team-a',
+            name: 'Team A',
+            users: [
+              {
+                username: '@tpeck',
+                email: 'tpeck@pal.com',
+                name: 'Templeton Peck',
+              },
+              {
+                username: '@jsmith',
+                email: 'jsmith@pal.com',
+                name: 'John Smith',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        username: 'Example-User',
+        email: 'example@pal.com',
+        name: 'Example User',
+      },
+      {
+        username: 'Test-User',
+        email: 'test@pal.com',
+        name: 'Test User',
+      },
+      {
+        username: 'Other-User',
+        email: 'other@pal.com',
+        name: 'Other User',
+      },
+    ],
+    /**
+     * the rules passed into the component. The RuleBuilder is a controlled component, so
+     * this works the same as passing defaultValue to a controlled input component.
+     */
+    filterRules: {
+      id: '14p5ho3pcu',
+      groupLogic: 'ALL',
+      rules: [
+        {
+          id: 'rsiru4rjba',
+          columnId: 'select',
+          operand: 'EQ',
+          value: 'option-C',
+        },
+        {
+          id: '34bvyub9jq',
+          columnId: 'boolean',
+          operand: 'EQ',
+          value: 'false',
+        },
+      ],
+    },
+    filterColumns: getTableColumns(),
+  },
+];
+
+export const getTableKnobs = (enableAllKnobs, useGroups = true) => {
+  const TABLE_GROUP = useGroups ? 'Table general' : undefined;
+  const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
+  const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
+  const ROW_EDIT_GROUP = useGroups ? 'Data editing' : undefined;
+  const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
+  const SEARCH_GROUP = useGroups ? 'Search' : undefined;
+  const COLUMN_GROUP = useGroups ? 'Column configuration' : undefined;
+  const AGGREGATION_GROUP = useGroups ? 'Aggregation' : undefined;
+  const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
+  const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
+  const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
+  const STATES_GROUP = useGroups ? 'States' : undefined;
+
+  return {
+    // TABLE_GROUP
+    selectedTableType: select(
+      'Type of Table',
+      ['Table', 'StatefulTable'],
+      'StatefulTable',
+      TABLE_GROUP
+    ),
+    tableMaxWidth: select(
+      'Demo table max-width',
+      ['300px', '600px', '900px', 'none'],
+      'none',
+      TABLE_GROUP
+    ),
+    size: select('Row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg', TABLE_GROUP),
+    numerOfRows: select('Demo number of rows in data', [100, 50, 20, 5], 100, TABLE_GROUP),
+    hasUserViewManagement: boolean(
+      'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
+      false,
+      TABLE_GROUP
+    ),
+
+    // TITLE_TOOLBAR_GROUP
+    secondaryTitle: text(
+      'Title shown in bar above header row (secondaryTitle)',
+      'Table playground',
+      TITLE_TOOLBAR_GROUP
+    ),
+    tableTooltipText: text(
+      'Table title toltip (tooltip)',
+      enableAllKnobs ? 'I must be wrapped in a react node' : '',
+      TITLE_TOOLBAR_GROUP
+    ),
+    stickyHeader: boolean('Sticky header ☢️ (stickyHeader)', false, TITLE_TOOLBAR_GROUP),
+    demoToolbarActions: boolean(
+      'Demo toolbar actions (view.toolbar.toolbarActions)',
+      enableAllKnobs,
+      TITLE_TOOLBAR_GROUP
+    ),
+    demoCustomToolbarContent: boolean(
+      'Demo custom toolbar content (view.toolbar.customToolbarContent)',
+      enableAllKnobs,
+      TITLE_TOOLBAR_GROUP
+    ),
+    toolbarIsDisabled: boolean(
+      'Disable the table toolbar (view.toolbar.isDisabled)',
+      false,
+      TITLE_TOOLBAR_GROUP
+    ),
+
+    // SORT_FILTER_GROUP
+    demoSingleSort: boolean(
+      'Single dimension sorting (columns[i].isSortable)',
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
+    hasMultiSort: boolean(
+      'Enable multiple dimension sorting (options.hasMultiSort)',
+      false,
+      SORT_FILTER_GROUP
+    ),
+    hasFilter: select(
+      'Enable filtering by column value (options.hasFilter)',
+      ['onKeyPress', 'onEnterAndBlur', true, false],
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
+    hasAdvancedFilter: boolean(
+      'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
+      enableAllKnobs,
+      SORT_FILTER_GROUP
+    ),
+
+    // SEARCH_GROUP
+    hasSearch: boolean(
+      'Enable searching on the table values (options.hasSearch)',
+      enableAllKnobs,
+      SEARCH_GROUP
+    ),
+    hasFastSearch: boolean(
+      'Trigger search while typing (options.hasFastSearch)',
+      enableAllKnobs,
+      SEARCH_GROUP
+    ),
+
+    // AGGREGATION_GROUP
+    hasAggregations: boolean(
+      'Aggregate column values in footer (options.hasAggregations)',
+      enableAllKnobs,
+      AGGREGATION_GROUP
+    ),
+    aggregationLabel: text(
+      'Aggregation label (view.aggregations.label)',
+      'Total',
+      AGGREGATION_GROUP
+    ),
+    aggregationsColumns: object(
+      'Aggregations columns settings',
+      [
+        {
+          id: 'number',
+          align: 'start',
+          isSortable: false,
+        },
+      ],
+      AGGREGATION_GROUP
+    ),
+
+    // PAGINATION_GROUP
+    hasPagination: boolean(
+      'Enable pagination (options.hasPagination)',
+      enableAllKnobs,
+      PAGINATION_GROUP
+    ),
+    pageSizes: object(
+      'Selectable page sizes (view.pagination.pageSizes)',
+      [10, 20, 30, 50],
+      PAGINATION_GROUP
+    ),
+    maxPages: parseInt(
+      text(
+        'Upper limit for number of pages (view.pagination.maxPages)',
+        '100', // use text and string instead of number since number() does not work with knob groups
+        PAGINATION_GROUP
+      ),
+      10
+    ),
+    isItemPerPageHidden: boolean(
+      'Hide items per page selection (options.pagination.isItemPerPageHidden)',
+      false,
+      PAGINATION_GROUP
+    ),
+    paginationSize: select(
+      'Size of pagination buttons (options.pagination.size)',
+      ['sm', 'md', 'lg'],
+      'lg',
+      PAGINATION_GROUP
+    ),
+    hasOnlyPageData: boolean(
+      'Data prop only represents the currently visible page (options.hasOnlyPageData)',
+      enableAllKnobs,
+      PAGINATION_GROUP
+    ),
+
+    // COLUMN_GROUP
+    demoInitialColumnSizes: boolean('Demo initial columns sizes', false, COLUMN_GROUP),
+    hasResize: boolean(
+      'Enable resizing of column widths (options.hasResize)',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    preserveColumnWidths: boolean(
+      'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    useAutoTableLayoutForResize: boolean(
+      'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
+      false,
+      COLUMN_GROUP
+    ),
+    demoColumnTooltips: boolean('Demo column tooltips', enableAllKnobs, COLUMN_GROUP),
+    demoColumnGroupAssignments: boolean(
+      'Demo assigning columns to groups',
+      enableAllKnobs,
+      COLUMN_GROUP
+    ),
+    columnGroups: object(
+      'Column groups definition (columnGroups)',
+      [
+        {
+          id: 'groupA',
+          name: 'Group A that has a very long name that should be truncated',
+        },
+        { id: 'groupB', name: 'Group B' },
+      ],
+      COLUMN_GROUP
+    ),
+
+    hasColumnSelection: boolean(
+      'Enable legacy column management (options.hasColumnSelection)',
+      false,
+      COLUMN_GROUP
+    ),
+    hasColumnSelectionConfig: boolean(
+      'Show config button in legacy column management (options.hasColumnSelectionConfig)',
+      false,
+      COLUMN_GROUP
+    ),
+
+    // SELECTIONS_ACTIONS_GROUP
+    hasRowSelection: select(
+      'Enable row selection type (options.hasRowSelection)',
+      ['multi', 'single', false],
+      enableAllKnobs ? 'multi' : false.valueOf,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    selectionCheckboxEnabled: boolean(
+      'Row checkbox selectable (data[i].isSelectable)',
+      true,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    demoBatchActions: boolean(
+      'Demo batch actions for selected rows (view.toolbar.batchActions)',
+      true,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+    hasRowActions: boolean(
+      'Demo row actions (options.hasRowActions)',
+      enableAllKnobs,
+      SELECTIONS_ACTIONS_GROUP
+    ),
+
+    // NESTING_EXPANSION_GROUP
+    hasRowExpansion: select(
+      'Demo rows with additional expandable content (options.hasRowExpansion)',
+      {
+        true: true,
+        false: false,
+        '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+      },
+      false,
+      NESTING_EXPANSION_GROUP
+    ),
+    hasRowNesting: select(
+      'Demo nested rows (options.hasRowNesting)',
+      {
+        true: true,
+        false: false,
+        '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
+      },
+      enableAllKnobs,
+      NESTING_EXPANSION_GROUP
+    ),
+    shouldExpandOnRowClick: boolean(
+      'Expand row on click (options.shouldExpandOnRowClick)',
+      enableAllKnobs,
+      NESTING_EXPANSION_GROUP
+    ),
+
+    // ROW_RENDER_GROUP
+    shouldLazyRender: boolean(
+      'Enable only loading table rows as they become visible (options.shouldLazyRender)',
+      false,
+      ROW_RENDER_GROUP
+    ),
+    useZebraStyles: boolean(
+      'Alternate colors in table rows (useZebraStyles)',
+      enableAllKnobs,
+      ROW_RENDER_GROUP
+    ),
+    wrapCellText: select(
+      'Cell text overflow strategy (options.wrapCellText)',
+      getSelectTextWrappingOptions(),
+      'always',
+      ROW_RENDER_GROUP
+    ),
+    cellTextAlignment: select(
+      'Align cell text (columns[i].align)',
+      ['start', 'center', 'end'],
+      'start',
+      ROW_RENDER_GROUP
+    ),
+    locale: text('Locale used to format table values (locale)', '', ROW_RENDER_GROUP),
+    preserveCellWhiteSpace: boolean(
+      'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+      false,
+      ROW_RENDER_GROUP
+    ),
+    demoRenderDataFunction: boolean(
+      'Demo custom data render function (columns[i].renderDataFunction)',
+      true,
+      ROW_RENDER_GROUP
+    ),
+
+    // ROW_EDIT_GROUP
+    hasRowEdit: boolean(
+      'Enables row editing for the entire table (options.hasRowEdit)',
+      enableAllKnobs,
+      ROW_EDIT_GROUP
+    ),
+    hasSingleRowEdit: boolean(
+      'Enables row editing for a single row (options.hasSingleRowEdit)',
+      enableAllKnobs,
+      ROW_EDIT_GROUP
+    ),
+
+    // STATES_GROUP
+    tableIsLoading: boolean(
+      'Show table loading state (view.table.loadingState.isLoading)',
+      false,
+      STATES_GROUP
+    ),
+    demoEmptyColumns: boolean('Demo empty columns in loading state (columns)', false, STATES_GROUP),
+    loadingRowCount: parseInt(
+      text(
+        'Number of additional rows in loading state (view.table.loadingState.rowCount)',
+        '7', // use text and string instead of number since number() does not work with knob groups
+        STATES_GROUP
+      ),
+      10
+    ),
+    loadingColumnCount: parseInt(
+      text(
+        'Number of columns in loading state (view.table.loadingState.columnCount)',
+        '6', // use text and string instead of number since number() does not work with knob groups
+        STATES_GROUP
+      ),
+      10
+    ),
+    demoEmptyState: boolean('Demo empty state (view.table.emptyState)', false, STATES_GROUP),
+    demoCustomEmptyState: boolean(
+      'Demo custom empty state (view.table.emptyState)',
+      false,
+      STATES_GROUP
+    ),
+    demoCustomErrorState: boolean(
+      'Demo custom error state (view.table.errorState)',
+      false,
+      STATES_GROUP
+    ),
+  };
+};
+
+export const getI18nKnobs = (useGroup = true) => {
+  const I18N_GROUP = useGroup ? 'i18n' : undefined;
+
+  return {
+    pageBackwardAria: text('i18n.pageBackwardAria', 'Previous page', I18N_GROUP),
+    pageForwardAria: text('i18n.pageForwardAria', 'Next page', I18N_GROUP),
+    pageNumberAria: text('i18n.pageNumberAria', 'Page Number', I18N_GROUP),
+    itemsPerPage: text('i18n.itemsPerPage', 'Items per page:', I18N_GROUP),
+    overflowMenuAria: text('i18n.overflowMenuAria', 'More actions', I18N_GROUP),
+    clickToExpandAria: text('i18n.clickToExpandAria', 'Click to expand content', I18N_GROUP),
+    clickToCollapseAria: text('i18n.clickToCollapseAria', 'Click to collapse content', I18N_GROUP),
+    selectAllAria: text('i18n.selectAllAria', 'Select all items', I18N_GROUP),
+    selectRowAria: text('i18n.selectRowAria', 'Select row', I18N_GROUP),
+    clearAllFilters: text('i18n.clearAllFilters', 'Clear all filters', I18N_GROUP),
+    columnSelectionButtonAria: text(
+      'i18n.columnSelectionButtonAria',
+      'Column Selection',
+      I18N_GROUP
+    ),
+    columnSelectionConfig: text('i18n.columnSelectionConfig', 'Manage columns', I18N_GROUP),
+    filterButtonAria: text('i18n.filterButtonAria', 'Filters', I18N_GROUP),
+    editButtonAria: text('i18n.editButtonAria', 'Edit rows', I18N_GROUP),
+    searchLabel: text('i18n.searchLabel', 'Search', I18N_GROUP),
+    searchPlaceholder: text('i18n.searchPlaceholder', 'Search', I18N_GROUP),
+    clearFilterAria: text('i18n.clearFilterAria', 'Clear filter', I18N_GROUP),
+    filterAria: text('i18n.filterAria', 'Filter', I18N_GROUP),
+    openMenuAria: text('i18n.openMenuAria', 'Open menu', I18N_GROUP),
+    closeMenuAria: text('i18n.closeMenuAria', 'Close menu', I18N_GROUP),
+    clearSelectionAria: text('i18n.clearSelectionAria', 'Clear selection', I18N_GROUP),
+    batchCancel: text('i18n.batchCancel', 'Cancel', I18N_GROUP),
+    applyButtonText: text('i18n.applyButtonText', 'Apply filters', I18N_GROUP),
+    cancelButtonText: text('i18n.cancelButtonText', 'Cancel', I18N_GROUP),
+    advancedFilterLabelText: text(
+      'i18n.advancedFilterLabelText',
+      'Select an existing filter or',
+      I18N_GROUP
+    ),
+    createNewAdvancedFilterText: text(
+      'i18n.createNewAdvancedFilterText',
+      'create a new advanced filter',
+      I18N_GROUP
+    ),
+    advancedFilterPlaceholderText: text(
+      'i18n.advancedFilterPlaceholderText',
+      'Select a filter',
+      I18N_GROUP
+    ),
+    simpleFiltersTabLabel: text('i18n.simpleFiltersTabLabel', 'Simple filters', I18N_GROUP),
+    advancedFiltersTabLabel: text('i18n.advancedFiltersTabLabel', 'Advanced filters', I18N_GROUP),
+    emptyMessage: text('i18n.emptyMessage', 'There is no data', I18N_GROUP),
+    emptyMessageWithFilters: text(
+      'i18n.emptyMessageWithFilters',
+      'No results match the current filters',
+      I18N_GROUP
+    ),
+    emptyButtonLabel: text('i18n.emptyButtonLabel', 'Create some data', I18N_GROUP),
+    emptyButtonLabelWithFilters: text(
+      'i18n.emptyButtonLabelWithFilters',
+      'Clear all filters',
+      I18N_GROUP
+    ),
+    filterNone: text('i18n.filterNone', 'Unsort rows by this header', I18N_GROUP),
+    filterAscending: text(
+      'i18n.filterAscending',
+      'Sort rows by this header in ascending order',
+      I18N_GROUP
+    ),
+    filterDescending: text(
+      'i18n.filterDescending',
+      'Sort rows by this header in descending order',
+      I18N_GROUP
+    ),
+    toggleAggregations: text('i18n.toggleAggregations', 'Toggle aggregations', I18N_GROUP),
+    multiSortModalTitle: text('i18n.multiSortModalTitle', 'Select columns to sort', I18N_GROUP),
+    multiSortModalPrimaryLabel: text('i18n.multiSortModalPrimaryLabel', 'Sort', I18N_GROUP),
+    multiSortModalSecondaryLabel: text('i18n.multiSortModalSecondaryLabel', 'Cancel', I18N_GROUP),
+    multiSortSelectColumnLabel: text(
+      'i18n.multiSortSelectColumnLabel',
+      'Select a column',
+      I18N_GROUP
+    ),
+    multiSortSelectColumnSortByTitle: text(
+      'i18n.multiSortSelectColumnSortByTitle',
+      'Sort by',
+      I18N_GROUP
+    ),
+    multiSortSelectColumnThenByTitle: text(
+      'i18n.multiSortSelectColumnThenByTitle',
+      'Then by',
+      I18N_GROUP
+    ),
+    multiSortDirectionLabel: text('i18n.multiSortDirectionLabel', 'Select a direction', I18N_GROUP),
+    multiSortDirectionTitle: text('i18n.multiSortDirectionTitle', 'Sort order', I18N_GROUP),
+    multiSortAddColumn: text('i18n.multiSortAddColumn', 'Add column', I18N_GROUP),
+    multiSortRemoveColumn: text('i18n.multiSortRemoveColumn', 'Remove column', I18N_GROUP),
+    multiSortAscending: text('i18n.multiSortAscending', 'Ascending', I18N_GROUP),
+    multiSortDescending: text('i18n.multiSortDescending', 'Descending', I18N_GROUP),
+    multiSortCloseModal: text('i18n.multiSortCloseModal', 'Close', I18N_GROUP),
+    multiSortOpenMenu: text('i18n.multiSortOpenMenu', 'Open menu', I18N_GROUP),
+    multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
+    multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
+    toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+  };
+};
