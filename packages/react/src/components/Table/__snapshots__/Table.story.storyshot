@@ -106762,7 +106762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <div
           aria-label="Story Filter Story Filter"
-          className="bx--tag bx--tag--filter"
+          className="bx--tag bx--tag--filter bx--tag--blue"
           data-testid="table-filter-tag-story-filter"
           id="tag-34"
         >
