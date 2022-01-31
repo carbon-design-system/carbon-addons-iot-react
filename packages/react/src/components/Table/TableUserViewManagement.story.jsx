@@ -140,6 +140,11 @@ export const WithUserViewManagement = () => {
   const [manageViewsCurrentPageItems, setManageViewsCurrentPageItems] = useState(
     viewsStorage.slice(0, manageViewsRowsPerPage)
   );
+  /** Determine if the TableManageViewModal should list public views  */
+  const [
+    manageViewsDisplayPublicDefaultChecked,
+    setManageViewsDisplayPublicDefaultChecked,
+  ] = useState(true);
 
   // This is the state of the current table.
   const [currentTableState, setCurrentTableState] = useState(
@@ -238,6 +243,7 @@ export const WithUserViewManagement = () => {
             };
             setManageViewsCurrentFilters(newFilters);
             applyFiltering(newFilters);
+            setManageViewsDisplayPublicDefaultChecked(showPublic);
           },
           onSearchChange: (searchTerm = '') => {
             const newFilters = {
@@ -262,6 +268,7 @@ export const WithUserViewManagement = () => {
         isLoading={boolean('TableManageViewsModal: isLoading', false)}
         open={manageViewsModalOpen}
         views={manageViewsCurrentPageItems}
+        displayPublicDefaultChecked={manageViewsDisplayPublicDefaultChecked}
         pagination={{
           page: manageViewsCurrentPageNumber,
           onPage: (pageNumber) => showPage(pageNumber, manageViewsFilteredViews),
@@ -294,7 +301,11 @@ export const WithUserViewManagement = () => {
           },
           onManageViews: () => {
             setManageViewsModalOpen(true);
-            setManageViewsCurrentPageItems(viewsStorage.slice(0, manageViewsRowsPerPage));
+            setManageViewsCurrentPageItems(
+              viewsStorage
+                .slice(0, manageViewsRowsPerPage)
+                .filter((view) => !view.isPublic || manageViewsDisplayPublicDefaultChecked)
+            );
           },
           onChangeView: ({ id }) => {
             const selectedView = viewsStorage.find((view) => view.id === id);
