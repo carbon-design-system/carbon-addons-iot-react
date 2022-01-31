@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.147.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.3...v2.147.4) (2022-01-31)
+
+
+### Bug Fixes
+
+* **table:** add hidden prop to row action ([9bd3a36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9bd3a3607a48a9370b43c434503fc8c65c314a4e)), closes [#3208](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3208)
+* **table:** add hidden proptype to row action ([0640e76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0640e76ed7764b78a47504aff0949f7e53b6751c)), closes [#3208](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3208)
+
+
+
+
+
 ## [2.147.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.2...v2.147.3) (2022-01-27)
 
 
