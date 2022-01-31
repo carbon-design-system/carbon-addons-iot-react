@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { Search } from '../../Search';
 import { settings } from '../../../constants/Settings';
+import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix } = settings;
 
@@ -13,6 +14,7 @@ const propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string,
     id: PropTypes.string,
+    hasFastSearch: PropTypes.bool,
   }),
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -26,6 +28,7 @@ const defaultProps = {
   search: {
     onChange: () => {},
     value: '',
+    hasFastSearch: true,
   },
   i18n: {
     searchPlaceHolderText: 'Enter a value',
@@ -35,6 +38,17 @@ const defaultProps = {
 };
 
 const ListHeader = ({ title, buttons, search, i18n, testId }) => {
+  const previousSearchValueRef = useRef(search?.value);
+  const hasFastSearch = search?.hasFastSearch !== false;
+  const handleSearch = (e) => {
+    const { value: currentValue } = e.target;
+    const { current: previousValue } = previousSearchValueRef;
+    if (previousValue !== currentValue) {
+      search.onChange(e);
+      previousSearchValueRef.current = currentValue;
+    }
+  };
+
   return (
     <div data-testid={testId} className={`${iotPrefix}--list-header-container`}>
       {title || (buttons && buttons.length > 0) ? (
@@ -49,7 +63,10 @@ const ListHeader = ({ title, buttons, search, i18n, testId }) => {
             closeButtonLabelText={i18n.clearSearchIconDescription}
             id={search.id || `${iotPrefix}--list-header--search`}
             placeholder={i18n.searchPlaceHolderText}
-            onChange={search.onChange}
+            onChange={hasFastSearch !== false ? handleSearch : undefined}
+            onBlur={hasFastSearch ? undefined : handleSearch}
+            onKeyDown={handleSpecificKeyDown(['Enter'], handleSearch)}
+            onClear={() => handleSearch({ target: { value: '' } })}
             size="lg"
             value={search.value}
             labelText={i18n.searchPlaceHolderText}

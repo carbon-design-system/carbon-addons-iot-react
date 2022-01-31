@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.11...v2.148.0-next.12) (2022-01-31)
+
+
+### Features
+
+* **list:** add `hasFastSearch` and example async search story ([3cb74f3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3cb74f398f0c491b639bd9a7f14ca3ff7d2ce127))
+
+
+
+
+
+# [2.148.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.10...v2.148.0-next.11) (2022-01-28)
+
+
+### Bug Fixes
+
+* **table:** add rownesting in total columns calc ([0da8b85](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0da8b85546f4bb2173093915f4a42f29cf1fb3e1)), closes [#3210](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3210)
+* **table:** fix filter columns for row nesting ([3dfee86](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3dfee86688e672a2c4295d5549a3779a4237606c))
+* **table:** fix incorrect data proptype ([ef75d00](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ef75d006f54a5b784755d7620ab8b346097394bc))
+
+
+
+
+
 # [2.148.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.9...v2.148.0-next.10) (2022-01-28)
 
 
