@@ -25,6 +25,8 @@ const propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string,
     id: PropTypes.string,
+    /** should search be trigger onChange (true) or only on Enter/Blur (false) */
+    hasFastSearch: PropTypes.bool,
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
