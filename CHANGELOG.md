@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.11...v2.148.0-next.12) (2022-01-31)
+
+
+### Features
+
+* **list:** add `hasFastSearch` and example async search story ([3cb74f3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3cb74f398f0c491b639bd9a7f14ca3ff7d2ce127))
+
+
+
+
+
 # [2.148.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.10...v2.148.0-next.11) (2022-01-28)
 
 
