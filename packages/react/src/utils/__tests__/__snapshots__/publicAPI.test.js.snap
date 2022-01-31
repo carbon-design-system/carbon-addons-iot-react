@@ -1050,6 +1050,9 @@ Map {
                           "hasDivider": Object {
                             "type": "bool",
                           },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -3257,6 +3260,9 @@ Map {
                           "hasDivider": Object {
                             "type": "bool",
                           },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -4170,6 +4176,9 @@ Map {
                             "type": "bool",
                           },
                           "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "hidden": Object {
                             "type": "bool",
                           },
                           "id": Object {
