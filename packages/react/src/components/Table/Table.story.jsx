@@ -5,7 +5,7 @@ import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
 import { spacing03 } from '@carbon/layout';
-import { Add20, TrashCan16, ViewOff16 } from '@carbon/icons-react';
+import { TrashCan16, ViewOff16 } from '@carbon/icons-react';
 import { cloneDeep, assign, isEqual } from 'lodash-es';
 import { firstBy } from 'thenby';
 
@@ -28,158 +28,27 @@ import MockApiClient from './AsyncTable/MockApiClient';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
+import {
+  getTableActions,
+  getSelectDataOptions,
+  getSelectTextWrappingOptions,
+  renderStatusIcon,
+  customColumnSort,
+  getTableColumns,
+  getTableToolbarActions,
+  getTableData,
+  getNewRow,
+  getDefaultOrdering,
+  getRowActions,
+  getEditDataFunction,
+  getRowActionStates,
+} from './Table.story.helpers';
 
-const selectData = [
-  {
-    id: 'option-A',
-    text: 'option-A',
-  },
-  {
-    id: 'option-B',
-    text: 'option-B',
-  },
-  {
-    id: 'option-C',
-    text: 'option-C',
-  },
-  {
-    id: 'option-D',
-    text: 'option-D',
-  },
-  {
-    id: 'option-E',
-    text: 'option-E',
-  },
-  {
-    id: 'option-F',
-    text: 'option-F',
-  },
-];
+const selectData = getSelectDataOptions();
 
-const STATUS = {
-  RUNNING: 'RUNNING',
-  NOT_RUNNING: 'NOT_RUNNING',
-  BROKEN: 'BROKEN',
-};
+const selectTextWrapping = getSelectTextWrappingOptions();
 
-export const selectTextWrapping = ['always', 'never', 'auto', 'alwaysTruncate'];
-
-const renderStatusIcon = ({ value: status }) => {
-  switch (status) {
-    case STATUS.NOT_RUNNING:
-      return (
-        <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="gray" />
-        </svg>
-      );
-    case STATUS.BROKEN:
-      return (
-        <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="red" />
-        </svg>
-      );
-
-    case STATUS.RUNNING:
-    default:
-      return (
-        <svg height="10" width="10">
-          <circle cx="5" cy="5" r="3" stroke="none" strokeWidth="1" fill="green" />
-        </svg>
-      );
-  }
-};
-// Example custom sort method for the status field.  Will sort the broken to the top, then the running, then the not_running
-const customColumnSort = ({ data, columnId, direction }) => {
-  // clone inputData because sort mutates the array
-  const sortedData = data.map((i) => i);
-  sortedData.sort((a, b) => {
-    let compare = -1;
-    // same status
-    if (a.values[columnId] === b.values[columnId]) {
-      compare = 0;
-    } else if (a.values[columnId] === STATUS.RUNNING && b.values[columnId] === STATUS.NOT_RUNNING) {
-      compare = -1;
-    } else if (a.values[columnId] === STATUS.NOT_RUNNING && b.values[columnId] === STATUS.RUNNING) {
-      compare = 1;
-    } else if (b.values[columnId] === STATUS.BROKEN) {
-      compare = 1;
-    } else if (a.values[columnId] === STATUS.BROKEN) {
-      compare = -1;
-    }
-
-    return direction === 'ASC' ? compare : -compare;
-  });
-  return sortedData;
-};
-
-export const tableColumns = [
-  {
-    id: 'string',
-    name: 'String',
-    filter: { placeholderText: 'enter a string' },
-  },
-
-  {
-    id: 'date',
-    name: 'Date',
-    filter: { placeholderText: 'enter a date' },
-  },
-  {
-    id: 'select',
-    name: 'Select',
-    filter: { placeholderText: 'pick an option', options: selectData },
-  },
-  {
-    id: 'secretField',
-    name: 'Secret Information',
-  },
-  {
-    id: 'status',
-    name: 'Status',
-    renderDataFunction: renderStatusIcon,
-    sortFunction: customColumnSort,
-  },
-  {
-    id: 'number',
-    name: 'Number',
-    filter: { placeholderText: 'enter a number' },
-  },
-  {
-    id: 'boolean',
-    name: 'Boolean',
-    filter: { placeholderText: 'true or false' },
-  },
-  {
-    id: 'node',
-    name: 'React Node',
-  },
-  {
-    id: 'object',
-    name: 'Object Id',
-    renderDataFunction: ({ value }) => {
-      return value?.id;
-    },
-    sortFunction: ({ data, columnId, direction }) => {
-      // clone inputData because sort mutates the array
-      const sortedData = data.map((i) => i);
-      sortedData.sort((a, b) => {
-        const aId = a.values[columnId].id;
-        const bId = b.values[columnId].id;
-        const compare = aId.localeCompare(bId);
-
-        return direction === 'ASC' ? compare : -compare;
-      });
-
-      return sortedData;
-    },
-    filter: {
-      placeholderText: 'Filter object values...',
-      filterFunction: (columnValue, filterValue) => {
-        return columnValue.id.includes(filterValue);
-      },
-    },
-  },
-];
+const tableColumns = getTableColumns();
 
 export const tableColumnsWithAlignment = [
   {
@@ -295,86 +164,9 @@ export const tableColumnsWithOverflowMenu = [
   },
 ];
 
-export const defaultOrdering = tableColumns.map((c) => ({
-  columnId: c.id,
-  isHidden: c.id === 'secretField',
-}));
+export const defaultOrdering = getDefaultOrdering(tableColumns);
 
-const words = [
-  'toyota',
-  'helping',
-  'whiteboard',
-  'as',
-  'can',
-  'bottle',
-  'eat',
-  'chocolate',
-  'pinocchio',
-  'scott',
-];
-const getLetter = (index) =>
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(index % 62);
-const getWord = (index, step = 1) => words[(step * index) % words.length];
-const getSentence = (index) =>
-  `${getWord(index, 1)} ${getWord(index, 2)} ${getWord(index, 3)} ${index}`;
-const getString = (index, length) =>
-  Array(length)
-    .fill(0)
-    .map((i, idx) => getLetter(index * (idx + 14) * (idx + 1)))
-    .join('');
-
-const getStatus = (idx) => {
-  const modStatus = idx % 3;
-  switch (modStatus) {
-    case 1:
-      return STATUS.NOT_RUNNING;
-    case 2:
-      return STATUS.BROKEN;
-    case 0:
-    default:
-      return STATUS.RUNNING;
-  }
-};
-
-const getBoolean = (index) => {
-  return index % 2 === 0;
-};
-
-export const getNewRow = (idx, suffix = '', withActions = false) => ({
-  id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
-  values: {
-    string: getSentence(idx) + suffix,
-    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
-    select: selectData[idx % 3].id,
-    secretField: getString(idx, 10) + suffix,
-    number: idx % 3 === 0 ? null : idx * idx,
-    status: getStatus(idx),
-    boolean: getBoolean(idx),
-    node: <Add20 />,
-    object: { id: getString(idx, 5) },
-  },
-  rowActions: withActions
-    ? [
-        {
-          id: 'drilldown',
-          renderIcon: Arrow,
-          iconDescription: 'Drill in',
-          labelText: 'Drill in',
-        },
-        {
-          id: 'Add',
-          renderIcon: Add,
-          iconDescription: 'Add',
-          labelText: 'Add',
-          isOverflow: true,
-        },
-      ]
-    : undefined,
-});
-
-export const tableData = Array(100)
-  .fill(0)
-  .map((i, idx) => getNewRow(idx));
+export const tableData = getTableData();
 
 /** Sample expanded row component */
 const RowExpansionContent = ({ rowId }) => (
@@ -393,50 +185,7 @@ const RowExpansionContent = ({ rowId }) => (
   </div>
 );
 
-export const tableActions = {
-  pagination: {
-    /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
-    onChangePage: action('onChangePage'),
-  },
-  toolbar: {
-    onApplyFilter: action('onApplyFilter'),
-    onToggleFilter: action('onToggleFilter'),
-    onShowRowEdit: action('onShowRowEdit'),
-    onToggleColumnSelection: action('onToggleColumnSelection'),
-    /** Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column */
-    onClearAllFilters: action('onClearAllFilters'),
-    onCancelBatchAction: action('onCancelBatchAction'),
-    onApplyBatchAction: action('onApplyBatchAction'),
-    onApplySearch: action('onApplySearch'),
-    /** advanced filter actions */
-    onCancelAdvancedFilter: action('onCancelAdvancedFilter'),
-    onRemoveAdvancedFilter: action('onRemoveAdvancedFilter'),
-    onCreateAdvancedFilter: action('onCreateAdvancedFilter'),
-    onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
-    onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
-    onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
-    onToggleAggregations: action('onToggleAggregations'),
-    onApplyToolbarAction: action('onApplyToolbarAction'),
-  },
-  table: {
-    onRowClicked: action('onRowClicked'),
-    onRowSelected: action('onRowSelected'),
-    onSelectAll: action('onSelectAll'),
-    onEmptyStateAction: action('onEmptyStateAction'),
-    onErrorStateAction: action('onErrorStateAction'),
-    onApplyRowAction: action('onApplyRowAction'),
-    onRowExpanded: action('onRowExpanded'),
-    onChangeOrdering: action('onChangeOrdering'),
-    onColumnSelectionConfig: action('onColumnSelectionConfig'),
-    onChangeSort: action('onChangeSort'),
-    onColumnResize: action('onColumnResize'),
-    onOverflowItemClicked: action('onOverflowItemClicked'),
-    onSaveMultiSortColumns: action('onSaveMultiSortColumns'),
-    onCancelMultiSortColumns: action('onCancelMultiSortColumns'),
-    onAddMultiSortColumn: action('onAddMultiSortColumn'),
-    onRemoveMultiSortColumn: action('onRemoveMultiSortColumn'),
-  },
-};
+const tableActions = getTableActions();
 
 /** This would be loaded from your fetch */
 export const initialState = {
@@ -446,47 +195,7 @@ export const initialState = {
   })),
   data: tableData.map((i, idx) => ({
     ...i,
-    rowActions: [
-      idx % 4 !== 0
-        ? {
-            id: 'drilldown',
-            renderIcon: Arrow,
-            iconDescription: 'Drill in',
-            labelText: 'Drill in to find out more after observing',
-          }
-        : null,
-      {
-        id: 'edit',
-        renderIcon: Edit,
-        labelText: 'Edit',
-        isOverflow: true,
-        iconDescription: 'Edit',
-        isDelete: false,
-        isEdit: true,
-        disabled: true,
-      },
-      {
-        id: 'Add',
-        renderIcon: Add,
-        iconDescription: 'Add',
-        labelText: 'Add',
-        isOverflow: true,
-        hasDivider: true,
-      },
-      {
-        id: 'delete',
-        renderIcon: TrashCan16,
-        labelText: 'Delete',
-        isOverflow: true,
-        iconDescription: 'Delete',
-        isDelete: true,
-      },
-      {
-        id: 'textOnly',
-        labelText: 'Text only sample action',
-        isOverflow: true,
-      },
-    ].filter((i) => i),
+    rowActions: getRowActions(idx),
   })),
   expandedData: [
     {
@@ -549,29 +258,7 @@ export const initialState = {
   },
 };
 
-const tableToolbarActions = [
-  {
-    id: 'edit',
-    labelText: 'Edit',
-    renderIcon: 'edit',
-    disabled: true,
-    isOverflow: true,
-  },
-  {
-    id: 'delete',
-    labelText: 'Delete',
-    isDelete: true,
-    hasDivider: true,
-    isOverflow: true,
-    renderIcon: () => <TrashCan16 />,
-  },
-  {
-    id: 'hidden',
-    labelText: 'Hidden',
-    hidden: true,
-    isOverflow: true,
-  },
-];
+const tableToolbarActions = getTableToolbarActions();
 
 export default {
   title: '1 - Watson IoT/Table/Table',
@@ -681,7 +368,6 @@ export const BasicDumbTable = () => {
           true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
-        hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
           'Preserve column widths when resizing (options.preserveColumnWidths)',
           true
@@ -1327,30 +1013,7 @@ export const BasicTableWithFullRowEditExample = () => {
 
   // This is a simplified example.
   // The app should handle input validation and types like dates, select etc
-  const editDataFunction = ({ value, columnId, rowId }) => {
-    const id = `${columnId}-${rowId}`;
-    return React.isValidElement(value) ? (
-      value
-    ) : typeof value === 'boolean' ? (
-      <Checkbox
-        defaultChecked={value}
-        id={id}
-        labelText=""
-        hideLabel
-        onChange={(e) => onDataChange(e, columnId, rowId)}
-      />
-    ) : (
-      <TextInput
-        id={id}
-        onChange={(e) => onDataChange(e, columnId, rowId)}
-        type="text"
-        light
-        defaultValue={value}
-        labelText=""
-        hideLabel
-      />
-    );
-  };
+  const editDataFunction = getEditDataFunction(onDataChange);
 
   const myToast = (
     <ToastNotification
@@ -1698,19 +1361,7 @@ export const WithRowExpansionAndActions = () => {
         filters: [],
         table: {
           ordering: defaultOrdering,
-          rowActions: [
-            {
-              rowId: 'row-1',
-              isRunning: true,
-            },
-            {
-              rowId: 'row-3',
-              error: {
-                title: 'Import failed',
-                message: 'Contact your administrator',
-              },
-            },
-          ],
+          rowActions: getRowActionStates(),
         },
       }}
     />
