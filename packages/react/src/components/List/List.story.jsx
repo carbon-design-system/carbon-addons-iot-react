@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, object } from '@storybook/addon-knobs';
+import { boolean, text, object, number } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import { cloneDeep } from 'lodash-es';
 
@@ -133,6 +133,10 @@ export const BasicSingleColumn = () => {
   const BasicSingleColumn = () => {
     const [searchValue, setSearchValue] = useState(null);
     const useSearch = boolean('use search (search)', false);
+    const hasFastSearch = boolean(
+      'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+      true
+    );
     const demoEmptyList = boolean('demo empty list', false);
 
     return (
@@ -159,6 +163,7 @@ export const BasicSingleColumn = () => {
             useSearch
               ? {
                   onChange: (evt) => setSearchValue(evt.target.value),
+                  hasFastSearch,
                 }
               : undefined
           }
@@ -172,6 +177,13 @@ export const BasicSingleColumn = () => {
   return <BasicSingleColumn />;
 };
 BasicSingleColumn.storyName = 'basic (single column)';
+BasicSingleColumn.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const BasicSingleColumnWithSearch = () => {
   const ListWithSearch = () => {
@@ -192,6 +204,10 @@ export const BasicSingleColumnWithSearch = () => {
           isLoading={boolean('isLoading', false)}
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),
+            hasFastSearch: boolean(
+              'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+              true
+            ),
           }}
           isVirtualList={boolean('isVirtualList', false)}
         />
@@ -203,6 +219,79 @@ export const BasicSingleColumnWithSearch = () => {
 };
 
 BasicSingleColumnWithSearch.storyName = 'basic (single column) with search';
+BasicSingleColumnWithSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithAsyncLoadingAndSearch = () => {
+  const numberOfItems = number('number of items to render', 100);
+  const generateItems = (number = numberOfItems) =>
+    [...Array(number)].map((_, i) => ({
+      id: `item-${i}`,
+      content: {
+        value: `Item ${i}`,
+        secondaryValue: `Item ${i} Subvalue`,
+      },
+    }));
+
+  const simulateGettingItemsFromServer = (searchValue) =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        const itemsFromServer = generateItems(numberOfItems).filter(
+          ({ content }) =>
+            content.value.includes(searchValue) || content.secondaryValue.includes(searchValue)
+        );
+        resolve(itemsFromServer);
+      }, 1500);
+    });
+
+  const ListWithAsyncLoadingAndSearch = () => {
+    const [searchValue, setSearchValue] = useState('');
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+      const searchServerForItems = async () => {
+        setIsLoading(true);
+        const newItems = await simulateGettingItemsFromServer(searchValue);
+        setItems(newItems);
+        setIsLoading(false);
+      };
+
+      searchServerForItems();
+    }, [searchValue]);
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title={text('title', 'Async loading and search')}
+          items={items}
+          isFiltering={!!searchValue}
+          isLoading={isLoading}
+          search={{
+            onChange: (evt) => setSearchValue(evt.target.value),
+            hasFastSearch: false,
+          }}
+          isVirtualList={boolean('isVirtualList', false)}
+        />
+      </div>
+    );
+  };
+
+  return <ListWithAsyncLoadingAndSearch />;
+};
+
+WithAsyncLoadingAndSearch.storyName = 'with async loading and search';
+WithAsyncLoadingAndSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const SelectableItems = () => {
   const ListWithSelectableItems = () => {
