@@ -1,20 +1,20 @@
-@use 'globals/config' as *;
-@use 'globals/theme';
+@forward 'globals/config';
+@forward 'globals/theme';
 
 @use 'sass:list' as sass-list;
 @use 'sass:meta';
 @use 'globals/feature-flags';
-@use 'globals/vars';
-@use 'globals/colors';
-@use 'globals/mixins';
-@use 'globals/layout';
-@use 'globals/spacing';
-@use 'globals/typography';
-// @use 'globals/css--reset';
-@use 'globals/css--font-face';
-@use 'globals/css--helpers';
-@use 'globals/css--body';
-@use 'globals/grid';
+@forward 'globals/vars';
+@forward 'globals/colors';
+@forward 'globals/mixins';
+@forward 'globals/layout';
+@forward 'globals/spacing';
+@forward 'globals/typography';
+// @forward 'globals/css--reset';
+@forward 'globals/css--font-face';
+@forward 'globals/css--helpers';
+@forward 'globals/css--body';
+@forward 'globals/grid';
 @use 'globals/charts';
 
 //-------------------------
