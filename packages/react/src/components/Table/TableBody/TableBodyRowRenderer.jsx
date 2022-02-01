@@ -196,7 +196,7 @@ const TableBodyRowRenderer = (props) => {
         tableId={tableId}
         columns={columns}
         rowVisibilityRef={rowVisibilityRef}
-        testId={testId}
+        testId={`${tableId}-lazy-row-${row.id}`}
         hasRowActions={hasRowActions}
         hasRowExpansion={hasRowExpansion}
         hasRowNesting={hasRowNesting}

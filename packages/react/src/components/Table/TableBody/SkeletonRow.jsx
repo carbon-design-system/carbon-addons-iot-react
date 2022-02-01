@@ -12,7 +12,7 @@ const propTypes = {
   /** The unique id for the table */
   tableId: PropTypes.string.isRequired,
   /** The unique id for the table test */
-  testId: PropTypes.string.isRequired,
+  testId: PropTypes.string,
   columns: TableColumnsPropTypes,
   /** since some columns might not be currently visible */
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
@@ -31,6 +31,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  testId: 'skeleton-row',
   columns: [],
   hasRowActions: false,
   hasRowExpansion: false,
@@ -53,7 +54,7 @@ const SkeletonRow = ({
   columns,
 }) => {
   return (
-    <tr key={`lazy-row-${id}`} ref={rowVisibilityRef} data-testid={`${tableId}-${testId}-skeleton`}>
+    <tr key={`lazy-row-${id}`} ref={rowVisibilityRef} data-testid={`${tableId}-${testId}`}>
       {hasRowSelection === 'multi' ? <TableCell /> : null}
       {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
       {columns.map((v, colIndex) => (
