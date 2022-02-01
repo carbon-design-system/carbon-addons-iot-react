@@ -637,7 +637,14 @@ export const getAdvancedFilters = () => [
   },
 ];
 
-export const getTableKnobs = (enableAllKnobs, useGroups = true) => {
+/**
+ * Helper function that Table knobs.
+ * If param knobsToCreate is empty then all knobs will be created, otherwise only the
+ * knobs whose names are in the array. This conditional creation is needed since StoryBook
+ * will show a knob as soon as it is created by a story, regardless of whether it is
+ * "used" or not.
+ */
+export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = false) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
   const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
@@ -651,327 +658,391 @@ export const getTableKnobs = (enableAllKnobs, useGroups = true) => {
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'States' : undefined;
 
+  const shouldCreate = (name) => knobsToCreate.length === 0 || knobsToCreate.includes(name);
+
   return {
-    // TABLE_GROUP
-    selectedTableType: select(
-      'Type of Table',
-      ['Table', 'StatefulTable'],
-      'StatefulTable',
-      TABLE_GROUP
-    ),
-    tableMaxWidth: select(
-      'Demo table max-width',
-      ['300px', '600px', '900px', 'none'],
-      'none',
-      TABLE_GROUP
-    ),
-    size: select('Row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg', TABLE_GROUP),
-    numerOfRows: select('Demo number of rows in data', [100, 50, 20, 5], 100, TABLE_GROUP),
-    hasUserViewManagement: boolean(
-      'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
-      false,
-      TABLE_GROUP
-    ),
+    selectedTableType: shouldCreate('selectedTableType')
+      ? select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable', TABLE_GROUP)
+      : null,
+
+    tableMaxWidth: shouldCreate('tableMaxWidth')
+      ? select('Demo table max-width', ['300px', '600px', '900px', 'none'], 'none', TABLE_GROUP)
+      : null,
+    size: shouldCreate('size')
+      ? select('Row height (size)', ['xs', 'sm', 'md', 'lg', 'xl'], 'lg', TABLE_GROUP)
+      : null,
+    numerOfRows: shouldCreate('numerOfRows')
+      ? select('Demo number of rows in data', [100, 50, 20, 5], 100, TABLE_GROUP)
+      : null,
+    hasUserViewManagement: shouldCreate('hasUserViewManagement')
+      ? boolean(
+          'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
+          false,
+          TABLE_GROUP
+        )
+      : null,
 
     // TITLE_TOOLBAR_GROUP
-    secondaryTitle: text(
-      'Title shown in bar above header row (secondaryTitle)',
-      'Table playground',
-      TITLE_TOOLBAR_GROUP
-    ),
-    tableTooltipText: text(
-      'Table title toltip (tooltip)',
-      enableAllKnobs ? 'I must be wrapped in a react node' : '',
-      TITLE_TOOLBAR_GROUP
-    ),
-    stickyHeader: boolean('Sticky header ☢️ (stickyHeader)', false, TITLE_TOOLBAR_GROUP),
-    demoToolbarActions: boolean(
-      'Demo toolbar actions (view.toolbar.toolbarActions)',
-      enableAllKnobs,
-      TITLE_TOOLBAR_GROUP
-    ),
-    demoCustomToolbarContent: boolean(
-      'Demo custom toolbar content (view.toolbar.customToolbarContent)',
-      enableAllKnobs,
-      TITLE_TOOLBAR_GROUP
-    ),
-    toolbarIsDisabled: boolean(
-      'Disable the table toolbar (view.toolbar.isDisabled)',
-      false,
-      TITLE_TOOLBAR_GROUP
-    ),
+    secondaryTitle: shouldCreate('secondaryTitle')
+      ? text(
+          'Title shown in bar above header row (secondaryTitle)',
+          'Table playground',
+          TITLE_TOOLBAR_GROUP
+        )
+      : null,
+    tableTooltipText: shouldCreate('tableTooltipText')
+      ? text(
+          'Table title toltip (tooltip)',
+          enableAllKnobs ? 'I must be wrapped in a react node' : '',
+          TITLE_TOOLBAR_GROUP
+        )
+      : null,
+    stickyHeader: shouldCreate('stickyHeader')
+      ? boolean('Sticky header ☢️ (stickyHeader)', false, TITLE_TOOLBAR_GROUP)
+      : null,
+    demoToolbarActions: shouldCreate('demoToolbarActions')
+      ? boolean(
+          'Demo toolbar actions (view.toolbar.toolbarActions)',
+          enableAllKnobs,
+          TITLE_TOOLBAR_GROUP
+        )
+      : null,
+    demoCustomToolbarContent: shouldCreate('demoCustomToolbarContent')
+      ? boolean(
+          'Demo custom toolbar content (view.toolbar.customToolbarContent)',
+          enableAllKnobs,
+          TITLE_TOOLBAR_GROUP
+        )
+      : null,
+    toolbarIsDisabled: shouldCreate('toolbarIsDisabled')
+      ? boolean('Disable the table toolbar (view.toolbar.isDisabled)', false, TITLE_TOOLBAR_GROUP)
+      : null,
 
     // SORT_FILTER_GROUP
-    demoSingleSort: boolean(
-      'Single dimension sorting (columns[i].isSortable)',
-      enableAllKnobs,
-      SORT_FILTER_GROUP
-    ),
-    hasMultiSort: boolean(
-      'Enable multiple dimension sorting (options.hasMultiSort)',
-      false,
-      SORT_FILTER_GROUP
-    ),
-    hasFilter: select(
-      'Enable filtering by column value (options.hasFilter)',
-      ['onKeyPress', 'onEnterAndBlur', true, false],
-      enableAllKnobs,
-      SORT_FILTER_GROUP
-    ),
-    hasAdvancedFilter: boolean(
-      'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
-      enableAllKnobs,
-      SORT_FILTER_GROUP
-    ),
+    demoSingleSort: shouldCreate('demoSingleSort')
+      ? boolean(
+          'Enable sort on single dimension (columns[i].isSortable)',
+          enableAllKnobs,
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasMultiSort: shouldCreate('hasMultiSort')
+      ? boolean(
+          'Enable sort on multiple dimensions (options.hasMultiSort)',
+          false,
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasFilter: shouldCreate('hasFilter')
+      ? select(
+          'Enable filtering by column value (options.hasFilter)',
+          ['onKeyPress', 'onEnterAndBlur', true, false],
+          enableAllKnobs,
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasAdvancedFilter: shouldCreate('hasAdvancedFilter')
+      ? boolean(
+          'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
+          enableAllKnobs,
+          SORT_FILTER_GROUP
+        )
+      : null,
 
     // SEARCH_GROUP
-    hasSearch: boolean(
-      'Enable searching on the table values (options.hasSearch)',
-      enableAllKnobs,
-      SEARCH_GROUP
-    ),
-    hasFastSearch: boolean(
-      'Trigger search while typing (options.hasFastSearch)',
-      enableAllKnobs,
-      SEARCH_GROUP
-    ),
+    hasSearch: shouldCreate('hasSearch')
+      ? boolean(
+          'Enable searching on the table values (options.hasSearch)',
+          enableAllKnobs,
+          SEARCH_GROUP
+        )
+      : null,
+    hasFastSearch: shouldCreate('hasFastSearch')
+      ? boolean('Trigger search while typing (options.hasFastSearch)', enableAllKnobs, SEARCH_GROUP)
+      : null,
 
     // AGGREGATION_GROUP
-    hasAggregations: boolean(
-      'Aggregate column values in footer (options.hasAggregations)',
-      enableAllKnobs,
-      AGGREGATION_GROUP
-    ),
-    aggregationLabel: text(
-      'Aggregation label (view.aggregations.label)',
-      'Total',
-      AGGREGATION_GROUP
-    ),
-    aggregationsColumns: object(
-      'Aggregations columns settings',
-      [
-        {
-          id: 'number',
-          align: 'start',
-          isSortable: false,
-        },
-      ],
-      AGGREGATION_GROUP
-    ),
+    hasAggregations: shouldCreate('hasAggregations')
+      ? boolean(
+          'Aggregate column values in footer (options.hasAggregations)',
+          enableAllKnobs,
+          AGGREGATION_GROUP
+        )
+      : null,
+    aggregationLabel: shouldCreate('aggregationLabel')
+      ? text('Aggregation label (view.aggregations.label)', 'Total', AGGREGATION_GROUP)
+      : null,
+    aggregationsColumns: shouldCreate('aggregationsColumns')
+      ? object(
+          'Aggregations columns settings',
+          [
+            {
+              id: 'number',
+              align: 'start',
+              isSortable: false,
+            },
+          ],
+          AGGREGATION_GROUP
+        )
+      : null,
 
     // PAGINATION_GROUP
-    hasPagination: boolean(
-      'Enable pagination (options.hasPagination)',
-      enableAllKnobs,
-      PAGINATION_GROUP
-    ),
-    pageSizes: object(
-      'Selectable page sizes (view.pagination.pageSizes)',
-      [10, 20, 30, 50],
-      PAGINATION_GROUP
-    ),
-    maxPages: parseInt(
-      text(
-        'Upper limit for number of pages (view.pagination.maxPages)',
-        '100', // use text and string instead of number since number() does not work with knob groups
-        PAGINATION_GROUP
-      ),
-      10
-    ),
-    isItemPerPageHidden: boolean(
-      'Hide items per page selection (options.pagination.isItemPerPageHidden)',
-      false,
-      PAGINATION_GROUP
-    ),
-    paginationSize: select(
-      'Size of pagination buttons (options.pagination.size)',
-      ['sm', 'md', 'lg'],
-      'lg',
-      PAGINATION_GROUP
-    ),
-    hasOnlyPageData: boolean(
-      'Data prop only represents the currently visible page (options.hasOnlyPageData)',
-      enableAllKnobs,
-      PAGINATION_GROUP
-    ),
+    hasPagination: shouldCreate('hasPagination')
+      ? boolean('Enable pagination (options.hasPagination)', enableAllKnobs, PAGINATION_GROUP)
+      : null,
+    pageSizes: shouldCreate('pageSizes')
+      ? object(
+          'Selectable page sizes (view.pagination.pageSizes)',
+          [10, 20, 30, 50],
+          PAGINATION_GROUP
+        )
+      : null,
+    maxPages: shouldCreate('maxPages')
+      ? parseInt(
+          text(
+            'Upper limit for number of pages (view.pagination.maxPages)',
+            '100', // use text and string instead of number since number() does not work with knob groups
+            PAGINATION_GROUP
+          ),
+          10
+        )
+      : null,
+    isItemPerPageHidden: shouldCreate('isItemPerPageHidden')
+      ? boolean(
+          'Hide items per page selection (options.pagination.isItemPerPageHidden)',
+          false,
+          PAGINATION_GROUP
+        )
+      : null,
+    paginationSize: shouldCreate('paginationSize')
+      ? select(
+          'Size of pagination buttons (options.pagination.size)',
+          ['sm', 'md', 'lg'],
+          'lg',
+          PAGINATION_GROUP
+        )
+      : null,
+    hasOnlyPageData: shouldCreate('hasOnlyPageData')
+      ? boolean(
+          'Data prop only represents the currently visible page (options.hasOnlyPageData)',
+          enableAllKnobs,
+          PAGINATION_GROUP
+        )
+      : null,
 
     // COLUMN_GROUP
-    demoInitialColumnSizes: boolean('Demo initial columns sizes', false, COLUMN_GROUP),
-    hasResize: boolean(
-      'Enable resizing of column widths (options.hasResize)',
-      enableAllKnobs,
-      COLUMN_GROUP
-    ),
-    preserveColumnWidths: boolean(
-      'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
-      enableAllKnobs,
-      COLUMN_GROUP
-    ),
-    useAutoTableLayoutForResize: boolean(
-      'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
-      false,
-      COLUMN_GROUP
-    ),
-    demoColumnTooltips: boolean('Demo column tooltips', enableAllKnobs, COLUMN_GROUP),
-    demoColumnGroupAssignments: boolean(
-      'Demo assigning columns to groups',
-      enableAllKnobs,
-      COLUMN_GROUP
-    ),
-    columnGroups: object(
-      'Column groups definition (columnGroups)',
-      [
-        {
-          id: 'groupA',
-          name: 'Group A that has a very long name that should be truncated',
-        },
-        { id: 'groupB', name: 'Group B' },
-      ],
-      COLUMN_GROUP
-    ),
+    demoInitialColumnSizes: shouldCreate('demoInitialColumnSizes')
+      ? boolean('Demo initial columns sizes', false, COLUMN_GROUP)
+      : null,
+    hasResize: shouldCreate('hasResize')
+      ? boolean(
+          'Enable resizing of column widths (options.hasResize)',
+          enableAllKnobs,
+          COLUMN_GROUP
+        )
+      : null,
+    preserveColumnWidths: shouldCreate('preserveColumnWidths')
+      ? boolean(
+          'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
+          enableAllKnobs,
+          COLUMN_GROUP
+        )
+      : null,
+    useAutoTableLayoutForResize: shouldCreate('useAutoTableLayoutForResize')
+      ? boolean(
+          'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
+          false,
+          COLUMN_GROUP
+        )
+      : null,
+    demoColumnTooltips: shouldCreate('demoColumnTooltips')
+      ? boolean('Demo column tooltips', enableAllKnobs, COLUMN_GROUP)
+      : null,
+    demoColumnGroupAssignments: shouldCreate('demoColumnGroupAssignments')
+      ? boolean('Demo assigning columns to groups', enableAllKnobs, COLUMN_GROUP)
+      : null,
+    columnGroups: shouldCreate('columnGroups')
+      ? object(
+          'Column groups definition (columnGroups)',
+          [
+            {
+              id: 'groupA',
+              name: 'Group A that has a very long name that should be truncated',
+            },
+            { id: 'groupB', name: 'Group B' },
+          ],
+          COLUMN_GROUP
+        )
+      : null,
 
-    hasColumnSelection: boolean(
-      'Enable legacy column management (options.hasColumnSelection)',
-      false,
-      COLUMN_GROUP
-    ),
-    hasColumnSelectionConfig: boolean(
-      'Show config button in legacy column management (options.hasColumnSelectionConfig)',
-      false,
-      COLUMN_GROUP
-    ),
+    hasColumnSelection: shouldCreate('hasColumnSelection')
+      ? boolean('Enable legacy column management (options.hasColumnSelection)', false, COLUMN_GROUP)
+      : null,
+    hasColumnSelectionConfig: shouldCreate('hasColumnSelectionConfig')
+      ? boolean(
+          'Show config button in legacy column management (options.hasColumnSelectionConfig)',
+          false,
+          COLUMN_GROUP
+        )
+      : null,
 
     // SELECTIONS_ACTIONS_GROUP
-    hasRowSelection: select(
-      'Enable row selection type (options.hasRowSelection)',
-      ['multi', 'single', false],
-      enableAllKnobs ? 'multi' : false.valueOf,
-      SELECTIONS_ACTIONS_GROUP
-    ),
-    selectionCheckboxEnabled: boolean(
-      'Row checkbox selectable (data[i].isSelectable)',
-      true,
-      SELECTIONS_ACTIONS_GROUP
-    ),
-    demoBatchActions: boolean(
-      'Demo batch actions for selected rows (view.toolbar.batchActions)',
-      true,
-      SELECTIONS_ACTIONS_GROUP
-    ),
-    hasRowActions: boolean(
-      'Demo row actions (options.hasRowActions)',
-      enableAllKnobs,
-      SELECTIONS_ACTIONS_GROUP
-    ),
+    hasRowSelection: shouldCreate('hasRowSelection')
+      ? select(
+          'Enable row selection type (options.hasRowSelection)',
+          ['multi', 'single', false],
+          enableAllKnobs ? 'multi' : false.valueOf,
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
+    selectionCheckboxEnabled: shouldCreate('selectionCheckboxEnabled')
+      ? boolean('Row checkbox selectable (data[i].isSelectable)', true, SELECTIONS_ACTIONS_GROUP)
+      : null,
+    demoBatchActions: shouldCreate('demoBatchActions')
+      ? boolean(
+          'Demo batch actions for selected rows (view.toolbar.batchActions)',
+          true,
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
+    hasRowActions: shouldCreate('hasRowActions')
+      ? boolean(
+          'Demo row actions (options.hasRowActions)',
+          enableAllKnobs,
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
 
     // NESTING_EXPANSION_GROUP
-    hasRowExpansion: select(
-      'Demo rows with additional expandable content (options.hasRowExpansion)',
-      {
-        true: true,
-        false: false,
-        '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
-      },
-      false,
-      NESTING_EXPANSION_GROUP
-    ),
-    hasRowNesting: select(
-      'Demo nested rows (options.hasRowNesting)',
-      {
-        true: true,
-        false: false,
-        '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
-      },
-      enableAllKnobs,
-      NESTING_EXPANSION_GROUP
-    ),
-    shouldExpandOnRowClick: boolean(
-      'Expand row on click (options.shouldExpandOnRowClick)',
-      enableAllKnobs,
-      NESTING_EXPANSION_GROUP
-    ),
+    hasRowExpansion: shouldCreate('hasRowExpansion')
+      ? select(
+          'Demo rows with additional expandable content (options.hasRowExpansion)',
+          {
+            true: true,
+            false: false,
+            '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
+          },
+          false,
+          NESTING_EXPANSION_GROUP
+        )
+      : null,
+    hasRowNesting: shouldCreate('hasRowNesting')
+      ? select(
+          'Demo nested rows (options.hasRowNesting)',
+          {
+            true: true,
+            false: false,
+            '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
+          },
+          enableAllKnobs,
+          NESTING_EXPANSION_GROUP
+        )
+      : null,
+    shouldExpandOnRowClick: shouldCreate('shouldExpandOnRowClick')
+      ? boolean(
+          'Expand row on click (options.shouldExpandOnRowClick)',
+          enableAllKnobs,
+          NESTING_EXPANSION_GROUP
+        )
+      : null,
 
     // ROW_RENDER_GROUP
-    shouldLazyRender: boolean(
-      'Enable only loading table rows as they become visible (options.shouldLazyRender)',
-      false,
-      ROW_RENDER_GROUP
-    ),
-    useZebraStyles: boolean(
-      'Alternate colors in table rows (useZebraStyles)',
-      enableAllKnobs,
-      ROW_RENDER_GROUP
-    ),
-    wrapCellText: select(
-      'Cell text overflow strategy (options.wrapCellText)',
-      getSelectTextWrappingOptions(),
-      'always',
-      ROW_RENDER_GROUP
-    ),
-    cellTextAlignment: select(
-      'Align cell text (columns[i].align)',
-      ['start', 'center', 'end'],
-      'start',
-      ROW_RENDER_GROUP
-    ),
-    locale: text('Locale used to format table values (locale)', '', ROW_RENDER_GROUP),
-    preserveCellWhiteSpace: boolean(
-      'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
-      false,
-      ROW_RENDER_GROUP
-    ),
-    demoRenderDataFunction: boolean(
-      'Demo custom data render function (columns[i].renderDataFunction)',
-      true,
-      ROW_RENDER_GROUP
-    ),
+    shouldLazyRender: shouldCreate('shouldLazyRender')
+      ? boolean(
+          'Enable only loading table rows as they become visible (options.shouldLazyRender)',
+          false,
+          ROW_RENDER_GROUP
+        )
+      : null,
+    useZebraStyles: shouldCreate('useZebraStyles')
+      ? boolean('Alternate colors in table rows (useZebraStyles)', enableAllKnobs, ROW_RENDER_GROUP)
+      : null,
+    wrapCellText: shouldCreate('wrapCellText')
+      ? select(
+          'Cell text overflow strategy (options.wrapCellText)',
+          getSelectTextWrappingOptions(),
+          'always',
+          ROW_RENDER_GROUP
+        )
+      : null,
+    cellTextAlignment: shouldCreate('cellTextAlignment')
+      ? select(
+          'Align cell text (columns[i].align)',
+          ['start', 'center', 'end'],
+          'start',
+          ROW_RENDER_GROUP
+        )
+      : null,
+    locale: shouldCreate('locale')
+      ? text('Locale used to format table values (locale)', '', ROW_RENDER_GROUP)
+      : null,
+    preserveCellWhiteSpace: shouldCreate('preserveCellWhiteSpace')
+      ? boolean(
+          'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
+          false,
+          ROW_RENDER_GROUP
+        )
+      : null,
+    demoRenderDataFunction: shouldCreate('demoRenderDataFunction')
+      ? boolean(
+          'Demo custom data render function (columns[i].renderDataFunction)',
+          true,
+          ROW_RENDER_GROUP
+        )
+      : null,
 
     // ROW_EDIT_GROUP
-    hasRowEdit: boolean(
-      'Enables row editing for the entire table (options.hasRowEdit)',
-      enableAllKnobs,
-      ROW_EDIT_GROUP
-    ),
-    hasSingleRowEdit: boolean(
-      'Enables row editing for a single row (options.hasSingleRowEdit)',
-      enableAllKnobs,
-      ROW_EDIT_GROUP
-    ),
+    hasRowEdit: shouldCreate('hasRowEdit')
+      ? boolean(
+          'Enables row editing for the entire table (options.hasRowEdit)',
+          enableAllKnobs,
+          ROW_EDIT_GROUP
+        )
+      : null,
+    hasSingleRowEdit: shouldCreate('hasSingleRowEdit')
+      ? boolean(
+          'Enables row editing for a single row (options.hasSingleRowEdit)',
+          enableAllKnobs,
+          ROW_EDIT_GROUP
+        )
+      : null,
 
     // STATES_GROUP
-    tableIsLoading: boolean(
-      'Show table loading state (view.table.loadingState.isLoading)',
-      false,
-      STATES_GROUP
-    ),
-    demoEmptyColumns: boolean('Demo empty columns in loading state (columns)', false, STATES_GROUP),
-    loadingRowCount: parseInt(
-      text(
-        'Number of additional rows in loading state (view.table.loadingState.rowCount)',
-        '7', // use text and string instead of number since number() does not work with knob groups
-        STATES_GROUP
-      ),
-      10
-    ),
-    loadingColumnCount: parseInt(
-      text(
-        'Number of columns in loading state (view.table.loadingState.columnCount)',
-        '6', // use text and string instead of number since number() does not work with knob groups
-        STATES_GROUP
-      ),
-      10
-    ),
-    demoEmptyState: boolean('Demo empty state (view.table.emptyState)', false, STATES_GROUP),
-    demoCustomEmptyState: boolean(
-      'Demo custom empty state (view.table.emptyState)',
-      false,
-      STATES_GROUP
-    ),
-    demoCustomErrorState: boolean(
-      'Demo custom error state (view.table.errorState)',
-      false,
-      STATES_GROUP
-    ),
+    tableIsLoading: shouldCreate('tableIsLoading')
+      ? boolean('Show table loading state (view.table.loadingState.isLoading)', false, STATES_GROUP)
+      : null,
+    demoEmptyColumns: shouldCreate('demoEmptyColumns')
+      ? boolean('Demo empty columns in loading state (columns)', false, STATES_GROUP)
+      : null,
+    loadingRowCount: shouldCreate('loadingRowCount')
+      ? parseInt(
+          text(
+            'Number of additional rows in loading state (view.table.loadingState.rowCount)',
+            '7', // use text and string instead of number since number() does not work with knob groups
+            STATES_GROUP
+          ),
+          10
+        )
+      : null,
+    loadingColumnCount: shouldCreate('loadingColumnCount')
+      ? parseInt(
+          text(
+            'Number of columns in loading state (view.table.loadingState.columnCount)',
+            '6', // use text and string instead of number since number() does not work with knob groups
+            STATES_GROUP
+          ),
+          10
+        )
+      : null,
+    demoEmptyState: shouldCreate('demoEmptyState')
+      ? boolean('Demo empty state (view.table.emptyState)', false, STATES_GROUP)
+      : null,
+    demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
+      ? boolean('Demo custom empty state (view.table.emptyState)', false, STATES_GROUP)
+      : null,
+    demoCustomErrorState: shouldCreate('demoCustomErrorState')
+      ? boolean('Demo custom error state (view.table.errorState)', false, STATES_GROUP)
+      : null,
   };
 };
 

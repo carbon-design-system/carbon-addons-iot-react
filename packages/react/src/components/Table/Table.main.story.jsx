@@ -1,12 +1,15 @@
-import React, { useState, createElement } from 'react';
+import React, { useState } from 'react';
 import { action } from '@storybook/addon-actions';
+import { object } from '@storybook/addon-knobs';
 import { merge } from 'lodash-es';
 import { TrashCan16 } from '@carbon/icons-react';
 
 import Button from '../Button';
 import EmptyState from '../EmptyState';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import TableREADME from './mdx/Table.mdx';
+import SortingREADME from './mdx/Sorting.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -25,10 +28,6 @@ import {
   getTableKnobs,
   getI18nKnobs,
 } from './Table.story.helpers';
-
-const tableColumns = getTableColumns();
-const tableActions = getTableActions();
-const tableToolbarActions = getTableToolbarActions();
 
 export default {
   title: '1 - Watson IoT/Table',
@@ -57,6 +56,7 @@ export const Playground = () => {
 
   // KNOBS
   // The order of appearance is defined function getTableKnobs.
+  const useKnobGroups = true;
   const {
     selectedTableType,
     tableMaxWidth,
@@ -113,7 +113,7 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     demoBatchActions,
-  } = getTableKnobs(enableAllKnobs);
+  } = getTableKnobs([], enableAllKnobs, useKnobGroups);
 
   // CUSTOM DEMO JSX
   const rowEditBarButtons = (
@@ -180,7 +180,7 @@ export const Playground = () => {
       : showRowEditBar
       ? 'rowEdit'
       : undefined;
-  const toolbarActions = demoToolbarActions ? tableToolbarActions : undefined;
+  const toolbarActions = demoToolbarActions ? getTableToolbarActions() : undefined;
   const customToolbarContent = demoCustomToolbarContent ? customToolbarContentElement : undefined;
 
   const data = [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
@@ -191,7 +191,7 @@ export const Playground = () => {
 
   const expandedData = hasRowExpansion ? getExpandedData(data) : [];
 
-  const columns = [...(demoEmptyColumns ? [] : tableColumns)]
+  const columns = [...(demoEmptyColumns ? [] : getTableColumns())]
     .map((column, index) => ({
       ...column,
       isSortable: (hasMultiSort || demoSingleSort) && index !== 1,
@@ -206,11 +206,11 @@ export const Playground = () => {
       return columnNoRenderDataFunction;
     });
 
-  const ordering = getDefaultOrdering(tableColumns).map((col, index) =>
+  const ordering = getDefaultOrdering(columns).map((col, index) =>
     demoColumnGroupAssignments ? addColumnGroupIds(col, index) : col
   );
 
-  const myTableActions = merge(tableActions, {
+  const myTableActions = merge(getTableActions(), {
     toolbar: {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
@@ -313,5 +313,62 @@ export const Playground = () => {
     />
   );
 };
-Playground.decorators = [createElement];
 Playground.storyName = 'Playground';
+Playground.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithSorting = () => {
+  const enableAllKnobs = true;
+  const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs(
+    ['selectedTableType', 'demoSingleSort', 'hasMultiSort'],
+    enableAllKnobs
+  );
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    isSortable: demoSingleSort,
+  }));
+
+  const sort = object('Sort state (view.table.sort)', {
+    columnId: 'select',
+    direction: 'ASC',
+  });
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasMultiSort,
+      }}
+      view={{
+        table: {
+          sort,
+        },
+      }}
+    />
+  );
+};
+
+WithSorting.storyName = 'With sorting';
+WithSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+WithSorting.parameters = {
+  component: Table,
+  docs: {
+    page: SortingREADME,
+  },
+};
