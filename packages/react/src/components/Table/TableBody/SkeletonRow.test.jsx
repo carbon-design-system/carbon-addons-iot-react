@@ -9,6 +9,7 @@ const { prefix } = settings;
 
 const skeletonRowProps = () => ({
   id: 'skeletonRow01',
+  tableId: 'tableId',
   testId: 'skeleton-row-test',
   rowVisibilityRef: null,
   hasRowActions: false,
