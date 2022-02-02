@@ -409,9 +409,7 @@ export const WithRowExpansion = () => {
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const data = getTableData().slice(0, 10);
-  const columns = getTableColumns().map((column) => ({
-    ...column,
-  }));
+  const columns = getTableColumns();
 
   const expandedData = object('expandedData', [
     {
