@@ -1,4 +1,5 @@
 import React from 'react';
+import { cloneDeep } from 'lodash-es';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
@@ -368,12 +369,12 @@ export const addRowAction = (row, hasSingleRowEdit, index) => ({
   ),
 });
 
-export const addChildRows = (row, idx) => ({
+export const addChildRows = (row, idx, demoDeepNesting = true) => ({
   ...row,
   children:
     idx % 4 !== 0
       ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
-      : idx === 4
+      : demoDeepNesting && idx === 4
       ? [
           getNewRow(idx, 'A', true),
           {
@@ -399,6 +400,18 @@ export const addChildRows = (row, idx) => ({
         ]
       : undefined,
 });
+
+export const addMoreChildRowsToParent = (data, parentId) => {
+  const clonedData = cloneDeep(data);
+  const parentRowIndex = clonedData.findIndex((row) => row.id === parentId);
+  const parentRow = clonedData[parentRowIndex];
+  const suffix = parentRow.children.length;
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 1}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 2}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 3}`, false));
+  return clonedData;
+};
 
 export const getExpandedData = (data) =>
   data.map((row) => ({
@@ -969,6 +982,13 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
       ? boolean(
           'Expand row on click (options.shouldExpandOnRowClick)',
           enableKnob('shouldExpandOnRowClick'),
+          NESTING_EXPANSION_GROUP
+        )
+      : null,
+    demoHasLoadMore: shouldCreate('demoHasLoadMore')
+      ? boolean(
+          'Demo load more child rows (data[i].hasLoadMore)',
+          enableKnob('demoHasLoadMore'),
           NESTING_EXPANSION_GROUP
         )
       : null,

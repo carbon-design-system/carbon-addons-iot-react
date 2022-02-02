@@ -12,6 +12,10 @@ import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
 - [Expansion](#expansion)
   - [Programmatic expansion](#programmatic-expansion)
   - [Additional configuration](#additional-configuration)
+- [Row nesting](#row-nesting)
+  - [Row nesting code example](#row-nesting-code-example)
+  - [Handling the onRowExpanded event](#handling-the-onrowexpanded-event)
+  - [Load more child rows](#load-more-child-rows)
 - [Selection](#selection)
   - [Programmatic selection](#programmatic-selection)
 - [Filtering](#filtering)
@@ -412,6 +416,10 @@ const RowExpansionContent = ({ rowId }) => (
 ### Additional configuration
 
 If the prop `options.shouldExpandOnRowClick` is true then clicking anywhere on the row will expand it.
+
+import RowNesting from './RowNesting.mdx';
+
+<RowNesting />
 
 ## Selection
 
