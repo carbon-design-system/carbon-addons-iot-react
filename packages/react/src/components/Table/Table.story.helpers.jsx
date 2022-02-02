@@ -639,12 +639,15 @@ export const getAdvancedFilters = () => [
 
 /**
  * Helper function that Table knobs.
+ *
  * If param knobsToCreate is empty then all knobs will be created, otherwise only the
  * knobs whose names are in the array. This conditional creation is needed since StoryBook
  * will show a knob as soon as it is created by a story, regardless of whether it is
- * "used" or not.
+ * placed in a local variable or not.
+ *
+ *
  */
-export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = false) => {
+export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = false }) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
   const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
@@ -677,7 +680,7 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     hasUserViewManagement: shouldCreate('hasUserViewManagement')
       ? boolean(
           'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
-          false,
+          enableKnob('hasUserViewManagement'),
           TABLE_GROUP
         )
       : null,
@@ -693,43 +696,47 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     tableTooltipText: shouldCreate('tableTooltipText')
       ? text(
           'Table title toltip (tooltip)',
-          enableAllKnobs ? 'I must be wrapped in a react node' : '',
+          enableKnob('tableTooltipText') ? 'I must be wrapped in a react node' : '',
           TITLE_TOOLBAR_GROUP
         )
       : null,
     stickyHeader: shouldCreate('stickyHeader')
-      ? boolean('Sticky header ☢️ (stickyHeader)', false, TITLE_TOOLBAR_GROUP)
+      ? boolean('Sticky header ☢️ (stickyHeader)', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
       : null,
-    demoToolbarActions: shouldCreate('demoToolbarActions')
+    demoToolbarActions: shouldCreate('tableTooltipText')
       ? boolean(
           'Demo toolbar actions (view.toolbar.toolbarActions)',
-          enableAllKnobs,
+          enableKnob('tableTooltipText'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
     demoCustomToolbarContent: shouldCreate('demoCustomToolbarContent')
       ? boolean(
           'Demo custom toolbar content (view.toolbar.customToolbarContent)',
-          enableAllKnobs,
+          enableKnob('demoCustomToolbarContent'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
     toolbarIsDisabled: shouldCreate('toolbarIsDisabled')
-      ? boolean('Disable the table toolbar (view.toolbar.isDisabled)', false, TITLE_TOOLBAR_GROUP)
+      ? boolean(
+          'Disable the table toolbar (view.toolbar.isDisabled)',
+          enableKnob('toolbarIsDisabled'),
+          TITLE_TOOLBAR_GROUP
+        )
       : null,
 
     // SORT_FILTER_GROUP
     demoSingleSort: shouldCreate('demoSingleSort')
       ? boolean(
           'Enable sort on single dimension (columns[i].isSortable)',
-          enableAllKnobs,
+          enableKnob('demoSingleSort'),
           SORT_FILTER_GROUP
         )
       : null,
     hasMultiSort: shouldCreate('hasMultiSort')
       ? boolean(
           'Enable sort on multiple dimensions (options.hasMultiSort)',
-          false,
+          enableKnob('hasMultiSort'),
           SORT_FILTER_GROUP
         )
       : null,
@@ -737,14 +744,14 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
       ? select(
           'Enable filtering by column value (options.hasFilter)',
           ['onKeyPress', 'onEnterAndBlur', true, false],
-          enableAllKnobs,
+          enableKnob('hasFilter'),
           SORT_FILTER_GROUP
         )
       : null,
     hasAdvancedFilter: shouldCreate('hasAdvancedFilter')
       ? boolean(
           'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
-          enableAllKnobs,
+          enableKnob('hasAdvancedFilter'),
           SORT_FILTER_GROUP
         )
       : null,
@@ -753,19 +760,23 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     hasSearch: shouldCreate('hasSearch')
       ? boolean(
           'Enable searching on the table values (options.hasSearch)',
-          enableAllKnobs,
+          enableKnob('hasSearch'),
           SEARCH_GROUP
         )
       : null,
     hasFastSearch: shouldCreate('hasFastSearch')
-      ? boolean('Trigger search while typing (options.hasFastSearch)', enableAllKnobs, SEARCH_GROUP)
+      ? boolean(
+          'Trigger search while typing (options.hasFastSearch)',
+          enableKnob('xxx'),
+          SEARCH_GROUP
+        )
       : null,
 
     // AGGREGATION_GROUP
     hasAggregations: shouldCreate('hasAggregations')
       ? boolean(
           'Aggregate column values in footer (options.hasAggregations)',
-          enableAllKnobs,
+          enableKnob('hasAggregations'),
           AGGREGATION_GROUP
         )
       : null,
@@ -788,7 +799,11 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
 
     // PAGINATION_GROUP
     hasPagination: shouldCreate('hasPagination')
-      ? boolean('Enable pagination (options.hasPagination)', enableAllKnobs, PAGINATION_GROUP)
+      ? boolean(
+          'Enable pagination (options.hasPagination)',
+          enableKnob('hasPagination'),
+          PAGINATION_GROUP
+        )
       : null,
     pageSizes: shouldCreate('pageSizes')
       ? object(
@@ -810,7 +825,7 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     isItemPerPageHidden: shouldCreate('isItemPerPageHidden')
       ? boolean(
           'Hide items per page selection (options.pagination.isItemPerPageHidden)',
-          false,
+          enableKnob('isItemPerPageHidden'),
           PAGINATION_GROUP
         )
       : null,
@@ -825,41 +840,45 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     hasOnlyPageData: shouldCreate('hasOnlyPageData')
       ? boolean(
           'Data prop only represents the currently visible page (options.hasOnlyPageData)',
-          enableAllKnobs,
+          enableKnob('hasOnlyPageData'),
           PAGINATION_GROUP
         )
       : null,
 
     // COLUMN_GROUP
     demoInitialColumnSizes: shouldCreate('demoInitialColumnSizes')
-      ? boolean('Demo initial columns sizes', false, COLUMN_GROUP)
+      ? boolean('Demo initial columns sizes', enableKnob('demoInitialColumnSizes'), COLUMN_GROUP)
       : null,
     hasResize: shouldCreate('hasResize')
       ? boolean(
           'Enable resizing of column widths (options.hasResize)',
-          enableAllKnobs,
+          enableKnob('hasResize'),
           COLUMN_GROUP
         )
       : null,
     preserveColumnWidths: shouldCreate('preserveColumnWidths')
       ? boolean(
           'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
-          enableAllKnobs,
+          enableKnob('preserveColumnWidths'),
           COLUMN_GROUP
         )
       : null,
     useAutoTableLayoutForResize: shouldCreate('useAutoTableLayoutForResize')
       ? boolean(
           'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
-          false,
+          enableKnob('useAutoTableLayoutForResize'),
           COLUMN_GROUP
         )
       : null,
     demoColumnTooltips: shouldCreate('demoColumnTooltips')
-      ? boolean('Demo column tooltips', enableAllKnobs, COLUMN_GROUP)
+      ? boolean('Demo column tooltips', enableKnob('demoColumnTooltips'), COLUMN_GROUP)
       : null,
     demoColumnGroupAssignments: shouldCreate('demoColumnGroupAssignments')
-      ? boolean('Demo assigning columns to groups', enableAllKnobs, COLUMN_GROUP)
+      ? boolean(
+          'Demo assigning columns to groups',
+          enableKnob('demoColumnGroupAssignments'),
+          COLUMN_GROUP
+        )
       : null,
     columnGroups: shouldCreate('columnGroups')
       ? object(
@@ -876,12 +895,16 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
       : null,
 
     hasColumnSelection: shouldCreate('hasColumnSelection')
-      ? boolean('Enable legacy column management (options.hasColumnSelection)', false, COLUMN_GROUP)
+      ? boolean(
+          'Enable legacy column management (options.hasColumnSelection)',
+          enableKnob('hasColumnSelection'),
+          COLUMN_GROUP
+        )
       : null,
     hasColumnSelectionConfig: shouldCreate('hasColumnSelectionConfig')
       ? boolean(
           'Show config button in legacy column management (options.hasColumnSelectionConfig)',
-          false,
+          enableKnob('hasColumnSelectionConfig'),
           COLUMN_GROUP
         )
       : null,
@@ -891,24 +914,28 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
       ? select(
           'Enable row selection type (options.hasRowSelection)',
           ['multi', 'single', false],
-          enableAllKnobs ? 'multi' : false.valueOf,
+          enableKnob('hasRowSelection') ? 'multi' : false.valueOf,
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
     selectionCheckboxEnabled: shouldCreate('selectionCheckboxEnabled')
-      ? boolean('Row checkbox selectable (data[i].isSelectable)', true, SELECTIONS_ACTIONS_GROUP)
+      ? boolean(
+          'Row checkbox selectable (data[i].isSelectable)',
+          enableKnob('selectionCheckboxEnabled'),
+          SELECTIONS_ACTIONS_GROUP
+        )
       : null,
     demoBatchActions: shouldCreate('demoBatchActions')
       ? boolean(
           'Demo batch actions for selected rows (view.toolbar.batchActions)',
-          true,
+          enableKnob('demoBatchActions'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
     hasRowActions: shouldCreate('hasRowActions')
       ? boolean(
           'Demo row actions (options.hasRowActions)',
-          enableAllKnobs,
+          enableKnob('hasRowActions'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
@@ -922,7 +949,7 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
             false: false,
             '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
           },
-          false,
+          enableKnob('hasRowExpansion'),
           NESTING_EXPANSION_GROUP
         )
       : null,
@@ -934,14 +961,14 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
             false: false,
             '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
           },
-          enableAllKnobs,
+          enableKnob('hasRowNesting'),
           NESTING_EXPANSION_GROUP
         )
       : null,
     shouldExpandOnRowClick: shouldCreate('shouldExpandOnRowClick')
       ? boolean(
           'Expand row on click (options.shouldExpandOnRowClick)',
-          enableAllKnobs,
+          enableKnob('shouldExpandOnRowClick'),
           NESTING_EXPANSION_GROUP
         )
       : null,
@@ -950,12 +977,16 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     shouldLazyRender: shouldCreate('shouldLazyRender')
       ? boolean(
           'Enable only loading table rows as they become visible (options.shouldLazyRender)',
-          false,
+          enableKnob('shouldLazyRender'),
           ROW_RENDER_GROUP
         )
       : null,
     useZebraStyles: shouldCreate('useZebraStyles')
-      ? boolean('Alternate colors in table rows (useZebraStyles)', enableAllKnobs, ROW_RENDER_GROUP)
+      ? boolean(
+          'Alternate colors in table rows (useZebraStyles)',
+          enableKnob('useZebraStyles'),
+          ROW_RENDER_GROUP
+        )
       : null,
     wrapCellText: shouldCreate('wrapCellText')
       ? select(
@@ -979,7 +1010,7 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     preserveCellWhiteSpace: shouldCreate('preserveCellWhiteSpace')
       ? boolean(
           'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
-          false,
+          enableKnob('preserveCellWhiteSpace'),
           ROW_RENDER_GROUP
         )
       : null,
@@ -995,24 +1026,32 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
     hasRowEdit: shouldCreate('hasRowEdit')
       ? boolean(
           'Enables row editing for the entire table (options.hasRowEdit)',
-          enableAllKnobs,
+          enableKnob('hasRowEdit'),
           ROW_EDIT_GROUP
         )
       : null,
     hasSingleRowEdit: shouldCreate('hasSingleRowEdit')
       ? boolean(
           'Enables row editing for a single row (options.hasSingleRowEdit)',
-          enableAllKnobs,
+          enableKnob('hasSingleRowEdit'),
           ROW_EDIT_GROUP
         )
       : null,
 
     // STATES_GROUP
     tableIsLoading: shouldCreate('tableIsLoading')
-      ? boolean('Show table loading state (view.table.loadingState.isLoading)', false, STATES_GROUP)
+      ? boolean(
+          'Show table loading state (view.table.loadingState.isLoading)',
+          enableKnob('tableIsLoading'),
+          STATES_GROUP
+        )
       : null,
     demoEmptyColumns: shouldCreate('demoEmptyColumns')
-      ? boolean('Demo empty columns in loading state (columns)', false, STATES_GROUP)
+      ? boolean(
+          'Demo empty columns in loading state (columns)',
+          enableKnob('demoEmptyColumns'),
+          STATES_GROUP
+        )
       : null,
     loadingRowCount: shouldCreate('loadingRowCount')
       ? parseInt(
@@ -1035,13 +1074,25 @@ export const getTableKnobs = (knobsToCreate = [], enableAllKnobs, useGroups = fa
         )
       : null,
     demoEmptyState: shouldCreate('demoEmptyState')
-      ? boolean('Demo empty state (view.table.emptyState)', false, STATES_GROUP)
+      ? boolean(
+          'Demo empty state (view.table.emptyState)',
+          enableKnob('demoEmptyState'),
+          STATES_GROUP
+        )
       : null,
     demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
-      ? boolean('Demo custom empty state (view.table.emptyState)', false, STATES_GROUP)
+      ? boolean(
+          'Demo custom empty state (view.table.emptyState)',
+          enableKnob('demoCustomEmptyState'),
+          STATES_GROUP
+        )
       : null,
     demoCustomErrorState: shouldCreate('demoCustomErrorState')
-      ? boolean('Demo custom error state (view.table.errorState)', false, STATES_GROUP)
+      ? boolean(
+          'Demo custom error state (view.table.errorState)',
+          enableKnob('demoCustomErrorState'),
+          STATES_GROUP
+        )
       : null,
   };
 };
