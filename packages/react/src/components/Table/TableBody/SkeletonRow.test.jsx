@@ -42,8 +42,8 @@ describe('SkeletonRow', () => {
       container: document.body.appendChild(document.createElement('tbody')),
     });
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(3);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(3);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 
   it('creates data skeleton row with row actions', () => {
@@ -51,8 +51,8 @@ describe('SkeletonRow', () => {
       container: document.body.appendChild(document.createElement('tbody')),
     });
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(4);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 
   it('creates data skeleton row with row selection', () => {
@@ -60,8 +60,8 @@ describe('SkeletonRow', () => {
       container: document.body.appendChild(document.createElement('tbody')),
     });
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(4);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 
   it('creates data skeleton row with row expansion', () => {
@@ -69,8 +69,8 @@ describe('SkeletonRow', () => {
       container: document.body.appendChild(document.createElement('tbody')),
     });
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(4);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 
   it('creates data skeleton row with expander column', () => {
@@ -78,8 +78,8 @@ describe('SkeletonRow', () => {
       container: document.body.appendChild(document.createElement('tbody')),
     });
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(4);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(4);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 
   it('creates data skeleton row with row selection, row nesting, expander column and row actions', () => {
@@ -96,7 +96,7 @@ describe('SkeletonRow', () => {
       }
     );
     expect(container).toBeDefined();
-    expect(container.rows[0].cells.length).toBe(7);
-    expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toBe(3);
+    expect(container.querySelectorAll('td')).toHaveLength(7);
+    expect(container.getElementsByClassName(`${prefix}--skeleton__text`)).toHaveLength(3);
   });
 });

@@ -8,7 +8,7 @@ import TableBodyLoadMoreRow from './TableBodyLoadMoreRow';
 
 const { prefix } = settings;
 
-const getTableRowPropsNotLoading = () => ({
+const getTableRowProps = (overrides = {}) => ({
   id: 'tableRow01',
   tableId: 'tableId',
   testId: 'table-test',
@@ -38,11 +38,7 @@ const getTableRowPropsNotLoading = () => ({
       isSortable: true,
     },
   ],
-});
-
-const getTableRowPropsLoading = () => ({
-  ...getTableRowPropsNotLoading(),
-  isLoadingMore: true,
+  ...overrides,
 });
 
 describe('TableBodyLoadMoreRow', () => {
@@ -50,7 +46,7 @@ describe('TableBodyLoadMoreRow', () => {
     const mockLoadMore = jest.fn();
     render(
       <TableBodyLoadMoreRow
-        {...getTableRowPropsNotLoading()}
+        {...getTableRowProps()}
         onRowLoadMore={mockLoadMore}
         options={{
           hasRowExpansion: true,
@@ -61,17 +57,15 @@ describe('TableBodyLoadMoreRow', () => {
       }
     );
     expect(mockLoadMore).not.toHaveBeenCalled();
-    userEvent.click(
-      screen.getByRole('button', { name: getTableRowPropsNotLoading().loadMoreText })
-    );
-    expect(mockLoadMore).toHaveBeenCalledWith(getTableRowPropsNotLoading().id);
+    userEvent.click(screen.getByRole('button', { name: getTableRowProps().loadMoreText }));
+    expect(mockLoadMore).toHaveBeenCalledWith(getTableRowProps().id);
   });
 
   it('renders a skeleton while loading', () => {
     const mockLoadMore = jest.fn();
     const { container } = render(
       <TableBodyLoadMoreRow
-        {...getTableRowPropsLoading()}
+        {...getTableRowProps({ isLoadingMore: true })}
         onRowLoadMore={mockLoadMore}
         options={{
           hasRowExpansion: true,
@@ -81,9 +75,9 @@ describe('TableBodyLoadMoreRow', () => {
         container: document.body.appendChild(document.createElement('tbody')),
       }
     );
-    expect(container.rows[0].cells.length).toEqual(getTableRowPropsLoading().totalColumns);
+    expect(container.rows[0].cells.length).toEqual(getTableRowProps().totalColumns);
     expect(container.getElementsByClassName(`${prefix}--skeleton__text`).length).toEqual(
-      getTableRowPropsNotLoading().columns.length
+      getTableRowProps().columns.length
     );
   });
 });
