@@ -259,7 +259,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   @Input() selected: DateTimeSelection = null;
   @Input() hasRelative = true;
   @Input() hasAbsolute = true;
-  @Input() theme: 'light' | 'dark' = null;
+  @Input() theme: 'light' | null = null;
   @Input() placeholder = 'yyyy-mm-dd HH:mm';
   @Input() dateFormat = 'yyyy-MM-dd';
   @Input() flatpickrOptions;
