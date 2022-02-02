@@ -1,0 +1,197 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Sorting
+
+In order to sort the rows in your data table, you will need to include the `isSortable` key
+in the `columns` array for each column you would like to be sortable. This will enable
+sorting on a single dimension, i.e. on one column at a time. If this value requires custom
+sorting you may also pass a sortFunction.
+
+```js
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    isSortable: true,
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    isSortable: true,
+  },
+  // other columns...
+];
+```
+
+### Handling the sort event
+
+For the StatefulTable setting the `isSortable` on a column is all that is required, but for the
+Table the `onChangeSort` needs to be handled as illustrated by the example below.
+
+```js
+// Simple sort function. In reality there might be other data types
+// than strings and numbers to consider
+const sortData = (data, columnId) =>
+  [...data].sort((rowA, rowB) => {
+    const a = rowA.values[columnId];
+    const b = rowB.values[columnId];
+    if (typeof a === 'string' && !Number(a)) {
+      return a.localeCompare(b);
+    }
+    return Number(a) - Number(b);
+  });
+
+const getSortDirection = (sortState, columnId) => {
+  const activeSortColumnChanged = sortState.columnId === columnId;
+  return activeSortColumnChanged
+    ? sortState.direction === 'ASC'
+      ? 'DESC'
+      : sortState.direction === 'DESC'
+      ? 'NONE'
+      : 'ASC'
+    : 'ASC';
+};
+
+const TableWithSort = () => {
+  // Generate some table data. Replace with your own data.
+  const data = getTableData().slice(0, 50);
+
+  // Format for single dimension sort is { columnId: 'col1', direction: 'ASC' }
+  const [sortState, setSortState] = useState({});
+  const [sortedData, setSortedData] = useState(data);
+
+  // Get the table columns and make sure they have property isSortable
+  // Replace this with your own columns
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    isSortable: true,
+  }));
+
+  // The onChangeSort must update both the data and the view.table.sort states
+  const onChangeSort = (columnId) => {
+    const direction = getSortDirection(sortState, columnId);
+    const sorted = direction === 'NONE' ? data : sortData(data, columnId);
+    const sortedWithDirection = direction === 'DESC' ? sorted.reverse() : sorted;
+    setSortedData(sortedWithDirection);
+    setSortState({ columnId, direction });
+  };
+
+  return (
+    <Table
+      actions={{
+        table: {
+          // Listen to the change event
+          onChangeSort,
+        },
+      }}
+      columns={columns}
+      // Sorted data is updated on sort
+      data={sortedData}
+      view={{
+        table: {
+          // The view.table.sort is updated to make sure the sorted column
+          // shows the correct sort arrows
+          sort: sortState,
+        },
+      }}
+    />
+  );
+};
+```
+
+### Custom sorting
+
+If the default sorting logic of the StatefulTable (or your own Table sort logic) doesn't
+match your use-case for one or more columns, you can provide a custom sort method as a
+`sortFunction` key on the objects in the `columns` array.
+
+`sortFunction` is a function that takes in the values of two cells, in addition to some
+info, and should return -1, 0, or 1 as a result (mirroring the native sort behavior in JavaScript).
+
+```js
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    isSortable: true,
+  },
+  {
+    id: 'status',
+    name: 'Status',
+    isSortable: true,
+    sortFunction: ({ data, columnId, direction }) => {
+      // clone inputData because sort mutates the array
+      const sortedData = [...data];
+      sortedData.sort((a, b) => {
+        let compare = -1;
+        // same status
+        if (a.values[columnId] === b.values[columnId]) {
+          compare = 0;
+        } else if (a.values[columnId] === 'RUNNING' && b.values[columnId] === 'NOT_RUNNING') {
+          compare = -1;
+        } else if (a.values[columnId] === 'NOT_RUNNING' && b.values[columnId] === 'RUNNING') {
+          compare = 1;
+        } else if (b.values[columnId] === 'BROKEN') {
+          compare = 1;
+        } else if (a.values[columnId] === 'BROKEN') {
+          compare = -1;
+        }
+
+        return direction === 'ASC' ? compare : -compare;
+      });
+      return sortedData;
+    };
+  },
+  // other columns...
+];
+```
+
+### Multi-sorting
+
+By passing `options.hasMultiSort` you can enable multi-sort columns functionality. If you want to set the sorted column order,
+you can pass an array of sort objects to the `view.table.sort`, and interact with this data via the callbacks on `actions.table`. Additionally,
+you can pass a `multiSortModal` prop containing an `anticipatedColumn` prop to pre-select the column you want to appear in the modal UI.
+This is used by the `StatefulTable` to show the column where the user just clicked the "Multi-sort" overflow option. See example below.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    table: {
+      onAddMultiSortColumn: (index) => {},
+      onRemoveMultiSortColumn: (index) => {},
+      /*
+       * example onSaveMultiSortColumns param structure:
+       * ([{columnId: 'select', direction: 'ASC'}, {columnId: 'string', direction: 'ASC'}]) => {}
+       */
+      onSaveMultiSortColumns: (multiSortedColumns) => {},
+      onCancelMultiSortColumns: () => {},
+    },
+  }}
+  options={{
+    hasMultiSort: true,
+  }}
+  view={{
+    table: {
+      multiSortModal: {
+        anticipatedColumn: {
+          columnId: 'boolean',
+          direction: 'ASC',
+        },
+      },
+      sort: [
+        {
+          columnId: 'select',
+          direction: 'ASC',
+        },
+        {
+          columnId: 'string',
+          direction: 'ASC',
+        },
+      ],
+    },
+  }}
+/>
+```
