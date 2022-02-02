@@ -640,14 +640,12 @@ export const getAdvancedFilters = () => [
 /**
  * Helper function that Table knobs.
  *
- * If param knobsToCreate is empty then all knobs will be created, otherwise only the
+ * If param knobsToCreate is unspecified then all knobs will be created, otherwise only the
  * knobs whose names are in the array. This conditional creation is needed since StoryBook
  * will show a knob as soon as it is created by a story, regardless of whether it is
  * placed in a local variable or not.
- *
- *
  */
-export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = false }) => {
+export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
   const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
@@ -661,7 +659,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'States' : undefined;
 
-  const shouldCreate = (name) => knobsToCreate.length === 0 || knobsToCreate.includes(name);
+  const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
   return {
     selectedTableType: shouldCreate('selectedTableType')
