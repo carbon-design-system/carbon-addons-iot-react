@@ -48,15 +48,12 @@ export default {
  * @returns story function
  */
 export const Playground = () => {
-  const enableAllKnobs = __DEV__;
-
   // STATES
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const [rowActionsState, setRowActionsState] = useState(getRowActionStates());
 
   // KNOBS
   // The order of appearance is defined function getTableKnobs.
-  const useKnobGroups = true;
   const {
     selectedTableType,
     tableMaxWidth,
@@ -113,7 +110,37 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     demoBatchActions,
-  } = getTableKnobs([], enableAllKnobs, useKnobGroups);
+  } = getTableKnobs({
+    knobsToCreate: [],
+    enableKnob: (name) =>
+      // For this story always disable the following knobs by default
+      [
+        'hasUserViewManagement',
+        'demoInitialColumnSizes',
+        'hasRowExpansion',
+        'toolbarIsDisabled',
+        'hasMultiSort',
+        'stickyHeader',
+        'useAutoTableLayoutForResize',
+        'isItemPerPageHidden',
+        'hasColumnSelection',
+        'hasColumnSelectionConfig',
+        'shouldLazyRender',
+        'preserveCellWhiteSpace',
+        'tableIsLoading',
+        'demoEmptyColumns',
+        'demoEmptyState',
+        'demoCustomEmptyState',
+        'demoCustomErrorState',
+      ].includes(name)
+        ? false
+        : // For this story always enable the following knobs by default
+        ['demoBatchActions', 'selectionCheckboxEnabled'].includes(name)
+        ? true
+        : // For this story enable the other knobs by defaults if we are in dev environment
+          !__DEV__,
+    useGroups: true,
+  });
 
   // CUSTOM DEMO JSX
   const rowEditBarButtons = (
@@ -323,11 +350,10 @@ Playground.decorators = [
 ];
 
 export const WithSorting = () => {
-  const enableAllKnobs = true;
-  const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs(
-    ['selectedTableType', 'demoSingleSort', 'hasMultiSort'],
-    enableAllKnobs
-  );
+  const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'demoSingleSort', 'hasMultiSort'],
+    enableKnob: (name) => name !== 'hasMultiSort',
+  });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const data = getTableData().slice(0, 50);
