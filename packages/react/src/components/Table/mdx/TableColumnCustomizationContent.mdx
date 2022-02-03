@@ -1,0 +1,157 @@
+### Introduction to ordering and visibility
+
+In the simplest form the presence and order of a column is determined by the `columns` prop. By updating the prop it is possible to add, remove and
+reorder columns. The following simplified example will render a table with 4 columns in the order col1, col2, col3 and col4.
+
+```jsx
+<table
+  columns={[
+    {id: 'col1', name: 'Column 1'}
+    {id: 'col2', name: 'Column 2'}
+    {id: 'col3', name: 'Column 3'}
+    {id: 'col4', name: 'Column 4'}
+  ]}
+  data={tableData}
+/>
+```
+
+But the order and the visibility of the columns can also be controlled by the view prop `view.table.ordering`.
+The order of the objects in the ordering prop will override the `columns` prop and determine the order the columns will have in the table.
+It is possible to have columns referenced in the ordering prop without having them visible in the table
+by using the `isHidden` attribute. The behavior of showing and hiding a column is also affected by the `options.preserveColumnWidths`,
+i.e. when set to false, hiding a column will distribute the extra width on the remaining columns rather than shrinking the width of the table itself.
+
+The following simplified example will render a table with 3 columns in the order col4, col1 and col3.
+
+```jsx
+<table
+  columns={[
+    {id: 'col1', name: 'Column 1'}
+    {id: 'col2', name: 'Column 2'}
+    {id: 'col3', name: 'Column 3'}
+    {id: 'col4', name: 'Column 4'}
+  ]}
+  data={tableData}
+  view={{
+    table: {
+      ordering: [
+        { columnId: 'col4' },
+        { columnId: 'col1' },
+        { columnId: 'col2', isHidden: true },
+        { columnId: 'col3' },
+      ],
+    },
+  }}
+/>
+```
+
+### Column widths and resize
+
+If the table has the prop `options.hasResize` the width of the columns can be programmatically controlled by the `columns` prop.
+Each column object in the columns array can have a width defined in `px`. The minimum column width is 62px and the default value
+is 150px if no column width is given.
+
+```jsx
+columns={[
+  {
+    id: 'string',
+    name: 'String',
+    width: '200px'
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+    width: '100px'
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    width: '100px'
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+  }
+]}
+```
+
+The prop `options.hasResize` also enables the user to resize the column widths using drag and drop. When `options.preserveColumnWidths` is true
+only the width of the targeted column will change on column resize, meaning that the width of the table will grow or shrink depending
+on if the column is made wider or smaller. If set to false the table width will remain unchanged.
+
+When a table has resizable columns the CSS property table-layout will be "fixed". This can be changed into "auto" using `options.useAutoTableLayoutForResize`.
+
+### Column grouping
+
+The table columns can be grouped into any number of groups. Each column group has an id, a name and can include any number of columns. The column groups will be displayed in a dedicated row above the normal column headers.
+The column grouping can be combined with any other table functionality except with the StatefulTable's column toggle and reordering functionality (`hasColumnSelection`).
+
+A group is defined by adding an object containing the id and name to the `ColumnGroups` prop. A column is matched to a group by setting the `columnGroupId` prop of the column object in `view.table.ordering`.
+The order of the column groups is implicitly defined by the order they are referenced in the `view.table.ordering` and that order must be sequential.
+E.g. this ordering is valid since the columns belonging to groupA appear in sequence in the array.
+
+```jsx
+ordering: [
+  { columnId: 'col0' },
+  { columnId: 'col1', columnGroupId: 'groupA' },
+  { columnId: 'col2', columnGroupId: 'groupA' },
+  { columnId: 'col3' },
+];
+```
+
+A complete example of how to use the column grouping could look like this:
+
+```jsx
+<Table
+  columns={[
+    { id: 'col0', name: 'column 0' },
+    { id: 'col1', name: 'column 1' },
+    { id: 'col2', name: 'column 2' },
+    { id: 'col3', name: 'column 3' },
+  ]}
+  // Column groups are defined here
+  columnGroups={[{ id: 'groupA', name: 'Group A' }]}
+  view={{
+    table: {
+      ordering: [
+        { columnId: 'col0' },
+        // Columns are matched to to groups here
+        { columnId: 'col1', columnGroupId: 'groupA' },
+        { columnId: 'col2', columnGroupId: 'groupA' },
+        { columnId: 'col3' },
+      ],
+    },
+  }}
+/>
+```
+
+### Legacy column management
+
+The Table has a built-in legacy UI to show/hide/reorder columns which is enabled with `options.hasColumnSelection`.
+For the StatefulTable that is the only prop needed but for the normal Table the action `actions.toolbar.onToggleColumnSelection`
+must update the `view.toolbar.activeBar` to `column` and the callback function for `actions.table.onChangeOrdering` must handle the changes made to
+the column ordering and visibility.
+
+### Additional column functionality
+
+The columns can be given custom overflow menus using the prop `overflowMenuItems` on the objects in the `columns` prop.
+When a menu item is clicked the action `table.onOverflowItemClicked` will be called with the id of the item.
+
+A column can also get a tooltip by using the `tooltip` prop.
+
+```jsx
+<Table
+  columns={[
+    { id: 'col0', name: 'column 0',
+      overflowMenuItems: [
+        { id: 'action-A', text: 'Action A},
+        { id: 'action-B', text: 'Action B},
+      ]
+    },
+    { id: 'col1', name: 'column 1', tooltip: 'I am a toolip text for Column 1' },
+    { id: 'col2', name: 'column 2' },
+    { id: 'col3', name: 'column 3' },
+  ]}
+/>
+```
