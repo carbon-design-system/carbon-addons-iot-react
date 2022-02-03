@@ -21,23 +21,27 @@ the `useMerged` helper hook to merge the objects together.
 ```jsx
 // component
 const defaultProps = {
-  onClick: undefined,
   i18n: {
     labelText: 'button label',
+    placeholderText: 'Enter a value',
   },
 };
 
-const Button = ({ i18n, onClick, children }) => {
+const Input = ({ i18n }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   return (
-    <button aria-label={mergedI18n.labelText} onClick={onClick}>
-      {children}
-    </button>
+    <input type="text" aria-label={mergedI18n.labelText} placeholder={mergedI18n.placeholder} />
   );
 };
 
+Input.defaultProps = defaultProps;
+
 // usage
-<Button i18n={{ labelText: 'A fancy button' }}>Fancy button</Button>;
+// in this example, mergedI18n variable above will contain { labelText: 'A fancy input', placeholderText: 'Enter a value' }
+// because the useMerged hook will use the defaults from defaultProps.i18n, and overwrite them with anything
+// from i18n of the same key. In this instance, labelText will be replaced with 'A fancy input', but
+// placeholderText will remain the same 'Enter a value'.
+<Input i18n={{ labelText: 'A fancy input' }} />;
 ```
 
 ### Adding data-testid
@@ -186,7 +190,7 @@ You can learn more about BEM in this [documentation](http://getbem.com/introduct
   color: $text-01;
 }
 
-// prefix       block  element
+// prefix       block element modifier
 .#{$iot-prefix}--menu__item--active {
   color: $focus;
 }
