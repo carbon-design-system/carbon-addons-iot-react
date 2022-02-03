@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Add16, TrashCan32 } from '@carbon/icons-react';
 import { omit, isEmpty } from 'lodash-es';
-import uuid from 'uuid';
+import uuidv4 from 'uuid/v4';
 import { red60 } from '@carbon/colors';
 import { TextInput } from 'carbon-components-react';
 
@@ -120,7 +120,7 @@ const ThresholdsFormItem = ({
 
   // initialize thresholds with a unique id
   const [thresholds, setThresholds] = useState(
-    thresholdsProp.map((threshold) => ({ ...threshold, id: uuid.v4() }))
+    thresholdsProp.map((threshold) => ({ ...threshold, id: uuidv4() }))
   );
 
   return (
@@ -284,7 +284,7 @@ const ThresholdsFormItem = ({
           setThresholds([
             ...thresholds,
             {
-              id: uuid.v4(),
+              id: uuidv4(),
               ...newThreshold,
             },
           ]);

@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import { isEmpty, omit } from 'lodash-es';
-import uuid from 'uuid';
+import uuidv4 from 'uuid/v4';
 import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
@@ -201,7 +201,7 @@ const TableCardFormContent = ({
           dataSourceId:
             itemWithMetaData?.destination === 'groupBy'
               ? selectedItem.id
-              : `${selectedItem.id}_${uuid.v4()}`,
+              : `${selectedItem.id}_${uuidv4()}`,
         },
       ];
       const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null);
