@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import { omit, isEmpty } from 'lodash-es';
-import uuidv4 from 'uuid/v4';
+import * as uuid from 'uuid';
 import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
@@ -293,7 +293,7 @@ const DataSeriesFormItem = ({
             dataSourceId:
               itemWithMetaData?.destination === 'groupBy'
                 ? selectedItem.id
-                : `${selectedItem.id}_${uuidv4()}`,
+                : `${selectedItem.id}_${uuid.v4()}`,
           },
         ];
         // need to remove the category if the card is a stacked timeseries bar
@@ -502,7 +502,7 @@ const DataSeriesFormItem = ({
                   {
                     id: selectedItem,
                     ...(itemWithMetaData && { ...itemWithMetaData }),
-                    dataSourceId: `${selectedItem}_${uuidv4()}`,
+                    dataSourceId: `${selectedItem}_${uuid.v4()}`,
                   },
                 ],
                 cardConfig,

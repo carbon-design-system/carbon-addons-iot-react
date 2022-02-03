@@ -1,7 +1,7 @@
 import { useRef } from 'react';
-import uuidv4 from 'uuid/v4';
+import * as uuid from 'uuid';
 
-const getUniqueId = () => uuidv4();
+const getUniqueId = () => uuid.v4();
 
 export function useUniqueId() {
   const idRef = useRef(null);

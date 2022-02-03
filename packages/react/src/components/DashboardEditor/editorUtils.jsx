@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import uuidv4 from 'uuid/v4';
+import * as uuid from 'uuid';
 import { isNil, uniqBy, isEmpty } from 'lodash-es';
 import {
   purple70,
@@ -94,7 +94,7 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
  */
 export const getDuplicateCard = (cardConfig) => ({
   ...cardConfig,
-  id: uuidv4(),
+  id: uuid.v4(),
 });
 
 /**
@@ -114,7 +114,7 @@ export const getDefaultCard = (type, i18n) => {
   };
 
   const baseCardProps = {
-    id: uuidv4(),
+    id: uuid.v4(),
     title: i18n.defaultCardTitle,
     size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
     ...(type.includes(CARD_TYPES.BAR) ? { type: CARD_TYPES.BAR } : { type }),

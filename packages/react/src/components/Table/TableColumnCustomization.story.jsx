@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Column20 } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
 import { boolean, object, select } from '@storybook/addon-knobs';
-import uuidv4 from 'uuid/v4';
+import * as uuid from 'uuid';
 
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
 import Button from '../Button';
@@ -202,7 +202,7 @@ export const Playground = () => {
           action('onLoadMore')(id);
         }}
         onReset={() => {
-          setModalKey(uuidv4());
+          setModalKey(uuid.v4());
           action('onReset');
         }}
         onSave={(updatedOrdering, updatedColumns) => {
