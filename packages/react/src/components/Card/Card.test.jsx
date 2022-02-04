@@ -417,6 +417,31 @@ describe('Card', () => {
       expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
     });
 
+    it('should remove the tooltip if the title changes to a shorter string', async () => {
+      const aLongTitle =
+        'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+
+      const aShortTitle = 'A Title';
+      const { rerender } = render(<Card {...cardProps} title={aLongTitle} />);
+      const tooltipButton = screen.getByRole('button', {
+        name: aLongTitle,
+      });
+      expect(tooltipButton).toBeVisible();
+      expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
+      Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+      rerender(<Card {...cardProps} title={aShortTitle} subtitle="This is subtitle" />);
+      expect(screen.getByTestId('Card-title-notip')).toBeVisible();
+    });
+
     it('should put the subtitle in a tooltip if it overflows', () => {
       const aLongSubTitle =
         'A very very long subtitle which will almost certainly overflow and require a tooltip and we must test these things, you know.';
