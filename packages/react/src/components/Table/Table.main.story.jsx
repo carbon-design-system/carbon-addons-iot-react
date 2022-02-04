@@ -138,7 +138,7 @@ export const Playground = () => {
         ['demoBatchActions', 'selectionCheckboxEnabled'].includes(name)
         ? true
         : // For this story enable the other knobs by defaults if we are in dev environment
-          !__DEV__,
+          __DEV__,
     useGroups: true,
   });
 
