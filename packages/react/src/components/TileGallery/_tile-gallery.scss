@@ -70,6 +70,7 @@
   margin-top: $spacing-05;
   box-shadow: none;
   border: solid rem(1px) $ui-background;
+  padding: $spacing-05;
 
   .options {
     flex: 0;
@@ -91,6 +92,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow-x: hidden;
+    color: $active-ui;
   }
   small {
     color: $text-01;
