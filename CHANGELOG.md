@@ -47,8 +47,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 # [2.148.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.2...v2.148.0-next.3) (2022-01-19)
-* **suite-header:** do not allow tabbing to closed app switcher panel ([7ac17ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7ac17ba151eee24a3f71df0679e69cacf5287f58))
-=======
 * **menubutton:** add support for button kinds ([8e03a25](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e03a255c79586fccdc37cfebd7c96fef979fb30)), closes [#3044](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3044)
 * **menubutton:** add support for sizes ([82eda03](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82eda0375c6237d5fe2f3234ee5eb768cb38a6d6))
 * **menubutton:** fix rtl issues ([b353f5b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b353f5b0e46b1ac6ce888cb4eaf1c76b24e4c104))
