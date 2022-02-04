@@ -31,6 +31,14 @@
     flex-direction: column;
     position: absolute;
     align-items: stretch;
+
+    &.#{$iot-prefix}--list-item__large {
+      margin-left: -($spacing-05);
+
+      [dir='rtl'] & {
+        margin-right: -($spacing-05);
+      }
+    }
   }
 
   &--drop-target-above {
