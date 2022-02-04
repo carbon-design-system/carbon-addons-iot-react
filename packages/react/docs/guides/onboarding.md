@@ -44,6 +44,45 @@ Input.defaultProps = defaultProps;
 <Input i18n={{ labelText: 'A fancy input' }} />;
 ```
 
+If you have data that needs to be embedded in that string, we're moving toward using index-based placeholders
+to make it easy for translators.
+
+```jsx
+// example needing i18n string interpolation
+const List = ({ items, title }) => {
+  <div>
+    <h3>{title}</h3>
+    <ul>
+      {items.map(({ text }) => {
+        return <li>{text}</li>;
+      })}
+    </ul>
+    <div>Item Count: {items.length}</div>
+  </div>;
+};
+
+// after refactoring
+const defaultProps = {
+  i18n: {
+    itemCountText: 'List count: {0}',
+  },
+};
+
+const List = ({ items, title, i18n }) => {
+  const mergedI18n = getMerged(defaultProps.i18n, i18n);
+
+  <div>
+    <h3>{title}</h3>
+    <ul>
+      {items.map(({ text }) => {
+        return <li>{text}</li>;
+      })}
+    </ul>
+    <div>{mergedI18n.itemCountText.replace('{0}', items.length)}</div>
+  </div>;
+};
+```
+
 ### Adding data-testid
 
 We want to make sure our components have dependable way to test all major functionality, so we provide
@@ -77,6 +116,33 @@ or Enzyme could find by test id:
 
 - `find('button[data-testid="new-window-button"]')`
 
+As components become more complex with multiple items the consumers are expected to interact with we
+need to make sure testIds are also applied to those elements.
+
+```jsx
+const Button = ({ testId = 'Button', i18n, children }) => {
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  return (
+    <button data-testid={testId} aria-label={mergedI18n.buttonLabel}>
+      {children}
+    </button>
+  );
+};
+
+// a simple example with multiple buttons the user will want to test for their availability based
+// on props. This allows the consumer to test for `form-buttons-reset-button` or `form-buttons-submit-button`.
+const FormButtons = ({ testId = 'form-buttons', showReset = true }) => {
+  return (
+    <div>
+      {showReset ? <Button testId={`${testId}-reset-button`}>Reset</Button> : null}
+      <Button testId={`${testId}-submit-button`}>Submit</Button>
+    </div>
+  );
+};
+
+// usage
+```
+
 ### Using prefixes for component classes
 
 Carbon uses a prefix `bx` (soon to be `cds`) to ensure unique classnames. We also follow suite in
@@ -99,10 +165,10 @@ This same structure is available within the scss files, too.
 ```scss
 // this is using @use from newer versions of sass, but isn't supported until v3 of this library
 // is released in 2022. The method in v2 is the usual @import
-@use '<react-package>/src/globals/vars' as *;
+// @use '<react-package>/src/globals/vars' as *;
 
 // for v2
-// @import '<react-package>/src/globals/vars';
+@import '<react-package>/src/globals/vars';
 
 .#{$prefix}--button {
   // styles to override the carbon button
@@ -134,12 +200,12 @@ button {
 }
 
 // Good example, v3 @use
-@use '<react-package>/src/globals/spacing' as *;
-@use '<react-package>/src/globals/colors' as *;
+// @use '<react-package>/src/globals/spacing' as *;
+// @use '<react-package>/src/globals/colors' as *;
 
 // v2 @import
-// @import '<react-package>/src/globals/vars';
-// @import '<react-package>/src/globals/spacing';
+@import '<react-package>/src/globals/vars';
+@import '<react-package>/src/globals/spacing';
 
 button {
   padding: $spacing-05;
@@ -163,12 +229,12 @@ You can learn more about BEM in this [documentation](http://getbem.com/introduct
 
 ```scss
 // v3 @use
-@use '<react-package>/src/globals/vars' as *;
-@use '<react-package>/src/globals/spacing' as *;
+// @use '<react-package>/src/globals/vars' as *;
+// @use '<react-package>/src/globals/spacing' as *;
 
 // v2 @import
-// @import '<react-package>/src/globals/vars';
-// @import '<react-package>/src/globals/spacing';
+@import '<react-package>/src/globals/vars';
+@import '<react-package>/src/globals/spacing';
 
 // prefix        block
 .#{$iot-prefix}--input {
@@ -226,6 +292,46 @@ const Button = ({ type = 'primary', className, children, disabled = false }) => 
 };
 ```
 
+### Component pure functions
+
+If you're writing a component and have a need for a helper function related entirely to that component
+and doesn't have any side effect on the data it's operating on, this is called a pure function. Pure
+functions should be defined in the same file as the component and passed whatever parameters necessary
+to their task. This is more performant because we're not allocating a new function on every render.
+This is a bit of a contrived example, but just image the function is something more complex.
+
+```jsx
+// example before refactoring
+const Button = ({ children, isActive: isActiveProp }) => {
+  const [isActive, setIsActive] = useState(isActiveProp);
+
+  const getClassNames = () => {
+    return {
+      [`${iotPrefix}--button`]: true,
+      [`${iotPrefix}--button--is-active`]: isActive,
+    };
+  };
+
+  return <button className={classnames(getClassNames())}>{children}</button>;
+};
+```
+
+```jsx
+// after refactoring to a pure helper function
+const getClassNames = (isActive) => {
+  return {
+    [`${iotPrefix}--button`]: true,
+    [`${iotPrefix}--button--is-active`]: isActive,
+  };
+};
+
+const Button = ({ children, isActive: isActiveProp }) => {
+  const [isActive, setIsActive] = useState(isActiveProp);
+
+  return <button className={classnames(getClassNames(isActive))}>{children}</button>;
+};
+```
+
 ### Utility functions
 
 When creating components often you will need helper functions that don't pertain to state. In this
@@ -250,6 +356,82 @@ component. Functions like these can be stored in `<react-package>/src/utils/comp
 Memoization is the process of caching a complex process, so it doesn't have to be re-calculated on
 each render. There's no way I can write this better then Kent C. Dodds, so I let's take a look at
 what he has to say in [this blog post](https://kentcdodds.com/blog/usememo-and-usecallback).
+
+### Keep JSX clean and simple
+
+As components grow more complex it's important to keep the code as readable as possible. While it's
+easy and tempting to just keep adding if statements or ternary operators as features are added, it's
+much easier to follow and maintain if we split those conditionals into their own simple components.
+
+```jsx
+// an ugly example with many nested ternary operators
+const RenderItems = ({ items }) => {
+  return items.length === 0 ? null : items.length === 1 ? (
+    <p>{items.text}</p>
+  ) : items.length === 2 ? (
+    <div>
+      {items.map(({ text }) => {
+        <p>{text}</p>;
+      })}
+    </div>
+  ) : (
+    <ul>
+      {items.map(({ text }) => {
+        <li>{text}</li>;
+      })}
+    </ul>
+  );
+};
+```
+
+```jsx
+// after some cleanup
+
+// render one or no items
+const ItemSingle = (items) => {
+  if (!items.length) {
+    return null;
+  }
+
+  const [item] = items;
+
+  return <p>{item.text}</p>;
+};
+
+// render only two items
+const ItemSet = (items) => {
+  return (
+    <div>
+      {items.map(({ text }) => {
+        <p>{text}</p>;
+      })}
+    </div>
+  );
+};
+
+// render a full list of items
+const ItemList = (items) => {
+  return (
+    <ul>
+      {items.map(({ text }) => {
+        <li>{text}</li>;
+      })}
+    </ul>
+  );
+};
+
+const RenderItems = ({ items }) => {
+  switch (items.length) {
+    case 0:
+    case 1:
+      return <ItemSingle items={items} />;
+    case 2:
+      return <ItemSet items={items} />;
+    default:
+      return <ItemList items={items} />;
+  }
+};
+```
 
 ### Creating new branches for PRs
 
