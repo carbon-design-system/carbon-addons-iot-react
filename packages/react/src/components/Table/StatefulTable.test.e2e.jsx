@@ -3,6 +3,7 @@ import { mount } from '@cypress/react';
 
 import StatefulTable from './StatefulTable';
 import {
+  getAdvancedFilters,
   getTableColumns as getStoryTableColumns,
   getTableData as getStoryTableData,
 } from './Table.story.helpers';
@@ -13,6 +14,10 @@ describe('StatefulTable', () => {
   const selectData = getSelectData();
   const tableColumns = getStoryTableColumns();
   const tableData = getStoryTableData();
+
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
 
   it('should search on keydown when hasFastSearch:true', () => {
     const onApplySearch = cy.stub();
@@ -204,5 +209,48 @@ describe('StatefulTable', () => {
     cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
     cy.viewport(1680, 900);
+  });
+
+  it('should allow advanced filters and multi-sort at the same time', () => {
+    mount(
+      <StatefulTable
+        id="search-table"
+        columns={tableColumns.map((c) => ({
+          ...c,
+          isSortable: c.id === 'string' || c.id === 'select',
+        }))}
+        data={tableData}
+        options={{
+          hasAdvancedFilter: true,
+          hasMultiSort: true,
+        }}
+        view={{
+          advancedFilters: getAdvancedFilters(),
+          table: {
+            sort: [],
+          },
+        }}
+      />
+    );
+
+    // 100 rows plus header
+    cy.get('tr').should('have.length', 101);
+    cy.findByTestId('advanced-filter-flyout-button').click();
+    cy.findByRole('tab', { name: 'Advanced filters' }).click();
+    cy.findByText('Select a filter').click();
+    cy.findByText('select=Option c, boolean=false').click();
+    cy.findByRole('button', { name: 'Apply filters' }).click();
+    // 16 rows plus header
+    cy.get('tr').should('have.length', 17);
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'bottle toyota bottle 5');
+
+    cy.findAllByLabelText('open and close list of options').eq(2).click();
+    cy.findAllByText('Multi-sort').eq(0).click();
+    cy.findByRole('button', { name: 'Add column' }).click();
+    cy.findByRole('button', { name: 'Sort' }).click();
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'as eat scott 23');
+
+    cy.findAllByLabelText('Sort rows by this header in descending order').eq(0).click();
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'whiteboard can eat 72');
   });
 });

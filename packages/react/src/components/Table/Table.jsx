@@ -786,8 +786,16 @@ const Table = (props) => {
       ? [view.table.sort]
       : [];
 
-    if (view.table.multiSortModal?.anticipatedColumn) {
-      return [...arrayifiedSort, view.table.multiSortModal.anticipatedColumn];
+    const anticipatedColumn = view.table.multiSortModal?.anticipatedColumn;
+
+    if (anticipatedColumn) {
+      const columnNotSortedYet = arrayifiedSort.every(
+        (sort) => sort.columnId !== anticipatedColumn.columnId
+      );
+
+      if (columnNotSortedYet) {
+        return [...arrayifiedSort, anticipatedColumn];
+      }
     }
 
     return arrayifiedSort;
