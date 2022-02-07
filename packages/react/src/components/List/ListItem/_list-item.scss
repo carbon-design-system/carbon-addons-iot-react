@@ -49,6 +49,14 @@
     &__over {
       border-top: solid 2px $focus;
     }
+
+    &.#{$iot-prefix}--list-item__large {
+      margin-left: -($spacing-05);
+
+      [dir='rtl'] & {
+        margin-right: -($spacing-05);
+      }
+    }
   }
 
   &--drop-target-nested {
