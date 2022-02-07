@@ -1,5 +1,5 @@
 import { TableItem, TableHeaderItem } from 'carbon-components-angular';
-import { AITableModel } from './table-model.class';
+import { AITableHeaderItem, AITableModel } from './table-model.class';
 
 describe('Table', () => {
   it('empty model should have length 0', () => {
@@ -68,23 +68,23 @@ describe('Table', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
       [
-        new TableHeaderItem({ data: 'h1' }),
-        new TableHeaderItem({ data: 'h2', colSpan: 4 }),
-        new TableHeaderItem({ data: 'h3' }),
+        new AITableHeaderItem({ data: 'h1' }),
+        new AITableHeaderItem({ data: 'h2', colSpan: 4 }),
+        new AITableHeaderItem({ data: 'h3' }),
       ],
       [
-        new TableHeaderItem({ data: 'h11' }),
-        new TableHeaderItem({ data: 'h12', colSpan: 2 }),
-        new TableHeaderItem({ data: 'h13', colSpan: 2 }),
-        new TableHeaderItem({ data: 'h14' }),
+        new AITableHeaderItem({ data: 'h11' }),
+        new AITableHeaderItem({ data: 'h12', colSpan: 2 }),
+        new AITableHeaderItem({ data: 'h13', colSpan: 2 }),
+        new AITableHeaderItem({ data: 'h14' }),
       ],
       [
-        new TableHeaderItem({ data: 'h21' }),
-        new TableHeaderItem({ data: 'h22' }),
-        new TableHeaderItem({ data: 'h23' }),
-        new TableHeaderItem({ data: 'h24' }),
-        new TableHeaderItem({ data: 'h25' }),
-        new TableHeaderItem({ data: 'h26' }),
+        new AITableHeaderItem({ data: 'h21' }),
+        new AITableHeaderItem({ data: 'h22' }),
+        new AITableHeaderItem({ data: 'h23' }),
+        new AITableHeaderItem({ data: 'h24' }),
+        new AITableHeaderItem({ data: 'h25' }),
+        new AITableHeaderItem({ data: 'h26' }),
       ],
     ]);
     tableModel.setData([
@@ -686,9 +686,9 @@ describe('Table', () => {
   it('should move column to beginning', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
     ]);
     tableModel.setData([
       [new TableItem({ data: 'A' }), new TableItem({ data: 'B' }), new TableItem({ data: 'C' })],
@@ -718,9 +718,9 @@ describe('Table', () => {
   it('should move column to end', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
     ]);
     tableModel.setData([
       [new TableItem({ data: 'A' }), new TableItem({ data: 'B' }), new TableItem({ data: 'C' })],
@@ -750,9 +750,9 @@ describe('Table', () => {
   it('should move column to left', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
     ]);
     tableModel.setData([
       [new TableItem({ data: 'A' }), new TableItem({ data: 'B' }), new TableItem({ data: 'C' })],
@@ -787,9 +787,9 @@ describe('Table', () => {
   it('should move column to right', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
     ]);
     tableModel.setData([
       [new TableItem({ data: 'A' }), new TableItem({ data: 'B' }), new TableItem({ data: 'C' })],
@@ -820,23 +820,23 @@ describe('Table', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
       [
-        new TableHeaderItem({ data: 'h1' }),
-        new TableHeaderItem({ data: 'h2', colSpan: 4 }),
-        new TableHeaderItem({ data: 'h3' }),
+        new AITableHeaderItem({ data: 'h1' }),
+        new AITableHeaderItem({ data: 'h2', colSpan: 4 }),
+        new AITableHeaderItem({ data: 'h3' }),
       ],
       [
-        new TableHeaderItem({ data: 'h11' }),
-        new TableHeaderItem({ data: 'h12', colSpan: 2 }),
-        new TableHeaderItem({ data: 'h13', colSpan: 2 }),
-        new TableHeaderItem({ data: 'h14' }),
+        new AITableHeaderItem({ data: 'h11' }),
+        new AITableHeaderItem({ data: 'h12', colSpan: 2 }),
+        new AITableHeaderItem({ data: 'h13', colSpan: 2 }),
+        new AITableHeaderItem({ data: 'h14' }),
       ],
       [
-        new TableHeaderItem({ data: 'h21' }),
-        new TableHeaderItem({ data: 'h22' }),
-        new TableHeaderItem({ data: 'h23' }),
-        new TableHeaderItem({ data: 'h24' }),
-        new TableHeaderItem({ data: 'h25' }),
-        new TableHeaderItem({ data: 'h26' }),
+        new AITableHeaderItem({ data: 'h21' }),
+        new AITableHeaderItem({ data: 'h22' }),
+        new AITableHeaderItem({ data: 'h23' }),
+        new AITableHeaderItem({ data: 'h24' }),
+        new AITableHeaderItem({ data: 'h25' }),
+        new AITableHeaderItem({ data: 'h26' }),
       ],
     ]);
     tableModel.setData([
@@ -901,9 +901,9 @@ describe('Table', () => {
 
   it('should calculate correct actual index', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
-      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new AITableHeaderItem({ data: 'h3', colSpan: 4 }),
     ];
     const tableModel = new AITableModel();
 
@@ -919,9 +919,9 @@ describe('Table', () => {
 
   it('should calculate correct projected indices', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
-      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new AITableHeaderItem({ data: 'h3', colSpan: 4 }),
     ];
     const tableModel = new AITableModel();
 
@@ -932,16 +932,16 @@ describe('Table', () => {
 
   it('should calculate correct projected indices', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2', colSpan: 3 }),
-      new TableHeaderItem({ data: 'h3', colSpan: 4 }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2', colSpan: 3 }),
+      new AITableHeaderItem({ data: 'h3', colSpan: 4 }),
     ];
     const header2 = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2', colSpan: 2 }),
-      new TableHeaderItem({ data: 'h3' }),
-      new TableHeaderItem({ data: 'h4', colSpan: 2 }),
-      new TableHeaderItem({ data: 'h5', colSpan: 2 }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2', colSpan: 2 }),
+      new AITableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h4', colSpan: 2 }),
+      new AITableHeaderItem({ data: 'h5', colSpan: 2 }),
     ];
     const tableModel = new AITableModel();
 
@@ -967,12 +967,12 @@ describe('Table', () => {
 
   it('should move multiple array items to left', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
-      new TableHeaderItem({ data: 'h4' }),
-      new TableHeaderItem({ data: 'h5' }),
-      new TableHeaderItem({ data: 'h6' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h4' }),
+      new AITableHeaderItem({ data: 'h5' }),
+      new AITableHeaderItem({ data: 'h6' }),
     ];
     const tableModel = new AITableModel();
 
@@ -983,12 +983,12 @@ describe('Table', () => {
 
   it('should move one array items to left', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
-      new TableHeaderItem({ data: 'h4' }),
-      new TableHeaderItem({ data: 'h5' }),
-      new TableHeaderItem({ data: 'h6' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h4' }),
+      new AITableHeaderItem({ data: 'h5' }),
+      new AITableHeaderItem({ data: 'h6' }),
     ];
     const tableModel = new AITableModel();
 
@@ -999,12 +999,12 @@ describe('Table', () => {
 
   it('should move multiple array items to right', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
-      new TableHeaderItem({ data: 'h4' }),
-      new TableHeaderItem({ data: 'h5' }),
-      new TableHeaderItem({ data: 'h6' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h4' }),
+      new AITableHeaderItem({ data: 'h5' }),
+      new AITableHeaderItem({ data: 'h6' }),
     ];
     const tableModel = new AITableModel();
 
@@ -1015,12 +1015,12 @@ describe('Table', () => {
 
   it('should move one array items to right', () => {
     const header = [
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
-      new TableHeaderItem({ data: 'h4' }),
-      new TableHeaderItem({ data: 'h5' }),
-      new TableHeaderItem({ data: 'h6' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h4' }),
+      new AITableHeaderItem({ data: 'h5' }),
+      new AITableHeaderItem({ data: 'h6' }),
     ];
     const tableModel = new AITableModel();
 
@@ -1031,9 +1031,9 @@ describe('Table', () => {
   it('should preserve header if data is emptied', () => {
     let tableModel = new AITableModel();
     tableModel.setHeader([
-      new TableHeaderItem({ data: 'h1' }),
-      new TableHeaderItem({ data: 'h2' }),
-      new TableHeaderItem({ data: 'h3' }),
+      new AITableHeaderItem({ data: 'h1' }),
+      new AITableHeaderItem({ data: 'h2' }),
+      new AITableHeaderItem({ data: 'h3' }),
     ]);
     tableModel.setData([
       [new TableItem({ data: 'A' }), new TableItem({ data: 'B' }), new TableItem({ data: 'C' })],
