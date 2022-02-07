@@ -230,6 +230,13 @@ describe('DateTimePicker', () => {
       '2020-04-01 13:34 to 2020-04-06 11:49'
     );
 
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    wrapper.find(`.${iotPrefix}--time-picker__controls--btn.up-icon`).at(1).simulate('click');
+    jest.runAllTimers();
+    expect(wrapper.find(`.${iotPrefix}--date-time-picker__field`).first().text()).toEqual(
+      '2020-04-01 13:34 to 2020-04-06 13:49'
+    );
+
     wrapper.find(`.${iotPrefix}--date-time-picker__menu-btn-apply`).first().simulate('click');
     jest.runAllTimers();
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
@@ -493,6 +500,8 @@ describe('DateTimePicker', () => {
     expect(screen.queryByText(i18nDefault.startTimeLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
     // click apply
+    const times = screen.getAllByTestId('time-picker-spinner');
+    fireEvent.change(times[1], { target: { value: '03:00' } });
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
     expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
@@ -682,6 +691,146 @@ describe('DateTimePicker', () => {
     // set time to 11:61
     userEvent.type(relativeToTime, '{backspace}{backspace}61');
     expect(relativeToTime).toBeInvalid();
+    expect(applyBytton).toBeDisabled();
+  });
+
+  it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2020, 3, 1, 12, 34, 0),
+            end: new Date(2020, 3, 1, 11, 49, 0),
+            startDate: '2020-04-01',
+            startTime: '12:34',
+            endDate: '2020-04-01',
+            endTime: '11:49',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    const applyBytton = screen.getByRole('button', { name: i18n.applyBtnLabel });
+
+    // Get start and end time inputs
+    const startTime = screen.getAllByTestId('time-picker-spinner')[0];
+    const endTime = screen.getAllByTestId('time-picker-spinner')[1];
+
+    const timeRange = screen.getByTestId('date-time-picker__field');
+
+    expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-01 11:49');
+    expect(applyBytton).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-01 11:49
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:34');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('11:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 11:49');
+    expect(applyBytton).toBeDisabled();
+
+    // 2020-04-01 13:34 to 2020-04-01 12:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}12:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('12:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 12:49');
+    expect(applyBytton).toBeDisabled();
+
+    // // 2020-04-01 13:34 to 2020-04-01 13:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 13:49');
+    expect(applyBytton).toBeEnabled();
+
+    // // 2020-04-01 13:50 to 2020-04-01 13:49
+    userEvent.type(startTime, '{backspace}{backspace}50');
+    expect(startTime).toHaveValue('13:50');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-01 13:49');
+    expect(applyBytton).toBeDisabled();
+
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
+    expect(applyBytton).toBeDisabled();
+  });
+
+  it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2020, 3, 1, 12, 34, 0),
+            end: new Date(2020, 3, 6, 11, 49, 0),
+            startDate: '2020-04-01',
+            startTime: '12:34',
+            endDate: '2020-04-06',
+            endTime: '11:49',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    const applyBytton = screen.getByRole('button', { name: i18n.applyBtnLabel });
+
+    // Get start and end time inputs
+    const startTime = screen.getAllByTestId('time-picker-spinner')[0];
+    const endTime = screen.getAllByTestId('time-picker-spinner')[1];
+
+    const timeRange = screen.getByTestId('date-time-picker__field');
+
+    expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-06 11:49');
+    expect(applyBytton).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 11:49
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:34');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('11:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 11:49');
+    expect(applyBytton).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 12:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}12:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('12:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 12:49');
+    expect(applyBytton).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 13:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 13:49');
+    expect(applyBytton).toBeEnabled();
+
+    // 2020-04-01 13:50 to 2020-04-06 13:49
+    userEvent.type(startTime, '{backspace}{backspace}50');
+    expect(startTime).toHaveValue('13:50');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-06 13:49');
+    expect(applyBytton).toBeEnabled();
+
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
     expect(applyBytton).toBeDisabled();
   });
 

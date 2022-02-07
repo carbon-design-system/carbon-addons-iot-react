@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, SkeletonText } from 'carbon-components-react';
+import { TableBody, TableCell, TableRow, SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 import deprecate from '../../../internal/deprecate';
 
-const { TableBody, TableCell, TableRow } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {

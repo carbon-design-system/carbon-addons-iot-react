@@ -32,6 +32,16 @@ const propTypes = {
   iconDescription: PropTypes.string.isRequired,
 
   testId: PropTypes.string.isRequired,
+
+  /**
+   * The size of the button and the dropdown items
+   */
+  size: PropTypes.oneOf(['sm', 'md', 'default']).isRequired,
+
+  /**
+   * The kind of button to render
+   */
+  kind: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'ghost']).isRequired,
 };
 
 const defaultProps = {
@@ -42,7 +52,16 @@ const defaultProps = {
 
 export const SingleMenuButton = React.forwardRef(
   (
-    { onSecondaryActionClick, onPrimaryActionClick, label, iconDescription, renderIcon, testId },
+    {
+      onSecondaryActionClick,
+      onPrimaryActionClick,
+      label,
+      iconDescription,
+      renderIcon,
+      testId,
+      size,
+      kind,
+    },
     ref
   ) => {
     return (
@@ -53,8 +72,9 @@ export const SingleMenuButton = React.forwardRef(
         iconDescription={iconDescription}
         renderIcon={renderIcon}
         hasIconOnly={!label}
-        kind={!label ? 'ghost' : 'primary'}
+        kind={kind}
         testId={label ? `${testId}-single` : `${testId}-icon`}
+        size={size}
       >
         {label}
       </Button>
