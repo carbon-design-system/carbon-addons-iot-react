@@ -32,8 +32,11 @@ export enum SelectionType {
         >
         </ng-container>
         <div
-          *ngIf="!items || items.length < 1"
-          class="iot--list--empty-state iot--list--empty-state__full-height"
+          *ngIf="!items || items.length < 1 || noItemsDisplayed"
+          [ngClass]="{
+            'iot--list--empty-state': true,
+            'iot--list--empty-state__full-height': isFullHeight
+          }"
           (drop)="isDragging ? handleDrop(null, 0) : undefined"
           (dragover)="$event.preventDefault()"
         >
@@ -49,7 +52,14 @@ export enum SelectionType {
 
     <ng-template #listItemTemplateRef let-data>
       <!-- Render item -->
-      <ng-container *ngIf="data.item.id && !isArray(data.item) && data.item.includes(searchString)">
+      <ng-container
+        *ngIf="
+          data.item.id &&
+          !isArray(data.item) &&
+          data.item.includes(searchString) &&
+          !data.item.hidden
+        "
+      >
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
           [disabled]="data.item.disabled"
@@ -76,7 +86,11 @@ export enum SelectionType {
       </ng-container>
 
       <!-- Item has children -->
-      <ng-container *ngIf="!isArray(data.item) && data.item.hasChildren() && data.item.expanded">
+      <ng-container
+        *ngIf="
+          !isArray(data.item) && data.item.hasChildren() && data.item.expanded && !data.item.hidden
+        "
+      >
         <ng-container
           *ngFor="let item of data.item.items; index as i"
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -183,6 +197,10 @@ export class AIListComponent implements OnInit {
   @Output() draggedItemChange = new EventEmitter<AIListItem>();
 
   searchString = '';
+
+  get noItemsDisplayed() {
+    return this.items.every((item) => !item.includes(this.searchString) || item.hidden);
+  }
 
   protected _isDragging = false;
   protected _draggedItem: AIListItem = null;

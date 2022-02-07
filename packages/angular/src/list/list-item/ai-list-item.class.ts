@@ -1,4 +1,4 @@
-import { TemplateRef } from '@angular/core';
+import { EventEmitter, TemplateRef } from '@angular/core';
 
 export class AIListItem {
   /**
@@ -51,6 +51,10 @@ export class AIListItem {
 
   disabled = false;
 
+  hidden = false;
+
+  onSelect = new EventEmitter<boolean>();
+
   /**
    * Indicates whether or not the list item is in an indeterminate state.
    */
@@ -80,6 +84,8 @@ export class AIListItem {
     };
     Object.assign(this, {}, data);
   }
+
+  onSelectCallback: any = () => {};
 
   /**
    * This method returns `true` if `searchString` is a substring of `value`
@@ -118,8 +124,14 @@ export class AIListItem {
     this.expanded = expanded;
   }
 
-  select(selected = true) {
+  select(selected = true, shouldEmit = false) {
     this.selected = selected;
+
+    if (shouldEmit) {
+      this.onSelect.emit(this.selected);
+    }
+
+    this.onSelectCallback();
   }
 
   setIndeterminate(indeterminate = true) {
