@@ -158,6 +158,8 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     searchPlaceHolderText: 'Enter a search',
     editDataItems: 'Edit data items',
+    fit: 'Contain',
+    stretch: 'Fill',
   },
   getValidDimensions: null,
   getValidDataItems: null,
