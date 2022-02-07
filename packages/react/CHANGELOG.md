@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.4...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+
+
+
 # [2.148.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.5...v2.148.0-next.6) (2022-01-21)
 
 **Note:** Version bump only for package carbon-addons-iot-react
