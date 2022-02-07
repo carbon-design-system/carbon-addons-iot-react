@@ -43,6 +43,7 @@ const useDynamicOverflowMenuItems = ({ className, actions, testId, isDisabled, o
           disabled={isDisabled || action.disabled}
           hasDivider={action.hasDivider}
           isDelete={action.isDelete}
+          aria-label={action.labelText}
         />
       ));
   }, [actions, className, isDisabled, onClick, testId]);
