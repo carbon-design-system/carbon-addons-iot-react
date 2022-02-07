@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.148.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.13...v2.148.0-next.14) (2022-02-02)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.148.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.12...v2.148.0-next.13) (2022-02-01)
+
+
+### Bug Fixes
+
+* **table:** fix proptype on TableToolbar, too ([993fde5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/993fde58d59ef0c991616ef7737a1426f562b01b))
+
+
+
+
+
 # [2.148.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.11...v2.148.0-next.12) (2022-01-31)
 
 
