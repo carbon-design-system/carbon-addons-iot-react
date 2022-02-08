@@ -1,0 +1,272 @@
+# `DashboardGrid` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Custom layout](#custom-layout)
+- [Editable layout](#editable-layout)
+- [Resizable cards](#resizable-cards)
+- [Props](#props)
+- [Source Code](#source-code)
+- [Feedback](#feedback)
+
+## Getting started
+
+The simplest way to use the dashboard grid is pass it a set of cards and let it figure out its own layout to use.
+
+```jsx
+import { DashboardGrid, CARD_SIZES, CARD_TYPES, Card } from 'carbon-addons-iot-react';
+
+<DashboardGrid>
+  {[
+    <Card
+      title="Facility Metrics"
+      key="facility"
+      id="facility"
+      size={CARD_SIZES.MEDIUM}
+      type={CARD_TYPES.}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Facility Metrics"
+    />
+  ]}
+</DashboardGrid>
+```
+
+## Custom layout
+
+Pass a custom layout to the dashboard grid to assign positions and sizes to the various to the cards.
+In this case, only the lg and md breakpoint have a custom layout defined. Resize the screen to see
+the cards reposition and resize themselves at different layouts. In this example, when the screen matches
+the lg breakpoint size, the card with the id 'facility' will be in the fifth row and fifth column
+(zero-based index), the card with the id 'humidity' will be in the first column and first row, and the
+card with the id 'utilization' will be in the fourth column and first row. However, since the humidity
+card already occupied that space, it will get pushed down to the next row by the auto-reflowing of the
+grid so that no cards overlap. The height (h) and width (w) are unused, because sizes are determined
+by the size prop passed to the card itself—not defined by the grid.
+
+```jsx
+<DashboardGrid
+  layouts={{
+    lg: [
+      { i: 'facility', x: 4, y: 4, w: 1, h: 1 },
+      { i: 'humidity', x: 0, y: 0, w: 1, h: 1 },
+      { i: 'utilization', x: 3, y: 0, w: 1, h: 1 },
+    ],
+    md: [
+      { i: 'facility', x: 0, y: 0, w: 1, h: 1 },
+      { i: 'humidity', x: 0, y: 1, w: 1, h: 1 },
+      { i: 'utilization', x: 0, y: 2, w: 1, h: 1 },
+    ],
+  }}
+>
+  {[
+    <Card
+      title="Facility Metrics"
+      key="facility"
+      id="facility"
+      size={CARD_SIZES.MEDIUM}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Facility Metrics"
+    />,
+    <Card
+      title="Humidity"
+      key="humidity"
+      id="humidity"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Humidity Values"
+    />,
+    <Card
+      title="Utilization"
+      id="utilization"
+      key="utilization"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My utilization chart"
+    />,
+  ]}
+</DashboardGrid>
+```
+
+## Editable layout
+
+You can drag and drop the cards around. The `onLayoutChange` handler will be triggered each time you
+drop a card in a new location. The card array contains objects representing each card in the layout.
+Similar to the layout prop above. It's easiest to inspect the output in the Actions tab of the
+[is editable story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-is-editable) to see the
+callback in action.
+
+```jsx
+<DashboardGrid isEditable onLayoutChange={(cardArray, layoutObject) => {}}>
+  {[
+    <Card
+      title="Facility Metrics"
+      key="facility"
+      id="facility"
+      size={CARD_SIZES.MEDIUM}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Facility Metrics"
+    />,
+    <Card
+      title="Humidity"
+      key="humidity"
+      id="humidity"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Humidity Values"
+    />,
+    <Card
+      title="Utilization"
+      id="utilization"
+      key="utilization"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My utilization chart"
+    />,
+  ]}
+</DashboardGrid>
+```
+
+## Resizable cards
+
+Mby passing `isResizable` to the cards in a DashboardGrid, the cards become resizable by dragging and
+the card size prop is automatically updated to match the new size during the drag process. This triggers
+the `onCardSizeChange` callback which is passed two parameters. The first is an object giving details
+about the card (its `id` and its `size`), and the second is an object containing information about
+the DashboardGrid and its layout. Again, it's easiest to view the Actions panel in the [resizable card
+story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-resizable-card) to see callback in action.
+The `onCardSizeChange` is triggered instantly as you drag and drop and the `onResizeStop` callback is
+only triggered once you've stopped resizing the card.
+
+```jsx
+<DashboardGrid
+  isEditable
+  onCardSizeChange={(cardSizeData, gridData) => {}}
+  onResizeStop={(cardSizeData, gridData) => {}}
+>
+  {[
+    <Card
+      title="Facility Metrics"
+      key="facility"
+      id="facility"
+      size={CARD_SIZES.MEDIUM}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Facility Metrics"
+      isResizable
+    />,
+    <Card
+      title="Humidity"
+      key="humidity"
+      id="humidity"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My Humidity Values"
+      isResizable
+    />,
+    <Card
+      title="Utilization"
+      id="utilization"
+      key="utilization"
+      size={CARD_SIZES.SMALL}
+      type={CARD_TYPES.VALUE}
+      availableActions={{
+        delete: true,
+      }}
+      content="My utilization chart"
+      isResizable
+    />,
+  ]}
+</DashboardGrid>
+```
+
+## Props
+
+### DashboardGrid Props
+
+| Name               | Type                                         | Default                               | Description                                                                                                  |
+| :----------------- | :------------------------------------------- | :------------------------------------ | :----------------------------------------------------------------------------------------------------------- |
+| breakpoint         | oneOf('max', 'xl', 'lg', 'md', 'sm', 'xs')   | 'lg'                                  | The current screen breakpoint to determine which layout to use                                               |
+| isEditable         | bool                                         | false                                 | Is the DashboardGrid editable, meaning cards can be moved and resized                                        |
+| onBreakpointChange | function                                     | null                                  | Fired when the screen changes size and triggers a breakpoint change                                          |
+| onLayoutChange     | function                                     | null                                  | Fired when the DashboardGrid is editable and a card is moved or resized                                      |
+| layouts            | object                                       | {}                                    | (see [layout prop](#layout-prop)) An object representing the size and layout of cards at various breakpoints |
+| supportedLayouts   | arrayOf('max', 'xl', 'lg', 'md', 'sm', 'xs') | ['max', 'xl', 'lg', 'md', 'sm', 'xs'] | An array of breakpoints this DashboardGrid supports                                                          |
+| onResizeStop       | function                                     | null                                  |                                                                                                              |
+| onCardSizeChange   | function                                     | null                                  | Callback triggered when the DashboardGrid is editable and a card has been resized                            |
+| testId             | string                                       | 'dashboard-grid'                      | A string to assign to the grid for testing                                                                   |
+
+#### Layouts props
+
+| Name            | Type            | Default | Description                                       |
+| :-------------- | :-------------- | :------ | :------------------------------------------------ |
+| layouts.max     | arrayOf(object) |         |                                                   |
+| layouts.max[].i | string          |         | the id of this element                            |
+| layouts.max[].x | number          |         | The x position of this card at the max breakpoint |
+| layouts.max[].y | number          |         | The y position of this card at the max breakpoint |
+| layouts.max[].w | number          |         | The width of this card at the max breakpoint      |
+| layouts.max[].h | number          |         | The height of this card at the max breakpoint     |
+| layouts.xl      | arrayOf(object) |         |                                                   |
+| layouts.xl[].i  | string          |         | the id of this element                            |
+| layouts.xl[].x  | number          |         | The x position of this card at the xl breakpoint  |
+| layouts.xl[].y  | number          |         | The y position of this card at the xl breakpoint  |
+| layouts.xl[].w  | number          |         | The width of this card at the xl breakpoint       |
+| layouts.xl[].h  | number          |         | The height of this card at the xl breakpoint      |
+| layouts.lg      | arrayOf(object) |         |                                                   |
+| layouts.lg[].i  | string          |         | the id of this element                            |
+| layouts.lg[].x  | number          |         | The x position of this card at the lg breakpoint  |
+| layouts.lg[].y  | number          |         | The y position of this card at the lg breakpoint  |
+| layouts.lg[].w  | number          |         | The width of this card at the lg breakpoint       |
+| layouts.lg[].h  | number          |         | The height of this card at the lg breakpoint      |
+| layouts.md      | arrayOf(object) |         |                                                   |
+| layouts.md[].i  | string          |         | the id of this element                            |
+| layouts.md[].x  | number          |         | The x position of this card at md breakpoint      |
+| layouts.md[].y  | number          |         | The y position of this card at md breakpoint      |
+| layouts.md[].w  | number          |         | The width of this card at md breakpoint           |
+| layouts.md[].h  | number          |         | The height of this card at md breakpoint          |
+| layouts.sm      | arrayOf(object) |         |                                                   |
+| layouts.sm[].i  | string          |         | the id of this element                            |
+| layouts.sm[].x  | number          |         | The x position of this card at the sm breakpoint  |
+| layouts.sm[].y  | number          |         | The y position of this card at the sm breakpoint  |
+| layouts.sm[].w  | number          |         | The width of this card at the sm breakpoint       |
+| layouts.sm[].h  | number          |         | The height of this card at the sm breakpoint      |
+| layouts.xs      | arrayOf(object) |         |                                                   |
+| layouts.xs[].i  | string          |         | the id of this element                            |
+| layouts.xs[].x  | number          |         | The x position of this card at the xs breakpoint  |
+| layouts.xs[].y  | number          |         | The y position of this card at the xs breakpoint  |
+| layouts.xs[].w  | number          |         | The width of this card at the xs breakpoint       |
+| layouts.xs[].h  | number          |         | The height of this card at the xs breakpoint      |
+
+## Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/DashboardGrid)
+
+## Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/DashboardGrid/DashboardGrid.mdx).
