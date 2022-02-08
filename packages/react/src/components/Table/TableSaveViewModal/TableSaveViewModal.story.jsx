@@ -113,7 +113,7 @@ export const WithDemoStates = () => {
   );
 };
 
-WithDemoStates.storyName = 'With simple state management';
+WithDemoStates.storyName = 'With demo states';
 WithDemoStates.decorators = [createElement];
 
 /**
