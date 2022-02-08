@@ -556,7 +556,7 @@ to use the component.
 #### Story structure
 
 The stories should contain a playground story that contains all knobs possible
-for the component. The playground knobs should default to `on` when in DEV to make catching bugs or issues
+for the component. The playground knobs should be on by default when in DEV to make catching bugs or issues
 more apparent during the development process. However, when in production the majority of knobs should
 be off and only those related to major functionality of the component turned on.
 
