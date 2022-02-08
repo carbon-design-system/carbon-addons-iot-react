@@ -3,7 +3,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, BeeBat16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
@@ -261,6 +261,19 @@ export const getTableToolbarActions = () => [
     isOverflow: true,
   },
   {
+    id: 'long',
+    labelText: 'A really long text that should be truncated',
+    disabled: false,
+    isOverflow: true,
+  },
+  {
+    id: 'long-icon',
+    labelText: 'A really long text that should be truncated with an icon',
+    renderIcon: () => <BeeBat16 />,
+    disabled: false,
+    isOverflow: true,
+  },
+  {
     id: 'delete',
     labelText: 'Delete',
     isDelete: true,
@@ -332,6 +345,18 @@ export const getRowActions = (index) =>
       isDelete: false,
       isEdit: true,
       disabled: true,
+    },
+    {
+      id: 'hiddenOverflow',
+      labelText: 'Hidden overflow',
+      isOverflow: true,
+      hidden: true,
+    },
+    {
+      id: 'hidden',
+      labelText: 'Hidden',
+      isOverflow: false,
+      hidden: true,
     },
     {
       id: 'Add',

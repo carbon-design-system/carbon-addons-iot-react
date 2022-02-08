@@ -215,4 +215,10 @@ const SideNav = ({ links, defaultExpanded, isSideNavExpanded, i18n, testId, ...p
 SideNav.propTypes = SideNavPropTypes;
 SideNav.defaultProps = defaultProps;
 
+CarbonSideNav.displayName = 'SideNav';
+SideNavItems.displayName = 'SideNavItems';
+SideNavLink.displayName = 'SideNavLink';
+SideNavMenu.displayName = 'SideNavMenu';
+SideNavMenuItem.displayName = 'SideNavMenuItem';
+
 export default SideNav;

@@ -26,6 +26,7 @@ const defaultProps = {
     learnMoreLink: 'Learn more',
   },
   testId: 'suite-header-app-switcher',
+  isExpanded: false,
 };
 
 const propTypes = {
@@ -40,6 +41,7 @@ const propTypes = {
     learnMoreLink: PropTypes.string,
   }),
   testId: PropTypes.string,
+  isExpanded: PropTypes.bool,
 };
 
 const SuiteHeaderAppSwitcher = ({
@@ -50,6 +52,7 @@ const SuiteHeaderAppSwitcher = ({
   i18n,
   onRouteChange,
   testId,
+  isExpanded,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
@@ -91,6 +94,8 @@ const SuiteHeaderAppSwitcher = ({
     [allApplicationsLink, onRouteChange]
   );
 
+  const tabIndex = isExpanded ? 0 : -1;
+
   return (
     <ul data-testid={testId} className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
@@ -106,6 +111,7 @@ const SuiteHeaderAppSwitcher = ({
             onClick={handleAllApplicationRoute}
             onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
+            tabIndex={tabIndex}
           >
             {mergedI18n.allApplicationsLink}
           </Button>
@@ -135,6 +141,7 @@ const SuiteHeaderAppSwitcher = ({
                 testId={`${testId}--${id}`}
                 onClick={eventHandler}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+                tabIndex={tabIndex}
               >
                 {name}
               </Button>
@@ -161,6 +168,7 @@ const SuiteHeaderAppSwitcher = ({
                 window.location.href = noAccessLink;
               }
             }}
+            tabIndex={tabIndex}
           >
             {mergedI18n.learnMoreLink}
           </a>
