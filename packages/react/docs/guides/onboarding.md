@@ -572,6 +572,8 @@ indicate the behavior being demonstrated. The goal is to make it easy for consum
 and find examples and documentation related to the specific functionality they're implementing.
 
 ```jsx
+// ComponentName.story.jsx
+
 const Playground = () => {
   return <ComponentName isActive={boolean('Is this component active (isActive)', false)} />;
 };
@@ -598,6 +600,8 @@ if it's a new component that hasn't been thoroughly tested or could have a shift
 fully defined, it should go in `1 - Watson IoT`. This is determined by the title in the story default export.
 
 ```jsx
+// ComponentName.story.jsx
+
 // a normal component
 export default {
   title: '1 - Watson IoT/ComponentName',
@@ -605,6 +609,8 @@ export default {
 ```
 
 ```jsx
+// ComponentName.story.jsx
+
 // an experimental component
 export default {
   title: '2 - Watson IoT Experimental/☢️ ComponentName',
@@ -665,7 +671,7 @@ props table.
 | isActive | bool   | false   | Is this component active    |
 | i18n     | object |         | See [i18n prop](#i18n-prop) |
 
-### I18n prop
+### i18n prop
 
 | Name             | Type   | Default    | Description                        |
 | :--------------- | :----- | :--------- | :--------------------------------- |
