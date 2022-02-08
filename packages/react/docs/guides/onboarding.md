@@ -569,7 +569,7 @@ or [row expansion](https://next.carbon-addons-iot-react.com/?path=/story/1-watso
 
 The storyName should match the name of the story component with spaces and the name should clearly
 indicate the behavior being demonstrated. The goal is to make it easy for consumers to quickly scan
-and find example and documentation related to the specific functionality they're implementing.
+and find examples and documentation related to the specific functionality they're implementing.
 
 ```jsx
 const Playground = () => {
