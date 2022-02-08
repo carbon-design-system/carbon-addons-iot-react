@@ -48,8 +48,9 @@
 
     &__over {
       border-top: solid 2px $focus;
+      position: absolute;
       width: calc(100% + #{$spacing-07});
-      margin-top: -($spacing-05);
+      top: 0;
     }
   }
 
