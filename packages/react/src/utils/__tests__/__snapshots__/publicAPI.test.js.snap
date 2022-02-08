@@ -2018,6 +2018,9 @@ Map {
                         "defaultValue": Object {
                           "type": "string",
                         },
+                        "isExpanded": Object {
+                          "type": "bool",
+                        },
                         "onChange": Object {
                           "type": "func",
                         },
@@ -4717,6 +4720,9 @@ Map {
                   },
                   "defaultValue": Object {
                     "type": "string",
+                  },
+                  "isExpanded": Object {
+                    "type": "bool",
                   },
                   "onChange": Object {
                     "type": "func",

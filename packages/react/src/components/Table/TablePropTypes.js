@@ -292,6 +292,7 @@ export const TableSearchPropTypes = PropTypes.shape({
   defaultExpanded: PropTypes.bool,
   onChange: PropTypes.func,
   onExpand: PropTypes.func,
+  isExpanded: PropTypes.bool,
 });
 
 /** Which toolbar is currently active */

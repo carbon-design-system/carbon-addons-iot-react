@@ -111,6 +111,7 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     demoBatchActions,
+    searchIsExpanded,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -314,6 +315,9 @@ export const Playground = () => {
           toolbarActions,
           rowEditBarButtons,
           batchActions,
+          search: {
+            isExpanded: searchIsExpanded,
+          },
         },
         table: {
           emptyState,
