@@ -38,7 +38,7 @@ hasFastFilter: PropTypes.bool,
 ### Localization
 
 All non-falsy translatable strings should be passed in an `i18n` prop and the defaultProps should include
-an English default. If you have multiple default, but only want to override some of them, you can use
+an English default. If you have multiple defaults, but only want to override some of them, you can use
 the `useMerged` helper hook to merge the objects together. Do not be afraid to use long prop names,
 so that you can be as descriptive as possible. This helps make it clear exactly what value is used in
 which component.
