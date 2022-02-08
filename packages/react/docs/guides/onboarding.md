@@ -468,7 +468,7 @@ component. Functions like these can be stored in `<react-package>/src/utils/comp
 ### Memoizing complex functions or callbacks
 
 Memoization is the process of caching a complex process, so it doesn't have to be re-calculated on
-each render. There's no way I can write this better then Kent C. Dodds, so I let's take a look at
+each render. There's no way I can write this better than Kent C. Dodds, so I let's take a look at
 what he has to say in [this blog post](https://kentcdodds.com/blog/usememo-and-usecallback).
 
 ### Keep JSX clean and simple
@@ -544,6 +544,167 @@ const RenderItems = ({ items }) => {
     default:
       return <ItemList items={items} />;
   }
+};
+```
+
+### Stories
+
+We use [Storybook](https://storybook.js.org) to demo, test, and document our components. Each component
+should have a `ComponentName.story.jsx` file that imports the component and demonstrates various ways
+to use the component.
+
+#### Story structure
+
+The stories should contain a playground story that contains all knobs possible
+for the component. The playground knobs should default to `on` when in DEV to make catching bugs or issues
+more apparent during the development process. However, when in production the majority of knobs should
+be off and only those related to major functionality of the component turned on.
+
+Other stories for a component should be structured around a single behavior or a group of related behaviors.
+See the [Table stories](https://next.carbon-addons-iot-react.com/?path=/story/1-watson-iot-table--playground)
+for examples. The [playground](https://next.carbon-addons-iot-react.com/?path=/story/1-watson-iot-table--playground) gives a broad overview of everything the table offers and other stories focus on a single function such as [sorting](https://next.carbon-addons-iot-react.com/?path=/story/1-watson-iot-table--with-sorting)
+or [row expansion](https://next.carbon-addons-iot-react.com/?path=/story/1-watson-iot-table--with-row-expansion).
+
+#### Naming stories
+
+The storyName should match the name of the story component with spaces and the name should clearly
+indicate the behavior being demonstrated. The goal is to make it easy for consumers to quickly scan
+and find example and documentation related to the specific functionality they're implementing.
+
+```jsx
+const Playground = () => {
+  return <ComponentName isActive={boolean('Is this component active (isActive)', false)} />;
+};
+
+Playground.storyName = 'Playground';
+
+const WithActive = () => {
+  return <ComponentName isActive={boolean('Is this component active (isActive)', true)} />;
+};
+
+Playground.storyName = 'With active';
+```
+
+Components that have been deprecated should be prefixed with `🚫` and include the `StoryNotice` component
+as the first story to explain why it is deprecated and what to replace it with. Components that have
+added a piece of functionality that is experimental should prefix that individual story with a `☢️`
+and also use the `StoryNotice` component to explain what experimental about it and discourage it's
+usage in production.
+
+#### Story placement
+
+Stories for components should be placed in experimental (`2 - Watson IoT Experimental`)
+if it's a new component that hasn't been thoroughly tested or could have a shifting API. If it's more
+fully defined, it should go in `1 - Watson IoT`. This is determined by the title in the story default export.
+
+```jsx
+// a normal component
+export default {
+  title: '1 - Watson IoT/ComponentName',
+};
+```
+
+```jsx
+// an experimental component
+export default {
+  title: '2 - Watson IoT Experimental/☢️ ComponentName',
+};
+```
+
+### Documentation
+
+Documentation is written in mdx files and saved in the same folder with the same name as the component
+you're documenting (For example, `<react-package>/src/components/DashboardGrid/DashboardGrid.mdx`).
+However, if the component is very complex (Table, for example), you will need to create an mdx folder
+and place all documentation files related to various functionality of the component into it. This
+should not be the norm as we're striving to keep components simpler and composable rather than complex
+and static.
+
+The basic structure of our documentation is:
+
+---
+
+// Begin documentation example
+
+---
+
+# `ComponentName` component
+
+## Table of contents
+
+- [Getting started](#getting-started)
+- Any additional specific examples of more complex use cases
+- [Props](#props)
+- [Source Code](#source-code)
+- [Feedback](#feedback)
+
+## Getting started
+
+The getting started section should contain a small introduction about the component, how to import it
+from the `carbon-addon-iot-react` library, and a simple example of usage.
+
+```jsx
+import { ComponentName } from 'carbon-addon-iot-react';
+
+<ComponentName isActive />;
+```
+
+## Complex example
+
+If you have other complex examples of usage they should go here and be linked in the table of contents.
+
+## Props
+
+The props section should contain a table of all available props for the component, their type, the
+default value, and a short description of the prop. If the props are complex, an i18n prop with many
+strings for example, we recommend splitting that into it's own table and linking to it from the main
+props table.
+
+| Name     | Type   | Default | Description                 |
+| :------- | :----- | :------ | :-------------------------- |
+| isActive | bool   | false   | Is this component active    |
+| i18n     | object |         | See [i18n prop](#i18n-prop) |
+
+### I18n prop
+
+| Name             | Type   | Default    | Description                        |
+| :--------------- | :----- | :--------- | :--------------------------------- |
+| i18n.buttonLabel | string | 'a button' | The aria-label shown on the button |
+
+## Source Code
+
+The source code is a simple link to the Github folder containing this component.
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ComponentName)
+
+## Feedback
+
+The feedback section is a simple call to action to reach out for help or feedback with a link the
+documentation file on Github.
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ComponentName/ComponentName.mdx).
+
+---
+
+// End documentation example
+
+---
+
+This documentation file is imported into the component's story and set docs page in the storybook
+default export. These changes allow a user to click on the "Docs" tab in storybook and read
+documentation while interacting with a component's story.
+
+```jsx
+import DashboardGridREADME from './DashboardGrid.mdx';
+
+export default {
+  title: '1 - Watson IoT/DashboardGrid',
+  parameters: {
+    docs: {
+      page: DashboardGridREADME,
+    },
+  },
 };
 ```
 
