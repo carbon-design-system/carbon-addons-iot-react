@@ -7,7 +7,12 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.component';
+import {
+  DateRange,
+  DateTimeSelection,
+  RelativeRange,
+  RelativeToOption,
+} from './date-time-picker.component';
 
 @Component({
   selector: 'ai-custom-date-time',
@@ -27,6 +32,7 @@ import { DateRange, DateTimeSelection, RelativeRange } from './date-time-picker.
       (valueChange)="relativeChange($event)"
       [value]="value"
       [batchText]="batchText"
+      [relativeToOptions]="relativeToOptions"
     >
     </ai-date-time-relative>
     <ai-date-time-absolute
@@ -62,6 +68,7 @@ export class CustomDateTimeComponent implements OnChanges {
    */
   @Input() dateFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
+  @Input() relativeToOptions: RelativeToOption[];
   @Input() flatpickrOptions;
   @Output() rangeChange: EventEmitter<DateTimeSelection> = new EventEmitter();
 
