@@ -10,38 +10,152 @@ code reviews.
 
 ### Prop naming conventions
 
-When naming props all names should be in camelCase, events should be prefixed with `on` (onClick), and booleans should be prefixed with `is` or `has` (isActive, hasLabel).
+When naming props all names should be in camelCase, events should be prefixed with `on` (onClick),
+and booleans should be prefixed with `is` or `has` (isActive, hasLabel). You may notice instances where
+a boolean has been overridden with another type to extend it's functionality. This practice is frowned
+upon. If you need to extend or change the functionality of an existing prop, you should create a new
+prop to contain this behavior. For example, in the Table the `hasFilter` prop was overridden like so:
+
+```jsx
+hasFilter: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(['onKeyPress', 'onEnterAndBlur'])]);
+```
+
+When instead this behavior should have been controlled with it's own prop.
+
+```jsx
+/**
+ * Does the Table support filtering, true or false
+ */
+hasFilter: PropTypes.bool,
+
+/**
+ * If true, filtering will be triggered on each keystroke.
+ * If false, it will only be triggered on 'Enter' key or 'onBlur'
+ */
+hasFastFilter: PropTypes.bool,
+```
 
 ### Localization
 
 All non-falsy translatable strings should be passed in an `i18n` prop and the defaultProps should include
 an English default. If you have multiple default, but only want to override some of them, you can use
-the `useMerged` helper hook to merge the objects together.
+the `useMerged` helper hook to merge the objects together. Do not be afraid to use long prop names,
+so that you can be as descriptive as possible. This helps make it clear exactly what value is used in
+which component.
 
 ```jsx
 // component
 const defaultProps = {
   i18n: {
-    labelText: 'button label',
-    placeholderText: 'Enter a value',
+    searchButtonLabel: 'Search button',
+    searchButtonText: 'Search',
+    searchInputLabel: 'Search for something',
+    searchInputPlaceholder: 'Enter a value',
   },
 };
 
-const Input = ({ i18n }) => {
+const Search = ({ i18n }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   return (
-    <input type="text" aria-label={mergedI18n.labelText} placeholder={mergedI18n.placeholder} />
+    <>
+      <input
+        type="text"
+        aria-label={mergedI18n.searchInputLabel}
+        placeholder={mergedI18n.searchInputPlaceholder}
+      />
+      <button type="submit" aria-label={mergedI18n.searchButtonLabel}>
+        {mergedI18n.searchButtonText}
+      </button>
+    </>
   );
 };
 
-Input.defaultProps = defaultProps;
+Search.defaultProps = defaultProps;
 
 // usage
-// in this example, mergedI18n variable above will contain { labelText: 'A fancy input', placeholderText: 'Enter a value' }
+// in this example, mergedI18n variable above will contain
+// {
+//   searchInputLabel: 'A fancy search input',
+//   searchInputPlaceholder: 'Enter a value',
+//   searchButtonLabel: 'Search button',
+//   searchButtonText: 'Search'
+// }
 // because the useMerged hook will use the defaults from defaultProps.i18n, and overwrite them with anything
-// from i18n of the same key. In this instance, labelText will be replaced with 'A fancy input', but
-// placeholderText will remain the same 'Enter a value'.
-<Input i18n={{ labelText: 'A fancy input' }} />;
+// from i18n of the same key. In this instance, searchInputLabel will be replaced with 'A fancy search input', but
+// searchInputPlaceholder will remain the same 'Enter a value'.
+<Search i18n={{ searchInputLabel: 'A fancy search input' }} />;
+```
+
+Complex components will have multiple sub-components and those sub-components may have i18n objects
+and defaults of their own; however, the parent components should not rely on the child's defaults.
+All i18n strings of the children that could be exposed by the parent's usage should also be explicitly
+defined at the parent level including defaults.
+
+```jsx
+const ChildComponent = ({ i18n }) => {
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+  return (
+    <button type="submit" aria-label={mergedI18n.childLabelText}>
+      mergedI18n.childButtonText
+    </button>
+  );
+};
+
+ChildComponent.propTypes = {
+  i18n: PropTypes.shape({
+    childLabelText: PropTypes.string,
+    childButtonText: PropTypes.string,
+  }),
+};
+
+ChildComponent.defaultProps = {
+  i18n: {
+    childLabelText: 'a child label',
+    childButtonText: 'a child button',
+  },
+};
+
+const ParentComponent = ({ i18n }) => {
+  const mergedI18n = useMerged(defaultProps.i18n, i18n);
+
+  return (
+    <>
+      <input type="text" aria-label={mergedI18n.parentLabelText} />
+      <ChildComponent i18n={mergedI18n} />
+    </>
+  );
+};
+
+// 🚫  This example is INCORRECT. The parent should also expose the props of the child i18n object
+// instead of relying on the default of the child to fill in the gaps.
+ParentComponent.propTypes = {
+  i18n: PropTypes.shape({
+    parentLabelText: PropTypes.string,
+  }),
+};
+
+ParentComponent.defaultProps = {
+  i18n: {
+    parentLabelText: 'a parent label',
+  },
+};
+
+// ✅  This example is CORRECT. The parent exposes the props of the child i18n object.
+ParentComponent.propTypes = {
+  i18n: PropTypes.shape({
+    parentLabelText: PropTypes.string,
+    childLabelText: PropTypes.string,
+    childButtonText: PropTypes.string,
+  }),
+};
+
+ParentComponent.defaultProps = {
+  i18n: {
+    parentLabelText: 'a parent label',
+    childLabelText: 'a child label',
+    childButtonText: 'a child button',
+  },
+};
 ```
 
 If you have data that needs to be embedded in that string, we're moving toward using index-based placeholders
@@ -295,10 +409,10 @@ const Button = ({ type = 'primary', className, children, disabled = false }) => 
 ### Component pure functions
 
 If you're writing a component and have a need for a helper function related entirely to that component
-and doesn't have any side effect on the data it's operating on, this is called a pure function. Pure
+and it doesn't have any side effects on the data it's operating on, this is called a pure function. Pure
 functions should be defined in the same file as the component and passed whatever parameters necessary
 to their task. This is more performant because we're not allocating a new function on every render.
-This is a bit of a contrived example, but just image the function is something more complex.
+This is a bit of a contrived example, but just imagine the function is something more complex.
 
 ```jsx
 // example before refactoring
