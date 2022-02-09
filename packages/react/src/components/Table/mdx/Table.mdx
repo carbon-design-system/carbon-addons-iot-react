@@ -9,7 +9,7 @@ import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
   - [Handling the sort event](#handling-the-sort-event)
   - [Custom sorting](#custom-sorting)
   - [Multi-sorting](#multi-sorting)
-- [Expansion](#expansion)
+- [Row expansion](#row-expansion)
   - [Programmatic expansion](#programmatic-expansion)
   - [Additional configuration](#additional-configuration)
 - [Row nesting](#row-nesting)
@@ -327,95 +327,9 @@ import Sorting from './Sorting.mdx';
 
 <Sorting />
 
-## Expansion
+import RowExpansion from './RowExpansion.mdx';
 
-The `Table` components support row-level expansion by setting `options.hasRowExpansion` to true. The content
-of the expanded rows must be provided ahead of time using the prop [expandedData](#expandedData-prop).
-
-The StatefulTable will automatically expand and collapse a row when the row's toggle expand button
-is clicked. The `options.hasRowExpansion` can also be passed an object with additional configuration,
-i.e. the prop `expandRowsExclusively` which when true will force previously expanded rows to collapse when
-a new one is expanded.
-
-```jsx
-<StatefulTable
-  id="table"
-  columns={columns}
-  data={data}
-  expandedData={[
-    {
-      rowId: 'row-1',
-      content: <div>My expanded content</div>,
-    },
-  ]},
-  options={{
-    hasRowExpansion: { expandRowsExclusively: true },
-  }}
-/>
-```
-
-### Programmatic expansion
-
-For the normal stateless table the currently expanded rows need to be programmatically managed through
-the `view.table.expandedIds` prop. The action callback `table.onRowExpanded` must be used to modify the
-array of `expandedIds`. The callback will receive two params; the row id and a boolean value stating
-if the row should be expanded or not. See full example below:
-
-```jsx
-const [expandedIds, setExpandedIds] = useState(['row-0']);
-
-const RowExpansionContent = ({ rowId }) => (
-  <div key={`${rowId}-expansion`} style={{ padding: 20 }}>
-    <h3 key={`${rowId}-title`}>{rowId}</h3>
-    <ul style={{ lineHeight: '22px' }}>
-      {Object.entries(tableData.find((i) => i.id === rowId).values).map(([key, value]) => (
-        <li key={`${rowId}-${key}`}>
-          <b>{key}</b>:{' '}
-          {!React.isValidElement(value) && typeof value === 'object' && value !== null
-            ? JSON.stringify(value, null, 2)
-            : value}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-<Table
-  id="table"
-  columns={columns}
-  data={data}
-  expandedData={[
-    {
-      rowId: 'row-2',
-      content: <RowExpansionContent rowId="row-2" />,
-    },
-    {
-      rowId: 'row-5',
-      content: <RowExpansionContent rowId="row-5" />,
-    },
-  ]}
-  actions={{
-    table: {
-      onRowExpanded: (rowId, expanded) => {
-        setExpandedIds(
-          expanded ? expandedIds.concat([rowId]) : expandedIds.filter((i) => i !== rowId)
-        );
-      },
-    },
-  }}
-  options={{
-    hasRowExpansion: true,
-    shouldExpandOnRowClick: true,
-  }}
-  view={{
-    table: { expandedIds },
-  }}
-/>;
-```
-
-### Additional configuration
-
-If the prop `options.shouldExpandOnRowClick` is true then clicking anywhere on the row will expand it.
+<RowExpansion />
 
 import RowNesting from './RowNesting.mdx';
 

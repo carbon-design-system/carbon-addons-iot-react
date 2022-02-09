@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, BeeBat16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
@@ -262,6 +262,19 @@ export const getTableToolbarActions = () => [
     isOverflow: true,
   },
   {
+    id: 'long',
+    labelText: 'A really long text that should be truncated',
+    disabled: false,
+    isOverflow: true,
+  },
+  {
+    id: 'long-icon',
+    labelText: 'A really long text that should be truncated with an icon',
+    renderIcon: () => <BeeBat16 />,
+    disabled: false,
+    isOverflow: true,
+  },
+  {
     id: 'delete',
     labelText: 'Delete',
     isDelete: true,
@@ -333,6 +346,18 @@ export const getRowActions = (index) =>
       isDelete: false,
       isEdit: true,
       disabled: true,
+    },
+    {
+      id: 'hiddenOverflow',
+      labelText: 'Hidden overflow',
+      isOverflow: true,
+      hidden: true,
+    },
+    {
+      id: 'hidden',
+      labelText: 'Hidden',
+      isOverflow: false,
+      hidden: true,
     },
     {
       id: 'Add',
@@ -653,14 +678,12 @@ export const getAdvancedFilters = () => [
 /**
  * Helper function that Table knobs.
  *
- * If param knobsToCreate is empty then all knobs will be created, otherwise only the
+ * If param knobsToCreate is unspecified then all knobs will be created, otherwise only the
  * knobs whose names are in the array. This conditional creation is needed since StoryBook
  * will show a knob as soon as it is created by a story, regardless of whether it is
  * placed in a local variable or not.
- *
- *
  */
-export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = false }) => {
+export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
   const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
@@ -674,7 +697,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'States' : undefined;
 
-  const shouldCreate = (name) => knobsToCreate.length === 0 || knobsToCreate.includes(name);
+  const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
   return {
     selectedTableType: shouldCreate('selectedTableType')
