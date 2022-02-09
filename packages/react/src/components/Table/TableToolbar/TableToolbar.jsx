@@ -226,7 +226,7 @@ const TableToolbar = ({
     totalSelected,
     totalFilters,
     batchActions,
-    search,
+    search: searchProp,
     activeBar,
     customToolbarContent,
     isDisabled,
@@ -245,6 +245,7 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
+  const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -369,7 +370,7 @@ const TableToolbar = ({
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
-              expanded={search?.isExpanded === true ? search.isExpanded : undefined}
+              expanded={searchIsExpanded === true ? true : undefined}
             />
           ) : null}
           {totalFilters > 0 ? (
