@@ -21,7 +21,7 @@ const SizedPagination = ({
   size,
   ...rest
 }) => {
-  const [{ width }, paginationRef] = useSizeObserver();
+  const [{ width }, paginationRef] = useSizeObserver({ initialWidth: 500 });
   return (
     <>
       {/** empty div to fill the width of the pagination area so we don't have to wrap the pagination
