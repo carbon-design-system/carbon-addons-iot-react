@@ -287,8 +287,10 @@ const SuiteHeader = ({
           handleSideNavButtonClick(evt);
         }}
         headerPanel={{
-          content: React.forwardRef(() => (
+          // eslint-disable-next-line react/prop-types
+          content: React.forwardRef(({ isExpanded }, ref) => (
             <SuiteHeaderAppSwitcher
+              ref={ref}
               applications={applications}
               customApplications={customApplications}
               allApplicationsLink={routes?.navigator}
@@ -301,6 +303,7 @@ const SuiteHeader = ({
                 learnMoreLink: mergedI18n.switcherLearnMoreLink,
               }}
               testId={`${testId}-app-switcher`}
+              isExpanded={isExpanded}
             />
           )),
         }}

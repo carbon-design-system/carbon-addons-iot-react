@@ -7,6 +7,7 @@ import Button from '../../Button';
 import { Tag } from '../../Tag';
 
 import TableManageViewsModal from './TableManageViewsModal';
+import TableManageViewsModalREADME from './TableManageViewsModal.mdx';
 
 const demoViews = Array(100)
   .fill({
@@ -22,15 +23,18 @@ const demoViews = Array(100)
   }));
 
 export default {
-  title: '1 - Watson IoT/Table/TableManageViewsModal',
+  title: '1 - Watson IoT/Table/User view management/TableManageViewsModal',
 
   parameters: {
     component: TableManageViewsModal,
+    docs: {
+      page: TableManageViewsModalREADME,
+    },
   },
 };
 
 export const WithCallbacksImplemented = () => {
-  const rowPerPage = 10;
+  const rowsPerPage = 10;
   const [currentPageNumber, setCurrentPageNumber] = useState(1);
   const [currentFilters, setCurrentFilters] = useState({
     searchTerm: '',
@@ -38,11 +42,11 @@ export const WithCallbacksImplemented = () => {
   });
   const [isOpen, setIsOpen] = useState(true);
   const [filteredViews, setFilteredViews] = useState(demoViews);
-  const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
+  const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowsPerPage));
 
   const showPage = (pageNumber, views) => {
-    const rowUpperLimit = pageNumber * rowPerPage;
-    const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
+    const rowUpperLimit = pageNumber * rowsPerPage;
+    const currentItemsOnPage = views.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
     setCurrentPageNumber(pageNumber);
     setViewsToShow(currentItemsOnPage);
   };
@@ -95,7 +99,7 @@ export const WithCallbacksImplemented = () => {
   const pagination = {
     page: currentPageNumber,
     onPage,
-    maxPage: Math.ceil(filteredViews.length / rowPerPage),
+    maxPage: Math.ceil(filteredViews.length / rowsPerPage),
     i18n: { pageOfPagesText: (pageNumber) => `Page ${pageNumber}` },
   };
 
@@ -122,107 +126,12 @@ export const WithCallbacksImplemented = () => {
 WithCallbacksImplemented.storyName = 'With callbacks implemented';
 WithCallbacksImplemented.decorators = [createElement];
 
-WithCallbacksImplemented.parameters = {
-  info: {
-    text: `
-      This TableManageViewsModal story demonstrates a fully implemented example with data
-      and actions working properly in the default configuration. The avaiability of
-      'Delete' and 'Edit' actions are determined by the respective views data properties.
-
-      ~~~js
-      return React.createElement(() => {
-        const rowPerPage = 10;
-        const [currentPageNumber, setCurrentPageNumber] = useState(1);
-        const [currentFilters, setCurrentFilters] = useState({ searchTerm: '', showPublic: true });
-        const [isOpen, setIsOpen] = useState(true);
-        const [filteredViews, setFilteredViews] = useState(demoViews);
-        const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowPerPage));
-
-        const showPage = (pageNumber, views) => {
-          const rowUpperLimit = pageNumber * rowPerPage;
-          const currentItemsOnPage = views.slice(rowUpperLimit - rowPerPage, rowUpperLimit);
-          setCurrentPageNumber(pageNumber);
-          setViewsToShow(currentItemsOnPage);
-        };
-
-        const applyFiltering = ({ searchTerm, showPublic }) => {
-          const views = demoViews
-            .filter(
-              view =>
-                searchTerm === '' ||
-                view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
-            )
-            .filter(view => (showPublic ? view : !view.isPublic));
-
-          setFilteredViews(views);
-          showPage(1, views);
-        };
-
-        const onDelete = viewId => {
-          const deleteIndex = demoViews.findIndex(view => view.id === viewId);
-          demoViews.splice(deleteIndex, 1);
-          setFilteredViews(demoViews);
-          showPage(1, demoViews);
-        };
-
-        const onClose = () => {
-          setIsOpen(false);
-        };
-
-        const onEdit = viewId => {
-          /* eslint-disable-next-line no-alert */
-          alert(
-            'This action should close this modal and open TableSaveViewModal with the data of this view prefilled.'
-          );
-        };
-
-        const onPage = pageNumber => showPage(pageNumber, filteredViews);
-
-        const onSearchChange = val => {
-          const searchTerm = val === undefined ? '' : val;
-          const newFilters = { ...currentFilters, searchTerm };
-          setCurrentFilters(newFilters);
-          applyFiltering(newFilters);
-        };
-
-        const onDisplayPublicChange = showPublic => {
-          const newFilters = { ...currentFilters, showPublic };
-          setCurrentFilters(newFilters);
-          applyFiltering(newFilters);
-        };
-
-        const pagination = {
-          page: currentPageNumber,
-          onPage,
-          maxPage: Math.ceil(filteredViews.length / rowPerPage),
-          i18n: { pageOfPagesText: pageNumber => 'Page ' + pageNumber },
-        };
-
-        return (
-          <TableManageViewsModal
-            actions={{
-              onDisplayPublicChange,
-              onSearchChange,
-              onEdit,
-              onDelete,
-              onClearError: action('onClearError'),
-              onClose,
-            }}
-            defaultViewId="id1"
-            error={select('error', [undefined, 'My error msg'], undefined)}
-            isLoading={boolean('isLoading', false)}
-            open={isOpen}
-            views={viewsToShow}
-            pagination={pagination}
-          />
-        );
-      });
-      ~~~
-      `,
-    propTables: [TableManageViewsModal],
-  },
-};
-
+/**
+ * This TableManageViewsModal story demonstrates how the component and subcomponents can
+ * be customized using the 'overrides pattern'. Here we override the rendering props
+ * for the internal TableManageViewsList to get different row actions and modify the row
+ * rendering in general. We also override the internal component List to make the rows small.`,
+ */
 export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
   const defaultViewId = 'id1';
   const myViews = demoViews.map((view) => ({ ...view, isClonable: true }));
@@ -316,14 +225,4 @@ export const WithCustomRowActionsCustomRenderingAndNoPagination = () => {
 };
 
 WithCustomRowActionsCustomRenderingAndNoPagination.storyName =
-  'with custom row actions, custom rendering and no Pagination';
-
-WithCustomRowActionsCustomRenderingAndNoPagination.parameters = {
-  info: {
-    text: `
-    This TableManageViewsModal story demonstrates how the component and subcomponents can
-    be customized using the 'overrides pattern'. Here we override the rendering props
-    for the internal TableManageViewsList to get different row actions and modify the row
-    rendering in general. We also override the internal component List to make the rows small.`,
-  },
-};
+  'With custom row actions, custom rendering and no Pagination';

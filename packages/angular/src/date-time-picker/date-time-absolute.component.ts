@@ -81,7 +81,7 @@ import { format, setHours, setMinutes } from 'date-fns';
 })
 export class DateTimeAbsoluteComponent implements OnChanges {
   startTime = '00:00';
-  endTime = '00:00';
+  endTime = '23:59';
   dateRange = null;
 
   @Input() value = [];

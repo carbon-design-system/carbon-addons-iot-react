@@ -1,6 +1,9 @@
 import React from 'react';
 
+import { settings } from '../../constants/Settings';
 import icons from '../../utils/bundledIcons';
+
+const { prefix } = settings;
 
 /**
  * Use this function to traverse the tree structure of a set of table rows using Depth-first search (DFS)
@@ -78,7 +81,7 @@ export const renderTableOverflowItemText = ({ action, className }) => {
       ) : (
         <action.renderIcon description={action.labelText} />
       )}
-      {action.labelText}
+      <div className={`${prefix}--overflow-menu-options__option-content`}>{action.labelText}</div>
     </div>
   ) : (
     action.labelText

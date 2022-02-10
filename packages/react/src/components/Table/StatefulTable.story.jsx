@@ -10,7 +10,6 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
-import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
@@ -166,14 +165,31 @@ export const SimpleStatefulExample = () => {
       id="table"
       key={`table${demoInitialColumnSizes}`}
       {...initialState}
-      data={initialState.data.slice(
-        0,
-        select(
-          'number of data items in table',
-          [initialState.data.length, 50, 20, 5],
-          initialState.data.length
+      data={initialState.data
+        .slice(
+          0,
+          select(
+            'number of data items in table',
+            [initialState.data.length, 50, 20, 5],
+            initialState.data.length
+          )
         )
-      )}
+        .map((row, index) => ({
+          ...row,
+          rowActions:
+            index === 1
+              ? [
+                  {
+                    id: 'Add',
+                    iconDescription: 'Add',
+                    labelText: 'Add',
+                    isOverflow: false,
+                    hasDivider: true,
+                    hidden: true,
+                  },
+                ]
+              : row.rowActions,
+        }))}
       actions={tableActions}
       columns={initialState.columns
         .map((column) => {
@@ -1382,70 +1398,3 @@ export const StatefulTableWithAdvancedFilters = () => {
 
 StatefulTableWithAdvancedFilters.storyName = '☢️ with advanced filters';
 StatefulTableWithAdvancedFilters.decorators = [createElement];
-
-export const WithMultiSorting = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  return (
-    <MyTable
-      columns={tableColumns.map((i, idx) => ({
-        ...i,
-        width: '200px',
-        isSortable: idx !== 1,
-        align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
-      }))}
-      data={tableData}
-      actions={tableActions}
-      size={select(
-        'Sets the height of the table rows (size)',
-        ['xs', 'sm', 'md', 'lg', 'xl'],
-        'lg'
-      )}
-      options={{
-        hasFilter: false,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-        hasAggregations: false,
-        hasMultiSort: true,
-        hasResize: true,
-        hasColumnSelection: true,
-        preserveColumnWidths: true,
-      }}
-      view={{
-        filters: [],
-        aggregations: {
-          label: 'Total',
-          columns: [
-            {
-              id: 'number',
-              align: 'end',
-              isSortable: true,
-            },
-          ],
-        },
-        table: {
-          ordering: defaultOrdering,
-          sort: [
-            {
-              columnId: 'select',
-              direction: 'ASC',
-            },
-            {
-              columnId: 'string',
-              direction: 'ASC',
-            },
-          ],
-        },
-      }}
-    />
-  );
-};
-
-WithMultiSorting.storyName = 'with multi-sorting';
-WithMultiSorting.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];

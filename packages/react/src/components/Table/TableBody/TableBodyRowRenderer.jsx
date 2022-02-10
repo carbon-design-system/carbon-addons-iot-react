@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
 import { pick } from 'lodash-es';
-import { TableCell } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
 import useVisibilityObserver from '../../../hooks/useVisibilityObserver';
-import { SkeletonText } from '../../SkeletonText';
 import {
   CellTextOverflowPropType,
   ExpandedRowsPropTypes,
@@ -16,6 +14,7 @@ import {
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
+import SkeletonRow from './SkeletonRow';
 
 const propTypes = {
   /** The unique id of the table */
@@ -194,21 +193,18 @@ const TableBodyRowRenderer = (props) => {
 
   if (shouldLazyRender && !isVisible) {
     return (
-      <tr
-        key={`lazy-row-${row.id}`}
-        ref={rowVisibilityRef}
-        data-testid={`${tableId}-lazy-row-${row.id}`}
-      >
-        {hasRowSelection === 'multi' ? <TableCell /> : null}
-        {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
-        {columns.map((v, colIndex) => (
-          <TableCell key={`empty-cell-${colIndex}`}>
-            <SkeletonText />
-          </TableCell>
-        ))}
-        {showExpanderColumn ? <TableCell /> : null}
-        {hasRowActions ? <TableCell /> : null}
-      </tr>
+      <SkeletonRow
+        id={row.id}
+        tableId={tableId}
+        columns={columns}
+        rowVisibilityRef={rowVisibilityRef}
+        testId={`${tableId}-lazy-row-${row.id}`}
+        hasRowActions={hasRowActions}
+        hasRowExpansion={hasRowExpansion}
+        hasRowNesting={hasRowNesting}
+        hasRowSelection={hasRowSelection}
+        showExpanderColumn={showExpanderColumn}
+      />
     );
   }
 
@@ -276,9 +272,16 @@ const TableBodyRowRenderer = (props) => {
       key={`${row.id}--load-more`}
       tableId={tableId}
       testId={testId}
-      loadMoreText={loadMoreText}
-      totalColumns={totalColumns}
+      rowVisibilityRef={rowVisibilityRef}
       onRowLoadMore={actions?.onRowLoadMore}
+      loadMoreText={loadMoreText}
+      hasRowActions={hasRowActions}
+      hasRowExpansion={hasRowExpansion}
+      hasRowNesting={hasRowNesting}
+      hasRowSelection={hasRowSelection}
+      showExpanderColumn={showExpanderColumn}
+      columns={columns}
+      totalColumns={totalColumns}
       isLoadingMore={loadingMoreIds.includes(row.id)}
     />
   );

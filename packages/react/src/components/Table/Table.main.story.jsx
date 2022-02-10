@@ -1,12 +1,16 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
+import { object } from '@storybook/addon-knobs';
 import { merge } from 'lodash-es';
 import { TrashCan16 } from '@carbon/icons-react';
 
 import Button from '../Button';
 import EmptyState from '../EmptyState';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import TableREADME from './mdx/Table.mdx';
+import SortingREADME from './mdx/Sorting.mdx';
+import RowExpansionREADME from './mdx/RowExpansion.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -25,10 +29,6 @@ import {
   getTableKnobs,
   getI18nKnobs,
 } from './Table.story.helpers';
-
-const tableColumns = getTableColumns();
-const tableActions = getTableActions();
-const tableToolbarActions = getTableToolbarActions();
 
 export default {
   title: '1 - Watson IoT/Table',
@@ -49,8 +49,6 @@ export default {
  * @returns story function
  */
 export const Playground = () => {
-  const enableAllKnobs = __DEV__;
-
   // STATES
   const [showRowEditBar, setShowRowEditBar] = useState(false);
   const [rowActionsState, setRowActionsState] = useState(getRowActionStates());
@@ -113,7 +111,36 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     demoBatchActions,
-  } = getTableKnobs(enableAllKnobs);
+  } = getTableKnobs({
+    enableKnob: (name) =>
+      // For this story always disable the following knobs by default
+      [
+        'hasUserViewManagement',
+        'demoInitialColumnSizes',
+        'hasRowExpansion',
+        'toolbarIsDisabled',
+        'hasMultiSort',
+        'stickyHeader',
+        'useAutoTableLayoutForResize',
+        'isItemPerPageHidden',
+        'hasColumnSelection',
+        'hasColumnSelectionConfig',
+        'shouldLazyRender',
+        'preserveCellWhiteSpace',
+        'tableIsLoading',
+        'demoEmptyColumns',
+        'demoEmptyState',
+        'demoCustomEmptyState',
+        'demoCustomErrorState',
+      ].includes(name)
+        ? false
+        : // For this story always enable the following knobs by default
+        ['demoBatchActions', 'selectionCheckboxEnabled'].includes(name)
+        ? true
+        : // For this story enable the other knobs by defaults if we are in dev environment
+          __DEV__,
+    useGroups: true,
+  });
 
   // CUSTOM DEMO JSX
   const rowEditBarButtons = (
@@ -180,7 +207,7 @@ export const Playground = () => {
       : showRowEditBar
       ? 'rowEdit'
       : undefined;
-  const toolbarActions = demoToolbarActions ? tableToolbarActions : undefined;
+  const toolbarActions = demoToolbarActions ? getTableToolbarActions() : undefined;
   const customToolbarContent = demoCustomToolbarContent ? customToolbarContentElement : undefined;
 
   const data = [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
@@ -191,7 +218,7 @@ export const Playground = () => {
 
   const expandedData = hasRowExpansion ? getExpandedData(data) : [];
 
-  const columns = [...(demoEmptyColumns ? [] : tableColumns)]
+  const columns = [...(demoEmptyColumns ? [] : getTableColumns())]
     .map((column, index) => ({
       ...column,
       isSortable: (hasMultiSort || demoSingleSort) && index !== 1,
@@ -206,11 +233,11 @@ export const Playground = () => {
       return columnNoRenderDataFunction;
     });
 
-  const ordering = getDefaultOrdering(tableColumns).map((col, index) =>
+  const ordering = getDefaultOrdering(columns).map((col, index) =>
     demoColumnGroupAssignments ? addColumnGroupIds(col, index) : col
   );
 
-  const myTableActions = merge(tableActions, {
+  const myTableActions = merge(getTableActions(), {
     toolbar: {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
@@ -313,5 +340,111 @@ export const Playground = () => {
     />
   );
 };
-Playground.decorators = [createElement];
 Playground.storyName = 'Playground';
+Playground.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithSorting = () => {
+  const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'demoSingleSort', 'hasMultiSort'],
+    enableKnob: (name) => name !== 'hasMultiSort',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    isSortable: demoSingleSort,
+  }));
+
+  const sort = object('Sort state (view.table.sort)', {
+    columnId: 'select',
+    direction: 'ASC',
+  });
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasMultiSort,
+      }}
+      view={{
+        table: {
+          sort,
+        },
+      }}
+    />
+  );
+};
+
+WithSorting.storyName = 'With sorting';
+WithSorting.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+WithSorting.parameters = {
+  component: Table,
+  docs: {
+    page: SortingREADME,
+  },
+};
+
+export const WithRowExpansion = () => {
+  const { selectedTableType, hasRowExpansion, shouldExpandOnRowClick } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasRowExpansion', 'shouldExpandOnRowClick'],
+    enableKnob: () => true,
+  });
+
+  const initiallyExpandedIds = object('expandedIds', ['row-1']);
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 10);
+  const columns = getTableColumns();
+
+  const expandedData = object('expandedData', [
+    {
+      rowId: 'row-1',
+      content: 'My expanded content for row 1',
+    },
+    {
+      rowId: 'row-3',
+      content: 'My expanded content for row 3',
+    },
+  ]);
+
+  return (
+    <>
+      <style>{`.iot--expanded-tablerow td[colspan="10"] { padding: 2rem !important;}`}</style>
+      <MyTable
+        actions={getTableActions()}
+        columns={columns}
+        data={data}
+        expandedData={expandedData}
+        options={{
+          hasRowExpansion,
+          shouldExpandOnRowClick,
+        }}
+        view={{ table: { expandedIds: initiallyExpandedIds } }}
+      />
+    </>
+  );
+};
+
+WithRowExpansion.storyName = 'With row expansion';
+WithRowExpansion.decorators = [createElement];
+WithRowExpansion.parameters = {
+  component: Table,
+  docs: {
+    page: RowExpansionREADME,
+  },
+};
