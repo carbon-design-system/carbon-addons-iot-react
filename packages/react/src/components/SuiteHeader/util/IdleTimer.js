@@ -39,8 +39,9 @@ class IdleTimer {
     }
     // Initialize the setInterval thread
     this.intervalHandler = setInterval(() => {
-      // Check if user is idle
-      if (this.getUserInactivityTimeout() < Date.now()) {
+      // Check if user is idle or if userInactivityTimeout is not a number, which indicates that a logout has already happened in another tab
+      const userInactivityTimeout = this.getUserInactivityTimeout();
+      if (Number.isNaN(userInactivityTimeout) || userInactivityTimeout < Date.now()) {
         // Fire onIdleTimeoutWarning during the countdown, and when countdown reaches zero, fire onIdleTimeout.
         if (this.countdown === 0) {
           this.onIdleTimeout();
@@ -65,7 +66,7 @@ class IdleTimer {
       document.cookie.split('; ').reduce((r, v) => {
         const parts = v.split('=');
         return parts[0] === this.COOKIE_NAME ? decodeURIComponent(parts[1]) : r;
-      }, Date.now()),
+      }, NaN),
       10
     );
   }
@@ -75,6 +76,10 @@ class IdleTimer {
     document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(
       timestamp
     )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};`;
+  }
+
+  deleteUserInactivityTimeout() {
+    document.cookie = `${this.COOKIE_NAME}=;Max-Age=0;path=/;domain=${this.COOKIE_DOMAIN};`;
   }
 
   updateUserInactivityTimeout() {
@@ -87,7 +92,8 @@ class IdleTimer {
   debouncedUpdateExpiredTime() {
     // Expired time is only updated if inactivity timeout has not been reached
     // Otherwise, the only way to resume inactivity timeout cookie updates is by calling restart()
-    if (Date.now() < this.getUserInactivityTimeout()) {
+    const userInactivityTimeout = this.getUserInactivityTimeout();
+    if (!Number.isNaN(userInactivityTimeout) && Date.now() < userInactivityTimeout) {
       if (this.debounceTimeoutHandler) {
         clearTimeout(this.debounceTimeoutHandler);
       }
@@ -140,6 +146,7 @@ class IdleTimer {
     clearInterval(this.intervalHandler);
     this.cleanUpUserActivityListeners();
     this.onIdleTimeoutWarning = () => {};
+    this.deleteUserInactivityTimeout();
   }
 }
 
