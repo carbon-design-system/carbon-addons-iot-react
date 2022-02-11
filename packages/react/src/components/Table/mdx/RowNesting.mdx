@@ -3,13 +3,13 @@ View the full Table documentation [here](/docs/1-watson-iot-table--playground)
 ## Row nesting
 
 The `Table` components support nested rows by setting `options.hasRowNesting` to true.
-This will add toggle expand button to each row that has additional row data defined in
+This will add a toggle expand button to each row that has additional row data defined in
 its `children` property. The children supports the same props as the objects in the
-[Data prop](/docs/1-watson-iot-table--playground/#data-prop) including row actions and
+[Data prop](/docs/1-watson-iot-table--playground#data-prop) including row actions and
 additional levels of children. The StatefulTable will automatically expand and collapse
 a row when the row's toggle expand button is clicked.
 
-If the table only use a single level of nesting (i.e. no children have children of their own)
+If the table only uses a single level of nesting (i.e. no children have children of their own)
 then the prop `options.hasRowNesting` should be set to `{ hasSingleNestedHierarchy: true }`
 in order to get the proper styling.
 
