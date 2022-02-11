@@ -73,6 +73,8 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   selectedItemRef: HtmlElementRefProp,
+  /** called after the row has expanded and is passed the ID */
+  onAfterExpand: PropTypes.func,
 };
 
 const defaultProps = {
@@ -107,6 +109,7 @@ const defaultProps = {
   selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
+  onAfterExpand: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -139,6 +142,7 @@ const ListContent = ({
   handleLoadMore,
   i18n,
   selectedItemRef,
+  onAfterExpand,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -245,6 +249,7 @@ const ListContent = ({
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
           preventRowFocus={isCheckboxMultiSelect}
+          onAfterExpand={onAfterExpand}
         />
       </div>,
       ...(hasChildren && isExpanded

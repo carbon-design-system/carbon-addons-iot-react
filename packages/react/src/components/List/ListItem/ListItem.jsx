@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { DragSource } from 'react-dnd';
 import classnames from 'classnames';
 import { Draggable16, ChevronUp16, ChevronDown16, Locked16 } from '@carbon/icons-react';
 import PropTypes from 'prop-types';
 import warning from 'warning';
 
+import { usePrevious } from '../../../hooks/usePrevious';
 import { EditingStyle } from '../../../utils/DragAndDropUtils';
 import { settings } from '../../../constants/Settings';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
@@ -79,6 +80,9 @@ const ListItemPropTypes = {
   itemWillMove: PropTypes.func.isRequired,
   /** true if the list item should not be focusable even though isSelectable is true */
   preventRowFocus: PropTypes.bool,
+  isVirtualList: PropTypes.bool,
+  /** called after the row has expanded and is passed the ID */
+  onAfterExpand: PropTypes.func,
 };
 
 const ListItemDefaultProps = {
@@ -110,6 +114,8 @@ const ListItemDefaultProps = {
   selectedItemRef: null,
   tags: null,
   preventRowFocus: false,
+  isVirtualList: false,
+  onAfterExpand: null,
 };
 
 const ListItem = ({
@@ -144,8 +150,17 @@ const ListItem = ({
   itemWillMove,
   dragPreviewText,
   preventRowFocus,
+  onAfterExpand,
+  isVirtualList,
 }) => {
   const mergedI18n = useMemo(() => ({ ...ListItemDefaultProps.i18n, ...i18n }), [i18n]);
+  const previousExpansion = usePrevious(expanded, expanded);
+
+  useEffect(() => {
+    if (!isVirtualList && onAfterExpand && previousExpansion !== expanded && isExpandable) {
+      onAfterExpand(id);
+    }
+  }, [expanded, id, isExpandable, isVirtualList, onAfterExpand, previousExpansion]);
 
   const handleExpansionClick = (event) => {
     event.stopPropagation();

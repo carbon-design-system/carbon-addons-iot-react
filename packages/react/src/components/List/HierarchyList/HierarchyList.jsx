@@ -279,6 +279,7 @@ const HierarchyList = ({
   const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
   const previousExpandedIds = usePrevious(expandedIds);
+
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
@@ -301,13 +302,19 @@ const HierarchyList = ({
 
   /**
    * effect to trigger calling the onExpandedChange callback. Ignore it on the initial render
-   * when previousExpandedIds is undefined, but fire it on every change afterward
+   * when previousExpandedIds is undefined, but fire it on every change afterward when using a
+   * virtualList. The regular list triggers the onExpandedChange callback in the handleAfterExpand
+   * function below.
    */
   useEffect(() => {
-    if (previousExpandedIds !== undefined && !isEqual(previousExpandedIds, expandedIds)) {
+    if (
+      previousExpandedIds !== undefined &&
+      !isEqual(previousExpandedIds, expandedIds) &&
+      isVirtualList
+    ) {
       onExpandedChange(expandedIds);
     }
-  }, [expandedIds, onExpandedChange, previousExpandedIds]);
+  }, [expandedIds, isVirtualList, onExpandedChange, previousExpandedIds]);
 
   /**
    * Effect to handle indeterminate state for parent checkboxes. If we're in an editMode and
@@ -496,6 +503,25 @@ const HierarchyList = ({
     }
   };
 
+  /**
+   * Used to trigger the onExpandedChange callback after the _last_ item in the expandedIds
+   * array has official expanded. Only used on regular lists, not virtual, because the virtual
+   * list only renders the rows shown, so we can't know what the _last_ item actually is.
+   *
+   * @param {string} id The ID of the item that was just expanded
+   */
+  const handleAfterExpand = (id) => {
+    const [lastId] = expandedIds.slice(-1);
+    const [previousLastId] = previousExpandedIds.slice(-1);
+    if (id === lastId || id === previousLastId) {
+      setTimeout(() => {
+        window.requestAnimationFrame(() => {
+          onExpandedChange(expandedIds);
+        });
+      }, 0);
+    }
+  };
+
   return (
     <>
       {editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
@@ -576,6 +602,7 @@ const HierarchyList = ({
         className={className}
         emptyState={emptyState}
         emptySearchState={emptySearchState}
+        onAfterExpand={!isVirtualList ? handleAfterExpand : undefined}
       />
     </>
   );
