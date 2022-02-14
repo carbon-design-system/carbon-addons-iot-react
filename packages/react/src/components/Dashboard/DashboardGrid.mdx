@@ -43,8 +43,7 @@ the lg breakpoint size, the card with the id 'facility' will be in the fifth row
 (zero-based index), the card with the id 'humidity' will be in the first column and first row, and the
 card with the id 'utilization' will be in the fourth column and first row. However, since the humidity
 card already occupied that space, it will get pushed down to the next row by the auto-reflowing of the
-grid so that no cards overlap. The height (h) and width (w) are unused, because sizes are determined
-by the size prop passed to the card itself—not defined by the grid.
+grid so that no cards overlap.
 
 ```jsx
 <DashboardGrid
@@ -105,7 +104,8 @@ You can drag and drop the cards around. The `onLayoutChange` handler will be tri
 drop a card in a new location. The card array contains objects representing each card in the layout.
 Similar to the layout prop above. It's easiest to inspect the output in the Actions tab of the
 [is editable story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-is-editable) to see the
-callback in action.
+callback in action. This `onLayoutChange` can be used to save the current state of the grid so that
+it can be re-created later.
 
 ```jsx
 <DashboardGrid isEditable onLayoutChange={(cardArray, layoutObject) => {}}>
@@ -156,7 +156,8 @@ about the card (its `id` and its `size`), and the second is an object containing
 the DashboardGrid and its layout. Again, it's easiest to view the Actions panel in the [resizable card
 story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-resizable-card) to see callback in action.
 The `onCardSizeChange` is triggered instantly as you drag and drop and the `onResizeStop` callback is
-only triggered once you've stopped resizing the card.
+only triggered once you've stopped resizing the card. The `onResizeStop` or `onCardSizeChange` callbacks
+can be used to save the layout state, so that it can be recreated later.
 
 ```jsx
 <DashboardGrid
