@@ -31,6 +31,9 @@ const propTypes = {
    * value label text differently
    */
   max: PropTypes.number,
+  /* If true, the bar area is white, for use with a gray background */
+  light: PropTypes.bool,
+
   /**
    * An array of threshold objects to compare the value against and change the icon and/or
    * bar colors based on matching criteria
@@ -59,6 +62,7 @@ const propTypes = {
 const defaultProps = {
   helperText: '',
   hideLabel: false,
+  light: false,
   thresholds: [],
   max: 100,
   valueUnit: '%',
@@ -75,6 +79,7 @@ const ProgressBar = ({
   label,
   helperText,
   hideLabel,
+  light,
   value,
   valueUnit,
   max,
@@ -93,7 +98,9 @@ const ProgressBar = ({
 
   return (
     <div
-      className={`${iotPrefix}--progress-bar-container`}
+      className={classnames(`${iotPrefix}--progress-bar-container`, {
+        [`${iotPrefix}--progress-bar-container--light`]: light,
+      })}
       data-testid="progress-bar-container"
       style={{
         '--progress-bar-fill-color': fillColor,

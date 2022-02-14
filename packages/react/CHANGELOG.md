@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.2...v2.149.0-next.0) (2022-02-14)
+
+
+### Features
+
+* **progress-bar:** add light prop ([f23dbdc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f23dbdc3fcbc3bcab09537182e98620e562b02ec))
+
+
+
+
+
 ## [2.148.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.1...v2.148.1-next.2) (2022-02-10)
 
 
