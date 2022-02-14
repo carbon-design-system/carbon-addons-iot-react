@@ -109,12 +109,9 @@ const IdleLogoutConfirmationModal = ({
           }
         },
         onCookieCleared: async () => {
-          const result = await onRouteChange(
-            SUITE_HEADER_ROUTE_TYPES.LOGOUT,
-            routes.logoutInactivity
-          );
+          const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes.logout);
           if (result) {
-            window.location.href = routes.logoutInactivity;
+            window.location.href = routes.logout;
           }
         },
         onRestart: () => {

@@ -83,10 +83,6 @@ class IdleTimer {
     )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};`;
   }
 
-  deleteUserInactivityTimeout() {
-    document.cookie = `${this.COOKIE_NAME}=;Max-Age=0;path=/;domain=${this.COOKIE_DOMAIN};`;
-  }
-
   updateUserInactivityTimeoutCookie() {
     // Cookie will expire in 7 days (this doesn't matter as the cookie is always recreated on user activity and when IdleTimer is restarted)
     const expires = new Date(Date.now() + 6048e5).toUTCString();
@@ -153,7 +149,6 @@ class IdleTimer {
     clearInterval(this.intervalHandler);
     this.cleanUpUserActivityListeners();
     this.onIdleTimeoutWarning = () => {};
-    this.deleteUserInactivityTimeout();
   }
 }
 

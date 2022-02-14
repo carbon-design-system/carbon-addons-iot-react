@@ -79,7 +79,7 @@ describe('IdleTimer', () => {
     // onRestart should never have been fired
     expect(timer.onRestart).not.toHaveBeenCalled();
   });
-  it('fires onCookieCleared when countdown reaches zero if cookie does not exist anymore', () => {
+  it('fires onCookieCleared if cookie does not exist anymore', () => {
     // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
