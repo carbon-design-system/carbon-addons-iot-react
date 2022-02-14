@@ -163,6 +163,30 @@ describe('IdleLogoutConfirmationModal', () => {
     });
     expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
   });
+  it('user has logged out in another tab', async () => {
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=;Max-Age=0;`,
+    });
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    expect(window.location.href).toBe(commonProps.routes.logout);
+  });
+  it('user has logged out in another tab (but no redirect)', async () => {
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
+    // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=;Max-Age=0;`,
+    });
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    expect(window.location.href).not.toBe(commonProps.routes.logout);
+  });
 
   it("user clicks 'Stay logged in' on the idle logout confirmation dialog", async () => {
     jest.spyOn(IdleLogoutConfirmationModal.defaultProps, 'onStayLoggedIn');
