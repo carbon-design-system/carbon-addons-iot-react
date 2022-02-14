@@ -118,7 +118,7 @@ describe('IdleTimer', () => {
   });
   it('acts on user events pushing the cookie value forward if timeout has not been reached yet', () => {
     // Simulate a timestamp cookie that is in the future
-    timer.updateUserInactivityTimeout = jest.fn();
+    timer.updateUserInactivityTimeoutCookie = jest.fn();
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: `${timer.COOKIE_NAME}=${Date.now() + timer.COOKIE_CHECK_INTERVAL}`,
@@ -129,12 +129,12 @@ describe('IdleTimer', () => {
     window.dispatchEvent(new Event('keydown'));
     expect(setTimeout).toHaveBeenCalledTimes(4);
     jest.runOnlyPendingTimers();
-    // Debouncing logic should make sure that updateUserInactivityTimeout is executed only once
-    expect(timer.updateUserInactivityTimeout).toHaveBeenCalledTimes(1);
+    // Debouncing logic should make sure that updateUserInactivityTimeoutCookie is executed only once
+    expect(timer.updateUserInactivityTimeoutCookie).toHaveBeenCalledTimes(1);
   });
   it('does not act on user events if timeout has already been reached', () => {
     // Simulate a timestamp cookie that is in the past
-    timer.updateUserInactivityTimeout = jest.fn();
+    timer.updateUserInactivityTimeoutCookie = jest.fn();
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: `${timer.COOKIE_NAME}=${Date.now() - timer.COOKIE_CHECK_INTERVAL}`,
@@ -145,7 +145,7 @@ describe('IdleTimer', () => {
     window.dispatchEvent(new Event('keydown'));
     expect(setTimeout).not.toHaveBeenCalled();
     jest.runOnlyPendingTimers();
-    expect(timer.updateUserInactivityTimeout).not.toHaveBeenCalled();
+    expect(timer.updateUserInactivityTimeoutCookie).not.toHaveBeenCalled();
   });
   it('restarts the timer', () => {
     timer.createUserActivityListeners = jest.fn();

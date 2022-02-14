@@ -30,7 +30,7 @@ class IdleTimer {
 
   startIdleUserDetectionInterval() {
     // Push the cookie forward by this.TIMEOUT
-    this.updateUserInactivityTimeout();
+    this.updateUserInactivityTimeoutCookie();
     // Reset the countdown
     this.countdown = this.COUNTDOWN_START;
     // Make sure we don't stack up setInterval threads
@@ -40,8 +40,10 @@ class IdleTimer {
     // Initialize the setInterval thread
     this.intervalHandler = setInterval(() => {
       // Check if user is idle or if userInactivityTimeout is not a number, which indicates that a logout has already happened in another tab
-      const userInactivityTimeout = this.getUserInactivityTimeout();
-      if (Number.isNaN(userInactivityTimeout) || userInactivityTimeout < Date.now()) {
+      const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
+      const userIsIdle = userInactivityTimeoutValue < Date.now();
+      const userLoggedOutInDifferentTab = Number.isNaN(userInactivityTimeoutValue);
+      if (userLoggedOutInDifferentTab || userIsIdle) {
         // Fire onIdleTimeoutWarning during the countdown, and when countdown reaches zero, fire onIdleTimeout.
         if (this.countdown === 0) {
           this.onIdleTimeout();
@@ -71,7 +73,15 @@ class IdleTimer {
     );
   }
 
-  setUserInactivityTimeout(timestamp, expires) {
+  getUserInactivityTimeoutCookie() {
+    const cookie = document.cookie
+      .split('; ')
+      .find((currentCookie) => currentCookie.split('=')[0] === this.COOKIE_NAME);
+    const cookieValue = cookie?.split('=')[1];
+    return parseInt(decodeURIComponent(cookieValue), 10);
+  }
+
+  setUserInactivityTimeoutCookie(timestamp, expires) {
     // Write the inactivity timeout cookie
     document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(
       timestamp
@@ -82,23 +92,25 @@ class IdleTimer {
     document.cookie = `${this.COOKIE_NAME}=;Max-Age=0;path=/;domain=${this.COOKIE_DOMAIN};`;
   }
 
-  updateUserInactivityTimeout() {
+  updateUserInactivityTimeoutCookie() {
     // Cookie will expire in 7 days (this doesn't matter as the cookie is always recreated on user activity and when IdleTimer is restarted)
     const expires = new Date(Date.now() + 6048e5).toUTCString();
     const timestamp = Date.now() + this.TIMEOUT * 1000;
-    this.setUserInactivityTimeout(timestamp, expires);
+    this.setUserInactivityTimeoutCookie(timestamp, expires);
   }
 
   debouncedUpdateExpiredTime() {
     // Expired time is only updated if inactivity timeout has not been reached
     // Otherwise, the only way to resume inactivity timeout cookie updates is by calling restart()
-    const userInactivityTimeout = this.getUserInactivityTimeout();
-    if (!Number.isNaN(userInactivityTimeout) && Date.now() < userInactivityTimeout) {
+    const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
+    const userIsStillLoggedInOtherTabs = !Number.isNaN(userInactivityTimeoutValue);
+    const userIsActive = Date.now() < userInactivityTimeoutValue;
+    if (userIsStillLoggedInOtherTabs && userIsActive) {
       if (this.debounceTimeoutHandler) {
         clearTimeout(this.debounceTimeoutHandler);
       }
       this.debounceTimeoutHandler = setTimeout(() => {
-        this.updateUserInactivityTimeout();
+        this.updateUserInactivityTimeoutCookie();
       }, this.ACTIVITY_DEBOUNCE);
     }
   }
