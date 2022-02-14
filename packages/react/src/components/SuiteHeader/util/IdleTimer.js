@@ -62,17 +62,6 @@ class IdleTimer {
     }, this.COOKIE_CHECK_INTERVAL);
   }
 
-  getUserInactivityTimeout() {
-    // Read the inactivity timeout cookie
-    return parseInt(
-      document.cookie.split('; ').reduce((r, v) => {
-        const parts = v.split('=');
-        return parts[0] === this.COOKIE_NAME ? decodeURIComponent(parts[1]) : r;
-      }, NaN),
-      10
-    );
-  }
-
   getUserInactivityTimeoutCookie() {
     const cookie = document.cookie
       .split('; ')
