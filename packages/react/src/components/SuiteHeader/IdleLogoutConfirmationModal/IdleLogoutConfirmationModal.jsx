@@ -108,6 +108,15 @@ const IdleLogoutConfirmationModal = ({
             window.location.href = routes.logoutInactivity;
           }
         },
+        onCookieCleared: async () => {
+          const result = await onRouteChange(
+            SUITE_HEADER_ROUTE_TYPES.LOGOUT,
+            routes.logoutInactivity
+          );
+          if (result) {
+            window.location.href = routes.logoutInactivity;
+          }
+        },
         onRestart: () => {
           setLogoutConfirmationCountdown(0);
           onStayLoggedIn();

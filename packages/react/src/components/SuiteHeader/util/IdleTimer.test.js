@@ -11,6 +11,7 @@ describe('IdleTimer', () => {
     timer.onIdleTimeoutWarning = jest.fn();
     timer.onIdleTimeout = jest.fn();
     timer.onRestart = jest.fn();
+    timer.onCookieCleared = jest.fn();
   });
   afterEach(() => {
     timer.cleanUp();
@@ -28,6 +29,7 @@ describe('IdleTimer', () => {
     expect(timer.onIdleTimeoutWarning).not.toBeUndefined();
     expect(timer.onIdleTimeout).not.toBeUndefined();
     expect(timer.onRestart).not.toBeUndefined();
+    expect(timer.onCookieCleared).not.toBeUndefined();
     expect(timer.eventHandler).not.toBeUndefined();
     expect(timer.countdown).not.toBeUndefined();
     expect(clearInterval).not.toHaveBeenCalled();
@@ -77,23 +79,15 @@ describe('IdleTimer', () => {
     // onRestart should never have been fired
     expect(timer.onRestart).not.toHaveBeenCalled();
   });
-  it('fires onIdleTimeoutWarning N times and then onIdleTimeout when countdown reaches zero if cookie does not exist anymore', () => {
+  it('fires onCookieCleared when countdown reaches zero if cookie does not exist anymore', () => {
     // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
       value: `${timer.COOKIE_NAME}=;Max-Age=0;`,
     });
-    // Make sure COUNTDOWN_START cycles of the setInterval run
-    jest.advanceTimersByTime(timer.COUNTDOWN_START * timer.COOKIE_CHECK_INTERVAL);
-    // only onIdleTimeoutWarning callbacks should have been fired
-    expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
-    expect(timer.onIdleTimeout).not.toHaveBeenCalled();
-    // Run just one more setInterval cycle
     jest.runOnlyPendingTimers();
     // now onIdleTimeout should have been fired
-    expect(timer.onIdleTimeout).toHaveBeenCalled();
-    // onRestart should never have been fired
-    expect(timer.onRestart).not.toHaveBeenCalled();
+    expect(timer.onCookieCleared).toHaveBeenCalled();
   });
   it('fires onRestart when cookie value is pushed forward during the timeout warning countdown', () => {
     // Simulate a timestamp cookie that is in the past

@@ -7,6 +7,7 @@ class IdleTimer {
     onIdleTimeoutWarning = () => {},
     onIdleTimeout = () => {},
     onRestart = () => {},
+    onCookieCleared = () => {},
   }) {
     // Initialize constants
     this.COOKIE_CHECK_INTERVAL = 1000; // 1 second
@@ -20,6 +21,7 @@ class IdleTimer {
     this.onIdleTimeoutWarning = onIdleTimeoutWarning;
     this.onIdleTimeout = onIdleTimeout;
     this.onRestart = onRestart;
+    this.onCookieCleared = onCookieCleared;
 
     // Bind the user activity event handler to IdleTimer's object (this)
     this.eventHandler = this.debouncedUpdateExpiredTime.bind(this);
@@ -39,11 +41,15 @@ class IdleTimer {
     }
     // Initialize the setInterval thread
     this.intervalHandler = setInterval(() => {
-      // Check if user is idle or if userInactivityTimeout is not a number, which indicates that a logout has already happened in another tab
+      // Check if userInactivityTimeout is not a number, which indicates that a the cookie might have been deleted in another tab
       const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
-      const userIsIdle = userInactivityTimeoutValue < Date.now();
-      const userLoggedOutInDifferentTab = Number.isNaN(userInactivityTimeoutValue);
-      if (userLoggedOutInDifferentTab || userIsIdle) {
+      const cookieClearedInDifferentTab = Number.isNaN(userInactivityTimeoutValue);
+      if (cookieClearedInDifferentTab) {
+        this.onCookieCleared();
+        this.cleanUp();
+      }
+      // Check if user is idle by comparing the inactivity timeout cookie timestamp with the current time
+      if (userInactivityTimeoutValue < Date.now()) {
         // Fire onIdleTimeoutWarning during the countdown, and when countdown reaches zero, fire onIdleTimeout.
         if (this.countdown === 0) {
           this.onIdleTimeout();
@@ -92,9 +98,9 @@ class IdleTimer {
     // Expired time is only updated if inactivity timeout has not been reached
     // Otherwise, the only way to resume inactivity timeout cookie updates is by calling restart()
     const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
-    const userIsStillLoggedInOtherTabs = !Number.isNaN(userInactivityTimeoutValue);
+    const cookieStillExists = !Number.isNaN(userInactivityTimeoutValue);
     const userIsActive = Date.now() < userInactivityTimeoutValue;
-    if (userIsStillLoggedInOtherTabs && userIsActive) {
+    if (cookieStillExists && userIsActive) {
       if (this.debounceTimeoutHandler) {
         clearTimeout(this.debounceTimeoutHandler);
       }
