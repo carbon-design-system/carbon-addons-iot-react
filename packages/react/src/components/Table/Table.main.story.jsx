@@ -12,6 +12,7 @@ import SortingREADME from './mdx/Sorting.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
 import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
+import RowNestingREADME from './mdx/RowNesting.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -38,6 +39,7 @@ import {
   getOverflowEditRowAction,
   getHiddenOverflowRowAction,
   getHiddenRowAction,
+  addMoreChildRowsToParent,
 } from './Table.story.helpers';
 
 export default {
@@ -96,6 +98,7 @@ export const Playground = () => {
     paginationSize,
     hasRowExpansion,
     hasRowNesting,
+    demoHasLoadMore,
     shouldExpandOnRowClick,
     expandedIds,
     hasRowSelection,
@@ -209,6 +212,23 @@ export const Playground = () => {
     />
   );
 
+  // INITIAL DATA STATE
+  const [data, setData] = useState(
+    [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
+      .slice(0, numerOfRows)
+      .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
+      .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
+      .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row))
+      .map((row) => (demoHasLoadMore ? { ...row, hasLoadMore: true } : row))
+  );
+
+  const onRowLoadMore = (parentId) => {
+    action('onRowLoadMore')(parentId);
+    setTimeout(() => {
+      setData((prevData) => addMoreChildRowsToParent(prevData, parentId));
+    }, 1000);
+  };
+
   // PROPS ADJUSTED BASED ON KNOBS
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const style = tableMaxWidth !== 'none' ? { maxWidth: tableMaxWidth } : null;
@@ -221,15 +241,7 @@ export const Playground = () => {
       : undefined;
   const toolbarActions = demoToolbarActions ? getTableToolbarActions() : undefined;
   const customToolbarContent = demoCustomToolbarContent ? customToolbarContentElement : undefined;
-
-  const data = [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
-    .slice(0, numerOfRows)
-    .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
-    .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
-    .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row));
-
   const expandedData = hasRowExpansion ? getExpandedData(data) : [];
-
   const columns = [...(demoEmptyColumns ? [] : getTableColumns())]
     .map((column, index) => ({
       ...column,
@@ -250,6 +262,7 @@ export const Playground = () => {
   );
 
   const myTableActions = merge(getTableActions(), {
+    table: { onRowLoadMore },
     toolbar: {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
@@ -449,6 +462,97 @@ WithRowExpansion.parameters = {
   },
 };
 
+export const WithRowNesting = () => {
+  const {
+    selectedTableType,
+    hasRowNesting,
+    shouldExpandOnRowClick,
+    demoHasLoadMore,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasRowNesting',
+      'shouldExpandOnRowClick',
+      'demoHasLoadMore',
+    ],
+    enableKnob: () => true,
+  });
+  const initiallyExpandedIds = object('Expanded ids (view.table.expandedIds)', ['row-1']);
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const initialData = getTableData()
+    .slice(0, 10)
+    .map((row, index) => {
+      const demoDeepNesting = !hasRowNesting.hasSingleNestedHierarchy;
+      return addChildRows(row, index, demoDeepNesting);
+    })
+    .map((row) => ({
+      ...row,
+      hasLoadMore: demoHasLoadMore,
+    }));
+  const columns = getTableColumns();
+  const actions = getTableActions();
+
+  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+  const [data, setData] = useState(initialData);
+  const [expandedIds, setExpandedIds] = useState(initiallyExpandedIds);
+
+  const onRowLoadMore = (parentId) => {
+    action('onRowLoadMore')(parentId);
+    if (selectedTableType !== 'StatefulTable') {
+      setLoadingMoreIds((prev) => [...prev, parentId]);
+    }
+    setTimeout(() => {
+      setData((prevData) => {
+        if (selectedTableType !== 'StatefulTable') {
+          setLoadingMoreIds((ids) => ids.filter((loadId) => loadId !== parentId));
+        }
+        return addMoreChildRowsToParent(prevData, parentId);
+      });
+    }, 2000);
+  };
+
+  const onRowExpanded = (rowId, expanded) => {
+    action('onRowExpanded')(rowId, expanded);
+    setExpandedIds((currentlyExpanded) =>
+      expanded ? [...currentlyExpanded, rowId] : currentlyExpanded.filter((id) => id !== rowId)
+    );
+  };
+  return (
+    <MyTable
+      actions={{
+        ...actions,
+        table: {
+          ...actions.table,
+          onRowExpanded,
+          onRowLoadMore,
+        },
+      }}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowNesting,
+        shouldExpandOnRowClick,
+      }}
+      view={{
+        table: {
+          expandedIds,
+          loadingMoreIds: selectedTableType !== 'StatefulTable' ? loadingMoreIds : [],
+        },
+      }}
+    />
+  );
+};
+
+WithRowNesting.storyName = 'With row nesting';
+WithRowNesting.decorators = [createElement];
+WithRowNesting.parameters = {
+  component: Table,
+  docs: {
+    page: RowNestingREADME,
+  },
+};
+
 export const WithSelectionAndBatchActions = () => {
   const { selectedTableType, hasRowSelection, selectionCheckboxEnabled } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasRowSelection', 'selectionCheckboxEnabled'],
@@ -556,7 +660,6 @@ export const WithInlineActions = () => {
     />
   );
 };
-
 WithInlineActions.storyName = 'With inline actions';
 WithInlineActions.decorators = [createElement];
 WithInlineActions.parameters = {

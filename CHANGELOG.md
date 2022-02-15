@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.1...v2.149.0-next.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **IdleLogoutConfirmationModal:** Disabling the "Stay Logged in" button after the Log out button is clicked. ([f1384b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1384b025b9bb68e2af9b5282c3e3c12f5abd533))
+* **IdleTimer:** Adding an extra callback to IdleTimer that is fired when the user inactivity timeout cookie is cleared in some other tab. ([5f1abce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5f1abce1d43f9c628d64e856a3e05dd34fef63e5))
+* **IdleTimer:** Changes per PR feedbacks. ([a136a81](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a136a8128ebdfb540a00d737497f4ec900cb3fe1))
+* **IdleTimer:** Including the condition where the idle timeout cookie is NaN in the setInterval logic, since a logout event in another tab would clear the cookie. The default behavior for a deleted cookie is to consider that timeout has been reached and enter countdown state. ([39a5bfc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/39a5bfcd246e0da8b79db15e009941c1147b956a))
+* **IdleTimer:** Removing an unused method in IdlerTimer. ([4939de0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4939de0260c431c02896d701d7477ba7a404a682))
+* **IdleTimer:** Removing the method that deletes the cookie (it is not needed and may cause a bug) ([ae8a535](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae8a5357970445171f983c61cfab4610e5dd4a06))
+
+
+
+
+
 # [2.149.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
 
 
