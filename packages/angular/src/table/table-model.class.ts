@@ -1017,8 +1017,8 @@ export class AITableModel implements PaginationModel {
   }
 
   protected tabularToNested(
-    headerRow: TableHeaderItem[] = [],
-    availableHeaderItems: TableHeaderItem[][] = [],
+    headerRow: AITableHeaderItem[] = [],
+    availableHeaderItems: AITableHeaderItem[][] = [],
     // This allows us to walk the leaves as if they were in a list from left to right.
     // We need to pass by reference so that we can update this value from within the recursion.
     leafIndexRef = { current: 0 },
@@ -1079,7 +1079,7 @@ export class AITableModel implements PaginationModel {
 
   protected nestedToTabular(
     nested: any,
-    header: TableHeaderItem[][] = new Array(this.header.length).fill([]),
+    header: AITableHeaderItem[][] = new Array(this.header.length).fill([]),
     data: TableItem[][] = new Array(this._data.length).fill([]),
     rowIndex = 0
   ) {
