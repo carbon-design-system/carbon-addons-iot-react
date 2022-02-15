@@ -7,6 +7,7 @@ class IdleTimer {
     onIdleTimeoutWarning = () => {},
     onIdleTimeout = () => {},
     onRestart = () => {},
+    onCookieCleared = () => {},
   }) {
     // Initialize constants
     this.COOKIE_CHECK_INTERVAL = 1000; // 1 second
@@ -20,6 +21,7 @@ class IdleTimer {
     this.onIdleTimeoutWarning = onIdleTimeoutWarning;
     this.onIdleTimeout = onIdleTimeout;
     this.onRestart = onRestart;
+    this.onCookieCleared = onCookieCleared;
 
     // Bind the user activity event handler to IdleTimer's object (this)
     this.eventHandler = this.debouncedUpdateExpiredTime.bind(this);
@@ -30,7 +32,7 @@ class IdleTimer {
 
   startIdleUserDetectionInterval() {
     // Push the cookie forward by this.TIMEOUT
-    this.updateUserInactivityTimeout();
+    this.updateUserInactivityTimeoutCookie();
     // Reset the countdown
     this.countdown = this.COUNTDOWN_START;
     // Make sure we don't stack up setInterval threads
@@ -39,8 +41,15 @@ class IdleTimer {
     }
     // Initialize the setInterval thread
     this.intervalHandler = setInterval(() => {
-      // Check if user is idle
-      if (this.getUserInactivityTimeout() < Date.now()) {
+      // Check if userInactivityTimeout is not a number, which indicates that a the cookie might have been deleted in another tab
+      const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
+      const cookieClearedInDifferentTab = Number.isNaN(userInactivityTimeoutValue);
+      if (cookieClearedInDifferentTab) {
+        this.onCookieCleared();
+        this.cleanUp();
+      }
+      // Check if user is idle by comparing the inactivity timeout cookie timestamp with the current time
+      if (userInactivityTimeoutValue < Date.now()) {
         // Fire onIdleTimeoutWarning during the countdown, and when countdown reaches zero, fire onIdleTimeout.
         if (this.countdown === 0) {
           this.onIdleTimeout();
@@ -59,40 +68,40 @@ class IdleTimer {
     }, this.COOKIE_CHECK_INTERVAL);
   }
 
-  getUserInactivityTimeout() {
-    // Read the inactivity timeout cookie
-    return parseInt(
-      document.cookie.split('; ').reduce((r, v) => {
-        const parts = v.split('=');
-        return parts[0] === this.COOKIE_NAME ? decodeURIComponent(parts[1]) : r;
-      }, Date.now()),
-      10
-    );
+  getUserInactivityTimeoutCookie() {
+    const cookie = document.cookie
+      .split('; ')
+      .find((currentCookie) => currentCookie.split('=')[0] === this.COOKIE_NAME);
+    const cookieValue = cookie?.split('=')[1];
+    return parseInt(decodeURIComponent(cookieValue), 10);
   }
 
-  setUserInactivityTimeout(timestamp, expires) {
+  setUserInactivityTimeoutCookie(timestamp, expires) {
     // Write the inactivity timeout cookie
     document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(
       timestamp
     )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};`;
   }
 
-  updateUserInactivityTimeout() {
+  updateUserInactivityTimeoutCookie() {
     // Cookie will expire in 7 days (this doesn't matter as the cookie is always recreated on user activity and when IdleTimer is restarted)
     const expires = new Date(Date.now() + 6048e5).toUTCString();
     const timestamp = Date.now() + this.TIMEOUT * 1000;
-    this.setUserInactivityTimeout(timestamp, expires);
+    this.setUserInactivityTimeoutCookie(timestamp, expires);
   }
 
   debouncedUpdateExpiredTime() {
     // Expired time is only updated if inactivity timeout has not been reached
     // Otherwise, the only way to resume inactivity timeout cookie updates is by calling restart()
-    if (Date.now() < this.getUserInactivityTimeout()) {
+    const userInactivityTimeoutValue = this.getUserInactivityTimeoutCookie();
+    const cookieStillExists = !Number.isNaN(userInactivityTimeoutValue);
+    const userIsActive = Date.now() < userInactivityTimeoutValue;
+    if (cookieStillExists && userIsActive) {
       if (this.debounceTimeoutHandler) {
         clearTimeout(this.debounceTimeoutHandler);
       }
       this.debounceTimeoutHandler = setTimeout(() => {
-        this.updateUserInactivityTimeout();
+        this.updateUserInactivityTimeoutCookie();
       }, this.ACTIVITY_DEBOUNCE);
     }
   }
@@ -105,6 +114,7 @@ class IdleTimer {
     window.addEventListener('mousedown', this.eventHandler);
     window.addEventListener('scroll', this.eventHandler);
     window.addEventListener('keydown', this.eventHandler);
+    window.addEventListener('clientTimerEvent', this.eventHandler, true);
     // Listen for mobile (touch) events
     window.addEventListener('touchstart', this.eventHandler);
     window.addEventListener('touchend', this.eventHandler);
@@ -118,6 +128,7 @@ class IdleTimer {
     window.removeEventListener('mousedown', this.eventHandler);
     window.removeEventListener('scroll', this.eventHandler);
     window.removeEventListener('keydown', this.eventHandler);
+    window.removeEventListener('clientTimerEvent', this.eventHandler);
     window.removeEventListener('touchstart', this.eventHandler);
     window.removeEventListener('touchend', this.eventHandler);
     window.removeEventListener('touchmove', this.eventHandler);

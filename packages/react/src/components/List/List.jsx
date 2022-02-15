@@ -25,6 +25,8 @@ const propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string,
     id: PropTypes.string,
+    /** should search be trigger onChange (true) or only on Enter/Blur (false) */
+    hasFastSearch: PropTypes.bool,
   }),
   /** action buttons on right side of list title */
   buttons: PropTypes.arrayOf(PropTypes.node),
@@ -44,6 +46,8 @@ const propTypes = {
     EditingStyle.SingleNesting,
     EditingStyle.MultipleNesting,
   ]),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   isFullHeight: PropTypes.bool,
   /** use large/fat row in list */
@@ -73,7 +77,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * Recieves the id of the item that is being dragged and shuld return a list of allowed ids.
+   * Receives the id of the item that is being dragged and should return a list of allowed ids.
    * Returning an empty list will result in 0 drop targets but returning null will
    * enable all items as drop targets */
   getAllowedDropIds: PropTypes.func,
@@ -87,6 +91,8 @@ const propTypes = {
   itemWillMove: PropTypes.func,
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   testId: PropTypes.string,
   /** call back function for when load more row is clicked  (rowId) => {} */
   handleLoadMore: PropTypes.func,
@@ -103,6 +109,7 @@ const defaultProps = {
   getAllowedDropIds: null,
   overrides: null,
   indeterminateIds: [],
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -112,7 +119,7 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more',
   },
   iconPosition: 'left',
   lockedIds: [],
@@ -128,6 +135,7 @@ const defaultProps = {
     return true;
   },
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   testId: 'list',
   handleLoadMore: () => {},
 };
@@ -155,11 +163,13 @@ const List = forwardRef((props, ref) => {
     indeterminateIds,
     isLargeRow,
     isLoading,
+    isFiltering,
     isCheckboxMultiSelect,
     isVirtualList,
     onItemMoved,
     itemWillMove,
     emptyState,
+    emptySearchState,
     testId,
     handleLoadMore,
     loadingMoreIds,
@@ -169,7 +179,7 @@ const List = forwardRef((props, ref) => {
   const ListContent =
     overrides?.content?.component || isVirtualList ? VirtualListContent : DefaultListContent;
   // getAllowedDropIds will be called by all list items when a drag is initiated and the
-  // paramater (id of the dragged item) will be the same until a new drag starts.
+  // parameter (id of the dragged item) will be the same until a new drag starts.
   const memoizedGetAllowedDropIds = getAllowedDropIds ? memoize(getAllowedDropIds) : null;
 
   return (
@@ -192,10 +202,12 @@ const List = forwardRef((props, ref) => {
         />
         <ListContent
           emptyState={emptyState}
+          emptySearchState={emptySearchState}
           items={items}
           isFullHeight={isFullHeight}
           testId={testId}
           indeterminateIds={indeterminateIds}
+          isFiltering={isFiltering}
           isLoading={isLoading}
           isCheckboxMultiSelect={isCheckboxMultiSelect}
           selectedIds={selectedIds}
@@ -217,7 +229,7 @@ const List = forwardRef((props, ref) => {
         />
         {pagination && !isLoading ? (
           <div className={`${iotPrefix}--list--page`}>
-            <SimplePagination {...pagination} />
+            <SimplePagination {...pagination} size="md" />
           </div>
         ) : null}
       </div>
@@ -225,6 +237,7 @@ const List = forwardRef((props, ref) => {
   );
 });
 
+List.displayName = 'List';
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 

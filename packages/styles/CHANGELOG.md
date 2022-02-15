@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.148.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.15...v2.148.1-next.0) (2022-02-08)
+
+
+
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.14...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+
+
+
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.4...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+# [2.148.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.0-next.14...v2.148.0-next.15) (2022-02-07)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+## [2.147.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0...v2.147.1-next.0) (2022-01-12)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
+# [2.147.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.91...v2.147.0) (2022-01-12)
+
+**Note:** Version bump only for package @ai-apps/styles
+
+
+
+
+
 # [2.147.0-next.72](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.0-next.71...v2.147.0-next.72) (2021-12-02)
 
 

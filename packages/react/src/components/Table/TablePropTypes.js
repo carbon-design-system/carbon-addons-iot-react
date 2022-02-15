@@ -22,6 +22,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
       PropTypes.func,
     ]),
     disabled: PropTypes.bool,
+    hidden: PropTypes.bool,
     labelText: PropTypes.string,
     /** Action should go into the overflow menu, not be rendered inline in the row */
     isOverflow: PropTypes.bool,
@@ -70,25 +71,25 @@ export const ExpandedRowsPropTypes = PropTypes.arrayOf(
   })
 );
 
-export const TableRowPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    /** id is sent back on each event callback as users interact with the row */
-    id: PropTypes.string.isRequired,
-    /** {key: value} object where each key is a column identifier so that it can be dynamically ordered and value is the underlying data value of the each field.
-     * If the item is a boolean, string, or number, it can be searched, filtered, and sorted. Else, it will not be able to. */
-    values: PropTypes.objectOf(PropTypes.any).isRequired,
-    /** Optional array of rows (TableDataPropTypes) nested beneath this one */
-    children: PropTypes.oneOfType([
-      PropTypes.array, // an array of TableRowPropTypes or elements
-    ]),
-    /** Optional list of actions visible on row hover or expansion */
-    rowActions: RowActionPropTypes,
-    /** is this particular row selectable */
-    isSelectable: PropTypes.bool,
-    /** boolean to define load more row */
-    hasLoadMore: PropTypes.bool,
-  })
-);
+export const TableRowPropTypes = PropTypes.shape({
+  /** id is sent back on each event callback as users interact with the row */
+  id: PropTypes.string.isRequired,
+  /** {key: value} object where each key is a column identifier so that it can be dynamically ordered and value is the underlying data value of the each field.
+   * If the item is a boolean, string, or number, it can be searched, filtered, and sorted. Else, it will not be able to. */
+  values: PropTypes.objectOf(PropTypes.any).isRequired,
+  /** Optional array of rows (TableDataPropTypes) nested beneath this one */
+  children: PropTypes.oneOfType([
+    PropTypes.array, // an array of TableRowPropTypes or elements
+  ]),
+  /** Optional list of actions visible on row hover or expansion */
+  rowActions: RowActionPropTypes,
+  /** is this particular row selectable */
+  isSelectable: PropTypes.bool,
+  /** boolean to define load more row */
+  hasLoadMore: PropTypes.bool,
+});
+
+export const TableRowsPropTypes = PropTypes.arrayOf(TableRowPropTypes);
 
 export const TableColumnsPropTypes = PropTypes.arrayOf(
   PropTypes.shape({

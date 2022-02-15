@@ -2,7 +2,12 @@
 
 import React, { useState, useLayoutEffect, createRef, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Checkbox } from 'carbon-components-react';
+import {
+  TableHead as CarbonTableHead,
+  TableRow,
+  TableExpandHeader,
+  Checkbox,
+} from 'carbon-components-react';
 import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
@@ -47,8 +52,6 @@ import {
 import ColumnGrouping from './ColumnGrouping/ColumnGrouping';
 
 const { iotPrefix } = settings;
-
-const { TableHead: CarbonTableHead, TableRow, TableExpandHeader } = DataTable;
 
 const propTypes = {
   tableId: PropTypes.string.isRequired,
@@ -547,6 +550,7 @@ const TableHead = ({
 
               {hasOverflow || (hasMultiSort && matchingColumnMeta.isSortable && !isDisabled) ? (
                 <OverflowMenu
+                  size="lg"
                   className={`${iotPrefix}--table-head--overflow`}
                   direction="bottom"
                   data-testid="table-head--overflow"

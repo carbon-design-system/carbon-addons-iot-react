@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, text, object } from '@storybook/addon-knobs';
+import { boolean, text, object, number } from '@storybook/addon-knobs';
 import { Add16, Edit16, Star16 } from '@carbon/icons-react';
 import { cloneDeep } from 'lodash-es';
 
@@ -8,7 +8,7 @@ import Button from '../Button';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { Tag } from '../Tag';
-import { EditingStyle } from '../../utils/DragAndDropUtils';
+import { EditingStyle, DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import List from './List';
 import ListREADME from './List.mdx';
@@ -129,23 +129,61 @@ export default {
   excludeStories: ['sampleHierarchy'],
 };
 
-export const BasicSingleColumn = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: { value: key },
-        })
-      )}
-      isLoading={boolean('isLoading', false)}
-      isVirtualList={boolean('isVirtualList', false)}
-    />
-  </div>
-);
+export const BasicSingleColumn = () => {
+  const BasicSingleColumn = () => {
+    const [searchValue, setSearchValue] = useState(null);
+    const useSearch = boolean('use search (search)', false);
+    const hasFastSearch = boolean(
+      'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+      true
+    );
+    const demoEmptyList = boolean('demo empty list', false);
 
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          emptyState={text('Empty state text (emptyState)', 'No list items to show')}
+          emptySearchState={text('Empty search state text (emptySearchState)', 'No results found')}
+          isLargeRow={boolean('show large rows (isLargeRow)', false)}
+          title={text('title', 'NY Yankees')}
+          items={
+            demoEmptyList
+              ? []
+              : Object.entries(sampleHierarchy.MLB['American League']['New York Yankees'])
+                  .map(([key]) => ({
+                    id: key,
+                    content: { value: key },
+                  }))
+                  .filter(
+                    ({ id }) =>
+                      !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
+                  )
+          }
+          search={
+            useSearch
+              ? {
+                  onChange: (evt) => setSearchValue(evt.target.value),
+                  hasFastSearch,
+                }
+              : undefined
+          }
+          isFiltering={!!searchValue}
+          isLoading={boolean('isLoading', false)}
+          isVirtualList={boolean('isVirtualList', false)}
+        />
+      </div>
+    );
+  };
+  return <BasicSingleColumn />;
+};
 BasicSingleColumn.storyName = 'basic (single column)';
+BasicSingleColumn.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const BasicSingleColumnWithSearch = () => {
   const ListWithSearch = () => {
@@ -162,9 +200,14 @@ export const BasicSingleColumnWithSearch = () => {
             .filter(
               ({ id }) => !searchValue || id.toLowerCase().includes(searchValue?.toLowerCase())
             )}
+          isFiltering={!!searchValue}
           isLoading={boolean('isLoading', false)}
           search={{
             onChange: (evt) => setSearchValue(evt.target.value),
+            hasFastSearch: boolean(
+              'Trigger search onChange (true) or onBlur/Enter (false) (search.hasFastSearch)',
+              true
+            ),
           }}
           isVirtualList={boolean('isVirtualList', false)}
         />
@@ -176,6 +219,79 @@ export const BasicSingleColumnWithSearch = () => {
 };
 
 BasicSingleColumnWithSearch.storyName = 'basic (single column) with search';
+BasicSingleColumnWithSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
+
+export const WithAsyncLoadingAndSearch = () => {
+  const numberOfItems = number('number of items to render', 100);
+  const generateItems = (number = numberOfItems) =>
+    [...Array(number)].map((_, i) => ({
+      id: `item-${i}`,
+      content: {
+        value: `Item ${i}`,
+        secondaryValue: `Item ${i} Subvalue`,
+      },
+    }));
+
+  const simulateGettingItemsFromServer = (searchValue) =>
+    new Promise((resolve) => {
+      setTimeout(() => {
+        const itemsFromServer = generateItems(numberOfItems).filter(
+          ({ content }) =>
+            content.value.includes(searchValue) || content.secondaryValue.includes(searchValue)
+        );
+        resolve(itemsFromServer);
+      }, 1500);
+    });
+
+  const ListWithAsyncLoadingAndSearch = () => {
+    const [searchValue, setSearchValue] = useState('');
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+      const searchServerForItems = async () => {
+        setIsLoading(true);
+        const newItems = await simulateGettingItemsFromServer(searchValue);
+        setItems(newItems);
+        setIsLoading(false);
+      };
+
+      searchServerForItems();
+    }, [searchValue]);
+    return (
+      <div style={{ width: 400 }}>
+        <List
+          title={text('title', 'Async loading and search')}
+          items={items}
+          isFiltering={!!searchValue}
+          isLoading={isLoading}
+          search={{
+            onChange: (evt) => setSearchValue(evt.target.value),
+            hasFastSearch: false,
+          }}
+          isVirtualList={boolean('isVirtualList', false)}
+        />
+      </div>
+    );
+  };
+
+  return <ListWithAsyncLoadingAndSearch />;
+};
+
+WithAsyncLoadingAndSearch.storyName = 'with async loading and search';
+WithAsyncLoadingAndSearch.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const SelectableItems = () => {
   const ListWithSelectableItems = () => {
@@ -217,6 +333,7 @@ export const WithSecondaryValue = () => (
           },
         })
       )}
+      isLargeRow={boolean('isLargeRow', false)}
       isLoading={boolean('isLoading', false)}
       isVirtualList={boolean('isVirtualList', false)}
     />
@@ -258,7 +375,7 @@ export const WithRowActionsSingle = () => (
           content: {
             value: key,
             secondaryValue: value,
-            rowActions: [
+            rowActions: () => [
               <Button
                 key={`${key}-list-item-button-${value}`}
                 style={{ color: 'black' }}
@@ -268,17 +385,18 @@ export const WithRowActionsSingle = () => (
                 size="small"
                 onClick={() => action('row action clicked')}
                 iconDescription="Edit"
+                tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
               />,
             ],
           },
         })
       )}
+      isLargeRow={boolean('isLargeRow', false)}
       isLoading={boolean('isLoading', false)}
       isVirtualList={boolean('isVirtualList', false)}
     />
   </div>
 );
-
 WithRowActionsSingle.storyName = 'with row actions (single)';
 
 export const WithRowActionsMultiple = () => (
@@ -291,8 +409,9 @@ export const WithRowActionsMultiple = () => (
           content: {
             value: key,
             secondaryValue: value,
-            rowActions: [
+            rowActions: () => [
               <OverflowMenu
+                size="sm"
                 flipped={document.dir !== 'rtl'}
                 key={`${key}-list-item-button-${value}`}
               >
@@ -332,11 +451,13 @@ export const WithHierarchy = () => (
                   size="small"
                   onClick={() => action('row action clicked')}
                   iconDescription="Edit"
+                  tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
                 />,
               ]
             : level === 2
             ? [
                 <OverflowMenu
+                  size="sm"
                   flipped={document.dir !== 'rtl'}
                   key={`${key}-list-item-button-${level}`}
                 >
@@ -355,6 +476,7 @@ export const WithHierarchy = () => (
         'MLB_American League_New York Yankees',
       ]}
       toggleExpansion={action('toggleExpansion')}
+      isLargeRow={boolean('isLargeRow', false)}
       isLoading={boolean('isLoading', false)}
       isVirtualList={boolean('isVirtualList', false)}
     />
@@ -467,6 +589,10 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
   const MultiSelectList = () => {
     const [selectedIds, setSelectedIds] = useState([]);
     const [expandedIds, setExpandedIds] = useState([]);
+    const demoLongValue = boolean('demo long value string', false);
+    const demoLongSecondaryValue = boolean('demo long secondary value string', false);
+    const demoRowActions = boolean('demo row actions', false);
+    const demoTags = boolean('demo tags', false);
 
     const searchNestedItems = (items, value, parentMatch) => {
       let filteredItems = [];
@@ -523,14 +649,41 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
         isCategory: true,
         isSelectable: true,
         content: {
-          value: team,
+          value: demoLongValue
+            ? `${team} - this value is extra long so that it will overflow`
+            : team,
         },
         children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
           id: `${team}-${player}`,
           isSelectable: true,
           content: {
-            value: player,
-            secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+            value: demoLongValue
+              ? `${player} - this value is extra long so that it will overflow`
+              : player,
+            secondaryValue: demoLongSecondaryValue
+              ? `${sampleHierarchy.MLB['American League'][team][player]} - this second value is extra long so that it will overflow `
+              : undefined,
+            tags: demoTags
+              ? [
+                  <Tag type="blue" title="descriptor" key="tag1">
+                    default
+                  </Tag>,
+                ]
+              : [],
+            rowActions: () =>
+              demoRowActions
+                ? [
+                    <OverflowMenu
+                      size="sm"
+                      flipped={document.dir !== 'rtl'}
+                      key={`${team}-list-item-button-${player}`}
+                    >
+                      <OverflowMenuItem itemText="Edit" />
+                      <OverflowMenuItem itemText="Add" />
+                      <OverflowMenuItem itemText="Delete" hasDivider isDelete />
+                    </OverflowMenu>,
+                  ]
+                : [],
           },
         })),
       })),
@@ -561,7 +714,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
           buttons={[headerButton]}
           iconPosition="left"
           items={nestedItems}
-          selectedIds={selectedIds}
+          selectedIds={selectedIds.filter((id) => !indeterminateIds.includes(id))}
           expandedIds={expandedIds}
           indeterminateIds={indeterminateIds}
           toggleExpansion={(id) => {
@@ -572,6 +725,7 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
               setExpandedIds(expandedIds.concat([id]));
             }
           }}
+          isLargeRow={boolean('isLargeRow', false)}
           isLoading={boolean('isLoading', false)}
           isVirtualList={boolean('isVirtualList', false)}
           isCheckboxMultiSelect
@@ -584,29 +738,55 @@ export const WithCheckboxMultiSelectionAndHierarchy = () => {
 };
 
 WithCheckboxMultiSelectionAndHierarchy.storyName = 'with checkbox multi-selection and hierarchy';
+WithCheckboxMultiSelectionAndHierarchy.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
-export const WithTags = () => (
-  <div style={{ width: 400 }}>
-    <List
-      title={text('title', 'NY Yankees')}
-      items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
-        ([key]) => ({
-          id: key,
-          content: {
-            value: key,
-            tags: [
-              <Tag type="blue" title="descriptor" key="tag1">
-                default
-              </Tag>,
-            ],
-          },
-        })
-      )}
-      isLoading={boolean('isLoading', false)}
-      isVirtualList={boolean('isVirtualList', false)}
-    />
-  </div>
-);
+export const WithTags = () => {
+  const demoRowActions = boolean('demoRowActions', false);
+  return (
+    <div style={{ width: 400 }}>
+      <List
+        title={text('title', 'NY Yankees')}
+        items={Object.entries(sampleHierarchy.MLB['American League']['New York Yankees']).map(
+          ([key, value]) => ({
+            id: key,
+            content: {
+              value: key,
+              secondaryValue: value,
+              tags: [
+                <Tag type="blue" title="descriptor" key="tag1">
+                  default
+                </Tag>,
+              ],
+              rowActions: () =>
+                demoRowActions
+                  ? [
+                      <OverflowMenu
+                        size="sm"
+                        flipped={document.dir !== 'rtl'}
+                        key={`${key}-list-item-button-${value}`}
+                      >
+                        <OverflowMenuItem itemText="Edit" />
+                        <OverflowMenuItem itemText="Add" />
+                        <OverflowMenuItem itemText="Delete" hasDivider isDelete />
+                      </OverflowMenu>,
+                    ]
+                  : [],
+            },
+          })
+        )}
+        isLargeRow={boolean('isLargeRow', false)}
+        isLoading={boolean('isLoading', false)}
+        isVirtualList={boolean('isVirtualList', false)}
+      />
+    </div>
+  );
+};
 
 WithTags.storyName = 'with tags';
 
@@ -747,6 +927,13 @@ export const WithLoadMore = () => {
 };
 
 WithLoadMore.storyName = 'with load more';
+WithLoadMore.decorators = [
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];
 
 export const WithVirtualList = () => (
   <div style={{ height: 300, overflow: 'auto', width: 400 }}>

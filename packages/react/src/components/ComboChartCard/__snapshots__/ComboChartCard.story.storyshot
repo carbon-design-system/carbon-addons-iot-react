@@ -61,7 +61,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 aria-expanded={false}
                 aria-haspopup={true}
                 aria-label="open and close list of options"
-                className="iot--card--toolbar-date-range-action bx--overflow-menu"
+                className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
                 data-testid="Card-toolbar-range-picker"
                 onClick={[Function]}
                 onClose={[Function]}
@@ -1676,6 +1676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </table>
                 </div>
               </div>
+              <div />
               <div
                 className="bx--pagination iot--pagination bx--pagination--lg"
                 data-testid="BarChartCard-table-table-pagination"
@@ -1983,7 +1984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}
@@ -2172,7 +2173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               aria-expanded={false}
               aria-haspopup={true}
               aria-label="open and close list of options"
-              className="iot--card--toolbar-date-range-action bx--overflow-menu"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
               data-testid="Card-toolbar-range-picker"
               onClick={[Function]}
               onClose={[Function]}

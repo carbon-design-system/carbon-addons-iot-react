@@ -134,6 +134,9 @@
 
   .#{$iot-prefix}--table-header-checkbox {
     vertical-align: middle;
+    .#{$prefix}--table-header-label {
+      overflow: visible;
+    }
   }
 
   .#{$iot-prefix}--table-header-checkbox-resize {
@@ -171,6 +174,7 @@
   &--overflow {
     margin: auto 0;
     flex-shrink: 0;
+    display: inline-flex;
 
     .#{$prefix}--table-sort:focus &:hover {
       margin-top: -2px;

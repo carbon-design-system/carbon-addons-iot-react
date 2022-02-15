@@ -2,23 +2,32 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Bee32 } from '@carbon/icons-react';
 import { VariableSizeList } from 'react-window';
 
 import { settings } from '../../../constants/Settings';
 import ListItem from '../ListItem/ListItem';
 import { Checkbox } from '../../Checkbox';
+import EmptyState from '../../EmptyState';
 import Button from '../../Button';
 import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDropUtils';
 import { ListItemPropTypes } from '../ListPropTypes';
 import { useResize } from '../../../internal/UseResizeObserver';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 
+import {
+  ITEM_COLUMN_GAP,
+  ITEM_HEIGHT,
+  ITEM_HEIGHT_LARGE,
+  ITEM_LEVEL_OFFSET,
+} from './listConstants';
+
 const { iotPrefix } = settings;
 
 const propTypes = {
   /** content shown if list is empty */
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** content shown if list is empty on search */
+  emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   /** i18n strings */
   i18n: PropTypes.shape({
     searchPlaceHolderText: PropTypes.string,
@@ -28,6 +37,8 @@ const propTypes = {
   }),
   /** data source of list items */
   items: PropTypes.arrayOf(PropTypes.shape(ListItemPropTypes)),
+  /** if true shows empty search state, instead of empty state, when there are no search results */
+  isFiltering: PropTypes.bool,
   /** use full height in list */
   // eslint-disable-next-line consistent-return
   isFullHeight: (props, propName, componentName) => {
@@ -52,7 +63,7 @@ const propTypes = {
   /** ids of row expanded */
   expandedIds: PropTypes.arrayOf(PropTypes.string),
   /** callback used to limit which items that should get drop targets rendered.
-   * recieves the id of the item that is being dragged and returns a list of ids. */
+   * receives the id of the item that is being dragged and returns a list of ids. */
   getAllowedDropIds: PropTypes.func,
   /** call back function of select */
   handleSelect: PropTypes.func,
@@ -85,6 +96,7 @@ const propTypes = {
 const defaultProps = {
   editingStyle: null,
   emptyState: 'No list items to show',
+  emptySearchState: 'No results found',
   expandedIds: [],
   getAllowedDropIds: null,
   handleLoadMore: () => {},
@@ -93,9 +105,10 @@ const defaultProps = {
     searchPlaceHolderText: 'Enter a value',
     expand: 'Expand',
     close: 'Close',
-    loadMore: 'Load more...',
+    loadMore: 'View more...',
   },
   iconPosition: 'left',
+  isFiltering: false,
   isFullHeight: false,
   isLargeRow: false,
   isLoading: false,
@@ -122,12 +135,14 @@ const getAdjustedNestingLevel = (items, currentLevel) =>
 const VirtualListContent = ({
   editingStyle,
   emptyState,
+  emptySearchState,
   expandedIds,
   handleLoadMore,
   handleSelect,
   i18n,
   iconPosition,
   indeterminateIds,
+  isFiltering,
   isFullHeight,
   isLargeRow,
   isLoading,
@@ -144,12 +159,50 @@ const VirtualListContent = ({
   virtualListRef: virtualListRefProp,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-  const rowSize = isLargeRow ? 96 : 40;
+  const rowSize = isLargeRow ? ITEM_HEIGHT_LARGE : ITEM_HEIGHT;
   const [listHeight, setListHeight] = useState(0);
   const listOuterRef = useResize(useRef(null));
   const didScrollRef = useRef(false);
   const internalVirtualListRef = useRef(null);
   const virtualListRef = virtualListRefProp || internalVirtualListRef;
+
+  const renderLoadMore = (item, isLoadingMore, level, style) => {
+    const indentation = `${level * ITEM_LEVEL_OFFSET - ITEM_COLUMN_GAP}px`;
+    return isLoadingMore ? (
+      <div
+        style={style}
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item`}
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <SkeletonText
+          className={`${iotPrefix}--list--load-more-skeleton`}
+          width="30%"
+          data-testid={`${testId}-loading-more`}
+        />
+      </div>
+    ) : (
+      <Button
+        key={`${item.id}-list-item-load-more`}
+        className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
+        onClick={() => handleLoadMore(item.id)}
+        data-testid={`${testId}-${item.id}-load-more`}
+        kind="ghost"
+        style={style}
+      >
+        <div
+          style={{
+            width: indentation,
+          }}
+        />
+        <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
+      </Button>
+    );
+  };
 
   const flatten = useCallback(
     (initialItems, parentId = null, currentLevel = 0) => {
@@ -167,9 +220,7 @@ const VirtualListContent = ({
         }
 
         if (isExpanded && item.children) {
-          tmp = tmp.concat(
-            flatten(item.children, item.id, getAdjustedNestingLevel(item.children, currentLevel))
-          );
+          tmp = tmp.concat(flatten(item.children, item.id, currentLevel + 1));
 
           if (item.hasLoadMore && isExpanded) {
             tmp = tmp.concat([
@@ -196,16 +247,25 @@ const VirtualListContent = ({
         return tmp;
       }, []);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [expandedIds]
   );
 
-  const [flattened, setFlattened] = useState(() => {
+  const flattenHelper = useCallback(() => {
     const flattenedItems = flatten(items);
     const parents = flattenedItems.filter(
       (item) =>
         item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
     ).length;
+
+    return {
+      flattenedItems,
+      parents,
+    };
+  }, [expandedIds, flatten, items]);
+
+  const [flattened, setFlattened] = useState(() => {
+    const { flattenedItems, parents } = flattenHelper();
+
     return {
       items: flattenedItems,
       parents,
@@ -220,18 +280,14 @@ const VirtualListContent = ({
   }, [expandedIds, flattened, virtualListRef, rowSize]);
 
   useEffect(() => {
-    const flattenedItems = flatten(items);
-    const parents = flattenedItems.filter(
-      (item) =>
-        item.level === 0 || expandedIds.includes(item.id) || expandedIds.includes(item.parentId)
-    ).length;
+    const { flattenedItems, parents } = flattenHelper();
 
     setFlattened({
       items: flattenedItems,
       parents,
       height: parents * rowSize,
     });
-  }, [expandedIds, flatten, items, rowSize]);
+  }, [flattenHelper, rowSize]);
 
   const renderItemAndChildren = (item, index, parentId, level, style) => {
     const hasChildren = item?.children && item.children.length > 0;
@@ -251,19 +307,8 @@ const VirtualListContent = ({
 
     if (item.isLoadMoreRow) {
       if (parentIsExpanded || item.level === 0) {
-        return (
-          <Button
-            key={`${item.id}-list-item-parent-loading`}
-            className={`${iotPrefix}--list-item ${iotPrefix}--load-more-row`}
-            onClick={() => handleLoadMore(item.id)}
-            data-testid={`${testId}-${item.id}-load-more`}
-            kind="ghost"
-            loading={isLoadingMore}
-            style={style}
-          >
-            <div className={`${iotPrefix}--load-more-row--content`}>{mergedI18n.loadMore}</div>
-          </Button>
-        );
+        const loadMoreLevel = parentIsExpanded ? level + 1 : level;
+        return renderLoadMore(item, isLoadingMore, loadMoreLevel, style);
       }
 
       return null;
@@ -329,6 +374,7 @@ const VirtualListContent = ({
 
   const getItemSize = (index) => {
     const item = flattened?.items?.[index];
+
     if (!item) {
       return 0;
     }
@@ -336,7 +382,7 @@ const VirtualListContent = ({
     const isExpanded = expandedIds.filter((rowId) => rowId === item.parentId).length > 0;
 
     if (item.isLoadMoreRow && (isExpanded || item.level === 0)) {
-      return 48;
+      return ITEM_HEIGHT;
     }
 
     if (!item.parentId || isExpanded) {
@@ -346,9 +392,11 @@ const VirtualListContent = ({
     return 0;
   };
 
+  // eslint-disable-next-line react/prop-types
   const ListRow = ({ index, style }) => {
     const item = flattened?.items?.[index];
-    if (!item) {
+
+    if (!item || !item?.content) {
       return null;
     }
 
@@ -368,19 +416,20 @@ const VirtualListContent = ({
     );
   };
 
-  const emptyContent =
-    typeof emptyState === 'string' ? (
+  const renderEmptyContent = () => {
+    const emptyContent = isFiltering ? emptySearchState : emptyState;
+    return typeof emptyContent === 'string' ? (
       <div
         className={classnames(`${iotPrefix}--list--empty-state`, {
           [`${iotPrefix}--list--empty-state__full-height`]: isFullHeight,
         })}
       >
-        <Bee32 />
-        <p>{emptyState}</p>
+        <EmptyState icon={isFiltering ? 'no-result' : 'empty'} title={emptyContent} body="" />
       </div>
     ) : (
-      emptyState
+      emptyContent
     );
+  };
 
   const handleItemsRendered = useCallback(() => {
     const parentList = listOuterRef.current.closest(`.${iotPrefix}--list`);
@@ -441,7 +490,7 @@ const VirtualListContent = ({
           data-testid={`${testId}-loading`}
         />
       ) : (
-        emptyContent
+        renderEmptyContent()
       )}
     </div>
   );

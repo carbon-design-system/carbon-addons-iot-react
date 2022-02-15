@@ -44,8 +44,9 @@ export const BasicWKnobs = () => {
 
   const rowActionComponent =
     rowActionSet === 'single'
-      ? [
+      ? () => [
           <Button
+            tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
             key="list-item-edit"
             style={{ color: 'black' }}
             renderIcon={Edit16}
@@ -57,14 +58,14 @@ export const BasicWKnobs = () => {
           />,
         ]
       : rowActionSet === 'multi'
-      ? [
-          <OverflowMenu flipped>
+      ? () => [
+          <OverflowMenu flipped={document.dir !== 'rtl'} size="sm">
             <OverflowMenuItem itemText="Edit" />
             <OverflowMenuItem itemText="Add" />
             <OverflowMenuItem itemText="Delete" hasDivider isDelete />
           </OverflowMenu>,
         ]
-      : [];
+      : () => [];
   const tagsData =
     tagsConfig === 'single'
       ? [
@@ -236,8 +237,9 @@ export const WithSingleRowAction = () => (
       id="list-item"
       value={text('value', 'List Item')}
       secondaryValue={text('secondaryValue', 'Secondary Value')}
-      rowActions={[
+      rowActions={() => [
         <Button
+          tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
           key="list-item-edit"
           style={{ color: 'black' }}
           renderIcon={Edit16}
@@ -263,8 +265,9 @@ export const WithDisabled = () => (
       secondaryValue={text('secondaryValue', 'Secondary Value')}
       disabled={boolean('disabled', true)}
       isSelectable={boolean('isSelectable', true)}
-      rowActions={[
+      rowActions={() => [
         <Button
+          tooltipPosition={document.dir === 'ltr' ? 'left' : 'right'}
           key="list-item-edit"
           style={{ color: 'black' }}
           renderIcon={Edit16}
@@ -293,8 +296,12 @@ export const WithOverflowMenuRowActions = () => (
       )}
       isExpandable={boolean('isExpandable', true)}
       onExpand={action('onExpand')}
-      rowActions={[
-        <OverflowMenu key="ListItem-action-overflow-menu" flipped>
+      rowActions={() => [
+        <OverflowMenu
+          key="ListItem-action-overflow-menu"
+          flipped={document.dir !== 'rtl'}
+          size="sm"
+        >
           <OverflowMenuItem key="ListItem-action-overflow-Edit" itemText="Edit" />
           <OverflowMenuItem key="ListItem-action-overflow-Add" itemText="Add" />
           <OverflowMenuItem key="ListItem-action-overflow-Delete" itemText="Delete" />
@@ -331,3 +338,19 @@ export const WithTags = () => (
 );
 
 WithTags.storyName = 'with Tags';
+
+export const WithSecondaryValueObject = () => (
+  <div style={{ width: 400 }}>
+    <ListItem
+      {...dndProps}
+      id="list-item"
+      value={text('value', 'List Item')}
+      secondaryValue={{
+        value: () => <div>Secondary value object</div>,
+        label: 'Secondary value object',
+      }}
+    />
+  </div>
+);
+
+WithSecondaryValueObject.storyName = 'with secondary value an object';

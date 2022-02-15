@@ -66,6 +66,13 @@ $hoverBgColor: #2c2c2c;
   }
 
   .#{$prefix}--overflow-menu {
+    align-items: center;
+    display: inline-flex;
+    height: $spacing-09;
+    justify-content: center;
+    width: $spacing-09;
+    padding: 0;
+
     &:hover {
       background-color: $gray-90;
     }
@@ -130,15 +137,6 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--tag {
     margin: 0;
   }
-}
-
-.#{$prefix}--overflow-menu {
-  align-items: center;
-  display: inline-flex;
-  height: 3rem;
-  justify-content: center;
-  width: 3rem;
-  padding: 0;
 }
 
 .#{$prefix}--header-action-btn {

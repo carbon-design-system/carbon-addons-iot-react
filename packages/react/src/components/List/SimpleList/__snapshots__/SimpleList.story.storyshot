@@ -30,24 +30,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -84,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -125,7 +147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -838,7 +860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -941,24 +963,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -995,7 +1039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1036,7 +1080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -1121,23 +1165,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 1"
                   >
                     Item 1
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 100"
                   >
+                    This is a description or some secondary bit of data for Item 100
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1146,13 +1217,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1161,13 +1253,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1176,13 +1289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 100"
-                >
-                  This is a description or some secondary bit of data for Item 100
+                  </button>
                 </div>
               </div>
             </div>
@@ -1205,23 +1312,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 2"
                   >
                     Item 2
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 101"
                   >
+                    This is a description or some secondary bit of data for Item 101
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1230,13 +1364,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1245,13 +1400,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1260,13 +1436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 101"
-                >
-                  This is a description or some secondary bit of data for Item 101
+                  </button>
                 </div>
               </div>
             </div>
@@ -1289,23 +1459,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 3"
                   >
                     Item 3
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 102"
                   >
+                    This is a description or some secondary bit of data for Item 102
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1314,13 +1511,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1329,13 +1547,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1344,13 +1583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 102"
-                >
-                  This is a description or some secondary bit of data for Item 102
+                  </button>
                 </div>
               </div>
             </div>
@@ -1373,23 +1606,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 4"
                   >
                     Item 4
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 103"
                   >
+                    This is a description or some secondary bit of data for Item 103
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1398,13 +1658,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1413,13 +1694,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1428,13 +1730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 103"
-                >
-                  This is a description or some secondary bit of data for Item 103
+                  </button>
                 </div>
               </div>
             </div>
@@ -1457,23 +1753,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 5"
                   >
                     Item 5
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 104"
                   >
+                    This is a description or some secondary bit of data for Item 104
+                  </div>
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1482,13 +1805,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1497,13 +1841,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -1512,13 +1877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 104"
-                >
-                  This is a description or some secondary bit of data for Item 104
+                  </button>
                 </div>
               </div>
             </div>
@@ -1529,7 +1888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -1582,24 +1941,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1636,7 +2017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -1677,7 +2058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -1762,66 +2143,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 1"
                   >
                     Item 1
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 100"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
+                    This is a description or some secondary bit of data for Item 100
                   </div>
                 </div>
                 <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 100"
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
                 >
-                  This is a description or some secondary bit of data for Item 100
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1844,66 +2225,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 2"
                   >
                     Item 2
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 101"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
+                    This is a description or some secondary bit of data for Item 101
                   </div>
                 </div>
                 <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 101"
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
                 >
-                  This is a description or some secondary bit of data for Item 101
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -1926,66 +2307,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 3"
                   >
                     Item 3
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 102"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
+                    This is a description or some secondary bit of data for Item 102
                   </div>
                 </div>
                 <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 102"
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
                 >
-                  This is a description or some secondary bit of data for Item 102
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -2008,66 +2389,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 4"
                   >
                     Item 4
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 103"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
+                    This is a description or some secondary bit of data for Item 103
                   </div>
                 </div>
                 <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 103"
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
                 >
-                  This is a description or some secondary bit of data for Item 103
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -2090,66 +2471,66 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 5"
                   >
                     Item 5
                   </div>
                   <div
-                    className="iot--list-item--content--row-actions"
-                    onClick={[Function]}
-                    onKeyPress={[Function]}
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 104"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
-                      aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
-                    >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
+                    This is a description or some secondary bit of data for Item 104
                   </div>
                 </div>
                 <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large iot--list-item--content--values--value__with-actions"
-                  title="This is a description or some secondary bit of data for Item 104"
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
                 >
-                  This is a description or some secondary bit of data for Item 104
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
+                    onClick={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
+                  >
+                    <svg
+                      aria-label="open and close list of options"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -2160,7 +2541,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2213,24 +2594,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2267,7 +2670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2308,7 +2711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -2568,7 +2971,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -2621,24 +3024,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2675,7 +3100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -2716,7 +3141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -2806,12 +3231,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   >
                     Item 1
                   </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                  title="This is a description or some secondary bit of data for Item 100"
-                >
-                  This is a description or some secondary bit of data for Item 100
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 100"
+                  >
+                    This is a description or some secondary bit of data for Item 100
+                  </div>
                 </div>
               </div>
             </div>
@@ -2839,12 +3264,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   >
                     Item 2
                   </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                  title="This is a description or some secondary bit of data for Item 101"
-                >
-                  This is a description or some secondary bit of data for Item 101
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 101"
+                  >
+                    This is a description or some secondary bit of data for Item 101
+                  </div>
                 </div>
               </div>
             </div>
@@ -2872,12 +3297,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   >
                     Item 3
                   </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                  title="This is a description or some secondary bit of data for Item 102"
-                >
-                  This is a description or some secondary bit of data for Item 102
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 102"
+                  >
+                    This is a description or some secondary bit of data for Item 102
+                  </div>
                 </div>
               </div>
             </div>
@@ -2905,12 +3330,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   >
                     Item 4
                   </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                  title="This is a description or some secondary bit of data for Item 103"
-                >
-                  This is a description or some secondary bit of data for Item 103
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 103"
+                  >
+                    This is a description or some secondary bit of data for Item 103
+                  </div>
                 </div>
               </div>
             </div>
@@ -2938,12 +3363,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   >
                     Item 5
                   </div>
-                </div>
-                <div
-                  className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                  title="This is a description or some secondary bit of data for Item 104"
-                >
-                  This is a description or some secondary bit of data for Item 104
+                  <div
+                    className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                    title="This is a description or some secondary bit of data for Item 104"
+                  >
+                    This is a description or some secondary bit of data for Item 104
+                  </div>
                 </div>
               </div>
             </div>
@@ -2954,7 +3379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -3057,24 +3482,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -3111,7 +3558,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -3152,7 +3599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -3237,23 +3684,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 1"
                   >
                     Item 1
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3262,13 +3730,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3277,13 +3766,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3292,7 +3802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3315,23 +3825,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 2"
                   >
                     Item 2
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3340,13 +3871,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3355,13 +3907,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3370,7 +3943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3393,23 +3966,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 3"
                   >
                     Item 3
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3418,13 +4012,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3433,13 +4048,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3448,7 +4084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3471,23 +4107,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 4"
                   >
                     Item 4
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3496,13 +4153,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3511,13 +4189,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3526,7 +4225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3549,23 +4248,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 5"
                   >
                     Item 5
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Edit
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Edit"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3574,13 +4294,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3589,13 +4330,34 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
                       />
                     </svg>
+                  </button>
+                  <button
+                    aria-describedby={null}
+                    className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Close
+                    </div>
                     <svg
-                      aria-hidden={true}
+                      aria-hidden="true"
+                      aria-label="Close"
+                      className="bx--btn__icon"
                       fill="currentColor"
                       focusable="false"
                       height={16}
-                      onClick={[Function]}
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
                       viewBox="0 0 32 32"
                       width={16}
                       xmlns="http://www.w3.org/2000/svg"
@@ -3604,7 +4366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
                       />
                     </svg>
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3615,7 +4377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -3668,24 +4430,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -3722,7 +4506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -3763,7 +4547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -3848,60 +4632,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 1"
                   >
                     Item 1
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
+                    <svg
                       aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -3924,60 +4708,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 2"
                   >
                     Item 2
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
+                    <svg
                       aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -4000,60 +4784,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 3"
                   >
                     Item 3
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
+                    <svg
                       aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -4076,60 +4860,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 4"
                   >
                     Item 4
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
+                    <svg
                       aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -4152,60 +4936,60 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                   className="iot--list-item--content--values--main"
                 >
                   <div
-                    className="iot--list-item--content--values--value iot--list-item--content--values--value__with-actions"
+                    className="iot--list-item--content--values--value"
                     title="Item 5"
                   >
                     Item 5
                   </div>
-                  <div
-                    className="iot--list-item--content--row-actions"
+                </div>
+                <div
+                  className="iot--list-item--content--row-actions"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    aria-label="open and close list of options"
+                    className="bx--overflow-menu bx--overflow-menu--sm"
                     onClick={[Function]}
-                    onKeyPress={[Function]}
+                    onClose={[Function]}
+                    onKeyDown={[Function]}
+                    open={false}
+                    type="button"
                   >
-                    <button
-                      aria-expanded={false}
-                      aria-haspopup={true}
+                    <svg
                       aria-label="open and close list of options"
-                      className="bx--overflow-menu"
-                      onClick={[Function]}
-                      onClose={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      type="button"
+                      className="bx--overflow-menu__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        aria-label="open and close list of options"
-                        className="bx--overflow-menu__icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        role="img"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <circle
-                          cx="16"
-                          cy="8"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="16"
-                          r="2"
-                        />
-                        <circle
-                          cx="16"
-                          cy="24"
-                          r="2"
-                        />
-                        <title>
-                          open and close list of options
-                        </title>
-                      </svg>
-                    </button>
-                  </div>
+                      <circle
+                        cx="16"
+                        cy="8"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="2"
+                      />
+                      <circle
+                        cx="16"
+                        cy="24"
+                        r="2"
+                      />
+                      <title>
+                        open and close list of options
+                      </title>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
@@ -4216,7 +5000,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div
@@ -4266,24 +5050,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           <div
             className="iot--list-header--btn-container"
           >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
+            <button
+              aria-describedby={null}
+              className="bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
             >
-              <path
-                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-              />
-            </svg>
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Edit
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Edit"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                />
+              </svg>
+            </button>
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--secondary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -4320,7 +5126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             <button
               aria-describedby={null}
               aria-pressed={null}
-              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              className="bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
               disabled={false}
               onBlur={[Function]}
               onClick={[Function]}
@@ -4361,7 +5167,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <div
             aria-labelledby="iot--list-header--search-search"
-            className="bx--search bx--search--sm"
+            className="bx--search bx--search--lg"
             role="search"
           >
             <div
@@ -5289,7 +6095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--list--page"
       >
         <div
-          className="iot-simple-pagination-container bx--pagination--lg"
+          className="iot-simple-pagination-container bx--pagination--md"
           data-testid="iot-simple-pagination"
         >
           <div

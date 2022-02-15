@@ -280,6 +280,7 @@ const propTypes = {
     yAxisLabel: PropTypes.string,
     unitLabel: PropTypes.string,
     decimalPrecisionLabel: PropTypes.string,
+    maximumDataPointsLabel: PropTypes.string,
     precisionLabel: PropTypes.string,
     showLegendLabel: PropTypes.string,
 
@@ -514,7 +515,7 @@ const DashboardEditor = ({
   const addCard = useCallback(
     (type) => {
       const defaultCard = customGetDefaultCard // Use the default card specified by the consumer if it exists
-        ? customGetDefaultCard(type)
+        ? customGetDefaultCard(type, mergedI18n)
         : getDefaultCard(type, mergedI18n);
 
       // notify consumers that the card has been added in onCardChange if we don't have an explicit customGetDefaultCard passed

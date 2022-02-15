@@ -16,7 +16,7 @@ import {
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -545,6 +545,43 @@ const DateTimePicker = ({
     }
   }, [datePickerElem, focusOnFirstField]);
 
+  const isValidDate = (date, time) => {
+    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
+    return date instanceof Date && !Number.isNaN(date) && isValid24HoursRegex.test(time);
+  };
+
+  // Validates absolute start date
+  const invalidStartDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.start), startTime)
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
+    }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
+    return true;
+  };
+
+  // Validates absolute end date
+  const invalidEndDate = (startTime, endTime, absoluteValues) => {
+    // If start and end date have been selected
+    if (
+      absoluteValues.hasOwnProperty('start') &&
+      absoluteValues.hasOwnProperty('end') &&
+      isValidDate(new Date(absoluteValues.end), endTime)
+    ) {
+      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
+      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+      return startDate >= endDate;
+    }
+    // Return invalid date if start time and end date not selected or if inputted time is not valid
+    return true;
+  };
+
   const onDatePickerChange = ([start, end], _, flatpickr) => {
     const calendarInFocus = document.activeElement.closest(
       `.${iotPrefix}--date-time-picker__datepicker`
@@ -592,6 +629,14 @@ const DateTimePicker = ({
     }
 
     setAbsoluteValue(newAbsolute);
+
+    // Update end and start time invalid state when date changed
+    setAbsoluteEndTimeInvalid(
+      invalidEndDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
+    setAbsoluteStartTimeInvalid(
+      invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
   };
 
   const onDatePickerClose = (range, single, flatpickr) => {
@@ -656,13 +701,15 @@ const DateTimePicker = ({
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
-          absolute.start = dayjs(absolute.startDate).valueOf();
+          absolute.start = dayjs(`${absolute.startDate} ${absolute.startTime}`).valueOf();
         }
         if (!absolute.hasOwnProperty('end')) {
-          absolute.end = dayjs(absolute.endDate).valueOf();
+          absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
+        absolute.startTime = dayjs(absolute.start).format('HH:mm');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
+        absolute.endTime = dayjs(absolute.end).format('HH:mm');
         setAbsoluteValue(absolute);
       }
     } else {
@@ -789,11 +836,19 @@ const DateTimePicker = ({
 
   // on change functions that trigger a absolute value update
   const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteStartTimeInvalid(meta.invalid);
+    setAbsoluteStartTimeInvalid(
+      meta.invalid || invalidStartDate(pickerValue, absoluteValue.endTime, absoluteValue)
+    );
+    setAbsoluteEndTimeInvalid(invalidEndDate(pickerValue, absoluteValue.endTime, absoluteValue));
     changeAbsolutePropertyValue('startTime', pickerValue);
   };
   const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteEndTimeInvalid(meta.invalid);
+    setAbsoluteEndTimeInvalid(
+      meta.invalid || invalidEndDate(absoluteValue.startTime, pickerValue, absoluteValue)
+    );
+    setAbsoluteStartTimeInvalid(
+      invalidStartDate(absoluteValue.startTime, pickerValue, absoluteValue)
+    );
     changeAbsolutePropertyValue('endTime', pickerValue);
   };
 
