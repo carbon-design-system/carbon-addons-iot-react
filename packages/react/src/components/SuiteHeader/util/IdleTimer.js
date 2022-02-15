@@ -80,7 +80,7 @@ class IdleTimer {
     // Write the inactivity timeout cookie
     document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(
       timestamp
-    )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};`;
+    )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};Secure;`;
   }
 
   updateUserInactivityTimeoutCookie() {
