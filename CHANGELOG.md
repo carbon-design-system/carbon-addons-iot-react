@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear and format code ([b6d7774](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b6d7774a5dfca0961782a2ec96430f1929aa2c88))
+* **datetimepicker:** unable to modify abs range issue ([73c5e04](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73c5e0411bd06c08d84a82875be9f649b7e64aa1))
+* **repo:** change uuid imports to use uuid/v4 ([63dffa4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63dffa4d8979ea64c67e628d2a98eb8b043f990f))
+* **repo:** use wildcard import for uuid ([1d6c0f9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d6c0f9cd1baad85da8c27aa614bfdf4eda87539))
+
+
+
+
+
+# [2.149.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.2...v2.149.0-next.0) (2022-02-14)
+
+
+### Features
+
+* **progress-bar:** add light prop ([f23dbdc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f23dbdc3fcbc3bcab09537182e98620e562b02ec))
+
+
+
+
+
 ## [2.148.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.1...v2.148.1-next.2) (2022-02-10)
 
 

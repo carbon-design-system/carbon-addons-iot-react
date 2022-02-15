@@ -142,7 +142,8 @@ export type RelativeToOption = {
             [range]="selected"
             [hasRelative]="hasRelative"
             [hasAbsolute]="hasAbsolute"
-            [dateFormat]="absoluteDateFormat"
+            [dateFormat]="dateFormat"
+            [datePickerFormat]="datePickerFormat"
             [placeholder]="dateFormat.toLowerCase()"
             [flatpickrOptions]="flatpickrOptions"
             [batchText]="batchText"
@@ -306,7 +307,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   expanded = false;
   disabled = false;
   timeFormat = 'HH:mm';
-  absoluteDateFormat = 'Y-m-d';
+  datePickerFormat = 'Y-m-d';
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -339,7 +340,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const newDateFormat = formatCharacters
       .filter((char, i) => i === 0 || formatCharacters[i] !== formatCharacters[i - 1])
       .join('');
-    this.absoluteDateFormat = newDateFormat.replace('y', 'Y').replace('M', 'm');
+    this.datePickerFormat = newDateFormat.replace('y', 'Y').replace('M', 'm');
   }
 
   updateI18nTranslationString() {
