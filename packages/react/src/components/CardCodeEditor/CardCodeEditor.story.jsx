@@ -28,7 +28,7 @@ export const isValidCallback = (val, setError) => {
 };
 
 export default {
-  title: '1 - Watson IoT/CardCodeEditor',
+  title: '1 - Watson IoT/Card/CardCodeEditor',
 
   parameters: {
     component: CardCodeEditor,

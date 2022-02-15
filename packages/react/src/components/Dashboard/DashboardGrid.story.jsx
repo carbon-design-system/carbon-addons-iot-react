@@ -94,7 +94,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/Dashboard Grid',
+  title: '1 - Watson IoT/Dashboard',
 };
 
 export const DashboardDefaultLayouts = () => {

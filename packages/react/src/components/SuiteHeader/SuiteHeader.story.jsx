@@ -295,7 +295,7 @@ const customApplications = [
 ];
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/UI shell/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,

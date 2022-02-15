@@ -79,7 +79,7 @@ const StatefulFilterTags = ({ tags }) => {
 };
 
 export default {
-  title: '1 - Watson IoT/FilterTags',
+  title: '1 - Watson IoT/Tags',
 
   parameters: {
     component: FilterTags,

@@ -49,7 +49,7 @@ const items = [
 ];
 
 export default {
-  title: '1 - Watson IoT/ProgressIndicator',
+  title: '1 - Watson IoT/Progress indicator/Progress indicator',
 
   parameters: {
     component: ProgressIndicator,
