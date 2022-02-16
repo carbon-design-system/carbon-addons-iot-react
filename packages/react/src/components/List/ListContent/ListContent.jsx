@@ -274,6 +274,9 @@ const ListContent = ({
 
     const isLastItem = lastId === itemId || previousLastId === itemId;
     if (isLastItem && expandedIds.includes(itemId) !== previousExpandedIds.includes(itemId)) {
+      // the setTimeout within the request animation frame helps to ensure the event is fired
+      // immediately after a repaint. See:
+      // https://firefox-source-docs.mozilla.org/performance/bestpractices.html#how-do-i-avoid-triggering-uninterruptible-reflow
       window.requestAnimationFrame(() => {
         setTimeout(() => {
           onExpandedChange(expandedIds);
