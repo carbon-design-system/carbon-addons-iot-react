@@ -112,6 +112,11 @@ export const Basic = () => {
           renderExpandIcon={Tree16}
           onFocus={action('onFocus')}
           tabIndex={0}
+          padding={select(
+            'Apply padding to the card content or not (padding)',
+            ['default', 'none'],
+            'default'
+          )}
         />
       </CardStoryStateManager>
     </div>

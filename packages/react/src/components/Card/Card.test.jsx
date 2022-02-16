@@ -598,4 +598,11 @@ describe('Card', () => {
     fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
     expect(screen.queryByText('Item4')).not.toBeInTheDocument();
   });
+
+  it('should not have padding when padding="none"', () => {
+    render(<Card {...cardProps} size={CARD_SIZES.SMALL} padding="none" />);
+    expect(screen.getByTestId('Card-content')).toHaveClass(
+      `${iotPrefix}--card__content--no-padding`
+    );
+  });
 });
