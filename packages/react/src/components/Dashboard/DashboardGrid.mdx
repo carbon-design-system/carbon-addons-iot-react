@@ -36,7 +36,7 @@ import { DashboardGrid, CARD_SIZES, CARD_TYPES, Card } from 'carbon-addons-iot-r
 
 ## Custom layout
 
-Pass a custom layout to the dashboard grid to assign positions and sizes to the various to the cards.
+Pass a custom layout to the dashboard grid to assign positions and sizes to the various cards.
 In this case, only the lg and md breakpoint have a custom layout defined. Resize the screen to see
 the cards reposition and resize themselves at different layouts. In this example, when the screen matches
 the lg breakpoint size, the card with the id 'facility' will be in the fifth row and fifth column
@@ -101,9 +101,9 @@ grid so that no cards overlap.
 ## Editable layout
 
 You can drag and drop the cards around. The `onLayoutChange` handler will be triggered each time you
-drop a card in a new location. The card array contains objects representing each card in the layout.
-Similar to the layout prop above. It's easiest to inspect the output in the Actions tab of the
-[is editable story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-is-editable) to see the
+drop a card in a new location. The card array contains objects representing each card in the layout,
+similar to the layout prop above. It's easiest to inspect the output in the Actions tab of the
+[is editable story](/story/1-watson-iot-dashboard-grid--dashboard-is-editable) to see the
 callback in action. This `onLayoutChange` can be used to save the current state of the grid so that
 it can be re-created later.
 
@@ -154,10 +154,10 @@ the card size prop is automatically updated to match the new size during the dra
 the `onCardSizeChange` callback which is passed two parameters. The first is an object giving details
 about the card (its `id` and its `size`), and the second is an object containing information about
 the DashboardGrid and its layout. Again, it's easiest to view the Actions panel in the [resizable card
-story](/?path=/story/1-watson-iot-dashboard-grid--dashboard-resizable-card) to see callback in action.
+story](/story/1-watson-iot-dashboard-grid--dashboard-resizable-card) to see callback in action.
 The `onCardSizeChange` is triggered instantly as you drag and drop and the `onResizeStop` callback is
 only triggered once you've stopped resizing the card. The `onResizeStop` or `onCardSizeChange` callbacks
-can be used to save the layout state, so that it can be recreated later.
+can be used to save the layout state, so that it can be re-created later.
 
 ```jsx
 <DashboardGrid
@@ -265,9 +265,9 @@ can be used to save the layout state, so that it can be recreated later.
 
 ## Source Code
 
-[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/DashboardGrid)
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/src/components/Dashboard)
 
 ## Feedback
 
 Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
-[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/DashboardGrid/DashboardGrid.mdx).
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/packages/react/src/components/Dashboard/DashboardGrid.mdx).
