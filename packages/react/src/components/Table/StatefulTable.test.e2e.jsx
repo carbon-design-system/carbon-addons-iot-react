@@ -2,12 +2,17 @@ import React from 'react';
 import { mount } from '@cypress/react';
 
 import StatefulTable from './StatefulTable';
-import { tableColumns, tableData } from './Table.story';
+import {
+  getTableColumns as getStoryTableColumns,
+  getTableData as getStoryTableData,
+} from './Table.story.helpers';
 import { getSelectData, getTableColumns, getTableData, getWords } from './Table.test.helpers';
 
 describe('StatefulTable', () => {
   const words = getWords();
   const selectData = getSelectData();
+  const tableColumns = getStoryTableColumns();
+  const tableData = getStoryTableData();
 
   it('should search on keydown when hasFastSearch:true', () => {
     const onApplySearch = cy.stub();

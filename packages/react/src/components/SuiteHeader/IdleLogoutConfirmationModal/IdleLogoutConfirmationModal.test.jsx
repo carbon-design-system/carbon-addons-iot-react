@@ -16,6 +16,8 @@ const commonProps = {
   idleTimeoutData: { countdown: 10, timeout: 10, cookieName: '_user_inactivity_timeout' },
 };
 
+const TIME_INTERVAL = 1000;
+
 describe('IdleLogoutConfirmationModal', () => {
   let originalWindowLocation;
   let originalWindowDocumentCookie;
@@ -40,7 +42,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the future
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -52,7 +54,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -69,7 +71,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -81,7 +83,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -94,7 +96,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -110,7 +112,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -126,7 +128,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -142,10 +144,10 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     await act(async () => {
-      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
     });
     expect(window.location.href).toBe(commonProps.routes.logoutInactivity);
   });
@@ -154,12 +156,36 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     await act(async () => {
-      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * 1000);
+      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
     });
     expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
+  });
+  it('user has logged out in another tab', async () => {
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=;Max-Age=0;`,
+    });
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    expect(window.location.href).toBe(commonProps.routes.logout);
+  });
+  it('user has logged out in another tab (but no redirect)', async () => {
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
+    // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=;Max-Age=0;`,
+    });
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    expect(window.location.href).not.toBe(commonProps.routes.logout);
   });
 
   it("user clicks 'Stay logged in' on the idle logout confirmation dialog", async () => {
@@ -168,7 +194,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -187,7 +213,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();
@@ -197,7 +223,7 @@ describe('IdleLogoutConfirmationModal', () => {
     // Simulate a timestamp cookie that is in the future (another tab could have updated it)
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
-      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + 1000}`,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() + TIME_INTERVAL}`,
     });
     act(() => {
       jest.runOnlyPendingTimers();

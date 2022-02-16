@@ -10,18 +10,11 @@ import StoryNotice from '../../internal/StoryNotice';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 import Button from '../Button/Button';
-import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import StatefulTable from './StatefulTable';
 import {
   initialState,
-  getNewRow,
-  tableActions,
-  selectTextWrapping,
   tableColumnsFixedWidth,
-  tableData,
-  tableColumns,
-  defaultOrdering,
   tableColumnsWithOverflowMenu,
   tableColumnsWithAlignment,
 } from './Table.story';
@@ -30,6 +23,21 @@ import TableREADME from './mdx/Table.mdx';
 import TableManageViewsModal from './TableManageViewsModal/TableManageViewsModal';
 import TableViewDropdown from './TableViewDropdown/TableViewDropdown';
 import TableSaveViewModal from './TableSaveViewModal/TableSaveViewModal';
+import {
+  getTableActions,
+  getSelectTextWrappingOptions,
+  getTableColumns,
+  getTableData,
+  getNewRow,
+  getDefaultOrdering,
+  getAdvancedFilters,
+} from './Table.story.helpers';
+
+const tableActions = getTableActions();
+const selectTextWrapping = getSelectTextWrappingOptions();
+const tableColumns = getTableColumns();
+const tableData = getTableData();
+const defaultOrdering = getDefaultOrdering(tableColumns);
 
 export const StatefulTableWithNestedRowItems = (props) => {
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
@@ -263,7 +271,6 @@ export const SimpleStatefulExample = () => {
           true
         ),
         hasSearch: boolean('Enable searching on the table values (options.hasSearch)', false),
-        hasSort: boolean('Enable sorting columns by a single dimension (options.hasSort)', false),
         preserveColumnWidths: boolean(
           'Preserve column widths when resizing (options.preserveColumnWidths)',
           false
@@ -1308,182 +1315,7 @@ WithPreFilledSearch.parameters = {
 export const StatefulTableWithAdvancedFilters = () => {
   const [showBuilder, setShowBuilder] = useState(false);
 
-  const [advancedFilters, setAdvancedFilters] = useState([
-    {
-      filterId: 'story-filter',
-      /** Text for main tilte of page */
-      filterTitleText: 'date CONTAINS 19, boolean=true',
-      /** Text for metadata for the filter */
-      filterMetaText: `last updated: 2021-03-11 15:34:01`,
-      /** tags associated with particular filter */
-      filterTags: ['fav', 'other-tag'],
-      /** users that have access to particular filter */
-      filterAccess: [
-        {
-          username: 'Example-User',
-          email: 'example@pal.com',
-          name: 'Example User',
-          access: 'edit',
-        },
-        {
-          username: 'Other-User',
-          email: 'other@pal.com',
-          name: 'Other User',
-          access: 'read',
-        },
-      ],
-      /** All possible users that can be granted access */
-      filterUsers: [
-        {
-          id: 'teams',
-          name: 'Teams',
-          groups: [
-            {
-              id: 'team-a',
-              name: 'Team A',
-              users: [
-                {
-                  username: '@tpeck',
-                  email: 'tpeck@pal.com',
-                  name: 'Templeton Peck',
-                },
-                {
-                  username: '@jsmith',
-                  email: 'jsmith@pal.com',
-                  name: 'John Smith',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          username: 'Example-User',
-          email: 'example@pal.com',
-          name: 'Example User',
-        },
-        {
-          username: 'Test-User',
-          email: 'test@pal.com',
-          name: 'Test User',
-        },
-        {
-          username: 'Other-User',
-          email: 'other@pal.com',
-          name: 'Other User',
-        },
-      ],
-      /**
-       * the rules passed into the component. The RuleBuilder is a controlled component, so
-       * this works the same as passing defaultValue to a controlled input component.
-       */
-      filterRules: {
-        id: '14p5ho3pcu',
-        groupLogic: 'ALL',
-        rules: [
-          {
-            id: 'rsiru4rjba',
-            columnId: 'date',
-            operand: 'CONTAINS',
-            value: '19',
-          },
-          {
-            id: '34bvyub9jq',
-            columnId: 'boolean',
-            operand: 'EQ',
-            value: 'true',
-          },
-        ],
-      },
-      filterColumns: tableColumns,
-    },
-    {
-      filterId: 'next-filter',
-      /** Text for main tilte of page */
-      filterTitleText: 'select=Option c, boolean=false',
-      /** Text for metadata for the filter */
-      filterMetaText: `last updated: 2021-03-11 15:34:01`,
-      /** tags associated with particular filter */
-      filterTags: ['fav', 'other-tag'],
-      /** users that have access to particular filter */
-      filterAccess: [
-        {
-          username: 'Example-User',
-          email: 'example@pal.com',
-          name: 'Example User',
-          access: 'edit',
-        },
-        {
-          username: 'Other-User',
-          email: 'other@pal.com',
-          name: 'Other User',
-          access: 'read',
-        },
-      ],
-      /** All possible users that can be granted access */
-      filterUsers: [
-        {
-          id: 'teams',
-          name: 'Teams',
-          groups: [
-            {
-              id: 'team-a',
-              name: 'Team A',
-              users: [
-                {
-                  username: '@tpeck',
-                  email: 'tpeck@pal.com',
-                  name: 'Templeton Peck',
-                },
-                {
-                  username: '@jsmith',
-                  email: 'jsmith@pal.com',
-                  name: 'John Smith',
-                },
-              ],
-            },
-          ],
-        },
-        {
-          username: 'Example-User',
-          email: 'example@pal.com',
-          name: 'Example User',
-        },
-        {
-          username: 'Test-User',
-          email: 'test@pal.com',
-          name: 'Test User',
-        },
-        {
-          username: 'Other-User',
-          email: 'other@pal.com',
-          name: 'Other User',
-        },
-      ],
-      /**
-       * the rules passed into the component. The RuleBuilder is a controlled component, so
-       * this works the same as passing defaultValue to a controlled input component.
-       */
-      filterRules: {
-        id: '14p5ho3pcu',
-        groupLogic: 'ALL',
-        rules: [
-          {
-            id: 'rsiru4rjba',
-            columnId: 'select',
-            operand: 'EQ',
-            value: 'option-C',
-          },
-          {
-            id: '34bvyub9jq',
-            columnId: 'boolean',
-            operand: 'EQ',
-            value: 'false',
-          },
-        ],
-      },
-      filterColumns: tableColumns,
-    },
-  ]);
+  const [advancedFilters, setAdvancedFilters] = useState(getAdvancedFilters());
 
   return (
     <>
@@ -1566,70 +1398,3 @@ export const StatefulTableWithAdvancedFilters = () => {
 
 StatefulTableWithAdvancedFilters.storyName = '☢️ with advanced filters';
 StatefulTableWithAdvancedFilters.decorators = [createElement];
-
-export const WithMultiSorting = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  return (
-    <MyTable
-      columns={tableColumns.map((i, idx) => ({
-        ...i,
-        width: '200px',
-        isSortable: idx !== 1,
-        align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
-      }))}
-      data={tableData}
-      actions={tableActions}
-      size={select(
-        'Sets the height of the table rows (size)',
-        ['xs', 'sm', 'md', 'lg', 'xl'],
-        'lg'
-      )}
-      options={{
-        hasFilter: false,
-        hasPagination: true,
-        hasRowSelection: 'multi',
-        hasAggregations: false,
-        hasMultiSort: true,
-        hasResize: true,
-        hasColumnSelection: true,
-        preserveColumnWidths: true,
-      }}
-      view={{
-        filters: [],
-        aggregations: {
-          label: 'Total',
-          columns: [
-            {
-              id: 'number',
-              align: 'end',
-              isSortable: true,
-            },
-          ],
-        },
-        table: {
-          ordering: defaultOrdering,
-          sort: [
-            {
-              columnId: 'select',
-              direction: 'ASC',
-            },
-            {
-              columnId: 'string',
-              direction: 'ASC',
-            },
-          ],
-        },
-      }}
-    />
-  );
-};
-
-WithMultiSorting.storyName = 'with multi-sorting';
-WithMultiSorting.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];

@@ -1017,143 +1017,148 @@ Map {
       "data": Object {
         "args": Array [
           Object {
-            "children": Object {
-              "args": Array [
-                Array [
-                  Object {
-                    "type": "array",
-                  },
-                ],
-              ],
-              "type": "oneOfType",
-            },
-            "hasLoadMore": Object {
-              "type": "bool",
-            },
-            "id": Object {
-              "isRequired": true,
-              "type": "string",
-            },
-            "isSelectable": Object {
-              "type": "bool",
-            },
-            "rowActions": Object {
-              "args": Array [
-                Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "array",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+                "rowActions": Object {
                   "args": Array [
                     Object {
-                      "disabled": Object {
-                        "type": "bool",
-                      },
-                      "hasDivider": Object {
-                        "type": "bool",
-                      },
-                      "hidden": Object {
-                        "type": "bool",
-                      },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isDelete": Object {
-                        "type": "bool",
-                      },
-                      "isEdit": Object {
-                        "type": "bool",
-                      },
-                      "isOverflow": Object {
-                        "type": "bool",
-                      },
-                      "labelText": Object {
-                        "type": "string",
-                      },
-                      "renderIcon": Object {
-                        "args": Array [
-                          Array [
-                            Object {
-                              "args": Array [
+                      "args": Array [
+                        Object {
+                          "disabled": Object {
+                            "type": "bool",
+                          },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
+                          "isOverflow": Object {
+                            "type": "bool",
+                          },
+                          "labelText": Object {
+                            "type": "string",
+                          },
+                          "renderIcon": Object {
+                            "args": Array [
+                              Array [
                                 Object {
-                                  "height": Object {
-                                    "type": "string",
-                                  },
-                                  "svgData": Object {
-                                    "args": Array [
-                                      Object {
-                                        "type": Object {
-                                          "args": Array [
-                                            Array [
-                                              "svg",
-                                            ],
-                                          ],
-                                          "type": "oneOf",
-                                        },
+                                  "args": Array [
+                                    Object {
+                                      "height": Object {
+                                        "type": "string",
                                       },
+                                      "svgData": Object {
+                                        "args": Array [
+                                          Object {
+                                            "type": Object {
+                                              "args": Array [
+                                                Array [
+                                                  "svg",
+                                                ],
+                                              ],
+                                              "type": "oneOf",
+                                            },
+                                          },
+                                        ],
+                                        "isRequired": true,
+                                        "type": "shape",
+                                      },
+                                      "viewBox": Object {
+                                        "isRequired": true,
+                                        "type": "string",
+                                      },
+                                      "width": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                Object {
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
                                     ],
-                                    "isRequired": true,
-                                    "type": "shape",
-                                  },
-                                  "viewBox": Object {
-                                    "isRequired": true,
-                                    "type": "string",
-                                  },
-                                  "width": Object {
-                                    "type": "string",
-                                  },
+                                  ],
+                                  "type": "oneOf",
+                                },
+                                Object {
+                                  "type": "node",
+                                },
+                                Object {
+                                  "type": "object",
+                                },
+                                Object {
+                                  "type": "func",
                                 },
                               ],
-                              "type": "shape",
-                            },
-                            Object {
-                              "args": Array [
-                                Array [
-                                  "caretUp",
-                                  "caretDown",
-                                  "edit",
-                                  "close",
-                                  "checkmark",
-                                  "warning",
-                                  "arrowUp",
-                                  "arrowDown",
-                                  "user",
-                                  "info",
-                                  "help",
-                                ],
-                              ],
-                              "type": "oneOf",
-                            },
-                            Object {
-                              "type": "node",
-                            },
-                            Object {
-                              "type": "object",
-                            },
-                            Object {
-                              "type": "func",
-                            },
-                          ],
-                        ],
-                        "type": "oneOfType",
-                      },
+                            ],
+                            "type": "oneOfType",
+                          },
+                        },
+                      ],
+                      "type": "shape",
                     },
                   ],
-                  "type": "shape",
+                  "type": "arrayOf",
                 },
-              ],
-              "type": "arrayOf",
-            },
-            "values": Object {
-              "args": Array [
-                Object {
-                  "type": "any",
+                "values": Object {
+                  "args": Array [
+                    Object {
+                      "type": "any",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "objectOf",
                 },
-              ],
-              "isRequired": true,
-              "type": "objectOf",
-            },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "isRequired": true,
-        "type": "shape",
+        "type": "arrayOf",
       },
       "error": Object {
         "type": "string",
@@ -4140,143 +4145,148 @@ Map {
       "data": Object {
         "args": Array [
           Object {
-            "children": Object {
-              "args": Array [
-                Array [
-                  Object {
-                    "type": "array",
-                  },
-                ],
-              ],
-              "type": "oneOfType",
-            },
-            "hasLoadMore": Object {
-              "type": "bool",
-            },
-            "id": Object {
-              "isRequired": true,
-              "type": "string",
-            },
-            "isSelectable": Object {
-              "type": "bool",
-            },
-            "rowActions": Object {
-              "args": Array [
-                Object {
+            "args": Array [
+              Object {
+                "children": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "array",
+                      },
+                    ],
+                  ],
+                  "type": "oneOfType",
+                },
+                "hasLoadMore": Object {
+                  "type": "bool",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isSelectable": Object {
+                  "type": "bool",
+                },
+                "rowActions": Object {
                   "args": Array [
                     Object {
-                      "disabled": Object {
-                        "type": "bool",
-                      },
-                      "hasDivider": Object {
-                        "type": "bool",
-                      },
-                      "hidden": Object {
-                        "type": "bool",
-                      },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isDelete": Object {
-                        "type": "bool",
-                      },
-                      "isEdit": Object {
-                        "type": "bool",
-                      },
-                      "isOverflow": Object {
-                        "type": "bool",
-                      },
-                      "labelText": Object {
-                        "type": "string",
-                      },
-                      "renderIcon": Object {
-                        "args": Array [
-                          Array [
-                            Object {
-                              "args": Array [
+                      "args": Array [
+                        Object {
+                          "disabled": Object {
+                            "type": "bool",
+                          },
+                          "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isDelete": Object {
+                            "type": "bool",
+                          },
+                          "isEdit": Object {
+                            "type": "bool",
+                          },
+                          "isOverflow": Object {
+                            "type": "bool",
+                          },
+                          "labelText": Object {
+                            "type": "string",
+                          },
+                          "renderIcon": Object {
+                            "args": Array [
+                              Array [
                                 Object {
-                                  "height": Object {
-                                    "type": "string",
-                                  },
-                                  "svgData": Object {
-                                    "args": Array [
-                                      Object {
-                                        "type": Object {
-                                          "args": Array [
-                                            Array [
-                                              "svg",
-                                            ],
-                                          ],
-                                          "type": "oneOf",
-                                        },
+                                  "args": Array [
+                                    Object {
+                                      "height": Object {
+                                        "type": "string",
                                       },
+                                      "svgData": Object {
+                                        "args": Array [
+                                          Object {
+                                            "type": Object {
+                                              "args": Array [
+                                                Array [
+                                                  "svg",
+                                                ],
+                                              ],
+                                              "type": "oneOf",
+                                            },
+                                          },
+                                        ],
+                                        "isRequired": true,
+                                        "type": "shape",
+                                      },
+                                      "viewBox": Object {
+                                        "isRequired": true,
+                                        "type": "string",
+                                      },
+                                      "width": Object {
+                                        "type": "string",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                                Object {
+                                  "args": Array [
+                                    Array [
+                                      "caretUp",
+                                      "caretDown",
+                                      "edit",
+                                      "close",
+                                      "checkmark",
+                                      "warning",
+                                      "arrowUp",
+                                      "arrowDown",
+                                      "user",
+                                      "info",
+                                      "help",
                                     ],
-                                    "isRequired": true,
-                                    "type": "shape",
-                                  },
-                                  "viewBox": Object {
-                                    "isRequired": true,
-                                    "type": "string",
-                                  },
-                                  "width": Object {
-                                    "type": "string",
-                                  },
+                                  ],
+                                  "type": "oneOf",
+                                },
+                                Object {
+                                  "type": "node",
+                                },
+                                Object {
+                                  "type": "object",
+                                },
+                                Object {
+                                  "type": "func",
                                 },
                               ],
-                              "type": "shape",
-                            },
-                            Object {
-                              "args": Array [
-                                Array [
-                                  "caretUp",
-                                  "caretDown",
-                                  "edit",
-                                  "close",
-                                  "checkmark",
-                                  "warning",
-                                  "arrowUp",
-                                  "arrowDown",
-                                  "user",
-                                  "info",
-                                  "help",
-                                ],
-                              ],
-                              "type": "oneOf",
-                            },
-                            Object {
-                              "type": "node",
-                            },
-                            Object {
-                              "type": "object",
-                            },
-                            Object {
-                              "type": "func",
-                            },
-                          ],
-                        ],
-                        "type": "oneOfType",
-                      },
+                            ],
+                            "type": "oneOfType",
+                          },
+                        },
+                      ],
+                      "type": "shape",
                     },
                   ],
-                  "type": "shape",
+                  "type": "arrayOf",
                 },
-              ],
-              "type": "arrayOf",
-            },
-            "values": Object {
-              "args": Array [
-                Object {
-                  "type": "any",
+                "values": Object {
+                  "args": Array [
+                    Object {
+                      "type": "any",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "objectOf",
                 },
-              ],
-              "isRequired": true,
-              "type": "objectOf",
-            },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "isRequired": true,
-        "type": "shape",
+        "type": "arrayOf",
       },
       "i18n": Object {
         "args": Array [
@@ -24425,6 +24435,9 @@ Map {
       "search": Object {
         "args": Array [
           Object {
+            "hasFastSearch": Object {
+              "type": "bool",
+            },
             "id": Object {
               "type": "string",
             },
@@ -29627,6 +29640,280 @@ Map {
         "type": "elementType",
       },
       "testId": Object {
+        "type": "string",
+      },
+    },
+  },
+  "ProgressBar" => Object {
+    "defaultProps": Object {
+      "className": undefined,
+      "helperText": "",
+      "hideLabel": false,
+      "i18n": Object {
+        "iconLabel": "Progress bar icon",
+      },
+      "light": false,
+      "max": 100,
+      "renderIcon": undefined,
+      "renderIconByName": undefined,
+      "thresholds": Array [],
+      "valueUnit": "%",
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "helperText": Object {
+        "type": "string",
+      },
+      "hideLabel": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "iconLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "label": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "max": Object {
+        "type": "number",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
+      "thresholds": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "fill": Object {
+                                    "type": "string",
+                                  },
+                                  "stroke": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "comparison": Object {
+                        "args": Array [
+                          Array [
+                            "<",
+                            ">",
+                            "=",
+                            "<=",
+                            ">=",
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOf",
+                      },
+                      "icon": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "height": Object {
+                                    "type": "string",
+                                  },
+                                  "svgData": Object {
+                                    "args": Array [
+                                      Object {
+                                        "type": Object {
+                                          "args": Array [
+                                            Array [
+                                              "svg",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                      },
+                                    ],
+                                    "isRequired": true,
+                                    "type": "shape",
+                                  },
+                                  "viewBox": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "width": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "value": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "number",
+                            },
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+                Object {
+                  "args": Array [
+                    Object {
+                      "color": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "fill": Object {
+                                    "type": "string",
+                                  },
+                                  "stroke": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                      "comparison": Object {
+                        "isRequired": true,
+                        "type": "func",
+                      },
+                      "icon": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "args": Array [
+                                Object {
+                                  "height": Object {
+                                    "type": "string",
+                                  },
+                                  "svgData": Object {
+                                    "args": Array [
+                                      Object {
+                                        "type": Object {
+                                          "args": Array [
+                                            Array [
+                                              "svg",
+                                            ],
+                                          ],
+                                          "type": "oneOf",
+                                        },
+                                      },
+                                    ],
+                                    "isRequired": true,
+                                    "type": "shape",
+                                  },
+                                  "viewBox": Object {
+                                    "isRequired": true,
+                                    "type": "string",
+                                  },
+                                  "width": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "value": Object {
+        "isRequired": true,
+        "type": "number",
+      },
+      "valueUnit": Object {
         "type": "string",
       },
     },

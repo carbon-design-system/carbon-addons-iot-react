@@ -27,11 +27,11 @@ import {
   TableSearchPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
-  TableRowPropTypes,
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
   TableToolbarActionsPropType,
+  TableRowsPropTypes,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -165,7 +165,7 @@ const propTypes = {
     toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
-  data: TableRowPropTypes.isRequired,
+  data: TableRowsPropTypes.isRequired,
 
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
