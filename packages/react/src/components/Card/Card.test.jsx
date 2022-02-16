@@ -385,6 +385,11 @@ describe('Card', () => {
       'scrollWidth'
     );
 
+    const originalClientWidth = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'clientWidth'
+    );
+
     beforeEach(() => {
       Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
         writable: true,
@@ -401,6 +406,7 @@ describe('Card', () => {
     afterAll(() => {
       Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
       Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalClientWidth);
     });
 
     it('should put the title in a tooltip if it overflows', () => {
