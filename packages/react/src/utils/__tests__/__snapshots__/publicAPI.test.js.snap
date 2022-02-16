@@ -1050,6 +1050,9 @@ Map {
                           "hasDivider": Object {
                             "type": "bool",
                           },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -3260,6 +3263,9 @@ Map {
                           "hasDivider": Object {
                             "type": "bool",
                           },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -4173,6 +4179,9 @@ Map {
                             "type": "bool",
                           },
                           "hasDivider": Object {
+                            "type": "bool",
+                          },
+                          "hidden": Object {
                             "type": "bool",
                           },
                           "id": Object {
@@ -11197,6 +11206,7 @@ Map {
         "myApplications": "My applications",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "isExpanded": false,
       "onRouteChange": [Function],
       "testId": "suite-header-app-switcher",
     },
@@ -11273,6 +11283,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isExpanded": Object {
+        "type": "bool",
       },
       "noAccessLink": Object {
         "isRequired": true,
@@ -29639,11 +29652,13 @@ Map {
   },
   "ProgressBar" => Object {
     "defaultProps": Object {
+      "className": undefined,
       "helperText": "",
       "hideLabel": false,
       "i18n": Object {
         "iconLabel": "Progress bar icon",
       },
+      "light": false,
       "max": 100,
       "renderIcon": undefined,
       "renderIconByName": undefined,
@@ -29651,6 +29666,9 @@ Map {
       "valueUnit": "%",
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "helperText": Object {
         "type": "string",
       },
@@ -29670,6 +29688,9 @@ Map {
       "label": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "max": Object {
         "type": "number",
@@ -37133,6 +37154,7 @@ Map {
     },
   },
   "SideNavItems" => Object {
+    "displayName": "SideNavItems",
     "propTypes": Object {
       "children": Object {
         "isRequired": true,

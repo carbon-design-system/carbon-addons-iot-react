@@ -1,148 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableViewDropdown Custom view selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableViewDropdown Playground 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    style={
-      Object {
-        "width": "300px",
-      }
-    }
+    className="iot--view-dropdown__container"
   >
     <div
-      className="iot--view-dropdown__container"
+      className="bx--dropdown__wrapper bx--list-box__wrapper"
+      data-testid="TableViewDropdown"
     >
+      
       <div
-        className="bx--dropdown__wrapper bx--list-box__wrapper"
-        data-testid="TableViewDropdown"
+        aria-label="Select view"
+        className="bx--dropdown bx--list-box"
+        id="iot--view-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
       >
-        
-        <div
-          aria-label="Select view"
-          className="bx--dropdown bx--list-box"
-          id="iot--view-dropdown"
+        <button
+          aria-disabled={false}
+          aria-expanded={false}
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label downshift-0-toggle-button"
+          className="bx--list-box__field"
+          disabled={false}
+          id="downshift-0-toggle-button"
           onClick={[Function]}
           onKeyDown={[Function]}
+          title={
+            <TableViewDropdownItem
+              activeViewEdited={true}
+              i18n={
+                Object {
+                  "ariaLabel": "Select view",
+                  "edited": "Edited",
+                  "manageViews": "Manage views",
+                  "saveAsNewView": "Save as new view",
+                  "saveChanges": "Save changes",
+                  "tableViewMenu": "Table view menu",
+                  "view": "View",
+                  "viewAll": "View All",
+                }
+              }
+              isCompact={false}
+              isSelected={true}
+              item={
+                Object {
+                  "id": "view-3",
+                  "text": "My saved 3",
+                }
+              }
+              testID="TableViewDropdownItem-view-3"
+            />
+          }
+          type="button"
         >
-          <button
-            aria-disabled={false}
-            aria-expanded={false}
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label downshift-0-toggle-button"
-            className="bx--list-box__field"
-            disabled={false}
-            id="downshift-0-toggle-button"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            title={
-              <TableViewDropdownItem
-                activeViewEdited={false}
-                i18n={
-                  Object {
-                    "ariaLabel": "Select view",
-                    "edited": "Edited",
-                    "manageViews": "Manage views",
-                    "saveAsNewView": "Save as new view",
-                    "saveChanges": "Save changes",
-                    "tableViewMenu": "Table view menu",
-                    "view": "View",
-                    "viewAll": "View All",
-                  }
-                }
-                isCompact={false}
-                isSelected={true}
-                item={
-                  Object {
-                    "id": "view-1",
-                    "text": "My saved 1",
-                  }
-                }
-                testID="TableViewDropdownItem-view-1"
-              />
-            }
-            type="button"
+          <span
+            className="bx--list-box__label"
           >
-            <span
-              className="bx--list-box__label"
-            >
-              <div
-                className="iot--view-dropdown__item"
-                data-testid="TableViewDropdownItem-view-1"
-                title="My saved 1"
-              >
-                <span
-                  className="iot--view-dropdown__button-prefix"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={20}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M30.94,15.66A16.69,16.69,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16.69,16.69,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM16,25c-5.3,0-10.9-3.93-12.93-9C5.1,10.93,10.7,7,16,7s10.9,3.93,12.93,9C26.9,21.07,21.3,25,16,25Z"
-                    />
-                    <path
-                      d="M16,10a6,6,0,1,0,6,6A6,6,0,0,0,16,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"
-                    />
-                  </svg>
-                  <span>
-                    View: 
-                  </span>
-                </span>
-                <span>
-                  My saved 1
-                </span>
-              </div>
-            </span>
             <div
-              className="bx--list-box__menu-icon"
+              className="iot--view-dropdown__item"
+              data-testid="TableViewDropdownItem-view-3"
+              title="My saved 3 - Edited"
             >
-              <svg
-                aria-label="Open menu"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                name="chevron--down"
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                viewBox="0 0 16 16"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
+              <span
+                className="iot--view-dropdown__button-prefix"
               >
-                <path
-                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                />
-                <title>
-                  Open menu
-                </title>
-              </svg>
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.94,15.66A16.69,16.69,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16.69,16.69,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM16,25c-5.3,0-10.9-3.93-12.93-9C5.1,10.93,10.7,7,16,7s10.9,3.93,12.93,9C26.9,21.07,21.3,25,16,25Z"
+                  />
+                  <path
+                    d="M16,10a6,6,0,1,0,6,6A6,6,0,0,0,16,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"
+                  />
+                </svg>
+                <span>
+                  View: 
+                </span>
+              </span>
+              <span>
+                My saved 3
+                <span
+                  className="iot--view-dropdown__edited-text"
+                >
+                   - Edited
+                </span>
+              </span>
             </div>
-          </button>
+          </span>
           <div
-            aria-labelledby="downshift-0-label"
-            className="bx--list-box__menu"
-            id="downshift-0-menu"
-            onBlur={[Function]}
-            onKeyDown={[Function]}
-            onMouseLeave={[Function]}
-            role="listbox"
-            tabIndex={-1}
-          />
-        </div>
+            className="bx--list-box__menu-icon"
+          >
+            <svg
+              aria-label="Open menu"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              name="chevron--down"
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+              />
+              <title>
+                Open menu
+              </title>
+            </svg>
+          </div>
+        </button>
+        <div
+          aria-labelledby="downshift-0-label"
+          className="bx--list-box__menu"
+          id="downshift-0-menu"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+          onMouseLeave={[Function]}
+          role="listbox"
+          tabIndex={-1}
+        />
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableViewDropdown View all selected - edited 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableViewDropdown With state - edited 1`] = `
 <div
   className="storybook-container"
 >
@@ -289,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableViewDropdown View all selected - not edited 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableViewDropdown With state 1`] = `
 <div
   className="storybook-container"
 >
@@ -387,6 +384,148 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </span>
                 <span>
                   View All
+                </span>
+              </div>
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-label="Open menu"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title>
+                  Open menu
+                </title>
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-0-label"
+            className="bx--list-box__menu"
+            id="downshift-0-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableViewDropdown With state and custom view selected 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="iot--view-dropdown__container"
+    >
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="TableViewDropdown"
+      >
+        
+        <div
+          aria-label="Select view"
+          className="bx--dropdown bx--list-box"
+          id="iot--view-dropdown"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-0-label downshift-0-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-0-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title={
+              <TableViewDropdownItem
+                activeViewEdited={false}
+                i18n={
+                  Object {
+                    "ariaLabel": "Select view",
+                    "edited": "Edited",
+                    "manageViews": "Manage views",
+                    "saveAsNewView": "Save as new view",
+                    "saveChanges": "Save changes",
+                    "tableViewMenu": "Table view menu",
+                    "view": "View",
+                    "viewAll": "View All",
+                  }
+                }
+                isCompact={false}
+                isSelected={true}
+                item={
+                  Object {
+                    "id": "view-1",
+                    "text": "My saved 1",
+                  }
+                }
+                testID="TableViewDropdownItem-view-1"
+              />
+            }
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              <div
+                className="iot--view-dropdown__item"
+                data-testid="TableViewDropdownItem-view-1"
+                title="My saved 1"
+              >
+                <span
+                  className="iot--view-dropdown__button-prefix"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M30.94,15.66A16.69,16.69,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16.69,16.69,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM16,25c-5.3,0-10.9-3.93-12.93-9C5.1,10.93,10.7,7,16,7s10.9,3.93,12.93,9C26.9,21.07,21.3,25,16,25Z"
+                    />
+                    <path
+                      d="M16,10a6,6,0,1,0,6,6A6,6,0,0,0,16,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"
+                    />
+                  </svg>
+                  <span>
+                    View: 
+                  </span>
+                </span>
+                <span>
+                  My saved 1
                 </span>
               </div>
             </span>

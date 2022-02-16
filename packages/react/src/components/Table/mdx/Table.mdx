@@ -1,4 +1,5 @@
 import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
+import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
 
 # `Table` component
 
@@ -12,6 +13,10 @@ import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
 - [Row expansion](#row-expansion)
   - [Programmatic expansion](#programmatic-expansion)
   - [Additional configuration](#additional-configuration)
+- [Row nesting](#row-nesting)
+  - [Row nesting code example](#row-nesting-code-example)
+  - [Handling the onRowExpanded event](#handling-the-onrowexpanded-event)
+  - [Load more child rows](#load-more-child-rows)
 - [Selection](#selection)
   - [Programmatic selection](#programmatic-selection)
 - [Filtering](#filtering)
@@ -24,6 +29,8 @@ import TableColumnCustomizationTOC from './TableColumnCustomizationTOC.mdx';
 - [Row data editing](#row-data-editing)
 - [Column customization](#column-customization)
   <TableColumnCustomizationTOC />
+- [User view management](#user-view-management)
+  <TableUserViewManagementTOC />
 - [Props](#props)
   - [Column Prop](#column-prop)
   - [Data Prop](#data-prop)
@@ -326,6 +333,10 @@ import Sorting from './Sorting.mdx';
 import RowExpansion from './RowExpansion.mdx';
 
 <RowExpansion />
+
+import RowNesting from './RowNesting.mdx';
+
+<RowNesting />
 
 ## Selection
 
@@ -953,6 +964,30 @@ import TableColumnCustomizationModalContent from '../TableColumnCustomizationMod
 
 <TableColumnCustomizationModalContent />
 
+## User view management
+
+import TableUserViewManagementContent from './TableUserViewManagementContent.mdx';
+
+<TableUserViewManagementContent />
+
+### The manage views modal
+
+import TableManageViewsModalContent from '../TableManageViewsModal/TableManageViewsModalContent.mdx';
+
+<TableManageViewsModalContent />
+
+### The save view modal
+
+import TableSaveViewModalContent from '../TableSaveViewModal/TableSaveViewModalContent.mdx';
+
+<TableSaveViewModalContent />
+
+### The view dropdown
+
+import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownContent.mdx';
+
+<TableViewDropdownContent />
+
 ## Props
 
 ### Table Props
@@ -1007,7 +1042,7 @@ import TableColumnCustomizationModalContent from '../TableColumnCustomizationMod
 | values                  | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
 | hasLoadMore             | bool            |         | An optional boolean prop to define if the row has more data to be loaded                              |
 | children                | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
-| rowActions              | object          |         | An optional list of actions visible on row how or expansion                                           |
+| rowActions              | arrayOf(object) |         | An optional list of actions visible on row how or expansion                                           |
 | rowActions[].id         | string          |         | unique id for this action                                                                             |
 | rowActions[].renderIcon |                 |         | icon that gets pass through to the button component for this action                                   |
 | rowActions[].disabled   | bool            |         | disables this action                                                                                  |

@@ -39,6 +39,10 @@
 
 .#{$prefix}--progress-bar__track {
   background-color: $ui-02;
+
+  .#{$iot-prefix}--progress-bar-container--light & {
+    background-color: $ui-01;
+  }
 }
 
 .#{$prefix}--progress-bar__bar {

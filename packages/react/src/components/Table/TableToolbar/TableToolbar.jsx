@@ -255,17 +255,19 @@ const TableToolbar = ({
     testId: testID || testId,
   });
 
-  const hasToolbarOverflowActions =
-    typeof toolbarActions === 'function' ||
-    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+  const actions = useMemo(() => {
+    const renderedActions =
+      typeof toolbarActions === 'function' ? toolbarActions() : toolbarActions;
 
-  const visibleToolbarActions = useMemo(() => {
-    if (typeof toolbarActions === 'function') {
-      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
-    }
-
-    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+    return renderedActions?.length ? renderedActions : [];
   }, [toolbarActions]);
+
+  const hasToolbarOverflowActions =
+    actions.filter((action) => action.isOverflow && action.hidden !== true).length > 0;
+
+  const visibleToolbarActions = actions.filter(
+    (action) => !action.isOverflow && action.hidden !== true
+  );
 
   return (
     <CarbonTableToolbar

@@ -1,0 +1,147 @@
+The TableManageViewsModal is an external component that can be placed outside the table.
+It is highly customizable and is used to list existing views and provide the user with the
+option to delete and edit the view's metadata. The component is stateless and the app
+developer will have to implement the required callbacks.
+
+#### TableManageViewsModal code example
+
+This TableManageViewsModal story demonstrates a fully implemented example with data
+and actions working properly in the default configuration. The availability of 'Delete'
+and 'Edit' actions are determined by the respective views data properties.
+
+```js
+return React.createElement(() => {
+  const rowsPerPage = 10;
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
+  const [currentFilters, setCurrentFilters] = useState({ searchTerm: '', showPublic: true });
+  const [isOpen, setIsOpen] = useState(true);
+  const [filteredViews, setFilteredViews] = useState(demoViews);
+  const [viewsToShow, setViewsToShow] = useState(demoViews.slice(0, rowsPerPage));
+
+  const showPage = (pageNumber, views) => {
+    const rowUpperLimit = pageNumber * rowsPerPage;
+    const currentItemsOnPage = views.slice(rowUpperLimit - rowsPerPage, rowUpperLimit);
+    setCurrentPageNumber(pageNumber);
+    setViewsToShow(currentItemsOnPage);
+  };
+
+  const applyFiltering = ({ searchTerm, showPublic }) => {
+    const views = demoViews
+      .filter(
+        (view) =>
+          searchTerm === '' || view.title.toLowerCase().search(searchTerm.toLowerCase()) !== -1
+      )
+      .filter((view) => (showPublic ? view : !view.isPublic));
+
+    setFilteredViews(views);
+    showPage(1, views);
+  };
+
+  const onDelete = (viewId) => {
+    const deleteIndex = demoViews.findIndex((view) => view.id === viewId);
+    demoViews.splice(deleteIndex, 1);
+    setFilteredViews(demoViews);
+    showPage(1, demoViews);
+  };
+
+  const onClose = () => {
+    setIsOpen(false);
+  };
+
+  const onEdit = (viewId) => {
+    alert(
+      'This action should close this modal and open TableSaveViewModal with the data of this view prefilled.'
+    );
+  };
+
+  const onPage = (pageNumber) => showPage(pageNumber, filteredViews);
+
+  const onSearchChange = (val) => {
+    const searchTerm = val === undefined ? '' : val;
+    const newFilters = { ...currentFilters, searchTerm };
+    setCurrentFilters(newFilters);
+    applyFiltering(newFilters);
+  };
+
+  const onDisplayPublicChange = (showPublic) => {
+    const newFilters = { ...currentFilters, showPublic };
+    setCurrentFilters(newFilters);
+    applyFiltering(newFilters);
+  };
+
+  const pagination = {
+    page: currentPageNumber,
+    onPage,
+    maxPage: Math.ceil(filteredViews.length / rowsPerPage),
+    pageOfPagesText: (pageNumber) => 'Page ' + pageNumber,
+  };
+
+  return (
+    <TableManageViewsModal
+      actions={{
+        onDisplayPublicChange,
+        onSearchChange,
+        onEdit,
+        onDelete,
+        onClearError: action('onClearError'),
+        onClose,
+      }}
+      defaultViewId="id1"
+      error={select('error', [undefined, 'My error msg'], undefined)}
+      isLoading={boolean('isLoading', false)}
+      open={isOpen}
+      views={viewsToShow}
+      pagination={pagination}
+    />
+  );
+});
+```
+
+#### TableManageViewsModal props
+
+| Name                            | Type                                  | Default                                             | Description                                                                                 |
+| :------------------------------ | :------------------------------------ | :-------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| actions                         | object                                |                                                     | Required object holding all the callbacks                                                   |
+| actions.onClose                 | function                              |                                                     | Callbacks for the actions of the modal                                                      |
+| actions.onEdit                  | function                              |                                                     | Called when the user clicks edit on a view row. The ID of the view is passed as argument.   |
+| actions.onDelete                | function                              |                                                     | Called when the user clicks delete on a view row. The ID of the view is passed as argument. |
+| actions.onClearError            | function                              |                                                     | Called when the dialog error msg is cleared                                                 |
+| actions.onSearchChange          | function                              |                                                     | Called when the search input value is changed, the search term is passed as argument.       |
+| actions.onDisplayPublicChange   | function                              |                                                     | Called when view title input value is changed, a bool value is passed as argument.          |
+| defaultViewId                   | string                                | undefined                                           | The ID of the view that should be marked as default if any                                  |
+| displayPublicDefaultChecked     | bool                                  | true                                                | True means that the 'display public' checkbox is checked by default                         |
+| error                           | string                                | undefined                                           | Shows this string as a general modal error when present                                     |
+| isLoading                       | bool                                  | false                                               | Shows loading skeleton and disables pagination when true                                    |
+| searchValueDefault              | string                                | ''                                                  | The default value of the search field value                                                 |
+| open                            | bool                                  |                                                     | Determines if the modal is open or closed (i.e. visible or not to the user)                 |
+| overrides                       | shape                                 | undefined                                           | Used to override the internal components and props for advanced customisation               |
+| pagination                      | shape                                 | undefined                                           | pagination at the bottom of list, see SimplePaginationPropTypes                             |
+| testId                          | string                                | 'TableManageViewsModal'                             | Id that can be used for testing                                                             |
+| views                           | [ViewsPropType](#viewsproptype-props) |                                                     | The views to be displayed in the list, see ViewsPropType                                    |
+| i18n                            | object                                |                                                     | i18n object holding all the strings                                                         |
+| i18n.closeIconDescription       | string                                | 'Close'                                             | Internationalisation strings object                                                         |
+| i18n.defaultLabelText           | string                                | 'default'                                           |                                                                                             |
+| i18n.deleteIconText             | string                                | 'delete'                                            |                                                                                             |
+| i18n.deleteWarningTextTemplate  | function                              | (label) => `You are about to delete view ${label}.` |                                                                                             |
+| i18n.deleteWarningCancel        | string                                | 'Cancel'                                            |                                                                                             |
+| i18n.deleteWarningConfirm       | string                                | 'Delete'                                            |                                                                                             |
+| i18n.editIconText               | string                                | 'edit'                                              |                                                                                             |
+| i18n.listTitle                  | string                                | 'Available Views'                                   |                                                                                             |
+| i18n.modalTitle                 | string                                | 'Manage views'                                      |                                                                                             |
+| i18n.privateLabelText           | string                                | 'Private'                                           |                                                                                             |
+| i18n.publicLabelText            | string                                | 'Public'                                            |                                                                                             |
+| i18n.publicCheckboxLabelText    | string                                | 'Display public views'                              |                                                                                             |
+| i18n.searchPlaceholderText      | string                                | 'Search views'                                      |                                                                                             |
+| i18n.searchClearButtonLabelText | string                                | 'Clear search input'                                |                                                                                             |
+| i18n.searchIconLabelText        | string                                | 'Search'                                            |                                                                                             |
+
+#### ViewsPropType props
+
+| Name         | Type   | Default | Description                                                     |
+| :----------- | :----- | :------ | :-------------------------------------------------------------- |
+| id           | string |         | The ID of the view                                              |
+| isPublic     | object |         | True if this view is public, False if private                   |
+| isEditable   | object |         | True if this the user can edit this view                        |
+| isDeleteable | object |         | True if this the user can delete this view                      |
+| title        | object |         | The user given name of the view                                 |
+| description  | object |         | An auto generated string that describes what this view contains |

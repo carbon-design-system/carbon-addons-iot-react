@@ -95,6 +95,59 @@ describe('RowActionsCell', () => {
     expect(screen.queryByText(action.labelText)).toBeTruthy();
   });
 
+  it('still renders action cell and container when all actions are hidden', () => {
+    const tableRow = document.createElement('tr');
+    const actions = [
+      {
+        id: 'hidden',
+        labelText: 'hidden',
+        hidden: true,
+      },
+      {
+        id: 'hidden2',
+        labelText: 'Hidden 2',
+        isOverflow: true,
+        hidden: true,
+      },
+    ];
+    render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+      container: document.body.appendChild(tableRow),
+    });
+
+    expect(screen.getByTestId('row-action-container-background')).toBeVisible();
+  });
+
+  it('does not render hidden actions', () => {
+    const tableRow = document.createElement('tr');
+    const actions = [
+      {
+        id: 'hiddenEdit',
+        renderIcon: 'edit',
+        iconDescription: 'Edit stuff',
+        labelText: 'Hidden Edit icon label',
+        hidden: true,
+      },
+      {
+        id: 'visible',
+        labelText: 'Visible action button',
+      },
+      {
+        id: 'hidden2',
+        labelText: 'Hidden 2',
+        hidden: true,
+      },
+    ];
+    render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+      container: document.body.appendChild(tableRow),
+    });
+
+    expect(screen.queryByText('Hidden Edit icon label')).toBeNull();
+
+    expect(screen.getByText('Visible action button')).toBeVisible();
+
+    expect(screen.queryByText('Hidden 2')).toBeNull();
+  });
+
   describe('RowActionsError', () => {
     it('should show errors and be dismissable when onClearError is given', () => {
       const tableRow = document.createElement('tr');
@@ -328,6 +381,91 @@ describe('RowActionsCell', () => {
       expect(
         screen.getByTestId('tableId-rowId-row-actions-cell-overflow-menu-item-edit')
       ).toBeVisible();
+    });
+
+    it('does not render hidden overflow actions', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [
+        {
+          id: 'hiddenEdit',
+          renderIcon: 'edit',
+          iconDescription: 'Edit stuff',
+          labelText: 'Hidden Edit icon label',
+          isOverflow: true,
+          hidden: true,
+        },
+        {
+          id: 'visible',
+          labelText: 'Visible',
+          isOverflow: true,
+        },
+        {
+          id: 'hidden2',
+          labelText: 'Hidden 2',
+          isOverflow: true,
+          hidden: true,
+        },
+      ];
+      render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+        container: document.body.appendChild(tableRow),
+      });
+
+      userEvent.click(
+        screen.getByRole('button', {
+          name: RowActionsCell.defaultProps.overflowMenuAria,
+        })
+      );
+
+      expect(screen.queryByLabelText('Hidden Edit icon label', { selector: 'svg' })).toBeNull();
+      expect(
+        screen.queryByTestId('tableId-rowId-row-actions-cell-overflow-menu-item-hiddenEdit')
+      ).toBeNull();
+
+      expect(
+        screen.getByTestId('tableId-rowId-row-actions-cell-overflow-menu-item-visible')
+      ).toBeVisible();
+
+      expect(
+        screen.queryByTestId('tableId-rowId-row-actions-cell-overflow-menu-item-hidden2')
+      ).toBeNull();
+    });
+
+    it('does not render overflow button if all actions are hidden', () => {
+      const tableRow = document.createElement('tr');
+      const actions = [
+        {
+          id: 'initiallyVisible',
+          labelText: 'Initially visible',
+          isOverflow: true,
+          hidden: false,
+        },
+        {
+          id: 'hidden2',
+          labelText: 'Hidden 2',
+          isOverflow: true,
+          hidden: true,
+        },
+      ];
+      const { rerender } = render(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+        container: document.body.appendChild(tableRow),
+      });
+
+      expect(
+        screen.queryByRole('button', {
+          name: RowActionsCell.defaultProps.overflowMenuAria,
+        })
+      ).toBeVisible();
+
+      actions[0].hidden = true;
+      rerender(<RowActionsCell {...commonRowActionsProps} actions={actions} />, {
+        container: document.body.appendChild(tableRow),
+      });
+
+      expect(
+        screen.queryByRole('button', {
+          name: RowActionsCell.defaultProps.overflowMenuAria,
+        })
+      ).toBeNull();
     });
   });
 });
