@@ -6482,7 +6482,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
-      "onAfterExpand": null,
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -6713,7 +6713,7 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "onAfterExpand": Object {
+      "onExpandedChange": Object {
         "type": "func",
       },
       "onItemMoved": Object {
@@ -6788,7 +6788,6 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
-      "onAfterExpand": null,
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "testId": "list",
@@ -7014,9 +7013,6 @@ Map {
           },
         ],
         "type": "arrayOf",
-      },
-      "onAfterExpand": Object {
-        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -24074,7 +24070,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
-      "onAfterExpand": null,
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -24324,7 +24320,7 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "onAfterExpand": Object {
+      "onExpandedChange": Object {
         "type": "func",
       },
       "onItemMoved": Object {

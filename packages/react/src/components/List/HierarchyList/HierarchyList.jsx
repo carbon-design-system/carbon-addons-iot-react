@@ -503,25 +503,6 @@ const HierarchyList = ({
     }
   };
 
-  /**
-   * Used to trigger the onExpandedChange callback after the _last_ item in the expandedIds
-   * array has official expanded. Only used on regular lists, not virtual, because the virtual
-   * list only renders the rows shown, so we can't know what the _last_ item actually is.
-   *
-   * @param {string} id The ID of the item that was just expanded
-   */
-  const handleAfterExpand = (id) => {
-    const [lastId] = expandedIds.slice(-1);
-    const [previousLastId] = previousExpandedIds.slice(-1);
-    if (id === lastId || id === previousLastId) {
-      setTimeout(() => {
-        window.requestAnimationFrame(() => {
-          onExpandedChange(expandedIds);
-        });
-      }, 0);
-    }
-  };
-
   return (
     <>
       {editingStyle === EditingStyle.MultipleNesting && editModeSelectedIds.length > 0 ? (
@@ -602,7 +583,7 @@ const HierarchyList = ({
         className={className}
         emptyState={emptyState}
         emptySearchState={emptySearchState}
-        onAfterExpand={!isVirtualList ? handleAfterExpand : undefined}
+        onExpandedChange={onExpandedChange}
       />
     </>
   );

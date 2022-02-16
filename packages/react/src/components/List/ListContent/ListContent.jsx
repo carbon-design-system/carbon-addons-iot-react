@@ -12,6 +12,7 @@ import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDrop
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 const { iotPrefix } = settings;
 
@@ -73,8 +74,8 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   selectedItemRef: HtmlElementRefProp,
-  /** called after the row has expanded and is passed the ID */
-  onAfterExpand: PropTypes.func,
+  /** called after the row has expanded or collapsed and is passed the array of expanded ids */
+  onExpandedChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -109,7 +110,7 @@ const defaultProps = {
   selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
-  onAfterExpand: null,
+  onExpandedChange: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -142,7 +143,7 @@ const ListContent = ({
   handleLoadMore,
   i18n,
   selectedItemRef,
-  onAfterExpand,
+  onExpandedChange,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -249,7 +250,6 @@ const ListContent = ({
           selectedItemRef={isSelected ? selectedItemRef : null}
           tags={tags}
           preventRowFocus={isCheckboxMultiSelect}
-          onAfterExpand={onAfterExpand}
         />
       </div>,
       ...(hasChildren && isExpanded
@@ -262,10 +262,24 @@ const ListContent = ({
       ...(!hasChildren && item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : []),
     ];
   };
+  const previousExpandedIds = usePrevious(expandedIds, expandedIds);
+  const notifyOnLastExpansionChange = (itemId) => {
+    const [lastId] = expandedIds.slice(-1);
+    const [previousLastId] = previousExpandedIds.slice(-1);
+    const isLastItem = itemId === lastId || itemId === previousLastId;
+    if (isLastItem && expandedIds.includes(itemId) !== previousExpandedIds.includes(itemId)) {
+      window.requestAnimationFrame(() => {
+        setTimeout(() => {
+          onExpandedChange(expandedIds);
+        });
+      }, 0);
+    }
+  };
 
-  const listItems = items.map((item, index) =>
-    renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0))
-  );
+  const listItems = items.map((item, index) => {
+    notifyOnLastExpansionChange(item.id);
+    return renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0));
+  });
 
   const renderEmptyContent = () => {
     const emptyContent = isFiltering ? emptySearchState : emptyState;

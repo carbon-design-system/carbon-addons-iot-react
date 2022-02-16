@@ -98,8 +98,8 @@ const propTypes = {
   handleLoadMore: PropTypes.func,
   /** RowIds for rows currently loading more child rows */
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
-  /** called after the row has expanded and is passed the ID */
-  onAfterExpand: PropTypes.func,
+  /** called after the row has expanded or collapsed and is passed the array of expanded ids */
+  onExpandedChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -140,7 +140,7 @@ const defaultProps = {
   emptySearchState: 'No results found',
   testId: 'list',
   handleLoadMore: () => {},
-  onAfterExpand: null,
+  onExpandedChange: null,
 };
 
 const List = forwardRef((props, ref) => {
@@ -176,7 +176,7 @@ const List = forwardRef((props, ref) => {
     testId,
     handleLoadMore,
     loadingMoreIds,
-    onAfterExpand,
+    onExpandedChange,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -229,7 +229,7 @@ const List = forwardRef((props, ref) => {
           selectedItemRef={ref}
           i18n={mergedI18n}
           lockedIds={lockedIds}
-          onAfterExpand={onAfterExpand}
+          onExpandedChange={onExpandedChange}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (

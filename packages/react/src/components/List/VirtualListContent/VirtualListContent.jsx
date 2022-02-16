@@ -91,8 +91,6 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   virtualListRef: HtmlElementRefProp,
-  /** called after the row has expanded and is passed the ID */
-  onAfterExpand: PropTypes.func,
 };
 
 const defaultProps = {
@@ -127,7 +125,6 @@ const defaultProps = {
   testId: 'list',
   toggleExpansion: () => {},
   virtualListRef: undefined,
-  onAfterExpand: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -160,7 +157,6 @@ const VirtualListContent = ({
   testId,
   toggleExpansion,
   virtualListRef: virtualListRefProp,
-  onAfterExpand,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const rowSize = isLargeRow ? ITEM_HEIGHT_LARGE : ITEM_HEIGHT;
@@ -371,8 +367,6 @@ const VirtualListContent = ({
           i18n={mergedI18n}
           tags={tags}
           preventRowFocus={isCheckboxMultiSelect}
-          onAfterExpand={onAfterExpand}
-          isVirtualList
         />
       </div>,
     ];

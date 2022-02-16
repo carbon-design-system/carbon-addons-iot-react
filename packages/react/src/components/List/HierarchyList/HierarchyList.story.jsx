@@ -659,12 +659,14 @@ export const WithLargeNumberOfExpandableItems = () => {
     <>
       <Button
         onClick={() => {
-          setIsLoading(true);
-          if (allOpen) {
-            setExpandedIds([]);
-          } else {
-            setExpandedIds(parentIds);
-          }
+          window.requestAnimationFrame(() => {
+            setIsLoading(true);
+            if (allOpen) {
+              setExpandedIds([]);
+            } else {
+              setExpandedIds(parentIds);
+            }
+          });
         }}
         loading={isLoading}
       >
@@ -689,7 +691,7 @@ export const WithLargeNumberOfExpandableItems = () => {
           expandedIds={expandedIds}
           onExpandedChange={(...args) => {
             setIsLoading(false);
-            action('onExpandedChange')(args);
+            action('onExpandedChange')(...args);
             setAllOpen((prev) => !prev);
           }}
           isVirtualList={boolean('hasVirtualList', false)}
