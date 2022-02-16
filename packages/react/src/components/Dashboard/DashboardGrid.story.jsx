@@ -24,6 +24,7 @@ import data from '../MapCard/storyFiles/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';
+import DashboardGridREADME from './DashboardGrid.mdx';
 
 const MapboxExample = ({ ...props }) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
@@ -95,6 +96,11 @@ const commonGridProps = {
 
 export default {
   title: '1 - Watson IoT/Dashboard',
+  parameters: {
+    docs: {
+      page: DashboardGridREADME,
+    },
+  },
 };
 
 export const DashboardDefaultLayouts = () => {
