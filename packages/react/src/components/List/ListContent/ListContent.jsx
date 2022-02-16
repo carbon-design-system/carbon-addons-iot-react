@@ -264,9 +264,15 @@ const ListContent = ({
   };
   const previousExpandedIds = usePrevious(expandedIds, expandedIds);
   const notifyOnLastExpansionChange = (itemId) => {
-    const [lastId] = expandedIds.slice(-1);
-    const [previousLastId] = previousExpandedIds.slice(-1);
-    const isLastItem = itemId === lastId || itemId === previousLastId;
+    // get the lastId of the diff between previous and current, this handles closes
+    const [previousLastId] = previousExpandedIds
+      .filter((id) => !expandedIds.includes(id))
+      .slice(-1);
+
+    // get the lastId of the diff between current and previous, this handles opens
+    const [lastId] = expandedIds.filter((id) => !previousExpandedIds.includes(id)).slice(-1);
+
+    const isLastItem = lastId === itemId || previousLastId === itemId;
     if (isLastItem && expandedIds.includes(itemId) !== previousExpandedIds.includes(itemId)) {
       window.requestAnimationFrame(() => {
         setTimeout(() => {
