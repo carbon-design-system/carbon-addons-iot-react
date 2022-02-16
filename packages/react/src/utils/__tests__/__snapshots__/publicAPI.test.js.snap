@@ -29646,6 +29646,7 @@ Map {
   },
   "ProgressBar" => Object {
     "defaultProps": Object {
+      "className": undefined,
       "helperText": "",
       "hideLabel": false,
       "i18n": Object {
@@ -29659,6 +29660,9 @@ Map {
       "valueUnit": "%",
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "helperText": Object {
         "type": "string",
       },
