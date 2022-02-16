@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.3...v2.149.0-next.4) (2022-02-16)
+
+
+### Features
+
+* **status-bar:** add className prop ([7e4aaf6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e4aaf6b18f92d587db0f5ef2339c5a3c6113c8a))
+
+
+
+
+
 # [2.149.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.2...v2.149.0-next.3) (2022-02-16)
 
 **Note:** Version bump only for package ibm-ai-applications
