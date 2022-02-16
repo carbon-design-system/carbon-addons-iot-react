@@ -30,7 +30,7 @@ export const getTiles = (num) => {
 };
 
 export default {
-  title: '1 - Watson IoT/TileCatalogNew',
+  title: '1 - Watson IoT/Catalog/Marketplace/TileCatalogNew',
 
   parameters: {
     component: TileCatalogNew,

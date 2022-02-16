@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -184,7 +184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Light version 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Light version 1`] = `
 <div
   className="storybook-container"
 >
@@ -368,7 +368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Locale 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Locale 1`] = `
 <div
   className="storybook-container"
 >
@@ -861,7 +861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected absolute 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected absolute 1`] = `
 <div
   className="storybook-container"
 >
@@ -1354,7 +1354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected preset 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected preset 1`] = `
 <div
   className="storybook-container"
 >
@@ -1538,7 +1538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected relative 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected relative 1`] = `
 <div
   className="storybook-container"
 >
@@ -2079,7 +2079,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Without a custom range link 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Without a custom range link 1`] = `
 <div
   className="storybook-container"
 >
@@ -2255,7 +2255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Without a relative option 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Without a relative option 1`] = `
 <div
   className="storybook-container"
 >

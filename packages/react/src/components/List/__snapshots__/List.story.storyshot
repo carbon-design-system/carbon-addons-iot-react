@@ -690,7 +690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with async loading and search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with async loading and search 1`] = `
 <div
   className="storybook-container"
 >
