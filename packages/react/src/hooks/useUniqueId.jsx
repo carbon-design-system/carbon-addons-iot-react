@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 
 const getUniqueId = () => uuid.v4();
 

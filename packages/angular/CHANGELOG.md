@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.1](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear and format code ([b6d7774](https://github.com/IBM/carbon-components-angular/commit/b6d7774a5dfca0961782a2ec96430f1929aa2c88))
+* **datetimepicker:** unable to modify abs range issue ([73c5e04](https://github.com/IBM/carbon-components-angular/commit/73c5e0411bd06c08d84a82875be9f649b7e64aa1))
+
+
+
+
+
+## [2.148.1-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.15...v2.148.1-next.0) (2022-02-08)
+
+
+
+# [2.148.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/IBM/carbon-components-angular/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+
+
+
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.4...v2.148.0) (2022-02-07)
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
 # [2.148.0-next.15](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0-next.15) (2022-02-07)
 
 
