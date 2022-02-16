@@ -372,7 +372,7 @@ const TableToolbar = ({
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
-              expanded={searchIsExpanded === true ? true : undefined}
+              expanded={searchIsExpanded || undefined}
             />
           ) : null}
           {totalFilters > 0 ? (
