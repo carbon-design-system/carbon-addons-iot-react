@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import { isEmpty, omit } from 'lodash-es';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
