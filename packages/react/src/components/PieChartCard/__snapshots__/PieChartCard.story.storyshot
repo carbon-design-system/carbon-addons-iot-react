@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard advanced customisation using overrides 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard advanced customisation using overrides 1`] = `
 <div
   className="storybook-container"
 >
@@ -556,7 +556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -658,7 +658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard custom colors 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard custom colors 1`] = `
 <div
   className="storybook-container"
 >
@@ -760,7 +760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard custom labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard custom labels 1`] = `
 <div
   className="storybook-container"
 >
@@ -862,7 +862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard custom tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard custom tooltip 1`] = `
 <div
   className="storybook-container"
 >
@@ -964,7 +964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard no data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard no data 1`] = `
 <div
   className="storybook-container"
 >
@@ -1069,7 +1069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PieChartCard with CardVariables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/PieChartCard with CardVariables 1`] = `
 <div
   className="storybook-container"
 >

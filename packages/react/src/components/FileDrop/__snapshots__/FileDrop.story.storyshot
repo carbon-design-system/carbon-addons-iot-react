@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Accept JSON 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Accept JSON 1`] = `
 <div
   className="storybook-container"
 >
@@ -67,7 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Browse 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Browse 1`] = `
 <div
   className="storybook-container"
 >
@@ -120,7 +120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Browse only one 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Browse only one 1`] = `
 <div
   className="storybook-container"
 >
@@ -173,7 +173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Drag and drop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Drag and drop 1`] = `
 <div
   className="storybook-container"
 >
@@ -236,7 +236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Drag only one file 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Drag only one file 1`] = `
 <div
   className="storybook-container"
 >
@@ -299,7 +299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FileDrop Show files false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/File uploader Show files false 1`] = `
 <div
   className="storybook-container"
 >

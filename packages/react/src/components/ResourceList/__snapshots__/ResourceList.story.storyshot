@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList default 1`] = `
 <div
   className="storybook-container"
 >
@@ -166,7 +166,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList with action 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList with action 1`] = `
 <div
   className="storybook-container"
 >
@@ -353,7 +353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList with extra content 1`] = `
 <div
   className="storybook-container"
 >

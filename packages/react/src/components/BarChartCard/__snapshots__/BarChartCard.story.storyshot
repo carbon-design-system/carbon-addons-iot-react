@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with grouped bar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with grouped bar 1`] = `
 <div
   className="storybook-container"
 >
@@ -102,7 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with simple bar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with simple bar 1`] = `
 <div
   className="storybook-container"
 >
@@ -204,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with simple bar of time series data and custom domainRange 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with simple bar of time series data and custom domainRange 1`] = `
 <div
   className="storybook-container"
 >
@@ -355,7 +355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with simple bar of time series data and intervals 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with simple bar of time series data and intervals 1`] = `
 <div
   className="storybook-container"
 >
@@ -457,7 +457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with stacked bar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with stacked bar 1`] = `
 <div
   className="storybook-container"
 >
@@ -559,7 +559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with stacked bar of time series data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with stacked bar of time series data 1`] = `
 <div
   className="storybook-container"
 >
@@ -710,7 +710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/BarChartCard with stacked bar of time series data and categories 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/BarChartCard with stacked bar of time series data and categories 1`] = `
 <div
   className="storybook-container"
 >
