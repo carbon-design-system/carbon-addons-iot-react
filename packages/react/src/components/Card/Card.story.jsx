@@ -428,11 +428,15 @@ export const ImplementingACustomCard = () => {
         availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
         onCardAction={action('onCardAction')}
         hideHeader
+        padding={select(
+          'Apply padding to the card content or not (padding)',
+          ['default', 'none'],
+          'none'
+        )}
       >
         {!isEditable
           ? (_$, { cardToolbar, values }) => (
               <Table
-                style={{ width: 'calc(100% + 2rem)', transform: 'translateX(-1rem)' }}
                 id="my table"
                 secondaryTitle={title}
                 columns={[
