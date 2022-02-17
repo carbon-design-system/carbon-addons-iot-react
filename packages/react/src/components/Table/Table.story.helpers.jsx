@@ -249,6 +249,16 @@ export const getTableColumns = () => [
       filterFunction: (columnValue, filterValue) => {
         return columnValue.id.includes(filterValue);
       },
+      options: [
+        {
+          id: 'apa-A',
+          text: 'option-A',
+        },
+        {
+          id: 'apa-B',
+          text: 'option-B',
+        },
+      ],
     },
   },
 ];
@@ -737,7 +747,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
         )
       : null,
     stickyHeader: shouldCreate('stickyHeader')
-      ? boolean('Sticky header ☢️ (stickyHeader)', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
+      ? boolean('Sticky header (stickyHeader) ☢️', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
       : null,
     demoToolbarActions: shouldCreate('tableTooltipText')
       ? boolean(
@@ -778,7 +788,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
       : null,
     hasFilter: shouldCreate('hasFilter')
       ? select(
-          'Enable filtering by column value (options.hasFilter)',
+          'Enable simple filtering by column value (options.hasFilter)',
           ['onKeyPress', 'onEnterAndBlur', true, false],
           enableKnob('hasFilter'),
           SORT_FILTER_GROUP
@@ -786,7 +796,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
       : null,
     hasAdvancedFilter: shouldCreate('hasAdvancedFilter')
       ? boolean(
-          'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
+          'Enable advanced filters (options.hasAdvancedFilter) ☢️',
           enableKnob('hasAdvancedFilter'),
           SORT_FILTER_GROUP
         )
@@ -803,7 +813,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasFastSearch: shouldCreate('hasFastSearch')
       ? boolean(
           'Trigger search while typing (options.hasFastSearch)',
-          enableKnob('xxx'),
+          enableKnob('hasFastSearch'),
           SEARCH_GROUP
         )
       : null,

@@ -29466,39 +29466,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--form-item iot--filter-header-row--form-item"
+                      className="iot--combobox iot--combobox__menu--fit-content iot--combobox__menu--flip-horizontal"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--form-item bx--text-input-wrapper"
+                        className="bx--list-box__wrapper"
                       >
-                        <label
-                          className="bx--label bx--visually-hidden"
-                          htmlFor="object"
-                        >
-                          object
-                        </label>
                         <div
-                          className="bx--text-input__field-outer-wrapper"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--list-box__field"
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input bx--text-input--empty"
+                              data-testid="combo-box"
                               disabled={false}
-                              id="object"
-                              onBlur={null}
+                              id="column-7"
+                              onBlur={[Function]}
                               onChange={[Function]}
                               onClick={[Function]}
-                              onKeyDown={null}
+                              onKeyDown={[Function]}
                               placeholder="Filter object values..."
-                              title="Filter object values..."
+                              role="combobox"
+                              tabIndex="0"
+                              title=""
                               type="text"
                               value=""
                             />
+                            
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
                           </div>
+                          <div
+                            aria-label="Choose an item"
+                            aria-labelledby={null}
+                            className="bx--list-box__menu"
+                            id="downshift-2-menu"
+                            role="listbox"
+                          />
                         </div>
                       </div>
                     </div>
@@ -34515,39 +34563,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--table-header-label"
                 >
                   <div
-                    className="bx--form-item iot--filter-header-row--form-item"
+                    className="iot--combobox iot--combobox__menu--fit-content iot--combobox__menu--flip-horizontal"
+                    data-edit-option-text="Create"
+                    data-testid="combo-wrapper"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
                   >
                     <div
-                      className="bx--form-item bx--text-input-wrapper"
+                      className="bx--list-box__wrapper"
                     >
-                      <label
-                        className="bx--label bx--visually-hidden"
-                        htmlFor="object"
-                      >
-                        object
-                      </label>
                       <div
-                        className="bx--text-input__field-outer-wrapper"
+                        className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                       >
                         <div
-                          className="bx--text-input__field-wrapper"
-                          data-invalid={null}
+                          className="bx--list-box__field"
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            aria-activedescendant={null}
+                            aria-autocomplete="list"
+                            aria-controls={null}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-label="Filter"
+                            aria-labelledby={null}
+                            autoComplete="off"
+                            className="bx--text-input bx--text-input--empty"
+                            data-testid="combo-box"
                             disabled={false}
-                            id="object"
+                            id="column-7"
                             onBlur={[Function]}
                             onChange={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             placeholder="Filter object values..."
-                            title="Filter object values..."
+                            role="combobox"
+                            tabIndex="0"
+                            title=""
                             type="text"
                             value=""
                           />
+                          
+                          <button
+                            aria-haspopup={true}
+                            aria-label="Open menu"
+                            className="bx--list-box__menu-icon"
+                            data-toggle={true}
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseUp={[Function]}
+                            role="button"
+                            tabIndex="-1"
+                            title="Open menu"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                            </svg>
+                          </button>
                         </div>
+                        <div
+                          aria-label="Choose an item"
+                          aria-labelledby={null}
+                          className="bx--list-box__menu"
+                          id="downshift-1-menu"
+                          role="listbox"
+                        />
                       </div>
                     </div>
                   </div>
@@ -40935,39 +41031,87 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="bx--table-header-label"
                   >
                     <div
-                      className="bx--form-item iot--filter-header-row--form-item"
+                      className="iot--combobox iot--combobox__menu--fit-content"
+                      data-edit-option-text="Create"
+                      data-testid="combo-wrapper"
+                      onBlur={[Function]}
+                      onKeyDown={[Function]}
                     >
                       <div
-                        className="bx--form-item bx--text-input-wrapper"
+                        className="bx--list-box__wrapper"
                       >
-                        <label
-                          className="bx--label bx--visually-hidden"
-                          htmlFor="object"
-                        >
-                          object
-                        </label>
                         <div
-                          className="bx--text-input__field-outer-wrapper"
+                          className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
                         >
                           <div
-                            className="bx--text-input__field-wrapper"
-                            data-invalid={null}
+                            className="bx--list-box__field"
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              aria-activedescendant={null}
+                              aria-autocomplete="list"
+                              aria-controls={null}
+                              aria-expanded={false}
+                              aria-haspopup="listbox"
+                              aria-label="Filter"
+                              aria-labelledby={null}
+                              autoComplete="off"
+                              className="bx--text-input bx--text-input--empty"
+                              data-testid="combo-box"
                               disabled={false}
-                              id="object"
-                              onBlur={null}
+                              id="column-8"
+                              onBlur={[Function]}
                               onChange={[Function]}
                               onClick={[Function]}
-                              onKeyDown={null}
+                              onKeyDown={[Function]}
                               placeholder="Filter object values..."
-                              title="Filter object values..."
+                              role="combobox"
+                              tabIndex="0"
+                              title=""
                               type="text"
                               value=""
                             />
+                            
+                            <button
+                              aria-haspopup={true}
+                              aria-label="Open menu"
+                              className="bx--list-box__menu-icon"
+                              data-toggle={true}
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseUp={[Function]}
+                              role="button"
+                              tabIndex="-1"
+                              title="Open menu"
+                              type="button"
+                            >
+                              <svg
+                                aria-hidden={true}
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                />
+                              </svg>
+                            </button>
                           </div>
+                          <div
+                            aria-label="Choose an item"
+                            aria-labelledby={null}
+                            className="bx--list-box__menu"
+                            id="downshift-1-menu"
+                            role="listbox"
+                          />
                         </div>
                       </div>
                     </div>
@@ -84962,37 +85106,86 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           </div>
                         </div>
                         <div
-                          className="bx--form-item iot--filter-flyout__simple-field"
+                          className="bx--list-box__wrapper"
                         >
-                          <div
-                            className="bx--form-item bx--text-input-wrapper"
+                          <label
+                            className="bx--label"
+                            dir="auto"
+                            htmlFor="column-1"
+                            id="downshift-1-label"
                           >
-                            <label
-                              className="bx--label"
-                              htmlFor="object"
-                            >
-                              Object Id
-                            </label>
+                            Object Id
+                          </label>
+                          <div
+                            className="bx--combo-box iot--filter-flyout__simple-field bx--list-box"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                          >
                             <div
-                              className="bx--text-input__field-outer-wrapper"
+                              className="bx--list-box__field"
                             >
-                              <div
-                                className="bx--text-input__field-wrapper"
-                                data-invalid={null}
+                              <input
+                                aria-activedescendant={null}
+                                aria-autocomplete="list"
+                                aria-controls={null}
+                                aria-expanded={false}
+                                aria-haspopup="listbox"
+                                aria-label="Filter"
+                                aria-labelledby={null}
+                                autoComplete="off"
+                                className="bx--text-input bx--text-input--empty"
+                                disabled={false}
+                                id="column-1"
+                                onBlur={[Function]}
+                                onChange={[Function]}
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                placeholder="Filter object values..."
+                                role="combobox"
+                                tabIndex="0"
+                                type="text"
+                                value=""
+                              />
+                              
+                              <button
+                                aria-haspopup={true}
+                                aria-label="Open menu"
+                                className="bx--list-box__menu-icon"
+                                data-toggle={true}
+                                disabled={false}
+                                onBlur={[Function]}
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                onKeyUp={[Function]}
+                                onMouseUp={[Function]}
+                                role="button"
+                                tabIndex="-1"
+                                title="Open menu"
+                                type="button"
                               >
-                                <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
-                                  disabled={false}
-                                  id="object"
-                                  onChange={[Function]}
-                                  onClick={[Function]}
-                                  placeholder="Filter object values..."
-                                  title="Filter object values..."
-                                  type="text"
-                                />
-                              </div>
+                                <svg
+                                  aria-hidden={true}
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height={16}
+                                  preserveAspectRatio="xMidYMid meet"
+                                  viewBox="0 0 16 16"
+                                  width={16}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                                  />
+                                </svg>
+                              </button>
                             </div>
+                            <div
+                              aria-label="Choose an item"
+                              aria-labelledby={null}
+                              className="bx--list-box__menu"
+                              id="downshift-1-menu"
+                              role="listbox"
+                            />
                           </div>
                         </div>
                       </div>
@@ -85009,8 +85202,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       >
                         <label
                           className="bx--label"
-                          htmlFor="downshift-1-toggle-button"
-                          id="downshift-1-label"
+                          htmlFor="downshift-2-toggle-button"
+                          id="downshift-2-label"
                         >
                           Select an existing filter or
                            
@@ -85049,10 +85242,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             aria-disabled={false}
                             aria-expanded={false}
                             aria-haspopup="listbox"
-                            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+                            aria-labelledby="downshift-2-label downshift-2-toggle-button"
                             className="bx--list-box__field"
                             disabled={false}
-                            id="downshift-1-toggle-button"
+                            id="downshift-2-toggle-button"
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             type="button"
@@ -85123,10 +85316,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             </div>
                           </button>
                           <div
-                            aria-labelledby="downshift-1-label"
+                            aria-labelledby="downshift-2-label"
                             aria-multiselectable="true"
                             className="bx--list-box__menu"
-                            id="downshift-1-menu"
+                            id="downshift-2-menu"
                             onBlur={[Function]}
                             onKeyDown={[Function]}
                             onMouseLeave={[Function]}

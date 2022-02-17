@@ -1,17 +1,20 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
-import { object } from '@storybook/addon-knobs';
-import { merge } from 'lodash-es';
+import { object, select, boolean } from '@storybook/addon-knobs';
+import { merge, uniqueId } from 'lodash-es';
 import { TrashCan16 } from '@carbon/icons-react';
 
+import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
 import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
+import RuleBuilder from '../RuleBuilder/RuleBuilder';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
+import FilteringREADME from './mdx/Filtering.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -373,6 +376,12 @@ export const WithSorting = () => {
   const columns = getTableColumns().map((column) => ({
     ...column,
     isSortable: demoSingleSort,
+    tooltip:
+      column.id === 'object'
+        ? `This column has a custom sort function based on the object id property`
+        : column.id === 'status'
+        ? `This column has a custom sort function that orders on BROKEN, RUNNING and then NOT_RUNNING`
+        : undefined,
   }));
 
   const sort = object('Sort state (view.table.sort)', {
@@ -550,5 +559,122 @@ WithRowNesting.parameters = {
   component: Table,
   docs: {
     page: RowNestingREADME,
+  },
+};
+
+export const WithFiltering = () => {
+  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
+    enableKnob: (knobName) => knobName !== 'hasAdvancedFilter',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 30);
+  const columns = getTableColumns().map((col) =>
+    col.id === 'object'
+      ? {
+          ...col,
+          tooltip: `This column has objects as values and needs a custom filter function that
+      filters based on an object property.`,
+        }
+      : col
+  );
+
+  // Normal filter settings
+  let activeFilters;
+  let activeBar;
+  if (!hasAdvancedFilter) {
+    activeFilters = object('Active filters (view.filters)', [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
+      },
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ]);
+    activeBar = select(
+      'Show filter toolbar (view.toolbar.activeBar)',
+      ['filter', undefined],
+      'filter'
+    );
+  }
+
+  // Advanced filter settings
+  const [showBuilder, setShowBuilder] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState(
+    hasAdvancedFilter ? getAdvancedFilters() : undefined
+  );
+  const selectedAdvancedFilterIds = hasAdvancedFilter
+    ? object('Active advanced filters (view.selectedAdvancedFilterIds) ☢️', ['story-filter'])
+    : undefined;
+  const advancedFilterFlyoutOpen = hasAdvancedFilter
+    ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
+    : undefined;
+  const actions = merge(getTableActions(), {
+    toolbar: { onCreateAdvancedFilter: () => setShowBuilder(true) },
+  });
+  const storyNotice = hasAdvancedFilter ? (
+    <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
+  ) : null;
+
+  return (
+    <>
+      {storyNotice}
+      <MyTable
+        actions={actions}
+        columns={columns}
+        data={data}
+        options={{
+          hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
+          hasAdvancedFilter,
+        }}
+        view={{
+          advancedFilters,
+          selectedAdvancedFilterIds,
+          filters: activeFilters,
+          toolbar: {
+            activeBar,
+            advancedFilterFlyoutOpen,
+          },
+        }}
+      />
+      {showBuilder && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 10,
+          }}
+        >
+          <RuleBuilder
+            onSave={(newFilter) => {
+              setAdvancedFilters((prev) => [
+                ...prev,
+                {
+                  filterId: uniqueId('filter-id'),
+                  ...newFilter,
+                },
+              ]);
+              setShowBuilder(false);
+            }}
+            onCancel={() => setShowBuilder(false)}
+            filter={{
+              filterColumns: columns.map(({ id, name }) => ({ id, name })),
+            }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+WithFiltering.storyName = 'With filtering';
+WithFiltering.decorators = [createElement];
+WithFiltering.parameters = {
+  component: Table,
+  docs: {
+    page: FilteringREADME,
   },
 };

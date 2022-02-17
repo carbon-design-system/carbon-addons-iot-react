@@ -1,5 +1,1466 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="null-table-container"
+  >
+    <section
+      aria-label="data table toolbar"
+      className="bx--table-toolbar"
+      data-testid="null-table-toolbar"
+    >
+      <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span>
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
+        className="bx--toolbar-content iot--table-toolbar-content"
+        data-testid="null-table-toolbar-content"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+          data-testid="filter-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          title="Filters"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Filters"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <div
+      className="addons-iot-table-container iot-table-container--dropdown-height-fix"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid={null}
+          id={null}
+          title={null}
+        >
+          <thead
+            data-testid="null-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="object"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-object"
+                id="column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Object Id"
+                  >
+                    Object Id
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            data-testid="null-table-body"
+          >
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-0-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0"
+                  >
+                    toyota toyota toyota 0
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-0-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-1-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="helping whiteboard as 1"
+                  >
+                    helping whiteboard as 1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-1-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="OewGc"
+                  >
+                    OewGc
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-2-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="whiteboard can eat 2"
+                  >
+                    whiteboard can eat 2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-2-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="c8iM4"
+                  >
+                    c8iM4
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-3-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 3"
+                  >
+                    as eat scott 3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-3-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="qcUSW"
+                  >
+                    qcUSW
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-4-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="can pinocchio whiteboard 4"
+                  >
+                    can pinocchio whiteboard 4
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-4-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="46GYy"
+                  >
+                    46GYy
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-5-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="bottle toyota bottle 5"
+                  >
+                    bottle toyota bottle 5
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-5-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="Ia2eQ"
+                  >
+                    Ia2eQ
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-6-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="eat whiteboard pinocchio 6"
+                  >
+                    eat whiteboard pinocchio 6
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-6-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="W4oks"
+                  >
+                    W4oks
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-7-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="chocolate can helping 7"
+                  >
+                    chocolate can helping 7
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-7-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="kYaqK"
+                  >
+                    kYaqK
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-8-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="pinocchio eat can 8"
+                  >
+                    pinocchio eat can 8
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-8-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="y2Mwm"
+                  >
+                    y2Mwm
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-9-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="scott pinocchio chocolate 9"
+                  >
+                    scott pinocchio chocolate 9
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-9-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="CW82E"
+                  >
+                    CW82E
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-10-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 10"
+                  >
+                    toyota toyota toyota 10
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-10-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="Q0u8g"
+                  >
+                    Q0u8g
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-11-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="helping whiteboard as 11"
+                  >
+                    helping whiteboard as 11
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-11-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="eUgE8"
+                  >
+                    eUgE8
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-12-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="whiteboard can eat 12"
+                  >
+                    whiteboard can eat 12
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-12-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="sySKa"
+                  >
+                    sySKa
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-13-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 13"
+                  >
+                    as eat scott 13
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-13-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="6SEQ2"
+                  >
+                    6SEQ2
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-14-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="can pinocchio whiteboard 14"
+                  >
+                    can pinocchio whiteboard 14
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-14-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="Kw0WU"
+                  >
+                    Kw0WU
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-15-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="bottle toyota bottle 15"
+                  >
+                    bottle toyota bottle 15
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-15-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="YQmcw"
+                  >
+                    YQmcw
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-16-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="eat whiteboard pinocchio 16"
+                  >
+                    eat whiteboard pinocchio 16
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-16-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="muYiO"
+                  >
+                    muYiO
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-17-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="chocolate can helping 17"
+                  >
+                    chocolate can helping 17
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-17-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="0OKoq"
+                  >
+                    0OKoq
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-18-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="pinocchio eat can 18"
+                  >
+                    pinocchio eat can 18
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-18-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="Es6uI"
+                  >
+                    Es6uI
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-19-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="scott pinocchio chocolate 19"
+                  >
+                    scott pinocchio chocolate 19
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-19-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="SMs0k"
+                  >
+                    SMs0k
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-20-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 20"
+                  >
+                    toyota toyota toyota 20
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-20-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="gqe6C"
+                  >
+                    gqe6C
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-21-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="helping whiteboard as 21"
+                  >
+                    helping whiteboard as 21
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-21-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="uKQCe"
+                  >
+                    uKQCe
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-22-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="whiteboard can eat 22"
+                  >
+                    whiteboard can eat 22
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-22-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="8oCI6"
+                  >
+                    8oCI6
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-23-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="as eat scott 23"
+                  >
+                    as eat scott 23
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-23-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="MIyOY"
+                  >
+                    MIyOY
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-24-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="can pinocchio whiteboard 24"
+                  >
+                    can pinocchio whiteboard 24
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-24-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="amkU0"
+                  >
+                    amkU0
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-25-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="bottle toyota bottle 25"
+                  >
+                    bottle toyota bottle 25
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-25-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="oGWaS"
+                  >
+                    oGWaS
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-26-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="eat whiteboard pinocchio 26"
+                  >
+                    eat whiteboard pinocchio 26
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-26-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="2kIgu"
+                  >
+                    2kIgu
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-27-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="chocolate can helping 27"
+                  >
+                    chocolate can helping 27
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-27-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="GE4mM"
+                  >
+                    GE4mM
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-28-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="pinocchio eat can 28"
+                  >
+                    pinocchio eat can 28
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-28-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="Uiqso"
+                  >
+                    Uiqso
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-29-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="scott pinocchio chocolate 29"
+                  >
+                    scott pinocchio chocolate 29
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-29-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="iCcyG"
+                  >
+                    iCcyG
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table Playground 1`] = `
 <div
   className="storybook-container"
@@ -17725,6 +19186,1632 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With filtering 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="null-table-container"
+  >
+    <section
+      aria-label="data table toolbar"
+      className="bx--table-toolbar"
+      data-testid="null-table-toolbar"
+    >
+      <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span>
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
+        className="bx--toolbar-content iot--table-toolbar-content"
+        data-testid="null-table-toolbar-content"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="null-table-toolbar-clear-filters-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Clear all filters
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
+          data-testid="filter-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          title="Filters"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            aria-label="Filters"
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            role="img"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </section>
+    <div
+      className="addons-iot-table-container iot-table-container--dropdown-height-fix"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid={null}
+          id={null}
+          title={null}
+        >
+          <thead
+            data-testid="null-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="date"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-date"
+                id="column-date"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Date"
+                  >
+                    Date
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="select"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-select"
+                id="column-select"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Select"
+                  >
+                    Select
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="secretField"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-secretField"
+                id="column-secretField"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Secret Information"
+                  >
+                    Secret Information
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="status"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-status"
+                id="column-status"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Status"
+                  >
+                    Status
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="number"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-number"
+                id="column-number"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Number"
+                  >
+                    Number
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="boolean"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-boolean"
+                id="column-boolean"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Boolean"
+                  >
+                    Boolean
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="node"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-node"
+                id="column-node"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="React Node"
+                  >
+                    React Node
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="object"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-object"
+                id="column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--tooltip--definition bx--tooltip--a11y"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <button
+                    aria-describedby="table-header-tooltip"
+                    className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-start"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
+                    type="button"
+                  >
+                    <span
+                      className=""
+                    >
+                      Object Id
+                    </span>
+                  </button>
+                  <span
+                    className="bx--assistive-text"
+                    id="table-header-tooltip"
+                    role="tooltip"
+                  >
+                    This column has objects as values and needs a custom filter function that
+      filters based on an object property.
+                  </span>
+                </span>
+              </th>
+            </tr>
+            <tr
+              data-testid="null-table-head-filter-header-row"
+              style={
+                Object {
+                  "--filter-header-dropdown-max-height": "unset",
+                }
+              }
+            >
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="string"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item iot--filter-header-row--form-item"
+                  >
+                    <div
+                      className="bx--form-item bx--text-input-wrapper"
+                    >
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="string"
+                      >
+                        string
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                        >
+                          <input
+                            aria-describedby=""
+                            className="bx--text-input"
+                            disabled={false}
+                            id="string"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="enter a string"
+                            title="whiteboard"
+                            type="text"
+                            value="whiteboard"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="bx--list-box__selection"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex="0"
+                      title="Clear filter"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        description="Clear filter"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="date"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item iot--filter-header-row--form-item"
+                  >
+                    <div
+                      className="bx--form-item bx--text-input-wrapper"
+                    >
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="date"
+                      >
+                        date
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                        >
+                          <input
+                            aria-describedby=""
+                            className="bx--text-input"
+                            disabled={false}
+                            id="date"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="enter a date"
+                            title="enter a date"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="select"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="iot--combobox iot--combobox__menu--fit-content"
+                    data-edit-option-text="Create"
+                    data-testid="combo-wrapper"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <div
+                      className="bx--list-box__wrapper"
+                    >
+                      <div
+                        className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <div
+                          className="bx--list-box__field"
+                        >
+                          <input
+                            aria-activedescendant={null}
+                            aria-autocomplete="list"
+                            aria-controls={null}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-label="Filter"
+                            aria-labelledby={null}
+                            autoComplete="off"
+                            className="bx--text-input"
+                            data-testid="combo-box"
+                            disabled={false}
+                            id="column-2"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="pick an option"
+                            role="combobox"
+                            tabIndex="0"
+                            title=""
+                            type="text"
+                            value="option-B"
+                          />
+                          <button
+                            aria-label="Clear selection"
+                            className="bx--list-box__selection"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            tabIndex={0}
+                            title="Clear selection"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 32 32"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            aria-haspopup={true}
+                            aria-label="Open menu"
+                            className="bx--list-box__menu-icon"
+                            data-toggle={true}
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseUp={[Function]}
+                            role="button"
+                            tabIndex="-1"
+                            title="Open menu"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div
+                          aria-label="Choose an item"
+                          aria-labelledby={null}
+                          className="bx--list-box__menu"
+                          id="downshift-0-menu"
+                          role="listbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="secretField"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div />
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="status"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div />
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="number"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item iot--filter-header-row--form-item"
+                  >
+                    <div
+                      className="bx--form-item bx--text-input-wrapper"
+                    >
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="number"
+                      >
+                        number
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                        >
+                          <input
+                            aria-describedby=""
+                            className="bx--text-input"
+                            disabled={false}
+                            id="number"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="enter a number"
+                            title="enter a number"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="boolean"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item iot--filter-header-row--form-item"
+                  >
+                    <div
+                      className="bx--form-item bx--text-input-wrapper"
+                    >
+                      <label
+                        className="bx--label bx--visually-hidden"
+                        htmlFor="boolean"
+                      >
+                        boolean
+                      </label>
+                      <div
+                        className="bx--text-input__field-outer-wrapper"
+                      >
+                        <div
+                          className="bx--text-input__field-wrapper"
+                          data-invalid={null}
+                        >
+                          <input
+                            aria-describedby=""
+                            className="bx--text-input"
+                            disabled={false}
+                            id="boolean"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="true or false"
+                            title="true or false"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="node"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div />
+                </div>
+              </th>
+              <th
+                className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                data-column="object"
+                scope="col"
+              >
+                <div
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="iot--combobox iot--combobox__menu--fit-content iot--combobox__menu--flip-horizontal"
+                    data-edit-option-text="Create"
+                    data-testid="combo-wrapper"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                  >
+                    <div
+                      className="bx--list-box__wrapper"
+                    >
+                      <div
+                        className="bx--combo-box iot--filterheader-combo iot--combobox-input bx--list-box"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                      >
+                        <div
+                          className="bx--list-box__field"
+                        >
+                          <input
+                            aria-activedescendant={null}
+                            aria-autocomplete="list"
+                            aria-controls={null}
+                            aria-expanded={false}
+                            aria-haspopup="listbox"
+                            aria-label="Filter"
+                            aria-labelledby={null}
+                            autoComplete="off"
+                            className="bx--text-input bx--text-input--empty"
+                            data-testid="combo-box"
+                            disabled={false}
+                            id="column-8"
+                            onBlur={[Function]}
+                            onChange={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            placeholder="Filter object values..."
+                            role="combobox"
+                            tabIndex="0"
+                            title=""
+                            type="text"
+                            value=""
+                          />
+                          
+                          <button
+                            aria-haspopup={true}
+                            aria-label="Open menu"
+                            className="bx--list-box__menu-icon"
+                            data-toggle={true}
+                            disabled={false}
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            onKeyUp={[Function]}
+                            onMouseUp={[Function]}
+                            role="button"
+                            tabIndex="-1"
+                            title="Open menu"
+                            type="button"
+                          >
+                            <svg
+                              aria-hidden={true}
+                              fill="currentColor"
+                              focusable="false"
+                              height={16}
+                              preserveAspectRatio="xMidYMid meet"
+                              viewBox="0 0 16 16"
+                              width={16}
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div
+                          aria-label="Choose an item"
+                          aria-labelledby={null}
+                          className="bx--list-box__menu"
+                          id="downshift-1-menu"
+                          role="listbox"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            data-testid="null-table-body"
+          >
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-33-row-1-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="helping whiteboard as 1"
+                  >
+                    helping whiteboard as 1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-33-row-1-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="1973-03-14T23:33:20.000Z"
+                  >
+                    1973-03-14T23:33:20.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-33-row-1-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-33-row-1-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="OewGc0QsMs"
+                  >
+                    OewGc0QsMs
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-33-row-1-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-33-row-1-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title={1}
+                  >
+                    1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-33-row-1-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-33-row-1-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-33-row-1-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="OewGc"
+                  >
+                    OewGc
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-33-row-4-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="can pinocchio whiteboard 4"
+                  >
+                    can pinocchio whiteboard 4
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-33-row-4-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="1973-09-04T14:13:20.000Z"
+                  >
+                    1973-09-04T14:13:20.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-33-row-4-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-33-row-4-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="46GYyWC0w0"
+                  >
+                    46GYyWC0w0
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-33-row-4-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-33-row-4-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title={16}
+                  >
+                    16
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-33-row-4-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-33-row-4-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-33-row-4-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="46GYy"
+                  >
+                    46GYy
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-33-row-16-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="eat whiteboard pinocchio 16"
+                  >
+                    eat whiteboard pinocchio 16
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-33-row-16-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="1981-04-13T08:53:20.000Z"
+                  >
+                    1981-04-13T08:53:20.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-33-row-16-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-33-row-16-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="muYiOaIWGW"
+                  >
+                    muYiOaIWGW
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-33-row-16-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-33-row-16-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title={256}
+                  >
+                    256
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-33-row-16-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-33-row-16-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-33-row-16-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="muYiO"
+                  >
+                    muYiO
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+              onClick={[Function]}
+            >
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-33-row-22-string"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="whiteboard can eat 22"
+                  >
+                    whiteboard can eat 22
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-33-row-22-date"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="1988-07-04T06:13:20.000Z"
+                  >
+                    1988-07-04T06:13:20.000Z
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-33-row-22-select"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-33-row-22-secretField"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="8oCI6cqmQm"
+                  >
+                    8oCI6cqmQm
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-33-row-22-status"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-33-row-22-number"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title={484}
+                  >
+                    484
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-33-row-22-boolean"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-33-row-22-node"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-33-row-22-object"
+                offset={0}
+              >
+                <span
+                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                >
+                  <span
+                    className=""
+                    title="8oCI6"
+                  >
+                    8oCI6
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With row expansion 1`] = `
 <div
   className="storybook-container"
@@ -23559,13 +26646,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onClick={[Function]}
                 >
                   <span
-                    className="bx--table-header-label"
+                    className="bx--tooltip--definition bx--tooltip--a11y"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                   >
-                    <span
-                      className=""
-                      title="Status"
+                    <button
+                      aria-describedby="table-header-tooltip"
+                      className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-start"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      type="button"
                     >
-                      Status
+                      <span
+                        className=""
+                      >
+                        Status
+                      </span>
+                    </button>
+                    <span
+                      className="bx--assistive-text"
+                      id="table-header-tooltip"
+                      role="tooltip"
+                    >
+                      This column has a custom sort function that orders on BROKEN, RUNNING and then NOT_RUNNING
                     </span>
                   </span>
                   <svg
@@ -23811,13 +26914,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   onClick={[Function]}
                 >
                   <span
-                    className="bx--table-header-label"
+                    className="bx--tooltip--definition bx--tooltip--a11y"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
                   >
-                    <span
-                      className=""
-                      title="Object Id"
+                    <button
+                      aria-describedby="table-header-tooltip"
+                      className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-start"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      type="button"
                     >
-                      Object Id
+                      <span
+                        className=""
+                      >
+                        Object Id
+                      </span>
+                    </button>
+                    <span
+                      className="bx--assistive-text"
+                      id="table-header-tooltip"
+                      role="tooltip"
+                    >
+                      This column has a custom sort function based on the object id property
                     </span>
                   </span>
                   <svg
