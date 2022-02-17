@@ -43407,8 +43407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -43479,8 +43478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -43635,8 +43633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -43683,8 +43680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -43743,8 +43739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -71842,8 +71837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -71913,8 +71907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -72089,8 +72082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -72136,8 +72128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -72194,8 +72185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -81467,8 +81457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={[Function]}
@@ -81538,8 +81527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={[Function]}
@@ -81714,8 +81702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={[Function]}
@@ -81761,8 +81748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={[Function]}
@@ -81819,8 +81805,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={[Function]}

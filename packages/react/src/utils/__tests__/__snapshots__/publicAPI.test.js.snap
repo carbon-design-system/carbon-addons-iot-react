@@ -32303,6 +32303,7 @@ Map {
       "accept": Array [],
       "buttonKind": "primary",
       "buttonLabel": "",
+      "disabled": false,
       "filenameStatus": "uploading",
       "iconDescription": "Provide icon description",
       "multiple": false,
@@ -32337,6 +32338,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "filenameStatus": Object {
         "args": Array [
@@ -34114,17 +34118,6 @@ Map {
   },
   "PasswordInput" => Object {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "className": "\${prefix}--text__input",
-      "disabled": false,
-      "helperText": "",
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "size": "",
-    },
     "displayName": "PasswordInput",
     "propTypes": Object {
       "className": Object {
@@ -35129,10 +35122,12 @@ Map {
     "defaultProps": Object {
       "cols": 50,
       "disabled": false,
+      "enableCounter": false,
       "helperText": "",
       "invalid": false,
       "invalidText": "",
       "light": false,
+      "maxCount": undefined,
       "onChange": [Function],
       "onClick": [Function],
       "placeholder": "",
@@ -35162,6 +35157,9 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "enableCounter": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "node",
       },
@@ -35183,6 +35181,9 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxCount": Object {
+        "type": "number",
       },
       "onChange": Object {
         "type": "func",
@@ -35328,17 +35329,6 @@ Map {
     },
     "PasswordInput": Object {
       "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": Object {
-        "className": "\${prefix}--text__input",
-        "disabled": false,
-        "helperText": "",
-        "invalid": false,
-        "invalidText": "",
-        "light": false,
-        "onChange": [Function],
-        "onClick": [Function],
-        "size": "",
-      },
       "displayName": "PasswordInput",
       "propTypes": Object {
         "className": Object {
@@ -35458,19 +35448,6 @@ Map {
         },
       },
       "render": [Function],
-    },
-    "defaultProps": Object {
-      "disabled": false,
-      "helperText": "",
-      "inline": false,
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "type": "text",
-      "warn": false,
-      "warnText": "",
     },
     "displayName": "TextInput",
     "propTypes": Object {
@@ -36498,9 +36475,6 @@ Map {
     },
   },
   "ButtonSkeleton" => Object {
-    "defaultProps": Object {
-      "small": false,
-    },
     "propTypes": Object {
       "className": Object {
         "type": "string",

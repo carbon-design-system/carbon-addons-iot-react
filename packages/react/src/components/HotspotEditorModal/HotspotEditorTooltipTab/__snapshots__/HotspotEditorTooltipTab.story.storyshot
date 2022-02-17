@@ -30,8 +30,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby=""
-                className="bx--text-input bx--text-input--light"
+                className="bx--text-input bx--text-input--light bx--text-input--md"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -49,12 +48,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <label
-            className="bx--label"
-            htmlFor="tooltip-form-description"
+          <div
+            className="bx--text-area__label-wrapper"
           >
-            Description
-          </label>
+            <label
+              className="bx--label"
+              htmlFor="tooltip-form-description"
+            >
+              Description
+            </label>
+          </div>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
@@ -297,8 +300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby=""
-                className="bx--text-input bx--text-input--light"
+                className="bx--text-input bx--text-input--light bx--text-input--md"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -316,12 +318,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <label
-            className="bx--label"
-            htmlFor="tooltip-form-description"
+          <div
+            className="bx--text-area__label-wrapper"
           >
-            Description
-          </label>
+            <label
+              className="bx--label"
+              htmlFor="tooltip-form-description"
+            >
+              Description
+            </label>
+          </div>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
@@ -603,8 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                aria-describedby=""
-                className="bx--text-input bx--text-input--light"
+                className="bx--text-input bx--text-input--light bx--text-input--md"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -622,12 +627,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <label
-            className="bx--label"
-            htmlFor="tooltip-form-description"
+          <div
+            className="bx--text-area__label-wrapper"
           >
-            Description
-          </label>
+            <label
+              className="bx--label"
+              htmlFor="tooltip-form-description"
+            >
+              Description
+            </label>
+          </div>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
