@@ -16,6 +16,7 @@ import {
 const { prefix, iotPrefix } = settings;
 
 const propTypes = {
+  className: PropTypes.string,
   /* the label show above the bar */
   label: PropTypes.string.isRequired,
   /* the text shown below the bar */
@@ -31,6 +32,9 @@ const propTypes = {
    * value label text differently
    */
   max: PropTypes.number,
+  /* If true, the bar area is white, for use with a gray background */
+  light: PropTypes.bool,
+
   /**
    * An array of threshold objects to compare the value against and change the icon and/or
    * bar colors based on matching criteria
@@ -57,8 +61,10 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: undefined,
   helperText: '',
   hideLabel: false,
+  light: false,
   thresholds: [],
   max: 100,
   valueUnit: '%',
@@ -72,16 +78,18 @@ const defaultProps = {
 const DEFAULT_PROGRESS_BAR_COLOR = blue60;
 
 const ProgressBar = ({
-  label,
+  className,
   helperText,
   hideLabel,
-  value,
-  valueUnit,
+  i18n,
+  label,
+  light,
   max,
   renderIcon,
   renderIconByName,
   thresholds,
-  i18n,
+  value,
+  valueUnit,
 }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const matchingThreshold = useMatchingThreshold({ thresholds, value });
@@ -93,7 +101,13 @@ const ProgressBar = ({
 
   return (
     <div
-      className={`${iotPrefix}--progress-bar-container`}
+      className={classnames(
+        `${iotPrefix}--progress-bar-container`,
+        {
+          [`${iotPrefix}--progress-bar-container--light`]: light,
+        },
+        className
+      )}
       data-testid="progress-bar-container"
       style={{
         '--progress-bar-fill-color': fillColor,
