@@ -89,22 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-0-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                title={
-                  <div
-                    className="iot--icon-dropdown__item"
-                    style={
-                      Object {
-                        "color": "#da1e28",
-                      }
-                    }
-                  >
-                    <div
-                      className="iot--icon-dropdown__item-border"
-                    >
-                      <ForwardRef(Warning24) />
-                    </div>
-                  </div>
-                }
+                title="Warning"
                 type="button"
               >
                 <span
@@ -489,22 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-3-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                title={
-                  <div
-                    className="iot--icon-dropdown__item"
-                    style={
-                      Object {
-                        "color": "#24a148",
-                      }
-                    }
-                  >
-                    <div
-                      className="iot--icon-dropdown__item-border"
-                    >
-                      <ForwardRef(Warning24) />
-                    </div>
-                  </div>
-                }
+                title="Warning"
                 type="button"
               >
                 <span
@@ -889,22 +859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 id="downshift-6-toggle-button"
                 onClick={[Function]}
                 onKeyDown={[Function]}
-                title={
-                  <div
-                    className="iot--icon-dropdown__item"
-                    style={
-                      Object {
-                        "color": "#ff832b",
-                      }
-                    }
-                  >
-                    <div
-                      className="iot--icon-dropdown__item-border"
-                    >
-                      <ForwardRef(Warning24) />
-                    </div>
-                  </div>
-                }
+                title="Warning"
                 type="button"
               >
                 <span
