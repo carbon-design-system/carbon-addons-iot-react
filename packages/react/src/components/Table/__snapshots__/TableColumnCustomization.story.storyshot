@@ -560,11 +560,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-0-string"
-=======
                   id="cell-table-47-row-0-string"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -583,11 +579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-0-date"
-=======
                   id="cell-table-47-row-0-date"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -606,11 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-0-select"
-=======
                   id="cell-table-47-row-0-select"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -629,11 +617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-0-status"
-=======
                   id="cell-table-47-row-0-status"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -663,11 +647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-0-number"
-=======
                   id="cell-table-47-row-0-number"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -685,11 +665,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-1-string"
-=======
                   id="cell-table-47-row-1-string"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -708,11 +684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-1-date"
-=======
                   id="cell-table-47-row-1-date"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -731,11 +703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-1-select"
-=======
                   id="cell-table-47-row-1-select"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -754,11 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-1-status"
-=======
                   id="cell-table-47-row-1-status"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -788,11 +752,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-1-number"
-=======
                   id="cell-table-47-row-1-number"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -817,11 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-2-string"
-=======
                   id="cell-table-47-row-2-string"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -840,11 +796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-2-date"
-=======
                   id="cell-table-47-row-2-date"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -863,11 +815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-2-select"
-=======
                   id="cell-table-47-row-2-select"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -886,11 +834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-2-status"
-=======
                   id="cell-table-47-row-2-status"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -920,11 +864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-2-number"
-=======
                   id="cell-table-47-row-2-number"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -949,11 +889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-3-string"
-=======
                   id="cell-table-47-row-3-string"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -972,11 +908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-3-date"
-=======
                   id="cell-table-47-row-3-date"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -995,11 +927,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-3-select"
-=======
                   id="cell-table-47-row-3-select"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1018,11 +946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-3-status"
-=======
                   id="cell-table-47-row-3-status"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1052,11 +976,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-3-number"
-=======
                   id="cell-table-47-row-3-number"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1074,11 +994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-4-string"
-=======
                   id="cell-table-47-row-4-string"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1097,11 +1013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-4-date"
-=======
                   id="cell-table-47-row-4-date"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1120,11 +1032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-4-select"
-=======
                   id="cell-table-47-row-4-select"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1143,11 +1051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-4-status"
-=======
                   id="cell-table-47-row-4-status"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span
@@ -1177,11 +1081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-<<<<<<< HEAD
-                  id="cell-table-46-row-4-number"
-=======
                   id="cell-table-47-row-4-number"
->>>>>>> docs(table): add story and docs for filters
                   offset={0}
                 >
                   <span

@@ -249,16 +249,6 @@ export const getTableColumns = () => [
       filterFunction: (columnValue, filterValue) => {
         return columnValue.id.includes(filterValue);
       },
-      options: [
-        {
-          id: 'apa-A',
-          text: 'option-A',
-        },
-        {
-          id: 'apa-B',
-          text: 'option-B',
-        },
-      ],
     },
   },
 ];
