@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { isEqual } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
 import ListItem from '../ListItem/ListItem';
@@ -263,10 +264,13 @@ const ListContent = ({
     ];
   };
   const previousExpandedIds = usePrevious(expandedIds, expandedIds);
+  const selectionChanged = !isEqual(expandedIds, previousExpandedIds);
   // get the lastId of the diff between previous and current, this handles closes
-  const [previousLastId] = previousExpandedIds.filter((id) => !expandedIds.includes(id)).slice(-1);
+  const previousLastId =
+    selectionChanged && previousExpandedIds.filter((id) => !expandedIds.includes(id)).slice(-1)[0];
   // get the lastId of the diff between current and previous, this handles opens
-  const [lastId] = expandedIds.filter((id) => !previousExpandedIds.includes(id)).slice(-1);
+  const lastId =
+    selectionChanged && expandedIds.filter((id) => !previousExpandedIds.includes(id)).slice(-1)[0];
 
   const notifyOnLastExpansionChange = (itemId) => {
     const isLastItem = lastId === itemId || previousLastId === itemId;
