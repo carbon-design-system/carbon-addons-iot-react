@@ -9305,6 +9305,7 @@ Map {
         "view": "View",
         "viewAll": "View All",
       },
+      "isHidingStandardActions": false,
       "overrides": undefined,
       "selectedViewEdited": false,
       "selectedViewId": undefined,
@@ -9366,6 +9367,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isHidingStandardActions": Object {
+        "type": "bool",
       },
       "overrides": Object {
         "args": Array [

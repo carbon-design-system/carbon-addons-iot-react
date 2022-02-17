@@ -1,6 +1,6 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select, object } from '@storybook/addon-knobs';
+import { boolean, select, object, text } from '@storybook/addon-knobs';
 
 import TableViewDropdownREADME from './TableViewDropdown.mdx';
 import TableViewDropdown from './TableViewDropdown';
@@ -45,8 +45,9 @@ export const Playground = () => {
 
   return (
     <TableViewDropdown
-      selectedViewId={select('Selected view (selectedViewId)', ['view-1', 'view-2'], 'view-3')}
+      selectedViewId={text('Selected view (selectedViewId)', 'view-1')}
       selectedViewEdited={boolean('selectedViewEdited', true)}
+      isHidingStandardActions={boolean('isHidingStandardActions', false)}
       views={viewsAndActions}
       actions={{
         onSaveAsNewView: action('onSaveAsNewView'),
