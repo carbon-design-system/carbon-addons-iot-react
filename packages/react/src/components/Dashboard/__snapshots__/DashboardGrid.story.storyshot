@@ -1887,7 +1887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </button>
               </div>
               <ul
-                className="bx--accordion settings-accordion bx--accordion--end"
+                className="bx--accordion settings-accordion bx--accordion--end bx--accordion--md"
                 style={
                   Object {
                     "paddingTop": 0,

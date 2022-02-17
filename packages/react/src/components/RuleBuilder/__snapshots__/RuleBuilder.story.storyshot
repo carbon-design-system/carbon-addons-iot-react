@@ -693,7 +693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
@@ -6258,7 +6258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"

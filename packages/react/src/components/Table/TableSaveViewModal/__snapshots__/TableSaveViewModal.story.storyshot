@@ -318,7 +318,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <ul
-            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
+            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item"

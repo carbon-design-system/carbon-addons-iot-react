@@ -192,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="stateful-tile-gallery-section-id1"
             >
               <ul
-                className="bx--accordion bx--accordion--end"
+                className="bx--accordion bx--accordion--end bx--accordion--md"
                 data-testid="stateful-tile-gallery-section-id1-accordion"
               >
                 <li
@@ -630,7 +630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="stateful-tile-gallery-section-id2"
             >
               <ul
-                className="bx--accordion bx--accordion--end"
+                className="bx--accordion bx--accordion--end bx--accordion--md"
                 data-testid="stateful-tile-gallery-section-id2-accordion"
               >
                 <li
@@ -1525,7 +1525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-testid="stateful-tile-gallery-section-id1"
             >
               <ul
-                className="bx--accordion bx--accordion--end"
+                className="bx--accordion bx--accordion--end bx--accordion--md"
                 data-testid="stateful-tile-gallery-section-id1-accordion"
               >
                 <li
@@ -1725,7 +1725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         data-testid="tile-gallery-section"
       >
         <ul
-          className="bx--accordion bx--accordion--end"
+          className="bx--accordion bx--accordion--end bx--accordion--md"
           data-testid="tile-gallery-section-accordion"
         >
           <li
@@ -2188,7 +2188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         data-testid="tile-gallery-section"
       >
         <ul
-          className="bx--accordion bx--accordion--end"
+          className="bx--accordion bx--accordion--end bx--accordion--md"
           data-testid="tile-gallery-section-accordion"
         >
           <li
@@ -2480,7 +2480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="tile-gallery-section"
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
             data-testid="tile-gallery-section-accordion"
           >
             <li
@@ -2943,7 +2943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           data-testid="tile-gallery-section"
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
             data-testid="tile-gallery-section-accordion"
           >
             <li
