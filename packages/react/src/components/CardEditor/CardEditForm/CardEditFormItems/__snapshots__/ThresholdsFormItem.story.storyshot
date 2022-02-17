@@ -102,6 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         "color": "#da1e28",
                       }
                     }
+                    title="Warning"
                   >
                     <div
                       className="iot--icon-dropdown__item-border"
@@ -487,6 +488,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         "color": "#24a148",
                       }
                     }
+                    title="Warning"
                   >
                     <div
                       className="iot--icon-dropdown__item-border"
@@ -872,6 +874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         "color": "#ff832b",
                       }
                     }
+                    title="Warning"
                   >
                     <div
                       className="iot--icon-dropdown__item-border"

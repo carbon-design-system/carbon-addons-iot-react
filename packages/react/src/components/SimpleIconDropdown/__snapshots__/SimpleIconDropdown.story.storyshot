@@ -50,6 +50,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   "color": "unset",
                 }
               }
+              title="Checkmark"
             >
               <div
                 className="iot--icon-dropdown__item-border"
@@ -161,6 +162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   "color": "red",
                 }
               }
+              title="Error outline"
             >
               <div
                 className="iot--icon-dropdown__item-border"
@@ -276,6 +278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   "color": "unset",
                 }
               }
+              title="Information"
             >
               <div
                 className="iot--icon-dropdown__item-border"
