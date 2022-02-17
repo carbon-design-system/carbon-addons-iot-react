@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.4...v2.149.0-next.5) (2022-02-16)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.3...v2.149.0-next.4) (2022-02-16)
+
+
+### Features
+
+* **status-bar:** add className prop ([7e4aaf6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e4aaf6b18f92d587db0f5ef2339c5a3c6113c8a))
+
+
+
+
+
+# [2.149.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.2...v2.149.0-next.3) (2022-02-16)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.1...v2.149.0-next.2) (2022-02-15)
+
+
+### Bug Fixes
+
+* **IdleLogoutConfirmationModal:** Disabling the "Stay Logged in" button after the Log out button is clicked. ([f1384b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1384b025b9bb68e2af9b5282c3e3c12f5abd533))
+* **IdleTimer:** Adding an extra callback to IdleTimer that is fired when the user inactivity timeout cookie is cleared in some other tab. ([5f1abce](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5f1abce1d43f9c628d64e856a3e05dd34fef63e5))
+* **IdleTimer:** Changes per PR feedbacks. ([a136a81](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a136a8128ebdfb540a00d737497f4ec900cb3fe1))
+* **IdleTimer:** Including the condition where the idle timeout cookie is NaN in the setInterval logic, since a logout event in another tab would clear the cookie. The default behavior for a deleted cookie is to consider that timeout has been reached and enter countdown state. ([39a5bfc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/39a5bfcd246e0da8b79db15e009941c1147b956a))
+* **IdleTimer:** Removing an unused method in IdlerTimer. ([4939de0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4939de0260c431c02896d701d7477ba7a404a682))
+* **IdleTimer:** Removing the method that deletes the cookie (it is not needed and may cause a bug) ([ae8a535](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae8a5357970445171f983c61cfab4610e5dd4a06))
+
+
+
+
+
+# [2.149.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear and format code ([b6d7774](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b6d7774a5dfca0961782a2ec96430f1929aa2c88))
+* **datetimepicker:** unable to modify abs range issue ([73c5e04](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/73c5e0411bd06c08d84a82875be9f649b7e64aa1))
+* **repo:** change uuid imports to use uuid/v4 ([63dffa4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63dffa4d8979ea64c67e628d2a98eb8b043f990f))
+* **repo:** use wildcard import for uuid ([1d6c0f9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d6c0f9cd1baad85da8c27aa614bfdf4eda87539))
+
+
+
+
+
+# [2.149.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.2...v2.149.0-next.0) (2022-02-14)
+
+
+### Features
+
+* **progress-bar:** add light prop ([f23dbdc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f23dbdc3fcbc3bcab09537182e98620e562b02ec))
+
+
+
+
+
 ## [2.148.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.148.1-next.1...v2.148.1-next.2) (2022-02-10)
 
 
