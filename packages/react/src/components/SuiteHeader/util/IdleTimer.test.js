@@ -72,6 +72,8 @@ describe('IdleTimer', () => {
     // only onIdleTimeoutWarning callbacks should have been fired
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
+    // Simulate the countdown reaching zero
+    timer.countdown = 0;
     // Run just one more setInterval cycle
     jest.runOnlyPendingTimers();
     // now onIdleTimeout should have been fired
@@ -211,6 +213,8 @@ describe('IdleTimer', () => {
     // only onIdleTimeoutWarning callbacks should have been fired
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
+    // Simulate the countdown reaching zero
+    timer.countdown = 0;
     // Run just one more setInterval cycle
     jest.runOnlyPendingTimers();
     // now onIdleTimeout should have been fired
