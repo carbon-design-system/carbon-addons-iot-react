@@ -1174,6 +1174,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -1618,7 +1619,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -2686,6 +2689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -2732,6 +2736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -2783,6 +2788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -2834,6 +2840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -4109,6 +4116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -4553,7 +4561,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -5621,6 +5631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -5667,6 +5678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -5718,6 +5730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -5769,6 +5782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -7079,6 +7093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -7523,7 +7538,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -8591,6 +8608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -8637,6 +8655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -8688,6 +8707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -8739,6 +8759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -9579,7 +9600,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -12343,6 +12366,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -12787,7 +12811,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -13855,6 +13881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -13901,6 +13928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -13952,6 +13980,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -14003,6 +14032,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -14888,6 +14918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="iot--data-state-grid"
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                           className="bx--tooltip__label"
                           id="iot--data-state-grid__icon-xsmall-number-5"
@@ -15695,6 +15726,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="iot--data-state-grid"
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                           className="bx--tooltip__label"
                           id="iot--data-state-grid__icon-xsmall-number-5"
@@ -30016,6 +30048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -30460,7 +30493,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -31528,6 +31563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -31574,6 +31610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -31625,6 +31662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -31676,6 +31714,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"

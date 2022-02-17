@@ -30626,7 +30626,6 @@ Map {
     "defaultProps": Object {
       "indeterminate": false,
       "onChange": [Function],
-      "onClick": [Function],
     },
     "displayName": "Checkbox",
     "propTypes": Object {
@@ -30657,9 +30656,6 @@ Map {
         "type": "node",
       },
       "onChange": Object {
-        "type": "func",
-      },
-      "onClick": Object {
         "type": "func",
       },
       "title": Object {
@@ -31410,6 +31406,9 @@ Map {
         "colSpan": Object {
           "type": "number",
         },
+        "id": Object {
+          "type": "string",
+        },
         "isSortHeader": Object {
           "type": "bool",
         },
@@ -32113,17 +32112,7 @@ Map {
         "type": "object",
       },
       "helperText": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "string",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
+        "type": "node",
       },
       "hideLabel": Object {
         "type": "bool",
@@ -32173,6 +32162,9 @@ Map {
         "type": "bool",
       },
       "onChange": Object {
+        "type": "func",
+      },
+      "renderSelectedItem": Object {
         "type": "func",
       },
       "selectedItem": Object {
@@ -32635,7 +32627,6 @@ Map {
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
     },
-    "displayName": "MultiSelect.Filterable",
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
@@ -33515,7 +33506,6 @@ Map {
         "selectionFeedback": "top-after-reopen",
         "sortItems": [Function],
       },
-      "displayName": "MultiSelect.Filterable",
       "propTypes": Object {
         "ariaLabel": Object {
           "type": "string",
@@ -33668,6 +33658,7 @@ Map {
       "light": false,
       "locale": "en",
       "open": false,
+      "selectedItems": null,
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
       "title": false,
@@ -33778,6 +33769,9 @@ Map {
       },
       "open": Object {
         "type": "bool",
+      },
+      "selectedItems": Object {
+        "type": "array",
       },
       "selectionFeedback": Object {
         "args": Array [

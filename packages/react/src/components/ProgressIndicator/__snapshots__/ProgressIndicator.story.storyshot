@@ -104,6 +104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-text"
         >
           <div
+            aria-describedby={null}
             aria-labelledby="tooltipTrigger-0"
             className="bx--tooltip__label bx--progress-label"
             id="tooltipTrigger-0"
@@ -162,6 +163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-text"
         >
           <div
+            aria-describedby={null}
             aria-labelledby="tooltipTrigger-1"
             className="bx--tooltip__label bx--progress-label"
             id="tooltipTrigger-1"

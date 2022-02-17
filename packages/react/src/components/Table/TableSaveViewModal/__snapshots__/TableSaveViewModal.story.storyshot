@@ -113,7 +113,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -140,7 +139,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -414,7 +412,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -441,7 +438,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -776,7 +772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -803,7 +798,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -990,7 +984,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={true}
@@ -1017,7 +1010,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}

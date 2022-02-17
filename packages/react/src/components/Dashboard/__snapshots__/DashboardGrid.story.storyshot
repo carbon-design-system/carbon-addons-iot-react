@@ -875,6 +875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 
                 <div
+                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -2124,7 +2125,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span>
+                      <span
+                        dir="auto"
+                      >
                         0 items selected
                       </span>
                     </p>
@@ -3466,6 +3469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     }
                   >
                     <div
+                      aria-describedby={null}
                       aria-labelledby="hotspot-35-65"
                       className="bx--tooltip__label"
                       id="hotspot-35-65"

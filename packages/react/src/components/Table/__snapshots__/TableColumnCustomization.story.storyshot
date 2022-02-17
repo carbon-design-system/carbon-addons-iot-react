@@ -32,7 +32,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -1254,7 +1256,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <div
                             className="bx--form-item bx--checkbox-wrapper"
-                            onClick={[Function]}
                           >
                             <input
                               checked={true}
@@ -1263,6 +1264,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               disabled={false}
                               id="string-checkbox"
                               onChange={[Function]}
+                              onClick={[Function]}
                               type="checkbox"
                             />
                             <label
@@ -1325,7 +1327,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <div
                             className="bx--form-item bx--checkbox-wrapper"
-                            onClick={[Function]}
                           >
                             <input
                               checked={true}
@@ -1334,6 +1335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               disabled={false}
                               id="date-checkbox"
                               onChange={[Function]}
+                              onClick={[Function]}
                               type="checkbox"
                             />
                             <label
@@ -1396,7 +1398,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           <div
                             className="bx--form-item bx--checkbox-wrapper"
-                            onClick={[Function]}
                           >
                             <input
                               checked={true}
@@ -1405,6 +1406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                               disabled={false}
                               id="select-checkbox"
                               onChange={[Function]}
+                              onClick={[Function]}
                               type="checkbox"
                             />
                             <label
@@ -3186,7 +3188,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
