@@ -41557,7 +41557,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -47216,7 +47215,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -75450,7 +75448,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -76381,7 +76378,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </table>
       </div>
     </div>
-    <div />
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
@@ -80555,7 +80551,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -85095,7 +85090,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
@@ -86698,7 +86692,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </table>
         </div>
       </div>
-      <div />
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
