@@ -7,7 +7,14 @@ import {
   Edit20,
   OverflowMenuVertical20,
 } from '@carbon/icons-react';
-import { DataTable, Tooltip } from 'carbon-components-react';
+import {
+  TableToolbar as CarbonTableToolbar,
+  TableToolbarContent,
+  TableToolbarSearch,
+  TableBatchActions,
+  TableBatchAction,
+  Tooltip,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import { isNil, pick } from 'lodash-es';
@@ -20,11 +27,11 @@ import {
   TableSearchPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
-  TableRowPropTypes,
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
   TableToolbarActionsPropType,
+  TableRowsPropTypes,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -38,14 +45,6 @@ import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout
 import TableToolbarSVGButton from './TableToolbarSVGButton';
 
 const { iotPrefix } = settings;
-
-const {
-  TableToolbar: CarbonTableToolbar,
-  TableToolbarContent,
-  TableToolbarSearch,
-  TableBatchActions,
-  TableBatchAction,
-} = DataTable;
 
 const propTypes = {
   /** id of table */
@@ -166,7 +165,7 @@ const propTypes = {
     toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
-  data: TableRowPropTypes.isRequired,
+  data: TableRowsPropTypes.isRequired,
 
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
@@ -255,17 +254,19 @@ const TableToolbar = ({
     testId: testID || testId,
   });
 
-  const hasToolbarOverflowActions =
-    typeof toolbarActions === 'function' ||
-    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+  const actions = useMemo(() => {
+    const renderedActions =
+      typeof toolbarActions === 'function' ? toolbarActions() : toolbarActions;
 
-  const visibleToolbarActions = useMemo(() => {
-    if (typeof toolbarActions === 'function') {
-      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
-    }
-
-    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+    return renderedActions?.length ? renderedActions : [];
   }, [toolbarActions]);
+
+  const hasToolbarOverflowActions =
+    actions.filter((action) => action.isOverflow && action.hidden !== true).length > 0;
+
+  const visibleToolbarActions = actions.filter(
+    (action) => !action.isOverflow && action.hidden !== true
+  );
 
   return (
     <CarbonTableToolbar

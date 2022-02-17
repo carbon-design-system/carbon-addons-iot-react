@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, FormItem, TextInput, FilterableMultiSelect } from 'carbon-components-react';
+import {
+  TableHeader,
+  TableRow,
+  FormItem,
+  TextInput,
+  FilterableMultiSelect,
+} from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
 import { memoize, debounce, isEqual } from 'lodash-es';
 import classnames from 'classnames';
@@ -11,7 +17,6 @@ import { settings } from '../../../../constants/Settings';
 import ComboBox from '../../../ComboBox/ComboBox';
 
 const { iotPrefix, prefix } = settings;
-const { TableHeader, TableRow } = DataTable;
 
 class FilterHeaderRow extends Component {
   static propTypes = {
@@ -64,6 +69,7 @@ class FilterHeaderRow extends Component {
     tableOptions: PropTypes.shape({
       hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
+      hasRowNesting: PropTypes.bool,
       hasRowActions: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
@@ -240,7 +246,7 @@ class FilterHeaderRow extends Component {
       ordering,
       clearFilterText,
       filterText,
-      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
+      tableOptions: { hasRowSelection, hasRowExpansion, hasRowNesting, hasRowActions },
       isVisible,
       lightweight,
       isDisabled,
@@ -260,7 +266,7 @@ class FilterHeaderRow extends Component {
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
-        {hasRowExpansion ? (
+        {hasRowExpansion || hasRowNesting ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
         {visibleColumns.map((c, i) => {

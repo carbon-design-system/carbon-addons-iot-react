@@ -58,6 +58,17 @@ export type DateTimeSelection = PresetDateTimeSelection | CustomDateTimeSelectio
 
 export type DateRange = [Date, Date];
 
+/**
+ * @member key key for the RelativeTo item
+ * @member label label text in Relative to dropdown list
+ * @member value integer relative to today. e.g. -1 for yesterday, 0 for today, 1 for tomorrow
+ */
+export type RelativeToOption = {
+  key: string;
+  label: string;
+  value: number;
+};
+
 @Component({
   selector: 'ai-date-time-picker',
   template: `
@@ -131,10 +142,12 @@ export type DateRange = [Date, Date];
             [range]="selected"
             [hasRelative]="hasRelative"
             [hasAbsolute]="hasAbsolute"
-            [dateFormat]="absoluteDateFormat"
+            [dateFormat]="dateFormat"
+            [datePickerFormat]="datePickerFormat"
             [placeholder]="dateFormat.toLowerCase()"
             [flatpickrOptions]="flatpickrOptions"
             [batchText]="batchText"
+            [relativeToOptions]="relativeToOptions"
           ></ai-custom-date-time>
         </div>
         <div class="iot--date-time-picker__menu-btn-set">
@@ -271,6 +284,19 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     MINUTES: 'minutes',
     RANGE_SEPARATOR: 'to',
   };
+  @Input() relativeToOptions: RelativeToOption[] = [
+    {
+      key: 'YESTERDAY',
+      label: 'Yesterday',
+      value: -1,
+    },
+    {
+      key: 'TODAY',
+      label: 'Today',
+      value: 0,
+    },
+  ];
+
   @Output() selectedChange: EventEmitter<DateTimeSelection> = new EventEmitter();
   @Output() apply: EventEmitter<DateRange> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
@@ -281,7 +307,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
   expanded = false;
   disabled = false;
   timeFormat = 'HH:mm';
-  absoluteDateFormat = 'Y-m-d';
+  datePickerFormat = 'Y-m-d';
 
   get tooltipOffset() {
     return { x: 0, y: 4 };
@@ -314,7 +340,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
     const newDateFormat = formatCharacters
       .filter((char, i) => i === 0 || formatCharacters[i] !== formatCharacters[i - 1])
       .join('');
-    this.absoluteDateFormat = newDateFormat.replace('y', 'Y').replace('M', 'm');
+    this.datePickerFormat = newDateFormat.replace('y', 'Y').replace('M', 'm');
   }
 
   updateI18nTranslationString() {
@@ -360,7 +386,7 @@ export class DateTimePickerComponent implements OnChanges, OnInit {
         formatString
       )}`;
     } else if (type === 'RELATIVE') {
-      const [start, end] = getRangeFromRelative(relativeConfig);
+      const [start, end] = getRangeFromRelative(relativeConfig, this.relativeToOptions);
       return `${format(start, formatString)} ${this.batchText.RANGE_SEPARATOR} ${format(
         end,
         formatString

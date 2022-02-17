@@ -1,0 +1,56 @@
+@import '~carbon-components/scss/components/progress-bar/progress-bar';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--progress-bar-container {
+  position: relative;
+}
+
+.#{$prefix}--progress-bar__label {
+  @include carbon--type-style('productive-heading-01');
+  color: $text-01;
+}
+
+.#{$iot-prefix}--progress-bar__label--right {
+  position: absolute;
+  right: 0;
+  display: inline-flex;
+  gap: $spacing-02;
+  justify-content: center;
+  align-items: center;
+
+  [dir='rtl'] & {
+    right: unset;
+    left: 0;
+  }
+}
+
+.#{$iot-prefix}--progress-bar__icon {
+  display: inline-flex;
+}
+
+.#{$iot-prefix}--progress-bar__value-label {
+  @include carbon--type-style('body-short-01');
+  color: $text-01;
+}
+
+.#{$iot-prefix}--progress-bar__value-label--over {
+  color: var(--progress-bar-fill-color);
+}
+
+.#{$prefix}--progress-bar__track {
+  background-color: $ui-02;
+
+  .#{$iot-prefix}--progress-bar-container--light & {
+    background-color: $ui-01;
+  }
+}
+
+.#{$prefix}--progress-bar__bar {
+  background-color: var(--progress-bar-fill-color);
+  border: 1px solid var(--progress-bar-stroke-color);
+
+  [dir='rtl'] & {
+    // make the bar fill from the right when in RTL
+    transform-origin: 100% 50%;
+  }
+}

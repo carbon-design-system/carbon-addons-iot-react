@@ -921,205 +921,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-7-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-7-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="xx/xx/xxxx xx:xx"
-                        >
-                          xx/xx/xxxx xx:xx
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-7-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="xx/xx/xxxx xx:xx"
-                        >
-                          xx/xx/xxxx xx:xx
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="xx/xx/xxxx xx:xx"
-                        >
-                          xx/xx/xxxx xx:xx
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-sample-values-table-list-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="--"
-                        >
-                          --
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -1134,8 +940,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-32"
-                id="bx-pagination-select-32-count-label"
+                htmlFor="bx-pagination-select-30"
+                id="bx-pagination-select-30-count-label"
               >
                 Items per page:
               </label>
@@ -1154,17 +960,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-32"
+                        id="bx-pagination-select-30"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -1205,7 +1011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 100 items
+                1–7 of 100 items
               </span>
             </div>
             <div
@@ -1219,9 +1025,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-32-right"
+                    htmlFor="bx-pagination-select-30-right"
                   >
-                    Page number, of 10 pages
+                    Page number, of 15 pages
                   </label>
                   <div
                     className="bx--select-input--inline__wrapper"
@@ -1232,7 +1038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-32-right"
+                        id="bx-pagination-select-30-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -1316,6 +1122,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         >
                           10
                         </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={11}
+                        >
+                          11
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={12}
+                        >
+                          12
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={13}
+                        >
+                          13
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={14}
+                        >
+                          14
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={15}
+                        >
+                          15
+                        </option>
                       </select>
                       <svg
                         aria-hidden={true}
@@ -1339,7 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text"
               >
-                1 of 10 pages
+                1 of 15 pages
               </span>
               <div
                 className="bx--pagination__control-buttons"
@@ -2456,205 +2302,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -2669,8 +2321,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-31"
-                id="bx-pagination-select-31-count-label"
+                htmlFor="bx-pagination-select-29"
+                id="bx-pagination-select-29-count-label"
               >
                 Items per page:
               </label>
@@ -2689,17 +2341,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31"
+                        id="bx-pagination-select-29"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -2740,7 +2392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -2754,7 +2406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-31-right"
+                    htmlFor="bx-pagination-select-29-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -2767,7 +2419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-31-right"
+                        id="bx-pagination-select-29-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -4096,265 +3748,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI010 proccess need to optimize adjust Y variables"
-                        >
-                          AHI010 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-count"
-                      offset={0}
-                      width="250px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="2"
-                        >
-                          2
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI005 Asset failure"
-                        >
-                          AHI005 Asset failure
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-count"
-                      offset={0}
-                      width="250px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="1.2039201932"
-                        >
-                          1.2039201932
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 05:26"
-                        >
-                          07/23/2019 05:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-1-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI003 process need to optimize adjust X variables"
-                        >
-                          AHI003 process need to optimize adjust X variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-count"
-                      offset={0}
-                      width="250px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="1.10329291"
-                        >
-                          1.10329291
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-2-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="2"
-                        >
-                          2
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -4369,8 +3767,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-29"
-                id="bx-pagination-select-29-count-label"
+                htmlFor="bx-pagination-select-27"
+                id="bx-pagination-select-27-count-label"
               >
                 Items per page:
               </label>
@@ -4389,17 +3787,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29"
+                        id="bx-pagination-select-27"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -4440,7 +3838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -4454,7 +3852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-29-right"
+                    htmlFor="bx-pagination-select-27-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -4467,7 +3865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-29-right"
+                        id="bx-pagination-select-27-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -5262,6 +4660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-undefined-table-pagination"
@@ -5276,8 +4675,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-33"
-                id="bx-pagination-select-33-count-label"
+                htmlFor="bx-pagination-select-31"
+                id="bx-pagination-select-31-count-label"
               >
                 Items per page:
               </label>
@@ -5296,17 +4695,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-33"
+                        id="bx-pagination-select-31"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -5361,7 +4760,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-33-right"
+                    htmlFor="bx-pagination-select-31-right"
                   >
                     Page number, of 1 pages
                   </label>
@@ -5374,7 +4773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-33-right"
+                        id="bx-pagination-select-31-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -6327,163 +5726,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="deviceId"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-deviceId"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <a
-                            className="bx--link"
-                            href="https://undefined.com/11112"
-                            rel="noopener"
-                            target="_blank"
-                          >
-                            Link
-                          </a>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="deviceId"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-deviceId"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <a
-                            className="bx--link"
-                            href="https://undefined.com/11112"
-                            rel="noopener"
-                            target="_blank"
-                          >
-                            Link
-                          </a>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="deviceId"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-10-deviceId"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <a
-                            className="bx--link"
-                            href="https://undefined.com/11112"
-                            rel="noopener"
-                            target="_blank"
-                          >
-                            Link
-                          </a>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -6498,8 +5745,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-25"
-                id="bx-pagination-select-25-count-label"
+                htmlFor="bx-pagination-select-23"
+                id="bx-pagination-select-23-count-label"
               >
                 Items per page:
               </label>
@@ -6518,17 +5765,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25"
+                        id="bx-pagination-select-23"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -6569,7 +5816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -6583,7 +5830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-25-right"
+                    htmlFor="bx-pagination-select-23-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -6596,7 +5843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-25-right"
+                        id="bx-pagination-select-23-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -8497,445 +7744,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 7 > 2"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy-2"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
-                                    fill="#DA1E28"
-                                    id="background-color"
-                                  />
-                                  <polygon
-                                    fill="#FFFFFF"
-                                    id="icon-color"
-                                    points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 10 > 2"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy-2"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
-                                    fill="#DA1E28"
-                                    id="background-color"
-                                  />
-                                  <polygon
-                                    fill="#FFFFFF"
-                                    id="icon-color"
-                                    points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -8950,8 +7763,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-28"
-                id="bx-pagination-select-28-count-label"
+                htmlFor="bx-pagination-select-26"
+                id="bx-pagination-select-26-count-label"
               >
                 Items per page:
               </label>
@@ -8970,17 +7783,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28"
+                        id="bx-pagination-select-26"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -9021,7 +7834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -9035,7 +7848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-28-right"
+                    htmlFor="bx-pagination-select-26-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -9048,7 +7861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-28-right"
+                        id="bx-pagination-select-26-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -10795,433 +9608,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="7"
-                        >
-                          7
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start"
-                      data-column="actionColumn"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-actionColumn"
-                      offset={0}
-                      width="60px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu"
-                            onClick={[Function]}
-                            onClose={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="#5a6872"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx="16"
-                                cy="8"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="16"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="24"
-                                r="2"
-                              />
-                            </svg>
-                          </button>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start"
-                      data-column="actionColumn"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-actionColumn"
-                      offset={0}
-                      width="60px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu"
-                            onClick={[Function]}
-                            onClose={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="#5a6872"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx="16"
-                                cy="8"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="16"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="24"
-                                r="2"
-                              />
-                            </svg>
-                          </button>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start"
-                      data-column="actionColumn"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-actionColumn"
-                      offset={0}
-                      width="60px"
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <button
-                            aria-expanded={false}
-                            aria-haspopup={true}
-                            aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu"
-                            onClick={[Function]}
-                            onClose={[Function]}
-                            onKeyDown={[Function]}
-                            open={false}
-                            type="button"
-                          >
-                            <svg
-                              aria-hidden={true}
-                              fill="#5a6872"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx="16"
-                                cy="8"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="16"
-                                r="2"
-                              />
-                              <circle
-                                cx="16"
-                                cy="24"
-                                r="2"
-                              />
-                            </svg>
-                          </button>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -11236,8 +9627,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-24"
-                id="bx-pagination-select-24-count-label"
+                htmlFor="bx-pagination-select-22"
+                id="bx-pagination-select-22-count-label"
               >
                 Items per page:
               </label>
@@ -11256,17 +9647,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24"
+                        id="bx-pagination-select-22"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -11307,7 +9698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -11321,7 +9712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-24-right"
+                    htmlFor="bx-pagination-select-22-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -11334,7 +9725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-24-right"
+                        id="bx-pagination-select-22-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -12730,304 +11121,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -13042,8 +11140,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-30"
-                id="bx-pagination-select-30-count-label"
+                htmlFor="bx-pagination-select-28"
+                id="bx-pagination-select-28-count-label"
               >
                 Items per page:
               </label>
@@ -13062,17 +11160,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30"
+                        id="bx-pagination-select-28"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -13113,7 +11211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -13127,7 +11225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-30-right"
+                    htmlFor="bx-pagination-select-28-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -13140,7 +11238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-30-right"
+                        id="bx-pagination-select-28-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -14750,429 +12848,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 7 = 7"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.7894601,14.2675131 C15.5195241,14.7230623 15.029513,15.0024208 14.5000526,15.0025132 L1.53339891,15.0021846 C0.996512233,15.0159597 0.493279942,14.7413061 0.202531324,14.2625132 C-0.0652585874,13.7984115 -0.0652585874,13.2266148 0.189272648,12.78623 L6.68470115,0.787539475 C6.94639352,0.302404679 7.45295465,2.66453526e-15 8.00391648,2.66453526e-15 C8.55487831,2.66453526e-15 9.06143944,0.302404679 9.3224242,0.78623001 L15.8183281,12.7858011 C16.0707419,13.2512161 16.0592142,13.8153414 15.7894601,14.2675131 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.941052,13.2599875 L8.44460575,1.26245909 C8.35737079,1.1007808 8.18850902,1 8.00484631,1 C7.82118359,1 7.65232182,1.1007808 7.56508686,1.26245909 L1.06864057,13.2599875 C0.979373004,13.4146562 0.979373004,13.6052158 1.06864057,13.7598845 C1.16167713,13.9128935 1.32942924,14.0044259 1.50840001,13.9998351 L14.5012926,13.9998351 C14.6777297,13.9998043 14.8410746,13.906704 14.9310575,13.7548855 C15.0215326,13.6032635 15.0253318,13.4151411 14.941052,13.2599875 Z"
-                                    fill="#FC7B1E"
-                                    id="background-color"
-                                  />
-                                  <path
-                                    d="M7.50084897,5.75 L8.50084897,5.75 L8.50084897,9.75 L7.50084897,9.75 L7.50084897,5.75 Z M8.00084897,12.5 C7.58663541,12.5 7.25084897,12.1642136 7.25084897,11.75 C7.25084897,11.3357864 7.58663541,11 8.00084897,11 C8.41506253,11 8.75084897,11.3357864 8.75084897,11.75 C8.75084897,12.1642136 8.41506253,12.5 8.00084897,12.5 Z"
-                                    fill="#FFFFFF"
-                                    id="symbol-color"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Moderate
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 0 < 5"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <circle
-                                    cx="8"
-                                    cy="8"
-                                    fill="#FDD13A"
-                                    id="background-color"
-                                    r="7"
-                                  />
-                                  <path
-                                    d="M7.22,4 L8.47,4 L8.47,8 L7.22,8 L7.22,4 Z M7.875,11.9 C7.39175084,11.9 7,11.5082492 7,11.025 C7,10.5417508 7.39175084,10.15 7.875,10.15 C8.35824916,10.15 8.75,10.5417508 8.75,11.025 C8.75,11.5082492 8.35824916,11.9 7.875,11.9 Z"
-                                    fill="#FFFFFF"
-                                    id="symbol-color"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Low
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
-                    onClick={[Function]}
-                  >
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 10 >= 10"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy-2"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
-                                    fill="#DA1E28"
-                                    id="background-color"
-                                  />
-                                  <polygon
-                                    fill="#FFFFFF"
-                                    id="icon-color"
-                                    points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Custom Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="pressure: 10 >= 10"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy-2"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
-                                    fill="#DA1E28"
-                                    id="background-color"
-                                  />
-                                  <polygon
-                                    fill="#FFFFFF"
-                                    id="icon-color"
-                                    points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -15187,8 +12867,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-27"
-                id="bx-pagination-select-27-count-label"
+                htmlFor="bx-pagination-select-25"
+                id="bx-pagination-select-25-count-label"
               >
                 Items per page:
               </label>
@@ -15207,17 +12887,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27"
+                        id="bx-pagination-select-25"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -15258,7 +12938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -15272,7 +12952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-27-right"
+                    htmlFor="bx-pagination-select-25-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -15285,7 +12965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-27-right"
+                        id="bx-pagination-select-25-right"
                         onChange={[Function]}
                         value={1}
                       >
@@ -17325,587 +15005,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </span>
                     </td>
                   </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 7 = 7"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.7894601,14.2675131 C15.5195241,14.7230623 15.029513,15.0024208 14.5000526,15.0025132 L1.53339891,15.0021846 C0.996512233,15.0159597 0.493279942,14.7413061 0.202531324,14.2625132 C-0.0652585874,13.7984115 -0.0652585874,13.2266148 0.189272648,12.78623 L6.68470115,0.787539475 C6.94639352,0.302404679 7.45295465,2.66453526e-15 8.00391648,2.66453526e-15 C8.55487831,2.66453526e-15 9.06143944,0.302404679 9.3224242,0.78623001 L15.8183281,12.7858011 C16.0707419,13.2512161 16.0592142,13.8153414 15.7894601,14.2675131 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.941052,13.2599875 L8.44460575,1.26245909 C8.35737079,1.1007808 8.18850902,1 8.00484631,1 C7.82118359,1 7.65232182,1.1007808 7.56508686,1.26245909 L1.06864057,13.2599875 C0.979373004,13.4146562 0.979373004,13.6052158 1.06864057,13.7598845 C1.16167713,13.9128935 1.32942924,14.0044259 1.50840001,13.9998351 L14.5012926,13.9998351 C14.6777297,13.9998043 14.8410746,13.906704 14.9310575,13.7548855 C15.0215326,13.6032635 15.0253318,13.4151411 14.941052,13.2599875 Z"
-                                    fill="#FC7B1E"
-                                    id="background-color"
-                                  />
-                                  <path
-                                    d="M7.50084897,5.75 L8.50084897,5.75 L8.50084897,9.75 L7.50084897,9.75 L7.50084897,5.75 Z M8.00084897,12.5 C7.58663541,12.5 7.25084897,12.1642136 7.25084897,11.75 C7.25084897,11.3357864 7.58663541,11 8.00084897,11 C8.41506253,11 8.75084897,11.3357864 8.75084897,11.75 C8.75084897,12.1642136 8.41506253,12.5 8.00084897,12.5 Z"
-                                    fill="#FFFFFF"
-                                    id="symbol-color"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Moderate
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="7"
-                        >
-                          7
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 03:30"
-                        >
-                          07/23/2019 03:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-8-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize adjust Y variables"
-                        >
-                          AHI001 proccess need to optimize adjust Y variables
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:26"
-                        >
-                          07/23/2019 04:26
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        />
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-9-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="0"
-                        >
-                          0
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                  <tr
-                    className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
-                    data-child-count={0}
-                    data-nesting-offset={0}
-                    data-parent-row={true}
-                    data-row-nesting={false}
-                    onClick={[Function]}
-                  >
-                    <td
-                      className="bx--table-expand"
-                      headers="expand"
-                    >
-                      <button
-                        aria-label="Click to expand content"
-                        className="bx--table-expand__button"
-                        onClick={[Function]}
-                        title="Click to expand content"
-                        type="button"
-                      >
-                        <svg
-                          aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          role="img"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="alert"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-alert"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="AHI001 proccess need to optimize"
-                        >
-                          AHI001 proccess need to optimize
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-iconColumn-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="count: 10 >= 10"
-                          >
-                            <svg
-                              height="16px"
-                              version="1.1"
-                              viewBox="0 0 16 16"
-                              width="16px"
-                            >
-                              <g
-                                fill="none"
-                                fillRule="evenodd"
-                                id="Artboard-Copy-2"
-                                stroke="none"
-                                strokeWidth="1"
-                              >
-                                <g
-                                  id="Group"
-                                >
-                                  <path
-                                    d="M15.483595,4.16821623 L11.828224,0.514898318 C11.4996389,0.186340499 11.0498759,0 10.5847164,0 L5.4141139,0 C4.94895439,0 4.49919139,0.186340499 4.17043702,0.51506755 L0.515728028,4.16947288 C0.186857661,4.49695966 1.58095759e-13,4.94738907 1.58095759e-13,5.41374714 L1.58095759e-13,10.5845032 C1.58095759e-13,11.0496811 0.18637442,11.4994512 0.515144768,11.8281943 L4.17032421,15.4842364 C4.50074437,15.813273 4.94971353,16 5.4141139,16 L10.5841331,16 C11.0519715,16 11.4969656,15.8151662 11.82781,15.4843492 L15.4864327,11.8277802 C15.8179763,11.4922167 16,11.0496451 16,10.5845032 L16,5.41374714 C16.00134,4.94645588 15.816286,4.49993244 15.483595,4.16821623 Z"
-                                    fill="#FFFFFF"
-                                    id="outline-color"
-                                  />
-                                  <path
-                                    d="M14.7771914,4.87602583 L11.1213159,1.22220371 C10.9801669,1.08106644 10.7847747,1 10.5847164,1 L5.4141139,1 C5.21405561,1 5.01866342,1.08106644 4.87751443,1.22220371 L1.22280543,4.87660904 C1.08107318,5.0177463 1,5.21312227 1,5.41374714 L1,10.5845032 C1,10.7845449 1.08107318,10.9799208 1.22222217,11.1210581 L4.87751443,14.7772131 C5.01924668,14.9183503 5.21463888,15 5.4141139,15 L10.5841331,15 C10.7865245,15 10.9772506,14.9206832 11.1207326,14.7772131 L14.7795244,11.1204749 C14.9218399,10.9764216 15,10.7862945 15,10.5845032 L15,5.41374714 C15.0005801,5.21020621 14.9212567,5.01949594 14.7771914,4.87602583 Z"
-                                    fill="#DA1E28"
-                                    id="background-color"
-                                  />
-                                  <polygon
-                                    fill="#FFFFFF"
-                                    id="icon-color"
-                                    points="10.3185714 11.001753 8 8.68318155 5.68142857 11.001753 5 10.3203244 7.31857143 8.00175297 5 5.68318155 5.68142857 5.00175297 8 7.3203244 10.3185714 5.00175297 11 5.68318155 8.68142857 8.00175297 11 10.3203244"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Custom Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="count"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-count"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="hour"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-hour"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="07/23/2019 04:30"
-                        >
-                          07/23/2019 04:30
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="iconColumn-pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-iconColumn-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                        >
-                          <div
-                            className="iot--threshold-icon--wrapper"
-                            title="pressure: 10 >= 10"
-                          >
-                            <svg
-                              data-testid="card-icon"
-                              fill="black"
-                              focusable="true"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              tabIndex="0"
-                              title="pressure: 10 >= 10"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-                              />
-                              <title>
-                                pressure: 10 &gt;= 10
-                              </title>
-                            </svg>
-                            <span
-                              className="iot--threshold-icon--text"
-                            >
-                              Critical
-                            </span>
-                          </div>
-                        </span>
-                      </span>
-                    </td>
-                    <td
-                      align="start"
-                      className="data-table-start iot--table__cell--sortable"
-                      data-column="pressure"
-                      data-offset={0}
-                      id="cell-table-for-card-table-list-row-5-pressure"
-                      offset={0}
-                      width=""
-                    >
-                      <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
-                      >
-                        <span
-                          className=""
-                          title="10"
-                        >
-                          10
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <div />
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
@@ -17920,8 +15024,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <label
                 className="bx--pagination__text"
-                htmlFor="bx-pagination-select-26"
-                id="bx-pagination-select-26-count-label"
+                htmlFor="bx-pagination-select-24"
+                id="bx-pagination-select-24-count-label"
               >
                 Items per page:
               </label>
@@ -17940,17 +15044,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26"
+                        id="bx-pagination-select-24"
                         onChange={[Function]}
-                        value={10}
+                        value={7}
                       >
                         <option
                           className="bx--select-option"
                           disabled={false}
                           hidden={false}
-                          value={10}
+                          value={7}
                         >
-                          10
+                          7
                         </option>
                         <option
                           className="bx--select-option"
@@ -17991,7 +15095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <span
                 className="bx--pagination__text bx--pagination__items-count"
               >
-                1–10 of 11 items
+                1–7 of 11 items
               </span>
             </div>
             <div
@@ -18005,7 +15109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <label
                     className="bx--label bx--visually-hidden"
-                    htmlFor="bx-pagination-select-26-right"
+                    htmlFor="bx-pagination-select-24-right"
                   >
                     Page number, of 2 pages
                   </label>
@@ -18018,7 +15122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       <select
                         className="bx--select-input"
-                        id="bx-pagination-select-26-right"
+                        id="bx-pagination-select-24-right"
                         onChange={[Function]}
                         value={1}
                       >

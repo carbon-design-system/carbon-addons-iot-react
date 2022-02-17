@@ -3,6 +3,24 @@ import { Subject } from 'rxjs';
 
 export type HeaderType = number | 'select' | 'expand';
 
+export class AITableHeaderItem extends TableHeaderItem {
+  /**
+   * Defines the alignment of the the header item and the column below it.
+   */
+  alignment: 'start' | 'center' | 'end' = 'start';
+
+  constructor(rawData?: any) {
+    super(rawData);
+
+    const defaults = {
+      alignment: this.alignment,
+    };
+
+    // fill our object with provided props, and fallback to defaults
+    Object.assign(this, defaults, rawData);
+  }
+}
+
 /**
  * TableModel represents a data model for two-dimensional data. It's used for all things table
  * (table component, table toolbar, pagination, etc)
@@ -98,7 +116,7 @@ export class AITableModel implements PaginationModel {
   /**
    * Contains information about the header cells of the table.
    */
-  protected header: TableHeaderItem[][] = [[]];
+  protected header: AITableHeaderItem[][] = [[]];
 
   /**
    * The number of models instantiated, this is to make sure each table has a different
@@ -160,7 +178,7 @@ export class AITableModel implements PaginationModel {
       // loop the contents of the data
       // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < this._data[0].length; i++) {
-        newHeader[0].push(new TableHeaderItem());
+        newHeader[0].push(new AITableHeaderItem());
       }
       this.header = newHeader;
     } else {
@@ -172,7 +190,7 @@ export class AITableModel implements PaginationModel {
           // loop the difference between contents of data and projected header row length
           // tslint:disable-next-line: prefer-for-of
           for (let i = 0; i < difference; i++) {
-            headerRow.push(new TableHeaderItem());
+            headerRow.push(new AITableHeaderItem());
           }
         }
       });
@@ -186,16 +204,25 @@ export class AITableModel implements PaginationModel {
    *
    * Make sure all rows are the same length to keep the column count accurate.
    */
-  setHeader(newHeader: TableHeaderItem[][] | TableHeaderItem[]) {
+  setHeader(
+    newHeader: TableHeaderItem[][] | TableHeaderItem[] | AITableHeaderItem[][] | AITableHeaderItem[]
+  ) {
     if (!newHeader) {
       newHeader = [[]];
     } else if (Array.isArray(newHeader) && newHeader.length > 0 && !Array.isArray(newHeader[0])) {
-      newHeader = [newHeader as TableHeaderItem[]];
+      newHeader = [newHeader as any];
     } else if (Array.isArray(newHeader) && newHeader.length === 0) {
       newHeader = [[]];
     }
 
-    this.header = newHeader as TableHeaderItem[][];
+    newHeader = (newHeader as any).map((row: any): AITableHeaderItem[] =>
+      row.map(
+        (col: any): AITableHeaderItem =>
+          col.constructor.name === 'AITableHeaderItem' ? col : new AITableHeaderItem(col)
+      )
+    );
+
+    this.header = newHeader as AITableHeaderItem[][];
 
     this.dataChange.next();
   }
@@ -393,7 +420,7 @@ export class AITableModel implements PaginationModel {
       let difference = realRow.length - this.projectedRowLength(this.header[0], 0, this.header);
       for (let j = 0; j < difference; j++) {
         // add to the first header row and row-span to fill the height of the header
-        const headerItem = new TableHeaderItem();
+        const headerItem = new AITableHeaderItem();
         headerItem.rowSpan = this.header.length;
         this.header[0].push(headerItem);
       }
@@ -558,7 +585,7 @@ export class AITableModel implements PaginationModel {
       // update header if not already set by user
       if (this.header.length > 0 && this.header[0].length < this._data[0].length) {
         // add to the first header row and row-span to fill the height of the header
-        const headerItem = new TableHeaderItem();
+        const headerItem = new AITableHeaderItem();
         headerItem.rowSpan = this.header.length;
         this.header[0].push(headerItem);
       }
@@ -575,7 +602,7 @@ export class AITableModel implements PaginationModel {
       // update header if not already set by user
       if (this.header.length > 0 && this.header[0].length < this._data[0].length) {
         // add to the first header row and row-span to fill the height of the header
-        const headerItem = new TableHeaderItem();
+        const headerItem = new AITableHeaderItem();
         headerItem.rowSpan = this.header.length;
         // this.header[0].push(headerItem);
         this.header[0].splice(ci, 0, headerItem);
@@ -729,7 +756,7 @@ export class AITableModel implements PaginationModel {
   /**
    * Sorts the data currently present in the model based on `compare()`
    *
-   * Direction is set by `ascending` and `descending` properties of `TableHeaderItem`
+   * Direction is set by `ascending` and `descending` properties of `AITableHeaderItem`
    * in `index`th column.
    *
    * @param index The column based on which it's sorting
@@ -741,7 +768,7 @@ export class AITableModel implements PaginationModel {
       (a, b) => (headerToSort.descending ? -1 : 1) * headerToSort.compare(a[index], b[index])
     );
     this.popRowStateFromModelData();
-    this.header.forEach((headerRow: TableHeaderItem[]) => {
+    this.header.forEach((headerRow: AITableHeaderItem[]) => {
       headerRow.forEach((column) => {
         if (column) {
           column.sorted = false;
@@ -803,7 +830,7 @@ export class AITableModel implements PaginationModel {
    */
   isRowFiltered(index: number): boolean {
     const realIndex = this.realRowIndex(index);
-    return this.header.some((headerRow: TableHeaderItem[]) =>
+    return this.header.some((headerRow: AITableHeaderItem[]) =>
       headerRow.some((item, i) => item && item.filter(this.row(realIndex)[i]))
     );
   }
@@ -905,11 +932,11 @@ export class AITableModel implements PaginationModel {
   }
 
   /**
-   * @param itemArray TableItem[] | TableHeaderItem[]
+   * @param itemArray TableItem[] | AITableHeaderItem[]
    * @returns the number of columns as if now cells were merged
    */
   protected projectedRowLength(itemArray: any[], rowIndex?: number, matrix?: any[][]) {
-    // `any[]` should be `TableItem[] | TableHeaderItem[]` but typescript
+    // `any[]` should be `AITableItem[] | AITableHeaderItem[]` but typescript
     if (rowIndex === undefined || matrix === undefined) {
       return this.projectedRowLengthSimple(itemArray);
     }
@@ -939,7 +966,7 @@ export class AITableModel implements PaginationModel {
    */
   protected projectedIndexToActualIndex(
     projectedIndex: number,
-    list: TableHeaderItem[] | TableItem[]
+    list: AITableHeaderItem[] | TableItem[]
   ) {
     let index = 0;
     for (let i = 0; i < list.length; i++) {
@@ -959,7 +986,7 @@ export class AITableModel implements PaginationModel {
    */
   protected actualIndexToProjectedIndices(
     actualIndex: number,
-    list: TableHeaderItem[] | TableItem[]
+    list: AITableHeaderItem[] | TableItem[]
   ) {
     // find the starting projected index
     let startingIndex = 0;
@@ -973,7 +1000,7 @@ export class AITableModel implements PaginationModel {
 
   protected projectedIndicesToActualIndices(
     projectedIndices: number[],
-    list: TableHeaderItem[] | TableItem[]
+    list: AITableHeaderItem[] | TableItem[]
   ) {
     const actualIndicesSet = new Set();
 
@@ -984,7 +1011,7 @@ export class AITableModel implements PaginationModel {
     return Array.from(actualIndicesSet).sort() as number[];
   }
 
-  protected moveMultipleToIndex(indices: number[], index, list: TableHeaderItem[] | TableItem[]) {
+  protected moveMultipleToIndex(indices: number[], index, list: AITableHeaderItem[] | TableItem[]) {
     // assumes indices is sorted low to high and continuous
     // NOTE might need to generalize it
     const blockStart = indices[0];

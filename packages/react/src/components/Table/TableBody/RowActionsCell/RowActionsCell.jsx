@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { DataTable, Loading } from 'carbon-components-react';
+import { TableCell, Loading } from 'carbon-components-react';
 import classnames from 'classnames';
 import { omit } from 'lodash-es';
 
@@ -13,7 +13,6 @@ import { renderTableOverflowItemText } from '../../tableUtilities';
 
 import RowActionsError from './RowActionsError';
 
-const { TableCell } = DataTable;
 const { iotPrefix } = settings;
 
 const propTypes = {
@@ -118,7 +117,8 @@ class RowActionsCell extends React.Component {
       size,
     } = this.props;
     const { isOpen } = this.state;
-    const overflowActions = actions ? actions.filter((action) => action.isOverflow) : [];
+    const visibleActions = actions ? actions.filter((action) => !action.hidden) : [];
+    const overflowActions = visibleActions.filter((action) => action.isOverflow);
     const hasOverflow = overflowActions.length > 0;
     const firstSelectableItemIndex = overflowActions.findIndex((action) => !action.disabled);
 
@@ -158,7 +158,7 @@ class RowActionsCell extends React.Component {
               </Fragment>
             ) : (
               <Fragment>
-                {actions
+                {visibleActions
                   .filter((action) => !action.isOverflow)
                   .map(({ id: actionId, labelText, iconDescription, ...others }) => (
                     <Button
