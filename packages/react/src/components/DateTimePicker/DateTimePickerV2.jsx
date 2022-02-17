@@ -17,6 +17,7 @@ import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import * as uuid from 'uuid';
 import warning from 'warning';
+import { useLangDirection } from 'use-lang-direction';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -277,6 +278,7 @@ const DateTimePicker = ({
     }
   }, []);
 
+  const langDir = useLangDirection();
   const strings = useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -737,7 +739,7 @@ const DateTimePicker = ({
             light={light}
             menuOffset={{
               top: 0,
-              left: 0,
+              left: langDir === 'ltr' ? 0 : hasIconOnly ? -15 : 274,
             }}
             testId={`${testId}-datepicker-flyout`}
             direction={FlyoutMenuDirection.BottomEnd}
