@@ -117,3 +117,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   height: $spacing-07;
   width: $spacing-08;
 }
+
+.#{$iot-prefix}--table__cell__inner-wrapper {
+  position: relative;
+  left: var(--row-nesting-offset);
+  max-width: calc(100% - var(--row-nesting-offset));
+  display: block;
+}

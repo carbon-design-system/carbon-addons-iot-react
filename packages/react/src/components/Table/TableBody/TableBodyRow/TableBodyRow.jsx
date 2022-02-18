@@ -70,7 +70,7 @@ const propTypes = {
   /** some columns might be hidden, so total columns has the overall total */
   totalColumns: PropTypes.number.isRequired,
 
-  /** contents of the row each object value is a renderable node keyed by column id */
+  /** contents of the row each object value is a render-able node keyed by column id */
   values: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
   ).isRequired,
@@ -382,13 +382,6 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
   }
 `;
 
-const StyledNestedSpan = styled.span`
-  position: relative;
-  left: ${(props) => props.nestingOffset}px;
-  max-width: calc(100% - ${(props) => props.nestingOffset}px);
-  display: block;
-`;
-
 const TableBodyRow = ({
   id,
   tableId,
@@ -450,11 +443,10 @@ const TableBodyRow = ({
         onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
-      https://github.com/IBM/carbon-components-react/issues/1247
-      Also move onClick logic above into TableSelectRow
-      */}
-        <StyledNestedSpan nestingOffset={nestingOffset}>
+        <span
+          className={`${iotPrefix}--table__cell__inner-wrapper`}
+          style={{ '--row-nesting-offset': `${nestingOffset}px` }}
+        >
           <Checkbox
             id={`select-row-${tableId}-${id}`}
             labelText={selectRowAria}
@@ -463,7 +455,7 @@ const TableBodyRow = ({
             checked={isSelected}
             disabled={isSelectable === false}
           />
-        </StyledNestedSpan>
+        </span>
       </TableCell>
     ) : null;
 
@@ -498,7 +490,10 @@ const TableBodyRow = ({
             })}
             width={initialColumnWidth}
           >
-            <StyledNestedSpan nestingOffset={offset}>
+            <span
+              className={`${iotPrefix}--table__cell__inner-wrapper`}
+              style={{ '--row-nesting-offset': `${offset}px` }}
+            >
               {col.editDataFunction && isEditMode ? (
                 col.editDataFunction({
                   value: values[col.columnId],
@@ -524,7 +519,7 @@ const TableBodyRow = ({
                   {values[col.columnId]}
                 </TableCellRenderer>
               )}
-            </StyledNestedSpan>
+            </span>
           </TableCell>
         ) : null;
       })}
