@@ -63,7 +63,11 @@ class IdleTimer {
             this.countdown === 0
               ? this.countdown
               : Math.max(
-                  this.COUNTDOWN_START - parseInt((now - userInactivityTimeoutValue) / 1000, 10),
+                  this.COUNTDOWN_START -
+                    parseInt(
+                      (now - (userInactivityTimeoutValue - this.COOKIE_CHECK_INTERVAL)) / 1000,
+                      10
+                    ),
                   0
                 );
         }

@@ -61,7 +61,7 @@ describe('IdleTimer', () => {
     jest.runOnlyPendingTimers();
     // only onIdleTimeoutWarning should have been fired, and countdown should have decreased
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledWith(timer.COUNTDOWN_START);
-    expect(timer.countdown).toEqual(timer.COUNTDOWN_START - 1);
+    expect(timer.countdown).toEqual(timer.COUNTDOWN_START - 2);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
     expect(timer.onRestart).not.toHaveBeenCalled();
   });
