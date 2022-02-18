@@ -136,6 +136,24 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
+.#{$iot-prefix}--table__row--singly-selected {
+  cursor: pointer;
+
+  td:first-of-type {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: rem(3px);
+      background-color: $interactive-04;
+      border-right: solid 1px $highlight;
+    }
+  }
+}
 .#{$iot-prefix}--table__cell__offset {
   position: relative;
   left: var(--row-nesting-offset);

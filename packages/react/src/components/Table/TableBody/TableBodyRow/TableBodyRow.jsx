@@ -156,29 +156,6 @@ const defaultProps = {
   size: undefined,
 };
 
-const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
-  <TableRow {...props} />
-))`
-  &&& {
-    background: ${COLORS.lightBlue};
-
-    td:first-of-type {
-      position: relative;
-    }
-
-    cursor: pointer;
-    td:first-of-type:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 3px;
-      background-color: ${COLORS.blue};
-      border-right: solid 1px rgb(223,227,230);
-    }
-`;
-
 const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
   <TableExpandRow {...props} />
 ))`
@@ -592,7 +569,10 @@ const TableBodyRow = ({
       </StyledTableExpandRow>
     )
   ) : hasRowSelection === 'single' && isSelected ? (
-    <StyledSingleSelectedTableRow
+    <TableRow
+      className={classnames(`${iotPrefix}--table__row`, {
+        [`${iotPrefix}--table__row--singly-selected`]: isSelected,
+      })}
       key={id}
       onClick={() => {
         if (isSelectable !== false) {
@@ -602,7 +582,7 @@ const TableBodyRow = ({
       }}
     >
       {tableCells}
-    </StyledSingleSelectedTableRow>
+    </TableRow>
   ) : (
     <TableRow
       className={classnames(`${iotPrefix}--table__row`, {
