@@ -118,7 +118,25 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   width: $spacing-08;
 }
 
-.#{$iot-prefix}--table__cell__inner-wrapper {
+.#{$iot-prefix}--table__row--selectable {
+  .#{$prefix}--checkbox {
+    cursor: pointer;
+  }
+}
+
+.#{$iot-prefix}--table__row--unselectable:not(.#{$iot-prefix}--table__row--editing) {
+  &:hover {
+    &,
+    td {
+      background-color: inherit;
+      color: $text-02;
+      border-bottom-color: $ui-03;
+      border-top-color: $ui-01;
+    }
+  }
+}
+
+.#{$iot-prefix}--table__cell__offset {
   position: relative;
   left: var(--row-nesting-offset);
   max-width: calc(100% - var(--row-nesting-offset));

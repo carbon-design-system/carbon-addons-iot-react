@@ -156,29 +156,6 @@ const defaultProps = {
   size: undefined,
 };
 
-const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
-  <TableRow {...others} />
-))`
-  &&& {
-    .${prefix}--checkbox {
-      ${(props) => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
-    }
-    :hover {
-      td {
-        ${(props) =>
-          props.isSelectable === false && !props.isEditMode
-            ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-            : ``} /* turn off hover states if the row is set not selectable */
-      }
-      ${(props) =>
-        props.isSelectable === false && !props.isEditMode
-          ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-          : ``} /* turn off hover states if the row is set not selectable */
-    }
-
-
-`;
-
 const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
   <TableRow {...props} />
 ))`
@@ -444,7 +421,7 @@ const TableBodyRow = ({
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className={`${iotPrefix}--table__cell__inner-wrapper`}
+          className={`${iotPrefix}--table__cell__offset`}
           style={{ '--row-nesting-offset': `${nestingOffset}px` }}
         >
           <Checkbox
@@ -491,7 +468,7 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <span
-              className={`${iotPrefix}--table__cell__inner-wrapper`}
+              className={`${iotPrefix}--table__cell__offset`}
               style={{ '--row-nesting-offset': `${offset}px` }}
             >
               {col.editDataFunction && isEditMode ? (
@@ -627,7 +604,12 @@ const TableBodyRow = ({
       {tableCells}
     </StyledSingleSelectedTableRow>
   ) : (
-    <StyledTableRow
+    <TableRow
+      className={classnames(`${iotPrefix}--table__row`, {
+        [`${iotPrefix}--table__row--unselectable`]: isSelectable === false,
+        [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
+        [`${iotPrefix}--table__row--editing`]: isEditMode,
+      })}
       key={id}
       isSelected={isSelected}
       isSelectable={isSelectable}
@@ -642,7 +624,7 @@ const TableBodyRow = ({
       }}
     >
       {tableCells}
-    </StyledTableRow>
+    </TableRow>
   );
 };
 
