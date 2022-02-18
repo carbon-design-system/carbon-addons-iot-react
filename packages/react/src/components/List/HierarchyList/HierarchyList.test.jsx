@@ -51,7 +51,7 @@ describe('HierarchyList', () => {
   });
 
   afterAll(() => {
-    // this is likely unecessary, but should help ensure that everything from this file is garbage collected after completion
+    // this is likely unnecessary, but should help ensure that everything from this file is garbage collected after completion
     debounce.mockRestore();
   });
 
@@ -1060,7 +1060,8 @@ describe('HierarchyList', () => {
 
   it('should fire onExpandedChange when user expands or collapses hierarchies', () => {
     const onExpandedChange = jest.fn();
-
+    jest.useFakeTimers();
+    jest.spyOn(window, 'requestAnimationFrame').mockImplementation((cb) => cb());
     const { rerender } = render(
       <HierarchyList
         items={items}
@@ -1073,9 +1074,11 @@ describe('HierarchyList', () => {
     expect(onExpandedChange).toHaveBeenCalledTimes(0);
 
     userEvent.click(getCloseButtonForTeam('Atlanta Braves'));
+    jest.runOnlyPendingTimers();
     expect(onExpandedChange).toHaveBeenCalledWith([]);
     expect(onExpandedChange).toHaveBeenCalledTimes(1);
     userEvent.click(getExpandButtonForTeam('Atlanta Braves'));
+    jest.runOnlyPendingTimers();
     expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves']);
     expect(onExpandedChange).toHaveBeenCalledTimes(2);
 
@@ -1089,9 +1092,11 @@ describe('HierarchyList', () => {
       />
     );
 
+    jest.runOnlyPendingTimers();
     expect(onExpandedChange).toHaveBeenCalledWith(['Atlanta Braves', 'Chicago White Sox']);
     expect(onExpandedChange).toHaveBeenCalledTimes(3);
     userEvent.click(getExpandButtonForTeam('New York Mets'));
+    jest.runOnlyPendingTimers();
     expect(onExpandedChange).toHaveBeenCalledWith([
       'Atlanta Braves',
       'Chicago White Sox',
@@ -1108,8 +1113,12 @@ describe('HierarchyList', () => {
       />
     );
 
+    jest.runOnlyPendingTimers();
     expect(onExpandedChange).toHaveBeenCalledWith([]);
     expect(onExpandedChange).toHaveBeenCalledTimes(5);
+
+    window.requestAnimationFrame.mockRestore();
+    jest.useRealTimers();
   });
 
   /** ***********************************************
