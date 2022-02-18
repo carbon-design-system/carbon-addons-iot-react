@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { TableRow, TableExpandRow, TableCell, Checkbox } from 'carbon-components-react';
-import styled from 'styled-components';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -13,7 +12,6 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
-import { COLORS } from '../../../../styles/styles';
 
 const { prefix, iotPrefix } = settings;
 
@@ -155,64 +153,6 @@ const defaultProps = {
   isSelectable: undefined,
   size: undefined,
 };
-
-const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
-  <TableExpandRow {...props} />
-))`
-  &&& {
-    cursor: pointer;
-
-    ${// if single nested hierarchy, bolden all cells of this row
-    (props) =>
-      props['data-row-nesting'] && props['data-row-nesting'].hasSingleNestedHierarchy
-        ? `td {
-        font-weight: bold
-      }`
-        : ``}
-
-    ${(props) =>
-      props['data-row-nesting']
-        ? `
-
-        td.${prefix}--table-expand, td {
-          position: relative;
-          border-color: ${COLORS.gray20};
-        }
-        td > button.${prefix}--table-expand__button {
-          position: relative;
-          left: ${props['data-nesting-offset']}px;
-        }
-        td:first-of-type:before {
-          width: ${props['data-nesting-offset']}px;
-          background-color: rgb(229,237,237);
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
 
 const TableBodyRow = ({
   id,
@@ -385,7 +325,8 @@ const TableBodyRow = ({
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
-        <StyledTableExpandRowExpanded
+        <TableExpandRow
+          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {})}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
@@ -410,7 +351,7 @@ const TableBodyRow = ({
           }}
         >
           {tableCells}
-        </StyledTableExpandRowExpanded>
+        </TableExpandRow>
         {!hasRowNesting && (
           <TableRow
             className={classnames(`${iotPrefix}--expanded-tablerow`, {
@@ -444,6 +385,12 @@ const TableBodyRow = ({
         hasRowSelection={hasRowSelection}
         onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
+          console.log({
+            shouldExpandOnRowClick,
+            hasRowNesting,
+            nestingChildCount,
+            hasRowExpansion,
+          });
           if (shouldExpandOnRowClick && ((hasRowNesting && nestingChildCount) || hasRowExpansion)) {
             onRowExpanded(id, true);
           }

@@ -164,21 +164,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 
 .#{$iot-prefix}--expanded-tablerow {
   td {
-    background-color: inherit;
-    border-left: $spacing-01 solid $interactive-04;
-    border-width: 0 0 0 $spacing-01;
     padding: 0;
     font-weight: bold;
-  }
-
-  &:hover {
-    border: inherit;
-    background-color: inherit;
-    td {
-      background-color: inherit;
-      border-left: solid $interactive-04;
-      border-width: 0 0 0 $spacing-01;
-    }
   }
 }
 
