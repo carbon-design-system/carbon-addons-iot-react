@@ -156,84 +156,6 @@ const defaultProps = {
   size: undefined,
 };
 
-const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
-  <TableExpandRow {...props} />
-))`
-  &&& {
-    ${// if single nested hierarchy AND there are children rows (meaning this is a parent),
-    // bolden all cells of this row
-    (props) =>
-      props['data-row-nesting'] &&
-      props['data-row-nesting'].hasSingleNestedHierarchy &&
-      props['data-child-count'] > 0
-        ? `td {
-        font-weight: bold
-      }`
-        : ``}
-
-    ${(props) =>
-      props['data-child-count'] === 0 && props['data-row-nesting']
-        ? `
-    td > button.${prefix}--table-expand__button {
-      display: none;
-    }
-    `
-        : `
-    td > button.${prefix}--table-expand__button {
-      position: relative;
-      left: ${props['data-nesting-offset']}px;
-    }
-    `}
-    ${(props) =>
-      props['data-nesting-offset'] > 0
-        ? `
-      td.${prefix}--table-expand {
-        position: relative;
-      }
-      td:first-of-type:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: ${props['data-nesting-offset']}px;
-        background-color: ${COLORS.gray20};
-        border-right: solid 1px rgb(223,227,230);
-      }
-    `
-        : `
-    `}
-    cursor: pointer;
-    td {
-      div .${prefix}--btn--ghost:hover {
-        background: ${COLORS.gray20hover};
-      }
-    }
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
-
 const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
   <TableExpandRow {...props} />
 ))`
@@ -501,9 +423,17 @@ const TableBodyRow = ({
         )}
       </Fragment>
     ) : (
-      <StyledTableExpandRow
+      <TableExpandRow
         key={id}
-        className={`${iotPrefix}--expanded-tablerow`}
+        className={classnames(`${iotPrefix}--expandable-tablerow`, {
+          [`${iotPrefix}--expandable-tablerow--parent`]:
+            hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,
+          [`${iotPrefix}--expandable-tablerow--childless`]:
+            hasRowNesting && nestingChildCount === 0,
+          [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+          [`${iotPrefix}--expandable-tablerow--singly-selected`]:
+            hasRowSelection === 'single' && isSelected,
+        })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
         data-nesting-offset={nestingOffset}
@@ -525,9 +455,12 @@ const TableBodyRow = ({
             onRowClicked(id);
           }
         }}
+        style={{
+          '--row-nesting-offset': `${nestingOffset}px`,
+        }}
       >
         {tableCells}
-      </StyledTableExpandRow>
+      </TableExpandRow>
     )
   ) : hasRowSelection === 'single' && isSelected ? (
     <TableRow
