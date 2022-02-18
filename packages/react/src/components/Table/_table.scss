@@ -136,7 +136,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
-.#{$iot-prefix}--table__row--singly-selected {
+.#{$iot-prefix}--table__row--singly-selected,
+.#{$iot-prefix}--expanded-tablerow--singly-selected {
   cursor: pointer;
 
   td:first-of-type {
@@ -159,4 +160,24 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   left: var(--row-nesting-offset);
   max-width: calc(100% - var(--row-nesting-offset));
   display: block;
+}
+
+.#{$iot-prefix}--expanded-tablerow {
+  td {
+    background-color: inherit;
+    border-left: $spacing-01 solid $interactive-04;
+    border-width: 0 0 0 $spacing-01;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  &:hover {
+    border: inherit;
+    background-color: inherit;
+    td {
+      background-color: inherit;
+      border-left: solid $interactive-04;
+      border-width: 0 0 0 $spacing-01;
+    }
+  }
 }

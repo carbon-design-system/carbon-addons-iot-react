@@ -292,50 +292,6 @@ const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
   }
 `;
 
-const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <TableRow {...props} />)`
-  &&& {
-    td {
-      background-color: inherit;
-      border-left: 4px solid ${COLORS.blue};
-      border-width: 0 0 0 4px;
-      padding: 0;
-      font-weight: bold;
-    }
-
-    :hover {
-      border: inherit;
-      background-color: inherit;
-      td {
-        background-color: inherit;
-        border-left: solid ${COLORS.blue};
-        border-width: 0 0 0 4px;
-      }
-    }
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
-
 const TableBodyRow = ({
   id,
   tableId,
@@ -534,9 +490,14 @@ const TableBodyRow = ({
           {tableCells}
         </StyledTableExpandRowExpanded>
         {!hasRowNesting && (
-          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
+          <TableRow
+            className={classnames(`${iotPrefix}--expanded-tablerow`, {
+              [`${iotPrefix}--expanded-tablerow--singly-selected`]:
+                hasRowSelection === 'single' && isSelected,
+            })}
+          >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
-          </StyledExpansionTableRow>
+          </TableRow>
         )}
       </Fragment>
     ) : (
