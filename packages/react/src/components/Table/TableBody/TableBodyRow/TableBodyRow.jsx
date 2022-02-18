@@ -342,8 +342,6 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
   &&& {
     td {
       background-color: inherit;
-      border-left: 4px solid ${COLORS.blue};
-      border-width: 0 0 0 4px;
       padding: 0;
       font-weight: bold;
     }
@@ -353,8 +351,6 @@ const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <Table
       background-color: inherit;
       td {
         background-color: inherit;
-        border-left: solid ${COLORS.blue};
-        border-width: 0 0 0 4px;
       }
     }
 
