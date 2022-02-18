@@ -66,6 +66,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Small
               </div>
@@ -132,6 +133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Small Wide
               </div>
@@ -198,6 +200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Medium Thin
               </div>
@@ -264,6 +267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Medium
               </div>
@@ -330,6 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Medium Wide
               </div>
@@ -396,6 +401,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Large Thin
               </div>
@@ -462,6 +468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Large
               </div>
@@ -528,6 +535,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Large Wide
               </div>
@@ -633,6 +641,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Card - SMALL
               </div>
@@ -713,6 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 ValueCard - SMALLWIDE
               </div>
@@ -866,6 +876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 GaugeCard - MEDIUMTHIN
               </div>
@@ -1035,6 +1046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 PieChartCard - MEDIUM
               </div>
@@ -1115,6 +1127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="map-card-title-notip"
               >
                 MapCard - LARGEWIDE
               </div>
@@ -3347,6 +3360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 ImageCard - LARGE
               </div>
@@ -3608,6 +3622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 TimeSeriesCard - LARGETHIN
               </div>
@@ -3677,6 +3692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 ListCard - LARGETHIN
               </div>
@@ -3936,6 +3952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 BarChartCard - LARGEWIDE
               </div>
@@ -4044,6 +4061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Facility Metrics
               </div>
@@ -4111,6 +4129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Humidity
               </div>
@@ -4178,6 +4197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Utilization
               </div>
@@ -4299,6 +4319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   Facility Metrics
                 </div>
@@ -4366,6 +4387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   Humidity
                 </div>
@@ -4433,6 +4455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   Utilization
                 </div>
@@ -4539,6 +4562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Facility Metrics
               </div>
@@ -4606,6 +4630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Humidity
               </div>
@@ -4673,6 +4698,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Utilization
               </div>
@@ -4776,6 +4802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             >
               <div
                 className="iot--card--title--text"
+                data-testid="Card-title-notip"
               >
                 Card - SMALL
               </div>

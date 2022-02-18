@@ -385,6 +385,11 @@ describe('Card', () => {
       'scrollWidth'
     );
 
+    const originalClientWidth = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      'clientWidth'
+    );
+
     beforeEach(() => {
       Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
         writable: true,
@@ -401,6 +406,7 @@ describe('Card', () => {
     afterAll(() => {
       Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
       Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalClientWidth);
     });
 
     it('should put the title in a tooltip if it overflows', () => {
@@ -415,6 +421,31 @@ describe('Card', () => {
       userEvent.click(tooltipButton);
       expect(screen.getByTestId('Card-title-tooltip')).toBeVisible();
       expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    it('should remove the tooltip if the title changes to a shorter string', async () => {
+      const aLongTitle =
+        'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+
+      const aShortTitle = 'A Title';
+      const { rerender } = render(<Card {...cardProps} title={aLongTitle} />);
+      const tooltipButton = screen.getByRole('button', {
+        name: aLongTitle,
+      });
+      expect(tooltipButton).toBeVisible();
+      expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
+      Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+      rerender(<Card {...cardProps} title={aShortTitle} subtitle="This is subtitle" />);
+      expect(screen.getByTestId('Card-title-notip')).toBeVisible();
     });
 
     it('should put the subtitle in a tooltip if it overflows', () => {

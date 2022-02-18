@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.5...v2.149.0-next.6) (2022-02-18)
+
+
+### Bug Fixes
+
+* **card:** fix overflow tooltip for card ([68611c4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68611c412345ccfe29861fef1dfa17eeb9e32aed))
+
+
+### Features
+
+* **hierarchy-list:** call onExpandedChange after rows are expanded ([f6811a8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f6811a89909d0de4df663883924429e6f4242b38))
+
+
+
+
+
+# [2.149.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.4...v2.149.0-next.5) (2022-02-16)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.149.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.3...v2.149.0-next.4) (2022-02-16)
+
+
+### Features
+
+* **status-bar:** add className prop ([7e4aaf6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e4aaf6b18f92d587db0f5ef2339c5a3c6113c8a))
+
+
+
+
+
+# [2.149.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.2...v2.149.0-next.3) (2022-02-16)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.149.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.1...v2.149.0-next.2) (2022-02-15)
 
 

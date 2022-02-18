@@ -6482,6 +6482,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -6711,6 +6712,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -24066,6 +24070,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -24314,6 +24319,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -29646,6 +29654,7 @@ Map {
   },
   "ProgressBar" => Object {
     "defaultProps": Object {
+      "className": undefined,
       "helperText": "",
       "hideLabel": false,
       "i18n": Object {
@@ -29659,6 +29668,9 @@ Map {
       "valueUnit": "%",
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "helperText": Object {
         "type": "string",
       },
