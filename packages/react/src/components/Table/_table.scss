@@ -173,6 +173,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     border-right: solid 1px $ui-03;
   }
 
+  &[data-nesting-offset='0'] {
+    td:first-of-type:before {
+      border-right: 0;
+    }
+  }
   td.bx--table-expand[data-previous-value='collapsed'] {
     border-bottom: solid 1px $ui-03;
   }
