@@ -22269,6 +22269,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-row-nesting={false}
               hasRowSelection={false}
               onClick={[Function]}
+              style={
+                Object {
+                  "--row-nesting-offset": "0px",
+                }
+              }
             >
               <td
                 className="bx--table-expand"
@@ -25305,6 +25310,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               data-row-nesting={true}
               hasRowSelection={false}
               onClick={[Function]}
+              style={
+                Object {
+                  "--row-nesting-offset": "0px",
+                }
+              }
             >
               <td
                 className="bx--table-expand"

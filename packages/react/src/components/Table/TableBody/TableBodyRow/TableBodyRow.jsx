@@ -326,7 +326,7 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
-          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {})}
+          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`)}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
@@ -348,6 +348,9 @@ const TableBodyRow = ({
             if (isSelectable !== false) {
               onRowClicked(id);
             }
+          }}
+          style={{
+            '--row-nesting-offset': `${nestingOffset}px`,
           }}
         >
           {tableCells}

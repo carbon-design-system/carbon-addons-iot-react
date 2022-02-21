@@ -155,6 +155,25 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
 }
+
+.#{$iot-prefix}--expandable-tablerow--expanded {
+  td.#{$prefix}--table-expand {
+    position: relative;
+    left: var(--row-nesting-offset);
+  }
+
+  td:first-of-type:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(var(--row-nesting-offset) * -1);
+    height: 100%;
+    width: var(--row-nesting-offset);
+    background-color: $ui-03;
+    border-right: solid 1px $ui-03;
+  }
+}
+
 .#{$iot-prefix}--table__cell__offset {
   position: relative;
   left: var(--row-nesting-offset);
