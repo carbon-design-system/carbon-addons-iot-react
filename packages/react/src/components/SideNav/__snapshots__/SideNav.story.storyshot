@@ -82,9 +82,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             aria-describedby={null}
             aria-label="user"
             aria-pressed={null}
+            btnContent={
+              <ForwardRef(Group24)
+                className="bx--header__menu-item bx--header__menu-title"
+                description="Icon"
+                fill="white"
+              />
+            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
             disabled={false}
+            label="user"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -5260,9 +5268,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             aria-describedby={null}
             aria-label="user"
             aria-pressed={null}
+            btnContent={
+              <ForwardRef(Group24)
+                className="bx--header__menu-item bx--header__menu-title"
+                description="Icon"
+                fill="white"
+              />
+            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-user-global"
             disabled={false}
+            label="user"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

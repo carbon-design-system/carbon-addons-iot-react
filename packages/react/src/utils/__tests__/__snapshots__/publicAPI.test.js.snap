@@ -11155,6 +11155,7 @@ Map {
         "profileTitle": "Profile",
       },
       "onRequestLogout": null,
+      "profileLink": "javascript:void(0)",
       "testId": "suite-header-profile",
       "username": "",
     },
@@ -11184,6 +11185,9 @@ Map {
       },
       "onRequestLogout": Object {
         "type": "func",
+      },
+      "profileLink": Object {
+        "type": "string",
       },
       "testId": Object {
         "type": "string",

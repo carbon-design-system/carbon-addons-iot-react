@@ -33,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-11"
+          id="bx--modal-header__heading--modal-10"
         >
           Do you wish to log out?
         </h3>
@@ -61,9 +61,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-11"
+        aria-labelledby="bx--modal-header__heading--modal-10"
         className="bx--modal-content"
-        id="bx--modal-body--modal-11"
+        id="bx--modal-body--modal-10"
       >
         Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
