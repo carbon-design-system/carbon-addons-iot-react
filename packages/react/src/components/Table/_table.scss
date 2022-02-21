@@ -172,6 +172,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     background-color: $ui-03;
     border-right: solid 1px $ui-03;
   }
+
+  td.bx--table-expand[data-previous-value='collapsed'] {
+    border-bottom: solid 1px $ui-03;
+  }
 }
 
 .#{$iot-prefix}--table__cell__offset {
