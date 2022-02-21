@@ -430,11 +430,9 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--unselectable`]: isSelectable === false,
         [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
         [`${iotPrefix}--table__row--editing`]: isEditMode,
+        [`${iotPrefix}--table__row--selected`]: isSelected,
       })}
       key={id}
-      isSelected={isSelected}
-      isSelectable={isSelectable}
-      isEditMode={isEditMode}
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single') {
