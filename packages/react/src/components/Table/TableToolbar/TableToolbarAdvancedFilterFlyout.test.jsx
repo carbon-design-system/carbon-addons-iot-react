@@ -672,7 +672,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     );
   });
 
-  it('should not break on empty column arrry prop', () => {
+  it('should not break on empty column array prop', () => {
     const onApplyAdvancedFilter = jest.fn();
     const onCancelAdvancedFilter = jest.fn();
     render(
