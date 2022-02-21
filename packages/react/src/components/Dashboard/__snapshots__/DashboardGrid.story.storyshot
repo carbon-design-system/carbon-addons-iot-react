@@ -2104,7 +2104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             }
           >
             <div
-              className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+              className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
               data-testid="table-for-card-tableCard-table-container"
             >
               <section
@@ -2394,6 +2394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     className="bx--data-table bx--data-table--no-border"
                     data-testid="table-for-card-tableCard"
                     id="table-for-card-tableCard"
+                    showHeader={true}
                     title={null}
                   >
                     <thead
