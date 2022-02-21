@@ -4295,6 +4295,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -4524,6 +4525,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -21910,6 +21914,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -22158,6 +22163,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",

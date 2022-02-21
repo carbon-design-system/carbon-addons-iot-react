@@ -38,6 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card title
           </div>
@@ -497,6 +498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -557,6 +559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -671,6 +674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -785,6 +789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -899,6 +904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1013,6 +1019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1127,6 +1134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1241,6 +1249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1355,6 +1364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1473,6 +1483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1580,6 +1591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card with date picker
           </div>
@@ -1724,6 +1736,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1878,6 +1891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
           </div>
@@ -2070,6 +2084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -2138,6 +2153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card with render prop
           </div>

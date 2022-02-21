@@ -386,8 +386,8 @@ const Card = (props) => {
   // Ensure the title and subtitle have a tooltip only if their text is truncated
   const titleRef = useRef();
   const subTitleRef = useRef();
-  const hasTitleTooltip = useHasTextOverflow(titleRef);
-  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
+  const hasTitleTooltip = useHasTextOverflow(titleRef, title);
+  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
   const visibilityRef = useRef(null);
   const [isVisible] = useVisibilityObserver(visibilityRef, {
     unobserveAfterVisible: true,
@@ -473,6 +473,7 @@ const Card = (props) => {
             ) : (
               <div
                 ref={titleRef}
+                data-testid={`${testId}-title-notip`}
                 className={classnames(`${iotPrefix}--card--title--text`, {
                   [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
                 })}
