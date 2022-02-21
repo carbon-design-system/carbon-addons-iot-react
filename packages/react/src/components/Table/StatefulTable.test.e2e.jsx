@@ -251,6 +251,6 @@ describe('StatefulTable', () => {
     cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'as eat scott 23');
 
     cy.findAllByLabelText('Sort rows by this header in descending order').eq(0).click();
-    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'whiteboard can eat 72');
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'scott pinocchio chocolate 89');
   });
 });

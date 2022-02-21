@@ -435,7 +435,11 @@ export const tableReducer = (state = {}, action) => {
 
           return [...carry, column];
         }, []);
-        filteredData = handleMultiSort(nextSort, state.columns, state.data);
+        filteredData = handleMultiSort(
+          nextSort,
+          state.columns,
+          state.view.table.filteredData || state.data
+        );
       } else {
         filteredData =
           nextSortDir !== 'NONE'
