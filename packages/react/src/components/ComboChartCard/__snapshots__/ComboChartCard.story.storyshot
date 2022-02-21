@@ -40,6 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             <div
               className="iot--card--title--text"
+              data-testid="Card-title-notip"
             >
               Health history
             </div>
@@ -1963,6 +1964,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health history
           </div>
@@ -2114,6 +2116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             ComboChartCard Empty
           </div>
@@ -2306,6 +2309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             ComboChartCard Loading
           </div>
