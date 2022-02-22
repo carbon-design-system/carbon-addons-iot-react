@@ -186,22 +186,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -897,21 +884,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           aria-describedby={null}
           aria-label="bell"
           aria-pressed={null}
-          btnContent={
-            <span
-              id="bell-icon"
-            >
-              <ForwardRef(Notification24)
-                description="Icon"
-                fill="white"
-                id="notification-button"
-              />
-            </span>
-          }
           className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-bell-global"
           disabled={false}
-          label="bell"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1205,22 +1180,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1919,22 +1881,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2733,22 +2682,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3471,22 +3407,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -4563,22 +4486,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -5264,22 +5174,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon admin-icon__hidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon admin-icon__hidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="javascript:void(0)"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -5872,22 +5769,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           aria-label="Administration"
-          btnContent={
-            <span
-              id="suite-header-action-item-admin"
-            >
-              <ForwardRef(Settings20)
-                data-testid="admin-icon"
-                description="Settings"
-                fill="white"
-              />
-            </span>
-          }
-          className="admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
           href="https://www.ibm.com"
-          id="admin"
-          label="Administration"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
