@@ -499,6 +499,15 @@ const TableHead = ({
             ({ id }) => id === item.columnGroupId
           );
 
+          const { direction } = getComputedStyle(document.body);
+          const isLast = ordering.length - 1 === columnIndex;
+          const lastTooltipAlign =
+            align === 'start' && direction === 'ltr'
+              ? 'end'
+              : align === 'end' && direction === 'rtl'
+              ? 'start'
+              : align;
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               // TODO: remove deprecated 'testID' in v3
@@ -544,6 +553,7 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
+                align={isLast ? lastTooltipAlign : align}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>

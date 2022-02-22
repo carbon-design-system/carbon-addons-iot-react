@@ -28,6 +28,7 @@ const propTypes = {
   ),
   /** use white-space: pre; css when true */
   preserveCellWhiteSpace: PropTypes.bool,
+  align: PropTypes.string,
 };
 
 const defaultProps = {
@@ -55,6 +56,7 @@ const renderCustomCell = (renderDataFunction, args, className) => {
 
 /** Supports our default render decisions for primitive values */
 const TableCellRenderer = ({
+  align,
   children,
   wrapText,
   allowTooltip,
@@ -86,6 +88,7 @@ const TableCellRenderer = ({
         triggerClassName={`${iotPrefix}--table__cell-tooltip`}
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"
+        align={align}
       >
         {element}
       </TooltipDefinition>
