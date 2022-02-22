@@ -66,6 +66,9 @@ describe('HeaderAction', () => {
     expect(screen.queryByText('myButton')).not.toBeInTheDocument();
     expect(screen.getByTestId('menu-item-myhelpLabel-global')).toBeVisible();
     expect(screen.getByTestId('menu-item-myhelpLabel-global').tagName).toEqual('A');
-    expect(screen.getByTestId('menu-item-myhelpLabel-global')).toHaveAttribute('href', 'https://www.ibm.com');
+    expect(screen.getByTestId('menu-item-myhelpLabel-global')).toHaveAttribute(
+      'href',
+      'https://www.ibm.com'
+    );
   });
 });
