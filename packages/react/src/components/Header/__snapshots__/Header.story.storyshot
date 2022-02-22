@@ -78,16 +78,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="alerts"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Notification16)
-                description="Icon"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
-            label="alerts"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -481,16 +474,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
           aria-describedby={null}
           aria-label="user"
           aria-pressed={null}
-          btnContent={
-            <ForwardRef(UserAvatar16)
-              description="Icon"
-              fill="white"
-            />
-          }
           className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-user-global"
           disabled={false}
-          label="user"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1197,16 +1183,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="HiddenByClass"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Bullhorn16)
-                description="A Hidden Icon"
-                fill="white"
-              />
-            }
-            className="isReallyHidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            className="bx--header-action-btn isReallyHidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-HiddenByClass-global"
             disabled={false}
-            label="HiddenByClass"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1242,16 +1221,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="Announcements"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Bullhorn16)
-                description="Announcements"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Announcements-global"
             disabled={false}
-            label="Announcements"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1287,16 +1259,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="Custom icon 1"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Checkbox16)
-                description="icon"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 1-global"
             disabled={false}
-            label="Custom icon 1"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1332,16 +1297,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="Custom icon 2"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Checkbox16)
-                description="icon"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 2-global"
             disabled={false}
-            label="Custom icon 2"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1377,16 +1335,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
             aria-describedby={null}
             aria-label="Custom icon 3"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Checkbox16)
-                description="icon"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-Custom icon 3-global"
             disabled={false}
-            label="Custom icon 3"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
@@ -1418,20 +1369,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
               />
             </svg>
           </button>
+          <a
+            aria-label="Header action with href"
+            className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            data-testid="menu-item-Header action with href-global"
+            href="https://www.ibm.com"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Header action with href
+            </div>
+            <svg
+              aria-hidden={true}
+              description="icon"
+              fill="white"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2V6A2,2,0,0,0,26,4ZM6,26V6H26V26Z"
+              />
+            </svg>
+          </a>
           <button
             aria-describedby={null}
             aria-label="alerts"
             aria-pressed={null}
-            btnContent={
-              <ForwardRef(Notification16)
-                description="Icon"
-                fill="white"
-              />
-            }
             className="bx--header-action-btn bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             data-testid="menu-item-alerts-global"
             disabled={false}
-            label="alerts"
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}

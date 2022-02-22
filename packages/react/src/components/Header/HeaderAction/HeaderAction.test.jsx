@@ -47,4 +47,23 @@ describe('HeaderAction', () => {
     expect(screen.queryByText('myButton')).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: /myhelpLabel/i })).toBeVisible();
   });
+  it('it renders an a instead of button if item has href', () => {
+    const mockProps = {
+      testId: 'my-header-action',
+      item: {
+        label: 'myhelpLabel',
+        btnContent: <span>myButton</span>,
+        href: 'https://www.ibm.com',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+      },
+      index: 0,
+      renderLabel: true,
+    };
+
+    render(<HeaderAction {...mockProps} />);
+    expect(true).toBeTruthy();
+    expect(screen.queryByText('myButton')).not.toBeInTheDocument();
+    expect(screen.getByTestId('menu-item-myhelpLabel-global')).toBeVisible();
+  });
 });
