@@ -3968,6 +3968,7 @@ Map {
       "columns": Array [],
       "hasRowActions": false,
       "hasRowExpansion": false,
+      "hasRowNesting": false,
       "hasRowSelection": false,
       "rowCount": 10,
       "showExpanderColumn": false,
@@ -3997,6 +3998,9 @@ Map {
         "type": "bool",
       },
       "hasRowExpansion": Object {
+        "type": "bool",
+      },
+      "hasRowNesting": Object {
         "type": "bool",
       },
       "hasRowSelection": Object {
