@@ -91,7 +91,7 @@
     height: $spacing-08;
   }
   .#{$prefix}--data-table-content + .#{$prefix}--pagination {
-    border: 1px solid #dfe3e6;
+    border: 1px solid $ui-03;
   }
 
   .#{$prefix}--toolbar-search-container {
