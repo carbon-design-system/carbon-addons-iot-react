@@ -125,14 +125,6 @@
   &--nav-link {
     a {
       text-decoration: none;
-
-      &:hover {
-        background-color: $hover-ui;
-      }
-
-      svg {
-        margin-right: $spacing-03;
-      }
     }
     &--loading {
       display: flex;
