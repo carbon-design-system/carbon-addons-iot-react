@@ -1,17 +1,21 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
-import { object } from '@storybook/addon-knobs';
-import { merge } from 'lodash-es';
-import { TrashCan16 } from '@carbon/icons-react';
+import { object, select, boolean } from '@storybook/addon-knobs';
+import { merge, uniqueId } from 'lodash-es';
 
+import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
 import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
+import RuleBuilder from '../RuleBuilder/RuleBuilder';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
+import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
+import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
+import FilteringREADME from './mdx/Filtering.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -29,6 +33,15 @@ import {
   getAdvancedFilters,
   getTableKnobs,
   getI18nKnobs,
+  getBatchActions,
+  objectWithSubstitution,
+  getDrillDownRowAction,
+  getOverflowTextOnlyRowAction,
+  getOverflowDeleteRowAction,
+  getOverflowAddRowAction,
+  getOverflowEditRowAction,
+  getHiddenOverflowRowAction,
+  getHiddenRowAction,
   addMoreChildRowsToParent,
 } from './Table.story.helpers';
 
@@ -46,7 +59,7 @@ export default {
  * The main playground story for the Table/StatefulTable.
  * All props (that can be combined) are enabled in dev mode in order to help catch
  * regressions and see how changes affect existing functionality. But for the consumers
- * of the library it would probalby be overwhelming to see all functionality at once,
+ * of the library it would probably be overwhelming to see all functionality at once,
  * hence a simple table is shown in production.
  * @returns story function
  */
@@ -61,7 +74,7 @@ export const Playground = () => {
     selectedTableType,
     tableMaxWidth,
     secondaryTitle,
-    numerOfRows,
+    numberOfRows,
     useZebraStyles,
     size,
     tableTooltipText,
@@ -90,7 +103,9 @@ export const Playground = () => {
     hasRowNesting,
     demoHasLoadMore,
     shouldExpandOnRowClick,
+    expandedIds,
     hasRowSelection,
+    selectedIds,
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
@@ -113,7 +128,7 @@ export const Playground = () => {
     demoCustomEmptyState,
     demoCustomErrorState,
     locale,
-    demoBatchActions,
+    batchActions,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -138,7 +153,7 @@ export const Playground = () => {
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
-        ['demoBatchActions', 'selectionCheckboxEnabled'].includes(name)
+        ['selectionCheckboxEnabled'].includes(name)
         ? true
         : // For this story enable the other knobs by defaults if we are in dev environment
           __DEV__,
@@ -203,7 +218,7 @@ export const Playground = () => {
   // INITIAL DATA STATE
   const [data, setData] = useState(
     [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
-      .slice(0, numerOfRows)
+      .slice(0, numberOfRows)
       .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
       .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
       .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row))
@@ -255,20 +270,6 @@ export const Playground = () => {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
   });
-  const batchActions = demoBatchActions
-    ? [
-        {
-          id: 'delete',
-          labelText: 'Delete',
-          renderIcon: TrashCan16,
-          iconDescription: 'Delete Item',
-        },
-        {
-          id: 'process',
-          labelText: 'Process',
-        },
-      ]
-    : [];
   const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
   const emptyState = demoCustomEmptyState ? customEmptyState : undefined;
   const errorState = demoCustomErrorState ? customErrorState : undefined;
@@ -331,6 +332,8 @@ export const Playground = () => {
         table: {
           emptyState,
           errorState,
+          expandedIds,
+          selectedIds,
           rowActions: rowActionsState,
           singleRowEditButtons,
           loadingState: {
@@ -373,6 +376,12 @@ export const WithSorting = () => {
   const columns = getTableColumns().map((column) => ({
     ...column,
     isSortable: demoSingleSort,
+    tooltip:
+      column.id === 'object'
+        ? `This column has a custom sort function based on the object id property`
+        : column.id === 'status'
+        ? `This column has a custom sort function that orders on BROKEN, RUNNING and then NOT_RUNNING`
+        : undefined,
   }));
 
   const sort = object('Sort state (view.table.sort)', {
@@ -550,5 +559,238 @@ WithRowNesting.parameters = {
   component: Table,
   docs: {
     page: RowNestingREADME,
+  },
+};
+
+export const WithFiltering = () => {
+  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
+    enableKnob: (knobName) => knobName !== 'hasAdvancedFilter',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 30);
+  const columns = getTableColumns().map((col) =>
+    col.id === 'object'
+      ? {
+          ...col,
+          tooltip: `This column has objects as values and needs a custom filter function that
+      filters based on an object property.`,
+        }
+      : col
+  );
+
+  // Normal filter settings
+  let activeFilters;
+  let activeBar;
+  if (!hasAdvancedFilter) {
+    activeFilters = object('Active filters (view.filters)', [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
+      },
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ]);
+    activeBar = select(
+      'Show filter toolbar (view.toolbar.activeBar)',
+      ['filter', undefined],
+      'filter'
+    );
+  }
+
+  // Advanced filter settings
+  const [showBuilder, setShowBuilder] = useState(false);
+  const [advancedFilters, setAdvancedFilters] = useState(
+    hasAdvancedFilter ? getAdvancedFilters() : undefined
+  );
+  const selectedAdvancedFilterIds = hasAdvancedFilter
+    ? object('Active advanced filters (view.selectedAdvancedFilterIds) ☢️', ['story-filter'])
+    : undefined;
+  const advancedFilterFlyoutOpen = hasAdvancedFilter
+    ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
+    : undefined;
+  const actions = merge(getTableActions(), {
+    toolbar: { onCreateAdvancedFilter: () => setShowBuilder(true) },
+  });
+  const storyNotice = hasAdvancedFilter ? (
+    <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
+  ) : null;
+
+  return (
+    <>
+      {storyNotice}
+      <MyTable
+        actions={actions}
+        columns={columns}
+        data={data}
+        options={{
+          hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
+          hasAdvancedFilter,
+        }}
+        view={{
+          advancedFilters,
+          selectedAdvancedFilterIds,
+          filters: activeFilters,
+          toolbar: {
+            activeBar,
+            advancedFilterFlyoutOpen,
+          },
+        }}
+      />
+      {showBuilder && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 10,
+          }}
+        >
+          <RuleBuilder
+            onSave={(newFilter) => {
+              setAdvancedFilters((prev) => [
+                ...prev,
+                {
+                  filterId: uniqueId('filter-id'),
+                  ...newFilter,
+                },
+              ]);
+              setShowBuilder(false);
+            }}
+            onCancel={() => setShowBuilder(false)}
+            filter={{
+              filterColumns: columns.map(({ id, name }) => ({ id, name })),
+            }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+WithFiltering.storyName = 'With filtering';
+WithFiltering.decorators = [createElement];
+WithFiltering.parameters = {
+  component: Table,
+  docs: {
+    page: FilteringREADME,
+  },
+};
+
+export const WithSelectionAndBatchActions = () => {
+  const { selectedTableType, hasRowSelection, selectionCheckboxEnabled } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasRowSelection', 'selectionCheckboxEnabled'],
+    enableKnob: () => true,
+  });
+
+  const isStateful = selectedTableType === 'StatefulTable';
+  const isMultiSelect = hasRowSelection === 'multi';
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+    id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
+  const selectedIds =
+    hasRowSelection === 'multi'
+      ? object(selectdIdsDescription, ['row-3', 'row-4'])
+      : object(selectdIdsDescription, ['row-3']);
+
+  const batchActions = isMultiSelect
+    ? objectWithSubstitution(
+        'Batch actions for selected rows (view.toolbar.batchActions)',
+        getBatchActions()
+      )
+    : undefined;
+
+  const MyTable = isStateful ? StatefulTable : Table;
+  const data = getTableData()
+    .slice(0, 10)
+    .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row));
+  const columns = getTableColumns();
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowSelection,
+      }}
+      view={{
+        table: {
+          selectedIds,
+        },
+        toolbar: { batchActions },
+      }}
+    />
+  );
+};
+
+WithSelectionAndBatchActions.storyName = 'With selection and batch actions';
+WithSelectionAndBatchActions.decorators = [createElement];
+WithSelectionAndBatchActions.parameters = {
+  component: Table,
+  docs: {
+    page: SelectionAndBatchActionsREADME,
+  },
+};
+
+export const WithInlineActions = () => {
+  const { selectedTableType, hasRowActions } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasRowActions'],
+    enableKnob: () => true,
+  });
+
+  const rowActions = [
+    objectWithSubstitution('Row actions for row-0 (data[0].rowActions)', [getDrillDownRowAction()]),
+    objectWithSubstitution('Row actions for row-1 (data[1].rowActions)', [
+      getDrillDownRowAction(),
+      getOverflowTextOnlyRowAction(),
+      getHiddenOverflowRowAction(),
+    ]),
+    objectWithSubstitution('Row actions for row-2 (data[2].rowActions)', [
+      getOverflowEditRowAction(),
+      getOverflowAddRowAction(),
+      getOverflowDeleteRowAction(),
+    ]),
+    objectWithSubstitution('Row actions for row-3 (data[3].rowActions)', [
+      getHiddenRowAction(),
+      getHiddenOverflowRowAction(),
+    ]),
+  ];
+
+  const rowActionsState = object(
+    'State of the row actions (view.table.rowActions)',
+    getRowActionStates()
+  );
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData()
+    .slice(0, 10)
+    .map((row, index) => {
+      if (hasRowActions) {
+        return { ...row, rowActions: rowActions[index] ?? [] };
+      }
+      return row;
+    });
+  const columns = getTableColumns();
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowActions,
+      }}
+      view={{ table: { rowActions: rowActionsState } }}
+    />
+  );
+};
+WithInlineActions.storyName = 'With inline actions';
+WithInlineActions.decorators = [createElement];
+WithInlineActions.parameters = {
+  component: Table,
+  docs: {
+    page: InlineActionsREADME,
   },
 };

@@ -34,6 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health
           </div>
@@ -197,6 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health
           </div>
@@ -401,6 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health
           </div>
@@ -561,6 +564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health
           </div>

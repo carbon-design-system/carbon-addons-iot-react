@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.8...v2.149.0-next.9) (2022-02-22)
+
+
+### Bug Fixes
+
+* **stateful-table:** fix multi-sort and advanced filters cooperatively ([c6c01ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c6c01ef1619dfc7acdf3c1e80c7ee8f4a302c2e1))
+* **table:** maintain correct filtering when toggling multisort direction ([8b149aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8b149aa739de2606fd7b7032c19c998d89d0407c))
+
+
+### Features
+
+* **card:** add padding knob to custom card story ([0220544](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0220544f3034f2473789bd038a9162baa4af9370))
+* **card:** add padding prop to card ([214c082](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/214c0827115d3f5c4fe6c0405fdd558205b56ca9))
+* **tableviewdropdown:** add prop isHidingStandardActions ([b4e5990](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b4e59903317eea177908fd37806a00a5f0cd0484))
+
+
+
+
+
+# [2.149.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.7...v2.149.0-next.8) (2022-02-21)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.6...v2.149.0-next.7) (2022-02-21)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.5...v2.149.0-next.6) (2022-02-18)
+
+
+### Bug Fixes
+
+* **card:** fix overflow tooltip for card ([68611c4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68611c412345ccfe29861fef1dfa17eeb9e32aed))
+
+
+### Features
+
+* **hierarchy-list:** call onExpandedChange after rows are expanded ([f6811a8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f6811a89909d0de4df663883924429e6f4242b38))
+
+
+
+
+
 # [2.149.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.4...v2.149.0-next.5) (2022-02-16)
 
 **Note:** Version bump only for package ibm-ai-applications

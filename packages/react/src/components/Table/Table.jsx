@@ -277,7 +277,8 @@ const propTypes = {
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
   actions: PropTypes.shape({
     pagination: PropTypes.shape({
-      /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
+      /** Specify a callback for when the current page or page size is changed.
+       * This callback is passed an object parameter containing the current page and the current page size */
       onChangePage: PropTypes.func,
     }),
     toolbar: PropTypes.shape({
@@ -285,9 +286,13 @@ const propTypes = {
       onToggleFilter: PropTypes.func,
       onShowRowEdit: PropTypes.func,
       onToggleColumnSelection: PropTypes.func,
-      /** Specify a callback for when the user clicks toolbar button to clear all filters. Receives a parameter of the current filter values for each column */
+      /** Specify a callback for when the user clicks toolbar button to clear all filters.
+       * Receives a parameter of the current filter values for each column */
       onClearAllFilters: PropTypes.func,
+      /** Callback for when the automatcally generated Cancel action in the batch actions bar is clicked */
       onCancelBatchAction: PropTypes.func,
+      /** Callback for all the batch actions except the cancel. Is called with the id of the clicked action.
+       *  For the StatefulTable the current selections are received as second parameter  */
       onApplyBatchAction: PropTypes.func,
       /** Apply a search criteria to the table */
       onApplySearch: PropTypes.func,
@@ -317,7 +322,8 @@ const propTypes = {
       onRowExpanded: PropTypes.func,
       onSelectAll: PropTypes.func,
       onChangeSort: PropTypes.func,
-      /** callback if a row action is clicked called with the id of the action then the id of the row if you return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
+      /** callback if a row action is clicked called with the id of the action then the id of the row if you
+       * return a promise from apply row action the stateful table will assume you're asynchronous and give a spinner */
       onApplyRowAction: PropTypes.func,
       onClearRowError: PropTypes.func,
       onEmptyStateAction: PropTypes.func,
@@ -786,8 +792,16 @@ const Table = (props) => {
       ? [view.table.sort]
       : [];
 
-    if (view.table.multiSortModal?.anticipatedColumn) {
-      return [...arrayifiedSort, view.table.multiSortModal.anticipatedColumn];
+    const anticipatedColumn = view.table.multiSortModal?.anticipatedColumn;
+
+    if (anticipatedColumn) {
+      const columnNotSortedYet = arrayifiedSort.every(
+        (sort) => sort.columnId !== anticipatedColumn.columnId
+      );
+
+      if (columnNotSortedYet) {
+        return [...arrayifiedSort, anticipatedColumn];
+      }
     }
 
     return arrayifiedSort;

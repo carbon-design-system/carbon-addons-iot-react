@@ -48,6 +48,8 @@ const propTypes = {
   }),
   style: PropTypes.objectOf(PropTypes.string),
   testID: PropTypes.string,
+  /** When true hides all action items and only allows the selection of views  */
+  isHidingStandardActions: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -68,6 +70,7 @@ const defaultProps = {
   overrides: undefined,
   style: undefined,
   testID: 'TableViewDropdown',
+  isHidingStandardActions: false,
 };
 
 const TableViewDropdown = ({
@@ -80,6 +83,7 @@ const TableViewDropdown = ({
   overrides,
   style,
   testID,
+  isHidingStandardActions,
 }) => {
   const viewAllItem = {
     id: 'view-all',
@@ -102,7 +106,7 @@ const TableViewDropdown = ({
       customAction: onManageViews,
       icon: Settings16,
     };
-    // Save changes button show only appear if the view has been edited and the current view is not 'View all'
+    // Save changes item should only appear if the view has been edited and the current view is not 'View all'
     // 'View all' is equivalent to a "default view", which would not be able to get re-saved. The user should supply
     // their own default views that can be changed if they would like that functionality
     const dialogItems =
@@ -110,9 +114,11 @@ const TableViewDropdown = ({
         ? [saveAsNewItem, saveItem, manageViewsItem]
         : [saveAsNewItem, manageViewsItem];
 
-    // move the action / dialog items to the top so that they are always easily accessible in the case that there are
-    // many views. The user would need to scroll all the way to the bottom to find the actions
-    return [...dialogItems, viewAllItem, ...views];
+    return isHidingStandardActions
+      ? views
+      : // move the action / dialog items to the top so that they are always accessible
+        // without scrolling in the case that there are many views.
+        [...dialogItems, viewAllItem, ...views];
   }, [
     i18n.saveAsNewView,
     i18n.saveChanges,
@@ -124,6 +130,7 @@ const TableViewDropdown = ({
     selectedViewId,
     viewAllItem,
     views,
+    isHidingStandardActions,
   ]);
 
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
