@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add20, TrashCan16, BeeBat16, Activity16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, BeeBat16, Activity16, Error16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
@@ -492,6 +492,43 @@ export const getBatchActions = () => {
     {
       id: 'process',
       labelText: 'Process',
+    },
+    {
+      id: 'hidden-not-overflow',
+      labelText: 'Hidden',
+      hidden: true,
+    },
+    {
+      id: 'reject',
+      labelText: 'Reject',
+      renderIcon: Error16,
+      iconDescription: 'Reject these items',
+      isOverflow: true,
+    },
+    {
+      id: 'reassign',
+      labelText: 'Reassign',
+      iconDescription: 'Reassign these items to another person',
+      isOverflow: true,
+      hasDivider: true,
+      disabled: true,
+    },
+    {
+      id: 'hidden',
+      labelText: 'Hide these items',
+      iconDescription: 'This action is hidden in the overflow menu',
+      isOverflow: true,
+      hasDivider: true,
+      hidden: true,
+    },
+    {
+      id: 'expunge',
+      labelText: 'Expunge these records',
+      iconDescription: 'Expunge these records from the database',
+      renderIcon: TrashCan16,
+      isOverflow: true,
+      hasDivider: true,
+      isDelete: true,
     },
   ];
 };

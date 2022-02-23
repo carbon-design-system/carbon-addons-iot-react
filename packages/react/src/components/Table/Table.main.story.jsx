@@ -687,7 +687,7 @@ export const WithSelectionAndBatchActions = () => {
 
   const isStateful = selectedTableType === 'StatefulTable';
   const isMultiSelect = hasRowSelection === 'multi';
-  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'}
     id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
   const selectedIds =
     hasRowSelection === 'multi'

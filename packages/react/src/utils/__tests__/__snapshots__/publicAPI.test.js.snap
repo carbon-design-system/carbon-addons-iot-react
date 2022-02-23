@@ -4487,24 +4487,73 @@ Map {
               "args": Array [
                 Object {
                   "args": Array [
-                    Object {
-                      "icon": Object {
-                        "type": "node",
+                    Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "iconDescription": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "labelText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "type": "node",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
-                      "iconDescription": Object {
-                        "type": "string",
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hasDivider": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "iconDescription": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "isOverflow": Object {
+                              "type": "bool",
+                            },
+                            "labelText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "type": "node",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "labelText": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                    },
+                    ],
                   ],
-                  "type": "shape",
+                  "type": "oneOfType",
                 },
               ],
               "type": "arrayOf",

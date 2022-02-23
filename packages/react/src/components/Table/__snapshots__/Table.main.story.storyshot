@@ -137,6 +137,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </svg>
           </button>
           <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="open and close list of options"
+            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg"
+            data-testid="table-table-toolbar-batch-actions-overflow-menu"
+            onClick={[Function]}
+            onClose={[Function]}
+            onKeyDown={[Function]}
+            open={false}
+            tabIndex={-1}
+            type="button"
+          >
+            <svg
+              aria-label="open and close list of options"
+              className="bx--overflow-menu__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="16"
+                cy="8"
+                r="2"
+              />
+              <circle
+                cx="16"
+                cy="16"
+                r="2"
+              />
+              <circle
+                cx="16"
+                cy="24"
+                r="2"
+              />
+              <title>
+                open and close list of options
+              </title>
+            </svg>
+          </button>
+          <button
             aria-describedby={null}
             aria-pressed={null}
             className="bx--batch-summary__cancel bx--btn bx--btn--primary"
@@ -27569,6 +27614,51 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-icon-path="inner-path"
                 fill="none"
               />
+            </svg>
+          </button>
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            aria-label="open and close list of options"
+            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg"
+            data-testid="null-table-toolbar-batch-actions-overflow-menu"
+            onClick={[Function]}
+            onClose={[Function]}
+            onKeyDown={[Function]}
+            open={false}
+            tabIndex={0}
+            type="button"
+          >
+            <svg
+              aria-label="open and close list of options"
+              className="bx--overflow-menu__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="16"
+                cy="8"
+                r="2"
+              />
+              <circle
+                cx="16"
+                cy="16"
+                r="2"
+              />
+              <circle
+                cx="16"
+                cy="24"
+                r="2"
+              />
+              <title>
+                open and close list of options
+              </title>
             </svg>
           </button>
           <button
