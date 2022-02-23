@@ -146,9 +146,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     &:after {
       content: '';
       position: absolute;
-      top: 0;
+      // -1px because the parent has a 1px border at the top, so we need to fill that gap
+      top: -1px;
       left: 0;
-      height: 100%;
+      height: calc(100% + 1px);
       width: rem(3px);
       background-color: $interactive-04;
       border-right: solid 1px $highlight;
@@ -165,9 +166,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   td:first-of-type:before {
     content: '';
     position: absolute;
-    top: 0;
+    // -1px because the parent has a 1px border at the top, so we need to fill that gap
+    top: -1px;
     left: calc(var(--row-nesting-offset) * -1);
-    height: 100%;
+    height: calc(100% + 1px);
     width: var(--row-nesting-offset);
     background-color: $ui-03;
     border-right: solid 1px $ui-03;
@@ -177,6 +179,9 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     td:first-of-type:before {
       border-right: 0;
     }
+  }
+  td.bx--table-expand[data-previous-value='collapsed'] {
+    border-bottom: solid 1px $ui-03;
   }
 }
 
@@ -210,9 +215,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   td:first-of-type:before {
     content: '';
     position: absolute;
-    top: 0;
+    // -1px because the parent has a 1px border at the top, so we need to fill that gap
+    top: -1px;
     left: 0;
-    height: 100%;
+    height: calc(100% + 1px);
     width: var(--row-nesting-offset);
     background-color: $ui-03;
     border-right: solid 1px $ui-03;
