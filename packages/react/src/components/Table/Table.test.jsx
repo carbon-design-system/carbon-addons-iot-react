@@ -3179,5 +3179,38 @@ describe('Table', () => {
 
       expect(screen.queryByText('hidden batch action')).toBeNull();
     });
+    it('should hide the overflow menu if all items are hidden', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'hidden-batch-action',
+                  labelText: 'hidden batch action',
+                  isOverflow: true,
+                  hidden: true,
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
+    });
   });
 });
