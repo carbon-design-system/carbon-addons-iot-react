@@ -172,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       }
     >
       <div
-        className="iot--card--content"
+        className="iot--card--content iot--card__content--no-padding"
         data-testid="Card-content"
         style={
           Object {
@@ -183,12 +183,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <div
           className="iot--table-container bx--data-table-container"
           data-testid="my table-table-container"
-          style={
-            Object {
-              "transform": "translateX(-1rem)",
-              "width": "calc(100% + 2rem)",
-            }
-          }
         >
           <section
             aria-label="Custom Card Title Toolbar"

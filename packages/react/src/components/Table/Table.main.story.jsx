@@ -59,7 +59,7 @@ export default {
  * The main playground story for the Table/StatefulTable.
  * All props (that can be combined) are enabled in dev mode in order to help catch
  * regressions and see how changes affect existing functionality. But for the consumers
- * of the library it would probalby be overwhelming to see all functionality at once,
+ * of the library it would probably be overwhelming to see all functionality at once,
  * hence a simple table is shown in production.
  * @returns story function
  */
@@ -74,7 +74,7 @@ export const Playground = () => {
     selectedTableType,
     tableMaxWidth,
     secondaryTitle,
-    numerOfRows,
+    numberOfRows,
     useZebraStyles,
     size,
     tableTooltipText,
@@ -218,7 +218,7 @@ export const Playground = () => {
   // INITIAL DATA STATE
   const [data, setData] = useState(
     [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
-      .slice(0, numerOfRows)
+      .slice(0, numberOfRows)
       .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
       .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
       .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row))

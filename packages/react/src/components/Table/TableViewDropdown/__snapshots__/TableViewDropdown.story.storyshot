@@ -48,11 +48,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               isSelected={true}
               item={
                 Object {
-                  "id": "view-3",
-                  "text": "My saved 3",
+                  "id": "view-1",
+                  "text": "My saved 1",
                 }
               }
-              testID="TableViewDropdownItem-view-3"
+              testID="TableViewDropdownItem-view-1"
             />
           }
           type="button"
@@ -62,8 +62,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="iot--view-dropdown__item"
-              data-testid="TableViewDropdownItem-view-3"
-              title="My saved 3 - Edited"
+              data-testid="TableViewDropdownItem-view-1"
+              title="My saved 1 - Edited"
             >
               <span
                 className="iot--view-dropdown__button-prefix"
@@ -90,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </span>
               </span>
               <span>
-                My saved 3
+                My saved 1
                 <span
                   className="iot--view-dropdown__edited-text"
                 >
