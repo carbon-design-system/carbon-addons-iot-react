@@ -9,7 +9,7 @@ let states = [];
 let dependencies = [];
 
 addons.getChannel().addListener(STORY_CHANGED, () => {
-  // Clear the global state and reset the capll order when
+  // Clear the global state and reset the call order when
   // the user selects another story
   callOrder = 0;
   states = [];
