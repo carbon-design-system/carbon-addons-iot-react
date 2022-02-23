@@ -36,7 +36,7 @@ addons.getChannel().addListener(STORY_RENDERED, () => {
  * Example 2
  * The dependencies can be the value of a knob representing the same table prop as the state does
  * so that that they can be used together, i.e. when the knob is modified the state
- * is also updatet with the same value.
+ * is also updated with the same value.
  * @param {any} initialValue The inital value of the state
  * @param {any} currentDep The dependencies that when changed will force a reset to the
  * initial value and re-render
@@ -56,7 +56,7 @@ export default function useStoryState(initialValue, currentDep) {
 
   // If the dependencies has changed the state is "reset" to use the
   // new initial value and force a rerender of the story just like
-  // a normal update would, thus the resetted value is picked up during
+  // a normal update would, thus the reset value is picked up during
   // next render
   const previousDep = dependencies[index];
   const dependenciesHasChanged = !isEqual(previousDep, currentDep);
