@@ -1,6 +1,6 @@
 import React, { useState, createElement } from 'react';
 import { action } from '@storybook/addon-actions';
-import { object, select, boolean } from '@storybook/addon-knobs';
+import { object, select, boolean, number } from '@storybook/addon-knobs';
 import { merge, uniqueId } from 'lodash-es';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -16,6 +16,7 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import PaginationREADME from './mdx/Pagination.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -99,6 +100,7 @@ export const Playground = () => {
     maxPages,
     isItemPerPageHidden,
     paginationSize,
+    hasOnlyPageData,
     hasRowExpansion,
     hasRowNesting,
     demoHasLoadMore,
@@ -150,6 +152,7 @@ export const Playground = () => {
         'demoEmptyState',
         'demoCustomEmptyState',
         'demoCustomErrorState',
+        'hasOnlyPageData',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -299,6 +302,7 @@ export const Playground = () => {
         hasAdvancedFilter,
         hasMultiSort,
         hasPagination,
+        hasOnlyPageData,
         hasResize,
         hasRowExpansion,
         hasRowNesting,
@@ -792,5 +796,66 @@ WithInlineActions.parameters = {
   component: Table,
   docs: {
     page: InlineActionsREADME,
+  },
+};
+
+export const WithPagination = () => {
+  const {
+    selectedTableType,
+    hasPagination,
+    pageSizes,
+    maxPages,
+    isItemPerPageHidden,
+    paginationSize,
+    hasOnlyPageData,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasPagination',
+      'pageSizes',
+      'maxPages',
+      'isItemPerPageHidden',
+      'paginationSize',
+      'hasOnlyPageData',
+    ],
+    enableKnob: (name) => name !== 'hasOnlyPageData' && name !== 'isItemPerPageHidden',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData();
+  const columns = getTableColumns();
+
+  const pageSize = select('Selected pageSize (view.pagination.pageSize)', pageSizes, 10);
+  const page = number('Current page (view.pagination.page)', 1);
+  const totalItems = number('Total items in data prop (view.pagination.totalItems)', data.length);
+
+  const knobRegeneratedKey = `table${isItemPerPageHidden}${maxPages}${paginationSize}${pageSize}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{ hasPagination, hasOnlyPageData }}
+      view={{
+        pagination: {
+          page,
+          pageSize,
+          pageSizes,
+          totalItems,
+          maxPages,
+          isItemPerPageHidden,
+          size: paginationSize,
+        },
+      }}
+    />
+  );
+};
+WithPagination.storyName = 'With pagination';
+WithPagination.parameters = {
+  component: Table,
+  docs: {
+    page: PaginationREADME,
   },
 };
