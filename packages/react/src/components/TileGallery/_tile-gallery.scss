@@ -113,6 +113,9 @@
   .overflow-menu {
     margin-top: -$spacing-03;
     margin-left: auto;
+    .#{$prefix}--overflow-menu:hover {
+      background-color: $hover-selected-ui;
+    }
   }
   &.#{$prefix}--link:hover {
     text-decoration: none;
@@ -130,7 +133,7 @@
 
     &:hover {
       background: $ui-03;
-      border: none;
+      border-color: transparent;
     }
     .title-card {
       margin-left: $spacing-05;
