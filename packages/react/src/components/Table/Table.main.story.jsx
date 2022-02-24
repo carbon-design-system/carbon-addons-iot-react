@@ -1,17 +1,22 @@
-import React, { useState, createElement } from 'react';
+import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { object } from '@storybook/addon-knobs';
-import { merge } from 'lodash-es';
-import { TrashCan16 } from '@carbon/icons-react';
+import { object, select, boolean } from '@storybook/addon-knobs';
+import { merge, uniqueId } from 'lodash-es';
 
+import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
 import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
+import RuleBuilder from '../RuleBuilder/RuleBuilder';
+import useStoryState from '../../internal/storyState';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
+import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
+import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
+import FilteringREADME from './mdx/Filtering.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -29,6 +34,15 @@ import {
   getAdvancedFilters,
   getTableKnobs,
   getI18nKnobs,
+  getBatchActions,
+  objectWithSubstitution,
+  getDrillDownRowAction,
+  getOverflowTextOnlyRowAction,
+  getOverflowDeleteRowAction,
+  getOverflowAddRowAction,
+  getOverflowEditRowAction,
+  getHiddenOverflowRowAction,
+  getHiddenRowAction,
   addMoreChildRowsToParent,
 } from './Table.story.helpers';
 
@@ -46,14 +60,14 @@ export default {
  * The main playground story for the Table/StatefulTable.
  * All props (that can be combined) are enabled in dev mode in order to help catch
  * regressions and see how changes affect existing functionality. But for the consumers
- * of the library it would probalby be overwhelming to see all functionality at once,
+ * of the library it would probably be overwhelming to see all functionality at once,
  * hence a simple table is shown in production.
  * @returns story function
  */
 export const Playground = () => {
   // STATES
-  const [showRowEditBar, setShowRowEditBar] = useState(false);
-  const [rowActionsState, setRowActionsState] = useState(getRowActionStates());
+  const [showRowEditBar, setShowRowEditBar] = useStoryState(false);
+  const [rowActionsState, setRowActionsState] = useStoryState(getRowActionStates());
 
   // KNOBS
   // The order of appearance is defined function getTableKnobs.
@@ -61,7 +75,7 @@ export const Playground = () => {
     selectedTableType,
     tableMaxWidth,
     secondaryTitle,
-    numerOfRows,
+    numberOfRows,
     useZebraStyles,
     size,
     tableTooltipText,
@@ -90,7 +104,9 @@ export const Playground = () => {
     hasRowNesting,
     demoHasLoadMore,
     shouldExpandOnRowClick,
+    expandedIds,
     hasRowSelection,
+    selectedIds,
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
@@ -113,7 +129,7 @@ export const Playground = () => {
     demoCustomEmptyState,
     demoCustomErrorState,
     locale,
-    demoBatchActions,
+    batchActions,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -138,7 +154,7 @@ export const Playground = () => {
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
-        ['demoBatchActions', 'selectionCheckboxEnabled'].includes(name)
+        ['selectionCheckboxEnabled'].includes(name)
         ? true
         : // For this story enable the other knobs by defaults if we are in dev environment
           __DEV__,
@@ -201,13 +217,24 @@ export const Playground = () => {
   );
 
   // INITIAL DATA STATE
-  const [data, setData] = useState(
+  const [data, setData] = useStoryState(
     [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
-      .slice(0, numerOfRows)
+      .slice(0, numberOfRows)
       .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
       .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
       .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row))
-      .map((row) => (demoHasLoadMore ? { ...row, hasLoadMore: true } : row))
+      .map((row) => (demoHasLoadMore ? { ...row, hasLoadMore: true } : row)),
+    // Reset initial state and trigger a story re-render when any
+    // of the following values change
+    [
+      demoEmptyState,
+      demoCustomEmptyState,
+      hasRowActions,
+      hasSingleRowEdit,
+      hasRowNesting,
+      selectionCheckboxEnabled,
+      demoHasLoadMore,
+    ]
   );
 
   const onRowLoadMore = (parentId) => {
@@ -255,112 +282,99 @@ export const Playground = () => {
       onShowRowEdit: () => setShowRowEditBar(true),
     },
   });
-  const batchActions = demoBatchActions
-    ? [
-        {
-          id: 'delete',
-          labelText: 'Delete',
-          renderIcon: TrashCan16,
-          iconDescription: 'Delete Item',
-        },
-        {
-          id: 'process',
-          labelText: 'Process',
-        },
-      ]
-    : [];
   const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
   const emptyState = demoCustomEmptyState ? customEmptyState : undefined;
   const errorState = demoCustomErrorState ? customErrorState : undefined;
   const error = demoCustomErrorState ? 'Error!' : undefined;
 
-  const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}`;
+  // For demo and test purposes we generate an new key for the table when
+  // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
+  const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
+  ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
+  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}`;
 
   return (
-    <MyTable
-      key={knobRegeneratedKey}
-      id="table"
-      style={style}
-      secondaryTitle={secondaryTitle}
-      useZebraStyles={useZebraStyles}
-      tooltip={tableTooltip}
-      columns={columns}
-      columnGroups={columnGroups}
-      data={data}
-      expandedData={expandedData}
-      actions={myTableActions}
-      size={size}
-      options={{
-        hasAggregations,
-        hasColumnSelection,
-        hasColumnSelectionConfig,
-        hasFilter: hasFilter && !hasAdvancedFilter,
-        hasAdvancedFilter,
-        hasMultiSort,
-        hasPagination,
-        hasResize,
-        hasRowExpansion,
-        hasRowNesting,
-        hasRowSelection,
-        shouldExpandOnRowClick,
-        hasFastSearch,
-        hasSearch,
-        preserveColumnWidths,
-        useAutoTableLayoutForResize,
-        wrapCellText,
-        preserveCellWhiteSpace,
-        hasRowActions,
-        shouldLazyRender,
-        hasRowEdit,
-        hasSingleRowEdit,
-      }}
-      view={{
-        advancedFilters,
-        aggregations: {
-          label: aggregationLabel,
-          columns: aggregationsColumns,
-        },
-        toolbar: {
-          activeBar,
-          isDisabled: toolbarIsDisabled,
-          customToolbarContent,
-          toolbarActions,
-          rowEditBarButtons,
-          batchActions,
-        },
-        table: {
-          emptyState,
-          errorState,
-          rowActions: rowActionsState,
-          singleRowEditButtons,
-          loadingState: {
-            isLoading: tableIsLoading,
-            rowCount: loadingRowCount,
-            columnCount: loadingColumnCount,
+    <DragAndDrop>
+      <MyTable
+        key={knobRegeneratedKey}
+        id="table"
+        style={style}
+        secondaryTitle={secondaryTitle}
+        useZebraStyles={useZebraStyles}
+        tooltip={tableTooltip}
+        columns={columns}
+        columnGroups={columnGroups}
+        data={data}
+        expandedData={expandedData}
+        actions={myTableActions}
+        size={size}
+        options={{
+          hasAggregations,
+          hasColumnSelection,
+          hasColumnSelectionConfig,
+          hasFilter: hasFilter && !hasAdvancedFilter,
+          hasAdvancedFilter,
+          hasMultiSort,
+          hasPagination,
+          hasResize,
+          hasRowExpansion,
+          hasRowNesting,
+          hasRowSelection,
+          shouldExpandOnRowClick,
+          hasFastSearch,
+          hasSearch,
+          preserveColumnWidths,
+          useAutoTableLayoutForResize,
+          wrapCellText,
+          preserveCellWhiteSpace,
+          hasRowActions,
+          shouldLazyRender,
+          hasRowEdit,
+          hasSingleRowEdit,
+        }}
+        view={{
+          advancedFilters,
+          aggregations: {
+            label: aggregationLabel,
+            columns: aggregationsColumns,
           },
-          ordering,
-        },
-        pagination: {
-          pageSizes,
-          maxPages,
-          isItemPerPageHidden,
-          size: paginationSize,
-        },
-      }}
-      i18n={getI18nKnobs()}
-      error={error}
-      locale={locale}
-    />
+          toolbar: {
+            activeBar,
+            isDisabled: toolbarIsDisabled,
+            customToolbarContent,
+            toolbarActions,
+            rowEditBarButtons,
+            batchActions,
+          },
+          table: {
+            emptyState,
+            errorState,
+            expandedIds,
+            selectedIds,
+            rowActions: rowActionsState,
+            singleRowEditButtons,
+            loadingState: {
+              isLoading: tableIsLoading,
+              rowCount: loadingRowCount,
+              columnCount: loadingColumnCount,
+            },
+            ordering,
+          },
+          pagination: {
+            pageSizes,
+            maxPages,
+            isItemPerPageHidden,
+            size: paginationSize,
+          },
+        }}
+        i18n={getI18nKnobs()}
+        error={error}
+        locale={locale}
+      />
+    </DragAndDrop>
   );
 };
 Playground.storyName = 'Playground';
-Playground.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];
 
 export const WithSorting = () => {
   const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({
@@ -373,6 +387,12 @@ export const WithSorting = () => {
   const columns = getTableColumns().map((column) => ({
     ...column,
     isSortable: demoSingleSort,
+    tooltip:
+      column.id === 'object'
+        ? `This column has a custom sort function based on the object id property`
+        : column.id === 'status'
+        ? `This column has a custom sort function that orders on BROKEN, RUNNING and then NOT_RUNNING`
+        : undefined,
   }));
 
   const sort = object('Sort state (view.table.sort)', {
@@ -381,30 +401,25 @@ export const WithSorting = () => {
   });
 
   return (
-    <MyTable
-      actions={getTableActions()}
-      columns={columns}
-      data={data}
-      options={{
-        hasMultiSort,
-      }}
-      view={{
-        table: {
-          sort,
-        },
-      }}
-    />
+    <DragAndDrop>
+      <MyTable
+        actions={getTableActions()}
+        columns={columns}
+        data={data}
+        options={{
+          hasMultiSort,
+        }}
+        view={{
+          table: {
+            sort,
+          },
+        }}
+      />
+    </DragAndDrop>
   );
 };
 
 WithSorting.storyName = 'With sorting';
-WithSorting.decorators = [
-  (Story) => (
-    <DragAndDrop>
-      <Story />
-    </DragAndDrop>
-  ),
-];
 WithSorting.parameters = {
   component: Table,
   docs: {
@@ -454,7 +469,6 @@ export const WithRowExpansion = () => {
 };
 
 WithRowExpansion.storyName = 'With row expansion';
-WithRowExpansion.decorators = [createElement];
 WithRowExpansion.parameters = {
   component: Table,
   docs: {
@@ -477,13 +491,13 @@ export const WithRowNesting = () => {
     ],
     enableKnob: () => true,
   });
-  const initiallyExpandedIds = object('Expanded ids (view.table.expandedIds)', ['row-1']);
 
+  const initiallyExpandedIds = object('Expanded ids (view.table.expandedIds)', ['row-1']);
+  const demoDeepNesting = !hasRowNesting.hasSingleNestedHierarchy;
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const initialData = getTableData()
     .slice(0, 10)
     .map((row, index) => {
-      const demoDeepNesting = !hasRowNesting.hasSingleNestedHierarchy;
       return addChildRows(row, index, demoDeepNesting);
     })
     .map((row) => ({
@@ -493,9 +507,9 @@ export const WithRowNesting = () => {
   const columns = getTableColumns();
   const actions = getTableActions();
 
-  const [loadingMoreIds, setLoadingMoreIds] = useState([]);
-  const [data, setData] = useState(initialData);
-  const [expandedIds, setExpandedIds] = useState(initiallyExpandedIds);
+  const [loadingMoreIds, setLoadingMoreIds] = useStoryState([]);
+  const [data, setData] = useStoryState(initialData, [demoHasLoadMore, demoDeepNesting]);
+  const [expandedIds, setExpandedIds] = useStoryState(initiallyExpandedIds, initiallyExpandedIds);
 
   const onRowLoadMore = (parentId) => {
     action('onRowLoadMore')(parentId);
@@ -514,9 +528,8 @@ export const WithRowNesting = () => {
 
   const onRowExpanded = (rowId, expanded) => {
     action('onRowExpanded')(rowId, expanded);
-    setExpandedIds((currentlyExpanded) =>
-      expanded ? [...currentlyExpanded, rowId] : currentlyExpanded.filter((id) => id !== rowId)
-    );
+    const temp = expanded ? [...expandedIds, rowId] : expandedIds.filter((id) => id !== rowId);
+    setExpandedIds(temp);
   };
   return (
     <MyTable
@@ -545,10 +558,241 @@ export const WithRowNesting = () => {
 };
 
 WithRowNesting.storyName = 'With row nesting';
-WithRowNesting.decorators = [createElement];
 WithRowNesting.parameters = {
   component: Table,
   docs: {
     page: RowNestingREADME,
+  },
+};
+
+export const WithFiltering = () => {
+  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
+    enableKnob: (knobName) => knobName !== 'hasAdvancedFilter',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 30);
+  const columns = getTableColumns().map((col) =>
+    col.id === 'object'
+      ? {
+          ...col,
+          tooltip: `This column has objects as values and needs a custom filter function that
+      filters based on an object property.`,
+        }
+      : col
+  );
+
+  // Normal filter settings
+  let activeFilters;
+  let activeBar;
+  if (!hasAdvancedFilter) {
+    activeFilters = object('Active filters (view.filters)', [
+      {
+        columnId: 'string',
+        value: 'whiteboard',
+      },
+      {
+        columnId: 'select',
+        value: 'option-B',
+      },
+    ]);
+    activeBar = select(
+      'Show filter toolbar (view.toolbar.activeBar)',
+      ['filter', undefined],
+      'filter'
+    );
+  }
+
+  // Advanced filter settings
+  const [showBuilder, setShowBuilder] = useStoryState(false);
+  const [advancedFilters, setAdvancedFilters] = useStoryState(
+    hasAdvancedFilter ? getAdvancedFilters() : undefined
+  );
+  const selectedAdvancedFilterIds = hasAdvancedFilter
+    ? object('Active advanced filters (view.selectedAdvancedFilterIds) ☢️', ['story-filter'])
+    : undefined;
+  const advancedFilterFlyoutOpen = hasAdvancedFilter
+    ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
+    : undefined;
+  const actions = merge(getTableActions(), {
+    toolbar: { onCreateAdvancedFilter: () => setShowBuilder(true) },
+  });
+  const storyNotice = hasAdvancedFilter ? (
+    <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
+  ) : null;
+
+  const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
+  return (
+    <>
+      {storyNotice}
+      <MyTable
+        key={knobRegeneratedKey}
+        actions={actions}
+        columns={columns}
+        data={data}
+        options={{
+          hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
+          hasAdvancedFilter,
+        }}
+        view={{
+          advancedFilters,
+          selectedAdvancedFilterIds,
+          filters: activeFilters,
+          toolbar: {
+            activeBar,
+            advancedFilterFlyoutOpen,
+          },
+        }}
+      />
+      {showBuilder && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 10,
+          }}
+        >
+          <RuleBuilder
+            onSave={(newFilter) => {
+              setAdvancedFilters((prev) => [
+                ...prev,
+                {
+                  filterId: uniqueId('filter-id'),
+                  ...newFilter,
+                },
+              ]);
+              setShowBuilder(false);
+            }}
+            onCancel={() => setShowBuilder(false)}
+            filter={{
+              filterColumns: columns.map(({ id, name }) => ({ id, name })),
+            }}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+WithFiltering.storyName = 'With filtering';
+WithFiltering.parameters = {
+  component: Table,
+  docs: {
+    page: FilteringREADME,
+  },
+};
+
+export const WithSelectionAndBatchActions = () => {
+  const { selectedTableType, hasRowSelection, selectionCheckboxEnabled } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasRowSelection', 'selectionCheckboxEnabled'],
+    enableKnob: () => true,
+  });
+
+  const isStateful = selectedTableType === 'StatefulTable';
+  const isMultiSelect = hasRowSelection === 'multi';
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+    id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
+  const selectedIds =
+    hasRowSelection === 'multi'
+      ? object(selectdIdsDescription, ['row-3', 'row-4'])
+      : object(selectdIdsDescription, ['row-3']);
+
+  const batchActions = isMultiSelect
+    ? objectWithSubstitution(
+        'Batch actions for selected rows (view.toolbar.batchActions)',
+        getBatchActions()
+      )
+    : undefined;
+
+  const MyTable = isStateful ? StatefulTable : Table;
+  const data = getTableData()
+    .slice(0, 10)
+    .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row));
+  const columns = getTableColumns();
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowSelection,
+      }}
+      view={{
+        table: {
+          selectedIds,
+        },
+        toolbar: { batchActions },
+      }}
+    />
+  );
+};
+
+WithSelectionAndBatchActions.storyName = 'With selection and batch actions';
+WithSelectionAndBatchActions.parameters = {
+  component: Table,
+  docs: {
+    page: SelectionAndBatchActionsREADME,
+  },
+};
+
+export const WithInlineActions = () => {
+  const { selectedTableType, hasRowActions } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasRowActions'],
+    enableKnob: () => true,
+  });
+
+  const rowActions = [
+    objectWithSubstitution('Row actions for row-0 (data[0].rowActions)', [getDrillDownRowAction()]),
+    objectWithSubstitution('Row actions for row-1 (data[1].rowActions)', [
+      getDrillDownRowAction(),
+      getOverflowTextOnlyRowAction(),
+      getHiddenOverflowRowAction(),
+    ]),
+    objectWithSubstitution('Row actions for row-2 (data[2].rowActions)', [
+      getOverflowEditRowAction(),
+      getOverflowAddRowAction(),
+      getOverflowDeleteRowAction(),
+    ]),
+    objectWithSubstitution('Row actions for row-3 (data[3].rowActions)', [
+      getHiddenRowAction(),
+      getHiddenOverflowRowAction(),
+    ]),
+  ];
+
+  const rowActionsState = object(
+    'State of the row actions (view.table.rowActions)',
+    getRowActionStates()
+  );
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData()
+    .slice(0, 10)
+    .map((row, index) => {
+      if (hasRowActions) {
+        return { ...row, rowActions: rowActions[index] ?? [] };
+      }
+      return row;
+    });
+  const columns = getTableColumns();
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowActions,
+      }}
+      view={{ table: { rowActions: rowActionsState } }}
+    />
+  );
+};
+WithInlineActions.storyName = 'With inline actions';
+WithInlineActions.parameters = {
+  component: Table,
+  docs: {
+    page: InlineActionsREADME,
   },
 };

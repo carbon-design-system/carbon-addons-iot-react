@@ -279,6 +279,7 @@ const HierarchyList = ({
   const itemsStrippedOfNodeElements = useMemo(() => reduceItems(items), [items]);
   const previousItems = usePrevious(items);
   const previousExpandedIds = usePrevious(expandedIds);
+
   useEffect(() => {
     if (!isEqual(items, previousItems)) {
       setFilteredItems(items);
@@ -301,13 +302,19 @@ const HierarchyList = ({
 
   /**
    * effect to trigger calling the onExpandedChange callback. Ignore it on the initial render
-   * when previousExpandedIds is undefined, but fire it on every change afterward
+   * when previousExpandedIds is undefined, but fire it on every change afterward when using a
+   * virtualList. The regular list triggers the onExpandedChange callback in the handleAfterExpand
+   * function below.
    */
   useEffect(() => {
-    if (previousExpandedIds !== undefined && !isEqual(previousExpandedIds, expandedIds)) {
+    if (
+      previousExpandedIds !== undefined &&
+      !isEqual(previousExpandedIds, expandedIds) &&
+      isVirtualList
+    ) {
       onExpandedChange(expandedIds);
     }
-  }, [expandedIds, onExpandedChange, previousExpandedIds]);
+  }, [expandedIds, isVirtualList, onExpandedChange, previousExpandedIds]);
 
   /**
    * Effect to handle indeterminate state for parent checkboxes. If we're in an editMode and
@@ -576,6 +583,7 @@ const HierarchyList = ({
         className={className}
         emptyState={emptyState}
         emptySearchState={emptySearchState}
+        onExpandedChange={onExpandedChange}
       />
     </>
   );
