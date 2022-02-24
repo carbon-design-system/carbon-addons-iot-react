@@ -34,6 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -185,6 +186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -336,6 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -451,6 +454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -602,6 +606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -753,6 +758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -824,6 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="iot--card--title--text"
+              data-testid="Card-title-notip"
             >
               Temperature
             </div>
@@ -3084,6 +3091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature, Humidity, eCount, and Pressure
           </div>
@@ -3235,6 +3243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature
           </div>
@@ -3386,6 +3395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature with variables
           </div>
@@ -3537,6 +3547,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Pressure
           </div>
