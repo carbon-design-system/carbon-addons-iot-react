@@ -171,8 +171,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     left: calc(var(--row-nesting-offset) * -1);
     height: calc(100% + 1px);
     width: var(--row-nesting-offset);
-    background-color: $ui-03;
-    border-right: solid 1px $ui-03;
+    background-color: $ui-01;
+    border-right: solid 1px $ui-01;
   }
 
   &[data-nesting-offset='0'] {
@@ -220,8 +220,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     left: 0;
     height: calc(100% + 1px);
     width: var(--row-nesting-offset);
-    background-color: $ui-03;
-    border-right: solid 1px $ui-03;
+    background-color: $ui-01;
+    border-right: solid 1px $ui-01;
   }
 }
 
