@@ -329,6 +329,7 @@
     "rollup-plugin-uglify": "^6.0.4",
     "sass": "^1.42.1",
     "storybook-addon-rtl": "^0.2.2",
+    "storybook-addon-turbo-build": "^1.0.1",
     "style-loader": "^0.23.1",
     "stylelint": "^10.1.0",
     "stylelint-config-recommended-scss": "^3.3.0",
@@ -339,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.149.0-next.5",
+  "version": "2.149.0-next.10",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2"

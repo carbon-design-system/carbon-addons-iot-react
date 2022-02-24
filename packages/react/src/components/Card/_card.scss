@@ -127,6 +127,12 @@ $lineHeightSize: 1.375em;
   }
 }
 
+.#{$iot-prefix}--card__content--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
 .#{$iot-prefix}--card--content--expanded {
   overflow-y: auto;
 }

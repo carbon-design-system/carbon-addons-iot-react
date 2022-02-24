@@ -37,4 +37,36 @@ describe('Card', () => {
     cy.scrollTo('bottom', { duration: 1000 });
     cy.findAllByText(/renderprop/).should('have.length', 8);
   });
+
+  it('should render tooltip if the text is too long', () => {
+    cy.viewport(1680, 900);
+    const aLongTitle =
+      'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+    mount(
+      <Card
+        style={{ width: '400px', height: '360px' }}
+        id="myCard"
+        title={aLongTitle}
+        size={CARD_SIZES.MEDIUM}
+      />
+    );
+
+    cy.findByRole('button', { name: aLongTitle }).should('exist');
+  });
+
+  it('should not render tooltip if the text is not too long', () => {
+    cy.viewport(1680, 900);
+    const aShortTitle = 'A short title';
+    mount(
+      <Card
+        style={{ width: '600px', height: '360px' }}
+        id="myCard"
+        title={aShortTitle}
+        size={CARD_SIZES.MEDIUM}
+        breakpoint="lg"
+      />
+    );
+
+    cy.findByRole('button', { name: aShortTitle }).should('not.exist');
+  });
 });
