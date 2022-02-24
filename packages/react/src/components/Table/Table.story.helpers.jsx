@@ -890,6 +890,13 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
           SEARCH_GROUP
         )
       : null,
+    searchFieldDefaultExpanded: shouldCreate('searchFieldDefaultExpanded')
+      ? boolean(
+          'Expand search field by default on initialization (view.toolbar.search.defaultExpanded)',
+          enableKnob('searchFieldDefaultExpanded'),
+          SEARCH_GROUP
+        )
+      : null,
 
     // AGGREGATION_GROUP
     hasAggregations: shouldCreate('hasAggregations')

@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { object, select, boolean } from '@storybook/addon-knobs';
+import { object, select, boolean, text } from '@storybook/addon-knobs';
 import { merge, uniqueId } from 'lodash-es';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -17,6 +17,7 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import SearchingREADME from './mdx/Searching.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -110,6 +111,7 @@ export const Playground = () => {
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
+    searchFieldDefaultExpanded,
     wrapCellText,
     cellTextAlignment,
     preserveCellWhiteSpace,
@@ -345,6 +347,9 @@ export const Playground = () => {
             toolbarActions,
             rowEditBarButtons,
             batchActions,
+            search: {
+              defaultExpanded: searchFieldDefaultExpanded,
+            },
           },
           table: {
             emptyState,
@@ -424,6 +429,61 @@ WithSorting.parameters = {
   component: Table,
   docs: {
     page: SortingREADME,
+  },
+};
+
+export const WithSearch = () => {
+  const { selectedTableType, hasSearch, hasFastSearch, searchFieldDefaultExpanded } = getTableKnobs(
+    {
+      knobsToCreate: [
+        'selectedTableType',
+        'hasSearch',
+        'hasFastSearch',
+        'searchFieldDefaultExpanded',
+      ],
+      enableKnob: (name) => name !== 'searchFieldDefaultExpanded',
+    }
+  );
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns();
+
+  const defaultValue = text(
+    'Default search value controlled by the app (view.toolbar.search.defaultValue)',
+    'helping'
+  );
+
+  const knobRegeneratedKey = `${searchFieldDefaultExpanded}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasSearch,
+        hasFastSearch,
+      }}
+      view={{
+        toolbar: {
+          search: {
+            defaultValue,
+            defaultExpanded: searchFieldDefaultExpanded,
+            onExpand: action('onExpand'),
+          },
+        },
+      }}
+    />
+  );
+};
+
+WithSearch.storyName = 'With search';
+WithSearch.parameters = {
+  component: Table,
+  docs: {
+    page: SearchingREADME,
   },
 };
 
