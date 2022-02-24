@@ -1,5 +1,0 @@
-[build]
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ."
-  publish = "storybook-static"
-  command = "NODE_ENV=production yarn build:storybook"
-  environment = { YARN_FLAGS = "--ignore-scripts", YARN_VERSION = "1.22.4" }
