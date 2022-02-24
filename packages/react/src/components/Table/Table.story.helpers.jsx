@@ -1089,7 +1089,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
         )
       : null,
     batchActions: shouldCreate('batchActions')
-      ? object(
+      ? objectWithSubstitution(
           'Batch actions for selected rows (view.toolbar.batchActions)',
           getBatchActions(),
           SELECTIONS_ACTIONS_GROUP
