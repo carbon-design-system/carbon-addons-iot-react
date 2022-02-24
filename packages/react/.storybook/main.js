@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
     '@storybook/addon-docs',
+    'storybook-addon-turbo-build',
   ],
   babel: async (options) => {
     // ensure all plugins are using loose: false (the default)
