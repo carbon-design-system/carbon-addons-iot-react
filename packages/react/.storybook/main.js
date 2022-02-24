@@ -10,6 +10,7 @@ module.exports = {
     '@storybook/addon-a11y',
     'storybook-addon-rtl',
     '@storybook/addon-docs',
+    'storybook-addon-turbo-build',
   ],
   babel: async (options) => {
     // ensure all plugins are using loose: false (the default)
@@ -29,7 +30,7 @@ module.exports = {
 
     // High quality 'original source' sourcemaps are slow to generate on initial builds and rebuilds.
     // Using cheap-module-eval-source-map speeds up builds and rebuilds in development while not sacrificing too much source map quality.
-    config.devtool = configType === 'DEVELOPMENT' ? 'cheap-module-eval-source-map' : 'source-map';
+    config.devtool = configType === 'DEVELOPMENT' ? 'cheap-module-eval-source-map' : '';
 
     // Moment.js is quite large, the locales that they bundle in the core as of v2.18 are ignored to keep our bundle size down.
     // https://webpack.js.org/plugins/ignore-plugin/#example-of-ignoring-moment-locales
