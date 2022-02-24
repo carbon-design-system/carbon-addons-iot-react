@@ -50,7 +50,7 @@ must also set the `totalItems` prop explicitly.
 
 Normally the number of pages are automatically calculated by the total items divided by the page size but
 for very large data sets the number of options available in the current page dropdown might grow too large.
-If the `totalItems` is dynamically set but risk being very large the `view.pagination.maxPages` prop,
+If the `totalItems` is dynamically set but risks being very large the `view.pagination.maxPages` prop,
 which must be a positive integer, can be used to explicitly limit the number of pages and prevent the
 current page dropdown from becoming sluggish.
 
@@ -82,7 +82,7 @@ return (
 
 ### Handling the onChangePage event
 
-The normal stateles Table must always implement the `onChangePage` event and respond to user initiated
+The normal stateless Table must always implement the `onChangePage` event and respond to user initiated
 changes of current page and page size as shown in the code example below. The internal state of the
 pagination component is automatically reset when the `pageSize` prop changes.
 
