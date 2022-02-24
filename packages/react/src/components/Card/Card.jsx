@@ -104,7 +104,7 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className, testId } = props;
+  const { children, dimensions, isExpanded, className, testId, noPadding } = props;
   const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
   return (
     <div
@@ -112,6 +112,7 @@ const CardContent = (props) => {
       style={{ [`--card-content-height`]: height }}
       className={classnames(className, `${iotPrefix}--card--content`, {
         [`${iotPrefix}--card--content--expanded`]: isExpanded,
+        [`${iotPrefix}--card__content--no-padding`]: noPadding,
       })}
     >
       {children}
@@ -171,8 +172,14 @@ CardContent.propTypes = {
   children: PropTypes.node,
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
+  noPadding: PropTypes.bool,
 };
-CardContent.defaultProps = { children: undefined, className: '', testId: 'card-content' };
+CardContent.defaultProps = {
+  children: undefined,
+  className: '',
+  testId: 'card-content',
+  noPadding: false,
+};
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -252,6 +259,7 @@ export const defaultProps = {
   testId: CardWrapper.defaultProps.testId,
   footerContent: undefined,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
+  padding: 'default',
 };
 
 /** Dumb component that renders the card basics */
@@ -291,6 +299,7 @@ const Card = (props) => {
     footerContent: CardFooter,
     dateTimeMask,
     extraActions,
+    padding,
     ...others
   } = props;
 
@@ -386,8 +395,8 @@ const Card = (props) => {
   // Ensure the title and subtitle have a tooltip only if their text is truncated
   const titleRef = useRef();
   const subTitleRef = useRef();
-  const hasTitleTooltip = useHasTextOverflow(titleRef);
-  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef);
+  const hasTitleTooltip = useHasTextOverflow(titleRef, title);
+  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
   const visibilityRef = useRef(null);
   const [isVisible] = useVisibilityObserver(visibilityRef, {
     unobserveAfterVisible: true,
@@ -473,6 +482,7 @@ const Card = (props) => {
             ) : (
               <div
                 ref={titleRef}
+                data-testid={`${testId}-title-notip`}
                 className={classnames(`${iotPrefix}--card--title--text`, {
                   [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
                 })}
@@ -525,6 +535,7 @@ const Card = (props) => {
         dimensions={dimensions}
         isExpanded={isExpanded}
         className={contentClassName}
+        noPadding={padding === 'none'}
       >
         {!isVisible && isLazyLoading ? ( // if not visible don't show anything
           ''

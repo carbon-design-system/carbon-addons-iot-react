@@ -17,17 +17,20 @@ export default {
   },
 };
 
-const props = () => ({
+const props = ({ light } = {}) => ({
   label: text('Label text (label)', 'Progress bar label'),
   helperText: text('Helper text (helperText)', 'Optional helper text'),
   hideLabel: boolean('Hide the label (hideLabel)', false),
   value: number('Current value (value)', 75),
   valueUnit: text('The unit displayed with the text value above the bar (valueUnit)', '%'),
   max: number('Maximum value (max)', 100),
+  light: boolean('Turn the progress bar white--for use on a gray background (light)', light),
 });
 
-const ProgressBarContainer = ({ maxWidth = 300, children }) => (
-  <div style={{ maxWidth, backgroundColor: '#FFF', padding: '1rem' }}>{children}</div>
+const ProgressBarContainer = ({ maxWidth = 300, children, light = false }) => (
+  <div style={{ maxWidth, backgroundColor: !light ? '#FFF' : 'transparent', padding: '1rem' }}>
+    {children}
+  </div>
 );
 
 export const Default = () => {
@@ -39,6 +42,16 @@ export const Default = () => {
 };
 
 Default.storyName = 'default';
+
+export const WithLight = () => {
+  return (
+    <ProgressBarContainer light>
+      <ProgressBar {...props({ light: true })} label="Mon, Oct 5" valueUnit="%" />
+    </ProgressBarContainer>
+  );
+};
+
+WithLight.storyName = 'with light';
 
 export const WithIcon = () => {
   return (

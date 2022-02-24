@@ -1,9 +1,10 @@
 import React from 'react';
+import { cloneDeep } from 'lodash-es';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add20, TrashCan16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, BeeBat16, Activity16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
@@ -261,6 +262,19 @@ export const getTableToolbarActions = () => [
     isOverflow: true,
   },
   {
+    id: 'long',
+    labelText: 'A really long text that should be truncated',
+    disabled: false,
+    isOverflow: true,
+  },
+  {
+    id: 'long-icon',
+    labelText: 'A really long text that should be truncated with an icon',
+    renderIcon: () => <BeeBat16 />,
+    disabled: false,
+    isOverflow: true,
+  },
+  {
     id: 'delete',
     labelText: 'Delete',
     isDelete: true,
@@ -313,47 +327,70 @@ export const getTableData = () =>
     .fill(0)
     .map((i, idx) => getNewRow(idx));
 
+export const getDrillDownRowAction = () => ({
+  id: 'drilldown',
+  renderIcon: Arrow,
+  iconDescription: 'Drill in',
+  labelText: 'Drill in to find out more after observing',
+});
+
+export const getOverflowEditRowAction = () => ({
+  id: 'edit',
+  renderIcon: Edit,
+  labelText: 'Edit',
+  isOverflow: true,
+  iconDescription: 'Edit',
+  isEdit: true,
+  disabled: true,
+});
+
+export const getOverflowAddRowAction = () => ({
+  id: 'Add',
+  renderIcon: Add,
+  iconDescription: 'Add',
+  labelText: 'Add',
+  isOverflow: true,
+  hasDivider: true,
+});
+
+export const getOverflowDeleteRowAction = () => ({
+  id: 'delete',
+  renderIcon: TrashCan16,
+  labelText: 'Delete',
+  isOverflow: true,
+  iconDescription: 'Delete',
+  isDelete: true,
+});
+
+export const getOverflowTextOnlyRowAction = () => ({
+  id: 'textOnly',
+  labelText: 'Text only sample action',
+  isOverflow: true,
+});
+
+export const getHiddenRowAction = () => ({
+  id: 'hidden',
+  labelText: 'Hidden',
+  isOverflow: false,
+  hidden: true,
+});
+
+export const getHiddenOverflowRowAction = () => ({
+  id: 'hiddenOverflow',
+  labelText: 'Hidden overflow',
+  isOverflow: true,
+  hidden: true,
+});
+
 export const getRowActions = (index) =>
   [
-    index % 4 !== 0
-      ? {
-          id: 'drilldown',
-          renderIcon: Arrow,
-          iconDescription: 'Drill in',
-          labelText: 'Drill in to find out more after observing',
-        }
-      : null,
-    {
-      id: 'edit',
-      renderIcon: Edit,
-      labelText: 'Edit',
-      isOverflow: true,
-      iconDescription: 'Edit',
-      isDelete: false,
-      isEdit: true,
-      disabled: true,
-    },
-    {
-      id: 'Add',
-      renderIcon: Add,
-      iconDescription: 'Add',
-      labelText: 'Add',
-      isOverflow: true,
-      hasDivider: true,
-    },
-    {
-      id: 'delete',
-      renderIcon: TrashCan16,
-      labelText: 'Delete',
-      isOverflow: true,
-      iconDescription: 'Delete',
-      isDelete: true,
-    },
-    {
-      id: 'textOnly',
-      labelText: 'Text only sample action',
-      isOverflow: true,
-    },
+    index % 4 !== 0 ? getDrillDownRowAction() : null,
+    getOverflowEditRowAction(),
+    getHiddenRowAction(),
+    getHiddenOverflowRowAction(),
+    getOverflowAddRowAction(),
+    getOverflowDeleteRowAction(),
+    getOverflowTextOnlyRowAction(),
   ].filter((i) => i);
 
 export const addRowAction = (row, hasSingleRowEdit, index) => ({
@@ -368,12 +405,12 @@ export const addRowAction = (row, hasSingleRowEdit, index) => ({
   ),
 });
 
-export const addChildRows = (row, idx) => ({
+export const addChildRows = (row, idx, demoDeepNesting = true) => ({
   ...row,
   children:
     idx % 4 !== 0
       ? [getNewRow(idx, 'A', true), getNewRow(idx, 'B', true)]
-      : idx === 4
+      : demoDeepNesting && idx === 4
       ? [
           getNewRow(idx, 'A', true),
           {
@@ -400,6 +437,18 @@ export const addChildRows = (row, idx) => ({
       : undefined,
 });
 
+export const addMoreChildRowsToParent = (data, parentId) => {
+  const clonedData = cloneDeep(data);
+  const parentRowIndex = clonedData.findIndex((row) => row.id === parentId);
+  const parentRow = clonedData[parentRowIndex];
+  const suffix = parentRow.children.length;
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 1}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 2}`, false));
+  parentRow.children.push(getNewRow(parentRowIndex, `${suffix + 3}`, false));
+  return clonedData;
+};
+
 export const getExpandedData = (data) =>
   data.map((row) => ({
     rowId: row.id,
@@ -414,17 +463,89 @@ export const getDefaultOrdering = (tableColumns) =>
 
 export const getRowActionStates = () => [
   {
-    rowId: 'row-1',
+    rowId: 'row-4',
     isRunning: true,
   },
   {
-    rowId: 'row-3',
+    rowId: 'row-5',
     error: {
       title: 'Import failed',
       message: 'Contact your administrator',
     },
   },
 ];
+
+export const getBatchActions = () => {
+  return [
+    {
+      id: 'delete',
+      labelText: 'Delete',
+      renderIcon: TrashCan16,
+      iconDescription: 'Delete Item',
+    },
+    {
+      id: 'createActivity',
+      labelText: 'Create activity',
+      renderIcon: Activity16,
+      iconDescription: 'Create activity from item',
+    },
+    {
+      id: 'process',
+      labelText: 'Process',
+    },
+  ];
+};
+
+const revertSubstituteReactElements = (data, substitutions) => {
+  return data.map((obj, index) => {
+    const objCopy = { ...obj };
+
+    if (substitutions[index]) {
+      const [key, originalValue] = substitutions[index];
+      // Add back original value unless it has been deleted
+      objCopy[key] = objCopy.hasOwnProperty(key) ? originalValue : undefined;
+    }
+    return objCopy;
+  });
+};
+
+const substituteReactElements = (data, msg) => {
+  const substitutions = [];
+  const modifiedData = data.map((originalObj, index) => {
+    const objCopy = { ...originalObj };
+    Object.entries(originalObj).forEach(([key, value]) => {
+      if (value.render) {
+        objCopy[key] = `${value.render.name} (${msg})`;
+        substitutions[index] = [key, value];
+      }
+    });
+    return objCopy;
+  });
+  return {
+    modifiedData,
+    revert: (dataToRevert) => revertSubstituteReactElements(dataToRevert, substitutions),
+  };
+};
+
+/**
+ * Drop in replacement for knob 'object' with the added possibility to substitute
+ * react elements like icons with strings. Uses the render.name as substitute.
+ * @param {*} name
+ * @param {*} value
+ * @param {*} groupId
+ * @param {*} msg Message to be appended to substituted text
+ * @returns
+ */
+export const objectWithSubstitution = (
+  name,
+  value,
+  groupId,
+  msg = 'icon substituted with text - no edit'
+) => {
+  const { modifiedData, revert } = substituteReactElements(value, msg);
+  const knobData = object(name, modifiedData, groupId);
+  return revert(knobData);
+};
 
 // eslint-disable-next-line react/prop-types
 export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
@@ -640,14 +761,12 @@ export const getAdvancedFilters = () => [
 /**
  * Helper function that Table knobs.
  *
- * If param knobsToCreate is empty then all knobs will be created, otherwise only the
+ * If param knobsToCreate is unspecified then all knobs will be created, otherwise only the
  * knobs whose names are in the array. This conditional creation is needed since StoryBook
  * will show a knob as soon as it is created by a story, regardless of whether it is
  * placed in a local variable or not.
- *
- *
  */
-export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = false }) => {
+export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
   const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
@@ -661,7 +780,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'States' : undefined;
 
-  const shouldCreate = (name) => knobsToCreate.length === 0 || knobsToCreate.includes(name);
+  const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
   return {
     selectedTableType: shouldCreate('selectedTableType')
@@ -701,7 +820,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
         )
       : null,
     stickyHeader: shouldCreate('stickyHeader')
-      ? boolean('Sticky header ☢️ (stickyHeader)', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
+      ? boolean('Sticky header (stickyHeader) ☢️', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
       : null,
     demoToolbarActions: shouldCreate('tableTooltipText')
       ? boolean(
@@ -742,7 +861,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
       : null,
     hasFilter: shouldCreate('hasFilter')
       ? select(
-          'Enable filtering by column value (options.hasFilter)',
+          'Enable simple filtering by column value (options.hasFilter)',
           ['onKeyPress', 'onEnterAndBlur', true, false],
           enableKnob('hasFilter'),
           SORT_FILTER_GROUP
@@ -750,7 +869,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
       : null,
     hasAdvancedFilter: shouldCreate('hasAdvancedFilter')
       ? boolean(
-          'Enable advanced filters ☢️ (options.hasAdvancedFilter)',
+          'Enable advanced filters (options.hasAdvancedFilter) ☢️',
           enableKnob('hasAdvancedFilter'),
           SORT_FILTER_GROUP
         )
@@ -767,7 +886,7 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
     hasFastSearch: shouldCreate('hasFastSearch')
       ? boolean(
           'Trigger search while typing (options.hasFastSearch)',
-          enableKnob('xxx'),
+          enableKnob('hasFastSearch'),
           SEARCH_GROUP
         )
       : null,
@@ -918,23 +1037,30 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
+    selectedIds: shouldCreate('selectedIds')
+      ? object(
+          'Batch actions for selected rows (view.table.selectedIds)',
+          [],
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
     selectionCheckboxEnabled: shouldCreate('selectionCheckboxEnabled')
       ? boolean(
-          'Row checkbox selectable (data[i].isSelectable)',
+          'Demo row as selectable (data[i].isSelectable)',
           enableKnob('selectionCheckboxEnabled'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
-    demoBatchActions: shouldCreate('demoBatchActions')
-      ? boolean(
-          'Demo batch actions for selected rows (view.toolbar.batchActions)',
-          enableKnob('demoBatchActions'),
+    batchActions: shouldCreate('batchActions')
+      ? objectWithSubstitution(
+          'Batch actions for selected rows (view.toolbar.batchActions)',
+          getBatchActions(),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
     hasRowActions: shouldCreate('hasRowActions')
       ? boolean(
-          'Demo row actions (options.hasRowActions)',
+          'Demo inline actions (options.hasRowActions)',
           enableKnob('hasRowActions'),
           SELECTIONS_ACTIONS_GROUP
         )
@@ -965,10 +1091,20 @@ export const getTableKnobs = ({ knobsToCreate = [], enableKnob, useGroups = fals
           NESTING_EXPANSION_GROUP
         )
       : null,
+    expandedIds: shouldCreate('expandedIds')
+      ? object('Expanded ids (view.table.expandedIds)', [], NESTING_EXPANSION_GROUP)
+      : null,
     shouldExpandOnRowClick: shouldCreate('shouldExpandOnRowClick')
       ? boolean(
           'Expand row on click (options.shouldExpandOnRowClick)',
           enableKnob('shouldExpandOnRowClick'),
+          NESTING_EXPANSION_GROUP
+        )
+      : null,
+    demoHasLoadMore: shouldCreate('demoHasLoadMore')
+      ? boolean(
+          'Demo load more child rows (data[i].hasLoadMore)',
+          enableKnob('demoHasLoadMore'),
           NESTING_EXPANSION_GROUP
         )
       : null,

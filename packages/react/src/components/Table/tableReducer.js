@@ -435,7 +435,11 @@ export const tableReducer = (state = {}, action) => {
 
           return [...carry, column];
         }, []);
-        filteredData = handleMultiSort(nextSort, state.columns, state.data);
+        filteredData = handleMultiSort(
+          nextSort,
+          state.columns,
+          state.view.table.filteredData || state.data
+        );
       } else {
         filteredData =
           nextSortDir !== 'NONE'
@@ -728,6 +732,13 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_MULTI_SORT_SAVE: {
+      const selectedAdvancedFilterIds = get(state, 'view.selectedAdvancedFilterIds', []);
+      const advancedFilters = get(state, 'view.advancedFilters', []);
+
+      const selectedAdvancedFilters = advancedFilters.filter((advFilter) =>
+        selectedAdvancedFilterIds.includes(advFilter.filterId)
+      );
+
       return update(state, {
         view: {
           table: {
@@ -741,7 +752,7 @@ export const tableReducer = (state = {}, action) => {
                 get(state, 'view.toolbar.search'),
                 get(state, 'view.filters'),
                 get(state, 'columns'),
-                get(state, 'view.advancedFilters')
+                selectedAdvancedFilters
               ),
             },
             showMultiSortModal: {

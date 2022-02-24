@@ -1,0 +1,111 @@
+The TableSaveViewModal is an external component that can be placed outside the table.
+It is highly customizable and is used to let the user add metadata to the
+view before it is saved.
+
+#### TableSaveViewModal code example
+
+This code example shows how the TableSaveViewModal can be used together with an active view
+and a few simple states.
+
+```js
+const WithStatesDemo = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [sendingData, setSendingData] = useState(false);
+  const [saveError, setSaveError] = useState('');
+  const [titleInputInvalidText, setTitleInputInvalidText] = useState('');
+  const [titleInputInvalid, setTitleInputInvalid] = useState(false);
+
+  const activeViewExample = {
+    description: 'Filters: 0, Search: pinoc',
+    id: 'view1',
+    isPublic: true,
+    isDeleteable: true,
+    isEditable: true,
+    title: 'Search view',
+    props: {
+      view: {
+        filters: [],
+        table: {
+          ordering: [],
+          sort: {},
+        },
+        toolbar: {
+          activeBar: 'column',
+          search: { defaultValue: 'pinoc', defaultExpanded: true },
+        },
+      },
+    },
+  };
+
+  return (
+    <TableSaveViewModal
+      actions={{
+        onSave: (viewMetadata) => {
+          // Application should save new or update existing view in your data layer.
+          // Inform the TableViewDropdown this view is now the selected view and
+          // that it is pristine (not edited).
+          const viewToSave = { ...activeViewExample, ...viewMetadata };
+          setSendingData(true);
+          mockSave(viewToSave).then(
+            () => {
+              setSendingData(false);
+              setIsOpen(false);
+            },
+            (err) => {
+              setSendingData(false);
+              setSaveError(err);
+            }
+          );
+        },
+        onClose: () => setIsOpen(false),
+        onClearError: () => setSaveError(undefined),
+        onChange: ({ title }) => {
+          // Optional callback for when the input and checkboxes are changed.
+          // Could be used to warn for duplicate view titles etc.
+          if (title === 'Existing title') {
+            setTitleInputInvalidText('This title already exists');
+            setTitleInputInvalid(true);
+          }
+        },
+      }}
+      sendingData={sendingData}
+      error={saveError}
+      open={isOpen}
+      titleInputInvalid={titleInputInvalid}
+      titleInputInvalidText={titleInputInvalidText}
+      viewDescription={activeViewExample.description}
+    />
+  );
+};
+```
+
+#### TableSaveViewModal props
+
+| Name                          | Type   | Default                                                                       | Description                                                                                  |
+| :---------------------------- | :----- | :---------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- |
+| actions                       | obj    |                                                                               | Required object containing named action callbacks                                            |
+| actions.onSave                | func   |                                                                               | Called with { title: string, defaultView: boolean, publicView: boolean} on save button click |
+| actions.onClose               | func   |                                                                               | Called on cancel button click and on the top right close icon click                          |
+| actions.onClearError          | func   |                                                                               | Called when the error msg is cleared                                                         |
+| actions.onChange              | func   |                                                                               | Called when view title input value is changed                                                |
+| error                         | string | undefined                                                                     | Shows this string as a general modal error when present                                      |
+| initialFormValues             | obj    |                                                                               | The initial values of the form elements e.g: { title: 'My view 1', isDefault: true }         |
+| initialFormValues.title       | string | ''                                                                            | Initial value for the title input element                                                    |
+| initialFormValues.isDefault   | bool   | false                                                                         | Initial value for the isDefault checkbox                                                     |
+| initialFormValues.isPublic    | bool   | false                                                                         | Initial value for the isPublic checkbox                                                      |
+| open                          | bool   |                                                                               | Determines if the modal is open or closed (i.e. visible or not to the user)                  |
+| overrides                     | obj    | undefined                                                                     | Used to override the internal components and props for advanced customisation                |
+| sendingData                   | bool   | false                                                                         | Disables the form and shows spinner on save button when true                                 |
+| testId                        | string | TableSaveViewModal                                                            | Id that can be used for testing                                                              |
+| titleInputInvalid             | bool   | false                                                                         | When true it will show that the title field has invalid input                                |
+| titleInputInvalidText         | string | undefined                                                                     | Used to describe the input validation error for the the title field                          |
+| viewDescription               | string | undefined                                                                     | A string that describes what this view contains                                              |
+| i18n                          | obj    |                                                                               | Object holding the i18n strings                                                              |
+| i18n.modalTitle               | string | Save new view                                                                 |                                                                                              |
+| i18n.modalBodyText            | string | You can save the current view's settings including applied filters and search |                                                                                              |
+| i18n.titleInputLabelText      | string | View title                                                                    |                                                                                              |
+| i18n.defaultCheckboxLabelText | string | Save as my default view                                                       |                                                                                              |
+| i18n.publicCheckboxLabelText  | string | Public view                                                                   |                                                                                              |
+| i18n.closeIconDescription     | string | Close                                                                         |                                                                                              |
+| i18n.saveButtonLabelText      | string | Save                                                                          |                                                                                              |
+| i18n.cancelButtonLabelText    | string | Cancel                                                                        |                                                                                              |
