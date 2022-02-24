@@ -432,7 +432,7 @@ WithSorting.parameters = {
   },
 };
 
-export const WithSearch = () => {
+export const WithSearching = () => {
   const { selectedTableType, hasSearch, hasFastSearch, searchFieldDefaultExpanded } = getTableKnobs(
     {
       knobsToCreate: [
@@ -479,8 +479,8 @@ export const WithSearch = () => {
   );
 };
 
-WithSearch.storyName = 'With search';
-WithSearch.parameters = {
+WithSearching.storyName = 'With searching';
+WithSearching.parameters = {
   component: Table,
   docs: {
     page: SearchingREADME,
