@@ -129,6 +129,14 @@ html[dir='rtl'] {
   > svg {
     fill: $ui-01;
   }
+
+  // hide the divider between overflow menu and cancel on hover
+  &:hover,
+  &:focus {
+    & + .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
+      opacity: 0;
+    }
+  }
 }
 
 .#{$iot-prefix}--table-overflow-batch-actions__menu {
