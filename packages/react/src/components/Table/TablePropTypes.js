@@ -334,37 +334,45 @@ export const TableFiltersPropType = PropTypes.arrayOf(
   })
 );
 
+export const TableSharedActionPropTypes = {
+  id: PropTypes.string.isRequired,
+  /** the item is displayed, but disabled */
+  disabled: PropTypes.bool,
+  /** the text for the option */
+  labelText: PropTypes.string.isRequired,
+  /** filters out the option so it isn't displayed */
+  hidden: PropTypes.bool,
+  /** the icon to render for this action */
+  renderIcon: PropTypes.oneOfType([
+    PropTypes.shape({
+      width: PropTypes.string,
+      height: PropTypes.string,
+      viewBox: PropTypes.string.isRequired,
+      svgData: SvgPropType.isRequired,
+    }),
+    PropTypes.oneOf(bundledIconNames),
+    PropTypes.node,
+    PropTypes.object,
+    PropTypes.func,
+  ]),
+};
+
+export const TableSharedOverflowMenuPropTypes = {
+  ...TableSharedActionPropTypes,
+  /** displays the option in red */
+  isDelete: PropTypes.bool,
+  /** show a divider above this item */
+  hasDivider: PropTypes.bool,
+  /** should this action be shown in the overflow menu */
+  isOverflow: PropTypes.bool,
+};
+
 export const TableToolbarActionsPropType = PropTypes.oneOfType([
   /** allow the actions to be generated dynamically by a callback */
   PropTypes.func,
   PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      /** the item is displayed, but disabled */
-      disabled: PropTypes.bool,
-      /** the text for the option */
-      labelText: PropTypes.string.isRequired,
-      /** filters out the option so it isn't displayed */
-      hidden: PropTypes.bool,
-      /** displays the option in red */
-      isDelete: PropTypes.bool,
-      /** the icon to render for this action */
-      renderIcon: PropTypes.oneOfType([
-        PropTypes.shape({
-          width: PropTypes.string,
-          height: PropTypes.string,
-          viewBox: PropTypes.string.isRequired,
-          svgData: SvgPropType.isRequired,
-        }),
-        PropTypes.oneOf(bundledIconNames),
-        PropTypes.node,
-        PropTypes.object,
-        PropTypes.func,
-      ]),
-      /** show a divider above this item */
-      hasDivider: PropTypes.bool,
-      /** should this action be shown in the overflow menu */
-      isOverflow: PropTypes.bool,
+      ...TableSharedOverflowMenuPropTypes,
       /** only used for actions in the toolbar (not overflow menu) to show when they are active */
       isActive: PropTypes.bool,
     })

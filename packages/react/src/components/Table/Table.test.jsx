@@ -65,6 +65,8 @@ const i18nTest = {
 
 const i18nDefault = defaultProps({}).i18n;
 
+const OVERFLOW_BUTTON_LABEL = 'open and close list of options';
+
 describe('Table', () => {
   beforeAll(() => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -2544,7 +2546,7 @@ describe('Table', () => {
       />
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
     const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
     expect(toggleButton).toBeVisible();
     expect(toggleButton).toBeDisabled();
@@ -2578,7 +2580,7 @@ describe('Table', () => {
         }}
       />
     );
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
     expect(toggleButton).toBeVisible();
     expect(toggleButton).not.toBeDisabled();
     expect(screen.getByText('Total:')).toBeVisible();
@@ -2807,7 +2809,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
       expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
@@ -2855,7 +2857,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
       expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
@@ -2911,7 +2913,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       // second after the toolbar has been opened
       expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
 
@@ -2928,7 +2930,7 @@ describe('Table', () => {
       });
 
       // ensure state tracking is working and items are visible again when re-opening.
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /Edit something/ })).toBeVisible();
       userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
@@ -3009,7 +3011,7 @@ describe('Table', () => {
         'Arrow right toolbar'
       );
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /a-warning-label/ })).toBeVisible();
       expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: /View off/ })).toBeVisible();
@@ -3047,7 +3049,7 @@ describe('Table', () => {
       );
 
       expect(screen.queryByRole('button', { name: 'Do something' })).toBeNull();
-      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
+      expect(screen.queryByRole('button', { name: OVERFLOW_BUTTON_LABEL })).toBeNull();
     });
   });
 
@@ -3120,23 +3122,23 @@ describe('Table', () => {
         />
       );
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       userEvent.click(screen.getByText('overflow batch action text'));
       expect(onApplyBatchAction).toHaveBeenCalledWith('overflow-batch-action-text');
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       userEvent.click(screen.getByText('overflow batch action with icon'));
       expect(onApplyBatchAction).toHaveBeenCalledWith('test-overflow-batch-action-icon');
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       userEvent.click(screen.getByText('overflow batch action delete'));
       expect(onApplyBatchAction).toHaveBeenCalledWith('test-overflow-batch-action-delete');
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       userEvent.click(screen.getByText("overflow batch action that's disabled"));
       expect(onApplyBatchAction).not.toHaveBeenCalledWith('test-overflow-batch-action-disabled');
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.queryByText("overflow batch action that's hidden")).toBeNull();
     });
     it('should hide and disable batch actions', () => {
@@ -3210,7 +3212,7 @@ describe('Table', () => {
         />
       );
 
-      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
+      expect(screen.queryByRole('button', { name: OVERFLOW_BUTTON_LABEL })).toBeNull();
     });
   });
 });

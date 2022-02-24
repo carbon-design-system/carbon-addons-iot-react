@@ -32,6 +32,8 @@ import {
   TableOrderingPropType,
   TableToolbarActionsPropType,
   TableRowsPropTypes,
+  TableSharedOverflowMenuPropTypes,
+  TableSharedActionPropTypes,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -141,23 +143,12 @@ const propTypes = {
     batchActions: PropTypes.arrayOf(
       PropTypes.oneOfType([
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          labelText: PropTypes.string.isRequired,
-          renderIcon: PropTypes.node,
+          ...TableSharedActionPropTypes,
           iconDescription: PropTypes.string,
-          hidden: PropTypes.bool,
-          disabled: PropTypes.bool,
         }),
         PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          labelText: PropTypes.string.isRequired,
-          renderIcon: PropTypes.node,
+          ...TableSharedOverflowMenuPropTypes,
           iconDescription: PropTypes.string,
-          hidden: PropTypes.bool,
-          disabled: PropTypes.bool,
-          isOverflow: PropTypes.bool,
-          hasDivider: PropTypes.bool,
-          isDelete: PropTypes.bool,
         }),
       ])
     ),
@@ -334,11 +325,11 @@ const TableToolbar = ({
             menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
           >
             {visibleOverflowBatchActions.map(
-              ({ id, labelText, disabled, hasDivider, isDelete, renderIcon }) => (
+              ({ id, labelText, disabled, hasDivider, isDelete, renderIcon, iconDescription }) => (
                 <OverflowMenuItem
                   data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
                   itemText={renderTableOverflowItemText({
-                    action: { renderIcon, labelText },
+                    action: { renderIcon, labelText: labelText || iconDescription },
                     className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
                   })}
                   disabled={!shouldShowBatchActions || disabled}
