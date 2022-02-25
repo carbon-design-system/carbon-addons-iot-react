@@ -104,6 +104,21 @@ const ProgressBar = ({
   const strokeColor = hasColorObject ? matchingThreshold.color.stroke : undefined;
 
   /**
+   * helper to render the value and unit
+   *
+   * @returns JSXElement
+   */
+  const renderValueAndUnit = () => (
+    <span
+      className={classnames(`${iotPrefix}--progress-bar__value-label`, {
+        // allow styling the value label differently when above max
+        [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
+        [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
+      })}
+    >{`${value}${valueUnit}`}</span>
+  );
+
+  /**
    * When the progress bar is not using the inline variant, render the label and icon
    * above the progress bar.
    *
@@ -128,15 +143,15 @@ const ProgressBar = ({
           )}
         </span>
       ) : null}
-      <span
-        className={classnames(`${iotPrefix}--progress-bar__value-label`, {
-          // allow styling the value label differently when above max
-          [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
-        })}
-      >{`${value}${valueUnit}`}</span>
+      {renderValueAndUnit()}
     </div>
   );
 
+  /**
+   * helper method to render the progress bar with a div wrapper for the inline variant
+   *
+   * @returns JSXElement
+   */
   const renderProgressBarWithInlineWrapper = () => (
     <div
       className={classnames({
@@ -150,13 +165,7 @@ const ProgressBar = ({
         value={value}
         max={max}
       />
-      <span
-        className={classnames(`${iotPrefix}--progress-bar__value-label`, {
-          // allow styling the value label differently when above max
-          [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
-          [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
-        })}
-      >{`${value}${valueUnit}`}</span>
+      {renderValueAndUnit()}
     </div>
   );
 
