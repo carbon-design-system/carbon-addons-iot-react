@@ -887,6 +887,13 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
           SEARCH_GROUP
         )
       : null,
+    searchIsExpanded: shouldCreate('search.isExpanded')
+      ? boolean(
+          'Force the toolbar search field to always be expanded (view.toolbar.search.isExpanded)',
+          false,
+          SEARCH_GROUP
+        )
+      : null,
 
     // AGGREGATION_GROUP
     hasAggregations: shouldCreate('hasAggregations')

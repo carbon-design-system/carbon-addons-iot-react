@@ -620,6 +620,101 @@ describe('Table', () => {
     mockActions.toolbar.onApplySearch.mockClear();
   });
 
+  it('should force the search box to always be open when search.isExpanded:true', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: true,
+            },
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}testing'
+    );
+    fireEvent.blur(screen.getByPlaceholderText('Search'));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once on blur, once on clicking clear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+  });
+
+  it('should allow the search box to expand and contract naturally on focus when search.isExpanded is undefined', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: undefined,
+            },
+          },
+        }}
+      />
+    );
+
+    // isn't open by default.
+    expect(screen.getByRole('search')).not.toHaveClass(
+      `${prefix}--toolbar-search-container-active`
+    );
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    // is open now that we have a search value.
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    userEvent.click(document.body);
+    // should still be open because we have a search value, even when losing focus
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    userEvent.clear(screen.getByPlaceholderText('Search'));
+    userEvent.click(document.body);
+    // not be open anymore without a search value or focus
+    expect(screen.getByRole('search')).not.toHaveClass(
+      `${prefix}--toolbar-search-container-active`
+    );
+  });
+
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
