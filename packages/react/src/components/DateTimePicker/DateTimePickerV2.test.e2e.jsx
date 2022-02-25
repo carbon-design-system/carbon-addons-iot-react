@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
+import { onlyOn } from '@cypress/skip-test';
 
 import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
@@ -470,5 +471,35 @@ describe('DateTimePickerV2', () => {
           },
         });
       });
+  });
+
+  it('should position the flyout menu correctly in RTL', () => {
+    cy.window().then((win) => {
+      win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+    });
+    mount(
+      <div style={{ padding: '1rem' }}>
+        <DateTimePicker id="picker-test" hasIconOnly menuOffset={{ top: 0, left: -1 }} />
+      </div>
+    );
+    cy.findByTestId('date-time-picker').click();
+    onlyOn('headless', () => {
+      cy.findByTestId('date-time-picker').compareSnapshot('v2-icon-only-rtl');
+    });
+  });
+
+  it('should position the flyout menu correctly in RTL with icon only', () => {
+    cy.window().then((win) => {
+      win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+    });
+    mount(
+      <div style={{ padding: '1rem' }}>
+        <DateTimePicker id="picker-test" menuOffset={{ top: 0, left: 287 }} />
+      </div>
+    );
+    cy.findByTestId('date-time-picker').click();
+    onlyOn('headless', () => {
+      cy.findByTestId('date-time-picker').compareSnapshot('v2-rtl');
+    });
   });
 });

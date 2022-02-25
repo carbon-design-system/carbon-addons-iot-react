@@ -52,7 +52,7 @@ module.exports = {
       lines: 80,
     },
     './src/components/DateTimePicker/DateTimePickerV2.jsx': {
-      branches: 86,
+      branches: 84,
     },
     './src/components/DateTimePicker/DateTimePicker.jsx': {
       statements: 79,

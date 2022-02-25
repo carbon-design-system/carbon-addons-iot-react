@@ -165,6 +165,8 @@ const propTypes = {
   id: PropTypes.string,
   /** Optionally renders only an icon rather than displaying the current selected time */
   hasIconOnly: PropTypes.bool,
+  /** Allow repositioning the flyout menu */
+  menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
 };
 
 const defaultProps = {
@@ -245,6 +247,7 @@ const defaultProps = {
   locale: 'en',
   id: undefined,
   hasIconOnly: false,
+  menuOffset: undefined,
 };
 
 const DateTimePicker = ({
@@ -267,6 +270,7 @@ const DateTimePicker = ({
   locale,
   id = uuid.v4(),
   hasIconOnly,
+  menuOffset,
   ...others
 }) => {
   React.useEffect(() => {
@@ -656,6 +660,15 @@ const DateTimePicker = ({
     );
   };
 
+  const menuOffsetLeft = menuOffset?.left
+    ? menuOffset.left
+    : langDir === 'ltr'
+    ? 0
+    : hasIconOnly
+    ? -15
+    : 274;
+  const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
+
   return (
     <>
       <div
@@ -738,8 +751,8 @@ const DateTimePicker = ({
             triggerId="test-trigger-id-2"
             light={light}
             menuOffset={{
-              top: 0,
-              left: langDir === 'ltr' ? 0 : hasIconOnly ? -15 : 274,
+              top: menuOffsetTop,
+              left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
             direction={FlyoutMenuDirection.BottomEnd}
