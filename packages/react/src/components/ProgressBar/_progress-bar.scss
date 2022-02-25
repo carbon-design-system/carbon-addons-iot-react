@@ -33,6 +33,12 @@
   color: $text-01;
 }
 
+// reposition the inline label to be even with the progress bar
+.#{$iot-prefix}--progress-bar__value-label--inline {
+  position: relative;
+  top: -($spacing-02);
+}
+
 .#{$iot-prefix}--progress-bar__value-label--over {
   color: var(--progress-bar-fill-color);
 }
@@ -53,4 +59,10 @@
     // make the bar fill from the right when in RTL
     transform-origin: 100% 50%;
   }
+}
+
+.#{$iot-prefix}--progress-bar-wrapper--inline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: $spacing-03;
 }

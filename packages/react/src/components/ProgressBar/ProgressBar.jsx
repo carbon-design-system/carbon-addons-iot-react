@@ -23,6 +23,8 @@ const propTypes = {
   helperText: PropTypes.string,
   /* if true, hide the label  */
   hideLabel: PropTypes.bool,
+  /** When true, show the inline variant without an icon or label */
+  inline: PropTypes.bool,
   /* the number used to fill the bar */
   value: PropTypes.number.isRequired,
   /* the unit shown beside the value label text */
@@ -64,6 +66,7 @@ const defaultProps = {
   className: undefined,
   helperText: '',
   hideLabel: false,
+  inline: false,
   light: false,
   thresholds: [],
   max: 100,
@@ -82,6 +85,7 @@ const ProgressBar = ({
   helperText,
   hideLabel,
   i18n,
+  inline,
   label,
   light,
   max,
@@ -99,6 +103,63 @@ const ProgressBar = ({
   const fillColor = hasColorObject ? matchingThreshold.color.fill : matchingFillColor;
   const strokeColor = hasColorObject ? matchingThreshold.color.stroke : undefined;
 
+  /**
+   * When the progress bar is not using the inline variant, render the label and icon
+   * above the progress bar.
+   *
+   * @returns JSX Element
+   */
+  const renderProgressBarLabel = () => (
+    <div
+      className={classnames(`${iotPrefix}--progress-bar__label--right`, {
+        [`${prefix}--visually-hidden`]: hideLabel,
+      })}
+    >
+      {Icon ? (
+        <span className={`${iotPrefix}--progress-bar__icon`} data-testid="progress-bar-icon">
+          {renderIconByName && typeof Icon === 'string' ? (
+            renderIconByName(Icon, {
+              fill: fillColor,
+              stroke: strokeColor,
+              'aria-label': mergedI18n.iconLabel,
+            })
+          ) : (
+            <Icon fill={fillColor} stroke={strokeColor} aria-label={mergedI18n.iconLabel} />
+          )}
+        </span>
+      ) : null}
+      <span
+        className={classnames(`${iotPrefix}--progress-bar__value-label`, {
+          // allow styling the value label differently when above max
+          [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
+        })}
+      >{`${value}${valueUnit}`}</span>
+    </div>
+  );
+
+  const renderProgressBarWithInlineWrapper = () => (
+    <div
+      className={classnames({
+        [`${iotPrefix}--progress-bar-wrapper--inline`]: inline,
+      })}
+    >
+      <CarbonProgressBar
+        label={label}
+        helperText={!inline ? helperText : undefined}
+        hideLabel={hideLabel || inline}
+        value={value}
+        max={max}
+      />
+      <span
+        className={classnames(`${iotPrefix}--progress-bar__value-label`, {
+          // allow styling the value label differently when above max
+          [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
+          [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
+        })}
+      >{`${value}${valueUnit}`}</span>
+    </div>
+  );
+
   return (
     <div
       className={classnames(
@@ -114,38 +175,20 @@ const ProgressBar = ({
         '--progress-bar-stroke-color': strokeColor,
       }}
     >
-      <div
-        className={classnames(`${iotPrefix}--progress-bar__label--right`, {
-          [`${prefix}--visually-hidden`]: hideLabel,
-        })}
-      >
-        {Icon ? (
-          <span className={`${iotPrefix}--progress-bar__icon`} data-testid="progress-bar-icon">
-            {renderIconByName && typeof Icon === 'string' ? (
-              renderIconByName(Icon, {
-                fill: fillColor,
-                stroke: strokeColor,
-                'aria-label': mergedI18n.iconLabel,
-              })
-            ) : (
-              <Icon fill={fillColor} stroke={strokeColor} aria-label={mergedI18n.iconLabel} />
-            )}
-          </span>
-        ) : null}
-        <span
-          className={classnames(`${iotPrefix}--progress-bar__value-label`, {
-            // allow styling the value label differently when above max
-            [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
-          })}
-        >{`${value}${valueUnit}`}</span>
-      </div>
-      <CarbonProgressBar
-        label={label}
-        helperText={helperText}
-        hideLabel={hideLabel}
-        value={value}
-        max={max}
-      />
+      {inline ? (
+        renderProgressBarWithInlineWrapper()
+      ) : (
+        <>
+          {renderProgressBarLabel()}
+          <CarbonProgressBar
+            label={label}
+            helperText={!inline ? helperText : undefined}
+            hideLabel={hideLabel || inline}
+            value={value}
+            max={max}
+          />
+        </>
+      )}
     </div>
   );
 };

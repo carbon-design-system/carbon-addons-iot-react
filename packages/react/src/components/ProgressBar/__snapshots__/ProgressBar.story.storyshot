@@ -39,7 +39,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-675"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-676"
@@ -135,7 +135,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-679"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-680"
@@ -206,7 +206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-677"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-678"
