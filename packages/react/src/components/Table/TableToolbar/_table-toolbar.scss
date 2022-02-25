@@ -29,8 +29,12 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   flex: 1;
   font-size: 0.875rem;
   // Z-index higher than 1 is needed to have Dropdown components correctly show
-  // the listbox on top of the relatively positioned table columns and reszie handle.
+  // the listbox on top of the relatively positioned table columns and resize handle.
   z-index: 2;
+
+  .#{$prefix}--toolbar-search-container-active .#{$prefix}--search-input {
+    border-bottom: 0;
+  }
 }
 
 .#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {

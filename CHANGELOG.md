@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.11...v2.149.0-next.12) (2022-02-25)
+
+
+### Bug Fixes
+
+* **table:** remove bottom border on expanded search box ([bc99611](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc99611c1f1a037616c8b5502db5759f83f7c426))
+
+
+### Features
+
+* **table:** add prop to allow search to always be open ([4e30f3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4e30f3eb9839dfe657b2e06cb69864226807069f))
+* **table:** add support for isExpanded in StatefulTable ([abda495](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abda495e5a3e10de3eca02a93b043246192cfe41))
+
+
+
+
+
+# [2.149.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.10...v2.149.0-next.11) (2022-02-24)
+
+
+### Bug Fixes
+
+* **table:** advanced filter crash fix ([fabc07b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fabc07b85e723f6ad4cd5a504247a5f4b0c33c89)), closes [#3319](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3319)
+
+
+### Reverts
+
+* Revert "chore(repo): add netlify.toml for react" ([e8f097d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8f097dba490b2d5d564fc992ab55e00dbe7a66b))
+
+
+
+
+
 # [2.149.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.9...v2.149.0-next.10) (2022-02-23)
 
 **Note:** Version bump only for package ibm-ai-applications

@@ -132,6 +132,7 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     batchActions,
+    searchIsExpanded,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -208,7 +209,7 @@ export const Playground = () => {
   const customErrorState = (
     <EmptyState
       icon="error"
-      title="Error occured while loading"
+      title="Error occurred while loading"
       body="Custom Error message"
       action={{
         label: 'Reload',
@@ -293,7 +294,8 @@ export const Playground = () => {
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
-  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}`;
+  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
+  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
 
   return (
     <DragAndDrop>
@@ -349,6 +351,7 @@ export const Playground = () => {
             batchActions,
             search: {
               defaultExpanded: searchFieldDefaultExpanded,
+              isExpanded: searchIsExpanded,
             },
           },
           table: {
@@ -433,17 +436,22 @@ WithSorting.parameters = {
 };
 
 export const WithSearching = () => {
-  const { selectedTableType, hasSearch, hasFastSearch, searchFieldDefaultExpanded } = getTableKnobs(
-    {
-      knobsToCreate: [
-        'selectedTableType',
-        'hasSearch',
-        'hasFastSearch',
-        'searchFieldDefaultExpanded',
-      ],
-      enableKnob: (name) => name !== 'searchFieldDefaultExpanded',
-    }
-  );
+  const {
+    selectedTableType,
+    hasSearch,
+    hasFastSearch,
+    searchFieldDefaultExpanded,
+    searchIsExpanded,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasSearch',
+      'hasFastSearch',
+      'searchFieldDefaultExpanded',
+      'searchIsExpanded',
+    ],
+    enableKnob: (name) => name !== 'searchFieldDefaultExpanded' && name !== 'searchIsExpanded',
+  });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
   const data = getTableData().slice(0, 50);
@@ -454,7 +462,7 @@ export const WithSearching = () => {
     'helping'
   );
 
-  const knobRegeneratedKey = `${searchFieldDefaultExpanded}`;
+  const knobRegeneratedKey = `${searchFieldDefaultExpanded}${searchIsExpanded}`;
 
   return (
     <MyTable
@@ -471,6 +479,7 @@ export const WithSearching = () => {
           search: {
             defaultValue,
             defaultExpanded: searchFieldDefaultExpanded,
+            isExpanded: searchIsExpanded,
             onExpand: action('onExpand'),
           },
         },
@@ -751,7 +760,7 @@ export const WithSelectionAndBatchActions = () => {
 
   const isStateful = selectedTableType === 'StatefulTable';
   const isMultiSelect = hasRowSelection === 'multi';
-  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'}
     id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
   const selectedIds =
     hasRowSelection === 'multi'
