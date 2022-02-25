@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.11...v2.149.0-next.12) (2022-02-25)
+
+
+### Bug Fixes
+
+* **table:** remove bottom border on expanded search box ([bc99611](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc99611c1f1a037616c8b5502db5759f83f7c426))
+
+
+### Features
+
+* **table:** add prop to allow search to always be open ([4e30f3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4e30f3eb9839dfe657b2e06cb69864226807069f))
+* **table:** add support for isExpanded in StatefulTable ([abda495](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abda495e5a3e10de3eca02a93b043246192cfe41))
+
+
+
+
+
 # [2.149.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.10...v2.149.0-next.11) (2022-02-24)
 
 
