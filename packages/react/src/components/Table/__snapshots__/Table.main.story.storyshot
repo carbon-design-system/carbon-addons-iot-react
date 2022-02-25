@@ -27436,7 +27436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With searching 1`] = `
 <div
   className="storybook-container"
 >
