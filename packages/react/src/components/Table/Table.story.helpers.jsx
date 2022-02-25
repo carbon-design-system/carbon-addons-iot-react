@@ -109,6 +109,7 @@ export const getTableActions = () => ({
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    onToggleAggregations: action('onToggleAggregations'),
     // TODO: removed to mimic the current state of consumers in the wild
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
@@ -774,7 +775,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
   const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
   const SEARCH_GROUP = useGroups ? 'Search' : undefined;
   const COLUMN_GROUP = useGroups ? 'Column configuration' : undefined;
-  const AGGREGATION_GROUP = useGroups ? 'Aggregation' : undefined;
+  const AGGREGATION_GROUP = useGroups ? 'Aggregations' : undefined;
   const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
@@ -917,6 +918,11 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
               id: 'number',
               align: 'start',
               isSortable: false,
+            },
+            {
+              id: 'object',
+              isSortable: false,
+              value: '5',
             },
           ],
           AGGREGATION_GROUP

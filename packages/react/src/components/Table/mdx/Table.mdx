@@ -30,7 +30,9 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
 - [Toolbar actions](#toolbar-actions)
-- [Aggregation](#aggregation)
+- [Aggregations](#aggregations)
+  - [Aggregations column settings](#aggregations-column-settings)
+  - [Handling the onToggleAggregations event](#handling-the-ontoggleaggregations-event)
 - [Row data editing](#row-data-editing)
 - [Column customization](#column-customization)
   <TableColumnCustomizationTOC />
@@ -468,37 +470,9 @@ appear as another button in the toolbar.
 />
 ```
 
-## Aggregation
+import Aggregations from './Aggregations.mdx';
 
-The table can sum columns and show their aggregate total in a footer. A custom value can be passed, a function to sum the rows, or a default sum function will be provided. The `onToggleAggregations` prop passed to `actions.toolbar` serves as a callback to show or hide the the aggregations row in the bottom by changing the `aggregations.isHidden` prop.
-
-```jsx
-<Table
-  actions={{
-    toolbar: {
-      onToggleAggregations: () => {},
-    },
-  }}
-  options={{
-    hasAggregations: true,
-  }}
-  view={{
-    aggregations: {
-      label: 'Total:',
-      columns: [
-        {
-          id: 'number',
-          align: 'start',
-          isSortable: false,
-          // a function to sum the totals, or a given total to display
-          // value: (values) => string, '61056171'
-        },
-      ],
-      isHidden: false,
-    },
-  }}
-/>
-```
+<Aggregations />
 
 ## Row data editing
 

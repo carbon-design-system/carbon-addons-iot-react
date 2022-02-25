@@ -17,6 +17,7 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import AggregationsREADME from './mdx/Aggregations.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -566,6 +567,54 @@ WithRowNesting.parameters = {
   component: Table,
   docs: {
     page: RowNestingREADME,
+  },
+};
+
+export const WithAggregations = () => {
+  const {
+    selectedTableType,
+    hasAggregations,
+    aggregationLabel,
+    aggregationsColumns,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasAggregations',
+      'aggregationLabel',
+      'aggregationsColumns',
+    ],
+    enableKnob: () => true,
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 10);
+  const columns = getTableColumns();
+  const actions = getTableActions();
+
+  const knobRegeneratedKey = `table${JSON.stringify(aggregationsColumns)}${aggregationLabel}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={actions}
+      columns={columns}
+      data={data}
+      options={{ hasAggregations }}
+      view={{
+        aggregations: {
+          label: aggregationLabel,
+          columns: aggregationsColumns,
+        },
+      }}
+    />
+  );
+};
+
+WithAggregations.storyName = 'With aggregations';
+WithAggregations.parameters = {
+  component: Table,
+  docs: {
+    page: AggregationsREADME,
   },
 };
 
