@@ -278,7 +278,7 @@ const TableToolbarAdvancedFilterFlyout = ({
           {ordering
             .filter((column) => {
               const fullColumn = columns.find((item) => column.columnId === item.id);
-              return !column.isHidden && fullColumn.isFilterable === true;
+              return !column.isHidden && fullColumn?.isFilterable === true;
             })
             .reduce((chunks, item, index) => {
               const newChunks = [...chunks];
