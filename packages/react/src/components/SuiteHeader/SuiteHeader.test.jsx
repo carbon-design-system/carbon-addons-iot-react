@@ -512,13 +512,13 @@ describe('SuiteHeader', () => {
     const onRouteChange = jest.fn().mockImplementation(() => false);
     render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
-    await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
+    await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
-    await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }));
+    await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
     expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
     expect(window.location.href).toBe(commonProps.routes.profile);
   });
@@ -999,7 +999,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(1);
       userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
-      await userEvent.click(screen.getByRole('button', { name: 'Manage profile' }), {
+      await userEvent.click(screen.getByTestId('suite-header-profile--profile'), {
         ctrlKey: true,
       });
       expect(window.open).toHaveBeenLastCalledWith(
