@@ -107,8 +107,8 @@
     height: $spacing-10;
 
     th {
-      padding-top: 5px;
-      padding-bottom: 10px;
+      padding-top: rem(5px);
+      padding-bottom: rem(10px);
 
       input {
         height: $spacing-07;
@@ -132,8 +132,8 @@
 
   .#{$prefix}--pagination {
     position: fixed;
-    bottom: 25px;
-    width: calc(100% - 35px);
+    bottom: rem(25px);
+    width: calc(100% - rem(35px));
   }
 }
 
@@ -150,7 +150,7 @@
 
   &:not(.#{$iot-prefix}--table-card__table--expanded) {
     .#{$prefix}--data-table-content {
-      max-height: 523px;
+      max-height: rem(523px);
     }
   }
 }
