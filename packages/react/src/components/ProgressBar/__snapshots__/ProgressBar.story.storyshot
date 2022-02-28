@@ -28,6 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -124,6 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -195,6 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -287,6 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -358,6 +362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>

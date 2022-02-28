@@ -102,6 +102,7 @@ const ProgressBar = ({
   const matchingFillColor = matchingThreshold?.color ?? DEFAULT_PROGRESS_BAR_COLOR;
   const fillColor = hasColorObject ? matchingThreshold.color.fill : matchingFillColor;
   const strokeColor = hasColorObject ? matchingThreshold.color.stroke : undefined;
+  const valueAndUnit = Number.isInteger(value) ? `${value}${valueUnit}` : '';
 
   /**
    * helper to render the value and unit
@@ -115,7 +116,10 @@ const ProgressBar = ({
         [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
         [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
       })}
-    >{`${value}${valueUnit}`}</span>
+      title={valueAndUnit}
+    >
+      {valueAndUnit}
+    </span>
   );
 
   /**
@@ -153,18 +157,8 @@ const ProgressBar = ({
    * @returns JSXElement
    */
   const renderProgressBarWithInlineWrapper = () => (
-    <div
-      className={classnames({
-        [`${iotPrefix}--progress-bar-wrapper--inline`]: inline,
-      })}
-    >
-      <CarbonProgressBar
-        label={label}
-        helperText={!inline ? helperText : undefined}
-        hideLabel={hideLabel || inline}
-        value={value}
-        max={max}
-      />
+    <div className={`${iotPrefix}--progress-bar-wrapper--inline`}>
+      <CarbonProgressBar label={label} helperText={undefined} hideLabel value={value} max={max} />
       {renderValueAndUnit()}
     </div>
   );
@@ -191,8 +185,8 @@ const ProgressBar = ({
           {renderProgressBarLabel()}
           <CarbonProgressBar
             label={label}
-            helperText={!inline ? helperText : undefined}
-            hideLabel={hideLabel || inline}
+            helperText={helperText}
+            hideLabel={hideLabel}
             value={value}
             max={max}
           />

@@ -3,11 +3,14 @@
 
 .#{$iot-prefix}--progress-bar-container {
   position: relative;
-}
 
-.#{$prefix}--progress-bar__label {
-  @include carbon--type-style('productive-heading-01');
-  color: $text-01;
+  .#{$prefix}--progress-bar__label {
+    @include carbon--type-style('productive-heading-01');
+    color: $text-01;
+    margin-right: calc(#{$spacing-10} + #{$spacing-05});
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
 .#{$iot-prefix}--progress-bar__label--right {
@@ -31,6 +34,10 @@
 .#{$iot-prefix}--progress-bar__value-label {
   @include carbon--type-style('body-short-01');
   color: $text-01;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: calc(#{$spacing-09} + #{$spacing-03});
 }
 
 // reposition the inline label to be even with the progress bar
@@ -65,4 +72,8 @@
   display: grid;
   grid-template-columns: 1fr auto;
   column-gap: $spacing-03;
+
+  .#{$prefix}--progress-bar__label {
+    margin-right: 0;
+  }
 }
