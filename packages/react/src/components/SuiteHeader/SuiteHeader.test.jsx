@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import Chip from '@carbon/icons-react/es/chip/24';
+import MockDate from 'mockdate';
 
 import { settings } from '../../constants/Settings';
 
@@ -68,6 +69,7 @@ describe('SuiteHeader', () => {
     window.location = { ...originalWindowLocation };
     window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
+    MockDate.reset();
   });
 
   it('should be selectable with testId', () => {
@@ -390,10 +392,12 @@ describe('SuiteHeader', () => {
       writable: true,
       value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
     });
+    // Go to the future by a little more than idleTimeoutDataProp.countdown seconds
+    MockDate.set(Date.now() + (idleTimeoutDataProp.countdown + 1) * 1000);
     await act(async () => {
-      await jest.advanceTimersByTime((idleTimeoutDataProp.countdown + 1) * 1000);
+      await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).toBe(commonProps.routes.logoutInactivity);
+    await waitFor(() => expect(window.location.href).toBe(commonProps.routes.logoutInactivity));
   });
   it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
     render(
@@ -408,10 +412,12 @@ describe('SuiteHeader', () => {
       writable: true,
       value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
     });
+    // Go to the future by a little more than idleTimeoutDataProp.countdown seconds
+    MockDate.set(Date.now() + (idleTimeoutDataProp.countdown + 1) * 1000);
     await act(async () => {
-      await jest.advanceTimersByTime((idleTimeoutDataProp.countdown + 1) * 1000);
+      await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
+    await waitFor(() => expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity));
   });
   it('renders Walkme', async () => {
     render(<SuiteHeader {...commonProps} walkmePath="/some/test/path" walkmeLang="en" />);

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.12...v2.149.0-next.13) (2022-02-28)
+
+
+### Bug Fixes
+
+* **IdleTimer:** Adding `Secure;` too the cookie only if window.location.protocol is https. ([45e0f02](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/45e0f025fc85f161b4a4f930ddf6f874b86da1a7))
+* **IdleTimer:** Adding the `Secure;` property to the cookie, ([19db552](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/19db552c26a0f0795d985fe68cb4b127e5b4c6fb))
+* **IdleTimer:** Calculating the new countdown based on the current timestamp and the last user activity timeout instead of just subtracting 1 second from the last value. This is needed because browsers usually reduce the priority of javascript and timers in inactive tabs (minimized tabs or tabs without focus), which can cause the logout confirmation dialog to show different countdowns in different tabs. ([1911ea9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1911ea9b308195854f98c63ea6082242703c430c))
+* **IdleTimer:** Minor fix for an edge case. Countdown needs to be 29 seconds in its first iteration, not 30. ([9fe4b69](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9fe4b699d4c54a5028069c0012436c6f980df30c))
+* **tile-gallery:** fix styles, sizing on TileGalleryItem list ([7734959](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7734959311918f0c6bfec342b93b6fc8d172f8a6))
+* **tile-gallery-item:** fix overflow menu hover color, and content jumps ([5f306ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5f306ba23847a0fa9dc13d46e09f2ccdffd7af02))
+
+
+
+
+
 # [2.149.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.11...v2.149.0-next.12) (2022-02-25)
 
 
