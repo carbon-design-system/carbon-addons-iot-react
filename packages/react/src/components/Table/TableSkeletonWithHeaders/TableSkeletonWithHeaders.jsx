@@ -11,6 +11,7 @@ const { iotPrefix } = settings;
 const propTypes = {
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
   hasRowExpansion: PropTypes.bool,
+  hasRowNesting: PropTypes.bool,
   hasRowActions: PropTypes.bool,
   rowCount: PropTypes.number,
   /* used to show X number of loading skeletons when columns are unknown */
@@ -31,6 +32,7 @@ const defaultProps = {
   hasRowSelection: false,
   hasRowExpansion: false,
   hasRowActions: false,
+  hasRowNesting: false,
   rowCount: 10,
   columnCount: 5,
   columns: [],
@@ -43,6 +45,7 @@ const TableSkeletonWithHeaders = ({
   hasRowSelection,
   hasRowExpansion,
   hasRowActions,
+  hasRowNesting,
   columns,
   rowCount,
   columnCount,
@@ -62,7 +65,7 @@ const TableSkeletonWithHeaders = ({
         })}
       >
         {hasRowSelection === 'multi' ? <TableCell /> : null}
-        {hasRowExpansion ? <TableCell /> : null}
+        {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
         {loadingColumns.map((column) => (
           <TableCell key={`skeletonCol-${column.id}`}>
             <SkeletonText />
@@ -79,7 +82,7 @@ const TableSkeletonWithHeaders = ({
           className={`${iotPrefix}--table-skeleton-with-headers--table-row`}
         >
           {hasRowSelection === 'multi' ? <TableCell /> : null}
-          {hasRowExpansion ? <TableCell /> : null}
+          {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
           {loadingColumns.map((v, colIndex) => (
             <TableCell key={`emptycell-${colIndex}`}>
               {rowIndex === 0 && !columns.length ? <SkeletonText /> : null}

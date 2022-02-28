@@ -88,16 +88,7 @@ describe('SuiteHeaderAppSwitcher', () => {
   it('clicks no access link', async () => {
     delete window.location;
     window.location = { href: '' };
-    jest.spyOn(console, 'error').mockImplementation(() => {});
     render(<SuiteHeaderAppSwitcher {...commonProps} applications={[]} />);
-    expect(console.error).toHaveBeenCalledWith(
-      expect.stringContaining(
-        'Warning: A future version of React will block javascript: URLs as a security precaution.'
-      ),
-      `"javascript:void(0)"`,
-      expect.stringContaining('SuiteHeaderAppSwitcher')
-    );
-    console.error.mockReset();
     await userEvent.click(screen.getByTestId('suite-header-app-switcher--no-access'));
     expect(window.location.href).toBe(commonProps.noAccessLink);
   });
@@ -137,7 +128,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       />
     );
 
-    await userEvent.click(screen.getByRole('button', { name: 'All applications' }));
+    await userEvent.click(screen.getByTestId('suite-header-app-switcher--all-applications'));
     expect(SuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
       'NAVIGATOR',
       'https://www.ibm.com'
@@ -164,7 +155,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       />
     );
 
-    const customAppButton = screen.getByRole('button', { name: 'Custom application' });
+    const customAppButton = screen.getByTestId('suite-header-app-switcher--custom');
     expect(customAppButton).toBeVisible();
     await userEvent.click(customAppButton);
     expect(onRouteChange).toHaveBeenCalledWith('APPLICATION', 'https://www.ibm.com', {
