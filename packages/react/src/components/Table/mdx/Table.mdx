@@ -29,6 +29,9 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
     - [Programmatic filtering](#programmatic-filtering)
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
+  - [Pagination code example](#pagination-code-example)
+  - [Dealing with large data sets](#dealing-with-large-data-sets)
+  - [Handling the onChangePage event](#handling-the-onchangepage-event)
 - [Toolbar actions](#toolbar-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
@@ -355,56 +358,9 @@ import Filtering from './Filtering.mdx';
 
 <Filtering />
 
-## Pagination
+import Pagination from './Pagination.mdx';
 
-Pagination is controlled through the `options.hasPagination` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
-By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
-The maxPages prop must be a positive integer and is used to limit the number of pages available the dropdown when working with very large datasets.
-
-```jsx
-<Table
-  actions={{
-    pagination: {
-      onChangePage: ({ page, pageSize }) => {},
-    },
-  }}
-  options={{
-    hasPagination: true,
-  }}
-  view={{
-    pagination: {
-      isItemPerPageHidden: false,
-      maxPages: 100,
-      page: 1,
-      pageSize: 10,
-      pageSizes: [10, 20, 30],
-      totalItems: undefined,
-    },
-  }}
-/>
-```
-
-```jsx
-<Table
-  actions={{
-    pagination: {
-      onChangePage: ({ page, pageSize }) => {},
-    },
-  }}
-  options={{
-    hasPagination: true,
-    hasOnlyPageData: true,
-  }}
-  view={{
-    pagination: {
-      pageSize: 10,
-      pageSizes: [10, 20, 30],
-      page: 8267,
-      totalItems: 97532,
-    },
-  }}
-/>
-```
+<Pagination />
 
 ## Toolbar actions
 
@@ -759,6 +715,7 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | pagination.totalItems                            | number                           |           | The total number of items available to the table                                                                                                                                                                          |
 | pagination.maxPages                              | number                           |           | Number of pages rendered in pagination. Must be a positive integer.                                                                                                                                                       |
 | pagination.isItemPerPageHidden                   | bool                             |           | Hide displaying the text for the number of rows per page                                                                                                                                                                  |
+| pagination.size                                  | 'sm', 'md', or 'lg'              | 'lg'      | The size of the pagination component                                                                                                                                                                                      |
 | filters                                          | object[]                         |           | An array of objects setting the current filter state                                                                                                                                                                      |
 | filters[].columnId                               | string                           |           | The columnId of the column being filtered by this value                                                                                                                                                                   |
 | filters[].value                                  | string, number, bool, string[]   |           | The value used to filter the given columnId                                                                                                                                                                               |
