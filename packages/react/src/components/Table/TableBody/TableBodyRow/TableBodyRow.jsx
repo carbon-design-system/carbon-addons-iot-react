@@ -390,12 +390,6 @@ const TableBodyRow = ({
         hasRowSelection={hasRowSelection}
         onExpand={(evt) => stopPropagationAndCallback(evt, onRowExpanded, id, true)}
         onClick={() => {
-          console.log({
-            shouldExpandOnRowClick,
-            hasRowNesting,
-            nestingChildCount,
-            hasRowExpansion,
-          });
           if (shouldExpandOnRowClick && ((hasRowNesting && nestingChildCount) || hasRowExpansion)) {
             onRowExpanded(id, true);
           }
