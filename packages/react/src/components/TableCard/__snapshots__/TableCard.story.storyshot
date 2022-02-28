@@ -33,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -257,6 +257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -1305,7 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -1638,6 +1639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -2582,7 +2584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -2879,6 +2881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -4027,7 +4030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-undefined-table-container"
         >
           <section
@@ -4297,6 +4300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-undefined"
                 id="table-for-card-undefined"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -4928,7 +4932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -5225,6 +5229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -6006,7 +6011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -6339,6 +6344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -8024,7 +8030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -8321,6 +8327,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                isExpanded={false}
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -9888,7 +9896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -10221,6 +10229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -11401,7 +11410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -11698,6 +11707,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead
@@ -13128,7 +13138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         }
       >
         <div
-          className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -13425,6 +13435,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-table-list"
                 id="table-for-card-table-list"
+                showHeader={true}
                 title={null}
               >
                 <thead

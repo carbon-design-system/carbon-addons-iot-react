@@ -32,7 +32,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-5"
+          id="bx--modal-header__heading--modal-6"
         >
           Do you wish to log out?
         </h3>
@@ -60,9 +60,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-5"
+        aria-labelledby="bx--modal-header__heading--modal-6"
         className="bx--modal-content"
-        id="bx--modal-body--modal-5"
+        id="bx--modal-body--modal-6"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -184,13 +184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -198,7 +196,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -229,7 +226,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -288,9 +285,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -309,9 +307,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -330,9 +329,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -351,9 +351,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -372,9 +373,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -393,9 +395,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -512,23 +515,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -632,20 +633,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -663,7 +662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -672,45 +671,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>
@@ -756,7 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-6"
+          id="bx--modal-header__heading--modal-7"
         >
           Do you wish to log out?
         </h3>
@@ -784,9 +779,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-6"
+        aria-labelledby="bx--modal-header__heading--modal-7"
         className="bx--modal-content"
-        id="bx--modal-body--modal-6"
+        id="bx--modal-body--modal-7"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -1183,13 +1178,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
             </ul>
           </div>
         </div>
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1197,7 +1190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -1228,7 +1220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -1362,9 +1354,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -1383,9 +1376,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -1404,9 +1398,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -1425,9 +1420,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -1446,9 +1442,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -1467,9 +1464,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -1586,23 +1584,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -1732,7 +1728,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-3"
+          id="bx--modal-header__heading--modal-4"
         >
           Do you wish to log out?
         </h3>
@@ -1760,9 +1756,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-3"
+        aria-labelledby="bx--modal-header__heading--modal-4"
         className="bx--modal-content"
-        id="bx--modal-body--modal-3"
+        id="bx--modal-body--modal-4"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -1883,13 +1879,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -1897,7 +1891,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -1928,7 +1921,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -1987,9 +1980,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -2008,9 +2002,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -2029,9 +2024,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -2050,9 +2046,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -2071,9 +2068,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -2092,9 +2090,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -2211,23 +2210,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -2331,20 +2328,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -2362,7 +2357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -2371,45 +2366,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>
@@ -2455,7 +2446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-9"
+          id="bx--modal-header__heading--modal-10"
         >
           Session Timeout
         </h3>
@@ -2483,9 +2474,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-9"
+        aria-labelledby="bx--modal-header__heading--modal-10"
         className="bx--modal-content"
-        id="bx--modal-body--modal-9"
+        id="bx--modal-body--modal-10"
       >
         You will be logged out due to inactivity in 0 seconds.
       </div>
@@ -2560,7 +2551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-10"
+          id="bx--modal-header__heading--modal-11"
         >
           Do you wish to log out?
         </h3>
@@ -2588,9 +2579,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-10"
+        aria-labelledby="bx--modal-header__heading--modal-11"
         className="bx--modal-content"
-        id="bx--modal-body--modal-10"
+        id="bx--modal-body--modal-11"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -2689,13 +2680,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -2703,7 +2692,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -2734,7 +2722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -2793,9 +2781,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -2814,9 +2803,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -2835,9 +2825,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -2856,9 +2847,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -2877,9 +2869,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -2898,9 +2891,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -3017,23 +3011,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -3137,20 +3129,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -3168,7 +3158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -3177,45 +3167,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://google.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>
@@ -3267,7 +3253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-4"
+          id="bx--modal-header__heading--modal-5"
         >
           Do you wish to log out?
         </h3>
@@ -3295,9 +3281,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-4"
+        aria-labelledby="bx--modal-header__heading--modal-5"
         className="bx--modal-content"
-        id="bx--modal-body--modal-4"
+        id="bx--modal-body--modal-5"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -3419,13 +3405,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -3433,7 +3417,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -3464,7 +3447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -3523,9 +3506,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -3544,9 +3528,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -3565,9 +3550,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -3586,9 +3572,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -3607,9 +3594,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -3628,9 +3616,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -3747,23 +3736,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -3867,20 +3854,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -3898,7 +3883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -3907,45 +3892,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>
@@ -4300,9 +4281,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       >
         <a
           className="bx--link"
-          href="#"
+          href="https://www.ibm.com"
           onClick={[Function]}
-          rel={null}
+          rel="noopener noreferrer"
         >
           Click here to help us improve the product
         </a>
@@ -4311,9 +4292,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         >
           <a
             className="bx--link"
-            href="#"
+            href="https://www.ibm.com"
             onClick={[Function]}
-            rel={null}
+            rel="noopener noreferrer"
           >
             Privacy Policy
           </a>
@@ -4374,7 +4355,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-7"
+          id="bx--modal-header__heading--modal-8"
         >
           Do you wish to log out?
         </h3>
@@ -4402,9 +4383,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-7"
+        aria-labelledby="bx--modal-header__heading--modal-8"
         className="bx--modal-content"
-        id="bx--modal-body--modal-7"
+        id="bx--modal-body--modal-8"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -4503,13 +4484,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -4517,7 +4496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -4548,7 +4526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -4607,9 +4585,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -4628,9 +4607,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -4649,9 +4629,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -4670,9 +4651,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -4691,9 +4673,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -4712,9 +4695,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -4831,23 +4815,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -4951,20 +4933,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -4982,7 +4962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -4991,45 +4971,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>
@@ -5075,7 +5051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-8"
+          id="bx--modal-header__heading--modal-9"
         >
           Do you wish to log out?
         </h3>
@@ -5103,9 +5079,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-8"
+        aria-labelledby="bx--modal-header__heading--modal-9"
         className="bx--modal-content"
-        id="bx--modal-body--modal-8"
+        id="bx--modal-body--modal-9"
       >
         You are logged in to Application Name as null.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -5196,13 +5172,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon admin-icon__hidden bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="#"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -5210,7 +5184,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -5241,7 +5214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -5629,6 +5602,706 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Navigational actions blocked 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal bx--modal-tall"
+    data-testid="suite-header-logout-modal"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    onMouseDown={[Function]}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-label="Do you wish to log out?"
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        
+        <h3
+          className="bx--modal-header__heading"
+          id="bx--modal-header__heading--modal-3"
+        >
+          Do you wish to log out?
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        aria-labelledby="bx--modal-header__heading--modal-3"
+        className="bx--modal-content"
+        id="bx--modal-body--modal-3"
+      >
+        You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
+      </div>
+      <div
+        className="bx--modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--secondary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="bx--btn bx--btn--primary"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Log out
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+  <span
+    className="iot--suite-header-data"
+    data-type="workspaceId"
+  >
+    workspace1
+  </span>
+  <span
+    className="iot--suite-header-data"
+    data-type="domain"
+  >
+    ibm.com
+  </span>
+  <header
+    aria-label="main header"
+    className="bx--header iot--suite-header"
+    data-testid="suite-header"
+  >
+    <a
+      className="bx--skip-to-content"
+      href="#main-content"
+      tabIndex="0"
+    >
+      Skip to main content
+    </a>
+    <a
+      className="bx--header__name"
+      data-testid="suite-header-name"
+      href="https://www.ibm.com"
+    >
+      <span
+        className="bx--header__name--prefix"
+      >
+        IBM
+      </span>
+       
+      <span>
+        Application Suite
+      </span>
+      <span
+        className="iot--header__short-name"
+      >
+        Application Suite
+      </span>
+      <div
+        className="iot--header__subtitle"
+      >
+        Application Name
+      </div>
+    </a>
+    <div
+      className="bx--header__global"
+    >
+      <div
+        className="bx--header__global"
+        data-testid="suite-header-action-group"
+      >
+        <a
+          aria-label="Administration"
+          className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          data-testid="menu-item-Administration-global"
+          href="https://www.ibm.com"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          >
+            Administration
+          </div>
+          <span
+            id="suite-header-action-item-admin"
+          >
+            <svg
+              aria-hidden={true}
+              data-testid="admin-icon"
+              description="Settings"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27,16.76c0-.25,0-.5,0-.76s0-.51,0-.77l1.92-1.68A2,2,0,0,0,29.3,11L26.94,7a2,2,0,0,0-1.73-1,2,2,0,0,0-.64.1l-2.43.82a11.35,11.35,0,0,0-1.31-.75l-.51-2.52a2,2,0,0,0-2-1.61H13.64a2,2,0,0,0-2,1.61l-.51,2.52a11.48,11.48,0,0,0-1.32.75L7.43,6.06A2,2,0,0,0,6.79,6,2,2,0,0,0,5.06,7L2.7,11a2,2,0,0,0,.41,2.51L5,15.24c0,.25,0,.5,0,.76s0,.51,0,.77L3.11,18.45A2,2,0,0,0,2.7,21L5.06,25a2,2,0,0,0,1.73,1,2,2,0,0,0,.64-.1l2.43-.82a11.35,11.35,0,0,0,1.31.75l.51,2.52a2,2,0,0,0,2,1.61h4.72a2,2,0,0,0,2-1.61l.51-2.52a11.48,11.48,0,0,0,1.32-.75l2.42.82a2,2,0,0,0,.64.1,2,2,0,0,0,1.73-1L29.3,21a2,2,0,0,0-.41-2.51ZM25.21,24l-3.43-1.16a8.86,8.86,0,0,1-2.71,1.57L18.36,28H13.64l-.71-3.55a9.36,9.36,0,0,1-2.7-1.57L6.79,24,4.43,20l2.72-2.4a8.9,8.9,0,0,1,0-3.13L4.43,12,6.79,8l3.43,1.16a8.86,8.86,0,0,1,2.71-1.57L13.64,4h4.72l.71,3.55a9.36,9.36,0,0,1,2.7,1.57L25.21,8,27.57,12l-2.72,2.4a8.9,8.9,0,0,1,0,3.13L27.57,20Z"
+              />
+              <path
+                d="M16,22a6,6,0,1,1,6-6A5.94,5.94,0,0,1,16,22Zm0-10a3.91,3.91,0,0,0-4,4,3.91,3.91,0,0,0,4,4,3.91,3.91,0,0,0,4-4A3.91,3.91,0,0,0,16,12Z"
+              />
+            </svg>
+          </span>
+        </a>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="Help"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <span
+                id="suite-header-action-item-help"
+              >
+                <svg
+                  aria-hidden={true}
+                  description="Help"
+                  fill="white"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                  />
+                  <circle
+                    cx="16"
+                    cy="23.5"
+                    r="1.5"
+                  />
+                  <path
+                    d="M17,8H15.5A4.49,4.49,0,0,0,11,12.5V13h2v-.5A2.5,2.5,0,0,1,15.5,10H17a2.5,2.5,0,0,1,0,5H15v4.5h2V17a4.5,4.5,0,0,0,0-9Z"
+                  />
+                </svg>
+              </span>
+            </a>
+            <ul
+              aria-label="Help"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--whatsNew"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="What's new"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-whatsNew"
+                    >
+                      What's new
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--gettingStarted"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="Getting started"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-gettingStarted"
+                    >
+                      Getting started
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--documentation"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="Documentation"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-documentation"
+                    >
+                      Documentation
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--requestEnhancement"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="Request enhancement"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-requestEnhancement"
+                    >
+                      Request enhancement
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--support"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="Support"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-support"
+                    >
+                      Support
+                    </span>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-help--about"
+                  href="https://www.ibm.com"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  rel="noopener noreferrer"
+                  tabIndex={0}
+                  title="About"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-help-menu-about"
+                    >
+                      About
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <div
+            className="bx--header__submenu bx--header-action-btn"
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup="menu"
+              aria-label="user"
+              className="bx--header__menu-item bx--header__menu-title"
+              data-testid="menuitem"
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              <span
+                id="suite-header-action-item-profile"
+              >
+                <svg
+                  aria-hidden={true}
+                  data-testid="user-icon"
+                  description="User"
+                  fill="white"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16,8a5,5,0,1,0,5,5A5,5,0,0,0,16,8Zm0,8a3,3,0,1,1,3-3A3.0034,3.0034,0,0,1,16,16Z"
+                  />
+                  <path
+                    d="M16,2A14,14,0,1,0,30,16,14.0158,14.0158,0,0,0,16,2ZM10,26.3765V25a3.0033,3.0033,0,0,1,3-3h6a3.0033,3.0033,0,0,1,3,3v1.3765a11.8989,11.8989,0,0,1-12,0Zm13.9925-1.4507A5.0016,5.0016,0,0,0,19,20H13a5.0016,5.0016,0,0,0-4.9925,4.9258,12,12,0,1,1,15.985,0Z"
+                  />
+                </svg>
+              </span>
+            </a>
+            <ul
+              aria-label="user"
+              className="bx--header__menu"
+              role="menu"
+            >
+              <li>
+                <div
+                  className="bx--header__menu-item"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-profile-menu-profile"
+                      style={
+                        Object {
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <div
+                        className="iot--suite-header-profile"
+                        data-testid="suite-header-profile"
+                      >
+                        <h5>
+                          Profile
+                        </h5>
+                        <div
+                          className="iot--suite-header-profile--user"
+                        >
+                          <div
+                            className="iot--suite-header-profile--user--chip"
+                          >
+                            AU
+                          </div>
+                          <div
+                            className="iot--suite-header-profile--user--detail"
+                          >
+                            <div>
+                              <strong>
+                                Admin User
+                              </strong>
+                            </div>
+                            <div>
+                              adminuser
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
+                        >
+                          <a
+                            className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
+                            data-testid="suite-header-profile--profile"
+                            href="https://www.ibm.com"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
+                            tabIndex={0}
+                          >
+                            Manage profile
+                          </a>
+                        </div>
+                      </div>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li
+                className="iot--suite-header--logout"
+              >
+                <a
+                  className="bx--header__menu-item"
+                  data-testid="suite-header-profile--logout"
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                  title="Logout"
+                >
+                  <span
+                    className="bx--text-truncate--end"
+                  >
+                    <span
+                      id="suite-header-profile-menu-logout"
+                    >
+                      Logout
+                    </span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="bx--header__submenu bx--header-action-btn action-btn__group"
+          data-testid="action-btn__group"
+          onBlur={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-describedby={null}
+            aria-expanded={false}
+            aria-haspopup="menu"
+            aria-label="AppSwitcher"
+            aria-pressed={null}
+            className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="AppSwitcher"
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              AppSwitcher
+            </div>
+            <svg
+              aria-hidden={true}
+              className="bx--header__menu-item bx--header__menu-title"
+              fill="white"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
+              />
+            </svg>
+          </button>
+          <div
+            aria-label="Header Panel"
+            className="bx--header-panel bx--app-switcher"
+            data-testid="action-btn__panel"
+            tabIndex="-1"
+          >
+            <ul
+              aria-label="AppSwitcher"
+            >
+              <li
+                className="action-btn__headerpanel-li"
+              >
+                <a
+                  className="bx--app-switcher undefined"
+                  onKeyDown={[Function]}
+                >
+                  <ul
+                    className="iot--suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher"
+                  >
+                    <li
+                      className="iot--suite-header-app-switcher--nav-link"
+                    >
+                      <p>
+                        My applications
+                      </p>
+                      <a
+                        className="iot--btn bx--btn bx--btn--tertiary"
+                        data-testid="suite-header-app-switcher--all-applications"
+                        href="https://www.ibm.com"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
+                        tabIndex={-1}
+                      >
+                        All applications
+                        <svg
+                          aria-hidden={true}
+                          className="bx--btn__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <div
+                      className="iot--suite-header-app-switcher--nav-link--separator"
+                    />
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                      id="suite-header-application-monitor"
+                    >
+                      <a
+                        className="iot--btn bx--btn bx--btn--ghost"
+                        data-testid="suite-header-app-switcher--monitor"
+                        href="https://www.ibm.com"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
+                        tabIndex={-1}
+                      >
+                        Monitor
+                      </a>
+                    </li>
+                    <li
+                      className="iot--suite-header-app-switcher--app-link"
+                      id="suite-header-application-health"
+                    >
+                      <a
+                        className="iot--btn bx--btn bx--btn--ghost"
+                        data-testid="suite-header-app-switcher--health"
+                        href="https://www.ibm.com"
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
+                        tabIndex={-1}
+                      >
+                        Health
+                      </a>
+                    </li>
+                  </ul>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader default 1`] = `
 <div
   className="storybook-container"
@@ -5794,13 +6467,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="bx--header__global"
         data-testid="suite-header-action-group"
       >
-        <button
-          aria-describedby={null}
+        <a
           aria-label="Administration"
-          aria-pressed={null}
           className="bx--header-action-btn admin-icon bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
           data-testid="menu-item-Administration-global"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
@@ -5808,7 +6479,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          type="button"
         >
           <div
             className="bx--assistive-text"
@@ -5839,7 +6509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               />
             </svg>
           </span>
-        </button>
+        </a>
         <div
           className="bx--header__submenu bx--header-action-btn action-btn__group"
           data-testid="action-btn__group"
@@ -5898,9 +6568,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--whatsNew"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="What's new"
                 >
@@ -5919,9 +6590,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--gettingStarted"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Getting started"
                 >
@@ -5940,9 +6612,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--documentation"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Documentation"
                 >
@@ -5961,9 +6634,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--requestEnhancement"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Request enhancement"
                 >
@@ -5982,9 +6656,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--support"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="Support"
                 >
@@ -6003,9 +6678,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                 <a
                   className="bx--header__menu-item"
                   data-testid="suite-header-help--about"
-                  href="#"
+                  href="https://www.ibm.com"
                   onClick={[Function]}
                   onKeyDown={[Function]}
+                  rel="noopener noreferrer"
                   tabIndex={0}
                   title="About"
                 >
@@ -6122,23 +6798,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         <div
                           className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
                         >
-                          <button
-                            aria-describedby={null}
-                            aria-pressed={null}
+                          <a
                             className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
                             data-testid="suite-header-profile--profile"
-                            disabled={false}
+                            href="https://www.ibm.com"
                             onBlur={[Function]}
                             onClick={[Function]}
                             onFocus={[Function]}
                             onKeyDown={[Function]}
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
+                            rel="noopener noreferrer"
                             tabIndex={0}
-                            type="button"
                           >
                             Manage profile
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </span>
@@ -6242,20 +6916,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       <p>
                         My applications
                       </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         All applications
                         <svg
@@ -6273,7 +6945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                             d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
                           />
                         </svg>
-                      </button>
+                      </a>
                     </li>
                     <div
                       className="iot--suite-header-app-switcher--nav-link--separator"
@@ -6282,45 +6954,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Monitor
-                      </button>
+                      </a>
                     </li>
                     <li
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
+                      <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
-                        disabled={false}
+                        href="https://www.ibm.com"
                         onBlur={[Function]}
                         onClick={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
+                        rel="noopener noreferrer"
                         tabIndex={-1}
-                        type="button"
                       >
                         Health
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </a>

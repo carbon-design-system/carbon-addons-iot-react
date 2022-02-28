@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.14...v2.149.0-next.15) (2022-02-28)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.149.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.13...v2.149.0-next.14) (2022-02-28)
+
+
+### Bug Fixes
+
+* **SuiteHeader:** Making all actions in SuiteHeader (but the Logout action) become html `<a>` elements so that basic browser workflow works as expected ("open in a new tab" context menu option, ctrl+click to force open in new tab). ([0f4b085](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f4b0852c71e6cc7656034bd670829b94e829ab6))
+* **SuiteHeaderAppSwitcher:** Fixing the styling so that it looks the way it was before the changes to convert buttons to anchor links in the SuiteHeader. ([322422d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/322422d89e156e8cb16ab41da416ac6b5b3e0f8c))
+* **table:** show correct number of columns in tableskeleton ([74e8a8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74e8a8a2f8bde3a3d725e8115b821bb4098e3db6)), closes [#3323](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3323)
+
+
+
+
+
 # [2.149.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.12...v2.149.0-next.13) (2022-02-28)
 
 

@@ -128,7 +128,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       />
     );
 
-    await userEvent.click(screen.getByRole('button', { name: 'All applications' }));
+    await userEvent.click(screen.getByTestId('suite-header-app-switcher--all-applications'));
     expect(SuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
       'NAVIGATOR',
       'https://www.ibm.com'
@@ -155,7 +155,7 @@ describe('SuiteHeaderAppSwitcher', () => {
       />
     );
 
-    const customAppButton = screen.getByRole('button', { name: 'Custom application' });
+    const customAppButton = screen.getByTestId('suite-header-app-switcher--custom');
     expect(customAppButton).toBeVisible();
     await userEvent.click(customAppButton);
     expect(onRouteChange).toHaveBeenCalledWith('APPLICATION', 'https://www.ibm.com', {
