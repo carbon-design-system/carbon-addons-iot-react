@@ -484,7 +484,7 @@ describe('DateTimePickerV2', () => {
     );
     cy.findByTestId('date-time-picker').click();
     onlyOn('headless', () => {
-      cy.findByTestId('date-time-picker').compareSnapshot('v2-icon-only-rtl');
+      cy.compareSnapshot('v2-icon-only-rtl');
     });
   });
 
@@ -499,7 +499,7 @@ describe('DateTimePickerV2', () => {
     );
     cy.findByTestId('date-time-picker').click();
     onlyOn('headless', () => {
-      cy.findByTestId('date-time-picker').compareSnapshot('v2-rtl');
+      cy.compareSnapshot('v2-rtl');
     });
   });
 });
