@@ -169,6 +169,7 @@ const ProgressBar = ({
         `${iotPrefix}--progress-bar-container`,
         {
           [`${iotPrefix}--progress-bar-container--light`]: light,
+          [`${iotPrefix}--progress-bar-container--with-icon`]: Icon,
         },
         className
       )}
