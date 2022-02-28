@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.12...v2.149.0-next.13) (2022-02-28)
+
+
+### Bug Fixes
+
+* **IdleTimer:** Adding `Secure;` too the cookie only if window.location.protocol is https. ([45e0f02](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/45e0f025fc85f161b4a4f930ddf6f874b86da1a7))
+* **IdleTimer:** Adding the `Secure;` property to the cookie, ([19db552](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/19db552c26a0f0795d985fe68cb4b127e5b4c6fb))
+* **IdleTimer:** Calculating the new countdown based on the current timestamp and the last user activity timeout instead of just subtracting 1 second from the last value. This is needed because browsers usually reduce the priority of javascript and timers in inactive tabs (minimized tabs or tabs without focus), which can cause the logout confirmation dialog to show different countdowns in different tabs. ([1911ea9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1911ea9b308195854f98c63ea6082242703c430c))
+* **IdleTimer:** Minor fix for an edge case. Countdown needs to be 29 seconds in its first iteration, not 30. ([9fe4b69](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9fe4b699d4c54a5028069c0012436c6f980df30c))
+* **tile-gallery:** fix styles, sizing on TileGalleryItem list ([7734959](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7734959311918f0c6bfec342b93b6fc8d172f8a6))
+* **tile-gallery-item:** fix overflow menu hover color, and content jumps ([5f306ba](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5f306ba23847a0fa9dc13d46e09f2ccdffd7af02))
+
+
+
+
+
+# [2.149.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.11...v2.149.0-next.12) (2022-02-25)
+
+
+### Bug Fixes
+
+* **table:** remove bottom border on expanded search box ([bc99611](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc99611c1f1a037616c8b5502db5759f83f7c426))
+
+
+### Features
+
+* **table:** add prop to allow search to always be open ([4e30f3e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4e30f3eb9839dfe657b2e06cb69864226807069f))
+* **table:** add support for isExpanded in StatefulTable ([abda495](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/abda495e5a3e10de3eca02a93b043246192cfe41))
+
+
+
+
+
+# [2.149.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.10...v2.149.0-next.11) (2022-02-24)
+
+
+### Bug Fixes
+
+* **table:** advanced filter crash fix ([fabc07b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fabc07b85e723f6ad4cd5a504247a5f4b0c33c89)), closes [#3319](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3319)
+
+
+### Reverts
+
+* Revert "chore(repo): add netlify.toml for react" ([e8f097d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8f097dba490b2d5d564fc992ab55e00dbe7a66b))
+
+
+
+
+
 # [2.149.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.9...v2.149.0-next.10) (2022-02-23)
 
 **Note:** Version bump only for package ibm-ai-applications

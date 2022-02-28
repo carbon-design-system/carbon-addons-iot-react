@@ -2021,6 +2021,9 @@ Map {
                         "defaultValue": Object {
                           "type": "string",
                         },
+                        "isExpanded": Object {
+                          "type": "bool",
+                        },
                         "onChange": Object {
                           "type": "func",
                         },
@@ -3968,6 +3971,7 @@ Map {
       "columns": Array [],
       "hasRowActions": false,
       "hasRowExpansion": false,
+      "hasRowNesting": false,
       "hasRowSelection": false,
       "rowCount": 10,
       "showExpanderColumn": false,
@@ -3997,6 +4001,9 @@ Map {
         "type": "bool",
       },
       "hasRowExpansion": Object {
+        "type": "bool",
+      },
+      "hasRowNesting": Object {
         "type": "bool",
       },
       "hasRowSelection": Object {
@@ -4726,6 +4733,9 @@ Map {
                   },
                   "defaultValue": Object {
                     "type": "string",
+                  },
+                  "isExpanded": Object {
+                    "type": "bool",
                   },
                   "onChange": Object {
                     "type": "func",
@@ -11168,6 +11178,7 @@ Map {
         "profileTitle": "Profile",
       },
       "onRequestLogout": null,
+      "profileLink": "javascript:void(0)",
       "testId": "suite-header-profile",
       "username": "",
     },
@@ -11197,6 +11208,9 @@ Map {
       },
       "onRequestLogout": Object {
         "type": "func",
+      },
+      "profileLink": Object {
+        "type": "string",
       },
       "testId": Object {
         "type": "string",

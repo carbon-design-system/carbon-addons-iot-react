@@ -132,6 +132,7 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     batchActions,
+    searchIsExpanded,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -209,7 +210,7 @@ export const Playground = () => {
   const customErrorState = (
     <EmptyState
       icon="error"
-      title="Error occured while loading"
+      title="Error occurred while loading"
       body="Custom Error message"
       action={{
         label: 'Reload',
@@ -349,6 +350,9 @@ export const Playground = () => {
             toolbarActions,
             rowEditBarButtons,
             batchActions,
+            search: {
+              isExpanded: searchIsExpanded,
+            },
           },
           table: {
             emptyState,
@@ -695,7 +699,7 @@ export const WithSelectionAndBatchActions = () => {
 
   const isStateful = selectedTableType === 'StatefulTable';
   const isMultiSelect = hasRowSelection === 'multi';
-  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'}
     id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
   const selectedIds =
     hasRowSelection === 'multi'

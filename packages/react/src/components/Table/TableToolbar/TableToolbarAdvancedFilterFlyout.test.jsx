@@ -671,4 +671,50 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
       'true'
     );
   });
+
+  it('should not break on empty column array prop', () => {
+    const onApplyAdvancedFilter = jest.fn();
+    const onCancelAdvancedFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test-column-value',
+            },
+            {
+              columnId: 'string-column',
+              value: [
+                {
+                  id: 'string-column-value',
+                  text: 'string-column-value',
+                },
+              ],
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+        isDisabled
+      />
+    );
+
+    expect(screen.getByTestId('advanced-filter-flyout-container')).toBeVisible();
+  });
 });

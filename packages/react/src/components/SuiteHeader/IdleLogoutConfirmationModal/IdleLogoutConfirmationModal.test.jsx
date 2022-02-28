@@ -1,7 +1,8 @@
-import { act, render, screen, within } from '@testing-library/react';
+import { act, waitFor, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
+import MockDate from 'mockdate';
 
 import SuiteHeaderI18N from '../i18n';
 
@@ -34,6 +35,7 @@ describe('IdleLogoutConfirmationModal', () => {
     window.location = { ...originalWindowLocation };
     window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
+    MockDate.reset();
   });
 
   it('active user does not see idle logout confirmation dialog', () => {
@@ -146,10 +148,12 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
+    // Go to the future by a little more than commonProps.idleTimeoutData.countdown seconds
+    MockDate.set(Date.now() + (commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
     await act(async () => {
-      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
+      await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).toBe(commonProps.routes.logoutInactivity);
+    await waitFor(() => expect(window.location.href).toBe(commonProps.routes.logoutInactivity));
   });
   it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
@@ -158,10 +162,12 @@ describe('IdleLogoutConfirmationModal', () => {
       writable: true,
       value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
     });
+    // Go to the future by a little more than commonProps.idleTimeoutData.countdown seconds
+    MockDate.set(Date.now() + (commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
     await act(async () => {
-      await jest.advanceTimersByTime((commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
+      await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity);
+    await waitFor(() => expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity));
   });
   it('user has logged out in another tab', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
