@@ -181,7 +181,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
   td.bx--table-expand[data-previous-value='collapsed'] {
-    border-bottom: solid 1px $ui-03;
+    border-bottom: solid 1px $ui-01;
   }
 }
 
@@ -211,17 +211,46 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 .#{$iot-prefix}--expandable-tablerow--indented {
   td.#{$prefix}--table-expand {
     position: relative;
+    left: var(--row-nesting-offset);
+    border-bottom: 1px solid $ui-01;
   }
+
   td:first-of-type:before {
     content: '';
     position: absolute;
     // -1px because the parent has a 1px border at the top, so we need to fill that gap
     top: -1px;
-    left: 0;
+    left: calc(-1 * var(--row-nesting-offset));
     height: calc(100% + 1px);
     width: var(--row-nesting-offset);
     background-color: $ui-01;
     border-right: solid 1px $ui-01;
+    border-bottom: solid 1px $ui-01;
+  }
+
+  &:not(.#{$iot-prefix}--expandable-tablerow--childless) {
+    td:first-of-type:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 1px;
+      bottom: -1px;
+      width: calc(#{$spacing-08} - var(--row-nesting-offset));
+      border-bottom: solid 1px $ui-03;
+    }
+  }
+
+  &.#{$iot-prefix}--expandable-tablerow--childless,
+  &.#{$iot-prefix}--expandable-tablerow--expanded {
+    td:first-of-type:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 1px;
+      bottom: -1px;
+      width: $spacing-08;
+      border-bottom: solid 1px $ui-01;
+    }
   }
 }
 
@@ -233,15 +262,15 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
-.#{$iot-prefix}--expandable-tablerow--parent {
-  td {
-    font-weight: bold;
+.#{$iot-prefix}--expandable-tablerow--indented,
+.#{$iot-prefix}--expandable-tablerow--expanded {
+  td.#{$prefix}--table-expand {
+    border-bottom: 1px solid $ui-01;
   }
 }
 
-.#{$iot-prefix}--expandable-tablerow:not(.#{$iot-prefix}--expandable-tablerow--childless) {
-  td > button.#{$prefix}--table-expand__button {
-    position: relative;
-    left: var(--row-nesting-offset);
+.#{$iot-prefix}--expandable-tablerow--parent {
+  td {
+    font-weight: bold;
   }
 }

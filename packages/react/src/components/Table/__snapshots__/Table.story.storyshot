@@ -29643,7 +29643,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded"
+              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded iot--expandable-tablerow--indented"
               data-nesting-offset={16}
               data-parent-row={true}
               data-row-nesting={true}
@@ -30755,7 +30755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded"
+              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded iot--expandable-tablerow--indented"
               data-nesting-offset={16}
               data-parent-row={true}
               data-row-nesting={true}
@@ -95960,7 +95960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded"
+              className="bx--parent-row bx--expandable-row iot--expandable-tablerow--expanded iot--expandable-tablerow--indented"
               data-nesting-offset={16}
               data-parent-row={true}
               data-row-nesting={true}

@@ -326,7 +326,9 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
-          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`)}
+          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
+            [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+          })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
