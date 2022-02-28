@@ -55,6 +55,7 @@ export const WithMultipleActions = () => {
         onCardAction={action('onCardAction')}
         size={size}
         isLoading={boolean('isLoading', false)}
+        isExpanded={boolean('isExpanded', false)}
       />
     </div>
   );
