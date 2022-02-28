@@ -500,13 +500,8 @@ const TableHead = ({
           );
 
           const { direction } = getComputedStyle(document.body);
-          const isLast = ordering.length - 1 === columnIndex;
-          const lastTooltipAlign =
-            align === 'start' && direction === 'ltr'
-              ? 'end'
-              : align === 'end' && direction === 'rtl'
-              ? 'start'
-              : align;
+          const rightmostColumn = direction === 'ltr' ? lastVisibleColumn : visibleColumns[0];
+          const flipTooltipDirection = rightmostColumn === item;
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
@@ -553,7 +548,7 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
-                align={isLast ? lastTooltipAlign : align}
+                tooltipDirection={flipTooltipDirection ? 'end' : undefined}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
