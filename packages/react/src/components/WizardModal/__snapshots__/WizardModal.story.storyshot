@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -566,7 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
           </p>
         </div>
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -860,7 +860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
