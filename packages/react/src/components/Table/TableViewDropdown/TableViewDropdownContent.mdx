@@ -1,0 +1,104 @@
+The TableViewDropdown allows the user to select an existing view and to open
+the related modals for creating new views and modifying existing ones. The component
+expects a list of views specified by the application but will also add the following items
+to the list: `save-new-view`, `save-changes` and `manage-views`. If you don't want these items
+you can set `isHidingStandardActions` to true and by doing so create a dropdown that can only
+be used to select existing views.
+
+The `save-changes` item will only appear if the view has been edited and the current view
+is not 'View all'. The 'View all' is equivalent to a "default view", which would not
+be able to get re-saved.
+
+When a view is selected the `onChangeView` is called but if needed it is also possible
+to add custom actions to the list using the `customAction` prop on the list object.
+
+#### TableViewDropdown code example
+
+The following code example shows the basic setup for the TableViewDropdown including
+a simplified version of the states. It does not show the save functionality since it
+will always be application specific.
+
+```js
+export const CodeExmple = () => {
+  const myViews = [
+    // Normal views
+    {
+      id: 'view-1',
+      text: 'My saved 1',
+    },
+    {
+      id: 'view-2',
+      text: 'My saved 2',
+    },
+    {
+      id: 'view-3',
+      text: 'My saved 3',
+    },
+    // A custom action
+    {
+      id: 'custom-action-1',
+      text: 'My custom action',
+      customAction: () => {
+        // Application specific action here
+      },
+  ];
+
+  // The selectedViewId adds a checkmark to the  corresponding list item
+  const [selectedViewId, setSelectedViewId] = useState('view-all');
+  // This should be updated when the current view is edited by the user,
+  // e.g. by modifying filters etc or anything that affects the view.
+  const [selectedViewEdited, setSelectedViewEdited] = useState(false);
+  const [showManageViewsModal, setShowManageViewsModal] = useState(false);
+  const [showSaveViewsModal, setShowSaveViewsModal] = useState(false);
+
+  return (
+    <TableViewDropdown
+      selectedViewId={selectedViewId}
+      selectedViewEdited={selectedViewEdited}
+      views={myViews}
+      actions={{
+        onSaveAsNewView: () => {
+          setShowSaveViewsModal(true);
+        },
+        onSaveChanges: () => {},
+        onManageViews: () => {
+          setShowManageViewsModal(true);
+        },
+        onChangeView: (viewItem) => {
+          setSelectedViewId(viewItem.id);
+        },
+      }}
+    />
+  );
+};
+```
+
+#### TableViewDropdown props
+
+| Name                    | Type                           | Default             | Description                                                                   |
+| :---------------------- | :----------------------------- | :------------------ | :---------------------------------------------------------------------------- |
+| selectedViewEdited      | bool                           | false               | Set to true if the user has modified filters etc since the view was loaded    |
+| selectedViewId          | string                         | undefined           | The id of the view that is currently selected                                 |
+| disabled                | bool                           | false               |                                                                               |
+| views                   | arrayOf(TableViewItemPropType) | []                  | An array of items representing the user generated views                       |
+| views[].id              | string                         |                     | Required item id                                                              |
+| views[].text            | string                         |                     | Required item label text                                                      |
+| views[].customAction    | string                         |                     | Callback that will be called instead of the onChangeView                      |
+| views[].icon            | elementType                    |                     | Icon used by the item if any                                                  |
+| i18n                    | obj                            |                     | Object holding all i18n strings                                               |
+| i18n.view               | string                         | 'View'              |                                                                               |
+| i18n.edited             | string                         | 'Edited'            |                                                                               |
+| i18n.viewAll            | string                         | 'View All'          |                                                                               |
+| i18n.saveAsNewView      | string                         | 'Save as new view'  |                                                                               |
+| i18n.saveChanges        | string                         | 'Save changes'      |                                                                               |
+| i18n.manageViews        | string                         | 'Manage views'      |                                                                               |
+| i18n.ariaLabel          | string                         | 'Select view'       |                                                                               |
+| i18n.tableViewMenu      | string                         | 'Table view menu'   |                                                                               |
+| onSaveAsNewView         | function                       |                     | Callback for when the user selected save new View                             |
+| onSaveChanges           | function                       |                     | Callback for when the user selected save View                                 |
+| onManageViews           | function                       |                     | Callback for when the user selected Manage views                              |
+| onChangeView            | function                       |                     | Callback for when the current view is changed by the user                     |
+| style                   | objectOf                       |                     |                                                                               |
+| testID                  | string                         | 'TableViewDropdown' |                                                                               |
+| overrides               | obj                            | undefined           | Used to override the internal components and props for advanced customisation |
+| isHidingStandardActions | bool                           | false               | When true hides all standard action items                                     |

@@ -22,7 +22,7 @@ import { TableRowComponent } from 'carbon-components-angular';
         <ng-template #tableCheckboxTemplate>
           <td
             ibmTableCheckbox
-            class="bx--table-column-checkbox"
+            class="bx--checkbox-table-cell"
             [size]="size"
             [selected]="selected"
             [label]="getCheckboxLabel()"
@@ -52,6 +52,12 @@ import { TableRowComponent } from 'carbon-components-angular';
           [title]="item.title"
           [class]="model.getClosestHeader(j).className"
           [ngStyle]="model.getClosestHeader(j).style"
+          [ngClass]="{
+            'data-table-end': model.getClosestHeader(j).alignment === 'end',
+            'data-table-start': model.getClosestHeader(j).alignment === 'start',
+            'data-table-center': model.getClosestHeader(j).alignment === 'center',
+            'iot--table__cell--sortable': model.getClosestHeader(j).sortable
+          }"
           [skeleton]="skeleton"
           [attr.colspan]="item.colSpan"
           [attr.rowspan]="item.rowSpan"

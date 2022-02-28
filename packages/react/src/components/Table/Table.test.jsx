@@ -620,6 +620,101 @@ describe('Table', () => {
     mockActions.toolbar.onApplySearch.mockClear();
   });
 
+  it('should force the search box to always be open when search.isExpanded:true', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: true,
+            },
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+    );
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('test');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.type(
+      screen.getByPlaceholderText('Search'),
+      '{backspace}{backspace}{backspace}{backspace}testing'
+    );
+    fireEvent.blur(screen.getByPlaceholderText('Search'));
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('testing');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+
+    userEvent.click(screen.getByRole('button', { name: 'Clear search input' }));
+    // once on blur, once on clicking clear
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenCalledTimes(2);
+    expect(mockActions.toolbar.onApplySearch).toHaveBeenLastCalledWith('');
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    mockActions.toolbar.onApplySearch.mockClear();
+  });
+
+  it('should allow the search box to expand and contract naturally on focus when search.isExpanded is undefined', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: undefined,
+            },
+          },
+        }}
+      />
+    );
+
+    // isn't open by default.
+    expect(screen.getByRole('search')).not.toHaveClass(
+      `${prefix}--toolbar-search-container-active`
+    );
+    userEvent.type(screen.getByPlaceholderText('Search'), 'testing{enter}');
+    // is open now that we have a search value.
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    userEvent.click(document.body);
+    // should still be open because we have a search value, even when losing focus
+    expect(screen.getByRole('search')).toHaveClass(`${prefix}--toolbar-search-container-active`);
+    userEvent.clear(screen.getByPlaceholderText('Search'));
+    userEvent.click(document.body);
+    // not be open anymore without a search value or focus
+    expect(screen.getByRole('search')).not.toHaveClass(
+      `${prefix}--toolbar-search-container-active`
+    );
+  });
+
   it('should render RowActionsCell dropdowns in the right direction for different language directions ', async () => {
     const id = 'TableId3';
     // Should render correctly by default even if no lang attribute exist
@@ -2679,13 +2774,13 @@ describe('Table', () => {
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
-      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
       expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
-      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
-      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+      expect(screen.getByRole('menuitem', { name: /Delete something/ })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Delete something/ }).parentNode).toHaveClass(
         `${prefix}--overflow-menu-options__option--danger`
       );
-      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
@@ -2727,13 +2822,13 @@ describe('Table', () => {
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
-      expect(screen.getByRole('menuitem', { name: 'Hide something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
       expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
-      expect(screen.getByRole('menuitem', { name: 'Delete something' })).toBeVisible();
-      expect(screen.getByRole('menuitem', { name: 'Delete something' }).parentNode).toHaveClass(
+      expect(screen.getByRole('menuitem', { name: /Delete something/ })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Delete something/ }).parentNode).toHaveClass(
         `${prefix}--overflow-menu-options__option--danger`
       );
-      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
@@ -2785,10 +2880,10 @@ describe('Table', () => {
       expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
 
       // check an item is present with correct state
-      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: /Edit something/ })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Edit something/ })).toBeDisabled();
 
-      userEvent.click(screen.getByRole('menuitem', { name: 'Delete something' }));
+      userEvent.click(screen.getByRole('menuitem', { name: /Delete something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'delete',
         labelText: 'Delete something',
@@ -2798,8 +2893,8 @@ describe('Table', () => {
 
       // ensure state tracking is working and items are visible again when re-opening.
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
-      userEvent.click(screen.getByRole('menuitem', { name: 'Hide something' }));
+      expect(screen.getByRole('menuitem', { name: /Edit something/ })).toBeVisible();
+      userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
         id: 'hide',
         labelText: 'Hide something',
@@ -2879,18 +2974,44 @@ describe('Table', () => {
       );
 
       userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
-      expect(screen.getByRole('menuitem', { name: 'a-warning-label' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /a-warning-label/ })).toBeVisible();
       expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
-      expect(screen.getByTitle('View off')).toBeVisible();
-      expect(screen.getByTitle('View off').firstChild).toBeVisible();
-      expect(screen.getByTitle('View off').firstChild).toHaveAttribute('aria-label', 'View off');
-      expect(screen.getByTitle('Arrow right')).toBeVisible();
-      expect(screen.getByTitle('Arrow right').firstChild).toBeVisible();
-      expect(screen.getByTitle('Arrow right').firstChild).toHaveAttribute(
-        'description',
-        'Arrow right'
-      );
+      expect(screen.getByRole('menuitem', { name: /View off/ })).toBeVisible();
+      expect(
+        within(screen.getByRole('menuitem', { name: /View off/ })).getByLabelText('View off')
+      ).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Arrow right/ })).toBeVisible();
+      expect(
+        screen
+          .getByRole('menuitem', { name: /Arrow right/ })
+          .querySelector('[description="Arrow right"]')
+      ).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Just text' })).toBeVisible();
+    });
+
+    it('should not render the overflow actions if all actions are hidden', async () => {
+      render(
+        <Table
+          columns={tableColumns}
+          data={[tableData[0]]}
+          expandedData={expandedData}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          options={{
+            ...options,
+            hasAggregations: false,
+          }}
+          view={{
+            ...view,
+            toolbar: {
+              ...view.toolbar,
+              toolbarActions: toolbarActions.map((action) => ({ ...action, hidden: true })),
+            },
+          }}
+        />
+      );
+
+      expect(screen.queryByRole('button', { name: 'Do something' })).toBeNull();
+      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
     });
   });
 });

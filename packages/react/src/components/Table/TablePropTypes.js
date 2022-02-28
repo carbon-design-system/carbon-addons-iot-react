@@ -22,6 +22,7 @@ export const RowActionPropTypes = PropTypes.arrayOf(
       PropTypes.func,
     ]),
     disabled: PropTypes.bool,
+    hidden: PropTypes.bool,
     labelText: PropTypes.string,
     /** Action should go into the overflow menu, not be rendered inline in the row */
     isOverflow: PropTypes.bool,
@@ -292,6 +293,7 @@ export const TableSearchPropTypes = PropTypes.shape({
   defaultExpanded: PropTypes.bool,
   onChange: PropTypes.func,
   onExpand: PropTypes.func,
+  isExpanded: PropTypes.bool,
 });
 
 /** Which toolbar is currently active */

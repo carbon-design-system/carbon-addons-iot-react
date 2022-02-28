@@ -1031,4 +1031,40 @@ describe('SuiteHeader', () => {
       expect(window.open).toHaveBeenCalledTimes(6);
     });
   });
+
+  it('should not allow tabbing to application switcher panel items when it is closed', async () => {
+    render(<SuiteHeader {...commonProps} />);
+    expect(screen.getByTestId('action-btn__panel')).toHaveAttribute('tabindex', '-1');
+    // not tab-able when closed.
+    expect(screen.getByTestId('suite-header-app-switcher--all-applications')).toHaveAttribute(
+      'tabindex',
+      '-1'
+    );
+    expect(screen.getByTestId('suite-header-app-switcher--monitor')).toHaveAttribute(
+      'tabindex',
+      '-1'
+    );
+    expect(screen.getByTestId('suite-header-app-switcher--health')).toHaveAttribute(
+      'tabindex',
+      '-1'
+    );
+
+    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    expect(screen.getByTestId('action-btn__panel')).toHaveClass(
+      `${prefix}--header-panel--expanded`
+    );
+    // tab-able when open
+    expect(screen.getByTestId('suite-header-app-switcher--all-applications')).toHaveAttribute(
+      'tabindex',
+      '0'
+    );
+    expect(screen.getByTestId('suite-header-app-switcher--monitor')).toHaveAttribute(
+      'tabindex',
+      '0'
+    );
+    expect(screen.getByTestId('suite-header-app-switcher--health')).toHaveAttribute(
+      'tabindex',
+      '0'
+    );
+  });
 });

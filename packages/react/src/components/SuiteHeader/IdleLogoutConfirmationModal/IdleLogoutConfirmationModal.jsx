@@ -87,6 +87,8 @@ const IdleLogoutConfirmationModal = ({
   const [restartIdleTimer, setRestartIdleTimer] = useState(false);
   // Countdown state. If countdown is greater than zero, logout confirmation dialog is going to be displayed
   const [logoutConfirmationCountdown, setLogoutConfirmationCountdown] = useState(0);
+  // "Stay Logged in" button disabled state
+  const [stayLoggedInButtonDisabled, setStayLoggedInButtonDisabled] = useState(false);
   // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (idleTimeoutData && idleTimeoutData?.timeout > 0 && routes) {
@@ -105,6 +107,12 @@ const IdleLogoutConfirmationModal = ({
           );
           if (result) {
             window.location.href = routes.logoutInactivity;
+          }
+        },
+        onCookieCleared: async () => {
+          const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes.logout);
+          if (result) {
+            window.location.href = routes.logout;
           }
         },
         onRestart: () => {
@@ -128,8 +136,11 @@ const IdleLogoutConfirmationModal = ({
       open={logoutConfirmationCountdown > 0}
       modalHeading={mergedI18n.sessionTimeoutModalHeading}
       primaryButtonText={mergedI18n.sessionTimeoutModalStayLoggedInButton}
+      primaryButtonDisabled={stayLoggedInButtonDisabled}
       secondaryButtonText={mergedI18n.sessionTimeoutModalLogoutButton}
       onSecondarySubmit={async () => {
+        // Disable the "Stay Logged in" button after the "Log out" button is clicked
+        setStayLoggedInButtonDisabled(true);
         const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout);
         if (result) {
           window.location.href = routes?.logout;

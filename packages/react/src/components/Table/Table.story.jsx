@@ -1450,91 +1450,6 @@ WithRowExpansionAndActions.parameters = {
   },
 };
 
-export const WithSorting = () => {
-  const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
-  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const hasMultiSort = boolean(
-    'Enables sorting the table by multiple dimentions (options.hasMultiSort)',
-    false
-  );
-
-  const sortedData =
-    hasMultiSort && selectedTableType === 'Table'
-      ? tableData.slice(0, 10).sort(
-          firstBy((row) => row.values.select).thenBy((row) => {
-            return row.values.string;
-          })
-        )
-      : getSortedData(tableData, 'string', 'ASC');
-  return (
-    <FullWidthWrapper>
-      <style>{`#custom-row-height table tr { height: 5rem;}`}</style>
-      <div id="custom-row-height">
-        <MyTable
-          columns={tableColumns.map((i, idx) => ({
-            ...i,
-            isSortable: idx !== 1,
-            align: i.id === 'number' ? 'end' : i.id === 'string' ? 'center' : 'start',
-          }))}
-          data={sortedData}
-          actions={tableActions}
-          options={{
-            hasFilter: boolean('Enables filtering columns by value (options.hasFilter)', false),
-            hasPagination: boolean(
-              'Enables pagination for the table (options.hasPagination)',
-              false
-            ),
-            hasRowSelection: select(
-              'Enable or Disable selecting single, multiple, or no rows (options.hasRowSelection)',
-              ['multi', 'single', false],
-              'multi'
-            ),
-            hasAggregations: boolean(
-              'Aggregates column values and displays in a footer row (options.hasAggregations)',
-              true
-            ),
-            hasMultiSort,
-          }}
-          view={{
-            filters: [],
-            aggregations: {
-              label: 'Total',
-              columns: [
-                {
-                  id: 'number',
-                  align: 'end',
-                  isSortable: true,
-                },
-              ],
-              isHidden: false,
-            },
-            table: {
-              ordering: defaultOrdering,
-              sort: hasMultiSort
-                ? [
-                    {
-                      columnId: 'select',
-                      direction: 'ASC',
-                    },
-                    {
-                      columnId: 'string',
-                      direction: 'ASC',
-                    },
-                  ]
-                : {
-                    columnId: 'string',
-                    direction: 'ASC',
-                  },
-            },
-          }}
-        />
-      </div>
-    </FullWidthWrapper>
-  );
-};
-
-WithSorting.storyName = 'with sorting and custom row height';
-
 export const WithFilters = () => {
   text(
     'instructions',
@@ -1564,6 +1479,7 @@ export const WithFilters = () => {
 
   const selectedTableType = select('Type of Table', ['Table', 'StatefulTable'], 'Table');
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const demoToolbarOverflowItemsHidden = boolean('demo all toolbar overflow items hidden', false);
   return (
     <MyTable
       id="table"
@@ -1594,7 +1510,16 @@ export const WithFilters = () => {
               labelText: 'toolbarAction shown in toolbar instead of overflow',
               renderIcon: ViewOff16,
             },
-          ],
+          ].map((action) => {
+            if (action.id === 'hidden') {
+              return action;
+            }
+
+            return {
+              ...action,
+              hidden: demoToolbarOverflowItemsHidden,
+            };
+          }),
           customToolbarContent: (
             <div style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}>
               custom content

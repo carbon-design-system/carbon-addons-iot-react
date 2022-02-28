@@ -116,7 +116,16 @@ const HeaderActionPanel = ({
                   onClick={onClick}
                   onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
                 >
-                  {childItem.content}
+                  {
+                    // if we're working with an actual react component (not an html element) pass
+                    // the isExpanded prop, so we can control tab-navigation on the closed AppSwitcher
+                    React.isValidElement(childItem.content) &&
+                    typeof childItem.content.type !== 'string'
+                      ? React.cloneElement(childItem.content, {
+                          isExpanded,
+                        })
+                      : childItem.content
+                  }
                 </ChildElement>
               </li>
             );

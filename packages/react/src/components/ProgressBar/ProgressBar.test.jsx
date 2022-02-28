@@ -15,6 +15,13 @@ describe('ProgressBar', () => {
     expect(screen.getByLabelText('A progress label')).toBeVisible();
   });
 
+  it('should render with the given className', () => {
+    const { container } = render(
+      <ProgressBar label="A progress label" value={40} className="a-test-class" />
+    );
+    expect(container.querySelector('.a-test-class')).toBeInTheDocument();
+  });
+
   it('should render an icon when renderIcon is given', () => {
     render(
       <ProgressBar

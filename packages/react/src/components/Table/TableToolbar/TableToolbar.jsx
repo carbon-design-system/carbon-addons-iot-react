@@ -27,11 +27,11 @@ import {
   TableSearchPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
-  TableRowPropTypes,
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
   TableToolbarActionsPropType,
+  TableRowsPropTypes,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -165,7 +165,7 @@ const propTypes = {
     toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
-  data: TableRowPropTypes.isRequired,
+  data: TableRowsPropTypes.isRequired,
 
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
@@ -226,7 +226,7 @@ const TableToolbar = ({
     totalSelected,
     totalFilters,
     batchActions,
-    search,
+    search: searchProp,
     activeBar,
     customToolbarContent,
     isDisabled,
@@ -245,6 +245,7 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
+  const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -254,17 +255,19 @@ const TableToolbar = ({
     testId: testID || testId,
   });
 
-  const hasToolbarOverflowActions =
-    typeof toolbarActions === 'function' ||
-    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+  const actions = useMemo(() => {
+    const renderedActions =
+      typeof toolbarActions === 'function' ? toolbarActions() : toolbarActions;
 
-  const visibleToolbarActions = useMemo(() => {
-    if (typeof toolbarActions === 'function') {
-      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
-    }
-
-    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+    return renderedActions?.length ? renderedActions : [];
   }, [toolbarActions]);
+
+  const hasToolbarOverflowActions =
+    actions.filter((action) => action.isOverflow && action.hidden !== true).length > 0;
+
+  const visibleToolbarActions = actions.filter(
+    (action) => !action.isOverflow && action.hidden !== true
+  );
 
   return (
     <CarbonTableToolbar
@@ -369,6 +372,7 @@ const TableToolbar = ({
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
+              expanded={searchIsExpanded || undefined}
             />
           ) : null}
           {totalFilters > 0 ? (

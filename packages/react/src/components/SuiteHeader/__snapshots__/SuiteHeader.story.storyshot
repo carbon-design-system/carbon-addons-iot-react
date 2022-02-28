@@ -644,7 +644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -684,7 +684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -706,7 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health
@@ -2343,7 +2343,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -2383,7 +2383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -2405,7 +2405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health
@@ -3149,7 +3149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -3189,7 +3189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -3211,7 +3211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health
@@ -3879,7 +3879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -3919,7 +3919,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -3941,7 +3941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health
@@ -4963,7 +4963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -5003,7 +5003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -5025,7 +5025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health
@@ -6254,7 +6254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         All applications
@@ -6294,7 +6294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Monitor
@@ -6316,7 +6316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
                         onKeyDown={[Function]}
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
-                        tabIndex={0}
+                        tabIndex={-1}
                         type="button"
                       >
                         Health

@@ -996,6 +996,9 @@ Map {
                           "hasDivider": Object {
                             "type": "bool",
                           },
+                          "hidden": Object {
+                            "type": "bool",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -1961,6 +1964,9 @@ Map {
                         },
                         "defaultValue": Object {
                           "type": "string",
+                        },
+                        "isExpanded": Object {
+                          "type": "bool",
                         },
                         "onChange": Object {
                           "type": "func",
@@ -4292,6 +4298,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "selectedIds": Array [],
       "selectedItemRef": Object {
@@ -4521,6 +4528,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -5717,6 +5727,15 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -7115,6 +7134,7 @@ Map {
         "view": "View",
         "viewAll": "View All",
       },
+      "isHidingStandardActions": false,
       "overrides": undefined,
       "selectedViewEdited": false,
       "selectedViewId": undefined,
@@ -7176,6 +7196,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isHidingStandardActions": Object {
+        "type": "bool",
       },
       "overrides": Object {
         "args": Array [
@@ -9041,6 +9064,7 @@ Map {
         "myApplications": "My applications",
         "requestAccess": "Contact your administrator to request application access.",
       },
+      "isExpanded": false,
       "onRouteChange": [Function],
       "testId": "suite-header-app-switcher",
     },
@@ -9117,6 +9141,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isExpanded": Object {
+        "type": "bool",
       },
       "noAccessLink": Object {
         "isRequired": true,
@@ -11778,6 +11805,7 @@ Map {
       "onScroll": undefined,
       "onTouchEnd": undefined,
       "onTouchStart": undefined,
+      "padding": "default",
       "renderExpandIcon": undefined,
       "rowHeight": Object {
         "lg": 144,
@@ -12530,6 +12558,15 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -13680,6 +13717,15 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -14903,6 +14949,15 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -16149,6 +16204,15 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -17218,6 +17282,15 @@ Map {
       },
       "onUpload": Object {
         "type": "func",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -18520,6 +18593,15 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -19751,6 +19833,15 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -20789,6 +20880,15 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -21903,6 +22003,7 @@ Map {
       "items": Array [],
       "loadingMoreIds": Array [],
       "lockedIds": Array [],
+      "onExpandedChange": null,
       "onItemMoved": [Function],
       "overrides": null,
       "pagination": null,
@@ -22151,6 +22252,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "onExpandedChange": Object {
+        "type": "func",
       },
       "onItemMoved": Object {
         "type": "func",
@@ -24768,6 +24872,15 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -26887,6 +27000,15 @@ Map {
         "isRequired": true,
         "type": "func",
       },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -27507,11 +27629,13 @@ Map {
   },
   "ProgressBar" => Object {
     "defaultProps": Object {
+      "className": undefined,
       "helperText": "",
       "hideLabel": false,
       "i18n": Object {
         "iconLabel": "Progress bar icon",
       },
+      "light": false,
       "max": 100,
       "renderIcon": undefined,
       "renderIconByName": undefined,
@@ -27519,6 +27643,9 @@ Map {
       "valueUnit": "%",
     },
     "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
       "helperText": Object {
         "type": "string",
       },
@@ -27538,6 +27665,9 @@ Map {
       "label": Object {
         "isRequired": true,
         "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
       },
       "max": Object {
         "type": "number",
@@ -35001,6 +35131,7 @@ Map {
     },
   },
   "SideNavItems" => Object {
+    "displayName": "SideNavItems",
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
