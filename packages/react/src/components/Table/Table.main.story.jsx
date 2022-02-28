@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { object, select, boolean, number } from '@storybook/addon-knobs';
+import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { merge, uniqueId } from 'lodash-es';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -17,6 +17,7 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import SearchingREADME from './mdx/Searching.mdx';
 import PaginationREADME from './mdx/Pagination.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
@@ -112,6 +113,7 @@ export const Playground = () => {
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
+    searchFieldDefaultExpanded,
     wrapCellText,
     cellTextAlignment,
     preserveCellWhiteSpace,
@@ -295,7 +297,8 @@ export const Playground = () => {
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
-  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}`;
+  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
+  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
 
   return (
     <DragAndDrop>
@@ -351,6 +354,7 @@ export const Playground = () => {
             rowEditBarButtons,
             batchActions,
             search: {
+              defaultExpanded: searchFieldDefaultExpanded,
               isExpanded: searchIsExpanded,
             },
           },
@@ -432,6 +436,67 @@ WithSorting.parameters = {
   component: Table,
   docs: {
     page: SortingREADME,
+  },
+};
+
+export const WithSearching = () => {
+  const {
+    selectedTableType,
+    hasSearch,
+    hasFastSearch,
+    searchFieldDefaultExpanded,
+    searchIsExpanded,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasSearch',
+      'hasFastSearch',
+      'searchFieldDefaultExpanded',
+      'searchIsExpanded',
+    ],
+    enableKnob: (name) => name !== 'searchFieldDefaultExpanded' && name !== 'searchIsExpanded',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns();
+
+  const defaultValue = text(
+    'Default search value controlled by the app (view.toolbar.search.defaultValue)',
+    'helping'
+  );
+
+  const knobRegeneratedKey = `${searchFieldDefaultExpanded}${searchIsExpanded}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasSearch,
+        hasFastSearch,
+      }}
+      view={{
+        toolbar: {
+          search: {
+            defaultValue,
+            defaultExpanded: searchFieldDefaultExpanded,
+            isExpanded: searchIsExpanded,
+            onExpand: action('onExpand'),
+          },
+        },
+      }}
+    />
+  );
+};
+
+WithSearching.storyName = 'With searching';
+WithSearching.parameters = {
+  component: Table,
+  docs: {
+    page: SearchingREADME,
   },
 };
 

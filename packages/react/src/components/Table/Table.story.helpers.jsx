@@ -895,7 +895,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
           SEARCH_GROUP
         )
       : null,
-    searchIsExpanded: shouldCreate('search.isExpanded')
+    searchFieldDefaultExpanded: shouldCreate('searchFieldDefaultExpanded')
+      ? boolean(
+          'Expand search field by default on initialization (view.toolbar.search.defaultExpanded)',
+          enableKnob('searchFieldDefaultExpanded'),
+          SEARCH_GROUP
+        )
+      : null,
+    searchIsExpanded: shouldCreate('searchIsExpanded')
       ? boolean(
           'Force the toolbar search field to always be expanded (view.toolbar.search.isExpanded)',
           false,
