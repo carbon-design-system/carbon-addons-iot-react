@@ -1,0 +1,197 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Toolbar
+
+The toolbar can have a secondary table title and a tooltip and is also home to buttons and elements belonging to
+different table functionality. The title accepts any string and can be used to reveal some portion
+of the table state, e.g. the number of rows `` secondaryTitle={`Row count: ${data.length}`}  ``.
+Some buttons are added automatically when certain functionality is enabled but it is also possible
+to add custom buttons (called toolbarActions) and custom JSX content. Below is a list of elements and
+buttons that can be directly added to the toolbar:
+
+| Toolbar element                        | Activated by prop                            | Description                                                    | Read more                                             |
+| :------------------------------------- | :------------------------------------------- | :------------------------------------------------------------- | :---------------------------------------------------- |
+| Title                                  | secondaryTitle                               | The title placed to the left in the toolbar                    |                                                       |
+| Tooltip                                | tooltip                                      | An icon only Tooltip that expects a react Node as content      |                                                       |
+| Search field                           | options.hasSearch                            | The expandable search field                                    | [Searching](/docs/1-watson-iot-table--with-searching) |
+| Download button                        | actions.toolbar.onDownloadCSV                | A button to trigger download of data                           | [Data download](#data-download)                       |
+| Filter button, Clear all Filter button | options.hasFilter, options.hasAdvancedFilter | A button to toggle the table filters & button to clear filters | [Filtering](/docs/1-watson-iot-table--with-filtering) |
+| Edit button                            | options.hasRowEdit                           | A button to toggle the table row edit state                    | Editing - to be written                               |
+| Action button                          | view.toolbar.toolbarActions                  | Custom actions added as toolbar buttons                        | [Toolbar actions](#toolbar-actions)                   |
+| Action overflow item                   | view.toolbar.toolbarActions                  | Custom actions added as toolbar overflow items                 | [Toolbar actions](#toolbar-actions)                   |
+| Custom toolbar content                 | view.toolbar.customToolbarContent            | A react node with any type of custom content                   | [Custom toolbar content](#custom-toolbar-content)     |
+
+All interactive toolbar elements except the tooltip are disabled with the prop `view.toolbar.isDisabled`.
+The table search field, filter buttons and row edit button are covered in separate sections related to their respective functionality.
+
+### Data download
+
+The download data button is automatically added to the toolbar when a callback function is added
+to the prop `actions.toolbar.onDownloadCSV`. The function will be passed the current data state
+which includes modifications from filtering, sorting and searching. The actual data transformation
+and creation of a downloadable file has to be handled in the callback for both the StatefulTable and
+the normal Table. An example implementation is shown below:
+
+```jsx
+import fileDownload from 'js-file-download';
+
+...
+
+/**
+ * Helper function to generate a CSV from an array of table cell data
+ * Retrieve the column headers, then match and join the cell values
+ * with each header
+ * @param {Array<string | number>} data from table cells
+ * @return {string} generated csv
+ */
+export const generateCsv = (data) => {
+  let csv = '';
+  // get all headers available and merge it
+  let columnHeaders = [];
+  data.forEach((item) => {
+    columnHeaders = [...columnHeaders, ...Object.keys(item.values)];
+  });
+  columnHeaders = [...new Set(columnHeaders)];
+  csv += `${columnHeaders.join(',')}\n`;
+  data.forEach((item) => {
+    columnHeaders.forEach((arrayHeader) => {
+      // if item is of arrayHeader, add value to csv
+      // isNil will also correct the cases in which the value is 0 or false
+      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
+    });
+    csv += `\n`;
+  });
+
+  return csv;
+};
+
+/**
+ * Helper function to support downloading data as CSV
+ * Retrieve the column headers, then match and join the cell values
+ * with each header. When CSV is fully joined, download the file
+ *
+ * @param {Array<string | number>} data from table cells
+ * @param {string} title file name to be saved as
+ */
+export const csvDownloadHandler = (data, title = 'export') => {
+  const csv = generateCsv(data);
+  const exportedFilename = `${title}.csv`;
+
+  fileDownload(csv, exportedFilename);
+};
+
+return (
+  <Table
+    columns={columns}
+    data={data}
+    actions={toolbar: {onDownloadCSV: (dataToDownload) => csvDownloadHandler(dataToDownload), 'Example download'}}
+  />
+);
+```
+
+### Custom toolbar content
+
+The custom toolbar content can be used to insert any React node into the toolbar. The node will be
+inserted at the end of the row but the placement can be modified using standard CSS. Since this content
+is inserted as a node, any callbacks are defined and handled completely outside the table. An example of
+this is the external component
+[TableViewDropdown](/docs/1-watson-iot-table-user-view-management--with-user-view-management#user-view-management-code-example)
+which is inserted as custom toolbar content to manage different table views. The code example below shows
+how to insert a flyout menu into the toolbar:
+
+```jsx
+import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+...
+
+const flyoutMenu = (
+  <FlyoutMenu
+    direction={FlyoutMenuDirection.BottomEnd}
+    buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
+    iconDescription="Toggle flyout Menu"
+    onApply={()=>{...}}
+    onCancel={()=>{...}}
+  >
+    Example of custom toolbar content inserting a FlyoutMenu
+  </FlyoutMenu>
+);
+
+return (
+  <Table
+    columns={columns}
+    data={data}
+    view={{
+      toolbar: {
+        customToolbarContent: flyoutMenu,
+      },
+    }}
+  />
+);
+```
+
+### Toolbar actions
+
+In addition to the automatically generated toolbar buttons and actions you can add additional actions
+to be triggered by either buttons or overflow menu items. The actions are defined by objects added to
+the prop the `view.toolbar.toolbarActions`. When clicking on an action it will trigger the
+`actions.toolbar.onApplyToolbarAction` callback passing the object used to create the action.
+
+The `isOverflow` prop will force the item to appear in the overflow menu, but by default it will
+appear as another button in the toolbar where a `renderIcon` is mandatory. For the full list of
+toolbar action props see the [View Prop](/docs/1-watson-iot-table--playground#view-prop) section.
+
+If `view.toolbar.toolbarActions` is a function, it can return an array of objects representing the
+toolbarActions and these will be rendered dynamically when the overflow menu is opened. The code
+example below shows how to add both normal action buttons and action items in an overflow menu.
+
+```jsx
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      // Implement your toolbar actions here
+      onApplyToolbarAction: (actionObject) => {...},
+    },
+  }}
+  view={{
+    toolbar: {
+      toolbarActions: [
+        {
+          id: 'edit',
+          labelText: 'Edit',
+          // can be a handful of included icons
+          renderIcon: 'edit',
+          disabled: true,
+          isOverflow: true,
+        },
+        // this item will appear in the toolbar, not the overflow menu, because it doesn't have
+        // isOverflow:true
+        {
+          id: 'toggle',
+          labelText: 'Toggle something',
+          // can be an icon directly from @carbon/icons-react
+          renderIcon: ViewOff16,
+          // force this item to show in an active state
+          isActive: true,
+        },
+        {
+          id: 'delete',
+          labelText: 'Delete',
+          isDelete: true,
+          hasDivider: true,
+          // can be a function
+          renderIcon: () => <TrashCan16 aria-label="Delete" />,
+          isOverflow: true,
+        },
+        {
+          id: 'hidden',
+          labelText: 'Hidden',
+          hidden: true,
+          isOverflow: true,
+        },
+      ],
+    },
+  }}
+/>
+```
