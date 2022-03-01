@@ -200,12 +200,14 @@ const TableBodyRow = ({
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
+  const nestingLevelPixels = nestingLevel * 32;
+
   // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
   const nestingOffset = hasRowNesting?.hasSingleNestedHierarchy
     ? 0
     : hasRowSelection === 'single'
-    ? nestingLevel * 16 - singleSelectionIndicatorWidth
-    : nestingLevel * 16;
+    ? nestingLevelPixels - singleSelectionIndicatorWidth
+    : nestingLevelPixels;
 
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
