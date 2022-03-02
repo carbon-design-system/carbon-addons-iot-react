@@ -178,6 +178,7 @@ const generateOrderedColumnRefs = (ordering) =>
 // This increases the min width of columns when the overflow button and sort is present
 const PADDING_WITH_OVERFLOW = 24;
 const PADDING_WITH_OVERFLOW_AND_SORT = 58;
+const PADDING_WITH_SORT = 24;
 
 const TableHead = ({
   testID,
@@ -495,6 +496,14 @@ const TableHead = ({
               : PADDING_WITH_OVERFLOW
             : 0;
 
+          const paddingWithTooltip = hasOverflow
+            ? matchingColumnMeta.isSortable
+              ? PADDING_WITH_OVERFLOW_AND_SORT
+              : PADDING_WITH_OVERFLOW
+            : matchingColumnMeta.isSortable
+            ? PADDING_WITH_SORT
+            : 0;
+
           const columnBelongsToExistingGroup = columnGroups.some(
             ({ id }) => id === item.columnGroupId
           );
@@ -544,6 +553,9 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
+                tooptipStyle={{
+                  width: currentColumnWidths[matchingColumnMeta.id]?.width - paddingWithTooltip,
+                }}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
