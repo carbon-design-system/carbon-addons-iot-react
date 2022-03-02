@@ -24,28 +24,19 @@ import dayjs from './dayjs';
  * Helper function to generate a CSV from an array of table cell data
  * Retrieve the column headers, then match and join the cell values
  * with each header
- * @param {Array<string | number>} data from table cells
+ * @param {Array<string | number | boolean>} data from table cells
  * @return {string} generated csv
  */
 export const generateCsv = (data) => {
-  let csv = '';
-  // get all headers available and merge it
-  let columnHeaders = [];
-  data.forEach((item) => {
-    columnHeaders = [...columnHeaders, ...Object.keys(item.values)];
-  });
-  columnHeaders = [...new Set(columnHeaders)];
-  csv += `${columnHeaders.join(',')}\n`;
-  data.forEach((item) => {
-    columnHeaders.forEach((arrayHeader) => {
-      // if item is of arrayHeader, add value to csv
-      // isNil will also correct the cases in which the value is 0 or false
-      csv += `${!isNil(item.values[arrayHeader]) ? item.values[arrayHeader] : ''},`;
-    });
-    csv += `\n`;
-  });
+  const allHeadersObj = Object.assign({}, ...data.map((row) => row.values));
+  const columnHeaders = Object.keys(allHeadersObj);
+  const headerRow = `${columnHeaders.join(',')}\n`;
 
-  return csv;
+  return data.reduce((previousCsv, row) => {
+    return columnHeaders.reduce((previousNestedCsv, headerId) => {
+      return `${previousNestedCsv}${row.values[headerId] ?? ''},`;
+    }, `${previousCsv.slice(0, -1)}\n`);
+  }, headerRow);
 };
 
 /**
