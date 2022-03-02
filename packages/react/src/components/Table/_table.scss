@@ -241,7 +241,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 
   &.#{$iot-prefix}--expandable-tablerow--childless,
-  &.#{$iot-prefix}--expandable-tablerow--expanded {
+  &.#{$iot-prefix}--expandable-tablerow--expanded,
+  &.#{$iot-prefix}--expandable-tablerow--last-child {
     td:first-of-type:after {
       content: '';
       position: absolute;
@@ -256,6 +257,22 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   &.#{$iot-prefix}--expandable-tablerow--expanded {
     td:first-of-type:after {
       width: $spacing-08;
+    }
+  }
+
+  &.#{$iot-prefix}--expandable-tablerow--last-child {
+    td:first-of-type:after {
+      left: -($spacing-06);
+      width: $spacing-07;
+      border-bottom-color: $ui-03;
+    }
+  }
+
+  &.#{$iot-prefix}--expandable-tablerow--last-child[data-nesting-offset='32'] {
+    td:first-of-type:after {
+      left: -($spacing-07);
+      width: $spacing-08;
+      border-bottom-color: $ui-03;
     }
   }
 }

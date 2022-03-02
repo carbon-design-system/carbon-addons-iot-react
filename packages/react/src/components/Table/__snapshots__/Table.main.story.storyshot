@@ -30390,14 +30390,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <tr
               className="bx--parent-row iot--expandable-tablerow iot--expandable-tablerow--childless iot--expandable-tablerow--indented"
               data-child-count={0}
-              data-nesting-offset={16}
+              data-nesting-offset={32}
               data-parent-row={true}
               data-row-nesting={true}
               hasRowSelection={false}
               onClick={[Function]}
               style={
                 Object {
-                  "--row-nesting-offset": "16px",
+                  "--row-nesting-offset": "32px",
                 }
               }
             >
@@ -30434,15 +30434,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 align="start"
                 className="data-table-start"
                 data-column="string"
-                data-offset={16}
+                data-offset={32}
                 id="cell-table-33-row-1_A-string"
-                offset={16}
+                offset={32}
               >
                 <span
                   className="iot--table__cell__offset"
                   style={
                     Object {
-                      "--row-nesting-offset": "16px",
+                      "--row-nesting-offset": "32px",
                     }
                   }
                 >
@@ -30667,16 +30667,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="bx--parent-row iot--expandable-tablerow iot--expandable-tablerow--childless iot--expandable-tablerow--indented"
+              className="bx--parent-row iot--expandable-tablerow iot--expandable-tablerow--childless iot--expandable-tablerow--indented iot--expandable-tablerow--last-child"
               data-child-count={0}
-              data-nesting-offset={16}
+              data-nesting-offset={32}
               data-parent-row={true}
               data-row-nesting={true}
               hasRowSelection={false}
               onClick={[Function]}
               style={
                 Object {
-                  "--row-nesting-offset": "16px",
+                  "--row-nesting-offset": "32px",
                 }
               }
             >
@@ -30713,15 +30713,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 align="start"
                 className="data-table-start"
                 data-column="string"
-                data-offset={16}
+                data-offset={32}
                 id="cell-table-33-row-1_B-string"
-                offset={16}
+                offset={32}
               >
                 <span
                   className="iot--table__cell__offset"
                   style={
                     Object {
-                      "--row-nesting-offset": "16px",
+                      "--row-nesting-offset": "32px",
                     }
                   }
                 >

@@ -123,6 +123,9 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+
+  /** True if this is the last child of a nested group */
+  isLastChild: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -152,6 +155,7 @@ const defaultProps = {
   locale: 'en',
   isSelectable: undefined,
   size: undefined,
+  isLastChild: false,
 };
 
 const TableBodyRow = ({
@@ -197,6 +201,7 @@ const TableBodyRow = ({
   singleRowEditButtons,
   showExpanderColumn,
   size,
+  isLastChild,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -381,6 +386,7 @@ const TableBodyRow = ({
           [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           [`${iotPrefix}--expandable-tablerow--singly-selected`]:
             hasRowSelection === 'single' && isSelected,
+          [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
