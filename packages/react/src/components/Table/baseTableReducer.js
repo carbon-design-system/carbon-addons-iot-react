@@ -1,4 +1,5 @@
 import update from 'immutability-helper';
+import { get } from 'lodash-es';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -94,12 +95,14 @@ export const baseTableReducer = (state = {}, action) => {
         },
       });
     case TABLE_SEARCH_APPLY: {
+      const isExpanded = get(state, 'view.toolbar.search.isExpanded');
       return update(state, {
         view: {
           toolbar: {
             search: {
               $set: {
                 defaultValue: action.payload,
+                isExpanded,
               },
             },
           },

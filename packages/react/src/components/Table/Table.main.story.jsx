@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { object, select, boolean } from '@storybook/addon-knobs';
+import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { merge, uniqueId } from 'lodash-es';
 
 import StoryNotice from '../../internal/StoryNotice';
@@ -17,6 +17,8 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import SearchingREADME from './mdx/Searching.mdx';
+import PaginationREADME from './mdx/Pagination.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -100,6 +102,7 @@ export const Playground = () => {
     maxPages,
     isItemPerPageHidden,
     paginationSize,
+    hasOnlyPageData,
     hasRowExpansion,
     hasRowNesting,
     demoHasLoadMore,
@@ -110,6 +113,7 @@ export const Playground = () => {
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
+    searchFieldDefaultExpanded,
     wrapCellText,
     cellTextAlignment,
     preserveCellWhiteSpace,
@@ -130,6 +134,7 @@ export const Playground = () => {
     demoCustomErrorState,
     locale,
     batchActions,
+    searchIsExpanded,
   } = getTableKnobs({
     enableKnob: (name) =>
       // For this story always disable the following knobs by default
@@ -151,6 +156,7 @@ export const Playground = () => {
         'demoEmptyState',
         'demoCustomEmptyState',
         'demoCustomErrorState',
+        'hasOnlyPageData',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -206,7 +212,7 @@ export const Playground = () => {
   const customErrorState = (
     <EmptyState
       icon="error"
-      title="Error occured while loading"
+      title="Error occurred while loading"
       body="Custom Error message"
       action={{
         label: 'Reload',
@@ -291,7 +297,8 @@ export const Playground = () => {
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
-  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}`;
+  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
+  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
 
   return (
     <DragAndDrop>
@@ -316,6 +323,7 @@ export const Playground = () => {
           hasAdvancedFilter,
           hasMultiSort,
           hasPagination,
+          hasOnlyPageData,
           hasResize,
           hasRowExpansion,
           hasRowNesting,
@@ -345,6 +353,10 @@ export const Playground = () => {
             toolbarActions,
             rowEditBarButtons,
             batchActions,
+            search: {
+              defaultExpanded: searchFieldDefaultExpanded,
+              isExpanded: searchIsExpanded,
+            },
           },
           table: {
             emptyState,
@@ -424,6 +436,67 @@ WithSorting.parameters = {
   component: Table,
   docs: {
     page: SortingREADME,
+  },
+};
+
+export const WithSearching = () => {
+  const {
+    selectedTableType,
+    hasSearch,
+    hasFastSearch,
+    searchFieldDefaultExpanded,
+    searchIsExpanded,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasSearch',
+      'hasFastSearch',
+      'searchFieldDefaultExpanded',
+      'searchIsExpanded',
+    ],
+    enableKnob: (name) => name !== 'searchFieldDefaultExpanded' && name !== 'searchIsExpanded',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns();
+
+  const defaultValue = text(
+    'Default search value controlled by the app (view.toolbar.search.defaultValue)',
+    'helping'
+  );
+
+  const knobRegeneratedKey = `${searchFieldDefaultExpanded}${searchIsExpanded}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasSearch,
+        hasFastSearch,
+      }}
+      view={{
+        toolbar: {
+          search: {
+            defaultValue,
+            defaultExpanded: searchFieldDefaultExpanded,
+            isExpanded: searchIsExpanded,
+            onExpand: action('onExpand'),
+          },
+        },
+      }}
+    />
+  );
+};
+
+WithSearching.storyName = 'With searching';
+WithSearching.parameters = {
+  component: Table,
+  docs: {
+    page: SearchingREADME,
   },
 };
 
@@ -691,7 +764,7 @@ export const WithSelectionAndBatchActions = () => {
 
   const isStateful = selectedTableType === 'StatefulTable';
   const isMultiSelect = hasRowSelection === 'multi';
-  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'} 
+  const selectdIdsDescription = `${isStateful ? 'Initially selected' : 'Selected'}
     id${isMultiSelect ? 's' : ''} (view.table.selectedIds)`;
   const selectedIds =
     hasRowSelection === 'multi'
@@ -794,5 +867,66 @@ WithInlineActions.parameters = {
   component: Table,
   docs: {
     page: InlineActionsREADME,
+  },
+};
+
+export const WithPagination = () => {
+  const {
+    selectedTableType,
+    hasPagination,
+    pageSizes,
+    maxPages,
+    isItemPerPageHidden,
+    paginationSize,
+    hasOnlyPageData,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasPagination',
+      'pageSizes',
+      'maxPages',
+      'isItemPerPageHidden',
+      'paginationSize',
+      'hasOnlyPageData',
+    ],
+    enableKnob: (name) => name !== 'hasOnlyPageData' && name !== 'isItemPerPageHidden',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData();
+  const columns = getTableColumns();
+
+  const pageSize = select('Selected pageSize (view.pagination.pageSize)', pageSizes, 10);
+  const page = number('Current page (view.pagination.page)', 1);
+  const totalItems = number('Total items in data prop (view.pagination.totalItems)', data.length);
+
+  const knobRegeneratedKey = `table${isItemPerPageHidden}${maxPages}${paginationSize}${pageSize}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{ hasPagination, hasOnlyPageData }}
+      view={{
+        pagination: {
+          page,
+          pageSize,
+          pageSizes,
+          totalItems,
+          maxPages,
+          isItemPerPageHidden,
+          size: paginationSize,
+        },
+      }}
+    />
+  );
+};
+WithPagination.storyName = 'With pagination';
+WithPagination.parameters = {
+  component: Table,
+  docs: {
+    page: PaginationREADME,
   },
 };

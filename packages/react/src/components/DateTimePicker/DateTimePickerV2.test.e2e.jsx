@@ -1,17 +1,25 @@
 import React from 'react';
 import { mount } from '@cypress/react';
+import { onlyOn } from '@cypress/skip-test';
+import MockDate from 'mockdate';
 
+import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
 import { INTERVAL_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
-import DateTimePickerV2 from './DateTimePickerV2';
+import DateTimePicker from './DateTimePickerV2';
+
+const { iotPrefix } = settings;
 
 describe('DateTimePickerV2', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
   it('should pick a new absolute ranges', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
-      <DateTimePickerV2
+      <DateTimePicker
         onApply={onApply}
         onCancel={onCancel}
         id="picker-test"
@@ -35,6 +43,7 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findAllByLabelText('Increment hours').eq(0).click();
+    cy.findByLabelText('End time').type('{backspace}{backspace}{backspace}{backspace}{backspace}');
     cy.findByLabelText('End time').type('12:34');
     cy.findByText('Apply')
       .click()
@@ -47,19 +56,19 @@ describe('DateTimePickerV2', () => {
             endTime: '12:34',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
-            startTime: '01:00',
-            humanValue: '2021-08-06 01:00 to 2021-08-08 12:34',
-            tooltipValue: '',
+            startTime: '13:34',
+            humanValue: '2021-08-06 13:34 to 2021-08-08 12:34',
+            tooltipValue: '2021-08-06 13:34 to 2021-08-08 12:34',
           },
         });
       });
   });
 
   it('should disable apply button when relative TimePickerSpinner input is invalid ', () => {
-    const { i18n } = DateTimePickerV2.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     const onApply = cy.stub();
     const onCancel = cy.stub();
-    mount(<DateTimePickerV2 onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput />);
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput />);
 
     cy.findAllByLabelText('Calendar').eq(0).click();
     cy.findByText('Custom Range').click();
@@ -75,11 +84,11 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner inputs are invalid ', () => {
-    const { i18n } = DateTimePickerV2.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
-      <DateTimePickerV2
+      <DateTimePicker
         onApply={onApply}
         onCancel={onCancel}
         id="picker-test"
@@ -123,7 +132,7 @@ describe('DateTimePickerV2', () => {
     const onCancel = cy.stub();
     mount(
       <div style={{ width: '600px', padding: '3rem', marginLeft: '300px' }}>
-        <DateTimePickerV2
+        <DateTimePicker
           onApply={onApply}
           onCancel={onCancel}
           id="picker-test"
@@ -154,7 +163,7 @@ describe('DateTimePickerV2', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
-      <DateTimePickerV2
+      <DateTimePicker
         onApply={onApply}
         onCancel={onCancel}
         id="picker-test"
@@ -190,7 +199,7 @@ describe('DateTimePickerV2', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
-      <DateTimePickerV2
+      <DateTimePicker
         onApply={onApply}
         onCancel={onCancel}
         id="picker-test"
@@ -206,6 +215,7 @@ describe('DateTimePickerV2', () => {
     );
 
     cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByLabelText('Increment number').click();
     cy.findByPlaceholderText('hh:mm').should('be.visible').type('12:04');
     cy.findByRole('button', { name: 'Apply' })
       .click()
@@ -213,17 +223,210 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.have.been.calledWith({
           timeRangeKind: PICKER_KINDS.RELATIVE,
           timeRangeValue: {
+            lastNumber: 1,
             relativeToWhen: INTERVAL_VALUES.MINUTES,
             relativeToTime: '12:04',
             end: Cypress.sinon.match.any,
             start: Cypress.sinon.match.any,
             humanValue: Cypress.sinon.match((value) => {
-              return value.includes('Invalid Date') && value.includes('12:04');
+              return value.includes('12:04');
             }),
-            tooltipValue: '',
+            tooltipValue: Cypress.sinon.match((value) => {
+              return value.includes('12:04');
+            }),
           },
         });
       });
+  });
+
+  it('should be able to navigate by keyboard', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible');
+    cy.get('body').realPress('Tab');
+    cy.findByRole('dialog').should('be.visible');
+    cy.findByRole('button', { name: /2021-08-01 12:34 to 2021-08-06 10:49/ })
+      .should('be.focused')
+      .type('{enter}');
+    cy.findByText('Custom range').should('be.visible');
+    cy.findByText('August').should('be.visible');
+    cy.findByLabelText('Year').should('have.value', '2021');
+    // this _should_ tab from the input to the absolute label, but unfortunately it doesn't in the test
+    // because the `tab()` call is still experimental, so manually focus it instead to mimic the
+    // behavior in the browser.
+    // cy.focused().realPress('Tab')
+    cy.findByLabelText('Absolute').focus().should('be.focused').type('{leftarrow}');
+    cy.findByText('Relative to').should('be.visible');
+    cy.findByLabelText('Relative').focus().should('be.focused').type('{rightarrow}');
+    cy.findByLabelText('Absolute').should('be.focused');
+    cy.findByText('Custom range').should('be.visible');
+    cy.findByLabelText('Absolute').should('be.focused').realPress('Tab');
+    cy.focused().invoke('attr', 'id').should('eq', 'picker-test-date-picker-input-start');
+    cy.focused().type('{downarrow}{downarrow}{enter}');
+    cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
+    cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
+    cy.focused().realPress('Tab').realPress('Tab');
+    cy.findByLabelText('Start time')
+      .should('be.focused')
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}11:35');
+    cy.focused().realPress('Tab');
+    cy.findAllByTitle('Increment hours').eq(0).should('be.focused');
+    cy.focused().realPress('Tab');
+    cy.findAllByTitle('Decrement hours').eq(0).should('be.focused');
+    cy.focused().realPress('Tab');
+    cy.findByLabelText('End time')
+      .should('be.focused')
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}12:39');
+    cy.focused().realPress('Tab');
+    cy.findAllByTitle('Increment hours').eq(1).should('be.focused');
+    cy.focused().realPress('Tab');
+    cy.findAllByTitle('Decrement hours').eq(1).should('be.focused');
+    cy.focused().realPress('Tab');
+    cy.focused().should('contain.text', 'Back');
+    cy.focused().realPress('Tab');
+    cy.focused()
+      .should('contain.text', 'Apply')
+      .type('{enter}')
+      .should(() => {
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'ABSOLUTE',
+          timeRangeValue: {
+            end: Cypress.sinon.match.any,
+            endDate: '08/13/2021',
+            endTime: '12:39',
+            humanValue: '2021-08-06 11:35 to 2021-08-13 12:39',
+            start: Cypress.sinon.match.any,
+            startDate: '08/06/2021',
+            startTime: '11:35',
+            tooltipValue: '2021-08-06 11:35 to 2021-08-13 12:39',
+          },
+        });
+      });
+  });
+
+  it('should be able to navigate the preset list with a keyboard', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findAllByRole('button', { name: 'Last 30 minutes' }).eq(0).click();
+    cy.findByText('Custom Range').should('be.visible');
+    // add the focus() call because cypress loses it too easily
+    // and the type command will call click to re-gain focus which
+    // actually causes the picker to close. :-\
+    cy.findAllByRole('button', { name: /Last 30 minutes/ })
+      .focus()
+      .type('{downarrow}', { force: true });
+    cy.findByText('Custom Range').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findAllByText('Last 30 minutes').eq(1).should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 1 hour').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 6 hours').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 12 hours').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 24 hours').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Custom Range').should('be.focused');
+    cy.focused().type('{uparrow}');
+    cy.findByText('Last 24 hours').should('be.focused');
+    cy.focused().type('{uparrow}');
+    cy.findByText('Last 12 hours').should('be.focused');
+    cy.focused().type('{leftarrow}');
+    cy.findByText('Last 12 hours').should('be.focused');
+    cy.focused().type('{rightarrow}');
+    cy.findByText('Last 12 hours').should('be.focused');
+    cy.focused().type('{uparrow}');
+    cy.findByText('Last 6 hours')
+      .should('be.focused')
+      .type('{enter}')
+      .should('have.class', `${iotPrefix}--date-time-picker__listitem--preset-selected`);
+    // tab to the apply button
+    cy.focused().realPress('Tab').realPress('Tab').realPress('Tab').realPress('Tab');
+    cy.focused().should('contain.text', 'Apply');
+    cy.findByText('Apply')
+      .focus()
+      .type('{enter}')
+      .should(() => {
+        // the calendar in Flatpickr does not respect MockDate or cy.clock, so we must resort to using
+        // the current date, but picking specific ranges to test and format the dynamic output as expected
+        const now = dayjs();
+        const lastSixHours = now.subtract(6, 'hours');
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'PRESET',
+          timeRangeValue: {
+            id: 'item-03',
+            label: 'Last 6 hours',
+            offset: 360,
+            tooltipValue: `${lastSixHours.format('YYYY-MM-DD HH:mm')} to Now`,
+          },
+        });
+      });
+  });
+
+  it('should close when `Escape` is pressed', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.get('body').realPress('Tab');
+    cy.focused().type('{enter}');
+    cy.findByText('Last 12 hours').should('be.visible');
+    cy.focused().type('{esc}');
+    cy.findByText('Last 12 hours').should('not.exist');
+  });
+
+  it("should do nothing when `ArrowDown` is pressed if it isn't open.", () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.get('body').realPress('Tab');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 12 hours').should('not.exist');
+  });
+
+  it("should do nothing when `ArrowDown` is pressed if it's not a custom range", () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 20,
+            lastInterval: 'MINUTES',
+            relativeToWhen: 'TODAY',
+            relativeToTime: '13:30',
+          },
+        }}
+      />
+    );
+
+    cy.get('body').realPress('Tab');
+    cy.focused().click().type('{downarrow}');
+    cy.findAllByRole('button').eq(0).should('be.focused');
   });
 
   it('should pick ranges across months', () => {
@@ -236,12 +439,7 @@ describe('DateTimePickerV2', () => {
     const lastMonth = now.subtract(1, 'month');
     const lastMonthLabel = lastMonth.format(`MMMM [20], YYYY`);
     mount(
-      <DateTimePickerV2
-        onApply={onApply}
-        onCancel={onCancel}
-        id="picker-test"
-        hasTimeInput={false}
-      />
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput={false} />
     );
 
     cy.findByRole('button', { name: 'Last 30 minutes' }).should('be.visible').click();
@@ -268,9 +466,50 @@ describe('DateTimePickerV2', () => {
             humanValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
               'YYYY-MM-[12]'
             )} 00:00`,
-            tooltipValue: '',
+            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
+              'YYYY-MM-[12]'
+            )} 00:00`,
           },
         });
       });
+  });
+
+  describe('visual regression tests', () => {
+    beforeEach(() => {
+      MockDate.set(1537538254000);
+    });
+    afterEach(() => {
+      MockDate.reset();
+    });
+
+    it('should position the flyout menu correctly in RTL', () => {
+      cy.window().then((win) => {
+        win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+      });
+      mount(
+        <div style={{ padding: '1rem' }}>
+          <DateTimePicker id="picker-test" hasIconOnly menuOffset={{ top: 0, left: -1 }} />
+        </div>
+      );
+      cy.findByTestId('date-time-picker').click();
+      onlyOn('headless', () => {
+        cy.compareSnapshot('v2-icon-only-rtl');
+      });
+    });
+
+    it('should position the flyout menu correctly in RTL with icon only', () => {
+      cy.window().then((win) => {
+        win.document.querySelectorAll('html')[0].setAttribute('dir', 'rtl');
+      });
+      mount(
+        <div style={{ padding: '1rem' }}>
+          <DateTimePicker id="picker-test" menuOffset={{ top: 0, left: 287 }} />
+        </div>
+      );
+      cy.findByTestId('date-time-picker').click();
+      onlyOn('headless', () => {
+        cy.compareSnapshot('v2-rtl');
+      });
+    });
   });
 });

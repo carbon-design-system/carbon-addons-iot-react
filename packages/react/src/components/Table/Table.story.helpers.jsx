@@ -758,6 +758,11 @@ export const getAdvancedFilters = () => [
   },
 ];
 
+const getParsedIntOrUndefined = (value) => {
+  const parsedValue = Number.parseInt(value, 10);
+  return Number.isNaN(parsedValue) ? undefined : parsedValue;
+};
+
 /**
  * Helper function that Table knobs.
  *
@@ -890,6 +895,20 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
           SEARCH_GROUP
         )
       : null,
+    searchFieldDefaultExpanded: shouldCreate('searchFieldDefaultExpanded')
+      ? boolean(
+          'Expand search field by default on initialization (view.toolbar.search.defaultExpanded)',
+          enableKnob('searchFieldDefaultExpanded'),
+          SEARCH_GROUP
+        )
+      : null,
+    searchIsExpanded: shouldCreate('searchIsExpanded')
+      ? boolean(
+          'Force the toolbar search field to always be expanded (view.toolbar.search.isExpanded)',
+          false,
+          SEARCH_GROUP
+        )
+      : null,
 
     // AGGREGATION_GROUP
     hasAggregations: shouldCreate('hasAggregations')
@@ -932,10 +951,11 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
         )
       : null,
     maxPages: shouldCreate('maxPages')
-      ? parseInt(
+      ? getParsedIntOrUndefined(
+          // use text knob and string instead of number since number() does not work with knob groups
           text(
             'Upper limit for number of pages (view.pagination.maxPages)',
-            '100', // use text and string instead of number since number() does not work with knob groups
+            undefined,
             PAGINATION_GROUP
           ),
           10

@@ -1608,15 +1608,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
@@ -1759,15 +1763,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
