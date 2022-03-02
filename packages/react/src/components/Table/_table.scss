@@ -190,6 +190,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   left: var(--row-nesting-offset);
   max-width: calc(100% - var(--row-nesting-offset));
   display: block;
+
+  [dir='rtl'] & {
+    left: unset;
+    right: var(--row-nesting-offset);
+  }
 }
 
 .#{$iot-prefix}--expanded-tablerow {
@@ -213,6 +218,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     position: relative;
     left: var(--row-nesting-offset);
     border-bottom: 1px solid $ui-01;
+
+    [dir='rtl'] & {
+      left: unset;
+      right: var(--row-nesting-offset);
+    }
   }
 
   td:first-of-type {
@@ -228,6 +238,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       background-color: $ui-01;
       border-right: solid 1px $ui-01;
       border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: calc(-1 * var(--row-nesting-offset));
+      }
     }
 
     // add a white bottom-border to mask the existing rows border to get all the nested row borders
@@ -240,6 +255,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       bottom: -1px;
       width: $spacing-03;
       border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: 0;
+      }
     }
   }
 
@@ -256,6 +276,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       bottom: -1px;
       width: $spacing-03;
       border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: 0;
+      }
     }
   }
 
@@ -275,6 +300,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       left: -($spacing-06);
       width: $spacing-07;
       border-bottom-color: $ui-03;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: -($spacing-06);
+      }
     }
   }
 
@@ -285,6 +315,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       left: -($spacing-07);
       width: $spacing-08;
       border-bottom-color: $ui-03;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: -($spacing-07);
+      }
     }
   }
 }
