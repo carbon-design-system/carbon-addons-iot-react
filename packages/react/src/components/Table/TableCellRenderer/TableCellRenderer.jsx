@@ -29,7 +29,7 @@ const propTypes = {
   /** use white-space: pre; css when true */
   preserveCellWhiteSpace: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
-  tooptipStyle: PropTypes.object,
+  tooltipStyle: PropTypes.object,
 };
 
 const defaultProps = {
@@ -72,7 +72,7 @@ const TableCellRenderer = ({
   isFilterable,
   filterFunction,
   preserveCellWhiteSpace,
-  tooptipStyle,
+  tooltipStyle,
 }) => {
   const mySpanRef = React.createRef();
   const myClasses = classnames({
@@ -90,7 +90,7 @@ const TableCellRenderer = ({
         tooltipText={tooltipForExtraInformation}
         id="table-header-tooltip"
       >
-        <div style={tooptipStyle}>{element}</div>
+        <div style={tooltipStyle}>{element}</div>
       </TooltipDefinition>
     ) : (
       <Tooltip

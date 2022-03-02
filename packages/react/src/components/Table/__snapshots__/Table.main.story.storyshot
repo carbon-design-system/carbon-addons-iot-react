@@ -18106,11 +18106,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     onFocus={[Function]}
                     type="button"
                   >
-                    <span
-                      className=""
+                    <div
+                      style={
+                        Object {
+                          "width": NaN,
+                        }
+                      }
                     >
-                      Object Id
-                    </span>
+                      <span
+                        className=""
+                      >
+                        Object Id
+                      </span>
+                    </div>
                   </button>
                   <span
                     className="bx--assistive-text"
@@ -35279,11 +35287,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       onFocus={[Function]}
                       type="button"
                     >
-                      <span
-                        className=""
+                      <div
+                        style={
+                          Object {
+                            "width": NaN,
+                          }
+                        }
                       >
-                        Status
-                      </span>
+                        <span
+                          className=""
+                        >
+                          Status
+                        </span>
+                      </div>
                     </button>
                     <span
                       className="bx--assistive-text"
@@ -35547,11 +35563,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       onFocus={[Function]}
                       type="button"
                     >
-                      <span
-                        className=""
+                      <div
+                        style={
+                          Object {
+                            "width": NaN,
+                          }
+                        }
                       >
-                        Object Id
-                      </span>
+                        <span
+                          className=""
+                        >
+                          Object Id
+                        </span>
+                      </div>
                     </button>
                     <span
                       className="bx--assistive-text"

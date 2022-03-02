@@ -497,10 +497,10 @@ const TableHead = ({
             : 0;
 
           const paddingWithTooltip = hasOverflow
-            ? matchingColumnMeta.isSortable
+            ? matchingColumnMeta?.isSortable
               ? PADDING_WITH_OVERFLOW_AND_SORT
               : PADDING_WITH_OVERFLOW
-            : matchingColumnMeta.isSortable
+            : matchingColumnMeta?.isSortable
             ? PADDING_WITH_SORT
             : 0;
 
@@ -553,7 +553,7 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
-                tooptipStyle={{
+                tooltipStyle={{
                   width: currentColumnWidths[matchingColumnMeta.id]?.width - paddingWithTooltip,
                 }}
               >
