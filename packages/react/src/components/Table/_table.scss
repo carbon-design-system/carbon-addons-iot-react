@@ -216,6 +216,7 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 
   td:first-of-type {
+    // add a white indention block to create space on the left-side of nested rows.
     &:before {
       content: '';
       position: absolute;
@@ -229,6 +230,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
       border-bottom: solid 1px $ui-01;
     }
 
+    // add a white bottom-border to mask the existing rows border to get all the nested row borders
+    // to align properly.
     &:after {
       content: '';
       position: absolute;
@@ -240,6 +243,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
 
+  // using an :after pseudo-element we pad the bottom borders of nested rows
+  // so that the bottom border all align for siblings
   &.#{$iot-prefix}--expandable-tablerow--childless,
   &.#{$iot-prefix}--expandable-tablerow--expanded,
   &.#{$iot-prefix}--expandable-tablerow--last-child {
@@ -254,12 +259,17 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
 
+  // and if one of these siblings (above) is expanded, we need to lengthen that border in white to
+  // cover up the bottom border of the row and to visually show that row is expanded. ie. the border
+  // doesn't interfere with the open space between the parent and the children.
   &.#{$iot-prefix}--expandable-tablerow--expanded {
     td:first-of-type:after {
       width: $spacing-08;
     }
   }
 
+  // the last child in a nested group needs to extend the bottom border to the left, so that it
+  // aligns with the borders of the parent above it.
   &.#{$iot-prefix}--expandable-tablerow--last-child {
     td:first-of-type:after {
       left: -($spacing-06);
@@ -268,6 +278,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     }
   }
 
+  // the last child of a one-level indention row needs a little more width
+  // to position the after element correctly and close up the bottom border
   &.#{$iot-prefix}--expandable-tablerow--last-child[data-nesting-offset='32'] {
     td:first-of-type:after {
       left: -($spacing-07);
