@@ -40,7 +40,6 @@ export const generateCsv = (data) => {
     }, previousCsv);
   }, headerRow);
 
-  // return csv.replace(/,$/, '\n');
 };
 
 /**
