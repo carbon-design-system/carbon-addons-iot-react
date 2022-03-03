@@ -130,7 +130,7 @@ complexModel.setData([
     new TableItem({ data: 'd312' }),
     new TableItem({ data: 'd41' }),
     new TableItem({ data: 'd422' }),
-  ]
+  ],
 ]);
 
 emptyDataModel.setHeader([
