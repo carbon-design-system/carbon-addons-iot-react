@@ -31,12 +31,16 @@ export const generateCsv = (data) => {
   const allHeadersObj = Object.assign({}, ...data.map((row) => row.values));
   const columnHeaders = Object.keys(allHeadersObj);
   const headerRow = `${columnHeaders.join(',')}\n`;
+  const lastColumnId = columnHeaders.slice(-1)[0];
 
   return data.reduce((previousCsv, row) => {
     return columnHeaders.reduce((previousNestedCsv, headerId) => {
-      return `${previousNestedCsv}${row.values[headerId] ?? ''},`;
-    }, `${previousCsv.slice(0, -1)}\n`);
+      const separator = headerId === lastColumnId ? '\n' : ',';
+      return `${previousNestedCsv}${row.values[headerId] ?? ''}${separator}`;
+    }, previousCsv);
   }, headerRow);
+
+  // return csv.replace(/,$/, '\n');
 };
 
 /**
