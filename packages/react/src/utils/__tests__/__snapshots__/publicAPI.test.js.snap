@@ -6727,6 +6727,7 @@ Map {
       ],
       "light": false,
       "locale": "en",
+      "menuOffset": undefined,
       "onApply": null,
       "onCancel": null,
       "presets": Array [
@@ -7061,6 +7062,19 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "menuOffset": Object {
+        "args": Array [
+          Object {
+            "left": Object {
+              "type": "number",
+            },
+            "top": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "onApply": Object {
         "type": "func",

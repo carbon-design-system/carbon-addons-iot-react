@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.17...v2.149.0-next.18) (2022-03-02)
+
+
+### Bug Fixes
+
+* **date-time-picker:** rtl issues ([d9ede7d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9ede7d3c87dd213868633f098cd78f4cf3d7015))
+* **time-picker-spinner:** positioning of buttons when invalid ([fa4df07](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa4df07e74e77017ca709ec183001ac0f21b2fa9))
+
+
+
+
+
+# [2.149.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.16...v2.149.0-next.17) (2022-02-28)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.15...v2.149.0-next.16) (2022-02-28)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.149.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.14...v2.149.0-next.15) (2022-02-28)
 
 **Note:** Version bump only for package ibm-ai-applications
