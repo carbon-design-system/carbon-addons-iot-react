@@ -10,6 +10,9 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [Handling the sort event](#handling-the-sort-event)
   - [Custom sorting](#custom-sorting)
   - [Multi-sorting](#multi-sorting)
+- [Searching](#searching)
+  - [Simple search code example](#simple-search-code-example)
+  - [Programmatic search](#programmatic-search)
 - [Row expansion](#row-expansion)
   - [Programmatic expansion](#programmatic-expansion)
   - [Additional configuration](#additional-configuration)
@@ -17,13 +20,21 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [Row nesting code example](#row-nesting-code-example)
   - [Handling the onRowExpanded event](#handling-the-onrowexpanded-event)
   - [Load more child rows](#load-more-child-rows)
-- [Selection](#selection)
-  - [Programmatic selection](#programmatic-selection)
+- [Selection and batch actions](#selection-and-batch-actions)
+  - [Selections](#selections)
+  - [Batch actions](#batch-actions)
+  - [Programmatic selection and batch actions](#programmatic-selection-and-batch-actions)
+- [Inline actions](#inline-actions)
+  - [Handling the onApplyRowAction event](#handling-the-onapplyrowaction-event)
 - [Filtering](#filtering)
   - [Simple Filtering](#simple-filtering)
+    - [The column filter prop](#the-column-filter-prop)
+    - [Programmatic filtering](#programmatic-filtering)
   - [☢️ Advanced Filtering Experimental](#%EF%B8%8F-advanced-filtering-experimental)
 - [Pagination](#pagination)
-- [Batch actions](#batch-actions)
+  - [Pagination code example](#pagination-code-example)
+  - [Dealing with large data sets](#dealing-with-large-data-sets)
+  - [Handling the onChangePage event](#handling-the-onchangepage-event)
 - [Toolbar actions](#toolbar-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
@@ -330,6 +341,10 @@ import Sorting from './Sorting.mdx';
 
 <Sorting />
 
+import Searching from './Searching.mdx';
+
+<Searching />
+
 import RowExpansion from './RowExpansion.mdx';
 
 <RowExpansion />
@@ -338,428 +353,21 @@ import RowNesting from './RowNesting.mdx';
 
 <RowNesting />
 
-## Selection
+import SelectionAndBatchActions from './SelectionAndBatchActions.mdx';
 
-The `Table` component supports row selection when using the options.hasRowSelection prop. It can be set to 'single' for single row selection or 'multi' for multiple row selection.
+<SelectionAndBatchActions />
 
-```jsx
-<Table
-  id="table"
-  columns={columns}
-  data={data}
-  actions={{
-    table: {
-      onRowClicked: (rowId: string) => {},
-      onRowSelected: (rowId: string, selected: boolean, selectedIds: array) => {},
-    },
-  }}
-  options={{
-    hasRowSelection: 'single' | 'multi',
-  }}
-  view={{
-    table: {
-      selectedIds: ['row-4'],
-    },
-  }}
-/>
-```
+import InlineActions from './InlineActions.mdx';
 
-#### Programmatic selection
+<InlineActions />
 
-You can pass which rows are currently selected through the view.table.selectedIds prop. This prop takes an array of selected row ids.
+import Filtering from './Filtering.mdx';
 
-## Filtering
+<Filtering />
 
-### Simple Filtering
+import Pagination from './Pagination.mdx';
 
-Simple filtering in a `Table` is provided through the `options.hasFilter=true` prop and the `view.toolbar.activeBar='filter'` prop. You set set the current filters by supplying the `view.filters` prop as an array of object with a columnId and a value key. The objects in the `columns` array must also be given a `filter` prop that defines the input `placeholderText` and, if needed, an `options` prop for a combobox filter.
-
-```jsx
-<Table
-  id="table"
-  columns={[
-    {
-      id: 'string',
-      name: 'String',
-      filter: { placeholderText: 'enter a string' },
-    },
-    {
-      id: 'select',
-      name: 'Select',
-      filter: { placeholderText: 'pick an option',
-        options: [
-          {
-            id: 'option-A',
-            text: 'option-A',
-          },
-          {
-            id: 'option-B',
-            text: 'option-B',
-          },
-        ]
-      },
-    },
-  ]}
-  data={data}
-  actions={{
-    toolbar: {
-      /** filters is an object in the form of: {[columnId: string]: string} */
-      onApplyFilter: (filters) => {}
-      /** event is the onClick event */
-      onToggleFilter: (event) => {},
-      /** event is the onClick event */
-      onClearAllFilters: (event) => {}
-    },
-  }}
-  options={{
-    hasFilter: true,
-  }}
-  view={{
-    filters: [
-      {
-        columnId: 'string',
-        value: 'whiteboard',
-      },
-      {
-        columnId: 'select',
-        value: 'option-B',
-      },
-    ],
-    toolbar: {
-      activeBar: 'filter',
-    },
-  }}
-/>
-```
-
-### ☢️ Advanced Filtering (Experimental)
-
-Advanced filtering is experimental and may be subject to change, so it's usage in production is discouraged, but it can be enabled by passing the `options.hasAdvancedFilters=true`. The advanced filters are created with the `RuleBuilder` component (also experimental), and are passed to the table via the `view.advancedFilters` prop. The currently selected advanced filters are passed via the `view.selectedAdvancedFilterIds` as an array of advanced filter ids. Opening the advanced filter flyout is managed via the `view.toolbar.advancedFilterFlyoutOpen=true` prop. Advanced filtering also includes simple filtering, and can be passed with the same `view.filters` prop as an array of objects with a columnId and value key.
-
-```jsx
-<Table
-    options={{
-      hasAdvancedFilter: true,
-    }}
-    actions={{
-      toolbar: {
-        /** filters is an object in the form of: {[columnId: string]: string} */
-        onApplyFilter: (filters) => {}
-        /** event is the onClick event */
-        onToggleFilter: (event) => {},
-        /** event is the onClick event */
-        onClearAllFilters: (event) => {}
-        /** used to cancel and changes made in the flyout and revert to previous state */
-        onCancelAdvancedFilter: () => {},
-        /** event is the onClick event, advFilterId is the string id of the filter being removed */
-        onRemoveAdvancedFilter: (event, advFilterId) => {},
-        /** event is the onClick event. Can be used to display a RuleBuilder component to create new advanced rules */
-        onCreateAdvancedFilter: (event) => {},
-        /** filters is an object in the form of: {selectedItems: [advancedFilter]} */
-        onChangeAdvancedFilter: (filters) => {},
-        /** filters is an object in the form of
-         * {
-         *   advanced: [
-         *     'advanced-filter-id-1',
-         *     'advanced-filter-id-2'
-         *   ],
-         *   simple: {
-         *     [columnId]: 'value'
-         *   }
-         * }
-         */
-        onApplyAdvancedFilter: (filters) => {},
-        /** used to show/hide the advancedFilterFlyout */
-        onToggleAdvancedFilter: () => {},
-      }
-    }}
-    view={{
-      advancedFilters: [
-        {
-          filterAccess: [
-            {
-              access: 'edit',
-              email: 'example@pal.com',
-              name: 'Example User',
-              username: 'Example-User'
-            },
-            {
-              access: 'read',
-              email: 'other@pal.com',
-              name: 'Other User',
-              username: 'Other-User'
-            }
-          ],
-          filterColumns: [
-            {
-              filter: {
-                placeholderText: 'enter a string'
-              },
-              id: 'string',
-              name: 'String'
-            },
-            {
-              filter: {
-                placeholderText: 'enter a date'
-              },
-              id: 'date',
-              name: 'Date'
-            },
-            {
-              filter: {
-                options: [
-                  {
-                    id: 'option-A',
-                    text: 'option-A'
-                  },
-                  {
-                    id: 'option-B',
-                    text: 'option-B'
-                  },
-                  {
-                    id: 'option-C',
-                    text: 'option-C'
-                  },
-                  {
-                    id: 'option-D',
-                    text: 'option-D'
-                  },
-                  {
-                    id: 'option-E',
-                    text: 'option-E'
-                  },
-                  {
-                    id: 'option-F',
-                    text: 'option-F'
-                  }
-                ],
-                placeholderText: 'pick an option'
-              },
-              id: 'select',
-              name: 'Select'
-            },
-            {
-              id: 'secretField',
-              name: 'Secret Information'
-            },
-            {
-              id: 'status',
-              name: 'Status',
-              renderDataFunction: function E(){},
-              sortFunction: function E(){}
-            },
-            {
-              filter: {
-                placeholderText: 'enter a number'
-              },
-              id: 'number',
-              name: 'Number'
-            },
-            {
-              filter: {
-                placeholderText: 'true or false'
-              },
-              id: 'boolean',
-              name: 'Boolean'
-            },
-            {
-              id: 'node',
-              name: 'React Node'
-            }
-          ],
-          filterId: 'example-advanced-filter',
-          filterMetaText: 'last updated: 2021-03-11 15:34:01',
-          filterRules: {
-            groupLogic: 'ALL',
-            id: '14p5ho3pcu',
-            rules: [
-              {
-                columnId: 'select',
-                id: 'rsiru4rjba',
-                operand: 'EQ',
-                value: 'option-C'
-              },
-              {
-                columnId: 'boolean',
-                id: '34bvyub9jq',
-                operand: 'EQ',
-                value: 'false'
-              }
-            ]
-          },
-          filterTags: [
-            'fav',
-            'other-tag'
-          ],
-          filterTitleText: 'Example Advanced Filter',
-          filterUsers: [
-            {
-              groups: [
-                {
-                  id: 'team-a',
-                  name: 'Team A',
-                  users: [
-                    {
-                      email: 'tpeck@pal.com',
-                      name: 'Templeton Peck',
-                      username: '@tpeck'
-                    },
-                    {
-                      email: 'jsmith@pal.com',
-                      name: 'John Smith',
-                      username: '@jsmith'
-                    }
-                  ]
-                }
-              ],
-              id: 'teams',
-              name: 'Teams'
-            },
-            {
-              email: 'example@pal.com',
-              name: 'Example User',
-              username: 'Example-User'
-            },
-            {
-              email: 'test@pal.com',
-              name: 'Test User',
-              username: 'Test-User'
-            },
-            {
-              email: 'other@pal.com',
-              name: 'Other User',
-              username: 'Other-User'
-            }
-          ]
-        }
-      ],
-      filters: [
-        {
-          columnId: 'string',
-          value: 'whiteboard'
-        },
-        {
-          columnId: 'select',
-          value: 'option-B'
-        }
-      ],
-      selectedAdvancedFilterIds: [
-        'example-advanced-filter'
-      ],
-      toolbar: {
-        advancedFilterFlyoutOpen: true
-      }
-    }}
-/>
-```
-
-## Pagination
-
-Pagination is controlled through the `options.hasPagination` prop combined with the `view.pagination` prop. Pagination has one callback event for onChangePage that is fired when the page or the number of items per page changes.
-By default, tables with pagination will expect the entire table data to be passed in on the `data` prop; the visible data for a page is calculated dynamically by the table based on the page size and page number. In the case where the table is rendering a large data set, the `options.hasOnlyPageData` prop can be used change this behavior. With `options.hasOnlyPageData = true`, the `data` prop will be expected to contain only the rows for the visible page.
-The maxPages prop must be a positive integer and is used to limit the number of pages available the dropdown when working with very large datasets.
-
-```jsx
-<Table
-  actions={{
-    pagination: {
-      onChangePage: ({ page, pageSize }) => {},
-    },
-  }}
-  options={{
-    hasPagination: true,
-  }}
-  view={{
-    pagination: {
-      isItemPerPageHidden: false,
-      maxPages: 100,
-      page: 1,
-      pageSize: 10,
-      pageSizes: [10, 20, 30],
-      totalItems: undefined,
-    },
-  }}
-/>
-```
-
-```jsx
-<Table
-  actions={{
-    pagination: {
-      onChangePage: ({ page, pageSize }) => {},
-    },
-  }}
-  options={{
-    hasPagination: true,
-    hasOnlyPageData: true,
-  }}
-  view={{
-    pagination: {
-      pageSize: 10,
-      pageSizes: [10, 20, 30],
-      page: 8267,
-      totalItems: 97532,
-    },
-  }}
-/>
-```
-
-## Batch actions
-
-You can combine batch actions with the `Table` component to allow the user
-to perform a single action on multiple selected rows. To do this, you can use
-the following props:
-
-```jsx
-<Table
-  id="table"
-  columns={columns}
-  data={data}
-  actions={{
-    toolbar: {
-      /** cancels the action, and unselects all currently selected rows */
-      onCancelBatchAction: () => {},
-      /** actionId is the string id of the action being completed, and an arrow of row ids the action was performed on. */
-      onApplyBatchAction: (actionId, rowIds) => {},,
-    },
-    table: {
-      /** rowId is a string */
-      onRowClicked: (rowId) => {},
-      /** rowId is a string, selected is a boolean */
-      onRowSelected: (rowId, selected, selectedIds: array) => {},
-      /** allSelected is a boolean. true is all are selected, false otherwise */
-      onSelectAll: (allSelected) => {},
-    }
-  }}
-  options={{
-    hasFilter: true,
-    hasRowSelection: 'multi'
-  }}
-  view={{
-    table: {
-      isSelectAllIndeterminate: undefined,
-      isSelectAllSelected: undefined,
-      selectedIds: [
-        'row-3',
-        'row-4',
-        'row-6',
-        'row-7'
-      ]
-    },
-    toolbar: {
-      batchActions: [
-        {
-          iconDescription: 'Delete Item',
-          id: 'delete',
-          labelText: 'Delete',
-          renderIcon: <TrashCan16/>
-        }
-      ]
-    }
-  }}
-  }}
-/>
-```
+<Pagination />
 
 ## Toolbar actions
 
@@ -1036,22 +644,23 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 
 ### Data Prop
 
-| Name                    | Type            | Default | Description                                                                                           |
-| :---------------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------------------- |
-| id                      | string          |         | the id of this row                                                                                    |
-| values                  | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
-| hasLoadMore             | bool            |         | An optional boolean prop to define if the row has more data to be loaded                              |
-| children                | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
-| rowActions              | arrayOf(object) |         | An optional list of actions visible on row how or expansion                                           |
-| rowActions[].id         | string          |         | unique id for this action                                                                             |
-| rowActions[].renderIcon |                 |         | icon that gets pass through to the button component for this action                                   |
-| rowActions[].disabled   | bool            |         | disables this action                                                                                  |
-| rowActions[].labelText  | string          |         | label text shown on the action button                                                                 |
-| rowActions[].isOverflow | bool            |         | If true, the action will be rendered in the overflow menu not inline on the row                       |
-| rowActions[].hasDivider | bool            |         |                                                                                                       |
-| rowActions[].isDelete   | bool            |         |                                                                                                       |
-| rowActions[].isEdit     | bool            |         |                                                                                                       |
-| isSelectable            | bool            |         | is this row selecteable                                                                               |
+| Name                         | Type            | Default | Description                                                                                           |
+| :--------------------------- | :-------------- | :------ | :---------------------------------------------------------------------------------------------------- |
+| id                           | string          |         | the id of this row                                                                                    |
+| values                       | object          |         | A {[columnId]: value} object containing all the values for this row                                   |
+| hasLoadMore                  | bool            |         | An optional boolean prop to define if the row has more data to be loaded                              |
+| children                     | arrayOf(object) |         | An optional array of rows (in the same structure as the data prop) for children nested under this row |
+| rowActions                   | arrayOf(object) |         | An optional list of actions visible on row how or expansion                                           |
+| rowActions[].id              | string          |         | Unique id for this action                                                                             |
+| rowActions[].renderIcon      |                 |         | Icon that gets pass through to the button component for this action                                   |
+| rowActions[].disabled        | bool            |         | Disables this action                                                                                  |
+| rowActions[].labelText       | string          |         | Label text shown on the action button                                                                 |
+| rowActions[].isOverflow      | bool            |         | If true, the action will be rendered in the overflow menu not inline on the row                       |
+| rowActions[].hasDivider      | bool            |         | Adds a divider above the action item                                                                  |
+| rowActions[].iconDescription | string          |         | The descripion text for the icon                                                                      |
+| rowActions[].isDelete        | bool            |         | Tells the StatefulTable that this is a delete action                                                  |
+| rowActions[].isEdit          | bool            |         | Tells the StatefulTable that this is an edit action                                                   |
+| isSelectable                 | bool            |         | is this row selecteable                                                                               |
 
 ### ExpandedData Prop
 
@@ -1096,93 +705,95 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 
 ### View Prop
 
-| Name                                             | Type                             | Default   | Description                                                                                                                                         |
-| :----------------------------------------------- | :------------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
-| aggregations                                     | object                           |           | Allows certain columns to have an aggregated value in the footer of the table                                                                       |
-| aggregations.label                               | string                           |           | The text label for the aggregations bar in the table footer                                                                                         |
-| aggregations.isHidden                            | bool                             |           | hide the aggregations bar in the footer                                                                                                             |
-| aggregations.columns                             | arrayOf(object)                  |           |                                                                                                                                                     |
-| aggregations.columns[].id                        | string                           |           | The columnId of the column to aggregate                                                                                                             |
-| aggregations.columns[].value                     | string or func                   |           | If the aggregation is computed elsewhere, the value can be passed here, or a function can be passed to compute it on the fly                        |
-| aggregations.columns[].align                     | 'start', 'center', or 'end'      |           | allows the aggregate value to align with the rest of the column                                                                                     |
-| aggregations.columns[].isSortable                | bool                             |           | Ensures the aggregate value aligns with the rest of the column by supplying the extra padding needed when a column is sortable                      |
-| pagination                                       | object                           |           | Sets the pagination values for the table                                                                                                            |
-| pagination.pageSize                              | number                           |           | How many rows are displayed per page                                                                                                                |
-| pagination.pageSizes                             | number[]                         |           | An array of selections for choosing how many rows are displayed per page.                                                                           |
-| pagination.page                                  | number                           |           | The current page number                                                                                                                             |
-| pagination.totalItems                            | number                           |           | The total number of items available to the table                                                                                                    |
-| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination. Must be a positive integer.                                                                                 |
-| pagination.isItemPerPageHidden                   | bool                             |           | Hide displaying the text for the number of rows per page                                                                                            |
-| filters                                          | object[]                         |           | An array of objects setting the current filter state                                                                                                |
-| filters[].columnId                               | string                           |           | The columnId of the column being filtered by this value                                                                                             |
-| filters[].value                                  | string, number, bool, string[]   |           | The value used to filter the given columnId                                                                                                         |
-| advancedFilters                                  | object[]                         |           | An array of objects containing the minimum details of an advancedFilter object that will be used in the dropdown menu of the advanced filter flyout |
-| advancedFilters[].filterId                       | string                           |           | The filter id                                                                                                                                       |
-| advancedFilters[].filterTitleText                | string                           |           | The display name of the filter                                                                                                                      |
-| advancedFilters[].filterRules                    | object                           |           | The rules for this filter. See the RuleBuilder for details.                                                                                         |
-| selectedAdvancedFilterIds                        | string[]                         |           | An array of filter ids for the currently selected filters                                                                                           |
-| toolbar                                          | object                           |           |                                                                                                                                                     |
-| toolbar.activeBar                                | 'column', 'filter', or 'rowEdit' |           | Specify which header row to display, will display default header row if null                                                                        |
-| toolbar.customToolbarContent                     | node                             |           | optional content to render inside the toolbar                                                                                                       |
-| toolbar.batchActions                             | object[]                         |           | Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display                                       |
-| toolbar.batchActions[].id                        | string                           |           | unique id for this batch action                                                                                                                     |
-| toolbar.batchActions[].labeltext                 | string                           |           | text shown on the action button                                                                                                                     |
-| toolbar.batchActions[].icon                      | element                          |           | The icon rendered on the button for this action                                                                                                     |
-| toolbar.batchActions[].iconDescription           | string                           |           | The description used for aria on this icon                                                                                                          |
-| toolbar.search                                   | object                           |           |                                                                                                                                                     |
-| toolbar.search.value                             | string                           |           | Deprecated in favor of defaultValue                                                                                                                 |
-| toolbar.search.defaultValue                      | string                           |           | The current search value passed to the table                                                                                                        |
-| toolbar.search.defaultExpanded                   | bool                             |           | The current search value passed to the table                                                                                                        |
-| toolbar.search.onChange                          | func                             |           |                                                                                                                                                     |
-| toolbar.search.onExpand                          | func                             |           |                                                                                                                                                     |
-| toolbar.isDisabled                               | bool                             |           | Disable the toolbar                                                                                                                                 |
-| toolbar.rowEditBarButtons                        | node                             |           | buttons to be shown with when activeBar is 'rowEdit'                                                                                                |
-| toolbar.toolbarActions                           | arrayOf(object)                  |           | An array of objects for adding actions to the overflow menu in the toolbar                                                                          |
-| toolbar.toolbarActions[].id                      | string                           |           | the id of this action                                                                                                                               |
-| toolbar.toolbarActions[].labelText               | string                           |           | The text to display in the overflow menu                                                                                                            |
-| toolbar.toolbarActions[].hidden                  | bool                             |           | This will hide this item from the menu                                                                                                              |
-| toolbar.toolbarActions[].disabled                | bool                             |           | This will show the item, but it will be disabled                                                                                                    |
-| toolbar.toolbarActions[].isDelete                | bool                             |           | Show the item, and turn the background red on hover                                                                                                 |
-| toolbar.toolbarActions[].hasDivider              | bool                             |           | Show a divider at the top of this action item                                                                                                       |
-| toolbar.toolbarActions[].renderIcon              | node, func, string               |           | Can be a string of a handful of included icons, a function to render an icon, or an icon element                                                    |
-| toolbar.toolbarActions[].isActive                | bool                             | false     | used when the action is not in the overflow menu to show it is in active state                                                                      |
-| toolbar.toolbarActions[].isOverflow              | bool                             | false     | Force this item to appear in the overflow menu                                                                                                      |
-| table                                            | object                           |           |                                                                                                                                                     |
-| table.isSelectAllSelected                        | bool                             |           | If true, the select all option is checked                                                                                                           |
-| table.isSelectAllIndeterminate                   | bool                             |           |                                                                                                                                                     |
-| table.selectedIds                                | string[]                         |           | An array of row ids that are currently selected                                                                                                     |
-| table.sort                                       | object, array                    |           | an object or array of objects in the form of {columnId: string; direction: 'NONE' or 'ASC' or 'DESC' }                                              |
-| table.sort.columnId                              | string                           |           | the id of the column to sort                                                                                                                        |
-| table.sort.direction                             | 'NONE', 'ASC', or 'DESC'         |           |                                                                                                                                                     |
-| table.ordering                                   | object[]                         |           | an array of objects representing the order and visibility of the columns                                                                            |
-| table.ordering[].columnId                        | string                           |           | The id of the column to make hidden or visible                                                                                                      |
-| table.ordering[].isHidden                        | bool                             |           | If true, the column with columnId will be hidden in the table                                                                                       |
-| table.ordering[].columnGroupId                   | string                           |           | The id of the column group this column belongs to if any                                                                                            |
-| table.rowActions                                 | object[]                         |           |                                                                                                                                                     |
-| table.rowsActions[].rowId                        | string                           |           | The rowID associated with this action                                                                                                               |
-| table.rowActions[].isRunning                     | bool                             |           | Is this action currently running on this row                                                                                                        |
-| table.rowActions[].isEditMode                    | bool                             |           | Is this action available in edit mode                                                                                                               |
-| table.rowActions[].error                         | object                           |           | Object representing the error state for the action on this row                                                                                      |
-| table.rowActions[].error.title                   | node                             |           | The title node for this error on this row                                                                                                           |
-| table.rowActions[].error.message                 | node                             |           | The message node associated with this error on this row action                                                                                      |
-| table.rowActions[].error.learnMoreURL            | string                           |           | The link to learn more about this error                                                                                                             |
-| table.singleRowEditButtons                       | element                          |           | Buttons shown when editing a single row                                                                                                             |
-| table.expandedIds                                | string[]                         |           | an array of strings representing the rowIds to be expanded                                                                                          |
-| table.loadingMoreIds                             | string[]                         |           | an array of strings representing the rowIds with the load more active                                                                               |
-| table.emptyState                                 | object or element                |           | If a React element is provided, it will be rendered in place of the default                                                                         |
-| table.emptyState.message                         | node                             |           | The message to show when the table is empty                                                                                                         |
-| table.emptyState.messageWithFilters              | node                             |           | Show a different message if no content is in the table matching the filters                                                                         |
-| table.emptyState.buttonLabel                     | node                             |           | If a label is not provided, no action button will be rendered                                                                                       |
-| table.emptyState.buttonLabelWithFilters          | node                             |           | Show a different button label if no content is in the table matching the filters                                                                    |
-| table.errorState                                 | element                          |           | Show the table errorState element when there is any error occure                                                                                    |
+| Name                                             | Type                             | Default   | Description                                                                                                                                                                                                               |
+| :----------------------------------------------- | :------------------------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| aggregations                                     | object                           |           | Allows certain columns to have an aggregated value in the footer of the table                                                                                                                                             |
+| aggregations.label                               | string                           |           | The text label for the aggregations bar in the table footer                                                                                                                                                               |
+| aggregations.isHidden                            | bool                             |           | hide the aggregations bar in the footer                                                                                                                                                                                   |
+| aggregations.columns                             | arrayOf(object)                  |           |                                                                                                                                                                                                                           |
+| aggregations.columns[].id                        | string                           |           | The columnId of the column to aggregate                                                                                                                                                                                   |
+| aggregations.columns[].value                     | string or func                   |           | If the aggregation is computed elsewhere, the value can be passed here, or a function can be passed to compute it on the fly                                                                                              |
+| aggregations.columns[].align                     | 'start', 'center', or 'end'      |           | allows the aggregate value to align with the rest of the column                                                                                                                                                           |
+| aggregations.columns[].isSortable                | bool                             |           | Ensures the aggregate value aligns with the rest of the column by supplying the extra padding needed when a column is sortable                                                                                            |
+| pagination                                       | object                           |           | Sets the pagination values for the table                                                                                                                                                                                  |
+| pagination.pageSize                              | number                           |           | How many rows are displayed per page                                                                                                                                                                                      |
+| pagination.pageSizes                             | number[]                         |           | An array of selections for choosing how many rows are displayed per page.                                                                                                                                                 |
+| pagination.page                                  | number                           |           | The current page number                                                                                                                                                                                                   |
+| pagination.totalItems                            | number                           |           | The total number of items available to the table                                                                                                                                                                          |
+| pagination.maxPages                              | number                           |           | Number of pages rendered in pagination. Must be a positive integer.                                                                                                                                                       |
+| pagination.isItemPerPageHidden                   | bool                             |           | Hide displaying the text for the number of rows per page                                                                                                                                                                  |
+| pagination.size                                  | 'sm', 'md', or 'lg'              | 'lg'      | The size of the pagination component                                                                                                                                                                                      |
+| filters                                          | object[]                         |           | An array of objects setting the current filter state                                                                                                                                                                      |
+| filters[].columnId                               | string                           |           | The columnId of the column being filtered by this value                                                                                                                                                                   |
+| filters[].value                                  | string, number, bool, string[]   |           | The value used to filter the given columnId                                                                                                                                                                               |
+| advancedFilters                                  | object[]                         |           | An array of objects containing the minimum details of an advancedFilter object that will be used in the dropdown menu of the advanced filter flyout                                                                       |
+| advancedFilters[].filterId                       | string                           |           | The filter id                                                                                                                                                                                                             |
+| advancedFilters[].filterTitleText                | string                           |           | The display name of the filter                                                                                                                                                                                            |
+| advancedFilters[].filterRules                    | object                           |           | The rules for this filter. See the RuleBuilder for details.                                                                                                                                                               |
+| selectedAdvancedFilterIds                        | string[]                         |           | An array of filter ids for the currently selected filters                                                                                                                                                                 |
+| toolbar                                          | object                           |           |                                                                                                                                                                                                                           |
+| toolbar.activeBar                                | 'column', 'filter', or 'rowEdit' |           | Specify which header row to display, will display default header row if null                                                                                                                                              |
+| toolbar.customToolbarContent                     | node                             |           | optional content to render inside the toolbar                                                                                                                                                                             |
+| toolbar.batchActions                             | object[]                         |           | Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display                                                                                                             |
+| toolbar.batchActions[].id                        | string                           |           | unique id for this batch action                                                                                                                                                                                           |
+| toolbar.batchActions[].labeltext                 | string                           |           | text shown on the action button                                                                                                                                                                                           |
+| toolbar.batchActions[].icon                      | element                          |           | The icon rendered on the button for this action                                                                                                                                                                           |
+| toolbar.batchActions[].iconDescription           | string                           |           | The description used for aria on this icon                                                                                                                                                                                |
+| toolbar.search                                   | object                           |           |                                                                                                                                                                                                                           |
+| toolbar.search.value                             | string                           |           | Deprecated in favor of defaultValue                                                                                                                                                                                       |
+| toolbar.search.defaultValue                      | string                           |           | The current search value passed to the table                                                                                                                                                                              |
+| toolbar.search.defaultExpanded                   | bool                             |           | The current search value passed to the table                                                                                                                                                                              |
+| toolbar.search.onChange                          | func                             |           |                                                                                                                                                                                                                           |
+| toolbar.search.onExpand                          | func                             |           |                                                                                                                                                                                                                           |
+| toolbar.search.isExpanded                        | bool                             |           | Should the search bar always be expanded                                                                                                                                                                                  |
+| toolbar.isDisabled                               | bool                             |           | Disable the toolbar                                                                                                                                                                                                       |
+| toolbar.rowEditBarButtons                        | node                             |           | buttons to be shown with when activeBar is 'rowEdit'                                                                                                                                                                      |
+| toolbar.toolbarActions                           | arrayOf(object)                  |           | An array of objects for adding actions to the overflow menu in the toolbar                                                                                                                                                |
+| toolbar.toolbarActions[].id                      | string                           |           | the id of this action                                                                                                                                                                                                     |
+| toolbar.toolbarActions[].labelText               | string                           |           | The text to display in the overflow menu                                                                                                                                                                                  |
+| toolbar.toolbarActions[].hidden                  | bool                             |           | This will hide this item from the menu                                                                                                                                                                                    |
+| toolbar.toolbarActions[].disabled                | bool                             |           | This will show the item, but it will be disabled                                                                                                                                                                          |
+| toolbar.toolbarActions[].isDelete                | bool                             |           | Show the item, and turn the background red on hover                                                                                                                                                                       |
+| toolbar.toolbarActions[].hasDivider              | bool                             |           | Show a divider at the top of this action item                                                                                                                                                                             |
+| toolbar.toolbarActions[].renderIcon              | node, func, string               |           | Can be a string of a handful of included icons, a function to render an icon, or an icon element                                                                                                                          |
+| toolbar.toolbarActions[].isActive                | bool                             | false     | used when the action is not in the overflow menu to show it is in active state                                                                                                                                            |
+| toolbar.toolbarActions[].isOverflow              | bool                             | false     | Force this item to appear in the overflow menu                                                                                                                                                                            |
+| table                                            | object                           |           |                                                                                                                                                                                                                           |
+| table.isSelectAllSelected                        | bool                             |           | If true, the select all option is checked. There is normally no need to set this prop since both the Table and the StatefulTable will update it automatically based on the selectedIds prop and the actual rows           |
+| table.isSelectAllIndeterminate                   | bool                             |           | If true, the select all gets an indeterminate state. There is normally no need to set this prop since both the Table and the StatefulTable will update it automatically based on the selectedIds prop and the actual rows |
+| table.selectedIds                                | string[]                         |           | An array of row ids that are currently selected                                                                                                                                                                           |
+| table.sort                                       | object, array                    |           | an object or array of objects in the form of {columnId: string; direction: 'NONE' or 'ASC' or 'DESC' }                                                                                                                    |
+| table.sort.columnId                              | string                           |           | the id of the column to sort                                                                                                                                                                                              |
+| table.sort.direction                             | 'NONE', 'ASC', or 'DESC'         |           |                                                                                                                                                                                                                           |
+| table.ordering                                   | object[]                         |           | an array of objects representing the order and visibility of the columns                                                                                                                                                  |
+| table.ordering[].columnId                        | string                           |           | The id of the column to make hidden or visible                                                                                                                                                                            |
+| table.ordering[].isHidden                        | bool                             |           | If true, the column with columnId will be hidden in the table                                                                                                                                                             |
+| table.ordering[].columnGroupId                   | string                           |           | The id of the column group this column belongs to if any                                                                                                                                                                  |
+| table.rowActions                                 | object[]                         |           |                                                                                                                                                                                                                           |
+| table.rowsActions[].rowId                        | string                           |           | The rowID associated with this action                                                                                                                                                                                     |
+| table.rowActions[].isRunning                     | bool                             |           | Is this action currently running on this row                                                                                                                                                                              |
+| table.rowActions[].isEditMode                    | bool                             |           | Is this action available in edit mode                                                                                                                                                                                     |
+| table.rowActions[].error                         | object                           |           | Object representing the error state for the action on this row                                                                                                                                                            |
+| table.rowActions[].error.title                   | node                             |           | The title node for this error on this row                                                                                                                                                                                 |
+| table.rowActions[].error.message                 | node                             |           | The message node associated with this error on this row action                                                                                                                                                            |
+| table.rowActions[].error.learnMoreURL            | string                           |           | The link to learn more about this error                                                                                                                                                                                   |
+| table.singleRowEditButtons                       | element                          |           | Buttons shown when editing a single row                                                                                                                                                                                   |
+| table.expandedIds                                | string[]                         |           | an array of strings representing the rowIds to be expanded                                                                                                                                                                |
+| table.loadingMoreIds                             | string[]                         |           | an array of strings representing the rowIds with the load more active                                                                                                                                                     |
+| table.emptyState                                 | object or element                |           | If a React element is provided, it will be rendered in place of the default                                                                                                                                               |
+| table.emptyState.message                         | node                             |           | The message to show when the table is empty                                                                                                                                                                               |
+| table.emptyState.messageWithFilters              | node                             |           | Show a different message if no content is in the table matching the filters                                                                                                                                               |
+| table.emptyState.buttonLabel                     | node                             |           | If a label is not provided, no action button will be rendered                                                                                                                                                             |
+| table.emptyState.buttonLabelWithFilters          | node                             |           | Show a different button label if no content is in the table matching the filters                                                                                                                                          |
+| table.errorState                                 | element                          |           | Show the table errorState element when there is any error occure                                                                                                                                                          |
 | table.loadingState                               | object                           |           |
-| table.loadingState.isLoading                     | bool                             |           | If the table is currently loading                                                                                                                   |
-| table.loadingState.rowCount                      | number                           |           | The number of rows loaded                                                                                                                           |
-| table.showMultiSortModal                         | bool                             | false     | Shows or hides the MultiSort modal                                                                                                                  |
-| table.multiSortModal                             | object                           | undefined |                                                                                                                                                     |
-| table.multiSortModal.anticipatedColumn           | object                           | undefined | An object containing {columnId, direction} of the column that multi-sort was initiated on                                                           |
-| table.multiSortModal.anticipatedColumn.columnId  | string                           | undefined | The columnId of the column multi-sort was initiated on. This is to automatically select it in the modal                                             |
-| table.multiSortModal.anticipatedColumn.direction | 'ASC' or 'DESC'                  | undefined | The default direction for this column selected                                                                                                      |
+| table.loadingState.isLoading                     | bool                             |           | If the table is currently loading                                                                                                                                                                                         |
+| table.loadingState.rowCount                      | number                           |           | The number of rows loaded                                                                                                                                                                                                 |
+| table.showMultiSortModal                         | bool                             | false     | Shows or hides the MultiSort modal                                                                                                                                                                                        |
+| table.multiSortModal                             | object                           | undefined |                                                                                                                                                                                                                           |
+| table.multiSortModal.anticipatedColumn           | object                           | undefined | An object containing {columnId, direction} of the column that multi-sort was initiated on                                                                                                                                 |
+| table.multiSortModal.anticipatedColumn.columnId  | string                           | undefined | The columnId of the column multi-sort was initiated on. This is to automatically select it in the modal                                                                                                                   |
+| table.multiSortModal.anticipatedColumn.direction | 'ASC' or 'DESC'                  | undefined | The default direction for this column selected                                                                                                                                                                            |
 
 ### Actions Prop
 
@@ -1196,8 +807,8 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | toolbar.onShowRowEdit           | func   |         |                                                                                                                                                                                                                 |
 | toolbar.onToggleColumnSelection | func   |         |                                                                                                                                                                                                                 |
 | toolbar.onClearAllFilters       | func   |         | Specify a callback for when the user clicks toolbar button to clear all filters. Recieves a parameter of the current filter values for each column                                                              |
-| toolbar.onCancelBatchAction     | func   |         |
-| toolbar.onApplyBatchAction      | func   |         |
+| toolbar.onCancelBatchAction     | func   |         | Callback for when the automatcally generated Cancel action in the batch actions bar is clicked.                                                                                                                 |
+| toolbar.onApplyBatchAction      | func   |         | Callback for all the batch actions except the cancel. Is called with the id of the clicked action. For the StatefulTable the current selections are received as second parameter.                               |
 | toolbar.onApplySearch           | func   |         | Apply a search criteria to the table                                                                                                                                                                            |
 | toolbar.onDownloadCSV           | func   |         | Download the table contents                                                                                                                                                                                     |
 | toolbar.onApplyAdvancedFilter   | func   |         |                                                                                                                                                                                                                 |

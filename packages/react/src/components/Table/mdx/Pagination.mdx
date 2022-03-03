@@ -1,0 +1,124 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Pagination
+
+Pagination is controlled through the `options.hasPagination` prop combined with the `view.pagination`
+prop. Pagination has one callback event for onChangePage that is fired when the page or the number of
+items per page changes.
+
+By default, tables with pagination will expect the entire table data to be passed in using the `data`
+prop and for the `StatefulTable` the visible data for a page is calculated and set automatically based
+on the page size and page number.
+
+The pagination component itself is always stateful but for the normal `Table` calculating and setting
+the visible data rows for a selected page must be done programmatically.
+
+For the full list of pagination props see the
+[View Prop](/docs/1-watson-iot-table--playground#view-prop) section.
+
+### Pagination code example
+
+The code example below shows how to enable the pagination for the StatefulTable when _all the available
+data_ is passed in with the `data` prop. The StatefulTable will initialize the pagination based on the
+size of the data prop and handle the pagination interaction automatically.
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={columns}
+    data={data}
+    options={{ hasPagination: true }}
+    view={{
+      pagination: {
+        pageSize: 10,
+        pageSizes: [10, 20, 30],
+      },
+    }}
+  />
+);
+```
+
+### Dealing with large data sets
+
+If the application is using the StatefulTable with large data sets and needs to lazy load the data when
+the user moves between the pages this can be achieved by setting `options.hasOnlyPageData` to true which
+will stop the StatefulTable from automatically updating the rows displayed and only update the actual
+pagination component. In order for the pagination to show the correct number of pages in this case we
+must also set the `totalItems` prop explicitly.
+
+Normally the number of pages are automatically calculated by the total items divided by the page size but
+for very large data sets the number of options available in the current page dropdown might grow too large.
+If the `totalItems` is dynamically set but risks being very large the `view.pagination.maxPages` prop,
+which must be a positive integer, can be used to explicitly limit the number of pages and prevent the
+current page dropdown from becoming sluggish.
+
+```jsx
+...
+const totalItemsCount = mockGetTotalItemsCount();
+const loadPageIntoDataProp = ({ page, pageSize }) => {...}
+
+return (
+  <StatefulTable
+    actions={{
+      pagination: {
+        onChangePage: loadPageIntoDataProp
+      },
+    }}
+    columns={columns}
+    data={currentPageData}
+    options={{ hasPagination: true, hasOnlyPageData: true }}
+    view={{
+      pagination: {
+        pageSize: 10,
+        maxPages: 1000,
+        totalItems: totalItemsCount,
+      },
+    }}
+  />
+);
+```
+
+### Handling the onChangePage event
+
+The normal stateless Table must always implement the `onChangePage` event and respond to user initiated
+changes of current page and page size as shown in the code example below. The internal state of the
+pagination component is automatically reset when the `pageSize` prop changes.
+
+```jsx
+...
+
+const [pageSize, setPageSize] = useState(10);
+const [currentPageData, setCurrentPageData] = useState(data.slice(0, pageSize));
+
+const handleOnChangePage = ({ page, pageSize: newPageSize }) => {
+  const endIndex = page * newPageSize;
+  const startIndex = endIndex - newPageSize;
+  if (newPageSize !== pageSize) {
+    setPageSize(newPageSize);
+  }
+  setCurrentPageData(data.slice(startIndex, endIndex));
+};
+
+return (
+  <Table
+    actions={{
+      pagination: {
+        onChangePage: handleOnChangePage,
+      },
+    }}
+    columns={columns}
+    data={currentPageData}
+    options={{ hasPagination: true }}
+    view={{
+      pagination: {
+        pageSize,
+        pageSizes: [10, 20, 30, 40, 50],
+        totalItems: data.length,
+      },
+    }}
+  />
+);
+
+```
