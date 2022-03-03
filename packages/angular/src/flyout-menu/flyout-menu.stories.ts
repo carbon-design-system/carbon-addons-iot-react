@@ -19,7 +19,7 @@ storiesOf('Components/Filter menu', module)
   .add('Basic', () => ({
     template: `
       <div style="position: absolute; left: 50%; top: 50%;">
-        <ai-flyout-menu #flyoutElem (flyoutOpenChange)="handleOpenChange($event, flyoutElem)" [flip]="flip" [placement]="placement">
+        <ai-flyout-menu (isOpenChange)="handleOpenChange($event)" [flip]="flip" [placement]="placement">
           <div class="title">
             Filter
             <a ibmLink (click)="clearFilterClicked($event)" class="clear-flyout" href="#">Clear</a>
@@ -36,9 +36,8 @@ storiesOf('Components/Filter menu', module)
     props: {
       flip: boolean('flip', false),
       placement: select('Placement', ['bottom', 'top', 'left', 'right'], 'bottom'),
-      handleOpenChange: (state, flyoutElem) => {
-        console.log(`Flyout is ${ state ? 'Open' : 'Closed' }`);
-        console.log('Flyout is: ', flyoutElem.getFlyoutState());
-      }
+      handleOpenChange: (isOpen) => {
+        console.log(`Flyout has been ${isOpen ? 'opened' : 'closed'}`);
+      },
     },
   }));

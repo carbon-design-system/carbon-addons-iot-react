@@ -5,8 +5,6 @@ import {
   ElementRef,
   ViewContainerRef,
   HostBinding,
-  Output,
-  EventEmitter,
 } from '@angular/core';
 import { EventService } from 'carbon-components-angular/utils';
 import { TooltipDirective, DialogService } from 'carbon-components-angular';
@@ -29,10 +27,7 @@ export class FlyoutMenuDirective extends TooltipDirective {
    * Controls wether the overflow menu is flipped
    */
   @Input() flip = false;
-  /**
-   * Emit the open/close state of the menu
-   */
-  @Output() flyoutStateChange = new EventEmitter;
+
   @HostBinding('class.iot--flyout-menu') menuClass = true;
   /**
    * bx--tooltip__trigger is inherited from TooltipDirective and it enables focus indication
@@ -63,9 +58,6 @@ export class FlyoutMenuDirective extends TooltipDirective {
   ) {
     super(elementRef, viewContainerRef, dialogService, eventService);
     dialogService.setContext({ component: FlyoutMenuPane });
-    this.isOpenChange.subscribe( isOpen => {
-      this.flyoutStateChange.emit(isOpen);
-    })
   }
 
   updateConfig() {

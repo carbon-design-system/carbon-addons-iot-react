@@ -29,7 +29,8 @@ import { Filter16 } from '@carbon/icons';
     </ng-template>
     <div
       [aiFlyoutMenu]="templateRef"
-      (flyoutStateChange)="flyoutOpenChangeHandler($event)"
+      [isOpen]="isOpen"
+      (isOpenChange)="isOpenChange.emit($event)"
       [offset]="offset"
       [flip]="flip"
       trigger="click"
@@ -71,26 +72,15 @@ export class FlyoutMenu implements OnInit {
   }
 
   @Input() flip = false;
-
   @Input() placement: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
-
-  @Output() flyoutOpenChange = new EventEmitter;
+  @Input() isOpen: boolean;
+  @Output() isOpenChange = new EventEmitter<boolean>();
 
   private _offset;
-  private isOpen;
-
-  public getFlyoutState() {
-    return this.isOpen;
-  }
 
   constructor(protected iconService: IconService) {}
 
   ngOnInit() {
     this.iconService.register(Filter16);
-  }
-
-  flyoutOpenChangeHandler(flyoutState) {
-    this.isOpen = flyoutState;
-    this.flyoutOpenChange.emit(flyoutState);
   }
 }
