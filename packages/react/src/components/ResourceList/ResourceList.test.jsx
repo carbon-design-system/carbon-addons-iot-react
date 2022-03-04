@@ -7,7 +7,7 @@ import { settings } from '../../constants/Settings';
 
 import ResourceList from './ResourceList';
 
-const { prefix } = settings;
+const { prefix, iotPrefix } = settings;
 const resourceData = [
   {
     id: 'row-0',
@@ -114,6 +114,7 @@ describe('ResourceList', () => {
     expect(row).toBeVisible();
     expect(row.parentNode).toHaveClass(`${prefix}--structured-list-td`);
     expect(row.nextSibling).toHaveClass(`${prefix}--structured-list-td`);
+    expect(row.nextSibling).toHaveClass(`${iotPrefix}--inline-div`);
   });
 
   it('should trigger callback for keyboard events', () => {
