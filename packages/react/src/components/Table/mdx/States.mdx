@@ -1,0 +1,129 @@
+## Main view states
+
+This section covers the main table view states "loading", "empty" and "error" which can be
+externally set for both the StatefulTable and the normal Table. The empty state is also
+automatically activated for the StatefulTable when active filters or search result in an
+empty data set.
+
+### Loading state
+
+The "loading" state is activated by the prop `view.table.loadingState.isLoading` and will
+by default replace the table body with a single row of skeleton loading cells matching the
+number of columns visible in the table. If the columns are not known while in this loading
+state, i.e. the `columns` prop is an empty array, it is possible to set a default number
+of columns for the skeleton rows using the prop `view.table.loadingState.loadingColumnCount`.
+Both the header row and one body row will get skeleton cells. It is also possible to control
+the number of table rows by using the prop `view.table.loadingState.loadingRowCount`. Only
+the top two rows will contain skeleton cells, any additional rows will be empty.
+
+```jsx
+...
+
+return (
+  <Table
+    columns={[]}
+    data={data}
+    view={{
+      table: {
+        loadingState: {
+          rowCount: 7,
+          columnCount: 5,
+          isLoading: true,
+        },
+      },
+    }}
+  />
+);
+```
+
+### Empty state
+
+The empty state is activated when the `data` prop contains an empty array. Both the statefulTable
+and the normal Table will adjust the default empty state depending on if it was caused by filtering
+or not. The empty state can be customized with the prop `view.table.emptyState` which accepts a
+configuration object as shown in the code example below.
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={columns}
+    // Empty state is only shown when the data prop is empty, either by passing an empty array
+    // or by having active filters or search resulting in an empty set
+    data={data}
+    actions={{
+      table: {
+        onEmptyStateAction: () => {
+          // Action to take when the button in the default empty state
+          // UI is clicked
+        }
+      }
+    }}
+    view={{
+      table: {
+        // Custom configuration of the empty state
+        emptyState: {
+          message: 'No data',
+          messageBody: <p>There is no data to display</p>,
+          // Show a different message if filters are active
+          messageWithFilters: 'No filtered data',
+          messageWithFiltersBody: <p>There is no data matching th filters</p>,
+          // If a label is not provided, no action button will be rendered
+          buttonLabel: 'Take some action',
+          // Show a different button label if filters are active
+          buttonLabelWithFilters: 'Clear all filters',
+        },
+      },
+    }}
+  />
+);
+```
+
+The default empty state can also be completely overridden since the prop also accepts an element, but it is
+encouraged to use the `EmptyState` component for a consistent UX.
+
+### Error state
+
+The error state is activated with the `error` prop that accepts a string to be displayed as error message.
+The default table error UI doesn't contain any actions, it is purely informative. If furter customization
+of the error UI is required, e.g. adding a button or link, the prop `view.table.errorState` can be passed
+an element that is rendered in place of the default error like shown in the example below.
+
+```jsx
+...
+
+const [showError, setShowError] = useState(true);
+
+const customErrorState = (
+  // We base the error UI on the EmptyState component for UX consistency
+  <EmptyState
+    icon="error404" // There is also the 'error' icon
+    title="Custom error state"
+    body="Custom Error State message with custom icon, texts and action button"
+    action={{
+      label: 'Clear error',
+      onClick: () => {
+        setShowError(false);
+      },
+      kind: 'ghost',
+    }}
+  />
+);
+
+return (
+  <Table
+    columns={columns}
+    data={data}
+    options={{}}
+    // The string "error" won't be shown when we also use the view.table.errorState
+    // but a string is needed to activate the error state.
+    error={showError ? 'error' : undefined}
+    view={{
+      table: {
+        errorState: customErrorState,
+      },
+    }}
+  />
+);
+```

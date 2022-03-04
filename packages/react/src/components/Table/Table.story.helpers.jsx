@@ -11,6 +11,7 @@ import Edit from '@carbon/icons-react/es/edit/16';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
+import EmptyState from '../EmptyState';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -763,6 +764,31 @@ const getParsedIntOrUndefined = (value) => {
   return Number.isNaN(parsedValue) ? undefined : parsedValue;
 };
 
+export const getCustomEmptyState = () => (
+  <EmptyState
+    icon="not-authorized"
+    title="Custom empty state"
+    body="This is an custom empty state with custom icon, texts and action button"
+    action={{
+      label: 'Fix this',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
+
+export const getCustomErrorState = () => (
+  <EmptyState
+    icon="error404"
+    title="Custom error state"
+    body="Custom Error State message with custom icon, texts and action button"
+    action={{
+      label: 'Reload',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
 /**
  * Helper function that Table knobs.
  *
@@ -783,7 +809,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
   const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
-  const STATES_GROUP = useGroups ? 'States' : undefined;
+  const STATES_GROUP = useGroups ? 'Main view states' : undefined;
 
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
@@ -1230,11 +1256,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
         )
       : null,
     demoEmptyState: shouldCreate('demoEmptyState')
-      ? boolean(
-          'Demo empty state (view.table.emptyState)',
-          enableKnob('demoEmptyState'),
-          STATES_GROUP
-        )
+      ? boolean('Demo empty state (data)', enableKnob('demoEmptyState'), STATES_GROUP)
       : null,
     demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
       ? boolean(
@@ -1242,6 +1264,9 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
           enableKnob('demoCustomEmptyState'),
           STATES_GROUP
         )
+      : null,
+    error: shouldCreate('error')
+      ? text('Show error state with this string (error)', '', STATES_GROUP)
       : null,
     demoCustomErrorState: shouldCreate('demoCustomErrorState')
       ? boolean(
