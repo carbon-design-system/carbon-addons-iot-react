@@ -2,7 +2,6 @@ import React from 'react';
 import Edit16 from '@carbon/icons-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { spacing02 } from '@carbon/layout';
 
 import { settings } from '../../constants/Settings';
 
@@ -47,7 +46,6 @@ describe('ResourceList', () => {
     );
     expect(screen.getByTestId('resource_list')).toBeDefined();
     expect(screen.getByTestId('resource_list-row-row-0')).toBeDefined();
-    expect(screen.getByTestId('resource_list-custom-action-row-0')).toBeDefined();
   });
 
   // handle click function test
@@ -116,9 +114,6 @@ describe('ResourceList', () => {
     expect(row).toBeVisible();
     expect(row.parentNode).toHaveClass(`${prefix}--structured-list-td`);
     expect(row.nextSibling).toHaveClass(`${prefix}--structured-list-td`);
-    expect(row.nextSibling).toHaveStyleRule('font-weight', 'normal');
-    expect(row.nextSibling).toHaveStyleRule('padding-left', '0px !important');
-    expect(row.nextSibling).toHaveStyleRule('padding-top', `${spacing02} !important`);
   });
 
   it('should trigger callback for keyboard events', () => {

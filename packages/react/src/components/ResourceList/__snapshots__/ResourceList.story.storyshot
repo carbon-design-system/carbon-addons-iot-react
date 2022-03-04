@@ -5,7 +5,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -171,7 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -198,14 +198,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-row-0"
+            data-testid="resource-list-custom-action-[object Object]"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -255,14 +255,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-row-1"
+            data-testid="resource-list-custom-action-[object Object]"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -312,14 +312,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-row-2"
+            data-testid="resource-list-custom-action-[object Object]"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -358,7 +358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
