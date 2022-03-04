@@ -1,52 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { spacing02 } from '@carbon/layout';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
-import { COLORS } from '../../styles/styles';
 import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
 import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
-const { prefix } = settings;
-
-const ResourceListSection = styled.section`
-   {
-    &.${prefix}--structured-list--selection
-      .${prefix}--structured-list-row:hover:not(.${prefix}--structured-list-row--header-row)
-      > .${prefix}--structured-list-td {
-      border: none;
-    }
-
-    .${prefix}--btn {
-      display: flex;
-      align-items: flex-end;
-      margin: auto 0 auto auto;
-
-      svg {
-        fill: ${COLORS.blue60};
-        margin-left: ${spacing02};
-      }
-    }
-  }
-`;
-
-const InlineDiv = styled.div`
-   {
-    font-weight: normal;
-    padding-left: 0px !important;
-    padding-top: ${spacing02} !important;
-  }
-`;
-
-const CustomActionDiv = styled.div`
-   {
-    vertical-align: middle;
-    color: #3e70b2;
-    fill: #3e70b2;
-  }
-`;
+const { prefix, iotPrefix } = settings;
 
 class ResourceList extends Component {
   static propTypes = {
@@ -116,8 +76,8 @@ class ResourceList extends Component {
         </svg>
       </div>
     );
-    const customActionContent = (rowId) => (
-      <CustomActionDiv
+    const CustomActionContent = (rowId) => (
+      <div
         className={`${prefix}--structured-list-td ${prefix}--structured-list-content--nowrap`}
         role="presentation"
       >
@@ -129,7 +89,7 @@ class ResourceList extends Component {
         >
           {customAction.label}
         </Button>
-      </CustomActionDiv>
+      </div>
     );
 
     const listContent = data.map(({ id, title, description }, idx) => {
@@ -158,7 +118,9 @@ class ResourceList extends Component {
             <Fragment>
               <div className={`${prefix}--structured-list-td`}>
                 <strong>{title}</strong>
-                <InlineDiv className={`${prefix}--structured-list-td`}>{description}</InlineDiv>
+                <div className={`${iotPrefix}--inline-div ${prefix}--structured-list-td`}>
+                  {description}
+                </div>
               </div>
             </Fragment>
           ) : (
@@ -172,7 +134,7 @@ class ResourceList extends Component {
             </Fragment>
           )}
           {customAction ? (
-            customActionContent(id)
+            <CustomActionContent rowId={id} />
           ) : (
             <Fragment>
               <input
@@ -192,16 +154,17 @@ class ResourceList extends Component {
     });
 
     return (
-      <ResourceListSection
+      <section
         data-testid={testId}
         className={[
+          `${iotPrefix}--structured-list`,
           `${prefix}--structured-list`,
           `${prefix}--structured-list--border`,
           `${prefix}--structured-list--selection`,
         ].join(' ')}
       >
         <div className={`${prefix}--structured-list-tbody`}>{listContent}</div>
-      </ResourceListSection>
+      </section>
     );
   };
 }

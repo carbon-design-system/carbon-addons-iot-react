@@ -1,0 +1,26 @@
+@import '~carbon-components/scss/globals/scss/vars';
+@import '../../globals/vars';
+
+.#{$iot-prefix}--structured-list {
+  &.#{$prefix}--structured-list--selection
+    .#{$prefix}--structured-list-row:hover:not(.#{$prefix}--structured-list-row--header-row)
+    > .#{$prefix}--structured-list-td {
+    border: none;
+  }
+
+  .#{$prefix}--btn {
+    display: flex;
+    align-items: flex-end;
+    margin: auto 0 auto auto;
+
+    svg {
+      fill: $interactive-01;
+      margin-left: $spacing-02;
+    }
+  }
+  .#{$prefix}--structured-list-row .#{$prefix}--structured-list-td .#{$iot-prefix}--inline-div {
+    font-weight: normal;
+    padding-left: 0px;
+    padding-top: $spacing-02;
+  }
+}
