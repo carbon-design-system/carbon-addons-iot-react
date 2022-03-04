@@ -102,23 +102,23 @@ const ProgressBar = ({
   const matchingFillColor = matchingThreshold?.color ?? DEFAULT_PROGRESS_BAR_COLOR;
   const fillColor = hasColorObject ? matchingThreshold.color.fill : matchingFillColor;
   const strokeColor = hasColorObject ? matchingThreshold.color.stroke : undefined;
-  const valueAndUnit = Number.isInteger(value) ? `${value}${valueUnit}` : '';
+  const valueAndUnitString = Number.isInteger(value) ? `${value}${valueUnit}` : '';
 
   /**
    * helper to render the value and unit
    *
    * @returns JSXElement
    */
-  const renderValueAndUnit = () => (
+  const valueAndUnit = (
     <span
       className={classnames(`${iotPrefix}--progress-bar__value-label`, {
         // allow styling the value label differently when above max
         [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
         [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
       })}
-      title={valueAndUnit}
+      title={valueAndUnitString}
     >
-      {valueAndUnit}
+      {valueAndUnitString}
     </span>
   );
 
@@ -128,7 +128,7 @@ const ProgressBar = ({
    *
    * @returns JSX Element
    */
-  const renderProgressBarLabel = () => (
+  const progressBarLabel = (
     <div
       className={classnames(`${iotPrefix}--progress-bar__label--right`, {
         [`${prefix}--visually-hidden`]: hideLabel,
@@ -147,7 +147,7 @@ const ProgressBar = ({
           )}
         </span>
       ) : null}
-      {renderValueAndUnit()}
+      {valueAndUnit}
     </div>
   );
 
@@ -156,10 +156,10 @@ const ProgressBar = ({
    *
    * @returns JSXElement
    */
-  const renderProgressBarWithInlineWrapper = () => (
+  const progressBarWithInlineWrapper = (
     <div className={`${iotPrefix}--progress-bar-wrapper--inline`}>
       <CarbonProgressBar label={label} helperText={undefined} hideLabel value={value} max={max} />
-      {renderValueAndUnit()}
+      {valueAndUnit}
     </div>
   );
 
@@ -180,10 +180,10 @@ const ProgressBar = ({
       }}
     >
       {inline ? (
-        renderProgressBarWithInlineWrapper()
+        progressBarWithInlineWrapper
       ) : (
         <>
-          {renderProgressBarLabel()}
+          {progressBarLabel}
           <CarbonProgressBar
             label={label}
             helperText={helperText}
