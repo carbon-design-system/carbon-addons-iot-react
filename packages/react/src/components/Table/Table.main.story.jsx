@@ -889,7 +889,7 @@ export const WithMainViewStates = () => {
       'error',
       'demoCustomErrorState',
     ],
-    enableKnob: (name) =>
+    getDefaultValue: (name) =>
       name !== 'demoEmptyColumns' &&
       name !== 'demoEmptyState' &&
       name !== 'demoCustomEmptyState' &&
