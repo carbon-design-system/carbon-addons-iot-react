@@ -82,7 +82,7 @@ describe('BarChartCard', () => {
     userEvent.click(downloadBtn);
     // This means the csvDownloadHandler is firing
     expect(fileDownload).toHaveBeenCalledWith(
-      `Amsterdam,New York,Bangkok,San Francisco\n447,528,435,388,\n`,
+      `Amsterdam,New York,Bangkok,San Francisco\n447,528,435,388\n`,
       'Sample.csv'
     );
   });
