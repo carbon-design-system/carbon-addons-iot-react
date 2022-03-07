@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.21...v2.149.0-next.22) (2022-03-07)
+
+
+### Bug Fixes
+
+* **table:** add onapplytoolbaraction to statefultable ([e8249e1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8249e101b1b8bdbeeb00066d0fa82e991f6b315))
+* **utilityfunctions:** fix generatecsv and update test ([57315d5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57315d500aeffab8eb74818a19cf58b467b02ad4)), closes [#3363](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3363)
+
+
+
+
+
 # [2.149.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.20...v2.149.0-next.21) (2022-03-07)
 
 **Note:** Version bump only for package carbon-addons-iot-react
