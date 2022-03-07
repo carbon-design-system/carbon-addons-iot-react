@@ -1,3 +1,5 @@
+import { ListItem } from 'carbon-components-angular';
+
 export interface TabAction {
   title: string;
   icon?: string;
@@ -20,6 +22,11 @@ export interface Tab {
    */
   selected?: boolean;
   actions?: TabAction[];
+  /**
+   * (Optional) Additional props to be used when creating drop down list items
+   * from the `Tab` items if `ai-tab-dropdown` is used.
+   */
+  dropdownListProps?: ListItem;
   /**
    * to allow expansion of the Tab interface with properties as needed
    */

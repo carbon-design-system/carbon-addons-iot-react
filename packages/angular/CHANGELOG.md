@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.20](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
+
+
+### Bug Fixes
+
+* **table:** fix type error ([a978cda](https://github.com/IBM/carbon-components-angular/commit/a978cdae200c2571a96685939e27e6574c142917))
+
+
+### Features
+
+* **table model:** account for rowSpans in moveColumn ([5eb8c11](https://github.com/IBM/carbon-components-angular/commit/5eb8c11ebed812e9474bf232f87c311a22ea7826))
+* **tabs:** add support for custom templates ([6dc2faf](https://github.com/IBM/carbon-components-angular/commit/6dc2fafadb42d3eea0b28477f2796a9060be25fb))
+
+
+
+
+
 # [2.149.0-next.1](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
 
 

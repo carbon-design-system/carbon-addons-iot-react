@@ -13,7 +13,7 @@ import {
   TabsModule as CTabsModule,
 } from 'carbon-components-angular';
 import { NgModule } from '@angular/core';
-import Edit16 from '@carbon/icons/es/edit/16';
+import { Bee16, Edit16, Settings16 } from '@carbon/icons';
 
 @NgModule({
   imports: [IconModule],
@@ -21,6 +21,8 @@ import Edit16 from '@carbon/icons/es/edit/16';
 class StoryIconModule {
   constructor(protected iconService: IconService) {
     iconService.register(Edit16);
+    iconService.register(Bee16);
+    iconService.register(Settings16);
   }
 }
 
@@ -379,6 +381,99 @@ storiesOf('Components/Tabs', module)
               onClick: this.editTab.bind(this),
             },
           ],
+        });
+      },
+    },
+  }))
+  .add('With custom templates', () => ({
+    template: `
+      <ai-tabs [controller]="controller" [titleTpl]="titleTpl">
+        <ai-tab-actions>
+          <button aiTabAction (click)="addTab()">
+            <svg class="bx--btn__icon" ibmIcon="add" size="16"></svg>
+          </button>
+          <ai-tab-dropdown [controller]="controller" [listTpl]="listTpl"></ai-tab-dropdown>
+        </ai-tab-actions>
+      </ai-tabs>
+      <ai-tab
+        *ngFor="let tab of controller.tabList | async"
+        [key]="tab.key"
+        [controller]="controller">
+        {{tab.demoContent}}
+      </ai-tab>
+
+      <ng-template #titleTpl let-tab="tab">
+        <svg *ngIf="tab.icon" [ibmIcon]="tab.icon" size="16"></svg>
+        {{ tab.title }}
+      </ng-template>
+
+      <ng-template #listTpl let-item="item">
+        {{ item.content }}
+        <svg *ngIf="item.icon" [ibmIcon]="item.icon" size="16"></svg>
+      </ng-template>
+    `,
+    props: {
+      controller: new TabController([
+        {
+          key: 'one',
+          title: 'One',
+          icon: 'edit',
+          dropdownListProps: { icon: 'edit' },
+          demoContent: 'Tab content 1',
+          actions: [
+            {
+              title: 'Close',
+              icon: 'close',
+              onClick: () => {
+                console.log('tab one close action clicked!');
+              },
+            },
+          ],
+        },
+        {
+          key: 'two',
+          title: 'Second tab',
+          icon: 'bee',
+          dropdownListProps: { icon: 'bee' },
+          demoContent: 'Tab content 2',
+          actions: [
+            {
+              title: 'Close',
+              icon: 'close',
+              onClick: () => {
+                console.log('tab two close action clicked!');
+              },
+            },
+            {
+              title: 'Edit',
+              onClick: () => {
+                console.log('tab two edit action clicked!');
+              },
+            },
+          ],
+        },
+        {
+          key: 'three',
+          title: 'Three',
+          icon: 'settings',
+          dropdownListProps: { icon: 'settings' },
+          actions: [
+            {
+              title: 'Close',
+              icon: 'close',
+              onClick: () => {
+                console.log('tab one close action clicked!');
+              },
+            },
+          ],
+          demoContent: 'Tab content 3',
+        },
+      ]),
+      addTab() {
+        this.controller.addTab({
+          key: Math.random(),
+          title: 'Another tab',
+          demoContent: 'Another tab content',
         });
       },
     },
