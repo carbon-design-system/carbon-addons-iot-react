@@ -39,7 +39,6 @@ export const generateCsv = (data) => {
       return `${previousNestedCsv}${row.values[headerId] ?? ''}${separator}`;
     }, previousCsv);
   }, headerRow);
-
 };
 
 /**
