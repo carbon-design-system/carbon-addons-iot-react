@@ -4,7 +4,7 @@ import { cloneDeep } from 'lodash-es';
 import { action } from '@storybook/addon-actions';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean, text, select, object } from '@storybook/addon-knobs';
-import { Add20, TrashCan16, BeeBat16, Activity16, Error16 } from '@carbon/icons-react';
+import { Add20, TrashCan16, BeeBat16, Activity16, ViewOff16, Error16 } from '@carbon/icons-react';
 import Arrow from '@carbon/icons-react/es/arrow--right/16';
 import Add from '@carbon/icons-react/es/add/16';
 import Edit from '@carbon/icons-react/es/edit/16';
@@ -280,13 +280,19 @@ export const getTableToolbarActions = () => [
     isDelete: true,
     hasDivider: true,
     isOverflow: true,
-    renderIcon: () => <TrashCan16 />,
+    renderIcon: TrashCan16,
   },
   {
     id: 'hidden',
     labelText: 'Hidden',
     hidden: true,
     isOverflow: true,
+  },
+  {
+    id: 'toggle',
+    labelText: 'Toggle something',
+    renderIcon: () => <ViewOff16 />,
+    isActive: true,
   },
 ];
 
@@ -533,6 +539,16 @@ export const getBatchActions = () => {
   ];
 };
 
+export const getCustomToolbarContentElement = () => (
+  <div
+    key="custom-content-1"
+    className=".bx--type-light"
+    style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}
+  >
+    Custom content
+  </div>
+);
+
 const revertSubstituteReactElements = (data, substitutions) => {
   return data.map((obj, index) => {
     const objCopy = { ...obj };
@@ -553,6 +569,10 @@ const substituteReactElements = (data, msg) => {
     Object.entries(originalObj).forEach(([key, value]) => {
       if (value.render) {
         objCopy[key] = `${value.render.name} (${msg})`;
+        substitutions[index] = [key, value];
+      } else if (typeof value === 'function') {
+        const returnValRenderName = value()?.type?.render?.name || '';
+        objCopy[key] = `${returnValRenderName} (${msg})`;
         substitutions[index] = [key, value];
       }
     });
@@ -801,16 +821,16 @@ const getParsedIntOrUndefined = (value) => {
 };
 
 /**
- * Helper function that Table knobs.
+ * Helper function that generate the Table knobs.
  *
  * If param knobsToCreate is unspecified then all knobs will be created, otherwise only the
  * knobs whose names are in the array. This conditional creation is needed since StoryBook
  * will show a knob as soon as it is created by a story, regardless of whether it is
  * placed in a local variable or not.
  */
-export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) => {
+export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = false }) => {
   const TABLE_GROUP = useGroups ? 'Table general' : undefined;
-  const TITLE_TOOLBAR_GROUP = useGroups ? 'Title & toolbar' : undefined;
+  const TITLE_TOOLBAR_GROUP = useGroups ? 'Toolbar' : undefined;
   const ROW_RENDER_GROUP = useGroups ? 'Data rendering' : undefined;
   const ROW_EDIT_GROUP = useGroups ? 'Data editing' : undefined;
   const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
@@ -841,7 +861,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasUserViewManagement: shouldCreate('hasUserViewManagement')
       ? boolean(
           'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
-          enableKnob('hasUserViewManagement'),
+          getDefaultValue('hasUserViewManagement'),
           TABLE_GROUP
         )
       : null,
@@ -849,39 +869,50 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     // TITLE_TOOLBAR_GROUP
     secondaryTitle: shouldCreate('secondaryTitle')
       ? text(
-          'Title shown in bar above header row (secondaryTitle)',
-          'Table playground',
+          'Title shown in toolbar (secondaryTitle)',
+          getDefaultValue('secondaryTitle'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
     tableTooltipText: shouldCreate('tableTooltipText')
       ? text(
           'Table title toltip (tooltip)',
-          enableKnob('tableTooltipText') ? 'I must be wrapped in a react node' : '',
+          getDefaultValue('tableTooltipText') ? 'I must be wrapped in a react node' : '',
           TITLE_TOOLBAR_GROUP
         )
       : null,
     stickyHeader: shouldCreate('stickyHeader')
-      ? boolean('Sticky header (stickyHeader) ☢️', enableKnob('stickyHeader'), TITLE_TOOLBAR_GROUP)
+      ? boolean(
+          'Sticky header (stickyHeader) ☢️',
+          getDefaultValue('stickyHeader'),
+          TITLE_TOOLBAR_GROUP
+        )
       : null,
-    demoToolbarActions: shouldCreate('tableTooltipText')
+    demoToolbarActions: shouldCreate('demoToolbarActions')
       ? boolean(
           'Demo toolbar actions (view.toolbar.toolbarActions)',
-          enableKnob('tableTooltipText'),
+          getDefaultValue('demoToolbarActions'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
     demoCustomToolbarContent: shouldCreate('demoCustomToolbarContent')
       ? boolean(
           'Demo custom toolbar content (view.toolbar.customToolbarContent)',
-          enableKnob('demoCustomToolbarContent'),
+          getDefaultValue('demoCustomToolbarContent'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
     toolbarIsDisabled: shouldCreate('toolbarIsDisabled')
       ? boolean(
           'Disable the table toolbar (view.toolbar.isDisabled)',
-          enableKnob('toolbarIsDisabled'),
+          getDefaultValue('toolbarIsDisabled'),
+          TITLE_TOOLBAR_GROUP
+        )
+      : null,
+    demoDownloadCSV: shouldCreate('demoDownloadCSV')
+      ? boolean(
+          'Demo download data as CSV',
+          getDefaultValue('demoDownloadCSV'),
           TITLE_TOOLBAR_GROUP
         )
       : null,
@@ -890,14 +921,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     demoSingleSort: shouldCreate('demoSingleSort')
       ? boolean(
           'Enable sort on single dimension (columns[i].isSortable)',
-          enableKnob('demoSingleSort'),
+          getDefaultValue('demoSingleSort'),
           SORT_FILTER_GROUP
         )
       : null,
     hasMultiSort: shouldCreate('hasMultiSort')
       ? boolean(
           'Enable sort on multiple dimensions (options.hasMultiSort)',
-          enableKnob('hasMultiSort'),
+          getDefaultValue('hasMultiSort'),
           SORT_FILTER_GROUP
         )
       : null,
@@ -905,14 +936,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
       ? select(
           'Enable simple filtering by column value (options.hasFilter)',
           ['onKeyPress', 'onEnterAndBlur', true, false],
-          enableKnob('hasFilter'),
+          getDefaultValue('hasFilter'),
           SORT_FILTER_GROUP
         )
       : null,
     hasAdvancedFilter: shouldCreate('hasAdvancedFilter')
       ? boolean(
           'Enable advanced filters (options.hasAdvancedFilter) ☢️',
-          enableKnob('hasAdvancedFilter'),
+          getDefaultValue('hasAdvancedFilter'),
           SORT_FILTER_GROUP
         )
       : null,
@@ -921,21 +952,21 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasSearch: shouldCreate('hasSearch')
       ? boolean(
           'Enable searching on the table values (options.hasSearch)',
-          enableKnob('hasSearch'),
+          getDefaultValue('hasSearch'),
           SEARCH_GROUP
         )
       : null,
     hasFastSearch: shouldCreate('hasFastSearch')
       ? boolean(
           'Trigger search while typing (options.hasFastSearch)',
-          enableKnob('hasFastSearch'),
+          getDefaultValue('hasFastSearch'),
           SEARCH_GROUP
         )
       : null,
     searchFieldDefaultExpanded: shouldCreate('searchFieldDefaultExpanded')
       ? boolean(
           'Expand search field by default on initialization (view.toolbar.search.defaultExpanded)',
-          enableKnob('searchFieldDefaultExpanded'),
+          getDefaultValue('searchFieldDefaultExpanded'),
           SEARCH_GROUP
         )
       : null,
@@ -951,7 +982,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasAggregations: shouldCreate('hasAggregations')
       ? boolean(
           'Aggregate column values in footer (options.hasAggregations)',
-          enableKnob('hasAggregations'),
+          getDefaultValue('hasAggregations'),
           AGGREGATION_GROUP
         )
       : null,
@@ -976,7 +1007,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasPagination: shouldCreate('hasPagination')
       ? boolean(
           'Enable pagination (options.hasPagination)',
-          enableKnob('hasPagination'),
+          getDefaultValue('hasPagination'),
           PAGINATION_GROUP
         )
       : null,
@@ -1001,7 +1032,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     isItemPerPageHidden: shouldCreate('isItemPerPageHidden')
       ? boolean(
           'Hide items per page selection (options.pagination.isItemPerPageHidden)',
-          enableKnob('isItemPerPageHidden'),
+          getDefaultValue('isItemPerPageHidden'),
           PAGINATION_GROUP
         )
       : null,
@@ -1016,43 +1047,47 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasOnlyPageData: shouldCreate('hasOnlyPageData')
       ? boolean(
           'Data prop only represents the currently visible page (options.hasOnlyPageData)',
-          enableKnob('hasOnlyPageData'),
+          getDefaultValue('hasOnlyPageData'),
           PAGINATION_GROUP
         )
       : null,
 
     // COLUMN_GROUP
     demoInitialColumnSizes: shouldCreate('demoInitialColumnSizes')
-      ? boolean('Demo initial columns sizes', enableKnob('demoInitialColumnSizes'), COLUMN_GROUP)
+      ? boolean(
+          'Demo initial columns sizes',
+          getDefaultValue('demoInitialColumnSizes'),
+          COLUMN_GROUP
+        )
       : null,
     hasResize: shouldCreate('hasResize')
       ? boolean(
           'Enable resizing of column widths (options.hasResize)',
-          enableKnob('hasResize'),
+          getDefaultValue('hasResize'),
           COLUMN_GROUP
         )
       : null,
     preserveColumnWidths: shouldCreate('preserveColumnWidths')
       ? boolean(
           'Preserve sibling widths on column resize/show/hide (options.preserveColumnWidths)',
-          enableKnob('preserveColumnWidths'),
+          getDefaultValue('preserveColumnWidths'),
           COLUMN_GROUP
         )
       : null,
     useAutoTableLayoutForResize: shouldCreate('useAutoTableLayoutForResize')
       ? boolean(
           'Use CSS table-layout:auto (options.useAutoTableLayoutForResize)',
-          enableKnob('useAutoTableLayoutForResize'),
+          getDefaultValue('useAutoTableLayoutForResize'),
           COLUMN_GROUP
         )
       : null,
     demoColumnTooltips: shouldCreate('demoColumnTooltips')
-      ? boolean('Demo column tooltips', enableKnob('demoColumnTooltips'), COLUMN_GROUP)
+      ? boolean('Demo column tooltips', getDefaultValue('demoColumnTooltips'), COLUMN_GROUP)
       : null,
     demoColumnGroupAssignments: shouldCreate('demoColumnGroupAssignments')
       ? boolean(
           'Demo assigning columns to groups',
-          enableKnob('demoColumnGroupAssignments'),
+          getDefaultValue('demoColumnGroupAssignments'),
           COLUMN_GROUP
         )
       : null,
@@ -1073,14 +1108,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasColumnSelection: shouldCreate('hasColumnSelection')
       ? boolean(
           'Enable legacy column management (options.hasColumnSelection)',
-          enableKnob('hasColumnSelection'),
+          getDefaultValue('hasColumnSelection'),
           COLUMN_GROUP
         )
       : null,
     hasColumnSelectionConfig: shouldCreate('hasColumnSelectionConfig')
       ? boolean(
           'Show config button in legacy column management (options.hasColumnSelectionConfig)',
-          enableKnob('hasColumnSelectionConfig'),
+          getDefaultValue('hasColumnSelectionConfig'),
           COLUMN_GROUP
         )
       : null,
@@ -1090,7 +1125,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
       ? select(
           'Enable row selection type (options.hasRowSelection)',
           ['multi', 'single', false],
-          enableKnob('hasRowSelection') ? 'multi' : false.valueOf,
+          getDefaultValue('hasRowSelection') ? 'multi' : false.valueOf,
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
@@ -1104,7 +1139,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     selectionCheckboxEnabled: shouldCreate('selectionCheckboxEnabled')
       ? boolean(
           'Demo row as selectable (data[i].isSelectable)',
-          enableKnob('selectionCheckboxEnabled'),
+          getDefaultValue('selectionCheckboxEnabled'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
@@ -1118,7 +1153,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasRowActions: shouldCreate('hasRowActions')
       ? boolean(
           'Demo inline actions (options.hasRowActions)',
-          enableKnob('hasRowActions'),
+          getDefaultValue('hasRowActions'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
@@ -1132,7 +1167,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
             false: false,
             '{ expandRowsExclusively: true }': { expandRowsExclusively: true },
           },
-          enableKnob('hasRowExpansion'),
+          getDefaultValue('hasRowExpansion'),
           NESTING_EXPANSION_GROUP
         )
       : null,
@@ -1144,7 +1179,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
             false: false,
             '{ hasSingleNestedHierarchy: true }': { hasSingleNestedHierarchy: true },
           },
-          enableKnob('hasRowNesting'),
+          getDefaultValue('hasRowNesting'),
           NESTING_EXPANSION_GROUP
         )
       : null,
@@ -1154,14 +1189,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     shouldExpandOnRowClick: shouldCreate('shouldExpandOnRowClick')
       ? boolean(
           'Expand row on click (options.shouldExpandOnRowClick)',
-          enableKnob('shouldExpandOnRowClick'),
+          getDefaultValue('shouldExpandOnRowClick'),
           NESTING_EXPANSION_GROUP
         )
       : null,
     demoHasLoadMore: shouldCreate('demoHasLoadMore')
       ? boolean(
           'Demo load more child rows (data[i].hasLoadMore)',
-          enableKnob('demoHasLoadMore'),
+          getDefaultValue('demoHasLoadMore'),
           NESTING_EXPANSION_GROUP
         )
       : null,
@@ -1170,14 +1205,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     shouldLazyRender: shouldCreate('shouldLazyRender')
       ? boolean(
           'Enable only loading table rows as they become visible (options.shouldLazyRender)',
-          enableKnob('shouldLazyRender'),
+          getDefaultValue('shouldLazyRender'),
           ROW_RENDER_GROUP
         )
       : null,
     useZebraStyles: shouldCreate('useZebraStyles')
       ? boolean(
           'Alternate colors in table rows (useZebraStyles)',
-          enableKnob('useZebraStyles'),
+          getDefaultValue('useZebraStyles'),
           ROW_RENDER_GROUP
         )
       : null,
@@ -1203,7 +1238,7 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     preserveCellWhiteSpace: shouldCreate('preserveCellWhiteSpace')
       ? boolean(
           'Keep extra whitespace within a table cell (options.preserveCellWhiteSpace)',
-          enableKnob('preserveCellWhiteSpace'),
+          getDefaultValue('preserveCellWhiteSpace'),
           ROW_RENDER_GROUP
         )
       : null,
@@ -1219,14 +1254,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     hasRowEdit: shouldCreate('hasRowEdit')
       ? boolean(
           'Enables row editing for the entire table (options.hasRowEdit)',
-          enableKnob('hasRowEdit'),
+          getDefaultValue('hasRowEdit'),
           ROW_EDIT_GROUP
         )
       : null,
     hasSingleRowEdit: shouldCreate('hasSingleRowEdit')
       ? boolean(
           'Enables row editing for a single row (options.hasSingleRowEdit)',
-          enableKnob('hasSingleRowEdit'),
+          getDefaultValue('hasSingleRowEdit'),
           ROW_EDIT_GROUP
         )
       : null,
@@ -1235,14 +1270,14 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     tableIsLoading: shouldCreate('tableIsLoading')
       ? boolean(
           'Show table loading state (view.table.loadingState.isLoading)',
-          enableKnob('tableIsLoading'),
+          getDefaultValue('tableIsLoading'),
           STATES_GROUP
         )
       : null,
     demoEmptyColumns: shouldCreate('demoEmptyColumns')
       ? boolean(
           'Demo empty columns in loading state (columns)',
-          enableKnob('demoEmptyColumns'),
+          getDefaultValue('demoEmptyColumns'),
           STATES_GROUP
         )
       : null,
@@ -1269,21 +1304,21 @@ export const getTableKnobs = ({ knobsToCreate, enableKnob, useGroups = false }) 
     demoEmptyState: shouldCreate('demoEmptyState')
       ? boolean(
           'Demo empty state (view.table.emptyState)',
-          enableKnob('demoEmptyState'),
+          getDefaultValue('demoEmptyState'),
           STATES_GROUP
         )
       : null,
     demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
       ? boolean(
           'Demo custom empty state (view.table.emptyState)',
-          enableKnob('demoCustomEmptyState'),
+          getDefaultValue('demoCustomEmptyState'),
           STATES_GROUP
         )
       : null,
     demoCustomErrorState: shouldCreate('demoCustomErrorState')
       ? boolean(
           'Demo custom error state (view.table.errorState)',
-          enableKnob('demoCustomErrorState'),
+          getDefaultValue('demoCustomErrorState'),
           STATES_GROUP
         )
       : null,
