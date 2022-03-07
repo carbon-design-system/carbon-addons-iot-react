@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
+
+
+### Features
+
+* **progress-bar:** add inline variant ([191d557](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/191d557d71b2acf603586f31c084b88d75284fc3))
+
+
+
+
+
 # [2.149.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.18...v2.149.0-next.19) (2022-03-05)
 
 
