@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.18...v2.149.0-next.19) (2022-03-05)
+
+
+### Bug Fixes
+
+* **table:** hide the divider line before cancel on hover ([c77bb66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c77bb668642a9dadaafd22a6543163e86e6480d8))
+
+
+### Features
+
+* **table:** add overflow menu to batch actions ([46511b9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46511b91f854b0e879098d198f1eb7672796bb0a))
+
+
+
+
+
 # [2.149.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.17...v2.149.0-next.18) (2022-03-02)
 
 
