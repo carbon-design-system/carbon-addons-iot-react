@@ -3702,7 +3702,17 @@ Map {
               "type": "string",
             },
             "deleteWarningTextTemplate": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "editIconText": Object {
               "type": "string",
