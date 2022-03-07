@@ -8,7 +8,6 @@ import Button from '../Button';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
-import EmptyState from '../EmptyState';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
