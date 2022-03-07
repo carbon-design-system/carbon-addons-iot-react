@@ -29969,6 +29969,7 @@ Map {
       "i18n": Object {
         "iconLabel": "Progress bar icon",
       },
+      "inline": false,
       "light": false,
       "max": 100,
       "renderIcon": undefined,
@@ -29995,6 +29996,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "inline": Object {
+        "type": "bool",
       },
       "label": Object {
         "isRequired": true,
