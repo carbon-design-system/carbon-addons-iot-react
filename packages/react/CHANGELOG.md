@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.21...v2.149.0-next.22) (2022-03-07)
+
+
+### Bug Fixes
+
+* **table:** add onapplytoolbaraction to statefultable ([e8249e1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8249e101b1b8bdbeeb00066d0fa82e991f6b315))
+* **utilityfunctions:** fix generatecsv and update test ([57315d5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57315d500aeffab8eb74818a19cf58b467b02ad4)), closes [#3363](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3363)
+
+
+
+
+
+# [2.149.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.20...v2.149.0-next.21) (2022-03-07)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.149.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
+
+
+### Features
+
+* **progress-bar:** add inline variant ([191d557](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/191d557d71b2acf603586f31c084b88d75284fc3))
+
+
+
+
+
+# [2.149.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.18...v2.149.0-next.19) (2022-03-05)
+
+
+### Bug Fixes
+
+* **table:** hide the divider line before cancel on hover ([c77bb66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c77bb668642a9dadaafd22a6543163e86e6480d8))
+
+
+### Features
+
+* **table:** add overflow menu to batch actions ([46511b9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46511b91f854b0e879098d198f1eb7672796bb0a))
+
+
+
+
+
+# [2.149.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.17...v2.149.0-next.18) (2022-03-02)
+
+
+### Bug Fixes
+
+* **date-time-picker:** rtl issues ([d9ede7d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9ede7d3c87dd213868633f098cd78f4cf3d7015))
+* **time-picker-spinner:** positioning of buttons when invalid ([fa4df07](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa4df07e74e77017ca709ec183001ac0f21b2fa9))
+
+
+
+
+
+# [2.149.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.16...v2.149.0-next.17) (2022-02-28)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.149.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.15...v2.149.0-next.16) (2022-02-28)
 
 **Note:** Version bump only for package carbon-addons-iot-react

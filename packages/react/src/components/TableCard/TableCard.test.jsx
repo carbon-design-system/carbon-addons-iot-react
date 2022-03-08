@@ -1008,7 +1008,7 @@ describe('TableCard', () => {
 
     userEvent.click(screen.getByRole('button', { name: /download/i }));
     expect(fileDownload).toHaveBeenCalledWith(
-      `alert,count,hour,long_description,pressure\nAHI005 Asset failure,1.2039201932,1563877570000,long description for a given event payload,0,\nAHI003 process need to optimize adjust X variables,1.10329291,1563873970000,long description for a given event payload,2,\n`,
+      `alert,count,hour,long_description,pressure\nAHI005 Asset failure,1.2039201932,1563877570000,long description for a given event payload,0\nAHI003 process need to optimize adjust X variables,1.10329291,1563873970000,long description for a given event payload,2\n`,
       'Open Alerts.csv'
     );
   });

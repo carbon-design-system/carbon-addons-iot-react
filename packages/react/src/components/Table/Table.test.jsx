@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
-import { ArrowRight16, Screen16, ViewOff16 } from '@carbon/icons-react';
+import { ArrowRight16, Screen16, TrashCan16, ViewOff16 } from '@carbon/icons-react';
 import { merge } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
@@ -64,6 +64,8 @@ const i18nTest = {
 };
 
 const i18nDefault = defaultProps({}).i18n;
+
+const OVERFLOW_BUTTON_LABEL = 'open and close list of options';
 
 describe('Table', () => {
   beforeAll(() => {
@@ -2639,7 +2641,7 @@ describe('Table', () => {
       />
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
     const toggleButton = screen.getByRole('menuitem', { name: 'Toggle aggregations' });
     expect(toggleButton).toBeVisible();
     expect(toggleButton).toBeDisabled();
@@ -2673,7 +2675,7 @@ describe('Table', () => {
         }}
       />
     );
-    userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+    userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
     expect(toggleButton).toBeVisible();
     expect(toggleButton).not.toBeDisabled();
     expect(screen.getByText('Total:')).toBeVisible();
@@ -2902,7 +2904,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
       expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
@@ -2950,7 +2952,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
       expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
@@ -3006,7 +3008,7 @@ describe('Table', () => {
         renderIcon: expect.anything(),
       });
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       // second after the toolbar has been opened
       expect(obj.toolbarActions).toHaveBeenCalledTimes(2);
 
@@ -3023,7 +3025,7 @@ describe('Table', () => {
       });
 
       // ensure state tracking is working and items are visible again when re-opening.
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /Edit something/ })).toBeVisible();
       userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
       expect(onApplyToolbarAction).toHaveBeenCalledWith({
@@ -3104,7 +3106,7 @@ describe('Table', () => {
         'Arrow right toolbar'
       );
 
-      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /a-warning-label/ })).toBeVisible();
       expect(screen.getByLabelText('a-warning-label', { selector: 'svg' })).toBeVisible();
       expect(screen.getByRole('menuitem', { name: /View off/ })).toBeVisible();
@@ -3142,7 +3144,170 @@ describe('Table', () => {
       );
 
       expect(screen.queryByRole('button', { name: 'Do something' })).toBeNull();
-      expect(screen.queryByRole('button', { name: 'open and close list of options' })).toBeNull();
+      expect(screen.queryByRole('button', { name: OVERFLOW_BUTTON_LABEL })).toBeNull();
+    });
+  });
+
+  describe('batch actions', () => {
+    beforeEach(() => {
+      jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(() => ({ width: 100, height: 100 }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should fire callbacks for overflow batch actions', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'overflow-batch-action-text',
+                  labelText: 'overflow batch action text',
+                  isOverflow: true,
+                },
+                {
+                  id: 'test-overflow-batch-action-icon',
+                  labelText: 'overflow batch action with icon',
+                  renderIcon: Screen16,
+                  isOverflow: true,
+                },
+                {
+                  id: 'test-overflow-batch-action-hidden',
+                  labelText: "overflow batch action that's hidden",
+                  renderIcon: Screen16,
+                  isOverflow: true,
+                  hidden: true,
+                },
+                {
+                  id: 'test-overflow-batch-action-disabled',
+                  labelText: "overflow batch action that's disabled",
+                  renderIcon: Screen16,
+                  isOverflow: true,
+                  disabled: true,
+                },
+                {
+                  id: 'test-overflow-batch-action-delete',
+                  labelText: 'overflow batch action delete',
+                  renderIcon: TrashCan16,
+                  isOverflow: true,
+                  isDelete: true,
+                  hasDivider: true,
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
+      userEvent.click(screen.getByText('overflow batch action text'));
+      expect(onApplyBatchAction).toHaveBeenCalledWith('overflow-batch-action-text');
+
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
+      userEvent.click(screen.getByText('overflow batch action with icon'));
+      expect(onApplyBatchAction).toHaveBeenCalledWith('test-overflow-batch-action-icon');
+
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
+      userEvent.click(screen.getByText('overflow batch action delete'));
+      expect(onApplyBatchAction).toHaveBeenCalledWith('test-overflow-batch-action-delete');
+
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
+      userEvent.click(screen.getByText("overflow batch action that's disabled"));
+      expect(onApplyBatchAction).not.toHaveBeenCalledWith('test-overflow-batch-action-disabled');
+
+      userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
+      expect(screen.queryByText("overflow batch action that's hidden")).toBeNull();
+    });
+    it('should hide and disable batch actions', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'hidden-batch-action',
+                  labelText: 'hidden batch action',
+                  hidden: true,
+                },
+                {
+                  id: 'disabled-batch-action',
+                  labelText: 'disabled batch action',
+                  disabled: true,
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      userEvent.click(screen.getByRole('button', { name: 'disabled batch action' }));
+      expect(onApplyBatchAction).not.toHaveBeenCalledWith('disabled-batch-action');
+
+      expect(screen.queryByText('hidden batch action')).toBeNull();
+    });
+    it('should hide the overflow menu if all items are hidden', () => {
+      const rows = tableData.slice(0, 5);
+      const selectedIds = rows.map((row) => row.id);
+      const onApplyBatchAction = jest.fn();
+      render(
+        <Table
+          id="tableid1"
+          columns={tableColumns}
+          data={rows}
+          options={{ hasRowSelection: 'multi' }}
+          view={{
+            table: { selectedIds: selectedIds.slice(1, 5) },
+            toolbar: {
+              batchActions: [
+                {
+                  id: 'hidden-batch-action',
+                  labelText: 'hidden batch action',
+                  isOverflow: true,
+                  hidden: true,
+                },
+              ],
+            },
+          }}
+          actions={{
+            toolbar: {
+              onApplyBatchAction,
+            },
+          }}
+        />
+      );
+
+      expect(screen.queryByRole('button', { name: OVERFLOW_BUTTON_LABEL })).toBeNull();
     });
   });
 });

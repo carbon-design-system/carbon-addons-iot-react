@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, ElementRef, Input, TemplateRef } from '@angular/core';
 import { TabController } from './tab-controller.class';
 
 @Component({
@@ -17,7 +17,13 @@ import { TabController } from './tab-controller.class';
         (selected)="onSelected(tab.key)"
       >
         <div class="iot--tab__title-container">
-          <span>{{ tab.title }}</span>
+          <span *ngIf="!titleTpl">{{ tab.title }}</span>
+          <ng-container
+            *ngIf="titleTpl"
+            [ngTemplateOutlet]="titleTpl"
+            [ngTemplateOutletContext]="{ tab: tab }"
+          >
+          </ng-container>
         </div>
       </ai-tab-header>
     </ibm-tab-header-group>
@@ -33,6 +39,28 @@ import { TabController } from './tab-controller.class';
 })
 export class TabsComponent {
   @Input() controller: TabController;
+  /**
+   * Template to bind to header titles (optional).
+   * Tab item is passed in as context.
+   *
+   * For example:
+   *
+   * controller = new TabController([
+   *  {
+   *    title: 'One',
+   *    icon: 'edit'
+   *  }
+   * ]);
+   *
+   * // Tab items are passed in as context in the form "{tab: tab}" so the let-<your_var_name>="tab" is necessary
+   * <ng-template #titleTpl let-tab="tab">
+   *  <svg *ngIf="tab.icon" [ibmIcon]="tab.icon" size="16"></svg>
+   *  {{ tab.title }}
+   * </ng-template>
+   *
+   * <ai-tabs [controller]="controller" [titleTpl]="titleTpl"></ai-tabs>
+   */
+  @Input() titleTpl: TemplateRef<any> = null;
 
   constructor(protected elementRef: ElementRef) {}
 

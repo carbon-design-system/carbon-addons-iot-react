@@ -4,11 +4,14 @@ import { mount } from '@cypress/react';
 import dayjs from '../../utils/dayjs';
 import { settings } from '../../constants/Settings';
 
-import DateTimePicker, { PICKER_KINDS } from './DateTimePicker';
+import DateTimePicker, { INTERVAL_VALUES, PICKER_KINDS } from './DateTimePicker';
 
 const { iotPrefix } = settings;
 
 describe('DateTimePicker', () => {
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
   it('should pick a new absolute ranges', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
@@ -95,6 +98,97 @@ describe('DateTimePicker', () => {
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
   });
 
+  it('should disable apply button when relative TimePickerSpinner input is invalid ', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput />);
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByText('Custom Range').click();
+
+    cy.findByPlaceholderText('hh:mm').type('91:35');
+
+    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+
+    cy.findByPlaceholderText('hh:mm').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    );
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+  });
+
+  it('should not parse when relativeToWhen is empty', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            relativeToWhen: '',
+          },
+        }}
+      />
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByPlaceholderText('hh:mm').should('be.visible').type('12:04');
+    cy.findByRole('button', { name: 'Apply' })
+      .click()
+      .should(() => {
+        expect(onApply).to.have.been.calledWith({
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            relativeToWhen: '',
+            relativeToTime: '12:04',
+          },
+        });
+      });
+    cy.findByTestId('date-time-picker__field').should('contain.text', '');
+  });
+
+  it('should parse time after 5 characters have been typed', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            relativeToWhen: INTERVAL_VALUES.MINUTES,
+            relativeToTime: '',
+          },
+        }}
+      />
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByLabelText('Increment number').click();
+    cy.findByPlaceholderText('hh:mm').should('be.visible').type('12:04');
+    cy.findByRole('button', { name: 'Apply' })
+      .click()
+      .should(() => {
+        expect(onApply).to.have.been.calledWith({
+          timeRangeKind: PICKER_KINDS.RELATIVE,
+          timeRangeValue: {
+            lastNumber: 1,
+            relativeToWhen: INTERVAL_VALUES.MINUTES,
+            relativeToTime: '12:04',
+            end: Cypress.sinon.match.any,
+            start: Cypress.sinon.match.any,
+          },
+        });
+      });
+  });
+
   it('should be able to navigate by keyboard', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
@@ -156,8 +250,8 @@ describe('DateTimePicker', () => {
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');
     cy.focused().realPress('Tab');
-    cy.focused().should('contain.text', 'Apply');
     cy.focused()
+      .should('contain.text', 'Apply')
       .type('{enter}')
       .should(() => {
         expect(onApply).to.be.calledWith({

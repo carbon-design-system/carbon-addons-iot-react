@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   DatePicker,
@@ -17,6 +17,7 @@ import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import * as uuid from 'uuid';
 import warning from 'warning';
+import { useLangDirection } from 'use-lang-direction';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -29,8 +30,23 @@ import {
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { Tooltip } from '../Tooltip';
 
-import { parseValue } from './dateTimePickerUtils';
+import {
+  getIntervalValue,
+  invalidEndDate,
+  invalidStartDate,
+  onDatePickerClose,
+  parseValue,
+  useAbsoluteDateTimeValue,
+  useDateTimePickerFocus,
+  useDateTimePickerKeyboardInteraction,
+  useDateTimePickerRangeKind,
+  useDateTimePickerRef,
+  useDateTimePickerTooltip,
+  useRelativeDateTimeValue,
+} from './dateTimePickerUtils';
 
 const { iotPrefix } = settings;
 
@@ -58,9 +74,9 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
     timeRangeValue: PropTypes.exact({
       startDate: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
-      /** Can be a full parseable DateTime string or a Date object */
+      /** Can be a full parsable DateTime string or a Date object */
       start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
-      /** Can be a full parseable DateTime string or a Date object */
+      /** Can be a full parsable DateTime string or a Date object */
       end: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
       endDate: PropTypes.string.isRequired,
       endTime: PropTypes.string.isRequired,
@@ -149,6 +165,8 @@ const propTypes = {
   id: PropTypes.string,
   /** Optionally renders only an icon rather than displaying the current selected time */
   hasIconOnly: PropTypes.bool,
+  /** Allow repositioning the flyout menu */
+  menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
 };
 
 const defaultProps = {
@@ -229,6 +247,7 @@ const defaultProps = {
   locale: 'en',
   id: undefined,
   hasIconOnly: false,
+  menuOffset: undefined,
 };
 
 const DateTimePicker = ({
@@ -251,10 +270,9 @@ const DateTimePicker = ({
   locale,
   id = uuid.v4(),
   hasIconOnly,
+  menuOffset,
   ...others
 }) => {
-  // keeps track of the flyout menu state
-  const [isFlyoutOpen, setIsFlyoutOpen] = useState();
   React.useEffect(() => {
     if (__DEV__) {
       warning(
@@ -264,6 +282,7 @@ const DateTimePicker = ({
     }
   }, []);
 
+  const langDir = useLangDirection();
   const strings = useMemo(
     () => ({
       ...defaultProps.i18n,
@@ -278,24 +297,53 @@ const DateTimePicker = ({
   }, [locale]);
 
   // State
-  const [customRangeKind, setCustomRangeKind] = useState(
-    showRelativeOption ? PICKER_KINDS.RELATIVE : PICKER_KINDS.ABSOLUTE
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
+    showRelativeOption
   );
   const [isCustomRange, setIsCustomRange] = useState(false);
   const [selectedPreset, setSelectedPreset] = useState(null);
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
-  const [relativeValue, setRelativeValue] = useState(null);
-  const [absoluteValue, setAbsoluteValue] = useState(null);
-  const [focusOnFirstField, setFocusOnFirstField] = useState(true);
-  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
-  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
-  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
-
-  // Refs
-  const [datePickerElem, setDatePickerElem] = useState(null);
+  const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
+  const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const {
+    absoluteValue,
+    setAbsoluteValue,
+    absoluteStartTimeInvalid,
+    setAbsoluteStartTimeInvalid,
+    absoluteEndTimeInvalid,
+    setAbsoluteEndTimeInvalid,
+    onAbsoluteStartTimeChange,
+    onAbsoluteEndTimeChange,
+    resetAbsoluteValue,
+  } = useAbsoluteDateTimeValue();
+
+  const {
+    relativeValue,
+    setRelativeValue,
+    relativeToTimeInvalid,
+    resetRelativeValue,
+    relativeLastNumberInvalid,
+    onRelativeLastNumberChange,
+    onRelativeLastIntervalChange,
+    onRelativeToWhenChange,
+    onRelativeToTimeChange,
+  } = useRelativeDateTimeValue({
+    defaultInterval: intervals[0].value,
+    defaultRelativeTo: relatives[0].value,
+  });
+
+  const {
+    isExpanded,
+    setIsExpanded,
+    presetListRef,
+    onFieldInteraction,
+    onNavigateRadioButton,
+    onNavigatePresets,
+  } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
+  const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -317,25 +365,6 @@ const DateTimePicker = ({
       endTime: null,
     },
   };
-
-  const handleDatePickerRef = useCallback((node) => {
-    setDatePickerElem(node);
-  }, []);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (datePickerElem) {
-        datePickerElem.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to reparent its DOM to our component
-        const dp = document.getElementById(`${id}-${iotPrefix}--date-time-picker__datepicker`);
-        dp.appendChild(datePickerElem.cal.calendarContainer);
-      }
-    }, 0);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [datePickerElem, id]);
 
   /**
    * Transforms a default or selected value into a full blown returnable object
@@ -388,16 +417,6 @@ const DateTimePicker = ({
     [absoluteValue, relativeValue]
   );
 
-  useEffect(() => {
-    if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
-      if (focusOnFirstField) {
-        datePickerElem.inputField.click();
-      } else {
-        datePickerElem.toInputField.click();
-      }
-    }
-  }, [datePickerElem, focusOnFirstField]);
-
   const onDatePickerChange = ([start, end], _, flatpickr) => {
     const calendarInFocus = document?.activeElement?.closest(
       `.${iotPrefix}--date-time-picker__datepicker`
@@ -445,41 +464,19 @@ const DateTimePicker = ({
     }
 
     setAbsoluteValue(newAbsolute);
-  };
 
-  const onDatePickerClose = (range, single, flatpickr) => {
-    // force it to stay open
-    /* istanbul ignore else */
-    if (flatpickr) {
-      flatpickr.open();
-    }
-  };
-
-  const onCustomRangeChange = (kind) => {
-    setCustomRangeKind(kind);
+    // Update end and start time invalid state when date changed
+    setAbsoluteEndTimeInvalid(
+      invalidEndDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
+    setAbsoluteStartTimeInvalid(
+      invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
   };
 
   const onPresetClick = (preset) => {
     setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
-  };
-
-  const resetRelativeValue = () => {
-    setRelativeValue({
-      lastNumber: 0,
-      lastInterval: intervals[0].value,
-      relativeToWhen: relatives[0].value,
-      relativeToTime: '',
-    });
-  };
-
-  const resetAbsoluteValue = () => {
-    setAbsoluteValue({
-      startDate: '',
-      startTime: '00:00',
-      endDate: '',
-      endTime: '00:00',
-    });
   };
 
   const parseDefaultValue = (parsableValue) => {
@@ -509,13 +506,15 @@ const DateTimePicker = ({
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
         if (!absolute.hasOwnProperty('start')) {
-          absolute.start = dayjs(absolute.startDate).valueOf();
+          absolute.start = dayjs(`${absolute.startDate} ${absolute.startTime}`).valueOf();
         }
         if (!absolute.hasOwnProperty('end')) {
-          absolute.end = dayjs(absolute.endDate).valueOf();
+          absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
+        absolute.startTime = dayjs(absolute.start).format('HH:mm');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
+        absolute.endTime = dayjs(absolute.end).format('HH:mm');
         setAbsoluteValue(absolute);
       }
     } else {
@@ -557,67 +556,14 @@ const DateTimePicker = ({
     [defaultValue]
   );
 
-  /**
-   * Get an alternative human readable value for a preset to show in tooltips and dropdown
-   * ie. 'Last 30 minutes' displays '2020-04-01 11:30 to Now' on the tooltip
-   * @returns {string} an interval string, starting point in time to now
-   */
-  const getIntervalValue = () => {
-    if (currentValue) {
-      if (currentValue.kind === PICKER_KINDS.PRESET) {
-        return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
-          strings.toNowLabel
-        }`;
-      }
-    }
-    return '';
-  };
-
-  // Util func to update the relative value
-  const changeRelativePropertyValue = (property, value) => {
-    const newRelative = { ...relativeValue };
-    newRelative[property] = value;
-    setRelativeValue(newRelative);
-  };
-
-  // on change functions that trigger a relative value update
-  const onRelativeLastNumberChange = (event) => {
-    changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
-  };
-  const onRelativeLastIntervalChange = (event) => {
-    changeRelativePropertyValue('lastInterval', event.currentTarget.value);
-  };
-  const onRelativeToWhenChange = (event) => {
-    changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
-  };
-  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
-    setRelativeToTimeInvalid(meta.invalid);
-    changeRelativePropertyValue('relativeToTime', pickerValue);
-  };
-
-  // Util func to update the absolute value
-  const changeAbsolutePropertyValue = (property, value) => {
-    const newAbsolute = { ...absoluteValue };
-    newAbsolute[property] = value;
-    setAbsoluteValue(newAbsolute);
-  };
-
-  // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteStartTimeInvalid(meta.invalid);
-    changeAbsolutePropertyValue('startTime', pickerValue);
-  };
-  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteEndTimeInvalid(meta.invalid);
-    changeAbsolutePropertyValue('endTime', pickerValue);
-  };
-
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
-    : getIntervalValue();
+    : getIntervalValue({ currentValue, strings, dateTimeMask, humanValue });
 
   const disableRelativeApply =
-    isCustomRange && customRangeKind === PICKER_KINDS.RELATIVE && relativeToTimeInvalid;
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.RELATIVE &&
+    (relativeLastNumberInvalid || relativeToTimeInvalid);
 
   const disableAbsoluteApply =
     isCustomRange &&
@@ -626,54 +572,54 @@ const DateTimePicker = ({
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
+  const onApplyClick = () => {
+    setIsExpanded(false);
+    const value = renderValue();
+    setLastAppliedValue(value);
+    const returnValue = {
+      timeRangeKind: value.kind,
+      timeRangeValue: null,
+    };
+    switch (value.kind) {
+      case PICKER_KINDS.ABSOLUTE:
+        returnValue.timeRangeValue = {
+          ...value.absolute,
+          humanValue,
+          tooltipValue,
+        };
+        break;
+      case PICKER_KINDS.RELATIVE:
+        returnValue.timeRangeValue = {
+          ...value.relative,
+          humanValue,
+          tooltipValue,
+        };
+        break;
+      default:
+        returnValue.timeRangeValue = {
+          ...value.preset,
+          tooltipValue,
+        };
+        break;
+    }
+
+    if (onApply) {
+      onApply(returnValue);
+    }
+  };
+
+  const onCancelClick = () => {
+    parseDefaultValue(lastAppliedValue);
+    setIsExpanded(false);
+
+    /* istanbul ignore else */
+    if (onCancel) {
+      onCancel();
+    }
+  };
+
   // eslint-disable-next-line react/prop-types
-  const CustomFooter = ({ setIsOpen }) => {
-    const onApplyClick = () => {
-      setIsOpen(false);
-      const value = renderValue();
-      setLastAppliedValue(value);
-      const returnValue = {
-        timeRangeKind: value.kind,
-        timeRangeValue: null,
-      };
-      switch (value.kind) {
-        case PICKER_KINDS.ABSOLUTE:
-          returnValue.timeRangeValue = {
-            ...value.absolute,
-            humanValue,
-            tooltipValue,
-          };
-          break;
-        case PICKER_KINDS.RELATIVE:
-          returnValue.timeRangeValue = {
-            ...value.relative,
-            humanValue,
-            tooltipValue,
-          };
-          break;
-        default:
-          returnValue.timeRangeValue = {
-            ...value.preset,
-            tooltipValue,
-          };
-          break;
-      }
-
-      if (onApply) {
-        onApply(returnValue);
-      }
-    };
-
-    const onCancelClick = () => {
-      parseDefaultValue(lastAppliedValue);
-      setIsOpen(false);
-
-      /* istanbul ignore else */
-      if (onCancel) {
-        onCancel();
-      }
-    };
-
+  const CustomFooter = () => {
     return (
       <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
         {isCustomRange ? (
@@ -683,6 +629,7 @@ const DateTimePicker = ({
             size="field"
             {...others}
             onClick={toggleIsCustomRange}
+            onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
           >
             {strings.backBtnLabel}
           </Button>
@@ -693,6 +640,7 @@ const DateTimePicker = ({
             onClick={onCancelClick}
             size="field"
             {...others}
+            onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
           >
             {strings.cancelBtnLabel}
           </Button>
@@ -700,9 +648,10 @@ const DateTimePicker = ({
         <Button
           kind="primary"
           className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-apply`}
-          size="field"
           {...others}
           onClick={onApplyClick}
+          onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
+          size="field"
           disabled={disableApply}
         >
           {strings.applyBtnLabel}
@@ -710,6 +659,15 @@ const DateTimePicker = ({
       </div>
     );
   };
+
+  const menuOffsetLeft = menuOffset?.left
+    ? menuOffset.left
+    : langDir === 'ltr'
+    ? 0
+    : hasIconOnly
+    ? -15
+    : 274;
+  const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
   return (
     <>
@@ -719,17 +677,26 @@ const DateTimePicker = ({
         className={`${iotPrefix}--date-time-pickerv2__wrapper`}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
-        tabIndex="0"
-        onKeyDown={(event) => {
-          if (event.key === 'Enter') {
-            setIsFlyoutOpen((flyoutOpen) => !flyoutOpen);
-            // have to do this to stop the mouse click from being fired
-            event.preventDefault();
+        onClick={onFieldInteraction}
+        onKeyDown={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], (event) => {
+          // the onApplyClick event gets blocked when called via the keyboard from the flyout menu's
+          // custom footer. This is a catch to ensure the onApplyCLick is called correctly for preset
+          // ranges via the keyboard.
+          if (
+            (event.key === 'Enter' || event.key === ' ') &&
+            event.target.classList.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`) &&
+            !isCustomRange
+          ) {
+            onApplyClick();
           }
-        }}
-        onClick={() => {
-          setIsFlyoutOpen((flyoutOpen) => !flyoutOpen);
-        }}
+
+          onFieldInteraction(event);
+        })}
+        onFocus={toggleTooltip}
+        onBlur={toggleTooltip}
+        onMouseEnter={toggleTooltip}
+        onMouseLeave={toggleTooltip}
+        tabIndex={0}
       >
         <div
           className={classnames({
@@ -742,25 +709,35 @@ const DateTimePicker = ({
               data-testid={`${testId}__field`}
               className={`${iotPrefix}--date-time-picker__field`}
             >
-              {currentValue && currentValue.kind !== PICKER_KINDS.PRESET ? (
+              {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
                 <span title={humanValue}>{humanValue}</span>
               ) : humanValue ? (
-                <>
-                  <TooltipDefinition
-                    align="start"
-                    direction="bottom"
-                    tooltipText={tooltipValue}
-                    triggerClassName=""
-                  >
-                    {humanValue}
-                  </TooltipDefinition>
-                </>
+                <TooltipDefinition
+                  align="start"
+                  direction="bottom"
+                  tooltipText={tooltipValue}
+                  triggerClassName=""
+                >
+                  {humanValue}
+                </TooltipDefinition>
+              ) : null}
+              {!isExpanded && isTooltipOpen ? (
+                <Tooltip
+                  open={isTooltipOpen}
+                  showIcon={false}
+                  focusTrap={false}
+                  menuOffset={{ top: 16, left: 16 }}
+                  triggerClassName={`${iotPrefix}--date-time-picker__tooltip-trigger`}
+                  className={`${iotPrefix}--date-time-picker__tooltip`}
+                >
+                  {tooltipValue}
+                </Tooltip>
               ) : null}
             </div>
           ) : null}
 
           <FlyoutMenu
-            isOpen={isFlyoutOpen}
+            isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
             renderIcon={Calendar16}
             disabled={false}
@@ -774,8 +751,8 @@ const DateTimePicker = ({
             triggerId="test-trigger-id-2"
             light={light}
             menuOffset={{
-              top: 0,
-              left: 0,
+              top: menuOffsetTop,
+              left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
             direction={FlyoutMenuDirection.BottomEnd}
@@ -796,40 +773,53 @@ const DateTimePicker = ({
               tabIndex="-1"
             >
               {!isCustomRange ? (
-                <OrderedList nested={false}>
-                  {tooltipValue ? (
-                    <ListItem
-                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
-                    >
-                      {tooltipValue}
-                    </ListItem>
-                  ) : null}
-                  {showCustomRangeLink ? (
-                    <ListItem
-                      onClick={toggleIsCustomRange}
-                      className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
-                    >
-                      {strings.customRangeLinkLabel}
-                    </ListItem>
-                  ) : null}
-                  {presets.map((preset, i) => {
-                    return (
+                // Catch bubbled Up/Down keys from the preset list and move focus.
+                // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                <div
+                  ref={presetListRef}
+                  onKeyDown={handleSpecificKeyDown(['ArrowUp', 'ArrowDown'], onNavigatePresets)}
+                >
+                  <OrderedList nested={false}>
+                    {tooltipValue ? (
                       <ListItem
-                        key={i}
-                        onClick={() => onPresetClick(preset)}
-                        className={classnames(
-                          `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
-                          {
-                            [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                              selectedPreset === (preset.id ?? preset.offset),
-                          }
-                        )}
+                        className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
                       >
-                        {strings.presetLabels[i] || preset.label}
+                        {tooltipValue}
                       </ListItem>
-                    );
-                  })}
-                </OrderedList>
+                    ) : null}
+                    {showCustomRangeLink ? (
+                      <ListItem
+                        onClick={toggleIsCustomRange}
+                        onKeyDown={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+                        className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
+                        tabIndex={0}
+                      >
+                        {strings.customRangeLinkLabel}
+                      </ListItem>
+                    ) : null}
+                    {presets.map((preset, i) => {
+                      return (
+                        <ListItem
+                          key={i}
+                          onClick={() => onPresetClick(preset)}
+                          onKeyDown={handleSpecificKeyDown(['Enter', ' '], () =>
+                            onPresetClick(preset)
+                          )}
+                          className={classnames(
+                            `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
+                            {
+                              [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
+                                selectedPreset === (preset.id ?? preset.offset),
+                            }
+                          )}
+                          tabIndex={0}
+                        >
+                          {strings.presetLabels[i] || preset.label}
+                        </ListItem>
+                      );
+                    })}
+                  </OrderedList>
+                </div>
               ) : (
                 <div
                   className={`${iotPrefix}--date-time-picker__custom-wrapper`}
@@ -849,11 +839,19 @@ const DateTimePicker = ({
                           value={PICKER_KINDS.RELATIVE}
                           id={`${id}-relative`}
                           labelText={strings.relativeLabel}
+                          onKeyDown={handleSpecificKeyDown(
+                            ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                            onNavigateRadioButton
+                          )}
                         />
                         <RadioButton
                           value={PICKER_KINDS.ABSOLUTE}
                           id={`${id}-absolute`}
                           labelText={strings.absoluteLabel}
+                          onKeyDown={handleSpecificKeyDown(
+                            ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                            onNavigateRadioButton
+                          )}
                         />
                       </RadioButtonGroup>
                     </FormGroup>
