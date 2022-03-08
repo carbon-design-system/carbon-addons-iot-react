@@ -18146,7 +18146,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <button
                     aria-describedby="table-header-tooltip"
-                    className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-start"
+                    className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-end"
                     onBlur={[Function]}
                     onFocus={[Function]}
                     type="button"
@@ -35632,7 +35632,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <button
                       aria-describedby="table-header-tooltip"
-                      className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-start"
+                      className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition iot--table__cell-tooltip bx--tooltip--bottom bx--tooltip--align-end"
                       onBlur={[Function]}
                       onFocus={[Function]}
                       type="button"
