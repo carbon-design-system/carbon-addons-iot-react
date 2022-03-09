@@ -1931,18 +1931,38 @@ describe('TableHead', () => {
       actions: { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() },
     };
 
-    it('shows right last column tooltip with align end', () => {
-      const tableElement = document.createElement('table');
-      tableElement.setAttribute('style', 'width : 500px;');
+    it('shows right last column tooltip with align end when direction is left to right', () => {
+      Object.defineProperty(window, 'getComputedStyle', {
+        value: () => ({
+          direction: 'ltr',
+        }),
+      });
 
       render(<TableHead {...myProps} />, {
-        container: document.body.appendChild(tableElement),
+        container: document.body.appendChild(document.createElement('table')),
       });
 
       userEvent.hover(screen.getByText('Column 4'));
+      expect(getComputedStyle().direction).toBe('ltr');
       expect(screen.getByText('Column 4').parentElement).toHaveClass(
         'bx--tooltip--align-end bx--tooltip--visible'
       );
+    });
+
+    it('shows first visible column tooltip with align end when direction is right to left', () => {
+      Object.defineProperty(window, 'getComputedStyle', {
+        value: () => ({
+          direction: 'rtl',
+        }),
+      });
+
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.hover(screen.getByText('Column 1'));
+      expect(getComputedStyle().direction).toBe('rtl');
+      expect(screen.getByText('Column 1').parentElement).toHaveClass('bx--tooltip--align-end');
     });
   });
 });

@@ -500,7 +500,7 @@ const TableHead = ({
           );
 
           const { direction } = getComputedStyle(document.body);
-          const rightmostColumn = direction === 'rtl' ? visibleColumns[0] : lastVisibleColumn;
+          const rightmostColumn = direction === 'ltr' ? lastVisibleColumn : visibleColumns[0];
           const flipTooltipDirection = rightmostColumn === item;
 
           return !item.isHidden && matchingColumnMeta ? (
