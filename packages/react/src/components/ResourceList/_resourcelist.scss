@@ -1,7 +1,7 @@
 @import '~carbon-components/scss/globals/scss/vars';
 @import '../../globals/vars';
 
-.#{$iot-prefix}--structured-list {
+.#{$iot-prefix}--resource-list {
   &.#{$prefix}--structured-list--selection
     .#{$prefix}--structured-list-row:hover:not(.#{$prefix}--structured-list-row--header-row)
     > .#{$prefix}--structured-list-td {
@@ -18,7 +18,9 @@
       margin-left: $spacing-02;
     }
   }
-  .#{$prefix}--structured-list-row .#{$prefix}--structured-list-td .#{$iot-prefix}--inline-div {
+  .#{$prefix}--structured-list-row
+    .#{$prefix}--structured-list-td
+    .#{$iot-prefix}--resource-list__inline-div {
     font-weight: normal;
     padding-left: 0px;
     padding-top: $spacing-02;

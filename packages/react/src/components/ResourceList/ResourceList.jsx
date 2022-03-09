@@ -118,7 +118,9 @@ class ResourceList extends Component {
             <Fragment>
               <div className={`${prefix}--structured-list-td`}>
                 <strong>{title}</strong>
-                <div className={`${iotPrefix}--inline-div ${prefix}--structured-list-td`}>
+                <div
+                  className={`{iotPrefix}--resource-list__inline-div ${prefix}--structured-list-td`}
+                >
                   {description}
                 </div>
               </div>
@@ -157,7 +159,7 @@ class ResourceList extends Component {
       <section
         data-testid={testId}
         className={[
-          `${iotPrefix}--structured-list`,
+          `${iotPrefix}--resource-list`,
           `${prefix}--structured-list`,
           `${prefix}--structured-list--border`,
           `${prefix}--structured-list--selection`,
