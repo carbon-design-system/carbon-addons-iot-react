@@ -8,6 +8,7 @@ import { gray60 } from '@carbon/colors';
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
 import useMatchingThreshold from '../../hooks/useMatchingThreshold';
+import { Link } from '../Link';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -18,6 +19,7 @@ const propTypes = {
     label: PropTypes.string,
     unit: PropTypes.string,
     dataSourceId: PropTypes.string,
+    measurementUnitLabel: PropTypes.string,
     // decimal precision
     precision: PropTypes.number,
     thresholds: PropTypes.arrayOf(
@@ -40,6 +42,8 @@ const propTypes = {
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
+    href: PropTypes.string,
+    onClick: PropTypes.func,
   }),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
   fontSize: PropTypes.number.isRequired,
@@ -71,7 +75,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision, dataSourceId },
+  attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel },
   attributeCount,
   customFormatter,
   isEditable,
@@ -135,6 +139,7 @@ const Attribute = ({
             isNumberValueCompact={isNumberValueCompact}
             testId={`${testId}-value`}
             dataSourceId={dataSourceId}
+            measurementUnitLabel={measurementUnitLabel}
             onClick={onValueClick}
           />
           <UnitRenderer unit={unit} testId={`${testId}-unit`} />
@@ -147,14 +152,14 @@ const Attribute = ({
               '--secondary-value-color': gray60,
             }}
           >
-            {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+            {secondaryValue?.trend === 'up' ? (
               <CaretUp16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
                 data-testid={`${testId}-trending-up`}
                 fill={secondaryValue.color || gray60}
               />
-            ) : secondaryValue.trend === 'down' ? (
+            ) : secondaryValue?.trend === 'down' ? (
               <CaretDown16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending down"
@@ -162,7 +167,17 @@ const Attribute = ({
                 fill={secondaryValue.color || gray60}
               />
             ) : null}
-            {secondaryValue.value}
+            {secondaryValue?.href || secondaryValue?.onClick ? (
+              <Link
+                href={secondaryValue?.href}
+                rel="noopener noreferrer"
+                onClick={secondaryValue?.onClick}
+              >
+                {secondaryValue.value}
+              </Link>
+            ) : (
+              secondaryValue.value
+            )}
           </div>
         ) : null}
       </div>

@@ -36,6 +36,10 @@
     &--vertical {
       text-align: left;
     }
+    &--measurement-unit {
+      @include type-style('productive-heading-03');
+      margin-left: $spacing-04;
+    }
   }
 
   &--boolean {
