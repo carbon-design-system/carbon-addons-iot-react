@@ -21687,19 +21687,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       onFocus={[Function]}
                       type="button"
                     >
-                      <div
-                        style={
-                          Object {
-                            "width": NaN,
-                          }
-                        }
+                      <span
+                        className=""
                       >
-                        <span
-                          className=""
-                        >
-                          Select
-                        </span>
-                      </div>
+                        Select
+                      </span>
                     </button>
                     <span
                       className="bx--assistive-text"
