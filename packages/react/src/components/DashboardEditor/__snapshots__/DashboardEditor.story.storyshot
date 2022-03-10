@@ -630,7 +630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     >
                       <div
-                        className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+                        className="iot--table-card__table iot--table-container bx--data-table-container"
                         data-testid="table-for-card-Table-table-container"
                       >
                         <section
@@ -811,6 +811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               className="bx--data-table bx--data-table--no-border"
                               data-testid="table-for-card-Table"
                               id="table-for-card-Table"
+                              showHeader={true}
                               title={null}
                             >
                               <thead
@@ -1665,6 +1666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <div
                           className="iot--card--title--text"
+                          data-testid="Card-title-notip"
                         >
                           Custom rendered card
                         </div>
@@ -1799,6 +1801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <div
                           className="iot--card--title--text"
+                          data-testid="Card-title-notip"
                         >
                           Value card
                         </div>
@@ -1979,6 +1982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <div
                           className="iot--card--title--text"
+                          data-testid="Card-title-notip"
                         >
                           Timeseries
                         </div>
@@ -2099,6 +2103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <div
                           className="iot--card--title--text"
+                          data-testid="Card-title-notip"
                         >
                           Bar
                         </div>
@@ -9713,6 +9718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Custom rendered card
                       </div>
@@ -9850,6 +9856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         my custom title: Default rendered card
                       </div>
@@ -18535,6 +18542,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Untitled
                       </div>
@@ -19904,7 +19912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   >
                     <div
-                      className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+                      className="iot--table-card__table iot--table-container bx--data-table-container"
                       data-testid="table-for-card-Table-table-container"
                     >
                       <section
@@ -20085,6 +20093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             className="bx--data-table bx--data-table--no-border"
                             data-testid="table-for-card-Table"
                             id="table-for-card-Table"
+                            showHeader={true}
                             title={null}
                           >
                             <thead
@@ -20940,6 +20949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Custom rendered card
                       </div>
@@ -21066,6 +21076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Default rendered card
                       </div>
@@ -21297,6 +21308,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Timeseries
                       </div>
@@ -21417,6 +21429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Bar
                       </div>
@@ -21538,6 +21551,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     >
                       <div
                         className="iot--card--title--text"
+                        data-testid="Card-title-notip"
                       >
                         Custom rendered card
                       </div>

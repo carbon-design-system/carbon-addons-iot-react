@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -566,7 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           </p>
         </div>
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -860,7 +860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -895,13 +895,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           >
             <div
               aria-atomic="true"
-              aria-labelledby="loading-id-11"
+              aria-labelledby="loading-id-12"
               aria-live="assertive"
               className="bx--loading bx--loading--small"
             >
               <label
                 className="bx--visually-hidden"
-                id="loading-id-11"
+                id="loading-id-12"
               >
                 Active loading indicator
               </label>

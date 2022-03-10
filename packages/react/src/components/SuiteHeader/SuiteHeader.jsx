@@ -165,6 +165,7 @@ const SuiteHeader = ({
   }, [setIsSideNavExpandedState]);
 
   const navigatorRoute = routes?.navigator || 'javascript:void(0)';
+  const adminRoute = routes?.admin || 'javascript:void(0)';
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -182,6 +183,7 @@ const SuiteHeader = ({
       : [];
 
   const handleOnClick = (routeType, href, isExternal) => async (e) => {
+    e.preventDefault();
     const newWindow = isExternal ? true : shouldOpenInNewWindow(e);
     const result = await onRouteChange(routeType, href);
     if (result) {
@@ -209,7 +211,8 @@ const SuiteHeader = ({
           subtitle={
             <>
               <Link
-                href="javascript:void(0)"
+                href={surveyData.surveyLink}
+                rel="noopener noreferrer"
                 onClick={handleOnClick(
                   SUITE_HEADER_ROUTE_TYPES.SURVEY,
                   surveyData.surveyLink,
@@ -220,7 +223,8 @@ const SuiteHeader = ({
               </Link>
               <div className={`${settings.iotPrefix}--suite-header-survey-policy-link`}>
                 <Link
-                  href="javascript:void(0)"
+                  href={surveyData.privacyLink}
+                  rel="noopener noreferrer"
                   onClick={handleOnClick(
                     SUITE_HEADER_ROUTE_TYPES.SURVEY,
                     surveyData.privacyLink,
@@ -337,7 +341,8 @@ const SuiteHeader = ({
               </span>
             ),
             onClick: async (e) => {
-              let href = routes.admin;
+              e.preventDefault();
+              let href = adminRoute;
               let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
               if (isAdminView) {
                 href = navigatorRoute;
@@ -345,6 +350,7 @@ const SuiteHeader = ({
               }
               handleOnClick(routeType, href)(e);
             },
+            href: isAdminView ? navigatorRoute : adminRoute,
           },
           {
             id: 'help',
@@ -368,7 +374,8 @@ const SuiteHeader = ({
                     metaData: {
                       element: 'a',
                       'data-testid': `suite-header-help--${item}`,
-                      href: 'javascript:void(0)',
+                      href: routes[item],
+                      rel: 'noopener noreferrer',
                       title: mergedI18N[item],
                       onClick: handleOnClick(
                         SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
@@ -382,7 +389,8 @@ const SuiteHeader = ({
                     metaData: {
                       element: 'a',
                       'data-testid': 'suite-header-help--about',
-                      href: 'javascript:void(0)',
+                      href: routes.about,
+                      rel: 'noopener noreferrer',
                       title: mergedI18N.about,
                       onClick: handleOnClick(SUITE_HEADER_ROUTE_TYPES.ABOUT, routes.about),
                     },
@@ -427,6 +435,7 @@ const SuiteHeader = ({
                     <SuiteHeaderProfile
                       displayName={userDisplayName}
                       username={username}
+                      profileLink={routes?.profile}
                       onProfileClick={handleOnClick(
                         SUITE_HEADER_ROUTE_TYPES.PROFILE,
                         routes?.profile

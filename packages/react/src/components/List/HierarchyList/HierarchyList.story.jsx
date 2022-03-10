@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createElement, useMemo, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import { text, select, boolean, object, number, array } from '@storybook/addon-knobs';
 import { Add16 } from '@carbon/icons-react';
@@ -623,3 +623,90 @@ export const WithEmptyState = () => (
 );
 
 WithEmptyState.storyName = 'with empty state';
+
+const generateNestedItems = (numberToRender) => {
+  return [...Array(numberToRender)].map((_, i) => ({
+    id: `item-${i}`,
+    content: {
+      value: `Item ${i}`,
+    },
+    isCategory: true,
+    children: Array.from({ length: 10 }, (_, i) => String.fromCharCode('A'.charCodeAt(0) + i)).map(
+      (letter, ci) => ({
+        id: `item-${i}-${ci}`,
+        content: {
+          value: `Item ${i}-${letter}`,
+        },
+      })
+    ),
+  }));
+};
+
+const generateItemIds = (numberToRender) => [...Array(numberToRender)].map((_, i) => `item-${i}`);
+
+export const WithLargeNumberOfExpandableItems = () => {
+  const [expandedIds, setExpandedIds] = useState(
+    array('A comma separated list of expandedIds (expandedIds)', [], ',')
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [allOpen, setAllOpen] = useState(false);
+  const numberToRender = number('number of items to render', 200);
+  const [allItems, parentIds] = useMemo(
+    () => [generateNestedItems(numberToRender), generateItemIds(numberToRender)],
+    [numberToRender]
+  );
+  return (
+    <>
+      <Button
+        onClick={() => {
+          window.requestAnimationFrame(() => {
+            setIsLoading(true);
+            if (allOpen) {
+              setExpandedIds([]);
+            } else {
+              setExpandedIds(parentIds);
+            }
+          });
+        }}
+        loading={isLoading}
+      >
+        {isLoading ? (allOpen ? 'Closing all' : 'Opening all') : allOpen ? 'Close all' : 'Open all'}
+      </Button>
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title={text('Title', 'Big List')}
+          isFullHeight={boolean('isFullHeight', false)}
+          items={allItems}
+          hasSearch={boolean('hasSearch', true)}
+          pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], undefined)}
+          isLoading={boolean('isLoading', false)}
+          isLargeRow={boolean('isLargeRow', false)}
+          onSelect={action('onSelect')}
+          onListUpdated={action('onListUpdated')}
+          hasDeselection={boolean('hasDeselection', true)}
+          i18n={object('i18n', {
+            searchPlaceHolderText: 'Search',
+          })}
+          hasMultiSelect={boolean('hasMultiSelect', false)}
+          expandedIds={expandedIds}
+          onExpandedChange={(...args) => {
+            setIsLoading(false);
+            action('onExpandedChange')(...args);
+            setAllOpen((prev) => !prev);
+          }}
+          isVirtualList={boolean('hasVirtualList', false)}
+        />
+      </div>
+    </>
+  );
+};
+
+WithLargeNumberOfExpandableItems.storyName = 'With large number of expandable items';
+WithLargeNumberOfExpandableItems.decorators = [
+  createElement,
+  (Story) => (
+    <DragAndDrop>
+      <Story />
+    </DragAndDrop>
+  ),
+];

@@ -23,7 +23,7 @@ import TileGalleryViewSwitcher from './TileGalleryViewSwitcher';
 import StatefulTileGallery from './StatefulTileGallery';
 
 const overflowComponent = (
-  <OverflowMenu onClick={(evt) => evt.preventDefault()} style={{ height: spacing07 }}>
+  <OverflowMenu onClick={(evt) => evt.preventDefault()} size="sm">
     <OverflowMenuItem itemText="Edit" onClick={action('Edit')} />
     <OverflowMenuItem itemText="Share" onClick={action('Share')} />
     <OverflowMenuItem itemText="Move" onClick={action('Move')} />

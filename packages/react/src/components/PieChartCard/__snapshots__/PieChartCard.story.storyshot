@@ -40,6 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             <div
               className="iot--card--title--text"
+              data-testid="basicCardStoryTest-title-notip"
             >
               Animations turned on and FlyoutMenu added to table
             </div>
@@ -590,6 +591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>
@@ -692,6 +694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>
@@ -794,6 +797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>
@@ -896,6 +900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>
@@ -998,6 +1003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>
@@ -1103,6 +1109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="basicCardStoryTest-title-notip"
           >
             Schools
           </div>

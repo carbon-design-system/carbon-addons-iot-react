@@ -34,6 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles and temperature in cities
           </div>
@@ -136,6 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles by city
           </div>
@@ -238,6 +240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles over 4 days
           </div>
@@ -389,6 +392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Temperature over time
           </div>
@@ -491,6 +495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles and temperature in cities
           </div>
@@ -593,6 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles / emissions over 4 days
           </div>
@@ -744,6 +750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Particles by city over time
           </div>

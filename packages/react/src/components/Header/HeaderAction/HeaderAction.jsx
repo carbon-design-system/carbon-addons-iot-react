@@ -160,6 +160,9 @@ const HeaderAction = ({
       aria-label={item.label}
       onClick={onClick}
       onKeyDown={handleSpecificKeyDown(['Enter', ' '], onKeyDown)}
+      href={item.href}
+      rel={item.rel}
+      target={item.target}
     >
       {renderLabel ? item.label : item.btnContent}
     </HeaderGlobalAction>
