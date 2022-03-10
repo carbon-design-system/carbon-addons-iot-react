@@ -114,7 +114,7 @@ describe('ResourceList', () => {
     expect(row).toBeVisible();
     expect(row.parentNode).toHaveClass(`${prefix}--structured-list-td`);
     expect(row.nextSibling).toHaveClass(`${prefix}--structured-list-td`);
-    expect(row.nextSibling).toHaveClass(`${iotPrefix}--inline-div`);
+    expect(row.nextSibling).toHaveClass(`${iotPrefix}--resource-list__inline-div`);
   });
 
   it('should trigger callback for keyboard events', () => {

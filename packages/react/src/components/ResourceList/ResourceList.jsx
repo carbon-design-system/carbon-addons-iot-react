@@ -119,7 +119,7 @@ class ResourceList extends Component {
               <div className={`${prefix}--structured-list-td`}>
                 <strong>{title}</strong>
                 <div
-                  className={`{iotPrefix}--resource-list__inline-div ${prefix}--structured-list-td`}
+                  className={`${iotPrefix}--resource-list__inline-div ${prefix}--structured-list-td`}
                 >
                   {description}
                 </div>

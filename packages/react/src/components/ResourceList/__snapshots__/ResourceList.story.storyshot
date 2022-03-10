@@ -5,7 +5,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -171,7 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -358,7 +358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   className="storybook-container"
 >
   <section
-    className="iot--structured-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
