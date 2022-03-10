@@ -76,7 +76,7 @@ class ResourceList extends Component {
         </svg>
       </div>
     );
-    const CustomActionContent = (rowId) => (
+    const CustomActionContent = ({ rowId }) => (
       <div
         className={`${prefix}--structured-list-td ${prefix}--structured-list-content--nowrap`}
         role="presentation"

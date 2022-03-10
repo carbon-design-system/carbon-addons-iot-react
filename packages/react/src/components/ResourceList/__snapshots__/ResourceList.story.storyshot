@@ -205,7 +205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-[object Object]"
+            data-testid="resource-list-custom-action-row-0"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -262,7 +262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-[object Object]"
+            data-testid="resource-list-custom-action-row-1"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
@@ -319,7 +319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--ghost"
-            data-testid="resource-list-custom-action-[object Object]"
+            data-testid="resource-list-custom-action-row-2"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
