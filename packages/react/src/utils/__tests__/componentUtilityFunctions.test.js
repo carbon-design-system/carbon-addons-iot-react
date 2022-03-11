@@ -158,10 +158,11 @@ describe('componentUtilityFunctions', () => {
   });
   it('csv should display 0 value', () => {
     const csv = generateCsv(mockCsvData);
-    const splitCsv = csv.split(',');
+    const firstDataRow = csv.split('\n')[1];
+    const lastValueOfFirstRow = firstDataRow.split(',').slice(-1)[0];
 
     // The 0 should appear as the last value in the first row
-    expect(splitCsv[4]).toEqual('0');
+    expect(lastValueOfFirstRow).toEqual('0');
   });
 });
 

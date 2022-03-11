@@ -102,7 +102,8 @@
 
   li {
     width: 100%;
-    button {
+    button,
+    a {
       margin: $spacing-05;
       width: calc(100% - 32px);
       min-height: 40px;
@@ -118,23 +119,12 @@
   }
 
   a {
-    display: flex;
     align-items: center;
-    padding: $spacing-05;
   }
 
   &--nav-link {
     a {
       text-decoration: none;
-      color: $text-02;
-
-      &:hover {
-        background-color: $hover-ui;
-      }
-
-      svg {
-        margin-right: $spacing-03;
-      }
     }
     &--loading {
       display: flex;
@@ -160,7 +150,8 @@
   }
 
   &--app-link {
-    button {
+    button,
+    a {
       @include type-style('productive-heading-01');
       text-decoration: none;
       color: $text-02;

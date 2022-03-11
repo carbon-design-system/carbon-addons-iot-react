@@ -64,6 +64,7 @@ const SuiteHeaderAppSwitcher = ({
 
   const handleRouteChange = useCallback(
     ({ href, id, isExternal }) => async (e) => {
+      e.preventDefault();
       const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, {
         appId: id,
@@ -81,6 +82,7 @@ const SuiteHeaderAppSwitcher = ({
 
   const handleAllApplicationRoute = useCallback(
     async (e) => {
+      e.preventDefault();
       const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
       if (result) {
@@ -112,6 +114,8 @@ const SuiteHeaderAppSwitcher = ({
             onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
             tabIndex={tabIndex}
+            href={allApplicationsLink}
+            rel="noopener noreferrer"
           >
             {mergedI18n.allApplicationsLink}
           </Button>
@@ -142,6 +146,8 @@ const SuiteHeaderAppSwitcher = ({
                 onClick={eventHandler}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
                 tabIndex={tabIndex}
+                href={href}
+                rel="noopener noreferrer"
               >
                 {name}
               </Button>
@@ -157,9 +163,11 @@ const SuiteHeaderAppSwitcher = ({
           </div>
           <span>{mergedI18n.requestAccess}</span>
           <a
-            href="javascript:void(0)"
+            href={noAccessLink}
+            rel="noopener noreferrer"
             data-testid="suite-header-app-switcher--no-access"
-            onClick={async () => {
+            onClick={async (e) => {
+              e.preventDefault();
               const result = await onRouteChange(
                 SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
                 noAccessLink

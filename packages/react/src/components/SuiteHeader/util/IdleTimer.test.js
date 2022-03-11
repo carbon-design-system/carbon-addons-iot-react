@@ -1,3 +1,6 @@
+import { act, waitFor } from '@testing-library/react';
+import MockDate from 'mockdate';
+
 import IdleTimer from './IdleTimer';
 
 let timer;
@@ -17,6 +20,7 @@ describe('IdleTimer', () => {
     timer.cleanUp();
     window.document.cookie = originalWindowDocumentCookie;
     jest.useRealTimers();
+    MockDate.reset();
   });
   it('starts the timer', () => {
     // Make sure that there are default values for all IdleTimer variables
@@ -57,11 +61,11 @@ describe('IdleTimer', () => {
     jest.runOnlyPendingTimers();
     // only onIdleTimeoutWarning should have been fired, and countdown should have decreased
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledWith(timer.COUNTDOWN_START);
-    expect(timer.countdown).toEqual(timer.COUNTDOWN_START - 1);
+    expect(timer.countdown).toEqual(timer.COUNTDOWN_START - 2);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
     expect(timer.onRestart).not.toHaveBeenCalled();
   });
-  it('fires onIdleTimeoutWarning N times and then onIdleTimeout when countdown reaches zero if timeout has been reached', () => {
+  it('fires onIdleTimeoutWarning N times and then onIdleTimeout when countdown reaches zero if timeout has been reached', async () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -72,12 +76,17 @@ describe('IdleTimer', () => {
     // only onIdleTimeoutWarning callbacks should have been fired
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
+    // Go to the future by a little more than timer.COUNTDOWN_START seconds
+    MockDate.set(Date.now() + (timer.COUNTDOWN_START + 1) * timer.COOKIE_CHECK_INTERVAL);
     // Run just one more setInterval cycle
-    jest.runOnlyPendingTimers();
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
     // now onIdleTimeout should have been fired
-    expect(timer.onIdleTimeout).toHaveBeenCalled();
+    await waitFor(() => expect(timer.onIdleTimeout).toHaveBeenCalled());
     // onRestart should never have been fired
     expect(timer.onRestart).not.toHaveBeenCalled();
+    await waitFor(() => expect(timer.onRestart).not.toHaveBeenCalled());
   });
   it('fires onCookieCleared if cookie does not exist anymore', () => {
     // Simulate the scenario where the cookie has already been deleted (handled the same way as if timeout had been reached)
@@ -198,7 +207,7 @@ describe('IdleTimer', () => {
     expect(thisTimer.onIdleTimeout).not.toHaveBeenCalled();
   });
 
-  it('should correctly parse more complex cookies', () => {
+  it('should correctly parse more complex cookies', async () => {
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -211,11 +220,16 @@ describe('IdleTimer', () => {
     // only onIdleTimeoutWarning callbacks should have been fired
     expect(timer.onIdleTimeoutWarning).toHaveBeenCalledTimes(timer.COUNTDOWN_START);
     expect(timer.onIdleTimeout).not.toHaveBeenCalled();
+    // Go to the future by a little more than timer.COUNTDOWN_START seconds
+    MockDate.set(Date.now() + (timer.COUNTDOWN_START + 1) * timer.COOKIE_CHECK_INTERVAL);
     // Run just one more setInterval cycle
-    jest.runOnlyPendingTimers();
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
     // now onIdleTimeout should have been fired
-    expect(timer.onIdleTimeout).toHaveBeenCalled();
+    await waitFor(() => expect(timer.onIdleTimeout).toHaveBeenCalled());
     // onRestart should never have been fired
     expect(timer.onRestart).not.toHaveBeenCalled();
+    await waitFor(() => expect(timer.onRestart).not.toHaveBeenCalled());
   });
 });

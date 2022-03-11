@@ -1,0 +1,114 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Searching
+
+The Table provides a built in UI for search which is enabled by setting the prop `options.hasSearch` to true.
+The search field is collapsed by default and is expanded through an icon button in the table toolbar or
+programmatically by setting the prop `view.toolbar.search.defaultExpanded` or `view.toolbar.search.isExpanded`
+to true. The defaultExpanded will initially expand the search field but also allows it to collapse when a search
+is cleared, whereas the isExpanded will force it to always stay open.
+
+When a user types into the search field the search is immediately triggered and the function supplied for
+`actions.toolbar.onApplySearch` is called for each keystroke. If the prop `options.hasFastSearch` is set to
+`false` then a search is only triggered by any of the following actions:
+
+- the user hits 'Enter' in the search field
+- the search field loses focus
+- the button 'Clear search input' marked "x" is clicked
+
+The search value can also be programmatically set using the prop `view.toolbar.search.defaultValue` which
+will update the search field and trigger a new search.
+
+The `StatefulTable` automatically filters on the data supplied by the `data` prop but for the normal `Table`
+the `onApplySearch` event must be handled to update the table data programmatically. The StatefulTable will
+only search on values of the type strings, numbers and booleans and there is no search equivalent to the
+column props sortFunction and filterFunction. In order to search on complex types a programmatic search
+implementation is needed.
+
+### Simple search code example
+
+The example below shows how to enable search for the StatefulTable with a default search value set on initial
+rendering.
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={columns}
+    data={data}
+    options={{
+      // Enables the built in search
+      hasSearch: true,
+    }}
+    view={{
+      toolbar: {
+        search: {
+          // The table will be rendered with an active search for "helping"
+          defaultValue: 'helping',
+        },
+      },
+    }}
+  />
+);
+```
+
+### Programmatic search
+
+To implement a custom search for the normal `Table` the event for `actions.toolbar.onApplySearch` must be
+handled. The function receives the current search value as a parameter and can be used to directly modify
+the `data` prop as shown in the example below or trigger an asynchronous search in the backend. There is no
+automatic loading state triggered so if the search is not near instant it is wise to activate the loading
+skeletons using the prop `view.table.loadingState.isLoading` while executing.
+
+The normal Table also fires an onExpand event (`view.toolbar.search.onExpand`) when the search field is
+expanded but there is normally no need to handle that since the search component always manages its own
+expanded state.
+
+The example below shows how to implement a custom search on the "id" string of values of type Object.
+
+```jsx
+...
+
+const [filteredData, setFilteredData] = useState(data);
+
+const handleObjectSearch = (newSearchValue) => {
+  setFilteredData(
+    data.filter((row) => {
+      const cellValues = Object.values(row.values);
+      return cellValues.find((value) => {
+        const isObjectWithIdString = typeof value === 'object' && typeof value?.id === 'string';
+        return isObjectWithIdString && value.id.toLowerCase().includes(newSearchValue.toLowerCase());
+      });
+    })
+  );
+};
+
+return (
+  <Table
+    i18n={{ searchPlaceholder: 'Search on Object id' }}
+    actions={{
+      toolbar: {
+        onApplySearch: handleObjectSearch,
+      },
+    }}
+    columns={columns}
+    data={filteredData}
+    options={{
+      hasSearch,
+      hasFastSearch: false,
+    }}
+    view={{
+      toolbar: {
+        search: {
+          defaultExpanded: true,
+        },
+      },
+    }}
+  />
+)
+
+```
+
+Note! From a UX perspective it is not recommended to have both column filters and the built in search enabled at the
+same time.

@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import { settings } from '../../constants/Settings';
+
 import StatefulTable from './StatefulTable';
 import {
   getAdvancedFilters,
@@ -8,6 +10,8 @@ import {
   getTableData as getStoryTableData,
 } from './Table.story.helpers';
 import { getSelectData, getTableColumns, getTableData, getWords } from './Table.test.helpers';
+
+const { prefix } = settings;
 
 describe('StatefulTable', () => {
   const words = getWords();
@@ -157,6 +161,122 @@ describe('StatefulTable', () => {
         expect(onApplySearch).to.have.been.called;
       });
     cy.get('tr').should('have.length', 101);
+  });
+
+  it('should allow the search box to expand and contract naturally on focus when search.isExpanded is undefined', () => {
+    const onApplySearch = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onApplySearch,
+          },
+        }}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: undefined,
+            },
+          },
+        }}
+      />
+    );
+
+    // isn't open by default.
+    cy.findByRole('search').should('not.have.class', `${prefix}--toolbar-search-container-active`);
+
+    cy.findByPlaceholderText('Search').type('testing{enter}');
+
+    // is open now that we have a search value.
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    cy.get(document.body).click();
+    // should still be open because we have a search value, even when losing focus
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    cy.findByPlaceholderText('Search').clear();
+    cy.get(document.body).click();
+    // not be open anymore without a search value or focus
+    cy.findByRole('search').should('not.have.class', `${prefix}--toolbar-search-container-active`);
+  });
+
+  it('should force the search box to always be open when search.isExpanded:true', () => {
+    const onApplySearch = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onApplySearch,
+          },
+        }}
+        options={{
+          hasSearch: true,
+          hasFastSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: true,
+            },
+          },
+        }}
+      />
+    );
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+
+    cy.findByPlaceholderText('Search')
+      .type('testing{enter}')
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('testing');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByPlaceholderText('Search')
+      .type(
+        '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+      )
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('test');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByPlaceholderText('Search').type('{backspace}{backspace}{backspace}{backspace}testing');
+
+    cy.findByPlaceholderText('Search')
+      .blur()
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('testing');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByRole('button', { name: 'Clear search input' })
+      .click()
+      .should(() => {
+        // once on blur, once on clicking clear
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
   });
 
   it('shouldLazyRender rows on scroll with pagination shouldLazyRender:true', () => {
