@@ -142,6 +142,7 @@ export default {
 
 export const SideNavComponent = () => {
   const showDeepNesting = boolean('show deep nesting example', false);
+  const enableSearch = boolean('Enable searching (hasSearch)', true);
   const deepLinks = [
     ...links(),
     {
@@ -200,12 +201,12 @@ export const SideNavComponent = () => {
                 },
                 {
                   metaData: {
-                    label: 'Grandchild Link',
-                    title: 'Grandchild Link',
+                    label: 'Grandchild Link with long label',
+                    title: 'Grandchild Link with long label',
                     href: 'https://www.ibm.com',
                     element: 'a',
                   },
-                  content: 'Grandchild Link',
+                  content: 'Grandchild Link with long label',
                 },
               ],
             },
@@ -246,6 +247,7 @@ export const SideNavComponent = () => {
             <SideNav
               links={showDeepNesting ? deepLinks : links(true)}
               isSideNavExpanded={isSideNavExpanded}
+              hasSearch={enableSearch}
             />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
@@ -411,7 +413,7 @@ export const SideNavComponentWithState = () => {
               isSideNavExpanded={isSideNavExpanded}
               onClickSideNavExpand={onClickSideNavExpand}
             />
-            <SideNav links={linksState} isSideNavExpanded={isSideNavExpanded} />
+            <SideNav hasSearch={false} links={linksState} isSideNavExpanded={isSideNavExpanded} />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
             </div>
