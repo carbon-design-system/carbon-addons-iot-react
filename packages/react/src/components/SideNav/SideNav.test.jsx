@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switcher24, Chip24, Group24, ParentChild24 } from '@carbon/icons-react';
+import { Switcher24, Chip24, Group24, ParentChild24, Home24 } from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -475,5 +475,108 @@ describe('SideNav', () => {
     userEvent.type(screen.getByTestId('side-nav-search'), 'ers sub');
     // This is the parent of matched "Members sub menu"
     expect(screen.getByText('Members').closest('button')).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('it always renders pinned links in a separate list when hasSearch is true', () => {
+    const homeClicked = jest.fn();
+    const myLinks = [
+      ...links,
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Home',
+          element: 'button',
+        },
+        linkContent: 'Home',
+        isActive: true,
+      },
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Another pinned',
+          element: 'a',
+        },
+        linkContent: 'Another pinned',
+        isActive: true,
+      },
+    ];
+    render(<SideNav links={myLinks} hasSearch />);
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Boards').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'xxxx');
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.queryByLabelText('Boards')).toBeNull();
+  });
+
+  it('it does not render pinned links in a separate list when hasSearch is false', () => {
+    const homeClicked = jest.fn();
+    const myLinks = [
+      ...links,
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Home',
+          element: 'button',
+        },
+        linkContent: 'Home',
+        isActive: true,
+      },
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Another pinned',
+          element: 'a',
+        },
+        linkContent: 'Another pinned',
+        isActive: true,
+      },
+    ];
+    render(<SideNav links={myLinks} />);
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Boards').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
   });
 });

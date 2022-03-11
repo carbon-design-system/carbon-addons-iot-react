@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import { partition } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { CarbonIconPropType } from '../../constants/SharedPropTypes';
@@ -68,6 +69,8 @@ export const SideNavPropTypes = {
       current: PropTypes.bool,
       /** bot show/hide link */
       isEnabled: PropTypes.bool,
+      /** pins the link to the top if hasSearch is true */
+      isPinned: PropTypes.bool,
       /** extra props to pass to link component */
       /** Example:
           // What to render for link
@@ -258,15 +261,23 @@ const SideNav = ({
       })
       .filter((i) => i);
 
-  const [navItems, setNavItems] = useState(renderLinks(links));
+  const [pinnedLinks, filterableLinks] = hasSearch
+    ? partition(links, (link) => link.isPinned)
+    : [[], links];
+  const renderedPinnedLinks = renderLinks(pinnedLinks);
+  const [renderedFilterableLinks, setRenderedFilterableLinks] = useState(
+    renderLinks(filterableLinks)
+  );
   const [isFiltering, setIsFiltering] = useState(false);
 
   const handleSearchChange = (event) => {
     const isSearching = 'value' in event.target && event.target?.value !== '';
     const newSearchValue = isSearching ? event.target.value.toLowerCase() : undefined;
     setIsFiltering(isSearching);
-    const linksToRender = isSearching ? filterLinks(links, newSearchValue) : links;
-    setNavItems(renderLinks(linksToRender, newSearchValue));
+    const linksToRender = isSearching
+      ? filterLinks(filterableLinks, newSearchValue)
+      : filterableLinks;
+    setRenderedFilterableLinks(renderLinks(linksToRender, newSearchValue));
   };
 
   const search = hasSearch
@@ -284,14 +295,28 @@ const SideNav = ({
       ]
     : [];
 
-  const constSideNavContent =
-    isFiltering && navItems.length === 0 ? (
+  const staticSideNavContent =
+    hasSearch && pinnedLinks.length
+      ? [
+          <SideNavItems
+            className={`${iotPrefix}--side-nav__pinned-items`}
+            key="pinned-side-nav-content"
+          >
+            {renderedPinnedLinks}
+          </SideNavItems>,
+        ]
+      : [];
+
+  const dynamicSideNavContent =
+    isFiltering && renderedFilterableLinks.length === 0 ? (
       <div key="empty-search" className={`${iotPrefix}--side-nav__empty-search-msg`}>
         {i18n.emptySearchText}
       </div>
     ) : (
       // The key needed to pick up the change of `defaultExpanded` in the SideNavMenuItems
-      <SideNavItems key={`${isFiltering}`}>{navItems}</SideNavItems>
+      <SideNavItems key={`dynamic-side-nav-content-${isFiltering}`}>
+        {renderedFilterableLinks}
+      </SideNavItems>
     );
 
   // TODO: Will be added back in when footer is added for rails.
@@ -318,7 +343,7 @@ const SideNav = ({
       {
         // We use an array for the children since CarbonSideNav can't handle null or
         // undfined being passed as a child so if hasSearch is false we don't pass anthing.
-        [...search, constSideNavContent]
+        [...search, ...staticSideNavContent, dynamicSideNavContent]
       }
     </CarbonSideNav>
   );

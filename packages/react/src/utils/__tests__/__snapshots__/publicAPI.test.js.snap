@@ -10738,6 +10738,9 @@ Map {
                 "isEnabled": Object {
                   "type": "bool",
                 },
+                "isPinned": Object {
+                  "type": "bool",
+                },
                 "linkContent": Object {
                   "type": "string",
                 },
@@ -11319,6 +11322,9 @@ Map {
                         "type": "oneOfType",
                       },
                       "isEnabled": Object {
+                        "type": "bool",
+                      },
+                      "isPinned": Object {
                         "type": "bool",
                       },
                       "linkContent": Object {

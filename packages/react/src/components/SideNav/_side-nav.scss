@@ -32,6 +32,7 @@ $hoverBgColor: #2c2c2c;
   .#{$prefix}--search {
     // Prevent the close button from overlaying the magnifier when side nav is collapsed
     min-width: $spacing-11;
+    margin-bottom: -($spacing-05);
   }
   .#{$prefix}--search-input,
   .#{$prefix}--search-close:hover {
@@ -60,6 +61,12 @@ $hoverBgColor: #2c2c2c;
     &::placeholder {
       color: $ui-03;
     }
+  }
+
+  .#{$iot-prefix}--side-nav__pinned-items {
+    flex: none;
+    margin-bottom: -($spacing-05);
+    border-bottom: 1px solid $ui-04;
   }
 
   .#{$iot-prefix}--side-nav__item--is-filtering .#{$prefix}--side-nav__submenu {
@@ -91,7 +98,7 @@ $hoverBgColor: #2c2c2c;
   }
 
   .#{$iot-prefix}--side-nav__empty-search-msg {
-    margin: $spacing-05 $spacing-09;
+    margin: $spacing-07 $spacing-09 $spacing-05 $spacing-09;
     color: $textColor;
     display: none;
     @include type-style('body-short-01');
