@@ -1,11 +1,13 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import {
-  DocumentService,
-  DropdownList,
-  DropdownService,
-  ListItem,
-} from 'carbon-components-angular';
-import { Observable } from 'rxjs';
+  Component,
+  ElementRef,
+  Input,
+  OnDestroy,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
+import { DocumentService, DropdownList, DropdownService } from 'carbon-components-angular';
 import { map } from 'rxjs/operators';
 import { TabController } from './tab-controller.class';
 
@@ -16,13 +18,44 @@ import { TabController } from './tab-controller.class';
       <svg class="bx--btn__icon" ibmIcon="chevron--down" size="16"></svg>
     </button>
     <div style="display: none;" class="dropdown-menu bx--list-box--expanded" #dropdownMenu>
-      <ibm-dropdown-list [items]="displayItems" (select)="onSelect($event)"></ibm-dropdown-list>
+      <ibm-dropdown-list [items]="displayItems" (select)="onSelect($event)" [listTpl]="listTpl">
+      </ibm-dropdown-list>
     </div>
   `,
   providers: [DropdownService],
 })
 export class TabDropdownComponent implements OnInit, OnDestroy {
   @Input() controller: TabController;
+  /**
+   * Template to bind to items in the `DropdownList` (optional).
+   * `DropdownList` items generated from the `Tab` items are passed in as context.
+   * Additional props can included in the generation of the `DropdownList` items through
+   * the `dropdownListProps` field in the `Tab`s.
+   *
+   * For example:
+   *
+   * controller = new TabController([
+   *  {
+   *    title: 'One',
+   *    dropdownListProps: {
+   *      icon: 'settings'
+   *    }
+   *  }
+   * ]);
+   *
+   * // List items are passed in as context in the form "{item: item}" so the let-<your_var_name>="item" is necessary
+   * <ng-template #listTpl let-item="item">
+   *  <svg *ngIf="item.icon" [ibmIcon]="item.icon" size="16"></svg>
+   *  {{ item.content }}
+   * </ng-template>
+   *
+   * <ai-tabs [controller]="controller" [titleTpl]="titleTpl">
+   *  <ai-tab-actions>
+   *    <ai-tab-dropdown [controller]="controller" [listTpl]="listTpl"></ai-tab-dropdown>
+   *  </ai-tab-actions>
+   * </ai-tabs>
+   */
+  @Input() listTpl: TemplateRef<any> = null;
   @ViewChild('dropdownMenu', { static: true }) dropdownMenu: ElementRef;
   @ViewChild('dropdownButton', { static: true }) dropdownButton: ElementRef;
   @ViewChild(DropdownList) dropdownList: DropdownList;
@@ -60,6 +93,7 @@ export class TabDropdownComponent implements OnInit, OnDestroy {
           content: item.title,
           key: item.key,
           selected: item.selected,
+          ...item.dropdownListProps,
         }));
       })
     );

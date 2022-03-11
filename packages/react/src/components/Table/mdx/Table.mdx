@@ -35,7 +35,10 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [Pagination code example](#pagination-code-example)
   - [Dealing with large data sets](#dealing-with-large-data-sets)
   - [Handling the onChangePage event](#handling-the-onchangepage-event)
-- [Toolbar actions](#toolbar-actions)
+- [Toolbar](#toolbar)
+  - [Data download](#data-download)
+  - [Custom toolbar content](#custom-toolbar-content)
+  - [Toolbar actions](#toolbar-actions)
 - [Aggregation](#aggregation)
 - [Row data editing](#row-data-editing)
 - [Column customization](#column-customization)
@@ -369,67 +372,9 @@ import Pagination from './Pagination.mdx';
 
 <Pagination />
 
-## Toolbar actions
+import Toolbar from './Toolbar.mdx';
 
-You can add other actions to the toolbar overflow menu by using the toolbarActions prop on the view.toolbar.
-When clicking on an action it will trigger the `onApplyToolbarAction` callback passing the object
-used to create the action. If `toolbarActions` is a function, it can return an array of objects
-representing the toolbarActions and these will be rendered dynamically when the overflow menu is opened.
-
-The `isOverflow` prop will force the item to appear in the overflow menu, but by default it will
-appear as another button in the toolbar.
-
-```jsx
-<Table
-  id="table"
-  columns={columns}
-  data={data}
-  actions={{
-    toolbar: {
-      onApplyToolbarAction: (actionObject) => {},
-    },
-  }}
-  view={{
-    toolbar: {
-      toolbarActions: [
-        {
-          id: 'edit',
-          labelText: 'Edit',
-          // can be a handful of included icons
-          renderIcon: 'edit',
-          disabled: true,
-          isOverflow: true,
-        },
-        // this item will appear in the toolbar, not the overflow menu, because it doesn't have
-        // isOverflow:true
-        {
-          id: 'toggle',
-          labelText: 'Toggle something',
-          // can be an icon directly from @carbon/icons-react
-          renderIcon: ViewOff16,
-          // force this item to show in an active state
-          isActive: true,
-        },
-        {
-          id: 'delete',
-          labelText: 'Delete',
-          isDelete: true,
-          hasDivider: true,
-          // can be a function
-          renderIcon: () => <TrashCan16 aria-label="Delete" />,
-          isOverflow: true,
-        },
-        {
-          id: 'hidden',
-          labelText: 'Hidden',
-          hidden: true,
-          isOverflow: true,
-        },
-      ],
-    },
-  }}
-/>
-```
+<Toolbar />
 
 ## Aggregation
 
@@ -736,9 +681,14 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | toolbar.customToolbarContent                     | node                             |           | optional content to render inside the toolbar                                                                                                                                                                             |
 | toolbar.batchActions                             | object[]                         |           | Specify which batch actions to render in the batch action bar. If empty, no batch action toolbar will display                                                                                                             |
 | toolbar.batchActions[].id                        | string                           |           | unique id for this batch action                                                                                                                                                                                           |
-| toolbar.batchActions[].labeltext                 | string                           |           | text shown on the action button                                                                                                                                                                                           |
-| toolbar.batchActions[].icon                      | element                          |           | The icon rendered on the button for this action                                                                                                                                                                           |
+| toolbar.batchActions[].labelText                 | string                           |           | text shown on the action button                                                                                                                                                                                           |
+| toolbar.batchActions[].renderIcon                | element                          |           | The icon rendered on the button for this action                                                                                                                                                                           |
 | toolbar.batchActions[].iconDescription           | string                           |           | The description used for aria on this icon                                                                                                                                                                                |
+| toolbar.batchActions[].isOverflow                | bool                             |           | Set to true to force this batch action to appear in the overflow menu                                                                                                                                                     |
+| toolbar.batchActions[].isDelete                  | bool                             |           | Set to true to force this item to appear as dangerous (red) in the menu                                                                                                                                                   |
+| toolbar.batchActions[].hasDivider                | bool                             |           | Set to true to separate this item from the others by adding a divider above it                                                                                                                                            |
+| toolbar.batchActions[].disabled                  | bool                             |           | Set to true to disable this item from action, but still have it appear in a disabled state                                                                                                                                |
+| toolbar.batchActions[].hidden                    | bool                             |           | When true, this item will not appear in the DOM                                                                                                                                                                           |
 | toolbar.search                                   | object                           |           |                                                                                                                                                                                                                           |
 | toolbar.search.value                             | string                           |           | Deprecated in favor of defaultValue                                                                                                                                                                                       |
 | toolbar.search.defaultValue                      | string                           |           | The current search value passed to the table                                                                                                                                                                              |
