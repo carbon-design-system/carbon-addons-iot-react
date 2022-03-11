@@ -82,7 +82,6 @@ $hoverBgColor: #2c2c2c;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: pre;
-      text-overflow: ellipsis;
       flex-shrink: 1;
       background: $ui-01;
       color: $interactive-04;
@@ -92,7 +91,6 @@ $hoverBgColor: #2c2c2c;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: pre;
-      text-overflow: ellipsis;
       flex-shrink: 2;
     }
   }
@@ -155,6 +153,17 @@ html[dir='rtl'] {
   .#{$iot-prefix}--side-nav {
     left: unset;
     right: 0;
+
+    &.#{$prefix}--side-nav--rail {
+      &:not(.#{$prefix}--side-nav--expanded) {
+        .#{$prefix}--search-close {
+          display: none;
+        }
+      }
+    }
+    .#{$prefix}--search {
+      min-width: unset;
+    }
   }
 
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {
