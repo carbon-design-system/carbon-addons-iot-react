@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.24...v2.149.0-next.25) (2022-03-14)
+
+
+### Bug Fixes
+
+* **table-body-row:** fix rtl for nested rows ([3580216](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3580216eb682d6a3b6c580c310afd5d6977ecccc))
+
+
+### Features
+
+* **table:** make indention blocks white for expanded rows ([6885c0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6885c0f04d027926a0439ac8fca46037495015e5))
+* **table-body-row:** styling fixed for nested rows ([8429592](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8429592868925104c79d517d5118e65df83cfc5d))
+
+
+
+
+
 # [2.149.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.23...v2.149.0-next.24) (2022-03-14)
 
 
