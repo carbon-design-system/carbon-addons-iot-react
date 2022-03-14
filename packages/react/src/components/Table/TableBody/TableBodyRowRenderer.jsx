@@ -97,6 +97,8 @@ const propTypes = {
   someRowHasSingleRowEditMode: PropTypes.bool,
   row: TableRowPropTypes.isRequired,
   rows: TableRowsPropTypes,
+  /** True if this row is the last child of a nested group */
+  isLastChild: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -134,6 +136,7 @@ const defaultProps = {
   someRowHasSingleRowEditMode: false,
   testId: '',
   totalColumns: 0,
+  isLastChild: false,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -177,6 +180,7 @@ const TableBodyRowRenderer = (props) => {
     totalColumns,
     truncateCellText,
     wrapCellText,
+    isLastChild,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -264,6 +268,7 @@ const TableBodyRowRenderer = (props) => {
       values={row.values}
       showExpanderColumn={showExpanderColumn}
       size={size}
+      isLastChild={isLastChild}
     />
   ) : (
     <TableBodyLoadMoreRow
@@ -288,12 +293,13 @@ const TableBodyRowRenderer = (props) => {
   return shouldShowChildren
     ? [rowElement]
         .concat(
-          row.children.map((childRow) => (
+          row.children.map((childRow, i) => (
             <TableBodyRowRenderer
               key={`child-row-${childRow.id}`}
               {...props}
               row={childRow}
               nestingLevel={nestingLevel + 1}
+              isLastChild={i === row.children.length - 1}
             />
           ))
         )
