@@ -40,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <button
               aria-describedby="definition-tooltip-2"
-              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-center"
               onBlur={[Function]}
               onFocus={[Function]}
               type="button"
@@ -224,7 +224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <button
               aria-describedby="definition-tooltip-10"
-              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-center"
               onBlur={[Function]}
               onFocus={[Function]}
               type="button"
@@ -540,7 +540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -574,7 +573,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1033,7 +1031,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1067,7 +1064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1394,7 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <button
               aria-describedby="definition-tooltip-4"
-              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-center"
               onBlur={[Function]}
               onFocus={[Function]}
               type="button"
@@ -2119,7 +2115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <button
               aria-describedby="definition-tooltip-8"
-              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-center"
               onBlur={[Function]}
               onFocus={[Function]}
               type="button"
@@ -2295,7 +2291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           >
             <button
               aria-describedby="definition-tooltip-6"
-              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-center"
               onBlur={[Function]}
               onFocus={[Function]}
               type="button"

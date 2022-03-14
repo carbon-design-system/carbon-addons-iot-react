@@ -6727,6 +6727,7 @@ Map {
       ],
       "light": false,
       "locale": "en",
+      "menuOffset": undefined,
       "onApply": null,
       "onCancel": null,
       "presets": Array [
@@ -7061,6 +7062,19 @@ Map {
       },
       "locale": Object {
         "type": "string",
+      },
+      "menuOffset": Object {
+        "args": Array [
+          Object {
+            "left": Object {
+              "type": "number",
+            },
+            "top": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "onApply": Object {
         "type": "func",
@@ -9015,6 +9029,7 @@ Map {
         "profileTitle": "Profile",
       },
       "onRequestLogout": null,
+      "profileLink": "javascript:void(0)",
       "testId": "suite-header-profile",
       "username": "",
     },
@@ -9044,6 +9059,9 @@ Map {
       },
       "onRequestLogout": Object {
         "type": "func",
+      },
+      "profileLink": Object {
+        "type": "string",
       },
       "testId": Object {
         "type": "string",
@@ -22687,7 +22705,8 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpando": Object {
+      "renderExpando": [Function],
+      "renderToggle": Object {
         "type": "func",
       },
       "testId": Object {
@@ -27635,6 +27654,7 @@ Map {
       "i18n": Object {
         "iconLabel": "Progress bar icon",
       },
+      "inline": false,
       "light": false,
       "max": 100,
       "renderIcon": undefined,
@@ -27661,6 +27681,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "inline": Object {
+        "type": "bool",
       },
       "label": Object {
         "isRequired": true,
@@ -28497,9 +28520,6 @@ Map {
     },
   },
   "Accordion" => Object {
-    "defaultProps": Object {
-      "align": "end",
-    },
     "propTypes": Object {
       "align": Object {
         "args": Array [
@@ -28553,7 +28573,8 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpando": Object {
+      "renderExpando": [Function],
+      "renderToggle": Object {
         "type": "func",
       },
       "title": Object {
@@ -28609,7 +28630,6 @@ Map {
     "defaultProps": Object {
       "indeterminate": false,
       "onChange": [Function],
-      "onClick": [Function],
     },
     "displayName": "Checkbox",
     "propTypes": Object {
@@ -28642,9 +28662,6 @@ Map {
       "onChange": Object {
         "type": "func",
       },
-      "onClick": Object {
-        "type": "func",
-      },
       "title": Object {
         "type": "string",
       },
@@ -28664,7 +28681,7 @@ Map {
         "type": "string",
       },
       "children": Object {
-        "type": "string",
+        "type": "node",
       },
       "className": Object {
         "type": "string",
@@ -28673,6 +28690,9 @@ Map {
         "type": "string",
       },
       "copyLabel": Object {
+        "type": "string",
+      },
+      "copyText": Object {
         "type": "string",
       },
       "disabled": Object {
@@ -29393,6 +29413,9 @@ Map {
         "colSpan": Object {
           "type": "number",
         },
+        "id": Object {
+          "type": "string",
+        },
         "isSortHeader": Object {
           "type": "bool",
         },
@@ -30008,9 +30031,7 @@ Map {
       "hideLabel": Object {
         "type": "bool",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "isRequired": true,
         "type": "string",
@@ -30031,9 +30052,7 @@ Map {
       "onClick": Object {
         "type": "func",
       },
-      "openCalendar": Object {
-        "type": "func",
-      },
+      "openCalendar": [Function],
       "pattern": [Function],
       "placeholder": Object {
         "type": "string",
@@ -30096,17 +30115,7 @@ Map {
         "type": "object",
       },
       "helperText": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "string",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
+        "type": "node",
       },
       "hideLabel": Object {
         "type": "bool",
@@ -30156,6 +30165,9 @@ Map {
         "type": "bool",
       },
       "onChange": Object {
+        "type": "func",
+      },
+      "renderSelectedItem": Object {
         "type": "func",
       },
       "selectedItem": Object {
@@ -30297,6 +30309,7 @@ Map {
       "accept": Array [],
       "buttonKind": "primary",
       "buttonLabel": "",
+      "disabled": false,
       "filenameStatus": "uploading",
       "iconDescription": "Provide icon description",
       "multiple": false,
@@ -30331,6 +30344,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "filenameStatus": Object {
         "args": Array [
@@ -30618,7 +30634,6 @@ Map {
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
     },
-    "displayName": "MultiSelect.Filterable",
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
@@ -31498,7 +31513,6 @@ Map {
         "selectionFeedback": "top-after-reopen",
         "sortItems": [Function],
       },
-      "displayName": "MultiSelect.Filterable",
       "propTypes": Object {
         "ariaLabel": Object {
           "type": "string",
@@ -31651,6 +31665,7 @@ Map {
       "light": false,
       "locale": "en",
       "open": false,
+      "selectedItems": null,
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
       "title": false,
@@ -31761,6 +31776,9 @@ Map {
       },
       "open": Object {
         "type": "bool",
+      },
+      "selectedItems": Object {
+        "type": "array",
       },
       "selectionFeedback": Object {
         "args": Array [
@@ -32106,17 +32124,6 @@ Map {
   },
   "PasswordInput" => Object {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "className": "\${prefix}--text__input",
-      "disabled": false,
-      "helperText": "",
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "size": "",
-    },
     "displayName": "PasswordInput",
     "propTypes": Object {
       "className": Object {
@@ -32984,6 +32991,7 @@ Map {
       "_threadCount": 0,
     },
     "defaultProps": Object {
+      "scrollDebounceWait": 150,
       "scrollIntoView": true,
       "selected": 0,
       "selectionMode": "automatic",
@@ -33016,6 +33024,9 @@ Map {
       },
       "rightOverflowButtonProps": Object {
         "type": "object",
+      },
+      "scrollDebounceWait": Object {
+        "type": "number",
       },
       "scrollIntoView": Object {
         "type": "bool",
@@ -33117,10 +33128,12 @@ Map {
     "defaultProps": Object {
       "cols": 50,
       "disabled": false,
+      "enableCounter": false,
       "helperText": "",
       "invalid": false,
       "invalidText": "",
       "light": false,
+      "maxCount": undefined,
       "onChange": [Function],
       "onClick": [Function],
       "placeholder": "",
@@ -33150,6 +33163,9 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "enableCounter": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "node",
       },
@@ -33171,6 +33187,9 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxCount": Object {
+        "type": "number",
       },
       "onChange": Object {
         "type": "func",
@@ -33316,17 +33335,6 @@ Map {
     },
     "PasswordInput": Object {
       "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": Object {
-        "className": "\${prefix}--text__input",
-        "disabled": false,
-        "helperText": "",
-        "invalid": false,
-        "invalidText": "",
-        "light": false,
-        "onChange": [Function],
-        "onClick": [Function],
-        "size": "",
-      },
       "displayName": "PasswordInput",
       "propTypes": Object {
         "className": Object {
@@ -33446,19 +33454,6 @@ Map {
         },
       },
       "render": [Function],
-    },
-    "defaultProps": Object {
-      "disabled": false,
-      "helperText": "",
-      "inline": false,
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "type": "text",
-      "warn": false,
-      "warnText": "",
     },
     "displayName": "TextInput",
     "propTypes": Object {
@@ -34486,9 +34481,6 @@ Map {
     },
   },
   "ButtonSkeleton" => Object {
-    "defaultProps": Object {
-      "small": false,
-    },
     "propTypes": Object {
       "className": Object {
         "type": "string",

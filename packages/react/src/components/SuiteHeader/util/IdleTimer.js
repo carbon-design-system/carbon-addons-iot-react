@@ -48,8 +48,9 @@ class IdleTimer {
         this.onCookieCleared();
         this.cleanUp();
       }
+      const now = Date.now();
       // Check if user is idle by comparing the inactivity timeout cookie timestamp with the current time
-      if (userInactivityTimeoutValue < Date.now()) {
+      if (userInactivityTimeoutValue < now) {
         // Fire onIdleTimeoutWarning during the countdown, and when countdown reaches zero, fire onIdleTimeout.
         if (this.countdown === 0) {
           this.onIdleTimeout();
@@ -57,8 +58,18 @@ class IdleTimer {
           this.cleanUp();
         } else {
           this.onIdleTimeoutWarning(this.countdown);
-          // Decrease coountdown each time onIdleTimeoutWarning is fired
-          this.countdown = this.countdown === 0 ? this.countdown : this.countdown - 1;
+          // Decrease countdown each time onIdleTimeoutWarning is fired
+          this.countdown =
+            this.countdown === 0
+              ? this.countdown
+              : Math.max(
+                  this.COUNTDOWN_START -
+                    parseInt(
+                      (now - (userInactivityTimeoutValue - this.COOKIE_CHECK_INTERVAL)) / 1000,
+                      10
+                    ),
+                  0
+                );
         }
       } else if (this.countdown < this.COUNTDOWN_START) {
         // This means that the cookie has been updated by a restart of IdleTimer running in some other tab during the countdown (when onIdleTimeoutWarning was being fired)
@@ -80,7 +91,9 @@ class IdleTimer {
     // Write the inactivity timeout cookie
     document.cookie = `${this.COOKIE_NAME}=${encodeURIComponent(
       timestamp
-    )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};`;
+    )};expires=${expires};path=/;domain=${this.COOKIE_DOMAIN};${
+      window.location.protocol === 'https:' ? 'Secure;' : ''
+    }`;
   }
 
   updateUserInactivityTimeoutCookie() {

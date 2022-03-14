@@ -1183,6 +1183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -1609,7 +1610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -1629,7 +1630,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -1901,6 +1904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -2699,6 +2703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -2745,6 +2750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -2796,6 +2802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -2847,6 +2854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -4131,6 +4139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -4557,7 +4566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -4577,7 +4586,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -4849,6 +4860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -5647,6 +5659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -5693,6 +5706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -5744,6 +5758,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -5795,6 +5810,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -7114,6 +7130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -7540,7 +7557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -7560,7 +7577,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -7832,6 +7851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -8630,6 +8650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -8676,6 +8697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -8727,6 +8749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -8778,6 +8801,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -9601,7 +9625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
                   data-testid="table-for-card-expandedcard-table-container"
                 >
                   <section
@@ -9621,7 +9645,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -9855,6 +9881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-expandedcard"
                         id="table-for-card-expandedcard"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -10933,7 +10960,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </table>
                     </div>
                   </div>
-                  <div />
                   <div
                     className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                     data-testid="table-for-card-expandedcard-table-pagination"
@@ -12394,6 +12420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -12820,7 +12847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -12840,7 +12867,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -13112,6 +13141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -13910,6 +13940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -13956,6 +13987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -14007,6 +14039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -14058,6 +14091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"
@@ -14950,6 +14984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="iot--data-state-grid"
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                           className="bx--tooltip__label"
                           id="iot--data-state-grid__icon-xsmall-number-5"
@@ -15764,6 +15799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="iot--data-state-grid"
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="iot--data-state-grid__icon-xsmall-number-5"
                           className="bx--tooltip__label"
                           id="iot--data-state-grid__icon-xsmall-number-5"
@@ -30183,6 +30219,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     
                     <div
+                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -30609,7 +30646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -30629,7 +30666,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         <p
                           className="bx--batch-summary__para"
                         >
-                          <span>
+                          <span
+                            dir="auto"
+                          >
                             0 items selected
                           </span>
                         </p>
@@ -30901,6 +30940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -31699,6 +31739,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-35-65"
                           className="bx--tooltip__label"
                           id="hotspot-35-65"
@@ -31745,6 +31786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-25"
                           className="bx--tooltip__label"
                           id="hotspot-45-25"
@@ -31796,6 +31838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-50"
                           className="bx--tooltip__label"
                           id="hotspot-45-50"
@@ -31847,6 +31890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         }
                       >
                         <div
+                          aria-describedby={null}
                           aria-labelledby="hotspot-45-75"
                           className="bx--tooltip__label"
                           id="hotspot-45-75"

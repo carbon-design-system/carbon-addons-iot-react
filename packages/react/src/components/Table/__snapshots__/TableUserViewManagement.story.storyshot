@@ -139,7 +139,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 className="bx--checkbox"
@@ -486,7 +485,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -668,32 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   id="downshift-0-toggle-button"
                   onClick={[Function]}
                   onKeyDown={[Function]}
-                  title={
-                    <TableViewDropdownItem
-                      activeViewEdited={true}
-                      i18n={
-                        Object {
-                          "ariaLabel": "Select view",
-                          "edited": "Edited",
-                          "manageViews": "Manage views",
-                          "saveAsNewView": "Save as new view",
-                          "saveChanges": "Save changes",
-                          "tableViewMenu": "Table view menu",
-                          "view": "View",
-                          "viewAll": "View All",
-                        }
-                      }
-                      isCompact={false}
-                      isSelected={true}
-                      item={
-                        Object {
-                          "id": "view2",
-                          "text": "Filters and search view",
-                        }
-                      }
-                      testID="TableViewDropdownItem-view2"
-                    />
-                  }
+                  title="Filters and search view"
                   type="button"
                 >
                   <span
@@ -1461,8 +1437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -1533,8 +1508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -1689,8 +1663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -1737,8 +1710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -1797,8 +1769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={null}

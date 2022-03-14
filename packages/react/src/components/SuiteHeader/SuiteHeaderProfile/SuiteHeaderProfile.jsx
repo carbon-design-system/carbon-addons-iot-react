@@ -1,3 +1,5 @@
+/* eslint-disable no-script-url */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonSkeleton } from 'carbon-components-react';
@@ -11,6 +13,7 @@ import useMerged from '../../../hooks/useMerged';
 const defaultProps = {
   username: '',
   displayName: '',
+  profileLink: 'javascript:void(0)',
   onRequestLogout: null,
   i18n: {
     profileTitle: 'Profile',
@@ -21,8 +24,9 @@ const defaultProps = {
 };
 
 const propTypes = {
-  displayName: PropTypes.string,
   username: PropTypes.string,
+  displayName: PropTypes.string,
+  profileLink: PropTypes.string,
   onProfileClick: PropTypes.func.isRequired,
   onRequestLogout: PropTypes.func,
   i18n: PropTypes.shape({
@@ -34,8 +38,9 @@ const propTypes = {
 };
 
 const SuiteHeaderProfile = ({
-  displayName,
   username,
+  displayName,
+  profileLink,
   onProfileClick,
   onRequestLogout,
   i18n,
@@ -72,6 +77,8 @@ const SuiteHeaderProfile = ({
               testId={`${testId}--profile`}
               onClick={onProfileClick}
               onKeyDown={handleSpecificKeyDown(['Enter', ' '], onProfileClick)}
+              href={profileLink}
+              rel="noopener noreferrer"
             >
               {mergedI18n.profileButton}
             </Button>

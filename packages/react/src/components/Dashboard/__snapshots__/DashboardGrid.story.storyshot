@@ -886,6 +886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 
                 <div
+                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1899,7 +1900,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </button>
               </div>
               <ul
-                className="bx--accordion settings-accordion bx--accordion--end"
+                className="bx--accordion settings-accordion bx--accordion--end bx--accordion--md"
                 style={
                   Object {
                     "paddingTop": 0,
@@ -2117,7 +2118,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             }
           >
             <div
-              className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+              className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
               data-testid="table-for-card-tableCard-table-container"
             >
               <section
@@ -2137,7 +2138,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span>
+                      <span
+                        dir="auto"
+                      >
                         0 items selected
                       </span>
                     </p>
@@ -2407,6 +2410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     className="bx--data-table bx--data-table--no-border"
                     data-testid="table-for-card-tableCard"
                     id="table-for-card-tableCard"
+                    showHeader={true}
                     title={null}
                   >
                     <thead
@@ -3075,7 +3079,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </table>
                 </div>
               </div>
-              <div />
               <div
                 className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
@@ -3480,6 +3483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     }
                   >
                     <div
+                      aria-describedby={null}
                       aria-labelledby="hotspot-35-65"
                       className="bx--tooltip__label"
                       id="hotspot-35-65"

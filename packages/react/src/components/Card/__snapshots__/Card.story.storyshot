@@ -201,7 +201,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -1598,15 +1600,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
@@ -1662,6 +1668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1749,15 +1756,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
@@ -1813,6 +1824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1895,6 +1907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

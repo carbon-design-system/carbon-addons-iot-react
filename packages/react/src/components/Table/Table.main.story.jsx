@@ -1,7 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { object, select, boolean } from '@storybook/addon-knobs';
+import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { merge, uniqueId } from 'lodash-es';
+import { SettingsAdjust16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
@@ -9,6 +10,8 @@ import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
+import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
+import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
@@ -17,6 +20,9 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import SearchingREADME from './mdx/Searching.mdx';
+import PaginationREADME from './mdx/Pagination.mdx';
+import ToolbarREADME from './mdx/Toolbar.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -44,6 +50,7 @@ import {
   getHiddenOverflowRowAction,
   getHiddenRowAction,
   addMoreChildRowsToParent,
+  getCustomToolbarContentElement,
 } from './Table.story.helpers';
 
 export default {
@@ -100,6 +107,7 @@ export const Playground = () => {
     maxPages,
     isItemPerPageHidden,
     paginationSize,
+    hasOnlyPageData,
     hasRowExpansion,
     hasRowNesting,
     demoHasLoadMore,
@@ -110,6 +118,7 @@ export const Playground = () => {
     selectionCheckboxEnabled,
     hasSearch,
     hasFastSearch,
+    searchFieldDefaultExpanded,
     wrapCellText,
     cellTextAlignment,
     preserveCellWhiteSpace,
@@ -120,6 +129,7 @@ export const Playground = () => {
     demoRenderDataFunction,
     demoToolbarActions,
     demoCustomToolbarContent,
+    demoDownloadCSV,
     toolbarIsDisabled,
     tableIsLoading,
     demoEmptyColumns,
@@ -132,7 +142,7 @@ export const Playground = () => {
     batchActions,
     searchIsExpanded,
   } = getTableKnobs({
-    enableKnob: (name) =>
+    getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
       [
         'hasUserViewManagement',
@@ -152,11 +162,14 @@ export const Playground = () => {
         'demoEmptyState',
         'demoCustomEmptyState',
         'demoCustomErrorState',
+        'hasOnlyPageData',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
         ['selectionCheckboxEnabled'].includes(name)
         ? true
+        : name === 'secondaryTitle'
+        ? 'Table playground'
         : // For this story enable the other knobs by defaults if we are in dev environment
           __DEV__,
     useGroups: true,
@@ -188,14 +201,7 @@ export const Playground = () => {
     </Button>
   );
 
-  const customToolbarContentElement = (
-    <div
-      className=".bx--type-light"
-      style={{ alignItems: 'center', display: 'flex', padding: '0 1rem' }}
-    >
-      Custom content
-    </div>
-  );
+  const customToolbarContentElement = getCustomToolbarContentElement();
 
   const customEmptyState = (
     <div key="empty-state">
@@ -280,7 +286,16 @@ export const Playground = () => {
   const myTableActions = merge(getTableActions(), {
     table: { onRowLoadMore },
     toolbar: {
-      onShowRowEdit: () => setShowRowEditBar(true),
+      onShowRowEdit: () => {
+        action('onShowRowEdit')();
+        setShowRowEditBar(true);
+      },
+      onDownloadCSV: demoDownloadCSV
+        ? (dataToDownload) => {
+            csvDownloadHandler(dataToDownload, 'Table playground data');
+            action('onDownloadCSV')(dataToDownload);
+          }
+        : undefined,
     },
   });
   const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
@@ -292,7 +307,8 @@ export const Playground = () => {
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
-  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}`;
+  ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
+  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
 
   return (
     <DragAndDrop>
@@ -317,6 +333,7 @@ export const Playground = () => {
           hasAdvancedFilter,
           hasMultiSort,
           hasPagination,
+          hasOnlyPageData,
           hasResize,
           hasRowExpansion,
           hasRowNesting,
@@ -347,6 +364,7 @@ export const Playground = () => {
             rowEditBarButtons,
             batchActions,
             search: {
+              defaultExpanded: searchFieldDefaultExpanded,
               isExpanded: searchIsExpanded,
             },
           },
@@ -383,7 +401,7 @@ Playground.storyName = 'Playground';
 export const WithSorting = () => {
   const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'demoSingleSort', 'hasMultiSort'],
-    enableKnob: (name) => name !== 'hasMultiSort',
+    getDefaultValue: (name) => name !== 'hasMultiSort',
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
@@ -431,10 +449,71 @@ WithSorting.parameters = {
   },
 };
 
+export const WithSearching = () => {
+  const {
+    selectedTableType,
+    hasSearch,
+    hasFastSearch,
+    searchFieldDefaultExpanded,
+    searchIsExpanded,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasSearch',
+      'hasFastSearch',
+      'searchFieldDefaultExpanded',
+      'searchIsExpanded',
+    ],
+    getDefaultValue: (name) => name !== 'searchFieldDefaultExpanded' && name !== 'searchIsExpanded',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns();
+
+  const defaultValue = text(
+    'Default search value controlled by the app (view.toolbar.search.defaultValue)',
+    'helping'
+  );
+
+  const knobRegeneratedKey = `${searchFieldDefaultExpanded}${searchIsExpanded}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasSearch,
+        hasFastSearch,
+      }}
+      view={{
+        toolbar: {
+          search: {
+            defaultValue,
+            defaultExpanded: searchFieldDefaultExpanded,
+            isExpanded: searchIsExpanded,
+            onExpand: action('onExpand'),
+          },
+        },
+      }}
+    />
+  );
+};
+
+WithSearching.storyName = 'With searching';
+WithSearching.parameters = {
+  component: Table,
+  docs: {
+    page: SearchingREADME,
+  },
+};
+
 export const WithRowExpansion = () => {
   const { selectedTableType, hasRowExpansion, shouldExpandOnRowClick } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasRowExpansion', 'shouldExpandOnRowClick'],
-    enableKnob: () => true,
+    getDefaultValue: () => true,
   });
 
   const initiallyExpandedIds = object('expandedIds', ['row-1']);
@@ -493,7 +572,7 @@ export const WithRowNesting = () => {
       'shouldExpandOnRowClick',
       'demoHasLoadMore',
     ],
-    enableKnob: () => true,
+    getDefaultValue: () => true,
   });
 
   const initiallyExpandedIds = object('Expanded ids (view.table.expandedIds)', ['row-1']);
@@ -572,7 +651,7 @@ WithRowNesting.parameters = {
 export const WithFiltering = () => {
   const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
-    enableKnob: (knobName) => knobName !== 'hasAdvancedFilter',
+    getDefaultValue: (knobName) => knobName !== 'hasAdvancedFilter',
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
@@ -690,7 +769,7 @@ WithFiltering.parameters = {
 export const WithSelectionAndBatchActions = () => {
   const { selectedTableType, hasRowSelection, selectionCheckboxEnabled } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasRowSelection', 'selectionCheckboxEnabled'],
-    enableKnob: () => true,
+    getDefaultValue: () => true,
   });
 
   const isStateful = selectedTableType === 'StatefulTable';
@@ -744,7 +823,7 @@ WithSelectionAndBatchActions.parameters = {
 export const WithInlineActions = () => {
   const { selectedTableType, hasRowActions } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasRowActions'],
-    enableKnob: () => true,
+    getDefaultValue: () => true,
   });
 
   const rowActions = [
@@ -798,5 +877,157 @@ WithInlineActions.parameters = {
   component: Table,
   docs: {
     page: InlineActionsREADME,
+  },
+};
+
+export const WithPagination = () => {
+  const {
+    selectedTableType,
+    hasPagination,
+    pageSizes,
+    maxPages,
+    isItemPerPageHidden,
+    paginationSize,
+    hasOnlyPageData,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasPagination',
+      'pageSizes',
+      'maxPages',
+      'isItemPerPageHidden',
+      'paginationSize',
+      'hasOnlyPageData',
+    ],
+    getDefaultValue: (name) => name !== 'hasOnlyPageData' && name !== 'isItemPerPageHidden',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData();
+  const columns = getTableColumns();
+
+  const pageSize = select('Selected pageSize (view.pagination.pageSize)', pageSizes, 10);
+  const page = number('Current page (view.pagination.page)', 1);
+  const totalItems = number('Total items in data prop (view.pagination.totalItems)', data.length);
+
+  const knobRegeneratedKey = `table${isItemPerPageHidden}${maxPages}${paginationSize}${pageSize}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{ hasPagination, hasOnlyPageData }}
+      view={{
+        pagination: {
+          page,
+          pageSize,
+          pageSizes,
+          totalItems,
+          maxPages,
+          isItemPerPageHidden,
+          size: paginationSize,
+        },
+      }}
+    />
+  );
+};
+WithPagination.storyName = 'With pagination';
+WithPagination.parameters = {
+  component: Table,
+  docs: {
+    page: PaginationREADME,
+  },
+};
+
+export const WithToolbar = () => {
+  const {
+    selectedTableType,
+    secondaryTitle,
+    tableTooltipText,
+    demoCustomToolbarContent,
+    toolbarIsDisabled,
+    demoDownloadCSV,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'secondaryTitle',
+      'tableTooltipText',
+      'demoCustomToolbarContent',
+      'toolbarIsDisabled',
+      'demoDownloadCSV',
+    ],
+    getDefaultValue: (name) =>
+      name === 'secondaryTitle' ? 'Table with toolbar and actions' : name !== 'toolbarIsDisabled',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData();
+  const columns = getTableColumns();
+
+  const flyoutMenu = (
+    <FlyoutMenu
+      key="custom-content-2"
+      direction={FlyoutMenuDirection.BottomEnd}
+      iconDescription="Toggle flyout Menu"
+      buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
+      onApply={action('Flyout Menu Apply Clicked')}
+      onCancel={action('Flyout Menu Cancel Clicked')}
+    >
+      Example of custom toolbar content inserting a FlyoutMenu
+    </FlyoutMenu>
+  );
+  const tableTooltip = tableTooltipText ? <div>{tableTooltipText}</div> : null;
+  const customToolbarContent = demoCustomToolbarContent ? (
+    <>
+      {getCustomToolbarContentElement()}
+      {flyoutMenu}
+    </>
+  ) : undefined;
+  const toolbarActions = objectWithSubstitution(
+    'Toolbar actions (view.toolbar.toolbarActions)',
+    getTableToolbarActions(),
+    undefined,
+    'substituted with text - no edit'
+  );
+
+  // For demo and test purposes we generate an new key for the table when
+  // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
+  const knobRegeneratedKey = `table${toolbarIsDisabled}${JSON.stringify(toolbarActions)}`;
+
+  const onDownloadCSV = demoDownloadCSV
+    ? (filteredData) => csvDownloadHandler(filteredData, 'my table data')
+    : undefined;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={merge(getTableActions(), {
+        toolbar: {
+          onDownloadCSV,
+        },
+      })}
+      columns={columns}
+      data={data}
+      secondaryTitle={secondaryTitle}
+      tooltip={tableTooltip}
+      view={{
+        toolbar: {
+          isDisabled: toolbarIsDisabled,
+          customToolbarContent,
+          toolbarActions: () => {
+            return toolbarActions;
+          },
+        },
+      }}
+    />
+  );
+};
+WithToolbar.storyName = 'With toolbar';
+WithToolbar.parameters = {
+  component: Table,
+  docs: {
+    page: ToolbarREADME,
   },
 };

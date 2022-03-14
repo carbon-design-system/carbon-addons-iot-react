@@ -1032,6 +1032,7 @@ const Table = (props) => {
                 columns={visibleColumns}
                 {...pick(options, 'hasRowSelection', 'hasRowActions')}
                 hasRowExpansion={!!options.hasRowExpansion}
+                hasRowNesting={!!options.hasRowNesting}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
