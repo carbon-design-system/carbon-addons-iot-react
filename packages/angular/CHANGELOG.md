@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.24](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.23...v2.149.0-next.24) (2022-03-14)
+
+
+### Bug Fixes
+
+* added isOpen knob to test the change ([c41dd5a](https://github.com/IBM/carbon-components-angular/commit/c41dd5a0908fa2af783c5abc915f37f61b64c7c2))
+* resolve issues as mentioned in code review ([e8e0342](https://github.com/IBM/carbon-components-angular/commit/e8e034297c31ccd41ee6df09d0c0c915db331645))
+
+
+### Features
+
+* **ai-flyout-menu:** track open/close state ([583b732](https://github.com/IBM/carbon-components-angular/commit/583b7326d671397dde1588b2ef2b494cff0d3c4f))
+
+
+
+
+
 # [2.149.0-next.20](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
 
 
