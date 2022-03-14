@@ -103,6 +103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -207,6 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             className="iot--flyout-menu--tooltip-anchor"
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Calendar"
               className="bx--tooltip__label"
@@ -332,6 +334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -439,6 +442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -546,6 +550,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -670,6 +675,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -777,6 +783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -901,6 +908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"
@@ -1025,6 +1033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="iot--flyout-menu--tooltip-anchor"
         >
           <div
+            aria-describedby={null}
             aria-expanded={false}
             aria-label="Calendar"
             className="bx--tooltip__label"

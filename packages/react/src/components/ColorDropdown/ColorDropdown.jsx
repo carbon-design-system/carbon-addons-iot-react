@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import {
@@ -19,7 +19,6 @@ import warning from 'warning';
 
 import { settings } from '../../constants/Settings';
 import deprecate from '../../internal/deprecate';
-import { useDropdownTitleFixer } from '../IconDropdown/dropdownHooks';
 
 const { iotPrefix } = settings;
 
@@ -108,13 +107,6 @@ const ColorDropdown = ({
     }
   }, []);
   const [selectedColor, setSelectedColor] = useState(selectedColorProp);
-  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
-
-  useEffect(() => {
-    if ((selectedColor?.name || selectedColor?.carbonColor) && dropdownRef?.current) {
-      updateTitle(selectedColor.name || selectedColor.carbonColor);
-    }
-  }, [dropdownRef, selectedColor, selectedColorProp, updateTitle]);
 
   const renderColorItem = (item) => {
     return (
@@ -135,10 +127,10 @@ const ColorDropdown = ({
 
   return (
     <Dropdown
-      ref={dropdownRef}
       className={`${iotPrefix}--color-dropdown`}
       id={id}
-      itemToString={renderColorItem}
+      itemToElement={renderColorItem}
+      itemToString={(item) => item.name}
       items={colors}
       label={label}
       light={light}
@@ -149,6 +141,7 @@ const ColorDropdown = ({
         onChange({ color: selectedItem });
       }}
       selectedItem={selectedColor}
+      renderSelectedItem={renderColorItem}
       titleText={titleText}
       type="default"
       data-testid={testID || testId}
