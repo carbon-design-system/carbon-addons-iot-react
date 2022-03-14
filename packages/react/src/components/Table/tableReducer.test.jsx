@@ -789,11 +789,34 @@ describe('filter, search and sort', () => {
   });
 
   it('searchData', () => {
-    const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const mockData = [
+      {
+        values: {
+          number: 10,
+          node: <Add20 />,
+          string: 'string',
+          null: null,
+          boolean: true,
+        },
+      },
+      {
+        values: {
+          number: 30,
+          node: <Add20 />,
+          string: 'text',
+          null: null,
+          boolean: false,
+        },
+      },
+    ];
     expect(searchData(mockData, 10)).toHaveLength(1);
     expect(searchData(mockData, 'string')).toHaveLength(1);
     // case insensitive
     expect(searchData(mockData, 'STRING')).toHaveLength(1);
+
+    // search boolean values
+    expect(searchData(mockData, 'false')).toHaveLength(1);
+    expect(searchData(mockData, 'true')).toHaveLength(1);
   });
 
   it('filterSearchAndSort', () => {
