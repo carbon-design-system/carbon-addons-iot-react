@@ -44,6 +44,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -207,6 +208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -411,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -475,6 +478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
               className="iot--data-state-grid"
             >
               <div
+                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-GaugeCard"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-GaugeCard"
@@ -570,6 +574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

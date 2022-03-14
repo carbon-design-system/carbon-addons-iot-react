@@ -650,7 +650,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               <p
                                 className="bx--batch-summary__para"
                               >
-                                <span>
+                                <span
+                                  dir="auto"
+                                >
                                   0 items selected
                                 </span>
                               </p>
@@ -1275,7 +1277,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </table>
                           </div>
                         </div>
-                        <div />
                         <div
                           className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                           data-testid="table-for-card-Table-table-pagination"
@@ -19932,7 +19933,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <p
                               className="bx--batch-summary__para"
                             >
-                              <span>
+                              <span
+                                dir="auto"
+                              >
                                 0 items selected
                               </span>
                             </p>
@@ -20557,7 +20560,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </table>
                         </div>
                       </div>
-                      <div />
                       <div
                         className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                         data-testid="table-for-card-Table-table-pagination"

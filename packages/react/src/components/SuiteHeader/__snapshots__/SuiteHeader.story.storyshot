@@ -3941,7 +3941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     className="bx--side-nav__overlay"
   />
   <nav
-    aria-hidden={true}
+    aria-hidden={false}
     aria-label="Side navigation"
     className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
     data-testid="suite-header-side-nav"
