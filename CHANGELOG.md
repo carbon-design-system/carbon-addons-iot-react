@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.22...v2.149.0-next.23) (2022-03-14)
+
+
+### Bug Fixes
+
+* **color-dropdown:** replace dropdownTitleFixer hook ([a225c72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a225c72e6c63b4d66987267d464e80728e173ffc))
+* **icon-dropdown:** replace dropdownTitleFixer hook ([2715b06](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2715b06e0c5f9fa16880b172d343e2ae45b0d430))
+* **simple-icon-dropdown:** add title to items in open dropdown ([c41feae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c41feaed8c9dd4111e65edc667fb93f055093802))
+* **simple-icon-dropdown:** replace dropdownTitleFixer hook ([313a98c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/313a98c57ce38d5ae8c771f1226892692bf34a08))
+* **table:** pass ref directly to pagination now ([4d0cda3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d0cda3662ae1779770b987c3d96f7aaf08af04b))
+* **table:** remove dropdownTitleFixer from TableViewDropdown ([3b8ba1f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b8ba1ff53a95160c6b9f0efa34b5e6127bfb0b1))
+
+
+### Features
+
+* **repo:** remove dropdownHooks ([95ae36b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/95ae36bf2ba440058b93c19dd67451ab6308e152))
+* **repo:** upgrade to carbon 10.50 ([2774857](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/277485769b5185dae45a8000fe4a1b6fa863f22a))
+
+
+
+
+
 # [2.149.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.21...v2.149.0-next.22) (2022-03-07)
 
 
