@@ -32834,19 +32834,6 @@ Map {
       "role": Object {
         "type": "string",
       },
-      "size": Object {
-        "args": Array [
-          Array [
-            "default",
-            "field",
-            "small",
-            "sm",
-            "md",
-            "lg",
-          ],
-        ],
-        "type": "oneOf",
-      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -33488,6 +33475,8 @@ Map {
     },
   },
   "Link" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "Link",
     "propTypes": Object {
       "children": Object {
         "type": "node",
@@ -33531,6 +33520,7 @@ Map {
         "type": "bool",
       },
     },
+    "render": [Function],
   },
   "ListItem" => Object {
     "propTypes": Object {
@@ -34225,6 +34215,7 @@ Map {
       "ariaLabel": "open and close list of options",
       "direction": "bottom",
       "flipped": false,
+      "focusTrap": true,
       "iconDescription": "open and close list of options",
       "light": false,
       "menuOffset": [Function],
@@ -34260,6 +34251,9 @@ Map {
         "type": "oneOf",
       },
       "flipped": Object {
+        "type": "bool",
+      },
+      "focusTrap": Object {
         "type": "bool",
       },
       "iconClass": Object {
