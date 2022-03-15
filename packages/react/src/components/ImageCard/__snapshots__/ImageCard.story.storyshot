@@ -35,6 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -154,6 +155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-35-65"
                   className="bx--tooltip__label"
                   id="hotspot-35-65"
@@ -208,6 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-45-75"
                   className="bx--tooltip__label"
                   id="hotspot-45-75"
@@ -344,6 +347,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -463,6 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-35-65"
                   className="bx--tooltip__label"
                   id="hotspot-35-65"
@@ -511,6 +516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-45-25"
                   className="bx--tooltip__label"
                   id="hotspot-45-25"
@@ -562,6 +568,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-45-50"
                   className="bx--tooltip__label"
                   id="hotspot-45-50"
@@ -613,6 +620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-45-75"
                   className="bx--tooltip__label"
                   id="hotspot-45-75"
@@ -740,6 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -846,6 +855,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -952,6 +962,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -1190,6 +1201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -1235,17 +1247,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   
                 </div>
-                <input
-                  accept={Array []}
-                  className="bx--file-input"
-                  id="id16"
-                  multiple={false}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  tabIndex="-1"
-                  type="file"
-                />
               </label>
+              <input
+                accept={Array []}
+                className="bx--file-input"
+                id="id16"
+                multiple={false}
+                onChange={[Function]}
+                onClick={[Function]}
+                tabIndex="-1"
+                type="file"
+              />
             </div>
             <div
               className="iot--image-uploader-icon"
@@ -1357,6 +1369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -1402,17 +1415,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 >
                   
                 </div>
-                <input
-                  accept={Array []}
-                  className="bx--file-input"
-                  id="id14"
-                  multiple={false}
-                  onChange={[Function]}
-                  onClick={[Function]}
-                  tabIndex="-1"
-                  type="file"
-                />
               </label>
+              <input
+                accept={Array []}
+                className="bx--file-input"
+                id="id14"
+                multiple={false}
+                onChange={[Function]}
+                onClick={[Function]}
+                tabIndex="-1"
+                type="file"
+              />
             </div>
             <div
               className="iot--image-uploader-icon"
@@ -1524,6 +1537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Image
           </div>
@@ -1643,6 +1657,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-0-0"
                   className="bx--tooltip__label"
                   id="hotspot-0-0"
@@ -1694,6 +1709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-0-99.99"
                   className="bx--tooltip__label"
                   id="hotspot-0-99.99"
@@ -1745,6 +1761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-99.99-99.99"
                   className="bx--tooltip__label"
                   id="hotspot-99.99-99.99"
@@ -1796,6 +1813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                 }
               >
                 <div
+                  aria-describedby={null}
                   aria-labelledby="hotspot-99.99-0"
                   className="bx--tooltip__label"
                   id="hotspot-99.99-0"

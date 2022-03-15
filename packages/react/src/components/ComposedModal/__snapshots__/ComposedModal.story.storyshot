@@ -607,6 +607,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             Trigger Text
             <div
+              aria-describedby={null}
               aria-labelledby="my test tooltip"
               className="bx--tooltip__trigger"
               onBlur={[Function]}

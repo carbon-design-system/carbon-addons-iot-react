@@ -1,0 +1,107 @@
+# `ProgressBar` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [With thresholds](#with-thresholds)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+```jsx
+import { ProgressBar } from 'carbon-addons-iot-react';
+
+<ProgressBar value={30} label="A simple progress bar" />;
+```
+
+## With thresholds
+
+Thresholds can be given to change the color of the bar (and icon) at various values.
+
+```jsx
+<ProgressBar
+  value={67}
+  max={100}
+  valueUnit="%"
+  label="Mon, Oct 5"
+  helperText="Optional helper text"
+  hideLabel={false}
+  thresholds={[
+    {
+      comparison: '<',
+      value: 80,
+      color: {
+        fill: yellow30,
+        stroke: yellow50,
+      },
+    },
+    {
+      comparison: (value) => value >= 80 && value < 90,
+      color: {
+        fill: green20,
+        stroke: green50,
+      },
+    },
+    {
+      comparison: (value) => value >= 90 && value < 95,
+      color: {
+        fill: green30,
+        stroke: green50,
+      },
+    },
+    {
+      comparison: (value) => value >= 95 && value <= 100,
+      color: {
+        fill: green40,
+        stroke: green50,
+      },
+      icon: (props) => <Bee16 {...props} />,
+    },
+    {
+      comparison: '>',
+      value: 100,
+      color: red60,
+      icon: WarningFilled16,
+    },
+  ]}
+/>
+```
+
+## Props
+
+| Name                    | Type                                | Default             | Description                                                                                                                 |
+| :---------------------- | :---------------------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
+| className               | string                              |                     | Additional class names to be added to the component                                                                         |
+| label \*                | string                              |                     | The label show above the bar                                                                                                |
+| helperText              | string                              | ''                  | The text shown below the bar                                                                                                |
+| hideLabel               | bool                                | false               | If true, hide the label                                                                                                     |
+| inline                  | bool                                | false               | When true, the progress bar will render inline without a label or icons and with the value to the right of the progress bar |
+| value \*                | number                              |                     | The number used to fill the bar                                                                                             |
+| valueUnit               | string                              | '%'                 | The unit shown beside the value label text                                                                                  |
+| max                     | number                              | 100                 | the maximum value this bar supports, values higher trigger the `over` class to style the value label text differently       |
+| light                   | bool                                | false               | For use on gray backgrounds, when true turns the progress bar track white                                                   |
+| thresholds              | arrayOf(object)                     | undefined           | An array of threshold objects to compare the value against and change the icon and/or bar colors based on matching criteria |
+| thresholds[].comparison | '<', '<=', '=', '>', '>=', function |                     | The comparison character to compare value against or a function                                                             |
+| thresholds[].value      | string, number                      |                     | Only required when using a comparison character, if using a function it's not required                                      |
+| thresholds[].color      | object, string                      |                     | Either a string hex color, or an object with `fill` and `stroke` color strings                                              |
+| thresholds[].icon       | object, function, svg, string       |                     | An icon to render when the threshold is matched                                                                             |
+| renderIcon              | object, function, svg, string       |                     | Render an icon without matching a threshold                                                                                 |
+| renderIconByName        | function                            |                     | Required if the threshold icons or renderIcon is using a string                                                             |
+| i18n                    | shape                               |                     |                                                                                                                             |
+| i18n.iconLabel          | string                              | 'Progress bar icon' | aria-label used on the icon                                                                                                 |
+
+\*) Denotes required props
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ProgressBar)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ProgressBar/ProgressBar.mdx).

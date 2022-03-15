@@ -393,7 +393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </p>
           </div>
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button
@@ -798,7 +798,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           data-id="WizardInlineFooter"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button
@@ -1202,7 +1202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
             </p>
           </div>
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button
@@ -1624,7 +1624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           data-id="WizardInlineFooter"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button
@@ -2029,7 +2029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           data-id="WizardInlineFooter"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button
@@ -2510,7 +2510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
           data-id="WizardInlineFooter"
         >
           <div
-            className="WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+            className="iot--wizard-footer__buttons"
             data-testid="wizard-inline-footer"
           >
             <button

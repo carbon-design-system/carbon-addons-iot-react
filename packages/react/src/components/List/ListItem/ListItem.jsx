@@ -350,7 +350,7 @@ const dragSourceSpecification = {
   },
 };
 
-// These props origininate from React DND and are passed down to
+// These props originate from React DND and are passed down to
 // the ListItem via the DragSource wrapper.
 const dndPropsCollecting = (connect, monitor) => {
   return {

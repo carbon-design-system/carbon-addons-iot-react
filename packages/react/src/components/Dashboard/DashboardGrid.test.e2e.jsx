@@ -1162,6 +1162,7 @@ DashboardAllCardsAsResizable.propTypes = {
 describe('DashboardGrid', () => {
   beforeEach(() => {
     MockDate.set(1537538254000);
+    cy.viewport(1680, 900);
   });
   afterEach(() => {
     cy.viewport(1680, 900);

@@ -38,6 +38,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card title
           </div>
@@ -171,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       }
     >
       <div
-        className="iot--card--content"
+        className="iot--card--content iot--card__content--no-padding"
         data-testid="Card-content"
         style={
           Object {
@@ -182,12 +183,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <div
           className="iot--table-container bx--data-table-container"
           data-testid="my table-table-container"
-          style={
-            Object {
-              "transform": "translateX(-1rem)",
-              "width": "calc(100% + 2rem)",
-            }
-          }
         >
           <section
             aria-label="data table toolbar"
@@ -206,7 +201,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -407,7 +404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   data-testid="my table-table-body"
                 >
                   <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                    className="iot--table__row iot--table__row--selectable"
                     onClick={[Function]}
                   >
                     <td
@@ -419,7 +416,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
                       >
                         <span
                           className=""
@@ -438,7 +440,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
                       >
                         <span
                           className=""
@@ -497,6 +504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -557,6 +565,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -671,6 +680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -785,6 +795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -899,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1013,6 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1127,6 +1140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1241,6 +1255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1355,6 +1370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1473,6 +1489,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1580,6 +1597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card with date picker
           </div>
@@ -1592,15 +1610,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
@@ -1656,6 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1724,6 +1747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -1742,15 +1766,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="iot--date-time-pickerv2__wrapper"
             data-testid="date-time-picker"
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
+            onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             role="button"
             style={
               Object {
                 "--wrapper-width": "3rem",
               }
             }
-            tabIndex="0"
+            tabIndex={0}
           >
             <div
               className=""
@@ -1806,6 +1834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1878,6 +1907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.
           </div>
@@ -1887,6 +1917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -2070,6 +2101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card Title
           </div>
@@ -2138,6 +2170,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Card with render prop
           </div>

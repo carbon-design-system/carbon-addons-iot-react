@@ -14,6 +14,7 @@ module.exports = {
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
     '!src/components/Table/Table.test.helpers.jsx',
+    '!src/components/Table/Table.story.helpers.jsx',
     '!src/components/Table/TableColumnCustomizationModal/tableColumnCustomizationTestUtils.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
@@ -51,11 +52,11 @@ module.exports = {
       lines: 80,
     },
     './src/components/DateTimePicker/DateTimePickerV2.jsx': {
-      branches: 89,
+      branches: 84,
     },
     './src/components/DateTimePicker/DateTimePicker.jsx': {
       statements: 79,
-      branches: 80,
+      branches: 79,
       lines: 80,
       functions: 78,
     },

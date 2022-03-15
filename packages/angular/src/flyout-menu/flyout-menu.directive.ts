@@ -27,6 +27,7 @@ export class FlyoutMenuDirective extends TooltipDirective {
    * Controls wether the overflow menu is flipped
    */
   @Input() flip = false;
+
   @HostBinding('class.iot--flyout-menu') menuClass = true;
   /**
    * bx--tooltip__trigger is inherited from TooltipDirective and it enables focus indication

@@ -27,11 +27,13 @@ import {
   TableSearchPropTypes,
   defaultI18NPropTypes,
   ActiveTableToolbarPropType,
-  TableRowPropTypes,
   TableColumnsPropTypes,
   TableFiltersPropType,
   TableOrderingPropType,
   TableToolbarActionsPropType,
+  TableRowsPropTypes,
+  TableSharedOverflowMenuPropTypes,
+  TableSharedActionPropTypes,
 } from '../TablePropTypes';
 import {
   handleSpecificKeyDown,
@@ -40,6 +42,7 @@ import {
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 import useDynamicOverflowMenuItems from '../../../hooks/useDynamicOverflowMenuItems';
+import { renderTableOverflowItemText } from '../tableUtilities';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
@@ -138,12 +141,16 @@ const propTypes = {
     customToolbarContent: PropTypes.node,
     /** available batch actions */
     batchActions: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        labelText: PropTypes.string.isRequired,
-        icon: PropTypes.node,
-        iconDescription: PropTypes.string,
-      })
+      PropTypes.oneOfType([
+        PropTypes.shape({
+          ...TableSharedActionPropTypes,
+          iconDescription: PropTypes.string,
+        }),
+        PropTypes.shape({
+          ...TableSharedOverflowMenuPropTypes,
+          iconDescription: PropTypes.string,
+        }),
+      ])
     ),
     search: TableSearchPropTypes,
     /** buttons to be shown with when activeBar is 'rowEdit' */
@@ -165,7 +172,7 @@ const propTypes = {
     toolbarActions: TableToolbarActionsPropType,
   }).isRequired,
   /** Row value data for the body of the table */
-  data: TableRowPropTypes.isRequired,
+  data: TableRowsPropTypes.isRequired,
 
   // TODO: remove deprecated 'testID' in v3
   // eslint-disable-next-line react/require-default-props
@@ -226,7 +233,7 @@ const TableToolbar = ({
     totalSelected,
     totalFilters,
     batchActions,
-    search,
+    search: searchProp,
     activeBar,
     customToolbarContent,
     isDisabled,
@@ -245,6 +252,7 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
+  const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -254,17 +262,29 @@ const TableToolbar = ({
     testId: testID || testId,
   });
 
-  const hasToolbarOverflowActions =
-    typeof toolbarActions === 'function' ||
-    (toolbarActions?.length > 0 && toolbarActions.some((action) => action.isOverflow));
+  const actions = useMemo(() => {
+    const renderedActions =
+      typeof toolbarActions === 'function' ? toolbarActions() : toolbarActions;
 
-  const visibleToolbarActions = useMemo(() => {
-    if (typeof toolbarActions === 'function') {
-      return toolbarActions().filter(({ isOverflow }) => !isOverflow);
-    }
-
-    return toolbarActions?.filter(({ isOverflow }) => !isOverflow) ?? [];
+    return renderedActions?.length ? renderedActions : [];
   }, [toolbarActions]);
+
+  const hasToolbarOverflowActions =
+    actions.filter((action) => action.isOverflow && action.hidden !== true).length > 0;
+
+  const visibleToolbarActions = actions.filter(
+    (action) => !action.isOverflow && action.hidden !== true
+  );
+
+  const visibleBatchActions = batchActions.filter(
+    (action) => !action.isOverflow && action.hidden !== true
+  );
+
+  const visibleOverflowBatchActions = batchActions.filter(
+    (action) => action.isOverflow && action.hidden !== true
+  );
+
+  const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
 
   return (
     <CarbonTableToolbar
@@ -282,17 +302,49 @@ const TableToolbar = ({
         totalSelected={totalSelected}
         translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
       >
-        {batchActions.map(({ id, labelText, ...others }) => (
+        {visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
           <TableBatchAction
             key={id}
             onClick={() => onApplyBatchAction(id)}
             tabIndex={shouldShowBatchActions ? 0 : -1}
-            disabled={!shouldShowBatchActions}
+            disabled={!shouldShowBatchActions || disabled}
             {...others}
           >
             {labelText}
           </TableBatchAction>
         ))}
+        {hasVisibleOverflowBatchActions ? (
+          <OverflowMenu
+            data-testid={`${testID || testId}-batch-actions-overflow-menu`}
+            className={`${iotPrefix}--table-overflow-batch-actions`}
+            flipped={langDir === 'ltr'}
+            direction="bottom"
+            onClick={(e) => e.stopPropagation()}
+            renderIcon={OverflowMenuVertical20}
+            tabIndex={shouldShowBatchActions ? 0 : -1}
+            size="lg"
+            menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+          >
+            {visibleOverflowBatchActions.map(
+              ({ id, labelText, disabled, hasDivider, isDelete, renderIcon, iconDescription }) => (
+                <OverflowMenuItem
+                  data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
+                  itemText={renderTableOverflowItemText({
+                    action: { renderIcon, labelText: labelText || iconDescription },
+                    className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+                  })}
+                  disabled={!shouldShowBatchActions || disabled}
+                  onClick={() => onApplyBatchAction(id)}
+                  key={`table-batch-actions-overflow-menu-${id}`}
+                  requireTitle={!renderIcon}
+                  hasDivider={hasDivider}
+                  isDelete={isDelete}
+                  aria-label={labelText}
+                />
+              )
+            )}
+          </OverflowMenu>
+        ) : null}
       </TableBatchActions>
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
@@ -369,6 +421,7 @@ const TableToolbar = ({
               disabled={isDisabled}
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
+              expanded={searchIsExpanded || undefined}
             />
           ) : null}
           {totalFilters > 0 ? (
