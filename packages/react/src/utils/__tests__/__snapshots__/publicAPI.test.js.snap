@@ -31233,6 +31233,7 @@ Map {
     },
   },
   "ModalBody" => Object {
+    "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "aria-label": [Function],
       "children": Object {
@@ -31248,6 +31249,7 @@ Map {
         "type": "bool",
       },
     },
+    "render": [Function],
   },
   "ModalFooter" => Object {
     "contextType": Object {
@@ -34201,9 +34203,173 @@ Map {
     },
   },
   "OverflowMenu" => Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "displayName": "FeatureToggle(OverflowMenu)",
-    "render": [Function],
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
+    "defaultProps": Object {
+      "ariaLabel": "open and close list of options",
+      "direction": "bottom",
+      "flipped": false,
+      "iconDescription": "open and close list of options",
+      "light": false,
+      "menuOffset": [Function],
+      "menuOffsetFlip": [Function],
+      "onClick": [Function],
+      "onClose": [Function],
+      "onKeyDown": [Function],
+      "onOpen": [Function],
+      "open": false,
+      "renderIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "selectorPrimaryFocus": "[data-overflow-menu-primary-focus]",
+    },
+    "propTypes": Object {
+      "ariaLabel": Object {
+        "type": "string",
+      },
+      "children": Object {
+        "type": "node",
+      },
+      "className": Object {
+        "type": "string",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "top",
+            "bottom",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "flipped": Object {
+        "type": "bool",
+      },
+      "iconClass": Object {
+        "type": "string",
+      },
+      "iconDescription": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "menuOffset": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "left": Object {
+                    "type": "number",
+                  },
+                  "top": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "menuOffsetFlip": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "left": Object {
+                    "type": "number",
+                  },
+                  "top": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "type": "func",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "menuOptionsClass": Object {
+        "type": "string",
+      },
+      "onClick": Object {
+        "type": "func",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
+      "onKeyDown": Object {
+        "type": "func",
+      },
+      "onOpen": Object {
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "selectorPrimaryFocus": Object {
+        "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
   },
   "OverflowMenuItem" => Object {
     "defaultProps": Object {
@@ -34649,6 +34815,7 @@ Map {
       "_threadCount": 0,
     },
     "defaultProps": Object {
+      "hideLegend": false,
       "labelPosition": "right",
       "onChange": [Function],
       "orientation": "horizontal",
@@ -34674,6 +34841,9 @@ Map {
         "type": "oneOfType",
       },
       "disabled": Object {
+        "type": "bool",
+      },
+      "hideLegend": Object {
         "type": "bool",
       },
       "labelPosition": Object {
