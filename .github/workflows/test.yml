@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cypress/browsers:node16.14.0-slim-chrome99-ff97
-      options: --privileged --sysctl fs.inotify.max_user_watches=524288
+      options: --privileged
 
     steps:
       - name: Upgrade git
