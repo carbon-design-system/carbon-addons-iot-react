@@ -636,4 +636,32 @@ describe('Card', () => {
       `${iotPrefix}--card__content--no-padding`
     );
   });
+
+  it('should allow override pattern on empty state', () => {
+    const MyErrorMessage = ({ body, title, ...props }) => (
+      <div data-testid="my-error-message" title={title} {...props}>
+        {body}
+      </div>
+    );
+    render(
+      <Card
+        size={CARD_SIZES.LARGE}
+        padding="none"
+        error="an error occurred"
+        overrides={{
+          errorMessage: {
+            component: MyErrorMessage,
+            props: {
+              className: 'my-custom-class',
+            },
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-error-message')).toBeVisible();
+    expect(screen.getByText('an error occurred')).toBeVisible();
+    expect(screen.getByText('an error occurred')).toHaveClass('my-custom-class');
+    expect(screen.getByText('an error occurred')).toHaveAttribute('title', 'Data error.');
+  });
 });
