@@ -1162,10 +1162,9 @@ DashboardAllCardsAsResizable.propTypes = {
 describe('DashboardGrid', () => {
   beforeEach(() => {
     MockDate.set(1537538254000);
-    cy.viewport(1680, 900);
+    cy.viewport(1920, 1080);
   });
   afterEach(() => {
-    cy.viewport(1680, 900);
     MockDate.reset();
   });
   ['lg'].forEach((breakpoint) => {
@@ -1283,7 +1282,7 @@ describe('DashboardGrid', () => {
         }
 
         onlyOn('headless', () => {
-          if (type === 'GaugeCard') {
+          if (type === 'GaugeCard' || type === 'BarChartCard') {
             // eslint-disable-next-line cypress/no-unnecessary-waiting, allow the gauges to fill
             cy.wait(1000);
           }
