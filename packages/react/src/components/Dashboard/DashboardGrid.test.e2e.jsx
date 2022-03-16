@@ -1175,7 +1175,7 @@ describe('DashboardGrid', () => {
             cy.viewport(1440, 900);
             break;
           case 'lg':
-            cy.viewport(1028, 900);
+            cy.viewport(1024, 900);
             break;
           case 'md':
             cy.viewport(658, 900);
