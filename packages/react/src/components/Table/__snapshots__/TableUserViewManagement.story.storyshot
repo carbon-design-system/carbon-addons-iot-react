@@ -11,465 +11,463 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       }
     }
   >
-    <div>
-      <div
-        className="bx--modal iot--manage-views-modal iot--composed-modal"
-        data-floating-menu-container={true}
-        data-testid="TableManageViewsModal"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onClose={[Function]}
-        onKeyDown={[Function]}
-        open={false}
-        role="presentation"
+    <div
+      className="bx--modal iot--manage-views-modal iot--composed-modal"
+      data-floating-menu-container={true}
+      data-testid="TableManageViewsModal"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onClose={[Function]}
+      onKeyDown={[Function]}
+      open={false}
+      role="presentation"
+    >
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
       >
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
+        Focus sentinel
+      </span>
+      <div
+        aria-modal="true"
+        className="bx--modal-container"
+        role="dialog"
+      >
         <div
-          aria-modal="true"
-          className="bx--modal-container"
-          role="dialog"
+          className="bx--modal-header"
+        >
+          <h3
+            className="bx--modal-header__heading bx--type-beta"
+          >
+            Manage views
+          </h3>
+          <button
+            aria-label="Close"
+            className="bx--modal-close"
+            onClick={[Function]}
+            title="Close"
+            type="button"
+          >
+            <svg
+              aria-hidden={true}
+              className="bx--modal-close__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
-            className="bx--modal-header"
-          >
-            <h3
-              className="bx--modal-header__heading bx--type-beta"
-            >
-              Manage views
-            </h3>
-            <button
-              aria-label="Close"
-              className="bx--modal-close"
-              onClick={[Function]}
-              title="Close"
-              type="button"
-            >
-              <svg
-                aria-hidden={true}
-                className="bx--modal-close__icon"
-                fill="currentColor"
-                focusable="false"
-                height={20}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={20}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className="bx--modal-content"
-            style={
-              Object {
-                "maxHeight": "calc(0px - 3rem)",
-              }
-            }
+            className="iot--manage-views-modal__filter-container"
           >
             <div
-              className="iot--manage-views-modal__filter-container"
+              aria-labelledby="manage-views-modal-search-search"
+              className="bx--search bx--search--lg iot--manage-views-modal__search"
+              role="search"
             >
               <div
-                aria-labelledby="manage-views-modal-search-search"
-                className="bx--search bx--search--lg iot--manage-views-modal__search"
-                role="search"
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="manage-views-modal-search"
+                id="manage-views-modal-search-search"
+              >
+                Search
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                defaultValue=""
+                id="manage-views-modal-search"
+                name="searchValue"
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Search views"
+                role="searchbox"
+                type="text"
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
+            >
+              <input
+                className="bx--checkbox"
+                data-testid="TableManageViewsModal-public-checkbox"
+                defaultChecked={true}
+                id="manage-views-modal-public-checkbox-label"
+                name="isPublic"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label
+                className="bx--checkbox-label"
+                htmlFor="manage-views-modal-public-checkbox-label"
+                title={null}
+              >
+                <span
+                  className="bx--checkbox-label-text"
+                  dir="auto"
+                >
+                  Display public views
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            className="iot--list iot--manage-views-list iot--list__full-height"
+            data-testid="list"
+          >
+            <div
+              className="iot--list-header-container"
+              data-testid="list-header"
+            >
+              <div
+                className="iot--list-header"
               >
                 <div
-                  className="bx--search-magnifier"
+                  className="iot--list-header--title"
                 >
-                  <svg
-                    aria-hidden={true}
-                    className="bx--search-magnifier-icon"
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 16 16"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                    />
-                  </svg>
+                  Available Views
                 </div>
-                <label
-                  className="bx--label"
-                  htmlFor="manage-views-modal-search"
-                  id="manage-views-modal-search-search"
-                >
-                  Search
-                </label>
-                <input
-                  autoComplete="off"
-                  className="bx--search-input"
-                  defaultValue=""
-                  id="manage-views-modal-search"
-                  name="searchValue"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  placeholder="Search views"
-                  role="searchbox"
-                  type="text"
+                <div
+                  className="iot--list-header--btn-container"
                 />
-                <button
-                  aria-label="Clear search input"
-                  className="bx--search-close bx--search-close--hidden"
-                  onClick={[Function]}
-                  type="button"
-                >
-                  <svg
-                    aria-hidden={true}
-                    fill="currentColor"
-                    focusable="false"
-                    height={16}
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 32 32"
-                    width={16}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
-              >
-                <input
-                  className="bx--checkbox"
-                  data-testid="TableManageViewsModal-public-checkbox"
-                  defaultChecked={true}
-                  id="manage-views-modal-public-checkbox-label"
-                  name="isPublic"
-                  onChange={[Function]}
-                  type="checkbox"
-                />
-                <label
-                  className="bx--checkbox-label"
-                  htmlFor="manage-views-modal-public-checkbox-label"
-                  title={null}
-                >
-                  <span
-                    className="bx--checkbox-label-text"
-                    dir="auto"
-                  >
-                    Display public views
-                  </span>
-                </label>
               </div>
             </div>
             <div
-              className="iot--list iot--manage-views-list iot--list__full-height"
-              data-testid="list"
+              className="iot--list--content__full-height iot--list--content"
             >
               <div
-                className="iot--list-header-container"
-                data-testid="list-header"
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
               >
                 <div
-                  className="iot--list-header"
+                  className="iot--list-item iot--list-item__large"
                 >
                   <div
-                    className="iot--list-header--title"
-                  >
-                    Available Views
-                  </div>
-                  <div
-                    className="iot--list-header--btn-container"
-                  />
-                </div>
-              </div>
-              <div
-                className="iot--list--content__full-height iot--list--content"
-              >
-                <div
-                  className="iot--list-item-parent"
-                  data-floating-menu-container={true}
-                >
-                  <div
-                    className="iot--list-item iot--list-item__large"
+                    className="iot--list-item--content iot--list-item--content__large"
                   >
                     <div
-                      className="iot--list-item--content iot--list-item--content__large"
+                      className="iot--list-item--content--values iot--list-item--content--values__large"
                     >
                       <div
-                        className="iot--list-item--content--values iot--list-item--content--values__large"
+                        className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
                       >
                         <div
-                          className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
+                          className="iot--list-item--content--values--value"
+                          title="Search view (Public)"
                         >
-                          <div
-                            className="iot--list-item--content--values--value"
-                            title="Search view (Public)"
-                          >
-                            Search view (Public)
-                          </div>
-                          <div
-                            className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                            title="Columns: 7, Filters: 0, Search: pinoc"
-                          >
-                            Columns: 7, Filters: 0, Search: pinoc
-                          </div>
+                          Search view (Public)
                         </div>
                         <div
-                          className="iot--list-item--content--row-actions"
-                          onClick={[Function]}
-                          onKeyPress={[Function]}
+                          className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                          title="Columns: 7, Filters: 0, Search: pinoc"
                         >
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view1-edit"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              edit
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="edit"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view1-delete"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
-                          >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              delete
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="delete"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 12H14V24H12zM18 12H20V24H18z"
-                              />
-                              <path
-                                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                              />
-                            </svg>
-                          </button>
+                          Columns: 7, Filters: 0, Search: pinoc
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="iot--list-item-parent"
-                  data-floating-menu-container={true}
-                >
-                  <div
-                    className="iot--list-item iot--list-item__large"
-                  >
-                    <div
-                      className="iot--list-item--content iot--list-item--content__large"
-                    >
                       <div
-                        className="iot--list-item--content--values iot--list-item--content--values__large"
+                        className="iot--list-item--content--row-actions"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
                       >
-                        <div
-                          className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
-                        >
-                          <div
-                            className="iot--list-item--content--values--value"
-                            title="Filters and search view (Private)"
-                          >
-                            Filters and search view (Private)
-                          </div>
-                          <div
-                            className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
-                            title="Columns: 7, Filters: 1, Search:"
-                          >
-                            Columns: 7, Filters: 1, Search:
-                          </div>
-                        </div>
-                        <div>
-                          <div
-                            className="bx--tag bx--tag--blue"
-                            disabled={null}
-                            id="tag-139"
-                          >
-                            
-                            <span
-                              title="default"
-                            >
-                              default
-                            </span>
-                          </div>
-                        </div>
-                        <div
-                          className="iot--list-item--content--row-actions"
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view1-edit"
+                          disabled={false}
+                          onBlur={[Function]}
                           onClick={[Function]}
-                          onKeyPress={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
                         >
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view2-edit"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
+                          <div
+                            className="bx--assistive-text"
                             onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
                           >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              edit
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="edit"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
-                              />
-                            </svg>
-                          </button>
-                          <button
-                            aria-describedby={null}
-                            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
-                            data-testid="TableManageViewsModal-views-list-row-action-view2-delete"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
+                            edit
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="edit"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view1-delete"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
                             onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            tabIndex={0}
-                            type="button"
                           >
-                            <div
-                              className="bx--assistive-text"
-                              onMouseEnter={[Function]}
-                            >
-                              delete
-                            </div>
-                            <svg
-                              aria-hidden="true"
-                              aria-label="delete"
-                              className="bx--btn__icon"
-                              fill="currentColor"
-                              focusable="false"
-                              height={16}
-                              preserveAspectRatio="xMidYMid meet"
-                              role="img"
-                              viewBox="0 0 32 32"
-                              width={16}
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M12 12H14V24H12zM18 12H20V24H18z"
-                              />
-                              <path
-                                d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
-                              />
-                            </svg>
-                          </button>
-                        </div>
+                            delete
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="delete"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 12H14V24H12zM18 12H20V24H18z"
+                            />
+                            <path
+                              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div
-                className="iot--list--page"
+                className="iot--list-item-parent"
+                data-floating-menu-container={true}
               >
                 <div
-                  className="iot-simple-pagination-container bx--pagination--md"
-                  data-testid="iot-simple-pagination"
+                  className="iot--list-item iot--list-item__large"
                 >
                   <div
-                    className="iot-simple-pagination-page-bar"
+                    className="iot--list-item--content iot--list-item--content__large"
                   >
-                    <span
-                      className="iot-simple-pagination-page-label"
-                      maxpage={1}
+                    <div
+                      className="iot--list-item--content--values iot--list-item--content--values__large"
                     >
-                      Page 1
-                    </span>
+                      <div
+                        className="iot--list-item--content--values--main iot--list-item--content--values--main__large"
+                      >
+                        <div
+                          className="iot--list-item--content--values--value"
+                          title="Filters and search view (Private)"
+                        >
+                          Filters and search view (Private)
+                        </div>
+                        <div
+                          className="iot--list-item--content--values--value iot--list-item--content--values--value__large"
+                          title="Columns: 7, Filters: 1, Search:"
+                        >
+                          Columns: 7, Filters: 1, Search:
+                        </div>
+                      </div>
+                      <div>
+                        <div
+                          className="bx--tag bx--tag--blue"
+                          disabled={null}
+                          id="tag-139"
+                        >
+                          
+                          <span
+                            title="default"
+                          >
+                            default
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        className="iot--list-item--content--row-actions"
+                        onClick={[Function]}
+                        onKeyPress={[Function]}
+                      >
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view2-edit"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            edit
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="edit"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          aria-describedby={null}
+                          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                          data-testid="TableManageViewsModal-views-list-row-action-view2-delete"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onFocus={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          tabIndex={0}
+                          type="button"
+                        >
+                          <div
+                            className="bx--assistive-text"
+                            onMouseEnter={[Function]}
+                          >
+                            delete
+                          </div>
+                          <svg
+                            aria-hidden="true"
+                            aria-label="delete"
+                            className="bx--btn__icon"
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            role="img"
+                            viewBox="0 0 32 32"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M12 12H14V24H12zM18 12H20V24H18z"
+                            />
+                            <path
+                              d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list--page"
+            >
+              <div
+                className="iot-simple-pagination-container bx--pagination--md"
+                data-testid="iot-simple-pagination"
+              >
+                <div
+                  className="iot-simple-pagination-page-bar"
+                >
+                  <span
+                    className="iot-simple-pagination-page-label"
+                    maxpage={1}
+                  >
+                    Page 1
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <span
-          className="bx--visually-hidden"
-          role="link"
-          tabIndex="0"
-        >
-          Focus sentinel
-        </span>
       </div>
+      <span
+        className="bx--visually-hidden"
+        role="link"
+        tabIndex="0"
+      >
+        Focus sentinel
+      </span>
     </div>
     <div
       className="iot--table-container bx--data-table-container"

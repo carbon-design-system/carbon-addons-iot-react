@@ -7,7 +7,7 @@ import {
   InlineNotification,
 } from 'carbon-components-react';
 import PropTypes from 'prop-types';
-import React, { Fragment, useEffect, useRef, useState } from 'react';
+import React, { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import warning from 'warning';
 
@@ -15,7 +15,7 @@ import { settings } from '../../constants/Settings';
 import { scrollErrorIntoView } from '../../utils/componentUtilityFunctions';
 import Button from '../Button';
 import deprecate from '../../internal/deprecate';
-import useWindowSize from '../../hooks/useWindowSize';
+import useSizeObserver from '../../hooks/useSizeObserver';
 
 const { iotPrefix, prefix } = settings;
 
@@ -166,128 +166,116 @@ const ComposedModal = ({
       onClearError();
     }
   };
-  const { height: windowHeight } = useWindowSize();
-  const [maxContentHeight, setMaxContentHeight] = useState();
+
+  const [modalExtrasHeight, setModalExtrasHeight] = useState(0);
 
   /** TODO: This is needed to keep the ComposedModal from closing if you click outside it this supports our dialogs on top of dialogs issue */
   const doNotClose = () => false;
+  const modalRef = useRef(null);
+  const modalBodyRef = useRef(null);
+  const [modalSize] = useSizeObserver({ ref: modalRef });
+  const [modalBodySize] = useSizeObserver({ ref: modalBodyRef });
 
-  const modalWrapperRef = useRef(null);
+  useLayoutEffect(() => {
+    if (modalRef.current && modalBodyRef.current) {
+      const headerHeight =
+        modalRef.current.querySelector(`.${prefix}--modal-header`)?.getBoundingClientRect()
+          ?.height ?? 0;
+      const footerHeight =
+        modalRef.current.querySelector(`.${prefix}--modal-footer`)?.getBoundingClientRect()
+          ?.height ?? 0;
 
-  useEffect(() => {
-    if (modalWrapperRef.current) {
-      const modalEl = modalWrapperRef.current.querySelector(`.${prefix}--modal-container`);
-      const headerEl = modalWrapperRef.current.querySelector(`.${prefix}--modal-header`);
-      const footerEl = modalWrapperRef.current.querySelector(
-        `.${iotPrefix}--composed-modal-footer`
-      );
-      // get the css max-height
-      const modalStyles = window?.getComputedStyle(modalEl) ?? { maxHeight: undefined };
-      const fallback = { height: 0 };
-      const { height: modalHeight } = modalEl?.getBoundingClientRect() ?? fallback;
-      const { height: headerHeight } = headerEl?.getBoundingClientRect() ?? fallback;
-      const { height: footerHeight } = footerEl?.getBoundingClientRect() ?? fallback;
-
-      // if the maximum height is a percentage (default), convert that back into an integer
-      // and use that value to calculate the content height by subtracting the header/footer space
-      const modalMaxHeight = /%/.test(modalStyles.maxHeight)
-        ? (parseInt(modalStyles.maxHeight, 10) / 100) * windowHeight
-        : // otherwise, just use the current calculated height of the modal, since it can get very
-          // complicated with different units for the maxHeight
-          modalHeight;
-
-      setMaxContentHeight(Math.floor(modalMaxHeight - footerHeight - headerHeight));
+      setModalExtrasHeight(Math.floor(headerHeight + footerHeight));
     }
-  }, [windowHeight]);
+  }, [modalSize.height, modalBodySize.height]);
 
   const { label, title, helpText } = header;
   // First check for dataErrors as they are worse than form errors
   return isFetchingData ? (
     <Loading />
   ) : (
-    <div ref={modalWrapperRef}>
-      <CarbonComposedModal
-        {...props}
-        // TODO: remove deprecated testID in v3.
-        data-testid={testID || testId}
-        open={open}
-        onClose={doNotClose}
-        data-floating-menu-container // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
-        className={classnames(
-          className,
-          {
-            [`${iotPrefix}--composed-modal--large`]: isLarge,
-            [`${iotPrefix}--composed-modal--full-screen`]: isFullScreen,
-          },
-          `${iotPrefix}--composed-modal`
-        )}
+    <CarbonComposedModal
+      {...props}
+      forwardedRef={modalRef}
+      // TODO: remove deprecated testID in v3.
+      data-testid={testID || testId}
+      open={open}
+      onClose={doNotClose}
+      data-floating-menu-container // TODO: Can remove once this issue is fixed: https://github.com/carbon-design-system/carbon/issues/6662
+      className={classnames(
+        className,
+        {
+          [`${iotPrefix}--composed-modal--large`]: isLarge,
+          [`${iotPrefix}--composed-modal--full-screen`]: isFullScreen,
+        },
+        `${iotPrefix}--composed-modal`
+      )}
+    >
+      <ModalHeader
+        label={label}
+        title={title}
+        closeModal={onClose}
+        buttonOnClick={onClose}
+        iconDescription={iconDescription}
       >
-        <ModalHeader
-          label={label}
-          title={title}
-          closeModal={onClose}
-          buttonOnClick={onClose}
-          iconDescription={iconDescription}
+        {helpText ? <p className={`${prefix}--modal-content__text`}>{helpText}</p> : null}
+      </ModalHeader>
+      {children ? (
+        <ModalBody
+          ref={modalBodyRef}
+          className={classnames({
+            // Prevent double scrollbars
+            [`${iotPrefix}--composed-modal__body--small-margin-bottom`]: error,
+          })}
+          style={{ maxHeight: `calc(100vh - ${modalExtrasHeight}px)` }}
         >
-          {helpText ? <p className={`${prefix}--modal-content__text`}>{helpText}</p> : null}
-        </ModalHeader>
-        {children ? (
-          <ModalBody
-            className={classnames({
-              // Prevent double scrollbars
-              [`${iotPrefix}--composed-modal__body--small-margin-bottom`]: error,
-            })}
-            // subtracting 4rem for padding/margin
-            style={{ [isLarge ? 'height' : 'maxHeight']: `calc(${maxContentHeight}px - 3rem)` }}
-          >
-            {children}
-          </ModalBody>
-        ) : null}
-        {error ? (
-          <InlineNotification
-            title={error}
-            subtitle=""
-            kind="error"
-            onCloseButtonClick={handleClearError}
-            className={`${iotPrefix}--composed-modal--inline-notification`}
-            data-testid={`${testID || testId}-notification`}
-          />
-        ) : null}
-        {!passiveModal ? (
-          <ModalFooter className={`${iotPrefix}--composed-modal-footer`}>
-            {React.isValidElement(footer) ? (
-              footer
-            ) : (
-              <Fragment>
+          {children}
+        </ModalBody>
+      ) : null}
+      {error ? (
+        <InlineNotification
+          title={error}
+          subtitle=""
+          kind="error"
+          onCloseButtonClick={handleClearError}
+          className={`${iotPrefix}--composed-modal--inline-notification`}
+          data-testid={`${testID || testId}-notification`}
+        />
+      ) : null}
+      {!passiveModal ? (
+        <ModalFooter className={`${iotPrefix}--composed-modal-footer`}>
+          {React.isValidElement(footer) ? (
+            footer
+          ) : (
+            <Fragment>
+              <Button
+                kind="secondary"
+                onClick={onClose}
+                testId={`${testID || testId}-modal-secondary-button`}
+              >
+                {(footer && footer.secondaryButtonLabel) || 'Cancel'}
+              </Button>
+              {!footer?.isPrimaryButtonHidden ? (
                 <Button
-                  kind="secondary"
-                  onClick={onClose}
-                  testId={`${testID || testId}-modal-secondary-button`}
+                  disabled={footer?.isPrimaryButtonDisabled}
+                  kind={type === 'warn' ? 'danger' : 'primary'}
+                  loading={
+                    (typeof sendingData === 'boolean' && sendingData) ||
+                    typeof sendingData === 'string'
+                  }
+                  onClick={onSubmit}
+                  testId={`${testID || testId}-modal-${
+                    type === 'warn' ? 'danger' : 'primary'
+                  }-button`}
                 >
-                  {(footer && footer.secondaryButtonLabel) || 'Cancel'}
+                  {(footer && footer.primaryButtonLabel) || 'Save'}
                 </Button>
-                {!footer?.isPrimaryButtonHidden ? (
-                  <Button
-                    disabled={footer?.isPrimaryButtonDisabled}
-                    kind={type === 'warn' ? 'danger' : 'primary'}
-                    loading={
-                      (typeof sendingData === 'boolean' && sendingData) ||
-                      typeof sendingData === 'string'
-                    }
-                    onClick={onSubmit}
-                    testId={`${testID || testId}-modal-${
-                      type === 'warn' ? 'danger' : 'primary'
-                    }-button`}
-                  >
-                    {(footer && footer.primaryButtonLabel) || 'Save'}
-                  </Button>
-                ) : null}
-              </Fragment>
-            )}
-          </ModalFooter>
-        ) : null}
-      </CarbonComposedModal>
-    </div>
+              ) : null}
+            </Fragment>
+          )}
+        </ModalFooter>
+      ) : null}
+    </CarbonComposedModal>
   );
 };
 
