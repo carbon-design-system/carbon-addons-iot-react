@@ -84,9 +84,6 @@ jobs:
             react:
               - 'packages/react/**'
 
-      # - name: Increase watchers
-      #   run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
-
       - name: Use Node.js
         uses: actions/setup-node@v1
         if: steps.changes.outputs.react == 'true'
