@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar base 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar base 1`] = `
 <div
   className="storybook-container"
 >
@@ -4512,7 +4512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -5048,7 +5048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with condensed with primary + secondary buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with condensed with primary + secondary buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -5338,7 +5338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with custom render function 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with custom render function 1`] = `
 <div
   className="storybook-container"
 >
@@ -5507,7 +5507,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
 <div
   className="storybook-container"
 >
@@ -5858,7 +5858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -6840,7 +6840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with editable title bar and subtitle 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with editable title bar and subtitle 1`] = `
 <div
   className="storybook-container"
 >
@@ -6941,7 +6941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with select action and an overflowing page title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with select action and an overflowing page title 1`] = `
 <div
   className="storybook-container"
 >
@@ -7259,7 +7259,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with status description and breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with status description and breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -7397,7 +7397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with tooltip description with node 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with tooltip description with node 1`] = `
 <div
   className="storybook-container"
 >

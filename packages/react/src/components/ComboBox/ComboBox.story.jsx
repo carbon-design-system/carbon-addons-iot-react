@@ -147,7 +147,7 @@ const ControlledComboBoxApp = ({ onBlur, ...props }) => {
 const Wrapper = ({ children }) => <div style={{ width: 300, padding: '1rem' }}>{children}</div>;
 
 export default {
-  title: '1 - Watson IoT/ComboBox',
+  title: '1 - Watson IoT/Dropdown/ComboBox',
   decorators: [withKnobs],
 
   parameters: {

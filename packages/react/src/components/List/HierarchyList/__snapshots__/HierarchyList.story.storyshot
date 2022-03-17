@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList Stateful list with nested searching 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList Stateful list with nested searching 1`] = `
 <div
   className="storybook-container"
 >
@@ -484,7 +484,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With Nested Reorder 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With Nested Reorder 1`] = `
 <div
   className="storybook-container"
 >
@@ -1682,7 +1682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With OverflowMenu and controlled expandedIds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With OverflowMenu and controlled expandedIds 1`] = `
 <div
   className="storybook-container"
 >
@@ -2940,7 +2940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With defaultExpandedIds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With defaultExpandedIds 1`] = `
 <div
   className="storybook-container"
 >
@@ -4148,7 +4148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With defaultSelectedId 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With defaultSelectedId 1`] = `
 <div
   className="storybook-container"
 >
@@ -4956,7 +4956,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With large number of expandable items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With large number of expandable items 1`] = `
 <div
   className="storybook-container"
 >
@@ -15702,7 +15702,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With nested reordering restricted 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With nested reordering restricted 1`] = `
 <div
   className="storybook-container"
 >
@@ -16330,7 +16330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList With selectable categories 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With selectable categories 1`] = `
 <div
   className="storybook-container"
 >
@@ -17153,7 +17153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList with empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -17553,7 +17553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with mixed hierarchies 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList with mixed hierarchies 1`] = `
 <div
   className="storybook-container"
 >
@@ -17836,7 +17836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/HierarchyList with virtual list and large number of items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList with virtual list and large number of items 1`] = `
 <div
   className="storybook-container"
 >

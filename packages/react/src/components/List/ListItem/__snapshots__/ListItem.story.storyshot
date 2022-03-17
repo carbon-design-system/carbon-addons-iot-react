@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem basic w/ knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem basic w/ knobs 1`] = `
 <div
   className="storybook-container"
 >
@@ -42,7 +42,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem testing isLargeRow overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem testing isLargeRow overflow 1`] = `
 <div
   className="storybook-container"
 >
@@ -85,7 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem testing secondaryValue overflow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem testing secondaryValue overflow 1`] = `
 <div
   className="storybook-container"
 >
@@ -128,7 +128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with OverflowMenu row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with OverflowMenu row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -241,7 +241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with Tags 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with Tags 1`] = `
 <div
   className="storybook-container"
 >
@@ -304,7 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with disabled 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with disabled 1`] = `
 <div
   className="storybook-container"
 >
@@ -395,7 +395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -450,7 +450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isCategory 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with isCategory 1`] = `
 <div
   className="storybook-container"
 >
@@ -513,7 +513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isExpandable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with isExpandable 1`] = `
 <div
   className="storybook-container"
 >
@@ -576,7 +576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isLargeRow 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with isLargeRow 1`] = `
 <div
   className="storybook-container"
 >
@@ -619,7 +619,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with isSelectable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with isSelectable 1`] = `
 <div
   className="storybook-container"
 >
@@ -661,7 +661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with secondary value an object 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with secondary value an object 1`] = `
 <div
   className="storybook-container"
 >
@@ -706,7 +706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with secondaryValue 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with secondaryValue 1`] = `
 <div
   className="storybook-container"
 >
@@ -749,7 +749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with single row action 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with single row action 1`] = `
 <div
   className="storybook-container"
 >
@@ -840,7 +840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListItem with value 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ListItem with value 1`] = `
 <div
   className="storybook-container"
 >

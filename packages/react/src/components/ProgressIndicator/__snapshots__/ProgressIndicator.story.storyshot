@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator carbon progress indicator 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator carbon progress indicator 1`] = `
 <div
   className="storybook-container"
 >
@@ -289,7 +289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator hideLabels and default stepWidth 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator hideLabels and default stepWidth 1`] = `
 <div
   className="storybook-container"
 >
@@ -795,7 +795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator presentation 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator presentation 1`] = `
 <div
   className="storybook-container"
 >
@@ -1360,7 +1360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator presentation vertical 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator presentation vertical 1`] = `
 <div
   className="storybook-container"
 >
@@ -1866,7 +1866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator skeleton 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator skeleton 1`] = `
 <div
   className="storybook-container"
 >
@@ -1953,7 +1953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ProgressIndicator stateful 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/Progress indicator stateful 1`] = `
 <div
   className="storybook-container"
 >

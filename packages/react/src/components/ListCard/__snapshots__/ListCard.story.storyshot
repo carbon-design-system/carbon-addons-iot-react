@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ListCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -254,7 +254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard empty 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ListCard empty 1`] = `
 <div
   className="storybook-container"
 >
@@ -320,7 +320,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ListCard with extra content 1`] = `
 <div
   className="storybook-container"
 >
@@ -503,7 +503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ListCard with extra long content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ListCard with extra long content 1`] = `
 <div
   className="storybook-container"
 >

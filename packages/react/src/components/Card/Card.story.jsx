@@ -33,7 +33,7 @@ export const getDataStateProp = () => ({
 });
 
 export default {
-  title: '1 - Watson IoT/Card',
+  title: '1 - Watson IoT/Card/Card',
 
   parameters: {
     component: Card,

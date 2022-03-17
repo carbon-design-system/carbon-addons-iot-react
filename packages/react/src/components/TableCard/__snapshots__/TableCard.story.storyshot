@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -1380,7 +1380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard no row actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard no row actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -2765,7 +2765,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with custom column width and sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with custom column width and sort 1`] = `
 <div
   className="storybook-container"
 >
@@ -4354,7 +4354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with custom filters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with custom filters 1`] = `
 <div
   className="storybook-container"
 >
@@ -5276,7 +5276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with links and variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with links and variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -6427,7 +6427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with matching thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with matching thresholds 1`] = `
 <div
   className="storybook-container"
 >
@@ -8630,7 +8630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -10673,7 +10673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with row expansion, row specific link variables, and timestamp 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with row expansion, row specific link variables, and timestamp 1`] = `
 <div
   className="storybook-container"
 >
@@ -12336,7 +12336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with thresholds only with icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with thresholds only with icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -14206,7 +14206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TableCard with thresholds, precision and expanded rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard with thresholds, precision and expanded rows 1`] = `
 <div
   className="storybook-container"
 >
