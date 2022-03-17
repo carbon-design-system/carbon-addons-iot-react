@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SparklineChartCard empty state 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "4rem",
+        "width": "328px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Manage"
+        >
+          <div
+            className="iot--card--title--text"
+            data-testid="Card-title-notip"
+          >
+            Manage
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28,4H10A2.0059,2.0059,0,0,0,8,6V20a2.0059,2.0059,0,0,0,2,2H28a2.0059,2.0059,0,0,0,2-2V6A2.0059,2.0059,0,0,0,28,4Zm0,16H10V6H28Z"
+              />
+              <path
+                d="M18,26H4V16H6V14H4a2.0059,2.0059,0,0,0-2,2V26a2.0059,2.0059,0,0,0,2,2H18a2.0059,2.0059,0,0,0,2-2V24H18Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      >
+        <div
+          className="iot--card--empty-message-wrapper"
+          style={
+            Object {
+              "--card-content-padding": "16px",
+            }
+          }
+        >
+          No data available.
+        </div>
+      </div>
+      <div
+        className="iot--card--footer--wrapper"
+        data-testid="Card-footer"
+      >
+        <div>
+          Occured on ... 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

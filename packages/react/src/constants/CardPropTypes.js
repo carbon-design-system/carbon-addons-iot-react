@@ -28,6 +28,7 @@ import {
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
+import { ChartColorPropType } from './ChartPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -729,6 +730,40 @@ export const MapCardPropTypes = {
   stops: PropTypes.array,
   /** the ref used needed by a drag and drop library like react-dnd. Is added to the map container element. */
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
+};
+
+export const MeterChartPropTypes = {
+  content: PropTypes.shape({
+    peak: PropTypes.number,
+    meterTotal: PropTypes.number,
+    meterUnit: PropTypes.string,
+    legendPosition: PropTypes.string,
+    ...ChartColorPropType,
+  }),
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      group: PropTypes.string,
+      value: PropTypes.number,
+    })
+  ),
+};
+
+export const SparklineChartPropTypes = {
+  content: PropTypes.shape({
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string,
+    xProperty: PropTypes.string.isRequired,
+    yProperty: PropTypes.string.isRequired,
+    listContent: PropTypes.arrayOf(
+      PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })
+    ),
+    ...ChartColorPropType,
+  }),
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      group: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
