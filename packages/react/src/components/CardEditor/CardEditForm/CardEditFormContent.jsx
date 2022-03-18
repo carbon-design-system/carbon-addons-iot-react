@@ -107,6 +107,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  dataItemsSimpleList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -119,6 +120,7 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
+  dataItemsSimpleList: false,
 };
 
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
@@ -148,6 +150,7 @@ const CardEditFormContent = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  dataItemsSimpleList,
 }) => {
   const { type, timeRange, renderEditContent } = cardConfig;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -201,6 +204,7 @@ const CardEditFormContent = ({
           availableDimensions={availableDimensions}
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
+          dataItemsSimpleList={dataItemsSimpleList}
         />
       ) : type === CARD_TYPES.BAR ||
         type === CARD_TYPES.TIMESERIES ||

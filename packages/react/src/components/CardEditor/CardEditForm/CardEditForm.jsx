@@ -88,6 +88,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  dataItemsSimpleList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -129,6 +130,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   testID: 'card-edit-form',
   dataSeriesItemLinks: null,
+  dataItemsSimpleList: false,
 };
 
 /**
@@ -258,6 +260,7 @@ const CardEditForm = ({
   availableDimensions,
   testID,
   dataSeriesItemLinks,
+  dataItemsSimpleList,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
 }) => {
@@ -311,6 +314,7 @@ const CardEditForm = ({
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+              dataItemsSimpleList={dataItemsSimpleList}
             />
           </Tab>
           {!isCustomCardWithNoSettings ? (

@@ -311,6 +311,8 @@ const propTypes = {
   onEditDataItems: PropTypes.func,
 
   testId: PropTypes.string,
+  /** display selected dataItems in SimpleList */
+  dataItemsSimpleList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -384,6 +386,7 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
+  dataItemsSimpleList: false,
   testId: 'dashboard-editor',
 };
 
@@ -438,6 +441,7 @@ const DashboardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
+  dataItemsSimpleList,
   testId,
 }) => {
   React.useEffect(() => {
@@ -806,6 +810,7 @@ const DashboardEditor = ({
             getValidTimeRanges={getValidTimeRanges}
             dataItems={dataItems}
             onAddCard={addCard}
+            dataItemsSimpleList={dataItemsSimpleList}
             onValidateCardJson={onValidateCardJson}
             onCardJsonPreview={onCardJsonPreview}
             supportedCardTypes={supportedCardTypes}

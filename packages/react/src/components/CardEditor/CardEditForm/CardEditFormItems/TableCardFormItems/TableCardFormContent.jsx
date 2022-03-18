@@ -17,6 +17,8 @@ import ComboBox from '../../../../ComboBox';
 import DataSeriesFormItemModal from '../DataSeriesFormItemModal';
 import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
+import SimpleList from '../../../../List/SimpleList/SimpleList';
+import { DragAndDrop } from '../../../../../utils/DragAndDropUtils';
 
 const { iotPrefix } = settings;
 
@@ -87,6 +89,7 @@ const propTypes = {
     table: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
+  dataItemsSimpleList: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -113,6 +116,7 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
+  dataItemsSimpleList: false,
 };
 
 const TableCardFormContent = ({
@@ -127,6 +131,7 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
+  dataItemsSimpleList,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
@@ -274,47 +279,79 @@ const TableCardFormContent = ({
     [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
   );
 
-  const dataListItems = useMemo(
-    () =>
-      dataSection?.map((dataItem) => ({
+  const handleOnDataItemListOrderChange = (updatedItems) => {
+    // if we no longer have a groupBy, then we can exclude the dataSource from the response
+    const updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
+
+    onChange({
+      ...cardConfig,
+      content: {
+        ...cardConfig.content,
+        columns: updatedItems.map((item) => item.content.column), // Getting columns for new order of items
+      },
+      ...updatedDataSource,
+    });
+  };
+
+  const dataListItems = useMemo(() => {
+    const rowActions = (dataItem) => [
+      <Button
+        key={`data-item-${dataItem.dataSourceId}`}
+        renderIcon={Edit16}
+        hasIconOnly
+        kind="ghost"
+        size="small"
+        onClick={() => {
+          const dataItemWithMetaData = validDataItems.find(
+            ({ dataItemId }) => dataItemId === dataItem.dataItemId
+          );
+          setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
+          setShowEditor(true);
+        }}
+        iconDescription={mergedI18n.edit}
+        tooltipPosition="left"
+        tooltipAlignment="center"
+      />,
+      <Button
+        key={`data-item-${dataItem.dataSourceId}_remove`}
+        renderIcon={Subtract16}
+        hasIconOnly
+        kind="ghost"
+        size="small"
+        onClick={() => handleRemoveButton(dataItem)}
+        iconDescription={mergedI18n.remove}
+        tooltipPosition="left"
+        tooltipAlignment="center"
+      />,
+    ];
+    if (!dataItemsSimpleList) {
+      return dataSection?.map((dataItem) => ({
         id: dataItem.dataSourceId,
         content: {
           value: dataItem.label || dataItem.dataItemId,
           icon: null,
-          rowActions: () => [
-            <Button
-              key={`data-item-${dataItem.dataSourceId}`}
-              renderIcon={Edit16}
-              hasIconOnly
-              kind="ghost"
-              size="small"
-              onClick={() => {
-                const dataItemWithMetaData = validDataItems.find(
-                  ({ dataItemId }) => dataItemId === dataItem.dataItemId
-                );
-                setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
-                setShowEditor(true);
-              }}
-              iconDescription={mergedI18n.edit}
-              tooltipPosition="left"
-              tooltipAlignment="center"
-            />,
-            <Button
-              key={`data-item-${dataItem.dataSourceId}_remove`}
-              renderIcon={Subtract16}
-              hasIconOnly
-              kind="ghost"
-              size="small"
-              onClick={() => handleRemoveButton(dataItem)}
-              iconDescription={mergedI18n.remove}
-              tooltipPosition="left"
-              tooltipAlignment="center"
-            />,
-          ],
+          rowActions: rowActions(dataItem),
         },
-      })),
-    [dataSection, handleRemoveButton, mergedI18n.edit, mergedI18n.remove, validDataItems]
-  );
+      }));
+    }
+
+    return dataSection.map((dataItem) => ({
+      id: dataItem.dataItemId,
+      content: {
+        value: dataItem.label || dataItem.dataItemId,
+        column: dataItem,
+        rowActions: rowActions(dataItem),
+      },
+      isSelectable: true,
+    }));
+  }, [
+    dataItemsSimpleList,
+    dataSection,
+    handleRemoveButton,
+    mergedI18n.edit,
+    mergedI18n.remove,
+    validDataItems,
+  ]);
 
   return (
     <div className={`${iotPrefix}--table-card-form--content`}>
@@ -404,14 +441,27 @@ const TableCardFormContent = ({
           />
         </div>
       ) : null}
-      <List
-        // Lists the selected dataItem columns in the bottom section and allow additional configuration
-        key={`data-item-list${selectedDataItems.length}`}
-        // need to force an empty "empty state"
-        emptyState={<div />}
-        title=""
-        items={dataListItems}
-      />
+
+      {!dataItemsSimpleList ? (
+        <List
+          // Lists the selected dataItem columns in the bottom section and allow additional configuration
+          key={`data-item-list${selectedDataItems.length}`}
+          // need to force an empty "empty state"
+          emptyState={<div />}
+          title=""
+          items={dataListItems}
+        />
+      ) : (
+        <DragAndDrop>
+          <SimpleList
+            key={`data-item-list${selectedDataItems.length}`}
+            hasPagination={false}
+            editingStyle="single"
+            onListUpdated={handleOnDataItemListOrderChange}
+            items={dataListItems}
+          />
+        </DragAndDrop>
+      )}
     </div>
   );
 };

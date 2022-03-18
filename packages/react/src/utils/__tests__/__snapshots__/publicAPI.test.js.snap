@@ -12726,6 +12726,7 @@ Map {
       "availableImages": Array [],
       "breakpointSwitcher": null,
       "dataItems": Array [],
+      "dataItemsSimpleList": false,
       "dataSeriesItemLinks": null,
       "getDefaultCard": null,
       "getValidDataItems": null,
@@ -12896,6 +12897,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataItemsSimpleList": Object {
+        "type": "bool",
       },
       "dataSeriesItemLinks": Object {
         "args": Array [
@@ -13611,6 +13615,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "dataItemsSimpleList": Object {
+        "type": "bool",
       },
       "dataSeriesItemLinks": Object {
         "args": Array [

@@ -24,6 +24,7 @@ import large from '../ImageGalleryModal/images/large.png';
 import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // eslint-disable-line camelcase
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import SimpleList from '../List/SimpleList/SimpleList';
+import { DragAndDrop } from '../../utils/DragAndDropUtils';
 
 import DashboardEditorDefaultCardRenderer from './DashboardEditorDefaultCardRenderer';
 import DashboardEditor from './DashboardEditor';
@@ -1483,3 +1484,138 @@ export const withGetDefaultCard = () => {
 };
 
 withGetDefaultCard.storyName = 'With get default card';
+
+export const WithDataItemsSimpleList = () => (
+  <DragAndDrop>
+    <DashboardEditor
+      title="Custom dashboard"
+      dataItems={mockDataItems.filter((item) => !item.aggregationMethod)}
+      initialValue={{
+        cards: [
+          {
+            id: 'Table',
+            title: 'Table card',
+            size: 'LARGE',
+            type: 'TABLE',
+            content: {
+              columns: [
+                {
+                  dataItemId: 'temperature',
+                  dataSourceId: 'temperature',
+                  label: 'Temperature',
+                },
+                {
+                  dataItemId: 'pressure',
+                  dataSourceId: 'pressure',
+                  label: 'Pressure',
+                },
+              ],
+            },
+          },
+        ],
+        layouts: {
+          lg: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 8, y: 0 },
+            {
+              i: 'Standard',
+              x: 12,
+              y: 0,
+            },
+            {
+              i: 'Timeseries',
+              x: 1,
+              y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 1,
+              y: 8,
+            },
+            {
+              i: 'Custom-2',
+              x: 0,
+              y: 12,
+            },
+          ],
+          md: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 0, y: 4 },
+            {
+              i: 'Standard',
+              x: 0,
+              y: 6,
+            },
+            {
+              i: 'Timeseries',
+              x: 0,
+              y: 8,
+            },
+            {
+              i: 'Bar',
+              x: 0,
+              y: 10,
+            },
+            {
+              i: 'Custom-2',
+              x: 0,
+              y: 12,
+            },
+          ],
+          sm: [
+            { i: 'Table', x: 0, y: 0 },
+            { i: 'Custom', x: 4, y: 0 },
+            {
+              i: 'Standard',
+              x: 4,
+              y: 2,
+            },
+            {
+              i: 'Timeseries',
+              x: 1,
+              y: 4,
+            },
+            {
+              i: 'Bar',
+              x: 1,
+              y: 6,
+            },
+            {
+              i: 'Custom-2',
+              x: 0,
+              y: 8,
+            },
+          ],
+        },
+      }}
+      dataItemsSimpleList
+      onImport={action('onImport')}
+      onExport={action('onExport')}
+      onDelete={action('onDelete')}
+      onCancel={action('onCancel')}
+      onSubmit={action('onSubmit')}
+      onLayoutChange={action('onLayoutChange')}
+      supportedCardTypes={[
+        'TIMESERIES',
+        'SIMPLE_BAR',
+        'GROUPED_BAR',
+        'STACKED_BAR',
+        'VALUE',
+        'IMAGE',
+        'TABLE',
+      ]}
+      i18n={{
+        CUSTOM: 'Custom',
+      }}
+      headerBreadcrumbs={[
+        <Link href="www.ibm.com">Dashboard library</Link>,
+        <Link href="www.ibm.com">Favorites</Link>,
+      ]}
+      isLoading={boolean('isLoading', false)}
+      isSubmitDisabled={boolean('isSubmitDisabled', false)}
+      isSubmitLoading={boolean('isSubmitLoading', false)}
+    />
+  </DragAndDrop>
+);
+
+WithDataItemsSimpleList.storyName = 'with dataItemsSimpleList';
