@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue basic inline 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue basic stacked 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "heigh": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value iot--read-only-value__stacked"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue multiple values - inline 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 01
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 01
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 02
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 02
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 03
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 03
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 04
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 04
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue multiple values - inline with long label 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label bigger label
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 01
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 02
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 02
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 03
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 03
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 04
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 04
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue multiple values - stacked 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value iot--read-only-value__stacked"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 01
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 01
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__stacked"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 02
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 02
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__stacked"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 03
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 03
+      </span>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__stacked"
+      data-testid="testId"
+    >
+      <p
+        data-testid="testId--label"
+      >
+        Label 04
+      </p>
+      <span
+        data-testid="testId--value"
+      >
+        input value 04
+      </span>
+    </div>
+  </div>
+</div>
+`;

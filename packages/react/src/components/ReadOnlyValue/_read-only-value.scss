@@ -1,0 +1,28 @@
+.#{$iot-prefix}--read-only-value {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  > p,
+  span {
+    @include type-style('label-01');
+  }
+  > p {
+    margin-bottom: $spacing-03;
+    color: $text-02;
+  }
+  > span {
+    color: $text-01;
+  }
+  &__stacked {
+    margin-bottom: $spacing-06;
+    > p {
+      @include type-style('label-01');
+      margin-bottom: $spacing-02;
+      color: $text-02;
+    }
+    > span {
+      @include type-style('body-short-01');
+      color: $text-01;
+    }
+  }
+}
