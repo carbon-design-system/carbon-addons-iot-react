@@ -1236,7 +1236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <label
                 className="bx--file-browse-btn"
                 data-testid="Card-image-uploader-file-drop-container"
-                htmlFor="id16"
+                htmlFor="id17"
                 onKeyDown={[Function]}
                 size="field"
                 tabIndex={0}
@@ -1251,7 +1251,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <input
                 accept={Array []}
                 className="bx--file-input"
-                id="id16"
+                id="id17"
                 multiple={false}
                 onChange={[Function]}
                 onClick={[Function]}
@@ -1404,7 +1404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <label
                 className="bx--file-browse-btn"
                 data-testid="Card-image-uploader-file-drop-container"
-                htmlFor="id14"
+                htmlFor="id15"
                 onKeyDown={[Function]}
                 size="field"
                 tabIndex={0}
@@ -1419,7 +1419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
               <input
                 accept={Array []}
                 className="bx--file-input"
-                id="id14"
+                id="id15"
                 multiple={false}
                 onChange={[Function]}
                 onClick={[Function]}

@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     <label
       className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
-      htmlFor="id12"
+      htmlFor="id13"
       onKeyDown={[Function]}
       tabIndex={0}
     >
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       accept={Array []}
       className="bx--visually-hidden"
       disabled={false}
-      id="id12"
+      id="id13"
       multiple={true}
       onChange={[Function]}
       onClick={[Function]}
@@ -144,7 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
     <label
       className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
-      htmlFor="id13"
+      htmlFor="id14"
       onKeyDown={[Function]}
       tabIndex={0}
     >
@@ -159,7 +159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       accept={Array []}
       className="bx--visually-hidden"
       disabled={false}
-      id="id13"
+      id="id14"
       multiple={false}
       onChange={[Function]}
       onClick={[Function]}
