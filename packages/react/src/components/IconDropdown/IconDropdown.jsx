@@ -1,12 +1,10 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { Dropdown } from '../Dropdown';
-
-import { useDropdownTitleFixer } from './dropdownHooks';
 
 const { iotPrefix, prefix } = settings;
 
@@ -69,7 +67,7 @@ const propTypes = {
 
   /**
    * `onChange` is a utility for this controlled component to communicate to a
-   * consuming component what kind of internal state changes are occuring.
+   * consuming component what kind of internal state changes are occurring.
    */
   onChange: PropTypes.func,
   translateWithId: PropTypes.func,
@@ -135,18 +133,12 @@ const IconDropdown = ({
   const selectedItem =
     controlledSelectedItem !== null ? controlledSelectedItem : internalSelectedItem;
 
-  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
+  const dropdownRef = useRef(null);
 
   const highlightedItem =
     highlightedIndex >= 0 && highlightedIndex < items.length ? items[highlightedIndex] : null;
 
   const hasFooter = highlightedItem || selectedItem;
-
-  useEffect(() => {
-    if (selectedItem?.text && dropdownRef?.current) {
-      updateTitle(selectedItem?.text);
-    }
-  }, [dropdownRef, selectedItem, updateTitle]);
 
   const handleClick = useCallback(() => {
     // Takes measurements of the dropdown and text that renders beneath this - used to position the footer
@@ -176,8 +168,7 @@ const IconDropdown = ({
     setHeight(Math.ceil(items.length / columnCount) * defaultItemSize);
     setTopTranslate(helperTextHeight + validationTextHeight + labelHeight + 1); // Add one for the border width
     setBottomTranslate(helperTextHeight + validationTextHeight);
-    updateTitle(selectedItem?.text);
-  }, [columnCount, dropdownRef, items.length, selectedItem, updateTitle]);
+  }, [columnCount, dropdownRef, items.length]);
 
   const Footer = () => {
     const selectedFooter = highlightedItem !== null ? highlightedItem : selectedItem;
@@ -203,7 +194,7 @@ const IconDropdown = ({
     );
   };
 
-  const itemToString = (item) => {
+  const itemToElement = (item) => {
     const index = items.findIndex((element) => element.id === item.id);
 
     return (
@@ -266,9 +257,9 @@ const IconDropdown = ({
         onChange={({ selectedItem: newSelected }) => {
           setInternalSelectedItem(newSelected);
           onChange(newSelected);
-          updateTitle(newSelected?.text);
         }}
         translateWithId={translateWithId}
+        renderSelectedItem={itemToElement}
         downshiftProps={{
           isOpen,
           onStateChange: (change) => {
@@ -285,7 +276,8 @@ const IconDropdown = ({
         }}
         data-testid={testId}
         {...other}
-        itemToString={itemToString}
+        itemToElement={itemToElement}
+        itemToString={(item) => item.text}
       />
       {isOpen && direction === 'bottom' && <Footer />}
     </div>

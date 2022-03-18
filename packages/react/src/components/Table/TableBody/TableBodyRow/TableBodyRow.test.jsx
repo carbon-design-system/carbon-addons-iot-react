@@ -3,7 +3,11 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Add32 } from '@carbon/icons-react';
 
+import { settings } from '../../../../constants/Settings';
+
 import TableBodyRow from './TableBodyRow';
+
+const { iotPrefix } = settings;
 
 const mockActions = {
   onRowSelected: jest.fn(),
@@ -154,8 +158,10 @@ describe('TableBodyRow', () => {
     fireEvent.click(expandButton);
 
     // This assertion tells us that the expand button is still in the DOM (the component never flipped to isExpanded)
-    // And that the button/icon is not visible
-    expect(expandButton).toHaveStyle('display: none');
+    // And that the button/icon is not visible--the childless class hides the button with a display: none;
+    expect(
+      expandButton.closest(`.${iotPrefix}--expandable-tablerow--childless`)
+    ).toBeInTheDocument();
   });
 
   it('should fire the onRowExpanded when using hasRowExpansion', () => {

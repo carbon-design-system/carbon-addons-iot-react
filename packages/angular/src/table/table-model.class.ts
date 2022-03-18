@@ -734,23 +734,11 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    // ignore everything above rowIndex
-    // find the "projected indices" of the header column we're moving
-    const projectedIndices = this.actualIndexToProjectedIndices(indexFrom, this.header[rowIndex]);
-    // based on those indices, find the "actual indices" of child rows
-    for (let nextRowIndex = rowIndex; nextRowIndex < this.header.length; nextRowIndex++) {
-      const actualIndices = this.projectedIndicesToActualIndices(
-        projectedIndices,
-        this.header[nextRowIndex]
-      );
-      // move them to the right place (based on the "projected indexTo")
-      this.moveMultipleToIndex(actualIndices, indexTo, this.header[nextRowIndex]);
-    }
-
-    // move the data columns as well
-    for (let dataRowIndex = 0; dataRowIndex < this._data.length; dataRowIndex++) {
-      this.moveMultipleToIndex(projectedIndices, indexTo, this._data[dataRowIndex]);
-    }
+    const nested = this.tabularToNested();
+    this.moveNested(nested, indexFrom, indexTo, rowIndex);
+    const { header, data } = this.nestedToTabular(nested);
+    this.header = header;
+    this._data = data;
   }
 
   /**
@@ -1023,8 +1011,147 @@ export class AITableModel implements PaginationModel {
     } else {
       // if moving to right
       const block = list.slice(blockStart, blockEnd + 1);
-      list.splice.apply(list, [index, 0].concat(block));
+      list.splice.apply(list, [index + 1, 0].concat(block));
       list.splice(blockStart, blockEnd - blockStart + 1);
     }
+  }
+
+  protected tabularToNested(
+    headerRow: AITableHeaderItem[] = [],
+    availableHeaderItems: AITableHeaderItem[][] = [],
+    // This allows us to walk the leaves as if they were in a list from left to right.
+    // We need to pass by reference so that we can update this value from within the recursion.
+    leafIndexRef = { current: 0 },
+    rowIndex = 0
+  ) {
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = this.header[0];
+    }
+
+    if (!availableHeaderItems.length) {
+      availableHeaderItems = this.header.map((headerRow) =>
+        headerRow.filter((headerItem) => headerItem !== null)
+      );
+    }
+
+    return headerRow
+      .filter((headerItem) => headerItem !== null)
+      .map((headerItem, i) => {
+        const colSpan = headerItem?.colSpan || 1;
+        const rowSpan = headerItem?.rowSpan || 1;
+
+        // Leaf
+        if (rowIndex + rowSpan >= this.header.length) {
+          const leafIndex = leafIndexRef.current;
+          leafIndexRef.current += colSpan;
+
+          return {
+            headerItem,
+            leafIndex,
+            rowIndex,
+            children: [],
+          };
+        }
+
+        let spaceLeft = colSpan;
+        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
+        const children = [];
+
+        while (spaceLeft > 0 && availableChildren.length) {
+          const nextChild = availableChildren.shift();
+          spaceLeft -= nextChild?.colSpan || 1;
+          children.push(nextChild);
+        }
+
+        return {
+          headerItem,
+          leafIndex: -1,
+          rowIndex,
+          children: this.tabularToNested(
+            children,
+            availableHeaderItems,
+            leafIndexRef,
+            rowIndex + rowSpan
+          ),
+        };
+      });
+  }
+
+  protected nestedToTabular(
+    nested: any,
+    header: AITableHeaderItem[][] = new Array(this.header.length).fill([]),
+    data: TableItem[][] = new Array(this._data.length).fill([]),
+    rowIndex = 0
+  ) {
+    nested.forEach((headerObj: any) => {
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      const colSpan = headerObj.headerItem?.colSpan || 1;
+
+      header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
+
+      if (headerObj.leafIndex >= 0) {
+        for (let i = 0; i < data.length; i++) {
+          data[i] = [
+            ...data[i],
+            ...this._data[i].slice(headerObj.leafIndex, headerObj.leafIndex + colSpan),
+          ];
+        }
+      }
+
+      if (rowIndex + rowSpan >= this.header.length) {
+        return;
+      }
+
+      const children = headerObj.children;
+      this.nestedToTabular(children, header, data, rowIndex + rowSpan);
+    });
+
+    return {
+      header,
+      data,
+    };
+  }
+
+  /**
+   * Move `nested` element at `rowIndex` with index `indexFrom` to `indexTo`.
+   */
+  protected moveNested(
+    nested: any,
+    indexFrom: number,
+    indexTo: number,
+    rowIndex = 0,
+    startingChildIndex = 0
+  ) {
+    if (!nested.length) {
+      return;
+    }
+
+    const currentRowIndex = nested[0].rowIndex;
+    if (
+      currentRowIndex === rowIndex &&
+      startingChildIndex <= indexFrom &&
+      startingChildIndex + nested.length >= indexFrom &&
+      startingChildIndex <= indexTo &&
+      startingChildIndex + nested.length >= indexTo
+    ) {
+      this.moveMultipleToIndex(
+        [indexFrom - startingChildIndex],
+        indexTo - startingChildIndex,
+        nested
+      );
+      return;
+    }
+
+    nested.forEach((headerObj: any, i: number) => {
+      const rowSpan = headerObj.headerItem?.rowSpan || 1;
+      const children = headerObj.children;
+      this.moveNested(
+        children,
+        indexFrom,
+        indexTo,
+        rowIndex,
+        this.header[currentRowIndex + rowSpan]?.indexOf(children[0]?.headerItem)
+      );
+    });
   }
 }

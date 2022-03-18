@@ -201,7 +201,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span>
+                  <span
+                    dir="auto"
+                  >
                     0 items selected
                   </span>
                 </p>
@@ -402,7 +404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   data-testid="my table-table-body"
                 >
                   <tr
-                    className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                    className="iot--table__row iot--table__row--selectable"
                     onClick={[Function]}
                   >
                     <td
@@ -414,7 +416,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
                       >
                         <span
                           className=""
@@ -433,7 +440,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       offset={0}
                     >
                       <span
-                        className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
                       >
                         <span
                           className=""
@@ -1666,6 +1678,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1821,6 +1834,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
+                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -1903,6 +1917,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

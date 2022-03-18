@@ -4494,24 +4494,201 @@ Map {
               "args": Array [
                 Object {
                   "args": Array [
-                    Object {
-                      "icon": Object {
-                        "type": "node",
+                    Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "iconDescription": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "labelText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "args": Array [
+                                      Object {
+                                        "height": Object {
+                                          "type": "string",
+                                        },
+                                        "svgData": Object {
+                                          "args": Array [
+                                            Object {
+                                              "type": Object {
+                                                "args": Array [
+                                                  Array [
+                                                    "svg",
+                                                  ],
+                                                ],
+                                                "type": "oneOf",
+                                              },
+                                            },
+                                          ],
+                                          "isRequired": true,
+                                          "type": "shape",
+                                        },
+                                        "viewBox": Object {
+                                          "isRequired": true,
+                                          "type": "string",
+                                        },
+                                        "width": Object {
+                                          "type": "string",
+                                        },
+                                      },
+                                    ],
+                                    "type": "shape",
+                                  },
+                                  Object {
+                                    "args": Array [
+                                      Array [
+                                        "caretUp",
+                                        "caretDown",
+                                        "edit",
+                                        "close",
+                                        "checkmark",
+                                        "warning",
+                                        "arrowUp",
+                                        "arrowDown",
+                                        "user",
+                                        "info",
+                                        "help",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  Object {
+                                    "type": "node",
+                                  },
+                                  Object {
+                                    "type": "object",
+                                  },
+                                  Object {
+                                    "type": "func",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
-                      "iconDescription": Object {
-                        "type": "string",
+                      Object {
+                        "args": Array [
+                          Object {
+                            "disabled": Object {
+                              "type": "bool",
+                            },
+                            "hasDivider": Object {
+                              "type": "bool",
+                            },
+                            "hidden": Object {
+                              "type": "bool",
+                            },
+                            "iconDescription": Object {
+                              "type": "string",
+                            },
+                            "id": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "isDelete": Object {
+                              "type": "bool",
+                            },
+                            "isOverflow": Object {
+                              "type": "bool",
+                            },
+                            "labelText": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "renderIcon": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "args": Array [
+                                      Object {
+                                        "height": Object {
+                                          "type": "string",
+                                        },
+                                        "svgData": Object {
+                                          "args": Array [
+                                            Object {
+                                              "type": Object {
+                                                "args": Array [
+                                                  Array [
+                                                    "svg",
+                                                  ],
+                                                ],
+                                                "type": "oneOf",
+                                              },
+                                            },
+                                          ],
+                                          "isRequired": true,
+                                          "type": "shape",
+                                        },
+                                        "viewBox": Object {
+                                          "isRequired": true,
+                                          "type": "string",
+                                        },
+                                        "width": Object {
+                                          "type": "string",
+                                        },
+                                      },
+                                    ],
+                                    "type": "shape",
+                                  },
+                                  Object {
+                                    "args": Array [
+                                      Array [
+                                        "caretUp",
+                                        "caretDown",
+                                        "edit",
+                                        "close",
+                                        "checkmark",
+                                        "warning",
+                                        "arrowUp",
+                                        "arrowDown",
+                                        "user",
+                                        "info",
+                                        "help",
+                                      ],
+                                    ],
+                                    "type": "oneOf",
+                                  },
+                                  Object {
+                                    "type": "node",
+                                  },
+                                  Object {
+                                    "type": "object",
+                                  },
+                                  Object {
+                                    "type": "func",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
                       },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "labelText": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                    },
+                    ],
                   ],
-                  "type": "shape",
+                  "type": "oneOfType",
                 },
               ],
               "type": "arrayOf",
@@ -24854,7 +25031,8 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpando": Object {
+      "renderExpando": [Function],
+      "renderToggle": Object {
         "type": "func",
       },
       "testId": Object {
@@ -25028,7 +25206,6 @@ Map {
         "type": "func",
       },
       "placeholder": Object {
-        "isRequired": true,
         "type": "string",
       },
       "selectedItem": Object {
@@ -29792,6 +29969,7 @@ Map {
       "i18n": Object {
         "iconLabel": "Progress bar icon",
       },
+      "inline": false,
       "light": false,
       "max": 100,
       "renderIcon": undefined,
@@ -29818,6 +29996,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "inline": Object {
+        "type": "bool",
       },
       "label": Object {
         "isRequired": true,
@@ -30654,9 +30835,6 @@ Map {
     },
   },
   "Accordion" => Object {
-    "defaultProps": Object {
-      "align": "end",
-    },
     "propTypes": Object {
       "align": Object {
         "args": Array [
@@ -30710,7 +30888,8 @@ Map {
       "open": Object {
         "type": "bool",
       },
-      "renderExpando": Object {
+      "renderExpando": [Function],
+      "renderToggle": Object {
         "type": "func",
       },
       "title": Object {
@@ -30766,7 +30945,6 @@ Map {
     "defaultProps": Object {
       "indeterminate": false,
       "onChange": [Function],
-      "onClick": [Function],
     },
     "displayName": "Checkbox",
     "propTypes": Object {
@@ -30799,9 +30977,6 @@ Map {
       "onChange": Object {
         "type": "func",
       },
-      "onClick": Object {
-        "type": "func",
-      },
       "title": Object {
         "type": "string",
       },
@@ -30821,7 +30996,7 @@ Map {
         "type": "string",
       },
       "children": Object {
-        "type": "string",
+        "type": "node",
       },
       "className": Object {
         "type": "string",
@@ -30830,6 +31005,9 @@ Map {
         "type": "string",
       },
       "copyLabel": Object {
+        "type": "string",
+      },
+      "copyText": Object {
         "type": "string",
       },
       "disabled": Object {
@@ -31550,6 +31728,9 @@ Map {
         "colSpan": Object {
           "type": "number",
         },
+        "id": Object {
+          "type": "string",
+        },
         "isSortHeader": Object {
           "type": "bool",
         },
@@ -32165,9 +32346,7 @@ Map {
       "hideLabel": Object {
         "type": "bool",
       },
-      "iconDescription": Object {
-        "type": "string",
-      },
+      "iconDescription": [Function],
       "id": Object {
         "isRequired": true,
         "type": "string",
@@ -32188,9 +32367,7 @@ Map {
       "onClick": Object {
         "type": "func",
       },
-      "openCalendar": Object {
-        "type": "func",
-      },
+      "openCalendar": [Function],
       "pattern": [Function],
       "placeholder": Object {
         "type": "string",
@@ -32253,17 +32430,7 @@ Map {
         "type": "object",
       },
       "helperText": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "string",
-            },
-            Object {
-              "type": "node",
-            },
-          ],
-        ],
-        "type": "oneOfType",
+        "type": "node",
       },
       "hideLabel": Object {
         "type": "bool",
@@ -32313,6 +32480,9 @@ Map {
         "type": "bool",
       },
       "onChange": Object {
+        "type": "func",
+      },
+      "renderSelectedItem": Object {
         "type": "func",
       },
       "selectedItem": Object {
@@ -32454,6 +32624,7 @@ Map {
       "accept": Array [],
       "buttonKind": "primary",
       "buttonLabel": "",
+      "disabled": false,
       "filenameStatus": "uploading",
       "iconDescription": "Provide icon description",
       "multiple": false,
@@ -32488,6 +32659,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
       },
       "filenameStatus": Object {
         "args": Array [
@@ -32775,7 +32949,6 @@ Map {
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
     },
-    "displayName": "MultiSelect.Filterable",
     "propTypes": Object {
       "ariaLabel": Object {
         "type": "string",
@@ -33655,7 +33828,6 @@ Map {
         "selectionFeedback": "top-after-reopen",
         "sortItems": [Function],
       },
-      "displayName": "MultiSelect.Filterable",
       "propTypes": Object {
         "ariaLabel": Object {
           "type": "string",
@@ -33808,6 +33980,7 @@ Map {
       "light": false,
       "locale": "en",
       "open": false,
+      "selectedItems": null,
       "selectionFeedback": "top-after-reopen",
       "sortItems": [Function],
       "title": false,
@@ -33918,6 +34091,9 @@ Map {
       },
       "open": Object {
         "type": "bool",
+      },
+      "selectedItems": Object {
+        "type": "array",
       },
       "selectionFeedback": Object {
         "args": Array [
@@ -34263,17 +34439,6 @@ Map {
   },
   "PasswordInput" => Object {
     "$$typeof": Symbol(react.forward_ref),
-    "defaultProps": Object {
-      "className": "\${prefix}--text__input",
-      "disabled": false,
-      "helperText": "",
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "size": "",
-    },
     "displayName": "PasswordInput",
     "propTypes": Object {
       "className": Object {
@@ -35141,6 +35306,7 @@ Map {
       "_threadCount": 0,
     },
     "defaultProps": Object {
+      "scrollDebounceWait": 150,
       "scrollIntoView": true,
       "selected": 0,
       "selectionMode": "automatic",
@@ -35173,6 +35339,9 @@ Map {
       },
       "rightOverflowButtonProps": Object {
         "type": "object",
+      },
+      "scrollDebounceWait": Object {
+        "type": "number",
       },
       "scrollIntoView": Object {
         "type": "bool",
@@ -35274,10 +35443,12 @@ Map {
     "defaultProps": Object {
       "cols": 50,
       "disabled": false,
+      "enableCounter": false,
       "helperText": "",
       "invalid": false,
       "invalidText": "",
       "light": false,
+      "maxCount": undefined,
       "onChange": [Function],
       "onClick": [Function],
       "placeholder": "",
@@ -35307,6 +35478,9 @@ Map {
       "disabled": Object {
         "type": "bool",
       },
+      "enableCounter": Object {
+        "type": "bool",
+      },
       "helperText": Object {
         "type": "node",
       },
@@ -35328,6 +35502,9 @@ Map {
       },
       "light": Object {
         "type": "bool",
+      },
+      "maxCount": Object {
+        "type": "number",
       },
       "onChange": Object {
         "type": "func",
@@ -35473,17 +35650,6 @@ Map {
     },
     "PasswordInput": Object {
       "$$typeof": Symbol(react.forward_ref),
-      "defaultProps": Object {
-        "className": "\${prefix}--text__input",
-        "disabled": false,
-        "helperText": "",
-        "invalid": false,
-        "invalidText": "",
-        "light": false,
-        "onChange": [Function],
-        "onClick": [Function],
-        "size": "",
-      },
       "displayName": "PasswordInput",
       "propTypes": Object {
         "className": Object {
@@ -35603,19 +35769,6 @@ Map {
         },
       },
       "render": [Function],
-    },
-    "defaultProps": Object {
-      "disabled": false,
-      "helperText": "",
-      "inline": false,
-      "invalid": false,
-      "invalidText": "",
-      "light": false,
-      "onChange": [Function],
-      "onClick": [Function],
-      "type": "text",
-      "warn": false,
-      "warnText": "",
     },
     "displayName": "TextInput",
     "propTypes": Object {
@@ -36643,9 +36796,6 @@ Map {
     },
   },
   "ButtonSkeleton" => Object {
-    "defaultProps": Object {
-      "small": false,
-    },
     "propTypes": Object {
       "className": Object {
         "type": "string",
