@@ -1,5 +1,545 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) Default Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
+  >
+    <button
+      aria-describedby={null}
+      aria-pressed={null}
+      className="iot--btn bx--btn bx--btn--primary"
+      data-testid="Button"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Add tag
+    </button>
+    <div
+      className="iot--filtertags-container iot--filtertags-container__wrap"
+      data-testid="filter-tag-container"
+      id="filter-tag-container"
+      onChange={null}
+    >
+      <div
+        aria-label="Clear Filter Hello World"
+        className="bx--tag bx--tag--filter bx--tag--red"
+        id="tag-1"
+        style={
+          Object {
+            "marginRight": "1rem",
+          }
+        }
+      >
+        <span
+          className="bx--tag__label"
+          title="Hello World"
+        >
+          Hello World
+        </span>
+        <button
+          aria-labelledby="tag-1"
+          className="bx--tag__close-icon"
+          onClick={[Function]}
+          title="Clear Filter"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        aria-label="Clear Filter Hello Space"
+        className="bx--tag bx--tag--filter bx--tag--blue"
+        id="tag-2"
+        style={
+          Object {
+            "marginRight": "1rem",
+          }
+        }
+      >
+        <span
+          className="bx--tag__label"
+          title="Hello Space"
+        >
+          Hello Space
+        </span>
+        <button
+          aria-labelledby="tag-2"
+          className="bx--tag__close-icon"
+          onClick={[Function]}
+          title="Clear Filter"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        aria-label="Clear Filter Hello Sun"
+        className="bx--tag bx--tag--filter bx--tag--red"
+        id="tag-3"
+        style={
+          Object {
+            "marginRight": "1rem",
+          }
+        }
+      >
+        <span
+          className="bx--tag__label"
+          title="Hello Sun"
+        >
+          Hello Sun
+        </span>
+        <button
+          aria-labelledby="tag-3"
+          className="bx--tag__close-icon"
+          onClick={[Function]}
+          title="Clear Filter"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        aria-label="Clear Filter Hello Daughter"
+        className="bx--tag bx--tag--filter bx--tag--red"
+        id="tag-4"
+        style={
+          Object {
+            "marginRight": "1rem",
+          }
+        }
+      >
+        <span
+          className="bx--tag__label"
+          title="Hello Daughter"
+        >
+          Hello Daughter
+        </span>
+        <button
+          aria-labelledby="tag-4"
+          className="bx--tag__close-icon"
+          onClick={[Function]}
+          title="Clear Filter"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) With hasOverflow set to false 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--filtertags-container"
+    data-testid="filter-tag-container"
+    id="filter-tag-container"
+    onChange={null}
+  >
+    <div
+      aria-label="Clear Filter Hello World"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-5"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello World"
+      >
+        Hello World
+      </span>
+      <button
+        aria-labelledby="tag-5"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Space"
+      className="bx--tag bx--tag--filter bx--tag--blue"
+      id="tag-6"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Space"
+      >
+        Hello Space
+      </span>
+      <button
+        aria-labelledby="tag-6"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Sun"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-7"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Sun"
+      >
+        Hello Sun
+      </span>
+      <button
+        aria-labelledby="tag-7"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Daughter"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-8"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Daughter"
+      >
+        Hello Daughter
+      </span>
+      <button
+        aria-labelledby="tag-8"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) With tagContainer prop 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--filtertags-container"
+    data-testid="filter-tag-container"
+    i18n={Object {}}
+    id="filter-tag-container"
+    onChange={null}
+    style={
+      Object {
+        "border": "1px solid red",
+      }
+    }
+  >
+    <div
+      aria-label="Clear Filter Hello World"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-9"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello World"
+      >
+        Hello World
+      </span>
+      <button
+        aria-labelledby="tag-9"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Space"
+      className="bx--tag bx--tag--filter bx--tag--blue"
+      id="tag-10"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Space"
+      >
+        Hello Space
+      </span>
+      <button
+        aria-labelledby="tag-10"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Sun"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-11"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Sun"
+      >
+        Hello Sun
+      </span>
+      <button
+        aria-labelledby="tag-11"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      aria-label="Clear Filter Hello Daughter"
+      className="bx--tag bx--tag--filter bx--tag--red"
+      id="tag-12"
+      style={
+        Object {
+          "marginRight": "1rem",
+        }
+      }
+    >
+      <span
+        className="bx--tag__label"
+        title="Hello Daughter"
+      >
+        Hello Daughter
+      </span>
+      <button
+        aria-labelledby="tag-12"
+        className="bx--tag__close-icon"
+        onClick={[Function]}
+        title="Clear Filter"
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags Default Example 1`] = `
 <div
   className="storybook-container"
