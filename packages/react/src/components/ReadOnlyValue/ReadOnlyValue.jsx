@@ -7,7 +7,7 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  type: PropTypes.oneOf(['stacked', 'inline']),
+  type: PropTypes.oneOf(['stacked', 'inline', 'inline_small']),
   label: PropTypes.string,
   value: PropTypes.string,
   testId: PropTypes.string,
@@ -24,11 +24,21 @@ const ReadOnlyValue = ({ type, label, value, className, testId }) => {
     <div
       data-testid={testId}
       className={classnames(className, `${iotPrefix}--read-only-value`, {
-        [`${iotPrefix}--read-only-value__stacked`]: type === 'stacked',
+        [`${iotPrefix}--read-only-value__inline`]: type === 'inline' || type === 'inline_small',
+        [`${iotPrefix}--read-only-value__inline_small`]: type === 'inline_small',
       })}
     >
-      <p data-testid={`${testId}--label`}>{label}</p>
-      <span data-testid={`${testId}--value`}>{value}</span>
+      <label data-testid={`${testId}--label`} htmlFor={`readonly-${label}`}>
+        {label}
+        <input
+          data-testid={`${testId}--value`}
+          type="text"
+          id={`readonly-${label}`}
+          name={value}
+          value={value}
+          readOnly
+        />
+      </label>
     </div>
   );
 };

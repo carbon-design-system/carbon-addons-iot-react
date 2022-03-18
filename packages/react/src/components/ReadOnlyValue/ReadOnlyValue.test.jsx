@@ -17,21 +17,26 @@ describe('ReadOnlyValue', () => {
   it('render stacked', () => {
     const [label, value] = ['label-test01', 'some testing value'];
     const { container } = render(<ReadOnlyValue label={label} value={value} />);
-    expect(
-      container.querySelector(
-        `.${iotPrefix}--read-only-value.${iotPrefix}--read-only-value__stacked`
-      )
-    ).toBeDefined();
+    expect(container.querySelector(`.${iotPrefix}--read-only-value`)).toBeDefined();
+    expect(container.querySelector(`${iotPrefix}--read-only-value__inline`)).toBeNull();
     expect(screen.getByText(label)).toBeDefined();
-    expect(screen.getByText(value)).toBeDefined();
+    expect(screen.getByDisplayValue(value)).toBeDefined();
   });
   it('render inline', () => {
     const [label, value] = ['label-test01', 'some testing value'];
     const { container } = render(<ReadOnlyValue label={label} value={value} type="inline" />);
-    expect(container.querySelector(`.${iotPrefix}--read-only-value`)).toBeDefined();
-    expect(container.querySelector(`.${iotPrefix}--read-only-value__stacked`)).toBeNull();
+    expect(container.querySelector(`.${iotPrefix}--read-only-value__inline`)).toBeDefined();
+    expect(container.querySelector(`.${iotPrefix}--read-only-value__inline-small`)).toBeNull();
     expect(screen.getByText(label)).toBeDefined();
-    expect(screen.getByText(value)).toBeDefined();
+    expect(screen.getByDisplayValue(value)).toBeDefined();
+  });
+  it('render inline small', () => {
+    const [label, value] = ['label-test01', 'some testing value'];
+    const { container } = render(<ReadOnlyValue label={label} value={value} type="inline_small" />);
+    expect(container.querySelector(`.${iotPrefix}--read-only-value__inline`)).toBeDefined();
+    expect(container.querySelector(`.${iotPrefix}--read-only-value__inline-small`)).toBeDefined();
+    expect(screen.getByText(label)).toBeDefined();
+    expect(screen.getByDisplayValue(value)).toBeDefined();
   });
   it('render custom classname', () => {
     const { container } = render(

@@ -1,29 +1,44 @@
 .#{$iot-prefix}--read-only-value {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  > p,
-  span {
-    @include type-style('label-01');
-  }
-  > p {
-    margin-bottom: $spacing-03;
-    color: $text-02;
-  }
-  > span {
-    color: $text-01;
-  }
-  &__stacked {
+  display: block;
+  margin-bottom: $spacing-06;
+  label,
+  input {
     display: block;
-    margin-bottom: $spacing-06;
-    > p {
-      @include type-style('label-01');
-      margin-bottom: $spacing-02;
-      color: $text-02;
-    }
-    > span {
+  }
+  > label {
+    display: inline-block;
+    @include type-style('label-01');
+    color: $text-02;
+    > input {
       @include type-style('body-short-01');
+      margin-top: $spacing-02;
       color: $text-01;
+      border: 0;
+      background: none;
+    }
+  }
+
+  &__inline {
+    margin-bottom: $spacing-03;
+    label {
+      @include type-style('body-short-01');
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      color: $text-02;
+      align-items: baseline;
+      > input {
+        @include type-style('body-short-01');
+        color: $text-01;
+      }
+    }
+  }
+  &__inline_small {
+    > label {
+      @include type-style('label-01');
+      > input {
+        @include type-style('label-01');
+      }
     }
   }
 }

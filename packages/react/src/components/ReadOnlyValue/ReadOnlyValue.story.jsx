@@ -61,3 +61,14 @@ export const MultipleValuesLongLabelInline = () => (
 );
 
 MultipleValuesLongLabelInline.storyName = 'multiple values - inline with long label';
+
+export const MultipleValuesSmallInline = () => (
+  <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
+    <ReadOnlyValue label="Label 01" value="input value 01" type="inline_small" />
+    <ReadOnlyValue label="Label 02" value="input value 02" type="inline_small" />
+    <ReadOnlyValue label="Label 03" value="input value 03" type="inline_small" />
+    <ReadOnlyValue label="Label 04" value="input value 04" type="inline_small" />
+  </div>
+);
+
+MultipleValuesSmallInline.storyName = 'multiple values - inline small';
