@@ -13,19 +13,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     }
   >
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label"
       >
         Label
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label"
+          name="input value"
+          readOnly={true}
+          type="text"
+          value="input value"
+        />
+      </label>
     </div>
   </div>
 </div>
@@ -44,19 +48,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     }
   >
     <div
-      className="iot--read-only-value iot--read-only-value__stacked"
+      className="iot--read-only-value"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label"
       >
         Label
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label"
+          name="input value"
+          readOnly={true}
+          type="text"
+          value="input value"
+        />
+      </label>
     </div>
   </div>
 </div>
@@ -75,64 +83,172 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     }
   >
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 01"
       >
         Label 01
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 01
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 01"
+          name="input value 01"
+          readOnly={true}
+          type="text"
+          value="input value 01"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 02"
       >
         Label 02
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 02
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 02"
+          name="input value 02"
+          readOnly={true}
+          type="text"
+          value="input value 02"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 03"
       >
         Label 03
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 03
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 03"
+          name="input value 03"
+          readOnly={true}
+          type="text"
+          value="input value 03"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 04"
       >
         Label 04
-      </p>
-      <span
-        data-testid="testId--value"
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 04"
+          name="input value 04"
+          readOnly={true}
+          type="text"
+          value="input value 04"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue multiple values - inline small 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
+      data-testid="testId"
+    >
+      <label
+        data-testid="testId--label"
+        htmlFor="readonly-Label 01"
       >
-        input value 04
-      </span>
+        Label 01
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 01"
+          name="input value 01"
+          readOnly={true}
+          type="text"
+          value="input value 01"
+        />
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
+      data-testid="testId"
+    >
+      <label
+        data-testid="testId--label"
+        htmlFor="readonly-Label 02"
+      >
+        Label 02
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 02"
+          name="input value 02"
+          readOnly={true}
+          type="text"
+          value="input value 02"
+        />
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
+      data-testid="testId"
+    >
+      <label
+        data-testid="testId--label"
+        htmlFor="readonly-Label 03"
+      >
+        Label 03
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 03"
+          name="input value 03"
+          readOnly={true}
+          type="text"
+          value="input value 03"
+        />
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
+      data-testid="testId"
+    >
+      <label
+        data-testid="testId--label"
+        htmlFor="readonly-Label 04"
+      >
+        Label 04
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 04"
+          name="input value 04"
+          readOnly={true}
+          type="text"
+          value="input value 04"
+        />
+      </label>
     </div>
   </div>
 </div>
@@ -151,64 +267,80 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     }
   >
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label bigger label"
       >
         Label bigger label
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 01
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label bigger label"
+          name="input value 01"
+          readOnly={true}
+          type="text"
+          value="input value 01"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 02"
       >
         Label 02
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 02
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 02"
+          name="input value 02"
+          readOnly={true}
+          type="text"
+          value="input value 02"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 03"
       >
         Label 03
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 03
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 03"
+          name="input value 03"
+          readOnly={true}
+          type="text"
+          value="input value 03"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value"
+      className="iot--read-only-value iot--read-only-value__inline"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 04"
       >
         Label 04
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 04
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 04"
+          name="input value 04"
+          readOnly={true}
+          type="text"
+          value="input value 04"
+        />
+      </label>
     </div>
   </div>
 </div>
@@ -227,64 +359,80 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     }
   >
     <div
-      className="iot--read-only-value iot--read-only-value__stacked"
+      className="iot--read-only-value"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 01"
       >
         Label 01
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 01
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 01"
+          name="input value 01"
+          readOnly={true}
+          type="text"
+          value="input value 01"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value iot--read-only-value__stacked"
+      className="iot--read-only-value"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 02"
       >
         Label 02
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 02
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 02"
+          name="input value 02"
+          readOnly={true}
+          type="text"
+          value="input value 02"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value iot--read-only-value__stacked"
+      className="iot--read-only-value"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 03"
       >
         Label 03
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 03
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 03"
+          name="input value 03"
+          readOnly={true}
+          type="text"
+          value="input value 03"
+        />
+      </label>
     </div>
     <div
-      className="iot--read-only-value iot--read-only-value__stacked"
+      className="iot--read-only-value"
       data-testid="testId"
     >
-      <p
+      <label
         data-testid="testId--label"
+        htmlFor="readonly-Label 04"
       >
         Label 04
-      </p>
-      <span
-        data-testid="testId--value"
-      >
-        input value 04
-      </span>
+        <input
+          data-testid="testId--value"
+          id="readonly-Label 04"
+          name="input value 04"
+          readOnly={true}
+          type="text"
+          value="input value 04"
+        />
+      </label>
     </div>
   </div>
 </div>
