@@ -210,6 +210,7 @@ const ComposedModal = ({
         },
         `${iotPrefix}--composed-modal`
       )}
+      style={modalExtrasHeight > 0 ? { '--modal-extras-height': modalExtrasHeight } : undefined}
     >
       <ModalHeader
         label={label}
