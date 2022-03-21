@@ -160,6 +160,154 @@ export const Basic = () => {
 };
 
 Basic.storyName = 'basic';
+
+export const withThresholds = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: layout05,
+      }}
+    >
+      <SparklineChartCard
+        title={text('title', 'Manage')}
+        content={{
+          xLabel: text('content.xLabel', 'xlabel prop'),
+          yLabel: text('content.yLabel', 'y label prop'),
+          xProperty: text('content.xProperty', 'date'),
+          yProperty: text('content.yProperty', 'value'),
+          yThresholds: [
+            {
+              value: 6,
+              label: 'Threshold',
+            },
+          ],
+          color: {
+            pairing: {
+              option: 4,
+            },
+            gradient: {
+              enabled: true,
+            },
+          },
+          listContent: object('content.listContent', [
+            { label: 'Target', value: 1000 },
+            { label: 'Mean', value: 756 },
+            { label: 'Peak', value: 1045 },
+          ]),
+        }}
+        values={object('values', [
+          {
+            group: 'Dataset 1',
+            date: 1558453860000,
+            value: 5,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558453920000,
+            value: 5,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558453980000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454040000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454100000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454160000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454280000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454340000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454460000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454520000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454580000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454640000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454700000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454760000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454820000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454880000,
+            value: 1,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454940000,
+            value: 1,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558455000000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558455060000,
+            value: 2,
+          },
+        ])}
+        size={size}
+        breakpoint={breakpoint}
+        footerContent={() => <div>Occured on ... </div>}
+        isExpanded={boolean('isExpanded', false)}
+        locale="en"
+        availableActions={{ expand: true }}
+        onCardAction={action('onCardAction')}
+      />
+    </div>
+  );
+};
+
+withThresholds.storyName = 'with thresholds';
 export const MultipleGroups = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
