@@ -251,6 +251,12 @@ const TableCardFormContent = ({
         (groupByItem) => groupByItem !== dataItem.dataSourceId
       );
 
+      const newCardConfig = cardConfig.content.hasOwnProperty('thresholds')
+        ? cardConfig.content.thresholds.filter(
+            (threshold) => dataItem.dataSourceId !== threshold.dataSourceId
+          )
+        : cardConfig;
+
       setSelectedDataItems(filteredColumns.map((item) => item.dataSourceId));
       setRemovedDataItems([...removedDataItems, dataItem]);
 
@@ -265,7 +271,7 @@ const TableCardFormContent = ({
       onChange({
         ...cardConfig,
         content: {
-          ...cardConfig.content,
+          ...newCardConfig.content,
           columns: filteredColumns,
         },
         ...updatedDataSource,
