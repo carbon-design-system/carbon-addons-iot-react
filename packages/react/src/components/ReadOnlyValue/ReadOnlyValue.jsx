@@ -17,7 +17,7 @@ const defaultProps = {
   type: 'stacked',
   label: '',
   value: '',
-  testId: 'testId',
+  testId: 'read-only-value',
 };
 const ReadOnlyValue = ({ type, label, value, className, testId }) => {
   return (
@@ -30,7 +30,7 @@ const ReadOnlyValue = ({ type, label, value, className, testId }) => {
     >
       <label data-testid={`${testId}--label`} htmlFor={`readonly-${label}`}>
         {label}
-        <input
+        <textarea
           data-testid={`${testId}--value`}
           type="text"
           id={`readonly-${label}`}

@@ -14,15 +14,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label"
       >
         Label
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label"
           name="input value"
           readOnly={true}
@@ -49,15 +49,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label"
       >
         Label
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label"
           name="input value"
           readOnly={true}
@@ -84,15 +84,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 01"
       >
         Label 01
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 01"
           name="input value 01"
           readOnly={true}
@@ -103,15 +103,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 02"
       >
         Label 02
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 02"
           name="input value 02"
           readOnly={true}
@@ -122,15 +122,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 03"
       >
         Label 03
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 03"
           name="input value 03"
           readOnly={true}
@@ -141,15 +141,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 04"
       >
         Label 04
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 04"
           name="input value 04"
           readOnly={true}
@@ -176,15 +176,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 01"
       >
         Label 01
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 01"
           name="input value 01"
           readOnly={true}
@@ -195,15 +195,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 02"
       >
         Label 02
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 02"
           name="input value 02"
           readOnly={true}
@@ -214,15 +214,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 03"
       >
         Label 03
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 03"
           name="input value 03"
           readOnly={true}
@@ -233,15 +233,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline iot--read-only-value__inline_small"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 04"
       >
         Label 04
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 04"
           name="input value 04"
           readOnly={true}
@@ -268,77 +268,77 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label bigger label"
       >
         Label bigger label
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label bigger label"
-          name="input value 01"
+          name="value 01"
           readOnly={true}
           type="text"
-          value="input value 01"
+          value="value 01"
         />
       </label>
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 02"
       >
         Label 02
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 02"
-          name="input value 02"
+          name="value 02"
           readOnly={true}
           type="text"
-          value="input value 02"
+          value="value 02"
         />
       </label>
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 03"
       >
         Label 03
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 03"
-          name="input value 03"
+          name="value 03"
           readOnly={true}
           type="text"
-          value="input value 03"
+          value="value 03"
         />
       </label>
     </div>
     <div
       className="iot--read-only-value iot--read-only-value__inline"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 04"
       >
         Label 04
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 04"
-          name="input value 04"
+          name="value 04"
           readOnly={true}
           type="text"
-          value="input value 04"
+          value="value 04"
         />
       </label>
     </div>
@@ -360,15 +360,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   >
     <div
       className="iot--read-only-value"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 01"
       >
         Label 01
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 01"
           name="input value 01"
           readOnly={true}
@@ -379,15 +379,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 02"
       >
         Label 02
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 02"
           name="input value 02"
           readOnly={true}
@@ -398,15 +398,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 03"
       >
         Label 03
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 03"
           name="input value 03"
           readOnly={true}
@@ -417,15 +417,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
     </div>
     <div
       className="iot--read-only-value"
-      data-testid="testId"
+      data-testid="read-only-value"
     >
       <label
-        data-testid="testId--label"
+        data-testid="read-only-value--label"
         htmlFor="readonly-Label 04"
       >
         Label 04
-        <input
-          data-testid="testId--value"
+        <textarea
+          data-testid="read-only-value--value"
           id="readonly-Label 04"
           name="input value 04"
           readOnly={true}

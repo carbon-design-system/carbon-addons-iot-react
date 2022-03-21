@@ -2,19 +2,24 @@
   display: block;
   margin-bottom: $spacing-06;
   label,
-  input {
+  textarea {
     display: block;
+    &:focus-visible {
+      outline: unset;
+    }
   }
   > label {
     display: inline-block;
     @include type-style('label-01');
     color: $text-02;
-    > input {
+    > textarea {
       @include type-style('body-short-01');
       margin-top: $spacing-02;
       color: $text-01;
       border: 0;
       background: none;
+      padding-left: 0;
+      resize: none;
     }
   }
 
@@ -24,10 +29,10 @@
       @include type-style('body-short-01');
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: $spacing-06;
       color: $text-02;
       align-items: baseline;
-      > input {
+      > textarea {
         @include type-style('body-short-01');
         color: $text-01;
       }
@@ -36,7 +41,7 @@
   &__inline_small {
     > label {
       @include type-style('label-01');
-      > input {
+      > textarea {
         @include type-style('label-01');
       }
     }
