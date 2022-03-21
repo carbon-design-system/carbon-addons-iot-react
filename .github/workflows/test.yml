@@ -64,7 +64,7 @@ jobs:
     name: React Cypress test
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node16.5.0-chrome94-ff93
+      image: cypress/browsers:node16.14.0-slim-chrome99-ff97
       options: --privileged
 
     steps:
@@ -83,9 +83,6 @@ jobs:
           filters: |
             react:
               - 'packages/react/**'
-
-      - name: Increase watchers
-        run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
       - name: Use Node.js
         uses: actions/setup-node@v1
