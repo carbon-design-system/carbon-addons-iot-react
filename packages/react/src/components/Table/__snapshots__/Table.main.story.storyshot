@@ -29361,6 +29361,443 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With main view states 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="null-table-container"
+  >
+    <div
+      className="addons-iot-table-container"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid={null}
+          id={null}
+          title={null}
+        >
+          <thead
+            data-testid="null-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="date"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-date"
+                id="column-date"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Date"
+                  >
+                    Date
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="select"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-select"
+                id="column-select"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Select"
+                  >
+                    Select
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="secretField"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-secretField"
+                id="column-secretField"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Secret Information"
+                  >
+                    Secret Information
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="status"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-status"
+                id="column-status"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Status"
+                  >
+                    Status
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="number"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-number"
+                id="column-number"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Number"
+                  >
+                    Number
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="boolean"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-boolean"
+                id="column-boolean"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Boolean"
+                  >
+                    Boolean
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="node"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-node"
+                id="column-node"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="React Node"
+                  >
+                    React Node
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="object"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-object"
+                id="column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Object Id"
+                  >
+                    Object Id
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            data-testid="null-table-skeleton"
+          >
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+              <td>
+                <p
+                  className="bx--skeleton__text"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                />
+              </td>
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr
+              className="iot--table-skeleton-with-headers--table-row"
+            >
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+              <td />
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With pagination 1`] = `
 <div
   className="storybook-container"

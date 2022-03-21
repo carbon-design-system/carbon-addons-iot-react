@@ -7287,6 +7287,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         }
       }
     >
+      <style>
+        
+      .bx--tooltip__content .bx--inline-loading__text {
+        color: white
+      }
+
+      .bx--tooltip__content .bx--inline-loading__checkmark-container path + path {
+        fill: white;
+        opacity: 1
+      }
+    
+      </style>
       <div
         className="page-title-bar"
         data-testid="page-title-bar"
