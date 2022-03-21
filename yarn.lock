@@ -4034,12 +4034,12 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@carbon/charts-react@0.54.2":
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.54.2.tgz#a76ad602a2a1b267a335e0bddb98ab9768a1e832"
-  integrity sha512-Vdz9htq+CLdC90ldkvUf/2VKIs6BvOZ5lEzLm7cAXER293XUSlhVe6DGD1WsMEUG99hC1x8W3mzJ03Jgswtekg==
+"@carbon/charts-react@0.55.1":
+  version "0.55.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts-react/-/charts-react-0.55.1.tgz#13677c31eb8a07104ad7211aa89532b65492bc47"
+  integrity sha512-mAXrLSH1vHYdjQm4OPABnrBjdpkfplbtvRKG5xXRfSZHF0fpoi31Vpk4KVV7DGK96jKAHsxCl2CzyijAWIbFSA==
   dependencies:
-    "@carbon/charts" "^0.54.2"
+    "@carbon/charts" "^0.55.1"
     "@carbon/icons-react" "^10.32.0"
     "@carbon/telemetry" "0.0.0-alpha.6"
 
@@ -4055,13 +4055,13 @@
     lodash-es "4.17.15"
     resize-observer-polyfill "1.5.0"
 
-"@carbon/charts@0.54.2", "@carbon/charts@^0.54.2":
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.54.2.tgz#9ac2234b3d85fac89a8dacc99caea94eb41bdd8c"
-  integrity sha512-rkodYLj8dJaaO4sv9vCJulE+mG6QR0/N05Fv4undnA3xu9Q0cwnwIjEjgr7i3OfAKq5iczm2OkRpLW0yZF6quQ==
+"@carbon/charts@0.55.1", "@carbon/charts@^0.55.1":
+  version "0.55.1"
+  resolved "https://registry.yarnpkg.com/@carbon/charts/-/charts-0.55.1.tgz#d73abf6ccb734f8ac230038d6cca4e549f4a63ee"
+  integrity sha512-hLWgSWm7ABNzn2Qt3d0j3CQTcKnzKgAXO5DfxVZG50pm10RBYKqVz9vYNpKO5fmOAZe1nDelO9cXcSFVSATCTQ==
   dependencies:
     "@carbon/colors" "10.29.0"
-    "@carbon/telemetry" "0.0.0-alpha.6"
+    "@carbon/telemetry" "0.1.0"
     "@carbon/utils-position" "1.1.1"
     carbon-components "10.40.0"
     d3-cloud "1.2.5"
@@ -4188,6 +4188,11 @@
     semver "^7.3.2"
     winston "^3.3.3"
     yargs "^16.1.1"
+
+"@carbon/telemetry@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@carbon/telemetry/-/telemetry-0.1.0.tgz#57b331cd5a855b4abbf55457456da8211624d879"
+  integrity sha512-kNWt0bkgPwGW0i5h7HFuljbKRXPvIhsKbB+1tEURAYLXoJg9iJLF1eGvWN5iVoFCS2zje4GR3OGOsvvKVe7Hlg==
 
 "@carbon/themes@10.26.0":
   version "10.26.0"

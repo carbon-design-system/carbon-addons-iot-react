@@ -874,4 +874,7 @@ export const CardPropTypes = {
       })
     ),
   }),
+  overrides: PropTypes.shape({
+    errorMessage: OverridePropTypes,
+  }),
 };
