@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.27...v2.149.0-next.28) (2022-03-21)
+
+
+### Bug Fixes
+
+* **card:** style audit ([ac4a96c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac4a96ccd5ecb26bad14068c03b670b8caa0b68e))
+
+
+
+
+
+# [2.149.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.26...v2.149.0-next.27) (2022-03-21)
+
+
+### Bug Fixes
+
+* **table:** allow searching by "false" boolean values ([b671d68](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b671d682ab1f7e4346bdb3508c167cc4224ad5f1))
+* minor style update in PageTitleBar storybook ([253bffe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/253bffeab6b72b0372f5874e52c1335e07f4ee44))
+
+
+
+
+
 # [2.149.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.24...v2.149.0-next.25) (2022-03-14)
 
 
