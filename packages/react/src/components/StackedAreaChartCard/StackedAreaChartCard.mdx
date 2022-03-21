@@ -1,74 +1,72 @@
-# `Meter Chart Card` component
+# `Stacked Area Chart Card` component
 
 ## Table of Contents
 
 - [Getting started](#getting-started)
-- [Simple meter chart](#simple-meter-chart)
+- [Simple sparkline chart](#simple-sparkline-chart)
 - [Props](#props)
 
 ## Getting Started
 
-The `MeterChartCard` wraps a Card display around @carbon/charts to render meter chart.
+The `StackedAreaChartCard` wraps a Card display around @carbon/charts to render stacked area chart.
 
 ```jsx
-import { MeterChartCard } from 'carbon-addon-iot-react';
+import { StackedAreaChartCard } from 'carbon-addon-iot-react';
 ```
 
-## Simple Meter Chart
+## Simple Stacked Area Chart
 
 ```jsx
-import { MeterChartCard } from 'carbon-addon-iot-react';
+import { StackedAreaChartCard } from 'carbon-addon-iot-react';
 
-<MeterChartCard
-  title="Manage"
+<StackedAreaChartCard
+  title="Card title"
   content={{
-    peak: 2000,
-    meterTotal: 1000,
-    meterUnit: 'AppPoints',
-    color: {
-      pairing: {
-        option: 5,
-      },
-    },
-    status: {
-      success: [0, 300],
-      warning: [300, 900],
-      danger: [900, 2000],
-    },
+    xLabel: 'xlabel prop',
+    yLabel: 'y label prop',
+    xProperty: 'date',
+    yProperty: 'value',
   }}
   values={[
     {
-      group: 'Install',
-      value: 100,
+      group: 'Dummy',
+      date: '2019-01-01T02:00:00.000Z',
+      value: 10000,
+    },
+
+    {
+      group: 'Dummy 2',
+      date: '2019-01-05T02:00:00.000Z',
+      value: 65000,
     },
     {
-      group: 'Limited users',
-      value: 200,
+      group: 'Dummy 3',
+      date: '2019-01-05T02:00:00.000Z',
+      value: 65000,
     },
     {
-      group: 'Base users',
-      value: 300,
+      group: 'Dummy',
+      date: '2019-01-02T02:00:00.000Z',
+      value: 50400,
+    },
+
+    {
+      group: 'Dummy 2',
+      date: '2019-01-03T02:00:00.000Z',
+      value: 32200,
     },
     {
-      group: 'Premium users',
-      value: 200,
-    },
-    {
-      group: 'Cron tasks',
-      value: 100,
-    },
-    {
-      group: 'Reports',
-      value: 150,
+      group: 'Dummy 3',
+      date: '2019-01-07T02:00:00.000Z',
+      value: 59293,
     },
   ]}
-  size="MEDIUM"
+  size="MEDIUMWIDE"
   breakpoint="md"
-  footerContent={() => <div>Occured on ... </div>}
   isExpanded={false}
   locale="en"
   availableActions={{ expand: true }}
-  onCardAction={(action, id) => {}}
+  onCardAction={() => {}}
 />;
 ```
 
@@ -133,11 +131,15 @@ import { MeterChartCard } from 'carbon-addon-iot-react';
 | renderEditContent                     | function                                                                                                                  |                                                                           | Optional callback function that is passed an onChange function and the original cardConfig function. This allows additional information to be passed to be used in the Card Editor for this type. You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render \* |
 | size                                  | enum: <br/>'SMALLFULL'<br/>'MEDIUMTHIN'<br/>'MEDIUM' <br/> 'MEDIUMWIDE' <br/> 'LARGETHIN' <br/> 'LARGE' <br/> 'LARGEWIDE' |                                                                           | card size                                                                                                                                                                                                                                                                                                                                        |
 | content                               | shape                                                                                                                     |                                                                           | { xLabel: 'xlabel prop', yLabel: 'y label prop', xProperty: 'date', yProperty: 'value', color: { pairing: { option: 4 }, gradient: { enabled: true}},listContent: [ { label: 'Target', value: 1000 }]}                                                                                                                                           |
-| content.peak                          | number                                                                                                                    |                                                                           | the peak value for the chart                                                                                                                                                                                                                                                                                                                     |
-| content.meterTotal                    | number                                                                                                                    |                                                                           | meter total amount                                                                                                                                                                                                                                                                                                                               |
-| content.meterUnit                     | string                                                                                                                    |                                                                           | meter unit to be used                                                                                                                                                                                                                                                                                                                            |
+| content.xLabel                        | string                                                                                                                    |                                                                           | x-axis tooltip display name                                                                                                                                                                                                                                                                                                                      |
+| content.yLabel                        | string                                                                                                                    |                                                                           | y-axis tooltip display name                                                                                                                                                                                                                                                                                                                      |
+| content.xProperty                     | string                                                                                                                    |                                                                           | x-axis property to map from values                                                                                                                                                                                                                                                                                                               |
+| content.yProperty                     | string                                                                                                                    |                                                                           | y-axis property to map from values                                                                                                                                                                                                                                                                                                               |
+| content.yThresholds                   | arrayOf(shape({value: number (required), valueFormatter: func, label: string,fillColor: string}))                         | null                                                                      | y thresholds property to map thresholds in y axis                                                                                                                                                                                                                                                                                                |
+| content.xThresholds                   | arrayOf(shape({value: number (required), valueFormatter: func, label: string,fillColor: string}))                         | null                                                                      | x thresholds property to map thresholds in x axis                                                                                                                                                                                                                                                                                                |
+| content.curve                         | string                                                                                                                    | curveMonotoneX                                                            | line curve type                                                                                                                                                                                                                                                                                                                                  |
 | content.legendPosition                | string                                                                                                                    | bottom                                                                    | legend position                                                                                                                                                                                                                                                                                                                                  |
-| values                                | arrayOf(shape({group: string, value: number }))                                                                           | null                                                                      | array of data from the backend for instance                                                                                                                                                                                                                                                                                                      |
+| values                                | arrayOf(shape({group: string, [content.xProperty]: number, [content.yProperty]: number }))                                | null                                                                      | array of data from the backend for instance                                                                                                                                                                                                                                                                                                      |
 | i18n                                  | shape                                                                                                                     |                                                                           | internationalization                                                                                                                                                                                                                                                                                                                             |
 | i18n.alertDetected                    | string                                                                                                                    |                                                                           |                                                                                                                                                                                                                                                                                                                                                  |
 | i18n.tooltipGroupLabel                | string                                                                                                                    | 'Group'                                                                   |                                                                                                                                                                                                                                                                                                                                                  |

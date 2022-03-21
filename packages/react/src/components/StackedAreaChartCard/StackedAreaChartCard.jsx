@@ -1,36 +1,42 @@
-import React, { useMemo, useRef, useEffect, useState } from 'react';
+import React, { useMemo, useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import { isEmpty, isEqual, defaultsDeep } from 'lodash-es';
 
 import Card from '../Card/Card';
-import { AreaChart } from '../AreaChart';
+import { StackedAreaChart } from '../StackedAreaChart';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { CardPropTypes, SparklineChartPropTypes } from '../../constants/CardPropTypes';
+import { CardPropTypes, StackedAreaPropTypes } from '../../constants/CardPropTypes';
+import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
 import { usePrevious } from '../../hooks/usePrevious';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
   ...CardPropTypes,
-  ...SparklineChartPropTypes,
+  ...StackedAreaPropTypes,
 };
 
 const defaultProps = {
-  size: CARD_SIZES.MEDIUMWIDE,
+  size: CARD_SIZES.MEDIUM,
   title: null,
+  testId: 'stacked-area-chart-testId',
   content: {
     xLabel: 'x label',
     yLabel: 'y label',
+    pairing: {
+      option: 1,
+    },
+    legendPosition: 'bottom',
+    curve: 'curveMonotoneX',
   },
-  footerContent: null,
   locale: 'en',
+  i18n: {
+    noDataLabel: 'No data available',
+  },
   values: [],
-  i18n: { noDataLabel: 'No data available' },
 };
-
-const SparklineChartCard = ({
+const StackedAreaChartCard = ({
   title,
   values,
   content,
@@ -45,60 +51,46 @@ const SparklineChartCard = ({
   style,
   ...others
 }) => {
-  const listRef = useRef(null);
   const chartRef = useRef(null);
 
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const newSize = useMemo(() => getUpdatedCardSize(size), [size]);
+  const isChartDataEmpty = isEmpty(values);
   const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
     content,
   ]);
 
-  const isChartDataEmpty = isEmpty(values);
-
   const options = useMemo(
     () => ({
-      grid: {
-        x: {
-          enabled: false,
-        },
-        y: {
-          enabled: false,
-        },
-      },
+      animations: false,
+      accessibility: false,
       axes: {
-        bottom: {
-          visible: false,
-          title: contentWithDefaults.xLabel,
-          mapsTo: contentWithDefaults.xProperty,
-          scaleType: 'time',
-        },
         left: {
-          visible: false,
+          stacked: true,
           title: contentWithDefaults.yLabel,
           mapsTo: contentWithDefaults.yProperty,
+          thresholds: contentWithDefaults.yThresholds,
           scaleType: 'linear',
+        },
+        bottom: {
+          title: contentWithDefaults.xLabel,
+          mapsTo: contentWithDefaults.xProperty,
+          thresholds: contentWithDefaults.xThresholds,
+          scaleType: 'time',
         },
       },
       color: contentWithDefaults.color,
-      points: {
+      curve: contentWithDefaults.curve,
+      toolbar: {
         enabled: false,
       },
       legend: {
-        enabled: false,
-      },
-      toolbar: {
-        enabled: false,
+        position: contentWithDefaults.legendPosition,
       },
     }),
     [contentWithDefaults]
   );
-
-  const [listHeight, setListHeight] = useState();
-  useEffect(() => {
-    setListHeight(listRef?.current?.clientHeight);
-  }, [listRef]);
 
   const previousChartData = usePrevious(values);
 
@@ -124,30 +116,18 @@ const SparklineChartCard = ({
       {...others}
     >
       <div
-        className={classNames(`${iotPrefix}--sparkline-card--wrapper`, {
-          [`${iotPrefix}--sparkline-card--wrapper__expanded`]: isExpanded,
+        className={classNames(`${iotPrefix}--stacked-area-card--wrapper`, {
+          [`${iotPrefix}--stacked-area-card--wrapper__expanded`]: isExpanded,
         })}
-        style={{
-          ...style,
-          '--card-list-height':
-            contentWithDefaults.listContent?.length > 0 ? `${listHeight}px` : '0px',
-        }}
       >
-        <AreaChart ref={chartRef} data={values} options={options} />
-        {contentWithDefaults.listContent?.length > 0 ? (
-          <div ref={listRef} data-testid={`${testId}-list`}>
-            {contentWithDefaults.listContent.map(({ label, value }) => (
-              <div className={`${iotPrefix}--sparkline-card--wrapper--list`}>
-                <p>{label}</p>
-                <span>{value}</span>
-              </div>
-            ))}
-          </div>
+        {!isChartDataEmpty ? (
+          <StackedAreaChart ref={chartRef} data={values} options={options} />
         ) : null}
       </div>
     </Card>
   );
 };
-SparklineChartCard.propTypes = propTypes;
-SparklineChartCard.defaultProps = defaultProps;
-export default SparklineChartCard;
+
+StackedAreaChartCard.propTypes = propTypes;
+StackedAreaChartCard.defaultProps = defaultProps;
+export default StackedAreaChartCard;

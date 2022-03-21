@@ -766,6 +766,39 @@ export const SparklineChartPropTypes = {
   ),
 };
 
+export const StackedAreaPropTypes = {
+  content: PropTypes.shape({
+    xLabel: PropTypes.string,
+    yLabel: PropTypes.string,
+    xProperty: PropTypes.string.isRequired,
+    xThresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number.isRequired,
+        valueFormatter: PropTypes.func,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+      })
+    ),
+    yProperty: PropTypes.string.isRequired,
+    yThresholds: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number.isRequired,
+        valueFormatter: PropTypes.func,
+        label: PropTypes.string,
+        fillColor: PropTypes.string,
+      })
+    ),
+    curve: PropTypes.string,
+    legendPosition: PropTypes.oneOf(['bottom', 'left', 'right', 'top']),
+    ...ChartColorPropType,
+  }),
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      group: PropTypes.string.isRequired,
+    })
+  ),
+};
+
 export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
 
 export const CardPropTypes = {

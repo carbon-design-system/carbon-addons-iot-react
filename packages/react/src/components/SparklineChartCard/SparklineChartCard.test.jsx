@@ -186,7 +186,7 @@ describe('SparklineChartCard', () => {
     expect(screen.getByText('Mean')).toBeDefined();
     expect(screen.getByText('Peak')).toBeDefined();
   });
-  it('does not show bar chart when loading', () => {
+  it('does not show sparkline chart when loading', () => {
     const { container } = render(
       <SparklineChartCard
         title="Manage"
@@ -224,7 +224,7 @@ describe('SparklineChartCard', () => {
     expect(container.querySelectorAll('.bx--chart-holder')).toHaveLength(0);
   });
 
-  it('does not show bar chart when empty data', () => {
+  it('does not show sparkline chart when empty data', () => {
     const { container } = render(
       <SparklineChartCard
         title="Manage"
