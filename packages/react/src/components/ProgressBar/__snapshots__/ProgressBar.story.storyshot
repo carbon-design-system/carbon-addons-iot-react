@@ -28,6 +28,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -39,7 +40,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-676"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-677"
@@ -85,7 +86,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     }
   >
     <div
-      className="iot--progress-bar-container"
+      className="iot--progress-bar-container iot--progress-bar-container--with-icon"
       data-testid="progress-bar-container"
       style={
         Object {
@@ -124,6 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -135,7 +137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-680"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-681"
@@ -195,6 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -206,7 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
           className="bx--progress-bar__label"
           id="progress-bar-678"
         >
-          Mon, Oct 5
+          Progress bar label
         </span>
         <div
           aria-describedby="progress-bar-helper-679"
@@ -252,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
     }
   >
     <div
-      className="iot--progress-bar-container"
+      className="iot--progress-bar-container iot--progress-bar-container--with-icon"
       data-testid="progress-bar-container"
       style={
         Object {
@@ -287,6 +290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
@@ -358,6 +362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="iot--progress-bar__value-label"
+          title="75%"
         >
           75%
         </span>
