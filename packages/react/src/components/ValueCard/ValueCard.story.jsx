@@ -118,7 +118,7 @@ export const WithTrends = () => {
 
 WithTrends.storyName = 'with trends, variables, and label';
 
-export const WithHeaderStatus = () => {
+export const WithLinkAndMeasurementUnit = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
   return (
@@ -208,7 +208,7 @@ export const WithHeaderStatus = () => {
   );
 };
 
-WithHeaderStatus.storyName = 'with header status';
+WithLinkAndMeasurementUnit.storyName = 'with link and measurement unit ';
 export const WithThresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');

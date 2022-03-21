@@ -1011,7 +1011,188 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with header status 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with isEditable 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1rem4",
+        "width": "520px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--value-card__vertical iot--card--wrapper"
+      data-testid="Card"
+      id="facilitycard"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Really really really long card title?"
+        >
+          <div
+            className="iot--card--title--text"
+            data-testid="Card-title-notip"
+          >
+            Really really really long card title?
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      >
+        <div
+          className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
+        >
+          <div
+            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            style={
+              Object {
+                "--value-card-attribute-width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--value-card__attribute-label"
+            >
+              <span
+                data-testid="Card-attribute-0-threshold-label"
+              >
+                Monthly summary
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute"
+            >
+              <div
+                className="iot--value-card__value-renderer--wrapper"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "--value-renderer-color": "#0f62fe",
+                      "--value-renderer-font-size": "42px",
+                      "--value-renderer-max-lines": 1,
+                    }
+                  }
+                  tabIndex={0}
+                  title="--"
+                  type="button"
+                >
+                  --
+                </button>
+              </div>
+              <span
+                className="iot--value-card__attribute-unit"
+                data-testid="Card-attribute-0-unit"
+                style={
+                  Object {
+                    "--default-font-size": "1.25rem",
+                  }
+                }
+              >
+                Wh
+              </span>
+            </div>
+          </div>
+          <div
+            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
+            style={
+              Object {
+                "--value-card-attribute-width": "100%",
+              }
+            }
+          >
+            <div
+              className="iot--value-card__attribute-label"
+            >
+              <span
+                data-testid="Card-attribute-1-threshold-label"
+              >
+                Yearly summary
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute"
+            >
+              <div
+                className="iot--value-card__value-renderer--wrapper"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
+                  data-testid="Button"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "--value-renderer-color": "#0f62fe",
+                      "--value-renderer-font-size": "42px",
+                      "--value-renderer-max-lines": 1,
+                    }
+                  }
+                  tabIndex={0}
+                  title="--"
+                  type="button"
+                >
+                  --
+                </button>
+              </div>
+              <span
+                className="iot--value-card__attribute-unit"
+                data-testid="Card-attribute-1-unit"
+                style={
+                  Object {
+                    "--default-font-size": "1.25rem",
+                  }
+                }
+              >
+                Wh
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with link and measurement unit  1`] = `
 <div
   className="storybook-container"
 >
@@ -1255,187 +1436,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               >
                 Adjust target
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with isEditable 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "margin": "1rem4",
-        "width": "520px",
-      }
-    }
-  >
-    <div
-      className="iot--card iot--value-card__vertical iot--card--wrapper"
-      data-testid="Card"
-      id="facilitycard"
-      role="presentation"
-      style={
-        Object {
-          "--card-default-height": "304px",
-        }
-      }
-    >
-      <div
-        className="iot--card--header"
-        data-testid="Card-header"
-      >
-        <span
-          className="iot--card--title"
-          data-testid="Card-title"
-          title="Really really really long card title?"
-        >
-          <div
-            className="iot--card--title--text"
-            data-testid="Card-title-notip"
-          >
-            Really really really long card title?
-          </div>
-        </span>
-      </div>
-      <div
-        className="iot--card--content"
-        data-testid="Card-content"
-        style={
-          Object {
-            "--card-content-height": "256px",
-          }
-        }
-      >
-        <div
-          className="iot--value-card__content-wrapper iot--value-card__content-wrapper--vertical"
-        >
-          <div
-            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
-            style={
-              Object {
-                "--value-card-attribute-width": "100%",
-              }
-            }
-          >
-            <div
-              className="iot--value-card__attribute-label"
-            >
-              <span
-                data-testid="Card-attribute-0-threshold-label"
-              >
-                Monthly summary
-              </span>
-            </div>
-            <div
-              className="iot--value-card__attribute"
-            >
-              <div
-                className="iot--value-card__value-renderer--wrapper"
-              >
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
-                  data-testid="Button"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "--value-renderer-color": "#0f62fe",
-                      "--value-renderer-font-size": "42px",
-                      "--value-renderer-max-lines": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  title="--"
-                  type="button"
-                >
-                  --
-                </button>
-              </div>
-              <span
-                className="iot--value-card__attribute-unit"
-                data-testid="Card-attribute-0-unit"
-                style={
-                  Object {
-                    "--default-font-size": "1.25rem",
-                  }
-                }
-              >
-                Wh
-              </span>
-            </div>
-          </div>
-          <div
-            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--vertical"
-            style={
-              Object {
-                "--value-card-attribute-width": "100%",
-              }
-            }
-          >
-            <div
-              className="iot--value-card__attribute-label"
-            >
-              <span
-                data-testid="Card-attribute-1-threshold-label"
-              >
-                Yearly summary
-              </span>
-            </div>
-            <div
-              className="iot--value-card__attribute"
-            >
-              <div
-                className="iot--value-card__value-renderer--wrapper"
-              >
-                <button
-                  aria-describedby={null}
-                  aria-pressed={null}
-                  className="iot--value-card__value-renderer--value iot--value-card__value-renderer--value--vertical iot--btn bx--btn bx--btn--ghost"
-                  data-testid="Button"
-                  disabled={false}
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onFocus={[Function]}
-                  onMouseEnter={[Function]}
-                  onMouseLeave={[Function]}
-                  style={
-                    Object {
-                      "--value-renderer-color": "#0f62fe",
-                      "--value-renderer-font-size": "42px",
-                      "--value-renderer-max-lines": 1,
-                    }
-                  }
-                  tabIndex={0}
-                  title="--"
-                  type="button"
-                >
-                  --
-                </button>
-              </div>
-              <span
-                className="iot--value-card__attribute-unit"
-                data-testid="Card-attribute-1-unit"
-                style={
-                  Object {
-                    "--default-font-size": "1.25rem",
-                  }
-                }
-              >
-                Wh
-              </span>
             </div>
           </div>
         </div>
