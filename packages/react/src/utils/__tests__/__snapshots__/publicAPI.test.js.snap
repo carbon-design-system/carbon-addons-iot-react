@@ -10636,9 +10636,14 @@ Map {
   "SideNav" => Object {
     "defaultProps": Object {
       "defaultExpanded": false,
+      "hasSearch": false,
       "i18n": Object {
         "closeText": "Close",
+        "emptySearchText": "No matches found",
         "openText": "Open",
+        "searchCloseButtonLabelText": "Clear search input",
+        "searchLabelText": "Find navigation item",
+        "searchPlaceholder": "Find navigation item...",
         "sideNavLabelText": "Side navigation",
         "submenuLabel": "dropdown",
       },
@@ -10649,13 +10654,28 @@ Map {
       "defaultExpanded": Object {
         "type": "bool",
       },
+      "hasSearch": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
             "closeText": Object {
               "type": "string",
             },
+            "emptySearchText": Object {
+              "type": "string",
+            },
             "openText": Object {
+              "type": "string",
+            },
+            "searchCloseButtonLabelText": Object {
+              "type": "string",
+            },
+            "searchLabelText": Object {
+              "type": "string",
+            },
+            "searchPlaceholder": Object {
               "type": "string",
             },
             "sideNavLabelText": Object {
@@ -10746,6 +10766,9 @@ Map {
                   "type": "oneOfType",
                 },
                 "isEnabled": Object {
+                  "type": "bool",
+                },
+                "isPinned": Object {
                   "type": "bool",
                 },
                 "linkContent": Object {
@@ -11217,13 +11240,28 @@ Map {
             "defaultExpanded": Object {
               "type": "bool",
             },
+            "hasSearch": Object {
+              "type": "bool",
+            },
             "i18n": Object {
               "args": Array [
                 Object {
                   "closeText": Object {
                     "type": "string",
                   },
+                  "emptySearchText": Object {
+                    "type": "string",
+                  },
                   "openText": Object {
+                    "type": "string",
+                  },
+                  "searchCloseButtonLabelText": Object {
+                    "type": "string",
+                  },
+                  "searchLabelText": Object {
+                    "type": "string",
+                  },
+                  "searchPlaceholder": Object {
                     "type": "string",
                   },
                   "sideNavLabelText": Object {
@@ -11314,6 +11352,9 @@ Map {
                         "type": "oneOfType",
                       },
                       "isEnabled": Object {
+                        "type": "bool",
+                      },
+                      "isPinned": Object {
                         "type": "bool",
                       },
                       "linkContent": Object {
