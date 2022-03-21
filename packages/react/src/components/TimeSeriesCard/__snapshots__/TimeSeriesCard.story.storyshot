@@ -960,7 +960,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <p
                     className="bx--batch-summary__para"
                   >
-                    <span>
+                    <span
+                      dir="auto"
+                    >
                       0 items selected
                     </span>
                   </p>
@@ -2824,7 +2826,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <div
               className="bx--pagination iot--pagination bx--pagination--lg"
               data-testid="TimeSeries-table-table-pagination"
-              forwardedRef={[Function]}
               style={
                 Object {
                   "--pagination-text-display": "flex",

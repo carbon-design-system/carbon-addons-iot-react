@@ -169,7 +169,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span>
+                      <span
+                        dir="auto"
+                      >
                         0 items selected
                       </span>
                     </p>
@@ -1930,7 +1932,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               <div
                 className="bx--pagination iot--pagination bx--pagination--lg"
                 data-testid="BarChartCard-table-table-pagination"
-                forwardedRef={[Function]}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -2376,6 +2377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -2819,6 +2821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           >
             
             <div
+              aria-describedby={null}
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

@@ -25,7 +25,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -64,6 +66,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           
           <div
+            aria-describedby={null}
             aria-label="Toolbar tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
@@ -243,7 +246,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -518,7 +520,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -791,7 +792,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -1071,7 +1071,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -1351,7 +1350,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -1624,7 +1622,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -1904,7 +1901,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -2184,7 +2180,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -2457,7 +2452,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -2737,7 +2731,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -3017,7 +3010,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -3290,7 +3282,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -3570,7 +3561,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -3850,7 +3840,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -4123,7 +4112,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -4403,7 +4391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -4683,7 +4670,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -4956,7 +4942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -5236,7 +5221,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -5516,7 +5500,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -5789,7 +5772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -6069,7 +6051,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -6349,7 +6330,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -6622,7 +6602,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -6902,7 +6881,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -7182,7 +7160,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -7455,7 +7432,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -7735,7 +7711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -8015,7 +7990,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -8288,7 +8262,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -8568,7 +8541,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -8848,7 +8820,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -9121,7 +9092,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -9401,7 +9371,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -9681,7 +9650,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -9954,7 +9922,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -10234,7 +10201,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -10514,7 +10480,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -10787,7 +10752,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -11067,7 +11031,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -11347,7 +11310,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -11620,7 +11582,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -11900,7 +11861,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -12180,7 +12140,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -12453,7 +12412,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -12733,7 +12691,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -13013,7 +12970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -13286,7 +13242,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -13566,7 +13521,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -13846,7 +13800,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -14119,7 +14072,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -14399,7 +14351,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -14679,7 +14630,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -14952,7 +14902,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -15232,7 +15181,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -15512,7 +15460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -15785,7 +15732,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -16065,7 +16011,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -16345,7 +16290,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -16618,7 +16562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -16898,7 +16841,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -17178,7 +17120,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -17451,7 +17392,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -17731,7 +17671,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -18011,7 +17950,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -18284,7 +18222,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -18564,7 +18501,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -18844,7 +18780,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -19117,7 +19052,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -19397,7 +19331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -19677,7 +19610,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -19950,7 +19882,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -20230,7 +20161,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -20510,7 +20440,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -20783,7 +20712,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -21063,7 +20991,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -21343,7 +21270,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -21616,7 +21542,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -21896,7 +21821,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -22176,7 +22100,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -22449,7 +22372,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -22729,7 +22651,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -23009,7 +22930,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -23282,7 +23202,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -23562,7 +23481,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -23842,7 +23760,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -24115,7 +24032,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -24395,7 +24311,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -24675,7 +24590,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -24948,7 +24862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -25228,7 +25141,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -25508,7 +25420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -25781,7 +25692,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -26061,7 +25971,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -26341,7 +26250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -26614,7 +26522,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -26894,7 +26801,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -27174,7 +27080,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -27447,7 +27352,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -27727,7 +27631,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -28007,7 +27910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -32490,7 +32392,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -33013,7 +32917,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -33485,7 +33391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--manage-views-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 className="bx--checkbox"
@@ -33832,7 +33737,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -34061,7 +33968,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <div
               className="bx--dropdown__wrapper bx--list-box__wrapper"
               data-testid="TableViewDropdown"
-              renderSelectedItem={[Function]}
             >
               
               <div
@@ -34087,7 +33993,44 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <span
                     className="bx--list-box__label"
                   >
-                    Filters and search view
+                    <div
+                      className="iot--view-dropdown__item"
+                      data-testid="TableViewDropdownItem-view2"
+                      title="Filters and search view - Edited"
+                    >
+                      <span
+                        className="iot--view-dropdown__button-prefix"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M30.94,15.66A16.69,16.69,0,0,0,16,5,16.69,16.69,0,0,0,1.06,15.66a1,1,0,0,0,0,.68A16.69,16.69,0,0,0,16,27,16.69,16.69,0,0,0,30.94,16.34,1,1,0,0,0,30.94,15.66ZM16,25c-5.3,0-10.9-3.93-12.93-9C5.1,10.93,10.7,7,16,7s10.9,3.93,12.93,9C26.9,21.07,21.3,25,16,25Z"
+                          />
+                          <path
+                            d="M16,10a6,6,0,1,0,6,6A6,6,0,0,0,16,10Zm0,10a4,4,0,1,1,4-4A4,4,0,0,1,16,20Z"
+                          />
+                        </svg>
+                        <span>
+                          View: 
+                        </span>
+                      </span>
+                      <span>
+                        Filters and search view
+                        <span
+                          className="iot--view-dropdown__edited-text"
+                        >
+                           - Edited
+                        </span>
+                      </span>
+                    </div>
                   </span>
                   <div
                     className="bx--list-box__menu-icon"
@@ -34162,7 +34105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -34835,8 +34777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -34907,8 +34848,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -35063,8 +35003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -35111,8 +35050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -35171,8 +35109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -35263,7 +35200,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -35619,7 +35555,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -36015,7 +35950,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -36411,7 +36345,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -36800,7 +36733,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -37163,7 +37095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -37559,7 +37490,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -37948,7 +37878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -38344,7 +38273,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -38707,7 +38635,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     <div
                       className="bx--form-item bx--checkbox-wrapper"
-                      onClick={[Function]}
                     >
                       <input
                         checked={false}
@@ -39045,7 +38972,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
-        forwardedRef={[Function]}
         style={
           Object {
             "--pagination-text-display": "flex",
@@ -39912,7 +39838,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -40145,7 +40073,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -40411,8 +40338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="string"
                             onBlur={[Function]}
@@ -40482,8 +40408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="date"
                             onBlur={[Function]}
@@ -40658,8 +40583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="number"
                             onBlur={[Function]}
@@ -40705,8 +40629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="boolean"
                             onBlur={[Function]}
@@ -40763,8 +40686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="object"
                             onBlur={[Function]}
@@ -40807,7 +40729,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -41063,7 +40984,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -41319,7 +41239,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -41575,7 +41494,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -41831,7 +41749,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -42087,7 +42004,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -42343,7 +42259,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -42599,7 +42514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -42855,7 +42769,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -43111,7 +43024,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -43355,7 +43267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
-      forwardedRef={[Function]}
       style={
         Object {
           "--pagination-text-display": "flex",
@@ -43618,7 +43529,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -46951,7 +46864,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
-        forwardedRef={[Function]}
         style={
           Object {
             "--pagination-text-display": "flex",
@@ -47285,7 +47197,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -47720,8 +47634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="string"
                               onBlur={null}
@@ -47791,8 +47704,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="date"
                               onBlur={null}
@@ -47978,8 +47890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="number"
                               onBlur={null}
@@ -48025,8 +47936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="boolean"
                               onBlur={null}
@@ -48083,8 +47993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                             data-invalid={null}
                           >
                             <input
-                              aria-describedby=""
-                              className="bx--text-input"
+                              className="bx--text-input bx--text-input--md"
                               disabled={false}
                               id="object"
                               onBlur={null}
@@ -53926,7 +53835,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <div
         className="bx--pagination iot--pagination bx--pagination--lg"
         data-testid="table-table-pagination"
-        forwardedRef={[Function]}
         style={
           Object {
             "--pagination-text-display": "flex",
@@ -57346,6 +57254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       
                       <div
+                        aria-describedby={null}
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -92385,7 +92294,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               4 items selected
             </span>
           </p>
@@ -92523,7 +92434,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -92812,7 +92722,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -93100,7 +93009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -93395,7 +93303,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -93690,7 +93597,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -93978,7 +93884,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -94266,7 +94171,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -94554,7 +94458,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -94849,7 +94752,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -95144,7 +95046,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -95432,7 +95333,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -95727,7 +95627,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -96022,7 +95921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -96317,7 +96215,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -96612,7 +96509,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -96907,7 +96803,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -97202,7 +97097,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -97497,7 +97391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -97792,7 +97685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -98029,7 +97921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
-      forwardedRef={[Function]}
       style={
         Object {
           "--pagination-text-display": "flex",
@@ -98346,7 +98237,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -98444,6 +98337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               aria-controls="flyout-tooltip"
+              aria-describedby="flyout-tooltip"
               aria-expanded={true}
               aria-label="advanced-filter-flyout-icon"
               className="bx--tooltip__label"
@@ -98632,8 +98526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
+                                  className="bx--text-input bx--text-input--md"
                                   defaultValue="whiteboard"
                                   disabled={false}
                                   id="string"
@@ -98691,8 +98584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
+                                  className="bx--text-input bx--text-input--md"
                                   disabled={false}
                                   id="date"
                                   onChange={[Function]}
@@ -98835,8 +98727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
+                                  className="bx--text-input bx--text-input--md"
                                   disabled={false}
                                   id="number"
                                   onChange={[Function]}
@@ -98873,8 +98764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
+                                  className="bx--text-input bx--text-input--md"
                                   disabled={false}
                                   id="boolean"
                                   onChange={[Function]}
@@ -98907,8 +98797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                                 data-invalid={null}
                               >
                                 <input
-                                  aria-describedby=""
-                                  className="bx--text-input"
+                                  className="bx--text-input bx--text-input--md"
                                   disabled={false}
                                   id="object"
                                   onChange={[Function]}
@@ -99190,7 +99079,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -99440,7 +99328,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -99689,7 +99576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -99945,7 +99831,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -100201,7 +100086,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -100450,7 +100334,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -100706,7 +100589,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -100962,7 +100844,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -101211,7 +101092,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -101467,7 +101347,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -101723,7 +101602,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -101960,7 +101838,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="table-table-pagination"
-      forwardedRef={[Function]}
       style={
         Object {
           "--pagination-text-display": "flex",
