@@ -250,7 +250,7 @@ const SideNav = ({
             renderIcon={link.icon}
             isActive={link.isActive}
             data-testid={`${testId}-link-${index}`}
-            className={classnames({
+            className={classnames(link.metaData.className, {
               [`${iotPrefix}--side-nav__item--is-filtering`]: isFiltering,
             })}
             {...link.metaData}

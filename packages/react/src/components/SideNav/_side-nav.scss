@@ -39,7 +39,7 @@ $hoverBgColor: #2c2c2c;
     border-bottom-color: transparent;
   }
   .#{$prefix}--search-magnifier-icon {
-    left: 1rem;
+    left: $spacing-05;
   }
   .#{$prefix}--search-magnifier-icon,
   .#{$prefix}--search-close svg {
@@ -65,8 +65,10 @@ $hoverBgColor: #2c2c2c;
 
   .#{$iot-prefix}--side-nav__pinned-items {
     flex: none;
-    margin-bottom: -($spacing-05);
     border-bottom: 1px solid $ui-04;
+    & + .#{$prefix}--side-nav__items {
+      padding-top: 0;
+    }
   }
 
   .#{$iot-prefix}--side-nav__item--is-filtering .#{$prefix}--side-nav__submenu {

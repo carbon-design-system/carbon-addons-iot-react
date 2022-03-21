@@ -249,10 +249,10 @@ describe('SideNav', () => {
     // the mark tag.
     screen.getByTextContent = (text) => {
       return screen.getByText((content, node) => {
-        const childrenMathcing = Array.from(node?.children || []).some(
+        const childrenMatching = Array.from(node?.children || []).some(
           (child) => child.textContent === text
         );
-        return node.textContent === text && !childrenMathcing;
+        return node.textContent === text && !childrenMatching;
       });
     };
   });
