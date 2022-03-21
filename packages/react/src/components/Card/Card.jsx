@@ -23,6 +23,7 @@ import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunc
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
+import EmptyState from '../EmptyState/EmptyState';
 
 import CardToolbar from './CardToolbar';
 
@@ -88,9 +89,14 @@ const CardWrapper = React.forwardRef(
 
 /** Header components */
 export const CardHeader = (
-  { children, testId } // eslint-disable-line react/prop-types
+  { children, testId, hasSubtitle } // eslint-disable-line react/prop-types
 ) => (
-  <div data-testid={testId} className={`${iotPrefix}--card--header`}>
+  <div
+    data-testid={testId}
+    className={classnames(`${iotPrefix}--card--header`, {
+      [`${iotPrefix}--card--header--with-subtitle`]: hasSubtitle,
+    })}
+  >
     {children}
   </div>
 );
@@ -260,6 +266,7 @@ export const defaultProps = {
   footerContent: undefined,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   padding: 'default',
+  overrides: undefined,
 };
 
 /** Dumb component that renders the card basics */
@@ -300,6 +307,7 @@ const Card = (props) => {
     dateTimeMask,
     extraActions,
     padding,
+    overrides,
     ...others
   } = props;
 
@@ -312,11 +320,20 @@ const Card = (props) => {
       );
     }
   }, [availableActions]);
+
+  const ErrorMessage = overrides?.errorMessage?.component || EmptyState;
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
   const [cardSize, cardRef] = useSizeObserver();
 
-  const isSM = newSize === CARD_SIZES.SMALL;
+  const isSmall =
+    newSize === CARD_SIZES.SMALL ||
+    newSize === CARD_SIZES.SMALLWIDE ||
+    newSize === CARD_SIZES.SMALLFULL;
+  const isLargeThin = newSize === CARD_SIZES.LARGETHIN;
+  const isMediumThin = newSize === CARD_SIZES.MEDIUMTHIN;
+  const isSmallOrThin = isSmall || isMediumThin || isLargeThin;
 
   const dimensions = getCardMinSize(
     breakpoint,
@@ -457,6 +474,7 @@ const Card = (props) => {
         <CardHeader
           // TODO: remove deprecated testID prop in v3
           testId={`${testID || testId}-header`}
+          hasSubtitle={!!subtitle}
         >
           <CardTitle
             title={title}
@@ -546,22 +564,21 @@ const Card = (props) => {
             }}
             className={`${iotPrefix}--card--skeleton-wrapper`}
           >
-            <OptimizedSkeletonText
-              paragraph
-              lineCount={newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3}
-              width="100%"
-            />
+            <OptimizedSkeletonText paragraph lineCount={isSmallOrThin ? 2 : 3} width="100%" />
           </div>
         ) : error ? (
-          <EmptyMessageWrapper>
-            {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
-              ? strings.errorLoadingDataShortLabel
-              : `${strings.errorLoadingDataLabel} ${error}`}
-          </EmptyMessageWrapper>
+          <ErrorMessage
+            icon={isSmall ? '' : 'error'}
+            title={strings.errorLoadingDataShortLabel}
+            body={error}
+            {...overrides?.errorMessage?.props}
+          />
         ) : isEmpty && !isEditable ? (
-          <EmptyMessageWrapper>
-            {isSM ? strings.noDataShortLabel : strings.noDataLabel}
-          </EmptyMessageWrapper>
+          <ErrorMessage
+            title={isSmallOrThin ? strings.noDataShortLabel : strings.noDataLabel}
+            icon={isSmall ? '' : 'empty'}
+            {...overrides?.errorMessage?.props}
+          />
         ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
           [
             // first option is a function
