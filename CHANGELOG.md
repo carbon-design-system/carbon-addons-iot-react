@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.29...v2.149.0-next.30) (2022-03-21)
+
+
+### Bug Fixes
+
+* **readonlyvalue:** updates from feedback and support for inline small ([89ae044](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89ae0441130e9fbb0ee3d1ab37a833625ba30d20))
+* **scss:** small scss fix ([57f9c9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57f9c9b05c6101b3dfa7b61834074e853acd39e6))
+* **sidenav:** fix css lint and rtl issues ([75cafe5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/75cafe54abe38f373c5de28465d1b8f3bcdc6123))
+* **sidenav:** fix pr feedback ([2c9908d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2c9908d5fc780e512a640dde5e93318c8d8efad5))
+
+
+### Features
+
+* **readonlyvalue:** new component readonlyvalue ([a329ff1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a329ff126270e746e19b57252b928630fd3ebfb5))
+* **sidenav:** add possibility to pin links during search ([9b7dcd4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b7dcd48a389abbbcc6ca396a23d9a02805bd819)), closes [#3352](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3352)
+* **sidnav:** add search functionality ([c0794cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0794cfc9af8480274e4e520d1a88e48b2818193)), closes [#3352](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3352)
+
+
+
+
+
 # [2.149.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.28...v2.149.0-next.29) (2022-03-21)
 
 
