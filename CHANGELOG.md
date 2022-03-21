@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.26...v2.149.0-next.27) (2022-03-21)
+
+
+### Bug Fixes
+
+* **table:** allow searching by "false" boolean values ([b671d68](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b671d682ab1f7e4346bdb3508c167cc4224ad5f1))
+* minor style update in PageTitleBar storybook ([253bffe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/253bffeab6b72b0372f5874e52c1335e07f4ee44))
+
+
+
+
+
 # [2.149.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.25...v2.149.0-next.26) (2022-03-18)
 
 **Note:** Version bump only for package ibm-ai-applications
