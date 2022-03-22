@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableManageViewsModal With callbacks implemented 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableManageViewsModal With callbacks implemented 1`] = `
 <div
   className="storybook-container"
 >
@@ -1439,7 +1439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableManageViewsModal with custom row actions, custom rendering and no Pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableManageViewsModal With custom row actions, custom rendering and no Pagination 1`] = `
 <div
   className="storybook-container"
 >

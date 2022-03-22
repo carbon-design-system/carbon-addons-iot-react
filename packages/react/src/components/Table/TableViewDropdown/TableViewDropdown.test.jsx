@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { mount } from 'enzyme';
 import { Dropdown } from 'carbon-components-react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
 import { settings } from '../../../constants/Settings';
@@ -40,6 +41,69 @@ describe('TableViewDropdown', () => {
   });
 
   describe('item rendering', () => {
+    it('hides standard actions on isHidingStandardActions:true', () => {
+      const {
+        viewAll,
+        saveAsNewView,
+        saveChanges,
+        manageViews,
+        edited,
+      } = TableViewDropdown.defaultProps.i18n;
+      const { rerender } = render(
+        <TableViewDropdown
+          selectedViewEdited
+          selectedViewId="view-1"
+          views={myViews}
+          actions={actions}
+        />
+      );
+      userEvent.click(screen.getByRole('button'));
+
+      expect(screen.getByRole('option', { name: viewAll })).toBeVisible();
+      expect(screen.getByRole('option', { name: `View 1 - ${edited}` })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 2' })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 3' })).toBeVisible();
+      expect(screen.queryByText(manageViews)).not.toBeNull();
+      expect(screen.queryByText(saveChanges)).not.toBeNull();
+      expect(screen.queryByText(saveAsNewView)).not.toBeNull();
+
+      rerender(<TableViewDropdown isHidingStandardActions views={myViews} actions={actions} />);
+
+      expect(screen.getByRole('option', { name: 'View 1' })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 2' })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 3' })).toBeVisible();
+      expect(screen.queryByText(manageViews)).toBeNull();
+      expect(screen.queryByText(saveChanges)).toBeNull();
+      expect(screen.queryByText(saveAsNewView)).toBeNull();
+
+      // Unlikely configuration with an edited selected view when isHidingStandardActions
+      // is true but just to make sure none of the default actions items are ever displayed
+      // in this scenario
+      rerender(
+        <TableViewDropdown
+          isHidingStandardActions
+          selectedViewEdited
+          selectedViewId="view-1"
+          views={[
+            ...myViews,
+            {
+              id: 'custom-action',
+              text: 'Custom test action',
+            },
+          ]}
+          actions={actions}
+        />
+      );
+
+      expect(screen.getByRole('option', { name: `View 1 - ${edited}` })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 2' })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'View 3' })).toBeVisible();
+      expect(screen.getByRole('option', { name: 'Custom test action' })).toBeVisible();
+      expect(screen.queryByText(manageViews)).toBeNull();
+      expect(screen.queryByText(saveChanges)).toBeNull();
+      expect(screen.queryByText(saveAsNewView)).toBeNull();
+    });
+
     it('adds a "view all" default item to the start of the list of views', () => {
       const wrapper = mount(
         <TableViewDropdown views={myViews} actions={actions} selectedViewId={myViews[2].id} />

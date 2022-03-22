@@ -1,5 +1,6 @@
-import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
+import { Component, HostBinding, Input, ViewEncapsulation } from '@angular/core';
 import { TableHeadCell } from 'carbon-components-angular';
+import { AITableHeaderItem } from '../table-model.class';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -7,7 +8,12 @@ import { TableHeadCell } from 'carbon-components-angular';
   template: `
     <ng-container *ngIf="!skeleton">
       <button
-        class="bx--table-sort"
+        class="bx--table-sort table-header-label iot--table-head--table-header"
+        [ngClass]="{
+          'table-header-label-start': column.alignment === 'start',
+          'table-header-label-center': column.alignment === 'center',
+          'table-header-label-end': column.alignment === 'end'
+        }"
         *ngIf="this.sort.observers.length > 0 && column.sortable"
         [attr.aria-label]="
           (column.sorted && column.ascending ? getSortDescendingLabel() : getSortAscendingLabel())
@@ -22,11 +28,13 @@ import { TableHeadCell } from 'carbon-components-angular';
       >
         <span
           *ngIf="!column.template"
-          class="table-head-cell-text"
+          class="bx--table-header-label"
           [title]="column.data"
           tabindex="-1"
         >
-          {{ column.data }}
+          <span>
+            {{ column.data }}
+          </span>
         </span>
         <ng-template
           [ngTemplateOutlet]="column.template"
@@ -59,6 +67,7 @@ import { TableHeadCell } from 'carbon-components-angular';
         aria-haspopup="true"
         [ibmTooltip]="column.filterTemplate"
         trigger="click"
+        [attr.data-floating-menu-container]="true"
         [title]="getFilterTitle() | async"
         placement="bottom,top"
         [data]="column.filterData"
@@ -79,4 +88,5 @@ import { TableHeadCell } from 'carbon-components-angular';
 })
 export class AITableHeadCell extends TableHeadCell {
   @HostBinding('class.iot--table-head-cell') cssClass = true;
+  @Input() column: AITableHeaderItem;
 }

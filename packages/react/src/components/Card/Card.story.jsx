@@ -112,6 +112,11 @@ export const Basic = () => {
           renderExpandIcon={Tree16}
           onFocus={action('onFocus')}
           tabIndex={0}
+          padding={select(
+            'Apply padding to the card content or not (padding)',
+            ['default', 'none'],
+            'default'
+          )}
         />
       </CardStoryStateManager>
     </div>
@@ -190,7 +195,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}
@@ -423,11 +428,15 @@ export const ImplementingACustomCard = () => {
         availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
         onCardAction={action('onCardAction')}
         hideHeader
+        padding={select(
+          'Apply padding to the card content or not (padding)',
+          ['default', 'none'],
+          'none'
+        )}
       >
         {!isEditable
           ? (_$, { cardToolbar, values }) => (
               <Table
-                style={{ width: 'calc(100% + 2rem)', transform: 'translateX(-1rem)' }}
                 id="my table"
                 secondaryTitle={title}
                 columns={[

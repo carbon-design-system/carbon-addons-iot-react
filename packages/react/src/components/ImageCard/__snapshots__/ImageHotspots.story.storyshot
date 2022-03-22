@@ -669,8 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input iot--hotspot-content-title-input"
+                        className="bx--text-input iot--hotspot-content-title-input bx--text-input--md"
                         data-testid="hotspot-content-75-40-title-test"
                         defaultValue=""
                         disabled={false}

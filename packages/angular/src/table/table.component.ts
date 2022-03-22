@@ -55,7 +55,17 @@ import { Table } from 'carbon-components-angular';
         [skeleton]="skeleton"
         *ngIf="model.totalDataLength; else noDataTemplate"
       ></tbody>
-      <ng-template #noDataTemplate><ng-content></ng-content></ng-template>
+      <ng-template #noDataTemplate>
+        <tbody>
+          <tr class="iot--empty-table--table-row">
+            <td colspan="100%">
+              <div class="empty-table-cell--default">
+                <ng-content></ng-content>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </ng-template>
       <tfoot>
         <ng-template [ngTemplateOutlet]="footerTemplate"> </ng-template>
         <tr *ngIf="this.model.isLoading">

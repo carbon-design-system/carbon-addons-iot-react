@@ -1,13 +1,11 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import classnames from 'classnames';
 
 import Button from '../../Button/Button';
+import { settings } from '../../../constants/Settings';
 
-const StyledFooterButtons = styled.div`
-  display: flex;
-  margin: auto 0 auto auto;
-`;
+const { iotPrefix } = settings;
 
 const propTypes = {
   onNext: PropTypes.func.isRequired,
@@ -56,7 +54,10 @@ const WizardFooter = ({
     {footerLeftContent && (
       <div className="WizardInline-custom-footer-content">{footerLeftContent}</div>
     )}
-    <StyledFooterButtons data-testid={testId} className={className}>
+    <div
+      data-testid={testId}
+      className={classnames(className, `${iotPrefix}--wizard-footer__buttons`)}
+    >
       {!hasPrev ? (
         <Button
           onClick={onCancel}
@@ -97,7 +98,7 @@ const WizardFooter = ({
           {submitLabel}
         </Button>
       )}
-    </StyledFooterButtons>
+    </div>
   </Fragment>
 );
 

@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
       </a>
     </p>
     <ul
-      className="bx--accordion bx--accordion--end"
+      className="bx--accordion bx--accordion--end bx--accordion--md"
     >
       <li
         className="bx--accordion__item"
@@ -3259,6 +3259,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   unstable_FeatureFlags
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_FlexGrid
                 </div>
                 <div
                   className="bx--structured-list-td"

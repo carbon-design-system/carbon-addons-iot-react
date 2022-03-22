@@ -1,0 +1,237 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Selection and batch actions
+
+The `Table` component supports both single and multiple row selection modes with the use of the prop
+`options.hasRowSelection`. Once the user selects at least one row from the table in multi selection
+mode, the batch action bar appears at the top of the table, presenting the user with actions they can take.
+
+### Selections
+
+The `options.hasRowSelection` can be turned on using either the value `single` for single row selection or `multi`
+for multiple row selection. By default all rows are selectable but they can individually be made
+un-selectable by setting the row data object's `isSelectable` property to false.
+A table with hasRowSelection `multi` will automatically add checkboxes in front of each row using
+a extra column. For the StatefulTable the management of the the checkbox states are handled automatically,
+but the prop `view.table.selectedIds` can still be used to set the initial selection.
+
+```jsx
+...
+
+const preventSelection = (row) =>
+  row.values.status === 'RUNNING' ? { ...row, isSelectable: false } : row;
+
+return (
+  <StatefulTable
+    id="table"
+    columns={columns}
+    data={data.map(preventSelections)}
+    options={{
+      hasRowSelection: 'multi',
+    }}
+    view={{
+      table: {
+        selectedIds: ['row-4'],
+      },
+    }}
+  />
+);
+```
+
+### Batch actions
+
+Batch actions are functions that may be performed on multiple rows within a table. All batch actions are
+presented in a bar that temporarily hides the toolbar. By default the bar contains a "Cancel" button and
+clicking it in the StatefulTable will clear all selections and close the batch action bar. Deselecting all
+the selected rows will also close the batch actions bar. Additional batch actions can be added using the prop
+`view.toolbar.batchActions` which accepts an array of objects used to define the action as shown in the
+example below. All explicitly defined batch actions need to be handled programmatically except for the 'delete' action
+which is handled automatically by the StatefulTable.
+
+```jsx
+<StatefulTable
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      // The onApplyBatchAction is used for all batch actions.
+      // The actionId is the string id of the action being triggered,
+      // and and the rowIds is an array with the ids if the rows the
+      // action was performed on.
+      onApplyBatchAction: (actionId, rowIds) => {
+        // Implement your actions here
+      },
+    },
+  }}
+  options={{ hasRowSelection: 'multi' }}
+  view={{
+    table: {
+      toolbar: {
+        batchActions: [
+          {
+            // Adding an action with id 'delete' will tell the StatefulTable to
+            // delete all the selected rows when the action is called.
+            id: 'delete',
+            labelText: 'Delete',
+            renderIcon: TrashCan16,
+            iconDescription: 'Delete Item',
+          },
+          {
+            id: 'createActivity',
+            labelText: 'Create activity',
+            renderIcon: Activity16,
+            iconDescription: 'Create activity from item',
+          },
+          {
+            id: 'process',
+            labelText: 'Process',
+          },
+          // items in the batch action toolbar can be hidden
+          {
+            id: 'hidden-not-overflow',
+            labelText: 'Hidden',
+            hidden: true,
+          },
+        ],
+      },
+    },
+  }}
+/>
+```
+
+By default, batch actions will appear in the toolbar as buttons, but can also be added to an overflow
+menu that will appear last in the batch action bar (just before the Cancel button). These overflow
+items can be disabled, hidden, marked as dangerous, or given icons as seen in the example below:
+
+```jsx
+<StatefulTable
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    toolbar: {
+      onApplyBatchAction: (actionId, rowIds) => {
+        // Implement your actions here
+      },
+    },
+  }}
+  options={{ hasRowSelection: 'multi' }}
+  view={{
+    table: {
+      toolbar: {
+        batchActions: [
+          {
+          // items can also be added to an overflow menu by setting `isOverflow:true`
+          {
+            id: 'reject',
+            labelText: 'Reject',
+            renderIcon: Error16,
+            iconDescription: 'Reject these items',
+            isOverflow: true,
+          },
+          // this item will appear in the menu, but be disabled
+          {
+            id: 'reassign',
+            labelText: 'Reassign',
+            isOverflow: true,
+            disabled: true,
+          },
+          // this item will be hidden from the menu
+          {
+            id: 'hidden',
+            labelText: 'Hide these items',
+            isOverflow: true,
+            hidden: true,
+          },
+          // `isDelete` marks the item as dangerous and will be red when hovered or focused, because
+          // `hasDivider` is also set, this item will have a divider above it separating it from
+          // other actions in the menu
+          {
+            id: 'expunge',
+            labelText: 'Expunge these records',
+            iconDescription: 'Expunge these records from the database',
+            renderIcon: TrashCan16,
+            isOverflow: true,
+            hasDivider: true,
+            isDelete: true,
+          },
+        ],
+      },
+    },
+  }}
+/>
+```
+
+### Programmatic selection and batch actions
+
+For the normal `Table` the callbacks and states of the selections and batch actions must be managed
+programmatically, including the Cancel and Delete callbacks. You can set which rows are currently selected
+through the `view.table.selectedIds` prop. This prop takes an array of selected row ids.
+There are props that let you set the state of the "select all" checkbox explicitly but that is normally
+not needed since it will be set automatically based on the selectedIds prop and the
+actual rows of the table. If the table has nested rows it will also automatically show the correct selected
+and indeterminate state of a parent row based on its children.
+
+The following code example shows how to implement the "delete" and "cancel" batch action using the normal Table.
+
+```jsx
+...
+
+const [selectedIds, setSelectedIds] = useState([]);
+const [data, setData] = useState(initialData);
+
+return (
+  <Table
+    id="table"
+    columns={columns}
+    data={data}
+    actions={{
+      toolbar: {
+        // Cancel the action, and unselect all currently selected rows
+        onCancelBatchAction: () => {
+          setSelectedIds([]);
+        },
+        // Apply correct action using the actionId string
+        // ActionId is the string id of the action being completed,
+        // The StatefulTable also receives the current selections as a second argument.
+        onApplyBatchAction: (actionId) => {
+          if (actionId === 'delete') {
+            setData((currentData) => currentData.filter(({ id }) => !selectedIds.includes(id)));
+            setSelectedIds([]);
+          }
+        },
+      },
+      table: {
+        // RowId is a string, selected is a boolean, selectedIds contain the new selection state.
+        // If all child rows of a parent row are selected the last event's selectedIds param will also
+        // contain the id of the now automatically selected parent.
+        onRowSelected: (rowId, selected, selectedIds) => {
+          setSelectedIds(selectedIds);
+        },
+        // AllSelected is a boolean which is true when all are selected, false otherwise
+        onSelectAll: (allSelected) => {
+          const newSelection = allSelected ? data.map(({ id }) => id) : [];
+          setSelectedIds(newSelection);
+        },
+      },
+    }}
+    options={{ hasRowSelection: 'multi' }}
+    view={{
+      toolbar: {
+        batchActions: [
+          {
+            id: 'delete',
+            labelText: 'Delete',
+            renderIcon: TrashCan16,
+            iconDescription: 'Delete Item',
+          },
+        ],
+      },
+      table: {
+        selectedIds,
+      },
+    }}
+  />
+);
+```

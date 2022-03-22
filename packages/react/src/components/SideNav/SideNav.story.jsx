@@ -1,6 +1,13 @@
 import React, { useState, createElement, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Switcher24, Chip24, Dashboard24, Group24, ParentChild24 } from '@carbon/icons-react';
+import {
+  Switcher24,
+  Chip24,
+  Dashboard24,
+  Group24,
+  ParentChild24,
+  Home24,
+} from '@carbon/icons-react';
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
 
@@ -29,7 +36,6 @@ const links = (isActive = false) => [
       tabIndex: 0,
       label: 'Boards',
       element: RouterComponent,
-      // isActive: true,
     },
     linkContent: 'Boards',
     childContent: [
@@ -142,8 +148,31 @@ export default {
 
 export const SideNavComponent = () => {
   const showDeepNesting = boolean('show deep nesting example', false);
+  const enableSearch = boolean('Enable searching (hasSearch)', true);
+  const demoPinnedLink = boolean('Demo pinned link during search', true);
+  const pinnedLinks = demoPinnedLink
+    ? [
+        {
+          icon: Home24,
+          isEnabled: true,
+          isPinned: true,
+          metaData: {
+            onClick: action('menu click'),
+            tabIndex: 0,
+            label: 'Home',
+            element: RouterComponent,
+          },
+          linkContent: 'Home',
+          isActive: true,
+        },
+      ]
+    : [];
+
+  const shallowLinks = [...links(!demoPinnedLink), ...pinnedLinks];
+
   const deepLinks = [
     ...links(),
+    ...pinnedLinks,
     {
       isEnabled: true,
       icon: ParentChild24,
@@ -196,16 +225,16 @@ export const SideNavComponent = () => {
                     element: 'button',
                   },
                   content: 'Grandchild Button',
-                  isActive: true,
+                  isActive: !demoPinnedLink,
                 },
                 {
                   metaData: {
-                    label: 'Grandchild Link',
-                    title: 'Grandchild Link',
+                    label: 'Grandchild Link with long label',
+                    title: 'Grandchild Link with long label',
                     href: 'https://www.ibm.com',
                     element: 'a',
                   },
-                  content: 'Grandchild Link',
+                  content: 'Grandchild Link with long label',
                 },
               ],
             },
@@ -244,8 +273,9 @@ export const SideNavComponent = () => {
               onClickSideNavExpand={onClickSideNavExpand}
             />
             <SideNav
-              links={showDeepNesting ? deepLinks : links(true)}
+              links={showDeepNesting ? deepLinks : shallowLinks}
               isSideNavExpanded={isSideNavExpanded}
+              hasSearch={enableSearch}
             />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
@@ -411,7 +441,7 @@ export const SideNavComponentWithState = () => {
               isSideNavExpanded={isSideNavExpanded}
               onClickSideNavExpand={onClickSideNavExpand}
             />
-            <SideNav links={linksState} isSideNavExpanded={isSideNavExpanded} />
+            <SideNav hasSearch={false} links={linksState} isSideNavExpanded={isSideNavExpanded} />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
             </div>

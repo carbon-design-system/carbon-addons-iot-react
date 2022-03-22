@@ -359,7 +359,7 @@ describe('PieChartCard', () => {
     userEvent.click(downloadBtn);
     // This means the csvDownloadHandler is firing
     expect(fileDownload).toHaveBeenCalledWith(
-      `J9DZ F37AP,Misc,JQAI 2M4L1,YEL48 Q6XK YEL48,L22I P66EP L22I P66EP,2V2N 9KYPM\n50,40,20,15,10,1,\n`,
+      `J9DZ F37AP,Misc,JQAI 2M4L1,YEL48 Q6XK YEL48,L22I P66EP L22I P66EP,2V2N 9KYPM\n50,40,20,15,10,1\n`,
       'Schools.csv'
     );
   });

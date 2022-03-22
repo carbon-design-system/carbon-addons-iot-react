@@ -21,3 +21,8 @@
     padding-left: $spacing-05;
   }
 }
+
+.#{$iot-prefix}--wizard-footer__buttons {
+  display: flex;
+  margin: auto 0 auto auto;
+}

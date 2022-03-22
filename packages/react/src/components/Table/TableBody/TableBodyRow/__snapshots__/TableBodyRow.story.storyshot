@@ -17,7 +17,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+            className="iot--table__row iot--table__row--unselectable"
             onClick={[Function]}
           >
             <td
@@ -26,7 +26,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onClick={[Function]}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
@@ -63,7 +68,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -149,7 +159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+            className="iot--table__row iot--table__row--selectable"
             onClick={[Function]}
           >
             <td
@@ -158,7 +168,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onClick={[Function]}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
@@ -195,7 +210,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -281,7 +301,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+            className="iot--table__row iot--table__row--selectable"
             onClick={[Function]}
           >
             <td
@@ -293,7 +313,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -328,11 +353,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+            className="bx--parent-row iot--expandable-tablerow"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
             onClick={[Function]}
+            style={
+              Object {
+                "--row-nesting-offset": "0px",
+              }
+            }
           >
             <td
               className="bx--table-expand"
@@ -372,7 +402,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -458,11 +493,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+            className="bx--parent-row iot--expandable-tablerow"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
             onClick={[Function]}
+            style={
+              Object {
+                "--row-nesting-offset": "0px",
+              }
+            }
           >
             <td
               className="bx--table-expand"
@@ -502,7 +542,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -633,11 +678,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+            className="bx--parent-row iot--expandable-tablerow"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
             onClick={[Function]}
+            style={
+              Object {
+                "--row-nesting-offset": "0px",
+              }
+            }
           >
             <td
               className="bx--table-expand"
@@ -677,7 +727,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -768,11 +823,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-live="polite"
         >
           <tr
-            className="bx--parent-row iot--expanded-tablerow TableBodyRow__StyledTableExpandRow-sc-103itxu-2 cTiOFn"
+            className="bx--parent-row iot--expandable-tablerow"
             data-child-count={0}
             data-nesting-offset={0}
             data-parent-row={true}
             onClick={[Function]}
+            style={
+              Object {
+                "--row-nesting-offset": "0px",
+              }
+            }
           >
             <td
               className="bx--table-expand"
@@ -812,7 +872,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               offset={0}
             >
               <span
-                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
               >
                 <span
                   className="iot--table__cell-text--no-wrap"
@@ -835,13 +900,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     aria-atomic="true"
-                    aria-labelledby="loading-id-10"
+                    aria-labelledby="loading-id-11"
                     aria-live="assertive"
                     className="bx--loading bx--loading--small"
                   >
                     <label
                       className="bx--visually-hidden"
-                      id="loading-id-10"
+                      id="loading-id-11"
                     >
                       Active loading indicator
                     </label>

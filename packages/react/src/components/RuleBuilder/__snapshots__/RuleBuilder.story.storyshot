@@ -552,8 +552,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       data-testid="rsiru4rjba-value"
                       defaultValue=""
                       disabled={false}
@@ -693,14 +692,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-694"
+                aria-controls="accordion-item-698"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -731,7 +730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-694"
+                id="accordion-item-698"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -750,8 +749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
+                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light bx--text-input--md"
                         data-testid="rule-builder-title-input"
                         disabled={false}
                         id="rule-builder-title-input"
@@ -786,8 +784,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby=""
-                          className="bx--text-input bx--text-input--light"
+                          className="bx--text-input bx--text-input--light bx--text-input--md"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -814,7 +811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-695"
+                aria-controls="accordion-item-699"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -845,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-695"
+                id="accordion-item-699"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -4227,8 +4224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       data-testid="rsiru4rjba-value"
                       defaultValue="45"
                       disabled={false}
@@ -4503,8 +4499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       data-testid="34bvyub9jq-value"
                       defaultValue="14"
                       disabled={false}
@@ -4856,8 +4851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         data-testid="ewc2z5kyfu-value"
                         defaultValue="46"
                         disabled={false}
@@ -5132,8 +5126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         data-testid="hks7h2zin4-value"
                         defaultValue="45"
                         disabled={false}
@@ -5485,8 +5478,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby=""
-                          className="bx--text-input bx--text-input--light"
+                          className="bx--text-input bx--text-input--light bx--text-input--md"
                           data-testid="wg9hlv197c-value"
                           defaultValue=""
                           disabled={false}
@@ -5838,8 +5830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input bx--text-input--light"
+                            className="bx--text-input bx--text-input--light bx--text-input--md"
                             data-testid="7kadk2wfv8-value"
                             defaultValue="44"
                             disabled={false}
@@ -6114,8 +6105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input bx--text-input--light"
+                            className="bx--text-input bx--text-input--light bx--text-input--md"
                             data-testid="49mf09vjhn-value"
                             defaultValue="46"
                             disabled={false}
@@ -6258,14 +6248,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end"
+            className="bx--accordion bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-734"
+                aria-controls="accordion-item-738"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6296,7 +6286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-734"
+                id="accordion-item-738"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -6315,8 +6305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
+                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light bx--text-input--md"
                         data-testid="rule-builder-title-input"
                         defaultValue="My Filter"
                         disabled={false}
@@ -6352,8 +6341,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby=""
-                          className="bx--text-input bx--text-input--light"
+                          className="bx--text-input bx--text-input--light bx--text-input--md"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -6461,7 +6449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-735"
+                aria-controls="accordion-item-739"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6492,7 +6480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-735"
+                id="accordion-item-739"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -6732,7 +6720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-testid="edit-table-table-body"
                           >
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                              className="iot--table__row iot--table__row--selectable"
                               onClick={[Function]}
                             >
                               <td
@@ -6744,7 +6732,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 offset={0}
                               >
                                 <span
-                                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                  className="iot--table__cell__offset"
+                                  style={
+                                    Object {
+                                      "--row-nesting-offset": "0px",
+                                    }
+                                  }
                                 >
                                   <span
                                     className=""
@@ -6763,7 +6756,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 offset={0}
                               >
                                 <span
-                                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                  className="iot--table__cell__offset"
+                                  style={
+                                    Object {
+                                      "--row-nesting-offset": "0px",
+                                    }
+                                  }
                                 >
                                   <span
                                     className=""
@@ -7014,7 +7012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             data-testid="read-table-table-body"
                           >
                             <tr
-                              className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                              className="iot--table__row iot--table__row--selectable"
                               onClick={[Function]}
                             >
                               <td
@@ -7026,7 +7024,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 offset={0}
                               >
                                 <span
-                                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                  className="iot--table__cell__offset"
+                                  style={
+                                    Object {
+                                      "--row-nesting-offset": "0px",
+                                    }
+                                  }
                                 >
                                   <span
                                     className=""
@@ -7045,7 +7048,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 offset={0}
                               >
                                 <span
-                                  className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                  className="iot--table__cell__offset"
+                                  style={
+                                    Object {
+                                      "--row-nesting-offset": "0px",
+                                    }
+                                  }
                                 >
                                   <span
                                     className=""

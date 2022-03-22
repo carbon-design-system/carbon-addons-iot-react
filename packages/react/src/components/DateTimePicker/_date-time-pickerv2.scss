@@ -38,6 +38,10 @@
     max-height: 40px;
     height: 40px;
 
+    [dir='rtl'] & {
+      padding-right: $spacing-05;
+    }
+
     // the whole thing should pickup the hover
     &:hover {
       background-color: inherit;
@@ -58,6 +62,8 @@
       padding-left: $spacing-05;
       overflow: hidden;
       text-overflow: ellipsis;
+      position: relative;
+
       & span {
         white-space: nowrap;
       }
@@ -74,6 +80,15 @@
       .#{$prefix}--tooltip__trigger.#{$prefix}--tooltip__trigger--definition.#{$prefix}--tooltip--bottom:focus {
         outline: unset;
       }
+
+      .#{$iot-prefix}--date-time-picker__tooltip-trigger {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+      }
     }
   }
 
@@ -89,6 +104,10 @@
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
     width: var(--wrapper-width);
+
+    .#{$prefix}--list__item:before {
+      display: none;
+    }
 
     .#{$prefix}--fieldset {
       margin-bottom: $spacing-06;

@@ -141,6 +141,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onCancelAdvancedFilter,
     onCreateAdvancedFilter,
     onToggleAggregations,
+    onApplyToolbarAction,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -226,6 +227,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onToggleAggregations: () => {
         dispatch(tableToggleAggregations());
         callbackParent(onToggleAggregations);
+      },
+      onApplyToolbarAction: (action) => {
+        callbackParent(onApplyToolbarAction, action);
       },
       onDownloadCSV,
     },

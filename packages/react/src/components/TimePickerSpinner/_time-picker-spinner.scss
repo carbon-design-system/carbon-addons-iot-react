@@ -39,9 +39,7 @@
   }
 
   .#{$prefix}--time-picker--invalid {
-    .#{$iot-prefix}--time-picker__controls {
-      bottom: calc(#{$spacing-06} - #{$spacing-01});
-    }
+    position: relative;
   }
 
   .#{$iot-prefix}--time-picker__controls {

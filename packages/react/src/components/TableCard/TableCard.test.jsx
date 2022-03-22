@@ -4,13 +4,11 @@ import userEvent from '@testing-library/user-event';
 import { Bee32 } from '@carbon/icons-react';
 import fileDownload from 'js-file-download';
 
-import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { tableColumns, tableData, actions2, actions1 } from '../../utils/sample';
 
 import TableCard from './TableCard';
 
-const { prefix } = settings;
 jest.mock('js-file-download');
 
 describe('TableCard', () => {
@@ -1010,7 +1008,7 @@ describe('TableCard', () => {
 
     userEvent.click(screen.getByRole('button', { name: /download/i }));
     expect(fileDownload).toHaveBeenCalledWith(
-      `alert,count,hour,long_description,pressure\nAHI005 Asset failure,1.2039201932,1563877570000,long description for a given event payload,0,\nAHI003 process need to optimize adjust X variables,1.10329291,1563873970000,long description for a given event payload,2,\n`,
+      `alert,count,hour,long_description,pressure\nAHI005 Asset failure,1.2039201932,1563877570000,long description for a given event payload,0\nAHI003 process need to optimize adjust X variables,1.10329291,1563873970000,long description for a given event payload,2\n`,
       'Open Alerts.csv'
     );
   });
@@ -1207,40 +1205,5 @@ describe('TableCard', () => {
       )
     );
     console.error = error;
-  });
-
-  it('should render expanded when isExpanded:true', () => {
-    const onCardAction = jest.fn();
-    render(
-      <TableCard
-        id="table-test"
-        title="Open Alerts"
-        content={{
-          columns: tableColumns,
-          showHeader: false,
-        }}
-        values={tableData.slice(0, 1)}
-        onCardAction={onCardAction}
-        size={CARD_SIZES.LARGE}
-        isExpanded
-      />
-    );
-
-    const styledStatefulTable = screen.getByTestId('table-for-card-table-test-table-container');
-    expect(styledStatefulTable).toHaveStyleRule('overflow-y', 'auto');
-    expect(styledStatefulTable).toHaveStyleRule('padding-bottom', '3rem');
-    expect(styledStatefulTable).toHaveStyleRule('position', 'fixed', {
-      modifier: `&&& .${prefix}--pagination`,
-    });
-    expect(styledStatefulTable).toHaveStyleRule('bottom', '25px', {
-      modifier: `&&& .${prefix}--pagination`,
-    });
-    expect(styledStatefulTable).toHaveStyleRule('width', 'calc(100% - 50px)', {
-      modifier: `&&& .${prefix}--pagination`,
-    });
-
-    expect(styledStatefulTable).toHaveStyleRule('display', 'none', {
-      modifier: `&&& .${prefix}--data-table thead`,
-    });
   });
 });

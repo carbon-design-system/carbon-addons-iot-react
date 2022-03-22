@@ -149,8 +149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -168,12 +167,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="table card_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="table card_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -2054,8 +2057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -2073,12 +2075,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="calculated_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -2676,8 +2682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="table card_title"
                         onChange={[Function]}
@@ -2695,12 +2700,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="table card_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="table card_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -4192,8 +4201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -4211,12 +4219,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="calculated_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -4606,8 +4618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input"
+                      className="bx--text-input bx--text-input--md"
                       disabled={false}
                       id="custom-content-textinput"
                       onChange={[Function]}
@@ -4647,8 +4658,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="calculated_title"
                       onChange={[Function]}
@@ -4679,8 +4689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="calculated_y-axis-label"
                       onChange={[Function]}
@@ -4711,8 +4720,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="calculated_unit-selection"
                       onChange={[Function]}
@@ -4743,8 +4751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="calculated_decimal-precision"
                       onChange={[Function]}
@@ -4775,8 +4782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="calculated_maximum_data_points"
                       onChange={[Function]}
@@ -5124,8 +5130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="calculated_title"
                         onChange={[Function]}
@@ -5143,12 +5148,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="calculated_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="calculated_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -5746,8 +5755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="image_title"
                         onChange={[Function]}
@@ -5765,12 +5773,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="image_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="image_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -6580,8 +6592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        aria-describedby=""
-                        className="bx--text-input bx--text-input--light"
+                        className="bx--text-input bx--text-input--light bx--text-input--md"
                         disabled={false}
                         id="timeseries_title"
                         onChange={[Function]}
@@ -6599,12 +6610,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <div
                   className="bx--form-item"
                 >
-                  <label
-                    className="bx--label"
-                    htmlFor="timeseries_description"
+                  <div
+                    className="bx--text-area__label-wrapper"
                   >
-                    Description (Optional)
-                  </label>
+                    <label
+                      className="bx--label"
+                      htmlFor="timeseries_description"
+                    >
+                      Description (Optional)
+                    </label>
+                  </div>
                   <div
                     className="bx--text-area__wrapper"
                     data-invalid={null}
@@ -7196,8 +7211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="timeseries_title"
                       onChange={[Function]}
@@ -7229,8 +7243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="timeseries_y-axis-label"
                       onChange={[Function]}
@@ -7262,8 +7275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="timeseries_unit-selection"
                       onChange={[Function]}
@@ -7295,8 +7307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="timeseries_decimal-precision"
                       onChange={[Function]}
@@ -7327,8 +7338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      aria-describedby=""
-                      className="bx--text-input bx--text-input--light"
+                      className="bx--text-input bx--text-input--light bx--text-input--md"
                       disabled={false}
                       id="timeseries_maximum_data_points"
                       onChange={[Function]}
@@ -7693,8 +7703,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          aria-describedby=""
-                          className="bx--text-input bx--text-input--light"
+                          className="bx--text-input bx--text-input--light bx--text-input--md"
                           disabled={false}
                           id="card-1_title"
                           onChange={[Function]}
@@ -7712,12 +7721,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   <div
                     className="bx--form-item"
                   >
-                    <label
-                      className="bx--label"
-                      htmlFor="card-1_description"
+                    <div
+                      className="bx--text-area__label-wrapper"
                     >
-                      Description (Optional)
-                    </label>
+                      <label
+                        className="bx--label"
+                        htmlFor="card-1_description"
+                      >
+                        Description (Optional)
+                      </label>
+                    </div>
                     <div
                       className="bx--text-area__wrapper"
                       data-invalid={null}

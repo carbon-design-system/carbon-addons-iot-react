@@ -27,8 +27,91 @@ $hoverBgColor: #2c2c2c;
     > .#{$prefix}--side-nav__link:hover
     > span,
   .#{$prefix}--side-nav__menu .#{$prefix}--side-nav__link--current > span,
-  .#{$prefix}--side-nav__link--current > span {
+  .#{$prefix}--side-nav__link--current > span,
+  .#{$prefix}--search-input {
     color: $textColor;
+  }
+
+  .#{$prefix}--search {
+    // Prevent the close button from overlaying the magnifier when side nav is collapsed
+    min-width: $spacing-11;
+    margin-bottom: -($spacing-05);
+  }
+  .#{$prefix}--search-input,
+  .#{$prefix}--search-close:hover {
+    border-bottom-color: transparent;
+  }
+  .#{$prefix}--search-magnifier-icon {
+    left: $spacing-05;
+  }
+  .#{$prefix}--search-magnifier-icon,
+  .#{$prefix}--search-close svg {
+    fill: $inverse-01;
+  }
+
+  .#{$prefix}--search-close {
+    &:hover,
+    &:active {
+      background-color: $hoverBgColor;
+    }
+    &::before {
+      background-color: transparent;
+    }
+  }
+
+  .#{$prefix}--search-input {
+    background-color: $ui-05;
+    &::placeholder {
+      color: $ui-03;
+    }
+  }
+
+  .#{$iot-prefix}--side-nav__pinned-items {
+    flex: none;
+    border-bottom: 1px solid $ui-04;
+    & + .#{$prefix}--side-nav__items {
+      padding-top: 0;
+    }
+  }
+
+  .#{$iot-prefix}--side-nav__item--is-filtering .#{$prefix}--side-nav__submenu {
+    pointer-events: none;
+    .#{$prefix}--side-nav__submenu-chevron {
+      display: none;
+    }
+  }
+
+  .#{$iot-prefix}--side-nav__item--is-filtering .#{$prefix}--side-nav__link-text {
+    display: inline-flex;
+    mark {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: pre;
+      flex-shrink: 1;
+      background: $ui-01;
+      color: $interactive-04;
+    }
+
+    span {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: pre;
+      flex-shrink: 2;
+    }
+  }
+
+  .#{$iot-prefix}--side-nav__empty-search-msg {
+    margin: $spacing-07 $spacing-09 $spacing-05 $spacing-09;
+    color: $textColor;
+    display: none;
+    @include type-style('body-short-01');
+  }
+
+  &.#{$iot-prefix}--side-nav--expanded,
+  &.#{$prefix}--side-nav--expanded {
+    .#{$iot-prefix}--side-nav__empty-search-msg {
+      display: block;
+    }
   }
 
   .#{$prefix}--side-nav__icon > svg {
@@ -75,6 +158,17 @@ html[dir='rtl'] {
   .#{$iot-prefix}--side-nav {
     left: unset;
     right: 0;
+
+    &.#{$prefix}--side-nav--rail {
+      &:not(.#{$prefix}--side-nav--expanded) {
+        .#{$prefix}--search-close {
+          display: none;
+        }
+      }
+    }
+    .#{$prefix}--search {
+      min-width: unset;
+    }
   }
 
   .#{$prefix}--side-nav__icon:not(.#{$prefix}--side-nav__submenu-chevron) {

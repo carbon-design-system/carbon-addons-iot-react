@@ -94,6 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Facility Metrics with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -305,6 +306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Bar chart
                   </div>
@@ -403,6 +405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Humidity
                   </div>
@@ -510,6 +513,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Show tooltip when the card title has ellipsis 
                   </div>
@@ -660,6 +664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Utilization
                   </div>
@@ -769,6 +774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Alert Count
                   </div>
@@ -906,6 +912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Comfort Level
                   </div>
@@ -1030,6 +1037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Foot Traffic
                   </div>
@@ -1165,6 +1173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -1324,6 +1333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -1453,6 +1463,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Temperature with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -1599,7 +1610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -1893,6 +1904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -2422,6 +2434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Environment
                   </div>
@@ -2570,6 +2583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Floor Map
                   </div>
@@ -3036,6 +3050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Facility Metrics with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -3247,6 +3262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Bar chart
                   </div>
@@ -3345,6 +3361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Humidity
                   </div>
@@ -3452,6 +3469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Show tooltip when the card title has ellipsis 
                   </div>
@@ -3602,6 +3620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Utilization
                   </div>
@@ -3711,6 +3730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Alert Count
                   </div>
@@ -3848,6 +3868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Comfort Level
                   </div>
@@ -3972,6 +3993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Foot Traffic
                   </div>
@@ -4107,6 +4129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -4266,6 +4289,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -4395,6 +4419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Temperature with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -4541,7 +4566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -4835,6 +4860,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -5364,6 +5390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Environment
                   </div>
@@ -5512,6 +5539,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Floor Map
                   </div>
@@ -6013,6 +6041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Facility Metrics with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -6224,6 +6253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Bar chart
                   </div>
@@ -6322,6 +6352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Humidity
                   </div>
@@ -6429,6 +6460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Show tooltip when the card title has ellipsis 
                   </div>
@@ -6579,6 +6611,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Utilization
                   </div>
@@ -6688,6 +6721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Alert Count
                   </div>
@@ -6825,6 +6859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Comfort Level
                   </div>
@@ -6949,6 +6984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Foot Traffic
                   </div>
@@ -7084,6 +7120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -7243,6 +7280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -7372,6 +7410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Temperature with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -7518,7 +7557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -7812,6 +7851,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -8341,6 +8381,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Environment
                   </div>
@@ -8489,6 +8530,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Floor Map
                   </div>
@@ -8955,6 +8997,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   Expanded card
                 </div>
@@ -9135,6 +9178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Expanded card
                   </div>
@@ -9402,6 +9446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   Expanded card
                 </div>
@@ -9580,7 +9625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 ghyGJn iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
                   data-testid="table-for-card-expandedcard-table-container"
                 >
                   <section
@@ -9836,6 +9881,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-expandedcard"
                         id="table-for-card-expandedcard"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -10176,7 +10222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                           data-testid="table-for-card-expandedcard-table-body"
                         >
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10189,7 +10235,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10209,7 +10260,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10229,7 +10285,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10249,7 +10310,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10269,7 +10335,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10281,7 +10352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10294,7 +10365,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10314,7 +10390,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10334,7 +10415,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10354,7 +10440,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10374,7 +10465,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10386,7 +10482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10399,7 +10495,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10419,7 +10520,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10439,7 +10545,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10459,7 +10570,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10479,7 +10595,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10491,7 +10612,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10504,7 +10625,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10524,7 +10650,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10544,7 +10675,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10564,7 +10700,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10584,7 +10725,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10596,7 +10742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10609,7 +10755,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10629,7 +10780,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10649,7 +10805,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10669,7 +10830,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10689,7 +10855,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10701,7 +10872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10714,7 +10885,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10734,7 +10910,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10754,7 +10935,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10774,7 +10960,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10794,7 +10985,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10806,7 +11002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                             </td>
                           </tr>
                           <tr
-                            className="TableBodyRow__StyledTableRow-sc-103itxu-0 fNIOnc"
+                            className="iot--table__row iot--table__row--selectable"
                             onClick={[Function]}
                           >
                             <td
@@ -10819,7 +11015,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10839,7 +11040,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10859,7 +11065,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10879,7 +11090,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10899,7 +11115,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                               width=""
                             >
                               <span
-                                className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                                className="iot--table__cell__offset"
+                                style={
+                                  Object {
+                                    "--row-nesting-offset": "0px",
+                                  }
+                                }
                               >
                                 <span
                                   className=""
@@ -10914,7 +11135,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                       </table>
                     </div>
                   </div>
-                  <div />
                   <div
                     className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                     data-testid="table-for-card-expandedcard-table-pagination"
@@ -11286,6 +11506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Facility Metrics with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -11497,6 +11718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Bar chart
                   </div>
@@ -11595,6 +11817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Humidity
                   </div>
@@ -11702,6 +11925,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Show tooltip when the card title has ellipsis 
                   </div>
@@ -11852,6 +12076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Utilization
                   </div>
@@ -11961,6 +12186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Alert Count
                   </div>
@@ -12098,6 +12324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Comfort Level
                   </div>
@@ -12222,6 +12449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Foot Traffic
                   </div>
@@ -12357,6 +12585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -12516,6 +12745,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -12645,6 +12875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Temperature with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -12791,7 +13022,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -13085,6 +13316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -13614,6 +13846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Environment
                   </div>
@@ -13762,6 +13995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Floor Map
                   </div>
@@ -14228,6 +14462,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
               >
                 <div
                   className="iot--card--title--text"
+                  data-testid="Card-title-notip"
                 >
                   No options card
                 </div>
@@ -14371,6 +14606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 13 
                     </div>
@@ -14472,6 +14708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1352 steps
                     </div>
@@ -14575,6 +14812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 103.2 ËšF
                     </div>
@@ -14678,6 +14916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 107324.3 kJ
                     </div>
@@ -14781,6 +15020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1709384.1 people
                     </div>
@@ -14884,6 +15124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: false 
                     </div>
@@ -14993,6 +15234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: true 
                     </div>
@@ -15179,6 +15421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 13 
                     </div>
@@ -15280,6 +15523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1352 steps
                     </div>
@@ -15383,6 +15627,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 103.2 ËšF
                     </div>
@@ -15486,6 +15731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 107324.3 kJ
                     </div>
@@ -15589,6 +15835,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1709384.1 people
                     </div>
@@ -15692,6 +15939,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: false 
                     </div>
@@ -15801,6 +16049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: true 
                     </div>
@@ -15987,6 +16236,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16090,6 +16340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16195,6 +16446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16326,6 +16578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16532,6 +16785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16635,6 +16889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16740,6 +16995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -16871,6 +17127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -17077,6 +17334,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17197,6 +17455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17322,6 +17581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17450,6 +17710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17643,6 +17904,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17763,6 +18025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -17888,6 +18151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -18016,6 +18280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -18209,6 +18474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18312,6 +18578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18415,6 +18682,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18518,6 +18786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18621,6 +18890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18797,6 +19067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -18900,6 +19171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -19003,6 +19275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -19106,6 +19379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -19209,6 +19483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -19385,6 +19660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 13 
                     </div>
@@ -19486,6 +19762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1352 steps
                     </div>
@@ -19589,6 +19866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 103.2 ËšF
                     </div>
@@ -19692,6 +19970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 107324.3 kJ
                     </div>
@@ -19795,6 +20074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1709384.1 people
                     </div>
@@ -19898,6 +20178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: false 
                     </div>
@@ -20011,6 +20292,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: true 
                     </div>
@@ -20124,6 +20406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -20227,6 +20510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -20332,6 +20616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -20463,6 +20748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -20596,6 +20882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -20716,6 +21003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -20841,6 +21129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -20969,6 +21258,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -21089,6 +21379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -21192,6 +21483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -21295,6 +21587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -21398,6 +21691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -21501,6 +21795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -21677,6 +21972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 13 
                     </div>
@@ -21778,6 +22074,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1352 steps
                     </div>
@@ -21881,6 +22178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 103.2 ËšF
                     </div>
@@ -21984,6 +22282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 107324.3 kJ
                     </div>
@@ -22087,6 +22386,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: 1709384.1 people
                     </div>
@@ -22190,6 +22490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: false 
                     </div>
@@ -22303,6 +22604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       value: true 
                     </div>
@@ -22416,6 +22718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -22519,6 +22822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -22624,6 +22928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -22755,6 +23060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Temperature
                     </div>
@@ -22888,6 +23194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -23008,6 +23315,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -23133,6 +23441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -23261,6 +23570,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -23381,6 +23691,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -23484,6 +23795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -23587,6 +23899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -23690,6 +24003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -23793,6 +24107,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -23969,6 +24284,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 89.2%, 76 mb
                     </div>
@@ -24125,6 +24441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -24279,6 +24596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -24508,6 +24826,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 89.2%, 76 mb
                     </div>
@@ -24664,6 +24983,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -24818,6 +25138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -25047,6 +25368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 89.2%, 76 mb
                     </div>
@@ -25259,6 +25581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -25441,6 +25764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -25725,6 +26049,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 89.2%, 76 mb
                     </div>
@@ -25937,6 +26262,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -26119,6 +26445,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       values: 88.3ËšF, Elevated
                     </div>
@@ -26403,6 +26730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -26598,6 +26926,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -26869,6 +27198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -27064,6 +27394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -27335,6 +27666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -27598,6 +27930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -27799,6 +28132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -28137,6 +28471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Humidity
                     </div>
@@ -28400,6 +28735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -28601,6 +28937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Danger Level
                     </div>
@@ -28968,6 +29305,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Facility Metrics with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -29179,6 +29517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Bar chart
                   </div>
@@ -29277,6 +29616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Humidity
                   </div>
@@ -29384,6 +29724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Show tooltip when the card title has ellipsis 
                   </div>
@@ -29534,6 +29875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Utilization
                   </div>
@@ -29643,6 +29985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Alert Count
                   </div>
@@ -29780,6 +30123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Comfort Level
                   </div>
@@ -29904,6 +30248,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Foot Traffic
                   </div>
@@ -30039,6 +30384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -30198,6 +30544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Health
                   </div>
@@ -30327,6 +30674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Temperature with a very long title that should be truncated and have a tooltip for the full text 
                   </div>
@@ -30473,7 +30821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 }
               >
                 <div
-                  className="TableCard__StyledStatefulTable-q9l5bz-0 kPwgSQ iot--table-container bx--data-table-container"
+                  className="iot--table-card__table iot--table-container bx--data-table-container"
                   data-testid="table-for-card-alert-table1-table-container"
                 >
                   <section
@@ -30767,6 +31115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                         className="bx--data-table bx--data-table--no-border"
                         data-testid="table-for-card-alert-table1"
                         id="table-for-card-alert-table1"
+                        showHeader={true}
                         title={null}
                       >
                         <thead
@@ -31296,6 +31645,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Environment
                   </div>
@@ -31444,6 +31794,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                 >
                   <div
                     className="iot--card--title--text"
+                    data-testid="Card-title-notip"
                   >
                     Floor Map
                   </div>
@@ -33411,6 +33762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Tutorials
                     </div>
@@ -33616,6 +33968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ð
                   >
                     <div
                       className="iot--card--title--text"
+                      data-testid="Card-title-notip"
                     >
                       Announcements
                     </div>

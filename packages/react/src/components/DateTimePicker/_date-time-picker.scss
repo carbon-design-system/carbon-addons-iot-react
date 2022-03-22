@@ -144,6 +144,10 @@
       z-index: 9100;
       &.#{$iot-prefix}--date-time-picker__menu-expanded {
         display: block;
+
+        .#{$prefix}--list__item:before {
+          display: none;
+        }
       }
 
       .#{$iot-prefix}--date-time-picker__menu-scroll {

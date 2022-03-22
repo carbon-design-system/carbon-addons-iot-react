@@ -3,6 +3,7 @@ import React from 'react';
 import { merge, pick } from 'lodash-es';
 import { screen, render, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Screen16, ViewOff16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
 
@@ -903,5 +904,92 @@ describe('stateful table with real reducer', () => {
     expect(container.querySelectorAll('tr')).toHaveLength(101);
     expect(screen.getByTitle('String')).toBeVisible();
     expect(screen.getByTitle('Date')).toBeVisible();
+  });
+
+  describe('toolbarActions in toolbar', () => {
+    beforeEach(() => {
+      jest
+        .spyOn(HTMLElement.prototype, 'getBoundingClientRect')
+        .mockImplementation(() => ({ width: 100, height: 100 }));
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it('should add items to the toolbarActions overflow menu', async () => {
+      const onApplyToolbarAction = jest.fn();
+      const toolbarActions = [
+        {
+          id: 'in-toolbar',
+          labelText: 'Do something',
+          renderIcon: Screen16,
+        },
+        {
+          id: 'edit',
+          labelText: 'Edit something',
+          disabled: true,
+          isOverflow: true,
+        },
+        {
+          id: 'hide',
+          labelText: 'Hide something',
+          renderIcon: ViewOff16,
+          hasDivider: true,
+          isOverflow: true,
+        },
+        {
+          id: 'delete',
+          labelText: 'Delete something',
+          isDelete: true,
+          isOverflow: true,
+        },
+        {
+          id: 'hidden',
+          labelText: 'Hidden option',
+          hidden: true,
+          isOverflow: true,
+        },
+      ];
+
+      render(
+        <StatefulTable
+          columns={tableColumns}
+          data={[tableData[0]]}
+          actions={merge(mockActions, { toolbar: { onApplyToolbarAction } })}
+          view={{
+            toolbar: {
+              toolbarActions,
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByRole('button', { name: 'Do something' })).toBeVisible();
+      userEvent.click(screen.getByRole('button', { name: 'Do something' }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'in-toolbar',
+        labelText: 'Do something',
+        renderIcon: expect.anything(),
+      });
+
+      userEvent.click(screen.getByRole('button', { name: 'open and close list of options' }));
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: 'Edit something' })).toBeDisabled();
+      expect(screen.getByRole('menuitem', { name: /Hide something/ })).toBeVisible();
+      expect(screen.queryByRole('menuitem', { name: 'Hidden option' })).toBeNull();
+      expect(screen.getByRole('menuitem', { name: /Delete something/ })).toBeVisible();
+      expect(screen.getByRole('menuitem', { name: /Delete something/ }).parentNode).toHaveClass(
+        `${prefix}--overflow-menu-options__option--danger`
+      );
+      userEvent.click(screen.getByRole('menuitem', { name: /Hide something/ }));
+      expect(onApplyToolbarAction).toHaveBeenCalledWith({
+        id: 'hide',
+        labelText: 'Hide something',
+        renderIcon: expect.anything(),
+        hasDivider: true,
+        isOverflow: true,
+      });
+    });
   });
 });
