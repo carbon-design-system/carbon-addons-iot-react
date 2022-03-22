@@ -12,7 +12,7 @@ const StyledSimplePagination = styled.div`
 `;
 
 export default {
-  title: '1 - Watson IoT/SimplePagination',
+  title: '1 - Watson IoT/Pagination/SimplePagination',
 
   parameters: {
     component: SimplePagination,

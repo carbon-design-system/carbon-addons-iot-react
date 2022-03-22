@@ -55,7 +55,7 @@ const CardEditorInteractive = () => {
 };
 
 export default {
-  title: '2 - Watson IoT Experimental/☢️ CardEditor',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor/☢️ CardEditor',
   decorators: [withKnobs],
 
   parameters: {

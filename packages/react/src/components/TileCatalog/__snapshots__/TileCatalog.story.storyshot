@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog async loaded wait one second 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog async loaded wait one second 1`] = `
 <div
   className="storybook-container"
 >
@@ -144,7 +144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog default 1`] = `
 <div
   className="storybook-container"
 >
@@ -777,7 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog error 1`] = `
 <div
   className="storybook-container"
 >
@@ -807,7 +807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog isSelectedByDefault false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog isSelectedByDefault false 1`] = `
 <div
   className="storybook-container"
 >
@@ -1440,7 +1440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -1584,7 +1584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog with pages 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog with pages 1`] = `
 <div
   className="storybook-container"
 >
@@ -2183,7 +2183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalog with search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalog with search 1`] = `
 <div
   className="storybook-container"
 >

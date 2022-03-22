@@ -297,7 +297,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <input
-              className="bx--text-input bx--text-input--light bx--text-input--md"
+              aria-describedby=""
+              className="bx--text-input bx--text-input--light"
               data-testid="rsiru4rjba-value"
               defaultValue="45"
               disabled={false}
@@ -572,7 +573,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <input
-              className="bx--text-input bx--text-input--light bx--text-input--md"
+              aria-describedby=""
+              className="bx--text-input bx--text-input--light"
               data-testid="34bvyub9jq-value"
               defaultValue="14"
               disabled={false}
@@ -924,7 +926,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text-input--light bx--text-input--md"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="ewc2z5kyfu-value"
                 defaultValue="46"
                 disabled={false}
@@ -1199,7 +1202,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text-input--light bx--text-input--md"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="hks7h2zin4-value"
                 defaultValue="45"
                 disabled={false}
@@ -1551,7 +1555,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--light bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input bx--text-input--light"
                   data-testid="wg9hlv197c-value"
                   defaultValue=""
                   disabled={false}
@@ -1903,7 +1908,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   data-invalid={null}
                 >
                   <input
-                    className="bx--text-input bx--text-input--light bx--text-input--md"
+                    aria-describedby=""
+                    className="bx--text-input bx--text-input--light"
                     data-testid="7kadk2wfv8-value"
                     defaultValue="44"
                     disabled={false}
@@ -2178,7 +2184,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   data-invalid={null}
                 >
                   <input
-                    className="bx--text-input bx--text-input--light bx--text-input--md"
+                    aria-describedby=""
+                    className="bx--text-input bx--text-input--light"
                     data-testid="49mf09vjhn-value"
                     defaultValue="46"
                     disabled={false}
@@ -2612,7 +2619,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <input
-              className="bx--text-input bx--text-input--light bx--text-input--md"
+              aria-describedby=""
+              className="bx--text-input bx--text-input--light"
               data-testid="rsiru4rjba-value"
               defaultValue=""
               disabled={false}
@@ -3043,7 +3051,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             data-invalid={null}
           >
             <input
-              className="bx--text-input bx--text-input--light bx--text-input--md"
+              aria-describedby=""
+              className="bx--text-input bx--text-input--light"
               data-testid="rsiru4rjba-value"
               defaultValue=""
               disabled={false}

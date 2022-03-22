@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with data state, custom icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with data state, custom icon 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -69,7 +69,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               className="iot--data-state-grid"
             >
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-myStoryId"
@@ -106,7 +105,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </svg>
               </div>
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__label-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__label-myStoryId"
@@ -127,7 +125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </span>
               </div>
               <div
-                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__description-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__description-myStoryId"
@@ -163,14 +160,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with dataFilters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with dataFilters 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -344,14 +341,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with five data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with five data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -708,14 +705,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with four data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with four data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -1011,14 +1008,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with isEditable 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -1192,14 +1189,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with link and measurement unit  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with link and measurement unit  1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "624px",
       }
     }
@@ -1430,7 +1427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               }
             >
               <a
-                className="bx--link"
+                className="bx--link iot--value-card__attribute-secondary-value--link"
                 onClick={[Function]}
                 rel="noopener noreferrer"
               >
@@ -1445,14 +1442,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with long text, no units, no click handler 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with long text, no units, no click handler 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -1555,14 +1552,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with six data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with six data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -2041,14 +2038,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with three data points and thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with three data points and thresholds 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -2358,14 +2355,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds (string) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds (string) 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -2493,14 +2490,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -2631,14 +2628,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with trends, variables, and label 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with trends, variables, and label 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }

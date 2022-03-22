@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all card sizes 1`] = `
 <div
   className="storybook-container"
 >
@@ -574,7 +574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all cards as resizable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all cards as resizable 1`] = `
 <div
   className="storybook-container"
 >
@@ -886,7 +886,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 
                 <div
-                  aria-describedby={null}
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1900,7 +1899,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </button>
               </div>
               <ul
-                className="bx--accordion settings-accordion bx--accordion--end bx--accordion--md"
+                className="bx--accordion settings-accordion bx--accordion--end"
                 style={
                   Object {
                     "paddingTop": 0,
@@ -2138,9 +2137,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span
-                        dir="auto"
-                      >
+                      <span>
                         0 items selected
                       </span>
                     </p>
@@ -3187,6 +3184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <div
                 className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
+                forwardedRef={[Function]}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -3588,7 +3586,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     }
                   >
                     <div
-                      aria-describedby={null}
                       aria-labelledby="hotspot-35-65"
                       className="bx--tooltip__label"
                       id="hotspot-35-65"
@@ -4103,7 +4100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, custom layout 1`] = `
 <div
   className="storybook-container"
 >
@@ -4345,7 +4342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, default layouts 1`] = `
 <div
   className="storybook-container"
 >
@@ -4604,7 +4601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, is Editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, is Editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -4846,7 +4843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, resizable card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, resizable card 1`] = `
 <div
   className="storybook-container"
 >

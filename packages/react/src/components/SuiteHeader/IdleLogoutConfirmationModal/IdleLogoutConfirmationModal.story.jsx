@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import IdleLogoutConfirmationModal from './IdleLogoutConfirmationModal';
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader/IdleLogoutConfirmationModal',
+  title: '1 - Watson IoT/UI Shell/SuiteHeader/IdleLogoutConfirmationModal',
 
   parameters: {
     component: IdleLogoutConfirmationModal,

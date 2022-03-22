@@ -11,7 +11,7 @@ import StoryNotice, { deprecatedStoryTitle } from '../../internal/StoryNotice';
 import DashboardHeader from './DashboardHeader';
 
 export default {
-  title: '1 - Watson IoT/🚫 Dashboard Header',
+  title: '1 - Watson IoT/Deprecated/🚫 Dashboard Header',
 };
 
 export const Deprecated = () => <StoryNotice componentName="DashboardHeader" />;

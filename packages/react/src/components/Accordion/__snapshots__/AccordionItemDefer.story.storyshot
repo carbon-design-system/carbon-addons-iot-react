@@ -12,7 +12,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/A
     }
   >
     <ul
-      className="bx--accordion bx--accordion--end bx--accordion--md"
+      className="bx--accordion bx--accordion--end"
     >
       <li
         className="bx--accordion__item"

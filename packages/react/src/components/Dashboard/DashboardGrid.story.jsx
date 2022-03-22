@@ -95,7 +95,7 @@ const commonGridProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/Dashboard Grid',
+  title: '1 - Watson IoT/Dashboard',
   parameters: {
     docs: {
       page: DashboardGridREADME,

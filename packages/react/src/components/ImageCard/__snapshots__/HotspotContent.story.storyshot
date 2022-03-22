@@ -10,7 +10,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -180,7 +179,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -360,7 +358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}
@@ -586,7 +583,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
   >
     <div
       aria-controls="tooltip"
-      aria-describedby="tooltip"
       aria-expanded={true}
       className="bx--tooltip__trigger"
       onBlur={[Function]}

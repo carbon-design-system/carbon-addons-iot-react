@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DropDown/Dropdown Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -88,7 +88,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown Inline 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DropDown/Dropdown Inline 1`] = `
 <div
   className="storybook-container"
 >
@@ -171,7 +171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown Playground 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DropDown/Dropdown Playground 1`] = `
 <div
   className="storybook-container"
 >
@@ -260,7 +260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown Skeleton 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DropDown/Dropdown Skeleton 1`] = `
 <div
   className="storybook-container"
 >
@@ -286,7 +286,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown with icons and labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/DropDown/Dropdown with icons and labels 1`] = `
 <div
   className="storybook-container"
 >

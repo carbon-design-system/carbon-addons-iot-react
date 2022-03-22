@@ -650,9 +650,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               <p
                                 className="bx--batch-summary__para"
                               >
-                                <span
-                                  dir="auto"
-                                >
+                                <span>
                                   0 items selected
                                 </span>
                               </p>
@@ -1350,6 +1348,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                           data-testid="table-for-card-Table-table-pagination"
+                          forwardedRef={[Function]}
                           style={
                             Object {
                               "--pagination-text-display": "flex",
@@ -20003,9 +20002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <p
                               className="bx--batch-summary__para"
                             >
-                              <span
-                                dir="auto"
-                              >
+                              <span>
                                 0 items selected
                               </span>
                             </p>
@@ -20703,6 +20700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       <div
                         className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                         data-testid="table-for-card-Table-table-pagination"
+                        forwardedRef={[Function]}
                         style={
                           Object {
                             "--pagination-text-display": "flex",

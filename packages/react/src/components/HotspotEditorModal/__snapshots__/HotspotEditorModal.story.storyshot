@@ -1910,7 +1910,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-45-25"
                   className="bx--tooltip__label"
                   id="hotspot-45-25"
@@ -1997,7 +1996,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-0-0"
                   className="bx--tooltip__label"
                   id="hotspot-0-0"
@@ -2049,7 +2047,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-0-99.9"
                   className="bx--tooltip__label"
                   id="hotspot-0-99.9"
@@ -2101,7 +2098,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-99.9-99.9"
                   className="bx--tooltip__label"
                   id="hotspot-99.9-99.9"
@@ -2153,7 +2149,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-99.9-0"
                   className="bx--tooltip__label"
                   id="hotspot-99.9-0"
@@ -2246,7 +2241,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 }
               >
                 <div
-                  aria-describedby={null}
                   aria-labelledby="hotspot-35-65"
                   className="bx--tooltip__label"
                   id="hotspot-35-65"

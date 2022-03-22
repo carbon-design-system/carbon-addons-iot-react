@@ -89,7 +89,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -112,6 +113,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -138,6 +140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -302,7 +305,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -316,51 +320,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <ul
-            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end bx--accordion--md"
+            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
           >
-            <li
-              className="bx--accordion__item"
-              onAnimationEnd={[Function]}
-            >
-              <button
-                aria-controls="accordion-item-1610"
-                aria-expanded={false}
-                className="bx--accordion__heading"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="bx--accordion__arrow"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                  />
-                </svg>
-                <div
-                  className="bx--accordion__title"
-                  dir="auto"
-                >
-                  4 active filters
-                </div>
-              </button>
-              <div
-                className="bx--accordion__content"
-                id="accordion-item-1610"
-              >
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </li>
             <li
               className="bx--accordion__item"
               onAnimationEnd={[Function]}
@@ -392,12 +353,55 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="bx--accordion__title"
                   dir="auto"
                 >
-                  1 hidden column
+                  4 active filters
                 </div>
               </button>
               <div
                 className="bx--accordion__content"
                 id="accordion-item-1611"
+              >
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </div>
+            </li>
+            <li
+              className="bx--accordion__item"
+              onAnimationEnd={[Function]}
+            >
+              <button
+                aria-controls="accordion-item-1612"
+                aria-expanded={false}
+                className="bx--accordion__heading"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--accordion__arrow"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                  />
+                </svg>
+                <div
+                  className="bx--accordion__title"
+                  dir="auto"
+                >
+                  1 hidden column
+                </div>
+              </button>
+              <div
+                className="bx--accordion__content"
+                id="accordion-item-1612"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -410,6 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -436,6 +441,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -583,16 +589,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <div
             className="bx--form-item"
           >
-            <div
-              className="bx--text-area__label-wrapper"
+            <label
+              className="bx--label"
+              htmlFor="myTextArea"
             >
-              <label
-                className="bx--label"
-                htmlFor="myTextArea"
-              >
-                My custom form element
-              </label>
-            </div>
+              My custom form element
+            </label>
             <div
               className="bx--text-area__wrapper"
               data-invalid={null}
@@ -750,7 +752,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -773,6 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -799,6 +803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -963,7 +968,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -984,6 +990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={true}
@@ -1010,6 +1017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}

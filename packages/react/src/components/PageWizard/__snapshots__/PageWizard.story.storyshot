@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard With Horizontal ProgressIndicator 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard With Horizontal ProgressIndicator 1`] = `
 <div
   className="storybook-container"
 >
@@ -602,7 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard With Sticky Footer: stateful example w/ validation in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard With Sticky Footer: stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -686,7 +686,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -914,7 +913,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -947,7 +947,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"
@@ -1010,7 +1011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard With additional footer content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard With additional footer content 1`] = `
 <div
   className="storybook-container"
 >
@@ -1094,7 +1095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -1322,7 +1322,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -1355,7 +1356,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"
@@ -1475,7 +1477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard only one step, in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard only one step, in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -1559,7 +1561,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -1699,7 +1700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard stateful example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard stateful example 1`] = `
 <div
   className="storybook-container"
 >
@@ -2301,7 +2302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard stateful example w/ validation in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -2385,7 +2386,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}
@@ -2613,7 +2613,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="first-name"
                                 disabled={false}
                                 id="first-name"
@@ -2646,7 +2647,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                               data-invalid={null}
                             >
                               <input
-                                className="bx--text-input bx--text-input--md"
+                                aria-describedby=""
+                                className="bx--text-input"
                                 data-testid="last-name"
                                 disabled={false}
                                 id="last-name"
@@ -2709,7 +2711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard w/ i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard w/ i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -3311,7 +3313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageWizard wrapped in PageTitleBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/PageWizard wrapped in PageTitleBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -3395,7 +3397,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
             >
               
               <div
-                aria-describedby={null}
                 aria-label="More information"
                 className="bx--tooltip__trigger"
                 onBlur={[Function]}

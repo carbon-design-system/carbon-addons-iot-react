@@ -33,7 +33,7 @@ const CustomFooter = ({ setIsOpen, isOpen }) => {
 };
 
 export default {
-  title: '1 - Watson IoT/FlyoutMenu',
+  title: '1 - Watson IoT/Menus/FlyoutMenu',
 };
 
 export const DefaultExample = () => (

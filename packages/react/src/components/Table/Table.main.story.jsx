@@ -6,7 +6,6 @@ import { SettingsAdjust16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
-import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
@@ -20,7 +19,9 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import AggregationsREADME from './mdx/Aggregations.mdx';
 import SearchingREADME from './mdx/Searching.mdx';
+import StatesREADME from './mdx/States.mdx';
 import PaginationREADME from './mdx/Pagination.mdx';
 import ToolbarREADME from './mdx/Toolbar.mdx';
 import Table from './Table';
@@ -50,6 +51,8 @@ import {
   getHiddenOverflowRowAction,
   getHiddenRowAction,
   addMoreChildRowsToParent,
+  getCustomEmptyState,
+  getCustomErrorState,
   getCustomToolbarContentElement,
 } from './Table.story.helpers';
 
@@ -137,6 +140,7 @@ export const Playground = () => {
     loadingColumnCount,
     demoEmptyState,
     demoCustomEmptyState,
+    error: errorKnob,
     demoCustomErrorState,
     locale,
     batchActions,
@@ -203,25 +207,8 @@ export const Playground = () => {
 
   const customToolbarContentElement = getCustomToolbarContentElement();
 
-  const customEmptyState = (
-    <div key="empty-state">
-      <h1 key="empty-state-heading">Custom empty state</h1>
-      <p key="empty-state-message">Hey, no data!</p>
-    </div>
-  );
-
-  const customErrorState = (
-    <EmptyState
-      icon="error"
-      title="Error occurred while loading"
-      body="Custom Error message"
-      action={{
-        label: 'Reload',
-        onClick: action('onErrorStateAction'),
-        kind: 'ghost',
-      }}
-    />
-  );
+  const customEmptyState = getCustomEmptyState();
+  const customErrorState = getCustomErrorState();
 
   // INITIAL DATA STATE
   const [data, setData] = useStoryState(
@@ -301,14 +288,14 @@ export const Playground = () => {
   const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
   const emptyState = demoCustomEmptyState ? customEmptyState : undefined;
   const errorState = demoCustomErrorState ? customErrorState : undefined;
-  const error = demoCustomErrorState ? 'Error!' : undefined;
+  const error = demoCustomErrorState ? 'Error!' : errorKnob;
 
   // For demo and test purposes we generate an new key for the table when
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
   ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
-  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
+  ${searchFieldDefaultExpanded}${searchIsExpanded}${error}${demoCustomErrorState}`;
 
   return (
     <DragAndDrop>
@@ -648,6 +635,54 @@ WithRowNesting.parameters = {
   },
 };
 
+export const WithAggregations = () => {
+  const {
+    selectedTableType,
+    hasAggregations,
+    aggregationLabel,
+    aggregationsColumns,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasAggregations',
+      'aggregationLabel',
+      'aggregationsColumns',
+    ],
+    getDefaultValue: () => true,
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 10);
+  const columns = getTableColumns();
+  const actions = getTableActions();
+
+  const knobRegeneratedKey = `table${JSON.stringify(aggregationsColumns)}${aggregationLabel}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={actions}
+      columns={columns}
+      data={data}
+      options={{ hasAggregations }}
+      view={{
+        aggregations: {
+          label: aggregationLabel,
+          columns: aggregationsColumns,
+        },
+      }}
+    />
+  );
+};
+
+WithAggregations.storyName = 'With aggregations';
+WithAggregations.parameters = {
+  component: Table,
+  docs: {
+    page: AggregationsREADME,
+  },
+};
+
 export const WithFiltering = () => {
   const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
@@ -877,6 +912,78 @@ WithInlineActions.parameters = {
   component: Table,
   docs: {
     page: InlineActionsREADME,
+  },
+};
+
+export const WithMainViewStates = () => {
+  const {
+    selectedTableType,
+    tableIsLoading,
+    demoEmptyColumns,
+    loadingRowCount,
+    loadingColumnCount,
+    demoEmptyState,
+    demoCustomEmptyState,
+    error: errorKnob,
+    demoCustomErrorState,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'tableIsLoading',
+      'demoEmptyColumns',
+      'loadingRowCount',
+      'loadingColumnCount',
+      'demoEmptyState',
+      'demoCustomEmptyState',
+      'error',
+      'demoCustomErrorState',
+    ],
+    getDefaultValue: (name) =>
+      name !== 'demoEmptyColumns' &&
+      name !== 'demoEmptyState' &&
+      name !== 'demoCustomEmptyState' &&
+      name !== 'demoCustomErrorState',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = demoCustomEmptyState || demoEmptyState ? [] : getTableData();
+  const columns = getTableColumns();
+  const emptyState = demoCustomEmptyState ? getCustomEmptyState() : undefined;
+
+  // The "error" prop needs a value in order for the view.table.errorState
+  // to appear.
+  const error = demoCustomErrorState ? 'Error!' : errorKnob;
+  const errorState = demoCustomErrorState ? getCustomErrorState() : undefined;
+
+  const knobRegeneratedKey = `table${demoCustomEmptyState}${demoEmptyState}${demoCustomErrorState}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={demoEmptyColumns ? [] : columns}
+      data={data}
+      options={{}}
+      error={error}
+      view={{
+        table: {
+          errorState,
+          emptyState,
+          loadingState: {
+            rowCount: loadingRowCount,
+            columnCount: loadingColumnCount,
+            isLoading: tableIsLoading,
+          },
+        },
+      }}
+    />
+  );
+};
+WithMainViewStates.storyName = 'With main view states';
+WithMainViewStates.parameters = {
+  component: Table,
+  docs: {
+    page: StatesREADME,
   },
 };
 

@@ -562,7 +562,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     }
   >
     <div
-      aria-describedby={null}
       aria-labelledby="withoutIcon"
       className="bx--tooltip__label"
       id="withoutIcon"
@@ -601,7 +600,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       id="customIconOnly"
     >
       <div
-        aria-describedby={null}
         aria-label="Helpful Information"
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -668,7 +666,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     >
       Tooltip label
       <div
-        aria-describedby={null}
         aria-labelledby="customIcon"
         className="bx--tooltip__trigger"
         onBlur={[Function]}
@@ -763,7 +760,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   >
     <div
       aria-controls="uncontrolled"
-      aria-describedby="uncontrolled"
       aria-expanded={true}
       aria-labelledby="uncontrolled"
       className="bx--tooltip__label"

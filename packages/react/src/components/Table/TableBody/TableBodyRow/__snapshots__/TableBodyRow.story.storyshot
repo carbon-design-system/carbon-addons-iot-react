@@ -35,6 +35,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -177,6 +178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
+                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -759,7 +761,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   >
                     
                     <div
-                      aria-describedby={null}
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
