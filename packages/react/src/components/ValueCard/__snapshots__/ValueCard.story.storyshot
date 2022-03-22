@@ -1431,6 +1431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             >
               <a
                 className="bx--link iot--value-card__attribute-secondary-value--link"
+                data-testid="Card-attribute-1-secondary-value--link"
                 onClick={[Function]}
                 rel="noopener noreferrer"
               >
