@@ -8,7 +8,7 @@
   position: relative;
 
   .#{$prefix}--progress-bar__label {
-    @include carbon--type-style('productive-heading-01');
+    @include type-style('productive-heading-01');
     color: $text-01;
     margin-right: calc(#{$spacing-10} + #{$spacing-03});
     text-overflow: ellipsis;

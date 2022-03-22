@@ -1,3 +1,8 @@
+@use '../../globals/vars' as *;
+@use '../../globals/typography' as *;
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
+
 .#{$iot-prefix}--read-only-value {
   display: block;
   margin-bottom: $spacing-06;

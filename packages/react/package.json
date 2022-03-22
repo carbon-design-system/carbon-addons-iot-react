@@ -128,7 +128,7 @@
     "@babel/runtime": "^7.10.2",
     "@carbon/charts": "0.55.1",
     "@carbon/charts-react": "0.55.1",
-    "@carbon/styles": "0.12.0",
+    "@carbon/styles": "0.16.2",
     "@carbon/type": "10.40.0",
     "@carbon/colors": "10.35.0",
     "@carbon/icons-react": "10.46.0",

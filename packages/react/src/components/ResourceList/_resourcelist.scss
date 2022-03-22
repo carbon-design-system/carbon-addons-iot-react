@@ -1,5 +1,6 @@
-@import '~carbon-components/scss/globals/scss/vars';
-@import '../../globals/vars';
+@use '../../globals/vars' as *;
+@use '../../globals/theme' as *;
+@use '../../globals/spacing' as *;
 
 .#{$iot-prefix}--resource-list {
   &.#{$prefix}--structured-list--selection
