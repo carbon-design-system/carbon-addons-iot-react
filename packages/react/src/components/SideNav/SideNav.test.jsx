@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switcher24, Chip24, Group24, ParentChild24 } from '@carbon/icons-react';
+import { Switcher24, Chip24, Group24, ParentChild24, Home24 } from '@carbon/icons-react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -149,7 +149,117 @@ describe('SideNav', () => {
     },
   ];
 
+  const getDeeplyNestedlinks = (onClick) => [
+    {
+      isEnabled: true,
+      icon: ParentChild24,
+      metaData: {
+        label: 'Nested Levels',
+        element: 'button',
+      },
+      linkContent: 'Nested Levels',
+      childContent: [
+        {
+          metaData: {
+            label: 'Co-Parent Link',
+            title: 'Co-Parent Link',
+            element: 'a',
+            href: 'https://www.ibm.com',
+          },
+          content: 'Co-Parent Link',
+        },
+        {
+          metaData: {
+            label: 'Parent',
+            title: 'Parent',
+            element: 'button',
+          },
+          content: 'Parent',
+          linkContent: 'Parent',
+          childContent: [
+            {
+              metaData: {
+                label: 'Sibling 1 Link',
+                title: 'Sibling 1 Link',
+                element: 'a',
+                href: 'https://www.ibm.com',
+              },
+              content: 'Sibling 1 Link',
+            },
+            {
+              isEnabled: true,
+              metaData: {
+                label: 'Child',
+                element: 'button',
+              },
+              linkContent: 'Child',
+              childContent: [
+                {
+                  metaData: {
+                    label: 'Grandchild Button',
+                    title: 'Grandchild Button',
+                    onClick,
+                    element: 'button',
+                  },
+                  content: 'Grandchild Button',
+                  isActive: true,
+                },
+                {
+                  metaData: {
+                    label: 'Grandchild Link',
+                    title: 'Grandchild Link',
+                    href: 'https://www.ibm.com',
+                    element: 'a',
+                  },
+                  content: 'Grandchild Link',
+                },
+              ],
+            },
+            {
+              metaData: {
+                label: 'Sibling 2 Button',
+                title: 'Sibling 2 Button',
+                element: 'button',
+                onClick,
+              },
+              content: 'Sibling 2 Button',
+            },
+          ],
+        },
+        {
+          metaData: {
+            label: 'Co-Parent Button',
+            title: 'Co-Parent Button',
+            element: 'button',
+            onClick,
+          },
+          content: 'Co-Parent Button',
+        },
+      ],
+    },
+  ];
+
   let mockProps;
+
+  const { i18n } = SideNav.defaultProps;
+
+  beforeAll(() => {
+    // This is needed to find texts that have been split up in
+    // multiple DOM nodes, like when search result item texts are using
+    // the mark tag.
+    screen.getByTextContent = (text) => {
+      return screen.getByText((content, node) => {
+        const childrenMatching = Array.from(node?.children || []).some(
+          (child) => child.textContent === text
+        );
+        return node.textContent === text && !childrenMatching;
+      });
+    };
+  });
+
+  afterAll(() => {
+    delete screen.getByTextContent;
+  });
 
   beforeEach(() => {
     mockProps = {
@@ -221,100 +331,7 @@ describe('SideNav', () => {
 
   it('should render nested levels of children', () => {
     const onClick = jest.fn();
-    render(
-      <SideNav
-        {...mockProps}
-        links={[
-          {
-            isEnabled: true,
-            icon: ParentChild24,
-            metaData: {
-              label: 'Nested Levels',
-              element: 'button',
-            },
-            linkContent: 'Nested Levels',
-            childContent: [
-              {
-                metaData: {
-                  label: 'Co-Parent Link',
-                  title: 'Co-Parent Link',
-                  element: 'a',
-                  href: 'https://www.ibm.com',
-                },
-                content: 'Co-Parent Link',
-              },
-              {
-                metaData: {
-                  label: 'Parent',
-                  title: 'Parent',
-                  element: 'button',
-                },
-                content: 'Parent',
-                linkContent: 'Parent',
-                childContent: [
-                  {
-                    metaData: {
-                      label: 'Sibling 1 Link',
-                      title: 'Sibling 1 Link',
-                      element: 'a',
-                      href: 'https://www.ibm.com',
-                    },
-                    content: 'Sibling 1 Link',
-                  },
-                  {
-                    isEnabled: true,
-                    metaData: {
-                      label: 'Child',
-                      element: 'button',
-                    },
-                    linkContent: 'Child',
-                    childContent: [
-                      {
-                        metaData: {
-                          label: 'Grandchild Button',
-                          title: 'Grandchild Button',
-                          onClick,
-                          element: 'button',
-                        },
-                        content: 'Grandchild Button',
-                        isActive: true,
-                      },
-                      {
-                        metaData: {
-                          label: 'Grandchild Link',
-                          title: 'Grandchild Link',
-                          href: 'https://www.ibm.com',
-                          element: 'a',
-                        },
-                        content: 'Grandchild Link',
-                      },
-                    ],
-                  },
-                  {
-                    metaData: {
-                      label: 'Sibling 2 Button',
-                      title: 'Sibling 2 Button',
-                      element: 'button',
-                      onClick,
-                    },
-                    content: 'Sibling 2 Button',
-                  },
-                ],
-              },
-              {
-                metaData: {
-                  label: 'Co-Parent Button',
-                  title: 'Co-Parent Button',
-                  element: 'button',
-                  onClick,
-                },
-                content: 'Co-Parent Button',
-              },
-            ],
-          },
-        ]}
-      />
-    );
+    render(<SideNav {...mockProps} links={getDeeplyNestedlinks(onClick)} />);
 
     const expectToBeVisible = (text) => {
       expect(screen.getByText(text)).toBeVisible();
@@ -363,5 +380,203 @@ describe('SideNav', () => {
     expectToBeVisible('Grandchild Link');
     clickText('Grandchild Button');
     expect(onClick).toHaveBeenCalledTimes(3);
+  });
+
+  it('should render search field when hasSearch is true', () => {
+    const { rerender } = render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByTestId('side-nav-search')).toBeVisible();
+
+    rerender(<SideNav {...mockProps} />);
+    expect(screen.queryByTestId('side-nav-search')).toBeNull();
+  });
+
+  it('filters to show matched child leaf nodes and their parents when user types in the search field', () => {
+    render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Devices')).toBeVisible();
+    expect(screen.getByText('Members')).toBeVisible();
+    expect(screen.getByText('Members sub menu')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'ers sub');
+    expect(screen.queryByLabelText('Boards')).toBeNull();
+    expect(screen.queryByLabelText('Devices')).toBeNull();
+    // This is the parent of matched "Members sub menu"
+    expect(screen.getByText('Members')).toBeVisible();
+    expect(screen.getByText('Members')).toHaveClass('bx--side-nav__submenu-title');
+    // The original item text is split in multiple tags so we
+    // have to use a textContent search
+    expect(screen.getByTextContent('Members sub menu')).toBeVisible();
+  });
+
+  it('filters to show matched leaf nodes at top level when user types in the search field', () => {
+    render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Devices')).toBeVisible();
+    expect(screen.getByText('Members')).toBeVisible();
+    expect(screen.getByText('Members sub menu')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'Boa');
+    expect(screen.getByTextContent('Boards')).toBeVisible();
+    expect(screen.queryByLabelText('Devices')).toBeNull();
+    expect(screen.queryByText('Members')).toBeNull();
+    expect(screen.queryByText('Members sub menu')).toBeNull();
+  });
+
+  it('filters on deeply nested leaf nodes when user types in the search field', () => {
+    render(<SideNav {...mockProps} hasSearch links={getDeeplyNestedlinks(jest.fn())} />);
+    expect(screen.getByText('Grandchild Button')).toBeVisible();
+    expect(screen.getByText('Grandchild Link')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'Grandchild Butt');
+    expect(screen.getByTextContent('Grandchild Button')).toBeVisible();
+    expect(screen.queryByText('Grandchild Link')).toBeNull();
+  });
+
+  it('filters using case insensitive search', () => {
+    render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Devices')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'boards');
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.queryByLabelText('Devices')).toBeNull();
+  });
+
+  it('marks searched string in the filtered result', () => {
+    const { container } = render(<SideNav {...mockProps} hasSearch />);
+
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Devices')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'oard');
+
+    expect(container.querySelector('mark').innerHTML).toEqual('oard');
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.queryByLabelText('Devices')).toBeNull();
+  });
+
+  it('shows "No matches found" message and no links when search result is empty', () => {
+    render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Devices')).toBeVisible();
+    expect(screen.getByText('Members')).toBeVisible();
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'xxx');
+    expect(screen.getByText(i18n.emptySearchText)).toBeVisible();
+    expect(screen.queryByLabelText('Boards')).toBeNull();
+    expect(screen.queryByLabelText('Devices')).toBeNull();
+    expect(screen.queryByText('Members')).toBeNull();
+  });
+
+  it('removes parents from tab order in the search result', () => {
+    render(<SideNav {...mockProps} hasSearch />);
+    expect(screen.getByText('Members').closest('button')).not.toHaveAttribute('tabindex', '-1');
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'ers sub');
+    // This is the parent of matched "Members sub menu"
+    expect(screen.getByText('Members').closest('button')).toHaveAttribute('tabindex', '-1');
+  });
+
+  it('it always renders pinned links in a separate list when hasSearch is true', () => {
+    const homeClicked = jest.fn();
+    const myLinks = [
+      ...links,
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Home',
+          element: 'button',
+        },
+        linkContent: 'Home',
+        isActive: true,
+      },
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Another pinned',
+          element: 'a',
+        },
+        linkContent: 'Another pinned',
+        isActive: true,
+      },
+    ];
+    render(<SideNav links={myLinks} hasSearch />);
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Boards').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+
+    userEvent.type(screen.getByTestId('side-nav-search'), 'xxxx');
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.queryByLabelText('Boards')).toBeNull();
+  });
+
+  it('it does not render pinned links in a separate list when hasSearch is false', () => {
+    const homeClicked = jest.fn();
+    const myLinks = [
+      ...links,
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Home',
+          element: 'button',
+        },
+        linkContent: 'Home',
+        isActive: true,
+      },
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: homeClicked,
+          tabIndex: 0,
+          label: 'Another pinned',
+          element: 'a',
+        },
+        linkContent: 'Another pinned',
+        isActive: true,
+      },
+    ];
+    render(<SideNav links={myLinks} />);
+    expect(screen.getByLabelText('Home')).toBeVisible();
+    expect(screen.getByLabelText('Home').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Another pinned')).toBeVisible();
+    expect(screen.getByLabelText('Another pinned').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
+    expect(screen.getByLabelText('Boards')).toBeVisible();
+    expect(screen.getByLabelText('Boards').closest('ul')).not.toHaveClass(
+      `${iotPrefix}--side-nav__pinned-items`
+    );
   });
 });

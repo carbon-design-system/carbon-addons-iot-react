@@ -1884,4 +1884,58 @@ describe('TableHead', () => {
       );
     });
   });
+
+  describe('Column tooltips', () => {
+    const myProps = {
+      tableId: 'tablehead-test',
+      columns: [
+        { id: 'col1', name: 'Column 1', tooltip: 'this is a tooltip' },
+        { id: 'col2', name: 'Column 2', tooltip: 'this is a tooltip' },
+        { id: 'col3', name: 'Column 3', tooltip: 'this is a tooltip' },
+        { id: 'col4', name: 'Column 4', tooltip: 'this is a tooltip' },
+      ],
+      tableState: {
+        sort: {},
+        ordering: [
+          { columnId: 'col1' },
+          { columnId: 'col2' },
+          { columnId: 'col3' },
+          { columnId: 'col4' },
+        ],
+        selection: {},
+      },
+      options: {
+        wrapCellText: 'auto',
+        hasResize: true,
+        truncateCellText: false,
+      },
+      actions: { onChangeOrdering: jest.fn(), onColumnResize: jest.fn() },
+    };
+
+    it('shows right last column tooltip with align end when direction is left to right', () => {
+      document.dir = 'ltr';
+
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.hover(screen.getByText('Column 4'));
+      expect(screen.getByText('Column 4').parentElement).toHaveClass(
+        'bx--tooltip--align-end bx--tooltip--visible'
+      );
+    });
+
+    it('shows first visible column tooltip with align end when direction is right to left', () => {
+      document.dir = 'rtl';
+
+      render(<TableHead {...myProps} />, {
+        container: document.body.appendChild(document.createElement('table')),
+      });
+
+      userEvent.hover(screen.getByText('Column 1'));
+      expect(screen.getByText('Column 1').parentElement).toHaveClass(
+        'bx--tooltip--align-end bx--tooltip--visible'
+      );
+    });
+  });
 });

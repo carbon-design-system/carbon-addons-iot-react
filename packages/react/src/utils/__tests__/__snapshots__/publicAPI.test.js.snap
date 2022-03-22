@@ -5728,6 +5728,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -8266,9 +8296,14 @@ Map {
   "SideNav" => Object {
     "defaultProps": Object {
       "defaultExpanded": false,
+      "hasSearch": false,
       "i18n": Object {
         "closeText": "Close",
+        "emptySearchText": "No matches found",
         "openText": "Open",
+        "searchCloseButtonLabelText": "Clear search input",
+        "searchLabelText": "Find navigation item",
+        "searchPlaceholder": "Find navigation item...",
         "sideNavLabelText": "Side navigation",
         "submenuLabel": "dropdown",
       },
@@ -8279,13 +8314,28 @@ Map {
       "defaultExpanded": Object {
         "type": "bool",
       },
+      "hasSearch": Object {
+        "type": "bool",
+      },
       "i18n": Object {
         "args": Array [
           Object {
             "closeText": Object {
               "type": "string",
             },
+            "emptySearchText": Object {
+              "type": "string",
+            },
             "openText": Object {
+              "type": "string",
+            },
+            "searchCloseButtonLabelText": Object {
+              "type": "string",
+            },
+            "searchLabelText": Object {
+              "type": "string",
+            },
+            "searchPlaceholder": Object {
               "type": "string",
             },
             "sideNavLabelText": Object {
@@ -8376,6 +8426,9 @@ Map {
                   "type": "oneOfType",
                 },
                 "isEnabled": Object {
+                  "type": "bool",
+                },
+                "isPinned": Object {
                   "type": "bool",
                 },
                 "linkContent": Object {
@@ -8847,13 +8900,28 @@ Map {
             "defaultExpanded": Object {
               "type": "bool",
             },
+            "hasSearch": Object {
+              "type": "bool",
+            },
             "i18n": Object {
               "args": Array [
                 Object {
                   "closeText": Object {
                     "type": "string",
                   },
+                  "emptySearchText": Object {
+                    "type": "string",
+                  },
                   "openText": Object {
+                    "type": "string",
+                  },
+                  "searchCloseButtonLabelText": Object {
+                    "type": "string",
+                  },
+                  "searchLabelText": Object {
+                    "type": "string",
+                  },
+                  "searchPlaceholder": Object {
                     "type": "string",
                   },
                   "sideNavLabelText": Object {
@@ -8944,6 +9012,9 @@ Map {
                         "type": "oneOfType",
                       },
                       "isEnabled": Object {
+                        "type": "bool",
+                      },
+                      "isPinned": Object {
                         "type": "bool",
                       },
                       "linkContent": Object {
@@ -11823,6 +11894,7 @@ Map {
       "onScroll": undefined,
       "onTouchEnd": undefined,
       "onTouchStart": undefined,
+      "overrides": undefined,
       "padding": "default",
       "renderExpandIcon": undefined,
       "rowHeight": Object {
@@ -12576,6 +12648,36 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "padding": Object {
         "args": Array [
@@ -14968,6 +15070,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -16222,6 +16354,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -17300,6 +17462,36 @@ Map {
       },
       "onUpload": Object {
         "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "padding": Object {
         "args": Array [
@@ -18611,6 +18803,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -19851,6 +20073,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -20898,6 +21150,36 @@ Map {
       },
       "onTouchStart": Object {
         "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "padding": Object {
         "args": Array [
@@ -24891,6 +25173,36 @@ Map {
       "onTouchStart": Object {
         "type": "func",
       },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "padding": Object {
         "args": Array [
           Array [
@@ -27018,6 +27330,36 @@ Map {
       "onZoomOut": Object {
         "isRequired": true,
         "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "padding": Object {
         "args": Array [

@@ -3,6 +3,141 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.29...v2.149.0-next.30) (2022-03-21)
+
+
+### Bug Fixes
+
+* **readonlyvalue:** updates from feedback and support for inline small ([89ae044](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89ae0441130e9fbb0ee3d1ab37a833625ba30d20))
+* **scss:** small scss fix ([57f9c9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/57f9c9b05c6101b3dfa7b61834074e853acd39e6))
+* **sidenav:** fix css lint and rtl issues ([75cafe5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/75cafe54abe38f373c5de28465d1b8f3bcdc6123))
+* **sidenav:** fix pr feedback ([2c9908d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2c9908d5fc780e512a640dde5e93318c8d8efad5))
+
+
+### Features
+
+* **readonlyvalue:** new component readonlyvalue ([a329ff1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a329ff126270e746e19b57252b928630fd3ebfb5))
+* **sidenav:** add possibility to pin links during search ([9b7dcd4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b7dcd48a389abbbcc6ca396a23d9a02805bd819)), closes [#3352](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3352)
+* **sidnav:** add search functionality ([c0794cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c0794cfc9af8480274e4e520d1a88e48b2818193)), closes [#3352](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3352)
+
+
+
+
+
+# [2.149.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.28...v2.149.0-next.29) (2022-03-21)
+
+
+### Bug Fixes
+
+* **resourcelist:** added test case ([ffec38c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ffec38ca45fd858c9312caadd97953769259bd8f))
+* **resourcelist:** convert styled components to scss ([afcf457](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/afcf457cbf1531d10a54e5a2fd2ccc52aa0a63dd))
+* **resourcelist:** fix import ([638adf1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/638adf1c8676fed596b6ccdf9a2e7db218ba8d5e))
+* **resourcelist:** incorporated review comments ([ac08043](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac080438cb083aacf858737b095ec4c5f5f17a89))
+* **resourcelist:** incorporated review comments02 ([5c0ec36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5c0ec364dc6631eb57075c15995f1eb81ac155ef))
+* **resourcelist:** incorporated review comments03 ([7ae0311](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7ae0311ce9bc273d33ea223a16375f430a1103a4))
+* **table:** add cypress test ([c2de4d8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c2de4d89a53385e2209149dc1c8c77cf4d69e444))
+* **table:** remove unused import from story ([b66bf1a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b66bf1ad38f37862dde68e88cd0df41f52bf2ef2))
+* **table:** tooltip truncates and overlap ([b07f232](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b07f232feed8d2a6a4cc594038c15a822f9d3327))
+* **table:** update css ([d1d073f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d1d073f4cdf0a154420d5165c01fccc8ee73f0f3))
+* **table:** update snapshots ([1ebc82b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1ebc82be846b9fc32420f5ccd221a78e3091730d))
+
+
+
+
+
+# [2.149.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.27...v2.149.0-next.28) (2022-03-21)
+
+
+### Bug Fixes
+
+* **card:** style audit ([ac4a96c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac4a96ccd5ecb26bad14068c03b670b8caa0b68e))
+
+
+
+
+
+# [2.149.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.26...v2.149.0-next.27) (2022-03-21)
+
+
+### Bug Fixes
+
+* **table:** allow searching by "false" boolean values ([b671d68](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b671d682ab1f7e4346bdb3508c167cc4224ad5f1))
+* minor style update in PageTitleBar storybook ([253bffe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/253bffeab6b72b0372f5874e52c1335e07f4ee44))
+
+
+
+
+
+# [2.149.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.25...v2.149.0-next.26) (2022-03-18)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.24...v2.149.0-next.25) (2022-03-14)
+
+
+### Bug Fixes
+
+* **table-body-row:** fix rtl for nested rows ([3580216](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3580216eb682d6a3b6c580c310afd5d6977ecccc))
+
+
+### Features
+
+* **table:** make indention blocks white for expanded rows ([6885c0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6885c0f04d027926a0439ac8fca46037495015e5))
+* **table-body-row:** styling fixed for nested rows ([8429592](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8429592868925104c79d517d5118e65df83cfc5d))
+
+
+
+
+
+# [2.149.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.23...v2.149.0-next.24) (2022-03-14)
+
+
+### Bug Fixes
+
+* **table:** add align to tooltips ([2131ce3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2131ce3f8e5c9f75e032e1d5f41be6ddd4c7183c))
+* **table:** add mock up in  unit tests ([573a721](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/573a721bf241e2362948b3e97130e733f65d35a4))
+* **table:** added react tests ([6224ef1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6224ef1f7a6967b178be3aef8218965c0ac9f64b))
+* **table:** only flip the most right column ([87823c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87823c75f8048138504ac6867ad8c06a9ba57cd7))
+* **table:** update snapshots ([fb3b3d5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fb3b3d580d4f861ac501382124afd5ea5a2d15f8))
+* **table:** use useLangDirection ([97bf0b0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/97bf0b07bd553e8f3dcdf2747d149f76a16b9779))
+* added isOpen knob to test the change ([c41dd5a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c41dd5a0908fa2af783c5abc915f37f61b64c7c2))
+* resolve issues as mentioned in code review ([e8e0342](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8e034297c31ccd41ee6df09d0c0c915db331645))
+
+
+### Features
+
+* **ai-flyout-menu:** track open/close state ([583b732](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/583b7326d671397dde1588b2ef2b494cff0d3c4f))
+
+
+
+
+
+# [2.149.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.22...v2.149.0-next.23) (2022-03-14)
+
+
+### Bug Fixes
+
+* **color-dropdown:** replace dropdownTitleFixer hook ([a225c72](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a225c72e6c63b4d66987267d464e80728e173ffc))
+* **icon-dropdown:** replace dropdownTitleFixer hook ([2715b06](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2715b06e0c5f9fa16880b172d343e2ae45b0d430))
+* **simple-icon-dropdown:** add title to items in open dropdown ([c41feae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c41feaed8c9dd4111e65edc667fb93f055093802))
+* **simple-icon-dropdown:** replace dropdownTitleFixer hook ([313a98c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/313a98c57ce38d5ae8c771f1226892692bf34a08))
+* **table:** pass ref directly to pagination now ([4d0cda3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d0cda3662ae1779770b987c3d96f7aaf08af04b))
+* **table:** remove dropdownTitleFixer from TableViewDropdown ([3b8ba1f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3b8ba1ff53a95160c6b9f0efa34b5e6127bfb0b1))
+
+
+### Features
+
+* **repo:** remove dropdownHooks ([95ae36b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/95ae36bf2ba440058b93c19dd67451ab6308e152))
+* **repo:** upgrade to carbon 10.50 ([2774857](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/277485769b5185dae45a8000fe4a1b6fa863f22a))
+
+
+
+
+
 # [2.149.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.21...v2.149.0-next.22) (2022-03-07)
 
 

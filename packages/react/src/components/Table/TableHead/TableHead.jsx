@@ -11,6 +11,7 @@ import {
 import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
+import { useLangDirection } from 'use-lang-direction';
 
 import {
   TableColumnsPropTypes,
@@ -412,6 +413,7 @@ const TableHead = ({
   const showColumnGroups = columnGroups.some(({ id }) =>
     visibleColumns.find(({ columnGroupId }) => id === columnGroupId)
   );
+  const langDir = useLangDirection();
 
   return (
     <CarbonTableHead
@@ -498,6 +500,9 @@ const TableHead = ({
             ({ id }) => id === item.columnGroupId
           );
 
+          const rightmostColumn = langDir === 'ltr' ? lastVisibleColumn : visibleColumns[0];
+          const flipTooltipDirection = rightmostColumn === item;
+
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
               // TODO: remove deprecated 'testID' in v3
@@ -542,6 +547,7 @@ const TableHead = ({
                 cellTextOverflow={cellTextOverflow}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
+                tooltipDirection={flipTooltipDirection ? 'end' : undefined}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>
