@@ -16,7 +16,7 @@ const commonEditPageProps = {
 const breadcrumb = [<a href="/">Home</a>, <a href="/">Type</a>, <span>Instance</span>];
 
 export default {
-  title: '1 - Watson IoT/🚫 EditPage',
+  title: '1 - Watson IoT/Deprecated/🚫 EditPage',
   parameters: {
     docs: {
       inlineStories: false,

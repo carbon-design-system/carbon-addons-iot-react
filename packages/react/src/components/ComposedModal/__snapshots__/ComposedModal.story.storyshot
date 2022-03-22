@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal as warning dialog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal as warning dialog 1`] = `
 <div
   className="storybook-container"
 >
@@ -125,7 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with custom footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -216,7 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with custom header nodes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with custom header nodes 1`] = `
 <div
   className="storybook-container"
 >
@@ -338,7 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with error, isFetchingData, and sendingData states 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with error, isFetchingData, and sendingData states 1`] = `
 <div
   className="storybook-container"
 >
@@ -376,7 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with hidden or disabled buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with hidden or disabled buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -474,7 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with i18n, overflow menu, and tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with i18n, overflow menu, and tooltip 1`] = `
 <div
   className="storybook-container"
 >

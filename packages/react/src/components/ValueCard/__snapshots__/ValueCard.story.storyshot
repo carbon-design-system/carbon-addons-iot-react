@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with data state, custom icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with data state, custom icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -163,7 +163,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with dataFilters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with dataFilters 1`] = `
 <div
   className="storybook-container"
 >
@@ -344,7 +344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with five data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with five data points 1`] = `
 <div
   className="storybook-container"
 >
@@ -708,7 +708,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with four data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with four data points 1`] = `
 <div
   className="storybook-container"
 >
@@ -1011,7 +1011,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with isEditable 1`] = `
 <div
   className="storybook-container"
 >
@@ -1192,7 +1192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with long text, no units, no click handler 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with long text, no units, no click handler 1`] = `
 <div
   className="storybook-container"
 >
@@ -1302,7 +1302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with six data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with six data points 1`] = `
 <div
   className="storybook-container"
 >
@@ -1788,7 +1788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with three data points and thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with three data points and thresholds 1`] = `
 <div
   className="storybook-container"
 >
@@ -2105,7 +2105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds (string) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds (string) 1`] = `
 <div
   className="storybook-container"
 >
@@ -2240,7 +2240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
 <div
   className="storybook-container"
 >
@@ -2378,7 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with trends, variables, and label 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with trends, variables, and label 1`] = `
 <div
   className="storybook-container"
 >

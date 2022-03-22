@@ -8,7 +8,7 @@ import { Tabs, Tab } from '../Tabs';
 import EmptyState from './EmptyState';
 
 export default {
-  title: '1 - Watson IoT/EmptyState',
+  title: '1 - Watson IoT/Empty states',
 
   parameters: {
     component: EmptyState,

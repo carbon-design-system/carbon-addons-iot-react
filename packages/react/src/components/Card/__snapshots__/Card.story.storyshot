@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card basic stateful example with custom expand icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card basic stateful example with custom expand icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -148,7 +148,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card implementing a custom card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card implementing a custom card 1`] = `
 <div
   className="storybook-container"
 >
@@ -467,7 +467,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card size gallery 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card size gallery 1`] = `
 <div
   className="storybook-container"
 >
@@ -2973,7 +2973,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with custom range selector 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with custom range selector 1`] = `
 <div
   className="storybook-container"
 >
@@ -3081,7 +3081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with datetimepicker range selector 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with datetimepicker range selector 1`] = `
 <div
   className="storybook-container"
 >
@@ -3231,7 +3231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with datetimepicker range selector with existing value 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with datetimepicker range selector with existing value 1`] = `
 <div
   className="storybook-container"
 >
@@ -3387,7 +3387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with ellipsed title tooltip & external tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with ellipsed title tooltip & external tooltip 1`] = `
 <div
   className="storybook-container"
 >
@@ -3585,7 +3585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with error 1`] = `
 <div
   className="storybook-container"
 >
@@ -3890,7 +3890,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card with render prop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card with render prop 1`] = `
 <div
   className="storybook-container"
 >

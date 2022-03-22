@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -930,7 +930,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList large row list with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList large row list with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -1908,7 +1908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList large row list with overflow menu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList large row list with overflow menu 1`] = `
 <div
   className="storybook-container"
 >
@@ -2561,7 +2561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList list with empty row 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList list with empty row 1`] = `
 <div
   className="storybook-container"
 >
@@ -2991,7 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList list with large row 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList list with large row 1`] = `
 <div
   className="storybook-container"
 >
@@ -3449,7 +3449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList list with multiple actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList list with multiple actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -4397,7 +4397,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList list with overflow menu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList list with overflow menu 1`] = `
 <div
   className="storybook-container"
 >
@@ -5020,7 +5020,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SimpleList with reorder 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/SimpleList with reorder 1`] = `
 <div
   className="storybook-container"
 >

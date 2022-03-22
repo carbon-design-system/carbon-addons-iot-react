@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header Header action buttons with dropdowns 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header Header action buttons with dropdowns 1`] = `
 <div
   className="storybook-container"
 >
@@ -404,7 +404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header Header no submenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header Header no submenu 1`] = `
 <div
   className="storybook-container"
 >
@@ -517,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header header submenu 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header header submenu 1`] = `
 <div
   className="storybook-container"
 >
@@ -699,7 +699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header header subtitle 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header header subtitle 1`] = `
 <div
   className="storybook-container"
 >
@@ -886,7 +886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header header subtitle component 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header header subtitle component 1`] = `
 <div
   className="storybook-container"
 >
@@ -1095,7 +1095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/H
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Header small breakpoint 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/Header small breakpoint 1`] = `
 <div
   className="storybook-container"
 >

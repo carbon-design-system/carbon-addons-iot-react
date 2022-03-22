@@ -7,7 +7,7 @@ import ComposedModalREADME from './ComposedModal.mdx';
 import ComposedModal from './ComposedModal';
 
 export default {
-  title: '1 - Watson IoT/ComposedModal',
+  title: '1 - Watson IoT/Modal/ComposedModal',
 
   parameters: {
     component: ComposedModal,

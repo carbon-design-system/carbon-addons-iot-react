@@ -4,7 +4,7 @@ import { text, object } from '@storybook/addon-knobs';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher',
+  title: '1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher',
 
   parameters: {
     component: SuiteHeaderAppSwitcher,

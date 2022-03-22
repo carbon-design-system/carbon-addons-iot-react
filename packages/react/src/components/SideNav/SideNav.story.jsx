@@ -136,7 +136,7 @@ const HeaderProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/SideNav',
+  title: '1 - Watson IoT/UI shell/SideNav',
 
   parameters: {
     component: SideNav,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery Stateful TileGallery 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery Stateful TileGallery 1`] = `
 <div
   className="storybook-container"
 >
@@ -1041,7 +1041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery TileGalleryItem - Grid 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery TileGalleryItem - Grid 1`] = `
 <div
   className="storybook-container"
 >
@@ -1180,7 +1180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery TileGalleryItem - List 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery TileGalleryItem - List 1`] = `
 <div
   className="storybook-container"
 >
@@ -1293,7 +1293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery TileGallerySection with TileGalleryItem - i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery TileGallerySection with TileGalleryItem - i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -1662,7 +1662,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery TileGallerySection with TileGalleryItem Grid 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery TileGallerySection with TileGalleryItem Grid 1`] = `
 <div
   className="storybook-container"
 >
@@ -2337,7 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery TileGalleryViewSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery TileGalleryViewSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -2393,7 +2393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileGallery basic example  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileGallery basic example  1`] = `
 <div
   className="storybook-container"
 >

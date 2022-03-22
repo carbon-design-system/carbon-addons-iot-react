@@ -9,7 +9,7 @@ const AddCardProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/AddCard',
+  title: '1 - Watson IoT/Card/AddCard',
 
   parameters: {
     component: AddCard,
