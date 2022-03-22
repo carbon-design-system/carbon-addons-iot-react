@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.31...v2.149.0-next.32) (2022-03-22)
+
+
+### Bug Fixes
+
+* **storybook:** incorporated changes based on comments ([d0dcea5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d0dcea5da0e950bee128554400422673970502fc))
+* **storybook:** updated snapshots ([4952520](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4952520c0b2769a7c29424fd2b4a0f64ff22b96f))
+* **storybooks:** arrange storybook titles ([f8e73d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f8e73d7234fef030e2c0b35af1a88bb3cfc6514b))
+* **storybooks:** merge with next ([c98e55d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c98e55d4633dd026a75c67e6f1fe56817efc4afe))
+
+
+
+
+
 # [2.149.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.30...v2.149.0-next.31) (2022-03-22)
 
 **Note:** Version bump only for package carbon-addons-iot-react
