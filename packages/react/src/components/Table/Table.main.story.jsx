@@ -1,8 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
-import { merge, uniqueId } from 'lodash-es';
-import { SettingsAdjust16 } from '@carbon/icons-react';
+import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
+import { ToastNotification } from 'carbon-components-react';
+import { SettingsAdjust16, Edit16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
@@ -11,6 +12,7 @@ import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
+import { TextInput } from '../TextInput';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
@@ -24,6 +26,7 @@ import SearchingREADME from './mdx/Searching.mdx';
 import StatesREADME from './mdx/States.mdx';
 import PaginationREADME from './mdx/Pagination.mdx';
 import ToolbarREADME from './mdx/Toolbar.mdx';
+import EditDataREADME from './mdx/EditData.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -56,6 +59,9 @@ import {
   getCustomToolbarContentElement,
 } from './Table.story.helpers';
 
+// Dataset used to speed up stories using row edit
+const storyTableData = getTableData();
+
 export default {
   title: '1 - Watson IoT/Table',
   parameters: {
@@ -80,7 +86,7 @@ export const Playground = () => {
   const [rowActionsState, setRowActionsState] = useStoryState(getRowActionStates());
 
   // KNOBS
-  // The order of appearance is defined function getTableKnobs.
+  // The order of appearance is defined ub function getTableKnobs.
   const {
     selectedTableType,
     tableMaxWidth,
@@ -212,7 +218,7 @@ export const Playground = () => {
 
   // INITIAL DATA STATE
   const [data, setData] = useStoryState(
-    [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
+    [...(demoEmptyState || demoCustomEmptyState ? [] : storyTableData)]
       .slice(0, numberOfRows)
       .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
       .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
@@ -1136,5 +1142,198 @@ WithToolbar.parameters = {
   component: Table,
   docs: {
     page: ToolbarREADME,
+  },
+};
+
+export const WithDataEditing = () => {
+  const {
+    selectedTableType,
+    hasRowActions,
+    hasRowEdit,
+    hasSingleRowEdit,
+    preserveCellWhiteSpace,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasRowActions',
+      'hasRowEdit',
+      'hasSingleRowEdit',
+      'preserveCellWhiteSpace',
+    ],
+    getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const editAction = getOverflowEditRowAction();
+  editAction.disabled = false;
+  const initialData = storyTableData.slice(0, 10).map((i) => ({
+    ...i,
+    rowActions: [editAction],
+  }));
+
+  const [showRowEditBar, setShowRowEditBar] = useStoryState(false);
+  const [currentData, setCurrentData] = useStoryState(initialData);
+  const [, setRowEditedData] = useStoryState([]);
+  const [previousData, setPreviousData] = useStoryState([]);
+  const [showToast, setShowToast] = useStoryState(false);
+  const [rowActionsState, setRowActionsState] = useStoryState([]);
+  const [isPristine, setIsPristine] = useStoryState(true);
+
+  const disableRowActions = (disabled) => {
+    const rowAction = getOverflowEditRowAction();
+    rowAction.disabled = disabled;
+    setCurrentData((previusData) =>
+      previusData.map((row) => ({ ...row, rowActions: [rowAction] }))
+    );
+  };
+
+  const onDataChange = debounce((newValue, columnId, rowId) => {
+    setRowEditedData((previousData) =>
+      previousData.map((row) =>
+        row.id === rowId ? { ...row, values: { ...row.values, [columnId]: newValue } } : row
+      )
+    );
+    setIsPristine(false);
+  });
+
+  const onShowMultiRowEdit = () => {
+    setRowEditedData(cloneDeep(currentData));
+    setShowRowEditBar(true);
+    setShowToast(false);
+    disableRowActions(true);
+  };
+  const onCancelRowEdit = () => {
+    setRowEditedData([]);
+    setShowRowEditBar(false);
+    setRowActionsState([]);
+    setIsPristine(true);
+    disableRowActions(false);
+  };
+  const onSaveRowEdit = () => {
+    // because of the nature of rendering these buttons dynamically (and asyncronously via dispatch)
+    // in the StatefulTable we need to wrap these calls inside the setRowEditedData callback to ensure
+    // we're always working with the correctly updated data.
+    setRowEditedData((prev) => {
+      setShowToast(true);
+      setPreviousData(currentData);
+      setCurrentData(prev);
+      disableRowActions(false);
+      setShowRowEditBar(false);
+      setRowActionsState([]);
+      setIsPristine(true);
+      return [];
+    });
+  };
+  const onUndoRowEdit = () => {
+    setCurrentData(previousData);
+    setPreviousData([]);
+    setShowToast(false);
+  };
+
+  const onApplyRowAction = (action, rowId) => {
+    if (action === 'edit') {
+      setRowEditedData(cloneDeep(currentData));
+      disableRowActions(true);
+      setRowActionsState([{ rowId, isEditMode: true }]);
+    }
+  };
+
+  const saveCancelButtons = (
+    <div style={{ display: 'flex', gap: '0.5rem' }}>
+      <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+        Cancel
+      </Button>
+      <Button key="save" size="small" onClick={onSaveRowEdit} disabled={isPristine}>
+        Save
+      </Button>
+    </div>
+  );
+
+  // We define some initial column widths to prevent the columns from adjusting
+  // in size when edit mode is activated
+  const columnWidths = {
+    string: '250px',
+    date: '220px',
+    select: '160px',
+    secretField: '165px',
+    status: '165px',
+    number: '95px',
+    boolean: '90px',
+    node: '115px',
+    object: '110px',
+  };
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    // This is a simplified example.
+    // The app should also handle input validation etc
+    editDataFunction: getEditDataFunction(onDataChange),
+    width: columnWidths[column.id],
+  }));
+
+  const myToast = (
+    <ToastNotification
+      style={{ position: 'absolute', zIndex: '99' }}
+      hideCloseButton={false}
+      kind="success"
+      notificationType="inline"
+      role="alert"
+      subtitle={
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
+          <span>Changed your mind?</span>
+          <Button
+            style={{ color: 'white', marginLeft: '12px' }}
+            kind="ghost"
+            onClick={onUndoRowEdit}
+            size="small"
+            type="button"
+          >
+            Undo edits
+          </Button>
+        </div>
+      }
+      timeout={5000}
+      title="Your changes have been saved."
+    />
+  );
+
+  return (
+    <div>
+      {showToast ? myToast : null}
+      <MyTable
+        id="table"
+        secondaryTitle="My editable table"
+        view={{
+          toolbar: {
+            activeBar: showRowEditBar ? 'rowEdit' : undefined,
+            rowEditBarButtons: saveCancelButtons,
+          },
+          table: {
+            rowActions: rowActionsState,
+            singleRowEditButtons: saveCancelButtons,
+          },
+        }}
+        data={currentData}
+        actions={{
+          table: { onApplyRowAction },
+          toolbar: { onShowRowEdit: onShowMultiRowEdit },
+        }}
+        options={{
+          preserveColumnWidths: true,
+          hasResize: true,
+          hasRowEdit,
+          hasSingleRowEdit,
+          preserveCellWhiteSpace,
+          hasRowActions,
+        }}
+        columns={columns}
+      />
+    </div>
+  );
+};
+WithDataEditing.storyName = 'With data editing';
+WithDataEditing.parameters = {
+  component: Table,
+  docs: {
+    page: EditDataREADME,
   },
 };
