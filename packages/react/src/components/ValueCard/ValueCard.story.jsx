@@ -1,7 +1,6 @@
 import React from 'react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
 import { Bee16, Checkmark16, WarningFilled16 } from '@carbon/icons-react';
-import { spacing05 } from '@carbon/layout';
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
@@ -29,7 +28,7 @@ export const SmallLongNoUnits = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -75,7 +74,7 @@ export const WithTrends = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -125,7 +124,7 @@ export const WithLinkAndMeasurementUnit = () => {
     <div
       style={{
         width: text('cardWidth', `624px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -216,7 +215,7 @@ export const WithThresholds = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -282,7 +281,7 @@ export const SmallWideThresholdsString = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -330,7 +329,7 @@ export const MediumThin3 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -424,7 +423,7 @@ export const WithFourDataPoints = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -476,7 +475,7 @@ export const Large5 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -527,7 +526,7 @@ export const LargeThin6 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -603,7 +602,7 @@ export const DataStateNoDataMediumScrollPage = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -633,7 +632,7 @@ export const Editable = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -674,7 +673,7 @@ export const DataFilters = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard

@@ -152,14 +152,14 @@ const Attribute = ({
               '--secondary-value-color': gray60,
             }}
           >
-            {secondaryValue?.trend === 'up' ? (
+            {secondaryValue.trend === 'up' ? (
               <CaretUp16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
                 data-testid={`${testId}-trending-up`}
                 fill={secondaryValue.color || gray60}
               />
-            ) : secondaryValue?.trend === 'down' ? (
+            ) : secondaryValue.trend === 'down' ? (
               <CaretDown16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending down"
@@ -167,11 +167,12 @@ const Attribute = ({
                 fill={secondaryValue.color || gray60}
               />
             ) : null}
-            {secondaryValue?.href || secondaryValue?.onClick ? (
+            {secondaryValue.href || secondaryValue.onClick ? (
               <Link
+                className={`${BEM_BASE}-secondary-value--link`}
                 href={secondaryValue?.href}
                 rel="noopener noreferrer"
-                onClick={secondaryValue?.onClick}
+                onClick={() => secondaryValue?.onClick({ dataSourceId, secondaryValue })}
               >
                 {secondaryValue.value}
               </Link>
