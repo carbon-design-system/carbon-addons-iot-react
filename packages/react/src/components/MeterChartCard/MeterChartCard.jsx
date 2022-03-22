@@ -129,7 +129,7 @@ const MeterChartCard = ({
       isEmpty={isChartDataEmpty}
       isLoading={isLoading}
       testId={testId}
-      footerContent={footerContent}
+      footerContent={!isExpanded ? footerContent : null}
       i18n={mergedI18n}
       {...others}
     >

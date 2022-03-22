@@ -41,6 +41,7 @@ export const Basic = () => {
               option: 5,
             },
           },
+          legendPosition: 'top',
           status: object('content.status', {
             success: [0, 300],
             warning: [300, 900],
