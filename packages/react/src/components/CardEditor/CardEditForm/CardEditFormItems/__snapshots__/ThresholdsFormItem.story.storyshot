@@ -71,7 +71,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
-            renderSelectedItem={[Function]}
           >
             
             <div
@@ -96,7 +95,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  Warning
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#da1e28",
+                      }
+                    }
+                    title="Warning"
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -141,7 +170,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
-            renderSelectedItem={[Function]}
             title=""
           >
             
@@ -167,7 +195,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  red60
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="red60"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#da1e28",
+                          }
+                        }
+                        title="#da1e28"
+                      />
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -412,7 +457,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
-            renderSelectedItem={[Function]}
           >
             
             <div
@@ -437,7 +481,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  Warning
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#24a148",
+                      }
+                    }
+                    title="Warning"
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -482,7 +556,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
-            renderSelectedItem={[Function]}
             title=""
           >
             
@@ -508,7 +581,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  green50
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="green50"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#24a148",
+                          }
+                        }
+                        title="#24a148"
+                      />
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -753,7 +843,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         >
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
-            renderSelectedItem={[Function]}
           >
             
             <div
@@ -778,7 +867,37 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  Warning
+                  <div
+                    className="iot--icon-dropdown__item"
+                    style={
+                      Object {
+                        "color": "#ff832b",
+                      }
+                    }
+                    title="Warning"
+                  >
+                    <div
+                      className="iot--icon-dropdown__item-border"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={24}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 32 32"
+                        width={24}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z"
+                        />
+                        <path
+                          d="M15 8H17V19H15zM16 22a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 22z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -823,7 +942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
-            renderSelectedItem={[Function]}
             title=""
           >
             
@@ -849,7 +967,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  orange40
+                  <div
+                    className="iot--color-dropdown__item"
+                    title="orange40"
+                  >
+                    <div
+                      className="iot--color-dropdown__item-border"
+                    >
+                      <div
+                        className="iot--color-dropdown__color-sample"
+                        style={
+                          Object {
+                            "backgroundColor": "#ff832b",
+                          }
+                        }
+                        title="#ff832b"
+                      />
+                    </div>
+                  </div>
                 </span>
                 <div
                   className="bx--list-box__menu-icon"
@@ -970,8 +1105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="threshold-2-text-input"
                   disabled={false}
                   id="undefined_value-card-threshold-value_2"

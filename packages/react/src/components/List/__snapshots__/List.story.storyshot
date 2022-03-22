@@ -2081,7 +2081,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2090,6 +2089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="DJ LeMahieu-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2143,7 +2143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2152,6 +2151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Luke Voit-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2205,7 +2205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2214,6 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gary Sanchez-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2267,7 +2267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2276,6 +2275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Kendrys Morales-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2329,7 +2329,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2338,6 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gleyber Torres-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2391,7 +2391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2400,6 +2399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Clint Frazier-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2453,7 +2453,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2462,6 +2461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Brett Gardner-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2515,7 +2515,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2524,6 +2523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gio Urshela-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2577,7 +2577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2586,6 +2585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Cameron Maybin-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2639,7 +2639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2648,6 +2647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Robinson Cano-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2807,7 +2807,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2816,6 +2815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Chicago White Sox-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2895,7 +2895,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2904,6 +2903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="New York Yankees-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2983,7 +2983,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2992,6 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Houston Astros-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3053,7 +3053,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3062,6 +3061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Atlanta Braves-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3123,7 +3123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3132,6 +3131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="New York Mets-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3193,7 +3193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3202,6 +3201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Washington Nationals-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
