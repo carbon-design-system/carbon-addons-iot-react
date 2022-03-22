@@ -169,6 +169,7 @@ const Attribute = ({
             ) : null}
             {secondaryValue.href || secondaryValue.onClick ? (
               <Link
+                data-testid={`${testId}-secondary-value--link`}
                 className={`${BEM_BASE}-secondary-value--link`}
                 href={secondaryValue?.href}
                 rel="noopener noreferrer"
