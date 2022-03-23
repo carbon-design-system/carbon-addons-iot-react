@@ -1,6 +1,6 @@
-import React, { useMemo, useEffect, useRef } from 'react';
+import React, { useMemo } from 'react';
 import classNames from 'classnames';
-import { isEmpty, isEqual, defaultsDeep } from 'lodash-es';
+import { isEmpty, defaultsDeep } from 'lodash-es';
 
 import Card from '../Card/Card';
 import { StackedAreaChart } from '../StackedAreaChart';
@@ -8,7 +8,6 @@ import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, StackedAreaPropTypes } from '../../constants/CardPropTypes';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
 import { settings } from '../../constants/Settings';
-import { usePrevious } from '../../hooks/usePrevious';
 
 const { iotPrefix } = settings;
 
@@ -51,8 +50,6 @@ const StackedAreaChartCard = ({
   style,
   ...others
 }) => {
-  const chartRef = useRef(null);
-
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const newSize = useMemo(() => getUpdatedCardSize(size), [size]);
@@ -92,15 +89,6 @@ const StackedAreaChartCard = ({
     [contentWithDefaults]
   );
 
-  const previousChartData = usePrevious(values);
-
-  /** This is needed to update the chart when the lines and values change */
-  useEffect(() => {
-    if (chartRef?.current?.chart && !isEqual(values, previousChartData)) {
-      chartRef.current.chart.model.setData(values);
-    }
-  }, [values, previousChartData]);
-
   return (
     <Card
       title={title}
@@ -120,9 +108,7 @@ const StackedAreaChartCard = ({
           [`${iotPrefix}--stacked-area-card--wrapper__expanded`]: isExpanded,
         })}
       >
-        {!isChartDataEmpty ? (
-          <StackedAreaChart ref={chartRef} data={values} options={options} />
-        ) : null}
+        {!isChartDataEmpty ? <StackedAreaChart data={values} options={options} /> : null}
       </div>
     </Card>
   );
