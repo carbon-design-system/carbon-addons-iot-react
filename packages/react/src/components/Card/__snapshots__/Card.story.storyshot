@@ -4047,7 +4047,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         <button
           aria-describedby={null}
           aria-pressed={null}
-          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          className="iot--btn bx--btn bx--btn--md bx--btn--ghost"
           data-testid="Button"
           disabled={false}
           onBlur={[Function]}
