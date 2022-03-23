@@ -33,7 +33,7 @@ export const getDataStateProp = () => ({
 });
 
 export default {
-  title: '1 - Watson IoT/Card',
+  title: '1 - Watson IoT/Card/Card',
 
   parameters: {
     component: Card,
@@ -195,7 +195,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}

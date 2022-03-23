@@ -51,7 +51,7 @@ const getContent = () => ({
 });
 
 export default {
-  title: '1 - Watson IoT/GaugeCard',
+  title: '1 - Watson IoT/Card/GaugeCard',
 
   parameters: {
     component: GaugeCard,

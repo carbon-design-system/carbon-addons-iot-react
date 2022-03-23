@@ -7,7 +7,7 @@ import ProgressBarREADME from './ProgressBar.mdx';
 import ProgressBar from './ProgressBar';
 
 export default {
-  title: '1 - Watson IoT/ProgressBar',
+  title: '1 - Watson IoT/Progress bar',
 
   parameters: {
     component: ProgressBar,

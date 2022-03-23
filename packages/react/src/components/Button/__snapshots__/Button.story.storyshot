@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button Icon Selection buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button Icon Selection buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -127,7 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button Icon-only buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button Icon-only buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -172,7 +172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button Sets of Buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button Sets of Buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -215,7 +215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -271,7 +271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button loading with secondary 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button loading with secondary 1`] = `
 <div
   className="storybook-container"
 >
@@ -327,7 +327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button not loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button not loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -350,7 +350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Button skeleton 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Buttons/Button skeleton 1`] = `
 <div
   className="storybook-container"
 >

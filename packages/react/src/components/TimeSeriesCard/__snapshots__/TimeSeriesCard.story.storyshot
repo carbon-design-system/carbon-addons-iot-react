@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with custom colors 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with custom colors 1`] = `
 <div
   className="storybook-container"
 >
@@ -152,7 +152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with dataFilter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with dataFilter 1`] = `
 <div
   className="storybook-container"
 >
@@ -304,7 +304,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with domainRange 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with domainRange 1`] = `
 <div
   className="storybook-container"
 >
@@ -420,7 +420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with empty for a range 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with empty for a range 1`] = `
 <div
   className="storybook-container"
 >
@@ -572,7 +572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with highlight alert ranges 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with highlight alert ranges 1`] = `
 <div
   className="storybook-container"
 >
@@ -724,7 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with isEditable 1`] = `
 <div
   className="storybook-container"
 >
@@ -790,7 +790,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with isExpanded 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with isExpanded 1`] = `
 <div
   className="storybook-container"
 >
@@ -960,7 +960,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   <p
                     className="bx--batch-summary__para"
                   >
-                    <span>
+                    <span
+                      dir="auto"
+                    >
                       0 items selected
                     </span>
                   </p>
@@ -1654,7 +1656,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     data-testid="TimeSeries-table-table-body"
                   >
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -1666,7 +1668,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1685,7 +1692,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1704,7 +1716,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1723,7 +1740,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1742,7 +1764,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1761,7 +1788,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1780,7 +1812,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1799,7 +1836,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1808,7 +1850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </td>
                     </tr>
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -1820,7 +1862,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1839,7 +1886,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1858,7 +1910,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1877,7 +1934,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1896,7 +1958,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1915,7 +1982,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1934,7 +2006,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1953,7 +2030,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1962,7 +2044,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </td>
                     </tr>
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -1974,7 +2056,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -1993,7 +2080,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2012,7 +2104,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2031,7 +2128,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2050,7 +2152,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2069,7 +2176,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2088,7 +2200,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2107,7 +2224,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2116,7 +2238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </td>
                     </tr>
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -2128,7 +2250,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2147,7 +2274,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2166,7 +2298,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2185,7 +2322,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2204,7 +2346,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2223,7 +2370,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2242,7 +2394,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2261,7 +2418,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2270,7 +2432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </td>
                     </tr>
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -2282,7 +2444,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2301,7 +2468,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2320,7 +2492,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2339,7 +2516,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2358,7 +2540,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2377,7 +2564,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2396,7 +2588,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2415,7 +2612,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2424,7 +2626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                       </td>
                     </tr>
                     <tr
-                      className="TableBodyRow__StyledTableRow-sc-103itxu-0 gZGpiK"
+                      className="iot--table__row iot--table__row--unselectable"
                       onClick={[Function]}
                     >
                       <td
@@ -2436,7 +2638,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2455,7 +2662,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2474,7 +2686,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2493,7 +2710,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2512,7 +2734,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2531,7 +2758,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2550,7 +2782,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2569,7 +2806,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                         offset={0}
                       >
                         <span
-                          className="TableBodyRow__StyledNestedSpan-sc-103itxu-5 ieOGhB"
+                          className="iot--table__cell__offset"
+                          style={
+                            Object {
+                              "--row-nesting-offset": "0px",
+                            }
+                          }
                         >
                           <span
                             className=""
@@ -2581,7 +2823,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 </table>
               </div>
             </div>
-            <div />
             <div
               className="bx--pagination iot--pagination bx--pagination--lg"
               data-testid="TimeSeries-table-table-pagination"
@@ -2817,7 +3058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with multiple lines, intervals, configurable data points, and zoomBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with multiple lines, intervals, configurable data points, and zoomBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -2969,7 +3210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with single line, intervals, configurable data points, and zoomBar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with single line, intervals, configurable data points, and zoomBar 1`] = `
 <div
   className="storybook-container"
 >
@@ -3121,7 +3362,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with single point and variables 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with single point and variables 1`] = `
 <div
   className="storybook-container"
 >
@@ -3273,7 +3514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimeSeriesCard with thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TimeSeriesCard with thresholds 1`] = `
 <div
   className="storybook-container"
 >

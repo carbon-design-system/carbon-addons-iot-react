@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with application-controlled side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with application-controlled side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -719,7 +719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with custom action items and hidden icons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with custom action items and hidden icons 1`] = `
 <div
   className="storybook-container"
 >
@@ -1696,7 +1696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with extra content 1`] = `
 <div
   className="storybook-container"
 >
@@ -2414,7 +2414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with idle user detection 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with idle user detection 1`] = `
 <div
   className="storybook-container"
 >
@@ -3221,7 +3221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with side nav 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with side nav 1`] = `
 <div
   className="storybook-container"
 >
@@ -3941,7 +3941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
     className="bx--side-nav__overlay"
   />
   <nav
-    aria-hidden={true}
+    aria-hidden={false}
     aria-label="Side navigation"
     className="bx--side-nav__navigation bx--side-nav bx--side-nav--rail iot--side-nav bx--side-nav--ux"
     data-testid="suite-header-side-nav"
@@ -4235,7 +4235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Header with survey notification 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Header with survey notification 1`] = `
 <div
   className="storybook-container"
 >
@@ -5019,7 +5019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -5602,7 +5602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader Navigational actions blocked 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader Navigational actions blocked 1`] = `
 <div
   className="storybook-container"
 >
@@ -6302,7 +6302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI shell/SuiteHeader default 1`] = `
 <div
   className="storybook-container"
 >

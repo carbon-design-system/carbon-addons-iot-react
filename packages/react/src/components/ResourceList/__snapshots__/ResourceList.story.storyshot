@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList default 1`] = `
 <div
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -166,12 +166,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList with action 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList with action 1`] = `
 <div
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div
@@ -198,7 +198,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
@@ -255,7 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
           Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed. Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.Lorem ipsun dolor sit amet, consectetur adipiscing elit. Nunc dui magna, finibus id tortor sed.
         </div>
         <div
-          className="bx--structured-list-td bx--structured-list-content--nowrap ResourceList__CustomActionDiv-sc-27rnbq-2 gHaTLR"
+          className="bx--structured-list-td bx--structured-list-content--nowrap"
           role="presentation"
         >
           <button
@@ -353,12 +353,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ResourceList with extra content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/ResourceList with extra content 1`] = `
 <div
   className="storybook-container"
 >
   <section
-    className="bx--structured-list bx--structured-list--border bx--structured-list--selection ResourceList__ResourceListSection-sc-27rnbq-0 gAnvjz"
+    className="iot--resource-list bx--structured-list bx--structured-list--border bx--structured-list--selection"
     data-testid="resource-list"
   >
     <div

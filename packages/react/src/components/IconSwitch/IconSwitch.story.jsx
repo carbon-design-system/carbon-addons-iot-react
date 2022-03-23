@@ -65,7 +65,7 @@ const screenOffIcons = {
 };
 
 export default {
-  title: '1 - Watson IoT/IconSwitch',
+  title: '1 - Watson IoT/Icon content switcher',
   decorators: [withKnobs],
 
   parameters: {

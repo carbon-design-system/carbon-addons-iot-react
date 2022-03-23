@@ -48,7 +48,7 @@ const chartDataExample = [
 ];
 
 export default {
-  title: '1 - Watson IoT/PieChartCard',
+  title: '1 - Watson IoT/Card/PieChartCard',
 
   parameters: {
     component: PieChartCard,

@@ -130,7 +130,7 @@ const CustomLink = ({ children, href, ...other }) => (
 );
 
 export default {
-  title: '1 - Watson IoT/Button',
+  title: '1 - Watson IoT/Buttons/Button',
   decorators: [withKnobs],
 
   parameters: {

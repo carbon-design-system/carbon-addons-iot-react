@@ -19,7 +19,7 @@ const sizes = Object.keys(CARD_SIZES).filter(
 const layouts = Object.keys(BAR_CHART_LAYOUTS);
 
 export default {
-  title: __DEV__ ? '1 - Watson IoT/⚠️ BarChartCard' : '1 - Watson IoT/BarChartCard',
+  title: __DEV__ ? '1 - Watson IoT/Card/⚠️ BarChartCard' : '1 - Watson IoT/Card/BarChartCard',
   parameters: {
     component: BarChartCard,
     docs: {
