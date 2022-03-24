@@ -1184,6 +1184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     
                     <div
                       aria-describedby={null}
+                      aria-label="card-header-tooltip-GaugeCard"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -4140,6 +4141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     
                     <div
                       aria-describedby={null}
+                      aria-label="card-header-tooltip-GaugeCard"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -7131,6 +7133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     
                     <div
                       aria-describedby={null}
+                      aria-label="card-header-tooltip-GaugeCard"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -12596,6 +12599,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     
                     <div
                       aria-describedby={null}
+                      aria-label="card-header-tooltip-GaugeCard"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -30395,6 +30399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     
                     <div
                       aria-describedby={null}
+                      aria-label="card-header-tooltip-GaugeCard"
                       className="bx--tooltip__trigger"
                       onBlur={[Function]}
                       onClick={[Function]}
