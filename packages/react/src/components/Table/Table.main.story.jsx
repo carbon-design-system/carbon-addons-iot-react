@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
 import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
 import { ToastNotification } from 'carbon-components-react';
-import { SettingsAdjust16, Edit16 } from '@carbon/icons-react';
+import { SettingsAdjust16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
@@ -12,7 +12,6 @@ import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
-import { TextInput } from '../TextInput';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
