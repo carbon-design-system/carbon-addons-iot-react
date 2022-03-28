@@ -1,12 +1,16 @@
 import React, { useMemo, useRef, useEffect } from 'react';
+import classNames from 'classnames';
 import { isEmpty, isEqual, defaultsDeep } from 'lodash-es';
 
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { CardPropTypes, MeterChartPropTypes } from '../../constants/CardPropTypes';
 import Card from '../Card/Card';
 import { MeterChart } from '../MeterChart';
+import { settings } from '../../constants/Settings';
 import { usePrevious } from '../../hooks/usePrevious';
 import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   ...CardPropTypes,
@@ -134,7 +138,13 @@ const MeterChartCard = ({
       {...others}
     >
       {!isChartDataEmpty ? (
-        <MeterChart ref={chartRef} data={values} options={options} width="100%" height="100%" />
+        <div
+          className={classNames(`${iotPrefix}--meter-card--wrapper`, {
+            [`${iotPrefix}--meter-card--wrapper__expanded`]: isExpanded,
+          })}
+        >
+          <MeterChart ref={chartRef} data={values} options={options} width="100%" height="100%" />
+        </div>
       ) : null}
     </Card>
   );

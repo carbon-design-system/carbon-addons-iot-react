@@ -1,0 +1,14 @@
+.#{$iot-prefix}--meter-card--wrapper {
+  height: 100%;
+  width: 100%;
+}
+[dir='rtl'] {
+  .#{$iot-prefix}--meter-card--wrapper .bx--cc--meter-title {
+    .proportional-meter-total {
+      text-anchor: start;
+    }
+    .proportional-meter-title {
+      text-anchor: end;
+    }
+  }
+}
