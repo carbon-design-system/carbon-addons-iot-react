@@ -90,8 +90,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          id="mock-meter-chart"
-        />
+          className="iot--meter-card--wrapper"
+        >
+          <div
+            id="mock-meter-chart"
+          />
+        </div>
       </div>
       <div
         className="iot--card--footer--wrapper"
@@ -196,8 +200,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          id="mock-meter-chart"
-        />
+          className="iot--meter-card--wrapper"
+        >
+          <div
+            id="mock-meter-chart"
+          />
+        </div>
       </div>
     </div>
   </div>
