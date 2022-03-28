@@ -85,7 +85,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         data-testid="Card-content"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-content-height": "216px",
           }
         }
       >
@@ -234,7 +234,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         data-testid="Card-content"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-content-height": "216px",
           }
         }
       >
@@ -597,7 +597,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         data-testid="Card-content"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-content-height": "216px",
           }
         }
       >
@@ -746,7 +746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         data-testid="Card-content"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-content-height": "216px",
           }
         }
       >

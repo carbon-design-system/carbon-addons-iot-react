@@ -22966,6 +22966,3481 @@ Map {
       },
     },
   },
+  "MeterChartCard" => Object {
+    "defaultProps": Object {
+      "content": Object {
+        "color": Object {
+          "pairing": Object {
+            "option": 2,
+          },
+        },
+        "legendPosition": "bottom",
+        "meterTotal": 100,
+        "meterUnit": "Unit",
+        "peak": null,
+      },
+      "footerContent": null,
+      "i18n": Object {
+        "noDataLabel": "No data available",
+      },
+      "locale": "en",
+      "size": "MEDIUMWIDE",
+      "title": "",
+      "values": Array [],
+    },
+    "propTypes": Object {
+      "availableActions": Object {
+        "args": Array [
+          Object {
+            "clone": Object {
+              "type": "bool",
+            },
+            "delete": Object {
+              "type": "bool",
+            },
+            "edit": Object {
+              "type": "bool",
+            },
+            "expand": Object {
+              "type": "bool",
+            },
+            "extra": Object {
+              "type": "bool",
+            },
+            "range": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                        "full",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "breakpoint": Object {
+        "args": Array [
+          Array [
+            "lg",
+            "max",
+            "md",
+            "sm",
+            "xl",
+            "xs",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "cardDimensions": Object {
+        "args": Array [
+          Object {
+            "LARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "MEDIUM": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "SMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "TALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "WIDE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XLARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XSMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "color": Object {
+              "args": Array [
+                Object {
+                  "gradient": Object {
+                    "args": Array [
+                      Object {
+                        "colors": Object {
+                          "args": Array [
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                        "enabled": undefined,
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "pairing": Object {
+                    "args": Array [
+                      Object {
+                        "numberOfVariants": Object {
+                          "type": "number",
+                        },
+                        "option": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "scale": Object {
+                    "args": Array [
+                      Object {
+                        "type": "any",
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "legendPosition": Object {
+              "type": "string",
+            },
+            "meterTotal": Object {
+              "type": "number",
+            },
+            "meterUnit": Object {
+              "type": "string",
+            },
+            "peak": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "contentClassName": Object {
+        "type": "string",
+      },
+      "dashboardBreakpoints": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dashboardColumns": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "extraActions": Object {
+        "args": Array [
+          Object {
+            "callback": Object {
+              "type": "func",
+            },
+            "children": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "callback": Object {
+                        "isRequired": true,
+                        "type": "func",
+                      },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "itemText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "id": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
+      "hideHeader": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "cloneCardLabel": Object {
+              "type": "string",
+            },
+            "closeLabel": Object {
+              "type": "string",
+            },
+            "dailyLabel": Object {
+              "type": "string",
+            },
+            "defaultLabel": Object {
+              "type": "node",
+            },
+            "deleteCardLabel": Object {
+              "type": "string",
+            },
+            "editCardLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataShortLabel": Object {
+              "type": "string",
+            },
+            "expandLabel": Object {
+              "type": "string",
+            },
+            "hourlyLabel": Object {
+              "type": "string",
+            },
+            "last24HoursLabel": Object {
+              "type": "string",
+            },
+            "last7DaysLabel": Object {
+              "type": "string",
+            },
+            "lastMonthLabel": Object {
+              "type": "string",
+            },
+            "lastQuarterLabel": Object {
+              "type": "string",
+            },
+            "lastYearLabel": Object {
+              "type": "string",
+            },
+            "loadingDataLabel": Object {
+              "type": "string",
+            },
+            "monthlyLabel": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "noDataShortLabel": Object {
+              "type": "string",
+            },
+            "overflowMenuDescription": Object {
+              "type": "string",
+            },
+            "periodToDateLabel": Object {
+              "type": "string",
+            },
+            "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
+              "type": "string",
+            },
+            "thisMonthLabel": Object {
+              "type": "string",
+            },
+            "thisQuarterLabel": Object {
+              "type": "string",
+            },
+            "thisWeekLabel": Object {
+              "type": "string",
+            },
+            "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "weeklyLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "isEditable": Object {
+        "type": "bool",
+      },
+      "isEmpty": Object {
+        "type": "bool",
+      },
+      "isExpanded": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "isResizable": Object {
+        "type": "bool",
+      },
+      "layout": Object {
+        "args": Array [
+          Array [
+            "HORIZONTAL",
+            "VERTICAL",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
+      },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "renderEditContent": Object {
+        "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
+      },
+      "rowHeight": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "showOverflow": [Function],
+      "size": Object {
+        "args": Array [
+          Array [
+            "XSMALL",
+            "XSMALLWIDE",
+            "TALL",
+            "WIDE",
+            "XLARGE",
+            "SMALL",
+            "SMALLWIDE",
+            "SMALLFULL",
+            "MEDIUMTHIN",
+            "MEDIUM",
+            "MEDIUMWIDE",
+            "LARGETHIN",
+            "LARGE",
+            "LARGEWIDE",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "tabIndex": Object {
+        "type": "number",
+      },
+      "testID": [Function],
+      "testId": Object {
+        "type": "string",
+      },
+      "timeRange": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "timeRangeOptions": [Function],
+      "title": Object {
+        "type": "string",
+      },
+      "toolbar": Object {
+        "type": "element",
+      },
+      "tooltip": Object {
+        "type": "element",
+      },
+      "values": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "group": Object {
+                  "type": "string",
+                },
+                "value": Object {
+                  "type": "number",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
+  "SparklineChartCard" => Object {
+    "defaultProps": Object {
+      "content": Object {
+        "xLabel": "x label",
+        "yLabel": "y label",
+      },
+      "footerContent": null,
+      "i18n": Object {
+        "noDataLabel": "No data available",
+      },
+      "locale": "en",
+      "size": "MEDIUMWIDE",
+      "title": null,
+      "values": Array [],
+    },
+    "propTypes": Object {
+      "availableActions": Object {
+        "args": Array [
+          Object {
+            "clone": Object {
+              "type": "bool",
+            },
+            "delete": Object {
+              "type": "bool",
+            },
+            "edit": Object {
+              "type": "bool",
+            },
+            "expand": Object {
+              "type": "bool",
+            },
+            "extra": Object {
+              "type": "bool",
+            },
+            "range": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                        "full",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "breakpoint": Object {
+        "args": Array [
+          Array [
+            "lg",
+            "max",
+            "md",
+            "sm",
+            "xl",
+            "xs",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "cardDimensions": Object {
+        "args": Array [
+          Object {
+            "LARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "MEDIUM": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "SMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "TALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "WIDE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XLARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XSMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "color": Object {
+              "args": Array [
+                Object {
+                  "gradient": Object {
+                    "args": Array [
+                      Object {
+                        "colors": Object {
+                          "args": Array [
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                        "enabled": undefined,
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "pairing": Object {
+                    "args": Array [
+                      Object {
+                        "numberOfVariants": Object {
+                          "type": "number",
+                        },
+                        "option": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "scale": Object {
+                    "args": Array [
+                      Object {
+                        "type": "any",
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "listContent": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "xLabel": Object {
+              "type": "string",
+            },
+            "xProperty": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "yLabel": Object {
+              "type": "string",
+            },
+            "yProperty": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "contentClassName": Object {
+        "type": "string",
+      },
+      "dashboardBreakpoints": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dashboardColumns": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "extraActions": Object {
+        "args": Array [
+          Object {
+            "callback": Object {
+              "type": "func",
+            },
+            "children": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "callback": Object {
+                        "isRequired": true,
+                        "type": "func",
+                      },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "itemText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "id": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
+      "hideHeader": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "cloneCardLabel": Object {
+              "type": "string",
+            },
+            "closeLabel": Object {
+              "type": "string",
+            },
+            "dailyLabel": Object {
+              "type": "string",
+            },
+            "defaultLabel": Object {
+              "type": "node",
+            },
+            "deleteCardLabel": Object {
+              "type": "string",
+            },
+            "editCardLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataShortLabel": Object {
+              "type": "string",
+            },
+            "expandLabel": Object {
+              "type": "string",
+            },
+            "hourlyLabel": Object {
+              "type": "string",
+            },
+            "last24HoursLabel": Object {
+              "type": "string",
+            },
+            "last7DaysLabel": Object {
+              "type": "string",
+            },
+            "lastMonthLabel": Object {
+              "type": "string",
+            },
+            "lastQuarterLabel": Object {
+              "type": "string",
+            },
+            "lastYearLabel": Object {
+              "type": "string",
+            },
+            "loadingDataLabel": Object {
+              "type": "string",
+            },
+            "monthlyLabel": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "noDataShortLabel": Object {
+              "type": "string",
+            },
+            "overflowMenuDescription": Object {
+              "type": "string",
+            },
+            "periodToDateLabel": Object {
+              "type": "string",
+            },
+            "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
+              "type": "string",
+            },
+            "thisMonthLabel": Object {
+              "type": "string",
+            },
+            "thisQuarterLabel": Object {
+              "type": "string",
+            },
+            "thisWeekLabel": Object {
+              "type": "string",
+            },
+            "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "weeklyLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "isEditable": Object {
+        "type": "bool",
+      },
+      "isEmpty": Object {
+        "type": "bool",
+      },
+      "isExpanded": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "isResizable": Object {
+        "type": "bool",
+      },
+      "layout": Object {
+        "args": Array [
+          Array [
+            "HORIZONTAL",
+            "VERTICAL",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
+      },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "renderEditContent": Object {
+        "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
+      },
+      "rowHeight": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "showOverflow": [Function],
+      "size": Object {
+        "args": Array [
+          Array [
+            "XSMALL",
+            "XSMALLWIDE",
+            "TALL",
+            "WIDE",
+            "XLARGE",
+            "SMALL",
+            "SMALLWIDE",
+            "SMALLFULL",
+            "MEDIUMTHIN",
+            "MEDIUM",
+            "MEDIUMWIDE",
+            "LARGETHIN",
+            "LARGE",
+            "LARGEWIDE",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "tabIndex": Object {
+        "type": "number",
+      },
+      "testID": [Function],
+      "testId": Object {
+        "type": "string",
+      },
+      "timeRange": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "timeRangeOptions": [Function],
+      "title": Object {
+        "type": "string",
+      },
+      "toolbar": Object {
+        "type": "element",
+      },
+      "tooltip": Object {
+        "type": "element",
+      },
+      "values": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "group": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
+  "StackedAreaChartCard" => Object {
+    "defaultProps": Object {
+      "content": Object {
+        "curve": "curveMonotoneX",
+        "legendPosition": "bottom",
+        "pairing": Object {
+          "option": 1,
+        },
+        "xLabel": "x label",
+        "yLabel": "y label",
+      },
+      "i18n": Object {
+        "noDataLabel": "No data available",
+      },
+      "locale": "en",
+      "size": "MEDIUM",
+      "testId": "stacked-area-chart-testId",
+      "title": null,
+      "values": Array [],
+    },
+    "propTypes": Object {
+      "availableActions": Object {
+        "args": Array [
+          Object {
+            "clone": Object {
+              "type": "bool",
+            },
+            "delete": Object {
+              "type": "bool",
+            },
+            "edit": Object {
+              "type": "bool",
+            },
+            "expand": Object {
+              "type": "bool",
+            },
+            "extra": Object {
+              "type": "bool",
+            },
+            "range": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "bool",
+                  },
+                  Object {
+                    "args": Array [
+                      Array [
+                        "iconOnly",
+                        "full",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "settings": Object {
+              "type": "bool",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "breakpoint": Object {
+        "args": Array [
+          Array [
+            "lg",
+            "max",
+            "md",
+            "sm",
+            "xl",
+            "xs",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "cardDimensions": Object {
+        "args": Array [
+          Object {
+            "LARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "MEDIUM": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "SMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "TALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "WIDE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XLARGE": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "XSMALL": Object {
+              "args": Array [
+                Object {
+                  "lg": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "md": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "sm": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "xs": Object {
+                    "args": Array [
+                      Object {
+                        "h": Object {
+                          "type": "number",
+                        },
+                        "w": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "color": Object {
+              "args": Array [
+                Object {
+                  "gradient": Object {
+                    "args": Array [
+                      Object {
+                        "colors": Object {
+                          "args": Array [
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                          "type": "arrayOf",
+                        },
+                        "enabled": undefined,
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "pairing": Object {
+                    "args": Array [
+                      Object {
+                        "numberOfVariants": Object {
+                          "type": "number",
+                        },
+                        "option": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "scale": Object {
+                    "args": Array [
+                      Object {
+                        "type": "any",
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "curve": Object {
+              "type": "string",
+            },
+            "legendPosition": Object {
+              "args": Array [
+                Array [
+                  "bottom",
+                  "left",
+                  "right",
+                  "top",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "xLabel": Object {
+              "type": "string",
+            },
+            "xProperty": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "xThresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "isRequired": true,
+                        "type": "number",
+                      },
+                      "valueFormatter": Object {
+                        "type": "func",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "yLabel": Object {
+              "type": "string",
+            },
+            "yProperty": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "yThresholds": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "fillColor": Object {
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "isRequired": true,
+                        "type": "number",
+                      },
+                      "valueFormatter": Object {
+                        "type": "func",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "contentClassName": Object {
+        "type": "string",
+      },
+      "dashboardBreakpoints": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dashboardColumns": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "dateTimeMask": Object {
+        "type": "string",
+      },
+      "extraActions": Object {
+        "args": Array [
+          Object {
+            "callback": Object {
+              "type": "func",
+            },
+            "children": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "callback": Object {
+                        "isRequired": true,
+                        "type": "func",
+                      },
+                      "disabled": Object {
+                        "type": "bool",
+                      },
+                      "hidden": Object {
+                        "type": "bool",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "itemText": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "disabled": Object {
+              "type": "bool",
+            },
+            "icon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "id": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "footerContent": Object {
+        "type": "elementType",
+      },
+      "hasTitleWrap": Object {
+        "type": "bool",
+      },
+      "hideHeader": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "cloneCardLabel": Object {
+              "type": "string",
+            },
+            "closeLabel": Object {
+              "type": "string",
+            },
+            "dailyLabel": Object {
+              "type": "string",
+            },
+            "defaultLabel": Object {
+              "type": "node",
+            },
+            "deleteCardLabel": Object {
+              "type": "string",
+            },
+            "editCardLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataLabel": Object {
+              "type": "string",
+            },
+            "errorLoadingDataShortLabel": Object {
+              "type": "string",
+            },
+            "expandLabel": Object {
+              "type": "string",
+            },
+            "hourlyLabel": Object {
+              "type": "string",
+            },
+            "last24HoursLabel": Object {
+              "type": "string",
+            },
+            "last7DaysLabel": Object {
+              "type": "string",
+            },
+            "lastMonthLabel": Object {
+              "type": "string",
+            },
+            "lastQuarterLabel": Object {
+              "type": "string",
+            },
+            "lastYearLabel": Object {
+              "type": "string",
+            },
+            "loadingDataLabel": Object {
+              "type": "string",
+            },
+            "monthlyLabel": Object {
+              "type": "string",
+            },
+            "noDataLabel": Object {
+              "type": "string",
+            },
+            "noDataShortLabel": Object {
+              "type": "string",
+            },
+            "overflowMenuDescription": Object {
+              "type": "string",
+            },
+            "periodToDateLabel": Object {
+              "type": "string",
+            },
+            "rollingPeriodLabel": Object {
+              "type": "string",
+            },
+            "selectTimeRangeLabel": Object {
+              "type": "string",
+            },
+            "thisMonthLabel": Object {
+              "type": "string",
+            },
+            "thisQuarterLabel": Object {
+              "type": "string",
+            },
+            "thisWeekLabel": Object {
+              "type": "string",
+            },
+            "thisYearLabel": Object {
+              "type": "string",
+            },
+            "toLabel": Object {
+              "type": "string",
+            },
+            "weeklyLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "isEditable": Object {
+        "type": "bool",
+      },
+      "isEmpty": Object {
+        "type": "bool",
+      },
+      "isExpanded": Object {
+        "type": "bool",
+      },
+      "isLoading": Object {
+        "type": "bool",
+      },
+      "isResizable": Object {
+        "type": "bool",
+      },
+      "layout": Object {
+        "args": Array [
+          Array [
+            "HORIZONTAL",
+            "VERTICAL",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
+      },
+      "onBlur": Object {
+        "type": "func",
+      },
+      "onFocus": Object {
+        "type": "func",
+      },
+      "onMouseDown": Object {
+        "type": "func",
+      },
+      "onMouseUp": Object {
+        "type": "func",
+      },
+      "onScroll": Object {
+        "type": "func",
+      },
+      "onTouchEnd": Object {
+        "type": "func",
+      },
+      "onTouchStart": Object {
+        "type": "func",
+      },
+      "overrides": Object {
+        "args": Array [
+          Object {
+            "errorMessage": Object {
+              "args": Array [
+                Object {
+                  "component": Object {
+                    "type": "elementType",
+                  },
+                  "props": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "object",
+                        },
+                        Object {
+                          "type": "func",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "padding": Object {
+        "args": Array [
+          Array [
+            "default",
+            "none",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "renderEditContent": Object {
+        "type": "func",
+      },
+      "renderExpandIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "renderIconByName": Object {
+        "type": "func",
+      },
+      "resizeHandles": Object {
+        "type": "array",
+      },
+      "rowHeight": Object {
+        "args": Array [
+          Object {
+            "lg": Object {
+              "type": "number",
+            },
+            "md": Object {
+              "type": "number",
+            },
+            "sm": Object {
+              "type": "number",
+            },
+            "xs": Object {
+              "type": "number",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "showOverflow": [Function],
+      "size": Object {
+        "args": Array [
+          Array [
+            "XSMALL",
+            "XSMALLWIDE",
+            "TALL",
+            "WIDE",
+            "XLARGE",
+            "SMALL",
+            "SMALLWIDE",
+            "SMALLFULL",
+            "MEDIUMTHIN",
+            "MEDIUM",
+            "MEDIUMWIDE",
+            "LARGETHIN",
+            "LARGE",
+            "LARGEWIDE",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "tabIndex": Object {
+        "type": "number",
+      },
+      "testID": [Function],
+      "testId": Object {
+        "type": "string",
+      },
+      "timeRange": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "timeRangeOptions": [Function],
+      "title": Object {
+        "type": "string",
+      },
+      "toolbar": Object {
+        "type": "element",
+      },
+      "tooltip": Object {
+        "type": "element",
+      },
+      "values": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "group": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
+  "MeterChart" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "AreaChart" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
+  "StackedAreaChart" => Object {
+    "$$typeof": Symbol(react.forward_ref),
+    "render": [Function],
+  },
   "ListCard" => Object {
     "defaultProps": Object {
       "data": Array [],
