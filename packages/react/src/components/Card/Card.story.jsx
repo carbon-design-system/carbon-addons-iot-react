@@ -236,7 +236,7 @@ export const BasicWithRenderProp = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}

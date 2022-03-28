@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
     </p>
     <p>
       For additional guidance, see the
-       
+
       <a
         href="https://ibm.biz/iot-design-site"
       >
@@ -4761,82 +4761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
-                  MeterChartCard
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  SparklineChartCard
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  StackedAreaChartCard
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  MeterChart
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  AreaChart
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  StackedAreaChart
+                  ValueContent
                 </div>
               </div>
               <div
@@ -6028,7 +5953,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
           Found a bug or have an idea for an enhancement?
         </strong>
          File a new issue
-         
+
         <a
           href="https://github.com/carbon-design-system/carbon-addons-iot-react/issues/new/choose"
         >
@@ -6040,21 +5965,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
           Need some help?
         </strong>
          If you're an IBMer, join
-         
+
         <a
           href="https://ibm-ai-apps.slack.com/archives/CDD01SREX"
         >
           #ai-apps-pal
         </a>
          for questions about the Watson IoT Pattern and Asset Library (PAL) and
-         
+
         <a
           href="https://ibm-ai-apps.slack.com/archives/CMYHKU8HZ"
         >
           #ai-apps-pal-components
         </a>
          for questions about components. Otherwise, post your question to our github
-         
+
         <a
           href="https://github.com/carbon-design-system/carbon-addons-iot-react/issues/new?assignees=&labels=type%3A+question+%3Agrey_question%3A%2C+status%3A+needs+triage+%3Amag%3A&template=question.md&title=%5BComponentName%5D+question_title%3F"
         >
@@ -6066,13 +5991,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
         <strong>
           Interested in contributing to the project?
         </strong>
-         
+
         <a
           href="https://github.com/carbon-design-system/carbon-addons-iot-react/blob/next/.github/CONTRIBUTING.MD"
         >
           Here's
         </a>
-         
+
         how to get started.
       </p>
     </div>

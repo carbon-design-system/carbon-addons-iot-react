@@ -59,6 +59,9 @@
     font-size: 0.75rem;
     margin-bottom: $spacing-02;
     color: var(--secondary-value-color);
+    &--link {
+      cursor: pointer;
+    }
   }
 }
 

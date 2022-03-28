@@ -90,7 +90,7 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
   xs: PropTypes.number,
 });
 
-export const ValueCardPropTypes = {
+export const ValueContentPropTypes = {
   content: PropTypes.shape({
     attributes: PropTypes.arrayOf(AttributePropTypes).isRequired,
   }),
