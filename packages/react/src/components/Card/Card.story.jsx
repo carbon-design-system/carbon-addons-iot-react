@@ -464,6 +464,44 @@ export const ImplementingACustomCard = () => {
   );
 };
 
+export const EmptyStatWithFooter = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card with render prop')}
+        id="facilitycard-basic"
+        size={size}
+        isLoading={boolean('isloading', false)}
+        isEmpty={boolean('isEmpty', true)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: true,
+          expand: true,
+          edit: true,
+          clone: false,
+          delete: false,
+        })}
+        onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
+      />
+    </div>
+  );
+};
+
+EmptyStatWithFooter.storyName = 'empty state with footer';
+
 ImplementingACustomCard.storyName = 'implementing a custom card';
 
 ImplementingACustomCard.parameters = {

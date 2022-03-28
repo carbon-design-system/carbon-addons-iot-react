@@ -110,8 +110,8 @@ export const CardTitle = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className, testId, noPadding } = props;
-  const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
+  const { children, dimensions, isExpanded, className, testId, noPadding, hasFooter } = props;
+  const height = `${dimensions.y - CARD_TITLE_HEIGHT - (hasFooter ? '40' : '0')}px`;
   return (
     <div
       data-testid={testId}
@@ -179,12 +179,15 @@ CardContent.propTypes = {
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
   noPadding: PropTypes.bool,
+  // define the actual card content depending if it has a footer or not
+  hasFooter: PropTypes.bool,
 };
 CardContent.defaultProps = {
   children: undefined,
   className: '',
   testId: 'card-content',
   noPadding: false,
+  hasFooter: false,
 };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
@@ -554,6 +557,7 @@ const Card = (props) => {
         isExpanded={isExpanded}
         className={contentClassName}
         noPadding={padding === 'none'}
+        hasFooter={!!CardFooter}
       >
         {!isVisible && isLazyLoading ? ( // if not visible don't show anything
           ''

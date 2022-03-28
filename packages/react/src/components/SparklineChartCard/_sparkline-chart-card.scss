@@ -2,7 +2,7 @@
 
 .#{$iot-prefix}--sparkline-card--wrapper {
   width: 100%;
-  height: calc(100% - (var(--card-list-height) * 1.3));
+  height: calc(100% - (var(--card-list-height)));
   &--list {
     display: flex;
     margin-bottom: $spacing-03;
@@ -13,6 +13,18 @@
     > p {
       color: $text-02;
       padding-right: $spacing-05;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .#{$iot-prefix}--sparkline-card--wrapper {
+    &--list {
+      > p {
+        color: $text-02;
+        padding-left: $spacing-05;
+        padding-right: 0;
+      }
     }
   }
 }
