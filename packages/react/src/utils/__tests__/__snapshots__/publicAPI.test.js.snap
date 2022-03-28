@@ -11771,6 +11771,35 @@ Map {
       },
     },
   },
+  "ReadOnlyValue" => Object {
+    "defaultProps": Object {
+      "label": "",
+      "testId": "read-only-value",
+      "type": "stacked",
+      "value": "",
+    },
+    "propTypes": Object {
+      "label": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "stacked",
+            "inline",
+            "inline_small",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+    },
+  },
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -22963,35 +22992,6 @@ Map {
           ],
         ],
         "type": "oneOfType",
-      },
-    },
-  },
-  "ReadOnlyValue" => Object {
-    "defaultProps": Object {
-      "label": "",
-      "testId": "read-only-value",
-      "type": "stacked",
-      "value": "",
-    },
-    "propTypes": Object {
-      "label": Object {
-        "type": "string",
-      },
-      "testId": Object {
-        "type": "string",
-      },
-      "type": Object {
-        "args": Array [
-          Array [
-            "stacked",
-            "inline",
-            "inline_small",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "value": Object {
-        "type": "string",
       },
     },
   },
