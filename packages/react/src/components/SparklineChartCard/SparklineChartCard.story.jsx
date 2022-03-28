@@ -9,8 +9,11 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import SparklineChartCardREADME from './SparklineChartCard.mdx';
 import SparklineChartCard from './SparklineChartCard';
 
+const supportedSizes = Object.keys(CARD_SIZES).filter(
+  (size) => (size.includes('MEDIUM') || size.includes('LARGE')) && size !== CARD_SIZES.MEDIUMTHIN
+);
 export default {
-  title: '1 - Watson IoT/SparklineChartCard',
+  title: '1 - Watson IoT/Card/SparklineChartCard',
   parameters: {
     component: SparklineChartCard,
     docs: {
@@ -20,7 +23,7 @@ export default {
 };
 
 export const Basic = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
@@ -162,7 +165,7 @@ export const Basic = () => {
 Basic.storyName = 'basic';
 
 export const withThresholds = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
@@ -309,7 +312,7 @@ export const withThresholds = () => {
 
 withThresholds.storyName = 'with thresholds';
 export const MultipleGroups = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
@@ -460,7 +463,7 @@ export const MultipleGroups = () => {
 
 MultipleGroups.storyName = 'multiple chart groups';
 export const EmptyState = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMTHIN);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMTHIN);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div

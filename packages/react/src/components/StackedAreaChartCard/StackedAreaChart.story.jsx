@@ -9,8 +9,11 @@ import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import StackedAreaChartCardREADME from './StackedAreaChartCard.mdx';
 import StackedAreaChartCard from './StackedAreaChartCard';
 
+const supportedSizes = Object.keys(CARD_SIZES).filter(
+  (size) => (size.includes('MEDIUM') || size.includes('LARGE')) && size !== CARD_SIZES.MEDIUMTHIN
+);
 export default {
-  title: '1 - Watson IoT/StackedAreaChartCard',
+  title: '1 - Watson IoT/Card/StackedAreaChartCard',
   parameters: {
     component: StackedAreaChartCard,
     docs: {
@@ -20,7 +23,7 @@ export default {
 };
 
 export const Basic = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
@@ -90,7 +93,7 @@ export const Basic = () => {
 Basic.storyName = 'basic';
 
 export const withThresholds = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
@@ -165,7 +168,7 @@ export const withThresholds = () => {
 
 withThresholds.storyName = 'with Thresholds';
 export const EmptyState = () => {
-  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUMWIDE);
+  const size = select('size', supportedSizes, CARD_SIZES.MEDIUMWIDE);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
   return (
     <div
