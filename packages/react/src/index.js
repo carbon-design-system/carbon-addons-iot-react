@@ -84,6 +84,7 @@ export { default as TableCard } from './components/TableCard/TableCard';
 export { default as GaugeCard } from './components/GaugeCard/GaugeCard';
 export { DragAndDrop } from './utils/DragAndDropUtils';
 export { default as ValueContent } from './components/ValueCard/ValueContent';
+export { default as ReadOnlyValue } from './components/ReadOnlyValue/ReadOnlyValue';
 
 // Experimental
 export { default as ListCard } from './components/ListCard/ListCard';
