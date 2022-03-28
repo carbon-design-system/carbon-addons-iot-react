@@ -22966,6 +22966,35 @@ Map {
       },
     },
   },
+  "ReadOnlyValue" => Object {
+    "defaultProps": Object {
+      "label": "",
+      "testId": "read-only-value",
+      "type": "stacked",
+      "value": "",
+    },
+    "propTypes": Object {
+      "label": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "stacked",
+            "inline",
+            "inline_small",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+    },
+  },
   "ListCard" => Object {
     "defaultProps": Object {
       "data": Array [],
