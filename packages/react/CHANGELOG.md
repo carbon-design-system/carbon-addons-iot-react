@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.34...v2.149.0-next.35) (2022-03-28)
+
+
+### Bug Fixes
+
+* **readonlyvalue:** export component ([f9a647c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f9a647c481b35996efd24ead46be62791678c27c))
+* **readonlyvalue:** export component ([38ff876](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38ff8764c35285df73efb24bd8b25c37dbdea390))
+
+
+
+
+
 # [2.149.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.33...v2.149.0-next.34) (2022-03-24)
 
 
