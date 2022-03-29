@@ -4536,6 +4536,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  ReadOnlyValue
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   Dashboard
                 </div>
               </div>
@@ -4747,6 +4762,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   DragAndDrop
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  ValueContent
                 </div>
               </div>
               <div
