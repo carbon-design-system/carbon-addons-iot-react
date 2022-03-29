@@ -1,0 +1,114 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground#table-component)
+
+## Aggregations
+
+The table can sum columns and show their aggregate total in a footer. This feature is activated by
+setting the prop `options.hasAggregations` to `true` and configuring affected columns and the potential
+label with the prop `view.aggregations`. A menu option to toggle the aggregation footer is automatically
+added to an overflow button in the table toolbar. If the table has pagination it will show the aggregation
+of all pages, not just the current page.
+
+See the [View Prop](/docs/1-watson-iot-table--playground#view-prop) for the full list of aggregation props.
+
+The example below shows the basic code needed to aggregate the values in the "number" column using the
+default sum function.
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={columns}
+    data={data}
+    options={{ hasAggregations: true }}
+    view={{
+      // There is no default label, if the label prop is removed there will
+      // be no label shown.
+      label: 'Total:',
+      aggregations: {
+        columns: [{ id: 'number' }],
+      },
+    }}
+  />
+);
+
+```
+
+### Aggregations column settings
+
+As illustrated below there are several optional settings for an aggregation column object but the
+`id` of the column is required. The `isSortable` ensures the aggregate value aligns with the rest
+of the column by supplying the extra padding needed when a column is sortable.
+If the aggregation is computed elsewhere, the result can be set using the `value` prop.
+The `value` prop can also be a function passed to compute the result on the fly.
+
+```jsx
+...
+
+const aggregationColumns = [
+  // The "number" column will aggregate the values using the value function in order to
+  // display the result using the kilo unit.
+  {
+    id: 'number',
+    align: 'start', // 'start', 'center', or 'end'
+    isSortable: true,
+    value: (values) => {
+      const total = values.reduce((sum, val) => sum + val, 0);
+      const kilo = Math.round(total / 1000);
+      return `${kilo} k`;
+    },
+  },
+  // The "object" column is using a value from an aggregation computed elsewhere
+  // e.g. in the backend DB.
+  {
+    id: 'object',
+    value: objectColumnAggregateValue,
+  },
+  // The "boolean" column implements a basic custom aggregation function that counts
+  // all the true values. Only columns with data type finite numbers will pass the
+  // columns values as a parameter so in this case we have to use the locally available
+  // data prop.
+  {
+    id: 'boolean',
+    value: () => data.reduce((total, row) => total + row.values.boolean, 0),
+  },
+];
+```
+
+### Handling the onToggleAggregations event
+
+For the StatefulTable the toggled state is handled automatically but for the normal table a
+callback function that updates the prop `view.aggregations.isHidden` has to be provided for
+`actions.toolbar.onToggleAggregations`.
+
+```jsx
+...
+
+const [aggregationsHidden, setAggregationsHidden] = useState(false);
+
+return (
+  <StatefulTable
+    columns={columns}
+    data={data}
+    actions={{
+      toolbar: {
+        onToggleAggregations: () => {
+          setAggregationsHidden((hidden) => !hidden);
+        },
+      },
+    }}
+    options={{ hasAggregations: true }}
+    view={{
+      aggregations: {
+        isHidden: aggregationsHidden,
+        columns: [
+          {
+            id: 'number',
+            columns: [{ id: 'number' }],
+          },
+        ],
+      },
+    }}
+  />
+);
+```

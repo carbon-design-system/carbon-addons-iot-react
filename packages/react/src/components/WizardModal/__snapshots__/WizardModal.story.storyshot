@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal basic wizard modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal basic wizard modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -309,7 +309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal custom footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -625,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal sending data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal sending data 1`] = `
 <div
   className="storybook-container"
 >

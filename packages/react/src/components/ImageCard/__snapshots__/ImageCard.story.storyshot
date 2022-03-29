@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -312,7 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard custom renderIconByName 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard custom renderIconByName 1`] = `
 <div
   className="storybook-container"
 >
@@ -713,7 +713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard error 1`] = `
 <div
   className="storybook-container"
 >
@@ -1060,7 +1060,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard error loading image 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard error loading image 1`] = `
 <div
   className="storybook-container"
 >
@@ -1407,7 +1407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard hotspots are loading 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard hotspots are loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -1646,7 +1646,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard image upload error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard image upload error 1`] = `
 <div
   className="storybook-container"
 >
@@ -1814,7 +1814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard isEditable (experimental) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard isEditable (experimental) 1`] = `
 <div
   className="storybook-container"
 >
@@ -1982,7 +1982,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageCard with displayOptions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ImageCard with displayOptions 1`] = `
 <div
   className="storybook-container"
 >
