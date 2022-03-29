@@ -7,6 +7,7 @@ import { isEqual } from 'lodash-es';
 let callOrder = 0;
 let states = [];
 let dependencies = [];
+let reRenderingQueued = false;
 
 addons.getChannel().addListener(STORY_CHANGED, () => {
   // Clear the global state and reset the call order when
@@ -14,12 +15,15 @@ addons.getChannel().addListener(STORY_CHANGED, () => {
   callOrder = 0;
   states = [];
   dependencies = [];
+  reRenderingQueued = false;
 });
 
 addons.getChannel().addListener(STORY_RENDERED, () => {
-  // Reset on every render so that the index of the useStoryState
+  // Reset callOrder on every render so that the index of the useStoryState
   // doesn't keep increasing.
   callOrder = 0;
+  // Reset reRenderingQueued once the story has been rendered
+  reRenderingQueued = false;
 });
 
 /**
@@ -73,7 +77,13 @@ export default function useStoryState(initialValue, currentDep) {
   // The update function returned together with the value
   const update = (newValue) => {
     states[index] = typeof newValue === 'function' ? newValue(states[index]) : newValue;
-    addons.getChannel().emit(FORCE_RE_RENDER);
+
+    if (!reRenderingQueued) {
+      // Prevent multiple forced rerender calls if there are multiple states
+      // updateded in the same cycle.
+      reRenderingQueued = true;
+      addons.getChannel().emit(FORCE_RE_RENDER);
+    }
   };
 
   return [value, update];
