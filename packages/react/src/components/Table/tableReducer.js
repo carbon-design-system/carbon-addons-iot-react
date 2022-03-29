@@ -564,6 +564,7 @@ export const tableReducer = (state = {}, action) => {
             activeBar: {
               $set: activeBar,
             },
+            rowEditBarButtons: { $set: get(view, 'toolbar.rowEditBarButtons') },
           },
           table: {
             ordering: { $set: ordering },
@@ -600,6 +601,7 @@ export const tableReducer = (state = {}, action) => {
             loadingMoreIds: {
               $set: loadingMoreIds,
             },
+            singleRowEditButtons: { $set: get(view, 'table.singleRowEditButtons') },
           },
         },
       });

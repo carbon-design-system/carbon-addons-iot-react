@@ -66,6 +66,7 @@ export { default as suiteHeaderData } from './components/SuiteHeader/util/suiteH
 export { default as useUiResources } from './components/SuiteHeader/hooks/useUiResources';
 export { default as uiresources } from './components/SuiteHeader/util/uiresources';
 export { default as Walkme } from './components/Walkme/Walkme';
+export { default as ReadOnlyValue } from './components/ReadOnlyValue/ReadOnlyValue';
 
 // Dashboard
 export { default as Dashboard } from './components/Dashboard/Dashboard';
@@ -83,6 +84,7 @@ export { default as ImageCard } from './components/ImageCard/ImageCard';
 export { default as TableCard } from './components/TableCard/TableCard';
 export { default as GaugeCard } from './components/GaugeCard/GaugeCard';
 export { DragAndDrop } from './utils/DragAndDropUtils';
+export { default as ValueContent } from './components/ValueCard/ValueContent';
 
 // Experimental
 export { default as ListCard } from './components/ListCard/ListCard';
