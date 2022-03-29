@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.37...v2.149.0-next.38) (2022-03-29)
+
+
+### Bug Fixes
+
+* **statefultable:** include rowedit buttons in tableregister ([35cdaa6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/35cdaa69dce1579fb42eb3871cad87f227926052)), closes [#3404](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3404)
+* **table:** remove unused imports ([07ac057](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07ac057674e076b4ad5e5021b16a4f33726d7cdd))
+
+
+
+
+
 # [2.149.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.36...v2.149.0-next.37) (2022-03-29)
 
 
