@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.35...v2.149.0-next.36) (2022-03-29)
+
+
+### Features
+
+* **table-manage-views-modal:** deleteWarningTextTemplate as string ([e75d352](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e75d3529bcde5abc8603749e808862b6abf61053))
+
+
+
+
+
 # [2.149.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.34...v2.149.0-next.35) (2022-03-28)
 
 
