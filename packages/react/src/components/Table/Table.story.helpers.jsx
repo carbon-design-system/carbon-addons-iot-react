@@ -1209,6 +1209,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           COLUMN_GROUP
         )
       : null,
+    demoColumnOverflowMenuItems: shouldCreate('demoColumnOverflowMenuItems')
+      ? boolean(
+          'Demo column overflow menu (columns[i].overflowMenuItems)',
+          getDefaultValue('demoColumnOverflowMenuItems'),
+          COLUMN_GROUP
+        )
+      : null,
 
     // SELECTIONS_ACTIONS_GROUP
     hasRowSelection: shouldCreate('hasRowSelection')
@@ -1516,5 +1523,80 @@ export const getI18nKnobs = (useGroup = true) => {
     multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
     multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
     toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+  };
+};
+
+// Copied in from old table story where it was previously exported
+// to also be used in testing and other stories embedding a table
+export const getInitialState = () => {
+  const tableColumns = getTableColumns();
+  return {
+    columns: tableColumns.map((i, idx) => ({
+      ...i,
+      isSortable: idx !== 1,
+    })),
+    data: getTableData().map((i, idx) => ({
+      ...i,
+      rowActions: getRowActions(idx),
+    })),
+    expandedData: [
+      {
+        rowId: 'row-1',
+        content: <div>HELLO CONTENT</div>,
+      },
+    ],
+    options: {
+      hasFilter: true,
+      hasSearch: true,
+      hasPagination: true,
+      hasRowSelection: 'multi',
+      hasRowExpansion: true,
+      hasRowActions: true,
+      hasColumnSelection: true,
+      shouldExpandOnRowClick: false,
+      hasRowEdit: true,
+    },
+    view: {
+      filters: [
+        {
+          columnId: 'string',
+          value: 'whiteboard',
+        },
+        {
+          columnId: 'select',
+          value: 'option-B',
+        },
+      ],
+      pagination: {
+        pageSize: 10,
+        pageSizes: [10, 20, 30],
+        page: 1,
+      },
+      table: {
+        loadingMoreIds: [],
+        isSelectAllSelected: false,
+        selectedIds: [],
+        sort: undefined,
+        ordering: tableColumns.map(({ id }) => ({
+          columnId: id,
+          isHidden: id === 'secretField',
+        })),
+        expandedIds: [],
+        rowActions: [],
+        singleRowEditButtons: <span>singleRowEditButtons implementation needed</span>,
+      },
+      toolbar: {
+        activeBar: 'filter',
+        batchActions: [
+          {
+            id: 'delete',
+            labelText: 'Delete',
+            // renderIcon: TrashCan16,
+            iconDescription: 'Delete',
+          },
+        ],
+        rowEditBarButtons: <div>App implementation of rowEdit bar buttons expected</div>,
+      },
+    },
   };
 };
