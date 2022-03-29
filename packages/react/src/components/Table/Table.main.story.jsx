@@ -85,7 +85,7 @@ export const Playground = () => {
   const [rowActionsState, setRowActionsState] = useStoryState(getRowActionStates());
 
   // KNOBS
-  // The order of appearance is defined ub function getTableKnobs.
+  // The order of appearance is defined by the function getTableKnobs.
   const {
     selectedTableType,
     tableMaxWidth,
@@ -1172,18 +1172,16 @@ export const WithDataEditing = () => {
 
   const [showRowEditBar, setShowRowEditBar] = useStoryState(false);
   const [currentData, setCurrentData] = useStoryState(initialData);
-  const [, setRowEditedData] = useStoryState([]);
+  const [rowEditData, setRowEditedData] = useStoryState([]);
   const [previousData, setPreviousData] = useStoryState([]);
   const [showToast, setShowToast] = useStoryState(false);
   const [rowActionsState, setRowActionsState] = useStoryState([]);
   const [isPristine, setIsPristine] = useStoryState(true);
 
-  const disableRowActions = (disabled) => {
+  const disableRowActions = (data, disabled) => {
     const rowAction = getOverflowEditRowAction();
     rowAction.disabled = disabled;
-    setCurrentData((previusData) =>
-      previusData.map((row) => ({ ...row, rowActions: [rowAction] }))
-    );
+    return data.map((row) => ({ ...row, rowActions: [rowAction] }));
   };
 
   const onDataChange = debounce((newValue, columnId, rowId) => {
@@ -1199,14 +1197,14 @@ export const WithDataEditing = () => {
     setRowEditedData(cloneDeep(currentData));
     setShowRowEditBar(true);
     setShowToast(false);
-    disableRowActions(true);
+    setCurrentData((prev) => disableRowActions(prev, true));
   };
   const onCancelRowEdit = () => {
     setRowEditedData([]);
     setShowRowEditBar(false);
     setRowActionsState([]);
     setIsPristine(true);
-    disableRowActions(false);
+    setCurrentData((prev) => disableRowActions(prev, false));
   };
   const onSaveRowEdit = () => {
     // because of the nature of rendering these buttons dynamically (and asyncronously via dispatch)
@@ -1214,9 +1212,8 @@ export const WithDataEditing = () => {
     // we're always working with the correctly updated data.
     setRowEditedData((prev) => {
       setShowToast(true);
-      setPreviousData(currentData);
-      setCurrentData(prev);
-      disableRowActions(false);
+      setPreviousData(disableRowActions(currentData, false));
+      setCurrentData(disableRowActions(prev, false));
       setShowRowEditBar(false);
       setRowActionsState([]);
       setIsPristine(true);
@@ -1232,7 +1229,7 @@ export const WithDataEditing = () => {
   const onApplyRowAction = (action, rowId) => {
     if (action === 'edit') {
       setRowEditedData(cloneDeep(currentData));
-      disableRowActions(true);
+      setCurrentData(disableRowActions(currentData, true));
       setRowActionsState([{ rowId, isEditMode: true }]);
     }
   };
@@ -1311,7 +1308,12 @@ export const WithDataEditing = () => {
             singleRowEditButtons: saveCancelButtons,
           },
         }}
-        data={currentData}
+        // WORKAROUND for #3406
+        // Ideally we would only ever use the currentData here, but the stateful table doesn't pick
+        // up isolated changes to view.toolbar.rowEditBarButtons or view.table.singleRowEditButtons so we
+        // have to trigger the TABLE_REGISTER action by some other means in order to render the changes
+        // made to the disabled state of the save button. That is why we then use rowEditData.
+        data={selectedTableType === 'StatefulTable' && !isPristine ? rowEditData : currentData}
         actions={{
           table: { onApplyRowAction },
           toolbar: { onShowRowEdit: onShowMultiRowEdit },
