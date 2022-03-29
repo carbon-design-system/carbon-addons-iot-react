@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FilterTags Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) Default Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -194,7 +194,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FilterTags With hasOverflow set to false 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) With hasOverflow set to false 1`] = `
 <div
   className="storybook-container"
 >
@@ -364,7 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FilterTags With tagContainer prop 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Tags (FilterTags) With tagContainer prop 1`] = `
 <div
   className="storybook-container"
 >

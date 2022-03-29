@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard basic - without last updated header 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard basic - without last updated header 1`] = `
 <div
   className="storybook-container"
 >
@@ -2949,7 +2949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard basic dashboard 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard basic dashboard 1`] = `
 <div
   className="storybook-container"
 >
@@ -5905,7 +5905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard custom actions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard custom actions 1`] = `
 <div
   className="storybook-container"
 >
@@ -8896,7 +8896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen bar chart card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard full screen bar chart card 1`] = `
 <div
   className="storybook-container"
 >
@@ -9069,7 +9069,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen image card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard full screen image card 1`] = `
 <div
   className="storybook-container"
 >
@@ -9345,7 +9345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen line card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard full screen line card 1`] = `
 <div
   className="storybook-container"
 >
@@ -9518,7 +9518,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard full screen table card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard full screen table card 1`] = `
 <div
   className="storybook-container"
 >
@@ -11405,7 +11405,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard i18n labels 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard i18n labels 1`] = `
 <div
   className="storybook-container"
 >
@@ -14361,7 +14361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard line card with no options 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard line card with no options 1`] = `
 <div
   className="storybook-container"
 >
@@ -14493,7 +14493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard only value cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard only value cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -29178,7 +29178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard sidebar 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard sidebar 1`] = `
 <div
   className="storybook-container"
 >
@@ -32160,7 +32160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard with custom cards 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard with custom cards 1`] = `
 <div
   className="storybook-container"
 >
@@ -34127,7 +34127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/�
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/🚫 Dashboard ️⛔ Deprecation Notice  1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Deprecated/🚫 Dashboard ️⛔ Deprecation Notice  1`] = `
 <div
   className="storybook-container"
 >

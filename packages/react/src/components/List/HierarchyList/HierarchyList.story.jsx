@@ -22,7 +22,7 @@ const addButton = (
 );
 
 export default {
-  title: '1 - Watson IoT/HierarchyList',
+  title: '1 - Watson IoT/List/HierarchyList',
 
   parameters: {
     component: HierarchyList,

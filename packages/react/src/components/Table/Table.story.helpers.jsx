@@ -11,6 +11,7 @@ import Edit from '@carbon/icons-react/es/edit/16';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
+import EmptyState from '../EmptyState';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -109,6 +110,7 @@ export const getTableActions = () => ({
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    onToggleAggregations: action('onToggleAggregations'),
     // TODO: removed to mimic the current state of consumers in the wild
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
@@ -820,6 +822,31 @@ const getParsedIntOrUndefined = (value) => {
   return Number.isNaN(parsedValue) ? undefined : parsedValue;
 };
 
+export const getCustomEmptyState = () => (
+  <EmptyState
+    icon="not-authorized"
+    title="Custom empty state"
+    body="This is an custom empty state with custom icon, texts and action button"
+    action={{
+      label: 'Fix this',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
+
+export const getCustomErrorState = () => (
+  <EmptyState
+    icon="error404"
+    title="Custom error state"
+    body="Custom Error State message with custom icon, texts and action button"
+    action={{
+      label: 'Reload',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
 /**
  * Helper function that generate the Table knobs.
  *
@@ -836,11 +863,11 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
   const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
   const SEARCH_GROUP = useGroups ? 'Search' : undefined;
   const COLUMN_GROUP = useGroups ? 'Column configuration' : undefined;
-  const AGGREGATION_GROUP = useGroups ? 'Aggregation' : undefined;
+  const AGGREGATION_GROUP = useGroups ? 'Aggregations' : undefined;
   const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
-  const STATES_GROUP = useGroups ? 'States' : undefined;
+  const STATES_GROUP = useGroups ? 'Main view states' : undefined;
 
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
@@ -997,6 +1024,11 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
               id: 'number',
               align: 'start',
               isSortable: false,
+            },
+            {
+              id: 'object',
+              isSortable: false,
+              value: '5',
             },
           ],
           AGGREGATION_GROUP
@@ -1302,11 +1334,7 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
         )
       : null,
     demoEmptyState: shouldCreate('demoEmptyState')
-      ? boolean(
-          'Demo empty state (view.table.emptyState)',
-          getDefaultValue('demoEmptyState'),
-          STATES_GROUP
-        )
+      ? boolean('Demo empty state (data)', getDefaultValue('demoEmptyState'), STATES_GROUP)
       : null,
     demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
       ? boolean(
@@ -1314,6 +1342,9 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           getDefaultValue('demoCustomEmptyState'),
           STATES_GROUP
         )
+      : null,
+    error: shouldCreate('error')
+      ? text('Show error state with this string (error)', '', STATES_GROUP)
       : null,
     demoCustomErrorState: shouldCreate('demoCustomErrorState')
       ? boolean(

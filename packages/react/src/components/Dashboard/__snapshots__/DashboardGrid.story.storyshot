@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all card sizes 1`] = `
 <div
   className="storybook-container"
 >
@@ -574,7 +574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all cards as resizable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all cards as resizable 1`] = `
 <div
   className="storybook-container"
 >
@@ -4103,7 +4103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, custom layout 1`] = `
 <div
   className="storybook-container"
 >
@@ -4345,7 +4345,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, default layouts 1`] = `
 <div
   className="storybook-container"
 >
@@ -4604,7 +4604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, is Editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, is Editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -4846,7 +4846,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, resizable card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, resizable card 1`] = `
 <div
   className="storybook-container"
 >

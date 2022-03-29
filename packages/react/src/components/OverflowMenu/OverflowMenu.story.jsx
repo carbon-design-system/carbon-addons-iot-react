@@ -46,7 +46,7 @@ const defaultProps = {
 OverflowMenu.displayName = 'OverflowMenu';
 
 export default {
-  title: '1 - Watson IoT/OverflowMenu',
+  title: '1 - Watson IoT/Menus/OverflowMenu',
   decorators: [withKnobs],
 
   parameters: {

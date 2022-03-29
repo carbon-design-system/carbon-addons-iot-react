@@ -12,7 +12,7 @@ import ValueCard from './ValueCard';
 import ValueCardREADME from './ValueCard.mdx';
 
 export default {
-  title: '1 - Watson IoT/ValueCard',
+  title: '1 - Watson IoT/Card/ValueCard',
 
   parameters: {
     component: ValueCard,
