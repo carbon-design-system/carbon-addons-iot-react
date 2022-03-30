@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List basic (single column) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List basic (single column) 1`] = `
 <div
   className="storybook-container"
 >
@@ -311,7 +311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List basic (single column) with search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List basic (single column) with search 1`] = `
 <div
   className="storybook-container"
 >
@@ -690,7 +690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with async loading and search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with async loading and search 1`] = `
 <div
   className="storybook-container"
 >
@@ -809,7 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with categories, fixed height 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with categories, fixed height 1`] = `
 <div
   className="storybook-container"
 >
@@ -1987,7 +1987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with checkbox multi-selection 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with checkbox multi-selection 1`] = `
 <div
   className="storybook-container"
 >
@@ -2081,7 +2081,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2090,6 +2089,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="DJ LeMahieu-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2143,7 +2143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2152,6 +2151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Luke Voit-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2205,7 +2205,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2214,6 +2213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gary Sanchez-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2267,7 +2267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2276,6 +2275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Kendrys Morales-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2329,7 +2329,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2338,6 +2337,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gleyber Torres-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2391,7 +2391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2400,6 +2399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Clint Frazier-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2453,7 +2453,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2462,6 +2461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Brett Gardner-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2515,7 +2515,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2524,6 +2523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Gio Urshela-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2577,7 +2577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2586,6 +2585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Cameron Maybin-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2639,7 +2639,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2648,6 +2647,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Robinson Cano-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2687,7 +2687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with checkbox multi-selection and hierarchy 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with checkbox multi-selection and hierarchy 1`] = `
 <div
   className="storybook-container"
 >
@@ -2807,7 +2807,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2816,6 +2815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Chicago White Sox-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2895,7 +2895,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2904,6 +2903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="New York Yankees-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -2983,7 +2983,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -2992,6 +2991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Houston Astros-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3053,7 +3053,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3062,6 +3061,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Atlanta Braves-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3123,7 +3123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3132,6 +3131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="New York Mets-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3193,7 +3193,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
               >
                 <div
                   className="bx--form-item bx--checkbox-wrapper"
-                  onClick={[Function]}
                 >
                   <input
                     checked={false}
@@ -3202,6 +3201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
                     disabled={false}
                     id="Washington Nationals-checkbox"
                     onChange={[Function]}
+                    onClick={[Function]}
                     type="checkbox"
                   />
                   <label
@@ -3241,7 +3241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with empty state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with empty state 1`] = `
 <div
   className="storybook-container"
 >
@@ -3592,7 +3592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with hierarchy 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with hierarchy 1`] = `
 <div
   className="storybook-container"
 >
@@ -5199,7 +5199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with isLargeRow and icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with isLargeRow and icon 1`] = `
 <div
   className="storybook-container"
 >
@@ -5750,7 +5750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with load more 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with load more 1`] = `
 <div
   className="storybook-container"
 >
@@ -5906,7 +5906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with pagination 1`] = `
 <div
   className="storybook-container"
 >
@@ -6288,7 +6288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with reorder and drop target restrictions 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with reorder and drop target restrictions 1`] = `
 <div
   className="storybook-container"
 >
@@ -6901,7 +6901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with reorder and locked rows 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with reorder and locked rows 1`] = `
 <div
   className="storybook-container"
 >
@@ -7482,7 +7482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with row actions (multiple) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with row actions (multiple) 1`] = `
 <div
   className="storybook-container"
 >
@@ -8353,7 +8353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with row actions (single) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with row actions (single) 1`] = `
 <div
   className="storybook-container"
 >
@@ -9204,7 +9204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with secondaryValue 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with secondaryValue 1`] = `
 <div
   className="storybook-container"
 >
@@ -9575,7 +9575,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with selectable items 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with selectable items 1`] = `
 <div
   className="storybook-container"
 >
@@ -9936,7 +9936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with tags 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with tags 1`] = `
 <div
   className="storybook-container"
 >
@@ -10497,7 +10497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List with virtual list 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/List with virtual list 1`] = `
 <div
   className="storybook-container"
 >

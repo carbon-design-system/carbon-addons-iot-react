@@ -26,6 +26,7 @@ const defaultProps = {
     learnMoreLink: 'Learn more',
   },
   testId: 'suite-header-app-switcher',
+  isExpanded: false,
 };
 
 const propTypes = {
@@ -40,6 +41,7 @@ const propTypes = {
     learnMoreLink: PropTypes.string,
   }),
   testId: PropTypes.string,
+  isExpanded: PropTypes.bool,
 };
 
 const SuiteHeaderAppSwitcher = ({
@@ -50,6 +52,7 @@ const SuiteHeaderAppSwitcher = ({
   i18n,
   onRouteChange,
   testId,
+  isExpanded,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
@@ -61,6 +64,7 @@ const SuiteHeaderAppSwitcher = ({
 
   const handleRouteChange = useCallback(
     ({ href, id, isExternal }) => async (e) => {
+      e.preventDefault();
       const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, {
         appId: id,
@@ -78,6 +82,7 @@ const SuiteHeaderAppSwitcher = ({
 
   const handleAllApplicationRoute = useCallback(
     async (e) => {
+      e.preventDefault();
       const newWindow = shouldOpenInNewWindow(e);
       const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, allApplicationsLink);
       if (result) {
@@ -90,6 +95,8 @@ const SuiteHeaderAppSwitcher = ({
     },
     [allApplicationsLink, onRouteChange]
   );
+
+  const tabIndex = isExpanded ? 0 : -1;
 
   return (
     <ul data-testid={testId} className={baseClassName}>
@@ -106,6 +113,9 @@ const SuiteHeaderAppSwitcher = ({
             onClick={handleAllApplicationRoute}
             onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
             renderIcon={ArrowRight16}
+            tabIndex={tabIndex}
+            href={allApplicationsLink}
+            rel="noopener noreferrer"
           >
             {mergedI18n.allApplicationsLink}
           </Button>
@@ -135,6 +145,9 @@ const SuiteHeaderAppSwitcher = ({
                 testId={`${testId}--${id}`}
                 onClick={eventHandler}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+                tabIndex={tabIndex}
+                href={href}
+                rel="noopener noreferrer"
               >
                 {name}
               </Button>
@@ -150,9 +163,11 @@ const SuiteHeaderAppSwitcher = ({
           </div>
           <span>{mergedI18n.requestAccess}</span>
           <a
-            href="javascript:void(0)"
+            href={noAccessLink}
+            rel="noopener noreferrer"
             data-testid="suite-header-app-switcher--no-access"
-            onClick={async () => {
+            onClick={async (e) => {
+              e.preventDefault();
               const result = await onRouteChange(
                 SUITE_HEADER_ROUTE_TYPES.DOCUMENTATION,
                 noAccessLink
@@ -161,6 +176,7 @@ const SuiteHeaderAppSwitcher = ({
                 window.location.href = noAccessLink;
               }
             }}
+            tabIndex={tabIndex}
           >
             {mergedI18n.learnMoreLink}
           </a>

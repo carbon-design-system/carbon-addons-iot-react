@@ -7,7 +7,7 @@ import ProgressBarREADME from './ProgressBar.mdx';
 import ProgressBar from './ProgressBar';
 
 export default {
-  title: '1 - Watson IoT/ProgressBar',
+  title: '1 - Watson IoT/Progress bar',
 
   parameters: {
     component: ProgressBar,
@@ -17,33 +17,47 @@ export default {
   },
 };
 
-const props = () => ({
+const props = ({ light } = {}) => ({
   label: text('Label text (label)', 'Progress bar label'),
   helperText: text('Helper text (helperText)', 'Optional helper text'),
   hideLabel: boolean('Hide the label (hideLabel)', false),
+  inline: boolean('Show the inline variant without label or icons (inline)', false),
   value: number('Current value (value)', 75),
   valueUnit: text('The unit displayed with the text value above the bar (valueUnit)', '%'),
   max: number('Maximum value (max)', 100),
+  light: boolean('Turn the progress bar white--for use on a gray background (light)', light),
 });
 
-const ProgressBarContainer = ({ maxWidth = 300, children }) => (
-  <div style={{ maxWidth, backgroundColor: '#FFF', padding: '1rem' }}>{children}</div>
+const ProgressBarContainer = ({ maxWidth = 300, children, light = false }) => (
+  <div style={{ maxWidth, backgroundColor: !light ? '#FFF' : 'transparent', padding: '1rem' }}>
+    {children}
+  </div>
 );
 
 export const Default = () => {
   return (
     <ProgressBarContainer>
-      <ProgressBar {...props()} label="Mon, Oct 5" valueUnit="%" />
+      <ProgressBar {...props()} />
     </ProgressBarContainer>
   );
 };
 
 Default.storyName = 'default';
 
+export const WithLight = () => {
+  return (
+    <ProgressBarContainer light>
+      <ProgressBar {...props({ light: true })} />
+    </ProgressBarContainer>
+  );
+};
+
+WithLight.storyName = 'with light';
+
 export const WithIcon = () => {
   return (
     <ProgressBarContainer>
-      <ProgressBar {...props()} label="Mon, Oct 5" valueUnit="%" renderIcon={WarningFilled16} />
+      <ProgressBar {...props()} renderIcon={WarningFilled16} />
     </ProgressBarContainer>
   );
 };

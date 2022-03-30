@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import { gray20 } from '@carbon/colors';
 import MockDate from 'mockdate';
 
-import { settings } from '../../constants/Settings';
 import Button from '../Button';
 import { actions1, chartData, tableColumns, tableData } from '../../utils/sample';
 import PieChartCard from '../PieChartCard/PieChartCard';
@@ -30,8 +29,6 @@ import landscape from '../ImageCard/landscape.jpg';
 import { barChartData } from '../../utils/barChartDataSample';
 
 import DashboardGrid from './DashboardGrid';
-
-const { prefix } = settings;
 
 const commonGridProps = {
   onBreakpointChange: () => {},
@@ -1162,9 +1159,9 @@ DashboardAllCardsAsResizable.propTypes = {
 describe('DashboardGrid', () => {
   beforeEach(() => {
     MockDate.set(1537538254000);
+    cy.viewport(1920, 1080);
   });
   afterEach(() => {
-    cy.viewport(1680, 900);
     MockDate.reset();
   });
   ['lg'].forEach((breakpoint) => {
@@ -1192,42 +1189,21 @@ describe('DashboardGrid', () => {
           default:
             break;
         }
+
         mount(
           <div
             data-testid="visual-regression-test"
             style={{ padding: breakpoint === 'xs' ? 0 : '3rem' }}
           >
-            <DashboardAllCardsAsResizable breakpoint={breakpoint} type={type} />
+            <DashboardAllCardsAsResizable
+              key={`${breakpoint}-${type}`}
+              breakpoint={breakpoint}
+              type={type}
+            />
           </div>
         );
 
         cy.findByTestId('visual-regression-test').should('be.visible');
-
-        if (type === 'BarChartCard') {
-          if (breakpoint === 'max') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('barChartCard-MEDIUMTHIN').within(() => {
-            //   cy.findByRole('checkbox', { name: 'Bangkok' }).realHover();
-            // });
-          }
-
-          if (breakpoint === 'xl') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('barChartCard-MEDIUMTHIN').within(() => {
-            //   cy.get(`.${prefix}--cc--simple-bar`).find('.bar').eq(0).realHover();
-            // });
-          }
-
-          if (breakpoint === 'lg') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('barChartCard-MEDIUM').within(() => {
-            //   cy.get(`.${prefix}--cc--stacked-bar`).find('.bar').eq(0).realHover();
-            // });
-          }
-        }
 
         if (type === 'TableCard') {
           cy.findByTestId('tableCard-LARGETHIN').within(() => {
@@ -1245,40 +1221,6 @@ describe('DashboardGrid', () => {
         if (type === 'Card') {
           cy.findByTestId('date-time-picker-datepicker-flyout-button').click();
           cy.findByTestId('Card-toolbar-range-picker').click();
-        }
-
-        if (type === 'PieChartCard') {
-          if (breakpoint === 'max') {
-            cy.findByTestId('pieChartCard-LARGE').within(() => {
-              cy.get(`.${prefix}--cc--pie`).eq(0).find('.slice').eq(0).realHover();
-            });
-          }
-
-          if (breakpoint === 'xl') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('pieChartCard-LARGE').within(() => {
-            //   cy.findByRole('checkbox', { name: 'C' }).realHover();
-            // });
-          }
-        }
-
-        if (type === 'TimeSeriesCard') {
-          if (breakpoint === 'max') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('timeSeriesCard-MEDIUMTHIN').within(() => {
-            //   cy.get(`.${prefix}--cc--scatter`).eq(0).find('.dot').eq(0).realHover();
-            // });
-          }
-
-          if (breakpoint === 'xl') {
-            // these should be added back to test hover states in VRT, but currently
-            // something in cypress causes them to be broken.
-            // cy.findByTestId('timeSeriesCard-MEDIUM').within(() => {
-            //   cy.findByRole('checkbox', { name: 'Pressure' }).realHover();
-            // });
-          }
         }
 
         onlyOn('headless', () => {

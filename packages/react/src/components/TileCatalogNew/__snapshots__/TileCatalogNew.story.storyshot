@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Base with col / row specified 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew Base with col / row specified 1`] = `
 <div
   className="storybook-container"
 >
@@ -31,7 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              aria-labelledby="34-search"
+              aria-labelledby="35-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -56,8 +56,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <label
                 className="bx--label"
-                htmlFor="34"
-                id="34-search"
+                htmlFor="35"
+                id="35-search"
               >
                 Filter table
               </label>
@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="34"
+                id="35"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -352,7 +352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Dynamic resize with tile width specification 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew Dynamic resize with tile width specification 1`] = `
 <div
   className="storybook-container"
 >
@@ -377,7 +377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              aria-labelledby="35-search"
+              aria-labelledby="36-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -402,8 +402,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <label
                 className="bx--label"
-                htmlFor="35"
-                id="35-search"
+                htmlFor="36"
+                id="36-search"
               >
                 Filter table
               </label>
@@ -411,7 +411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="35"
+                id="36"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -595,7 +595,205 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Error 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew Error 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "width": "60rem",
+      }
+    }
+  >
+    <div
+      data-testid="tile-catalog-new"
+    >
+      <div
+        className="iot--tile-catalog--canvas-container"
+      >
+        <div
+          className="iot--tile-catalog--tile-canvas"
+        >
+          <div
+            className="iot--tile-catalog--tile-canvas--header"
+            data-testid="tile-catalog-new-header"
+          >
+            <div
+              className="iot--tile-catalog--tile-canvas--header--title"
+              data-testid="tile-catalog-new-title"
+            >
+              Product name
+            </div>
+            <div
+              aria-labelledby="38-search"
+              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
+              role="search"
+            >
+              <div
+                className="bx--search-magnifier"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="bx--search-magnifier-icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 16 16"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                  />
+                </svg>
+              </div>
+              <label
+                className="bx--label"
+                htmlFor="38"
+                id="38-search"
+              >
+                Filter table
+              </label>
+              <input
+                autoComplete="off"
+                className="bx--search-input"
+                data-testid="tile-catalog-new-search-input"
+                id="38"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                placeholder="Enter a value"
+                role="searchbox"
+                tabIndex="0"
+                type="text"
+                value=""
+              />
+              <button
+                aria-label="Clear search input"
+                className="bx--search-close bx--search-close--hidden"
+                onClick={[Function]}
+                type="button"
+              >
+                <svg
+                  aria-hidden={true}
+                  fill="currentColor"
+                  focusable="false"
+                  height={16}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 32 32"
+                  width={16}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              className="iot--tile-catalog--tile-canvas--header--select"
+            >
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select"
+                >
+                  <label
+                    className="bx--label"
+                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
+                  >
+                    
+                  </label>
+                  <div
+                    className="bx--select-input__wrapper"
+                    data-invalid={null}
+                  >
+                    <select
+                      className="bx--select-input"
+                      data-testid="tile-catalog-new-sort-select"
+                      defaultValue=""
+                      id="iot--tile-catalog--tile-canvas--header--select"
+                      onChange={[Function]}
+                      role="listbox"
+                    />
+                    <svg
+                      aria-hidden={true}
+                      className="bx--select__arrow"
+                      fill="currentColor"
+                      focusable="false"
+                      height={16}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 16 16"
+                      width={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="bx--tile iot--tile-catalog--empty-tile"
+            data-testid="tile-catalog-new-empty"
+          >
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={32}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={32}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
+              />
+            </svg>
+            <p>
+              An error has occurred. Please make sure your catalog has content.
+            </p>
+          </div>
+          <div
+            className="iot--tile-catalog--tile-canvas--bottom"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew Get Tiles 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="sample-tile"
+  >
+    <div
+      className="sample-tile--title"
+    >
+      1
+    </div>
+    <div
+      className="sample-tile--content"
+    >
+      This is a sample product tile
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew Loading 1`] = `
 <div
   className="storybook-container"
 >
@@ -741,204 +939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <div
-            className="bx--tile iot--tile-catalog--empty-tile"
-            data-testid="tile-catalog-new-empty"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={32}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={32}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 10a6 6 0 00-6 6v8a6 6 0 0012 0V16A6 6 0 0016 10zm-4.25 7.87h8.5v4.25h-8.5zM16 28.25A4.27 4.27 0 0111.75 24v-.13h8.5V24A4.27 4.27 0 0116 28.25zm4.25-12.13h-8.5V16a4.25 4.25 0 018.5 0zM30.66 19.21L24 13v9.1a4 4 0 008 0A3.83 3.83 0 0030.66 19.21zM28 24.35a2.25 2.25 0 01-2.25-2.25V17l3.72 3.47h0A2.05 2.05 0 0130.2 22 2.25 2.25 0 0128 24.35zM0 22.1a4 4 0 008 0V13L1.34 19.21A3.88 3.88 0 000 22.1zm2.48-1.56h0L6.25 17v5.1a2.25 2.25 0 01-4.5 0A2.05 2.05 0 012.48 20.54zM15 5.5A3.5 3.5 0 1011.5 9 3.5 3.5 0 0015 5.5zm-5.25 0A1.75 1.75 0 1111.5 7.25 1.77 1.77 0 019.75 5.5zM20.5 2A3.5 3.5 0 1024 5.5 3.5 3.5 0 0020.5 2zm0 5.25A1.75 1.75 0 1122.25 5.5 1.77 1.77 0 0120.5 7.25z"
-              />
-            </svg>
-            <p>
-              An error has occurred. Please make sure your catalog has content.
-            </p>
-          </div>
-          <div
-            className="iot--tile-catalog--tile-canvas--bottom"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Get Tiles 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    className="sample-tile"
-  >
-    <div
-      className="sample-tile--title"
-    >
-      1
-    </div>
-    <div
-      className="sample-tile--content"
-    >
-      This is a sample product tile
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew Loading 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "width": "60rem",
-      }
-    }
-  >
-    <div
-      data-testid="tile-catalog-new"
-    >
-      <div
-        className="iot--tile-catalog--canvas-container"
-      >
-        <div
-          className="iot--tile-catalog--tile-canvas"
-        >
-          <div
-            className="iot--tile-catalog--tile-canvas--header"
-            data-testid="tile-catalog-new-header"
-          >
-            <div
-              className="iot--tile-catalog--tile-canvas--header--title"
-              data-testid="tile-catalog-new-title"
-            >
-              Product name
-            </div>
-            <div
-              aria-labelledby="36-search"
-              className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
-              role="search"
-            >
-              <div
-                className="bx--search-magnifier"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="bx--search-magnifier-icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 16 16"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                  />
-                </svg>
-              </div>
-              <label
-                className="bx--label"
-                htmlFor="36"
-                id="36-search"
-              >
-                Filter table
-              </label>
-              <input
-                autoComplete="off"
-                className="bx--search-input"
-                data-testid="tile-catalog-new-search-input"
-                id="36"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                placeholder="Enter a value"
-                role="searchbox"
-                tabIndex="0"
-                type="text"
-                value=""
-              />
-              <button
-                aria-label="Clear search input"
-                className="bx--search-close bx--search-close--hidden"
-                onClick={[Function]}
-                type="button"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="iot--tile-catalog--tile-canvas--header--select"
-            >
-              <div
-                className="bx--form-item"
-              >
-                <div
-                  className="bx--select"
-                >
-                  <label
-                    className="bx--label"
-                    htmlFor="iot--tile-catalog--tile-canvas--header--select"
-                  >
-                    
-                  </label>
-                  <div
-                    className="bx--select-input__wrapper"
-                    data-invalid={null}
-                  >
-                    <select
-                      className="bx--select-input"
-                      data-testid="tile-catalog-new-sort-select"
-                      defaultValue=""
-                      id="iot--tile-catalog--tile-canvas--header--select"
-                      onChange={[Function]}
-                      role="listbox"
-                    />
-                    <svg
-                      aria-hidden={true}
-                      className="bx--select__arrow"
-                      fill="currentColor"
-                      focusable="false"
-                      height={16}
-                      preserveAspectRatio="xMidYMid meet"
-                      viewBox="0 0 16 16"
-                      width={16}
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
             className="iot--tile-catalog--tile-canvas--content"
           >
             <div
@@ -994,7 +994,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew StatefulTileCatalog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew StatefulTileCatalog 1`] = `
 <div
   className="storybook-container"
 >
@@ -1025,7 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              aria-labelledby="40-search"
+              aria-labelledby="41-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -1050,8 +1050,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <label
                 className="bx--label"
-                htmlFor="40"
-                id="40-search"
+                htmlFor="41"
+                id="41-search"
               >
                 Filter table
               </label>
@@ -1059,7 +1059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="40"
+                id="41"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -1454,7 +1454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With OverflowMenu in Pagination 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew With OverflowMenu in Pagination 1`] = `
 <div
   className="storybook-container"
 >
@@ -1485,7 +1485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              aria-labelledby="38-search"
+              aria-labelledby="39-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -1510,8 +1510,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <label
                 className="bx--label"
-                htmlFor="38"
-                id="38-search"
+                htmlFor="39"
+                id="39-search"
               >
                 Filter table
               </label>
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="38"
+                id="39"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -2039,7 +2039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Search 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew With Search 1`] = `
 <div
   className="storybook-container"
 >
@@ -2070,7 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               Product name
             </div>
             <div
-              aria-labelledby="39-search"
+              aria-labelledby="40-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -2095,8 +2095,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </div>
               <label
                 className="bx--label"
-                htmlFor="39"
-                id="39-search"
+                htmlFor="40"
+                id="40-search"
               >
                 Filter table
               </label>
@@ -2104,7 +2104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="39"
+                id="40"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -2431,7 +2431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TileCatalogNew With Sort 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Catalog/Marketplace/TileCatalogNew With Sort 1`] = `
 <div
   className="storybook-container"
 >

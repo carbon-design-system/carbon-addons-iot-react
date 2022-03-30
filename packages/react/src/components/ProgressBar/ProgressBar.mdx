@@ -74,12 +74,15 @@ Thresholds can be given to change the color of the bar (and icon) at various val
 
 | Name                    | Type                                | Default             | Description                                                                                                                 |
 | :---------------------- | :---------------------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------- |
+| className               | string                              |                     | Additional class names to be added to the component                                                                         |
 | label \*                | string                              |                     | The label show above the bar                                                                                                |
 | helperText              | string                              | ''                  | The text shown below the bar                                                                                                |
 | hideLabel               | bool                                | false               | If true, hide the label                                                                                                     |
+| inline                  | bool                                | false               | When true, the progress bar will render inline without a label or icons and with the value to the right of the progress bar |
 | value \*                | number                              |                     | The number used to fill the bar                                                                                             |
 | valueUnit               | string                              | '%'                 | The unit shown beside the value label text                                                                                  |
 | max                     | number                              | 100                 | the maximum value this bar supports, values higher trigger the `over` class to style the value label text differently       |
+| light                   | bool                                | false               | For use on gray backgrounds, when true turns the progress bar track white                                                   |
 | thresholds              | arrayOf(object)                     | undefined           | An array of threshold objects to compare the value against and change the icon and/or bar colors based on matching criteria |
 | thresholds[].comparison | '<', '<=', '=', '>', '>=', function |                     | The comparison character to compare value against or a function                                                             |
 | thresholds[].value      | string, number                      |                     | Only required when using a comparison character, if using a function it's not required                                      |
@@ -89,6 +92,8 @@ Thresholds can be given to change the color of the bar (and icon) at various val
 | renderIconByName        | function                            |                     | Required if the threshold icons or renderIcon is using a string                                                             |
 | i18n                    | shape                               |                     |                                                                                                                             |
 | i18n.iconLabel          | string                              | 'Progress bar icon' | aria-label used on the icon                                                                                                 |
+
+\*) Denotes required props
 
 ## External Links
 

@@ -33,7 +33,7 @@ export const getDataStateProp = () => ({
 });
 
 export default {
-  title: '1 - Watson IoT/Card',
+  title: '1 - Watson IoT/Card/Card',
 
   parameters: {
     component: Card,
@@ -112,6 +112,11 @@ export const Basic = () => {
           renderExpandIcon={Tree16}
           onFocus={action('onFocus')}
           tabIndex={0}
+          padding={select(
+            'Apply padding to the card content or not (padding)',
+            ['default', 'none'],
+            'default'
+          )}
         />
       </CardStoryStateManager>
     </div>
@@ -156,6 +161,10 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
       },
     ],
   };
+  const demoTitleTextTooltip = boolean('demo title text tooltip (titleTextTooltip)', false);
+  const demoIconTooltip = boolean('demo info icon tooltip (tooltip)', true);
+  const hasTitleWrap = demoTitleTextTooltip ? false : boolean('wrap title', true);
+
   return (
     <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
@@ -168,7 +177,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
           'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
         )}
-        hasTitleWrap={boolean('wrap title', true)}
+        hasTitleWrap={hasTitleWrap}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -190,11 +199,21 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}
-        tooltip={<p>this is the external tooltip content</p>}
+        tooltip={demoIconTooltip ? <p>this is the external tooltip content</p> : undefined}
+        titleTextTooltip={
+          demoTitleTextTooltip ? (
+            <>
+              <p>This is the external tooltip definition shown when the title is clicked</p>
+              <Button style={{ marginTop: '16px' }} onClick={action('tooltip button clicked')}>
+                Take action
+              </Button>
+            </>
+          ) : undefined
+        }
         extraActions={extraaction === 'Single' ? singleExtraAction : multiExtraAction}
       />
     </div>
@@ -231,7 +250,7 @@ export const BasicWithRenderProp = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}
@@ -423,11 +442,15 @@ export const ImplementingACustomCard = () => {
         availableActions={{ range: size !== CARD_SIZES.SMALL, expand: true }}
         onCardAction={action('onCardAction')}
         hideHeader
+        padding={select(
+          'Apply padding to the card content or not (padding)',
+          ['default', 'none'],
+          'none'
+        )}
       >
         {!isEditable
           ? (_$, { cardToolbar, values }) => (
               <Table
-                style={{ width: 'calc(100% + 2rem)', transform: 'translateX(-1rem)' }}
                 id="my table"
                 secondaryTitle={title}
                 columns={[

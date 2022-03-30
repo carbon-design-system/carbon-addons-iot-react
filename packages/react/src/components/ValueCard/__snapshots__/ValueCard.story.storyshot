@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with data state, custom icon 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with data state, custom icon 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -34,6 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Health score
           </div>
@@ -68,6 +69,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
               className="iot--data-state-grid"
             >
               <div
+                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-myStoryId"
@@ -104,6 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </svg>
               </div>
               <div
+                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__label-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__label-myStoryId"
@@ -124,6 +127,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
                 </span>
               </div>
               <div
+                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__description-myStoryId"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__description-myStoryId"
@@ -159,14 +163,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with dataFilters 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with dataFilters 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -193,6 +197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Facility Conditions per device
           </div>
@@ -339,14 +344,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with five data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with five data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -373,6 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Facility Conditions
           </div>
@@ -702,14 +708,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with four data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with four data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -736,6 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Status
           </div>
@@ -1004,14 +1011,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with isEditable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with isEditable 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -1038,6 +1045,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Really really really long card title?
           </div>
@@ -1184,14 +1192,268 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with long text, no units, no click handler 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with link and measurement unit  1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
+        "width": "624px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--value-card__horizontal iot--card--wrapper"
+      data-testid="Card"
+      id="appPoints-overage"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "144px",
+        }
+      }
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Overage"
+        >
+          <div
+            className="iot--card--title--text"
+            data-testid="Card-title-notip"
+          >
+            Overage
+          </div>
+        </span>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "96px",
+          }
+        }
+      >
+        <div
+          className="iot--value-card__content-wrapper"
+        >
+          <div
+            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            style={
+              Object {
+                "--value-card-attribute-width": "50%",
+              }
+            }
+          >
+            <div
+              className="iot--value-card__attribute-label"
+            >
+              <svg
+                data-testid="Card-attribute-0-threshold-icon"
+                fill="#f1c21b"
+                focusable="true"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                tabIndex="0"
+                title="> 1000"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,1C4.2,1,1,4.2,1,8s3.2,7,7,7s7-3.1,7-7S11.9,1,8,1z M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2	c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"
+                />
+                <path
+                  d="M7.5,4h1v5h-1C7.5,9,7.5,4,7.5,4z M8,12.2c-0.4,0-0.8-0.4-0.8-0.8s0.3-0.8,0.8-0.8	c0.4,0,0.8,0.4,0.8,0.8S8.4,12.2,8,12.2z"
+                  data-icon-path="inner-path"
+                  opacity="0"
+                />
+                <title>
+                  &gt; 1000
+                </title>
+              </svg>
+              <span
+                data-testid="Card-attribute-0-threshold-label"
+              >
+                Peak usage
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute"
+            >
+              <div
+                className="iot--value-card__value-renderer--wrapper"
+              >
+                <span
+                  className="iot--value-card__value-renderer--value"
+                  data-testid="Card-attribute-0-value"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                      "--value-renderer-font-size": "42px",
+                      "--value-renderer-max-lines": 1,
+                    }
+                  }
+                  title={
+                    <div>
+                      1,045
+                       
+                      AppPoints
+                    </div>
+                  }
+                >
+                  1,045
+                  <span
+                    className="iot--value-card__value-renderer--value--measurement-unit"
+                  >
+                    AppPoints
+                  </span>
+                </span>
+              </div>
+              <span
+                className="iot--value-card__attribute-unit"
+                data-testid="Card-attribute-0-unit"
+                style={
+                  Object {
+                    "--default-font-size": "1.25rem",
+                  }
+                }
+              >
+                
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute-secondary-value"
+              data-testid="Card-attribute-0-secondary-value"
+              style={
+                Object {
+                  "--secondary-value-color": "#6f6f6f",
+                }
+              }
+            >
+              <svg
+                aria-label="trending up"
+                className="iot--value-card__attribute_trend-icon"
+                data-testid="Card-attribute-0-trending-up"
+                fill="red"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 20L16 10 24 20z"
+                />
+              </svg>
+              Up 30% month on month
+            </div>
+          </div>
+          <div
+            className="iot--value-card__attribute-wrapper iot--value-card__attribute-wrapper--horizontal"
+            style={
+              Object {
+                "--value-card-attribute-width": "50%",
+              }
+            }
+          >
+            <div
+              className="iot--value-card__attribute-label"
+            >
+              <span
+                data-testid="Card-attribute-1-threshold-label"
+              >
+                Target
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute"
+            >
+              <div
+                className="iot--value-card__value-renderer--wrapper"
+              >
+                <span
+                  className="iot--value-card__value-renderer--value"
+                  data-testid="Card-attribute-1-value"
+                  style={
+                    Object {
+                      "--value-renderer-color": null,
+                      "--value-renderer-font-size": "42px",
+                      "--value-renderer-max-lines": 1,
+                    }
+                  }
+                  title={
+                    <div>
+                      1,000
+                       
+                      AppPoints
+                    </div>
+                  }
+                >
+                  1,000
+                  <span
+                    className="iot--value-card__value-renderer--value--measurement-unit"
+                  >
+                    AppPoints
+                  </span>
+                </span>
+              </div>
+              <span
+                className="iot--value-card__attribute-unit"
+                data-testid="Card-attribute-1-unit"
+                style={
+                  Object {
+                    "--default-font-size": "1.25rem",
+                  }
+                }
+              >
+                
+              </span>
+            </div>
+            <div
+              className="iot--value-card__attribute-secondary-value"
+              data-testid="Card-attribute-1-secondary-value"
+              style={
+                Object {
+                  "--secondary-value-color": "#6f6f6f",
+                }
+              }
+            >
+              <a
+                className="bx--link iot--value-card__attribute-secondary-value--link"
+                data-testid="Card-attribute-1-secondary-value--link"
+                onClick={[Function]}
+                rel="noopener noreferrer"
+              >
+                Adjust target
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with long text, no units, no click handler 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -1218,6 +1480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Tagpath
           </div>
@@ -1293,14 +1556,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with six data points 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with six data points 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -1327,6 +1590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Facility Conditions
           </div>
@@ -1778,14 +2042,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with three data points and thresholds 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with three data points and thresholds 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -1812,6 +2076,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Facility Conditions
           </div>
@@ -2094,14 +2359,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds (string) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds (string) 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "520px",
       }
     }
@@ -2128,6 +2393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Status
           </div>
@@ -2228,14 +2494,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with thresholds, custom icon renderer, and custom formatter 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -2262,6 +2528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Alert Count
           </div>
@@ -2365,14 +2632,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ValueCard with trends, variables, and label 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/ValueCard with trends, variables, and label 1`] = `
 <div
   className="storybook-container"
 >
   <div
     style={
       Object {
-        "margin": "1rem4",
+        "margin": "5px",
         "width": "252px",
       }
     }
@@ -2399,6 +2666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/V
         >
           <div
             className="iot--card--title--text"
+            data-testid="Card-title-notip"
           >
             Foot Traffic - working
           </div>

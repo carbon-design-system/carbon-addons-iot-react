@@ -156,7 +156,7 @@ const buttonsToRender = (dir) => [
 ];
 
 export default {
-  title: '1 - Watson IoT/SimpleList',
+  title: '1 - Watson IoT/List/SimpleList',
 
   parameters: {
     component: SimpleList,

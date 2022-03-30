@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -16,7 +16,7 @@ import {
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import uuid from 'uuid';
+import * as uuid from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -24,7 +24,20 @@ import dayjs from '../../utils/dayjs';
 import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
 
-import { parseValue } from './dateTimePickerUtils';
+import {
+  getIntervalValue,
+  invalidEndDate,
+  invalidStartDate,
+  onDatePickerClose,
+  parseValue,
+  useAbsoluteDateTimeValue,
+  useDateTimePickerFocus,
+  useDateTimePickerKeyboardInteraction,
+  useDateTimePickerRangeKind,
+  useDateTimePickerRef,
+  useDateTimePickerTooltip,
+  useRelativeDateTimeValue,
+} from './dateTimePickerUtils';
 
 const { iotPrefix } = settings;
 
@@ -101,9 +114,9 @@ const propTypes = {
       timeRangeValue: PropTypes.exact({
         startDate: PropTypes.string.isRequired,
         startTime: PropTypes.string.isRequired,
-        /** Can be a full parseable DateTime string or a Date object */
+        /** Can be a full parsable DateTime string or a Date object */
         start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
-        /** Can be a full parseable DateTime string or a Date object */
+        /** Can be a full parsable DateTime string or a Date object */
         end: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
         endDate: PropTypes.string.isRequired,
         endTime: PropTypes.string.isRequired,
@@ -303,29 +316,52 @@ const DateTimePicker = ({
   }, [locale]);
 
   // State
-  const [isExpanded, setIsExpanded] = useState(expanded);
-  const [customRangeKind, setCustomRangeKind] = useState(
-    showRelativeOption ? PICKER_KINDS.RELATIVE : PICKER_KINDS.ABSOLUTE
+  const [customRangeKind, setCustomRangeKind, onCustomRangeChange] = useDateTimePickerRangeKind(
+    showRelativeOption
   );
+  const {
+    isExpanded,
+    setIsExpanded,
+    presetListRef,
+    onFieldInteraction,
+    onNavigateRadioButton,
+    onNavigatePresets,
+  } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
   const [isCustomRange, setIsCustomRange] = useState(false);
   const [selectedPreset, setSelectedPreset] = useState(null);
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
-  const [relativeValue, setRelativeValue] = useState(null);
-  const [absoluteValue, setAbsoluteValue] = useState(null);
-  const [focusOnFirstField, setFocusOnFirstField] = useState(true);
-  const [isTooltipOpen, setIsTooltipOpen] = useState(false);
-  const [relativeLastNumberInvalid, setRelativeLastNumberInvalid] = useState(false);
-  const [relativeToTimeInvalid, setRelativeToTimeInvalid] = useState(false);
-  const [absoluteStartTimeInvalid, setAbsoluteStartTimeInvalid] = useState(false);
-  const [absoluteEndTimeInvalid, setAbsoluteEndTimeInvalid] = useState(false);
 
-  // Refs
-  const [datePickerElem, setDatePickerElem] = useState(null);
   const relativeSelect = useRef(null);
-  const presetListRef = useRef(null);
-  const previousActiveElement = useRef(null);
+  const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
+  const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
+  const {
+    absoluteValue,
+    setAbsoluteValue,
+    absoluteStartTimeInvalid,
+    setAbsoluteStartTimeInvalid,
+    absoluteEndTimeInvalid,
+    setAbsoluteEndTimeInvalid,
+    onAbsoluteStartTimeChange,
+    onAbsoluteEndTimeChange,
+    resetAbsoluteValue,
+  } = useAbsoluteDateTimeValue();
+  const {
+    relativeValue,
+    setRelativeValue,
+    relativeToTimeInvalid,
+    resetRelativeValue,
+    relativeLastNumberInvalid,
+    onRelativeLastNumberChange,
+    onRelativeLastIntervalChange,
+    onRelativeToWhenChange,
+    onRelativeToTimeChange,
+  } = useRelativeDateTimeValue({
+    defaultInterval: intervals[0].value,
+    defaultRelativeTo: relatives[0].value,
+  });
+  const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -347,47 +383,6 @@ const DateTimePicker = ({
       endTime: null,
     },
   };
-
-  /**
-   * A callback ref to capture the DateTime node. When a user changes from Relative to Absolute
-   * the calendar would capture focus and move the users position adding confusion to where they
-   * are on the page. This also checks if they're currently focused on the Absolute radio button
-   * and captures it so focus can be restored after the calendar has been reparented below.
-   */
-  const handleDatePickerRef = useCallback((node) => {
-    if (document.activeElement?.getAttribute('value') === PICKER_KINDS.ABSOLUTE) {
-      previousActiveElement.current = document.activeElement;
-    }
-
-    setDatePickerElem(node);
-  }, []);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (datePickerElem) {
-        datePickerElem.cal.open();
-        // while waiting for https://github.com/carbon-design-system/carbon/issues/5713
-        // the only way to display the calendar inline is to reparent its DOM to our component
-        const wrapper = document.getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`);
-        if (typeof wrapper !== 'undefined' && wrapper !== null) {
-          const dp = document
-            .getElementById(`${id}-${iotPrefix}--date-time-picker__wrapper`)
-            .getElementsByClassName(`${iotPrefix}--date-time-picker__datepicker`)[0];
-          dp.appendChild(datePickerElem.cal.calendarContainer);
-        }
-
-        // if we were focused on the Absolute radio button previously, restore focus to it.
-        /* istanbul ignore if */
-        if (previousActiveElement.current) {
-          previousActiveElement.current.focus();
-          previousActiveElement.current = null;
-        }
-      }
-    }, 0);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [datePickerElem, id]);
 
   /**
    * Transforms a default or selected value into a full blown returnable object
@@ -439,148 +434,6 @@ const DateTimePicker = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [absoluteValue, relativeValue]
   );
-
-  const getFocusableSiblings = () => {
-    /* istanbul ignore else */
-    if (presetListRef?.current) {
-      const siblings = presetListRef.current.querySelectorAll('[tabindex]');
-      return Array.from(siblings).filter(
-        (sibling) => parseInt(sibling.getAttribute('tabindex'), 10) !== -1
-      );
-    }
-
-    return [];
-  };
-
-  const onFieldInteraction = ({ key }) => {
-    switch (key) {
-      case 'Escape':
-        setIsExpanded(false);
-        break;
-      // if the input box is focused and a down arrow is pressed this
-      // moves focus to the first item in the preset list that has a tabindex
-      case 'ArrowDown':
-        /* istanbul ignore else */
-        if (presetListRef?.current) {
-          const listItems = getFocusableSiblings();
-          /* istanbul ignore else */
-          if (listItems?.[0]?.focus) {
-            listItems[0].focus();
-          }
-        }
-        break;
-      default:
-        setIsExpanded(!isExpanded);
-        break;
-    }
-  };
-
-  /**
-   * Moves up the preset list to the previous focusable element or wraps around to the bottom
-   * if already at the top.
-   */
-  const moveToPreviousElement = () => {
-    const siblings = getFocusableSiblings();
-    const index = siblings.findIndex((elem) => elem === document.activeElement);
-    const previous = siblings[index - 1];
-    if (previous) {
-      previous.focus();
-    } else {
-      siblings[siblings.length - 1].focus();
-    }
-  };
-
-  /**
-   * Moves down the preset list to the next focusable element or wraps around to the top
-   * if already at the bottom
-   */
-  const moveToNextElement = () => {
-    const siblings = getFocusableSiblings();
-    const index = siblings.findIndex((elem) => elem === document.activeElement);
-    const next = siblings[index + 1];
-    if (next) {
-      next.focus();
-    } else {
-      siblings[0].focus();
-    }
-  };
-
-  const onNavigatePresets = ({ key }) => {
-    switch (key) {
-      case 'ArrowUp':
-        moveToPreviousElement();
-        break;
-      case 'ArrowDown':
-        moveToNextElement();
-        break;
-      default:
-        break;
-    }
-  };
-
-  /**
-   * Allows navigation back and forth between the radio buttons for Relative/Absolute
-   *
-   * @param {KeyboardEvent} e
-   */
-  const onNavigateRadioButton = (e) => {
-    if (e.target.getAttribute('id').includes('absolute')) {
-      setCustomRangeKind(PICKER_KINDS.RELATIVE);
-      document.activeElement.parentNode.previousSibling
-        .querySelector('input[type="radio"]')
-        .focus();
-    } else {
-      setCustomRangeKind(PICKER_KINDS.ABSOLUTE);
-      document.activeElement.parentNode.nextSibling.querySelector('input[type="radio"]').focus();
-    }
-  };
-
-  useEffect(() => {
-    if (datePickerElem && datePickerElem.inputField && datePickerElem.toInputField) {
-      if (focusOnFirstField) {
-        datePickerElem.inputField.click();
-      } else {
-        datePickerElem.toInputField.click();
-      }
-    }
-  }, [datePickerElem, focusOnFirstField]);
-
-  const isValidDate = (date, time) => {
-    const isValid24HoursRegex = /^([01][0-9]|2[0-3]):([0-5][0-9])$/;
-    return date instanceof Date && !Number.isNaN(date) && isValid24HoursRegex.test(time);
-  };
-
-  // Validates absolute start date
-  const invalidStartDate = (startTime, endTime, absoluteValues) => {
-    // If start and end date have been selected
-    if (
-      absoluteValues.hasOwnProperty('start') &&
-      absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.start), startTime)
-    ) {
-      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
-      return startDate >= endDate;
-    }
-    // Return invalid date if start time and end date not selected or if inputted time is not valid
-    return true;
-  };
-
-  // Validates absolute end date
-  const invalidEndDate = (startTime, endTime, absoluteValues) => {
-    // If start and end date have been selected
-    if (
-      absoluteValues.hasOwnProperty('start') &&
-      absoluteValues.hasOwnProperty('end') &&
-      isValidDate(new Date(absoluteValues.end), endTime)
-    ) {
-      const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-      const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
-      return startDate >= endDate;
-    }
-    // Return invalid date if start time and end date not selected or if inputted time is not valid
-    return true;
-  };
 
   const onDatePickerChange = ([start, end], _, flatpickr) => {
     const calendarInFocus = document.activeElement.closest(
@@ -639,39 +492,9 @@ const DateTimePicker = ({
     );
   };
 
-  const onDatePickerClose = (range, single, flatpickr) => {
-    // force it to stay open
-    /* istanbul ignore else */
-    if (flatpickr) {
-      flatpickr.open();
-    }
-  };
-
-  const onCustomRangeChange = (kind) => {
-    setCustomRangeKind(kind);
-  };
-
   const onPresetClick = (preset) => {
     setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
-  };
-
-  const resetRelativeValue = () => {
-    setRelativeValue({
-      lastNumber: 0,
-      lastInterval: intervals[0].value,
-      relativeToWhen: relatives[0].value,
-      relativeToTime: '',
-    });
-  };
-
-  const resetAbsoluteValue = () => {
-    setAbsoluteValue({
-      startDate: '',
-      startTime: '00:00',
-      endDate: '',
-      endTime: '00:00',
-    });
   };
 
   const parseDefaultValue = (parsableValue) => {
@@ -784,77 +607,9 @@ const DateTimePicker = ({
     }
   };
 
-  /**
-   * Get an alternative human readable value for a preset to show in tooltips and dropdown
-   * ie. 'Last 30 minutes' displays '2020-04-01 11:30 to Now' on the tooltip
-   * @returns {string} an interval string, starting point in time to now
-   */
-  const getIntervalValue = () => {
-    if (currentValue) {
-      if (currentValue.kind === PICKER_KINDS.PRESET) {
-        return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
-          strings.toNowLabel
-        }`;
-      }
-      return humanValue;
-    }
-    return '';
-  };
-
-  // Util func to update the relative value
-  const changeRelativePropertyValue = (property, value) => {
-    const newRelative = { ...relativeValue };
-    newRelative[property] = value;
-    setRelativeValue(newRelative);
-  };
-
-  // on change functions that trigger a relative value update
-  const onRelativeLastNumberChange = (event) => {
-    const valid = !event.imaginaryTarget.getAttribute('data-invalid');
-    setRelativeLastNumberInvalid(!valid);
-    if (valid) {
-      changeRelativePropertyValue('lastNumber', Number(event.imaginaryTarget.value));
-    }
-  };
-  const onRelativeLastIntervalChange = (event) => {
-    changeRelativePropertyValue('lastInterval', event.currentTarget.value);
-  };
-  const onRelativeToWhenChange = (event) => {
-    changeRelativePropertyValue('relativeToWhen', event.currentTarget.value);
-  };
-  const onRelativeToTimeChange = (pickerValue, evt, meta) => {
-    setRelativeToTimeInvalid(meta.invalid);
-    changeRelativePropertyValue('relativeToTime', pickerValue);
-  };
-
-  // Util func to update the absolute value
-  const changeAbsolutePropertyValue = (property, value) => {
-    const newAbsolute = { ...absoluteValue };
-    newAbsolute[property] = value;
-    setAbsoluteValue(newAbsolute);
-  };
-
-  // on change functions that trigger a absolute value update
-  const onAbsoluteStartTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteStartTimeInvalid(
-      meta.invalid || invalidStartDate(pickerValue, absoluteValue.endTime, absoluteValue)
-    );
-    setAbsoluteEndTimeInvalid(invalidEndDate(pickerValue, absoluteValue.endTime, absoluteValue));
-    changeAbsolutePropertyValue('startTime', pickerValue);
-  };
-  const onAbsoluteEndTimeChange = (pickerValue, evt, meta) => {
-    setAbsoluteEndTimeInvalid(
-      meta.invalid || invalidEndDate(absoluteValue.startTime, pickerValue, absoluteValue)
-    );
-    setAbsoluteStartTimeInvalid(
-      invalidStartDate(absoluteValue.startTime, pickerValue, absoluteValue)
-    );
-    changeAbsolutePropertyValue('endTime', pickerValue);
-  };
-
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
-    : getIntervalValue();
+    : getIntervalValue({ currentValue, strings, dateTimeMask, humanValue });
 
   const disableRelativeApply =
     isCustomRange &&
@@ -867,18 +622,6 @@ const DateTimePicker = ({
     (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
-
-  /**
-   * Shows and hides the tooltip with the humanValue (Relative) or full-range (Absolute) when
-   * the user focuses or hovers on the input
-   */
-  const toggleTooltip = () => {
-    if (isExpanded) {
-      setIsTooltipOpen(false);
-    } else {
-      setIsTooltipOpen((prev) => !prev);
-    }
-  };
 
   return (
     // Escape handler added to allow pressing escape to close the picker from any via event bubbling
@@ -911,7 +654,7 @@ const DateTimePicker = ({
             <span title={humanValue}>{humanValue}</span>
           ) : humanValue ? (
             <TooltipDefinition
-              align="start"
+              align="center"
               direction="bottom"
               tooltipText={tooltipValue}
               triggerClassName=""
@@ -1130,7 +873,7 @@ const DateTimePicker = ({
                       <DatePicker
                         datePickerType="range"
                         dateFormat="m/d/Y"
-                        ref={handleDatePickerRef}
+                        ref={pickerRefCallback}
                         onChange={onDatePickerChange}
                         onClose={onDatePickerClose}
                         value={

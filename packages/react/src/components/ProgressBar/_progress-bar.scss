@@ -3,11 +3,20 @@
 
 .#{$iot-prefix}--progress-bar-container {
   position: relative;
+
+  .#{$prefix}--progress-bar__label {
+    @include carbon--type-style('productive-heading-01');
+    color: $text-01;
+    margin-right: calc(#{$spacing-10} + #{$spacing-03});
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
 
-.#{$prefix}--progress-bar__label {
-  @include carbon--type-style('productive-heading-01');
-  color: $text-01;
+.#{$iot-prefix}--progress-bar-container--with-icon {
+  .#{$prefix}--progress-bar__label {
+    margin-right: calc(#{$spacing-11} + #{$spacing-03});
+  }
 }
 
 .#{$iot-prefix}--progress-bar__label--right {
@@ -31,6 +40,16 @@
 .#{$iot-prefix}--progress-bar__value-label {
   @include carbon--type-style('body-short-01');
   color: $text-01;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: $spacing-10;
+}
+
+// reposition the inline label to be even with the progress bar
+.#{$iot-prefix}--progress-bar__value-label--inline {
+  position: relative;
+  top: -($spacing-02);
 }
 
 .#{$iot-prefix}--progress-bar__value-label--over {
@@ -39,6 +58,10 @@
 
 .#{$prefix}--progress-bar__track {
   background-color: $ui-02;
+
+  .#{$iot-prefix}--progress-bar-container--light & {
+    background-color: $ui-01;
+  }
 }
 
 .#{$prefix}--progress-bar__bar {
@@ -48,5 +71,15 @@
   [dir='rtl'] & {
     // make the bar fill from the right when in RTL
     transform-origin: 100% 50%;
+  }
+}
+
+.#{$iot-prefix}--progress-bar-wrapper--inline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: $spacing-03;
+
+  .#{$prefix}--progress-bar__label {
+    margin-right: 0;
   }
 }

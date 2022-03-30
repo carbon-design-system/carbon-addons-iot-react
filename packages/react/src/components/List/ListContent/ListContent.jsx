@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import { isEqual } from 'lodash-es';
 
 import { settings } from '../../../constants/Settings';
 import ListItem from '../ListItem/ListItem';
@@ -12,6 +13,7 @@ import { EditingStyle, editingStyleIsMultiple } from '../../../utils/DragAndDrop
 import { ListItemPropTypes } from '../ListPropTypes';
 import { HtmlElementRefProp } from '../../../constants/SharedPropTypes';
 import { ITEM_COLUMN_GAP, ITEM_LEVEL_OFFSET } from '../VirtualListContent/listConstants';
+import { usePrevious } from '../../../hooks/usePrevious';
 
 const { iotPrefix } = settings;
 
@@ -73,6 +75,8 @@ const propTypes = {
   /** icon can be left or right side of list row primary value */
   iconPosition: PropTypes.oneOf(['left', 'right']),
   selectedItemRef: HtmlElementRefProp,
+  /** called after the row has expanded or collapsed and is passed the array of expanded ids */
+  onExpandedChange: PropTypes.func,
 };
 
 const defaultProps = {
@@ -107,6 +111,7 @@ const defaultProps = {
   selectedItemRef: React.createRef(),
   testId: 'list',
   toggleExpansion: () => {},
+  onExpandedChange: null,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -139,6 +144,7 @@ const ListContent = ({
   handleLoadMore,
   i18n,
   selectedItemRef,
+  onExpandedChange,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -257,10 +263,33 @@ const ListContent = ({
       ...(!hasChildren && item.hasLoadMore ? [renderLoadMore(item, isLoadingMore, level)] : []),
     ];
   };
+  const previousExpandedIds = usePrevious(expandedIds, expandedIds);
+  const selectionChanged = !isEqual(expandedIds, previousExpandedIds);
+  // get the lastId of the diff between previous and current, this handles closes
+  const previousLastId =
+    selectionChanged && previousExpandedIds.filter((id) => !expandedIds.includes(id)).slice(-1)[0];
+  // get the lastId of the diff between current and previous, this handles opens
+  const lastId =
+    selectionChanged && expandedIds.filter((id) => !previousExpandedIds.includes(id)).slice(-1)[0];
 
-  const listItems = items.map((item, index) =>
-    renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0))
-  );
+  const notifyOnLastExpansionChange = (itemId) => {
+    const isLastItem = lastId === itemId || previousLastId === itemId;
+    if (isLastItem && expandedIds.includes(itemId) !== previousExpandedIds.includes(itemId)) {
+      // the setTimeout within the request animation frame helps to ensure the event is fired
+      // immediately after a repaint. See:
+      // https://firefox-source-docs.mozilla.org/performance/bestpractices.html#how-do-i-avoid-triggering-uninterruptible-reflow
+      window.requestAnimationFrame(() => {
+        setTimeout(() => {
+          onExpandedChange(expandedIds);
+        });
+      }, 0);
+    }
+  };
+
+  const listItems = items.map((item, index) => {
+    notifyOnLastExpansionChange(item.id);
+    return renderItemAndChildren(item, index, null, getAdjustedNestingLevel(items, 0));
+  });
 
   const renderEmptyContent = () => {
     const emptyContent = isFiltering ? emptySearchState : emptyState;

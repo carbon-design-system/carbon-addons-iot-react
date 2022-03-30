@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.26](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.25...v2.149.0-next.26) (2022-03-18)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.149.0-next.24](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.23...v2.149.0-next.24) (2022-03-14)
+
+
+### Bug Fixes
+
+* added isOpen knob to test the change ([c41dd5a](https://github.com/IBM/carbon-components-angular/commit/c41dd5a0908fa2af783c5abc915f37f61b64c7c2))
+* resolve issues as mentioned in code review ([e8e0342](https://github.com/IBM/carbon-components-angular/commit/e8e034297c31ccd41ee6df09d0c0c915db331645))
+
+
+### Features
+
+* **ai-flyout-menu:** track open/close state ([583b732](https://github.com/IBM/carbon-components-angular/commit/583b7326d671397dde1588b2ef2b494cff0d3c4f))
+
+
+
+
+
+# [2.149.0-next.20](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
+
+
+### Bug Fixes
+
+* **table:** fix type error ([a978cda](https://github.com/IBM/carbon-components-angular/commit/a978cdae200c2571a96685939e27e6574c142917))
+
+
+### Features
+
+* **table model:** account for rowSpans in moveColumn ([5eb8c11](https://github.com/IBM/carbon-components-angular/commit/5eb8c11ebed812e9474bf232f87c311a22ea7826))
+* **tabs:** add support for custom templates ([6dc2faf](https://github.com/IBM/carbon-components-angular/commit/6dc2fafadb42d3eea0b28477f2796a9060be25fb))
+
+
+
+
+
+# [2.149.0-next.1](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear and format code ([b6d7774](https://github.com/IBM/carbon-components-angular/commit/b6d7774a5dfca0961782a2ec96430f1929aa2c88))
+* **datetimepicker:** unable to modify abs range issue ([73c5e04](https://github.com/IBM/carbon-components-angular/commit/73c5e0411bd06c08d84a82875be9f649b7e64aa1))
+
+
+
+
+
+## [2.148.1-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.15...v2.148.1-next.0) (2022-02-08)
+
+
+
+# [2.148.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/IBM/carbon-components-angular/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+
+
+
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.4...v2.148.0) (2022-02-07)
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+# [2.148.0-next.15](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0-next.15) (2022-02-07)
+
+
+### Bug Fixes
+
+* **datetimepicker:** absolute end time ([a3a6d74](https://github.com/IBM/carbon-components-angular/commit/a3a6d74e30a7ecc3a4ac2fee659c86814083eec7))
+* **datetimepicker:** add comments for RelativeToOption ([4e4fd3e](https://github.com/IBM/carbon-components-angular/commit/4e4fd3eebf7d34e2e2fb889160669f43338aa94c))
+* **datetimepicker:** add key in RelativeToOption ([635a253](https://github.com/IBM/carbon-components-angular/commit/635a253e2b5393ca1221326a8a5783a4005af584))
+* **datetimepicker:** fix preset relative story ([823c2f8](https://github.com/IBM/carbon-components-angular/commit/823c2f85cd2c2bf028546f72d55a06eb6c742e6c))
+* **datetimepicker:** fix type name ([8e8cb65](https://github.com/IBM/carbon-components-angular/commit/8e8cb6592181b93b7291307ddadee6f76e9fe3ea))
+* **datetimepicker:** format code ([e563cd8](https://github.com/IBM/carbon-components-angular/commit/e563cd8f1d22b48fe74475fa5b0ab2b2a52c9051))
+* **datetimepicker:** format code ([93a6319](https://github.com/IBM/carbon-components-angular/commit/93a631978c89884a09b087b6243d74a8d1155f3a))
+* **datetimepicker:** support relativeTo customization ([3ab3b43](https://github.com/IBM/carbon-components-angular/commit/3ab3b43d5c145b812910881ec96fda1de5161e1b))
+* **empty state:** fix build ([8857f1a](https://github.com/IBM/carbon-components-angular/commit/8857f1a6b7e6bc95671fe5d2ecb365d39e39021e))
+* **icons:** move entry point up a level ([fdd9351](https://github.com/IBM/carbon-components-angular/commit/fdd935142dc0df46ac976a62d8672c5cfe6a0134))
+* **table:** change column type ([16385fe](https://github.com/IBM/carbon-components-angular/commit/16385fe350a5b4201ba05caa1a8f1908ec93ac15))
+* **table:** fill header item with provided props ([3f2352a](https://github.com/IBM/carbon-components-angular/commit/3f2352a45542d907d5f05990196fecaaa4f95a7d))
+* **table:** fix tests ([e3896e3](https://github.com/IBM/carbon-components-angular/commit/e3896e3c54acf9cf9e0b36621461e6a0194c716b))
+* **table model:** allow TableHeaderItems to be passed in ([d527325](https://github.com/IBM/carbon-components-angular/commit/d527325df9b91ce027589644723ad7620b3e5fee))
+
+
+### Features
+
+* **empty state:** add directives for empty state sections ([a0ad14d](https://github.com/IBM/carbon-components-angular/commit/a0ad14d640accd63dd8db190ecc15f7598ad7652))
+* **empty state:** convert action directives to components ([63aa0a3](https://github.com/IBM/carbon-components-angular/commit/63aa0a31b433ee064904b63b2a3343c9e3eef6b2))
+* **empty-state:** add angular empty state ([ed1ed82](https://github.com/IBM/carbon-components-angular/commit/ed1ed8296f1016e789caee38a356af03142fc66d))
+* **table:** add empty state ([9e06356](https://github.com/IBM/carbon-components-angular/commit/9e06356f01e3bcae9f16bcd4edd7682850000dfe))
+* **table:** add helpers for column alignment ([1780147](https://github.com/IBM/carbon-components-angular/commit/1780147a05ee83903e3d0ebec41a4541423df666))
+
+
+
+
+
 ## [2.147.1-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.147.0...v2.147.1-next.0) (2022-01-12)
 
 **Note:** Version bump only for package @ai-apps/angular

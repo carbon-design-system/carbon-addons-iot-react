@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
 import { pick } from 'lodash-es';
-import { TableCell } from 'carbon-components-react';
 import PropTypes from 'prop-types';
 
 import useVisibilityObserver from '../../../hooks/useVisibilityObserver';
-import { SkeletonText } from '../../SkeletonText';
 import {
   ExpandedRowsPropTypes,
   RowActionsStatePropTypes,
@@ -15,6 +13,7 @@ import {
 
 import TableBodyRow from './TableBodyRow/TableBodyRow';
 import TableBodyLoadMoreRow from './TableBodyLoadMoreRow/TableBodyLoadMoreRow';
+import SkeletonRow from './SkeletonRow';
 
 const propTypes = {
   /** The unique id of the table */
@@ -98,6 +97,8 @@ const propTypes = {
   someRowHasSingleRowEditMode: PropTypes.bool,
   row: TableRowPropTypes.isRequired,
   rows: TableRowsPropTypes,
+  /** True if this row is the last child of a nested group */
+  isLastChild: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -135,6 +136,7 @@ const defaultProps = {
   someRowHasSingleRowEditMode: false,
   testId: '',
   totalColumns: 0,
+  isLastChild: false,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -178,6 +180,7 @@ const TableBodyRowRenderer = (props) => {
     totalColumns,
     truncateCellText,
     wrapCellText,
+    isLastChild,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -192,21 +195,18 @@ const TableBodyRowRenderer = (props) => {
 
   if (shouldLazyRender && !isVisible) {
     return (
-      <tr
-        key={`lazy-row-${row.id}`}
-        ref={rowVisibilityRef}
-        data-testid={`${tableId}-lazy-row-${row.id}`}
-      >
-        {hasRowSelection === 'multi' ? <TableCell /> : null}
-        {hasRowExpansion || hasRowNesting ? <TableCell /> : null}
-        {columns.map((v, colIndex) => (
-          <TableCell key={`empty-cell-${colIndex}`}>
-            <SkeletonText />
-          </TableCell>
-        ))}
-        {showExpanderColumn ? <TableCell /> : null}
-        {hasRowActions ? <TableCell /> : null}
-      </tr>
+      <SkeletonRow
+        id={row.id}
+        tableId={tableId}
+        columns={columns}
+        rowVisibilityRef={rowVisibilityRef}
+        testId={`${tableId}-lazy-row-${row.id}`}
+        hasRowActions={hasRowActions}
+        hasRowExpansion={hasRowExpansion}
+        hasRowNesting={hasRowNesting}
+        hasRowSelection={hasRowSelection}
+        showExpanderColumn={showExpanderColumn}
+      />
     );
   }
 
@@ -268,6 +268,7 @@ const TableBodyRowRenderer = (props) => {
       values={row.values}
       showExpanderColumn={showExpanderColumn}
       size={size}
+      isLastChild={isLastChild}
     />
   ) : (
     <TableBodyLoadMoreRow
@@ -275,9 +276,16 @@ const TableBodyRowRenderer = (props) => {
       key={`${row.id}--load-more`}
       tableId={tableId}
       testId={testId}
-      loadMoreText={loadMoreText}
-      totalColumns={totalColumns}
+      rowVisibilityRef={rowVisibilityRef}
       onRowLoadMore={actions?.onRowLoadMore}
+      loadMoreText={loadMoreText}
+      hasRowActions={hasRowActions}
+      hasRowExpansion={hasRowExpansion}
+      hasRowNesting={hasRowNesting}
+      hasRowSelection={hasRowSelection}
+      showExpanderColumn={showExpanderColumn}
+      columns={columns}
+      totalColumns={totalColumns}
       isLoadingMore={loadingMoreIds.includes(row.id)}
     />
   );
@@ -285,12 +293,13 @@ const TableBodyRowRenderer = (props) => {
   return shouldShowChildren
     ? [rowElement]
         .concat(
-          row.children.map((childRow) => (
+          row.children.map((childRow, i) => (
             <TableBodyRowRenderer
               key={`child-row-${childRow.id}`}
               {...props}
               row={childRow}
               nestingLevel={nestingLevel + 1}
+              isLastChild={i === row.children.length - 1}
             />
           ))
         )

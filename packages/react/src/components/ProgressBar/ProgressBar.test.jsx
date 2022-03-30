@@ -15,6 +15,27 @@ describe('ProgressBar', () => {
     expect(screen.getByLabelText('A progress label')).toBeVisible();
   });
 
+  it('should render without labels and icons when inline:true', () => {
+    render(
+      <ProgressBar
+        label="A progress label"
+        value={40}
+        inline
+        renderIcon={() => <WarningFilled16 aria-label="warning filled 16" />}
+      />
+    );
+    expect(screen.getByText('A progress label')).toHaveClass(`${prefix}--visually-hidden`);
+    expect(screen.queryByLabelText('warning filled 16')).not.toBeInTheDocument();
+    expect(screen.getByText('40%')).toBeVisible();
+  });
+
+  it('should render with the given className', () => {
+    const { container } = render(
+      <ProgressBar label="A progress label" value={40} className="a-test-class" />
+    );
+    expect(container.querySelector('.a-test-class')).toBeInTheDocument();
+  });
+
   it('should render an icon when renderIcon is given', () => {
     render(
       <ProgressBar

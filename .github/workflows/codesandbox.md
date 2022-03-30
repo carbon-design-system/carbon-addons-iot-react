@@ -7,7 +7,7 @@ test-codesandbox:
 name: Test Codesandbox
 runs-on: ubuntu-latest
 container:
-image: cypress/browsers:node16.5.0-chrome94-ff93
+image: cypress/browsers:node16.14.0-slim-chrome99-ff97
 options: --privileged
 
     steps:

@@ -1,0 +1,429 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Filtering
+
+The table filtering is available in a simple and an advanced form. Both forms provide
+a customizable UI based on configuration props. The advanced filters is more powerful and can
+also handle filters defined using the Simple filter API, but it is currently experimental and
+is not safe to use in production.
+
+### Simple Filtering
+
+Simple filtering is provided through the `options.hasFilter` prop and by adding filter definitions
+to the objects in the `column` prop. For the `StatefulTable` that is all that is needed, but for the
+normal `Table` there are a few additional steps required as illustrated by the section
+[Programmatic filtering](#programmatic-filtering).
+
+Setting the `options.hasFilter` prop to be `true` will enable filtering but it also accepts the values
+`onKeyPress` and `onEnterAndBlur` to allow control of when the filter is triggered.
+
+#### Simple filtering in the StatefulTable
+
+The code example shows the most basic implementation of two filterable columns using the `StatefulTable`:
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={[
+      {
+        id: 'string',
+        name: 'String',
+        filter: { placeholderText: 'enter a string' },
+      },
+      {
+        id: 'date',
+        name: 'Date',
+        filter: { placeholderText: 'enter a date' },
+      },
+    ]}
+    data={data}
+    options={{
+      hasFilter: true,
+    }}
+  />
+);
+```
+
+#### The column filter prop
+
+The column definition object in the `column` prop array must have a `filter` prop in order for the column
+to be filterable. When this prop is available a simple filter UI is generated on a new row below the toolbar.
+
+Every filter prop must contain a `placeholderText` which is shown when the column is not being actively
+filtered on. Two types of controls are supported, text input and combobox. For filters using simple
+text input no additional configuration is needed, but in order to render a combobox you also
+need to define a set of `options`. If the column data type is an object you will need to add a prop called
+`filterFunction` containing a function that takes the column value, i.e. the object, and the filter
+value as input and returns a boolean. It is possible to add a filterFunction for any type of column,
+e.g. a string column that should only filter on part of the string value.
+For the full list of the available filter props see the Table's
+[Column Prop](/docs/1-watson-iot-table--playground#column-prop).
+
+Below is an example showing the column prop with three different configurations of filter controls:
+
+```jsx
+[
+  // This will render a text input
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+  },
+  // This will render a single select combobox with two options.
+  // It is the 'text' property of the options that is matched against
+  // the filter value.
+  {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      placeholderText: 'pick an option',
+      isMultiselect: false
+      options: [
+        {
+          id: 'option-A',
+          text: 'option-A',
+        },
+        {
+          id: 'option-B',
+          text: 'option-B',
+        },
+      ],
+    },
+  },
+  // This will also render a text input and the value entered there
+  // will be passed to the filterFunction. It is also possible to combine
+  // the filterFunction with the options prop if needed.
+  {
+    id: 'object',
+    name: 'Object Id',
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        return columnValue.id.includes(filterValue);
+      },
+    },
+  }
+];
+```
+
+#### Programmatic filtering
+
+When using the normal stateless `Table` the event handlers for toggling the filter bar (`onToggleFilter`),
+applying the filters (`onApplyFilter`) and clearing all the filters (`onClearAllFilters`)
+must be implemented. The code below shows a basic example of how it all can be brought together.
+
+```jsx
+...
+
+const [filteredData, setFilteredData] = useState(data);
+const [activeBar, setActiveBar] = useState();
+const [activeFilters, setActiveFilters] = useState([]);
+
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    filter: { placeholderText: 'enter a string' },
+  },
+  {
+    id: 'object',
+    name: 'Object Id',
+    renderDataFunction: ({ value }) => {
+      return value?.id;
+    },
+    filter: {
+      placeholderText: 'Filter object values...',
+      filterFunction: (columnValue, filterValue) => {
+        return columnValue.id.includes(filterValue);
+      },
+    },
+  },
+];
+
+// Helper functions
+const transformFiltersToArray = (filtersObj) => {
+  const filterEntries = Object.entries(filtersObj);
+  return filterEntries.map(([columnId, value]) => ({ columnId, value }));
+};
+
+const defaultFilterFunction = (columnValue, filterValue) => {
+  return columnValue.toString().includes(filterValue);
+};
+
+// Required callback implementations
+const onToggleFilter = () => {
+  setActiveBar((current) => (current === 'filter' ? undefined : 'filter'));
+};
+
+const onApplyFilter = (filtersObj) => {
+  // The format in which the new filters are received here is not
+  // the same as expected by the view.filters prop.
+  const filters = transformFiltersToArray(filtersObj);
+  setActiveFilters(filters);
+
+  setFilteredData(
+    data.filter(({ values }) =>
+      filters.every(({ columnId, value }) => {
+        // Apply the custom filter function if there is one
+        const { filterFunction } = columns.find(({ id }) => id === columnId).filter;
+        const currentFilterFunction = filterFunction || defaultFilterFunction;
+        return currentFilterFunction(values[columnId], value);
+      })
+    )
+  );
+};
+
+const onClearAllFilters = () => {
+  setActiveFilters([]);
+  setFilteredData(data);
+};
+
+return (
+  <Table
+    columns={columns}
+    data={filteredData}
+    options={{
+      hasFilter: true,
+    }}
+    actions={{
+      toolbar: {
+        onApplyFilter,
+        onToggleFilter,
+        onClearAllFilters,
+      },
+    }}
+    view={{
+      filters: activeFilters,
+      toolbar: {
+        activeBar,
+      },
+    }}
+  />
+);
+```
+
+### ☢️ Advanced Filtering (Experimental)
+
+Advanced filtering is experimental and may be subject to change, so it's usage in production is discouraged, but it can be enabled by passing the `options.hasAdvancedFilters=true`. The advanced filters are created with the `RuleBuilder` component (also experimental), and are passed to the table via the `view.advancedFilters` prop. The currently selected advanced filters are passed via the `view.selectedAdvancedFilterIds` as an array of advanced filter ids. Opening the advanced filter flyout is managed via the `view.toolbar.advancedFilterFlyoutOpen=true` prop. Advanced filtering also includes simple filtering, and can be passed with the same `view.filters` prop as an array of objects with a columnId and value key.
+
+```jsx
+<Table
+    options={{
+      hasAdvancedFilter: true,
+    }}
+    actions={{
+      toolbar: {
+        /** filters is an object in the form of: {[columnId: string]: string} */
+        onApplyFilter: (filters) => {}
+        /** event is the onClick event */
+        onToggleFilter: (event) => {},
+        /** event is the onClick event */
+        onClearAllFilters: (event) => {}
+        /** used to cancel and changes made in the flyout and revert to previous state */
+        onCancelAdvancedFilter: () => {},
+        /** event is the onClick event, advFilterId is the string id of the filter being removed */
+        onRemoveAdvancedFilter: (event, advFilterId) => {},
+        /** event is the onClick event. Can be used to display a RuleBuilder component to create new advanced rules */
+        onCreateAdvancedFilter: (event) => {},
+        /** filters is an object in the form of: {selectedItems: [advancedFilter]} */
+        onChangeAdvancedFilter: (filters) => {},
+        /** filters is an object in the form of
+         * {
+         *   advanced: [
+         *     'advanced-filter-id-1',
+         *     'advanced-filter-id-2'
+         *   ],
+         *   simple: {
+         *     [columnId]: 'value'
+         *   }
+         * }
+         */
+        onApplyAdvancedFilter: (filters) => {},
+        /** used to show/hide the advancedFilterFlyout */
+        onToggleAdvancedFilter: () => {},
+      }
+    }}
+    view={{
+      advancedFilters: [
+        {
+          filterAccess: [
+            {
+              access: 'edit',
+              email: 'example@pal.com',
+              name: 'Example User',
+              username: 'Example-User'
+            },
+            {
+              access: 'read',
+              email: 'other@pal.com',
+              name: 'Other User',
+              username: 'Other-User'
+            }
+          ],
+          filterColumns: [
+            {
+              filter: {
+                placeholderText: 'enter a string'
+              },
+              id: 'string',
+              name: 'String'
+            },
+            {
+              filter: {
+                placeholderText: 'enter a date'
+              },
+              id: 'date',
+              name: 'Date'
+            },
+            {
+              filter: {
+                options: [
+                  {
+                    id: 'option-A',
+                    text: 'option-A'
+                  },
+                  {
+                    id: 'option-B',
+                    text: 'option-B'
+                  },
+                  {
+                    id: 'option-C',
+                    text: 'option-C'
+                  },
+                  {
+                    id: 'option-D',
+                    text: 'option-D'
+                  },
+                  {
+                    id: 'option-E',
+                    text: 'option-E'
+                  },
+                  {
+                    id: 'option-F',
+                    text: 'option-F'
+                  }
+                ],
+                placeholderText: 'pick an option'
+              },
+              id: 'select',
+              name: 'Select'
+            },
+            {
+              id: 'secretField',
+              name: 'Secret Information'
+            },
+            {
+              id: 'status',
+              name: 'Status',
+              renderDataFunction: function E(){},
+              sortFunction: function E(){}
+            },
+            {
+              filter: {
+                placeholderText: 'enter a number'
+              },
+              id: 'number',
+              name: 'Number'
+            },
+            {
+              filter: {
+                placeholderText: 'true or false'
+              },
+              id: 'boolean',
+              name: 'Boolean'
+            },
+            {
+              id: 'node',
+              name: 'React Node'
+            }
+          ],
+          filterId: 'example-advanced-filter',
+          filterMetaText: 'last updated: 2021-03-11 15:34:01',
+          filterRules: {
+            groupLogic: 'ALL',
+            id: '14p5ho3pcu',
+            rules: [
+              {
+                columnId: 'select',
+                id: 'rsiru4rjba',
+                operand: 'EQ',
+                value: 'option-C'
+              },
+              {
+                columnId: 'boolean',
+                id: '34bvyub9jq',
+                operand: 'EQ',
+                value: 'false'
+              }
+            ]
+          },
+          filterTags: [
+            'fav',
+            'other-tag'
+          ],
+          filterTitleText: 'Example Advanced Filter',
+          filterUsers: [
+            {
+              groups: [
+                {
+                  id: 'team-a',
+                  name: 'Team A',
+                  users: [
+                    {
+                      email: 'tpeck@pal.com',
+                      name: 'Templeton Peck',
+                      username: '@tpeck'
+                    },
+                    {
+                      email: 'jsmith@pal.com',
+                      name: 'John Smith',
+                      username: '@jsmith'
+                    }
+                  ]
+                }
+              ],
+              id: 'teams',
+              name: 'Teams'
+            },
+            {
+              email: 'example@pal.com',
+              name: 'Example User',
+              username: 'Example-User'
+            },
+            {
+              email: 'test@pal.com',
+              name: 'Test User',
+              username: 'Test-User'
+            },
+            {
+              email: 'other@pal.com',
+              name: 'Other User',
+              username: 'Other-User'
+            }
+          ]
+        }
+      ],
+      filters: [
+        {
+          columnId: 'string',
+          value: 'whiteboard'
+        },
+        {
+          columnId: 'select',
+          value: 'option-B'
+        }
+      ],
+      selectedAdvancedFilterIds: [
+        'example-advanced-filter'
+      ],
+      toolbar: {
+        advancedFilterFlyoutOpen: true
+      }
+    }}
+/>
+```
+
+Note! From a UX perspective it is not recommended to have both column filters and the built in search enabled at the
+same time.

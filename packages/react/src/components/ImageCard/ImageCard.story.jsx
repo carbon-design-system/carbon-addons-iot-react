@@ -49,7 +49,7 @@ const values = {
 };
 
 export default {
-  title: '1 - Watson IoT/ImageCard',
+  title: '1 - Watson IoT/Card/ImageCard',
 
   parameters: {
     component: ImageCard,

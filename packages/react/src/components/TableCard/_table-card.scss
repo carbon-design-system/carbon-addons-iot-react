@@ -52,3 +52,105 @@
   align-items: baseline;
   margin-bottom: $spacing-05;
 }
+
+.#{$iot-prefix}--table-card__table {
+  flex: inherit;
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+  .#{$prefix}--pagination {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .#{$prefix}--data-table-content {
+    height: 90%;
+  }
+
+  .#{$prefix}--list-box__menu-item {
+    height: $spacing-07;
+    font-weight: normal;
+  }
+
+  .#{$prefix}--table-toolbar {
+    padding-bottom: $spacing-01;
+    padding-top: 0px;
+  }
+  .#{$prefix}--data-table th:first-of-type,
+  .#{$prefix}--data-table td:first-of-type {
+    padding-left: $spacing-05;
+    padding-right: $spacing-05;
+  }
+  .#{$prefix}--data-table thead {
+    tr {
+      height: $spacing-07;
+    }
+  }
+
+  .#{$prefix}--data-table tbody tr {
+    height: $spacing-08;
+  }
+  .#{$prefix}--data-table-content + .#{$prefix}--pagination {
+    border: 1px solid $ui-03;
+  }
+
+  .#{$prefix}--toolbar-search-container {
+    margin-left: $spacing-05;
+  }
+  .#{$prefix}--data-table {
+    height: 100%;
+    td {
+      white-space: nowrap;
+    }
+  }
+  .#{$prefix}--data-table thead tr:nth-child(2) {
+    height: $spacing-10;
+
+    th {
+      padding-top: rem(5px);
+      padding-bottom: rem(10px);
+
+      input {
+        height: $spacing-07;
+      }
+    }
+    th div.#{$prefix}--form-item {
+      display: block;
+      .#{$prefix}--list-box {
+        height: auto;
+      }
+    }
+    th div.#{$prefix}--list-box {
+      height: $spacing-07;
+    }
+  }
+}
+
+.#{$iot-prefix}--table-card__table--expanded {
+  overflow-y: auto;
+  padding-bottom: $spacing-10;
+
+  .#{$prefix}--pagination {
+    position: fixed;
+    bottom: rem(25px);
+    width: calc(100% - rem(35px));
+  }
+}
+
+.#{$iot-prefix}--table-card__table--hide-header {
+  .#{$prefix}--data-table thead {
+    display: none;
+  }
+}
+
+.#{$iot-prefix}--table-card__table--with-data {
+  .#{$prefix}--data-table {
+    height: initial;
+  }
+
+  &:not(.#{$iot-prefix}--table-card__table--expanded) {
+    .#{$prefix}--data-table-content {
+      max-height: rem(523px);
+    }
+  }
+}

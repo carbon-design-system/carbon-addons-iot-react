@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Custom Footer Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Menus/FlyoutMenu Custom Footer Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -65,6 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       >
         <div
           aria-controls="flyout-tooltip"
+          aria-describedby="flyout-tooltip"
           aria-expanded={true}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -188,7 +189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Default Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Menus/FlyoutMenu Default Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -254,6 +255,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         data-floating-menu-container={true}
       >
         <div
+          aria-describedby={null}
           aria-expanded={false}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -274,7 +276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu Large Flyout Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Menus/FlyoutMenu Large Flyout Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -338,6 +340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
         data-floating-menu-container={true}
       >
         <div
+          aria-describedby={null}
           aria-expanded={false}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -358,7 +361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/FlyoutMenu autopositioning example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Menus/FlyoutMenu autopositioning example 1`] = `
 <div
   className="storybook-container"
 >
@@ -443,6 +446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -522,6 +526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -601,6 +606,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -690,6 +696,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -769,6 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -848,6 +856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -937,6 +946,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -1016,6 +1026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -1095,6 +1106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"

@@ -1,9 +1,7 @@
 import React, { useMemo, useCallback } from 'react';
 import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
-import styled from 'styled-components';
 import { isNil, uniqBy, cloneDeep, capitalize } from 'lodash-es';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
-import { spacing01, spacing05 } from '@carbon/layout';
 import classnames from 'classnames';
 
 import dayjs from '../../utils/dayjs';
@@ -31,89 +29,7 @@ import {
 } from './tableCardUtils';
 import ThresholdIcon from './ThresholdIcon';
 
-const { prefix, iotPrefix } = settings;
-
-const StyledStatefulTable = styled(({ showHeader, isExpanded, data, ...rest }) => (
-  <StatefulTable {...rest} data={data} />
-))`
-  flex: inherit;
-  height: 100%;
-  position: relative;
-  overflow-y: ${(props) => (!props.isExpanded ? 'hidden' : 'auto')};
-  padding-bottom: ${(props) => (props.isExpanded ? '3rem' : '')};
-  &&& {
-    .${prefix}--pagination {
-      position: ${(props) => (!props.isExpanded ? 'absolute' : 'fixed')};
-      bottom: ${(props) => (!props.isExpanded ? '0px' : '25px')};
-      ${(props) => (props.isExpanded ? `width: calc(100% - 50px)` : ``)}
-    }
-    .${prefix}--data-table-content {
-      ${(props) =>
-        props.data && props.data.length > 0 && !props.isExpanded
-          ? `max-height: 523px;`
-          : `height: 90%;`}
-    }
-
-    .${prefix}--list-box__menu-item {
-      height: 2rem;
-      font-weight: normal;
-    }
-
-    .${prefix}--table-toolbar {
-      padding-bottom: ${spacing01};
-      padding-top: 0px;
-    }
-    .${prefix}--data-table th:first-of-type,
-    .${prefix}--data-table td:first-of-type {
-      padding-left: ${spacing05};
-      padding-right: ${spacing05};
-    }
-    .${prefix}--data-table thead {
-      display: ${(props) => (!props.showHeader ? 'none' : '')};
-      tr {
-        height: 2rem;
-      }
-    }
-
-    .${prefix}--data-table tbody tr {
-      height: 2.5rem;
-    }
-    .${prefix}--data-table-content + .${prefix}--pagination {
-      border: 1px solid #dfe3e6;
-    }
-
-    .${prefix}--toolbar-search-container {
-      margin-left: ${spacing05};
-    }
-    .${prefix}--data-table {
-      ${(props) => (props.data && props.data.length > 0 ? `height: initial;` : `height: 100%;`)}
-      td {
-        white-space: nowrap;
-      }
-    }
-    .${prefix}--data-table thead tr:nth-child(2) {
-      height: 3rem;
-
-      th {
-        padding-top: 5px;
-        padding-bottom: 10px;
-
-        input {
-          height: 2rem;
-        }
-      }
-      th div.${prefix}--form-item {
-        display: block;
-        .${prefix}--list-box {
-          height: auto;
-        }
-      }
-      th div.${prefix}--list-box {
-        height: 2rem;
-      }
-    }
-  }
-`;
+const { iotPrefix } = settings;
 
 const defaultProps = {
   size: CARD_SIZES.LARGE,
@@ -647,7 +563,13 @@ const TableCard = ({
           1 // at least pass 1 row per page
         );
         return (
-          <StyledStatefulTable
+          <StatefulTable
+            className={classnames(`${iotPrefix}--table-card__table`, {
+              [`${iotPrefix}--table-card__table--expanded`]: isExpanded,
+              [`${iotPrefix}--table-card__table--hide-header`]:
+                showHeader !== undefined ? showHeader : false,
+              [`${iotPrefix}--table-card__table--with-data`]: data?.length > 0,
+            })}
             columns={columnsToRender}
             data={tableDataWithTimestamp}
             id={`table-for-card-${id}`}

@@ -15,7 +15,7 @@ const commonPageHeroProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/🚫 PageHero',
+  title: '1 - Watson IoT/Deprecated/🚫 PageHero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 

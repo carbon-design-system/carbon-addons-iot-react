@@ -24,6 +24,7 @@ const propTypes = {
   /** callback to trigger further action when clicking the value */
   onClick: PropTypes.func,
   dataSourceId: PropTypes.string.isRequired,
+  measurementUnitLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -34,6 +35,7 @@ const defaultProps = {
   customFormatter: null,
   testId: 'value',
   onClick: null,
+  measurementUnitLabel: null,
 };
 
 /**
@@ -53,6 +55,7 @@ const ValueRenderer = ({
   testId,
   onClick,
   dataSourceId,
+  measurementUnitLabel,
 }) => {
   let renderValue = value;
   if (typeof value === 'boolean') {
@@ -84,17 +87,43 @@ const ValueRenderer = ({
       // otherwise, trucate the first line
       '--value-renderer-max-lines': fontSize < 20 ? 2 : 1,
     },
-    title: renderValue,
+    title: measurementUnitLabel ? (
+      <div>
+        {renderValue} {measurementUnitLabel}
+      </div>
+    ) : (
+      renderValue
+    ),
   };
 
   return (
     <div className={`${BASE_CLASS_NAME}__value-renderer--wrapper`}>
       {onClick ? (
         <Button {...commonProps} onClick={() => onClick({ dataSourceId, value })} kind="ghost">
-          {renderValue}
+          {measurementUnitLabel ? (
+            <>
+              {renderValue}
+              <span className={`${BASE_CLASS_NAME}__value-renderer--value--measurement-unit`}>
+                {measurementUnitLabel}
+              </span>
+            </>
+          ) : (
+            renderValue
+          )}
         </Button>
       ) : (
-        <span {...commonProps}>{renderValue}</span>
+        <span {...commonProps}>
+          {measurementUnitLabel ? (
+            <>
+              {renderValue}
+              <span className={`${BASE_CLASS_NAME}__value-renderer--value--measurement-unit`}>
+                {measurementUnitLabel}
+              </span>
+            </>
+          ) : (
+            renderValue
+          )}
+        </span>
       )}
     </div>
   );

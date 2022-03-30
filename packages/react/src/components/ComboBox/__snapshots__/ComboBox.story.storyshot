@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox Custom onBlur function automatically adds item to the list 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox Custom onBlur function automatically adds item to the list 1`] = `
 <div
   className="storybook-container"
 >
@@ -159,7 +159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -274,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox Items as components 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox Items as components 1`] = `
 <div
   className="storybook-container"
 >
@@ -389,7 +389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox add new items to list 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox add new items to list 1`] = `
 <div
   className="storybook-container"
 >
@@ -504,7 +504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox application-level control for selection 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox application-level control for selection 1`] = `
 <div
   className="storybook-container"
 >
@@ -654,7 +654,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComboBox multi-value tags 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dropdown/ComboBox multi-value tags 1`] = `
 <div
   className="storybook-container"
 >
