@@ -8375,6 +8375,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -14290,7 +14293,9 @@ Map {
       "testId": "Card",
       "timeRange": undefined,
       "title": undefined,
+      "titleTextTooltip": undefined,
       "toolbar": undefined,
+      "tooltip": undefined,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -15310,6 +15315,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -16471,6 +16479,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -17731,6 +17742,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -18999,6 +19013,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -20104,6 +20121,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -21453,6 +21473,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -22734,6 +22757,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -24040,6 +24066,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -28066,6 +28095,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -30223,6 +30255,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
