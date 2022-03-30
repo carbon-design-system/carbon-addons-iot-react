@@ -280,6 +280,7 @@ class FilterHeaderRow extends Component {
           };
           const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
           const isLastColumn = visibleColumns.length - 1 === i;
+          const lastVisibleColumn = visibleColumns.slice(-1)[0];
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
           const headerContent =
@@ -430,6 +431,8 @@ class FilterHeaderRow extends Component {
                   // This class does not make sense for undefined column widths and the corresponding
                   // CSS has been removed. Class is kept only for backwards compatibilty in the DOM.
                   [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
+                  [`${iotPrefix}--filter-header-row--last-column`]:
+                    column.id === lastVisibleColumn.columnId,
                 }
               )}
               data-column={column.id}

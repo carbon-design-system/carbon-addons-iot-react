@@ -4,6 +4,7 @@
 .#{$iot-prefix}--filter-header-row--form-item {
   display: inline-block;
   position: relative;
+
   input {
     padding-right: $spacing-08;
   }
@@ -15,9 +16,30 @@
   }
 }
 
+.#{$prefix}--data-table
+  th.#{$iot-prefix}--filter-header-row--header.#{$iot-prefix}--tableheader-filter {
+  padding-right: $spacing-02;
+  padding-left: $spacing-02;
+  padding-bottom: $spacing-03;
+
+  &.#{$iot-prefix}--tableheader-filter {
+    border-left-width: 2px !important;
+  }
+}
+
+.#{$prefix}--data-table--xl th.#{$iot-prefix}--filter-header-row--header {
+  height: $spacing-08;
+}
+
+.#{$prefix}--data-table
+  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column {
+  border-right-width: 2px;
+}
+
 .#{$prefix}--data-table th.#{$iot-prefix}--filter-header-row--header {
-  padding-right: 1px;
   padding-left: 1px;
+  padding-right: 1px;
+
   .#{$prefix}--table-header-label {
     padding-left: 0;
     padding-right: 0;
@@ -34,9 +56,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: $spacing-07;
+    padding-left: $spacing-04;
   }
   .#{$prefix}--form-item input:placeholder-shown {
     padding-right: $spacing-03;
+    padding-left: $spacing-04;
   }
 
   /* Need to force the colors of the selected-items counter in
@@ -96,4 +120,9 @@
       }
     }
   }
+}
+
+.#{$prefix}--data-table .#{$prefix}--list-box input[role='combobox'],
+.#{$prefix}--data-table .#{$prefix}--list-box input[type='text'] {
+  padding-left: $spacing-04;
 }
