@@ -352,23 +352,46 @@ SideNavComponent.parameters = {
 };
 
 export const SideNavComponentWithState = () => {
+  const demoPinnedLink = boolean('Demo pinned link', true);
+  const pinnedLinks = demoPinnedLink
+    ? [
+        {
+          icon: Home24,
+          isEnabled: true,
+          isPinned: true,
+          metaData: {
+            onClick: action('menu click'),
+            tabIndex: 0,
+            label: 'Home',
+          },
+          linkContent: 'Home',
+          isActive: false,
+        },
+      ]
+    : [];
+
   const [linksState, setLinksState] = useState([]);
   const onSideNavMenuItemClick = (linkLabel) => {
     setLinksState((currentLinks) =>
       currentLinks.map((group) => {
-        return {
-          ...group,
-          childContent: group.childContent.map((child) => ({
-            ...child,
-            isActive: linkLabel === child.metaData.label,
-          })),
-        };
+        if (group.childContent) {
+          return {
+            ...group,
+            childContent: group.childContent.map((child) => ({
+              ...child,
+              isActive: linkLabel === child.metaData.label,
+            })),
+          };
+        }
+
+        return group;
       })
     );
   };
 
   useEffect(() => {
     setLinksState([
+      ...pinnedLinks,
       {
         isEnabled: true,
         icon: Dashboard24,
@@ -429,6 +452,7 @@ export const SideNavComponentWithState = () => {
         ],
       },
     ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
