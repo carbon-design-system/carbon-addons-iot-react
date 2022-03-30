@@ -50,7 +50,7 @@ export const Basic = () => {
             danger: [900, 2000],
           }),
         }}
-        values={[
+        values={object('values', [
           {
             group: 'Install',
             value: 100,
@@ -75,7 +75,7 @@ export const Basic = () => {
             group: 'Reports',
             value: 150,
           },
-        ]}
+        ])}
         size={size}
         breakpoint={breakpoint}
         footerContent={() => <div>Occured on ... </div>}

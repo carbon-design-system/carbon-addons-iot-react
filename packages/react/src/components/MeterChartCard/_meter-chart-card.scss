@@ -1,9 +1,9 @@
-.#{$iot-prefix}--meter-card--wrapper {
+.#{$iot-prefix}--meter-chart--wrapper {
   height: 100%;
   width: 100%;
 }
 [dir='rtl'] {
-  .#{$iot-prefix}--meter-card--wrapper .bx--cc--meter-title {
+  .#{$iot-prefix}--meter-chart--wrapper .bx--cc--meter-title {
     .proportional-meter-total {
       text-anchor: start;
     }

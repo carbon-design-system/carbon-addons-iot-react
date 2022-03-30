@@ -1,19 +1,12 @@
-import React, { useMemo } from 'react';
-import classNames from 'classnames';
-import { isEmpty, defaultsDeep } from 'lodash-es';
+import React from 'react';
 
 import Card from '../Card/Card';
-import { StackedAreaChart } from '../StackedAreaChart';
-import { CARD_SIZES } from '../../constants/LayoutConstants';
-import { CardPropTypes, StackedAreaPropTypes } from '../../constants/CardPropTypes';
-import { getUpdatedCardSize } from '../../utils/cardUtilityFunctions';
-import { settings } from '../../constants/Settings';
-
-const { iotPrefix } = settings;
+import { CARD_SIZES, CARD_TYPES } from '../../constants/LayoutConstants';
+import { CardPropTypes, StackedAreaChartCardPropTypes } from '../../constants/CardPropTypes';
 
 const propTypes = {
   ...CardPropTypes,
-  ...StackedAreaPropTypes,
+  ...StackedAreaChartCardPropTypes,
 };
 
 const defaultProps = {
@@ -30,9 +23,6 @@ const defaultProps = {
     curve: 'curveMonotoneX',
   },
   locale: 'en',
-  i18n: {
-    noDataLabel: 'No data available',
-  },
   values: [],
 };
 const StackedAreaChartCard = ({
@@ -50,67 +40,22 @@ const StackedAreaChartCard = ({
   style,
   ...others
 }) => {
-  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
-
-  const newSize = useMemo(() => getUpdatedCardSize(size), [size]);
-  const isChartDataEmpty = isEmpty(values);
-  const contentWithDefaults = useMemo(() => defaultsDeep({}, content, defaultProps.content), [
-    content,
-  ]);
-
-  const options = useMemo(
-    () => ({
-      animations: false,
-      accessibility: false,
-      axes: {
-        left: {
-          stacked: true,
-          title: contentWithDefaults.yLabel,
-          mapsTo: contentWithDefaults.yProperty,
-          thresholds: contentWithDefaults.yThresholds,
-          scaleType: 'linear',
-        },
-        bottom: {
-          title: contentWithDefaults.xLabel,
-          mapsTo: contentWithDefaults.xProperty,
-          thresholds: contentWithDefaults.xThresholds,
-          scaleType: 'time',
-        },
-      },
-      color: contentWithDefaults.color,
-      curve: contentWithDefaults.curve,
-      toolbar: {
-        enabled: false,
-      },
-      legend: {
-        position: contentWithDefaults.legendPosition,
-      },
-    }),
-    [contentWithDefaults]
-  );
-
   return (
     <Card
       title={title}
-      size={newSize}
+      size={size}
       breakpoint={breakpoint}
       locale={locale}
       isExpanded={isExpanded}
-      isEmpty={isChartDataEmpty}
       isLoading={isLoading}
       testId={testId}
       footerContent={!isExpanded ? footerContent : null}
-      i18n={mergedI18n}
+      i18n={i18n}
+      data={values}
+      type={CARD_TYPES.STACKED_AREA_CHART}
+      content={content}
       {...others}
-    >
-      <div
-        className={classNames(`${iotPrefix}--stacked-area-card--wrapper`, {
-          [`${iotPrefix}--stacked-area-card--wrapper__expanded`]: isExpanded,
-        })}
-      >
-        {!isChartDataEmpty ? <StackedAreaChart data={values} options={options} /> : null}
-      </div>
-    </Card>
+    />
   );
 };
 

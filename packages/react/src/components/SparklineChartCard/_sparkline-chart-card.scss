@@ -1,6 +1,6 @@
 @import '../../globals/vars';
 
-.#{$iot-prefix}--sparkline-card--wrapper {
+.#{$iot-prefix}--sparkline-chart--wrapper {
   width: 100%;
   height: calc(100% - (var(--card-list-height)));
   &--list {
@@ -18,7 +18,7 @@
 }
 
 [dir='rtl'] {
-  .#{$iot-prefix}--sparkline-card--wrapper {
+  .#{$iot-prefix}--sparkline-chart--wrapper {
     &--list {
       > p {
         color: $text-02;

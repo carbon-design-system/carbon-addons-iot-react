@@ -3,6 +3,7 @@ import { Tooltip, SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
+import { isEmpty } from 'lodash-es';
 
 import useVisibilityObserver from '../../hooks/useVisibilityObserver';
 import { settings } from '../../constants/Settings';
@@ -25,6 +26,7 @@ import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 import EmptyState from '../EmptyState/EmptyState';
 
+import CardTypeContent from './CardTypeContent';
 import CardToolbar from './CardToolbar';
 
 const { prefix, iotPrefix } = settings;
@@ -270,6 +272,9 @@ export const defaultProps = {
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   padding: 'default',
   overrides: undefined,
+  type: null,
+  data: null,
+  content: null,
 };
 
 /** Dumb component that renders the card basics */
@@ -282,7 +287,7 @@ const Card = (props) => {
     hasTitleWrap,
     layout,
     isLoading,
-    isEmpty,
+    isEmpty: isEmptyProp,
     isEditable,
     isExpanded,
     isLazyLoading,
@@ -311,6 +316,10 @@ const Card = (props) => {
     extraActions,
     padding,
     overrides,
+    // support for instantiate charts based on type
+    type,
+    data,
+    content,
     ...others
   } = props;
 
@@ -447,6 +456,9 @@ const Card = (props) => {
     />
   ) : null;
 
+  // validate if the data is empty or prop says it's empty
+  const isCardEmpty = (type && isEmpty(data)) || isEmptyProp;
+
   const card = (
     <CardWrapper
       {...others} // you need all of these to support dynamic positioning during edit
@@ -577,12 +589,14 @@ const Card = (props) => {
             body={error}
             {...overrides?.errorMessage?.props}
           />
-        ) : isEmpty && !isEditable ? (
+        ) : isCardEmpty && !isEditable ? (
           <ErrorMessage
             title={isSmallOrThin ? strings.noDataShortLabel : strings.noDataLabel}
             icon={isSmall ? '' : 'empty'}
             {...overrides?.errorMessage?.props}
           />
+        ) : type ? ( // render card content based on it's type
+          <CardTypeContent isExpanded={isExpanded} type={type} data={data} content={content} />
         ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
           [
             // first option is a function

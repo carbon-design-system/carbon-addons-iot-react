@@ -26,9 +26,14 @@ import {
   CARD_DATA_STATE,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
+  CARD_TYPES,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
-import { ChartColorPropType } from './ChartPropTypes';
+import {
+  MeterChartPropTypes,
+  SparklineChartPropTypes,
+  StackedAreaChartPropTypes,
+} from './ChartPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -732,20 +737,9 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
-export const MeterChartPropTypes = {
-  content: PropTypes.shape({
-    peak: PropTypes.number,
-    meterTotal: PropTypes.number,
-    meterUnit: PropTypes.string,
-    legendPosition: PropTypes.string,
-    ...ChartColorPropType,
-  }),
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      group: PropTypes.string,
-      value: PropTypes.number,
-    })
-  ),
+export const MeterChartCardPropTypes = {
+  content: MeterChartPropTypes.content,
+  values: MeterChartPropTypes.data,
   size: (props, propName, componentName) => {
     let error;
     if (!Object.keys(CARD_SIZES).includes(props[propName])) {
@@ -770,22 +764,9 @@ export const MeterChartPropTypes = {
   },
 };
 
-export const SparklineChartPropTypes = {
-  content: PropTypes.shape({
-    xLabel: PropTypes.string,
-    yLabel: PropTypes.string,
-    xProperty: PropTypes.string.isRequired,
-    yProperty: PropTypes.string.isRequired,
-    listContent: PropTypes.arrayOf(
-      PropTypes.shape({ label: PropTypes.string, value: PropTypes.string })
-    ),
-    ...ChartColorPropType,
-  }),
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      group: PropTypes.string.isRequired,
-    })
-  ),
+export const SparklineChartCardPropTypes = {
+  content: SparklineChartPropTypes.content,
+  values: SparklineChartPropTypes.data,
   size: (props, propName, componentName) => {
     let error;
     if (!Object.keys(CARD_SIZES).includes(props[propName])) {
@@ -810,37 +791,9 @@ export const SparklineChartPropTypes = {
   },
 };
 
-export const StackedAreaPropTypes = {
-  content: PropTypes.shape({
-    xLabel: PropTypes.string,
-    yLabel: PropTypes.string,
-    xProperty: PropTypes.string.isRequired,
-    xThresholds: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.number.isRequired,
-        valueFormatter: PropTypes.func,
-        label: PropTypes.string,
-        fillColor: PropTypes.string,
-      })
-    ),
-    yProperty: PropTypes.string.isRequired,
-    yThresholds: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.number.isRequired,
-        valueFormatter: PropTypes.func,
-        label: PropTypes.string,
-        fillColor: PropTypes.string,
-      })
-    ),
-    curve: PropTypes.string,
-    legendPosition: PropTypes.oneOf(['bottom', 'left', 'right', 'top']),
-    ...ChartColorPropType,
-  }),
-  values: PropTypes.arrayOf(
-    PropTypes.shape({
-      group: PropTypes.string.isRequired,
-    })
-  ),
+export const StackedAreaChartCardPropTypes = {
+  content: StackedAreaChartPropTypes.content,
+  values: StackedAreaChartPropTypes.data,
   size: (props, propName, componentName) => {
     let error;
     if (!Object.keys(CARD_SIZES).includes(props[propName])) {
@@ -1011,4 +964,11 @@ export const CardPropTypes = {
   overrides: PropTypes.shape({
     errorMessage: OverridePropTypes,
   }),
+  type: PropTypes.oneOf([
+    CARD_TYPES.METER_CHART,
+    CARD_TYPES.SPARKLINE_CHART,
+    CARD_TYPES.STACKED_AREA_CHART,
+  ]),
+  data: PropTypes.oneOf([MeterChartPropTypes.data, SparklineChartPropTypes.data]),
+  content: PropTypes.oneOf([MeterChartPropTypes.content, SparklineChartPropTypes.content]),
 };
