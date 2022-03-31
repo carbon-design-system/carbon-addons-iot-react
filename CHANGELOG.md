@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.40...v2.149.0-next.41) (2022-03-31)
+
+
+### Bug Fixes
+
+* sidenav state example with pinned fix open/close on hover ([b7ba1aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b7ba1aa1f520873a395b1dd03b32abc5d3f7e12d))
+* **table:** adjust padding on empty state ([334d847](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/334d8470805caa66853fc57a3c0fc7e8155e1ca7))
+
+
+
+
+
 # [2.149.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.39...v2.149.0-next.40) (2022-03-30)
 
 
