@@ -293,6 +293,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
+                forwardedRef={
+                  Object {
+                    "current": null,
+                  }
+                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -352,6 +357,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -3125,6 +3135,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -3184,6 +3199,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -4471,6 +4491,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -4530,6 +4555,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -7784,6 +7814,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -7843,6 +7878,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -9450,6 +9490,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -9509,6 +9554,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -10882,6 +10932,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
+                forwardedRef={
+                  Object {
+                    "current": null,
+                  }
+                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -10941,6 +10996,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -12229,6 +12289,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -12288,6 +12353,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -14609,6 +14679,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -14668,6 +14743,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -17025,6 +17105,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
+                forwardedRef={
+                  Object {
+                    "current": null,
+                  }
+                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -17084,6 +17169,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -18275,6 +18365,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -18334,6 +18429,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -19646,6 +19746,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -19705,6 +19810,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -22948,6 +23058,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
+              forwardedRef={
+                Object {
+                  "current": null,
+                }
+              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -23007,6 +23122,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"

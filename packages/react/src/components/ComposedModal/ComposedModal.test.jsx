@@ -10,13 +10,27 @@ import ComposedModal from './ComposedModal';
 
 const { iotPrefix } = settings;
 
-jest.mock('../../utils/componentUtilityFunctions');
-
 const modalProps = {
   onClose: () => jest.fn(),
 };
 
 describe('ComposedModal', () => {
+  beforeEach(() => {
+    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
+      callback([{ contentRect: { width: 1000, height: 800 } }]);
+
+      return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+    });
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   it('should be selectable with either testID or testId', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     const { rerender } = render(<ComposedModal {...modalProps} testID="COMPOSED_MODAL" />);
@@ -34,6 +48,7 @@ describe('ComposedModal', () => {
   });
 
   it('invalid field should be scrolled into view', () => {
+    jest.spyOn(utilityFunctions, 'scrollErrorIntoView');
     const { rerender } = render(<ComposedModal {...modalProps} />);
     rerender(<ComposedModal {...modalProps} invalid submitFailed />);
     expect(utilityFunctions.scrollErrorIntoView).toHaveBeenCalledTimes(1);
@@ -135,7 +150,7 @@ describe('ComposedModal', () => {
 
     afterAll(() => {
       window.__DEV__ = originalDev;
-      console.error.mockRestore();
+      jest.resetAllMocks();
     });
 
     it('when passive modal is combined with a footer or onSubmit', () => {
@@ -143,10 +158,12 @@ describe('ComposedModal', () => {
       const { rerender } = render(
         <ComposedModal {...modalProps} footer={customFooter} passiveModal />
       );
+
       expect(console.error).toHaveBeenCalledTimes(1);
 
       rerender(<ComposedModal {...modalProps} onSubmit={() => {}} passiveModal />);
       expect(console.error).toHaveBeenCalledTimes(2);
+      jest.restoreAllMocks();
     });
   });
 });

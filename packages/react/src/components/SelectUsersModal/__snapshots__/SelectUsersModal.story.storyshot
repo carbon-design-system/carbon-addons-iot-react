@@ -12,6 +12,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
+      forwardedRef={
+        Object {
+          "current": null,
+        }
+      }
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -72,6 +77,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -769,6 +779,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
+      forwardedRef={
+        Object {
+          "current": null,
+        }
+      }
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -829,6 +844,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2197,6 +2217,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
+      forwardedRef={
+        Object {
+          "current": null,
+        }
+      }
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -2257,6 +2282,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2804,6 +2834,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       className="bx--modal is-visible iot--composed-modal--large iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="ComposedModal"
+      forwardedRef={
+        Object {
+          "current": null,
+        }
+      }
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
@@ -2864,6 +2899,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"

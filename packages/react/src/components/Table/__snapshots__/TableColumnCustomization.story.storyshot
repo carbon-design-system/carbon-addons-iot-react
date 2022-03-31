@@ -1234,6 +1234,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal iot--column-customization-modal iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="table-column-customization-modal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -1298,6 +1303,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <div
           className="iot--list-builder__container"

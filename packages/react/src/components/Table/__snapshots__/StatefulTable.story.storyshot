@@ -46563,7 +46563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-expanded={false}
             aria-haspopup={true}
             aria-label="open and close list of options"
-            className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+            className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
             data-testid="table-head--overflow"
             onClick={[Function]}
             onClose={[Function]}
@@ -50379,6 +50379,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--manage-views-modal__filter-container"
