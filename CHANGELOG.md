@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.42...v2.149.0-next.43) (2022-03-31)
+
+
+### Bug Fixes
+
+* **composed-modal:** adjust height based on content and available area ([45d3c9c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/45d3c9c2a66163fdf8a53eba5cc6b8a8dfdb65e3))
+* **composed-modal:** set maxHeight on content ([b6c0521](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b6c05214f062ea21c85d3d23aefa3a032b15971a))
+
+
+### Features
+
+* add css var for modal header/footer height ([d0523de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d0523de51cd76194cd96a9dccaa42137da3aaf76))
+
+
+
+
+
 # [2.149.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.41...v2.149.0-next.42) (2022-03-31)
 
 
