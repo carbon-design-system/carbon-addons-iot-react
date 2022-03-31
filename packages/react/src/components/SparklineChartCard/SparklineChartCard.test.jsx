@@ -223,7 +223,6 @@ describe('SparklineChartCard', () => {
     );
     expect(container.querySelectorAll('.bx--chart-holder')).toHaveLength(0);
   });
-
   it('does not show sparkline chart when empty data', () => {
     const { container } = render(
       <SparklineChartCard
@@ -260,5 +259,42 @@ describe('SparklineChartCard', () => {
       />
     );
     expect(container.querySelectorAll('.bx--chart-holder')).toHaveLength(0);
+  });
+  it('should not render footer content when expanded', () => {
+    const { container } = render(
+      <SparklineChartCard
+        title="Manage"
+        content={{
+          xLabel: 'xlabel prop',
+          yLabel: 'y label prop',
+          xProperty: 'date',
+          yProperty: 'value',
+          color: {
+            pairing: {
+              option: 4,
+            },
+            gradient: {
+              enabled: true,
+            },
+          },
+          listContent: [
+            { label: 'Target', value: 1000 },
+            { label: 'Mean', value: 756 },
+            { label: 'Peak', value: 1045 },
+          ],
+        }}
+        values={mockValues}
+        size="MEDIUM"
+        breakpoint="md"
+        isExpanded
+        locale="en"
+        availableActions={{ expand: true }}
+        onCardAction={() => {}}
+        footerContent={() => <div>Occured on ... </div>}
+        testId="SPARKLINE_CHART_CARD_TEST"
+      />
+    );
+
+    expect(container.querySelectorAll('.iot--card--footer--wrapper')).toHaveLength(0);
   });
 });
