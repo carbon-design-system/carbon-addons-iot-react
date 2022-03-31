@@ -22,12 +22,29 @@
   padding-left: $spacing-02;
   padding-bottom: $spacing-03;
 
-  &.#{$iot-prefix}--tableheader-filter {
+  &.#{$iot-prefix}--tableheader-filter:not(:first-of-type) {
     border-left-width: 2px;
 
     [dir='rtl'] & {
       border-left-width: 0;
       border-right-width: 2px;
+    }
+  }
+
+  &.#{$iot-prefix}--tableheader-filter:first-of-type {
+    border-right-width: 2px;
+
+    [dir='rtl'] & {
+      border-right-width: 0;
+      border-left-width: 2px;
+    }
+
+    & + .#{$iot-prefix}--tableheader-filter {
+      border-left-width: 0;
+
+      [dir='rtl'] & {
+        border-right-width: 0;
+      }
     }
   }
 }
@@ -37,7 +54,7 @@
 }
 
 .#{$prefix}--data-table
-  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column {
+  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(:last-of-type) {
   border-right-width: 2px;
 
   [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {
