@@ -15,11 +15,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       className="bx--modal iot--manage-views-modal iot--composed-modal"
       data-floating-menu-container={true}
       data-testid="TableManageViewsModal"
-      forwardedRef={
-        Object {
-          "current": null,
-        }
-      }
       onBlur={[Function]}
       onClick={[Function]}
       onClose={[Function]}
