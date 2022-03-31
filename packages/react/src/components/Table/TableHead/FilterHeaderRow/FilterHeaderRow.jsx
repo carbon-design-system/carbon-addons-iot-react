@@ -428,7 +428,7 @@ class FilterHeaderRow extends Component {
                 `${iotPrefix}--tableheader-filter`,
                 `${iotPrefix}--filter-header-row--header`,
                 {
-                  // This class does not make sense for undefined column widths and the corresponding
+                  // This "header-width" class does not make sense for undefined column widths and the corresponding
                   // CSS has been removed. Class is kept only for backwards compatibilty in the DOM.
                   [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
                   [`${iotPrefix}--filter-header-row--last-column`]:

@@ -23,7 +23,12 @@
   padding-bottom: $spacing-03;
 
   &.#{$iot-prefix}--tableheader-filter {
-    border-left-width: 2px !important;
+    border-left-width: 2px;
+
+    [dir='rtl'] & {
+      border-left-width: 0;
+      border-right-width: 2px;
+    }
   }
 }
 
@@ -34,6 +39,10 @@
 .#{$prefix}--data-table
   th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column {
   border-right-width: 2px;
+
+  [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {
+    border-left-width: 2px;
+  }
 }
 
 .#{$prefix}--data-table th.#{$iot-prefix}--filter-header-row--header {
@@ -56,11 +65,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     padding-right: $spacing-07;
-    padding-left: $spacing-04;
   }
+
   .#{$prefix}--form-item input:placeholder-shown {
     padding-right: $spacing-03;
-    padding-left: $spacing-04;
   }
 
   /* Need to force the colors of the selected-items counter in
