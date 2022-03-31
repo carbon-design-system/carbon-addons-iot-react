@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.43...v2.149.0-next.44) (2022-03-31)
+
+
+### Features
+
+* adjust padding when using filters in table ([894409d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/894409d7fbb39fbedd9208cb13b0bd4c3cd059d8))
+
+
+
+
+
 # [2.149.0-next.43](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.42...v2.149.0-next.43) (2022-03-31)
 
 
