@@ -24592,6 +24592,3573 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With data editing 1`] = `
+<div
+  className="storybook-container"
+>
+  <div>
+    <div
+      className="iot--table-container bx--data-table-container"
+      data-testid="table-table-container"
+    >
+      <section
+        aria-label="data table toolbar"
+        className="bx--table-toolbar"
+        data-testid="table-table-toolbar"
+      >
+        <div
+          aria-hidden={true}
+          className="bx--batch-actions iot--table-batch-actions"
+          data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
+        >
+          <div
+            className="bx--batch-summary"
+          >
+            <p
+              className="bx--batch-summary__para"
+            >
+              <span
+                dir="auto"
+              >
+                0 items selected
+              </span>
+            </p>
+          </div>
+          <div
+            className="bx--action-list"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+        <label
+          className="iot--table-toolbar-secondary-title"
+        >
+          My editable table
+        </label>
+        <div
+          className="bx--toolbar-content iot--table-toolbar-content"
+          data-testid="table-table-toolbar-content"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+            data-testid="row-edit-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Edit rows"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Edit rows"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={20}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={20}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+              />
+            </svg>
+          </button>
+        </div>
+      </section>
+      <div
+        className="addons-iot-table-container"
+      >
+        <div
+          className="bx--data-table-content"
+        >
+          <table
+            className="bx--data-table iot--data-table--resize iot--data-table--fixed iot--data-table--row-actions bx--data-table--no-border"
+            data-testid="table"
+            id="table"
+            title={null}
+          >
+            <thead
+              data-testid="table-table-head"
+              onMouseMove={[Function]}
+              onMouseUp={[Function]}
+            >
+              <tr>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="string"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-string"
+                  id="column-string"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="String"
+                    >
+                      String
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="date"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-date"
+                  id="column-date"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Date"
+                    >
+                      Date
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="select"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-select"
+                  id="column-select"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Select"
+                    >
+                      Select
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="secretField"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-secretField"
+                  id="column-secretField"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Secret Information"
+                    >
+                      Secret Information
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="status"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-status"
+                  id="column-status"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Status"
+                    >
+                      Status
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="number"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-number"
+                  id="column-number"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Number"
+                    >
+                      Number
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="boolean"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-boolean"
+                  id="column-boolean"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Boolean"
+                    >
+                      Boolean
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="node"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-node"
+                  id="column-node"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="React Node"
+                    >
+                      React Node
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  align="start"
+                  className="table-header-label-start iot--table-head--table-header iot--table-header-resize"
+                  data-column="object"
+                  data-floating-menu-container={true}
+                  data-testid="table-table-head-column-object"
+                  id="column-object"
+                  scope="col"
+                  style={
+                    Object {
+                      "width": 110,
+                    }
+                  }
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    <span
+                      className=""
+                      title="Object Id"
+                    >
+                      Object Id
+                    </span>
+                    <div
+                      aria-label="Resize column"
+                      className="iot--column-resize-handle"
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      role="button"
+                      style={
+                        Object {
+                          "left": "auto",
+                          "width": 4,
+                        }
+                      }
+                      tabIndex="0"
+                    />
+                  </span>
+                </th>
+                <th
+                  className="iot--table-header-expander-column"
+                  data-testid="table-table-head-expander-column"
+                  scope="col"
+                  style={Object {}}
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    
+                  </span>
+                </th>
+                <th
+                  className="iot--table-header-row-action-column iot--table-header-row-action-column--extra-wide"
+                  data-testid="table-table-head-row-actions-column"
+                  scope="col"
+                  style={Object {}}
+                >
+                  <span
+                    className="bx--table-header-label"
+                  >
+                    
+                  </span>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              aria-live="polite"
+              data-testid="table-table-body"
+            >
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-0-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="toyota toyota toyota 0"
+                    >
+                      toyota toyota toyota 0
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-0-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-03-03T09:46:40.000Z"
+                    >
+                      1973-03-03T09:46:40.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-0-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-A"
+                    >
+                      option-A
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-0-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="AAAAAAAAAA"
+                    >
+                      AAAAAAAAAA
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-0-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="green"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-0-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  />
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-0-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="true"
+                    >
+                      true
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-0-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-0-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="AAAAA"
+                    >
+                      AAAAA
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-0-row-actions-cell-overflow"
+                        id="table-row-0-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-1-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="helping whiteboard as 1"
+                    >
+                      helping whiteboard as 1
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-1-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-03-14T23:33:20.000Z"
+                    >
+                      1973-03-14T23:33:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-1-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-B"
+                    >
+                      option-B
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-1-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="OewGc0QsMs"
+                    >
+                      OewGc0QsMs
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-1-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="gray"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-1-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={1}
+                    >
+                      1
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-1-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="false"
+                    >
+                      false
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-1-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-1-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="OewGc"
+                    >
+                      OewGc
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-1-row-actions-cell-overflow"
+                        id="table-row-1-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-2-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="whiteboard can eat 2"
+                    >
+                      whiteboard can eat 2
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-2-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-04-18T16:53:20.000Z"
+                    >
+                      1973-04-18T16:53:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-2-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-C"
+                    >
+                      option-C
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-2-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="c8iM4qgaYa"
+                    >
+                      c8iM4qgaYa
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-2-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="red"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-2-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={4}
+                    >
+                      4
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-2-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="true"
+                    >
+                      true
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-2-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-2-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="c8iM4"
+                    >
+                      c8iM4
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-2-row-actions-cell-overflow"
+                        id="table-row-2-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-3-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="as eat scott 3"
+                    >
+                      as eat scott 3
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-3-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-06-15T13:46:40.000Z"
+                    >
+                      1973-06-15T13:46:40.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-3-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-A"
+                    >
+                      option-A
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-3-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="qcUSWgwIkI"
+                    >
+                      qcUSWgwIkI
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-3-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="green"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-3-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  />
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-3-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="false"
+                    >
+                      false
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-3-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-3-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="qcUSW"
+                    >
+                      qcUSW
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-3-row-actions-cell-overflow"
+                        id="table-row-3-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-4-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="can pinocchio whiteboard 4"
+                    >
+                      can pinocchio whiteboard 4
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-4-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-09-04T14:13:20.000Z"
+                    >
+                      1973-09-04T14:13:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-4-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-B"
+                    >
+                      option-B
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-4-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="46GYyWC0w0"
+                    >
+                      46GYyWC0w0
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-4-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="gray"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-4-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={16}
+                    >
+                      16
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-4-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="true"
+                    >
+                      true
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-4-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-4-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="46GYy"
+                    >
+                      46GYy
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-4-row-actions-cell-overflow"
+                        id="table-row-4-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-5-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="bottle toyota bottle 5"
+                    >
+                      bottle toyota bottle 5
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-5-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1973-12-17T18:13:20.000Z"
+                    >
+                      1973-12-17T18:13:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-5-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-C"
+                    >
+                      option-C
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-5-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="Ia2eQMSi8i"
+                    >
+                      Ia2eQMSi8i
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-5-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="red"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-5-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={25}
+                    >
+                      25
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-5-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="false"
+                    >
+                      false
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-5-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-5-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="Ia2eQ"
+                    >
+                      Ia2eQ
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-5-row-actions-cell-overflow"
+                        id="table-row-5-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-6-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="eat whiteboard pinocchio 6"
+                    >
+                      eat whiteboard pinocchio 6
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-6-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1974-04-24T01:46:40.000Z"
+                    >
+                      1974-04-24T01:46:40.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-6-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-A"
+                    >
+                      option-A
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-6-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="W4oksCiQKQ"
+                    >
+                      W4oksCiQKQ
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-6-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="green"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-6-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  />
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-6-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="true"
+                    >
+                      true
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-6-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-6-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="W4oks"
+                    >
+                      W4oks
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-6-row-actions-cell-overflow"
+                        id="table-row-6-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-7-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="chocolate can helping 7"
+                    >
+                      chocolate can helping 7
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-7-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1974-09-21T12:53:20.000Z"
+                    >
+                      1974-09-21T12:53:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-7-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-B"
+                    >
+                      option-B
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-7-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="kYaqK2y8W8"
+                    >
+                      kYaqK2y8W8
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-7-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="gray"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-7-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={49}
+                    >
+                      49
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-7-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="false"
+                    >
+                      false
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-7-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-7-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="kYaqK"
+                    >
+                      kYaqK
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-7-row-actions-cell-overflow"
+                        id="table-row-7-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-8-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="pinocchio eat can 8"
+                    >
+                      pinocchio eat can 8
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-8-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1975-03-14T03:33:20.000Z"
+                    >
+                      1975-03-14T03:33:20.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-8-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-C"
+                    >
+                      option-C
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-8-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="y2MwmsEqiq"
+                    >
+                      y2MwmsEqiq
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-8-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="red"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-8-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title={64}
+                    >
+                      64
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-8-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="true"
+                    >
+                      true
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-8-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-8-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="y2Mwm"
+                    >
+                      y2Mwm
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-8-row-actions-cell-overflow"
+                        id="table-row-8-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr
+                className="iot--table__row iot--table__row--selectable"
+                onClick={[Function]}
+              >
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="string"
+                  data-offset={0}
+                  id="cell-table-row-9-string"
+                  offset={0}
+                  width="250px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="scott pinocchio chocolate 9"
+                    >
+                      scott pinocchio chocolate 9
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="date"
+                  data-offset={0}
+                  id="cell-table-row-9-date"
+                  offset={0}
+                  width="220px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="1975-09-26T21:46:40.000Z"
+                    >
+                      1975-09-26T21:46:40.000Z
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="select"
+                  data-offset={0}
+                  id="cell-table-row-9-select"
+                  offset={0}
+                  width="160px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="option-A"
+                    >
+                      option-A
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="secretField"
+                  data-offset={0}
+                  id="cell-table-row-9-secretField"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="CW82EiUYuY"
+                    >
+                      CW82EiUYuY
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="status"
+                  data-offset={0}
+                  id="cell-table-row-9-status"
+                  offset={0}
+                  width="165px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                    >
+                      <svg
+                        height="10"
+                        width="10"
+                      >
+                        <circle
+                          cx="5"
+                          cy="5"
+                          fill="green"
+                          r="3"
+                          stroke="none"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="number"
+                  data-offset={0}
+                  id="cell-table-row-9-number"
+                  offset={0}
+                  width="95px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  />
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="boolean"
+                  data-offset={0}
+                  id="cell-table-row-9-boolean"
+                  offset={0}
+                  width="90px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="false"
+                    >
+                      false
+                    </span>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="node"
+                  data-offset={0}
+                  id="cell-table-row-9-node"
+                  offset={0}
+                  width="115px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <svg
+                      aria-hidden={true}
+                      fill="currentColor"
+                      focusable="false"
+                      height={20}
+                      preserveAspectRatio="xMidYMid meet"
+                      viewBox="0 0 32 32"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </span>
+                </td>
+                <td
+                  align="start"
+                  className="data-table-start"
+                  data-column="object"
+                  data-offset={0}
+                  id="cell-table-row-9-object"
+                  offset={0}
+                  width="110px"
+                >
+                  <span
+                    className="iot--table__cell__offset"
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <span
+                      className="iot--table__cell-text--preserve"
+                      title="CW82E"
+                    >
+                      CW82E
+                    </span>
+                  </span>
+                </td>
+                <td />
+                <td
+                  className="iot--row-actions-cell--table-cell"
+                >
+                  <div
+                    className="iot--row-actions-container"
+                  >
+                    <div
+                      className="iot--row-actions-container__background"
+                      data-testid="row-action-container-background"
+                      onClick={[Function]}
+                    >
+                      <button
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                        aria-label="More actions"
+                        className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                        data-testid="table-row-9-row-actions-cell-overflow"
+                        id="table-row-9-row-actions-cell-overflow"
+                        onClick={[Function]}
+                        onClose={[Function]}
+                        onKeyDown={[Function]}
+                        open={false}
+                        type="button"
+                      >
+                        <svg
+                          aria-label="More actions"
+                          className="bx--overflow-menu__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            cx="16"
+                            cy="8"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="16"
+                            r="2"
+                          />
+                          <circle
+                            cx="16"
+                            cy="24"
+                            r="2"
+                          />
+                          <title>
+                            More actions
+                          </title>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With filtering 1`] = `
 <div
   className="storybook-container"

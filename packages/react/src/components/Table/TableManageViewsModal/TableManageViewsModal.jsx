@@ -9,6 +9,7 @@ import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import { SimplePaginationPropTypes } from '../../SimplePagination/SimplePagination';
 import deprecate from '../../../internal/deprecate';
+import useMerged from '../../../hooks/useMerged';
 
 import TableManageViewsList from './TableManageViewsList';
 import { ViewsPropType } from './SharedTableManageViewsModalPropTypes';
@@ -38,12 +39,12 @@ const propTypes = {
   displayPublicDefaultChecked: PropTypes.bool,
   /** Shows this string as a general modal error when present */
   error: PropTypes.string,
-  /** Internationalisation strings object */
+  /** Internationalization strings object */
   i18n: PropTypes.shape({
     closeIconDescription: PropTypes.string,
     defaultLabelText: PropTypes.string,
     deleteIconText: PropTypes.string,
-    deleteWarningTextTemplate: PropTypes.func,
+    deleteWarningTextTemplate: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
     deleteWarningCancel: PropTypes.string,
     deleteWarningConfirm: PropTypes.string,
     editIconText: PropTypes.string,
@@ -62,7 +63,7 @@ const propTypes = {
   searchValueDefault: PropTypes.string,
   /** Determines if the modal is open or closed (i.e. visible or not to the user) */
   open: PropTypes.bool.isRequired,
-  /** Used to overide the internal components and props for advanced customisation */
+  /** Used to override the internal components and props for advanced customization */
   overrides: PropTypes.shape({
     mainModal: OverridePropTypes,
     publicCheckbox: OverridePropTypes,
@@ -126,18 +127,7 @@ const TableManageViewsModal = ({
   defaultViewId,
   displayPublicDefaultChecked,
   error,
-  i18n: {
-    closeIconDescription,
-    deleteWarningTextTemplate,
-    deleteWarningCancel,
-    deleteWarningConfirm,
-    modalTitle,
-    publicCheckboxLabelText,
-    searchPlaceholderText,
-    searchClearButtonLabelText,
-    searchIconLabelText,
-    ...i18n
-  },
+  i18n,
   isLoading,
   open,
   overrides,
@@ -148,6 +138,18 @@ const TableManageViewsModal = ({
   testId,
   views,
 }) => {
+  const {
+    closeIconDescription,
+    deleteWarningTextTemplate,
+    deleteWarningCancel,
+    deleteWarningConfirm,
+    modalTitle,
+    publicCheckboxLabelText,
+    searchPlaceholderText,
+    searchClearButtonLabelText,
+    searchIconLabelText,
+    ...mergedI18n
+  } = useMerged(defaultProps.i18n, i18n);
   const primaryInputId = 'manage-views-modal-search';
   const MyMainModal = overrides?.mainModal?.component || ComposedModal;
   const MySearch = overrides?.search?.component || Search;
@@ -160,7 +162,9 @@ const TableManageViewsModal = ({
 
   const getDeleteWarningText = () => {
     const viewTitle = views.find((view) => view.id === viewIdToDelete).title;
-    return deleteWarningTextTemplate(viewTitle);
+    return typeof deleteWarningTextTemplate === 'function'
+      ? deleteWarningTextTemplate(viewTitle)
+      : deleteWarningTextTemplate.replace('{0}', viewTitle);
   };
 
   const onShowWarning = (id) => {
@@ -214,7 +218,7 @@ const TableManageViewsModal = ({
         </div>
         <MyTableManageViewsList
           defaultViewId={defaultViewId}
-          i18n={i18n}
+          i18n={mergedI18n}
           isLoading={isLoading}
           onEdit={onEdit}
           onDelete={onShowWarning}

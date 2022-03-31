@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.39...v2.149.0-next.40) (2022-03-30)
+
+
+### Features
+
+* **card:** enable clickable tooltops with external content to title ([6583bbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6583bbcf92708d104633a870c1837c9962da191d))
+
+
+
+
+
+# [2.149.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.38...v2.149.0-next.39) (2022-03-30)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.149.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.37...v2.149.0-next.38) (2022-03-29)
+
+
+### Bug Fixes
+
+* **statefultable:** include rowedit buttons in tableregister ([35cdaa6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/35cdaa69dce1579fb42eb3871cad87f227926052)), closes [#3404](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3404)
+* **table:** remove unused imports ([07ac057](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07ac057674e076b4ad5e5021b16a4f33726d7cdd))
+
+
+
+
+
+# [2.149.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.36...v2.149.0-next.37) (2022-03-29)
+
+
+### Bug Fixes
+
+* **statefultable:** include rowedit buttons in tableregister ([e540e10](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e540e10aaad81bb107fa053bc3e5acd50d7fb69b)), closes [#3404](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3404)
+
+
+
+
+
+# [2.149.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.35...v2.149.0-next.36) (2022-03-29)
+
+
+### Features
+
+* **table-manage-views-modal:** deleteWarningTextTemplate as string ([e75d352](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e75d3529bcde5abc8603749e808862b6abf61053))
+
+
+
+
+
 # [2.149.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.34...v2.149.0-next.35) (2022-03-28)
 
 

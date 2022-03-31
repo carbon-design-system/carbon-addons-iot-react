@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import { Tooltip, SkeletonText } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
@@ -20,12 +20,12 @@ import {
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
-import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 import EmptyState from '../EmptyState/EmptyState';
 
 import CardToolbar from './CardToolbar';
+import { CardTitle } from './CardTitle';
 
 const { prefix, iotPrefix } = settings;
 
@@ -99,14 +99,6 @@ export const CardHeader = (
   >
     {children}
   </div>
-);
-
-export const CardTitle = (
-  { children, title, testId } // eslint-disable-line react/prop-types
-) => (
-  <span data-testid={testId} className={`${iotPrefix}--card--title`} title={title}>
-    {children}
-  </span>
 );
 
 const CardContent = (props) => {
@@ -263,6 +255,8 @@ export const defaultProps = {
   onBlur: undefined,
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
+  tooltip: undefined,
+  titleTextTooltip: undefined,
   footerContent: undefined,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   padding: 'default',
@@ -289,6 +283,7 @@ const Card = (props) => {
     hideHeader,
     id,
     tooltip,
+    titleTextTooltip,
     timeRange,
     timeRangeOptions,
     onCardAction,
@@ -409,11 +404,19 @@ const Card = (props) => {
     return childSize;
   };
 
-  // Ensure the title and subtitle have a tooltip only if their text is truncated
-  const titleRef = useRef();
-  const subTitleRef = useRef();
-  const hasTitleTooltip = useHasTextOverflow(titleRef, title);
-  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
+  if (__DEV__ && titleTextTooltip && tooltip) {
+    warning(
+      false,
+      'The props titleTextTooltip and tooltip cannot be combined. Now using titleTextTooltip'
+    );
+  }
+  if (__DEV__ && titleTextTooltip && hasTitleWrap) {
+    warning(
+      false,
+      'The props titleTextTooltip and hasTitleWrap cannot be combined. Now using titleTextTooltip'
+    );
+  }
+
   const visibilityRef = useRef(null);
   const [isVisible] = useVisibilityObserver(visibilityRef, {
     unobserveAfterVisible: true,
@@ -477,74 +480,15 @@ const Card = (props) => {
           hasSubtitle={!!subtitle}
         >
           <CardTitle
-            title={title}
             // TODO: remove deprecated testID prop in v3
-            testId={`${testID || testId}-title`}
-          >
-            {hasTitleTooltip ? (
-              <Tooltip
-                data-testid={`${testID || testId}-title-tooltip`}
-                ref={titleRef}
-                showIcon={false}
-                triggerClassName={classnames(
-                  `${iotPrefix}--card--title--text__overflow`,
-                  `${iotPrefix}--card--title--text`,
-                  {
-                    [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
-                  }
-                )}
-                triggerText={title}
-              >
-                {title}
-              </Tooltip>
-            ) : (
-              <div
-                ref={titleRef}
-                data-testid={`${testId}-title-notip`}
-                className={classnames(`${iotPrefix}--card--title--text`, {
-                  [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
-                })}
-              >
-                {title}
-              </div>
-            )}
-            {tooltip && (
-              <Tooltip
-                data-testid={`${testID || testId}-tooltip`}
-                triggerId={`card-tooltip-trigger-${id}`}
-                tooltipId={`card-tooltip-${id}`}
-                triggerClassName={`${iotPrefix}--card--header--tooltip`}
-                id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
-                triggerText=""
-                iconDescription={strings.iconDescription || `card-header-tooltip-${id}`} // To fix accessibility violation.
-              >
-                {tooltip}
-              </Tooltip>
-            )}
-            {!subtitle ? null : hasSubTitleTooltip ? (
-              <Tooltip
-                data-testid={`${testID || testId}-subtitle`}
-                ref={subTitleRef}
-                showIcon={false}
-                triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                })}
-                triggerText={subtitle}
-              >
-                {subtitle}
-              </Tooltip>
-            ) : (
-              <div
-                ref={subTitleRef}
-                data-testid={`${testID || testId}-subtitle`}
-                className={classnames(`${iotPrefix}--card--subtitle--text`, {
-                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                })}
-              >
-                {subtitle}
-              </div>
-            )}
-          </CardTitle>
+            id={id}
+            hasTitleWrap={hasTitleWrap}
+            subtitle={subtitle}
+            title={title}
+            titleTextTooltip={titleTextTooltip}
+            infoIconTooltip={tooltip}
+            testId={`${testID || testId}`}
+          />
           {cardToolbar}
         </CardHeader>
       )}
