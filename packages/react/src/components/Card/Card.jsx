@@ -245,6 +245,7 @@ export const defaultProps = {
     overflowMenuDescription: 'Open and close list of options',
     toLabel: 'to',
     extraActionLabel: 'Action Label',
+    titleTooltipIconDescription: 'Tooltip info icon',
   },
   onMouseDown: undefined,
   onMouseUp: undefined,
@@ -487,7 +488,7 @@ const Card = (props) => {
             title={title}
             titleTextTooltip={titleTextTooltip}
             infoIconTooltip={tooltip}
-            infoIconDescription={strings.infoIconDescription} // To fix accessibility violation.
+            titleTooltipIconDescription={strings.titleTooltipIconDescription} // To fix accessibility violation.
             testId={`${testID || testId}`}
           />
           {cardToolbar}

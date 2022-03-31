@@ -23,6 +23,7 @@ const propTypes = {
    * Cannot be used together with the tooltip prop or the or the hasTitleWrap prop.
    */
   titleTextTooltip: PropTypes.element,
+  titleTooltipIconDescription: PropTypes.string.isRequired,
 };
 
 const defaultProps = {
@@ -41,7 +42,7 @@ export const CardTitle = (
     testId,
     title,
     titleTextTooltip,
-    infoIconDescription,
+    titleTooltipIconDescription,
   } // eslint-disable-line react/prop-types
 ) => {
   const titleRef = useRef();
@@ -143,7 +144,7 @@ export const CardTitle = (
           triggerClassName={`${iotPrefix}--card--header--tooltip`}
           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
           triggerText=""
-          iconDescription={infoIconDescription || `card-header-tooltip-${id}`}
+          iconDescription={titleTooltipIconDescription}
         >
           {infoIconTooltip}
         </Tooltip>

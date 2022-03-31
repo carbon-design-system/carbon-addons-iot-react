@@ -14260,6 +14260,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "titleTooltipIconDescription": "Tooltip info icon",
         "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
@@ -14970,6 +14971,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "titleTooltipIconDescription": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -16086,6 +16090,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "titleTooltipIconDescription": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -17391,6 +17398,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "titleTooltipIconDescription": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -19789,6 +19799,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "titleTooltipIconDescription": Object {
+              "type": "string",
+            },
             "toLabel": Object {
               "type": "string",
             },
@@ -20324,6 +20337,7 @@ Map {
         "thisWeekLabel": "This week",
         "thisYearLabel": "This year",
         "timeRangeLabel": "Time range",
+        "titleTooltipIconDescription": "Tooltip info icon",
         "toLabel": "to",
         "weeklyLabel": "Weekly",
       },
@@ -22414,6 +22428,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "titleTooltipIconDescription": Object {
+              "type": "string",
+            },
             "toLabel": Object {
               "type": "string",
             },
@@ -23743,6 +23760,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "titleTooltipIconDescription": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -27751,6 +27771,9 @@ Map {
             "thisYearLabel": Object {
               "type": "string",
             },
+            "titleTooltipIconDescription": Object {
+              "type": "string",
+            },
             "toLabel": Object {
               "type": "string",
             },
@@ -29629,6 +29652,9 @@ Map {
               "type": "string",
             },
             "thisYearLabel": Object {
+              "type": "string",
+            },
+            "titleTooltipIconDescription": Object {
               "type": "string",
             },
             "toLabel": Object {
