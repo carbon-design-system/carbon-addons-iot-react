@@ -342,7 +342,7 @@ const SideNav = ({
     >
       {
         // We use an array for the children since CarbonSideNav can't handle null or
-        // undfined being passed as a child so if hasSearch is false we don't pass anthing.
+        // undefined being passed as a child so if hasSearch is false we don't pass anything.
         [...search, ...staticSideNavContent, dynamicSideNavContent]
       }
     </CarbonSideNav>
@@ -357,5 +357,6 @@ SideNavItems.displayName = 'SideNavItems';
 SideNavLink.displayName = 'SideNavLink';
 SideNavMenu.displayName = 'SideNavMenu';
 SideNavMenuItem.displayName = 'SideNavMenuItem';
+FilterableSideNavMenu.displayName = 'SideNavMenu';
 
 export default SideNav;

@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.41...v2.149.0-next.42) (2022-03-31)
+
+
+### Features
+
+* upgrade carbon to 10.55.1/7.55.1 ([c4b275e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c4b275eda517a473a185012cca06f3e4a18c5e35))
+* upgrade carbon to 10.56/7.56 ([22670f8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/22670f823e5fb52ad6c702273705508efd4f61f4))
+* upgrade vrt images ([9bcaad8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9bcaad8d290bb95b7df6cacfa1b28f6d1786e556))
+* **repo:** upgrade carbon to 10.54/7.54 ([cfa1b8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cfa1b8aaeae513397a7bd4dd9c82b40585d46cc2))
+
+
+
+
+
+# [2.149.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.40...v2.149.0-next.41) (2022-03-31)
+
+
+### Bug Fixes
+
+* sidenav state example with pinned fix open/close on hover ([b7ba1aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b7ba1aa1f520873a395b1dd03b32abc5d3f7e12d))
+* **table:** adjust padding on empty state ([334d847](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/334d8470805caa66853fc57a3c0fc7e8155e1ca7))
+
+
+
+
+
+# [2.149.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.39...v2.149.0-next.40) (2022-03-30)
+
+
+### Features
+
+* **card:** enable clickable tooltops with external content to title ([6583bbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6583bbcf92708d104633a870c1837c9962da191d))
+
+
+
+
+
+# [2.149.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.38...v2.149.0-next.39) (2022-03-30)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.149.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.37...v2.149.0-next.38) (2022-03-29)
 
 
