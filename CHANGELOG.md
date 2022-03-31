@@ -3,6 +3,109 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.41...v2.149.0-next.42) (2022-03-31)
+
+
+### Features
+
+* upgrade carbon to 10.55.1/7.55.1 ([c4b275e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c4b275eda517a473a185012cca06f3e4a18c5e35))
+* upgrade carbon to 10.56/7.56 ([22670f8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/22670f823e5fb52ad6c702273705508efd4f61f4))
+* upgrade vrt images ([9bcaad8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9bcaad8d290bb95b7df6cacfa1b28f6d1786e556))
+* **repo:** upgrade carbon to 10.54/7.54 ([cfa1b8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cfa1b8aaeae513397a7bd4dd9c82b40585d46cc2))
+
+
+
+
+
+# [2.149.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.40...v2.149.0-next.41) (2022-03-31)
+
+
+### Bug Fixes
+
+* sidenav state example with pinned fix open/close on hover ([b7ba1aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b7ba1aa1f520873a395b1dd03b32abc5d3f7e12d))
+* **table:** adjust padding on empty state ([334d847](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/334d8470805caa66853fc57a3c0fc7e8155e1ca7))
+
+
+
+
+
+# [2.149.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.39...v2.149.0-next.40) (2022-03-30)
+
+
+### Features
+
+* **card:** enable clickable tooltops with external content to title ([6583bbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6583bbcf92708d104633a870c1837c9962da191d))
+
+
+
+
+
+# [2.149.0-next.39](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.38...v2.149.0-next.39) (2022-03-30)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.37...v2.149.0-next.38) (2022-03-29)
+
+
+### Bug Fixes
+
+* **statefultable:** include rowedit buttons in tableregister ([35cdaa6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/35cdaa69dce1579fb42eb3871cad87f227926052)), closes [#3404](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3404)
+* **table:** remove unused imports ([07ac057](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/07ac057674e076b4ad5e5021b16a4f33726d7cdd))
+
+
+
+
+
+# [2.149.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.36...v2.149.0-next.37) (2022-03-29)
+
+
+### Bug Fixes
+
+* **statefultable:** include rowedit buttons in tableregister ([e540e10](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e540e10aaad81bb107fa053bc3e5acd50d7fb69b)), closes [#3404](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3404)
+
+
+
+
+
+# [2.149.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.35...v2.149.0-next.36) (2022-03-29)
+
+
+### Features
+
+* **table-manage-views-modal:** deleteWarningTextTemplate as string ([e75d352](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e75d3529bcde5abc8603749e808862b6abf61053))
+
+
+
+
+
+# [2.149.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.34...v2.149.0-next.35) (2022-03-28)
+
+
+### Bug Fixes
+
+* **readonlyvalue:** export component ([f9a647c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f9a647c481b35996efd24ead46be62791678c27c))
+* **readonlyvalue:** export component ([38ff876](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38ff8764c35285df73efb24bd8b25c37dbdea390))
+
+
+
+
+
+# [2.149.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.33...v2.149.0-next.34) (2022-03-24)
+
+
+### Features
+
+* **valuecard:** support to measurement unit; secondaryValue as a link ([6322676](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/63226765fb4f7b27cc27067f61ee69d5e135d20b))
+* **valuecard:** value card decoupled content into new component ([c3f65eb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c3f65eb2398dd0f2edebd2ab9fa100790213c3e8))
+
+
+
+
+
 # [2.149.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.32...v2.149.0-next.33) (2022-03-23)
 
 **Note:** Version bump only for package ibm-ai-applications

@@ -3702,7 +3702,17 @@ Map {
               "type": "string",
             },
             "deleteWarningTextTemplate": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "editIconText": Object {
               "type": "string",
@@ -8365,6 +8375,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -11771,6 +11784,35 @@ Map {
       },
     },
   },
+  "ReadOnlyValue" => Object {
+    "defaultProps": Object {
+      "label": "",
+      "testId": "read-only-value",
+      "type": "stacked",
+      "value": "",
+    },
+    "propTypes": Object {
+      "label": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "stacked",
+            "inline",
+            "inline_small",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+    },
+  },
   "Dashboard" => Object {
     "defaultProps": Object {
       "actions": Array [],
@@ -14251,7 +14293,9 @@ Map {
       "testId": "Card",
       "timeRange": undefined,
       "title": undefined,
+      "titleTextTooltip": undefined,
       "toolbar": undefined,
+      "tooltip": undefined,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -15271,6 +15315,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -16432,6 +16479,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -17692,6 +17742,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -18960,6 +19013,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -20065,6 +20121,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -21414,6 +21473,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -22696,6 +22758,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -22718,6 +22783,254 @@ Map {
     },
   },
   "DragAndDrop" => Object {},
+  "ValueContent" => Object {
+    "defaultProps": Object {
+      "customFormatter": null,
+      "dataState": null,
+      "fontSize": 42,
+      "id": "valueContent-id",
+      "isEditable": false,
+      "isNumberValueCompact": false,
+      "layout": "VERTICAL",
+      "locale": "en",
+      "onAttributeClick": null,
+      "size": "MEDIUM",
+      "testId": "ValueContent",
+      "title": "",
+      "values": null,
+    },
+    "propTypes": Object {
+      "cardVariables": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "func",
+                },
+                Object {
+                  "type": "number",
+                },
+                Object {
+                  "type": "bool",
+                },
+              ],
+            ],
+            "type": "oneOfType",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "content": Object {
+        "args": Array [
+          Object {
+            "attributes": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "dataFilter": Object {
+                        "args": Array [
+                          Object {
+                            "type": "any",
+                          },
+                        ],
+                        "type": "objectOf",
+                      },
+                      "dataSourceId": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "label": Object {
+                        "type": "string",
+                      },
+                      "precision": Object {
+                        "type": "number",
+                      },
+                      "secondaryValue": Object {
+                        "args": Array [
+                          Object {
+                            "color": Object {
+                              "type": "string",
+                            },
+                            "dataSourceId": Object {
+                              "isRequired": true,
+                              "type": "string",
+                            },
+                            "trend": Object {
+                              "args": Array [
+                                Array [
+                                  "up",
+                                  "down",
+                                ],
+                              ],
+                              "type": "oneOf",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                      "thresholds": Object {
+                        "args": Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "color": Object {
+                                  "type": "string",
+                                },
+                                "comparison": Object {
+                                  "args": Array [
+                                    Array [
+                                      "<",
+                                      ">",
+                                      "=",
+                                      "<=",
+                                      ">=",
+                                    ],
+                                  ],
+                                  "isRequired": true,
+                                  "type": "oneOf",
+                                },
+                                "icon": Object {
+                                  "type": "string",
+                                },
+                                "value": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "number",
+                                      },
+                                    ],
+                                  ],
+                                  "isRequired": true,
+                                  "type": "oneOfType",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "unit": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "isRequired": true,
+              "type": "arrayOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "customFormatter": Object {
+        "type": "func",
+      },
+      "dataState": Object {
+        "args": Array [
+          Object {
+            "description": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "extraTooltipText": Object {
+              "type": "string",
+            },
+            "icon": Object {
+              "type": "element",
+            },
+            "label": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "learnMoreElement": Object {
+              "type": "element",
+            },
+            "tooltipDirection": Object {
+              "args": Array [
+                Array [
+                  "bottom",
+                  "top",
+                  "left",
+                  "right",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "type": Object {
+              "args": Array [
+                Array [
+                  "NO_DATA",
+                  "ERROR",
+                ],
+              ],
+              "isRequired": true,
+              "type": "oneOf",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "fontSize": Object {
+        "type": "number",
+      },
+      "id": Object {
+        "type": "string",
+      },
+      "isEditable": Object {
+        "type": "bool",
+      },
+      "isNumberValueCompact": Object {
+        "type": "bool",
+      },
+      "layout": Object {
+        "args": Array [
+          Array [
+            "HORIZONTAL",
+            "VERTICAL",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "locale": Object {
+        "type": "string",
+      },
+      "onAttributeClick": Object {
+        "type": "func",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "values": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "type": "object",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+    },
+  },
   "ListCard" => Object {
     "defaultProps": Object {
       "data": Array [],
@@ -23753,6 +24066,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -25482,6 +25798,9 @@ Map {
         "type": "func",
       },
       "onInputChange": Object {
+        "type": "func",
+      },
+      "onStateChange": Object {
         "type": "func",
       },
       "onToggleClick": Object {
@@ -27779,6 +28098,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -29936,6 +30258,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -33903,6 +34228,24 @@ Map {
     },
   },
   "Modal" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "hasScrollingContent": false,
       "modalHeading": "",
@@ -35369,6 +35712,24 @@ Map {
     },
   },
   "SearchLayoutButton" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "iconDescriptionGrid": "grid",
       "iconDescriptionList": "list",
@@ -35722,6 +36083,24 @@ Map {
     "render": [Function],
   },
   "Tab" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "label": "provide a label",
       "onClick": [Function],
@@ -36701,6 +37080,24 @@ Map {
     },
   },
   "TileGroup" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "onChange": [Function],
     },
@@ -36865,6 +37262,24 @@ Map {
     },
   },
   "TimePickerSelect" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "disabled": false,
     },
@@ -36997,6 +37412,24 @@ Map {
     "render": [Function],
   },
   "ToolbarSearch" => Object {
+    "contextType": Object {
+      "$$typeof": Symbol(react.context),
+      "Consumer": Object {
+        "$$typeof": Symbol(react.context),
+        "_calculateChangedBits": null,
+        "_context": [Circular],
+      },
+      "Provider": Object {
+        "$$typeof": Symbol(react.provider),
+        "_context": [Circular],
+      },
+      "_calculateChangedBits": null,
+      "_currentRenderer": null,
+      "_currentRenderer2": null,
+      "_currentValue": "bx",
+      "_currentValue2": "bx",
+      "_threadCount": 0,
+    },
     "defaultProps": Object {
       "id": "search__input",
       "labelId": "search__label",
@@ -37693,6 +38126,9 @@ Map {
       "role": Object {
         "type": "string",
       },
+      "tabIndex": Object {
+        "type": "number",
+      },
     },
     "render": [Function],
   },
@@ -37811,6 +38247,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "tabIndex": Object {
+        "type": "number",
       },
     },
     "render": [Function],

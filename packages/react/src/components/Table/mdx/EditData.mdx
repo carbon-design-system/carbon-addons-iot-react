@@ -1,0 +1,394 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Data editing
+
+The Table and StatefulTable both support multi row editing and single row editing. Multi row editing
+is activated from the table toolbar and allows the user to edit the data of multiple rows and save
+all changes at once. The single row editing is activated per row using a row action and is meant to
+let the user edit one row at a time.
+
+### Providing the data input UI
+
+For both types of data editing the application needs to provide a render prop called `editDataFunction`
+to each of the column objects in the `columns` prop. This function should render the appropriate form
+element (input, checkbox etc) depending on the column data type and the application must also handle the callbacks for when
+the data is changed. If no function is provided the column will render the value as normal.
+The editDataFunction is called per row with an object that has the following properties:
+
+| Name     | Type   | Default | Description                                                                                                             |
+| :------- | :----- | :------ | :---------------------------------------------------------------------------------------------------------------------- |
+| value    | string |         | The current cell value                                                                                                  |
+| columnId | string |         | The id of the column the value belongs to                                                                               |
+| rowId    | string |         | The id of the row tha value belongs to                                                                                  |
+| row      | obj    |         | The full data object for this row. Useful if the input validation is dependent on values of other cells on the same row |
+
+The following code shows the implementation of three basic kinds of editDataFunctions. In a real scenario the
+application should also handle input validation if needed. Every `editDataFunction` must be able to trigger a
+data update when the user has modifed the value. In this example that is done via the callback `onDataChange`.
+
+```jsx
+import { Checkbox, TextInput, Dropdown } from 'carbon-addons-iot-react';
+
+const onDataChange = (newVal, columnId, rowId) => { ... }
+
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    editDataFunction: ({ value, columnId, rowId }) => (
+      <TextInput
+        id={`${columnId}-${rowId}`}
+        onChange={(evt) => onDataChange(evt.currentTarget.value, columnId, rowId)}
+        type="text"
+        light
+        defaultValue={value}
+        labelText=""
+        hideLabel
+      />
+    )
+  },
+  {
+    id: 'boolean',
+    name: 'Boolean',
+    editDataFunction: ({ value, columnId, rowId }) => (
+      <Checkbox
+        defaultChecked={value}
+        id={`${columnId}-${rowId}`}
+        labelText=""
+        hideLabel
+        onChange={(evt) => onDataChange(evt, columnId, rowId)}
+      />
+    )
+  },
+  {
+    id: 'select',
+    name: 'Select',
+    editDataFunction: ({ value, columnId, rowId }) => (
+      <Dropdown
+        id={`${columnId}-${rowId}`}
+        light
+        items={[
+          {
+            id: 'option-A',
+            text: 'option-A',
+          },
+          {
+            id: 'option-B',
+            text: 'option-B',
+          },
+          {
+            id: 'option-C',
+            text: 'option-C',
+          }]
+        }
+        initialSelectedItem={value}
+        onChange={({ selectedItem: { id } }) => onDataChange(id, columnId, rowId)}
+      />
+    )
+  }
+];
+```
+
+### Multi row data editing
+
+Multi row data editing can be activated using the option prop `hasRowEdit`. When it is true an edit icon will be
+shown in the table toolbar. Clicking the edit icon will trigger the callback `onShowRowEdit` and the
+StatefulTable will set the current toolbar to be the content of the view prop `view.toolbar.rowEditBarButtons`
+and all the rows to render the `editDataFunction` specified by their respective column in the `columns` prop.
+
+For the normal table this needs to be done manually by listening to `actions.toolbar.onShowRowEdit` and setting
+`view.toolbar.activeBar: 'rowEdit'`.
+
+The application must also provide a node to the `view.toolbar.rowEditBarButtons` containing a
+cancel and a save button and implement their callbacks. The code example below shows how all the pieces fit
+together for the normal Table:
+
+```jsx
+...
+
+const [showRowEditBar, setShowRowEditBar] = useState(false);
+// The data to be displayed in normal mode
+const [currentData, setCurrentData] = useState(initialData);
+// The temporary data that is modified in edit mode
+const [rowEditedData, setRowEditedData] = useState();
+
+// We use a cloned state to track the changes before saving
+const enableEditMode = () => {
+  setRowEditedData(cloneDeep(currentData));
+  setShowRowEditBar(true);
+};
+
+// We debounce to prevent the table from rendering on every
+// character typed in the text field
+const onDataChange = debounce((newValue, columnId, rowId) => {
+  setRowEditedData((previousData) =>
+    previousData.map((row) =>
+      row.id === rowId ? { ...row, values: { ...row.values, [columnId]: newValue } } : row
+    )
+  );
+});
+
+const onCancelRowEdit = () => {
+  // Hiding the row edit bar will also
+  setShowRowEditBar(false);
+};
+
+// Update the current data with the changes from the temporary
+// state rowEditedData
+const onSaveRowEdit = () => {
+  setCurrentData(rowEditedData);
+  setShowRowEditBar(false);
+};
+
+// The editDataFunction render prop that is activated when a table cell is in edit mode.
+// It should use a callback for when the data is modified by the user.
+// This is a simplified version without input valdation that only handles strings.
+// In real usage different editDataFunctions could be created per column.
+const textDataEdit = ({ value, columnId, rowId }) => (
+  <TextInput
+    id={`${columnId}-${rowId}`}
+    onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+    type="text"
+    light
+    defaultValue={value}
+    labelText=""
+    hideLabel
+  />
+);
+
+// Only columns with the editDataFunction will become editable when the
+// table is in edit mode.
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    editDataFunction: textDataEdit,
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+  },
+  {
+    id: 'select',
+    name: 'Select',
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    editDataFunction: textDataEdit,
+  },
+];
+
+// The app should also handle i18n and button enable state, e.g. that the save button
+// is disabled when the input controls are pristine.
+const saveCancelButtons = (
+  <div style={{ display: 'flex', gap: '0.5rem' }}>
+    <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+      Cancel
+    </Button>
+    <Button key="save" size="small" onClick={onSaveRowEdit}>
+      Save
+    </Button>
+  </div>
+);
+
+return (
+  <Table
+    id="table"
+    secondaryTitle="My editable table"
+    view={{
+      toolbar: {
+        // Updating the activeBar is handled automatically if the StatefulTable is used
+        // but for the normal Table we must set it explicitly
+        activeBar: showRowEditBar ? 'rowEdit' : undefined,
+        rowEditBarButtons: saveCancelButtons,
+      },
+    }}
+    data={currentData}
+    actions={{
+      toolbar: { onShowRowEdit: enableEditMode },
+    }}
+    options={{
+      hasRowEdit: true,
+    }}
+    columns={columns}
+  />
+);
+
+```
+
+### Single row data editing
+
+Single row data editing can be activated using the option props `hasSingleRowEdit` and `hasRowActions` combined
+with a row action that can trigger the edit mode.
+
+Clicking the "Edit" row action should turn that specific row editable which requires that the columns have defined an
+[editDataFunction](#providing-the-data-input-ui). For the StatefulTable the row action state (`view.table.rowActions`)
+is automatically updated if the row action had the prop `isEdit` but for the normal table the row action state needs
+to be programtically updated. This is done by listening to the `actions.table.onApplyRowAction` and checking if the
+triggered action is the 'edit' row action. In that case the state in `view.table.rowActions`
+should be updated to set `isEditMode: true` on the row in question.
+
+The application must also provide a node to the prop `view.table.singleRowEditButtons` containing a cancel and a save
+button and implement their callbacks. For this a temporary state that contains the changed data must be used, since
+cancelling the operation should undo the changes.
+
+The code example below shows how all the pieces fit together for the normal Table:
+
+```jsx
+...
+
+const initialData = data.map((row) => ({
+  ...row,
+  // Add the configuration of the row action used to trigger the edit of a single row.
+  // When using the StatefulTable the prop isEdit:true should be included to automatically
+  // have the state of the row action (`view.table.rowActions`) updated when the action is
+  // triggered.
+  rowActions: [
+    {
+      id: 'edit',
+      renderIcon: Edit16,
+      labelText: 'Edit',
+      isOverflow: true,
+      iconDescription: 'Edit',
+      disabled: false,
+    },
+  ],
+}));
+
+// The data to be displayed in normal mode
+const [currentData, setCurrentData] = useState(initialData);
+// The temporary data that is modified in edit mode
+const [rowEditedData, setRowEditedData] = useState([]);
+// The states of the row actions that triggers the editable UI
+const [rowActionsState, setRowActionsState] = useState([]);
+
+const disableRowActions = (disabled) => {
+  setCurrentData((previusData) =>
+    previusData.map((row) => ({
+      ...row,
+      rowActions: row.rowActions.map((action) => ({ ...action, disabled })),
+    }))
+  );
+};
+
+// We debounce to prevent the table from re-rendering on every
+// character typed in the text field
+const onDataChange = debounce((newValue, columnId, rowId) => {
+  setRowEditedData((previousData) =>
+    previousData.map((row) =>
+      row.id === rowId ? { ...row, values: { ...row.values, [columnId]: newValue } } : row
+    )
+  );
+});
+
+const onCancelRowEdit = () => {
+  setRowEditedData([]);
+  setRowActionsState([]);
+  disableRowActions(false);
+};
+
+const onSaveRowEdit = () => {
+  setCurrentData(rowEditedData);
+  disableRowActions(false);
+  setRowActionsState([]);
+};
+
+const onApplyRowAction = (action, rowId) => {
+  if (action === 'edit') {
+    // Create a data clone that can be edited
+    setRowEditedData(cloneDeep(currentData));
+    // Only allow one editable row at a time by disabling the option to
+    // trigger another edit row action
+    disableRowActions(true);
+    // Update the row action state in view.table.rowActions to be in edit mode
+    // This will display the saveCancelButtons provided via
+    // view.table.singleRowEditButtons
+    setRowActionsState([{ rowId, isEditMode: true }]);
+  }
+};
+
+// The app should also handle i18n and button enable state, e.g. that the save button
+// is disabled when the input controls are pristine.
+const saveCancelButtons = (
+  <div style={{ display: 'flex', gap: '0.5rem' }}>
+    <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+      Cancel
+    </Button>
+    <Button key="save" size="small" onClick={onSaveRowEdit}>
+      Save
+    </Button>
+  </div>
+);
+
+// The editDataFunction render prop that is activated when a table cell is in edit mode.
+// It should use a callback for when the data is modified by the user.
+// This is a simplified version without input valdation that only handles strings.
+// In real usage different editDataFunctions could be created per column.
+const textDataEdit = ({ value, columnId, rowId }) => (
+  <TextInput
+    id={`${columnId}-${rowId}`}
+    onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+    type="text"
+    light
+    defaultValue={value}
+    labelText=""
+    hideLabel
+  />
+);
+
+// Only columns with the editDataFunction will become editable when the
+// table is in edit mode.
+const columns = [
+  {
+    id: 'string',
+    name: 'String',
+    editDataFunction: textDataEdit,
+  },
+
+  {
+    id: 'date',
+    name: 'Date',
+  },
+  {
+    id: 'select',
+    name: 'Select',
+  },
+  {
+    id: 'secretField',
+    name: 'Secret Information',
+    editDataFunction: textDataEdit,
+  },
+];
+
+return (
+  <Table
+    id="table"
+    secondaryTitle="My editable table"
+    view={{
+      table: {
+        rowActions: rowActionsState,
+        singleRowEditButtons: saveCancelButtons,
+      },
+    }}
+    data={currentData}
+    actions={{
+      table: { onApplyRowAction },
+    }}
+    options={{
+      hasSingleRowEdit: true,
+      hasRowActions: true,
+    }}
+    columns={columns}
+  />
+);
+```
+
+### Improving the data edit UX
+
+In order to keep the column widths from changing when moving between normal mode and data edit mode
+you can enable `options.hasResize` and programatically set the appropriate initial column widths.
+
+It is also recommended to add input validation to the form elements and to disable the save button
+while the form elements are pristine.

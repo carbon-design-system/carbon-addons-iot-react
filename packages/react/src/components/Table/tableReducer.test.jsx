@@ -720,6 +720,25 @@ describe('table reducer', () => {
       expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
       expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
       expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
+
+      // It updates element used for row editing
+      const initialRowEditState = merge({}, initialState, {
+        view: {
+          toolbar: { rowEditBarButtons: <div>initial</div> },
+          table: { singleRowEditButtons: <div>initial</div> },
+        },
+      });
+      const modifiedRowEditState = tableReducer(
+        initialRowEditState,
+        tableRegister({
+          view: {
+            toolbar: { rowEditBarButtons: <div>updated</div> },
+            table: { singleRowEditButtons: <div>updated</div> },
+          },
+        })
+      );
+      expect(modifiedRowEditState.view.toolbar.rowEditBarButtons).toEqual(<div>updated</div>);
+      expect(modifiedRowEditState.view.table.singleRowEditButtons).toEqual(<div>updated</div>);
     });
   });
 });

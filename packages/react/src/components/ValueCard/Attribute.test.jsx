@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { gray60 } from '@carbon/colors';
 
@@ -98,5 +98,80 @@ describe('Attribute', () => {
       )
     );
     console.error = error;
+  });
+  it('should render trend icon to secondaryValue', () => {
+    render(<Attribute {...commonProps} secondaryValue={{ trend: 'down', value: '22' }} />);
+
+    expect(screen.queryByTestId('attribute-test-trending-down')).toBeVisible();
+  });
+  it('should render link secondaryValue with href', () => {
+    render(
+      <Attribute
+        {...commonProps}
+        secondaryValue={{ dataSourceId: 'testDataSource', href: 'www.ibm.com' }}
+      />
+    );
+
+    expect(screen.queryByTestId('attribute-test-secondary-value--link')).toBeVisible();
+  });
+  it('should render link secondaryValue with onClick', () => {
+    const onClickLink = jest.fn();
+    render(
+      <Attribute
+        {...commonProps}
+        secondaryValue={{ dataSourceId: 'testDataSource', onClick: onClickLink }}
+      />
+    );
+
+    expect(screen.queryByTestId('attribute-test-secondary-value--link')).toBeVisible();
+
+    fireEvent.click(screen.queryByTestId('attribute-test-secondary-value--link'));
+    expect(onClickLink).toHaveBeenCalledTimes(1);
+  });
+  it('no thresholds', () => {
+    render(
+      <Attribute
+        {...commonProps}
+        attribute={{
+          dataSourceId: 'testDataSource',
+          label: 'Test',
+          unit: '%',
+          precision: 5,
+        }}
+      />
+    );
+
+    expect(screen.queryByTestId('attribute-test--threshold-icon')).toBeNull();
+  });
+  it('should render first thresholds when editable', () => {
+    render(
+      <Attribute
+        {...commonProps}
+        attribute={{
+          dataSourceId: 'testDataSource',
+          label: 'Test',
+          unit: '%',
+          precision: 5,
+          thresholds: [
+            {
+              comparison: '<=',
+              value: 90,
+              color: 'yellow',
+              icon: 'warning',
+            },
+
+            {
+              comparison: '>=',
+              value: 200,
+              color: 'red',
+              icon: 'warning',
+            },
+          ],
+        }}
+        isEditable
+      />
+    );
+
+    expect(screen.queryByTestId('attribute-test-threshold-icon')).toBeVisible();
   });
 });

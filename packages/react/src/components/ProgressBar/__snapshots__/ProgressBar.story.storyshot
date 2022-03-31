@@ -34,7 +34,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
       </div>
       <div
-        className="bx--progress-bar bx--progress-bar--big"
+        className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
         <span
           className="bx--progress-bar__label"
@@ -131,7 +131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
       </div>
       <div
-        className="bx--progress-bar bx--progress-bar--big"
+        className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
         <span
           className="bx--progress-bar__label"
@@ -203,7 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
       </div>
       <div
-        className="bx--progress-bar bx--progress-bar--big"
+        className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
         <span
           className="bx--progress-bar__label"
@@ -296,7 +296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
       </div>
       <div
-        className="bx--progress-bar bx--progress-bar--big"
+        className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
         <span
           className="bx--progress-bar__label"
@@ -368,7 +368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </span>
       </div>
       <div
-        className="bx--progress-bar bx--progress-bar--big"
+        className="bx--progress-bar bx--progress-bar--big bx--progress-bar--default"
       >
         <span
           className="bx--progress-bar__label"
