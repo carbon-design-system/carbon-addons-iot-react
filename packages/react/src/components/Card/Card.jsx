@@ -516,7 +516,7 @@ const Card = (props) => {
                 triggerClassName={`${iotPrefix}--card--header--tooltip`}
                 id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
                 triggerText=""
-                iconDescription={`card-header-tooltip-${id}`} // To fix accessibility violation.
+                iconDescription={strings.iconDescription || `card-header-tooltip-${id}`} // To fix accessibility violation.
               >
                 {tooltip}
               </Tooltip>
