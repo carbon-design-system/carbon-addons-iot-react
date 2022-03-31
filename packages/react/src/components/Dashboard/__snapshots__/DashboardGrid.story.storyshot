@@ -84,22 +84,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -154,22 +150,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -224,266 +216,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -538,266 +282,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -852,266 +348,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -1166,266 +414,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -1480,266 +480,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -1794,266 +546,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
       </div>
@@ -3401,7 +1905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-152"
+                    aria-controls="accordion-item-177"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -3432,7 +1936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-152"
+                    id="accordion-item-177"
                   >
                     <div
                       className="toggle-group"
@@ -3480,7 +1984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-153"
+                    aria-controls="accordion-item-178"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -3511,7 +2015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-153"
+                    id="accordion-item-178"
                   >
                     More Map settings
                   </div>
@@ -3522,7 +2026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-154"
+                    aria-controls="accordion-item-179"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -3553,7 +2057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-154"
+                    id="accordion-item-179"
                   >
                     Even more settings
                   </div>
@@ -4686,8 +3190,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 >
                   <label
                     className="bx--pagination__text"
-                    htmlFor="bx-pagination-select-2"
-                    id="bx-pagination-select-2-count-label"
+                    htmlFor="bx-pagination-select-3"
+                    id="bx-pagination-select-3-count-label"
                   >
                     Items per page:
                   </label>
@@ -4706,7 +3210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-2"
+                            id="bx-pagination-select-3"
                             onChange={[Function]}
                             value={7}
                           >
@@ -4771,7 +3275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     >
                       <label
                         className="bx--label bx--visually-hidden"
-                        htmlFor="bx-pagination-select-2-right"
+                        htmlFor="bx-pagination-select-3-right"
                       >
                         Page number, of 2 pages
                       </label>
@@ -4784,7 +3288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         >
                           <select
                             className="bx--select-input"
-                            id="bx-pagination-select-2-right"
+                            id="bx-pagination-select-3-right"
                             onChange={[Function]}
                             value={1}
                           >
@@ -5675,266 +4179,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -5989,22 +4245,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -6059,22 +4311,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
       </div>
@@ -6183,266 +4431,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 }
               }
             >
-              <div
-                className="iot--empty-state"
-                data-testid="EmptyState"
-              >
-                <div
-                  className="iot--empty-state--content"
-                >
-                  <svg
-                    alt=""
-                    className="iot--empty-state--icon"
-                    data-testid="EmptyState-icon"
-                    height={80}
-                    width={80}
-                  >
-                    <defs>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__a-defaultIcon"
-                        x1="37.502%"
-                        x2="55.959%"
-                        y1="34.928%"
-                        y2="57.808%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopOpacity={0.04}
-                        />
-                        <stop
-                          offset="100%"
-                          stopOpacity={0.04}
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__b-defaultIcon"
-                        x1="-63.062%"
-                        x2="101.194%"
-                        y1="77.587%"
-                        y2="37.496%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#767676"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#929292"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__c-defaultIcon"
-                        x1="73.167%"
-                        x2="44.204%"
-                        y1="89.948%"
-                        y2="39.998%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#969696"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#E8E8E8"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__d-defaultIcon"
-                        x1="-23.114%"
-                        x2="57.391%"
-                        y1="-11.496%"
-                        y2="56.197%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#393939"
-                        />
-                        <stop
-                          offset="99%"
-                          stopColor="#525252"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__e-defaultIcon"
-                        x1="5.255%"
-                        x2="56.521%"
-                        y1="115.2%"
-                        y2="40.489%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#9C9C9C"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#C5C5C5"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__f-defaultIcon"
-                        x1="45.625%"
-                        x2="61.212%"
-                        y1="38.922%"
-                        y2="78.234%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#8A8A8A"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#B5B5B5"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__g-defaultIcon"
-                        x1="57.243%"
-                        x2="41.531%"
-                        y1="31.727%"
-                        y2="71.327%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#A4A4A4"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#BEBEBE"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__h-defaultIcon"
-                        x1="27.599%"
-                        x2="45.796%"
-                        y1="69.394%"
-                        y2="53.639%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#C2C2C2"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#E8E8E8"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__i-defaultIcon"
-                        x1="62.356%"
-                        x2="31.337%"
-                        y1="64.634%"
-                        y2="27.889%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#C6C6C6"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#E8E8E8"
-                        />
-                      </linearGradient>
-                      <linearGradient
-                        id="emptystate-Default-icon_svg__j-defaultIcon"
-                        x1="62.354%"
-                        x2="43.81%"
-                        y1="114.244%"
-                        y2="17.782%"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#B7B7B7"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#EEE"
-                        />
-                      </linearGradient>
-                    </defs>
-                    <g
-                      fill="none"
-                      fillRule="nonzero"
-                    >
-                      <path
-                        d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                        fill="#A8A8A8"
-                      />
-                      <path
-                        d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                        fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                        transform="translate(11.724 43)"
-                      />
-                      <path
-                        d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                        fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                        transform="translate(12.414 7.138)"
-                      />
-                      <path
-                        d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                        fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                        transform="translate(0 4.38)"
-                      />
-                      <path
-                        d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                        fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                        transform="translate(12.414 31.276)"
-                      />
-                      <path
-                        d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                        fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                        transform="translate(40 7.138)"
-                      />
-                      <path
-                        d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                        fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                        transform="translate(40 23)"
-                      />
-                      <path
-                        d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                        fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                        transform="translate(12.414 23)"
-                      />
-                      <path
-                        d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                        fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                        transform="translate(40 3)"
-                      />
-                      <path
-                        d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                        fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                        transform="translate(40 23)"
-                      />
-                      <path
-                        d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                        fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                        transform="translate(2.069 23)"
-                      />
-                      <path
-                        d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                        fill="#FFF"
-                      />
-                      <path
-                        d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                        fill="#FFF"
-                      />
-                      <path
-                        d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                        fill="#999"
-                      />
-                      <path
-                        d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                        fill="#FFF"
-                      />
-                    </g>
-                  </svg>
-                  <h3
-                    className="iot--empty-state--title"
-                    data-testid="EmptyState-title"
-                  >
-                    No data is available for this time range.
-                  </h3>
-                </div>
-              </div>
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
             </div>
           </div>
           <div
@@ -6497,22 +4497,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 }
               }
             >
-              <div
-                className="iot--empty-state"
-                data-testid="EmptyState"
-              >
-                <div
-                  className="iot--empty-state--content"
-                >
-                  
-                  <h3
-                    className="iot--empty-state--title"
-                    data-testid="EmptyState-title"
-                  >
-                    No data
-                  </h3>
-                </div>
-              </div>
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
             </div>
           </div>
           <div
@@ -6567,22 +4563,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 }
               }
             >
-              <div
-                className="iot--empty-state"
-                data-testid="EmptyState"
-              >
-                <div
-                  className="iot--empty-state--content"
-                >
-                  
-                  <h3
-                    className="iot--empty-state--title"
-                    data-testid="EmptyState-title"
-                  >
-                    No data
-                  </h3>
-                </div>
-              </div>
+              <span
+                className="react-resizable-handle react-resizable-handle-se"
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "touchAction": "none",
+                  }
+                }
+              />
             </div>
           </div>
         </div>
@@ -6676,266 +4668,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                <svg
-                  alt=""
-                  className="iot--empty-state--icon"
-                  data-testid="EmptyState-icon"
-                  height={80}
-                  width={80}
-                >
-                  <defs>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__a-defaultIcon"
-                      x1="37.502%"
-                      x2="55.959%"
-                      y1="34.928%"
-                      y2="57.808%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopOpacity={0.04}
-                      />
-                      <stop
-                        offset="100%"
-                        stopOpacity={0.04}
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__b-defaultIcon"
-                      x1="-63.062%"
-                      x2="101.194%"
-                      y1="77.587%"
-                      y2="37.496%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#767676"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#929292"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__c-defaultIcon"
-                      x1="73.167%"
-                      x2="44.204%"
-                      y1="89.948%"
-                      y2="39.998%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#969696"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__d-defaultIcon"
-                      x1="-23.114%"
-                      x2="57.391%"
-                      y1="-11.496%"
-                      y2="56.197%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#393939"
-                      />
-                      <stop
-                        offset="99%"
-                        stopColor="#525252"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__e-defaultIcon"
-                      x1="5.255%"
-                      x2="56.521%"
-                      y1="115.2%"
-                      y2="40.489%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#9C9C9C"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#C5C5C5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__f-defaultIcon"
-                      x1="45.625%"
-                      x2="61.212%"
-                      y1="38.922%"
-                      y2="78.234%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#8A8A8A"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#B5B5B5"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__g-defaultIcon"
-                      x1="57.243%"
-                      x2="41.531%"
-                      y1="31.727%"
-                      y2="71.327%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#A4A4A4"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#BEBEBE"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__h-defaultIcon"
-                      x1="27.599%"
-                      x2="45.796%"
-                      y1="69.394%"
-                      y2="53.639%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C2C2C2"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__i-defaultIcon"
-                      x1="62.356%"
-                      x2="31.337%"
-                      y1="64.634%"
-                      y2="27.889%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#C6C6C6"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#E8E8E8"
-                      />
-                    </linearGradient>
-                    <linearGradient
-                      id="emptystate-Default-icon_svg__j-defaultIcon"
-                      x1="62.354%"
-                      x2="43.81%"
-                      y1="114.244%"
-                      y2="17.782%"
-                    >
-                      <stop
-                        offset="0%"
-                        stopColor="#B7B7B7"
-                      />
-                      <stop
-                        offset="100%"
-                        stopColor="#EEE"
-                      />
-                    </linearGradient>
-                  </defs>
-                  <g
-                    fill="none"
-                    fillRule="nonzero"
-                  >
-                    <path
-                      d="M36.131 27.683c.03.03.065.053.103.069h.042l-.159-.09s0 .02.014.02z"
-                      fill="#A8A8A8"
-                    />
-                    <path
-                      d="M28.793.593L.041 17.241l28.835 16.697 28.758-16.62z"
-                      fill="url(#emptystate-Default-icon_svg__a-defaultIcon)"
-                      transform="translate(11.724 43)"
-                    />
-                    <path
-                      d="M.069 16.207v24.476L28.062 24.51V.034L.07 16.207z"
-                      fill="url(#emptystate-Default-icon_svg__b-defaultIcon)"
-                      transform="translate(12.414 7.138)"
-                    />
-                    <path
-                      d="M40.455 2.807L27.945.33 0 16.551l12.483 2.477z"
-                      fill="url(#emptystate-Default-icon_svg__c-defaultIcon)"
-                      transform="translate(0 4.38)"
-                    />
-                    <path
-                      d="M27.986.276L0 16.462l28.048 16.241 27.986-16.151z"
-                      fill="url(#emptystate-Default-icon_svg__d-defaultIcon)"
-                      transform="translate(12.414 31.276)"
-                    />
-                    <path
-                      d="M28.434 40.641V16.207L.47.034V24.47l27.965 16.172z"
-                      fill="url(#emptystate-Default-icon_svg__e-defaultIcon)"
-                      transform="translate(40 7.138)"
-                    />
-                    <path
-                      d="M28.476 24.828V.352l-28 16.2v24.482l28-16.206z"
-                      fill="url(#emptystate-Default-icon_svg__f-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.062 41.007V16.524L.097.36v24.475l27.965 16.173z"
-                      fill="url(#emptystate-Default-icon_svg__g-defaultIcon)"
-                      transform="translate(12.414 23)"
-                    />
-                    <path
-                      d="M28.517 20.407L40 16.84 11.952.607.469 4.172z"
-                      fill="url(#emptystate-Default-icon_svg__h-defaultIcon)"
-                      transform="translate(40 3)"
-                    />
-                    <path
-                      d="M39.559 10.834L28.524.317.517 16.503l11.076 10.51z"
-                      fill="url(#emptystate-Default-icon_svg__i-defaultIcon)"
-                      transform="translate(40 23)"
-                    />
-                    <path
-                      d="M28.276 31.848l10.227-15.296L10.455.276.235 15.606z"
-                      fill="url(#emptystate-Default-icon_svg__j-defaultIcon)"
-                      transform="translate(2.069 23)"
-                    />
-                    <path
-                      d="M2.303 38.607l.063.041 10.158-15.227 27.966 16.2.082-.104-28.048-16.241z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M68.69 23.503l-.2-.186-27.973 16.186 11.076 10.51.076-.054-10.855-10.345z"
-                      fill="#FFF"
-                    />
-                    <path
-                      d="M80 19.841l-.159-.09-11.324 3.511-27.89-16.124-.158.055 28.048 16.235z"
-                      fill="#999"
-                    />
-                    <path
-                      d="M68.517 23.262h.09L40.614 7.028v-.042l-.131.042 28.034 16.234z"
-                      fill="#FFF"
-                    />
-                  </g>
-                </svg>
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data is available for this time range.
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -6990,22 +4734,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
         <div
@@ -7060,22 +4800,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               }
             }
           >
-            <div
-              className="iot--empty-state"
-              data-testid="EmptyState"
-            >
-              <div
-                className="iot--empty-state--content"
-              >
-                
-                <h3
-                  className="iot--empty-state--title"
-                  data-testid="EmptyState-title"
-                >
-                  No data
-                </h3>
-              </div>
-            </div>
+            <span
+              className="react-resizable-handle react-resizable-handle-se"
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "touchAction": "none",
+                }
+              }
+            />
           </div>
         </div>
       </div>

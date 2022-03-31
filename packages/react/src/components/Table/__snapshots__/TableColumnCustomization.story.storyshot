@@ -562,7 +562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-                  id="cell-table-46-row-0-string"
+                  id="cell-table-54-row-0-string"
                   offset={0}
                 >
                   <span
@@ -586,7 +586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-                  id="cell-table-46-row-0-date"
+                  id="cell-table-54-row-0-date"
                   offset={0}
                 >
                   <span
@@ -610,7 +610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-                  id="cell-table-46-row-0-select"
+                  id="cell-table-54-row-0-select"
                   offset={0}
                 >
                   <span
@@ -634,7 +634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-                  id="cell-table-46-row-0-status"
+                  id="cell-table-54-row-0-status"
                   offset={0}
                 >
                   <span
@@ -669,7 +669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-                  id="cell-table-46-row-0-number"
+                  id="cell-table-54-row-0-number"
                   offset={0}
                 >
                   <span
@@ -692,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-                  id="cell-table-46-row-1-string"
+                  id="cell-table-54-row-1-string"
                   offset={0}
                 >
                   <span
@@ -716,7 +716,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-                  id="cell-table-46-row-1-date"
+                  id="cell-table-54-row-1-date"
                   offset={0}
                 >
                   <span
@@ -740,7 +740,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-                  id="cell-table-46-row-1-select"
+                  id="cell-table-54-row-1-select"
                   offset={0}
                 >
                   <span
@@ -764,7 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-                  id="cell-table-46-row-1-status"
+                  id="cell-table-54-row-1-status"
                   offset={0}
                 >
                   <span
@@ -799,7 +799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-                  id="cell-table-46-row-1-number"
+                  id="cell-table-54-row-1-number"
                   offset={0}
                 >
                   <span
@@ -829,7 +829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-                  id="cell-table-46-row-2-string"
+                  id="cell-table-54-row-2-string"
                   offset={0}
                 >
                   <span
@@ -853,7 +853,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-                  id="cell-table-46-row-2-date"
+                  id="cell-table-54-row-2-date"
                   offset={0}
                 >
                   <span
@@ -877,7 +877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-                  id="cell-table-46-row-2-select"
+                  id="cell-table-54-row-2-select"
                   offset={0}
                 >
                   <span
@@ -901,7 +901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-                  id="cell-table-46-row-2-status"
+                  id="cell-table-54-row-2-status"
                   offset={0}
                 >
                   <span
@@ -936,7 +936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-                  id="cell-table-46-row-2-number"
+                  id="cell-table-54-row-2-number"
                   offset={0}
                 >
                   <span
@@ -966,7 +966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-                  id="cell-table-46-row-3-string"
+                  id="cell-table-54-row-3-string"
                   offset={0}
                 >
                   <span
@@ -990,7 +990,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-                  id="cell-table-46-row-3-date"
+                  id="cell-table-54-row-3-date"
                   offset={0}
                 >
                   <span
@@ -1014,7 +1014,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-                  id="cell-table-46-row-3-select"
+                  id="cell-table-54-row-3-select"
                   offset={0}
                 >
                   <span
@@ -1038,7 +1038,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-                  id="cell-table-46-row-3-status"
+                  id="cell-table-54-row-3-status"
                   offset={0}
                 >
                   <span
@@ -1073,7 +1073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-                  id="cell-table-46-row-3-number"
+                  id="cell-table-54-row-3-number"
                   offset={0}
                 >
                   <span
@@ -1096,7 +1096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="string"
                   data-offset={0}
-                  id="cell-table-46-row-4-string"
+                  id="cell-table-54-row-4-string"
                   offset={0}
                 >
                   <span
@@ -1120,7 +1120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="date"
                   data-offset={0}
-                  id="cell-table-46-row-4-date"
+                  id="cell-table-54-row-4-date"
                   offset={0}
                 >
                   <span
@@ -1144,7 +1144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="select"
                   data-offset={0}
-                  id="cell-table-46-row-4-select"
+                  id="cell-table-54-row-4-select"
                   offset={0}
                 >
                   <span
@@ -1168,7 +1168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="status"
                   data-offset={0}
-                  id="cell-table-46-row-4-status"
+                  id="cell-table-54-row-4-status"
                   offset={0}
                 >
                   <span
@@ -1203,7 +1203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   className="data-table-start"
                   data-column="number"
                   data-offset={0}
-                  id="cell-table-46-row-4-number"
+                  id="cell-table-54-row-4-number"
                   offset={0}
                 >
                   <span

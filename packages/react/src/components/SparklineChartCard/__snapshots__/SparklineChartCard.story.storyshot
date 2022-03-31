@@ -101,7 +101,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="cart-type-content-list"
+            data-testid="Card-list"
           >
             <div
               className="iot--sparkline-chart--wrapper--list"
@@ -613,7 +613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="cart-type-content-list"
+            data-testid="Card-list"
           >
             <div
               className="iot--sparkline-chart--wrapper--list"
@@ -762,7 +762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="cart-type-content-list"
+            data-testid="Card-list"
           >
             <div
               className="iot--sparkline-chart--wrapper--list"

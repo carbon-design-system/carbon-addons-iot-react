@@ -38,13 +38,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="bx--progress-bar__label"
-          id="progress-bar-652"
+          id="progress-bar-687"
         >
           Progress bar label
         </span>
         <div
-          aria-describedby="progress-bar-helper-653"
-          aria-labelledby="progress-bar-652"
+          aria-describedby="progress-bar-helper-688"
+          aria-labelledby="progress-bar-687"
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={75}
@@ -62,7 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="bx--progress-bar__helper-text"
-          id="progress-bar-helper-653"
+          id="progress-bar-helper-688"
         >
           Optional helper text
         </div>
@@ -135,13 +135,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="bx--progress-bar__label"
-          id="progress-bar-656"
+          id="progress-bar-691"
         >
           Progress bar label
         </span>
         <div
-          aria-describedby="progress-bar-helper-657"
-          aria-labelledby="progress-bar-656"
+          aria-describedby="progress-bar-helper-692"
+          aria-labelledby="progress-bar-691"
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={75}
@@ -159,7 +159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="bx--progress-bar__helper-text"
-          id="progress-bar-helper-657"
+          id="progress-bar-helper-692"
         >
           Optional helper text
         </div>
@@ -207,13 +207,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="bx--progress-bar__label"
-          id="progress-bar-654"
+          id="progress-bar-689"
         >
           Progress bar label
         </span>
         <div
-          aria-describedby="progress-bar-helper-655"
-          aria-labelledby="progress-bar-654"
+          aria-describedby="progress-bar-helper-690"
+          aria-labelledby="progress-bar-689"
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={75}
@@ -231,7 +231,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="bx--progress-bar__helper-text"
-          id="progress-bar-helper-655"
+          id="progress-bar-helper-690"
         >
           Optional helper text
         </div>
@@ -300,13 +300,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="bx--progress-bar__label"
-          id="progress-bar-660"
+          id="progress-bar-695"
         >
           Mon, Oct 5
         </span>
         <div
-          aria-describedby="progress-bar-helper-661"
-          aria-labelledby="progress-bar-660"
+          aria-describedby="progress-bar-helper-696"
+          aria-labelledby="progress-bar-695"
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={75}
@@ -324,7 +324,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="bx--progress-bar__helper-text"
-          id="progress-bar-helper-661"
+          id="progress-bar-helper-696"
         >
           Optional helper text
         </div>
@@ -372,13 +372,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
       >
         <span
           className="bx--progress-bar__label"
-          id="progress-bar-658"
+          id="progress-bar-693"
         >
           Mon, Oct 5
         </span>
         <div
-          aria-describedby="progress-bar-helper-659"
-          aria-labelledby="progress-bar-658"
+          aria-describedby="progress-bar-helper-694"
+          aria-labelledby="progress-bar-693"
           aria-valuemax={100}
           aria-valuemin={0}
           aria-valuenow={75}
@@ -396,7 +396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         </div>
         <div
           className="bx--progress-bar__helper-text"
-          id="progress-bar-helper-659"
+          id="progress-bar-helper-694"
         >
           Optional helper text
         </div>
