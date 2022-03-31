@@ -261,48 +261,4 @@ describe('SparklineChartCard', () => {
     );
     expect(container.querySelectorAll('.bx--chart-holder')).toHaveLength(0);
   });
-  it('i18n string test', () => {
-    const i18nTest = {
-      noDataLabel: 'no-data-label',
-    };
-
-    const i18nDefault = SparklineChartCard.defaultProps.i18n;
-
-    render(
-      <SparklineChartCard
-        title="Manage"
-        content={{
-          xLabel: 'xlabel prop',
-          yLabel: 'y label prop',
-          xProperty: 'date',
-          yProperty: 'value',
-          color: {
-            pairing: {
-              option: 4,
-            },
-            gradient: {
-              enabled: true,
-            },
-          },
-          listContent: [
-            { label: 'Target', value: 1000 },
-            { label: 'Mean', value: 756 },
-            { label: 'Peak', value: 1045 },
-          ],
-        }}
-        values={[]}
-        size="MEDIUM"
-        breakpoint="md"
-        footerContent={() => <div>Occured on ... </div>}
-        isExpanded={false}
-        locale="en"
-        availableActions={{ expand: true }}
-        onCardAction={() => {}}
-        testId="SPARKLINE_CHART_CARD_TEST"
-        i18n={i18nTest}
-      />
-    );
-    expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
-  });
 });

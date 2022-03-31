@@ -115,36 +115,6 @@ describe('StackedAreaChartCard', () => {
     );
     expect(container.querySelectorAll('#mock-stacked-area-chart')).toHaveLength(0);
   });
-  it('i18n string test', () => {
-    const i18nTest = {
-      noDataLabel: 'no-data-label',
-    };
-
-    const i18nDefault = StackedAreaChartCard.defaultProps.i18n;
-
-    render(
-      <StackedAreaChartCard
-        title="Card title"
-        content={{
-          xLabel: 'xlabel prop',
-          yLabel: 'y label prop',
-          xProperty: 'date',
-          yProperty: 'value',
-        }}
-        values={[]}
-        size="MEDIUM"
-        breakpoint="md"
-        isExpanded={false}
-        locale="en"
-        availableActions={{ expand: true }}
-        onCardAction={() => {}}
-        testId="STACKED_AREA_CHART_CARD_TEST"
-        i18n={i18nTest}
-      />
-    );
-    expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
-  });
   it('render xLabel/yLabel + title ', () => {
     const { container } = render(
       <StackedAreaChartCard

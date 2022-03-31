@@ -17,6 +17,7 @@ import {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   DASHBOARD_SIZES,
+  CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
@@ -456,8 +457,13 @@ const Card = (props) => {
     />
   ) : null;
 
+  const isSupportedType =
+    type === CARD_TYPES.METER_CHART ||
+    type === CARD_TYPES.SPARKLINE_CHART ||
+    type === CARD_TYPES.STACKED_AREA_CHART;
+
   // validate if the data is empty or prop says it's empty
-  const isCardEmpty = (type && isEmpty(data)) || isEmptyProp;
+  const isCardEmpty = (isSupportedType && isEmpty(data)) || isEmptyProp;
 
   const card = (
     <CardWrapper
@@ -595,8 +601,15 @@ const Card = (props) => {
             icon={isSmall ? '' : 'empty'}
             {...overrides?.errorMessage?.props}
           />
-        ) : type ? ( // render card content based on it's type
-          <CardTypeContent isExpanded={isExpanded} type={type} data={data} content={content} />
+        ) : isSupportedType ? ( // render card content based on supported type
+          // TODO: remove deprecated testID prop in v3
+          <CardTypeContent
+            testId={testID || testId}
+            isExpanded={isExpanded}
+            type={type}
+            data={data}
+            content={content}
+          />
         ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
           [
             // first option is a function

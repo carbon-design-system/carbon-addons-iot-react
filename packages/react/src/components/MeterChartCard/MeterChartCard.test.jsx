@@ -57,17 +57,6 @@ describe('MeterChartCard', () => {
     const { container } = render(<MeterChartCard {...meterChartCardProps} values={[]} />);
     expect(container.querySelectorAll('.bx--chart-holder')).toHaveLength(0);
   });
-  it('i18n string test', () => {
-    const i18nTest = {
-      noDataLabel: 'no-data-label',
-    };
-
-    const i18nDefault = MeterChartCard.defaultProps.i18n;
-
-    render(<MeterChartCard {...meterChartCardProps} values={[]} i18n={i18nTest} />);
-    expect(screen.getByText(i18nTest.noDataLabel)).toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.noDataLabel)).not.toBeInTheDocument();
-  });
   it('show correctly card title + chart total and unit', () => {
     render(<MeterChartCard {...meterChartCardProps} testId="meterchart-card" />);
     expect(

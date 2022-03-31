@@ -7939,6 +7939,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -8373,6 +8414,16 @@ Map {
       },
       "tooltipDateFormatPattern": Object {
         "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "values": Object {
         "args": Array [
@@ -14198,6 +14249,7 @@ Map {
           },
         },
       },
+      "content": null,
       "dashboardBreakpoints": Object {
         "lg": 1056,
         "max": 1584,
@@ -14214,6 +14266,7 @@ Map {
         "xl": 16,
         "xs": 4,
       },
+      "data": null,
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "footerContent": undefined,
       "hasTitleWrap": false,
@@ -14281,6 +14334,7 @@ Map {
       "timeRange": undefined,
       "title": undefined,
       "toolbar": undefined,
+      "type": null,
     },
     "propTypes": Object {
       "availableActions": Object {
@@ -14760,6 +14814,159 @@ Map {
         ],
         "type": "shape",
       },
+      "content": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "legendPosition": Object {
+                    "type": "string",
+                  },
+                  "meterTotal": Object {
+                    "type": "number",
+                  },
+                  "meterUnit": Object {
+                    "type": "string",
+                  },
+                  "peak": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "listContent": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "label": Object {
+                              "type": "string",
+                            },
+                            "value": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "xProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                  "yProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "contentClassName": Object {
         "type": "string",
       },
@@ -14800,6 +15007,47 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
       },
       "dateTimeMask": Object {
         "type": "string",
@@ -15306,6 +15554,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -15914,6 +16172,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -16467,6 +16766,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "values": Object {
         "args": Array [
@@ -17168,6 +17477,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dataState": Object {
         "args": Array [
           Object {
@@ -17727,6 +18077,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "values": Object {
         "args": Array [
@@ -18549,6 +18909,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -19000,6 +19401,16 @@ Map {
       },
       "tooltipShowTotals": Object {
         "type": "bool",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "values": Object {
         "args": Array [
@@ -19606,6 +20017,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -20100,6 +20552,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "validateUploadedImage": Object {
         "type": "func",
@@ -21018,6 +21480,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -21448,6 +21951,16 @@ Map {
       },
       "tooltip": Object {
         "type": "node",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "value": Object {
         "args": Array [
@@ -22225,6 +22738,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -22731,6 +23285,16 @@ Map {
       "tooltip": Object {
         "type": "element",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "values": Object {
         "args": Array [
           Object {
@@ -23009,9 +23573,6 @@ Map {
         "peak": null,
       },
       "footerContent": null,
-      "i18n": Object {
-        "noDataLabel": "No data available",
-      },
       "locale": "en",
       "size": "MEDIUMWIDE",
       "title": "",
@@ -23599,6 +24160,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -24085,6 +24687,16 @@ Map {
       "tooltip": Object {
         "type": "element",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "values": Object {
         "args": Array [
           Object {
@@ -24112,9 +24724,6 @@ Map {
         "yLabel": "y label",
       },
       "footerContent": null,
-      "i18n": Object {
-        "noDataLabel": "No data available",
-      },
       "locale": "en",
       "size": "MEDIUMWIDE",
       "title": null,
@@ -24722,6 +25331,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -25208,6 +25858,16 @@ Map {
       "tooltip": Object {
         "type": "element",
       },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "values": Object {
         "args": Array [
           Object {
@@ -25236,9 +25896,6 @@ Map {
         },
         "xLabel": "x label",
         "yLabel": "y label",
-      },
-      "i18n": Object {
-        "noDataLabel": "No data available",
       },
       "locale": "en",
       "size": "MEDIUM",
@@ -25894,6 +26551,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -26379,6 +27077,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
       "values": Object {
         "args": Array [
@@ -26897,6 +27605,159 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "content": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "legendPosition": Object {
+                    "type": "string",
+                  },
+                  "meterTotal": Object {
+                    "type": "number",
+                  },
+                  "meterUnit": Object {
+                    "type": "string",
+                  },
+                  "peak": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "listContent": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "label": Object {
+                              "type": "string",
+                            },
+                            "value": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "xProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                  "yProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOf",
       },
       "contentClassName": Object {
         "type": "string",
@@ -27451,6 +28312,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -30971,6 +31842,47 @@ Map {
         ],
         "type": "shape",
       },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -31476,6 +32388,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -32791,6 +33713,159 @@ Map {
         ],
         "type": "shape",
       },
+      "content": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "legendPosition": Object {
+                    "type": "string",
+                  },
+                  "meterTotal": Object {
+                    "type": "number",
+                  },
+                  "meterUnit": Object {
+                    "type": "string",
+                  },
+                  "peak": Object {
+                    "type": "number",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "color": Object {
+                    "args": Array [
+                      Object {
+                        "gradient": Object {
+                          "args": Array [
+                            Object {
+                              "colors": Object {
+                                "args": Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                ],
+                                "type": "arrayOf",
+                              },
+                              "enabled": undefined,
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "pairing": Object {
+                          "args": Array [
+                            Object {
+                              "numberOfVariants": Object {
+                                "type": "number",
+                              },
+                              "option": Object {
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                        "scale": Object {
+                          "args": Array [
+                            Object {
+                              "type": "any",
+                            },
+                          ],
+                          "type": "shape",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "listContent": Object {
+                    "args": Array [
+                      Object {
+                        "args": Array [
+                          Object {
+                            "label": Object {
+                              "type": "string",
+                            },
+                            "value": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    ],
+                    "type": "arrayOf",
+                  },
+                  "xLabel": Object {
+                    "type": "string",
+                  },
+                  "xProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "yLabel": Object {
+                    "type": "string",
+                  },
+                  "yProperty": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+        ],
+        "type": "oneOf",
+      },
       "contentClassName": Object {
         "type": "string",
       },
@@ -32831,6 +33906,47 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "data": Object {
+        "args": Array [
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "type": "string",
+                      },
+                      "value": Object {
+                        "type": "number",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "group": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+          ],
+        ],
+        "type": "oneOf",
       },
       "dateTimeMask": Object {
         "type": "string",
@@ -33634,6 +34750,16 @@ Map {
       },
       "tooltip": Object {
         "type": "element",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "METER_CHART",
+            "SPARKLINE_CHART",
+            "STACKED_AREA_CHART",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -41959,7 +43085,10 @@ Map {
     "GAUGE": "GAUGE",
     "IMAGE": "IMAGE",
     "LIST": "LIST",
+    "METER_CHART": "METER_CHART",
     "PIE": "PIE",
+    "SPARKLINE_CHART": "SPARKLINE_CHART",
+    "STACKED_AREA_CHART": "STACKED_AREA_CHART",
     "TABLE": "TABLE",
     "TIMESERIES": "TIMESERIES",
     "VALUE": "VALUE",

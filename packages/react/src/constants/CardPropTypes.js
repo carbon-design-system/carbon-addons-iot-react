@@ -26,7 +26,6 @@ import {
   CARD_DATA_STATE,
   BAR_CHART_TYPES,
   BAR_CHART_LAYOUTS,
-  CARD_TYPES,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
 import {
@@ -964,11 +963,4 @@ export const CardPropTypes = {
   overrides: PropTypes.shape({
     errorMessage: OverridePropTypes,
   }),
-  type: PropTypes.oneOf([
-    CARD_TYPES.METER_CHART,
-    CARD_TYPES.SPARKLINE_CHART,
-    CARD_TYPES.STACKED_AREA_CHART,
-  ]),
-  data: PropTypes.oneOf([MeterChartPropTypes.data, SparklineChartPropTypes.data]),
-  content: PropTypes.oneOf([MeterChartPropTypes.content, SparklineChartPropTypes.content]),
 };
