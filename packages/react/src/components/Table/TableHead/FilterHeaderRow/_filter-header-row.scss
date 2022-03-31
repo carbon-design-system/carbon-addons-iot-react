@@ -1,6 +1,8 @@
 @import '../../../../globals/vars';
 @import '../../../../globals/mixins';
 
+$grouped-columns-filter-border-width: 2px;
+
 .#{$iot-prefix}--filter-header-row--form-item {
   display: inline-block;
   position: relative;
@@ -23,20 +25,20 @@
   padding-bottom: $spacing-03;
 
   &.#{$iot-prefix}--tableheader-filter:not(:first-of-type) {
-    border-left-width: 2px;
+    border-left-width: $grouped-columns-filter-border-width;
 
     [dir='rtl'] & {
       border-left-width: 0;
-      border-right-width: 2px;
+      border-right-width: $grouped-columns-filter-border-width;
     }
   }
 
   &.#{$iot-prefix}--tableheader-filter:first-of-type {
-    border-right-width: 2px;
+    border-right-width: $grouped-columns-filter-border-width;
 
     [dir='rtl'] & {
       border-right-width: 0;
-      border-left-width: 2px;
+      border-left-width: $grouped-columns-filter-border-width;
     }
 
     & + .#{$iot-prefix}--tableheader-filter {
@@ -55,10 +57,10 @@
 
 .#{$prefix}--data-table
   th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(:last-of-type) {
-  border-right-width: 2px;
+  border-right-width: $grouped-columns-filter-border-width;
 
   [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {
-    border-left-width: 2px;
+    border-left-width: $grouped-columns-filter-border-width;
   }
 }
 
