@@ -487,6 +487,7 @@ const Card = (props) => {
             title={title}
             titleTextTooltip={titleTextTooltip}
             infoIconTooltip={tooltip}
+            infoIconDescription={strings.infoIconDescription} // To fix accessibility violation.
             testId={`${testID || testId}`}
           />
           {cardToolbar}
