@@ -46,7 +46,7 @@ html[dir='rtl'] {
   .#{$prefix}--table-sort__icon-unsorted,
   .#{$prefix}--table-sort__icon {
     margin-right: $spacing-03;
-    margin-left: 0;
+    margin-left: $spacing-03;
   }
 
   td.data-table {

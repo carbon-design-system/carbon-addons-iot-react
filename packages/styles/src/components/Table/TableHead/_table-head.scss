@@ -164,6 +164,16 @@
   .#{$iot-prefix}--clear-filters-button--disabled {
     @include disabled-icon-button();
   }
+
+  .#{$prefix}--table-sort {
+    padding-left: 0;
+    padding-right: 0;
+
+    .#{$prefix}--table-header-label {
+      padding-left: $spacing-05;
+      padding-right: 0;
+    }
+  }
 }
 
 .#{$iot-prefix}--table-head {

@@ -1,9 +1,12 @@
 @import '../../../../globals/vars';
 @import '../../../../globals/mixins';
 
+$grouped-columns-filter-border-width: 2px;
+
 .#{$iot-prefix}--filter-header-row--form-item {
   display: inline-block;
   position: relative;
+
   input {
     padding-right: $spacing-08;
   }
@@ -15,9 +18,56 @@
   }
 }
 
+.#{$prefix}--data-table
+  th.#{$iot-prefix}--filter-header-row--header.#{$iot-prefix}--tableheader-filter {
+  padding-right: $spacing-02;
+  padding-left: $spacing-02;
+  padding-bottom: $spacing-03;
+
+  &.#{$iot-prefix}--tableheader-filter:not(:first-of-type) {
+    border-left-width: $grouped-columns-filter-border-width;
+
+    [dir='rtl'] & {
+      border-left-width: 0;
+      border-right-width: $grouped-columns-filter-border-width;
+    }
+  }
+
+  &.#{$iot-prefix}--tableheader-filter:first-of-type {
+    border-right-width: $grouped-columns-filter-border-width;
+
+    [dir='rtl'] & {
+      border-right-width: 0;
+      border-left-width: $grouped-columns-filter-border-width;
+    }
+
+    & + .#{$iot-prefix}--tableheader-filter {
+      border-left-width: 0;
+
+      [dir='rtl'] & {
+        border-right-width: 0;
+      }
+    }
+  }
+}
+
+.#{$prefix}--data-table--xl th.#{$iot-prefix}--filter-header-row--header {
+  height: $spacing-08;
+}
+
+.#{$prefix}--data-table
+  th.#{$iot-prefix}--filter-header-row--last-column.#{$iot-prefix}--filter-header-row--last-column:not(:last-of-type) {
+  border-right-width: $grouped-columns-filter-border-width;
+
+  [dir='rtl'] &.#{$iot-prefix}--filter-header-row--last-column {
+    border-left-width: $grouped-columns-filter-border-width;
+  }
+}
+
 .#{$prefix}--data-table th.#{$iot-prefix}--filter-header-row--header {
-  padding-right: 1px;
   padding-left: 1px;
+  padding-right: 1px;
+
   .#{$prefix}--table-header-label {
     padding-left: 0;
     padding-right: 0;
@@ -35,6 +85,7 @@
     text-overflow: ellipsis;
     padding-right: $spacing-07;
   }
+
   .#{$prefix}--form-item input:placeholder-shown {
     padding-right: $spacing-03;
   }
@@ -96,4 +147,9 @@
       }
     }
   }
+}
+
+.#{$prefix}--data-table .#{$prefix}--list-box input[role='combobox'],
+.#{$prefix}--data-table .#{$prefix}--list-box input[type='text'] {
+  padding-left: $spacing-04;
 }
