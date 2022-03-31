@@ -105,11 +105,13 @@ describe('stateful table with real reducer', () => {
   });
   it('render nestedRows', async () => {
     const tableId = 'tableId';
-    const data = getTableData().map((row, index) => {
-      const parent = addChildRows(row, index, true);
-      parent.rowActions = getRowActions(index);
-      return parent;
-    });
+    const data = getTableData()
+      .slice(0, 10)
+      .map((row, index) => {
+        const parent = addChildRows(row, index, true);
+        parent.rowActions = getRowActions(index);
+        return parent;
+      });
 
     render(
       <StatefulTable
