@@ -3015,6 +3015,18 @@
     babel-plugin-polyfill-regenerator "^0.3.0"
     semver "^6.3.0"
 
+"@babel/plugin-transform-runtime@^7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.17.0.tgz#0a2e08b5e2b2d95c4b1d3b3371a2180617455b70"
+  integrity sha512-fr7zPWnKXNc1xoHfrIU9mN/4XKX4VLZ45Q+oMhfsYIaHvg7mHgmhfOy/ckRWqDK7XF3QDigRpkh5DKq6+clE8A==
+  dependencies:
+    "@babel/helper-module-imports" "^7.16.7"
+    "@babel/helper-plugin-utils" "^7.16.7"
+    babel-plugin-polyfill-corejs2 "^0.3.0"
+    babel-plugin-polyfill-corejs3 "^0.5.0"
+    babel-plugin-polyfill-regenerator "^0.3.0"
+    semver "^6.3.0"
+
 "@babel/plugin-transform-shorthand-properties@^7.12.1", "@babel/plugin-transform-shorthand-properties@^7.12.13":
   version "7.12.13"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.12.13.tgz#db755732b70c539d504c6390d9ce90fe64aff7ad"
@@ -27661,10 +27673,12 @@ use-isomorphic-layout-effect@^1.0.0:
   resolved "https://registry.yarnpkg.com/use-isomorphic-layout-effect/-/use-isomorphic-layout-effect-1.1.1.tgz#7bb6589170cd2987a152042f9084f9effb75c225"
   integrity sha512-L7Evj8FGcwo/wpbv/qvSfrkHFtOpCzvM5yl2KVyDJoylVuSvzphiiasmjgQPttIGBAy2WKiBNR98q8w7PiNgKQ==
 
-use-lang-direction@^0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/use-lang-direction/-/use-lang-direction-0.1.11.tgz#dc235fa11c2f082abced76d2b291f0613c013e5b"
-  integrity sha512-YCVJ8/EyaagfltYL/f6xkikwh1gCUIoU6mszDOYR301zZ3jRM2v+XzRo/8eK4MOuqC/o6OtFWNepNiP7NJYkdw==
+use-lang-direction@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-lang-direction/-/use-lang-direction-0.2.0.tgz#6e3aaf997d904fcdacefd1cdbf7d40c3187b5ede"
+  integrity sha512-Wibllnif/Ib985B5ZiXHF4fjKBU/G8iHplbnkqJW19qT0v1l8WAD0Ejlw1a5KdzR1K8q7xYcQBYv7Q+ut0hOEA==
+  dependencies:
+    "@babel/plugin-transform-runtime" "^7.17.0"
 
 use-latest@^1.0.0:
   version "1.2.0"

@@ -3702,7 +3702,17 @@ Map {
               "type": "string",
             },
             "deleteWarningTextTemplate": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "editIconText": Object {
               "type": "string",
@@ -8364,6 +8374,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -14282,7 +14295,9 @@ Map {
       "testId": "Card",
       "timeRange": undefined,
       "title": undefined,
+      "titleTextTooltip": undefined,
       "toolbar": undefined,
+      "tooltip": undefined,
       "type": null,
     },
     "propTypes": Object {
@@ -15303,6 +15318,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -16464,6 +16482,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -17724,6 +17745,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -18992,6 +19016,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -20097,6 +20124,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -21446,6 +21476,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -22727,6 +22760,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -24079,6 +24115,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -25198,6 +25237,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -26368,6 +26410,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -27439,6 +27484,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",
@@ -31465,6 +31513,9 @@ Map {
       "title": Object {
         "type": "string",
       },
+      "titleTextTooltip": Object {
+        "type": "element",
+      },
       "toolbar": Object {
         "type": "element",
       },
@@ -33622,6 +33673,9 @@ Map {
       "timeRangeOptions": [Function],
       "title": Object {
         "type": "string",
+      },
+      "titleTextTooltip": Object {
+        "type": "element",
       },
       "toolbar": Object {
         "type": "element",

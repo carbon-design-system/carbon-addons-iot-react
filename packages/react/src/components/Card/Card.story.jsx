@@ -161,6 +161,10 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
       },
     ],
   };
+  const demoTitleTextTooltip = boolean('demo title text tooltip (titleTextTooltip)', false);
+  const demoIconTooltip = boolean('demo info icon tooltip (tooltip)', true);
+  const hasTitleWrap = demoTitleTextTooltip ? false : boolean('wrap title', true);
+
   return (
     <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
@@ -173,7 +177,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
           'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
         )}
-        hasTitleWrap={boolean('wrap title', true)}
+        hasTitleWrap={hasTitleWrap}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -199,7 +203,17 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
             Footer Content
           </Button>
         )}
-        tooltip={<p>this is the external tooltip content</p>}
+        tooltip={demoIconTooltip ? <p>this is the external tooltip content</p> : undefined}
+        titleTextTooltip={
+          demoTitleTextTooltip ? (
+            <>
+              <p>This is the external tooltip definition shown when the title is clicked</p>
+              <Button style={{ marginTop: '16px' }} onClick={action('tooltip button clicked')}>
+                Take action
+              </Button>
+            </>
+          ) : undefined
+        }
         extraActions={extraaction === 'Single' ? singleExtraAction : multiExtraAction}
       />
     </div>

@@ -902,7 +902,14 @@ export const CardPropTypes = {
     overflowMenuDescription: PropTypes.string,
     toLabel: PropTypes.string,
   }),
+  /** Adds an info icon after the title that when clicked shows a tooltip with this content.
+   * Cannot be used together with the titleTextTooltip prop
+   */
   tooltip: PropTypes.element,
+  /** Adds tooltip to the title (no info icon) that when clicked shows a tooltip with this content.
+   * Cannot be used together with the tooltip prop or the or the hasTitleWrap prop.
+   */
+  titleTextTooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,

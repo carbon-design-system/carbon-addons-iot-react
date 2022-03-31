@@ -12,6 +12,7 @@ import Edit from '@carbon/icons-react/es/edit/16';
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
 import EmptyState from '../EmptyState';
+import Dropdown from '../Dropdown/Dropdown';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -606,23 +607,72 @@ export const objectWithSubstitution = (
   return revert(knobData);
 };
 
+const convertUTCDateToLocalDate = (date) => {
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
+  return localDate.toISOString().slice(0, 19);
+};
 // eslint-disable-next-line react/prop-types
 export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
-  const id = `${columnId}-${rowId}`;
-  return React.isValidElement(value) ? (
+  const elementId = `${columnId}-${rowId}`;
+
+  return columnId === 'node' ? (
     value
-  ) : typeof value === 'boolean' ? (
+  ) : columnId === 'date' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => {
+        const dateCleared = e.currentTarget.value === '';
+        const newVal = dateCleared ? value : new Date(e.currentTarget.value).toISOString();
+        onDataChange(newVal, columnId, rowId);
+      }}
+      type="datetime-local"
+      light
+      defaultValue={convertUTCDateToLocalDate(new Date(value))}
+      labelText=""
+      hideLabel
+    />
+  ) : columnId === 'select' ? (
+    <Dropdown
+      id={elementId}
+      light
+      items={getSelectDataOptions()}
+      initialSelectedItem={value}
+      onChange={({ selectedItem: { id } }) => onDataChange(id, columnId, rowId)}
+      label=""
+    />
+  ) : columnId === 'boolean' ? (
     <Checkbox
       defaultChecked={value}
-      id={id}
+      id={elementId}
       labelText=""
       hideLabel
       onChange={(e) => onDataChange(e, columnId, rowId)}
     />
+  ) : columnId === 'object' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => onDataChange({ ...value, id: e.currentTarget.value }, columnId, rowId)}
+      type="text"
+      light
+      // eslint-disable-next-line react/prop-types
+      defaultValue={value.id}
+      labelText=""
+      hideLabel
+    />
+  ) : columnId === 'number' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+      type="number"
+      light
+      defaultValue={value}
+      labelText=""
+      hideLabel
+    />
   ) : (
     <TextInput
-      id={id}
-      onChange={(e) => onDataChange(e, columnId, rowId)}
+      id={elementId}
+      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
       type="text"
       light
       defaultValue={value}
@@ -873,7 +923,15 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
 
   return {
     selectedTableType: shouldCreate('selectedTableType')
-      ? select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable', TABLE_GROUP)
+      ? select(
+          'Type of Table',
+          ['Table', 'StatefulTable'],
+          (() => {
+            const tableType = getDefaultValue('selectedTableType');
+            return typeof tableType === 'string' ? tableType : 'StatefulTable';
+          })(),
+          TABLE_GROUP
+        )
       : null,
 
     tableMaxWidth: shouldCreate('tableMaxWidth')
