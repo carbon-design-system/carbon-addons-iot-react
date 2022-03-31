@@ -90,7 +90,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--sparkline-card--wrapper"
+          className="iot--sparkline-chart--wrapper"
           style={
             Object {
               "--card-list-height": "0px",
@@ -101,10 +101,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="undefined-list"
+            data-testid="cart-type-content-list"
           >
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Target
@@ -114,7 +114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Mean
@@ -124,7 +124,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Peak
@@ -602,7 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--sparkline-card--wrapper"
+          className="iot--sparkline-chart--wrapper"
           style={
             Object {
               "--card-list-height": "0px",
@@ -613,10 +613,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="undefined-list"
+            data-testid="cart-type-content-list"
           >
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Target
@@ -626,7 +626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Mean
@@ -636,7 +636,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Peak
@@ -751,7 +751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--sparkline-card--wrapper"
+          className="iot--sparkline-chart--wrapper"
           style={
             Object {
               "--card-list-height": "0px",
@@ -762,10 +762,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="mock-area-chart"
           />
           <div
-            data-testid="undefined-list"
+            data-testid="cart-type-content-list"
           >
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Target
@@ -775,7 +775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Mean
@@ -785,7 +785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </span>
             </div>
             <div
-              className="iot--sparkline-card--wrapper--list"
+              className="iot--sparkline-chart--wrapper--list"
             >
               <p>
                 Peak

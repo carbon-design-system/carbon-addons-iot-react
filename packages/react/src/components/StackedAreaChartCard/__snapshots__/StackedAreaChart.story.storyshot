@@ -90,7 +90,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--stacked-area-card--wrapper"
+          className="iot--stacked-area-chart--wrapper"
+          style={
+            Object {
+              "--card-list-height": "0px",
+            }
+          }
         >
           <div
             id="mock-stacked-area-chart"
@@ -447,7 +452,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--title"
               data-testid="EmptyState-title"
             >
-              No data available
+              No data is available for this time range.
             </h3>
           </div>
         </div>
@@ -547,7 +552,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--stacked-area-card--wrapper"
+          className="iot--stacked-area-chart--wrapper"
+          style={
+            Object {
+              "--card-list-height": "0px",
+            }
+          }
         >
           <div
             id="mock-stacked-area-chart"
