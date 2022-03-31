@@ -1,11 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  Input,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ArrowRight16, Subtract16 } from '@carbon/icons';
 import { AIListItem } from '@ai-apps/angular/list';
 import { IconService } from 'carbon-components-angular';
@@ -52,7 +45,6 @@ import { AIListBuilderItem } from './list-builder-item.class';
   `,
 })
 export class AIListBuilderComponent implements OnInit, AfterViewInit {
-
   @Input() set items(items: AIListBuilderItem[]) {
     this.unselectedListItems = [];
     this.selectedListItems = [];
@@ -133,10 +125,10 @@ export class AIListBuilderComponent implements OnInit, AfterViewInit {
 
       if (item.addingMethod === 'select') {
         // This will be called everytime the select method is called on the list item.
-        unselectedItem.onSelectCallback = () => {
-          item.added = unselectedItem.selected;
+        unselectedItem.onSelectedChange.subscribe((selected: boolean) => {
+          item.added = selected;
           selectedItem.hidden = !item.added;
-        };
+        });
       }
 
       // Deal with selected items.

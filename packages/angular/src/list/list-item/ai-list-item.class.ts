@@ -53,7 +53,19 @@ export class AIListItem {
 
   hidden = false;
 
+  /**
+   * Emitted in the `select` function when `emitOnSelected` is set to `true`.
+   *
+   * When used with `AIListItem` and `AIList` components, this is emitted when
+   * a user selects this item. When used in a hierarchical list this event triggers
+   * the change in `selected` states of its children and parents as well.
+   */
   onSelect = new EventEmitter<boolean>();
+
+  /**
+   * Emits everytime `selected` value changes.
+   */
+  onSelectedChange = new EventEmitter<boolean>();
 
   /**
    * Indicates whether or not the list item is in an indeterminate state.
@@ -84,8 +96,6 @@ export class AIListItem {
     };
     Object.assign(this, {}, data);
   }
-
-  onSelectCallback: any = () => {};
 
   /**
    * This method returns `true` if `searchString` is a substring of `value`
@@ -124,14 +134,15 @@ export class AIListItem {
     this.expanded = expanded;
   }
 
-  select(selected = true, shouldEmit = false) {
+  select(selected = true, emitOnSelected = false) {
+    if (this.selected !== selected) {
+      this.onSelectedChange.emit(selected);
+    }
     this.selected = selected;
 
-    if (shouldEmit) {
+    if (emitOnSelected) {
       this.onSelect.emit(this.selected);
     }
-
-    this.onSelectCallback();
   }
 
   setIndeterminate(indeterminate = true) {

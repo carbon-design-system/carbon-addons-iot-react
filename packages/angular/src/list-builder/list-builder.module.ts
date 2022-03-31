@@ -14,4 +14,4 @@ export * from './list-builder-utils';
   exports: [AIListBuilderComponent, AIListBuilderListComponent],
   imports: [ButtonModule, CommonModule, ListModule, IconModule],
 })
-export class ListBuilderModule {}
+export class AIListBuilderModule {}

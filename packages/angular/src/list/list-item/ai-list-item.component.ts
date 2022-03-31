@@ -150,7 +150,7 @@ export class AIListItemComponent implements OnInit, OnDestroy {
     this.iconService.register(Draggable16);
 
     this.selectSubscription = this.item.onSelect.subscribe(() => {
-      this.itemSelected.emit();
+      this.itemSelected.emit(this.item);
     });
   }
 

@@ -52,14 +52,7 @@ export enum SelectionType {
 
     <ng-template #listItemTemplateRef let-data>
       <!-- Render item -->
-      <ng-container
-        *ngIf="
-          data.item.id &&
-          !isArray(data.item) &&
-          data.item.includes(searchString) &&
-          !data.item.hidden
-        "
-      >
+      <ng-container *ngIf="shouldRenderItem(data.item, searchString)">
         <ai-list-item-wrapper
           [draggable]="itemsDraggable && data.item.isDraggable"
           [disabled]="data.item.disabled"
@@ -86,11 +79,7 @@ export enum SelectionType {
       </ng-container>
 
       <!-- Item has children -->
-      <ng-container
-        *ngIf="
-          !isArray(data.item) && data.item.hasChildren() && data.item.expanded && !data.item.hidden
-        "
-      >
+      <ng-container *ngIf="shouldRenderChildren(data.item)">
         <ng-container
           *ngFor="let item of data.item.items; index as i"
           [ngTemplateOutlet]="listItemTemplateRef"
@@ -286,6 +275,14 @@ export class AIListComponent implements OnInit {
 
   public isTemplate(value: any) {
     return value instanceof TemplateRef;
+  }
+
+  public shouldRenderItem(item: AIListItem, searchString: string) {
+    return item.id && !this.isArray(item) && item.includes(searchString) && !item.hidden;
+  }
+
+  public shouldRenderChildren(item: AIListItem) {
+    return !this.isArray(item) && item.hasChildren() && item.expanded && !item.hidden;
   }
 
   protected updateChildSelectedStates(selectedItem: AIListItem) {

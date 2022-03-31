@@ -1,7 +1,7 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import { ListBuilderModule } from './list-builder.module';
+import { AIListBuilderModule } from './list-builder.module';
 import { ListModule } from '../list/list.module';
 import { ButtonModule, IconModule, IconService } from 'carbon-components-angular';
 import { Add16, SubtractAlt16 } from '@carbon/icons';
@@ -12,27 +12,27 @@ import { Component, Input, OnInit } from '@angular/core';
 const simpleItems = [
   new AIListBuilderItem({
     unselectedItemProps: { value: 'Item 1' },
-    selectedItemProps: { value: 'Item 1 selected' }
+    selectedItemProps: { value: 'Item 1 selected' },
   }),
   new AIListBuilderItem({
     unselectedItemProps: { value: 'Item 2' },
-    selectedItemProps: { value: 'Item 2 yay' }
+    selectedItemProps: { value: 'Item 2 yay' },
   }),
   new AIListBuilderItem({
     unselectedItemProps: { value: 'Item 3' },
-    selectedItemProps: { value: 'Item 3' }
+    selectedItemProps: { value: 'Item 3' },
   }),
   new AIListBuilderItem({
     unselectedItemProps: { value: 'Item 4' },
-    selectedItemProps: { value: 'Item 4' }
-  })
+    selectedItemProps: { value: 'Item 4' },
+  }),
 ];
 
 const selectableItems = [
   new AIListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
-    unselectedItemProps: { value: 'Yo', isSelectable: true },
+    unselectedItemProps: { value: 'Yo', isSelectable: true, expanded: true },
     selectedItemProps: { value: 'Yo' },
     children: [
       new AIListBuilderItem({
@@ -47,12 +47,12 @@ const selectableItems = [
         unselectedItemProps: { value: 'YoChild2', isSelectable: true },
         selectedItemProps: { value: 'YoChild2' },
       }),
-    ]
+    ],
   }),
   new AIListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
-    unselectedItemProps: { value: 'Yo2', isSelectable: true },
+    unselectedItemProps: { value: 'Yo2', isSelectable: true, expanded: true },
     selectedItemProps: { value: 'Yo2' },
     children: [
       new AIListBuilderItem({
@@ -67,14 +67,14 @@ const selectableItems = [
         unselectedItemProps: { value: 'Yo2Child2', isSelectable: true },
         selectedItemProps: { value: 'Yo2Child2' },
       }),
-    ]
+    ],
   }),
 ];
 
 @Component({
   selector: 'ai-custom-icon-story',
   template: `
-    <div style='width: 900px; height: 1200px'>
+    <div style="width: 900px; height: 1200px">
       <ai-list-builder
         [items]="items"
         [unselectedListProps]="{
@@ -85,7 +85,8 @@ const selectableItems = [
           title: 'Selected items'
         }"
         [addItemButtonIcon]="addIcon"
-        [removeItemButtonIcon]="removeIcon">
+        [removeItemButtonIcon]="removeIcon"
+      >
       </ai-list-builder>
     </div>
 
@@ -96,7 +97,7 @@ const selectableItems = [
     <ng-template #removeIcon>
       <svg class="bx--btn__icon" ibmIcon="subtract--alt" size="16"></svg>
     </ng-template>
-  `
+  `,
 })
 class CustomIconStory implements OnInit {
   @Input() items = [];
@@ -112,7 +113,7 @@ class CustomIconStory implements OnInit {
 storiesOf('Components/List builder', module)
   .addDecorator(
     moduleMetadata({
-      imports: [ButtonModule, ListBuilderModule, ListModule, IconModule],
+      imports: [ButtonModule, AIListBuilderModule, ListModule, IconModule],
       declarations: [CustomIconStory],
     })
   )
@@ -131,9 +132,9 @@ storiesOf('Components/List builder', module)
         </ai-list-builder>
       </div>
       `,
-      props: {
-        items: simpleItems
-      }
+    props: {
+      items: simpleItems,
+    },
   }))
   .add('Multi select', () => ({
     template: `
@@ -151,16 +152,16 @@ storiesOf('Components/List builder', module)
       </div>
     `,
     props: {
-      items: selectableItems
-    }
+      items: selectableItems,
+    },
   }))
   .add('Custom icons', () => ({
     template: `
       <ai-custom-icon-story [items]="items"></ai-custom-icon-story>
     `,
     props: {
-      items: simpleItems
-    }
+      items: simpleItems,
+    },
   }))
   .add('Obtaining all selected items', () => ({
     template: `
@@ -178,11 +179,11 @@ storiesOf('Components/List builder', module)
         <button (click)="getSelectedItems()">Get all selected items</button>
       </div>
       `,
-      props: {
-        items: simpleItems,
-        selectedItems: [],
-        getSelectedItems: function() {
-          this.selectedItems = JSON.stringify(getSelectedItems(this.items), null, 2);
-        }
-      }
+    props: {
+      items: simpleItems,
+      selectedItems: [],
+      getSelectedItems: function () {
+        this.selectedItems = JSON.stringify(getSelectedItems(this.items), null, 2);
+      },
+    },
   }));
