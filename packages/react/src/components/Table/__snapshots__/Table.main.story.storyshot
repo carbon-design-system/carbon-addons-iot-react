@@ -21864,7 +21864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
           data-testid="table-head--overflow"
           onClick={[Function]}
           onClose={[Function]}
@@ -62051,7 +62051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
           data-testid="table-head--overflow"
           onClick={[Function]}
           onClose={[Function]}

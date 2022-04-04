@@ -1949,6 +1949,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -2814,6 +2819,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -7145,6 +7155,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -7828,6 +7843,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
