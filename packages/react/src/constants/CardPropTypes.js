@@ -901,6 +901,7 @@ export const CardPropTypes = {
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
     toLabel: PropTypes.string,
+    titleTooltipIconDescription: PropTypes.string,
   }),
   /** Adds an info icon after the title that when clicked shows a tooltip with this content.
    * Cannot be used together with the titleTextTooltip prop

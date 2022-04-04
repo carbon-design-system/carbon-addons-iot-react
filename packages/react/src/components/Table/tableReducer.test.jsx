@@ -32,8 +32,9 @@ import {
   tableCancelMultiSortColumns,
   tableClearMultiSortColumns,
 } from './tableActionCreators';
-import { getTableColumns } from './Table.story.helpers';
-import { initialState } from './Table.story';
+import { getTableColumns, getInitialState } from './Table.story.helpers';
+
+const initialState = getInitialState();
 
 const tableColumns = getTableColumns();
 

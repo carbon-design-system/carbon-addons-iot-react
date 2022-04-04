@@ -56,7 +56,10 @@ import {
   getCustomEmptyState,
   getCustomErrorState,
   getCustomToolbarContentElement,
+  getSelectDataOptions,
 } from './Table.story.helpers';
+import MockApiClient from './AsyncTable/MockApiClient';
+import AsyncTable from './AsyncTable/AsyncTable';
 
 // Dataset used to speed up stories using row edit
 const storyTableData = getTableData();
@@ -100,6 +103,7 @@ export const Playground = () => {
     useAutoTableLayoutForResize,
     demoColumnTooltips,
     demoColumnGroupAssignments,
+    demoColumnOverflowMenuItems,
     columnGroups,
     hasColumnSelection,
     hasColumnSelectionConfig,
@@ -171,6 +175,7 @@ export const Playground = () => {
         'demoEmptyState',
         'demoCustomEmptyState',
         'demoCustomErrorState',
+        'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
       ].includes(name)
         ? false
@@ -264,6 +269,7 @@ export const Playground = () => {
       tooltip: demoColumnTooltips ? `A tooltip for ${column.name}` : undefined,
       align: cellTextAlignment,
       editDataFunction: getEditDataFunction(() => {}),
+      overflowMenuItems: demoColumnOverflowMenuItems ? getSelectDataOptions() : undefined,
     }))
     .map((column) => {
       if (demoRenderDataFunction) return column;
@@ -744,6 +750,33 @@ export const WithFiltering = () => {
   const storyNotice = hasAdvancedFilter ? (
     <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
   ) : null;
+  const operands = {
+    CONTAINS: (a, b) => a.includes(b),
+    NEQ: (a, b) => a !== b,
+    LT: (a, b) => a < b,
+    LTOET: (a, b) => a <= b,
+    EQ: (a, b) => a === b,
+    GTOET: (a, b) => a >= b,
+    GT: (a, b) => a > b,
+  };
+  const filteredData =
+    selectedTableType === 'Table' && hasAdvancedFilter
+      ? data.filter(({ values }) => {
+          // return false if a value doesn't match a valid filter
+          return advancedFilters[0].filterRules.rules.reduce(
+            (acc, { columnId, operand, value: filterValue }) => {
+              const columnValue = values[columnId].toString();
+              const comparitor = operands[operand];
+              if (advancedFilters[0].filterRules.groupLogic === 'ALL') {
+                return acc && comparitor(columnValue, filterValue);
+              }
+
+              return comparitor(columnValue, filterValue);
+            },
+            true
+          );
+        })
+      : data;
 
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (
@@ -753,7 +786,7 @@ export const WithFiltering = () => {
         key={knobRegeneratedKey}
         actions={actions}
         columns={columns}
-        data={data}
+        data={filteredData}
         options={{
           hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
           hasAdvancedFilter,
@@ -1336,5 +1369,17 @@ WithDataEditing.parameters = {
   component: Table,
   docs: {
     page: EditDataREADME,
+  },
+};
+
+export const WithAsynchronousDataSource = () => {
+  const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
+  return <AsyncTable fetchData={apiClient.getData} />;
+};
+WithAsynchronousDataSource.storyName = 'With asynchronous data source';
+WithAsynchronousDataSource.parameters = {
+  component: Table,
+  docs: {
+    page: TableREADME,
   },
 };

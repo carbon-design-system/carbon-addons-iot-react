@@ -4299,6 +4299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             
             <div
               aria-describedby={null}
+              aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

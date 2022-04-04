@@ -72,6 +72,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -829,6 +834,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2257,6 +2267,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2864,6 +2879,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
