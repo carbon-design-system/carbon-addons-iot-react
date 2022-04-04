@@ -17,11 +17,12 @@ import { settings } from '../../constants/Settings';
 import FullWidthWrapper from '../../internal/FullWidthWrapper';
 import './SideNav.story.scss';
 import StatefulTable from '../Table/StatefulTable';
-import { initialState } from '../Table/Table.story';
+import { getInitialState } from '../Table/Table.story.helpers';
 
 import SideNav from './SideNav';
 
 const { prefix, iotPrefix } = settings;
+const initialTableState = getInitialState();
 
 React.Fragment = ({ children }) => children;
 
@@ -281,7 +282,7 @@ export const SideNavComponent = () => {
               <PageTitleBar title="Title" description="Description" />
 
               <div style={{ padding: '2rem' }}>
-                <StatefulTable {...initialState} />
+                <StatefulTable {...initialTableState} />
               </div>
             </div>
           </>
