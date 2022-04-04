@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.44...v2.149.0-next.45) (2022-04-04)
+
+
+### Bug Fixes
+
+* **card:** accessibility violation in card header tooltip ([475e9f6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/475e9f6b097e64b9580b8a879d20c3fdae71287a)), closes [#3395](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3395)
+
+
+
+
+
 # [2.149.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.43...v2.149.0-next.44) (2022-03-31)
 
 
