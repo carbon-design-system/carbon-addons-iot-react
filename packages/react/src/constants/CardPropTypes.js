@@ -28,6 +28,11 @@ import {
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
+import {
+  MeterChartPropTypes,
+  SparklineChartPropTypes,
+  StackedAreaChartPropTypes,
+} from './ChartPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -729,6 +734,87 @@ export const MapCardPropTypes = {
   stops: PropTypes.array,
   /** the ref used needed by a drag and drop library like react-dnd. Is added to the map container element. */
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
+};
+
+export const MeterChartCardPropTypes = {
+  content: MeterChartPropTypes.content,
+  values: MeterChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const SparklineChartCardPropTypes = {
+  content: SparklineChartPropTypes.content,
+  values: SparklineChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const StackedAreaChartCardPropTypes = {
+  content: StackedAreaChartPropTypes.content,
+  values: StackedAreaChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
 };
 
 export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };

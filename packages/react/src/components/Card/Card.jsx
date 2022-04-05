@@ -3,6 +3,7 @@ import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
+import { isEmpty } from 'lodash-es';
 
 import useVisibilityObserver from '../../hooks/useVisibilityObserver';
 import { settings } from '../../constants/Settings';
@@ -16,6 +17,7 @@ import {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   DASHBOARD_SIZES,
+  CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
@@ -24,6 +26,7 @@ import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 import EmptyState from '../EmptyState/EmptyState';
 
+import CardTypeContent from './CardTypeContent';
 import CardToolbar from './CardToolbar';
 import { CardTitle } from './CardTitle';
 
@@ -102,8 +105,8 @@ export const CardHeader = (
 );
 
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className, testId, noPadding } = props;
-  const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
+  const { children, dimensions, isExpanded, className, testId, noPadding, hasFooter } = props;
+  const height = `${dimensions.y - CARD_TITLE_HEIGHT - (hasFooter ? '40' : '0')}px`;
   return (
     <div
       data-testid={testId}
@@ -171,12 +174,15 @@ CardContent.propTypes = {
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
   noPadding: PropTypes.bool,
+  // define the actual card content depending if it has a footer or not
+  hasFooter: PropTypes.bool,
 };
 CardContent.defaultProps = {
   children: undefined,
   className: '',
   testId: 'card-content',
   noPadding: false,
+  hasFooter: false,
 };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
@@ -262,6 +268,9 @@ export const defaultProps = {
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   padding: 'default',
   overrides: undefined,
+  type: null,
+  data: null,
+  content: null,
 };
 
 /** Dumb component that renders the card basics */
@@ -274,7 +283,7 @@ const Card = (props) => {
     hasTitleWrap,
     layout,
     isLoading,
-    isEmpty,
+    isEmpty: isEmptyProp,
     isEditable,
     isExpanded,
     isLazyLoading,
@@ -304,6 +313,10 @@ const Card = (props) => {
     extraActions,
     padding,
     overrides,
+    // support for instantiate charts based on type
+    type,
+    data,
+    content,
     ...others
   } = props;
 
@@ -448,6 +461,14 @@ const Card = (props) => {
     />
   ) : null;
 
+  const isSupportedType =
+    type === CARD_TYPES.METER_CHART ||
+    type === CARD_TYPES.SPARKLINE_CHART ||
+    type === CARD_TYPES.STACKED_AREA_CHART;
+
+  // validate if the data is empty or prop says it's empty
+  const isCardEmpty = (isSupportedType && isEmpty(data)) || isEmptyProp;
+
   const card = (
     <CardWrapper
       {...others} // you need all of these to support dynamic positioning during edit
@@ -501,6 +522,7 @@ const Card = (props) => {
         isExpanded={isExpanded}
         className={contentClassName}
         noPadding={padding === 'none'}
+        hasFooter={!!CardFooter}
       >
         {!isVisible && isLazyLoading ? ( // if not visible don't show anything
           ''
@@ -520,11 +542,20 @@ const Card = (props) => {
             body={error}
             {...overrides?.errorMessage?.props}
           />
-        ) : isEmpty && !isEditable ? (
+        ) : isCardEmpty && !isEditable ? (
           <ErrorMessage
             title={isSmallOrThin ? strings.noDataShortLabel : strings.noDataLabel}
             icon={isSmall ? '' : 'empty'}
             {...overrides?.errorMessage?.props}
+          />
+        ) : isSupportedType ? ( // render card content based on supported type
+          // TODO: remove deprecated testID prop in v3
+          <CardTypeContent
+            testId={testID || testId}
+            isExpanded={isExpanded}
+            type={type}
+            data={data}
+            content={content}
           />
         ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
           [

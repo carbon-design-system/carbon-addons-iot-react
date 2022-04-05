@@ -1,0 +1,30 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--sparkline-chart--wrapper {
+  width: 100%;
+  height: calc(100% - (var(--card-list-height)));
+  &--list {
+    display: flex;
+    margin-bottom: $spacing-03;
+    > p,
+    span {
+      @include type-style('label-01');
+    }
+    > p {
+      color: $text-02;
+      padding-right: $spacing-05;
+    }
+  }
+}
+
+[dir='rtl'] {
+  .#{$iot-prefix}--sparkline-chart--wrapper {
+    &--list {
+      > p {
+        color: $text-02;
+        padding-left: $spacing-05;
+        padding-right: 0;
+      }
+    }
+  }
+}
