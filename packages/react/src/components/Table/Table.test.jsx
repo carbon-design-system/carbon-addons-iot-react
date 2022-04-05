@@ -24,7 +24,7 @@ import Table, { defaultProps } from './Table';
 import TableToolbar from './TableToolbar/TableToolbar';
 import TableBodyRow from './TableBody/TableBodyRow/TableBodyRow';
 import TableHead from './TableHead/TableHead';
-import { initialState } from './Table.story';
+import { getInitialState } from './Table.story.helpers';
 
 const { iotPrefix, prefix } = settings;
 
@@ -34,6 +34,7 @@ const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
 const tableData = addRowActions(getTableData(20, words, selectData));
 const largeTableData = getTableData(100, words, selectData);
+const initialState = getInitialState();
 
 const i18nTest = {
   /** table body */

@@ -68,6 +68,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <button
           aria-describedby={null}
@@ -310,6 +315,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <button
           aria-describedby={null}

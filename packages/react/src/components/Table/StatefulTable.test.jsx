@@ -10,7 +10,6 @@ import { settings } from '../../constants/Settings';
 import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
 import TableSkeletonWithHeaders from './TableSkeletonWithHeaders/TableSkeletonWithHeaders';
-import { StatefulTableWithNestedRowItems } from './StatefulTable.story';
 import {
   getMockActions,
   getNestedRows,
@@ -18,13 +17,15 @@ import {
   getSelectData,
   getTableColumns,
 } from './Table.test.helpers';
-import { initialState, tableData } from './Table.story';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
+import { addChildRows, getInitialState, getRowActions, getTableData } from './Table.story.helpers';
 
 const { prefix, iotPrefix } = settings;
 const mockActions = getMockActions(jest.fn);
 const selectData = getSelectData();
 const tableColumns = getTableColumns(selectData);
+const tableData = getTableData();
+const initialState = getInitialState();
 
 describe('stateful table with real reducer', () => {
   beforeEach(() => {
@@ -104,7 +105,28 @@ describe('stateful table with real reducer', () => {
   });
   it('render nestedRows', async () => {
     const tableId = 'tableId';
-    render(<StatefulTableWithNestedRowItems id={tableId} actions={mockActions} />);
+    const data = getTableData()
+      .slice(0, 10)
+      .map((row, index) => {
+        const parent = addChildRows(row, index, true);
+        parent.rowActions = getRowActions(index);
+        return parent;
+      });
+
+    render(
+      <StatefulTable
+        id={tableId}
+        actions={mockActions}
+        columns={getTableColumns()}
+        data={data}
+        options={{
+          hasRowActions: true,
+          hasRowNesting: true,
+          shouldExpandOnRowClick: true,
+        }}
+      />
+    );
+
     expect(screen.queryByText('whiteboard can eat 2A')).toBeNull();
     userEvent.click(
       screen
