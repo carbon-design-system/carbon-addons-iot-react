@@ -1,47 +1,47 @@
 import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withKnobs } from '@storybook/addon-knobs';
 
-import { AIListBuilderModule } from './list-builder.module';
+import { ListBuilderModule } from './list-builder.module';
 import { ListModule } from '../list/list.module';
 import { ButtonModule, IconModule, IconService } from 'carbon-components-angular';
 import { Add16, SubtractAlt16 } from '@carbon/icons';
-import { AIListBuilderItem } from './list-builder-item.class';
+import { ListBuilderItem } from './list-builder-item.class';
 import { getSelectedItems } from './list-builder-utils';
 import { Component, Input, OnInit } from '@angular/core';
 
 const simpleItems = [
-  new AIListBuilderItem({
+  new ListBuilderItem({
     unselectedItemProps: { value: 'Item 1' },
     selectedItemProps: { value: 'Item 1 selected' },
   }),
-  new AIListBuilderItem({
+  new ListBuilderItem({
     unselectedItemProps: { value: 'Item 2' },
     selectedItemProps: { value: 'Item 2 yay' },
   }),
-  new AIListBuilderItem({
+  new ListBuilderItem({
     unselectedItemProps: { value: 'Item 3' },
     selectedItemProps: { value: 'Item 3' },
   }),
-  new AIListBuilderItem({
+  new ListBuilderItem({
     unselectedItemProps: { value: 'Item 4' },
     selectedItemProps: { value: 'Item 4' },
   }),
 ];
 
 const selectableItems = [
-  new AIListBuilderItem({
+  new ListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
     unselectedItemProps: { value: 'Yo', isSelectable: true, expanded: true },
     selectedItemProps: { value: 'Yo' },
     children: [
-      new AIListBuilderItem({
+      new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
         unselectedItemProps: { value: 'YoChild', isSelectable: true },
         selectedItemProps: { value: 'YoChild' },
       }),
-      new AIListBuilderItem({
+      new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
         unselectedItemProps: { value: 'YoChild2', isSelectable: true },
@@ -49,19 +49,19 @@ const selectableItems = [
       }),
     ],
   }),
-  new AIListBuilderItem({
+  new ListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
     unselectedItemProps: { value: 'Yo2', isSelectable: true, expanded: true },
     selectedItemProps: { value: 'Yo2' },
     children: [
-      new AIListBuilderItem({
+      new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
         unselectedItemProps: { value: 'Yo2Child', isSelectable: true },
         selectedItemProps: { value: 'Yo2Child' },
       }),
-      new AIListBuilderItem({
+      new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
         unselectedItemProps: { value: 'Yo2Child2', isSelectable: true },
@@ -113,7 +113,7 @@ class CustomIconStory implements OnInit {
 storiesOf('Components/List builder', module)
   .addDecorator(
     moduleMetadata({
-      imports: [ButtonModule, AIListBuilderModule, ListModule, IconModule],
+      imports: [ButtonModule, ListBuilderModule, ListModule, IconModule],
       declarations: [CustomIconStory],
     })
   )

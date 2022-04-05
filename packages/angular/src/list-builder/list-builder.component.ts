@@ -2,7 +2,7 @@ import { AfterViewInit, Component, Input, OnInit, TemplateRef, ViewChild } from 
 import { ArrowRight16, Subtract16 } from '@carbon/icons';
 import { AIListItem } from '@ai-apps/angular/list';
 import { IconService } from 'carbon-components-angular';
-import { AIListBuilderItem } from './list-builder-item.class';
+import { ListBuilderItem } from './list-builder-item.class';
 
 @Component({
   selector: 'ai-list-builder',
@@ -44,8 +44,8 @@ import { AIListBuilderItem } from './list-builder-item.class';
     </ng-template>
   `,
 })
-export class AIListBuilderComponent implements OnInit, AfterViewInit {
-  @Input() set items(items: AIListBuilderItem[]) {
+export class ListBuilderComponent implements OnInit, AfterViewInit {
+  @Input() set items(items: ListBuilderItem[]) {
     this.unselectedListItems = [];
     this.selectedListItems = [];
     this._items = items;
@@ -81,7 +81,7 @@ export class AIListBuilderComponent implements OnInit, AfterViewInit {
    */
   selectedListItems = [];
 
-  protected _items: AIListBuilderItem[] = [];
+  protected _items: ListBuilderItem[] = [];
 
   constructor(protected iconService: IconService) {}
 
@@ -98,13 +98,13 @@ export class AIListBuilderComponent implements OnInit, AfterViewInit {
   }
 
   /**
-   * Creates unselected and selected list items from `AIListBuilderItem`s. The unselected and selected list
+   * Creates unselected and selected list items from `ListBuilderItem`s. The unselected and selected list
    * items are created in a way where they are tied to each other. For example, selecting an unselected
    * list item will cause its associated selected list item to be displayed.
    *
    * The unselected and selected list items are stored in the `unselectedItems` and `selectedItems` parameters.
    */
-  protected createListItems(items: AIListBuilderItem[], unselectedItems = [], selectedItems = []) {
+  protected createListItems(items: ListBuilderItem[], unselectedItems = [], selectedItems = []) {
     items.forEach((item: any) => {
       const unselectedItem = new AIListItem(item.unselectedItemProps);
       const selectedItem = new AIListItem(item.selectedItemProps);

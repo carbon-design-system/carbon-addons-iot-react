@@ -1,8 +1,8 @@
-import { AIListBuilderItem } from './list-builder-item.class';
+import { ListBuilderItem } from './list-builder-item.class';
 
-export const getSelectedItems = (items: AIListBuilderItem[]) => {
+export const getSelectedItems = (items: ListBuilderItem[]) => {
   return items.reduce(
-    (displayedItems: AIListBuilderItem[], item: AIListBuilderItem) =>
+    (displayedItems: ListBuilderItem[], item: ListBuilderItem) =>
       item.added
         ? [
             ...displayedItems,

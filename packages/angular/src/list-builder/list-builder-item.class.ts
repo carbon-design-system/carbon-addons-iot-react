@@ -1,4 +1,4 @@
-export class AIListBuilderItem {
+export class ListBuilderItem {
   addingMethod: 'row-action' | 'select' = 'row-action';
   hideUnselectedItemOnSelect = true;
 
@@ -9,7 +9,7 @@ export class AIListBuilderItem {
   // Props for the list item in the selected list.
   selectedItemProps: any = {};
 
-  children: AIListBuilderItem[] = [];
+  children: ListBuilderItem[] = [];
 
   constructor(rawData?: any) {
     Object.assign(this, {}, rawData);

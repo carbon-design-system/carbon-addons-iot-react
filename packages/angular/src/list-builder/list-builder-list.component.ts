@@ -6,7 +6,7 @@ import { AIListItem } from '@ai-apps/angular/list';
   selector: 'ai-list-builder-list',
   template: ` <ai-list #list [items]="items"> </ai-list> `,
 })
-export class AIListBuilderListComponent implements AfterViewInit {
+export class ListBuilderListComponent implements AfterViewInit {
   /**
    * Props for the selected list component
    */
