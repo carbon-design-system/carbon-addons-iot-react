@@ -17,24 +17,24 @@
 # These users own any files in the following directory at the root of
 # the repository and any of its subdirectories.
 
-* @bryancboyd @scottdickerson @davidicus @leetosc @cgirani @stuckless @tomklapiscak @JoelArmendariz @jessieyan @blechner @sstone2423 @herleraja
+* @davidicus @jessieyan
 
 #####
 # Core admin team should be notified of changes to build/test/deploy
 
 # Core dependencies
-/package.json  @davidicus @bryancboyd @scottdickerson
-/yarn.lock     @davidicus @bryancboyd @scottdickerson
+/package.json  @davidicus
+/yarn.lock     @davidicus
 
 # Configuration files
-**/*.config.js  @davidicus @bryancboyd @scottdickerson
-**/config/      @davidicus @bryancboyd @scottdickerson
-/.nvmrc         @davidicus @bryancboyd @scottdickerson
+**/*.config.js  @davidicus
+**/config/      @davidicus
+/.nvmrc         @davidicus
 
 # Deploy configuration
-**/.storybook/       @davidicus @bryancboyd @scottdickerson
-/.github/workflows/  @davidicus @bryancboyd @scottdickerson
-/netlify.toml        @davidicus @bryancboyd @scottdickerson
+**/.storybook/       @davidicus
+/.github/workflows/  @davidicus
+/netlify.toml        @davidicus
 
 #####
 # Release team should be notified of Public API changes in the system
