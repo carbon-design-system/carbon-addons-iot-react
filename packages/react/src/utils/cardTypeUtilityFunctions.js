@@ -2,7 +2,7 @@ import { CARD_TYPES } from '../constants/LayoutConstants';
 
 export const getChartOptions = (type, hasData, content) => {
   const basicOptionsObject = {
-    color: content.colors,
+    color: content.color,
     animations: false,
     accessibility: true,
     toolbar: {
