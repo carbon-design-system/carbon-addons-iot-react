@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.46...v2.149.0-next.47) (2022-04-11)
+
+
+### Bug Fixes
+
+* **cardtype:** fix on color variable name ([7127e70](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7127e7084d87b182a81b3753ff87756bdfbc08db))
+
+
+
+
+
 # [2.149.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.45...v2.149.0-next.46) (2022-04-05)
 
 
