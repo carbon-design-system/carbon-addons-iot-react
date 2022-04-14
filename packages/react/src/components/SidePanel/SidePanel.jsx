@@ -29,6 +29,7 @@ const propTypes = {
   secondaryButton: PropTypes.node,
   icons: PropTypes.arrayOf(PropTypes.node),
   testId: PropTypes.string,
+  condensed: PropTypes.bool,
 };
 const defaultProps = {
   direction: 'end',
@@ -45,6 +46,7 @@ const defaultProps = {
   secondaryButton: null,
   testId: undefined,
   icons: undefined,
+  condensed: false,
 };
 
 const SidePanel = ({
@@ -62,6 +64,7 @@ const SidePanel = ({
   direction = 'end',
   icons,
   testId,
+  condensed,
 }) => {
   const getIcon = () => {
     let icon;
@@ -106,7 +109,11 @@ const SidePanel = ({
         <div className="panel-content-wrapper">
           <div
             data-testid="side-panel-title"
-            className={`${iotPrefix}--side-panel--title ${iotPrefix}--side-panel--title--with-close`}
+            className={classNames(
+              `${iotPrefix}--side-panel--title`,
+              `${iotPrefix}--side-panel--title--with-close`,
+              { [`${iotPrefix}--side-panel--title--condensed`]: condensed }
+            )}
           >
             {title}
           </div>

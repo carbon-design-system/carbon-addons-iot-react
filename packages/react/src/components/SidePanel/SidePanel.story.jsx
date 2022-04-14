@@ -10,7 +10,7 @@ import SidePanel from './SidePanel';
 
 const primaryButton = (
   <Button
-    id="buttonIcon1"
+    testId="primaryButton"
     kind="primary"
     onClick={() => {
       action('Initiate clicked');
@@ -22,7 +22,7 @@ const primaryButton = (
 
 const secondaryButton = (
   <Button
-    id="buttonIcon2"
+    testId="secondaryButton"
     kind="secondary"
     onClick={() => {
       action('Cancel clicked');
@@ -52,8 +52,16 @@ const items = [
 ];
 
 const iconButtons = [
-  <Button hasIconOnly kind="ghost" renderIcon={Edit16} onClick={action('clicked')} size="small" />,
   <Button
+    id="icon1"
+    hasIconOnly
+    kind="ghost"
+    renderIcon={Edit16}
+    onClick={action('clicked')}
+    size="small"
+  />,
+  <Button
+    id="icon2"
     hasIconOnly
     kind="ghost"
     renderIcon={Information16}
@@ -61,6 +69,7 @@ const iconButtons = [
     size="small"
   />,
   <Button
+    id="icon3"
     hasIconOnly
     kind="ghost"
     renderIcon={SendAlt16}
@@ -100,6 +109,7 @@ const Interactive = ({
   showDrawer,
   showCloseButton,
   icons,
+  condensed,
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -124,6 +134,7 @@ const Interactive = ({
         showDrawer={showDrawer}
         showCloseButton={showCloseButton}
         onClose={() => setOpen(!open)}
+        condensed={condensed}
       />
       <div style={{ padding: '1rem' }}>
         <p>
@@ -169,7 +180,8 @@ export const SlideOverStory = () => (
     direction={select('direction', ['start', 'end'], 'start')}
     slideOver
     showCloseButton={boolean('Show close button', false)}
-    icons={iconButtons}
+    icons={boolean('Show icons', false) ? iconButtons : undefined}
+    condensed={boolean('Condensed', false)}
   />
 );
 
@@ -179,7 +191,8 @@ export const SlideInStory = () => (
   <Interactive
     direction={select('direction', ['start', 'end'], 'start')}
     slideIn
-    icons={iconButtons}
+    icons={boolean('Show icons', false) ? iconButtons : undefined}
+    condensed={boolean('Condensed', false)}
   />
 );
 
@@ -190,6 +203,8 @@ export const SlideInlineStory = () => (
     direction={select('direction', ['start', 'end'], 'start')}
     inline
     showDrawer={boolean('Show drawer', false)}
+    icons={boolean('Show icons', false) ? iconButtons : undefined}
+    condensed={boolean('Condensed', false)}
   />
 );
 

@@ -34358,6 +34358,7 @@ Map {
   },
   "SidePanel" => Object {
     "defaultProps": Object {
+      "condensed": false,
       "content": "",
       "direction": "end",
       "icons": undefined,
@@ -34374,8 +34375,11 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "condensed": Object {
+        "type": "bool",
+      },
       "content": Object {
-        "type": "string",
+        "type": "node",
       },
       "direction": Object {
         "type": "string",

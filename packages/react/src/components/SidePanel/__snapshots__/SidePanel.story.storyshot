@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--slide-in active"
+      className="iot--side-panel iot--side-panel--drawer iot--side-panel--slide-in"
     >
       <div
         className="panel iot--side-panel--start"
@@ -110,45 +110,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="iot--side-panel--footer"
-            data-testid="side-panel-footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon2"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--primary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon1"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Initiate
-            </button>
           </div>
         </div>
       </div>
@@ -271,44 +232,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--inline active"
+      className="iot--side-panel iot--side-panel--drawer iot--side-panel--inline"
     >
       <div
         className="panel iot--side-panel--start"
       >
-        <button
-          aria-describedby={null}
-          className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="close-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          />
-          <svg
-            aria-hidden={true}
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
-            />
-          </svg>
-        </button>
         <div
           className="panel-content-wrapper"
         >
@@ -400,45 +328,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="iot--side-panel--footer"
-            data-testid="side-panel-footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon2"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--primary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon1"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Initiate
-            </button>
           </div>
         </div>
       </div>
@@ -561,44 +450,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--slide-over active"
+      className="iot--side-panel iot--side-panel--drawer iot--side-panel--slide-over"
     >
       <div
         className="panel iot--side-panel--start"
       >
-        <button
-          aria-describedby={null}
-          className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="close-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          />
-          <svg
-            aria-hidden={true}
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-            />
-          </svg>
-        </button>
         <div
           className="panel-content-wrapper"
         >
@@ -690,45 +546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
             </div>
-          </div>
-          <div
-            className="iot--side-panel--footer"
-            data-testid="side-panel-footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--secondary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon2"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Cancel
-            </button>
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--primary"
-              data-testid="Button"
-              disabled={false}
-              id="buttonIcon1"
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Initiate
-            </button>
           </div>
         </div>
       </div>
