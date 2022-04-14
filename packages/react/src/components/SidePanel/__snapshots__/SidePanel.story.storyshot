@@ -1,0 +1,838 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide In Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex-direction": "row",
+        "margin": "1rem",
+      }
+    }
+  >
+    <div
+      className="iot--side-panel iot--slide-panel--slide-in active"
+    >
+      <div
+        className="panel iot--side-panel--start"
+      >
+        <div
+          className="panel-content-wrapper"
+        >
+          <div
+            className="iot--side-panel--title iot--side-panel--title--with-close"
+            data-testid="side-panel-title"
+          >
+            My title
+          </div>
+          <div
+            className="iot-side-panel--content"
+            data-testid="side-panel-content"
+          >
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
+              </p>
+              <div
+                className="bx--dropdown__wrapper bx--list-box__wrapper"
+                data-testid="dropdown"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="downshift-0-toggle-button"
+                  id="downshift-0-label"
+                >
+                  Dropdown label
+                </label>
+                <div
+                  className="bx--dropdown iot--dropdown bx--list-box"
+                  id="default"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <button
+                    aria-disabled={false}
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                    className="bx--list-box__field"
+                    disabled={false}
+                    id="downshift-0-toggle-button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    title="Dropdown menu options"
+                    type="button"
+                  >
+                    <span
+                      className="bx--list-box__label"
+                    >
+                      Dropdown menu options
+                    </span>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        name="chevron--down"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                        <title />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    aria-labelledby="downshift-0-label"
+                    className="bx--list-box__menu"
+                    id="downshift-0-menu"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseLeave={[Function]}
+                    role="listbox"
+                    tabIndex={-1}
+                  />
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  This is some helper text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--side-panel--footer"
+            data-testid="side-panel-footer"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon1"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Initiate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+        }
+      }
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
+      </p>
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="Button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        push
+      </button>
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="dropdown"
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-1-toggle-button"
+          id="downshift-1-label"
+        >
+          Dropdown label
+        </label>
+        <div
+          className="bx--dropdown iot--dropdown bx--list-box"
+          id="default"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-1-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title="Dropdown menu options"
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-1-label"
+            className="bx--list-box__menu"
+            id="downshift-1-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide Inline Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex-direction": "row",
+        "margin": "1rem",
+      }
+    }
+  >
+    <div
+      className="iot--side-panel iot--side-panel--inline active"
+    >
+      <div
+        className="panel iot--side-panel--start"
+      >
+        <button
+          aria-describedby={null}
+          className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          />
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5 8L10 3 10.7 3.7 6.4 8 10.7 12.3 10 13z"
+            />
+          </svg>
+        </button>
+        <div
+          className="panel-content-wrapper"
+        >
+          <div
+            className="iot--side-panel--title iot--side-panel--title--with-close"
+            data-testid="side-panel-title"
+          >
+            My title
+          </div>
+          <div
+            className="iot-side-panel--content"
+            data-testid="side-panel-content"
+          >
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
+              </p>
+              <div
+                className="bx--dropdown__wrapper bx--list-box__wrapper"
+                data-testid="dropdown"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="downshift-0-toggle-button"
+                  id="downshift-0-label"
+                >
+                  Dropdown label
+                </label>
+                <div
+                  className="bx--dropdown iot--dropdown bx--list-box"
+                  id="default"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <button
+                    aria-disabled={false}
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                    className="bx--list-box__field"
+                    disabled={false}
+                    id="downshift-0-toggle-button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    title="Dropdown menu options"
+                    type="button"
+                  >
+                    <span
+                      className="bx--list-box__label"
+                    >
+                      Dropdown menu options
+                    </span>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        name="chevron--down"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                        <title />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    aria-labelledby="downshift-0-label"
+                    className="bx--list-box__menu"
+                    id="downshift-0-menu"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseLeave={[Function]}
+                    role="listbox"
+                    tabIndex={-1}
+                  />
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  This is some helper text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--side-panel--footer"
+            data-testid="side-panel-footer"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon1"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Initiate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+        }
+      }
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
+      </p>
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="Button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        push
+      </button>
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="dropdown"
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-1-toggle-button"
+          id="downshift-1-label"
+        >
+          Dropdown label
+        </label>
+        <div
+          className="bx--dropdown iot--dropdown bx--list-box"
+          id="default"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-1-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title="Dropdown menu options"
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-1-label"
+            className="bx--list-box__menu"
+            id="downshift-1-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide Over Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flex-direction": "row",
+        "margin": "1rem",
+      }
+    }
+  >
+    <div
+      className="iot--side-panel iot--side-panel--slide-over active"
+    >
+      <div
+        className="panel iot--side-panel--start"
+      >
+        <button
+          aria-describedby={null}
+          className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          />
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+        <div
+          className="panel-content-wrapper"
+        >
+          <div
+            className="iot--side-panel--title iot--side-panel--title--with-close"
+            data-testid="side-panel-title"
+          >
+            My title
+          </div>
+          <div
+            className="iot-side-panel--content"
+            data-testid="side-panel-content"
+          >
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
+              </p>
+              <div
+                className="bx--dropdown__wrapper bx--list-box__wrapper"
+                data-testid="dropdown"
+              >
+                <label
+                  className="bx--label"
+                  htmlFor="downshift-0-toggle-button"
+                  id="downshift-0-label"
+                >
+                  Dropdown label
+                </label>
+                <div
+                  className="bx--dropdown iot--dropdown bx--list-box"
+                  id="default"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <button
+                    aria-disabled={false}
+                    aria-expanded={false}
+                    aria-haspopup="listbox"
+                    aria-labelledby="downshift-0-label downshift-0-toggle-button"
+                    className="bx--list-box__field"
+                    disabled={false}
+                    id="downshift-0-toggle-button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    title="Dropdown menu options"
+                    type="button"
+                  >
+                    <span
+                      className="bx--list-box__label"
+                    >
+                      Dropdown menu options
+                    </span>
+                    <div
+                      className="bx--list-box__menu-icon"
+                    >
+                      <svg
+                        aria-hidden={true}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        name="chevron--down"
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                        <title />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    aria-labelledby="downshift-0-label"
+                    className="bx--list-box__menu"
+                    id="downshift-0-menu"
+                    onBlur={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseLeave={[Function]}
+                    role="listbox"
+                    tabIndex={-1}
+                  />
+                </div>
+                <div
+                  className="bx--form__helper-text"
+                >
+                  This is some helper text
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="iot--side-panel--footer"
+            data-testid="side-panel-footer"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--secondary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--primary"
+              data-testid="Button"
+              disabled={false}
+              id="buttonIcon1"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              Initiate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "padding": "1rem",
+        }
+      }
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
+      </p>
+      <button
+        aria-describedby={null}
+        aria-pressed={null}
+        className="iot--btn bx--btn bx--btn--primary"
+        data-testid="Button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        push
+      </button>
+      <div
+        className="bx--dropdown__wrapper bx--list-box__wrapper"
+        data-testid="dropdown"
+      >
+        <label
+          className="bx--label"
+          htmlFor="downshift-1-toggle-button"
+          id="downshift-1-label"
+        >
+          Dropdown label
+        </label>
+        <div
+          className="bx--dropdown iot--dropdown bx--list-box"
+          id="default"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-disabled={false}
+            aria-expanded={false}
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-1-label downshift-1-toggle-button"
+            className="bx--list-box__field"
+            disabled={false}
+            id="downshift-1-toggle-button"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            title="Dropdown menu options"
+            type="button"
+          >
+            <span
+              className="bx--list-box__label"
+            >
+              Dropdown menu options
+            </span>
+            <div
+              className="bx--list-box__menu-icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                name="chevron--down"
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                />
+                <title />
+              </svg>
+            </div>
+          </button>
+          <div
+            aria-labelledby="downshift-1-label"
+            className="bx--list-box__menu"
+            id="downshift-1-menu"
+            onBlur={[Function]}
+            onKeyDown={[Function]}
+            onMouseLeave={[Function]}
+            role="listbox"
+            tabIndex={-1}
+          />
+        </div>
+        <div
+          className="bx--form__helper-text"
+        >
+          This is some helper text
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

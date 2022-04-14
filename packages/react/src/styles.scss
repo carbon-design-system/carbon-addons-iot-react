@@ -160,6 +160,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 @import 'components/SimpleIconDropdown/simple-icon-dropdown';
 @import 'components/RuleBuilder/rule-builder';
+@import 'components/SidePanel/side-panel';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
@@ -225,7 +226,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/RuleBuilder/rulebuilder';
 @import 'components/SelectUsersModal/select-users-modal';
 @import 'components/SideNav/side-nav';
-@import 'components/SidePanel/side-panel';
 @import 'components/SimplePagination/simple-pagination';
 @import 'components/SuiteHeader/suite-header';
 @import 'components/Table/TableToolbar/table-toolbar';
