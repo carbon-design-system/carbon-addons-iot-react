@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
 
@@ -99,9 +99,9 @@ const Interactive = ({
   slideIn,
   showDrawer,
   showCloseButton,
-  iconButtons,
+  icons,
 }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <div
       style={{
@@ -118,7 +118,7 @@ const Interactive = ({
         direction={direction}
         title="My title"
         content={content}
-        icons={iconButtons}
+        icons={icons}
         primaryButton={primaryButton}
         secondaryButton={secondaryButton}
         showDrawer={showDrawer}
@@ -168,7 +168,7 @@ export const SlideOverStory = () => (
   <Interactive
     direction={select('direction', ['start', 'end'], 'start')}
     slideOver
-    showCloseButton
+    showCloseButton={boolean('Show close button', false)}
     icons={iconButtons}
   />
 );
@@ -186,7 +186,11 @@ export const SlideInStory = () => (
 SlideInStory.storyName = 'Slide In Example';
 
 export const SlideInlineStory = () => (
-  <Interactive direction={select('direction', ['start', 'end'], 'start')} inline showDrawer />
+  <Interactive
+    direction={select('direction', ['start', 'end'], 'start')}
+    inline
+    showDrawer={boolean('Show drawer', false)}
+  />
 );
 
 SlideInlineStory.storyName = 'Slide Inline Example';

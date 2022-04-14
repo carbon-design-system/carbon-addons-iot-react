@@ -23,7 +23,7 @@ const propTypes = {
   showCloseButton: PropTypes.bool,
   showDrawer: PropTypes.bool,
   title: PropTypes.string,
-  content: PropTypes.string,
+  content: PropTypes.node,
   onClose: PropTypes.func,
   primaryButton: PropTypes.node,
   secondaryButton: PropTypes.node,
