@@ -5,7 +5,9 @@ import StatefulTable from './StatefulTable';
 import EmptyTable from './EmptyTable/EmptyTable';
 import Table from './Table';
 import { getMockActions } from './Table.test.helpers';
-import { initialState } from './Table.story';
+import { getInitialState } from './Table.story.helpers';
+
+const initialState = getInitialState();
 
 const mockActions = getMockActions(jest.fn);
 

@@ -11,6 +11,8 @@ import Edit from '@carbon/icons-react/es/edit/16';
 
 import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
+import EmptyState from '../EmptyState';
+import Dropdown from '../Dropdown/Dropdown';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -109,6 +111,7 @@ export const getTableActions = () => ({
     onChangeAdvancedFilter: action('onChangeAdvancedFilter'),
     onApplyAdvancedFilter: action('onApplyAdvancedFilter'),
     onToggleAdvancedFilter: action('onToggleAdvancedFilter'),
+    onToggleAggregations: action('onToggleAggregations'),
     // TODO: removed to mimic the current state of consumers in the wild
     // since they won't be adding this prop to any of their components
     // can be readded in V3.
@@ -604,23 +607,72 @@ export const objectWithSubstitution = (
   return revert(knobData);
 };
 
+const convertUTCDateToLocalDate = (date) => {
+  const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
+  return localDate.toISOString().slice(0, 19);
+};
 // eslint-disable-next-line react/prop-types
 export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
-  const id = `${columnId}-${rowId}`;
-  return React.isValidElement(value) ? (
+  const elementId = `${columnId}-${rowId}`;
+
+  return columnId === 'node' ? (
     value
-  ) : typeof value === 'boolean' ? (
+  ) : columnId === 'date' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => {
+        const dateCleared = e.currentTarget.value === '';
+        const newVal = dateCleared ? value : new Date(e.currentTarget.value).toISOString();
+        onDataChange(newVal, columnId, rowId);
+      }}
+      type="datetime-local"
+      light
+      defaultValue={convertUTCDateToLocalDate(new Date(value))}
+      labelText=""
+      hideLabel
+    />
+  ) : columnId === 'select' ? (
+    <Dropdown
+      id={elementId}
+      light
+      items={getSelectDataOptions()}
+      initialSelectedItem={value}
+      onChange={({ selectedItem: { id } }) => onDataChange(id, columnId, rowId)}
+      label=""
+    />
+  ) : columnId === 'boolean' ? (
     <Checkbox
       defaultChecked={value}
-      id={id}
+      id={elementId}
       labelText=""
       hideLabel
       onChange={(e) => onDataChange(e, columnId, rowId)}
     />
+  ) : columnId === 'object' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => onDataChange({ ...value, id: e.currentTarget.value }, columnId, rowId)}
+      type="text"
+      light
+      // eslint-disable-next-line react/prop-types
+      defaultValue={value.id}
+      labelText=""
+      hideLabel
+    />
+  ) : columnId === 'number' ? (
+    <TextInput
+      id={elementId}
+      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
+      type="number"
+      light
+      defaultValue={value}
+      labelText=""
+      hideLabel
+    />
   ) : (
     <TextInput
-      id={id}
-      onChange={(e) => onDataChange(e, columnId, rowId)}
+      id={elementId}
+      onChange={(e) => onDataChange(e.currentTarget.value, columnId, rowId)}
       type="text"
       light
       defaultValue={value}
@@ -820,6 +872,31 @@ const getParsedIntOrUndefined = (value) => {
   return Number.isNaN(parsedValue) ? undefined : parsedValue;
 };
 
+export const getCustomEmptyState = () => (
+  <EmptyState
+    icon="not-authorized"
+    title="Custom empty state"
+    body="This is an custom empty state with custom icon, texts and action button"
+    action={{
+      label: 'Fix this',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
+
+export const getCustomErrorState = () => (
+  <EmptyState
+    icon="error404"
+    title="Custom error state"
+    body="Custom Error State message with custom icon, texts and action button"
+    action={{
+      label: 'Reload',
+      onClick: action('onErrorStateAction'),
+      kind: 'ghost',
+    }}
+  />
+);
 /**
  * Helper function that generate the Table knobs.
  *
@@ -836,17 +913,25 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
   const SORT_FILTER_GROUP = useGroups ? 'Sort & filter' : undefined;
   const SEARCH_GROUP = useGroups ? 'Search' : undefined;
   const COLUMN_GROUP = useGroups ? 'Column configuration' : undefined;
-  const AGGREGATION_GROUP = useGroups ? 'Aggregation' : undefined;
+  const AGGREGATION_GROUP = useGroups ? 'Aggregations' : undefined;
   const PAGINATION_GROUP = useGroups ? 'Pagination' : undefined;
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
-  const STATES_GROUP = useGroups ? 'States' : undefined;
+  const STATES_GROUP = useGroups ? 'Main view states' : undefined;
 
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
   return {
     selectedTableType: shouldCreate('selectedTableType')
-      ? select('Type of Table', ['Table', 'StatefulTable'], 'StatefulTable', TABLE_GROUP)
+      ? select(
+          'Type of Table',
+          ['Table', 'StatefulTable'],
+          (() => {
+            const tableType = getDefaultValue('selectedTableType');
+            return typeof tableType === 'string' ? tableType : 'StatefulTable';
+          })(),
+          TABLE_GROUP
+        )
       : null,
 
     tableMaxWidth: shouldCreate('tableMaxWidth')
@@ -998,6 +1083,11 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
               align: 'start',
               isSortable: false,
             },
+            {
+              id: 'object',
+              isSortable: false,
+              value: '5',
+            },
           ],
           AGGREGATION_GROUP
         )
@@ -1116,6 +1206,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Show config button in legacy column management (options.hasColumnSelectionConfig)',
           getDefaultValue('hasColumnSelectionConfig'),
+          COLUMN_GROUP
+        )
+      : null,
+    demoColumnOverflowMenuItems: shouldCreate('demoColumnOverflowMenuItems')
+      ? boolean(
+          'Demo column overflow menu (columns[i].overflowMenuItems)',
+          getDefaultValue('demoColumnOverflowMenuItems'),
           COLUMN_GROUP
         )
       : null,
@@ -1302,11 +1399,7 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
         )
       : null,
     demoEmptyState: shouldCreate('demoEmptyState')
-      ? boolean(
-          'Demo empty state (view.table.emptyState)',
-          getDefaultValue('demoEmptyState'),
-          STATES_GROUP
-        )
+      ? boolean('Demo empty state (data)', getDefaultValue('demoEmptyState'), STATES_GROUP)
       : null,
     demoCustomEmptyState: shouldCreate('demoCustomEmptyState')
       ? boolean(
@@ -1314,6 +1407,9 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           getDefaultValue('demoCustomEmptyState'),
           STATES_GROUP
         )
+      : null,
+    error: shouldCreate('error')
+      ? text('Show error state with this string (error)', '', STATES_GROUP)
       : null,
     demoCustomErrorState: shouldCreate('demoCustomErrorState')
       ? boolean(
@@ -1427,5 +1523,80 @@ export const getI18nKnobs = (useGroup = true) => {
     multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
     multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
     toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+  };
+};
+
+// Copied in from old table story where it was previously exported
+// to also be used in testing and other stories embedding a table
+export const getInitialState = () => {
+  const tableColumns = getTableColumns();
+  return {
+    columns: tableColumns.map((i, idx) => ({
+      ...i,
+      isSortable: idx !== 1,
+    })),
+    data: getTableData().map((i, idx) => ({
+      ...i,
+      rowActions: getRowActions(idx),
+    })),
+    expandedData: [
+      {
+        rowId: 'row-1',
+        content: <div>HELLO CONTENT</div>,
+      },
+    ],
+    options: {
+      hasFilter: true,
+      hasSearch: true,
+      hasPagination: true,
+      hasRowSelection: 'multi',
+      hasRowExpansion: true,
+      hasRowActions: true,
+      hasColumnSelection: true,
+      shouldExpandOnRowClick: false,
+      hasRowEdit: true,
+    },
+    view: {
+      filters: [
+        {
+          columnId: 'string',
+          value: 'whiteboard',
+        },
+        {
+          columnId: 'select',
+          value: 'option-B',
+        },
+      ],
+      pagination: {
+        pageSize: 10,
+        pageSizes: [10, 20, 30],
+        page: 1,
+      },
+      table: {
+        loadingMoreIds: [],
+        isSelectAllSelected: false,
+        selectedIds: [],
+        sort: undefined,
+        ordering: tableColumns.map(({ id }) => ({
+          columnId: id,
+          isHidden: id === 'secretField',
+        })),
+        expandedIds: [],
+        rowActions: [],
+        singleRowEditButtons: <span>singleRowEditButtons implementation needed</span>,
+      },
+      toolbar: {
+        activeBar: 'filter',
+        batchActions: [
+          {
+            id: 'delete',
+            labelText: 'Delete',
+            // renderIcon: TrashCan16,
+            iconDescription: 'Delete',
+          },
+        ],
+        rowEditBarButtons: <div>App implementation of rowEdit bar buttons expected</div>,
+      },
+    },
   };
 };

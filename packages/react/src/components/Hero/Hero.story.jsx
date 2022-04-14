@@ -24,7 +24,7 @@ const tooltip = {
 };
 
 export default {
-  title: '1 - Watson IoT/🚫 Hero',
+  title: '1 - Watson IoT/Deprecated/🚫 Hero',
   decorators: [(storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 };
 

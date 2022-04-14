@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all card sizes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all card sizes 1`] = `
 <div
   className="storybook-container"
 >
@@ -53,7 +53,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -120,7 +119,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "632px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -187,7 +185,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -254,7 +251,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "632px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -321,7 +317,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "1280px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -388,7 +383,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -455,7 +449,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "632px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -522,7 +515,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "1280px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -574,7 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, all cards as resizable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, all cards as resizable 1`] = `
 <div
   className="storybook-container"
 >
@@ -887,6 +879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 
                 <div
                   aria-describedby={null}
+                  aria-label="Tooltip info icon"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
                   onClick={[Function]}
@@ -1913,7 +1906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-169"
+                    aria-controls="accordion-item-177"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1944,7 +1937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-169"
+                    id="accordion-item-177"
                   >
                     <div
                       className="toggle-group"
@@ -1992,7 +1985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-170"
+                    aria-controls="accordion-item-178"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2023,7 +2016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-170"
+                    id="accordion-item-178"
                   >
                     More Map settings
                   </div>
@@ -2034,7 +2027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-171"
+                    aria-controls="accordion-item-179"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2065,7 +2058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-171"
+                    id="accordion-item-179"
                   >
                     Even more settings
                   </div>
@@ -4103,7 +4096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, custom layout 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, custom layout 1`] = `
 <div
   className="storybook-container"
 >
@@ -4137,7 +4130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       >
         <div
           className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My Facility Metrics"
           data-testid="Card"
           id="facility"
           onMouseDown={[Function]}
@@ -4157,7 +4149,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "632px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4205,7 +4196,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My Humidity Values"
           data-testid="Card"
           id="humidity"
           onMouseDown={[Function]}
@@ -4225,7 +4215,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4273,7 +4262,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My utilization chart"
           data-testid="Card"
           id="utilization"
           onMouseDown={[Function]}
@@ -4293,7 +4281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4345,7 +4332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, default layouts 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, default layouts 1`] = `
 <div
   className="storybook-container"
 >
@@ -4395,7 +4382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         >
           <div
             className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Facility Metrics"
             data-testid="Card"
             id="facility"
             onMouseDown={[Function]}
@@ -4415,7 +4401,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "632px",
               }
             }
-            type="VALUE"
           >
             <div
               className="iot--card--header"
@@ -4463,7 +4448,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </div>
           <div
             className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-            content="My Humidity Values"
             data-testid="Card"
             id="humidity"
             onMouseDown={[Function]}
@@ -4483,7 +4467,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "308px",
               }
             }
-            type="VALUE"
           >
             <div
               className="iot--card--header"
@@ -4531,7 +4514,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           </div>
           <div
             className="iot--card react-grid-item cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-            content="My utilization chart"
             data-testid="Card"
             id="utilization"
             onMouseDown={[Function]}
@@ -4551,7 +4533,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "308px",
               }
             }
-            type="VALUE"
           >
             <div
               className="iot--card--header"
@@ -4604,7 +4585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, is Editable 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, is Editable 1`] = `
 <div
   className="storybook-container"
 >
@@ -4638,7 +4619,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       >
         <div
           className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My Facility Metrics"
           data-testid="Card"
           id="facility"
           onMouseDown={[Function]}
@@ -4658,7 +4638,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "632px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4706,7 +4685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My Humidity Values"
           data-testid="Card"
           id="humidity"
           onMouseDown={[Function]}
@@ -4726,7 +4704,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4774,7 +4751,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--card react-grid-item react-draggable cssTransforms react-resizable-hide react-resizable iot--card--wrapper"
-          content="My utilization chart"
           data-testid="Card"
           id="utilization"
           onMouseDown={[Function]}
@@ -4794,7 +4770,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               "width": "308px",
             }
           }
-          type="VALUE"
         >
           <div
             className="iot--card--header"
@@ -4846,7 +4821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard Grid dashboard, resizable card 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Dashboard dashboard, resizable card 1`] = `
 <div
   className="storybook-container"
 >

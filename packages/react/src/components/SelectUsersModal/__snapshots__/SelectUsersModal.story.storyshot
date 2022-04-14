@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal default modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/SelectUsersModal default modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -72,6 +72,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -757,7 +762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal flat list of users 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/SelectUsersModal flat list of users 1`] = `
 <div
   className="storybook-container"
 >
@@ -829,6 +834,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2185,7 +2195,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal group list 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/SelectUsersModal group list 1`] = `
 <div
   className="storybook-container"
 >
@@ -2257,6 +2267,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"
@@ -2792,7 +2807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SelectUsersModal initial selected modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/SelectUsersModal initial selected modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -2864,6 +2879,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--list-builder__container"

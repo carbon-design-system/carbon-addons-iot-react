@@ -352,6 +352,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -618,7 +623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="TABLE"
                   >
                     <div
                       className="iot--card--content"
@@ -760,7 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 aria-expanded={false}
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
-                                className="bx--overflow-menu"
+                                className="bx--overflow-menu bx--overflow-menu--md"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1723,7 +1727,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="CUSTOM"
                     value={35}
                   >
                     <div
@@ -1750,7 +1753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -1859,7 +1862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="VALUE"
                   >
                     <div
                       className="iot--card--header"
@@ -1885,7 +1887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2040,7 +2042,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="TIMESERIES"
                   >
                     <div
                       className="iot--card--header"
@@ -2066,7 +2067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2161,7 +2162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="BAR"
                   >
                     <div
                       className="iot--card--header"
@@ -2187,7 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -3184,6 +3184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -4530,6 +4535,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -7843,6 +7853,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -9509,6 +9524,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -9775,7 +9795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
@@ -9802,7 +9821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -9914,7 +9933,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="VALUE"
                 >
                   <div
                     className="iot--card--header"
@@ -9940,7 +9958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -10941,6 +10959,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -12288,6 +12311,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -14668,6 +14696,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -17084,6 +17117,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <div
                     className="bx--modal-content"
+                    style={
+                      Object {
+                        "maxHeight": "calc(100vh - 0px)",
+                      }
+                    }
                   >
                     <div
                       className="iot--image-gallery-modal__top-section"
@@ -18334,6 +18372,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -18600,7 +18643,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TIMESERIES"
                 >
                   <div
                     className="iot--card--header"
@@ -18626,7 +18668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -19705,6 +19747,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"
@@ -19971,7 +20018,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TABLE"
                 >
                   <div
                     className="iot--card--content"
@@ -20113,7 +20159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               aria-expanded={false}
                               aria-haspopup={true}
                               aria-label="open and close list of options"
-                              className="bx--overflow-menu"
+                              className="bx--overflow-menu bx--overflow-menu--md"
                               onClick={[Function]}
                               onClose={[Function]}
                               onKeyDown={[Function]}
@@ -21077,7 +21123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
@@ -21104,7 +21149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21205,7 +21250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="VALUE"
                 >
                   <div
                     className="iot--card--header"
@@ -21231,7 +21275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21437,7 +21481,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TIMESERIES"
                 >
                   <div
                     className="iot--card--header"
@@ -21463,7 +21506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21558,7 +21601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="BAR"
                 >
                   <div
                     className="iot--card--header"
@@ -21584,7 +21626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21679,7 +21721,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
@@ -21706,7 +21747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -23007,6 +23048,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
                 <div
                   className="bx--modal-content"
+                  style={
+                    Object {
+                      "maxHeight": "calc(100vh - 0px)",
+                    }
+                  }
                 >
                   <div
                     className="iot--image-gallery-modal__top-section"

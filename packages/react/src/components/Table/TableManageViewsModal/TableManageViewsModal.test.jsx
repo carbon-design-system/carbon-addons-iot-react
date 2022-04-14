@@ -173,4 +173,32 @@ describe('TableManageViewsModal', () => {
     fireEvent.click(confirmDeleteButton);
     expect(actions.onDelete).toHaveBeenCalledWith('view1');
   });
+
+  it('should allow i18n.deleteWarningTextTemplate to be a string', () => {
+    render(
+      <TableManageViewsModal
+        views={testViews}
+        actions={actions}
+        open
+        testId={testID}
+        i18n={{
+          deleteWarningTextTemplate: "You are about to delete view '{0}'.",
+        }}
+      />
+    );
+
+    const warningMessage = "You are about to delete view 'myView 1'.";
+
+    expect(screen.queryByText(warningMessage)).not.toBeInTheDocument();
+
+    // Triggers warning dialog
+    const deleteButton = screen.getAllByLabelText(i18n.deleteIconText)[0];
+    fireEvent.click(deleteButton);
+    expect(screen.getByText(warningMessage)).toBeVisible();
+
+    // Confirms deletion
+    const confirmDeleteButton = screen.getByText(i18n.deleteWarningConfirm);
+    fireEvent.click(confirmDeleteButton);
+    expect(actions.onDelete).toHaveBeenCalledWith('view1');
+  });
 });

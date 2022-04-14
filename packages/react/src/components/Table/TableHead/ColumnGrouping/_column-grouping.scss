@@ -1,8 +1,8 @@
 /**
-  This mixin is used to switch the position of the two header rows 
+  This mixin is used to switch the position of the two header rows
   ("column row" and "group row") and adjust the heights and positions for
   all the different table sizes. Since Safari doesn't support position: relative;
-  on 'tr' elements we have to manage the repositioning on the 'th' level. 
+  on 'tr' elements we have to manage the repositioning on the 'th' level.
 **/
 @mixin adjustPositionsAndHeights($group-height, $col-height) {
   .#{$iot-prefix}--table-head--with-column-groups {
@@ -216,6 +216,10 @@
 
   &--xl {
     @include adjustPositionsAndHeights($spacing-10, $spacing-10);
+
+    .#{$iot-prefix}--table-header__column-group {
+      vertical-align: middle;
+    }
   }
   &--md {
     @include adjustPositionsAndHeights($spacing-08, $spacing-08);

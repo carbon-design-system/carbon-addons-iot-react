@@ -699,7 +699,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-698"
+                aria-controls="accordion-item-709"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -730,7 +730,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-698"
+                id="accordion-item-709"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -811,7 +811,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-699"
+                aria-controls="accordion-item-710"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -842,7 +842,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-699"
+                id="accordion-item-710"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -2008,6 +2008,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--modal-content"
+              style={
+                Object {
+                  "maxHeight": "calc(100vh - 0px)",
+                }
+              }
             >
               <div
                 className="iot--list-builder__container"
@@ -2868,6 +2873,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--modal-content"
+              style={
+                Object {
+                  "maxHeight": "calc(100vh - 0px)",
+                }
+              }
             >
               <div
                 className="iot--list-builder__container"
@@ -6255,7 +6265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-738"
+                aria-controls="accordion-item-749"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6286,7 +6296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-738"
+                id="accordion-item-749"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -6449,7 +6459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-739"
+                aria-controls="accordion-item-750"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6480,7 +6490,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-739"
+                id="accordion-item-750"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -7194,6 +7204,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--modal-content"
+              style={
+                Object {
+                  "maxHeight": "calc(100vh - 0px)",
+                }
+              }
             >
               <div
                 className="iot--list-builder__container"
@@ -7872,6 +7887,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             </div>
             <div
               className="bx--modal-content"
+              style={
+                Object {
+                  "maxHeight": "calc(100vh - 0px)",
+                }
+              }
             >
               <div
                 className="iot--list-builder__container"

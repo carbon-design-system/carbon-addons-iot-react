@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, select, boolean, object } from '@storybook/addon-knobs';
+import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16, Add16 } from '@carbon/icons-react';
 
@@ -33,7 +33,7 @@ export const getDataStateProp = () => ({
 });
 
 export default {
-  title: '1 - Watson IoT/Card',
+  title: '1 - Watson IoT/Card/Card',
 
   parameters: {
     component: Card,
@@ -161,6 +161,10 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
       },
     ],
   };
+  const demoTitleTextTooltip = boolean('demo title text tooltip (titleTextTooltip)', false);
+  const demoIconTooltip = boolean('demo info icon tooltip (tooltip)', true);
+  const hasTitleWrap = demoTitleTextTooltip ? false : boolean('wrap title', true);
+
   return (
     <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
       <Card
@@ -173,7 +177,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
           ['lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse', undefined],
           'lorem ipsum lorem ipsum santi spiritu sanctum sentorum isabella luccesse'
         )}
-        hasTitleWrap={boolean('wrap title', true)}
+        hasTitleWrap={hasTitleWrap}
         id="facilitycard-basic"
         size={size}
         isLoading={boolean('isloading', false)}
@@ -195,11 +199,21 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}
-        tooltip={<p>this is the external tooltip content</p>}
+        tooltip={demoIconTooltip ? <p>this is the external tooltip content</p> : undefined}
+        titleTextTooltip={
+          demoTitleTextTooltip ? (
+            <>
+              <p>This is the external tooltip definition shown when the title is clicked</p>
+              <Button style={{ marginTop: '16px' }} onClick={action('tooltip button clicked')}>
+                Take action
+              </Button>
+            </>
+          ) : undefined
+        }
         extraActions={extraaction === 'Single' ? singleExtraAction : multiExtraAction}
       />
     </div>
@@ -236,7 +250,7 @@ export const BasicWithRenderProp = () => {
         onClick={action('onClick')}
         tabIndex={0}
         footerContent={() => (
-          <Button size="sm" kind="ghost">
+          <Button size="field" kind="ghost">
             Footer Content
           </Button>
         )}
@@ -412,6 +426,364 @@ export const Error = () => {
 };
 
 Error.storyName = 'with error';
+
+export const EmptyStatWithFooter = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card with render prop')}
+        id="facilitycard-basic"
+        size={size}
+        isLoading={boolean('isloading', false)}
+        isEmpty={boolean('isEmpty', true)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: true,
+          expand: true,
+          edit: true,
+          clone: false,
+          delete: false,
+        })}
+        onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
+      />
+    </div>
+  );
+};
+
+EmptyStatWithFooter.storyName = 'empty state with footer';
+
+export const CardWithChartTypeMeter = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card with render prop')}
+        id="facilitycard-basic"
+        size={size}
+        isLoading={boolean('isloading', false)}
+        isEmpty={boolean('isEmpty', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: false,
+          expand: true,
+          edit: false,
+          clone: false,
+          delete: false,
+        })}
+        onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
+        type={text('type', 'METER_CHART')}
+        data={object('data', [
+          {
+            group: 'Install',
+            value: 100,
+          },
+          {
+            group: 'Limited users',
+            value: 200,
+          },
+          {
+            group: 'Base users',
+            value: 300,
+          },
+          {
+            group: 'Premium users',
+            value: 200,
+          },
+          {
+            group: 'Cron tasks',
+            value: 100,
+          },
+          {
+            group: 'Reports',
+            value: 150,
+          },
+        ])}
+        content={{
+          peak: number('content.peak', 2000),
+          meterTotal: number('content.meterTotal', 1000),
+          meterUnit: text('content.meterUnit', 'AppPoints'),
+          color: {
+            pairing: {
+              option: 5,
+            },
+          },
+          legendPosition: 'top',
+          status: object('content.status', {
+            success: [0, 300],
+            warning: [300, 900],
+            danger: [900, 2000],
+          }),
+        }}
+      />
+    </div>
+  );
+};
+
+CardWithChartTypeMeter.storyName = 'card with type prop - meter chart';
+
+export const CardWithChartTypeSparkline = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card with render prop')}
+        id="facilitycard-basic"
+        size={size}
+        isLoading={boolean('isloading', false)}
+        isEmpty={boolean('isEmpty', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: false,
+          expand: true,
+          edit: false,
+          clone: false,
+          delete: false,
+        })}
+        onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
+        type={text('type', 'SPARKLINE_CHART')}
+        data={object('data', [
+          {
+            group: 'Dataset 1',
+            date: 1558453860000,
+            value: 5,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558453920000,
+            value: 5,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558453980000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454040000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454100000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454160000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454280000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454340000,
+            value: 6,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454460000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454520000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454580000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454640000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454700000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454760000,
+            value: 2,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454820000,
+            value: 4,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454880000,
+            value: 1,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558454940000,
+            value: 1,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558455000000,
+            value: 3,
+          },
+          {
+            group: 'Dataset 1',
+            date: 1558455060000,
+            value: 2,
+          },
+        ])}
+        content={{
+          xLabel: text('content.xLabel', 'xlabel prop'),
+          yLabel: text('content.yLabel', 'y label prop'),
+          xProperty: text('content.xProperty', 'date'),
+          yProperty: text('content.yProperty', 'value'),
+          color: {
+            pairing: {
+              option: 4,
+            },
+            gradient: {
+              enabled: true,
+            },
+          },
+          listContent: object('content.listContent', [
+            { label: 'Target', value: 1000 },
+            { label: 'Mean', value: 756 },
+            { label: 'Peak', value: 1045 },
+          ]),
+        }}
+      />
+    </div>
+  );
+};
+
+CardWithChartTypeSparkline.storyName = 'card with type prop - sparkline chart';
+
+export const CardWithChartTypeStackedArea = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+      <Card
+        title={text('title', 'Card with render prop')}
+        id="facilitycard-basic"
+        size={size}
+        isLoading={boolean('isloading', false)}
+        isEmpty={boolean('isEmpty', false)}
+        isEditable={boolean('isEditable', false)}
+        isExpanded={boolean('isExpanded', false)}
+        breakpoint={breakpoint}
+        availableActions={object('availableActions', {
+          range: false,
+          expand: true,
+          edit: false,
+          clone: false,
+          delete: false,
+        })}
+        onCardAction={action('onCardAction')}
+        onFocus={action('onFocus')}
+        onBlur={action('onBlur')}
+        onClick={action('onClick')}
+        tabIndex={0}
+        footerContent={() => (
+          <Button size="sm" kind="ghost">
+            Footer Content
+          </Button>
+        )}
+        type={text('type', 'STACKED_AREA_CHART')}
+        data={object('data', [
+          {
+            group: 'Dummy',
+            date: '2019-01-01T02:00:00.000Z',
+            value: 10000,
+          },
+
+          {
+            group: 'Dummy 2',
+            date: '2019-01-05T02:00:00.000Z',
+            value: 65000,
+          },
+          {
+            group: 'Dummy 3',
+            date: '2019-01-05T02:00:00.000Z',
+            value: 65000,
+          },
+          {
+            group: 'Dummy',
+            date: '2019-01-02T02:00:00.000Z',
+            value: 50400,
+          },
+
+          {
+            group: 'Dummy 2',
+            date: '2019-01-03T02:00:00.000Z',
+            value: 32200,
+          },
+          {
+            group: 'Dummy 3',
+            date: '2019-01-07T02:00:00.000Z',
+            value: 59293,
+          },
+        ])}
+        content={{
+          xLabel: text('content.xLabel', 'xlabel prop'),
+          yLabel: text('content.yLabel', 'y label prop'),
+          xProperty: text('content.xProperty', 'date'),
+          yProperty: text('content.yProperty', 'value'),
+          color: {
+            pairing: {
+              option: 4,
+            },
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+CardWithChartTypeStackedArea.storyName = 'card with type prop - stacked are chart';
 
 export const ImplementingACustomCard = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);

@@ -28,6 +28,11 @@ import {
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
+import {
+  MeterChartPropTypes,
+  SparklineChartPropTypes,
+  StackedAreaChartPropTypes,
+} from './ChartPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -89,7 +94,7 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
   xs: PropTypes.number,
 });
 
-export const ValueCardPropTypes = {
+export const ValueContentPropTypes = {
   content: PropTypes.shape({
     attributes: PropTypes.arrayOf(AttributePropTypes).isRequired,
   }),
@@ -731,6 +736,87 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
+export const MeterChartCardPropTypes = {
+  content: MeterChartPropTypes.content,
+  values: MeterChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const SparklineChartCardPropTypes = {
+  content: SparklineChartPropTypes.content,
+  values: SparklineChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const StackedAreaChartCardPropTypes = {
+  content: StackedAreaChartPropTypes.content,
+  values: StackedAreaChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
 export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
 
 export const CardPropTypes = {
@@ -815,8 +901,16 @@ export const CardPropTypes = {
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
     toLabel: PropTypes.string,
+    titleTooltipIconDescription: PropTypes.string,
   }),
+  /** Adds an info icon after the title that when clicked shows a tooltip with this content.
+   * Cannot be used together with the titleTextTooltip prop
+   */
   tooltip: PropTypes.element,
+  /** Adds tooltip to the title (no info icon) that when clicked shows a tooltip with this content.
+   * Cannot be used together with the tooltip prop or the or the hasTitleWrap prop.
+   */
+  titleTextTooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
@@ -873,5 +967,8 @@ export const CardPropTypes = {
         hidden: PropTypes.bool,
       })
     ),
+  }),
+  overrides: PropTypes.shape({
+    errorMessage: OverridePropTypes,
   }),
 };

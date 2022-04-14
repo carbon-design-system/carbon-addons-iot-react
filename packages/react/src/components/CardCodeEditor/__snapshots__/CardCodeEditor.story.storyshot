@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/CardCodeEditor default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DashboardEditor/CardCodeEditor default 1`] = `
 <div
   className="storybook-container"
 >
@@ -68,6 +68,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <button
           aria-describedby={null}
@@ -242,7 +247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/CardCodeEditor with preloaded content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DashboardEditor/CardCodeEditor with preloaded content 1`] = `
 <div
   className="storybook-container"
 >
@@ -310,6 +315,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <button
           aria-describedby={null}

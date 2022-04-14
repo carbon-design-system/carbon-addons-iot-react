@@ -82,11 +82,7 @@ html[dir='rtl'] {
     // stylelint-disable-next-line declaration-property-unit-blacklist
     padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
-      margin: $spacing-05;
-    }
-
-    & > * {
-      margin: $spacing-03;
+      margin: $spacing-05 $spacing-05 $spacing-05 0;
     }
   }
 

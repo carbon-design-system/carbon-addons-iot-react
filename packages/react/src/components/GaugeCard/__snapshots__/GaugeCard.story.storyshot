@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/GaugeCard basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -45,6 +45,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
             
             <div
               aria-describedby={null}
+              aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -164,7 +165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard basic with expand 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/GaugeCard basic with expand 1`] = `
 <div
   className="storybook-container"
 >
@@ -209,6 +210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
             
             <div
               aria-describedby={null}
+              aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -369,7 +371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard with data state no-data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/GaugeCard with data state no-data 1`] = `
 <div
   className="storybook-container"
 >
@@ -414,6 +416,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
             
             <div
               aria-describedby={null}
+              aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}
@@ -530,7 +533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/GaugeCard with multiple gauges 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/GaugeCard with multiple gauges 1`] = `
 <div
   className="storybook-container"
 >
@@ -575,6 +578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/G
             
             <div
               aria-describedby={null}
+              aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
               onClick={[Function]}

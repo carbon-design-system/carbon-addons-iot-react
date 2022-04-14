@@ -1,12 +1,12 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { object, select, boolean, text, number } from '@storybook/addon-knobs';
-import { merge, uniqueId } from 'lodash-es';
+import { cloneDeep, debounce, merge, uniqueId } from 'lodash-es';
+import { ToastNotification } from 'carbon-components-react';
 import { SettingsAdjust16 } from '@carbon/icons-react';
 
 import StoryNotice from '../../internal/StoryNotice';
 import Button from '../Button';
-import EmptyState from '../EmptyState';
 import { DragAndDrop } from '../../utils/DragAndDropUtils';
 import RuleBuilder from '../RuleBuilder/RuleBuilder';
 import useStoryState from '../../internal/storyState';
@@ -20,9 +20,12 @@ import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
 import RowNestingREADME from './mdx/RowNesting.mdx';
 import FilteringREADME from './mdx/Filtering.mdx';
+import AggregationsREADME from './mdx/Aggregations.mdx';
 import SearchingREADME from './mdx/Searching.mdx';
+import StatesREADME from './mdx/States.mdx';
 import PaginationREADME from './mdx/Pagination.mdx';
 import ToolbarREADME from './mdx/Toolbar.mdx';
+import EditDataREADME from './mdx/EditData.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -50,8 +53,16 @@ import {
   getHiddenOverflowRowAction,
   getHiddenRowAction,
   addMoreChildRowsToParent,
+  getCustomEmptyState,
+  getCustomErrorState,
   getCustomToolbarContentElement,
+  getSelectDataOptions,
 } from './Table.story.helpers';
+import MockApiClient from './AsyncTable/MockApiClient';
+import AsyncTable from './AsyncTable/AsyncTable';
+
+// Dataset used to speed up stories using row edit
+const storyTableData = getTableData();
 
 export default {
   title: '1 - Watson IoT/Table',
@@ -77,7 +88,7 @@ export const Playground = () => {
   const [rowActionsState, setRowActionsState] = useStoryState(getRowActionStates());
 
   // KNOBS
-  // The order of appearance is defined function getTableKnobs.
+  // The order of appearance is defined by the function getTableKnobs.
   const {
     selectedTableType,
     tableMaxWidth,
@@ -92,6 +103,7 @@ export const Playground = () => {
     useAutoTableLayoutForResize,
     demoColumnTooltips,
     demoColumnGroupAssignments,
+    demoColumnOverflowMenuItems,
     columnGroups,
     hasColumnSelection,
     hasColumnSelectionConfig,
@@ -137,6 +149,7 @@ export const Playground = () => {
     loadingColumnCount,
     demoEmptyState,
     demoCustomEmptyState,
+    error: errorKnob,
     demoCustomErrorState,
     locale,
     batchActions,
@@ -162,6 +175,7 @@ export const Playground = () => {
         'demoEmptyState',
         'demoCustomEmptyState',
         'demoCustomErrorState',
+        'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
       ].includes(name)
         ? false
@@ -203,29 +217,12 @@ export const Playground = () => {
 
   const customToolbarContentElement = getCustomToolbarContentElement();
 
-  const customEmptyState = (
-    <div key="empty-state">
-      <h1 key="empty-state-heading">Custom empty state</h1>
-      <p key="empty-state-message">Hey, no data!</p>
-    </div>
-  );
-
-  const customErrorState = (
-    <EmptyState
-      icon="error"
-      title="Error occurred while loading"
-      body="Custom Error message"
-      action={{
-        label: 'Reload',
-        onClick: action('onErrorStateAction'),
-        kind: 'ghost',
-      }}
-    />
-  );
+  const customEmptyState = getCustomEmptyState();
+  const customErrorState = getCustomErrorState();
 
   // INITIAL DATA STATE
   const [data, setData] = useStoryState(
-    [...(demoEmptyState || demoCustomEmptyState ? [] : getTableData())]
+    [...(demoEmptyState || demoCustomEmptyState ? [] : storyTableData)]
       .slice(0, numberOfRows)
       .map((row, index) => (hasRowActions ? addRowAction(row, hasSingleRowEdit, index) : row))
       .map((row, index) => (hasRowNesting ? addChildRows(row, index) : row))
@@ -272,6 +269,7 @@ export const Playground = () => {
       tooltip: demoColumnTooltips ? `A tooltip for ${column.name}` : undefined,
       align: cellTextAlignment,
       editDataFunction: getEditDataFunction(() => {}),
+      overflowMenuItems: demoColumnOverflowMenuItems ? getSelectDataOptions() : undefined,
     }))
     .map((column) => {
       if (demoRenderDataFunction) return column;
@@ -301,14 +299,14 @@ export const Playground = () => {
   const advancedFilters = hasAdvancedFilter ? getAdvancedFilters() : undefined;
   const emptyState = demoCustomEmptyState ? customEmptyState : undefined;
   const errorState = demoCustomErrorState ? customErrorState : undefined;
-  const error = demoCustomErrorState ? 'Error!' : undefined;
+  const error = demoCustomErrorState ? 'Error!' : errorKnob;
 
   // For demo and test purposes we generate an new key for the table when
   // some knobs change that normally wouldn't trigger a rerender in the StatefulTable.
   const knobRegeneratedKey = `table${demoInitialColumnSizes}${JSON.stringify(aggregationsColumns)}
   ${aggregationLabel}${demoCustomEmptyState}${loadingRowCount}${loadingColumnCount}${maxPages}
   ${isItemPerPageHidden}${paginationSize}${demoToolbarActions}${toolbarIsDisabled}
-  ${searchFieldDefaultExpanded}${searchIsExpanded}`;
+  ${searchFieldDefaultExpanded}${searchIsExpanded}${error}${demoCustomErrorState}`;
 
   return (
     <DragAndDrop>
@@ -648,6 +646,54 @@ WithRowNesting.parameters = {
   },
 };
 
+export const WithAggregations = () => {
+  const {
+    selectedTableType,
+    hasAggregations,
+    aggregationLabel,
+    aggregationsColumns,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasAggregations',
+      'aggregationLabel',
+      'aggregationsColumns',
+    ],
+    getDefaultValue: () => true,
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 10);
+  const columns = getTableColumns();
+  const actions = getTableActions();
+
+  const knobRegeneratedKey = `table${JSON.stringify(aggregationsColumns)}${aggregationLabel}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={actions}
+      columns={columns}
+      data={data}
+      options={{ hasAggregations }}
+      view={{
+        aggregations: {
+          label: aggregationLabel,
+          columns: aggregationsColumns,
+        },
+      }}
+    />
+  );
+};
+
+WithAggregations.storyName = 'With aggregations';
+WithAggregations.parameters = {
+  component: Table,
+  docs: {
+    page: AggregationsREADME,
+  },
+};
+
 export const WithFiltering = () => {
   const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
     knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
@@ -704,6 +750,33 @@ export const WithFiltering = () => {
   const storyNotice = hasAdvancedFilter ? (
     <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
   ) : null;
+  const operands = {
+    CONTAINS: (a, b) => a.includes(b),
+    NEQ: (a, b) => a !== b,
+    LT: (a, b) => a < b,
+    LTOET: (a, b) => a <= b,
+    EQ: (a, b) => a === b,
+    GTOET: (a, b) => a >= b,
+    GT: (a, b) => a > b,
+  };
+  const filteredData =
+    selectedTableType === 'Table' && hasAdvancedFilter
+      ? data.filter(({ values }) => {
+          // return false if a value doesn't match a valid filter
+          return advancedFilters[0].filterRules.rules.reduce(
+            (acc, { columnId, operand, value: filterValue }) => {
+              const columnValue = values[columnId].toString();
+              const comparitor = operands[operand];
+              if (advancedFilters[0].filterRules.groupLogic === 'ALL') {
+                return acc && comparitor(columnValue, filterValue);
+              }
+
+              return comparitor(columnValue, filterValue);
+            },
+            true
+          );
+        })
+      : data;
 
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (
@@ -713,7 +786,7 @@ export const WithFiltering = () => {
         key={knobRegeneratedKey}
         actions={actions}
         columns={columns}
-        data={data}
+        data={filteredData}
         options={{
           hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
           hasAdvancedFilter,
@@ -880,6 +953,78 @@ WithInlineActions.parameters = {
   },
 };
 
+export const WithMainViewStates = () => {
+  const {
+    selectedTableType,
+    tableIsLoading,
+    demoEmptyColumns,
+    loadingRowCount,
+    loadingColumnCount,
+    demoEmptyState,
+    demoCustomEmptyState,
+    error: errorKnob,
+    demoCustomErrorState,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'tableIsLoading',
+      'demoEmptyColumns',
+      'loadingRowCount',
+      'loadingColumnCount',
+      'demoEmptyState',
+      'demoCustomEmptyState',
+      'error',
+      'demoCustomErrorState',
+    ],
+    getDefaultValue: (name) =>
+      name !== 'demoEmptyColumns' &&
+      name !== 'demoEmptyState' &&
+      name !== 'demoCustomEmptyState' &&
+      name !== 'demoCustomErrorState',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = demoCustomEmptyState || demoEmptyState ? [] : getTableData();
+  const columns = getTableColumns();
+  const emptyState = demoCustomEmptyState ? getCustomEmptyState() : undefined;
+
+  // The "error" prop needs a value in order for the view.table.errorState
+  // to appear.
+  const error = demoCustomErrorState ? 'Error!' : errorKnob;
+  const errorState = demoCustomErrorState ? getCustomErrorState() : undefined;
+
+  const knobRegeneratedKey = `table${demoCustomEmptyState}${demoEmptyState}${demoCustomErrorState}`;
+
+  return (
+    <MyTable
+      key={knobRegeneratedKey}
+      actions={getTableActions()}
+      columns={demoEmptyColumns ? [] : columns}
+      data={data}
+      options={{}}
+      error={error}
+      view={{
+        table: {
+          errorState,
+          emptyState,
+          loadingState: {
+            rowCount: loadingRowCount,
+            columnCount: loadingColumnCount,
+            isLoading: tableIsLoading,
+          },
+        },
+      }}
+    />
+  );
+};
+WithMainViewStates.storyName = 'With main view states';
+WithMainViewStates.parameters = {
+  component: Table,
+  docs: {
+    page: StatesREADME,
+  },
+};
+
 export const WithPagination = () => {
   const {
     selectedTableType,
@@ -1029,5 +1174,212 @@ WithToolbar.parameters = {
   component: Table,
   docs: {
     page: ToolbarREADME,
+  },
+};
+
+export const WithDataEditing = () => {
+  const {
+    selectedTableType,
+    hasRowActions,
+    hasRowEdit,
+    hasSingleRowEdit,
+    preserveCellWhiteSpace,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasRowActions',
+      'hasRowEdit',
+      'hasSingleRowEdit',
+      'preserveCellWhiteSpace',
+    ],
+    getDefaultValue: (knobName) => (knobName === 'selectedTableType' ? 'Table' : true),
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const editAction = getOverflowEditRowAction();
+  editAction.disabled = false;
+  const initialData = storyTableData.slice(0, 10).map((i) => ({
+    ...i,
+    rowActions: [editAction],
+  }));
+
+  const [showRowEditBar, setShowRowEditBar] = useStoryState(false);
+  const [currentData, setCurrentData] = useStoryState(initialData);
+  const [rowEditData, setRowEditedData] = useStoryState([]);
+  const [previousData, setPreviousData] = useStoryState([]);
+  const [showToast, setShowToast] = useStoryState(false);
+  const [rowActionsState, setRowActionsState] = useStoryState([]);
+  const [isPristine, setIsPristine] = useStoryState(true);
+
+  const disableRowActions = (data, disabled) => {
+    const rowAction = getOverflowEditRowAction();
+    rowAction.disabled = disabled;
+    return data.map((row) => ({ ...row, rowActions: [rowAction] }));
+  };
+
+  const onDataChange = debounce((newValue, columnId, rowId) => {
+    setRowEditedData((previousData) =>
+      previousData.map((row) =>
+        row.id === rowId ? { ...row, values: { ...row.values, [columnId]: newValue } } : row
+      )
+    );
+    setIsPristine(false);
+  });
+
+  const onShowMultiRowEdit = () => {
+    setRowEditedData(cloneDeep(currentData));
+    setShowRowEditBar(true);
+    setShowToast(false);
+    setCurrentData((prev) => disableRowActions(prev, true));
+  };
+  const onCancelRowEdit = () => {
+    setRowEditedData([]);
+    setShowRowEditBar(false);
+    setRowActionsState([]);
+    setIsPristine(true);
+    setCurrentData((prev) => disableRowActions(prev, false));
+  };
+  const onSaveRowEdit = () => {
+    // because of the nature of rendering these buttons dynamically (and asyncronously via dispatch)
+    // in the StatefulTable we need to wrap these calls inside the setRowEditedData callback to ensure
+    // we're always working with the correctly updated data.
+    setRowEditedData((prev) => {
+      setShowToast(true);
+      setPreviousData(disableRowActions(currentData, false));
+      setCurrentData(disableRowActions(prev, false));
+      setShowRowEditBar(false);
+      setRowActionsState([]);
+      setIsPristine(true);
+      return [];
+    });
+  };
+  const onUndoRowEdit = () => {
+    setCurrentData(previousData);
+    setPreviousData([]);
+    setShowToast(false);
+  };
+
+  const onApplyRowAction = (action, rowId) => {
+    if (action === 'edit') {
+      setRowEditedData(cloneDeep(currentData));
+      setCurrentData(disableRowActions(currentData, true));
+      setRowActionsState([{ rowId, isEditMode: true }]);
+    }
+  };
+
+  const saveCancelButtons = (
+    <div style={{ display: 'flex', gap: '0.5rem' }}>
+      <Button key="cancel" size="small" kind="tertiary" onClick={onCancelRowEdit}>
+        Cancel
+      </Button>
+      <Button key="save" size="small" onClick={onSaveRowEdit} disabled={isPristine}>
+        Save
+      </Button>
+    </div>
+  );
+
+  // We define some initial column widths to prevent the columns from adjusting
+  // in size when edit mode is activated
+  const columnWidths = {
+    string: '250px',
+    date: '220px',
+    select: '160px',
+    secretField: '165px',
+    status: '165px',
+    number: '95px',
+    boolean: '90px',
+    node: '115px',
+    object: '110px',
+  };
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    // This is a simplified example.
+    // The app should also handle input validation etc
+    editDataFunction: getEditDataFunction(onDataChange),
+    width: columnWidths[column.id],
+  }));
+
+  const myToast = (
+    <ToastNotification
+      style={{ position: 'absolute', zIndex: '99' }}
+      hideCloseButton={false}
+      kind="success"
+      notificationType="inline"
+      role="alert"
+      subtitle={
+        <div style={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
+          <span>Changed your mind?</span>
+          <Button
+            style={{ color: 'white', marginLeft: '12px' }}
+            kind="ghost"
+            onClick={onUndoRowEdit}
+            size="small"
+            type="button"
+          >
+            Undo edits
+          </Button>
+        </div>
+      }
+      timeout={5000}
+      title="Your changes have been saved."
+    />
+  );
+
+  return (
+    <div>
+      {showToast ? myToast : null}
+      <MyTable
+        id="table"
+        secondaryTitle="My editable table"
+        view={{
+          toolbar: {
+            activeBar: showRowEditBar ? 'rowEdit' : undefined,
+            rowEditBarButtons: saveCancelButtons,
+          },
+          table: {
+            rowActions: rowActionsState,
+            singleRowEditButtons: saveCancelButtons,
+          },
+        }}
+        // WORKAROUND for #3406
+        // Ideally we would only ever use the currentData here, but the stateful table doesn't pick
+        // up isolated changes to view.toolbar.rowEditBarButtons or view.table.singleRowEditButtons so we
+        // have to trigger the TABLE_REGISTER action by some other means in order to render the changes
+        // made to the disabled state of the save button. That is why we then use rowEditData.
+        data={selectedTableType === 'StatefulTable' && !isPristine ? rowEditData : currentData}
+        actions={{
+          table: { onApplyRowAction },
+          toolbar: { onShowRowEdit: onShowMultiRowEdit },
+        }}
+        options={{
+          preserveColumnWidths: true,
+          hasResize: true,
+          hasRowEdit,
+          hasSingleRowEdit,
+          preserveCellWhiteSpace,
+          hasRowActions,
+        }}
+        columns={columns}
+      />
+    </div>
+  );
+};
+WithDataEditing.storyName = 'With data editing';
+WithDataEditing.parameters = {
+  component: Table,
+  docs: {
+    page: EditDataREADME,
+  },
+};
+
+export const WithAsynchronousDataSource = () => {
+  const apiClient = new MockApiClient(100, number('Fetch Duration (ms)', 500));
+  return <AsyncTable fetchData={apiClient.getData} />;
+};
+WithAsynchronousDataSource.storyName = 'With asynchronous data source';
+WithAsynchronousDataSource.parameters = {
+  component: Table,
+  docs: {
+    page: TableREADME,
   },
 };

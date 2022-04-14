@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/es/chip/24';
 import Dashboard from '@carbon/icons-react/es/dashboard/24';
@@ -116,6 +117,7 @@ const customActionItems = [
         <NotificationOn id="notification-button" fill="white" description="Icon" />
       </span>
     ),
+    onClick: action('bell clicked'),
   },
   {
     label: 'bee',
@@ -295,7 +297,7 @@ const customApplications = [
 ];
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/UI shell/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,

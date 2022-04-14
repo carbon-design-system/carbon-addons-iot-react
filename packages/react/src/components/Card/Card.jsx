@@ -1,8 +1,9 @@
 import React, { useCallback, useMemo, useRef, useEffect, useState } from 'react';
-import { Tooltip, SkeletonText } from 'carbon-components-react';
+import { SkeletonText } from 'carbon-components-react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import warning from 'warning';
+import { isEmpty } from 'lodash-es';
 
 import useVisibilityObserver from '../../hooks/useVisibilityObserver';
 import { settings } from '../../constants/Settings';
@@ -16,15 +17,18 @@ import {
   DASHBOARD_BREAKPOINTS,
   DASHBOARD_COLUMNS,
   DASHBOARD_SIZES,
+  CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import { CardPropTypes } from '../../constants/CardPropTypes';
 import { getCardMinSize, filterValidAttributes } from '../../utils/componentUtilityFunctions';
 import { getUpdatedCardSize, useCardResizing } from '../../utils/cardUtilityFunctions';
-import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { parseValue } from '../DateTimePicker/dateTimePickerUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
+import EmptyState from '../EmptyState/EmptyState';
 
+import CardTypeContent from './CardTypeContent';
 import CardToolbar from './CardToolbar';
+import { CardTitle } from './CardTitle';
 
 const { prefix, iotPrefix } = settings;
 
@@ -88,24 +92,21 @@ const CardWrapper = React.forwardRef(
 
 /** Header components */
 export const CardHeader = (
-  { children, testId } // eslint-disable-line react/prop-types
+  { children, testId, hasSubtitle } // eslint-disable-line react/prop-types
 ) => (
-  <div data-testid={testId} className={`${iotPrefix}--card--header`}>
+  <div
+    data-testid={testId}
+    className={classnames(`${iotPrefix}--card--header`, {
+      [`${iotPrefix}--card--header--with-subtitle`]: hasSubtitle,
+    })}
+  >
     {children}
   </div>
 );
 
-export const CardTitle = (
-  { children, title, testId } // eslint-disable-line react/prop-types
-) => (
-  <span data-testid={testId} className={`${iotPrefix}--card--title`} title={title}>
-    {children}
-  </span>
-);
-
 const CardContent = (props) => {
-  const { children, dimensions, isExpanded, className, testId, noPadding } = props;
-  const height = `${dimensions.y - CARD_TITLE_HEIGHT}px`;
+  const { children, dimensions, isExpanded, className, testId, noPadding, hasFooter } = props;
+  const height = `${dimensions.y - CARD_TITLE_HEIGHT - (hasFooter ? '40' : '0')}px`;
   return (
     <div
       data-testid={testId}
@@ -173,12 +174,15 @@ CardContent.propTypes = {
   dimensions: PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }).isRequired,
   isExpanded: CardPropTypes.isExpanded.isRequired,
   noPadding: PropTypes.bool,
+  // define the actual card content depending if it has a footer or not
+  hasFooter: PropTypes.bool,
 };
 CardContent.defaultProps = {
   children: undefined,
   className: '',
   testId: 'card-content',
   noPadding: false,
+  hasFooter: false,
 };
 EmptyMessageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
@@ -247,6 +251,7 @@ export const defaultProps = {
     overflowMenuDescription: 'Open and close list of options',
     toLabel: 'to',
     extraActionLabel: 'Action Label',
+    titleTooltipIconDescription: 'Tooltip info icon',
   },
   onMouseDown: undefined,
   onMouseUp: undefined,
@@ -257,9 +262,15 @@ export const defaultProps = {
   onBlur: undefined,
   tabIndex: undefined,
   testId: CardWrapper.defaultProps.testId,
+  tooltip: undefined,
+  titleTextTooltip: undefined,
   footerContent: undefined,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
   padding: 'default',
+  overrides: undefined,
+  type: null,
+  data: null,
+  content: null,
 };
 
 /** Dumb component that renders the card basics */
@@ -272,7 +283,7 @@ const Card = (props) => {
     hasTitleWrap,
     layout,
     isLoading,
-    isEmpty,
+    isEmpty: isEmptyProp,
     isEditable,
     isExpanded,
     isLazyLoading,
@@ -282,6 +293,7 @@ const Card = (props) => {
     hideHeader,
     id,
     tooltip,
+    titleTextTooltip,
     timeRange,
     timeRangeOptions,
     onCardAction,
@@ -300,6 +312,11 @@ const Card = (props) => {
     dateTimeMask,
     extraActions,
     padding,
+    overrides,
+    // support for instantiate charts based on type
+    type,
+    data,
+    content,
     ...others
   } = props;
 
@@ -312,11 +329,20 @@ const Card = (props) => {
       );
     }
   }, [availableActions]);
+
+  const ErrorMessage = overrides?.errorMessage?.component || EmptyState;
+
   // Checks size property against new size naming convention and reassigns to closest supported size if necessary.
   const newSize = getUpdatedCardSize(size);
   const [cardSize, cardRef] = useSizeObserver();
 
-  const isSM = newSize === CARD_SIZES.SMALL;
+  const isSmall =
+    newSize === CARD_SIZES.SMALL ||
+    newSize === CARD_SIZES.SMALLWIDE ||
+    newSize === CARD_SIZES.SMALLFULL;
+  const isLargeThin = newSize === CARD_SIZES.LARGETHIN;
+  const isMediumThin = newSize === CARD_SIZES.MEDIUMTHIN;
+  const isSmallOrThin = isSmall || isMediumThin || isLargeThin;
 
   const dimensions = getCardMinSize(
     breakpoint,
@@ -392,11 +418,19 @@ const Card = (props) => {
     return childSize;
   };
 
-  // Ensure the title and subtitle have a tooltip only if their text is truncated
-  const titleRef = useRef();
-  const subTitleRef = useRef();
-  const hasTitleTooltip = useHasTextOverflow(titleRef, title);
-  const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
+  if (__DEV__ && titleTextTooltip && tooltip) {
+    warning(
+      false,
+      'The props titleTextTooltip and tooltip cannot be combined. Now using titleTextTooltip'
+    );
+  }
+  if (__DEV__ && titleTextTooltip && hasTitleWrap) {
+    warning(
+      false,
+      'The props titleTextTooltip and hasTitleWrap cannot be combined. Now using titleTextTooltip'
+    );
+  }
+
   const visibilityRef = useRef(null);
   const [isVisible] = useVisibilityObserver(visibilityRef, {
     unobserveAfterVisible: true,
@@ -426,6 +460,14 @@ const Card = (props) => {
       extraActions={extraActions}
     />
   ) : null;
+
+  const isSupportedType =
+    type === CARD_TYPES.METER_CHART ||
+    type === CARD_TYPES.SPARKLINE_CHART ||
+    type === CARD_TYPES.STACKED_AREA_CHART;
+
+  // validate if the data is empty or prop says it's empty
+  const isCardEmpty = (isSupportedType && isEmpty(data)) || isEmptyProp;
 
   const card = (
     <CardWrapper
@@ -457,75 +499,19 @@ const Card = (props) => {
         <CardHeader
           // TODO: remove deprecated testID prop in v3
           testId={`${testID || testId}-header`}
+          hasSubtitle={!!subtitle}
         >
           <CardTitle
-            title={title}
             // TODO: remove deprecated testID prop in v3
-            testId={`${testID || testId}-title`}
-          >
-            {hasTitleTooltip ? (
-              <Tooltip
-                data-testid={`${testID || testId}-title-tooltip`}
-                ref={titleRef}
-                showIcon={false}
-                triggerClassName={classnames(
-                  `${iotPrefix}--card--title--text__overflow`,
-                  `${iotPrefix}--card--title--text`,
-                  {
-                    [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
-                  }
-                )}
-                triggerText={title}
-              >
-                {title}
-              </Tooltip>
-            ) : (
-              <div
-                ref={titleRef}
-                data-testid={`${testId}-title-notip`}
-                className={classnames(`${iotPrefix}--card--title--text`, {
-                  [`${iotPrefix}--card--title--text--wrapped`]: hasTitleWrap && !subtitle,
-                })}
-              >
-                {title}
-              </div>
-            )}
-            {tooltip && (
-              <Tooltip
-                data-testid={`${testID || testId}-tooltip`}
-                triggerId={`card-tooltip-trigger-${id}`}
-                tooltipId={`card-tooltip-${id}`}
-                triggerClassName={`${iotPrefix}--card--header--tooltip`}
-                id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
-                triggerText=""
-              >
-                {tooltip}
-              </Tooltip>
-            )}
-            {!subtitle ? null : hasSubTitleTooltip ? (
-              <Tooltip
-                data-testid={`${testID || testId}-subtitle`}
-                ref={subTitleRef}
-                showIcon={false}
-                triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                })}
-                triggerText={subtitle}
-              >
-                {subtitle}
-              </Tooltip>
-            ) : (
-              <div
-                ref={subTitleRef}
-                data-testid={`${testID || testId}-subtitle`}
-                className={classnames(`${iotPrefix}--card--subtitle--text`, {
-                  [`${iotPrefix}--card--subtitle--text--padded`]: tooltip,
-                })}
-              >
-                {subtitle}
-              </div>
-            )}
-          </CardTitle>
+            id={id}
+            hasTitleWrap={hasTitleWrap}
+            subtitle={subtitle}
+            title={title}
+            titleTextTooltip={titleTextTooltip}
+            infoIconTooltip={tooltip}
+            titleTooltipIconDescription={strings.titleTooltipIconDescription} // To fix accessibility violation.
+            testId={`${testID || testId}`}
+          />
           {cardToolbar}
         </CardHeader>
       )}
@@ -536,6 +522,7 @@ const Card = (props) => {
         isExpanded={isExpanded}
         className={contentClassName}
         noPadding={padding === 'none'}
+        hasFooter={!!CardFooter}
       >
         {!isVisible && isLazyLoading ? ( // if not visible don't show anything
           ''
@@ -546,22 +533,30 @@ const Card = (props) => {
             }}
             className={`${iotPrefix}--card--skeleton-wrapper`}
           >
-            <OptimizedSkeletonText
-              paragraph
-              lineCount={newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE ? 2 : 3}
-              width="100%"
-            />
+            <OptimizedSkeletonText paragraph lineCount={isSmallOrThin ? 2 : 3} width="100%" />
           </div>
         ) : error ? (
-          <EmptyMessageWrapper>
-            {newSize === CARD_SIZES.SMALL || newSize === CARD_SIZES.SMALLWIDE
-              ? strings.errorLoadingDataShortLabel
-              : `${strings.errorLoadingDataLabel} ${error}`}
-          </EmptyMessageWrapper>
-        ) : isEmpty && !isEditable ? (
-          <EmptyMessageWrapper>
-            {isSM ? strings.noDataShortLabel : strings.noDataLabel}
-          </EmptyMessageWrapper>
+          <ErrorMessage
+            icon={isSmall ? '' : 'error'}
+            title={strings.errorLoadingDataShortLabel}
+            body={error}
+            {...overrides?.errorMessage?.props}
+          />
+        ) : isCardEmpty && !isEditable ? (
+          <ErrorMessage
+            title={isSmallOrThin ? strings.noDataShortLabel : strings.noDataLabel}
+            icon={isSmall ? '' : 'empty'}
+            {...overrides?.errorMessage?.props}
+          />
+        ) : isSupportedType ? ( // render card content based on supported type
+          // TODO: remove deprecated testID prop in v3
+          <CardTypeContent
+            testId={testID || testId}
+            isExpanded={isExpanded}
+            type={type}
+            data={data}
+            content={content}
+          />
         ) : Array.isArray(children) && typeof children?.[0] === 'function' ? ( // pass the measured size down to the children if it's an render function
           [
             // first option is a function

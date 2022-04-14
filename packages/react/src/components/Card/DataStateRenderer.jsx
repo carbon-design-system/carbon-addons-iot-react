@@ -4,7 +4,7 @@ import { ErrorFilled24, WarningFilled24 } from '@carbon/icons-react';
 
 import { Tooltip } from '../Tooltip';
 import { settings } from '../../constants/Settings';
-import { ValueCardPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
+import { ValueContentPropTypes, CardPropTypes } from '../../constants/CardPropTypes';
 import { CARD_SIZES, CARD_CONTENT_PADDING, CARD_DATA_STATE } from '../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
@@ -25,7 +25,7 @@ export const TooltipContent = ({ tooltipContent }) => {
   );
 };
 TooltipContent.propTypes = {
-  tooltipContent: ValueCardPropTypes.dataState.isRequired,
+  tooltipContent: ValueContentPropTypes.dataState.isRequired,
 };
 
 const DataStateRenderer = ({ dataState, size, id }) => {
@@ -96,7 +96,7 @@ const DataStateRenderer = ({ dataState, size, id }) => {
 DataStateRenderer.propTypes = {
   size: CardPropTypes.size,
   id: CardPropTypes.id,
-  dataState: ValueCardPropTypes.dataState.isRequired,
+  dataState: ValueContentPropTypes.dataState.isRequired,
 };
 DataStateRenderer.defaultProps = {
   size: CARD_SIZES.MEDIUM,

@@ -150,6 +150,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/UIShell/ui-shell';
 @import 'components/List/carbon-list';
 @import 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
+@import 'components/ResourceList/resourcelist';
 //-------------------------------------
 // 🔬 Experimental
 //-------------------------------------
@@ -254,3 +255,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/WizardInline/wizard-inline';
 @import 'components/WizardModal/wizard-modal';
 @import 'components/ComboChartCard/combo-chart-card';
+@import 'components/ReadOnlyValue/read-only-value';
+@import 'components/SparklineChartCard/sparkline-chart-card';
+@import 'components/StackedAreaChartCard/stacked-area-chart-card';
+@import 'components/MeterChartCard/meter-chart-card';

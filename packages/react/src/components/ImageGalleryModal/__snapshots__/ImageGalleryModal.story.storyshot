@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageGalleryModal With i18n 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ImageGalleryModal With i18n 1`] = `
 <div
   className="storybook-container"
 >
@@ -69,6 +69,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--image-gallery-modal__top-section"
@@ -1182,7 +1187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ImageGalleryModal basic 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ImageGalleryModal basic 1`] = `
 <div
   className="storybook-container"
 >
@@ -1251,6 +1256,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
         </div>
         <div
           className="bx--modal-content"
+          style={
+            Object {
+              "maxHeight": "calc(100vh - 0px)",
+            }
+          }
         >
           <div
             className="iot--image-gallery-modal__top-section"

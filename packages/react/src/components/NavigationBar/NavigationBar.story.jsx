@@ -64,7 +64,7 @@ const StatefulNavigationBar = () => {
 };
 
 export default {
-  title: '1 - Watson IoT/NavigationBar',
+  title: '1 - Watson IoT/Page header/NavigationBar',
 
   parameters: {
     component: NavigationBar,

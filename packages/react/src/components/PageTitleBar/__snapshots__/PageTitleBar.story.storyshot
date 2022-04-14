@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar base 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar base 1`] = `
 <div
   className="storybook-container"
 >
@@ -162,10 +162,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                            d="M16,2A14.1725,14.1725,0,0,0,2,16,14.1725,14.1725,0,0,0,16,30,14.1725,14.1725,0,0,0,30,16,14.1725,14.1725,0,0,0,16,2Zm8,15H17v7H15V17H8V15h7V8h2v7h7Z"
                           />
                           <path
-                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            d="M24 17L17 17 17 24 15 24 15 17 8 17 8 15 15 15 15 8 17 8 17 15 24 15 24 17z"
+                            data-icon-path="inner-path"
+                            fill="none"
                           />
                         </svg>
                       </button>
@@ -1277,7 +1279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </div>
                           </th>
                           <th
-                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
                             data-column="object"
                             scope="col"
                           >
@@ -2362,10 +2364,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           xmlns="http://www.w3.org/2000/svg"
                         >
                           <path
-                            d="M12 12H14V24H12zM18 12H20V24H18z"
+                            d="M16,2A14.1725,14.1725,0,0,0,2,16,14.1725,14.1725,0,0,0,16,30,14.1725,14.1725,0,0,0,30,16,14.1725,14.1725,0,0,0,16,2Zm8,15H17v7H15V17H8V15h7V8h2v7h7Z"
                           />
                           <path
-                            d="M4 6V8H6V28a2 2 0 002 2H24a2 2 0 002-2V8h2V6zM8 28V8H24V28zM12 2H20V4H12z"
+                            d="M24 17L17 17 17 24 15 24 15 17 8 17 8 15 15 15 15 8 17 8 17 15 24 15 24 17z"
+                            data-icon-path="inner-path"
+                            fill="none"
                           />
                         </svg>
                       </button>
@@ -3477,7 +3481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </div>
                           </th>
                           <th
-                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
                             data-column="object"
                             scope="col"
                           >
@@ -4512,7 +4516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -5048,7 +5052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with condensed with primary + secondary buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with condensed with primary + secondary buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -5338,7 +5342,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with custom render function 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with custom render function 1`] = `
 <div
   className="storybook-container"
 >
@@ -5507,7 +5511,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with dynamic with breadcrumbs, actions, and content 1`] = `
 <div
   className="storybook-container"
 >
@@ -5858,7 +5862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with dynamic with breadcrumbs, actions, and tabs 1`] = `
 <div
   className="storybook-container"
 >
@@ -6840,7 +6844,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with editable title bar and subtitle 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with editable title bar and subtitle 1`] = `
 <div
   className="storybook-container"
 >
@@ -6941,7 +6945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with select action and an overflowing page title 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with select action and an overflowing page title 1`] = `
 <div
   className="storybook-container"
 >
@@ -7259,7 +7263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with status description and breadcrumbs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with status description and breadcrumbs 1`] = `
 <div
   className="storybook-container"
 >
@@ -7277,6 +7281,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
         }
       }
     >
+      <style>
+        
+      .bx--tooltip__content .bx--inline-loading__text {
+        color: white
+      }
+
+      .bx--tooltip__content .bx--inline-loading__checkmark-container path + path {
+        fill: white;
+        opacity: 1
+      }
+    
+      </style>
       <div
         className="page-title-bar"
         data-testid="page-title-bar"
@@ -7397,7 +7413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/PageTitleBar with tooltip description with node 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Page header/PageTitleBar with tooltip description with node 1`] = `
 <div
   className="storybook-container"
 >
