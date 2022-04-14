@@ -29247,9 +29247,6 @@ Map {
       "onInputChange": Object {
         "type": "func",
       },
-      "onStateChange": Object {
-        "type": "func",
-      },
       "onToggleClick": Object {
         "type": "func",
       },
@@ -34359,6 +34356,73 @@ Map {
       },
     },
   },
+  "SidePanel" => Object {
+    "defaultProps": Object {
+      "content": "",
+      "direction": "end",
+      "icons": undefined,
+      "inline": false,
+      "onClose": [Function],
+      "open": false,
+      "primaryButton": null,
+      "secondaryButton": null,
+      "showCloseButton": false,
+      "showDrawer": false,
+      "slideIn": false,
+      "slideOver": false,
+      "testId": undefined,
+      "title": "",
+    },
+    "propTypes": Object {
+      "content": Object {
+        "type": "string",
+      },
+      "direction": Object {
+        "type": "string",
+      },
+      "icons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "inline": Object {
+        "type": "bool",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "primaryButton": Object {
+        "type": "node",
+      },
+      "secondaryButton": Object {
+        "type": "node",
+      },
+      "showCloseButton": Object {
+        "type": "bool",
+      },
+      "showDrawer": Object {
+        "type": "bool",
+      },
+      "slideIn": Object {
+        "type": "bool",
+      },
+      "slideOver": Object {
+        "type": "bool",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
   "useDNDProviderElement" => Object {},
   "hotspotActionTypes" => Object {
     "currentTypeSwitch": "CURRENT_TYPE_SWITCH",
@@ -35353,7 +35417,6 @@ Map {
     },
   },
   "ModalBody" => Object {
-    "$$typeof": Symbol(react.forward_ref),
     "propTypes": Object {
       "aria-label": [Function],
       "children": Object {
@@ -35369,7 +35432,6 @@ Map {
         "type": "bool",
       },
     },
-    "render": [Function],
   },
   "ModalFooter" => Object {
     "contextType": Object {
@@ -36954,6 +37016,19 @@ Map {
       "role": Object {
         "type": "string",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "field",
+            "small",
+            "sm",
+            "md",
+            "lg",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "tabIndex": Object {
         "type": "number",
       },
@@ -37595,8 +37670,6 @@ Map {
     },
   },
   "Link" => Object {
-    "$$typeof": Symbol(react.forward_ref),
-    "displayName": "Link",
     "propTypes": Object {
       "children": Object {
         "type": "node",
@@ -37640,7 +37713,6 @@ Map {
         "type": "bool",
       },
     },
-    "render": [Function],
   },
   "ListItem" => Object {
     "propTypes": Object {
@@ -37681,24 +37753,6 @@ Map {
     },
   },
   "Modal" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "hasScrollingContent": false,
       "modalHeading": "",
@@ -38331,177 +38385,9 @@ Map {
     },
   },
   "OverflowMenu" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
-    "defaultProps": Object {
-      "ariaLabel": "open and close list of options",
-      "direction": "bottom",
-      "flipped": false,
-      "focusTrap": true,
-      "iconDescription": "open and close list of options",
-      "light": false,
-      "menuOffset": [Function],
-      "menuOffsetFlip": [Function],
-      "onClick": [Function],
-      "onClose": [Function],
-      "onKeyDown": [Function],
-      "onOpen": [Function],
-      "open": false,
-      "renderIcon": Object {
-        "$$typeof": Symbol(react.forward_ref),
-        "render": [Function],
-      },
-      "selectorPrimaryFocus": "[data-overflow-menu-primary-focus]",
-    },
-    "propTypes": Object {
-      "ariaLabel": Object {
-        "type": "string",
-      },
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "direction": Object {
-        "args": Array [
-          Array [
-            "top",
-            "bottom",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "flipped": Object {
-        "type": "bool",
-      },
-      "focusTrap": Object {
-        "type": "bool",
-      },
-      "iconClass": Object {
-        "type": "string",
-      },
-      "iconDescription": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "id": Object {
-        "type": "string",
-      },
-      "light": Object {
-        "type": "bool",
-      },
-      "menuOffset": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "left": Object {
-                    "type": "number",
-                  },
-                  "top": Object {
-                    "type": "number",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "menuOffsetFlip": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "left": Object {
-                    "type": "number",
-                  },
-                  "top": Object {
-                    "type": "number",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "menuOptionsClass": Object {
-        "type": "string",
-      },
-      "onClick": Object {
-        "type": "func",
-      },
-      "onClose": Object {
-        "type": "func",
-      },
-      "onFocus": Object {
-        "type": "func",
-      },
-      "onKeyDown": Object {
-        "type": "func",
-      },
-      "onOpen": Object {
-        "type": "func",
-      },
-      "open": Object {
-        "type": "bool",
-      },
-      "renderIcon": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "func",
-            },
-            Object {
-              "type": "object",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "selectorPrimaryFocus": Object {
-        "type": "string",
-      },
-      "size": Object {
-        "args": Array [
-          Array [
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-        ],
-        "type": "oneOf",
-      },
-    },
+    "$$typeof": Symbol(react.forward_ref),
+    "displayName": "FeatureToggle(OverflowMenu)",
+    "render": [Function],
   },
   "OverflowMenuItem" => Object {
     "defaultProps": Object {
@@ -38947,7 +38833,6 @@ Map {
       "_threadCount": 0,
     },
     "defaultProps": Object {
-      "hideLegend": false,
       "labelPosition": "right",
       "onChange": [Function],
       "orientation": "horizontal",
@@ -38973,9 +38858,6 @@ Map {
         "type": "oneOfType",
       },
       "disabled": Object {
-        "type": "bool",
-      },
-      "hideLegend": Object {
         "type": "bool",
       },
       "labelPosition": Object {
@@ -39165,24 +39047,6 @@ Map {
     },
   },
   "SearchLayoutButton" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "iconDescriptionGrid": "grid",
       "iconDescriptionList": "list",
@@ -39536,24 +39400,6 @@ Map {
     "render": [Function],
   },
   "Tab" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "label": "provide a label",
       "onClick": [Function],
@@ -40533,24 +40379,6 @@ Map {
     },
   },
   "TileGroup" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "onChange": [Function],
     },
@@ -40715,24 +40543,6 @@ Map {
     },
   },
   "TimePickerSelect" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "disabled": false,
     },
@@ -40865,24 +40675,6 @@ Map {
     "render": [Function],
   },
   "ToolbarSearch" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": "bx",
-      "_currentValue2": "bx",
-      "_threadCount": 0,
-    },
     "defaultProps": Object {
       "id": "search__input",
       "labelId": "search__label",
@@ -41579,9 +41371,6 @@ Map {
       "role": Object {
         "type": "string",
       },
-      "tabIndex": Object {
-        "type": "number",
-      },
     },
     "render": [Function],
   },
@@ -41700,9 +41489,6 @@ Map {
       },
       "className": Object {
         "type": "string",
-      },
-      "tabIndex": Object {
-        "type": "number",
       },
     },
     "render": [Function],

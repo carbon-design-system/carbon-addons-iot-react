@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--slide-panel--slide-in active"
+      className="iot--side-panel iot--side-panel--slide-in active"
     >
       <div
         className="panel iot--side-panel--start"
@@ -279,7 +279,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="Button"
+          data-testid="close-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -569,7 +569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <button
           aria-describedby={null}
           className="iot--side-panel--close-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="Button"
+          data-testid="close-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
