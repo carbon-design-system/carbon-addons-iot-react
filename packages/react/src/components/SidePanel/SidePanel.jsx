@@ -41,12 +41,12 @@ const defaultProps = {
   showDrawer: false,
   title: '',
   content: '',
-  onClose: () => {},
   primaryButton: null,
   secondaryButton: null,
   testId: undefined,
   icons: undefined,
   condensed: false,
+  onClose: undefined,
 };
 
 const SidePanel = ({
@@ -61,7 +61,7 @@ const SidePanel = ({
   onClose,
   primaryButton,
   secondaryButton,
-  direction = 'end',
+  direction,
   icons,
   testId,
   condensed,
@@ -87,7 +87,7 @@ const SidePanel = ({
     <div
       data-testid={testId}
       className={classNames(`${iotPrefix}--side-panel`, {
-        [`${iotPrefix}--side-panel--drawer`]: !open,
+        [`${iotPrefix}--side-panel--drawer`]: showDrawer && !open,
         [`${iotPrefix}--side-panel--inline`]: inline,
         [`${iotPrefix}--side-panel--slide-over`]: slideOver,
         [`${iotPrefix}--side-panel--slide-in`]: slideIn,

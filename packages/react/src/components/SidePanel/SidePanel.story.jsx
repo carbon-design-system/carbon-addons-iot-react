@@ -167,7 +167,7 @@ const Interactive = ({
 };
 
 export default {
-  title: '2 - Watson IoT Experimental/☢️ SidePanel',
+  title: '1 - Watson IoT/SidePanel',
   decorators: [withKnobs],
 
   parameters: {

@@ -54,6 +54,7 @@ export { default as EditPage } from './components/Page/EditPage';
 export { default as NavigationBar } from './components/NavigationBar/NavigationBar';
 export { default as Header } from './components/Header';
 export { default as SideNav } from './components/SideNav';
+export { default as SidePanel } from './components/SidePanel/SidePanel';
 export { default as SuiteHeader } from './components/SuiteHeader/SuiteHeader';
 export { default as SuiteHeaderProfile } from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export { default as SuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
@@ -129,7 +130,6 @@ export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWra
 export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
 export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
-export { default as SidePanel } from './components/SidePanel/SidePanel';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

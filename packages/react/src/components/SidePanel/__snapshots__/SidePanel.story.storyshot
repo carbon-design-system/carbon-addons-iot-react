@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide In Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SidePanel Slide In Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--drawer iot--side-panel--slide-in"
+      className="iot--side-panel iot--side-panel--slide-in"
     >
       <div
         className="panel iot--side-panel--start"
@@ -218,7 +218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide Inline Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SidePanel Slide Inline Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -232,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--drawer iot--side-panel--inline"
+      className="iot--side-panel iot--side-panel--inline"
     >
       <div
         className="panel iot--side-panel--start"
@@ -436,7 +436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ SidePanel Slide Over Example 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SidePanel Slide Over Example 1`] = `
 <div
   className="storybook-container"
 >
@@ -450,7 +450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--drawer iot--side-panel--slide-over"
+      className="iot--side-panel iot--side-panel--slide-over"
     >
       <div
         className="panel iot--side-panel--start"

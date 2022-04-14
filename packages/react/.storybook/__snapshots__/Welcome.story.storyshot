@@ -2157,6 +2157,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  SkeletonIcon
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   SkeletonPlaceholder
                 </div>
                 <div
@@ -3264,6 +3279,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  unstable_ColumnHang
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_DefinitionTooltip
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   unstable_FeatureFlags
                 </div>
                 <div
@@ -3445,6 +3490,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   unstable_MenuSelectableItem
+                </div>
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  unstable_OverflowMenuV2
                 </div>
                 <div
                   className="bx--structured-list-td"
@@ -4342,6 +4402,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   NavigationBar
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  SidePanel
                 </div>
               </div>
               <div
@@ -5377,21 +5452,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   role="cell"
                 >
                   ProgressBar
-                </div>
-              </div>
-              <div
-                className="bx--structured-list-row"
-                role="row"
-              >
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                />
-                <div
-                  className="bx--structured-list-td"
-                  role="cell"
-                >
-                  SidePanel
                 </div>
               </div>
               <div

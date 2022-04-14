@@ -151,6 +151,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/List/carbon-list';
 @import 'components/Table/TableBody/TableBodyLoadMoreRow/table-body-load-more-row';
 @import 'components/ResourceList/resourcelist';
+
 //-------------------------------------
 // 🔬 Experimental
 //-------------------------------------
@@ -161,7 +162,6 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/HotspotEditorModal/DynamicHotspotSourcePicker/dynamic-hotspot-source-picker';
 @import 'components/SimpleIconDropdown/simple-icon-dropdown';
 @import 'components/RuleBuilder/rule-builder';
-@import 'components/SidePanel/side-panel';
 
 //-------------------------------------
 // 🙈 Hidden (Not exposed on website)
@@ -259,3 +259,4 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/SparklineChartCard/sparkline-chart-card';
 @import 'components/StackedAreaChartCard/stacked-area-chart-card';
 @import 'components/MeterChartCard/meter-chart-card';
+@import 'components/SidePanel/side-panel';
