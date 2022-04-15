@@ -10827,7 +10827,7 @@ Map {
       "direction": "end",
       "icons": undefined,
       "inline": false,
-      "onClose": undefined,
+      "onClose": [Function],
       "open": false,
       "primaryButton": null,
       "secondaryButton": null,
