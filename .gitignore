@@ -5,6 +5,14 @@ packages/react/cypress/coverage
 .nyc_output
 packages/react/reports
 # Compiled binary addons (http://nodejs.org/api/addons.html)
+packages/react/lib
+packages/react/es
+packages/react/scss
+packages/react/umd
+packages/react/css
+packages/react/tmp
+packages/react/storybook-static
+
 lib
 es
 scss
