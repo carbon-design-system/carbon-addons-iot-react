@@ -46,7 +46,7 @@ const defaultProps = {
   testId: undefined,
   icons: undefined,
   condensed: false,
-  onClose: undefined,
+  onClose: () => {},
 };
 
 const SidePanel = ({

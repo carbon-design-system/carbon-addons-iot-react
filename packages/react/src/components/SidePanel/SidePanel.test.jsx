@@ -102,6 +102,12 @@ describe('SidePanel Component Test', () => {
     expect(mockCloseButtonOnClose).toHaveBeenCalled();
   });
 
+  it('should no error if there is no onclose prop', () => {
+    render(<SidePanel {...commonProps} testId="side-panel" slideOver showCloseButton open />);
+    expect(screen.getByTestId('close-button')).toBeDefined();
+    fireEvent.click(screen.getByTestId('close-button'));
+  });
+
   it('should not show close button in slide-over panel', () => {
     render(<SidePanel {...commonProps} testId="side-panel" slideOver open />);
     expect(screen.queryByTestId('close-button')).toBeNull();
