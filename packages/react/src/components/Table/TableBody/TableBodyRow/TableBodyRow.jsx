@@ -1,6 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { TableRow, TableExpandRow, TableCell, Checkbox } from 'carbon-components-react';
+import {
+  TableRow,
+  TableExpandRow,
+  TableCell,
+  Checkbox,
+  RadioButton,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -233,6 +239,31 @@ const TableBodyRow = ({
             indeterminate={isIndeterminate}
             checked={isSelected}
             disabled={isSelectable === false}
+          />
+        </span>
+      </TableCell>
+    ) : hasRowSelection === 'single' ? (
+      <TableCell
+        className={`${prefix}--checkbox-table-cell`}
+        key={`${id}-row-selection-cell`}
+        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span
+          className={`${iotPrefix}--table__cell__offset`}
+          style={{ '--row-nesting-offset': `${nestingOffset}px` }}
+        >
+          <RadioButton
+            id={`select-row-${tableId}-${id}`}
+            // className={`${iotPrefix}--hierarchy-list-bulk-modal--radio`}
+            name={`select-row-${tableId}-${id}`}
+            // key={`radio-${item.content.value}`}
+            // value={item.content.value}
+            hideLabel
+            labelText={selectRowAria}
+            onChange={() => onRowSelected(id, !isSelected)}
+            tabIndex={0}
+            checked={isSelected}
           />
         </span>
       </TableCell>

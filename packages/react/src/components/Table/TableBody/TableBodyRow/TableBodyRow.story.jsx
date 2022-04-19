@@ -135,6 +135,22 @@ export const IsSelectable = () => (
 
 IsSelectable.storyName = 'is selectable';
 
+IsNotSelectable.storyName = 'is not selectable';
+
+export const SingleSelect = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowSelection: 'single',
+    }}
+  />
+);
+
+SingleSelect.storyName = 'single selected';
+
 export const RowActionsRunning = () => (
   <TableBodyRow
     {...tableBodyRowProps}
