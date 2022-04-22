@@ -167,7 +167,6 @@ const defaultProps = {
     ...defaultI18NPropTypes,
   },
   hasFastFilter: true,
-  testID: '',
   testId: '',
   showExpanderColumn: false,
   size: undefined,
