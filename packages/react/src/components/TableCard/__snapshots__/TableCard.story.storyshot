@@ -207,7 +207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   aria-expanded={false}
                   aria-haspopup={true}
                   aria-label="open and close list of options"
-                  className="bx--overflow-menu bx--overflow-menu--md"
+                  className="bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}
                   onKeyDown={[Function]}
@@ -9393,7 +9393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9559,7 +9559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9725,7 +9725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9891,7 +9891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10057,7 +10057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10223,7 +10223,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10389,7 +10389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}

@@ -89,7 +89,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       Any file can be uploaded.  Feel free to upload more than one!
     </p>
     <label
-      className="bx--btn bx--btn--secondary bx--btn--md"
+      className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
       htmlFor="id12"
       onKeyDown={[Function]}
@@ -142,7 +142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/F
       Only one file can be uploaded
     </p>
     <label
-      className="bx--btn bx--btn--secondary bx--btn--md"
+      className="bx--btn bx--btn--secondary"
       data-testid="file-drop-uploader-button"
       htmlFor="id13"
       onKeyDown={[Function]}
