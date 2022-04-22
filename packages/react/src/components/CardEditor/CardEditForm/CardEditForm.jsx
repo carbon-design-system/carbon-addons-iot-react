@@ -173,16 +173,16 @@ export const hideCardPropertiesForEditor = (card) => {
   let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'grain'])
+      omit(attribute, ['aggregationMethods', 'grain', 'downSampleMethods'])
     );
   }
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'grain'])
+      omit(attribute, ['aggregationMethods', 'grain', 'downSampleMethods'])
     );
   }
   if (card.content?.columns) {
-    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain', 'downSampleMethods']));
   }
   // Need to exclued content for custom cards because the card's JSX element lives on it in this case
   if (!CARD_TYPES.hasOwnProperty(card.type) || card.type === CARD_TYPES.CUSTOM) {

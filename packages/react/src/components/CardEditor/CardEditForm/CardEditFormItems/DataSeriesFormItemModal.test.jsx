@@ -141,6 +141,8 @@ describe('DataSeriesFormItemModal', () => {
     deviceid: ['73000', '73001', '73002'],
     manufacturer: ['Rentech', 'GHI Industries'],
   };
+  
+  const version = null;
 
   const commonProps = {
     onChange: mockOnChange,
@@ -148,6 +150,7 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
+    version,
   };
 
   it('Renders for timeseries card data', () => {
@@ -1256,5 +1259,119 @@ describe('DataSeriesFormItemModal', () => {
     // called with an empty object since editDataItem is passed as {}
     // and IMAGE cards just return what was given.
     expect(commonProps.onChange).toHaveBeenCalledWith({});
+  });
+
+  it('Version is V1 for timebased stacked bar should show grain and aggregation methods', () => {
+    const version ='V1'
+    const stackedTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+        version={version}
+      />
+    );
+
+    // grain field and aggregator should be shown
+    expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
+    const aggregationValue = screen.getByText('Max');
+    expect(aggregationValue).toBeInTheDocument();
+    expect(screen.queryByLabelText('DownSample Method')).not.toBeInTheDocument();
+  });
+  it('Version is V2 for timebased stacked bar should show DownSample method and hide grain and aggregation methods', () => {
+    const version ='V2'
+    const stackedTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            downSampleMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+    const downSampleBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      downSampleMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      downSampleMethod: 'max',
+    };
+
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedBar}
+        editDataItem={downSampleBarChartDataItem}
+        version={version}
+      />
+    );
+
+    // grain field and aggregator should not be shown
+    const label = screen.getByText('Custom label');
+    const legendColorLabel = screen.getByText('Bar color');
+    expect(label).toBeInTheDocument();
+    expect(legendColorLabel).toBeInTheDocument();
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    const downSampleValue = screen.getByText('Max');
+    expect(downSampleValue).toBeInTheDocument();
+    expect(screen.queryByLabelText('Aggergation Method')).not.toBeInTheDocument();
+    expect(screen.getByText('Downsample method')).toBeVisible();
   });
 });

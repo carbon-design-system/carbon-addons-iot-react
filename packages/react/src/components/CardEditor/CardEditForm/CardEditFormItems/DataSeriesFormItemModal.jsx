@@ -78,6 +78,13 @@ const propTypes = {
       })
     ),
     aggregationMethod: PropTypes.string,
+    downSampleMethods: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        text: PropTypes.string,
+      })
+    ),
+    downSampleMethod: PropTypes.string,
     grain: PropTypes.string,
     label: PropTypes.string,
     dataItemId: PropTypes.string,
@@ -109,6 +116,7 @@ const propTypes = {
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
   isLarge: PropTypes.bool,
+  version: PropTypes.string,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -166,6 +174,7 @@ const defaultProps = {
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
     decimalPlaces: 'Decimal places',
+    downSampleMethod: 'Downsample method',
   },
   editDataSeries: [],
   showEditor: false,
@@ -176,6 +185,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   isLarge: false,
   validDataItems: [],
+  version : null,
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -206,6 +216,7 @@ const DataSeriesFormItemModal = ({
   onChange,
   i18n,
   isLarge,
+  version,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -260,7 +271,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && (
+        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' &&  version !== 'V2' && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -557,6 +568,47 @@ const DataSeriesFormItemModal = ({
             }}
           />
         )}
+        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && version === 'V2' && (
+          <div className={`${baseClassName}--input-group`}>
+            {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <Dropdown
+                  id={`${id}_downSample-method`}
+                  label=""
+                  direction="bottom"
+                  itemToString={(item) => item.text}
+                  items={editDataItem.downSampleMethods || []}
+                  selectedItem={
+                    editDataItem.downSampleMethods?.find(
+                      (method) => method.id === editDataItem.downSampleMethod
+                    ) || { id: 'none', text: mergedI18n.none }
+                  }
+                  titleText={mergedI18n.downSampleMethod}
+                  light
+                  onChange={({ selectedItem }) => {
+                    setEditDataItem({
+                      ...editDataItem,
+                      downSampleMethod: selectedItem.id
+                    });
+                  }}
+                />
+              </div>
+            ) : (
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
+                  {mergedI18n.downSampleMethod}
+                </FormLabel>
+                <span className={`${baseClassName}--input-group--item-half-content`}>
+                  {`${
+                    editDataItem.downSampleMethod
+                      ? editDataItem.downSampleMethod[0].toUpperCase()
+                      : ''
+                  }${editDataItem.downSampleMethod?.slice(1) || ''}`}
+                </span>
+              </div>
+            )}
+          </div>
+        )}
       </>
     ),
     [
@@ -575,6 +627,7 @@ const DataSeriesFormItemModal = ({
       selectedDimensionFilter,
       setEditDataItem,
       type,
+      version,
     ]
   );
 
