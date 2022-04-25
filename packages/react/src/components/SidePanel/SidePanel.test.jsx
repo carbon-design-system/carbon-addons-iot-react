@@ -17,6 +17,7 @@ describe('SidePanel Component Test', () => {
   const commonProps = {
     title: 'test title',
     content: 'test content',
+    testId: 'side-panel',
   };
   const primaryButton = (
     <Button testId="buttonIcon1" kind="primary" onClick={mockPrimaryButtonOnClick}>
@@ -58,7 +59,11 @@ describe('SidePanel Component Test', () => {
   ];
 
   it('should be selectable by testId', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" icons={iconButtons} open />);
+    render(
+      <SidePanel title={commonProps.title} testId={commonProps.testId} icons={iconButtons} open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel')).toBeDefined();
     expect(screen.getByTestId('side-panel-title')).toBeDefined();
     expect(screen.getByTestId('side-panel-content')).toBeDefined();
@@ -67,35 +72,53 @@ describe('SidePanel Component Test', () => {
   });
 
   it('should not render footer', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" icons={iconButtons} open={false} />);
+    render(
+      <SidePanel title={commonProps.title} testId={commonProps.testId} icons={iconButtons}>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.queryByTestId('side-panel-footer')).toBeNull();
   });
 
   it('should render slide-over panel', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" slideOver />);
+    render(
+      <SidePanel title={commonProps.title} testId={commonProps.testId} slideOver open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel')).toHaveClass(`${iotPrefix}--side-panel--slide-over`);
   });
 
   it('should render slide-in panel', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" slideIn />);
+    render(
+      <SidePanel title={commonProps.title} testId={commonProps.testId} open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel')).toHaveClass(`${iotPrefix}--side-panel--slide-in`);
   });
 
   it('should render inline panel', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" inline />);
+    render(
+      <SidePanel title={commonProps.title} testId={commonProps.testId} inline open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel')).toHaveClass(`${iotPrefix}--side-panel--inline`);
   });
 
   it('should show close button in slide-over panel', () => {
     render(
       <SidePanel
-        {...commonProps}
-        testId="side-panel"
+        title={commonProps.title}
+        testId={commonProps.testId}
         slideOver
-        showCloseButton
         open
+        showCloseButton
         onClose={mockCloseButtonOnClose}
-      />
+      >
+        {commonProps.content}
+      </SidePanel>
     );
     expect(screen.getByTestId('close-button')).toBeDefined();
     fireEvent.click(screen.getByTestId('close-button'));
@@ -107,7 +130,7 @@ describe('SidePanel Component Test', () => {
     expect(screen.queryByTestId('close-button')).toBeNull();
   });
 
-  it('should not show close button in slide-over panel', () => {
+  it('should not show close button in slide-over panel if showCloseButton is not enabled', () => {
     render(<SidePanel {...commonProps} testId="side-panel" slideOver open />);
     expect(screen.queryByTestId('close-button')).toBeNull();
   });
@@ -139,13 +162,15 @@ describe('SidePanel Component Test', () => {
   it('should show close button in inline panel', () => {
     render(
       <SidePanel
-        {...commonProps}
-        testId="side-panel"
+        title={commonProps.title}
+        testId={commonProps.testId}
         inline
-        showDrawer
+        isRail
         open
         onClose={mockCloseButtonOnClose}
-      />
+      >
+        {commonProps.content}
+      </SidePanel>
     );
     expect(screen.getByTestId('close-button')).toBeDefined();
     fireEvent.click(screen.getByTestId('close-button'));
@@ -155,12 +180,14 @@ describe('SidePanel Component Test', () => {
   it('should show action bar in slide-over panel', () => {
     render(
       <SidePanel
-        {...commonProps}
-        testId="side-panel"
+        title={commonProps.title}
+        testId={commonProps.testId}
         slideOver
-        showCloseButton
+        open
         icons={iconButtons}
-      />
+      >
+        {commonProps.content}
+      </SidePanel>
     );
     expect(screen.getByTestId('side-panel-action-bar')).toBeDefined();
     expect(screen.getByTestId('icon1')).toBeDefined();
@@ -173,35 +200,55 @@ describe('SidePanel Component Test', () => {
   });
 
   it('should show condensed title in slide-over panel', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" slideOver condensed open />);
+    render(
+      <SidePanel {...commonProps} testId={commonProps.testId} slideOver condensed open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel-title')).toHaveClass(
-      `${iotPrefix}--side-panel--title--condensed`
+      `${iotPrefix}--side-panel__title--condensed`
     );
   });
 
   it('should show inline panel from the left side', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" inline direction="start" open />);
+    render(
+      <SidePanel {...commonProps} testId={commonProps.testId} inline direction="start" open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel').firstChild).toHaveClass(
       `${iotPrefix}--side-panel--start`
     );
   });
 
   it('should show drawer from the left side', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" inline direction="start" showDrawer />);
+    render(
+      <SidePanel {...commonProps} testId={commonProps.testId} inline direction="start" showDrawer>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel').firstChild).toHaveClass(
       `${iotPrefix}--side-panel--start`
     );
   });
 
   it('should show inline panel from the right side', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" inline direction="end" open />);
+    render(
+      <SidePanel {...commonProps} testId={commonProps.testId} inline direction="end" open>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel').firstChild).toHaveClass(
       `${iotPrefix}--side-panel--end`
     );
   });
 
   it('should show drawer from the right side', () => {
-    render(<SidePanel {...commonProps} testId="side-panel" inline direction="end" />);
+    render(
+      <SidePanel {...commonProps} testId={commonProps.testId} inline direction="end" showDrawer>
+        {commonProps.content}
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel').firstChild).toHaveClass(
       `${iotPrefix}--side-panel--end`
     );
