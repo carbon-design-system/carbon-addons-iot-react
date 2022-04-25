@@ -7,6 +7,7 @@ import Button from '../Button/Button';
 import Dropdown from '../Dropdown/Dropdown';
 
 import SidePanel from './SidePanel';
+import SidePanelReadMe from './SidePanel.mdx';
 
 const primaryButton = (
   <Button
@@ -103,13 +104,12 @@ const content = (
 
 const Interactive = ({
   direction,
-  slideOver,
-  inline,
-  slideIn,
-  showDrawer,
+  isRail,
   showCloseButton,
   icons,
   condensed,
+  variation,
+  showPrimaryandSecondaryButton,
 }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -122,20 +122,20 @@ const Interactive = ({
     >
       <SidePanel
         open={open}
-        slideOver={slideOver}
-        inline={inline}
-        slideIn={slideIn}
+        slideOver={variation === 'slideOver'}
+        inline={variation === 'inline'}
         direction={direction}
         title="My title"
-        content={content}
         icons={icons}
-        primaryButton={primaryButton}
-        secondaryButton={secondaryButton}
-        showDrawer={showDrawer}
+        primaryButton={showPrimaryandSecondaryButton ? primaryButton : null}
+        secondaryButton={showPrimaryandSecondaryButton ? secondaryButton : null}
+        isRail={isRail}
         showCloseButton={showCloseButton}
         onClose={() => setOpen(!open)}
         condensed={condensed}
-      />
+      >
+        {content}
+      </SidePanel>
       <div style={{ padding: '1rem' }}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et
@@ -153,14 +153,14 @@ const Interactive = ({
           Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec
           luctus neque quam, et blandit eros accumsan at.
         </p>
+        {dropdown}
         <Button
           onClick={() => {
             setOpen(!open);
           }}
         >
-          push
+          {open ? 'Close' : 'Open'}
         </Button>
-        {dropdown}
       </div>
     </div>
   );
@@ -172,40 +172,26 @@ export default {
 
   parameters: {
     component: SidePanel,
+    docs: {
+      page: SidePanelReadMe,
+    },
   },
 };
 
-export const SlideOverStory = () => (
+export const Default = () => (
   <Interactive
-    direction={select('direction', ['start', 'end'], 'start')}
-    slideOver
-    showCloseButton={boolean('Show close button', false)}
+    direction={select('Direction', ['start', 'end'], 'start')}
+    isRail={boolean('Show Drawer (only works with inline)', false)}
+    showCloseButton={boolean('Show close button (only works with slideOver)', false)}
     icons={boolean('Show icons', false) ? iconButtons : undefined}
     condensed={boolean('Condensed', false)}
+    variation={select(
+      'Slide variation (Default is slideIn)',
+      ['slideOver', 'slideIn', 'inline'],
+      'slideIn'
+    )}
+    showPrimaryandSecondaryButton={boolean('Show Primary and Secondary button (optional)', true)}
   />
 );
 
-SlideOverStory.storyName = 'Slide Over Example';
-
-export const SlideInStory = () => (
-  <Interactive
-    direction={select('direction', ['start', 'end'], 'start')}
-    slideIn
-    icons={boolean('Show icons', false) ? iconButtons : undefined}
-    condensed={boolean('Condensed', false)}
-  />
-);
-
-SlideInStory.storyName = 'Slide In Example';
-
-export const SlideInlineStory = () => (
-  <Interactive
-    direction={select('direction', ['start', 'end'], 'start')}
-    inline
-    showDrawer={boolean('Show drawer', false)}
-    icons={boolean('Show icons', false) ? iconButtons : undefined}
-    condensed={boolean('Condensed', false)}
-  />
-);
-
-SlideInlineStory.storyName = 'Slide Inline Example';
+Default.storyName = 'Default';

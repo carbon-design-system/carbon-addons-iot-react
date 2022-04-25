@@ -10822,28 +10822,27 @@ Map {
   },
   "SidePanel" => Object {
     "defaultProps": Object {
+      "children": null,
       "condensed": false,
-      "content": "",
-      "direction": "end",
+      "direction": "start",
       "icons": undefined,
       "inline": false,
-      "onClose": [Function],
+      "isRail": false,
+      "onClose": undefined,
       "open": false,
       "primaryButton": null,
       "secondaryButton": null,
       "showCloseButton": false,
-      "showDrawer": false,
-      "slideIn": false,
       "slideOver": false,
-      "testId": undefined,
+      "testId": "side-panel",
       "title": "",
     },
     "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
       "condensed": Object {
         "type": "bool",
-      },
-      "content": Object {
-        "type": "node",
       },
       "direction": Object {
         "type": "string",
@@ -10859,6 +10858,9 @@ Map {
       "inline": Object {
         "type": "bool",
       },
+      "isRail": Object {
+        "type": "bool",
+      },
       "onClose": Object {
         "type": "func",
       },
@@ -10872,12 +10874,6 @@ Map {
         "type": "node",
       },
       "showCloseButton": Object {
-        "type": "bool",
-      },
-      "showDrawer": Object {
-        "type": "bool",
-      },
-      "slideIn": Object {
         "type": "bool",
       },
       "slideOver": Object {

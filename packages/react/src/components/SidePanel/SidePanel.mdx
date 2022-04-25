@@ -1,0 +1,125 @@
+# `SidePanel` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Passing variables](#passing-variables)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+The `SidePanel` component keeps users in the context of a page while they do tasks such as navigating, editing, viewing details, or configuring a resource by using a slide-in, inline, or slide-over side panel.
+
+```jsx
+import { SidePanel } from 'carbon-addons-iot-react';
+```
+
+## Passing Variables
+
+To pass a variable into your card, identify a variable to be used by wrapping it in curly brackets.
+
+```jsx
+const primaryButton = (
+  <Button
+    testId="primaryButton"
+    kind="primary"
+    onClick={() => {
+      action('Initiate clicked');
+    }}
+  >
+    Initiate
+  </Button>
+);
+
+const secondaryButton = (
+  <Button
+    testId="secondaryButton"
+    kind="secondary"
+    onClick={() => {
+      action('Cancel clicked');
+    }}
+  >
+    Cancel
+  </Button>
+);
+
+const icons = [
+  <Button
+    id="icon1"
+    hasIconOnly
+    kind="ghost"
+    renderIcon={Edit16}
+    onClick={action('clicked')}
+    size="small"
+  />,
+  <Button
+    id="icon2"
+    hasIconOnly
+    kind="ghost"
+    renderIcon={Information16}
+    onClick={action('clicked')}
+    size="small"
+  />,
+  <Button
+    id="icon3"
+    hasIconOnly
+    kind="ghost"
+    renderIcon={SendAlt16}
+    onClick={action('clicked')}
+    size="small"
+  />,
+];
+
+<SidePanel
+  open={boolean('Expanded', false)}
+  slideOver
+  direction={select('Direction', ['start', 'end'], 'start')}
+  title="My title"
+  icons={icons}
+  primaryButton={primaryButton}
+  secondaryButton={secondaryButton}
+  isRail={boolean('Show Drawer (only works with inline)', false)}
+  showCloseButton={boolean('Show close button (only works with slideOver)', false)}
+  onClose={() => {
+    action('close side panel');
+  }}
+  condensed={boolean('Condensed', false)}
+>
+  {content}
+</SidePanel>;
+```
+
+If nothing specified, default is `slideIn`. You can specify `slideOver` or `inline` to make the panel overaly or inline. `showCloseButto` only works with `slideOver` panel. And `isRail` only works with `inline` panel.
+
+## Props
+
+| Name            | Type     | Default                       | Description                            |
+| :-------------- | :------- | :---------------------------- | :------------------------------------- |
+| direction       | string   | 'start'                       | silde in from start or end direction   |
+| open            | bool     | false                         | side panel is expanded or collapsed    |
+| slideOver       | bool     | false                         | slide overlay                          |
+| inline          | bool     | false                         | inline side panel with optional drawer |
+| showCloseButton | bool     | false                         | show close button in side panel        |
+| isRail          | bool     | false                         | show rail for inline panel             |
+| title           | string   | ''                            | title to show in the side panel        |
+| children        | node     | undefined                     | content to show in the side panel      |
+| onClose         | function | undefined                     | call back function for close button    |
+| primaryButton   | node     | undefined                     | footer primary button                  |
+| secondaryButton | node     | undefined                     | footer secondary button                |
+| icons           | node     | undefined                     | icons in action bar                    |
+| condensed       | bool     | false                         | condensed style                        |
+| testId          | string   | SidePanel.defaultProps.testId |                                        |
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SidePanel)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SidePanel/SidePanel.mdx).

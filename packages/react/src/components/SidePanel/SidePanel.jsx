@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Close16,
-  ChevronLeft16,
-  ChevronRight16,
-  OpenPanelLeft16,
-  OpenPanelRight16,
+  ChevronLeft16 as OpenLeft,
+  ChevronRight16 as OpenRight,
 } from '@carbon/icons-react';
 import classNames from 'classnames';
 
@@ -15,38 +13,49 @@ import { settings } from '../../constants/Settings';
 const { iotPrefix } = settings;
 
 const propTypes = {
+  /** silde in from start or end direction */
   direction: PropTypes.string,
+  /** side panel is expanded  or collapsed */
   open: PropTypes.bool,
+  /** slide overlay */
   slideOver: PropTypes.bool,
+  /** inline side panel with optional drawer */
   inline: PropTypes.bool,
-  slideIn: PropTypes.bool,
+  /** show close button in side panel */
   showCloseButton: PropTypes.bool,
-  showDrawer: PropTypes.bool,
+  /** show rail for inline panel */
+  isRail: PropTypes.bool,
+  /** title to show in the side panel */
   title: PropTypes.string,
-  content: PropTypes.node,
+  /** content to show in the side panel */
+  children: PropTypes.node,
+  /** call back function for close button */
   onClose: PropTypes.func,
+  /** footer primary button */
   primaryButton: PropTypes.node,
+  /** footer secondary button */
   secondaryButton: PropTypes.node,
+  /** icons in action bar */
   icons: PropTypes.arrayOf(PropTypes.node),
   testId: PropTypes.string,
+  /** condensed style */
   condensed: PropTypes.bool,
 };
 const defaultProps = {
-  direction: 'end',
+  direction: 'start',
   open: false,
   slideOver: false,
   inline: false,
-  slideIn: false,
   showCloseButton: false,
-  showDrawer: false,
+  isRail: false,
   title: '',
-  content: '',
+  children: null,
   primaryButton: null,
   secondaryButton: null,
-  testId: undefined,
+  testId: 'side-panel',
   icons: undefined,
   condensed: false,
-  onClose: () => {},
+  onClose: undefined,
 };
 
 const SidePanel = ({
@@ -54,10 +63,8 @@ const SidePanel = ({
   title,
   slideOver,
   inline,
-  slideIn,
-  content,
   showCloseButton,
-  showDrawer,
+  isRail,
   onClose,
   primaryButton,
   secondaryButton,
@@ -65,68 +72,65 @@ const SidePanel = ({
   icons,
   testId,
   condensed,
+  children,
 }) => {
-  const getIcon = () => {
-    let icon;
-    if (slideOver && showCloseButton) {
-      icon = Close16;
-    }
-
-    if (inline && direction === 'start') {
-      icon = open ? ChevronLeft16 : OpenPanelLeft16;
-    }
-
-    if (inline && direction === 'end') {
-      icon = open ? ChevronRight16 : OpenPanelRight16;
-    }
-
-    return icon;
-  };
+  const getIcon = useMemo(
+    () =>
+      open && ((slideOver && showCloseButton) || inline)
+        ? Close16
+        : !open && inline && direction === 'start'
+        ? OpenRight
+        : OpenLeft,
+    [direction, inline, open, showCloseButton, slideOver]
+  );
 
   return (
     <div
       data-testid={testId}
       className={classNames(`${iotPrefix}--side-panel`, {
-        [`${iotPrefix}--side-panel--drawer`]: showDrawer && !open,
         [`${iotPrefix}--side-panel--inline`]: inline,
+        [`${iotPrefix}--side-panel__drawer`]: isRail && !open,
         [`${iotPrefix}--side-panel--slide-over`]: slideOver,
-        [`${iotPrefix}--side-panel--slide-in`]: slideIn,
-        active: open,
+        [`${iotPrefix}--side-panel--slide-in`]: !inline && !slideOver,
+        [`${iotPrefix}--side-panel--active`]: open,
       })}
     >
-      <div className={`panel ${iotPrefix}--side-panel--${direction}`}>
-        {(slideOver && showCloseButton) || (inline && showDrawer) ? (
+      <div className={`${iotPrefix}--side-panel__panel ${iotPrefix}--side-panel--${direction}`}>
+        {(slideOver && showCloseButton && onClose) || (inline && isRail) ? (
           <Button
             testId="close-button"
             hasIconOnly
-            className={`${iotPrefix}--side-panel--close-button`}
+            className={`${iotPrefix}--side-panel__close-button`}
             kind="ghost"
-            renderIcon={getIcon()}
+            renderIcon={getIcon}
             onClick={onClose}
           />
         ) : null}
 
-        <div className="panel-content-wrapper">
+        <div className={`${iotPrefix}--side-panel__content-wrapper`}>
           <div
             data-testid="side-panel-title"
             className={classNames(
-              `${iotPrefix}--side-panel--title`,
-              `${iotPrefix}--side-panel--title--with-close`,
-              { [`${iotPrefix}--side-panel--title--condensed`]: condensed }
+              `${iotPrefix}--side-panel__title`,
+              `${iotPrefix}--side-panel__title--with-close`,
+              { [`${iotPrefix}--side-panel__title--condensed`]: condensed }
             )}
           >
             {title}
           </div>
           {icons && (
-            <div data-testid="side-panel-action-bar" className="iot--side-panel--action-bar">
+            <div
+              data-testid="side-panel-action-bar"
+              className={`${iotPrefix}--side-panel__action-bar`}
+            >
               {icons}
             </div>
           )}
-          <div data-testid="side-panel-content" className={`${iotPrefix}-side-panel--content`}>
-            {content}
+          <div data-testid="side-panel-content" className={`${iotPrefix}-side-panel__content`}>
+            {children}
           </div>
-          {open ? (
-            <div data-testid="side-panel-footer" className={`${iotPrefix}--side-panel--footer`}>
+          {open || inline ? (
+            <div data-testid="side-panel-footer" className={`${iotPrefix}--side-panel__footer`}>
               {secondaryButton}
               {primaryButton}
             </div>
