@@ -1226,6 +1226,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
+    showRadioButton: shouldCreate('showRadioButton')
+      ? boolean(
+          'Show radio button for single select',
+          getDefaultValue('showRadioButton'),
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
     selectedIds: shouldCreate('selectedIds')
       ? object(
           'Batch actions for selected rows (view.table.selectedIds)',

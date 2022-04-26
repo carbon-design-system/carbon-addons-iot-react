@@ -1092,7 +1092,8 @@ const Table = (props) => {
                   'hasRowNesting',
                   'shouldExpandOnRowClick',
                   'shouldLazyRender',
-                  'preserveCellWhiteSpace'
+                  'preserveCellWhiteSpace',
+                  'showRadioButton'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}

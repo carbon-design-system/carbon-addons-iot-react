@@ -2902,6 +2902,7 @@ Map {
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
       "showExpanderColumn": false,
+      "showRadioButton": false,
       "singleRowEditButtons": null,
       "size": undefined,
       "testId": "",
@@ -3390,6 +3391,9 @@ Map {
         "type": "bool",
       },
       "showExpanderColumn": Object {
+        "type": "bool",
+      },
+      "showRadioButton": Object {
         "type": "bool",
       },
       "singleRowEditButtons": Object {

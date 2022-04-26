@@ -1,6 +1,6 @@
 import React from 'react';
 import { actions } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { Table, TableContainer, TableBody } from 'carbon-components-react';
 import { Add32, Edit16, Stop16, TrashCan16 } from '@carbon/icons-react';
 
@@ -114,7 +114,8 @@ export const IsNotSelectable = () => (
     options={{
       ...tableBodyRowProps.options,
       hasRowActions: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
+      showRadioButton: true,
     }}
   />
 );
@@ -128,7 +129,8 @@ export const IsSelectable = () => (
     options={{
       ...tableBodyRowProps.options,
       hasRowActions: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
+      showRadioButton: boolean('Show Radio button', false),
     }}
   />
 );
@@ -145,6 +147,7 @@ export const SingleSelect = () => (
       ...tableBodyRowProps.options,
       hasRowActions: true,
       hasRowSelection: 'single',
+      showRadioButton: boolean('show radio button', false),
     }}
   />
 );

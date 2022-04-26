@@ -20,6 +20,7 @@ const tableRowProps = {
   totalColumns: 1,
   id: 'tableRow',
   tableId: 'tableId',
+  selectRowAria: 'selectedRow',
   ordering: [{ columnId: 'col1', isHidden: false }],
   values: { col1: 'value1' },
   columns: [
@@ -301,6 +302,30 @@ describe('TableBodyRow', () => {
     userEvent.click(container.querySelector('tr'));
     expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
     expect(mockActions.onRowClicked).toHaveBeenCalled();
+  });
+
+  it('hasRowSingleSelection with radio button', () => {
+    const { container } = render(
+      <TableBodyRow
+        options={{
+          hasRowSelection: 'single',
+          wrapCellText: 'always',
+          truncateCellText: true,
+          showRadioButton: true,
+        }}
+        tableActions={mockActions}
+        {...tableRowProps}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    userEvent.click(container.querySelector('tr'));
+    expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
+    expect(mockActions.onRowClicked).toHaveBeenCalled();
+    expect(screen.getByRole('radio', { name: tableRowProps.selectRowAria })).toHaveClass(
+      'bx--radio-button'
+    );
   });
 
   it('calls onRowSelected when expanded rows with hasRowSelection:"single" are clicked', () => {

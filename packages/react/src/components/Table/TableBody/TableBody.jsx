@@ -42,6 +42,7 @@ const propTypes = {
   /** since some columns might not be currently visible */
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+  showRadioButton: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.oneOfType([
     PropTypes.bool,
@@ -114,6 +115,7 @@ const defaultProps = {
   columns: [],
   totalColumns: 0,
   hasRowSelection: false,
+  showRadioButton: false,
   hasRowExpansion: false,
   hasRowNesting: false,
   hasRowActions: false,
@@ -155,6 +157,7 @@ const TableBody = ({
   rowActionsState,
   hasRowActions,
   hasRowSelection,
+  showRadioButton,
   hasRowExpansion,
   hasRowNesting,
   shouldExpandOnRowClick,
@@ -275,6 +278,7 @@ const TableBody = ({
           hasRowExpansion={hasRowExpansion}
           hasRowNesting={hasRowNesting}
           hasRowSelection={hasRowSelection}
+          showRadioButton={showRadioButton}
           indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
           inProgressText={inProgressText}
           langDir={langDir}
