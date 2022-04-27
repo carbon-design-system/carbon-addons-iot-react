@@ -12,6 +12,7 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+import { Version } from '../DashboardEditor/editorUtils';
 
 import CardEditor from './CardEditor';
 
@@ -486,3 +487,62 @@ export const DynamicallyAddSpecialContentToCardEditForm = () => (
 );
 
 DynamicallyAddSpecialContentToCardEditForm.storyName = 'Dynamically add edit form content';
+
+export const ForV2TimeSeries = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        id: 'timeseries',
+        title: 'time-series-card',
+        size: 'MEDIUMWIDE',
+        type: 'TIMESERIES',
+        content: {
+          series: [
+            {
+              dataSourceId: 'v2pressure',
+              label: 'V2 Pressure',
+              color: '#1192e8',
+              version: Version.V2,
+            },
+          ],
+          dataSource: {
+            attributes: [
+              {
+                downSampleMethod: 'max',
+                attribute: 'v2pressure',
+                id: 'v2pressure',
+                version: Version.V2,
+              },
+            ],
+          },
+          xLabel: 'Time',
+          yLabel: 'Temperature',
+          unit: '˚F',
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          timeDataSourceId: 'timestamp',
+        },
+        interval: 'day',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      dataItems={[
+        { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+        { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+        {
+          dataItemId: 'v2pressure',
+          dataSourceId: 'v2pressure',
+          label: 'V2 Pressure',
+          version: Version.V2,
+        },
+      ]}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+ForV2TimeSeries.storyName = 'for V2 TimeSeries';
