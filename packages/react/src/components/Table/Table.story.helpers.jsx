@@ -1470,7 +1470,11 @@ export const getI18nKnobs = (useGroup = true) => {
     ),
     simpleFiltersTabLabel: text('i18n.simpleFiltersTabLabel', 'Simple filters', I18N_GROUP),
     advancedFiltersTabLabel: text('i18n.advancedFiltersTabLabel', 'Advanced filters', I18N_GROUP),
-    emptyMessage: text('i18n.emptyMessage', 'There is no data', I18N_GROUP),
+    emptyMessage: text(
+      'i18n.emptyMessage',
+      'Empty state message. There is no more data. Test word break with extra strings. ',
+      I18N_GROUP
+    ),
     emptyMessageWithFilters: text(
       'i18n.emptyMessageWithFilters',
       'No results match the current filters',
