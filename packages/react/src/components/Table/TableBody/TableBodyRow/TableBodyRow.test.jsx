@@ -223,6 +223,7 @@ describe('TableBodyRow', () => {
     );
     expect(container).toBeDefined();
   });
+
   it('verify custom cell renderer', () => {
     const customRenderDataFunction = ({ value, columnId, rowId, row }) => (
       <div id={value}>
@@ -304,8 +305,8 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowClicked).toHaveBeenCalled();
   });
 
-  it('hasRowSingleSelection with radio button', () => {
-    const { container } = render(
+  it('shows radio button when rows hasRowSingleSelection', () => {
+    render(
       <TableBodyRow
         options={{
           hasRowSelection: 'single',
@@ -320,9 +321,28 @@ describe('TableBodyRow', () => {
         container: document.body.appendChild(document.createElement('tbody')),
       }
     );
-    userEvent.click(container.querySelector('tr'));
+    userEvent.click(screen.getByRole('radio', { name: tableRowProps.selectRowAria }));
     expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
-    expect(mockActions.onRowClicked).toHaveBeenCalled();
+  });
+
+  it('shows radio button on row with expansion', () => {
+    render(
+      <TableBodyRow
+        {...tableRowProps}
+        tableActions={mockActions}
+        options={{
+          hasRowSelection: 'single',
+          hasRowExpansion: true,
+          wrapCellText: 'always',
+          truncateCellText: true,
+          showRadioButton: true,
+        }}
+        isExpanded
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
     expect(screen.getByRole('radio', { name: tableRowProps.selectRowAria })).toHaveClass(
       'bx--radio-button'
     );
@@ -350,6 +370,32 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
   });
 
+  it('calls onRowSelected when expanded rows with hasRowSelection:"single" and radio button are clicked', () => {
+    render(
+      <TableBodyRow
+        {...tableRowProps}
+        tableActions={mockActions}
+        options={{
+          hasRowSelection: 'single',
+          hasRowExpansion: true,
+          wrapCellText: 'always',
+          truncateCellText: true,
+          showRadioButton: true,
+        }}
+        isExpanded
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    expect(mockActions.onRowSelected).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('cell', { name: 'value1' }));
+    expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
+    expect(screen.getByRole('radio', { name: tableRowProps.selectRowAria })).toHaveClass(
+      'bx--radio-button'
+    );
+  });
+
   it('calls onRowSelected & onRowClicked when selected rows with hasRowSelection:"single" are clicked', () => {
     render(
       <TableBodyRow
@@ -373,6 +419,30 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowClicked).toHaveBeenCalledWith(tableRowProps.id);
   });
 
+  it('calls onRowSelected & onRowClicked when selected rows with hasRowSelection:"single" and radio buttoon are clicked', () => {
+    render(
+      <TableBodyRow
+        {...tableRowProps}
+        tableActions={mockActions}
+        options={{
+          hasRowSelection: 'single',
+          wrapCellText: 'always',
+          truncateCellText: true,
+          showRadioButton: true,
+        }}
+        isSelectable
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+    expect(mockActions.onRowSelected).not.toHaveBeenCalled();
+    expect(mockActions.onRowClicked).not.toHaveBeenCalled();
+    userEvent.click(screen.getByRole('cell', { name: 'value1' }));
+    expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
+    expect(mockActions.onRowClicked).toHaveBeenCalledWith(tableRowProps.id);
+  });
+
   it('does not call onRowSelected when expanded rows with hasRowSelection:"single" are clicked if isSelectable:"false"', () => {
     render(
       <TableBodyRow
@@ -383,6 +453,29 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
+        }}
+        isSelectable={false}
+      />,
+      {
+        container: document.body.appendChild(document.createElement('tbody')),
+      }
+    );
+
+    userEvent.click(screen.getByRole('cell', { name: 'value1' }));
+    expect(mockActions.onRowSelected).not.toHaveBeenCalled();
+  });
+
+  it('does not call onRowSelected when expanded rows with hasRowSelection:"single" and showRadioButton are clicked if isSelectable:"false"', () => {
+    render(
+      <TableBodyRow
+        {...tableRowProps}
+        tableActions={mockActions}
+        options={{
+          hasRowSelection: 'single',
+          hasRowExpansion: true,
+          wrapCellText: 'always',
+          truncateCellText: true,
+          showRadioButton: true,
         }}
         isSelectable={false}
       />,

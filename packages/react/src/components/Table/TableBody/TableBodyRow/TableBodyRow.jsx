@@ -261,7 +261,6 @@ const TableBodyRow = ({
             name={`select-row-${tableId}-${id}`}
             hideLabel
             labelText={selectRowAria}
-            onChange={() => onRowSelected(id, !isSelected)}
             checked={isSelected}
             disabled={isSelectable === false}
           />
