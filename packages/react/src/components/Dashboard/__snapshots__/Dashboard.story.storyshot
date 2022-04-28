@@ -81,7 +81,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -293,7 +292,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="BAR"
             >
               <div
                 className="iot--card--header"
@@ -392,7 +390,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -500,7 +497,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -608,7 +604,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="CUSTOM"
             >
               <div
                 className="iot--card--content"
@@ -651,7 +646,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -761,7 +755,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -899,7 +892,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -1024,7 +1016,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -1160,7 +1151,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="GAUGE"
             >
               <div
                 className="iot--card--header"
@@ -1321,7 +1311,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -1451,7 +1440,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -1599,7 +1587,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -2422,7 +2409,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -2571,7 +2557,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -3038,7 +3023,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3250,7 +3234,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="BAR"
             >
               <div
                 className="iot--card--header"
@@ -3349,7 +3332,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3457,7 +3439,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3565,7 +3546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="CUSTOM"
             >
               <div
                 className="iot--card--content"
@@ -3608,7 +3588,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3718,7 +3697,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3856,7 +3834,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -3981,7 +3958,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -4117,7 +4093,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="GAUGE"
             >
               <div
                 className="iot--card--header"
@@ -4278,7 +4253,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -4408,7 +4382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -4556,7 +4529,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -5379,7 +5351,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -5528,7 +5499,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -6030,7 +6000,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6242,7 +6211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="BAR"
             >
               <div
                 className="iot--card--header"
@@ -6341,7 +6309,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6449,7 +6416,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6557,7 +6523,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="CUSTOM"
             >
               <div
                 className="iot--card--content"
@@ -6600,7 +6565,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6710,7 +6674,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6848,7 +6811,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -6973,7 +6935,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -7109,7 +7070,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="GAUGE"
             >
               <div
                 className="iot--card--header"
@@ -7270,7 +7230,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -7400,7 +7359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -7548,7 +7506,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -8371,7 +8328,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -8520,7 +8476,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -8987,7 +8942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "632px",
               }
             }
-            type="BAR"
           >
             <div
               className="iot--card--header"
@@ -9168,7 +9122,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -9436,7 +9389,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "632px",
               }
             }
-            type="TIMESERIES"
           >
             <div
               className="iot--card--header"
@@ -9616,7 +9568,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -11496,7 +11447,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -11708,7 +11658,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="BAR"
             >
               <div
                 className="iot--card--header"
@@ -11807,7 +11756,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -11915,7 +11863,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12023,7 +11970,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="CUSTOM"
             >
               <div
                 className="iot--card--content"
@@ -12066,7 +12012,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12176,7 +12121,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12314,7 +12258,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12439,7 +12382,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12575,7 +12517,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="GAUGE"
             >
               <div
                 className="iot--card--header"
@@ -12736,7 +12677,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -12866,7 +12806,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -13014,7 +12953,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -13837,7 +13775,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -13986,7 +13923,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -14453,7 +14389,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 "width": "632px",
               }
             }
-            type="TIMESERIES"
           >
             <div
               className="iot--card--header"
@@ -14597,7 +14532,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -14699,7 +14633,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -14803,7 +14736,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -14907,7 +14839,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15011,7 +14942,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15115,7 +15045,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15225,7 +15154,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15412,7 +15340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15514,7 +15441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15618,7 +15544,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15722,7 +15647,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15826,7 +15750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -15930,7 +15853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16040,7 +15962,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16227,7 +16148,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16331,7 +16251,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16437,7 +16356,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16569,7 +16487,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16776,7 +16693,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16880,7 +16796,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -16986,7 +16901,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17118,7 +17032,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17325,7 +17238,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17446,7 +17358,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17572,7 +17483,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17701,7 +17611,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -17895,7 +17804,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18016,7 +17924,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18142,7 +18049,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18271,7 +18177,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18465,7 +18370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18569,7 +18473,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18673,7 +18576,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18777,7 +18679,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -18881,7 +18782,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19058,7 +18958,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19162,7 +19061,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19266,7 +19164,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19370,7 +19267,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19474,7 +19370,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "308px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19651,7 +19546,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19753,7 +19647,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19857,7 +19750,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -19961,7 +19853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20065,7 +19956,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20169,7 +20059,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20283,7 +20172,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20397,7 +20285,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20501,7 +20388,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20607,7 +20493,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20739,7 +20624,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20873,7 +20757,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -20994,7 +20877,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21120,7 +21002,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21249,7 +21130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21370,7 +21250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21474,7 +21353,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21578,7 +21456,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21682,7 +21559,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21786,7 +21662,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -21963,7 +21838,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22065,7 +21939,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22169,7 +22042,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22273,7 +22145,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22377,7 +22248,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22481,7 +22351,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22595,7 +22464,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22709,7 +22577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22813,7 +22680,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -22919,7 +22785,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23051,7 +22916,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23185,7 +23049,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23306,7 +23169,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23432,7 +23294,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23561,7 +23422,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23682,7 +23542,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23786,7 +23645,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23890,7 +23748,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -23994,7 +23851,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24098,7 +23954,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24275,7 +24130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24432,7 +24286,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24587,7 +24440,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24817,7 +24669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -24974,7 +24825,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -25129,7 +24979,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -25359,7 +25208,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -25572,7 +25420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -25755,7 +25602,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -26040,7 +25886,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -26253,7 +26098,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -26436,7 +26280,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -26721,7 +26564,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -26917,7 +26759,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -27189,7 +27030,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -27385,7 +27225,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -27657,7 +27496,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -27921,7 +27759,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -28123,7 +27960,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -28462,7 +28298,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -28726,7 +28561,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -28928,7 +28762,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="VALUE"
               >
                 <div
                   className="iot--card--header"
@@ -29296,7 +29129,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -29508,7 +29340,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "1280px",
                 }
               }
-              type="BAR"
             >
               <div
                 className="iot--card--header"
@@ -29607,7 +29438,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -29715,7 +29545,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -29823,7 +29652,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="CUSTOM"
             >
               <div
                 className="iot--card--content"
@@ -29866,7 +29694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -29976,7 +29803,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -30114,7 +29940,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -30239,7 +30064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -30375,7 +30199,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "308px",
                 }
               }
-              type="GAUGE"
             >
               <div
                 className="iot--card--header"
@@ -30536,7 +30359,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="VALUE"
             >
               <div
                 className="iot--card--header"
@@ -30666,7 +30488,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -30814,7 +30635,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TABLE"
             >
               <div
                 className="iot--card--content"
@@ -31637,7 +31457,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="TIMESERIES"
             >
               <div
                 className="iot--card--header"
@@ -31786,7 +31605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   "width": "632px",
                 }
               }
-              type="IMAGE"
             >
               <div
                 className="iot--card--header"
@@ -32243,7 +32061,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="CUSTOM"
               >
                 <div
                   className="iot--card--content"
@@ -32394,7 +32211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="CUSTOM"
               >
                 <div
                   className="iot--card--content"
@@ -32841,7 +32657,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="CUSTOM"
               >
                 <div
                   className="iot--card--content"
@@ -33576,7 +33391,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="CUSTOM"
               >
                 <div
                   className="iot--card--content"
@@ -33649,7 +33463,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "632px",
                   }
                 }
-                type="CUSTOM"
               >
                 <div
                   className="iot--card--content"
@@ -33703,37 +33516,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </div>
               <div
                 className="iot--card iot--card--wrapper"
-                content={
-                  Object {
-                    "data": Array [
-                      Object {
-                        "extraContent": <span>
-                          View your device data in the entity view of the main Watson IoT Platform dashboard. If your plan includes Watson IoT Platform Analytics, the data is stored in the data lake for later retrieval and processing.
-                        </span>,
-                        "id": "row-9",
-                        "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-explore.html",
-                        "value": "Explore entity metrics in the data lake",
-                      },
-                      Object {
-                        "extraContent": <span>
-                          Process your entity metrics by running simple or complex calculations to create calculated metrics.
-                        </span>,
-                        "id": "row-10",
-                        "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-calculate.html",
-                        "value": "Perform simple calculations on your entity metrics",
-                      },
-                      Object {
-                        "extraContent": <span>
-                          Visualize your entity metrics in monitoring dashboards to get an overview of your data.
-                        </span>,
-                        "id": "row-11",
-                        "link": "https://www.ibm.com/support/knowledgecenter/SSQP8H/iot/guides/micro-monitor.html",
-                        "value": "View entity metrics in a monitoring dashboard",
-                      },
-                    ],
-                    "loadData": [Function],
-                  }
-                }
                 data-testid="Card"
                 id="tutorials"
                 onMouseDown={[Function]}
@@ -33754,7 +33536,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "1280px",
                   }
                 }
-                type="LIST"
               >
                 <div
                   className="iot--card--header"
@@ -33913,33 +33694,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               </div>
               <div
                 className="iot--card iot--card--wrapper"
-                content={
-                  Object {
-                    "data": Array [
-                      Object {
-                        "id": "row-9",
-                        "link": "https://internetofthings.ibmcloud.com",
-                        "value": "Notice - IBM Watson IoT Platform support for IBM Cloud resource groups",
-                      },
-                      Object {
-                        "id": "row-10",
-                        "link": "https://internetofthings.ibmcloud.com",
-                        "value": "New Connectivity Status API now available on IBM Watson IoT Platform",
-                      },
-                      Object {
-                        "id": "row-11",
-                        "link": "https://internetofthings.ibmcloud.com",
-                        "value": "Advanced Notice - Sunset of SPAPI support",
-                      },
-                      Object {
-                        "id": "row-12",
-                        "link": "https://internetofthings.ibmcloud.com",
-                        "value": "Advanced Notice - Withdrawal of RTI features from Watson IoT Platform",
-                      },
-                    ],
-                    "loadData": [Function],
-                  }
-                }
                 data-testid="Card"
                 id="announcements"
                 onMouseDown={[Function]}
@@ -33960,7 +33714,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     "width": "1280px",
                   }
                 }
-                type="LIST"
               >
                 <div
                   className="iot--card--header"

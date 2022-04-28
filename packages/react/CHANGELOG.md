@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.46...v2.149.0-next.47) (2022-04-11)
+
+
+### Bug Fixes
+
+* **cardtype:** fix on color variable name ([7127e70](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7127e7084d87b182a81b3753ff87756bdfbc08db))
+
+
+
+
+
+# [2.149.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.45...v2.149.0-next.46) (2022-04-05)
+
+
+### Bug Fixes
+
+* **cardtype:** fix from feedback ([f0bb972](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f0bb9729a40d0c32c2bf731a42f13ba997037833))
+* **charts:** card and charts fixes from feedback ([e44d199](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e44d199251d201aeb14878c19b80c8ce7189466b))
+* **meter:** meter rtl fix ([28bce66](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28bce6679b0e1571064751ecb4878f950cdc420e))
+* **tests:** fixes on tests and code ([6b8fef2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b8fef27dcf3f3fe4e717ab3e7636cf785d60ea4))
+
+
+### Features
+
+* **card:** support type prop in card and renders charts ([1e6cef5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1e6cef5e41abb88d95fac05f31a6ce005252d0b1))
+* **chartcard:** support to threshold in chart cards ([34905da](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/34905dae3fd2f3df4a3cf4415e3344999daf2667))
+* **charts:** new sparkline and meter chart ([6ffbe12](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6ffbe12a5c173acd00eb74f713e33ffb8fa6e714))
+* **stackedareachart:** stackedareachartcard new component ([b1220b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b1220b68d2cf5a40a46a6d3c807216748d94c8ef))
+
+
+
+
+
 # [2.149.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.44...v2.149.0-next.45) (2022-04-04)
 
 

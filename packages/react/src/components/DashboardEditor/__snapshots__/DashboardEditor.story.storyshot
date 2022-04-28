@@ -623,7 +623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="TABLE"
                   >
                     <div
                       className="iot--card--content"
@@ -1728,7 +1727,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="CUSTOM"
                     value={35}
                   >
                     <div
@@ -1864,7 +1862,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="VALUE"
                   >
                     <div
                       className="iot--card--header"
@@ -2045,7 +2042,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="TIMESERIES"
                   >
                     <div
                       className="iot--card--header"
@@ -2166,7 +2162,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       }
                     }
                     tabIndex={0}
-                    type="BAR"
                   >
                     <div
                       className="iot--card--header"
@@ -9800,7 +9795,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
@@ -9939,7 +9933,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="VALUE"
                 >
                   <div
                     className="iot--card--header"
@@ -18650,7 +18643,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TIMESERIES"
                 >
                   <div
                     className="iot--card--header"
@@ -20026,7 +20018,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TABLE"
                 >
                   <div
                     className="iot--card--content"
@@ -21132,7 +21123,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
@@ -21260,7 +21250,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="VALUE"
                 >
                   <div
                     className="iot--card--header"
@@ -21492,7 +21481,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="TIMESERIES"
                 >
                   <div
                     className="iot--card--header"
@@ -21613,7 +21601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="BAR"
                 >
                   <div
                     className="iot--card--header"
@@ -21734,7 +21721,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     }
                   }
                   tabIndex={0}
-                  type="CUSTOM"
                   value={35}
                 >
                   <div
