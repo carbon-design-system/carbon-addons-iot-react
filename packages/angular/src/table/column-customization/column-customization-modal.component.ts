@@ -51,103 +51,36 @@ export class AIColumnCustomizationModal extends BaseModal {
     protected modalService: ModalService
   ) {
     super();
-    this.listBuilderModel.items = this.headerToListItems(model.header);
+    this.listBuilderModel.items = this.model.tabularToNodeList(this.headerItemToNode);
   }
 
   updateColumns() {
-    this.moveColumns(this.listBuilderModel.addedItems);
-    this.listBuilderModel.items = this.headerToListItems(this.model.header);
+    // const { header } = this.model.nodeListToTabular(this.listBuilderModel.addedItems);
+    this.reorderColumnsTo(header);
+    // this.listBuilderModel.items = this.headerToListItems(this.model.header);
     this.closeModal();
   }
 
-  protected headerToListItems(
-    header: TableHeaderItem[][],
-    headerRow: TableHeaderItem[] = [],
-    availableHeaderItems: TableHeaderItem[][] = [],
-    rowIndex = 0
-  ) {
-    if (!headerRow.length && rowIndex === 0) {
-      headerRow = header[0];
-    }
-
-    if (!availableHeaderItems.length) {
-      availableHeaderItems = header.map((headerRow) =>
-        headerRow.filter((headerItem) => headerItem !== null)
-      );
-    }
-
-    return headerRow
-      .filter((headerItem) => headerItem !== null)
-      .map((headerItem) => {
-        const listBuilderItem = new AIListBuilderItem({
-          value: headerItem.data,
-          isSelectable: true,
-          addOnSelect: true,
-          addedState: null,
-          itemMetaData: {
-            headerItem: headerItem,
-          },
-          addedItemProps: {
-            itemMetaData: {
-              headerItem: headerItem,
-            },
-            expanded: false,
-            isDraggable: true,
-          },
-        });
-
-        const colSpan = headerItem?.colSpan || 1;
-        const rowSpan = headerItem?.rowSpan || 1;
-
-        if (rowIndex + rowSpan >= this.model.header.length) {
-          return listBuilderItem;
-        }
-
-        let spaceLeft = colSpan;
-        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
-        const children = [];
-
-        while (spaceLeft > 0 && availableChildren.length) {
-          const nextChild = availableChildren.shift();
-          spaceLeft -= nextChild?.colSpan || 1;
-          children.push(nextChild);
-        }
-
-        listBuilderItem.items = this.headerToListItems(
-          header,
-          children,
-          availableHeaderItems,
-          rowIndex + rowSpan
-        );
-
-        return listBuilderItem;
-      });
+  protected headerItemToNode(headerItem: TableHeaderItem) {
+    return new AIListBuilderItem({
+      value: headerItem.data,
+      isSelectable: true,
+      addOnSelect: true,
+      addedState: null,
+      itemMetaData: {
+        headerItem: headerItem,
+      },
+      addedItemProps: {
+        itemMetaData: {
+          headerItem: headerItem,
+        },
+        expanded: false,
+        isDraggable: true,
+      },
+    })
   }
 
-  protected listItemsToHeader(
-    listItems: AIListItem[],
-    header: TableHeaderItem[][] = new Array(this.model.header.length).fill([]),
-    rowIndex = 0
-  ) {
-    listItems.forEach((listItem: any) => {
-      const rowSpan = listItem.headerItem?.rowSpan || 1;
-
-      header[rowIndex] = [...header[rowIndex], listItem.itemMetaData.headerItem];
-
-      if (rowIndex + rowSpan >= this.model.header.length) {
-        return;
-      }
-
-      if (listItem.hasChildren()) {
-        this.listItemsToHeader(listItem.items, header, rowIndex + rowSpan);
-      }
-    });
-
-    return header;
-  }
-
-  protected moveColumns(items: AIListItem[]) {
-    const header = this.listItemsToHeader(items);
+  protected reorderColumnsTo(header: TableHeaderItem[][]) {
     header.forEach((headerRow, rowIndex) => {
       headerRow.forEach((headerItem, newIndex) => {
         const currentIndex = this.model.header[rowIndex].indexOf(headerItem);

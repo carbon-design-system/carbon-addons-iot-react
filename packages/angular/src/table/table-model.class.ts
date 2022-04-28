@@ -706,9 +706,9 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    const nested = this.tabularToNested();
-    this.moveNested(nested, indexFrom, indexTo, rowIndex);
-    const { header, data } = this.nestedToTabular(nested);
+    const nested = this.tabularToNodeList();
+    this.moveNodeListItem(nested, indexFrom, indexTo, rowIndex);
+    const { header, data } = this.nodeListToTabular(nested);
     this.header = header;
     this._data = data;
   }
@@ -988,7 +988,15 @@ export class AITableModel implements PaginationModel {
     }
   }
 
-  protected tabularToNested(
+  protected headerItemToNode(headerItem: TableHeaderItem) {
+    return {
+      headerItem,
+      items: []
+    }
+  }
+
+  tabularToNodeList(
+    headerItemToNode: (headerItem: TableHeaderItem) => any = this.headerItemToNode,
     headerRow: TableHeaderItem[] = [],
     availableHeaderItems: TableHeaderItem[][] = [],
     // This allows us to walk the leaves as if they were in a list from left to right.
@@ -1009,6 +1017,8 @@ export class AITableModel implements PaginationModel {
     return headerRow
       .filter((headerItem) => headerItem !== null)
       .map((headerItem, i) => {
+        const node = headerItemToNode(headerItem);
+
         const colSpan = headerItem?.colSpan || 1;
         const rowSpan = headerItem?.rowSpan || 1;
 
@@ -1017,12 +1027,10 @@ export class AITableModel implements PaginationModel {
           const leafIndex = leafIndexRef.current;
           leafIndexRef.current += colSpan;
 
-          return {
-            headerItem,
-            leafIndex,
-            rowIndex,
-            children: [],
-          };
+          node.leafIndex = leafIndex;
+          node.rowIndex = rowIndex;
+
+          return node
         }
 
         let spaceLeft = colSpan;
@@ -1035,37 +1043,37 @@ export class AITableModel implements PaginationModel {
           children.push(nextChild);
         }
 
-        return {
-          headerItem,
-          leafIndex: -1,
-          rowIndex,
-          children: this.tabularToNested(
-            children,
-            availableHeaderItems,
-            leafIndexRef,
-            rowIndex + rowSpan
-          ),
-        };
+        node.leafIndex = -1;
+        node.rowIndex = rowIndex;
+        node.items = this.tabularToNodeList(
+          headerItemToNode,
+          children,
+          availableHeaderItems,
+          leafIndexRef,
+          rowIndex + rowSpan
+        );
+
+        return node
       });
   }
 
-  protected nestedToTabular(
-    nested: any,
+  nodeListToTabular(
+    nodeList: any,
     header: TableHeaderItem[][] = new Array(this.header.length).fill([]),
     data: TableItem[][] = new Array(this._data.length).fill([]),
     rowIndex = 0
   ) {
-    nested.forEach((headerObj: any) => {
-      const rowSpan = headerObj.headerItem?.rowSpan || 1;
-      const colSpan = headerObj.headerItem?.colSpan || 1;
+    nodeList.forEach((node: any) => {
+      const rowSpan = node.headerItem?.rowSpan || 1;
+      const colSpan = node.headerItem?.colSpan || 1;
 
-      header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
+      header[rowIndex] = [...header[rowIndex], node.headerItem];
 
-      if (headerObj.leafIndex >= 0) {
+      if (node.leafIndex >= 0) {
         for (let i = 0; i < data.length; i++) {
           data[i] = [
             ...data[i],
-            ...this._data[i].slice(headerObj.leafIndex, headerObj.leafIndex + colSpan),
+            ...this._data[i].slice(node.leafIndex, node.leafIndex + colSpan),
           ];
         }
       }
@@ -1074,8 +1082,8 @@ export class AITableModel implements PaginationModel {
         return;
       }
 
-      const children = headerObj.children;
-      this.nestedToTabular(children, header, data, rowIndex + rowSpan);
+      const children = node.items;
+      this.nodeListToTabular(children, header, data, rowIndex + rowSpan);
     });
 
     return {
@@ -1087,37 +1095,37 @@ export class AITableModel implements PaginationModel {
   /**
    * Move `nested` element at `rowIndex` with index `indexFrom` to `indexTo`.
    */
-  protected moveNested(
-    nested: any,
+  protected moveNodeListItem(
+    nodeList: any,
     indexFrom: number,
     indexTo: number,
     rowIndex = 0,
     startingChildIndex = 0
   ) {
-    if (!nested.length) {
+    if (!nodeList.length) {
       return;
     }
 
-    const currentRowIndex = nested[0].rowIndex;
+    const currentRowIndex = nodeList[0].rowIndex;
     if (
       currentRowIndex === rowIndex &&
       startingChildIndex <= indexFrom &&
-      startingChildIndex + nested.length >= indexFrom &&
+      startingChildIndex + nodeList.length >= indexFrom &&
       startingChildIndex <= indexTo &&
-      startingChildIndex + nested.length >= indexTo
+      startingChildIndex + nodeList.length >= indexTo
     ) {
       this.moveMultipleToIndex(
         [indexFrom - startingChildIndex],
         indexTo - startingChildIndex,
-        nested
+        nodeList
       );
       return;
     }
 
-    nested.forEach((headerObj: any, i: number) => {
-      const rowSpan = headerObj.headerItem?.rowSpan || 1;
-      const children = headerObj.children;
-      this.moveNested(
+    nodeList.forEach((node: any, i: number) => {
+      const rowSpan = node.headerItem?.rowSpan || 1;
+      const children = node.items;
+      this.moveNodeListItem(
         children,
         indexFrom,
         indexTo,
