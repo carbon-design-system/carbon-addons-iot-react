@@ -142,7 +142,17 @@ describe('DataSeriesFormItemModal', () => {
     manufacturer: ['Rentech', 'GHI Industries'],
   };
   
-  const version = null;
+  const editTimeseriesDataItemDownSample = {
+    label: 'Temperature',
+    dataSourceId: 'temperature',
+    color: 'red',
+    downSampleMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
+  };
 
   const commonProps = {
     onChange: mockOnChange,
@@ -150,7 +160,6 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
-    version,
   };
 
   it('Renders for timeseries card data', () => {
@@ -1260,9 +1269,7 @@ describe('DataSeriesFormItemModal', () => {
     // and IMAGE cards just return what was given.
     expect(commonProps.onChange).toHaveBeenCalledWith({});
   });
-
-  it('Version is V1 for timebased stacked bar should show grain and aggregation methods', () => {
-    const version ='V1'
+  it('When no Downsample method for timebased stacked bar should show grain and aggregation methods', () => {
     const stackedTimeBasedBar = {
       title: 'Untitled',
       size: 'MEDIUM',
@@ -1305,18 +1312,15 @@ describe('DataSeriesFormItemModal', () => {
         isSummaryDashboard
         cardConfig={stackedTimeBasedBar}
         editDataItem={aggregatedBarChartDataItem}
-        version={version}
       />
     );
 
     // grain field and aggregator should be shown
     expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
-    const aggregationValue = screen.getByText('Max');
-    expect(aggregationValue).toBeInTheDocument();
     expect(screen.queryByLabelText('DownSample Method')).not.toBeInTheDocument();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
   });
-  it('Version is V2 for timebased stacked bar should show DownSample method and hide grain and aggregation methods', () => {
-    const version ='V2'
+  it('Version is V2 for timebased stacked bar should show Downsample method and hide grain and aggregation methods', () => {
     const stackedTimeBasedBar = {
       title: 'Untitled',
       size: 'MEDIUM',
@@ -1351,7 +1355,6 @@ describe('DataSeriesFormItemModal', () => {
       downSampleMethod: 'max',
     };
 
-
     render(
       <DataSeriesFormItemModal
         {...commonProps}
@@ -1359,19 +1362,61 @@ describe('DataSeriesFormItemModal', () => {
         isSummaryDashboard
         cardConfig={stackedTimeBasedBar}
         editDataItem={downSampleBarChartDataItem}
-        version={version}
       />
     );
-
-    // grain field and aggregator should not be shown
-    const label = screen.getByText('Custom label');
-    const legendColorLabel = screen.getByText('Bar color');
-    expect(label).toBeInTheDocument();
-    expect(legendColorLabel).toBeInTheDocument();
+    expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();
     expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
-    const downSampleValue = screen.getByText('Max');
-    expect(downSampleValue).toBeInTheDocument();
-    expect(screen.queryByLabelText('Aggergation Method')).not.toBeInTheDocument();
     expect(screen.getByText('Downsample method')).toBeVisible();
   });
+  it('Renders an downSample selector in summary dashboards and fires setEditDataItem', async () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemDownSample}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+    const downSampleDropdown = (await screen.findAllByText('None'))[1];
+    expect(downSampleDropdown).toBeInTheDocument();
+
+    fireEvent.click(downSampleDropdown);
+
+    const downSampleOption = screen.getByText('Min');
+    expect(downSampleOption).toBeInTheDocument();
+
+    fireEvent.click(downSampleOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+
+  it("should fallback to an empty string when editDataItem.downSampleMethod doesn't exist", () => {
+    const { container } = render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemDownSample}
+        editDataSeries={editDataSeriesTimeSeries}
+        isSummaryDashboard
+        validDataItems={[
+          {
+            dataItemId: 'testItemId',
+            dataSourceId: 'temperature',
+            downSampleMethod: 'min',
+          },
+        ]}
+      />
+    );
+    expect(screen.getByText('Downsample method')).toBeVisible();
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)[0]
+    ).toHaveTextContent('');
+  });
+
 });

@@ -12,7 +12,6 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
-import { Version } from '../DashboardEditor/editorUtils';
 
 import CardEditor from './CardEditor';
 
@@ -502,7 +501,8 @@ export const ForV2TimeSeries = () => (
               dataSourceId: 'v2pressure',
               label: 'V2 Pressure',
               color: '#1192e8',
-              version: Version.V2,
+              downSampleMethod: 'none',
+              downSampleMethods: [],
             },
           ],
           dataSource: {
@@ -511,7 +511,6 @@ export const ForV2TimeSeries = () => (
                 downSampleMethod: 'max',
                 attribute: 'v2pressure',
                 id: 'v2pressure',
-                version: Version.V2,
               },
             ],
           },
@@ -537,12 +536,23 @@ export const ForV2TimeSeries = () => (
           dataItemId: 'v2pressure',
           dataSourceId: 'v2pressure',
           label: 'V2 Pressure',
-          version: Version.V2,
+          downSampleMethod: 'min',
+          downSampleMethods: [
+            { id: 'none', text: 'None' },
+            { id: 'max', text: 'Maximum' },
+            { id: 'min', text: 'Minimum' },
+            { id: 'mean', text: 'Mean' },
+            { id: 'last', text: 'Last' },
+            { id: 'sum', text: 'Sum' },
+            { id: 'standerd', text: 'Standerd deviation' },
+          ]
         },
       ]}
       onAddCard={action('onAddCard')}
     />
   </div>
 );
+
+ForV2TimeSeries.storyName = 'for V2 TimeSeries';
 
 ForV2TimeSeries.storyName = 'for V2 TimeSeries';

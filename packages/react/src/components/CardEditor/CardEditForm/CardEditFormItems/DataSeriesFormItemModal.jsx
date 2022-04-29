@@ -24,7 +24,7 @@ import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import { TextInput } from '../../../TextInput';
-import { handleDataItemEdit, DataItemsPropTypes, Version } from '../../../DashboardEditor/editorUtils';
+import { handleDataItemEdit, DataItemsPropTypes} from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
 
@@ -99,7 +99,6 @@ const propTypes = {
         value: PropTypes.oneOfType([PropTypes.bool, PropTypes.number, PropTypes.string]),
       })
     ),
-    version: PropTypes.string,
   }),
   setEditDataItem: PropTypes.func,
   /** an object where the keys are available dimensions and the values are the values available for those dimensions
@@ -270,10 +269,12 @@ const DataSeriesFormItemModal = ({
     ? Object.keys(editDataItem.dataFilter)[0]
     : '';
 
+  const hasDownSampleMethods = editDataItem?.hasOwnProperty('downSampleMethods'); 
+
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' &&  editDataItem?.version !== Version.V2 && (
+        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' &&  !hasDownSampleMethods && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -570,7 +571,7 @@ const DataSeriesFormItemModal = ({
             }}
           />
         )}
-        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && editDataItem?.version === Version.V2 && (
+        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && hasDownSampleMethods && (
           <div className={`${baseClassName}--input-group`}>
             {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -630,6 +631,7 @@ const DataSeriesFormItemModal = ({
       setEditDataItem,
       type,
       initialDownSample,
+      hasDownSampleMethods,
     ]
   );
 

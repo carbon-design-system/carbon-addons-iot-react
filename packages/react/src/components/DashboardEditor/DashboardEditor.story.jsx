@@ -154,6 +154,21 @@ const mockDataItems = [
       { id: 'last', text: 'Last' },
     ],
   },
+  {
+    dataItemId: 'v2pressure',
+    dataSourceId: 'v2pressure',
+    label: 'V2 Pressure',
+    downSampleMethod: 'min',
+    downSampleMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'max', text: 'Maximum' },
+      { id: 'min', text: 'Minimum' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'last', text: 'Last' },
+      { id: 'sum', text: 'Sum' },
+      { id: 'standerd', text: 'Standerd deviation' },
+    ]
+  },
 ];
 
 export default {
