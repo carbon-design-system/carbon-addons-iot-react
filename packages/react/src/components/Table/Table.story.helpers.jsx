@@ -197,6 +197,7 @@ export const getTableColumns = () => [
   {
     id: 'date',
     name: 'Date',
+    isDate: true,
     filter: { placeholderText: 'enter a date' },
   },
   {

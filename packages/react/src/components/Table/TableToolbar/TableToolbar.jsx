@@ -479,6 +479,7 @@ const TableToolbar = ({
                 ...column.filter,
                 id: column.id,
                 name: column.name,
+                isDate: column.isDate,
                 isFilterable: !isNil(column.filter),
                 isMultiselect: column.filter?.isMultiselect,
               }))}

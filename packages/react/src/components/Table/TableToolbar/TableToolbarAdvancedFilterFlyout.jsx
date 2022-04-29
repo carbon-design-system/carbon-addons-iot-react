@@ -8,6 +8,8 @@ import {
   Tab,
   Tabs,
   TextInput,
+  DatePicker,
+  DatePickerInput,
 } from 'carbon-components-react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
@@ -309,7 +311,40 @@ const TableToolbarAdvancedFilterFlyout = ({
                       return options;
                     };
                     const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
-
+                    if (column.isDate) {
+                      return (
+                        <FormItem
+                          key={`simple-filter-item-${rowIndex}-${columnIndex}`}
+                          className={`${iotPrefix}--filter-flyout__simple-field`}
+                        >
+                          <DatePicker
+                            key={`${columnIndex}-${columnFilterValue}`}
+                            datePickerType="single"
+                            dateFormat="Y-m-d"
+                            id={`column-${rowIndex}-${columnIndex}`}
+                            onChange={(evt) => {
+                              const { selectedItem } = evt;
+                              setFilterState((prev) => {
+                                return {
+                                  ...prev,
+                                  simple: {
+                                    ...prev.simple,
+                                    [column.id]: selectedItem === null ? '' : selectedItem.id,
+                                  },
+                                };
+                              });
+                            }}
+                          >
+                            <DatePickerInput
+                              className={`${iotPrefix}--lelele`}
+                              placeholder="yyyy-mm-dd"
+                              labelText="Date"
+                              id={`column-${rowIndex}-${columnIndex}`}
+                            />
+                          </DatePicker>
+                        </FormItem>
+                      );
+                    }
                     if (column.options) {
                       if (column.isMultiselect) {
                         return (
