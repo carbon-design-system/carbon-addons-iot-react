@@ -57,7 +57,7 @@ import { SelectionType } from '@ai-apps/angular/list';
   `,
 })
 export class ColumnCustomizationModal extends BaseModal implements AfterViewInit {
-  protected listBuilderItems: ListBuilderItem[];
+  public listBuilderItems: ListBuilderItem[];
   protected unselectedListItems: AIListItem[];
   protected selectedListItems: AIListItem[];
 
