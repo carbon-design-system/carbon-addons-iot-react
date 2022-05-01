@@ -12,7 +12,13 @@ export enum SelectionType {
   selector: 'ai-list',
   template: `
     <div class="iot--list" [ngClass]="{ 'iot--list__full-height': isFullHeight }">
-      <ai-list-header [hasSearch]="hasSearch" [title]="title" (onSearch)="handleSearch($event)">
+      <ai-list-header
+        [hasSearch]="hasSearch"
+        [title]="title"
+        [buttons]="headerButtons"
+        [buttonsContext]="headerButtonsContext"
+        (onSearch)="handleSearch($event)"
+      >
       </ai-list-header>
       <div
         class="iot--list--content"
@@ -123,6 +129,8 @@ export class AIListComponent implements OnInit {
    */
   @Input() itemsDraggable: boolean;
 
+  @Input() allowDropOutsideParents = true;
+
   @Input() set isDragging(isDragging: boolean) {
     let shouldEmit = false;
     if (this._isDragging !== isDragging) {
@@ -149,9 +157,15 @@ export class AIListComponent implements OnInit {
     }
   }
 
+  /**
+   * Buttons that are displayed on the right side of the list header.
+   */
+  @Input() headerButtons: TemplateRef<any>;
+
   get draggedItem() {
     return this._draggedItem;
   }
+  @Input() headerButtonsContext: any;
 
   /**
    * Indicates whether a search bar should be rendered in the list header.
@@ -226,13 +240,17 @@ export class AIListComponent implements OnInit {
   }
 
   handleDragOver(dragEvent: DragEvent, receiver: AIListItem) {
+    const isDroppingWithinParent =
+      (receiver !== null && receiver.hasItemAsFirstChild(this.draggedItem)) ||
+      (receiver === null && this.items.some((listItem) => listItem === this.draggedItem));
     // Only allow dropping if:
     // 1. The dragged item is not being dropped onto one of its' own children.
     // 2. The dragged item is not being dropped onto itself.
     if (
       this.draggedItem &&
       !this.draggedItem.hasItem(receiver) &&
-      (receiver === null || receiver.id !== this.draggedItem.id)
+      (receiver === null || receiver.id !== this.draggedItem.id) &&
+      (this.allowDropOutsideParents || isDroppingWithinParent)
     ) {
       dragEvent.preventDefault();
     }

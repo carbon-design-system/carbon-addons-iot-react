@@ -3,25 +3,34 @@ export class ListBuilderItem {
   hideUnselectedItemOnSelect = true;
 
   // Props for the list item in the unselected list.
-  unselectedItemProps: any = {};
+  unselectedItemState: any = {};
   added = false;
 
   // Props for the list item in the selected list.
-  selectedItemProps: any = {};
+  selectedItemState: any = {};
 
-  children: ListBuilderItem[] = [];
+  items: ListBuilderItem[] = [];
 
   constructor(rawData?: any) {
     Object.assign(this, {}, rawData);
 
-    const defaultUnselectedItemProps = {
+    const defaultUnselectedItemState = {
       hidden: this.hideUnselectedItemOnSelect && this.added,
     };
-    const defaultSelectedItemProps = {
+    const defaultSelectedItemState = {
       hidden: !this.added,
     };
 
-    Object.assign(this.unselectedItemProps, defaultUnselectedItemProps, this.unselectedItemProps);
-    Object.assign(this.selectedItemProps, defaultSelectedItemProps, this.selectedItemProps);
+    Object.assign(this.unselectedItemState, defaultUnselectedItemState, this.unselectedItemState);
+    Object.assign(this.selectedItemState, defaultSelectedItemState, this.selectedItemState);
   }
+
+  hasChildren() {
+    return this.items && this.items.length > 0;
+  }
+
+  /**
+   * Allows for any other custom properties to be included in the ListItem
+   */
+  [x: string]: any;
 }

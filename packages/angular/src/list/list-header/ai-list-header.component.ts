@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'ai-list-header',
@@ -7,6 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
       <div class="iot--list-header">
         <div class="iot--list-header--title">
           {{ title }}
+        </div>
+        <div *ngIf="buttons" class="iot--list-header--btn-container">
+          <ng-container [ngTemplateOutlet]="buttons" [ngTemplateOutletContext]="buttonsContext">
+          </ng-container>
         </div>
       </div>
       <div *ngIf="hasSearch" class="iot--list-header--search">
@@ -30,6 +34,9 @@ export class AIListHeaderComponent {
    * Indicates whether a search bar should be rendered in the list header.
    */
   @Input() hasSearch = false;
+
+  @Input() buttons: TemplateRef<any>;
+  @Input() buttonsContext: any;
 
   /**
    * If a `hasSearch` is true, this is emitted when search value is changed.

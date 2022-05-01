@@ -161,6 +161,14 @@ export class AIListItem {
     }
   }
 
+  hasItemAsFirstChild(item: AIListItem) {
+    if (item === undefined || item === null) {
+      return false;
+    }
+
+    return this.items.some((listItem) => item.id === listItem.id);
+  }
+
   removeItem(index = 0) {
     if (index >= 0 && this.items.length > index) {
       this.items.splice(index, 1);
@@ -186,4 +194,9 @@ export class AIListItem {
   allChildrenSelected() {
     return this.items.every((item: AIListItem) => (item.isSelectable ? item.selected : false));
   }
+
+  /**
+   * Allows for any other custom properties to be included in the ListItem
+   */
+  [x: string]: any;
 }

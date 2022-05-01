@@ -29,6 +29,37 @@ export class AITableHeaderItem extends TableHeaderItem {
  * functions for modifying rows and columns and assigning header and data in that order.
  */
 export class AITableModel implements PaginationModel {
+
+  /**
+   * Manually set data length in case the data in the table doesn't
+   * correctly reflect all the data that table is to display.
+   *
+   * Example: if you have multiple pages of data that table will display
+   * but you're loading one at a time.
+   *
+   * Set to `null` to reset to default behavior.
+   */
+  set totalDataLength(length: number) {
+    // if this function is called without a parameter we need to set to null to avoid having undefined != null
+    this._totalDataLength = length || null;
+  }
+
+  /**
+   * Total length of data that table has access to, or the amount manually set
+   */
+  get totalDataLength() {
+    // if manually set data length
+    if (this._totalDataLength !== null && this._totalDataLength >= 0) {
+      return this._totalDataLength;
+    }
+
+    // if empty dataset
+    if (this._data && this._data.length === 1 && this._data[0].length === 0) {
+      return 0;
+    }
+
+    return this._data.length;
+  }
   /**
    * The number of models instantiated, used for (among other things) unique id generation
    */
@@ -76,37 +107,6 @@ export class AITableModel implements PaginationModel {
    * Absolute total number of rows of the table.
    */
   protected _totalDataLength: number;
-
-  /**
-   * Manually set data length in case the data in the table doesn't
-   * correctly reflect all the data that table is to display.
-   *
-   * Example: if you have multiple pages of data that table will display
-   * but you're loading one at a time.
-   *
-   * Set to `null` to reset to default behavior.
-   */
-  set totalDataLength(length: number) {
-    // if this function is called without a parameter we need to set to null to avoid having undefined != null
-    this._totalDataLength = length || null;
-  }
-
-  /**
-   * Total length of data that table has access to, or the amount manually set
-   */
-  get totalDataLength() {
-    // if manually set data length
-    if (this._totalDataLength !== null && this._totalDataLength >= 0) {
-      return this._totalDataLength;
-    }
-
-    // if empty dataset
-    if (this._data && this._data.length === 1 && this._data[0].length === 0) {
-      return 0;
-    }
-
-    return this._data.length;
-  }
 
   /**
    * Used in `data`
@@ -235,6 +235,14 @@ export class AITableModel implements PaginationModel {
   setItemData(rowIndex: number, columnIndex: number, data: any) {
     this._data[rowIndex][columnIndex].data = data;
     // TODO make sure changes are reflected in the table
+  }
+
+  /**
+   * Initializes this instance with data from the given model.
+   * @param model
+   */
+  initFrom(model: AITableModel) {
+    Object.assign(this, {}, Object.assign(Object.create(Object.getPrototypeOf(model)), model));
   }
 
   /**
@@ -620,20 +628,11 @@ export class AITableModel implements PaginationModel {
    * @param index
    */
   deleteColumn(index: number) {
-    const rci = this.realColumnIndex(index);
-    const rowCount = this._data.length;
-    for (let i = 0; i < rowCount; i++) {
-      this._data[i].splice(rci, 1);
-    }
-    // update header if not already set by user
-    if (this.header.length > 0 && this.header[0].length > this._data[0].length) {
-      for (let i = 0; i < this.header.length; i++) {
-        const headerRow = this.header[i];
-        headerRow.splice(rci, 1);
-      }
-    }
-
-    this.dataChange.next();
+    const nodeList = this.tabularToNodeList();
+    nodeList.splice(index, 1);
+    const { header, data } = this.nodeListToTabular(nodeList);
+    this.header = header;
+    this._data = data;
   }
 
   /**
@@ -734,9 +733,9 @@ export class AITableModel implements PaginationModel {
    * |  f  |  g  |  h  |  j  |  i  |
    */
   moveColumn(indexFrom: number, indexTo: number, rowIndex = 0) {
-    const nested = this.tabularToNested();
-    this.moveNested(nested, indexFrom, indexTo, rowIndex);
-    const { header, data } = this.nestedToTabular(nested);
+    const nodeList = this.tabularToNodeList();
+    this.moveNodeListItem(nodeList, indexFrom, indexTo, rowIndex);
+    const { header, data } = this.nodeListToTabular(nodeList);
     this.header = header;
     this._data = data;
   }
@@ -874,6 +873,117 @@ export class AITableModel implements PaginationModel {
   expandRow(index: number, value = true) {
     this.rowsExpanded[index] = value;
     this.rowsExpandedChange.next(index);
+  }
+
+  /**
+   * Returns the actual column index of the given `headerItem`.
+   * @param headerItem
+   */
+  headerColumnIndexOf(headerItem: AITableHeaderItem) {
+    const rowCount = this.header.length;
+    for (let i = 0; i < rowCount; i++) {
+      const columnIndex = this.header[i].indexOf(headerItem);
+      if (columnIndex >= 0) {
+        return columnIndex;
+      }
+    }
+    return -1;
+  }
+
+  tabularToNodeList(
+    // A callback function that determines the format of the nodes given an `AITableHeaderItem`.
+    headerItemToNode: (headerItem: AITableHeaderItem | TableHeaderItem) => any = this
+      .headerItemToNode,
+    headerRow: AITableHeaderItem[] = [],
+    availableHeaderItems: AITableHeaderItem[][] = [],
+    // This allows us to walk the leaves as if they were in a list from left to right.
+    // We need to pass by reference so that we can update this value from within the recursion.
+    leafIndexRef = { current: 0 },
+    rowIndex = 0
+  ) {
+    if (!headerRow.length && rowIndex === 0) {
+      headerRow = this.header[0];
+    }
+
+    if (!availableHeaderItems.length) {
+      availableHeaderItems = this.header.map((headerRow) =>
+        headerRow.filter((headerItem) => headerItem !== null)
+      );
+    }
+
+    return headerRow
+      .filter((headerItem) => headerItem !== null)
+      .map((headerItem) => {
+        const node = headerItemToNode(headerItem);
+
+        const colSpan = headerItem?.colSpan || 1;
+        const rowSpan = headerItem?.rowSpan || 1;
+
+        // Leaf
+        if (rowIndex + rowSpan >= this.header.length) {
+          const leafIndex = leafIndexRef.current;
+          leafIndexRef.current += colSpan;
+
+          node.leafIndex = leafIndex;
+          node.rowIndex = rowIndex;
+
+          return node;
+        }
+
+        let spaceLeft = colSpan;
+        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
+        const children = [];
+
+        while (spaceLeft > 0 && availableChildren.length) {
+          const nextChild = availableChildren.shift();
+          spaceLeft -= nextChild?.colSpan || 1;
+          children.push(nextChild);
+        }
+
+        node.leafIndex = -1;
+        node.rowIndex = rowIndex;
+        node.items = this.tabularToNodeList(
+          headerItemToNode,
+          children,
+          availableHeaderItems,
+          leafIndexRef,
+          rowIndex + rowSpan
+        );
+
+        return node;
+      });
+  }
+
+  nodeListToTabular(
+    nodeList: any,
+    header: AITableHeaderItem[][] = new Array(this.header.length).fill([]),
+    data: TableItem[][] = new Array(this._data.length).fill([]),
+    rowIndex = 0
+  ) {
+    nodeList.forEach((node: any) => {
+      const rowSpan = node.headerItem?.rowSpan || 1;
+      const colSpan = node.headerItem?.colSpan || 1;
+
+      header[rowIndex] = [...header[rowIndex], node.headerItem];
+
+      if (node.leafIndex >= 0) {
+        for (let i = 0; i < data.length; i++) {
+          data[i] = [...data[i], ...this._data[i].slice(node.leafIndex, node.leafIndex + colSpan)];
+        }
+      }
+
+      if (rowIndex + rowSpan >= this.header.length) {
+        return;
+      }
+
+      const children = node.items;
+      this.nodeListToTabular(children, header, data, rowIndex + rowSpan);
+    });
+
+    return {
+      header,
+      data,
+    };
   }
 
   /**
@@ -1016,136 +1126,52 @@ export class AITableModel implements PaginationModel {
     }
   }
 
-  protected tabularToNested(
-    headerRow: AITableHeaderItem[] = [],
-    availableHeaderItems: AITableHeaderItem[][] = [],
-    // This allows us to walk the leaves as if they were in a list from left to right.
-    // We need to pass by reference so that we can update this value from within the recursion.
-    leafIndexRef = { current: 0 },
-    rowIndex = 0
-  ) {
-    if (!headerRow.length && rowIndex === 0) {
-      headerRow = this.header[0];
-    }
-
-    if (!availableHeaderItems.length) {
-      availableHeaderItems = this.header.map((headerRow) =>
-        headerRow.filter((headerItem) => headerItem !== null)
-      );
-    }
-
-    return headerRow
-      .filter((headerItem) => headerItem !== null)
-      .map((headerItem, i) => {
-        const colSpan = headerItem?.colSpan || 1;
-        const rowSpan = headerItem?.rowSpan || 1;
-
-        // Leaf
-        if (rowIndex + rowSpan >= this.header.length) {
-          const leafIndex = leafIndexRef.current;
-          leafIndexRef.current += colSpan;
-
-          return {
-            headerItem,
-            leafIndex,
-            rowIndex,
-            children: [],
-          };
-        }
-
-        let spaceLeft = colSpan;
-        const availableChildren = availableHeaderItems[rowIndex + rowSpan];
-        const children = [];
-
-        while (spaceLeft > 0 && availableChildren.length) {
-          const nextChild = availableChildren.shift();
-          spaceLeft -= nextChild?.colSpan || 1;
-          children.push(nextChild);
-        }
-
-        return {
-          headerItem,
-          leafIndex: -1,
-          rowIndex,
-          children: this.tabularToNested(
-            children,
-            availableHeaderItems,
-            leafIndexRef,
-            rowIndex + rowSpan
-          ),
-        };
-      });
-  }
-
-  protected nestedToTabular(
-    nested: any,
-    header: AITableHeaderItem[][] = new Array(this.header.length).fill([]),
-    data: TableItem[][] = new Array(this._data.length).fill([]),
-    rowIndex = 0
-  ) {
-    nested.forEach((headerObj: any) => {
-      const rowSpan = headerObj.headerItem?.rowSpan || 1;
-      const colSpan = headerObj.headerItem?.colSpan || 1;
-
-      header[rowIndex] = [...header[rowIndex], headerObj.headerItem];
-
-      if (headerObj.leafIndex >= 0) {
-        for (let i = 0; i < data.length; i++) {
-          data[i] = [
-            ...data[i],
-            ...this._data[i].slice(headerObj.leafIndex, headerObj.leafIndex + colSpan),
-          ];
-        }
-      }
-
-      if (rowIndex + rowSpan >= this.header.length) {
-        return;
-      }
-
-      const children = headerObj.children;
-      this.nestedToTabular(children, header, data, rowIndex + rowSpan);
-    });
-
+  /**
+   * Default callback function passed into `tabularToNodeList`.
+   * Takes a `headerItem` and returns a node item.
+   * @param headerItem
+   */
+  protected headerItemToNode(headerItem: TableHeaderItem) {
     return {
-      header,
-      data,
+      headerItem,
+      items: [],
     };
   }
 
   /**
    * Move `nested` element at `rowIndex` with index `indexFrom` to `indexTo`.
    */
-  protected moveNested(
-    nested: any,
+  protected moveNodeListItem(
+    nodeList: any,
     indexFrom: number,
     indexTo: number,
     rowIndex = 0,
     startingChildIndex = 0
   ) {
-    if (!nested.length) {
+    if (!nodeList.length) {
       return;
     }
 
-    const currentRowIndex = nested[0].rowIndex;
+    const currentRowIndex = nodeList[0].rowIndex;
     if (
       currentRowIndex === rowIndex &&
       startingChildIndex <= indexFrom &&
-      startingChildIndex + nested.length >= indexFrom &&
+      startingChildIndex + nodeList.length >= indexFrom &&
       startingChildIndex <= indexTo &&
-      startingChildIndex + nested.length >= indexTo
+      startingChildIndex + nodeList.length >= indexTo
     ) {
       this.moveMultipleToIndex(
         [indexFrom - startingChildIndex],
         indexTo - startingChildIndex,
-        nested
+        nodeList
       );
       return;
     }
 
-    nested.forEach((headerObj: any, i: number) => {
-      const rowSpan = headerObj.headerItem?.rowSpan || 1;
-      const children = headerObj.children;
-      this.moveNested(
+    nodeList.forEach((node: any) => {
+      const rowSpan = node.headerItem?.rowSpan || 1;
+      const children = node.items;
+      this.moveNodeListItem(
         children,
         indexFrom,
         indexTo,

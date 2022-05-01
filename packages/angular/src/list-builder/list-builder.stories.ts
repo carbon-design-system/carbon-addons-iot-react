@@ -6,25 +6,24 @@ import { ListModule } from '../list/list.module';
 import { ButtonModule, IconModule, IconService } from 'carbon-components-angular';
 import { Add16, SubtractAlt16 } from '@carbon/icons';
 import { ListBuilderItem } from './list-builder-item.class';
-import { getSelectedItems } from './list-builder-utils';
 import { Component, Input, OnInit } from '@angular/core';
 
 const simpleItems = [
   new ListBuilderItem({
-    unselectedItemProps: { value: 'Item 1' },
-    selectedItemProps: { value: 'Item 1 selected' },
+    unselectedItemState: { value: 'Item 1' },
+    selectedItemState: { value: 'Item 1 selected' },
   }),
   new ListBuilderItem({
-    unselectedItemProps: { value: 'Item 2' },
-    selectedItemProps: { value: 'Item 2 yay' },
+    unselectedItemState: { value: 'Item 2' },
+    selectedItemState: { value: 'Item 2 yay' },
   }),
   new ListBuilderItem({
-    unselectedItemProps: { value: 'Item 3' },
-    selectedItemProps: { value: 'Item 3' },
+    unselectedItemState: { value: 'Item 3' },
+    selectedItemState: { value: 'Item 3' },
   }),
   new ListBuilderItem({
-    unselectedItemProps: { value: 'Item 4' },
-    selectedItemProps: { value: 'Item 4' },
+    unselectedItemState: { value: 'Item 4' },
+    selectedItemState: { value: 'Item 4' },
   }),
 ];
 
@@ -32,40 +31,40 @@ const selectableItems = [
   new ListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
-    unselectedItemProps: { value: 'Yo', isSelectable: true, expanded: true },
-    selectedItemProps: { value: 'Yo' },
+    unselectedItemState: { value: 'Yo', isSelectable: true, expanded: true },
+    selectedItemState: { value: 'Yo' },
     children: [
       new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
-        unselectedItemProps: { value: 'YoChild', isSelectable: true },
-        selectedItemProps: { value: 'YoChild' },
+        unselectedItemState: { value: 'YoChild', isSelectable: true },
+        selectedItemState: { value: 'YoChild' },
       }),
       new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
-        unselectedItemProps: { value: 'YoChild2', isSelectable: true },
-        selectedItemProps: { value: 'YoChild2' },
+        unselectedItemState: { value: 'YoChild2', isSelectable: true },
+        selectedItemState: { value: 'YoChild2' },
       }),
     ],
   }),
   new ListBuilderItem({
     addingMethod: 'select',
     hideUnselectedItemOnSelect: false,
-    unselectedItemProps: { value: 'Yo2', isSelectable: true, expanded: true },
-    selectedItemProps: { value: 'Yo2' },
+    unselectedItemState: { value: 'Yo2', isSelectable: true, expanded: true },
+    selectedItemState: { value: 'Yo2' },
     children: [
       new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
-        unselectedItemProps: { value: 'Yo2Child', isSelectable: true },
-        selectedItemProps: { value: 'Yo2Child' },
+        unselectedItemState: { value: 'Yo2Child', isSelectable: true },
+        selectedItemState: { value: 'Yo2Child' },
       }),
       new ListBuilderItem({
         addingMethod: 'select',
         hideUnselectedItemOnSelect: false,
-        unselectedItemProps: { value: 'Yo2Child2', isSelectable: true },
-        selectedItemProps: { value: 'Yo2Child2' },
+        unselectedItemState: { value: 'Yo2Child2', isSelectable: true },
+        selectedItemState: { value: 'Yo2Child2' },
       }),
     ],
   }),
@@ -77,13 +76,9 @@ const selectableItems = [
     <div style="width: 900px; height: 1200px">
       <ai-list-builder
         [items]="items"
-        [unselectedListProps]="{
-          selectionType: 'multi',
-          title: 'Available items'
-        }"
-        [selectedListProps]="{
-          title: 'Selected items'
-        }"
+        unselectedListTitle="Available items"
+        unselectedListSelectionType="multi"
+        selectedListTItle="Selected items"
         [addItemButtonIcon]="addIcon"
         [removeItemButtonIcon]="removeIcon"
       >
@@ -123,12 +118,8 @@ storiesOf('Components/List builder', module)
       <div style='width: 900px; height: 1200px'>
         <ai-list-builder
           [items]="items"
-          [unselectedListProps]="{
-            title: 'Available items'
-          }"
-          [selectedListProps]="{
-            title: 'Selected items'
-          }">
+          unselectedListTitle="Available items"
+          selectedListTitle="Selected items">
         </ai-list-builder>
       </div>
       `,
@@ -141,13 +132,10 @@ storiesOf('Components/List builder', module)
       <div style='width: 900px; height: 1200px'>
         <ai-list-builder
           [items]="items"
-          [unselectedListProps]="{
-            title: 'Available items',
-            selectionType: 'multi'
-          }"
-          [selectedListProps]="{
-            title: 'Selected items'
-          }">
+          unselectedListTitle="Available items"
+          unselectedListSelectionType="multi"
+          selectedListTitle="Selected items"
+          [selectedListItemsDraggable]="true">
         </ai-list-builder>
       </div>
     `,
@@ -168,22 +156,16 @@ storiesOf('Components/List builder', module)
       <div style='width: 900px; height: 1200px'>
         <ai-list-builder
           [items]="items"
-          [unselectedListProps]="{
-            title: 'Available items'
-          }"
-          [selectedListProps]="{
-            title: 'Selected items'
-          }">
+          (addedItemsChange)="onAddedItemsChange($event)"
+          unselectedListTitle="Available items"
+          selectedListTitle="Selected items">
         </ai-list-builder>
-        <p>{{ selectedItems }}</p>
-        <button (click)="getSelectedItems()">Get all selected items</button>
       </div>
       `,
     props: {
       items: simpleItems,
-      selectedItems: [],
-      getSelectedItems: function () {
-        this.selectedItems = JSON.stringify(getSelectedItems(this.items), null, 2);
+      onAddedItemsChange: (addedItems) => {
+        console.log(addedItems);
       },
     },
   }));

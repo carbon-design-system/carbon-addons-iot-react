@@ -1,17 +1,37 @@
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { moduleMetadata, storiesOf } from '@storybook/angular';
-import { ButtonModule, TableItem } from 'carbon-components-angular';
+import {
+  ButtonModule,
+  IconModule,
+  IconService,
+  PlaceholderModule,
+  TableItem,
+} from 'carbon-components-angular';
 
 import { AITableHeaderItem, AITableModel } from './table-model.class';
 import { AITableModule } from './table.module';
 
 import { EmptyStateModule } from '../empty-state-index';
+import { Component } from '@angular/core';
+import Column16 from '@carbon/icons/lib/column/16';
+
+const deepCloneObj = (obj: any) => Object.assign(Object.create(Object.getPrototypeOf(obj)), obj);
 
 const simpleModel = new AITableModel();
 const simpleMultiHeaderModel = new AITableModel();
 const complexModel = new AITableModel();
 const emptyDataModel = new AITableModel();
+
+@Component({
+  selector: 'app-demo-icons',
+  template: '',
+})
+class AppDemoIcons {
+  constructor(protected iconService: IconService) {
+    iconService.registerAll([Column16]);
+  }
+}
 
 simpleModel.setHeader([
   [
@@ -153,7 +173,8 @@ emptyDataModel.setHeader([
 storiesOf('Components/Table', module)
   .addDecorator(
     moduleMetadata({
-      imports: [AITableModule, ButtonModule, EmptyStateModule],
+      imports: [AITableModule, ButtonModule, EmptyStateModule, IconModule, PlaceholderModule],
+      declarations: [AppDemoIcons],
     })
   )
   .addDecorator(withKnobs)
@@ -264,7 +285,7 @@ storiesOf('Components/Table', module)
   .add('Complex multiheader table with move columns', () => {
     return {
       template: `
-        <button (click)="moveRandomColumns()">Move random columns</button>
+        <button (click)="model.deleteColumn(2)">Move random columns</button>
         <p>Moving header index {{indexFrom}} to index {{indexTo}}</p>
         <ai-table
           [model]="model"
@@ -291,6 +312,25 @@ storiesOf('Components/Table', module)
           this.indexTo = Math.floor(Math.random() * complexModel['header'][0].length);
           this.model.moveColumn(this.indexFrom, this.indexTo, 0);
         },
+      },
+    };
+  })
+  .add('Complex multi header with column customization modal', () => {
+    return {
+      template: `
+      <ai-table [model]="usedModel"></ai-table>
+      <ai-column-customization-button
+        [model]="model"
+        [usedModel]="usedModel"
+        assistiveText="Customize columns">
+        <svg class="bx--btn__icon" ibmIcon="column" size="16"></svg>
+      </ai-column-customization-button>
+      <ibm-placeholder></ibm-placeholder>
+      <app-demo-icons></app-demo-icons>
+		`,
+      props: {
+        model: complexModel,
+        usedModel: deepCloneObj(complexModel),
       },
     };
   });
