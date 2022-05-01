@@ -29,7 +29,6 @@ export class AITableHeaderItem extends TableHeaderItem {
  * functions for modifying rows and columns and assigning header and data in that order.
  */
 export class AITableModel implements PaginationModel {
-
   /**
    * Manually set data length in case the data in the table doesn't
    * correctly reflect all the data that table is to display.
