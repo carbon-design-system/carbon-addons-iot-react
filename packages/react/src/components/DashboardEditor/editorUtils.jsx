@@ -82,6 +82,10 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
     ),
+    downSampleMethod: PropTypes.string,
+    downSampleMethods: PropTypes.arrayOf(
+      PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
+    ),
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
   })
@@ -402,7 +406,10 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
 export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = { current: 0 }) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
-    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }, i) => {
+    (
+      { label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod },
+      i
+    ) => {
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === dataSourceId);
       const color = currentItem?.color ?? DATAITEM_COLORS_OPTIONS[colorIndex];
@@ -415,6 +422,7 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
         label,
         aggregationMethod,
         color,
+        downSampleMethod,
       };
     }
   );
@@ -429,7 +437,7 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const currentCardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }) => {
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod }) => {
       const currentItem = currentCardAttributes?.find(
         (dataItem) => dataItem.dataSourceId === dataSourceId
       );
@@ -442,6 +450,7 @@ export const formatAttributes = (selectedItems, cardConfig) => {
         dataSourceId,
         label,
         aggregationMethod,
+        downSampleMethod,
       };
     }
   );
