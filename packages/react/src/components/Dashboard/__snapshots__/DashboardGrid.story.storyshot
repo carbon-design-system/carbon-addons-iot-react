@@ -878,7 +878,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Tooltip info icon"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -1893,7 +1892,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </button>
               </div>
               <ul
-                className="bx--accordion settings-accordion bx--accordion--end bx--accordion--md"
+                className="bx--accordion settings-accordion bx--accordion--end"
                 style={
                   Object {
                     "paddingTop": 0,
@@ -1906,7 +1905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-177"
+                    aria-controls="accordion-item-181"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1937,7 +1936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-177"
+                    id="accordion-item-181"
                   >
                     <div
                       className="toggle-group"
@@ -1985,7 +1984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-178"
+                    aria-controls="accordion-item-182"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2016,7 +2015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-178"
+                    id="accordion-item-182"
                   >
                     More Map settings
                   </div>
@@ -2027,7 +2026,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-179"
+                    aria-controls="accordion-item-183"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2058,7 +2057,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-179"
+                    id="accordion-item-183"
                   >
                     Even more settings
                   </div>
@@ -2131,9 +2130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span
-                        dir="auto"
-                      >
+                      <span>
                         0 items selected
                       </span>
                     </p>
@@ -3180,6 +3177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <div
                 className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
+                forwardedRef={[Function]}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -3581,7 +3579,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     }
                   >
                     <div
-                      aria-describedby={null}
                       aria-labelledby="hotspot-35-65"
                       className="bx--tooltip__label"
                       id="hotspot-35-65"

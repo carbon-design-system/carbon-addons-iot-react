@@ -1064,9 +1064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -4059,7 +4057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
-                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -4215,7 +4212,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   className="iot--flyout-menu--tooltip-anchor"
                 >
                   <div
-                    aria-describedby={null}
                     aria-expanded={false}
                     aria-label="Calendar"
                     className="bx--tooltip__label"
@@ -4298,7 +4294,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
-              aria-describedby={null}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}

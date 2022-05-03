@@ -53,9 +53,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -94,7 +92,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -207,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   aria-expanded={false}
                   aria-haspopup={true}
                   aria-label="open and close list of options"
-                  className="bx--overflow-menu bx--overflow-menu--md"
+                  className="bx--overflow-menu"
                   onClick={[Function]}
                   onClose={[Function]}
                   onKeyDown={[Function]}
@@ -1037,6 +1034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -1433,9 +1431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -1474,7 +1470,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -2526,6 +2521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -2818,9 +2814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -2859,7 +2853,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -4115,6 +4108,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -4406,9 +4400,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -5045,6 +5037,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-undefined-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -5329,9 +5322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -5370,7 +5361,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -6188,6 +6178,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -6480,9 +6471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -6521,7 +6510,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -8391,6 +8379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -8683,9 +8672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -8724,7 +8711,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -9393,7 +9379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9559,7 +9545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9725,7 +9711,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -9891,7 +9877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10057,7 +10043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10223,7 +10209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10389,7 +10375,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                             aria-expanded={false}
                             aria-haspopup={true}
                             aria-label="open and close list of options"
-                            className="iot--table-card--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                            className="iot--table-card--overflow-menu bx--overflow-menu"
                             onClick={[Function]}
                             onClose={[Function]}
                             onKeyDown={[Function]}
@@ -10434,6 +10420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -10726,9 +10713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -10767,7 +10752,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -12097,6 +12081,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -12389,9 +12374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -12430,7 +12413,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -13967,6 +13949,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",
@@ -14259,9 +14242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 <p
                   className="bx--batch-summary__para"
                 >
-                  <span
-                    dir="auto"
-                  >
+                  <span>
                     0 items selected
                   </span>
                 </p>
@@ -14300,7 +14281,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               >
                 
                 <div
-                  aria-describedby={null}
                   aria-label="Toolbar tooltip"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -16379,6 +16359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
             data-testid="table-for-card-table-list-table-pagination"
+            forwardedRef={[Function]}
             style={
               Object {
                 "--pagination-text-display": "flex",

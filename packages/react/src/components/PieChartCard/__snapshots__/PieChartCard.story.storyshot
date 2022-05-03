@@ -120,9 +120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span
-                        dir="auto"
-                      >
+                      <span>
                         0 items selected
                       </span>
                     </p>
@@ -235,7 +233,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       data-floating-menu-container={true}
                     >
                       <div
-                        aria-describedby={null}
                         aria-expanded={false}
                         aria-label=""
                         className="bx--tooltip__label"

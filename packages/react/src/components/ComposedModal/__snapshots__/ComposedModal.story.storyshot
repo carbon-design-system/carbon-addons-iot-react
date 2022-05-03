@@ -8,6 +8,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -91,7 +96,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
           Cancel
         </button>
         <button
-          aria-describedby="danger-description-104"
+          aria-describedby="danger-description-108"
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--danger"
           data-testid="ComposedModal-modal-danger-button"
@@ -106,7 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         >
           <span
             className="bx--visually-hidden"
-            id="danger-description-104"
+            id="danger-description-108"
           >
             danger
           </span>
@@ -133,6 +138,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -224,6 +234,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -384,6 +399,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -482,6 +502,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="ComposedModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -552,7 +577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="bx--overflow-menu bx--overflow-menu--md"
+          className="bx--overflow-menu"
           onClick={[Function]}
           onClose={[Function]}
           onKeyDown={[Function]}
@@ -598,7 +623,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         >
           Trigger Text
           <div
-            aria-describedby={null}
             aria-labelledby="my test tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}

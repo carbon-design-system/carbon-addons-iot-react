@@ -8,6 +8,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -94,7 +99,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -117,6 +123,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -143,6 +150,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -226,6 +234,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -312,7 +325,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -326,14 +340,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <ul
-            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end bx--accordion--md"
+            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
           >
             <li
               className="bx--accordion__item"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1356"
+                aria-controls="accordion-item-1360"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -364,7 +378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1356"
+                id="accordion-item-1360"
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -376,7 +390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1357"
+                aria-controls="accordion-item-1361"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -407,7 +421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1357"
+                id="accordion-item-1361"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -420,6 +434,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -446,6 +461,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -529,6 +545,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -598,16 +619,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <div
             className="bx--form-item"
           >
-            <div
-              className="bx--text-area__label-wrapper"
+            <label
+              className="bx--label"
+              htmlFor="myTextArea"
             >
-              <label
-                className="bx--label"
-                htmlFor="myTextArea"
-              >
-                My custom form element
-              </label>
-            </div>
+              My custom form element
+            </label>
             <div
               className="bx--text-area__wrapper"
               data-invalid={null}
@@ -684,6 +701,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -770,7 +792,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -793,6 +816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -819,6 +843,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -902,6 +927,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
+    forwardedRef={
+      Object {
+        "current": null,
+      }
+    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -988,7 +1018,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  className="bx--text-input bx--text-input--md"
+                  aria-describedby=""
+                  className="bx--text-input"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -1009,6 +1040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={true}
@@ -1035,6 +1067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+              onClick={[Function]}
             >
               <input
                 checked={false}

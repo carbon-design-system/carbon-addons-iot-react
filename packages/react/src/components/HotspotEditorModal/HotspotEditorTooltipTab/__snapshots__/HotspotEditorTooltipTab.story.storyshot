@@ -30,7 +30,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text-input--light bx--text-input--md"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -48,16 +49,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <div
-            className="bx--text-area__label-wrapper"
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-description"
-            >
-              Description
-            </label>
-          </div>
+            Description
+          </label>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
@@ -157,6 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
+            renderSelectedItem={[Function]}
             title="Select a color"
           >
             <label
@@ -300,7 +298,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text-input--light bx--text-input--md"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -318,16 +317,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <div
-            className="bx--text-area__label-wrapper"
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-description"
-            >
-              Description
-            </label>
-          </div>
+            Description
+          </label>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
@@ -427,6 +422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
+            renderSelectedItem={[Function]}
             title="Select a color"
           >
             <label
@@ -609,7 +605,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               data-invalid={null}
             >
               <input
-                className="bx--text-input bx--text-input--light bx--text-input--md"
+                aria-describedby=""
+                className="bx--text-input bx--text-input--light"
                 data-testid="HotspotEditorTooltipTab-title-input"
                 disabled={false}
                 id="tooltip-form-title"
@@ -627,16 +624,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         <div
           className="bx--form-item"
         >
-          <div
-            className="bx--text-area__label-wrapper"
+          <label
+            className="bx--label"
+            htmlFor="tooltip-form-description"
           >
-            <label
-              className="bx--label"
-              htmlFor="tooltip-form-description"
-            >
-              Description
-            </label>
-          </div>
+            Description
+          </label>
           <div
             className="bx--text-area__wrapper"
             data-invalid={null}
@@ -784,6 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <div
             className="bx--dropdown__wrapper bx--list-box__wrapper"
             data-testid="color-dropdown"
+            renderSelectedItem={[Function]}
             title="Select a color"
           >
             <label
@@ -815,29 +809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 <span
                   className="bx--list-box__label"
                 >
-                  <div
-                    className="iot--color-dropdown__item"
-                    title="green"
-                  >
-                    <div
-                      className="iot--color-dropdown__item-border"
-                    >
-                      <div
-                        className="iot--color-dropdown__color-sample"
-                        style={
-                          Object {
-                            "backgroundColor": "#24a148",
-                          }
-                        }
-                        title="#24a148"
-                      />
-                      <div
-                        className="iot--color-dropdown__color-name"
-                      >
-                        green
-                      </div>
-                    </div>
-                  </div>
+                  green
                 </span>
                 <div
                   className="bx--list-box__menu-icon"

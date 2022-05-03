@@ -167,7 +167,7 @@ const mockDataItems = [
       { id: 'last', text: 'Last' },
       { id: 'sum', text: 'Sum' },
       { id: 'standerd', text: 'Standerd deviation' },
-    ]
+    ],
   },
 ];
 

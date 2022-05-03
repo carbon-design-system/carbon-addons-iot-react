@@ -13,6 +13,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      renderSelectedItem={[Function]}
     >
       <label
         className="bx--label"
@@ -43,34 +44,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <span
             className="bx--list-box__label"
           >
-            <div
-              className="iot--icon-dropdown__item"
-              style={
-                Object {
-                  "color": "unset",
-                }
-              }
-              title="Checkmark"
-            >
-              <div
-                className="iot--icon-dropdown__item-border"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={24}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 24 24"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 15.9L4.7 10.6 3.6 11.6 8.9 16.9 10 18 20.6 7.4 19.5 6.3z"
-                  />
-                </svg>
-              </div>
-            </div>
+            Checkmark
           </span>
           <div
             className="bx--list-box__menu-icon"
@@ -125,6 +99,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      renderSelectedItem={[Function]}
     >
       <label
         className="bx--label"
@@ -155,38 +130,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <span
             className="bx--list-box__label"
           >
-            <div
-              className="iot--icon-dropdown__item"
-              style={
-                Object {
-                  "color": "red",
-                }
-              }
-              title="Error outline"
-            >
-              <div
-                className="iot--icon-dropdown__item-border"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={24}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14.9 7.2H17.1V24.799H14.9z"
-                    transform="rotate(-45 16 16)"
-                  />
-                  <path
-                    d="M16,2A13.9138,13.9138,0,0,0,2,16,13.9138,13.9138,0,0,0,16,30,13.9138,13.9138,0,0,0,30,16,13.9138,13.9138,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12.0353,12.0353,0,0,1,16,28Z"
-                  />
-                </svg>
-              </div>
-            </div>
+            Error outline
           </span>
           <div
             className="bx--list-box__menu-icon"
@@ -241,6 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   >
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
+      renderSelectedItem={[Function]}
     >
       <label
         className="bx--label"
@@ -271,37 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <span
             className="bx--list-box__label"
           >
-            <div
-              className="iot--icon-dropdown__item"
-              style={
-                Object {
-                  "color": "unset",
-                }
-              }
-              title="Information"
-            >
-              <div
-                className="iot--icon-dropdown__item-border"
-              >
-                <svg
-                  aria-hidden={true}
-                  fill="currentColor"
-                  focusable="false"
-                  height={24}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M17 22L17 14 13 14 13 16 15 16 15 22 12 22 12 24 20 24 20 22 17 22zM16 8a1.5 1.5 0 101.5 1.5A1.5 1.5 0 0016 8z"
-                  />
-                  <path
-                    d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-                  />
-                </svg>
-              </div>
-            </div>
+            Information
           </span>
           <div
             className="bx--list-box__menu-icon"

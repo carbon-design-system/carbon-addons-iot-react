@@ -552,7 +552,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue=""
                       disabled={false}
@@ -692,14 +693,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end bx--accordion--md"
+            className="bx--accordion bx--accordion--end"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-709"
+                aria-controls="accordion-item-713"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -730,7 +731,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-709"
+                id="accordion-item-713"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -749,7 +750,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light bx--text-input--md"
+                        aria-describedby=""
+                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         disabled={false}
                         id="rule-builder-title-input"
@@ -784,7 +786,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text-input--light bx--text-input--md"
+                          aria-describedby=""
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -811,7 +814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-710"
+                aria-controls="accordion-item-714"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -842,7 +845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-710"
+                id="accordion-item-714"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -868,9 +871,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <p
                             className="bx--batch-summary__para"
                           >
-                            <span
-                              dir="auto"
-                            >
+                            <span>
                               0 items selected
                             </span>
                           </p>
@@ -1386,9 +1387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <p
                             className="bx--batch-summary__para"
                           >
-                            <span
-                              dir="auto"
-                            >
+                            <span>
                               0 items selected
                             </span>
                           </p>
@@ -1949,6 +1948,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -2814,6 +2818,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -4234,7 +4243,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       data-testid="rsiru4rjba-value"
                       defaultValue="45"
                       disabled={false}
@@ -4509,7 +4519,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
-                      className="bx--text-input bx--text-input--light bx--text-input--md"
+                      aria-describedby=""
+                      className="bx--text-input bx--text-input--light"
                       data-testid="34bvyub9jq-value"
                       defaultValue="14"
                       disabled={false}
@@ -4861,7 +4872,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text-input--light bx--text-input--md"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         data-testid="ewc2z5kyfu-value"
                         defaultValue="46"
                         disabled={false}
@@ -5136,7 +5148,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input bx--text-input--light bx--text-input--md"
+                        aria-describedby=""
+                        className="bx--text-input bx--text-input--light"
                         data-testid="hks7h2zin4-value"
                         defaultValue="45"
                         disabled={false}
@@ -5488,7 +5501,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text-input--light bx--text-input--md"
+                          aria-describedby=""
+                          className="bx--text-input bx--text-input--light"
                           data-testid="wg9hlv197c-value"
                           defaultValue=""
                           disabled={false}
@@ -5840,7 +5854,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            className="bx--text-input bx--text-input--light bx--text-input--md"
+                            aria-describedby=""
+                            className="bx--text-input bx--text-input--light"
                             data-testid="7kadk2wfv8-value"
                             defaultValue="44"
                             disabled={false}
@@ -6115,7 +6130,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           data-invalid={null}
                         >
                           <input
-                            className="bx--text-input bx--text-input--light bx--text-input--md"
+                            aria-describedby=""
+                            className="bx--text-input bx--text-input--light"
                             data-testid="49mf09vjhn-value"
                             defaultValue="46"
                             disabled={false}
@@ -6258,14 +6274,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           tabIndex={0}
         >
           <ul
-            className="bx--accordion bx--accordion--end bx--accordion--md"
+            className="bx--accordion bx--accordion--end"
           >
             <li
               className="bx--accordion__item bx--accordion__item--active"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-749"
+                aria-controls="accordion-item-753"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6296,7 +6312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-749"
+                id="accordion-item-753"
               >
                 <div
                   className="bx--form-item bx--text-input-wrapper bx--text-input-wrapper--light"
@@ -6315,7 +6331,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       data-invalid={null}
                     >
                       <input
-                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light bx--text-input--md"
+                        aria-describedby=""
+                        className="bx--text-input iot--rule-builder-wrap--title-input bx--text-input--light"
                         data-testid="rule-builder-title-input"
                         defaultValue="My Filter"
                         disabled={false}
@@ -6351,7 +6368,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         data-invalid={null}
                       >
                         <input
-                          className="bx--text-input bx--text-input--light bx--text-input--md"
+                          aria-describedby=""
+                          className="bx--text-input bx--text-input--light"
                           disabled={false}
                           id="rule-builder-tags-input"
                           onChange={[Function]}
@@ -6459,7 +6477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-750"
+                aria-controls="accordion-item-754"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -6490,7 +6508,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-750"
+                id="accordion-item-754"
               >
                 <div
                   className="iot--rule-builder-wrap--user-container"
@@ -6516,9 +6534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <p
                             className="bx--batch-summary__para"
                           >
-                            <span
-                              dir="auto"
-                            >
+                            <span>
                               0 items selected
                             </span>
                           </p>
@@ -6808,9 +6824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <p
                             className="bx--batch-summary__para"
                           >
-                            <span
-                              dir="auto"
-                            >
+                            <span>
                               0 items selected
                             </span>
                           </p>
@@ -7145,6 +7159,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
@@ -7828,6 +7847,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           className="bx--modal iot--composed-modal--large iot--composed-modal"
           data-floating-menu-container={true}
           data-testid="ComposedModal"
+          forwardedRef={
+            Object {
+              "current": null,
+            }
+          }
           onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}

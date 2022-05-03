@@ -141,7 +141,7 @@ describe('DataSeriesFormItemModal', () => {
     deviceid: ['73000', '73001', '73002'],
     manufacturer: ['Rentech', 'GHI Industries'],
   };
-  
+
   const editTimeseriesDataItemDownSample = {
     label: 'Temperature',
     dataSourceId: 'temperature',
@@ -1418,5 +1418,4 @@ describe('DataSeriesFormItemModal', () => {
       container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)[0]
     ).toHaveTextContent('');
   });
-
 });

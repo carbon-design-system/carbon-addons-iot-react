@@ -65,7 +65,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
       >
         <div
           aria-controls="flyout-tooltip"
-          aria-describedby="flyout-tooltip"
           aria-expanded={true}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -255,7 +254,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         data-floating-menu-container={true}
       >
         <div
-          aria-describedby={null}
           aria-expanded={false}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -340,7 +338,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
         data-floating-menu-container={true}
       >
         <div
-          aria-describedby={null}
           aria-expanded={false}
           aria-label="Helpful description"
           className="bx--tooltip__label"
@@ -446,7 +443,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -526,7 +522,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -606,7 +601,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -696,7 +690,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -776,7 +769,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -856,7 +848,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -946,7 +937,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -1026,7 +1016,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"
@@ -1106,7 +1095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/M
             data-floating-menu-container={true}
           >
             <div
-              aria-describedby={null}
               aria-expanded={false}
               aria-label="Helpful description"
               className="bx--tooltip__label"

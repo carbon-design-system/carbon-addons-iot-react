@@ -14,6 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
       data-testid="color-dropdown"
+      renderSelectedItem={[Function]}
       title="Select a color"
     >
       <label
@@ -101,6 +102,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
       data-testid="color-dropdown"
+      renderSelectedItem={[Function]}
       title="Select a color"
     >
       <label
@@ -188,6 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
       data-testid="color-dropdown"
+      renderSelectedItem={[Function]}
       title="Select a color"
     >
       <label
@@ -219,24 +222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <span
             className="bx--list-box__label"
           >
-            <div
-              className="iot--color-dropdown__item"
-              title="purple70"
-            >
-              <div
-                className="iot--color-dropdown__item-border"
-              >
-                <div
-                  className="iot--color-dropdown__color-sample"
-                  style={
-                    Object {
-                      "backgroundColor": "#6929c4",
-                    }
-                  }
-                  title="#6929c4"
-                />
-              </div>
-            </div>
+            purple70
           </span>
           <div
             className="bx--list-box__menu-icon"
@@ -292,6 +278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     <div
       className="bx--dropdown__wrapper bx--list-box__wrapper"
       data-testid="color-dropdown"
+      renderSelectedItem={[Function]}
       title="Select a color"
     >
       <label
@@ -323,29 +310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <span
             className="bx--list-box__label"
           >
-            <div
-              className="iot--color-dropdown__item"
-              title="teal70"
-            >
-              <div
-                className="iot--color-dropdown__item-border"
-              >
-                <div
-                  className="iot--color-dropdown__color-sample"
-                  style={
-                    Object {
-                      "backgroundColor": "#005d5d",
-                    }
-                  }
-                  title="#005d5d"
-                />
-                <div
-                  className="iot--color-dropdown__color-name"
-                >
-                  teal70
-                </div>
-              </div>
-            </div>
+            teal70
           </span>
           <div
             className="bx--list-box__menu-icon"

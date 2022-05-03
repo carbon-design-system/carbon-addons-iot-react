@@ -545,7 +545,7 @@ export const ForV2TimeSeries = () => (
             { id: 'last', text: 'Last' },
             { id: 'sum', text: 'Sum' },
             { id: 'standerd', text: 'Standerd deviation' },
-          ]
+          ],
         },
       ]}
       onAddCard={action('onAddCard')}
