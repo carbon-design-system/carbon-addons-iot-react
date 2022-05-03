@@ -44,6 +44,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
@@ -208,6 +209,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
@@ -413,6 +415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
@@ -478,6 +481,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--data-state-grid"
             >
               <div
+                aria-describedby={null}
                 aria-labelledby="iot--data-state-grid__icon-GaugeCard"
                 className="bx--tooltip__label"
                 id="iot--data-state-grid__icon-GaugeCard"
@@ -573,6 +577,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           >
             
             <div
+              aria-describedby={null}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}

@@ -540,7 +540,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -574,7 +573,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1033,7 +1031,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"
@@ -1067,7 +1064,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             fill="currentColor"
                             focusable="false"
                             height={16}
-                            onClick={[Function]}
                             preserveAspectRatio="xMidYMid meet"
                             role="img"
                             viewBox="0 0 32 32"

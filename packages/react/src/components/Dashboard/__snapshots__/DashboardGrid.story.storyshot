@@ -878,6 +878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               >
                 
                 <div
+                  aria-describedby={null}
                   aria-label="Tooltip info icon"
                   className="bx--tooltip__trigger"
                   onBlur={[Function]}
@@ -1892,7 +1893,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                 </button>
               </div>
               <ul
-                className="bx--accordion settings-accordion bx--accordion--end"
+                className="bx--accordion settings-accordion bx--accordion--end bx--accordion--md"
                 style={
                   Object {
                     "paddingTop": 0,
@@ -2130,7 +2131,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     <p
                       className="bx--batch-summary__para"
                     >
-                      <span>
+                      <span
+                        dir="auto"
+                      >
                         0 items selected
                       </span>
                     </p>
@@ -3177,7 +3180,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
               <div
                 className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                 data-testid="table-for-card-tableCard-table-pagination"
-                forwardedRef={[Function]}
                 style={
                   Object {
                     "--pagination-text-display": "flex",
@@ -3579,6 +3581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     }
                   >
                     <div
+                      aria-describedby={null}
                       aria-labelledby="hotspot-35-65"
                       className="bx--tooltip__label"
                       id="hotspot-35-65"

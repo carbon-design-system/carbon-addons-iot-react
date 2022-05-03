@@ -8,11 +8,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
-    forwardedRef={
-      Object {
-        "current": null,
-      }
-    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -99,8 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -123,7 +117,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -150,7 +143,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -234,11 +226,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
-    forwardedRef={
-      Object {
-        "current": null,
-      }
-    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -325,8 +312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -340,7 +326,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <ul
-            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
+            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item"
@@ -434,7 +420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -461,7 +446,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -545,11 +529,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
-    forwardedRef={
-      Object {
-        "current": null,
-      }
-    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -619,12 +598,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <div
             className="bx--form-item"
           >
-            <label
-              className="bx--label"
-              htmlFor="myTextArea"
+            <div
+              className="bx--text-area__label-wrapper"
             >
-              My custom form element
-            </label>
+              <label
+                className="bx--label"
+                htmlFor="myTextArea"
+              >
+                My custom form element
+              </label>
+            </div>
             <div
               className="bx--text-area__wrapper"
               data-invalid={null}
@@ -701,11 +684,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
-    forwardedRef={
-      Object {
-        "current": null,
-      }
-    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -792,8 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -816,7 +793,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -843,7 +819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -927,11 +902,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     className="bx--modal is-visible iot--composed-modal"
     data-floating-menu-container={true}
     data-testid="TableSaveViewModal"
-    forwardedRef={
-      Object {
-        "current": null,
-      }
-    }
     onBlur={[Function]}
     onClick={[Function]}
     onClose={[Function]}
@@ -1018,8 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -1040,7 +1009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={true}
@@ -1067,7 +1035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}

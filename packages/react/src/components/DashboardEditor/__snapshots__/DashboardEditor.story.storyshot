@@ -293,11 +293,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
-                forwardedRef={
-                  Object {
-                    "current": null,
-                  }
-                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -659,7 +654,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               <p
                                 className="bx--batch-summary__para"
                               >
-                                <span>
+                                <span
+                                  dir="auto"
+                                >
                                   0 items selected
                                 </span>
                               </p>
@@ -767,7 +764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 aria-expanded={false}
                                 aria-haspopup={true}
                                 aria-label="open and close list of options"
-                                className="bx--overflow-menu"
+                                className="bx--overflow-menu bx--overflow-menu--md"
                                 onClick={[Function]}
                                 onClose={[Function]}
                                 onKeyDown={[Function]}
@@ -1357,7 +1354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         <div
                           className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                           data-testid="table-for-card-Table-table-pagination"
-                          forwardedRef={[Function]}
                           style={
                             Object {
                               "--pagination-text-display": "flex",
@@ -1757,7 +1753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -1891,7 +1887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2071,7 +2067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -2191,7 +2187,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           aria-expanded={false}
                           aria-haspopup={true}
                           aria-label="open and close list of options"
-                          className="bx--overflow-menu"
+                          className="bx--overflow-menu bx--overflow-menu--md"
                           onClick={[Function]}
                           onClose={[Function]}
                           onKeyDown={[Function]}
@@ -3129,11 +3125,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -4485,11 +4476,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -7808,11 +7794,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -9484,11 +9465,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -9845,7 +9821,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -9982,7 +9958,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -10924,11 +10900,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
-                forwardedRef={
-                  Object {
-                    "current": null,
-                  }
-                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -12281,11 +12252,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -14671,11 +14637,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -17097,11 +17058,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
                 data-floating-menu-container={true}
                 data-testid="ComposedModal"
-                forwardedRef={
-                  Object {
-                    "current": null,
-                  }
-                }
                 onBlur={[Function]}
                 onClick={[Function]}
                 onClose={[Function]}
@@ -18357,11 +18313,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -18717,7 +18668,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -19737,11 +19688,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}
@@ -20103,7 +20049,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             <p
                               className="bx--batch-summary__para"
                             >
-                              <span>
+                              <span
+                                dir="auto"
+                              >
                                 0 items selected
                               </span>
                             </p>
@@ -20211,7 +20159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               aria-expanded={false}
                               aria-haspopup={true}
                               aria-label="open and close list of options"
-                              className="bx--overflow-menu"
+                              className="bx--overflow-menu bx--overflow-menu--md"
                               onClick={[Function]}
                               onClose={[Function]}
                               onKeyDown={[Function]}
@@ -20801,7 +20749,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       <div
                         className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
                         data-testid="table-for-card-Table-table-pagination"
-                        forwardedRef={[Function]}
                         style={
                           Object {
                             "--pagination-text-display": "flex",
@@ -21202,7 +21149,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21328,7 +21275,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21559,7 +21506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21679,7 +21626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -21800,7 +21747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         aria-expanded={false}
                         aria-haspopup={true}
                         aria-label="open and close list of options"
-                        className="bx--overflow-menu"
+                        className="bx--overflow-menu bx--overflow-menu--md"
                         onClick={[Function]}
                         onClose={[Function]}
                         onKeyDown={[Function]}
@@ -23042,11 +22989,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               className="bx--modal iot--image-gallery-modal iot--composed-modal--large iot--composed-modal"
               data-floating-menu-container={true}
               data-testid="ComposedModal"
-              forwardedRef={
-                Object {
-                  "current": null,
-                }
-              }
               onBlur={[Function]}
               onClick={[Function]}
               onClose={[Function]}

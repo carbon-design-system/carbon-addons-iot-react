@@ -26,7 +26,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -21827,7 +21829,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -21860,7 +21864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
           data-testid="table-head--overflow"
           onClick={[Function]}
           onClose={[Function]}
@@ -24613,7 +24617,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -24972,7 +24978,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             <p
               className="bx--batch-summary__para"
             >
-              <span>
+              <span
+                dir="auto"
+              >
                 0 items selected
               </span>
             </p>
@@ -28536,7 +28544,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -28913,8 +28923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="string"
                             onBlur={[Function]}
@@ -28984,8 +28993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="date"
                             onBlur={[Function]}
@@ -29171,8 +29179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="number"
                             onBlur={[Function]}
@@ -29218,8 +29225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="boolean"
                             onBlur={[Function]}
@@ -29276,8 +29282,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                           data-invalid={null}
                         >
                           <input
-                            aria-describedby=""
-                            className="bx--text-input"
+                            className="bx--text-input bx--text-input--md"
                             disabled={false}
                             id="object"
                             onBlur={[Function]}
@@ -32239,6 +32244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     >
                       
                       <div
+                        aria-describedby={null}
                         className="bx--tooltip__trigger"
                         onBlur={[Function]}
                         onClick={[Function]}
@@ -36357,7 +36363,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <div
       className="bx--pagination iot--pagination bx--pagination--lg"
       data-testid="null-table-pagination"
-      forwardedRef={[Function]}
       style={
         Object {
           "--pagination-text-display": "flex",
@@ -43349,7 +43354,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -46116,7 +46123,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               2 items selected
             </span>
           </p>
@@ -46322,7 +46331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -46597,7 +46605,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -46870,7 +46877,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -47150,7 +47156,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -47430,7 +47435,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -47703,7 +47707,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={true}
@@ -47983,7 +47986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -48263,7 +48265,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -48536,7 +48537,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -48816,7 +48816,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -49096,7 +49095,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 >
                   <div
                     className="bx--form-item bx--checkbox-wrapper"
-                    onClick={[Function]}
                   >
                     <input
                       checked={false}
@@ -61903,7 +61901,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="bx--batch-summary__para"
           >
-            <span>
+            <span
+              dir="auto"
+            >
               0 items selected
             </span>
           </p>
@@ -61942,6 +61942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           
           <div
+            aria-describedby={null}
             aria-label="Toolbar tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}
@@ -62050,7 +62051,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
           data-testid="table-head--overflow"
           onClick={[Function]}
           onClose={[Function]}
@@ -62154,6 +62155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-floating-menu-container={true}
           >
             <div
+              aria-describedby={null}
               aria-expanded={false}
               aria-label="Toggle flyout Menu"
               className="bx--tooltip__label"

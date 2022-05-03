@@ -18,7 +18,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       <div
         className="bx--dropdown__wrapper bx--list-box__wrapper"
         data-testid="icon-dropdown"
-        renderSelectedItem={[Function]}
         style={
           Object {
             "width": "192px",
