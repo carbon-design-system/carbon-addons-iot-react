@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal basic wizard modal 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal basic wizard modal 1`] = `
 <div
   className="storybook-container"
 >
@@ -68,6 +68,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <ul
           className="iot--progress-indicator"
@@ -255,7 +260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -304,7 +309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal custom footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -372,6 +377,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <ul
           className="iot--progress-indicator"
@@ -566,7 +576,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
           </p>
         </div>
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button
@@ -615,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/WizardModal sending data 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Progress indicator/WizardModal sending data 1`] = `
 <div
   className="storybook-container"
 >
@@ -683,6 +693,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <ul
           className="iot--progress-indicator"
@@ -860,7 +875,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/W
         className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
       >
         <div
-          className="iot--wizard-modal__footer WizardFooter__StyledFooterButtons-sc-18uwrwe-0 jSocgX"
+          className="iot--wizard-modal__footer iot--wizard-footer__buttons"
           data-testid="wizard-modal-footer"
         >
           <button

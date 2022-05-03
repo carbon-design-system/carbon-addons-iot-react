@@ -10,10 +10,14 @@ import TileCatalogNew from '../TileCatalogNew/TileCatalogNew';
 import { getTiles } from '../TileCatalogNew/TileCatalogNew.story';
 import Button from '../Button';
 import StatefulTable from '../Table/StatefulTable';
-import { initialState } from '../Table/Table.story';
+import { settings } from '../../constants/Settings';
+import { getInitialState } from '../Table/Table.story.helpers';
 
 import PageTitleBar from './PageTitleBar';
 import PageTitleBarREADME from './PageTitleBar.mdx';
+
+const { prefix } = settings;
+const initialTableState = getInitialState();
 
 export const commonPageTitleBarProps = {
   title: 'Page title',
@@ -66,7 +70,7 @@ const breadcrumbKnobOptions = {
 const breadcrumbDefaultValue = pageTitleBarBreadcrumb;
 
 export default {
-  title: '1 - Watson IoT/PageTitleBar',
+  title: '1 - Watson IoT/Page header/PageTitleBar',
   decorators: [withKnobs, (storyFn) => <FullWidthWrapper>{storyFn()}</FullWidthWrapper>],
 
   parameters: {
@@ -96,8 +100,8 @@ export const Base = () => {
         forceContentOutside={boolean('forceContentOutside', false)}
         content={
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
-            <StatefulTable {...initialState} data={initialState.data.slice(0, 5)} />
+            <StatefulTable {...initialTableState} data={initialTableState.data.slice(0, 5)} />
+            <StatefulTable {...initialTableState} data={initialTableState.data.slice(0, 5)} />
           </div>
         }
         stackBreadcrumbsWithTabs={boolean('stackBreadcrumbsWithTabs', false)}
@@ -131,6 +135,18 @@ WithTooltipDescriptionWithNode.storyName = 'with tooltip description with node';
 
 export const WithStatusDescriptionAndCrumbs = () => (
   <div style={{ height: '150vh' }}>
+    <style>
+      {`
+      .${prefix}--tooltip__content .${prefix}--inline-loading__text {
+        color: white
+      }
+
+      .${prefix}--tooltip__content .${prefix}--inline-loading__checkmark-container path + path {
+        fill: white;
+        opacity: 1
+      }
+    `}
+    </style>
     <PageTitleBar
       title={text('title', 'ZH002')}
       description={<InlineLoading status="finished" description="Running" />}

@@ -29,8 +29,12 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   flex: 1;
   font-size: 0.875rem;
   // Z-index higher than 1 is needed to have Dropdown components correctly show
-  // the listbox on top of the relatively positioned table columns and reszie handle.
+  // the listbox on top of the relatively positioned table columns and resize handle.
   z-index: 2;
+
+  .#{$prefix}--toolbar-search-container-active .#{$prefix}--search-input {
+    border-bottom: 0;
+  }
 }
 
 .#{$prefix}--batch-actions:not(.#{$prefix}--batch-actions--active) ~ .#{$prefix}--toolbar-content {
@@ -97,6 +101,7 @@ html[dir='rtl'] {
   display: flex;
   align-items: center;
   text-align: left;
+  min-width: 0;
 
   [dir='rtl'] & {
     text-align: right;
@@ -104,10 +109,42 @@ html[dir='rtl'] {
 
   svg {
     margin-right: $spacing-03;
+    flex-shrink: 0;
 
     [dir='rtl'] & {
       margin-right: 0;
       margin-left: $spacing-03;
     }
+  }
+}
+
+.#{$iot-prefix}--table-overflow-batch-actions {
+  &.#{$prefix}--overflow-menu--open,
+  &.#{$prefix}--overflow-menu--open:hover,
+  &:hover {
+    background-color: $hover-primary;
+  }
+
+  &:focus {
+    outline: 2px solid $ui-01;
+    outline-offset: -($spacing-01);
+  }
+
+  > svg {
+    fill: $ui-01;
+  }
+
+  // hide the divider between overflow menu and cancel on hover
+  &:hover,
+  &:focus {
+    & + .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
+      opacity: 0;
+    }
+  }
+}
+
+.#{$iot-prefix}--table-overflow-batch-actions__menu {
+  &:after {
+    background-color: $hover-primary;
   }
 }

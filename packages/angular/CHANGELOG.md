@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.44](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.43...v2.149.0-next.44) (2022-03-31)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.149.0-next.26](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.25...v2.149.0-next.26) (2022-03-18)
+
+**Note:** Version bump only for package @ai-apps/angular
+
+
+
+
+
+# [2.149.0-next.24](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.23...v2.149.0-next.24) (2022-03-14)
+
+
+### Bug Fixes
+
+* added isOpen knob to test the change ([c41dd5a](https://github.com/IBM/carbon-components-angular/commit/c41dd5a0908fa2af783c5abc915f37f61b64c7c2))
+* resolve issues as mentioned in code review ([e8e0342](https://github.com/IBM/carbon-components-angular/commit/e8e034297c31ccd41ee6df09d0c0c915db331645))
+
+
+### Features
+
+* **ai-flyout-menu:** track open/close state ([583b732](https://github.com/IBM/carbon-components-angular/commit/583b7326d671397dde1588b2ef2b494cff0d3c4f))
+
+
+
+
+
+# [2.149.0-next.20](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.19...v2.149.0-next.20) (2022-03-07)
+
+
+### Bug Fixes
+
+* **table:** fix type error ([a978cda](https://github.com/IBM/carbon-components-angular/commit/a978cdae200c2571a96685939e27e6574c142917))
+
+
+### Features
+
+* **table model:** account for rowSpans in moveColumn ([5eb8c11](https://github.com/IBM/carbon-components-angular/commit/5eb8c11ebed812e9474bf232f87c311a22ea7826))
+* **tabs:** add support for custom templates ([6dc2faf](https://github.com/IBM/carbon-components-angular/commit/6dc2fafadb42d3eea0b28477f2796a9060be25fb))
+
+
+
+
+
+# [2.149.0-next.1](https://github.com/IBM/carbon-components-angular/compare/v2.149.0-next.0...v2.149.0-next.1) (2022-02-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** clear and format code ([b6d7774](https://github.com/IBM/carbon-components-angular/commit/b6d7774a5dfca0961782a2ec96430f1929aa2c88))
+* **datetimepicker:** unable to modify abs range issue ([73c5e04](https://github.com/IBM/carbon-components-angular/commit/73c5e0411bd06c08d84a82875be9f649b7e64aa1))
+
+
+
+
+
+## [2.148.1-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.15...v2.148.1-next.0) (2022-02-08)
+
+
+
+# [2.148.0](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0) (2022-02-07)
+
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/IBM/carbon-components-angular/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
+
+
+
+
+# [2.148.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.147.4...v2.148.0) (2022-02-07)
+
+### Reverts
+
+* Revert "Revert "Merge branch 'next' into master"" ([eebc448](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eebc448685cb89e35e58d5be7d9891192f527f68))
+
 # [2.148.0-next.15](https://github.com/IBM/carbon-components-angular/compare/v2.148.0-next.14...v2.148.0-next.15) (2022-02-07)
 
 

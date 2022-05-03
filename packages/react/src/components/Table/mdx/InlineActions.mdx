@@ -1,0 +1,145 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Inline actions
+
+Inline actions, also called row actions, can be made available for each row by using the
+prop `options.hasRowActions`. The actions are defined by configuration objects added to each
+row using the row data array prop `rowActions`. Each obj must contain a for the array unique `id`.
+The row actions will appear in an extra column appended at the end of the table. A single row action
+can be shown directly "inline" on hover but if there are multiple actions per row they should be placed in
+an overflow menu by using the `isOverflow` property.
+
+The action rendering supports both icons and labels. The special prop `isDelete` is used to format the option red and the
+`isEdit` prop is used by the StatefulTable to automatically set the row action state in edit mode. See the table's
+[Data prop](/docs/1-watson-iot-table--playground#data-prop) for the full list of row action props.
+
+```jsx
+...
+
+const dataWithActions = data.map((row) => ({
+  ...row,
+  // All rows will get the same row actions
+  rowActions: [
+    // This is rendered as an inline action with an icon
+    {
+      id: 'drilldown',
+      renderIcon: ArrowRight16,
+      iconDescription: 'Drill in',
+      labelText: 'Drill in to find out more after observing',
+    },
+    // These actions are rendered as a menu items with icons in an overflow menu
+    // with a divider between them
+    {
+      id: 'edit',
+      renderIcon: Edit16,
+      labelText: 'Edit',
+      isOverflow: true,
+      iconDescription: 'Edit',
+      isEdit: true,
+      disabled: true,
+    },
+    {
+      id: 'delete',
+      renderIcon: TrashCan16,
+      labelText: 'Delete',
+      isOverflow: true,
+      iconDescription: 'Delete',
+      isDelete: true,
+      hasDivider: true,
+    },
+  ],
+}));
+
+return (
+  <MyTable
+    columns={columns}
+    data={data}
+    options={{
+      hasRowActions: true,
+    }}
+  />
+);
+```
+
+### Handling the onApplyRowAction event
+
+When a row action is clicked (or selected) the table will call `actions.table.onApplyRowAction` with the id of the
+row action and the id of the row. A normal flow would be to identify the type of action and then update the state
+of the row by adding a state object to the array prop `view.table.rowActions` before triggering the
+actual action. When the action has finished the state of the row is updated again.
+
+A row action state object must contain the id of the row and can specify either that the action is being processed
+by using the boolean prop `isRunning`, that the row is now in edit mode using the boolean prop `isEditMode` or
+that the action had failed by using the object prop `error`. See the table's
+[View Prop](/docs/1-watson-iot-table--playground#view-prop) for the full list of props the objects in
+`view.table.rowActions` can use.
+
+The code example below shows how to implement a row action that starts a mocked long running process.
+
+```jsx
+...
+
+const [rowActionStates, setRowActionStates] = useState([]);
+const dataWithActions = data.map((row) => ({
+  ...row,
+  // Add the row actions to every row
+  rowActions: [
+    {
+      id: 'longRunningProcess',
+      labelText: 'Start the process',
+    },
+  ],
+}));
+
+// Display an error msg when the action fails
+const handleRowActionError = (rowId, { name, message }) => {
+  setRowActionStates((current) =>
+    current.map((actionState) =>
+      actionState.rowId === rowId
+        ? {
+            ...actionState,
+            isRunning: false,
+            error: {
+              title: name,
+              message,
+            },
+          }
+        : actionState
+    )
+  );
+};
+
+// Remove the row action state when the process has successfully finished
+const handleRowActionSuccess = (rowId) => {
+  setRowActionStates((current) => current.filter((actionState) => actionState.rowId !== rowId));
+};
+
+const onApplyRowAction = (actionId, rowId) => {
+  // In this scenario there is only one row action defined but in a real case
+  // there might be multiple
+  if (actionId === 'longRunningProcess') {
+    setRowActionStates((current) => [...current, { rowId, isRunning: true }]);
+    runMockedProcess
+      .then(() => handleRowActionSuccess(rowId) )
+      .catch((err => handleRowActionError(err));
+  }
+};
+
+return (
+    <Table
+    columns={columns}
+    data={dataWithActions}
+    actions={{
+      table: {
+        onApplyRowAction,
+      },
+    }}
+    options={{ hasRowActions: true }}
+    view={{
+      table: {
+        rowActions: rowActionStates,
+      },
+    }}
+ />
+);
+```

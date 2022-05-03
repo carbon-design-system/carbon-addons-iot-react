@@ -24,6 +24,7 @@ import data from '../MapCard/storyFiles/data.json';
 import options from '../MapCard/storyFiles/mapOptions';
 
 import DashboardGrid from './DashboardGrid';
+import DashboardGridREADME from './DashboardGrid.mdx';
 
 const MapboxExample = ({ ...props }) => {
   const [settingsOpen, setSettingsOpen] = React.useState(false);
@@ -94,7 +95,12 @@ const commonGridProps = {
 };
 
 export default {
-  title: '1 - Watson IoT/Dashboard Grid',
+  title: '1 - Watson IoT/Dashboard',
+  parameters: {
+    docs: {
+      page: DashboardGridREADME,
+    },
+  },
 };
 
 export const DashboardDefaultLayouts = () => {
@@ -189,8 +195,12 @@ DashboardCustomLayout.parameters = {
 };
 
 export const DashboardAllCardSizes = () => {
+  const titleTextTooltip = boolean('Demo titleTextTooltip', false) ? (
+    <div>I am shown in tooltip that auto adjusts in position</div>
+  ) : undefined;
   const CARDS_ALL_SIZES = [
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Small"
       key="Small"
       id="Small"
@@ -201,6 +211,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Small Wide"
       key="Small Wide"
       id="Small Wide"
@@ -211,6 +222,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Medium Thin"
       id="Medium Thin"
       key="Medium Thin"
@@ -221,6 +233,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Medium"
       id="Medium"
       key="Medium"
@@ -231,6 +244,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Medium Wide"
       id="Medium Wide"
       key="Medium Wide"
@@ -241,6 +255,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Large Thin"
       id="Large Thin"
       key="Large Thin"
@@ -251,6 +266,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Large"
       id="Large"
       key="Large"
@@ -261,6 +277,7 @@ export const DashboardAllCardSizes = () => {
       }}
     />,
     <Card
+      titleTextTooltip={titleTextTooltip}
       title="Large Wide"
       id="Large Wide"
       key="Large Wide"
@@ -459,6 +476,10 @@ DashboardResizableCard.parameters = {
 };
 
 export const DashboardAllCardsAsResizable = () => {
+  const titleTextTooltip = boolean('Demo titleTextTooltip', false) ? (
+    <div>I am shown in tooltip that auto adjusts in position</div>
+  ) : undefined;
+
   const barChartCardValues = [
     {
       city: 'A',
@@ -620,6 +641,7 @@ export const DashboardAllCardsAsResizable = () => {
 
   const CARDS_ALL_SIZES = [
     <Card
+      titleTextTooltip={titleTextTooltip}
       title={`Card - ${currentSizes.card}`}
       id="card"
       isResizable={isResizable}
@@ -632,6 +654,7 @@ export const DashboardAllCardsAsResizable = () => {
       <p>This is a basic card</p>
     </Card>,
     <ValueCard
+      titleTextTooltip={titleTextTooltip}
       title={`ValueCard - ${currentSizes.valueCard}`}
       id="valueCard"
       key="valueCard"
@@ -653,19 +676,21 @@ export const DashboardAllCardsAsResizable = () => {
       values={{ occupancy: 88 }}
     />,
     <GaugeCard
+      titleTextTooltip={titleTextTooltip}
       id="gaugeCard"
       key="gaugeCard"
       isResizable={isResizable}
       size={currentSizes.gaugeCard}
       title={`GaugeCard - ${currentSizes.gaugeCard}`}
       content={gaugeCardContent}
-      tooltip={<p>Health - of floor 8</p>}
+      tooltip={!titleTextTooltip ? <p>Health - of floor 8</p> : undefined}
       values={{
         usage: 81,
         usageTrend: '12%',
       }}
     />,
     <PieChartCard
+      titleTextTooltip={titleTextTooltip}
       content={{
         groupDataSourceId: 'category',
         legendPosition: 'bottom',
@@ -678,6 +703,7 @@ export const DashboardAllCardsAsResizable = () => {
       values={pieChartCardValues}
     />,
     <MapboxExample
+      titleTextTooltip={titleTextTooltip}
       isResizable={isResizable}
       id="mapCard"
       key="mapCard"
@@ -685,6 +711,7 @@ export const DashboardAllCardsAsResizable = () => {
       size={currentSizes.mapCard}
     />,
     <TableCard
+      titleTextTooltip={titleTextTooltip}
       title={`TableCard - ${currentSizes.tableCard}`}
       id="tableCard"
       key="tableCard"
@@ -697,6 +724,7 @@ export const DashboardAllCardsAsResizable = () => {
       isResizable={isResizable}
     />,
     <ImageCard
+      titleTextTooltip={titleTextTooltip}
       title={`ImageCard - ${currentSizes.imageCard}`}
       id="imageCard"
       isResizable={isResizable}
@@ -710,6 +738,7 @@ export const DashboardAllCardsAsResizable = () => {
       values={imageCardValues}
     />,
     <TimeSeriesCard
+      titleTextTooltip={titleTextTooltip}
       id="timeSeriesCard"
       isResizable={isResizable}
       size={currentSizes.timeSeriesCard}
@@ -721,6 +750,7 @@ export const DashboardAllCardsAsResizable = () => {
       values={chartData.events.slice(0, 5)}
     />,
     <ListCard
+      titleTextTooltip={titleTextTooltip}
       id="listCard"
       isResizable={isResizable}
       key="listCard"
@@ -731,6 +761,7 @@ export const DashboardAllCardsAsResizable = () => {
       loadData={() => {}}
     />,
     <BarChartCard
+      titleTextTooltip={titleTextTooltip}
       id="barChartCard"
       key="barChartCard"
       size={currentSizes.barChartCard}

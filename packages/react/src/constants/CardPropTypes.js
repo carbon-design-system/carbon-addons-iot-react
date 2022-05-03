@@ -28,6 +28,11 @@ import {
   BAR_CHART_LAYOUTS,
 } from './LayoutConstants';
 import { ButtonIconPropType, OverridePropTypes, SvgPropType } from './SharedPropTypes';
+import {
+  MeterChartPropTypes,
+  SparklineChartPropTypes,
+  StackedAreaChartPropTypes,
+} from './ChartPropTypes';
 
 export const CHART_COLORS = [
   purple70,
@@ -89,7 +94,7 @@ export const DashboardColumnsPropTypes = PropTypes.shape({
   xs: PropTypes.number,
 });
 
-export const ValueCardPropTypes = {
+export const ValueContentPropTypes = {
   content: PropTypes.shape({
     attributes: PropTypes.arrayOf(AttributePropTypes).isRequired,
   }),
@@ -731,6 +736,87 @@ export const MapCardPropTypes = {
   dropRef: PropTypes.oneOfType([PropTypes.shape({}), PropTypes.func]),
 };
 
+export const MeterChartCardPropTypes = {
+  content: MeterChartPropTypes.content,
+  values: MeterChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const SparklineChartCardPropTypes = {
+  content: SparklineChartPropTypes.content,
+  values: SparklineChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
+export const StackedAreaChartCardPropTypes = {
+  content: StackedAreaChartPropTypes.content,
+  values: StackedAreaChartPropTypes.data,
+  size: (props, propName, componentName) => {
+    let error;
+    if (!Object.keys(CARD_SIZES).includes(props[propName])) {
+      error = new Error(
+        `\`${componentName}\` prop \`${propName}\` must be one of ${Object.keys(CARD_SIZES).join(
+          ','
+        )}.`
+      );
+    }
+    // If the size
+    if (
+      props[propName] === CARD_SIZES.SMALL ||
+      props[propName] === CARD_SIZES.SMALLWIDE ||
+      props[propName] === CARD_SIZES.SMALLFULL ||
+      props[propName] === CARD_SIZES.MEDIUMTHIN
+    ) {
+      error = new Error(
+        `Deprecation notice: \`${componentName}\` prop \`${propName}\` cannot be \`${props[propName]}\` as the charts will not render correctly. Minimum size is \`MEDIUM\``
+      );
+    }
+    return error;
+  },
+};
+
 export const DATE_PICKER_OPTIONS = { ICON_ONLY: 'iconOnly', FULL: 'full' };
 
 export const CardPropTypes = {
@@ -760,6 +846,8 @@ export const CardPropTypes = {
   size: PropTypes.oneOf(Object.values(LEGACY_CARD_SIZES)),
   layout: PropTypes.oneOf(Object.values(CARD_LAYOUTS)),
   breakpoint: PropTypes.oneOf(Object.values(DASHBOARD_SIZES)),
+  /** setting to none will remove internal padding from sides and bottom of card. */
+  padding: PropTypes.oneOf(['default', 'none']),
   /** Optional selected range to pass at the card level */
   timeRange: PropTypes.oneOfType([PropTypes.string, DateTimePickerDefaultValuePropTypes]),
   /** Generates the available time range selection options. Each option should include 'this' or 'last'.
@@ -813,8 +901,16 @@ export const CardPropTypes = {
     loadingDataLabel: PropTypes.string,
     overflowMenuDescription: PropTypes.string,
     toLabel: PropTypes.string,
+    titleTooltipIconDescription: PropTypes.string,
   }),
+  /** Adds an info icon after the title that when clicked shows a tooltip with this content.
+   * Cannot be used together with the titleTextTooltip prop
+   */
   tooltip: PropTypes.element,
+  /** Adds tooltip to the title (no info icon) that when clicked shows a tooltip with this content.
+   * Cannot be used together with the tooltip prop or the or the hasTitleWrap prop.
+   */
+  titleTextTooltip: PropTypes.element,
   toolbar: PropTypes.element,
   /** Row height in pixels for each layout */
   rowHeight: RowHeightPropTypes,
@@ -824,7 +920,7 @@ export const CardPropTypes = {
   dashboardColumns: DashboardColumnsPropTypes,
   /** array of configurable sizes to dimensions */
   cardDimensions: CardSizesToDimensionsPropTypes,
-  /** HTML classes that should be aplied to the content container */
+  /** HTML classes that should be applied to the content container */
   contentClassName: PropTypes.string,
   /** optional function that should return an icon react element based on a icon name, it is called back with the icon name and then an object containing additional icon properties to add to the rendered icon */
   renderIconByName: PropTypes.func,
@@ -852,7 +948,7 @@ export const CardPropTypes = {
   /** Optional callback function that is passed an onChange function and the original cardConfig object.
    * This allows additional information to be passed to be used in the Card Editor for this type.
    * You need to return an array of child objects with a header: {title, tooltip: {tooltipText: PropTypes.string}} and content element to render
-   * We recommend doing this dynamically with the CardEditor onRenderCardEditForm property rather than hardcoding it in the Card JSON
+   * We recommend doing this dynamically with the CardEditor onRenderCardEditForm property rather than hard-coding it in the Card JSON
    * * */
   renderEditContent: PropTypes.func,
   footerContent: PropTypes.elementType,
@@ -871,5 +967,8 @@ export const CardPropTypes = {
         hidden: PropTypes.bool,
       })
     ),
+  }),
+  overrides: PropTypes.shape({
+    errorMessage: OverridePropTypes,
   }),
 };

@@ -41,6 +41,7 @@ import {
       [value]="value"
       [batchText]="batchText"
       [dateFormat]="dateFormat"
+      [datePickerFormat]="datePickerFormat"
       [placeholder]="placeholder"
       [flatpickrOptions]="flatpickrOptions"
     >
@@ -66,7 +67,8 @@ export class CustomDateTimeComponent implements OnChanges {
    *
    * For reference: https://flatpickr.js.org/formatting/
    */
-  @Input() dateFormat = 'Y-m-d';
+  @Input() dateFormat = 'yyyy-MM-dd';
+  @Input() datePickerFormat = 'Y-m-d';
   @Input() placeholder = 'yyyy-mm-dd';
   @Input() relativeToOptions: RelativeToOption[];
   @Input() flatpickrOptions;

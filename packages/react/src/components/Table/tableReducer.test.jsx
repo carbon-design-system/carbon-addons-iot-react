@@ -32,8 +32,9 @@ import {
   tableCancelMultiSortColumns,
   tableClearMultiSortColumns,
 } from './tableActionCreators';
-import { getTableColumns } from './Table.story.helpers';
-import { initialState } from './Table.story';
+import { getTableColumns, getInitialState } from './Table.story.helpers';
+
+const initialState = getInitialState();
 
 const tableColumns = getTableColumns();
 
@@ -720,6 +721,25 @@ describe('table reducer', () => {
       expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
       expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
       expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
+
+      // It updates element used for row editing
+      const initialRowEditState = merge({}, initialState, {
+        view: {
+          toolbar: { rowEditBarButtons: <div>initial</div> },
+          table: { singleRowEditButtons: <div>initial</div> },
+        },
+      });
+      const modifiedRowEditState = tableReducer(
+        initialRowEditState,
+        tableRegister({
+          view: {
+            toolbar: { rowEditBarButtons: <div>updated</div> },
+            table: { singleRowEditButtons: <div>updated</div> },
+          },
+        })
+      );
+      expect(modifiedRowEditState.view.toolbar.rowEditBarButtons).toEqual(<div>updated</div>);
+      expect(modifiedRowEditState.view.table.singleRowEditButtons).toEqual(<div>updated</div>);
     });
   });
 });
@@ -789,11 +809,34 @@ describe('filter, search and sort', () => {
   });
 
   it('searchData', () => {
-    const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const mockData = [
+      {
+        values: {
+          number: 10,
+          node: <Add20 />,
+          string: 'string',
+          null: null,
+          boolean: true,
+        },
+      },
+      {
+        values: {
+          number: 30,
+          node: <Add20 />,
+          string: 'text',
+          null: null,
+          boolean: false,
+        },
+      },
+    ];
     expect(searchData(mockData, 10)).toHaveLength(1);
     expect(searchData(mockData, 'string')).toHaveLength(1);
     // case insensitive
     expect(searchData(mockData, 'STRING')).toHaveLength(1);
+
+    // search boolean values
+    expect(searchData(mockData, 'false')).toHaveLength(1);
+    expect(searchData(mockData, 'true')).toHaveLength(1);
   });
 
   it('filterSearchAndSort', () => {

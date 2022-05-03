@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Tree16, Add16 } from '@carbon/icons-react';
 
@@ -375,60 +375,195 @@ describe('Card', () => {
     console.error = error;
   });
 
-  describe('overflow tooltips', () => {
-    const originalOffsetWidth = Object.getOwnPropertyDescriptor(
-      HTMLElement.prototype,
-      'offsetWidth'
-    );
-    const originalScrollWidth = Object.getOwnPropertyDescriptor(
-      HTMLElement.prototype,
-      'scrollWidth'
-    );
+  describe('tooltips', () => {
+    it('should warn on combining tooltip and titleTextTooltip', () => {
+      const { __DEV__ } = global;
+      global.__DEV__ = true;
 
-    beforeEach(() => {
-      Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
-        writable: true,
-        configurable: true,
-        value: 400,
-      });
-      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
-        writable: true,
-        configurable: true,
-        value: 500,
-      });
+      jest.spyOn(console, 'error').mockImplementation(() => {});
+
+      render(
+        <Card
+          {...cardProps}
+          tooltip={<p>I am shown when the info icon is clicked</p>}
+          titleTextTooltip={<p>I am shown when the title is clicked</p>}
+        />
+      );
+      expect(console.error).toHaveBeenCalledWith(
+        expect.stringContaining('The props titleTextTooltip and tooltip cannot be combined.')
+      );
+
+      global.__DEV__ = __DEV__;
     });
 
-    afterAll(() => {
-      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
-      Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+    it('should show info icon tooltip', () => {
+      const text = 'I am shown when the info icon is clicked';
+      const { rerender } = render(<Card title="x" id="my card" tooltip={<p>{text}</p>} />);
+      expect(screen.getByRole('button')).toHaveClass(`${prefix}--tooltip__trigger`);
+      expect(screen.queryByText(text)).toBeNull();
+
+      userEvent.click(screen.getByRole('button'));
+      expect(screen.getByText(text)).toBeVisible();
+
+      rerender(<Card title="x" id="my card" />);
+      expect(screen.queryByRole('button')).toBeNull();
     });
 
-    it('should put the title in a tooltip if it overflows', () => {
-      const aLongTitle =
-        'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
-      render(<Card {...cardProps} title={aLongTitle} />);
-      const tooltipButton = screen.getByRole('button', {
-        name: aLongTitle,
-      });
-      expect(tooltipButton).toBeVisible();
-      expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
-      userEvent.click(tooltipButton);
-      expect(screen.getByTestId('Card-title-tooltip')).toBeVisible();
-      expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+    it('should show title text tooltip', () => {
+      const text = 'I am shown when the title text is clicked';
+      const { rerender } = render(
+        <Card title="my title" id="my card" titleTextTooltip={<p>{text}</p>} />
+      );
+      expect(screen.getByRole('button')).toHaveClass(`${prefix}--tooltip__label`);
+      expect(screen.queryByText(text)).toBeNull();
+
+      userEvent.click(screen.getByRole('button'));
+      expect(screen.getByText(text)).toBeVisible();
+
+      rerender(<Card title="my title" id="my card" />);
+      expect(screen.queryByRole('button')).toBeNull();
     });
 
-    it('should put the subtitle in a tooltip if it overflows', () => {
-      const aLongSubTitle =
-        'A very very long subtitle which will almost certainly overflow and require a tooltip and we must test these things, you know.';
-      render(<Card {...cardProps} title="A Very Modest Title" subtitle={aLongSubTitle} />);
-      const tooltipButton = screen.getByRole('button', {
-        name: aLongSubTitle,
+    it('should not prepend the title to the external title text tooltip content if there is no overflow', () => {
+      const text = 'I am shown when the title text is clicked';
+      render(
+        <Card testId="card-test" title="my title" id="my card" titleTextTooltip={<p>{text}</p>} />
+      );
+
+      userEvent.click(screen.getByRole('button'));
+
+      const tooltipContent = screen.getByTestId('card-test-title-tooltip');
+      expect(tooltipContent).toBeVisible();
+      expect(within(tooltipContent).getByText(text)).toBeVisible();
+      expect(within(tooltipContent).queryByText('my title')).toBeNull();
+    });
+
+    it('should show browser tooltip through the title-attribute', () => {
+      const titleText = 'I am the title';
+      render(<Card testId="card-test" title={titleText} id="my card" />);
+      expect(screen.getByTestId('card-test-title')).toHaveAttribute('title', titleText);
+    });
+
+    it('should not show browser tooltip through the title-attribute if prop titleTextTooltip is used', () => {
+      const titleText = 'I am the title';
+      render(
+        <Card testId="card-test" title={titleText} id="my card" titleTextTooltip={<p>test</p>} />
+      );
+      expect(screen.getByTestId('card-test-title')).not.toHaveAttribute('title', titleText);
+    });
+
+    describe('tooltips from overflow', () => {
+      const originalOffsetWidth = Object.getOwnPropertyDescriptor(
+        HTMLElement.prototype,
+        'offsetWidth'
+      );
+      const originalScrollWidth = Object.getOwnPropertyDescriptor(
+        HTMLElement.prototype,
+        'scrollWidth'
+      );
+
+      const originalClientWidth = Object.getOwnPropertyDescriptor(
+        HTMLElement.prototype,
+        'clientWidth'
+      );
+
+      beforeEach(() => {
+        Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+          writable: true,
+          configurable: true,
+          value: 400,
+        });
+        Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+          writable: true,
+          configurable: true,
+          value: 500,
+        });
       });
-      expect(tooltipButton).toBeVisible();
-      expect(tooltipButton).toHaveClass(`${iotPrefix}--card--subtitle--text`);
-      userEvent.click(tooltipButton);
-      expect(screen.getByTestId('Card-subtitle')).toBeVisible();
-      expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+
+      afterAll(() => {
+        Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
+        Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalScrollWidth);
+        Object.defineProperty(HTMLElement.prototype, 'scrollWidth', originalClientWidth);
+      });
+
+      it('should prepend the title to the external titleTextTooltip content if the title overflows', () => {
+        const aLongTitle =
+          'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+        render(
+          <Card
+            testId="card-test"
+            {...cardProps}
+            title={aLongTitle}
+            titleTextTooltip="I am shown when the title text is clicked"
+          />
+        );
+        const tooltipButton = screen.getByRole('button', {
+          name: aLongTitle,
+        });
+        expect(tooltipButton).toBeVisible();
+        expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
+        userEvent.click(tooltipButton);
+        expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+
+        const tooltipContent = screen.getByTestId('card-test-title-tooltip');
+        expect(within(tooltipContent).getByText(aLongTitle)).toBeVisible();
+        expect(
+          within(tooltipContent).getByText('I am shown when the title text is clicked')
+        ).toBeVisible();
+      });
+
+      it('should put the title in a tooltip if it overflows', () => {
+        const aLongTitle =
+          'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+        render(<Card {...cardProps} title={aLongTitle} />);
+        const tooltipButton = screen.getByRole('button', {
+          name: aLongTitle,
+        });
+        expect(tooltipButton).toBeVisible();
+        expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
+        userEvent.click(tooltipButton);
+        expect(screen.getByTestId('Card-title-tooltip')).toBeVisible();
+        expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+      });
+
+      it('should remove the tooltip if the title changes to a shorter string', async () => {
+        const aLongTitle =
+          'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+
+        const aShortTitle = 'A Title';
+        const { rerender } = render(<Card {...cardProps} title={aLongTitle} />);
+        const tooltipButton = screen.getByRole('button', {
+          name: aLongTitle,
+        });
+        expect(tooltipButton).toBeVisible();
+        expect(tooltipButton).toHaveClass(`${iotPrefix}--card--title--text__overflow`);
+        Object.defineProperty(HTMLElement.prototype, 'clientWidth', {
+          writable: true,
+          configurable: true,
+          value: 500,
+        });
+        Object.defineProperty(HTMLElement.prototype, 'scrollWidth', {
+          writable: true,
+          configurable: true,
+          value: 500,
+        });
+        rerender(<Card {...cardProps} title={aShortTitle} subtitle="This is subtitle" />);
+        expect(screen.getByTestId('Card-title-notip')).toBeVisible();
+      });
+
+      it('should put the subtitle in a tooltip if it overflows', () => {
+        const aLongSubTitle =
+          'A very very long subtitle which will almost certainly overflow and require a tooltip and we must test these things, you know.';
+        render(<Card {...cardProps} title="A Very Modest Title" subtitle={aLongSubTitle} />);
+        const tooltipButton = screen.getByRole('button', {
+          name: aLongSubTitle,
+        });
+        expect(tooltipButton).toBeVisible();
+        expect(tooltipButton).toHaveClass(`${iotPrefix}--card--subtitle--text`);
+        userEvent.click(tooltipButton);
+        expect(screen.getByTestId('Card-subtitle')).toBeVisible();
+        expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+      });
     });
   });
 
@@ -597,5 +732,40 @@ describe('Card', () => {
     // Reopen menu to verify hidden item
     fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
     expect(screen.queryByText('Item4')).not.toBeInTheDocument();
+  });
+
+  it('should not have padding when padding="none"', () => {
+    render(<Card {...cardProps} size={CARD_SIZES.SMALL} padding="none" />);
+    expect(screen.getByTestId('Card-content')).toHaveClass(
+      `${iotPrefix}--card__content--no-padding`
+    );
+  });
+
+  it('should allow override pattern on empty state', () => {
+    const MyErrorMessage = ({ body, title, ...props }) => (
+      <div data-testid="my-error-message" title={title} {...props}>
+        {body}
+      </div>
+    );
+    render(
+      <Card
+        size={CARD_SIZES.LARGE}
+        padding="none"
+        error="an error occurred"
+        overrides={{
+          errorMessage: {
+            component: MyErrorMessage,
+            props: {
+              className: 'my-custom-class',
+            },
+          },
+        }}
+      />
+    );
+
+    expect(screen.getByTestId('my-error-message')).toBeVisible();
+    expect(screen.getByText('an error occurred')).toBeVisible();
+    expect(screen.getByText('an error occurred')).toHaveClass('my-custom-class');
+    expect(screen.getByText('an error occurred')).toHaveAttribute('title', 'Data error.');
   });
 });

@@ -82,11 +82,7 @@ html[dir='rtl'] {
     // stylelint-disable-next-line declaration-property-unit-blacklist
     padding: Max(calc(48 * var(--is-large-card)), 0px);
     svg {
-      margin: $spacing-05;
-    }
-
-    & > * {
-      margin: $spacing-03;
+      margin: $spacing-05 $spacing-05 $spacing-05 0;
     }
   }
 
@@ -116,4 +112,224 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 .#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
   height: $spacing-07;
   width: $spacing-08;
+}
+
+.#{$iot-prefix}--table__row--selectable {
+  .#{$prefix}--checkbox {
+    cursor: pointer;
+  }
+}
+
+.#{$iot-prefix}--table__row--unselectable:not(.#{$iot-prefix}--table__row--editing) {
+  &:hover {
+    &,
+    td {
+      background-color: inherit;
+      color: $text-02;
+      border-bottom-color: $ui-03;
+      border-top-color: $ui-01;
+    }
+  }
+}
+
+.#{$iot-prefix}--table__row--singly-selected,
+.#{$iot-prefix}--expandable-tablerow--singly-selected {
+  cursor: pointer;
+
+  td:first-of-type {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      // -1px because the parent has a 1px border at the top, so we need to fill that gap
+      top: -1px;
+      left: 0;
+      height: calc(100% + 1px);
+      width: rem(3px);
+      background-color: $interactive-04;
+      border-right: solid 1px $highlight;
+    }
+  }
+}
+
+.#{$iot-prefix}--expandable-tablerow--expanded {
+  td.#{$prefix}--table-expand {
+    position: relative;
+    left: var(--row-nesting-offset);
+  }
+
+  td:first-of-type:before {
+    content: '';
+    position: absolute;
+    // -1px because the parent has a 1px border at the top, so we need to fill that gap
+    top: -1px;
+    left: calc(var(--row-nesting-offset) * -1);
+    height: calc(100% + 1px);
+    width: var(--row-nesting-offset);
+    background-color: $ui-01;
+    border-right: solid 1px $ui-01;
+  }
+
+  &[data-nesting-offset='0'] {
+    td:first-of-type:before {
+      border-right: 0;
+    }
+  }
+  td.bx--table-expand[data-previous-value='collapsed'] {
+    border-bottom: solid 1px $ui-01;
+  }
+}
+
+.#{$iot-prefix}--table__cell__offset {
+  position: relative;
+  left: var(--row-nesting-offset);
+  max-width: calc(100% - var(--row-nesting-offset));
+  display: block;
+
+  [dir='rtl'] & {
+    left: unset;
+    right: var(--row-nesting-offset);
+  }
+}
+
+.#{$iot-prefix}--expanded-tablerow {
+  td {
+    padding: 0;
+    font-weight: bold;
+  }
+}
+
+.#{$iot-prefix}--expandable-tablerow {
+  cursor: pointer;
+  td {
+    div .#{$prefix}--btn--ghost:hover {
+      background: $ui-03;
+    }
+  }
+}
+
+.#{$iot-prefix}--expandable-tablerow--indented {
+  td.#{$prefix}--table-expand {
+    position: relative;
+    left: var(--row-nesting-offset);
+    border-bottom: 1px solid $ui-01;
+
+    [dir='rtl'] & {
+      left: unset;
+      right: var(--row-nesting-offset);
+    }
+  }
+
+  td:first-of-type {
+    // add a white indention block to create space on the left-side of nested rows.
+    &:before {
+      content: '';
+      position: absolute;
+      // -1px because the parent has a 1px border at the top, so we need to fill that gap
+      top: -1px;
+      left: calc(-1 * var(--row-nesting-offset));
+      height: calc(100% + 1px);
+      width: var(--row-nesting-offset);
+      background-color: $ui-01;
+      border-right: solid 1px $ui-01;
+      border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: calc(-1 * var(--row-nesting-offset));
+      }
+    }
+
+    // add a white bottom-border to mask the existing rows border to get all the nested row borders
+    // to align properly.
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 1px;
+      bottom: -1px;
+      width: $spacing-03;
+      border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  // using an :after pseudo-element we pad the bottom borders of nested rows
+  // so that the bottom border all align for siblings
+  &.#{$iot-prefix}--expandable-tablerow--childless,
+  &.#{$iot-prefix}--expandable-tablerow--expanded,
+  &.#{$iot-prefix}--expandable-tablerow--last-child {
+    td:first-of-type:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 1px;
+      bottom: -1px;
+      width: $spacing-03;
+      border-bottom: solid 1px $ui-01;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  // and if one of these siblings (above) is expanded, we need to lengthen that border in white to
+  // cover up the bottom border of the row and to visually show that row is expanded. ie. the border
+  // doesn't interfere with the open space between the parent and the children.
+  &.#{$iot-prefix}--expandable-tablerow--expanded {
+    td:first-of-type:after {
+      width: $spacing-08;
+    }
+  }
+
+  // the last child in a nested group needs to extend the bottom border to the left, so that it
+  // aligns with the borders of the parent above it.
+  &.#{$iot-prefix}--expandable-tablerow--last-child {
+    td:first-of-type:after {
+      left: -($spacing-06);
+      width: $spacing-07;
+      border-bottom-color: $ui-03;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: -($spacing-06);
+      }
+    }
+  }
+
+  // the last child of a one-level indention row needs a little more width
+  // to position the after element correctly and close up the bottom border
+  &.#{$iot-prefix}--expandable-tablerow--last-child[data-nesting-offset='32'] {
+    td:first-of-type:after {
+      left: -($spacing-07);
+      width: $spacing-08;
+      border-bottom-color: $ui-03;
+
+      [dir='rtl'] & {
+        left: unset;
+        right: -($spacing-07);
+      }
+    }
+  }
+}
+
+.#{$iot-prefix}--expandable-tablerow--childless {
+  td {
+    > button.#{$prefix}--table-expand__button {
+      display: none;
+    }
+  }
+}
+
+.#{$iot-prefix}--expandable-tablerow--parent {
+  td {
+    font-weight: bold;
+  }
 }

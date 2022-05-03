@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal as warning dialog 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal as warning dialog 1`] = `
 <div
   className="storybook-container"
 >
@@ -91,7 +91,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           Cancel
         </button>
         <button
-          aria-describedby="danger-description-100"
+          aria-describedby="danger-description-104"
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--danger"
           data-testid="ComposedModal-modal-danger-button"
@@ -106,7 +106,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           <span
             className="bx--visually-hidden"
-            id="danger-description-100"
+            id="danger-description-104"
           >
             danger
           </span>
@@ -125,7 +125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with custom footer 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with custom footer 1`] = `
 <div
   className="storybook-container"
 >
@@ -216,7 +216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with custom header nodes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with custom header nodes 1`] = `
 <div
   className="storybook-container"
 >
@@ -338,7 +338,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with error, isFetchingData, and sendingData states 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with error, isFetchingData, and sendingData states 1`] = `
 <div
   className="storybook-container"
 >
@@ -376,7 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with hidden or disabled buttons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with hidden or disabled buttons 1`] = `
 <div
   className="storybook-container"
 >
@@ -474,7 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ComposedModal with i18n, overflow menu, and tooltip 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Modal/ComposedModal with i18n, overflow menu, and tooltip 1`] = `
 <div
   className="storybook-container"
 >
@@ -542,12 +542,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <button
           aria-expanded={false}
           aria-haspopup={true}
           aria-label="open and close list of options"
-          className="bx--overflow-menu"
+          className="bx--overflow-menu bx--overflow-menu--md"
           onClick={[Function]}
           onClose={[Function]}
           onKeyDown={[Function]}
@@ -593,6 +598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         >
           Trigger Text
           <div
+            aria-describedby={null}
             aria-labelledby="my test tooltip"
             className="bx--tooltip__trigger"
             onBlur={[Function]}

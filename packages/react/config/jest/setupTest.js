@@ -35,6 +35,23 @@ beforeEach(() => {
   // Review this for more context: https://github.com/carbon-design-system/carbon-addons-iot-react/issues/1143#issuecomment-623577505
   expect.hasAssertions();
 
-  // Ensure that downshift's internal ID is always 0, otherwise snapshots will change unecessarily when unrelated snaps are regenerated.
+  // Ensure that downshift's internal ID is always 0, otherwise snapshots will change unnecessarily when unrelated snaps are regenerated.
   resetIdCounter();
+
+  // carbon v10.52 adds matchMedia which needs to be mocked in tests, wrapped in if otherwise breaks ssr test
+  if (typeof window !== 'undefined') {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: jest.fn(), // Deprecated
+        removeListener: jest.fn(), // Deprecated
+        addEventListener: jest.fn(),
+        removeEventListener: jest.fn(),
+        dispatchEvent: jest.fn(),
+      })),
+    });
+  }
 });

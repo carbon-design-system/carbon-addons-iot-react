@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/es/chip/24';
 import Dashboard from '@carbon/icons-react/es/dashboard/24';
@@ -116,6 +117,7 @@ const customActionItems = [
         <NotificationOn id="notification-button" fill="white" description="Icon" />
       </span>
     ),
+    onClick: action('bell clicked'),
   },
   {
     label: 'bee',
@@ -295,7 +297,7 @@ const customApplications = [
 ];
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/UI shell/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,
@@ -347,6 +349,50 @@ export const Default = () => {
 };
 
 Default.storyName = 'default';
+
+export const NavigationalActionsBlocked = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView={boolean('isAdminView', false)}
+      routes={object('routes', {
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      applications={object('applications', [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+      onRouteChange={() => Promise.resolve(false)}
+    />
+  );
+};
+
+NavigationalActionsBlocked.storyName = 'Navigational actions blocked';
 
 export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'carbon-components-react';
 import { Settings16 } from '@carbon/icons-react';
@@ -6,7 +6,6 @@ import { Settings16 } from '@carbon/icons-react';
 import { settings } from '../../../constants/Settings';
 import { OverridePropTypes } from '../../../constants/SharedPropTypes';
 import useSizeObserver from '../../../hooks/useSizeObserver';
-import { useDropdownTitleFixer } from '../../IconDropdown/dropdownHooks';
 
 import TableViewItemPropType from './TableViewItemPropTypes';
 import TableViewDropdownItem from './TableViewDropdownItem';
@@ -49,6 +48,8 @@ const propTypes = {
   }),
   style: PropTypes.objectOf(PropTypes.string),
   testID: PropTypes.string,
+  /** When true hides all action items and only allows the selection of views  */
+  isHidingStandardActions: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -69,6 +70,7 @@ const defaultProps = {
   overrides: undefined,
   style: undefined,
   testID: 'TableViewDropdown',
+  isHidingStandardActions: false,
 };
 
 const TableViewDropdown = ({
@@ -81,6 +83,7 @@ const TableViewDropdown = ({
   overrides,
   style,
   testID,
+  isHidingStandardActions,
 }) => {
   const viewAllItem = {
     id: 'view-all',
@@ -103,7 +106,7 @@ const TableViewDropdown = ({
       customAction: onManageViews,
       icon: Settings16,
     };
-    // Save changes button show only appear if the view has been edited and the current view is not 'View all'
+    // Save changes item should only appear if the view has been edited and the current view is not 'View all'
     // 'View all' is equivalent to a "default view", which would not be able to get re-saved. The user should supply
     // their own default views that can be changed if they would like that functionality
     const dialogItems =
@@ -111,9 +114,11 @@ const TableViewDropdown = ({
         ? [saveAsNewItem, saveItem, manageViewsItem]
         : [saveAsNewItem, manageViewsItem];
 
-    // move the action / dialog items to the top so that they are always easily accessible in the case that there are
-    // many views. The user would need to scroll all the way to the bottom to find the actions
-    return [...dialogItems, viewAllItem, ...views];
+    return isHidingStandardActions
+      ? views
+      : // move the action / dialog items to the top so that they are always accessible
+        // without scrolling in the case that there are many views.
+        [...dialogItems, viewAllItem, ...views];
   }, [
     i18n.saveAsNewView,
     i18n.saveChanges,
@@ -125,21 +130,13 @@ const TableViewDropdown = ({
     selectedViewId,
     viewAllItem,
     views,
+    isHidingStandardActions,
   ]);
 
   const mySelectedItem = allItems.find((item) => item.id === selectedViewId) || viewAllItem;
   const MyDropDown = overrides?.dropdown?.component || Dropdown;
   const MyTableViewDropDownItem = overrides?.dropdownItem?.component || TableViewDropdownItem;
   const [containerSize, containerRef] = useSizeObserver({ initialWidth: 200 });
-  const [dropdownRef, updateTitle] = useDropdownTitleFixer();
-
-  useEffect(() => {
-    if (mySelectedItem?.text && dropdownRef?.current) {
-      updateTitle(
-        selectedViewEdited ? `${mySelectedItem.text} - ${i18n.edited}` : mySelectedItem.text
-      );
-    }
-  }, [dropdownRef, i18n.edited, mySelectedItem, selectedViewEdited, updateTitle]);
 
   const onSelectionChange = (change) => {
     const item = change.selectedItem;
@@ -152,32 +149,32 @@ const TableViewDropdown = ({
     }
   };
 
+  const itemToElement = (itemData) => {
+    return (
+      <MyTableViewDropDownItem
+        testID={`TableViewDropdownItem-${itemData.id}`}
+        isCompact={containerSize.width < 200}
+        item={itemData}
+        isSelected={itemData.id === mySelectedItem.id}
+        activeViewEdited={selectedViewEdited}
+        i18n={i18n}
+        {...overrides?.dropdownItem?.props}
+      />
+    );
+  };
+
   return (
     <div ref={containerRef} className={`${iotPrefix}--view-dropdown__container`} style={style}>
       <MyDropDown
-        ref={dropdownRef}
         label={i18n.tableViewMenu}
         data-testid={testID}
         selectedItem={mySelectedItem}
         ariaLabel={i18n.ariaLabel}
         disabled={disabled}
         id={`${iotPrefix}--view-dropdown`}
-        // We are using itemToString instead of itemToElement since we need the custom
-        // rendering to also happen when the item is selected. See closed PR
-        // https://github.com/carbon-design-system/carbon/pull/5578
-        itemToString={(itemData) => {
-          return (
-            <MyTableViewDropDownItem
-              testID={`TableViewDropdownItem-${itemData.id}`}
-              isCompact={containerSize.width < 200}
-              item={itemData}
-              isSelected={itemData.id === mySelectedItem.id}
-              activeViewEdited={selectedViewEdited}
-              i18n={i18n}
-              {...overrides?.dropdownItem?.props}
-            />
-          );
-        }}
+        renderSelectedItem={itemToElement}
+        itemToElement={itemToElement}
+        itemToString={(item) => item.text}
         items={allItems}
         light={false}
         onChange={onSelectionChange}

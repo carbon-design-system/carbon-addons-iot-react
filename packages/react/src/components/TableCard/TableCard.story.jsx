@@ -13,7 +13,7 @@ import TableCard from './TableCard';
 import TableCardREADME from './TableCard.mdx';
 
 export default {
-  title: '1 - Watson IoT/TableCard',
+  title: '1 - Watson IoT/Card/TableCard',
 
   parameters: {
     component: TableCard,
@@ -55,6 +55,7 @@ export const WithMultipleActions = () => {
         onCardAction={action('onCardAction')}
         size={size}
         isLoading={boolean('isLoading', false)}
+        isExpanded={boolean('isExpanded', false)}
       />
     </div>
   );

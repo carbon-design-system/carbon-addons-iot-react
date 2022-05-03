@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -22,20 +22,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         <p>
           My applications
         </p>
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           All applications
           <svg
@@ -53,7 +51,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
             />
           </svg>
-        </button>
+        </a>
       </li>
       <div
         className="iot--suite-header-app-switcher--nav-link--separator"
@@ -96,7 +94,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
 <div
   className="storybook-container"
 >
@@ -118,20 +116,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         <p>
           My applications
         </p>
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           All applications
           <svg
@@ -149,7 +145,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
             />
           </svg>
-        </button>
+        </a>
       </li>
       <div
         className="iot--suite-header-app-switcher--nav-link--separator"
@@ -183,8 +179,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </span>
         <a
           data-testid="suite-header-app-switcher--no-access"
-          href="javascript:void(0)"
+          href="https://www.ibm.com"
           onClick={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           Learn more
         </a>
@@ -194,7 +192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderAppSwitcher default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher default 1`] = `
 <div
   className="storybook-container"
 >
@@ -216,20 +214,18 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         <p>
           My applications
         </p>
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           All applications
           <svg
@@ -247,7 +243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
               d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
             />
           </svg>
-        </button>
+        </a>
       </li>
       <div
         className="iot--suite-header-app-switcher--nav-link--separator"
@@ -256,45 +252,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         className="iot--suite-header-app-switcher--app-link"
         id="suite-header-application-monitor"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--ghost"
           data-testid="suite-header-app-switcher--monitor"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           Monitor
-        </button>
+        </a>
       </li>
       <li
         className="iot--suite-header-app-switcher--app-link"
         id="suite-header-application-health"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--ghost"
           data-testid="suite-header-app-switcher--health"
-          disabled={false}
+          href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
-          tabIndex={0}
-          type="button"
+          rel="noopener noreferrer"
+          tabIndex={-1}
         >
           Health
-        </button>
+        </a>
       </li>
     </ul>
   </div>

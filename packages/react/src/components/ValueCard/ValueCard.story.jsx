@@ -1,7 +1,6 @@
 import React from 'react';
 import { text, select, object, boolean, number } from '@storybook/addon-knobs';
-import { Bee16, Checkmark16 } from '@carbon/icons-react';
-import { spacing05 } from '@carbon/layout';
+import { Bee16, Checkmark16, WarningFilled16 } from '@carbon/icons-react';
 import { action } from '@storybook/addon-actions';
 
 import { CARD_SIZES, CARD_DATA_STATE } from '../../constants/LayoutConstants';
@@ -12,7 +11,7 @@ import ValueCard from './ValueCard';
 import ValueCardREADME from './ValueCard.mdx';
 
 export default {
-  title: '1 - Watson IoT/ValueCard',
+  title: '1 - Watson IoT/Card/ValueCard',
 
   parameters: {
     component: ValueCard,
@@ -29,7 +28,7 @@ export const SmallLongNoUnits = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -75,7 +74,7 @@ export const WithTrends = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -118,6 +117,97 @@ export const WithTrends = () => {
 
 WithTrends.storyName = 'with trends, variables, and label';
 
+export const WithLinkAndMeasurementUnit = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALLWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+  return (
+    <div
+      style={{
+        width: text('cardWidth', `624px`),
+        margin: '5px',
+      }}
+    >
+      <ValueCard
+        title={text('title', 'Overage')}
+        id="appPoints-overage"
+        renderIconByName={(name, props = {}) =>
+          name === 'bee' ? (
+            <Bee16 {...props}>
+              <title>{props.title}</title>
+            </Bee16>
+          ) : name === 'checkmark' ? (
+            <Checkmark16 {...props}>
+              <title>{props.title}</title>
+            </Checkmark16>
+          ) : name === 'warning' ? (
+            <WarningFilled16 {...props}>
+              <title>{props.title}</title>
+            </WarningFilled16>
+          ) : (
+            <span>Unknown</span>
+          )
+        }
+        content={{
+          attributes: [
+            {
+              dataSourceId: 'peakUsage',
+              label: text('content.attributes[0].label', 'Peak usage'),
+              measurementUnitLabel: text('content.attributes[0].measurementUnitLabel', 'AppPoints'),
+              thresholds: [
+                {
+                  comparison: '>',
+                  value: 1000,
+                  icon: select(
+                    'content.attributes[0].thresholds[0].icon',
+                    ['bee', 'checkmark', 'warning', 'undefined'],
+                    'warning'
+                  ),
+                  color: select(
+                    'content.attributes[0].thresholds[0].color',
+                    ['red', 'green', 'yellow'],
+                    '#f1c21b'
+                  ),
+                },
+              ],
+              secondaryValue: {
+                dataSourceId: 'trend',
+                trend: select('content.attributes[0].secondaryValue.trend', ['up', 'down'], 'up'),
+                color: select(
+                  'content.attributes[0].secondaryValue.color',
+                  ['red', 'green'],
+                  'red'
+                ),
+              },
+            },
+            {
+              dataSourceId: 'target',
+              label: text('content.attributes[1].label', 'Target'),
+              measurementUnitLabel: text('content.attributes[1].measurementUnitLabel', 'AppPoints'),
+              secondaryValue: {
+                dataSourceId: 'adjustTarget',
+                // href: 'https://google.com',
+                onClick: action('onClick'),
+              },
+            },
+          ],
+        }}
+        breakpoint={breakpoint}
+        size={size}
+        values={{
+          peakUsage: number('values.peakUsage', 1045),
+          trend: text('values.trend', 'Up 30% month on month'),
+          target: number('values.target', 1000),
+          adjustTarget: text('values.adjustTarget', 'Adjust target'),
+        }}
+        isNumberValueCompact={boolean('isNumberValueCompact', false)}
+        locale={select('locale', ['de', 'fr', 'en', 'ja'], 'en')}
+        fontSize={number('fontSize', 42)}
+      />
+    </div>
+  );
+};
+
+WithLinkAndMeasurementUnit.storyName = 'with link and measurement unit ';
 export const WithThresholds = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.SMALL);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
@@ -125,7 +215,7 @@ export const WithThresholds = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -191,7 +281,7 @@ export const SmallWideThresholdsString = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -239,7 +329,7 @@ export const MediumThin3 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -333,7 +423,7 @@ export const WithFourDataPoints = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -385,7 +475,7 @@ export const Large5 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -436,7 +526,7 @@ export const LargeThin6 = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -512,7 +602,7 @@ export const DataStateNoDataMediumScrollPage = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -542,7 +632,7 @@ export const Editable = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard
@@ -583,7 +673,7 @@ export const DataFilters = () => {
     <div
       style={{
         width: text('cardWidth', `${getCardMinSize(breakpoint, size).x}px`),
-        margin: spacing05 + 4,
+        margin: '5px',
       }}
     >
       <ValueCard

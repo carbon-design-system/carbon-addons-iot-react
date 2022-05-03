@@ -16,12 +16,15 @@ import {
 const { prefix, iotPrefix } = settings;
 
 const propTypes = {
+  className: PropTypes.string,
   /* the label show above the bar */
   label: PropTypes.string.isRequired,
   /* the text shown below the bar */
   helperText: PropTypes.string,
   /* if true, hide the label  */
   hideLabel: PropTypes.bool,
+  /** When true, show the inline variant without an icon or label */
+  inline: PropTypes.bool,
   /* the number used to fill the bar */
   value: PropTypes.number.isRequired,
   /* the unit shown beside the value label text */
@@ -31,6 +34,9 @@ const propTypes = {
    * value label text differently
    */
   max: PropTypes.number,
+  /* If true, the bar area is white, for use with a gray background */
+  light: PropTypes.bool,
+
   /**
    * An array of threshold objects to compare the value against and change the icon and/or
    * bar colors based on matching criteria
@@ -57,8 +63,11 @@ const propTypes = {
 };
 
 const defaultProps = {
+  className: undefined,
   helperText: '',
   hideLabel: false,
+  inline: false,
+  light: false,
   thresholds: [],
   max: 100,
   valueUnit: '%',
@@ -72,16 +81,19 @@ const defaultProps = {
 const DEFAULT_PROGRESS_BAR_COLOR = blue60;
 
 const ProgressBar = ({
-  label,
+  className,
   helperText,
   hideLabel,
-  value,
-  valueUnit,
+  i18n,
+  inline,
+  label,
+  light,
   max,
   renderIcon,
   renderIconByName,
   thresholds,
-  i18n,
+  value,
+  valueUnit,
 }) => {
   const mergedI18n = useMerged(defaultProps.i18n, i18n);
   const matchingThreshold = useMatchingThreshold({ thresholds, value });
@@ -90,48 +102,97 @@ const ProgressBar = ({
   const matchingFillColor = matchingThreshold?.color ?? DEFAULT_PROGRESS_BAR_COLOR;
   const fillColor = hasColorObject ? matchingThreshold.color.fill : matchingFillColor;
   const strokeColor = hasColorObject ? matchingThreshold.color.stroke : undefined;
+  const valueAndUnitString = Number.isInteger(value) ? `${value}${valueUnit}` : '';
+
+  /**
+   * helper to render the value and unit
+   *
+   * @returns JSXElement
+   */
+  const valueAndUnit = (
+    <span
+      className={classnames(`${iotPrefix}--progress-bar__value-label`, {
+        // allow styling the value label differently when above max
+        [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
+        [`${iotPrefix}--progress-bar__value-label--inline`]: inline,
+      })}
+      title={valueAndUnitString}
+    >
+      {valueAndUnitString}
+    </span>
+  );
+
+  /**
+   * When the progress bar is not using the inline variant, render the label and icon
+   * above the progress bar.
+   *
+   * @returns JSX Element
+   */
+  const progressBarLabel = (
+    <div
+      className={classnames(`${iotPrefix}--progress-bar__label--right`, {
+        [`${prefix}--visually-hidden`]: hideLabel,
+      })}
+    >
+      {Icon ? (
+        <span className={`${iotPrefix}--progress-bar__icon`} data-testid="progress-bar-icon">
+          {renderIconByName && typeof Icon === 'string' ? (
+            renderIconByName(Icon, {
+              fill: fillColor,
+              stroke: strokeColor,
+              'aria-label': mergedI18n.iconLabel,
+            })
+          ) : (
+            <Icon fill={fillColor} stroke={strokeColor} aria-label={mergedI18n.iconLabel} />
+          )}
+        </span>
+      ) : null}
+      {valueAndUnit}
+    </div>
+  );
+
+  /**
+   * helper method to render the progress bar with a div wrapper for the inline variant
+   *
+   * @returns JSXElement
+   */
+  const progressBarWithInlineWrapper = (
+    <div className={`${iotPrefix}--progress-bar-wrapper--inline`}>
+      <CarbonProgressBar label={label} helperText={undefined} hideLabel value={value} max={max} />
+      {valueAndUnit}
+    </div>
+  );
 
   return (
     <div
-      className={`${iotPrefix}--progress-bar-container`}
+      className={classnames(
+        `${iotPrefix}--progress-bar-container`,
+        {
+          [`${iotPrefix}--progress-bar-container--light`]: light,
+          [`${iotPrefix}--progress-bar-container--with-icon`]: Icon,
+        },
+        className
+      )}
       data-testid="progress-bar-container"
       style={{
         '--progress-bar-fill-color': fillColor,
         '--progress-bar-stroke-color': strokeColor,
       }}
     >
-      <div
-        className={classnames(`${iotPrefix}--progress-bar__label--right`, {
-          [`${prefix}--visually-hidden`]: hideLabel,
-        })}
-      >
-        {Icon ? (
-          <span className={`${iotPrefix}--progress-bar__icon`} data-testid="progress-bar-icon">
-            {renderIconByName && typeof Icon === 'string' ? (
-              renderIconByName(Icon, {
-                fill: fillColor,
-                stroke: strokeColor,
-                'aria-label': mergedI18n.iconLabel,
-              })
-            ) : (
-              <Icon fill={fillColor} stroke={strokeColor} aria-label={mergedI18n.iconLabel} />
-            )}
-          </span>
-        ) : null}
-        <span
-          className={classnames(`${iotPrefix}--progress-bar__value-label`, {
-            // allow styling the value label differently when above max
-            [`${iotPrefix}--progress-bar__value-label--over`]: value > max,
-          })}
-        >{`${value}${valueUnit}`}</span>
-      </div>
-      <CarbonProgressBar
-        label={label}
-        helperText={helperText}
-        hideLabel={hideLabel}
-        value={value}
-        max={max}
-      />
+      {inline ? (
+        progressBarWithInlineWrapper
+      ) : (
+        <>
+          {progressBarLabel}
+          <CarbonProgressBar
+            label={label}
+            helperText={helperText}
+            hideLabel={hideLabel}
+            value={value}
+            max={max}
+          />
+        </>
+      )}
     </div>
   );
 };

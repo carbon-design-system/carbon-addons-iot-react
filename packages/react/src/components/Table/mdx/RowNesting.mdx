@@ -1,0 +1,204 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Row nesting
+
+The `Table` components support nested rows by setting `options.hasRowNesting` to true.
+This will add a toggle expand button to each row that has additional row data defined in
+its `children` property. The children supports the same props as the objects in the
+[Data prop](/docs/1-watson-iot-table--playground#data-prop) including row actions and
+additional levels of children. The StatefulTable will automatically expand and collapse
+a row when the row's toggle expand button is clicked.
+
+If the table only uses a single level of nesting (i.e. no children have children of their own)
+then the prop `options.hasRowNesting` should be set to `{ hasSingleNestedHierarchy: true }`
+in order to get the proper styling.
+
+### Row nesting code example
+
+The id of a child row can be any valid string as long as the value is unique among all
+the table rows. This is because the Table will technically still render a flat list of rows
+in the table body even though it will be styled with indentation for the children.
+The example below will show 3 rows on the top level where the two first ones will have toggle
+expand buttons.
+
+```jsx
+const data = [
+  // Single level nested row
+  {
+    id: 'row-1',
+    values: {...},
+    children: [
+      {
+        id: 'row-1-child',
+        values: {...},
+      },
+    ],
+  },
+  // Multi level nested row
+  {
+    id: 'row-2',
+    values: {...},
+    children: [
+      {
+        id: 'row-2-child-1',
+        values: {...},
+        // These will not be rendered if `options.hasRowNesting` is set to
+        // `{ hasSingleNestedHierarchy: true }`.
+        children: [
+          {
+            id: 'x',
+            values: {...},
+          },
+          (id: 'y'),
+          {
+            values: {...},
+          },
+        ],
+      },
+      (id: 'row-2-child-2'),
+      {
+        values: {...},
+      },
+    ],
+  },
+  // No nesting
+  {
+    id: 'row-3',
+    values: {...},
+  },
+];
+
+<StatefulTable
+  columns={columns}
+  data={data}
+  options={{ hasRowNesting: true }}
+/>
+```
+
+### Handling the onRowExpanded event
+
+For the normal stateless table the currently expanded rows need to be programmatically managed through
+the `view.table.expandedIds` prop. This prop can be used by both the Table and StatefulTable to set the
+initially expanded rows. The action callback `table.onRowExpanded` must be used to modify the
+array of `expandedIds`. The callback will receive two params; the row id and a boolean value stating
+if the row should be expanded or not. See full example below:
+
+```jsx
+const [expandedIds, setExpandedIds] = useState(['row-0']);
+
+const onRowExpanded = (rowId, expand) => {
+  setExpandedIds((currentlyExpanded) =>
+    expand ? [...currentlyExpanded, rowId] : currentlyExpanded.filter((id) => id !== rowId)
+  );
+};
+
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    table: { onRowExpanded },
+  }}
+  options={{
+    hasRowExpansion: true,
+    shouldExpandOnRowClick: true,
+  }}
+  view={{
+    table: { expandedIds },
+  }}
+/>;
+```
+
+### Load more child rows
+
+Due to the amount of data it is sometimes not possible to load all the nested rows upfront when
+rendering the table. In such scenarios more table rows can be
+asynchronous loaded into any position by letting the user click a "Load more" button.
+The load more button will occupy the full row and is automatically inserted as
+the last child if the parent row object's `hasLoadMore` prop is set to true.
+
+Both the Table and the Stateful table need to implement a callback for the action `onRowLoadMore`
+which will be called with the `id` of the parent row. This callback is responsible for loading
+more rows and inserting them as children of the parent triggering the call.
+
+The StatefulTable handles the loading state automatically based on the button click and the eventual
+change of data, but for the normal Table the application needs to handle this by adding and removing
+the parent row id to the array `view.table.loadingMoreIds`.
+
+```jsx
+// Get some initial nested data with limited children
+const nestedDataWithLoadMore = data.map((row) => ({
+  ...row,
+  // Make sure all top level rows get the load more button
+  hasLoadMore: true,
+}));
+
+const [loadingMoreIds, setLoadingMoreIds] = useState([]);
+const [data, setData] = useState(nestedDataWithLoadMore);
+const [expandedIds, setExpandedIds] = useState([]);
+
+const onRowExpanded = (rowId, expand) => {
+  setExpandedIds((currentlyExpanded) =>
+    expand ? [...currentlyExpanded, rowId] : currentlyExpanded.filter((id) => id !== rowId)
+  );
+};
+
+const appendChildRows = (currentData, newChildren, parentId) => {
+  const clonedData = cloneDeep(data);
+  const parentRowIndex = clonedData.findIndex((row) => row.id === parentId);
+  const parentRow = clonedData[parentRowIndex];
+  parentRow.children.push(newChildren);
+  return clonedData;
+};
+
+const onRowLoadMore = (parentId) => {
+  // Before the async call to load more children we make sure the table
+  // knows where to display the loading
+  setLoadingMoreIds((ids) => [...ids, parentId]);
+
+  // We use a pretend function that accepts the parent row id and the
+  // number of children already loaded
+  const loadedCount = data.find((row) => row.id === parentId).children.length;
+
+  mockedAsyncLoadingOfChildRows(parentId, loadedCount).then(({ newChildren, noMoreToLoad }) => {
+    // We update the table data by inserting the child rows at the correct place,
+    // which normally would be after the current last child
+    setData((prevData) => {
+      const modifiedData = appendChildRows(prevData, parentId);
+      // If there are no more child rows to load we inform the table about this
+      // by deleting the hasLoadMore more property
+      if (noMoreToLoad) {
+        const fullyLoadedParent = modifiedData.find((row) => row.id === parentId);
+        delete fullyLoadedParent.hasLoadMore;
+      }
+      return modifiedData;
+    });
+
+    // When data has loaded we tell the table to stop showing the loader
+    setLoadingMoreIds((ids) => ids.filter((loadId) => loadId !== parentId));
+  });
+};
+
+<Table
+  id="table"
+  columns={columns}
+  data={data}
+  actions={{
+    table: {
+      onRowExpanded,
+      onRowLoadMore,
+    },
+  }}
+  options={{
+    hasRowExpansion: true,
+    shouldExpandOnRowClick: true,
+  }}
+  view={{
+    table: { expandedIds },
+  }}
+/>;
+```
+
+### Additional configuration
+
+If the prop `options.shouldExpandOnRowClick` is true then clicking anywhere on the row will expand it.
