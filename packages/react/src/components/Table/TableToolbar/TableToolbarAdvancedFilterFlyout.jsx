@@ -323,13 +323,12 @@ const TableToolbarAdvancedFilterFlyout = ({
                             dateFormat="Y-m-d"
                             id={`column-${rowIndex}-${columnIndex}`}
                             onChange={(evt) => {
-                              const { selectedItem } = evt;
                               setFilterState((prev) => {
                                 return {
                                   ...prev,
                                   simple: {
                                     ...prev.simple,
-                                    [column.id]: selectedItem === null ? '' : selectedItem.id,
+                                    [column.id]: evt[0],
                                   },
                                 };
                               });
