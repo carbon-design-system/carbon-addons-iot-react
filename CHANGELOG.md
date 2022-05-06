@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.49](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.48...v2.149.0-next.49) (2022-05-03)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.149.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.47...v2.149.0-next.48) (2022-05-02)
+
+
+### Bug Fixes
+
+* **table:** empty state message with work break ([24d0659](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/24d06597c8eaf9f541003cd347eb158eb5f00640))
+
+
+
+
+
 # [2.149.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.46...v2.149.0-next.47) (2022-04-11)
 
 
