@@ -1,5 +1,4 @@
 @import '../../globals/vars';
-@import '~carbon-components/scss/globals/scss/vars';
 
 $side-panel-width: 20rem;
 $side-panel-drawer-width: $spacing-09;
@@ -7,9 +6,11 @@ $border-width: 1px;
 
 .#{$iot-prefix}--side-panel {
   position: relative;
-  background-color: $ui-background;
+  background-color: $ui-01;
+  height: 100%;
   width: fit-content;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  overflow-y: scroll;
   display: inline-block;
   min-width: $side-panel-width;
   transition: min-width $duration--moderate-02, width $duration--moderate-02,
@@ -19,6 +20,10 @@ $border-width: 1px;
   &--end {
     right: 0;
   }
+
+  // &__with-footer {
+  //   padding-bottom: 4rem;
+  // }
 
   &__close-button {
     top: 0;
@@ -84,14 +89,15 @@ $border-width: 1px;
     .#{$iot-prefix}-side-panel__content {
       margin-left: 1rem;
       margin-right: 1rem;
-      min-height: 330px;
+      min-height: 20rem;
       height: 100%;
+      padding-top: 5rem;
     }
   }
 
-  &__content {
-    padding-bottom: $spacing-09;
-  }
+  // &__content {
+  //   padding-bottom: $spacing-09;
+  // }
 }
 
 .#{$iot-prefix}--side-panel--slide-in,
@@ -136,17 +142,28 @@ $border-width: 1px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
+.#{$iot-prefix}--side-panel__header {
+  position: fixed;
+  top: 5rem;
+  width: 20rem;
+  background-color: $ui-01;
+}
+
 .#{$iot-prefix}--side-panel__title {
-  padding: $spacing-05;
-  color: $text-01;
   @include type-style('productive-heading-03');
+  padding: $spacing-05 0 $spacing-05 $spacing-05;
+  color: $text-01;
+  $line-height: 1.4rem;
+  @include multiline-text-overflow(2, $lineHeightSize);
+  word-break: break-all;
 
   &--condensed {
     @include type-style('productive-heading-02');
+    margin-right: $spacing-09;
+    padding: $spacing-04 $spacing-05 $spacing-04 $spacing-05;
   }
 
   &--with-close {
-    padding-right: $spacing-03;
     margin-right: $spacing-09;
   }
 }
@@ -155,18 +172,20 @@ $border-width: 1px;
   display: flex;
   flex-direction: row;
   padding: 0 $spacing-03 $spacing-03 $spacing-03;
+  position: relative;
 }
 
 .#{$iot-prefix}--side-panel__footer {
-  min-width: 15.4rem;
   display: flex;
-  width: 100%;
+  width: 20rem;
+  position: fixed;
+  bottom: 0;
 
   & > * {
     flex-grow: 1;
   }
 
   :not(:last-child) {
-    margin-right: 1px;
+    border-right: 1px solid $button-separator;
   }
 }

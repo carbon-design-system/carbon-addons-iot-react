@@ -13,6 +13,7 @@ const primaryButton = (
   <Button
     testId="primaryButton"
     kind="primary"
+    size="xl"
     onClick={() => {
       action('Initiate clicked');
     }}
@@ -25,6 +26,7 @@ const secondaryButton = (
   <Button
     testId="secondaryButton"
     kind="secondary"
+    size="xl"
     onClick={() => {
       action('Cancel clicked');
     }}
@@ -92,11 +94,25 @@ const dropdown = (
 );
 
 const content = (
-  <div>
+  <div
+    style={{
+      'padding-bottom': '2rem',
+    }}
+  >
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim
       et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit
-      amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
+      amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu
+      pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum.
+      Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam
+      id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id
+      erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere.
+      Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales.
+      Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris
+      vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non.
+      Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et
+      nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor.
+      Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
     </p>
     {dropdown}
   </div>
@@ -118,6 +134,7 @@ const Interactive = ({
         display: 'flex',
         'flex-direction': direction === 'start' ? 'row' : 'row-reverse',
         margin: '1rem',
+        height: '100%',
       }}
     >
       <SidePanel
@@ -125,7 +142,7 @@ const Interactive = ({
         slideOver={variation === 'slideOver'}
         inline={variation === 'inline'}
         direction={direction}
-        title="My title"
+        title="My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet"
         icons={icons}
         primaryButton={showPrimaryandSecondaryButton ? primaryButton : null}
         secondaryButton={showPrimaryandSecondaryButton ? secondaryButton : null}

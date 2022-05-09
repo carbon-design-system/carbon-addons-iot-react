@@ -9,12 +9,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       Object {
         "display": "flex",
         "flex-direction": "row",
+        "height": "100%",
         "margin": "1rem",
       }
     }
   >
     <div
-      className="iot--side-panel iot--side-panel--slide-in"
+      className="iot--side-panel iot--side-panel__with-footer iot--side-panel--slide-in"
       data-testid="side-panel"
     >
       <div
@@ -24,18 +25,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           className="iot--side-panel__content-wrapper"
         >
           <div
-            className="iot--side-panel__title iot--side-panel__title--with-close"
-            data-testid="side-panel-title"
+            className="iot--side-panel__header"
+            data-testid="side-panel-header"
           >
-            My title
+            <div
+              className="iot--side-panel__title"
+              data-testid="side-panel-title"
+            >
+              My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet
+            </div>
           </div>
           <div
             className="iot-side-panel__content"
             data-testid="side-panel-content"
           >
-            <div>
+            <div
+              style={
+                Object {
+                  "padding-bottom": "2rem",
+                }
+              }
+            >
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
               </p>
               <div
                 className="bx--dropdown__wrapper bx--list-box__wrapper"

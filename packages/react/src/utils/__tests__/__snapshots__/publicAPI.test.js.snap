@@ -10830,10 +10830,11 @@ Map {
       "isRail": false,
       "onClose": undefined,
       "open": false,
-      "primaryButton": null,
-      "secondaryButton": null,
+      "primaryButton": undefined,
+      "secondaryButton": undefined,
       "showCloseButton": false,
       "slideOver": false,
+      "subtitle": undefined,
       "testId": "side-panel",
       "title": "",
     },
@@ -10878,6 +10879,9 @@ Map {
       },
       "slideOver": Object {
         "type": "bool",
+      },
+      "subtitle": Object {
+        "type": "string",
       },
       "testId": Object {
         "type": "string",

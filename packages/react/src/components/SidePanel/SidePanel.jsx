@@ -27,6 +27,8 @@ const propTypes = {
   isRail: PropTypes.bool,
   /** title to show in the side panel */
   title: PropTypes.string,
+  /** Optional element that is hidden when the header is a sticky scroll */
+  subtitle: PropTypes.string,
   /** content to show in the side panel */
   children: PropTypes.node,
   /** call back function for close button */
@@ -49,9 +51,10 @@ const defaultProps = {
   showCloseButton: false,
   isRail: false,
   title: '',
+  subtitle: undefined,
   children: null,
-  primaryButton: null,
-  secondaryButton: null,
+  primaryButton: undefined,
+  secondaryButton: undefined,
   testId: 'side-panel',
   icons: undefined,
   condensed: false,
@@ -61,6 +64,7 @@ const defaultProps = {
 const SidePanel = ({
   open,
   title,
+  subtitle,
   slideOver,
   inline,
   showCloseButton,
@@ -88,6 +92,7 @@ const SidePanel = ({
     <div
       data-testid={testId}
       className={classNames(`${iotPrefix}--side-panel`, {
+        [`${iotPrefix}--side-panel__with-footer`]: primaryButton || secondaryButton,
         [`${iotPrefix}--side-panel--inline`]: inline,
         [`${iotPrefix}--side-panel__drawer`]: isRail && !open,
         [`${iotPrefix}--side-panel--slide-over`]: slideOver,
@@ -109,23 +114,39 @@ const SidePanel = ({
 
         <div className={`${iotPrefix}--side-panel__content-wrapper`}>
           <div
-            data-testid="side-panel-title"
-            className={classNames(
-              `${iotPrefix}--side-panel__title`,
-              `${iotPrefix}--side-panel__title--with-close`,
-              { [`${iotPrefix}--side-panel__title--condensed`]: condensed }
-            )}
+            data-testid="side-panel-header"
+            className={classNames(`${iotPrefix}--side-panel__header`, {
+              // [`${iotPrefix}--side-panel__header--with-close`]: showCloseButton,
+            })}
           >
-            {title}
-          </div>
-          {icons && (
             <div
-              data-testid="side-panel-action-bar"
-              className={`${iotPrefix}--side-panel__action-bar`}
+              data-testid="side-panel-title"
+              className={classNames(
+                `${iotPrefix}--side-panel__title`,
+                { [`${iotPrefix}--side-panel__title--with-close`]: showCloseButton },
+                { [`${iotPrefix}--side-panel__title--condensed`]: condensed }
+              )}
             >
-              {icons}
+              {title}
             </div>
-          )}
+            {subtitle ? (
+              <div
+                data-testid="side-panel-subtitle"
+                className={`${iotPrefix}--side-panel__subtitle`}
+              >
+                {subtitle}
+              </div>
+            ) : null}
+            {icons && (
+              <div
+                data-testid="side-panel-action-bar"
+                className={`${iotPrefix}--side-panel__action-bar`}
+              >
+                {icons}
+              </div>
+            )}
+          </div>
+
           <div data-testid="side-panel-content" className={`${iotPrefix}-side-panel__content`}>
             {children}
           </div>
