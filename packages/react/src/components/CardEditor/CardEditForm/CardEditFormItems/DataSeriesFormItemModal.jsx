@@ -75,6 +75,7 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
+    version: PropTypes.string,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
@@ -188,7 +189,6 @@ const defaultProps = {
   isSummaryDashboard: false,
   isLarge: false,
   validDataItems: [],
-  version: null,
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -219,7 +219,6 @@ const DataSeriesFormItemModal = ({
   onChange,
   i18n,
   isLarge,
-  version,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -622,7 +621,24 @@ const DataSeriesFormItemModal = ({
           )}
       </>
     ),
-    [availableDimensions, availableGrains, baseClassName, cardConfig, editDataItem, handleTranslation, id, initialAggregation, initialGrain, isSummaryDashboard, isTimeBasedCard, mergedI18n, selectedDimensionFilter, setEditDataItem, type, initialDownSample]
+    [
+      availableDimensions,
+      availableGrains,
+      baseClassName,
+      cardConfig,
+      editDataItem,
+      handleTranslation,
+      id,
+      initialAggregation,
+      initialGrain,
+      isSummaryDashboard,
+      isTimeBasedCard,
+      mergedI18n,
+      selectedDimensionFilter,
+      setEditDataItem,
+      type,
+      initialDownSample,
+    ]
   );
 
   return (

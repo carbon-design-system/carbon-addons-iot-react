@@ -25,7 +25,7 @@ import large_portrait from '../ImageGalleryModal/images/large_portrait.png'; // 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
 import SimpleList from '../List/SimpleList/SimpleList';
 
-import { Version } from "./editorUtils";
+import { Version } from './editorUtils';
 import DashboardEditorDefaultCardRenderer from './DashboardEditorDefaultCardRenderer';
 import DashboardEditor from './DashboardEditor';
 
