@@ -337,7 +337,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                             <DatePickerInput
                               className={`${iotPrefix}--lelele`}
                               placeholder="yyyy-mm-dd"
-                              labelText="Date"
+                              labelText={column.name}
                               id={`column-${rowIndex}-${columnIndex}`}
                             />
                           </DatePicker>
