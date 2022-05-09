@@ -2681,6 +2681,9 @@ Map {
             "preserveColumnWidths": Object {
               "type": "bool",
             },
+            "showRadioButton": Object {
+              "type": "bool",
+            },
             "truncateCellText": Object {
               "isRequired": true,
               "type": "bool",

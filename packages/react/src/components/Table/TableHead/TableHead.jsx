@@ -60,6 +60,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    showRadioButton: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
@@ -196,6 +197,7 @@ const TableHead = ({
     hasMultiSort,
     useAutoTableLayoutForResize,
     preserveColumnWidths,
+    showRadioButton,
   },
   columns,
   columnGroups,
@@ -464,6 +466,15 @@ const TableHead = ({
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
           </TableHeader>
+        ) : hasRowSelection === 'single' && showRadioButton ? (
+          <TableHeader
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-selection-column`}
+            className={classnames(`${iotPrefix}--table-header-radiobutton`, {
+              [`${iotPrefix}--table-header-radiobutton-resize`]: hasResize,
+            })}
+            translateWithId={(...args) => tableTranslateWithId(...args)}
+          />
         ) : null}
         {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find((column) => column.id === item.columnId);

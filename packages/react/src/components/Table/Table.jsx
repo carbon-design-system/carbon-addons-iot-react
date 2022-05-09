@@ -991,6 +991,7 @@ const Table = (props) => {
                   'hasRowNesting',
                   'hasSingleRowEdit',
                   'hasRowSelection',
+                  'showRadioButton',
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths'
