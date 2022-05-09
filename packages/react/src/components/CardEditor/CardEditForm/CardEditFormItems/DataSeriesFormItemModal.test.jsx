@@ -142,6 +142,18 @@ describe('DataSeriesFormItemModal', () => {
     manufacturer: ['Rentech', 'GHI Industries'],
   };
 
+  const editTimeseriesDataItemDownSample = {
+    label: 'Temperature',
+    dataSourceId: 'temperature',
+    color: 'red',
+    downSampleMethods: [
+      { id: 'last', text: 'Last' },
+      { id: 'mean', text: 'Mean' },
+      { id: 'max', text: 'Max' },
+      { id: 'min', text: 'Min' },
+    ],
+  };
+
   const commonProps = {
     onChange: mockOnChange,
     setShowEditor: mockSetShowEditor,
@@ -1256,5 +1268,154 @@ describe('DataSeriesFormItemModal', () => {
     // called with an empty object since editDataItem is passed as {}
     // and IMAGE cards just return what was given.
     expect(commonProps.onChange).toHaveBeenCalledWith({});
+  });
+  it('When no Downsample method for timebased stacked bar should show grain and aggregation methods', () => {
+    const stackedTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            aggregationMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+
+    const aggregatedBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      aggregationMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedBar}
+        editDataItem={aggregatedBarChartDataItem}
+      />
+    );
+
+    // grain field and aggregator should be shown
+    expect(screen.queryAllByLabelText('Grain')[0]).toBeInTheDocument();
+    expect(screen.queryByLabelText('DownSample Method')).not.toBeInTheDocument();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
+  });
+  it('Version is V2 for timebased stacked bar should show Downsample method and hide grain and aggregation methods', () => {
+    const stackedTimeBasedBar = {
+      title: 'Untitled',
+      size: 'MEDIUM',
+      type: 'BAR',
+      content: {
+        type: 'STACKED',
+        layout: 'VERTICAL',
+        series: [
+          {
+            dataItemId: 'torque',
+            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+            label: 'Torque',
+            downSampleMethod: 'mean',
+            color: '#6929c4',
+          },
+        ],
+        timeDataSourceId: 'timestamp',
+      },
+      dataSource: {},
+    };
+    const downSampleBarChartDataItem = {
+      label: 'Temperature Max',
+      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
+      color: 'red',
+      downSampleMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'last', text: 'Last' },
+        { id: 'mean', text: 'Mean' },
+        { id: 'max', text: 'Max' },
+        { id: 'min', text: 'Min' },
+      ],
+      downSampleMethod: 'max',
+    };
+
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={stackedTimeBasedBar}
+        editDataItem={downSampleBarChartDataItem}
+      />
+    );
+    expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    expect(screen.getByText('Downsample method')).toBeVisible();
+  });
+  it('Renders an downSample selector in summary dashboards and fires setEditDataItem', async () => {
+    render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        isSummaryDashboard
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemDownSample}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+    const downSampleDropdown = (await screen.findAllByText('None'))[1];
+    expect(downSampleDropdown).toBeInTheDocument();
+
+    fireEvent.click(downSampleDropdown);
+
+    const downSampleOption = screen.getByText('Min');
+    expect(downSampleOption).toBeInTheDocument();
+
+    fireEvent.click(downSampleOption);
+
+    expect(mockSetEditDataItem).toHaveBeenCalled();
+  });
+
+  it("should fallback to an empty string when editDataItem.downSampleMethod doesn't exist", () => {
+    const { container } = render(
+      <DataSeriesFormItemModal
+        {...commonProps}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemDownSample}
+        editDataSeries={editDataSeriesTimeSeries}
+        isSummaryDashboard
+        validDataItems={[
+          {
+            dataItemId: 'testItemId',
+            dataSourceId: 'temperature',
+            downSampleMethod: 'min',
+          },
+        ]}
+      />
+    );
+    expect(screen.getByText('Downsample method')).toBeVisible();
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)[0]
+    ).toHaveTextContent('');
   });
 });

@@ -23,6 +23,7 @@
     @include type-style('productive-heading-03');
     color: $text-01;
     margin-bottom: $spacing-03;
+    word-break: break-word;
   }
 
   &--text {
