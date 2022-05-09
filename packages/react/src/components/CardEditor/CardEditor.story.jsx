@@ -12,6 +12,7 @@ import {
   DASHBOARD_EDITOR_CARD_TYPES,
 } from '../../constants/LayoutConstants';
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
+import { Version } from '../DashboardEditor/editorUtils';
 
 import CardEditor from './CardEditor';
 
@@ -503,6 +504,7 @@ export const ForV2TimeSeries = () => (
               color: '#1192e8',
               downSampleMethod: 'none',
               downSampleMethods: [],
+              version: Version.V2,
             },
           ],
           dataSource: {

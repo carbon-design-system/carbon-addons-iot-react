@@ -13024,6 +13024,9 @@ Map {
                 "label": Object {
                   "type": "string",
                 },
+                "version": Object {
+                  "type": "string",
+                },
               },
             ],
             "type": "shape",

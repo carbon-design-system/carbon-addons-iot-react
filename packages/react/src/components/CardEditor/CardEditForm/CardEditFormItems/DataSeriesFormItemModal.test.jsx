@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../../constants/Settings';
 import { CARD_TYPES } from '../../../../constants/LayoutConstants';
+import { Version } from '../../../DashboardEditor/editorUtils';
 
 import DataSeriesFormItemModal from './DataSeriesFormItemModal';
 
@@ -145,6 +146,7 @@ describe('DataSeriesFormItemModal', () => {
   const editTimeseriesDataItemDownSample = {
     label: 'Temperature',
     dataSourceId: 'temperature',
+    version: Version.V2,
     color: 'red',
     downSampleMethods: [
       { id: 'last', text: 'Last' },
@@ -1345,6 +1347,7 @@ describe('DataSeriesFormItemModal', () => {
       label: 'Temperature Max',
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
+      version: Version.V2,
       downSampleMethods: [
         { id: 'none', text: 'None' },
         { id: 'last', text: 'Last' },
