@@ -197,8 +197,8 @@ export const getTableColumns = () => [
   {
     id: 'date',
     name: 'Date',
-    isDate: true,
     filter: {
+      isDate: true,
       placeholderText: 'enter a date',
       filterFunction: (columnValue, filterValue) => {
         if (filterValue instanceof Date) {
