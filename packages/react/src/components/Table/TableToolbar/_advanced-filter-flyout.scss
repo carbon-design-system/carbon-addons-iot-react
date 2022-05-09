@@ -17,8 +17,8 @@
     width: 100%;
   }
 
-  .#{$prefix}--date-picker-input__wrapper {
-    width: 100%;
+  .#{$prefix}--date-picker.#{$prefix}--date-picker--single {
+    text-align: initial;
   }
 
   .#{$prefix}--date-picker.#{$prefix}--date-picker--single .#{$prefix}--date-picker__input {
