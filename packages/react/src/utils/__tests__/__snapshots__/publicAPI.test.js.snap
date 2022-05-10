@@ -13021,10 +13021,10 @@ Map {
                 "grain": Object {
                   "type": "string",
                 },
-                "label": Object {
-                  "type": "string",
+                "isStreamingMetricEnabled": Object {
+                  "type": "bool",
                 },
-                "version": Object {
+                "label": Object {
                   "type": "string",
                 },
               },

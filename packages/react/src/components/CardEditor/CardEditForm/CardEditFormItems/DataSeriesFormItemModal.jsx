@@ -24,11 +24,7 @@ import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import { TextInput } from '../../../TextInput';
-import {
-  handleDataItemEdit,
-  DataItemsPropTypes,
-  Version,
-} from '../../../DashboardEditor/editorUtils';
+import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
 
@@ -75,7 +71,7 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
-    version: PropTypes.string,
+    isStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
@@ -184,7 +180,9 @@ const defaultProps = {
   showEditor: false,
   setShowEditor: null,
   availableDimensions: {},
-  editDataItem: {},
+  editDataItem: {
+    isStreamingMetricEnabled: false,
+  },
   setEditDataItem: null,
   isSummaryDashboard: false,
   isLarge: false,
@@ -279,7 +277,7 @@ const DataSeriesFormItemModal = ({
       <>
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.version !== Version.V2 && (
+          !editDataItem?.isStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
@@ -578,7 +576,7 @@ const DataSeriesFormItemModal = ({
         )}
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.version === Version.V2 && (
+          editDataItem?.isStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>

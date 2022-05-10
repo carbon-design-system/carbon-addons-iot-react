@@ -5,7 +5,6 @@ import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../../constants/Settings';
 import { CARD_TYPES } from '../../../../constants/LayoutConstants';
-import { Version } from '../../../DashboardEditor/editorUtils';
 
 import DataSeriesFormItemModal from './DataSeriesFormItemModal';
 
@@ -146,7 +145,7 @@ describe('DataSeriesFormItemModal', () => {
   const editTimeseriesDataItemDownSample = {
     label: 'Temperature',
     dataSourceId: 'temperature',
-    version: Version.V2,
+    isStreamingMetricEnabled: true,
     color: 'red',
     downSampleMethods: [
       { id: 'last', text: 'Last' },
@@ -1087,7 +1086,7 @@ describe('DataSeriesFormItemModal', () => {
     );
 
     userEvent.type(screen.getByPlaceholderText('Example: %'), '℉');
-    expect(setEditDataItem).toHaveBeenCalledWith({ unit: '℉' });
+    expect(setEditDataItem).toHaveBeenCalledWith({ isStreamingMetricEnabled: false, unit: '℉' });
   });
 
   it('should call setEditDataItem when changing precision on an IMAGE card.', () => {
@@ -1114,7 +1113,7 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('Not set'));
     userEvent.click(screen.getByText('3'));
-    expect(setEditDataItem).toHaveBeenCalledWith({ precision: 3 });
+    expect(setEditDataItem).toHaveBeenCalledWith({ precision: 3, isStreamingMetricEnabled: false });
   });
 
   it('should call setEditDataItem and remove precision when unsetting precision on an IMAGE card.', () => {
@@ -1136,6 +1135,7 @@ describe('DataSeriesFormItemModal', () => {
           },
         }}
         editDataItem={{
+          isStreamingMetricEnabled: false,
           precision: 3,
         }}
         setEditDataItem={setEditDataItem}
@@ -1144,7 +1144,7 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('3'));
     userEvent.click(screen.getByText('Not set'));
-    expect(setEditDataItem).toHaveBeenCalledWith({});
+    expect(setEditDataItem).toHaveBeenCalledWith({ isStreamingMetricEnabled: false });
   });
 
   it("should fallback to 'Not set' on a VALUE card when no precision given", () => {
@@ -1347,7 +1347,7 @@ describe('DataSeriesFormItemModal', () => {
       label: 'Temperature Max',
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
-      version: Version.V2,
+      isStreamingMetricEnabled: true,
       downSampleMethods: [
         { id: 'none', text: 'None' },
         { id: 'last', text: 'Last' },
