@@ -503,7 +503,7 @@ export const ForV2TimeSeries = () => (
               color: '#1192e8',
               downSampleMethod: 'none',
               downSampleMethods: [],
-              isStreamingMetricEnabled: true,
+              hasSsStreamingMetricEnabled: true,
             },
           ],
           dataSource: {

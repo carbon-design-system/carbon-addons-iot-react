@@ -145,7 +145,7 @@ describe('DataSeriesFormItemModal', () => {
   const editTimeseriesDataItemDownSample = {
     label: 'Temperature',
     dataSourceId: 'temperature',
-    isStreamingMetricEnabled: true,
+    hasSsStreamingMetricEnabled: true,
     color: 'red',
     downSampleMethods: [
       { id: 'last', text: 'Last' },
@@ -1086,7 +1086,7 @@ describe('DataSeriesFormItemModal', () => {
     );
 
     userEvent.type(screen.getByPlaceholderText('Example: %'), '℉');
-    expect(setEditDataItem).toHaveBeenCalledWith({ isStreamingMetricEnabled: false, unit: '℉' });
+    expect(setEditDataItem).toHaveBeenCalledWith({ hasSsStreamingMetricEnabled: false, unit: '℉' });
   });
 
   it('should call setEditDataItem when changing precision on an IMAGE card.', () => {
@@ -1113,7 +1113,10 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('Not set'));
     userEvent.click(screen.getByText('3'));
-    expect(setEditDataItem).toHaveBeenCalledWith({ precision: 3, isStreamingMetricEnabled: false });
+    expect(setEditDataItem).toHaveBeenCalledWith({
+      precision: 3,
+      hasSsStreamingMetricEnabled: false,
+    });
   });
 
   it('should call setEditDataItem and remove precision when unsetting precision on an IMAGE card.', () => {
@@ -1135,7 +1138,7 @@ describe('DataSeriesFormItemModal', () => {
           },
         }}
         editDataItem={{
-          isStreamingMetricEnabled: false,
+          hasSsStreamingMetricEnabled: false,
           precision: 3,
         }}
         setEditDataItem={setEditDataItem}
@@ -1144,7 +1147,7 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('3'));
     userEvent.click(screen.getByText('Not set'));
-    expect(setEditDataItem).toHaveBeenCalledWith({ isStreamingMetricEnabled: false });
+    expect(setEditDataItem).toHaveBeenCalledWith({ hasSsStreamingMetricEnabled: false });
   });
 
   it("should fallback to 'Not set' on a VALUE card when no precision given", () => {
@@ -1347,7 +1350,7 @@ describe('DataSeriesFormItemModal', () => {
       label: 'Temperature Max',
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
-      isStreamingMetricEnabled: true,
+      hasSsStreamingMetricEnabled: true,
       downSampleMethods: [
         { id: 'none', text: 'None' },
         { id: 'last', text: 'Last' },

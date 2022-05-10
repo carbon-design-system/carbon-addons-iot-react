@@ -71,7 +71,7 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
-    isStreamingMetricEnabled: PropTypes.bool,
+    hasSsStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
@@ -181,7 +181,7 @@ const defaultProps = {
   setShowEditor: null,
   availableDimensions: {},
   editDataItem: {
-    isStreamingMetricEnabled: false,
+    hasSsStreamingMetricEnabled: false,
   },
   setEditDataItem: null,
   isSummaryDashboard: false,
@@ -277,7 +277,7 @@ const DataSeriesFormItemModal = ({
       <>
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          !editDataItem?.isStreamingMetricEnabled && (
+          !editDataItem?.hasSsStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
@@ -576,7 +576,7 @@ const DataSeriesFormItemModal = ({
         )}
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.isStreamingMetricEnabled && (
+          editDataItem?.hasSsStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
