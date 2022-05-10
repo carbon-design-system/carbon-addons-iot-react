@@ -13021,7 +13021,7 @@ Map {
                 "grain": Object {
                   "type": "string",
                 },
-                "hasSsStreamingMetricEnabled": Object {
+                "hasIsStreamingMetricEnabled": Object {
                   "type": "bool",
                 },
                 "label": Object {

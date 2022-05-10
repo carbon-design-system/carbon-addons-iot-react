@@ -158,7 +158,7 @@ const mockDataItems = [
     dataItemId: 'v2pressure',
     dataSourceId: 'v2pressure',
     label: 'V2 Pressure',
-    hasSsStreamingMetricEnabled: true,
+    hasIsStreamingMetricEnabled: true,
     downSampleMethod: 'min',
     downSampleMethods: [
       { id: 'none', text: 'None' },

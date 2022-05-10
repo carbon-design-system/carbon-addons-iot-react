@@ -89,7 +89,7 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
     // Used for streming dataItems
-    hasSsStreamingMetricEnabled: PropTypes.bool,
+    hasIsStreamingMetricEnabled: PropTypes.bool,
   })
 );
 
