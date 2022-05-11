@@ -1,77 +1,51 @@
 @import '../../globals/vars';
-@import '../../globals/typography';
 
-$side-panel-width: 320px;
+$side-panel-width: 20rem;
 $side-panel-drawer-width: $spacing-09;
 $border-width: 1px;
 
 .#{$iot-prefix}--side-panel {
   position: relative;
-  background-color: $ui-background;
+  background-color: $ui-01;
+  height: 100%;
   width: fit-content;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  overflow-y: scroll;
   display: inline-block;
   min-width: $side-panel-width;
   transition: min-width $duration--moderate-02, width $duration--moderate-02,
     left $duration--moderate-02, right $duration--moderate-02;
   transition-timing-function: carbon--motion(standard);
 
-  &.#{$iot-prefix}--side-panel__right {
+  &--end {
     right: 0;
   }
 
-  .panel {
-    height: 100%;
+  // &__with-footer {
+  //   padding-bottom: 4rem;
+  // }
 
-    .panel-content-wrapper {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .panel-content {
-      padding-bottom: $spacing-09;
-    }
-  }
-
-  .close-button {
-    position: absolute;
+  &__close-button {
     top: 0;
     right: 0;
     z-index: 1;
+    width: 3rem;
+    justify-content: center;
+    &.bx--btn.bx--btn--icon-only.bx--tooltip__trigger {
+      position: absolute;
+    }
   }
 }
 
-.#{$iot-prefix}--side-panel-title {
-  padding: $spacing-05;
-  color: $text-01;
-  @include type-style('productive-heading-03');
+.#{$iot-prefix}--side-panel--inline {
+  .#{$iot-prefix}--side-panel__panel {
+    &.#{$iot-prefix}--side-panel--start {
+      border-right: 1px solid $ui-03;
+    }
 
-  &.#{$iot-prefix}--side-panel-title__condensed {
-    @include type-style('productive-heading-02');
-  }
-
-  &.#{$iot-prefix}--side-panel-title__with-close {
-    padding-right: $spacing-03;
-    margin-right: $spacing-09;
-  }
-}
-
-.#{$iot-prefix}--side-panel-footer {
-  min-width: 15.4rem;
-  display: flex;
-  width: 100%;
-
-  & > * {
-    flex-grow: 1;
-  }
-
-  & > button.bx--btn {
-    padding-right: 60px;
-  }
-
-  :not(:last-child) {
-    margin-right: 1px;
+    &.#{$iot-prefix}--side-panel--end {
+      border-left: 1px solid $ui-03;
+    }
   }
 }
 
@@ -79,13 +53,13 @@ $border-width: 1px;
   width: $side-panel-drawer-width;
   min-width: $side-panel-drawer-width;
 
-  .panel {
-    &.#{$iot-prefix}--side-panel__left .panel-content-wrapper {
+  .#{$iot-prefix}--side-panel__panel {
+    &.#{$iot-prefix}--side-panel--start .#{$iot-prefix}--side-panel__content-wrapper {
       right: $side-panel-width;
       height: 100%;
       position: relative;
     }
-    &.#{$iot-prefix}--side-panel__right .panel-content-wrapper {
+    &.#{$iot-prefix}--side-panel--end .#{$iot-prefix}--side-panel__content-wrapper {
       left: $side-panel-drawer-width;
       height: 100%;
       position: relative;
@@ -93,64 +67,125 @@ $border-width: 1px;
   }
 }
 
-.#{$iot-prefix}--side-panel__inline {
-  .panel {
-    &.#{$iot-prefix}--side-panel__left {
-      border-right: $border-width solid $ui-03;
-    }
-
-    &.#{$iot-prefix}--side-panel__right {
-      border-left: $border-width solid $ui-03;
-    }
-  }
-}
-
-.#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__left {
+.#{$iot-prefix}--side-panel--slide-in.#{$iot-prefix}--side-panel--active
+  .#{$iot-prefix}--side-panel__panel
+  .#{$iot-prefix}--side-panel--start {
   border-right: $border-width solid $ui-03;
 }
 
-.#{$iot-prefix}--side-panel__slide-in.active .panel.#{$iot-prefix}--side-panel__right {
+.#{$iot-prefix}--side-panel--slide-in.#{$iot-prefix}--side-panel--active
+  .#{$iot-prefix}--side-panel__panel
+  .#{$iot-prefix}--side-panel--end {
   border-left: $border-width solid $ui-03;
 }
 
-.#{$iot-prefix}--side-panel__slide-in,
-.#{$iot-prefix}--side-panel__slide-over {
+.#{$iot-prefix}--side-panel__panel {
+  height: 100%;
+
+  .#{$iot-prefix}--side-panel__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .#{$iot-prefix}-side-panel__content {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      min-height: 20rem;
+      height: 100%;
+      padding-top: 5rem;
+    }
+  }
+
+  // &__content {
+  //   padding-bottom: $spacing-09;
+  // }
+}
+
+.#{$iot-prefix}--side-panel--slide-in,
+.#{$iot-prefix}--side-panel--slide-over {
   min-width: 0;
   width: 0;
 
-  &.active {
+  &.#{$iot-prefix}--side-panel--active {
     width: $side-panel-width;
     min-width: $side-panel-width;
 
-    .panel {
-      &.#{$iot-prefix}--side-panel__left {
+    .#{$iot-prefix}--side-panel__panel {
+      &.#{$iot-prefix}--side-panel--start {
         left: 0;
       }
 
-      &.#{$iot-prefix}--side-panel__right {
+      &.#{$iot-prefix}--side-panel--end {
         right: 0;
       }
     }
   }
 
-  .panel {
+  .#{$iot-prefix}--side-panel__panel {
     width: $side-panel-width;
     height: 100%;
     position: relative;
     transition: width carbon--motion(standard), left carbon--motion(standard),
       right carbon--motion(standard);
 
-    &.#{$iot-prefix}--side-panel__left {
+    &.#{$iot-prefix}--side-panel--start {
       left: -$side-panel-width;
     }
-    &.#{$iot-prefix}--side-panel__right {
+    &.#{$iot-prefix}--side-panel--end {
       right: -$side-panel-width;
     }
   }
 }
 
-.#{$iot-prefix}--side-panel__slide-over {
+.#{$iot-prefix}--side-panel--slide-over {
   position: absolute;
   z-index: 1;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.#{$iot-prefix}--side-panel__header {
+  position: fixed;
+  top: 5rem;
+  width: 20rem;
+  background-color: $ui-01;
+}
+
+.#{$iot-prefix}--side-panel__title {
+  @include type-style('productive-heading-03');
+  padding: $spacing-05 0 $spacing-05 $spacing-05;
+  color: $text-01;
+  $line-height: 1.4rem;
+  @include multiline-text-overflow(2, $lineHeightSize);
+  word-break: break-all;
+
+  &--condensed {
+    @include type-style('productive-heading-02');
+    margin-right: $spacing-09;
+    padding: $spacing-04 $spacing-05 $spacing-04 $spacing-05;
+  }
+
+  &--with-close {
+    margin-right: $spacing-09;
+  }
+}
+
+.#{$iot-prefix}--side-panel__action-bar {
+  display: flex;
+  flex-direction: row;
+  padding: 0 $spacing-03 $spacing-03 $spacing-03;
+  position: relative;
+}
+
+.#{$iot-prefix}--side-panel__footer {
+  display: flex;
+  width: 20rem;
+  position: fixed;
+  bottom: 0;
+
+  & > * {
+    flex-grow: 1;
+  }
+
+  :not(:last-child) {
+    border-right: 1px solid $button-separator;
+  }
 }

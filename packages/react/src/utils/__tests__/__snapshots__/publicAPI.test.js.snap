@@ -10820,6 +10820,77 @@ Map {
       },
     },
   },
+  "SidePanel" => Object {
+    "defaultProps": Object {
+      "children": null,
+      "condensed": false,
+      "direction": "start",
+      "icons": undefined,
+      "inline": false,
+      "isRail": false,
+      "onClose": undefined,
+      "open": false,
+      "primaryButton": undefined,
+      "secondaryButton": undefined,
+      "showCloseButton": false,
+      "slideOver": false,
+      "subtitle": undefined,
+      "testId": "side-panel",
+      "title": "",
+    },
+    "propTypes": Object {
+      "children": Object {
+        "type": "node",
+      },
+      "condensed": Object {
+        "type": "bool",
+      },
+      "direction": Object {
+        "type": "string",
+      },
+      "icons": Object {
+        "args": Array [
+          Object {
+            "type": "node",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "inline": Object {
+        "type": "bool",
+      },
+      "isRail": Object {
+        "type": "bool",
+      },
+      "onClose": Object {
+        "type": "func",
+      },
+      "open": Object {
+        "type": "bool",
+      },
+      "primaryButton": Object {
+        "type": "node",
+      },
+      "secondaryButton": Object {
+        "type": "node",
+      },
+      "showCloseButton": Object {
+        "type": "bool",
+      },
+      "slideOver": Object {
+        "type": "bool",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "type": "string",
+      },
+    },
+  },
   "SuiteHeader" => Object {
     "ROUTE_TYPES": Object {
       "ABOUT": "ABOUT",
