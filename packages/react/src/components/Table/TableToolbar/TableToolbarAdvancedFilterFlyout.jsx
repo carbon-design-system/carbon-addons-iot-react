@@ -39,8 +39,15 @@ const propTypes = {
           text: PropTypes.string.isRequired,
         })
       ),
+      /** if dateOptions is empty array, assume text input for filter */
+      dateOptions: PropTypes.shape({
+        dateFormat: PropTypes.string,
+        locale: PropTypes.string,
+      }),
       /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
       isMultiselect: PropTypes.bool,
+      /** if isDate and isFilterable are true, the table is filtered base on a date picker */
+      isDate: PropTypes.bool,
     })
   ).isRequired,
   tableState: PropTypes.shape({
@@ -320,7 +327,8 @@ const TableToolbarAdvancedFilterFlyout = ({
                           <DatePicker
                             key={`${columnIndex}-${columnFilterValue}`}
                             datePickerType="single"
-                            dateFormat="Y-m-d"
+                            locale={column?.dateOptions?.locale || 'en'}
+                            dateFormat={column?.dateOptions?.dateFormat || 'Y-m-d'}
                             id={`column-${rowIndex}-${columnIndex}`}
                             onChange={(evt) => {
                               setFilterState((prev) => {
@@ -336,7 +344,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           >
                             <DatePickerInput
                               className={`${iotPrefix}--lelele`}
-                              placeholder="yyyy-mm-dd"
+                              placeholder={column.placeholderText || 'enter a date'}
                               labelText={column.name}
                               id={`column-${rowIndex}-${columnIndex}`}
                             />

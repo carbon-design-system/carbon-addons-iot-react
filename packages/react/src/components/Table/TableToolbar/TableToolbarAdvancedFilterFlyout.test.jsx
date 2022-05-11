@@ -365,6 +365,7 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
           {
             id: 'date-column',
             name: 'Date Column',
+            placeholderText: 'yyyy-mm-dd',
             isFilterable: true,
             isDate: true,
           },

@@ -200,6 +200,10 @@ export const getTableColumns = () => [
     filter: {
       isDate: true,
       placeholderText: 'enter a date',
+      dateOptions: {
+        dateFormat: 'Y-m-d',
+        locale: 'en'
+      },
       filterFunction: (columnValue, filterValue) => {
         if (filterValue instanceof Date) {
           const date = new Date(filterValue).toISOString();
