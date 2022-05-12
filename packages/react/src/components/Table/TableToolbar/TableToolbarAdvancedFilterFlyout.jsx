@@ -39,7 +39,7 @@ const propTypes = {
           text: PropTypes.string.isRequired,
         })
       ),
-      /** if dateOptions is empty array, assume text input for filter */
+      /** if dateOptions is empty array, assume a default format and locale */
       dateOptions: PropTypes.shape({
         dateFormat: PropTypes.string,
         locale: PropTypes.string,

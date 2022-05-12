@@ -904,8 +904,24 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "dateOptions": Object {
+                        "args": Array [
+                          Object {
+                            "dateFormat": Object {
+                              "type": "string",
+                            },
+                            "locale": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "filterFunction": Object {
                         "type": "func",
+                      },
+                      "isDate": Object {
+                        "type": "bool",
                       },
                       "isMultiselect": Object {
                         "type": "bool",
@@ -2313,8 +2329,24 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "dateOptions": Object {
+                        "args": Array [
+                          Object {
+                            "dateFormat": Object {
+                              "type": "string",
+                            },
+                            "locale": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "filterFunction": Object {
                         "type": "func",
+                      },
+                      "isDate": Object {
+                        "type": "bool",
                       },
                       "isMultiselect": Object {
                         "type": "bool",
@@ -2958,8 +2990,24 @@ Map {
                 "filter": Object {
                   "args": Array [
                     Object {
+                      "dateOptions": Object {
+                        "args": Array [
+                          Object {
+                            "dateFormat": Object {
+                              "type": "string",
+                            },
+                            "locale": Object {
+                              "type": "string",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
                       "filterFunction": Object {
                         "type": "func",
+                      },
+                      "isDate": Object {
+                        "type": "bool",
                       },
                       "isMultiselect": Object {
                         "type": "bool",
@@ -4721,8 +4769,24 @@ Map {
                       "filter": Object {
                         "args": Array [
                           Object {
+                            "dateOptions": Object {
+                              "args": Array [
+                                Object {
+                                  "dateFormat": Object {
+                                    "type": "string",
+                                  },
+                                  "locale": Object {
+                                    "type": "string",
+                                  },
+                                },
+                              ],
+                              "type": "shape",
+                            },
                             "filterFunction": Object {
                               "type": "func",
+                            },
+                            "isDate": Object {
+                              "type": "bool",
                             },
                             "isMultiselect": Object {
                               "type": "bool",
