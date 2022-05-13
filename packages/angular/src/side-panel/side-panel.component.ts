@@ -7,13 +7,11 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import {
-  Close16,
-  ChevronLeft16,
-  ChevronRight16,
-  OpenPanelLeft16,
-  OpenPanelRight16,
-} from '@carbon/icons';
+import Close16 from '@carbon/icons/es/close/16';
+import ChevronLeft16 from '@carbon/icons/es/chevron--left/16';
+import ChevronRight16 from '@carbon/icons/es/chevron--right/16';
+import OpenPanelLeft16 from '@carbon/icons/es/open-panel--left/16';
+import OpenPanelRight16 from '@carbon/icons/es/open-panel--right/16';
 import { IconService } from 'carbon-components-angular';
 
 /**
