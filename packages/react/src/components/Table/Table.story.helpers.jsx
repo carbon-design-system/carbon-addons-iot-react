@@ -202,7 +202,7 @@ export const getTableColumns = () => [
       placeholderText: 'enter a date',
       dateOptions: {
         dateFormat: 'Y-m-d',
-        locale: 'en'
+        locale: 'en',
       },
       filterFunction: (columnValue, filterValue) => {
         if (filterValue instanceof Date) {
