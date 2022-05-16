@@ -145,6 +145,7 @@ describe('DataSeriesFormItemModal', () => {
   const editTimeseriesDataItemDownSample = {
     label: 'Temperature',
     dataSourceId: 'temperature',
+    hasStreamingMetricEnabled: true,
     color: 'red',
     downSampleMethods: [
       { id: 'last', text: 'Last' },
@@ -1085,7 +1086,7 @@ describe('DataSeriesFormItemModal', () => {
     );
 
     userEvent.type(screen.getByPlaceholderText('Example: %'), '℉');
-    expect(setEditDataItem).toHaveBeenCalledWith({ unit: '℉' });
+    expect(setEditDataItem).toHaveBeenCalledWith({ hasStreamingMetricEnabled: false, unit: '℉' });
   });
 
   it('should call setEditDataItem when changing precision on an IMAGE card.', () => {
@@ -1112,7 +1113,10 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('Not set'));
     userEvent.click(screen.getByText('3'));
-    expect(setEditDataItem).toHaveBeenCalledWith({ precision: 3 });
+    expect(setEditDataItem).toHaveBeenCalledWith({
+      precision: 3,
+      hasStreamingMetricEnabled: false,
+    });
   });
 
   it('should call setEditDataItem and remove precision when unsetting precision on an IMAGE card.', () => {
@@ -1134,6 +1138,7 @@ describe('DataSeriesFormItemModal', () => {
           },
         }}
         editDataItem={{
+          hasStreamingMetricEnabled: false,
           precision: 3,
         }}
         setEditDataItem={setEditDataItem}
@@ -1142,7 +1147,7 @@ describe('DataSeriesFormItemModal', () => {
 
     userEvent.click(screen.getByText('3'));
     userEvent.click(screen.getByText('Not set'));
-    expect(setEditDataItem).toHaveBeenCalledWith({});
+    expect(setEditDataItem).toHaveBeenCalledWith({ hasStreamingMetricEnabled: false });
   });
 
   it("should fallback to 'Not set' on a VALUE card when no precision given", () => {
@@ -1345,6 +1350,7 @@ describe('DataSeriesFormItemModal', () => {
       label: 'Temperature Max',
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
+      hasStreamingMetricEnabled: true,
       downSampleMethods: [
         { id: 'none', text: 'None' },
         { id: 'last', text: 'Last' },

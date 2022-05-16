@@ -71,6 +71,7 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
+    hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string,
@@ -179,7 +180,9 @@ const defaultProps = {
   showEditor: false,
   setShowEditor: null,
   availableDimensions: {},
-  editDataItem: {},
+  editDataItem: {
+    hasStreamingMetricEnabled: false,
+  },
   setEditDataItem: null,
   isSummaryDashboard: false,
   isLarge: false,
@@ -269,14 +272,12 @@ const DataSeriesFormItemModal = ({
     ? Object.keys(editDataItem.dataFilter)[0]
     : '';
 
-  const hasDownSampleMethods = editDataItem?.hasOwnProperty('downSampleMethods');
-
   const DataEditorContent = useMemo(
     () => (
       <>
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          !hasDownSampleMethods && (
+          !editDataItem?.hasStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
@@ -575,7 +576,7 @@ const DataSeriesFormItemModal = ({
         )}
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          hasDownSampleMethods && (
+          editDataItem?.hasStreamingMetricEnabled && (
             <div className={`${baseClassName}--input-group`}>
               {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
@@ -635,7 +636,6 @@ const DataSeriesFormItemModal = ({
       setEditDataItem,
       type,
       initialDownSample,
-      hasDownSampleMethods,
     ]
   );
 

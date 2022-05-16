@@ -88,8 +88,16 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
     ),
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
+    // Used for streming dataItems
+    hasStreamingMetricEnabled: PropTypes.bool,
   })
 );
+
+// /** Needed to determain if we show downsample methods */
+// export const Version = {
+//   V1: 'V1',
+//   V2: 'V2',
+// };
 
 /**
  * Returns a duplicate card configuration
