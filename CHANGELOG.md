@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.50...v2.149.0-next.51) (2022-05-16)
+
+
+### Bug Fixes
+
+* **meterchart:** support new property for totalformatter at meter type ([f46aa65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f46aa652bb35269e2fba86e075600a2d4b8bcae1))
+
+
+
+
+
 # [2.149.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.49...v2.149.0-next.50) (2022-05-10)
 
 **Note:** Version bump only for package ibm-ai-applications
