@@ -23631,6 +23631,9 @@ Map {
             "peak": Object {
               "type": "number",
             },
+            "totalFormatter": Object {
+              "type": "func",
+            },
           },
         ],
         "type": "shape",
