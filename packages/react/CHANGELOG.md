@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.51...v2.149.0-next.52) (2022-05-16)
+
+
+### Bug Fixes
+
+* **table:** align date picker label ([0669fcb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0669fcbefde170492c323dafb5e83965b415ccc9))
+
+
+### Features
+
+* **table:** add support for datepicker in filters ([b9d9049](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b9d9049c6d4d2904d2927748ca361f0313243b9d))
+* **table:** filter data using date picker ([e5fabee](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e5fabeef6a0a1c6297b6a84651832bf575ae19e2))
+
+
+
+
+
 # [2.149.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.50...v2.149.0-next.51) (2022-05-16)
 
 
