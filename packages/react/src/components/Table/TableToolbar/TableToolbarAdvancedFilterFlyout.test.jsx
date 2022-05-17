@@ -423,6 +423,10 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
         'date-column': date,
       },
     });
+    expect(screen.getByPlaceholderText('yyyy-mm-dd').value).toEqual(
+      date.toISOString().split('T')[0]
+    );
+    userEvent.clear(screen.getByPlaceholderText('yyyy-mm-dd'));
     userEvent.type(screen.getByPlaceholderText('yyyy-mm-dd'), '2020-01-20');
     expect(screen.getByPlaceholderText('yyyy-mm-dd').value).toEqual('2020-01-20');
     userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
