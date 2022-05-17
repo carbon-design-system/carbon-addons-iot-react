@@ -330,6 +330,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                             locale={column?.dateOptions?.locale || 'en'}
                             dateFormat={column?.dateOptions?.dateFormat || 'Y-m-d'}
                             id={`column-${rowIndex}-${columnIndex}`}
+                            value={filterState?.simple?.[column.id]}
                             onChange={(evt) => {
                               setFilterState((prev) => {
                                 return {
