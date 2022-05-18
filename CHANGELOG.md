@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.53...v2.149.0-next.54) (2022-05-18)
+
+
+### Bug Fixes
+
+* **card:** add default empty body to empty state component ([c1bd6b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c1bd6b3ab8e353ab8d82cd2881698eb298068518))
+
+
+
+
+
 # [2.149.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.52...v2.149.0-next.53) (2022-05-17)
 
 
