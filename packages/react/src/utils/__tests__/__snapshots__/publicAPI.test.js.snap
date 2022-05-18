@@ -12890,6 +12890,7 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13505,6 +13506,9 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
+      "onEditDataItem": Object {
+        "type": "func",
+      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -13624,6 +13628,7 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -13828,6 +13833,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onEditDataItem": Object {
         "type": "func",
       },
       "onEditDataItems": Object {
