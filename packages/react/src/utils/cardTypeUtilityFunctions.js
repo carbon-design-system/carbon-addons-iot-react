@@ -24,6 +24,7 @@ export const getChartOptions = (type, hasData, content) => {
           proportional: {
             total: content.meterTotal,
             unit: content.meterUnit,
+            totalFormatter: content.totalFormatter,
           },
           status: {
             ranges: [

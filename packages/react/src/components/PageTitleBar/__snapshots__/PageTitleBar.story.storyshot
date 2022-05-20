@@ -1458,9 +1458,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <span
                                 className=""
-                                title="1973-03-14T23:33:20.000Z"
+                                title="1973-03-14"
                               >
-                                1973-03-14T23:33:20.000Z
+                                1973-03-14
                               </span>
                             </span>
                           </td>
@@ -1844,9 +1844,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <span
                                 className=""
-                                title="1973-09-04T14:13:20.000Z"
+                                title="1973-09-04"
                               >
-                                1973-09-04T14:13:20.000Z
+                                1973-09-04
                               </span>
                             </span>
                           </td>
@@ -3660,9 +3660,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <span
                                 className=""
-                                title="1973-03-14T23:33:20.000Z"
+                                title="1973-03-14"
                               >
-                                1973-03-14T23:33:20.000Z
+                                1973-03-14
                               </span>
                             </span>
                           </td>
@@ -4046,9 +4046,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             >
                               <span
                                 className=""
-                                title="1973-09-04T14:13:20.000Z"
+                                title="1973-09-04"
                               >
-                                1973-09-04T14:13:20.000Z
+                                1973-09-04
                               </span>
                             </span>
                           </td>

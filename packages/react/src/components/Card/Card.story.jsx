@@ -527,6 +527,7 @@ export const CardWithChartTypeMeter = () => {
           peak: number('content.peak', 2000),
           meterTotal: number('content.meterTotal', 1000),
           meterUnit: text('content.meterUnit', 'AppPoints'),
+          totalFormatter: (total) => text('content.totalFormatter', `${total} custom formatter`),
           color: {
             pairing: {
               option: 5,

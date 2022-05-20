@@ -127,6 +127,13 @@ export const TableColumnsPropTypes = PropTypes.arrayOf(
           text: PropTypes.string.isRequired,
         })
       ),
+      /** if isDate and isFilterable are true, the table is filtered base on a date picker */
+      isDate: PropTypes.bool,
+      /** if dateOptions is empty array, assume a default format and locale */
+      dateOptions: PropTypes.shape({
+        dateFormat: PropTypes.string,
+        locale: PropTypes.string,
+      }),
       /** custom filtration function, called back with (columnValue, filterValue) */
       filterFunction: PropTypes.func,
     }),
