@@ -103,7 +103,7 @@ const InPage = ({
         position: 'relative',
         padding,
         border: '1px solid',
-        transition: isOpen === true ? 'all 0.25s ease-in-out' : 'all 0.25s ease-in-out 0.25s',
+        transition: isOpen === true ? 'all 240ms ease-in-out' : 'all 240ms ease-in-out 240ms',
         minHeight: '600px',
         maxWidth: '1046px',
       }}

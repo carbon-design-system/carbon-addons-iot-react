@@ -154,6 +154,9 @@ $border-width: 1px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
+$duration-moderate-02: 240ms;
+$duration-moderate-01: 150ms;
+
 // React styles
 .#{$iot-prefix}--sidepanel {
   background: $ui-01;
@@ -164,12 +167,12 @@ $border-width: 1px;
   padding: $spacing-05;
   position: relative;
   transform-origin: right;
-  transition: all 0.25s ease-in-out;
+  transition: all $duration-moderate-02 ease-in-out;
   width: 320px;
   box-shadow: -2px 0 3px rgba($ui-03, 0.6);
 
   * {
-    transition: opacity 0.25s linear 0.25s;
+    transition: opacity $duration-moderate-02 linear $duration-moderate-02;
   }
 
   // &::before {
@@ -197,7 +200,8 @@ $border-width: 1px;
     left: 0;
     position: absolute;
     transform: translateX(-$spacing-05);
-    transition: background-color 0.25s ease-in-out, opacity 0.25s linear 0.25s;
+    transition: background-color $duration-moderate-02 ease-in-out,
+      opacity $duration-moderate-02 linear $duration-moderate-02;
     width: calc(100% + $spacing-07);
   }
 
@@ -211,17 +215,19 @@ $border-width: 1px;
   &__title {
     @include type-style('productive-heading-03');
     @include multiline-text-overflow(2, 1.4rem);
-    // animation: line-clamper 0.25s ease-in-out forwards reverse;
+    // animation: line-clamper $duration-moderate-02 ease-in-out forwards reverse;
     margin-bottom: $spacing-03;
     margin-right: $spacing-07;
-    transition: all 0.25s ease-in-out, opacity 0.25s linear 0.25s;
+    transition: all $duration-moderate-02 ease-in-out,
+      opacity $duration-moderate-02 linear $duration-moderate-02;
   }
 
   &__subtitle {
     height: calc(var(--sub-title-height) * 1px);
     margin-bottom: $spacing-05;
     overflow: hidden;
-    transition: all 0.25s ease-in-out, opacity 0.25s linear 0.25s;
+    transition: all $duration-moderate-02 ease-in-out,
+      opacity $duration-moderate-02 linear $duration-moderate-02;
   }
 
   &__action-bar {
@@ -255,7 +261,7 @@ $border-width: 1px;
 .#{$iot-prefix}--sidepanel--closed {
   padding: 0;
   transform: scaleX(0);
-  transition: all 0.25s ease-in-out 0.15s;
+  transition: all $duration-moderate-02 ease-in-out $duration-moderate-01;
 
   .#{$iot-prefix}--sidepanel__toggle-button,
   .#{$iot-prefix}--sidepanel__title,
@@ -263,11 +269,8 @@ $border-width: 1px;
   .#{$iot-prefix}--sidepanel__action-bar,
   .#{$iot-prefix}--sidepanel__content,
   .#{$iot-prefix}--sidepanel__footer {
-    // display: none;
     opacity: 0;
-    transition: opacity 0.25s linear;
-    // padding: 0;
-    // overflow: hidden;
+    transition: opacity $duration-moderate-02 linear;
   }
 }
 

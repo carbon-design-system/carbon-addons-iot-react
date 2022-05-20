@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
