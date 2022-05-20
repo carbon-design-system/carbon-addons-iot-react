@@ -777,11 +777,25 @@ describe('filter, search and sort', () => {
   });
 
   it('filterData with custom comparison', () => {
-    const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const dateValue = new Date();
+    const mockData = [
+      {
+        values: {
+          number: 10,
+          node: <Add20 />,
+          string: 'string',
+          null: null,
+          date: dateValue.toISOString().split('T')[0],
+        },
+      },
+    ];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
+    const dateFilter = { columnId: 'date', value: dateValue };
 
     const customFilterFunction = (columnFilterValue, value) => columnFilterValue === value;
+    const customDateFilterFunction = (columnFilterValue, value) =>
+      columnFilterValue.split('T')[0] === new Date(value).toISOString().split('T')[0];
     expect(
       filterData(
         mockData,
@@ -804,6 +818,14 @@ describe('filter, search and sort', () => {
         mockData,
         [numberFilter],
         [{ id: 'number', filter: { filterFunction: customFilterFunction } }]
+      )
+    ).toHaveLength(1);
+    // date
+    expect(
+      filterData(
+        mockData,
+        [dateFilter],
+        [{ id: 'date', filter: { filterFunction: customDateFilterFunction } }]
       )
     ).toHaveLength(1);
   });
@@ -1061,7 +1083,7 @@ describe('filter, search and sort', () => {
 
     const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
     const newState = tableReducer(myState, applyAction);
-    expect(newState.view.table.filteredData).toHaveLength(38);
+    expect(newState.view.table.filteredData).toHaveLength(36);
   });
 
   it('TABLE_ADVANCED_FILTER_APPLY - LT', () => {

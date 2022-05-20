@@ -16,6 +16,14 @@
   .#{$prefix}--text-input-wrapper {
     width: 100%;
   }
+
+  .#{$prefix}--date-picker.#{$prefix}--date-picker--single {
+    text-align: initial;
+  }
+
+  .#{$prefix}--date-picker.#{$prefix}--date-picker--single .#{$prefix}--date-picker__input {
+    width: 100%;
+  }
 }
 
 .#{$iot-prefix}--filter-flyout__simple-row {

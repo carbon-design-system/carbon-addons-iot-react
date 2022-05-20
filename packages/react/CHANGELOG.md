@@ -3,6 +3,56 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.54](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.53...v2.149.0-next.54) (2022-05-18)
+
+
+### Bug Fixes
+
+* **card:** add default empty body to empty state component ([c1bd6b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c1bd6b3ab8e353ab8d82cd2881698eb298068518))
+
+
+
+
+
+# [2.149.0-next.53](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.52...v2.149.0-next.53) (2022-05-17)
+
+
+### Bug Fixes
+
+* **table:** show selected filter in date picker ([5dc0254](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5dc025449bf6c9cd91da5cde6142a8ebc0139b5d))
+
+
+
+
+
+# [2.149.0-next.52](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.51...v2.149.0-next.52) (2022-05-16)
+
+
+### Bug Fixes
+
+* **table:** align date picker label ([0669fcb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0669fcbefde170492c323dafb5e83965b415ccc9))
+
+
+### Features
+
+* **table:** add support for datepicker in filters ([b9d9049](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b9d9049c6d4d2904d2927748ca361f0313243b9d))
+* **table:** filter data using date picker ([e5fabee](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e5fabeef6a0a1c6297b6a84651832bf575ae19e2))
+
+
+
+
+
+# [2.149.0-next.51](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.50...v2.149.0-next.51) (2022-05-16)
+
+
+### Bug Fixes
+
+* **meterchart:** support new property for totalformatter at meter type ([f46aa65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f46aa652bb35269e2fba86e075600a2d4b8bcae1))
+
+
+
+
+
 # [2.149.0-next.50](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.49...v2.149.0-next.50) (2022-05-10)
 
 **Note:** Version bump only for package carbon-addons-iot-react

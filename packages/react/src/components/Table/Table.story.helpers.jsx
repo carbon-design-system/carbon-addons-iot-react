@@ -197,7 +197,21 @@ export const getTableColumns = () => [
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'enter a date' },
+    filter: {
+      isDate: true,
+      placeholderText: 'enter a date',
+      dateOptions: {
+        dateFormat: 'Y-m-d',
+        locale: 'en',
+      },
+      filterFunction: (columnValue, filterValue) => {
+        if (filterValue instanceof Date) {
+          const date = new Date(filterValue).toISOString();
+          return columnValue.split('T')[0] === date.split('T')[0];
+        }
+        return columnValue.includes(filterValue);
+      },
+    },
   },
   {
     id: 'select',
@@ -303,7 +317,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
   id: `row-${idx}${suffix ? `_${suffix}` : ''}`,
   values: {
     string: getSentence(idx) + suffix,
-    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+    date: new Date(100000000000 + 1000000000 * idx * idx).toISOString().split('T')[0],
     select: getSelectDataOptions()[idx % 3].id,
     secretField: getString(idx, 10) + suffix,
     number: idx % 3 === 0 ? null : idx * idx,
@@ -609,7 +623,7 @@ export const objectWithSubstitution = (
 
 const convertUTCDateToLocalDate = (date) => {
   const localDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
-  return localDate.toISOString().slice(0, 19);
+  return localDate.toISOString().slice(0, 10);
 };
 // eslint-disable-next-line react/prop-types
 export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }) => {
@@ -622,10 +636,12 @@ export const getEditDataFunction = (onDataChange) => ({ value, columnId, rowId }
       id={elementId}
       onChange={(e) => {
         const dateCleared = e.currentTarget.value === '';
-        const newVal = dateCleared ? value : new Date(e.currentTarget.value).toISOString();
+        const newVal = dateCleared
+          ? value
+          : new Date(e.currentTarget.value).toISOString().split('T')[0];
         onDataChange(newVal, columnId, rowId);
       }}
-      type="datetime-local"
+      type="date"
       light
       defaultValue={convertUTCDateToLocalDate(new Date(value))}
       labelText=""
