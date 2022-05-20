@@ -65,8 +65,8 @@ const propTypes = {
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
-    /** show raidon button on single selection */
-    showRadioButtonSingleSelect: PropTypes.bool,
+    /** use raidon button on single selection */
+    useRadioButtonSingleSelect: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -183,7 +183,7 @@ const TableBodyRow = ({
     wrapCellText,
     truncateCellText,
     preserveCellWhiteSpace,
-    showRadioButtonSingleSelect,
+    useRadioButtonSingleSelect,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -245,7 +245,7 @@ const TableBodyRow = ({
           />
         </span>
       </TableCell>
-    ) : hasRowSelection === 'single' && showRadioButtonSingleSelect ? (
+    ) : hasRowSelection === 'single' && useRadioButtonSingleSelect ? (
       <TableCell
         className={`${prefix}--radiobutton-table-cell`}
         key={`${id}-row-selection-cell`}
@@ -399,7 +399,7 @@ const TableBodyRow = ({
           <TableRow
             className={classnames(`${iotPrefix}--expanded-tablerow`, {
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
-                hasRowSelection === 'single' && isSelected && !showRadioButtonSingleSelect,
+                hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
             })}
           >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
@@ -416,7 +416,7 @@ const TableBodyRow = ({
             hasRowNesting && nestingChildCount === 0,
           [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           [`${iotPrefix}--expandable-tablerow--singly-selected`]:
-            hasRowSelection === 'single' && isSelected && !showRadioButtonSingleSelect,
+            hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
         })}
         data-row-nesting={hasRowNesting}
@@ -450,7 +450,7 @@ const TableBodyRow = ({
   ) : hasRowSelection === 'single' && isSelected ? (
     <TableRow
       className={classnames(`${iotPrefix}--table__row`, {
-        [`${iotPrefix}--table__row--singly-selected`]: isSelected && !showRadioButtonSingleSelect,
+        [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
       })}
       key={id}
       onClick={() => {

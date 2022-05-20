@@ -2681,14 +2681,14 @@ Map {
             "preserveColumnWidths": Object {
               "type": "bool",
             },
-            "showRadioButtonSingleSelect": Object {
-              "type": "bool",
-            },
             "truncateCellText": Object {
               "isRequired": true,
               "type": "bool",
             },
             "useAutoTableLayoutForResize": Object {
+              "type": "bool",
+            },
+            "useRadioButtonSingleSelect": Object {
               "type": "bool",
             },
             "wrapCellText": Object {
@@ -2905,11 +2905,11 @@ Map {
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
       "showExpanderColumn": false,
-      "showRadioButtonSingleSelect": false,
       "singleRowEditButtons": null,
       "size": undefined,
       "testId": "",
       "totalColumns": 0,
+      "useRadioButtonSingleSelect": false,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3396,9 +3396,6 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
-      "showRadioButtonSingleSelect": Object {
-        "type": "bool",
-      },
       "singleRowEditButtons": Object {
         "type": "element",
       },
@@ -3427,6 +3424,9 @@ Map {
       },
       "truncateCellText": Object {
         "isRequired": true,
+        "type": "bool",
+      },
+      "useRadioButtonSingleSelect": Object {
         "type": "bool",
       },
       "wrapCellText": Object {

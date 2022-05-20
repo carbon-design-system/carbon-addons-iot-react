@@ -312,7 +312,7 @@ describe('TableBodyRow', () => {
           hasRowSelection: 'single',
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButtonSingleSelect: true,
+          useRadioButtonSingleSelect: true,
         }}
         tableActions={mockActions}
         {...tableRowProps}
@@ -335,7 +335,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButtonSingleSelect: true,
+          useRadioButtonSingleSelect: true,
         }}
         isExpanded
       />,
@@ -380,7 +380,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButtonSingleSelect: true,
+          useRadioButtonSingleSelect: true,
         }}
         isExpanded
       />,
@@ -428,7 +428,7 @@ describe('TableBodyRow', () => {
           hasRowSelection: 'single',
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButtonSingleSelect: true,
+          useRadioButtonSingleSelect: true,
         }}
         isSelectable
       />,
@@ -465,7 +465,7 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowSelected).not.toHaveBeenCalled();
   });
 
-  it('does not call onRowSelected when expanded rows with hasRowSelection:"single" and showRadioButtonSingleSelect are clicked if isSelectable:"false"', () => {
+  it('does not call onRowSelected when expanded rows with hasRowSelection:"single" and useRadioButtonSingleSelect are clicked if isSelectable:"false"', () => {
     render(
       <TableBodyRow
         {...tableRowProps}
@@ -475,7 +475,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButtonSingleSelect: true,
+          useRadioButtonSingleSelect: true,
         }}
         isSelectable={false}
       />,

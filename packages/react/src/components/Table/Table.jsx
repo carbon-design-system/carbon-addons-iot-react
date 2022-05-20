@@ -991,7 +991,7 @@ const Table = (props) => {
                   'hasRowNesting',
                   'hasSingleRowEdit',
                   'hasRowSelection',
-                  'showRadioButtonSingleSelect',
+                  'useRadioButtonSingleSelect',
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths'
@@ -1094,7 +1094,7 @@ const Table = (props) => {
                   'shouldExpandOnRowClick',
                   'shouldLazyRender',
                   'preserveCellWhiteSpace',
-                  'showRadioButtonSingleSelect'
+                  'useRadioButtonSingleSelect'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}

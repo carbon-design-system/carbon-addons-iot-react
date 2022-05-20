@@ -44,7 +44,7 @@ const propTypes = {
   totalColumns: PropTypes.number,
   hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
   /** show radio button on single selection */
-  showRadioButtonSingleSelect: PropTypes.bool,
+  useRadioButtonSingleSelect: PropTypes.bool,
   hasRowExpansion: PropTypes.bool,
   hasRowNesting: PropTypes.oneOfType([
     PropTypes.bool,
@@ -115,7 +115,7 @@ const defaultProps = {
   hasRowExpansion: false,
   hasRowNesting: false,
   hasRowSelection: false,
-  showRadioButtonSingleSelect: false,
+  useRadioButtonSingleSelect: false,
   indeterminateSelectionIds: [],
   inProgressText: 'In progress',
   langDir: 'ltr',
@@ -156,7 +156,7 @@ const TableBodyRowRenderer = (props) => {
     hasRowExpansion,
     hasRowNesting,
     hasRowSelection,
-    showRadioButtonSingleSelect,
+    useRadioButtonSingleSelect,
     indeterminateSelectionIds,
     inProgressText,
     langDir,
@@ -255,7 +255,7 @@ const TableBodyRowRenderer = (props) => {
         wrapCellText,
         truncateCellText,
         preserveCellWhiteSpace,
-        showRadioButtonSingleSelect,
+        useRadioButtonSingleSelect,
       }}
       nestingLevel={nestingLevel}
       nestingChildCount={row.children ? row.children.length : 0}

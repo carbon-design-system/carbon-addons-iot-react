@@ -60,7 +60,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
-    showRadioButtonSingleSelect: PropTypes.bool,
+    useRadioButtonSingleSelect: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
@@ -197,7 +197,7 @@ const TableHead = ({
     hasMultiSort,
     useAutoTableLayoutForResize,
     preserveColumnWidths,
-    showRadioButtonSingleSelect,
+    useRadioButtonSingleSelect,
   },
   columns,
   columnGroups,
@@ -466,7 +466,7 @@ const TableHead = ({
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
           </TableHeader>
-        ) : hasRowSelection === 'single' && showRadioButtonSingleSelect ? (
+        ) : hasRowSelection === 'single' && useRadioButtonSingleSelect ? (
           <TableHeader
             // TODO: remove deprecated 'testID' in v3
             testId={`${testID || testId}-row-selection-column`}
