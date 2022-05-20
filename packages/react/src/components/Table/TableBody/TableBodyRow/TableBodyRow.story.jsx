@@ -115,7 +115,7 @@ export const IsNotSelectable = () => (
       ...tableBodyRowProps.options,
       hasRowActions: true,
       hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
-      showRadioButton: true,
+      showRadioButtonSingleSelect: true,
     }}
   />
 );
@@ -130,7 +130,7 @@ export const IsSelectable = () => (
       ...tableBodyRowProps.options,
       hasRowActions: true,
       hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
-      showRadioButton: boolean('Show Radio button', false),
+      showRadioButtonSingleSelect: boolean('Show Radio button', false),
     }}
   />
 );
@@ -147,7 +147,7 @@ export const SingleSelect = () => (
       ...tableBodyRowProps.options,
       hasRowActions: true,
       hasRowSelection: 'single',
-      showRadioButton: boolean('show radio button', false),
+      showRadioButtonSingleSelect: boolean('show radio button', false),
     }}
   />
 );

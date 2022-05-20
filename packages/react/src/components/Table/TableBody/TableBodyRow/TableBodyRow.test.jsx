@@ -312,7 +312,7 @@ describe('TableBodyRow', () => {
           hasRowSelection: 'single',
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButton: true,
+          showRadioButtonSingleSelect: true,
         }}
         tableActions={mockActions}
         {...tableRowProps}
@@ -335,7 +335,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButton: true,
+          showRadioButtonSingleSelect: true,
         }}
         isExpanded
       />,
@@ -380,7 +380,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButton: true,
+          showRadioButtonSingleSelect: true,
         }}
         isExpanded
       />,
@@ -415,7 +415,7 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowSelected).not.toHaveBeenCalled();
     expect(mockActions.onRowClicked).not.toHaveBeenCalled();
     userEvent.click(screen.getByRole('cell', { name: 'value1' }));
-    expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
+    expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, false);
     expect(mockActions.onRowClicked).toHaveBeenCalledWith(tableRowProps.id);
   });
 
@@ -428,7 +428,7 @@ describe('TableBodyRow', () => {
           hasRowSelection: 'single',
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButton: true,
+          showRadioButtonSingleSelect: true,
         }}
         isSelectable
       />,
@@ -465,7 +465,7 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowSelected).not.toHaveBeenCalled();
   });
 
-  it('does not call onRowSelected when expanded rows with hasRowSelection:"single" and showRadioButton are clicked if isSelectable:"false"', () => {
+  it('does not call onRowSelected when expanded rows with hasRowSelection:"single" and showRadioButtonSingleSelect are clicked if isSelectable:"false"', () => {
     render(
       <TableBodyRow
         {...tableRowProps}
@@ -475,7 +475,7 @@ describe('TableBodyRow', () => {
           hasRowExpansion: true,
           wrapCellText: 'always',
           truncateCellText: true,
-          showRadioButton: true,
+          showRadioButtonSingleSelect: true,
         }}
         isSelectable={false}
       />,

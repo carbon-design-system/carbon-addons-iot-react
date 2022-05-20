@@ -1226,10 +1226,10 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
-    showRadioButton: shouldCreate('showRadioButton')
+    showRadioButtonSingleSelect: shouldCreate('showRadioButtonSingleSelect')
       ? boolean(
           'Show radio button for single select',
-          getDefaultValue('showRadioButton'),
+          getDefaultValue('showRadioButtonSingleSelect'),
           SELECTIONS_ACTIONS_GROUP
         )
       : null,

@@ -2681,7 +2681,7 @@ Map {
             "preserveColumnWidths": Object {
               "type": "bool",
             },
-            "showRadioButton": Object {
+            "showRadioButtonSingleSelect": Object {
               "type": "bool",
             },
             "truncateCellText": Object {
@@ -2905,7 +2905,7 @@ Map {
       "shouldExpandOnRowClick": false,
       "shouldLazyRender": false,
       "showExpanderColumn": false,
-      "showRadioButton": false,
+      "showRadioButtonSingleSelect": false,
       "singleRowEditButtons": null,
       "size": undefined,
       "testId": "",
@@ -3396,7 +3396,7 @@ Map {
       "showExpanderColumn": Object {
         "type": "bool",
       },
-      "showRadioButton": Object {
+      "showRadioButtonSingleSelect": Object {
         "type": "bool",
       },
       "singleRowEditButtons": Object {
