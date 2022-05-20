@@ -1228,7 +1228,7 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       : null,
     useRadioButtonSingleSelect: shouldCreate('useRadioButtonSingleSelect')
       ? boolean(
-          'Show radio button for single select',
+          'Use radio button for single select (options.useRadioButtonSingleSelect)',
           getDefaultValue('useRadioButtonSingleSelect'),
           SELECTIONS_ACTIONS_GROUP
         )
