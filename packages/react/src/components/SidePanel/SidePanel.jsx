@@ -1,168 +1,246 @@
-import React, { useMemo } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import { Tooltip } from 'carbon-components-react';
+import { debounce } from 'lodash-es';
 import {
   Close16,
   ChevronLeft16 as OpenLeft,
   ChevronRight16 as OpenRight,
 } from '@carbon/icons-react';
-import classNames from 'classnames';
 
-import Button from '../Button';
 import { settings } from '../../constants/Settings';
+import useHasTextOverflow from '../../hooks/useHasTextOverflow';
+import Button from '../Button';
 
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** silde in from start or end direction */
-  direction: PropTypes.string,
-  /** side panel is expanded  or collapsed */
-  open: PropTypes.bool,
-  /** slide overlay */
-  slideOver: PropTypes.bool,
-  /** inline side panel with optional drawer */
-  inline: PropTypes.bool,
-  /** show close button in side panel */
-  showCloseButton: PropTypes.bool,
-  /** show rail for inline panel */
-  isRail: PropTypes.bool,
-  /** title to show in the side panel */
+  /** Whether panel is open or not */
+  isOpen: PropTypes.bool,
+  /** Whether panel header is condensed or not */
+  isCondensed: PropTypes.bool,
+  /** Optional override of behavior of side panel which is to slide in */
+  type: PropTypes.oneOf(['inline', 'over']),
+  /** Which side the side panel will appear next to content */
+  direction: PropTypes.oneOf(['left', 'right']),
+  /** Callback for when close button is clicked */
+  onToggle: PropTypes.func,
+  /** Main Title */
   title: PropTypes.string,
-  /** Optional element that is hidden when the header is a sticky scroll */
+  /** Sub title or description - will go away when content is scrolled */
   subtitle: PropTypes.string,
-  /** content to show in the side panel */
-  children: PropTypes.node,
-  /** call back function for close button */
-  onClose: PropTypes.func,
-  /** footer primary button */
-  primaryButton: PropTypes.node,
-  /** footer secondary button */
-  secondaryButton: PropTypes.node,
-  /** icons in action bar */
-  icons: PropTypes.arrayOf(PropTypes.node),
+  /** Action items which will appear as part of header above the content */
+  actionItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      buttonLabel: PropTypes.string,
+      buttonIcon: PropTypes.elementType,
+      buttonCallback: PropTypes.func,
+    })
+  ),
+  /** Optional test id */
   testId: PropTypes.string,
-  /** condensed style */
-  condensed: PropTypes.bool,
-};
-const defaultProps = {
-  direction: 'start',
-  open: false,
-  slideOver: false,
-  inline: false,
-  showCloseButton: false,
-  isRail: false,
-  title: '',
-  subtitle: undefined,
-  children: null,
-  primaryButton: undefined,
-  secondaryButton: undefined,
-  testId: 'side-panel',
-  icons: undefined,
-  condensed: false,
-  onClose: undefined,
+  /** Callback for when Primary footer button is clicked */
+  onPrimaryButtonClick: PropTypes.func,
+  /** Callback for when Secondary footer button is clicked */
+  onSecondaryButtonClick: PropTypes.func,
+  i18n: PropTypes.shape({
+    closeIconLabel: PropTypes.string,
+    openIconLabel: PropTypes.string,
+    primaryButtonLabel: PropTypes.string,
+    secondaryButtonLabel: PropTypes.string,
+  }),
 };
 
-const SidePanel = ({
-  open,
+const defaultProps = {
+  isOpen: false,
+  isCondensed: false,
+  type: undefined,
+  direction: 'right',
+  title: null,
+  subtitle: null,
+  actionItems: null,
+  testId: 'side-panel',
+  i18n: {
+    closeIconLabel: 'Close',
+    openIconLabel: 'Open',
+    primaryButtonLabel: 'Save',
+    secondaryButtonLabel: 'Cancel',
+  },
+  onToggle: undefined,
+  onPrimaryButtonClick: undefined,
+  onSecondaryButtonClick: undefined,
+};
+
+const baseClass = `${iotPrefix}--sidepanel`;
+
+const SidePanelAlt = ({
+  isOpen,
+  isCondensed,
+  type,
+  direction,
   title,
   subtitle,
-  slideOver,
-  inline,
-  showCloseButton,
-  isRail,
-  onClose,
-  primaryButton,
-  secondaryButton,
-  direction,
-  icons,
+  actionItems,
   testId,
-  condensed,
+  i18n,
+  onToggle,
+  onPrimaryButtonClick,
+  onSecondaryButtonClick,
+  // eslint-disable-next-line react/prop-types
   children,
+  // eslint-disable-next-line react/prop-types
+  style,
 }) => {
-  const getIcon = useMemo(
+  const titleRef = useRef();
+  const subtitleRef = useRef();
+  const contenteRef = useRef();
+  const truncatesTitle = useHasTextOverflow(titleRef, title);
+  const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
+  const toggleIcon = useMemo(() => {
+    return isOpen
+      ? { icon: Close16, label: mergedI18n.closeIconLabel, tooltipPostion: 'left' }
+      : {
+          icon: direction === 'right' ? OpenLeft : OpenRight,
+          label: mergedI18n.openIconLabel,
+          tooltipPostion: direction === 'left' ? 'right' : 'left',
+        };
+  }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction]);
+  const actionIconBtns = useMemo(
     () =>
-      open && ((slideOver && showCloseButton) || inline)
-        ? Close16
-        : !open && inline && direction === 'start'
-        ? OpenRight
-        : OpenLeft,
-    [direction, inline, open, showCloseButton, slideOver]
+      actionItems &&
+      actionItems.map((e, i) => (
+        <Button
+          testId={`${testId}-action-button-${e.buttonLabel}`}
+          className={`${baseClass}__action-bar__item-${i + 1}`}
+          key={`${e.buttonLabel}-${i}`}
+          hasIconOnly
+          iconDescription={e.buttonLabel}
+          kind="ghost"
+          renderIcon={e.buttonIcon}
+          onClick={e.buttonCallback}
+          size="small"
+        />
+      )),
+    [actionItems, testId]
   );
+  // Since subtitle is dynamic we set a css variable with the height value to animate in condensed mode
+  const [subtitleHeight, setSubtitleHeight] = useState('100%');
+  // Triggerd when the content is scrolled in either direction
+  const [isScrolling, setIsScrolling] = useState(false);
+  // If content scrollTop is not 0 we set it to isScrolled
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setSubtitleHeight(subtitleRef?.current?.getBoundingClientRect().height), 500);
+  }, [subtitle]);
+
+  const delayedScrollCheck = debounce(() => {
+    if (contenteRef.current.scrollTop !== 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  }, 250);
+
+  useEffect(() => {
+    delayedScrollCheck();
+  }, [delayedScrollCheck, isScrolling]);
 
   return (
     <div
+      key={`sidePanel--${subtitle}`}
       data-testid={testId}
-      className={classNames(`${iotPrefix}--side-panel`, {
-        [`${iotPrefix}--side-panel__with-footer`]: primaryButton || secondaryButton,
-        [`${iotPrefix}--side-panel--inline`]: inline,
-        [`${iotPrefix}--side-panel__drawer`]: isRail && !open,
-        [`${iotPrefix}--side-panel--slide-over`]: slideOver,
-        [`${iotPrefix}--side-panel--slide-in`]: !inline && !slideOver,
-        [`${iotPrefix}--side-panel--active`]: open,
+      className={classnames(`${baseClass}`, {
+        [`${baseClass}--closed`]: !isOpen,
+        [`${baseClass}--start`]: direction === 'left',
+        [`${baseClass}--inline`]: type === 'inline',
+        [`${baseClass}--slide-over`]: type === 'over',
+        [`${baseClass}--condensed`]: isCondensed || isScrolled,
       })}
+      style={style}
     >
-      <div className={`${iotPrefix}--side-panel__panel ${iotPrefix}--side-panel--${direction}`}>
-        {(slideOver && showCloseButton && onClose) || (inline && isRail) ? (
-          <Button
-            testId="close-button"
-            hasIconOnly
-            className={`${iotPrefix}--side-panel__close-button`}
-            kind="ghost"
-            renderIcon={getIcon}
-            onClick={onClose}
-          />
-        ) : null}
-
-        <div className={`${iotPrefix}--side-panel__content-wrapper`}>
-          <div
-            data-testid="side-panel-header"
-            className={classNames(`${iotPrefix}--side-panel__header`, {
-              // [`${iotPrefix}--side-panel__header--with-close`]: showCloseButton,
-            })}
+      {onToggle && (isOpen || type === 'inline') ? (
+        <Button
+          testId={`${testId}-toggle-button`}
+          hasIconOnly
+          className={`${baseClass}__toggle-button`}
+          kind="ghost"
+          iconDescription={toggleIcon.label}
+          renderIcon={toggleIcon.icon}
+          onClick={onToggle}
+          tooltipPosition={toggleIcon.tooltipPostion}
+        />
+      ) : null}
+      <header className={`${baseClass}__header`}>
+        {title && truncatesTitle ? (
+          <Tooltip
+            data-testid={`${testId}-title`}
+            ref={titleRef}
+            showIcon={false}
+            triggerClassName={`${baseClass}__title`}
+            triggerText={title}
           >
-            <div
-              data-testid="side-panel-title"
-              className={classNames(
-                `${iotPrefix}--side-panel__title`,
-                { [`${iotPrefix}--side-panel__title--with-close`]: showCloseButton },
-                { [`${iotPrefix}--side-panel__title--condensed`]: condensed }
-              )}
+            {title}
+          </Tooltip>
+        ) : title ? (
+          <h2 data-testid={`${testId}-title`} ref={titleRef} className={`${baseClass}__title`}>
+            {title}
+          </h2>
+        ) : null}
+        {subtitle ? (
+          <p
+            ref={subtitleRef}
+            data-testid={`${testId}-subtitle`}
+            style={{ '--sub-title-height': subtitleHeight }}
+            className={`${baseClass}__subtitle`}
+          >
+            {subtitle}
+          </p>
+        ) : null}
+        {actionIconBtns ? (
+          <div data-testid={`${testId}-action-bar`} className={`${baseClass}__action-bar`}>
+            {actionIconBtns}
+          </div>
+        ) : null}
+      </header>
+      <section
+        data-testid={`${testId}-content`}
+        ref={contenteRef}
+        className={`${baseClass}__content`}
+        onScroll={() => setIsScrolling((prev) => !prev)}
+      >
+        {children}
+      </section>
+      {onSecondaryButtonClick || onPrimaryButtonClick ? (
+        <div className={`${baseClass}__footer`} data-testid={`${testId}-footer`}>
+          {onSecondaryButtonClick ? (
+            <Button
+              testId={`${testId}-secondary-button`}
+              className={`${baseClass}__footer__secondary-button`}
+              onClick={onSecondaryButtonClick}
+              tooltipPosition={toggleIcon.tooltipPostion}
+              kind="secondary"
             >
-              {title}
-            </div>
-            {subtitle ? (
-              <div
-                data-testid="side-panel-subtitle"
-                className={`${iotPrefix}--side-panel__subtitle`}
-              >
-                {subtitle}
-              </div>
-            ) : null}
-            {icons && (
-              <div
-                data-testid="side-panel-action-bar"
-                className={`${iotPrefix}--side-panel__action-bar`}
-              >
-                {icons}
-              </div>
-            )}
-          </div>
-
-          <div data-testid="side-panel-content" className={`${iotPrefix}-side-panel__content`}>
-            {children}
-          </div>
-          {open || inline ? (
-            <div data-testid="side-panel-footer" className={`${iotPrefix}--side-panel__footer`}>
-              {secondaryButton}
-              {primaryButton}
-            </div>
+              {mergedI18n.secondaryButtonLabel}
+            </Button>
+          ) : undefined}
+          {onPrimaryButtonClick ? (
+            <Button
+              testId={`${testId}-primary-button`}
+              className={`${baseClass}__footer__primary-button`}
+              kind="primary"
+              onClick={onPrimaryButtonClick}
+            >
+              {mergedI18n.primaryButtonLabel}
+            </Button>
           ) : null}
         </div>
-      </div>
+      ) : null}
     </div>
   );
 };
 
-SidePanel.propTypes = propTypes;
-SidePanel.defaultProps = defaultProps;
-
-export default SidePanel;
+SidePanelAlt.propTypes = propTypes;
+SidePanelAlt.defaultProps = defaultProps;
+export default SidePanelAlt;

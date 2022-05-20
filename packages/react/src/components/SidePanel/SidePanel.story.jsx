@@ -1,102 +1,33 @@
-import React, { useState } from 'react';
-import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import React from 'react';
+import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
-
-import Button from '../Button/Button';
-import Dropdown from '../Dropdown/Dropdown';
 
 import SidePanel from './SidePanel';
 import SidePanelReadMe from './SidePanel.mdx';
 
-const primaryButton = (
-  <Button
-    testId="primaryButton"
-    kind="primary"
-    size="xl"
-    onClick={() => {
-      action('Initiate clicked');
-    }}
-  >
-    Initiate
-  </Button>
-);
-
-const secondaryButton = (
-  <Button
-    testId="secondaryButton"
-    kind="secondary"
-    size="xl"
-    onClick={() => {
-      action('Cancel clicked');
-    }}
-  >
-    Cancel
-  </Button>
-);
-
-const items = [
+const actionItemButtons = [
   {
-    id: 'option-0',
-    text: 'Option 0',
+    buttonLabel: 'Edit',
+    buttonIcon: Edit16,
+    buttonCallback: action('Edit clicked'),
   },
   {
-    id: 'option-1',
-    text: 'Option 1',
+    buttonLabel: 'Info',
+    buttonIcon: Information16,
+    buttonCallback: action('Info clicked'),
   },
   {
-    id: 'option-2',
-    text: 'Option 2 ',
-  },
-  {
-    id: 'option-3',
-    text: 'Option 3',
+    buttonLabel: 'Send',
+    buttonIcon: SendAlt16,
+    buttonCallback: action('Send clicked'),
   },
 ];
 
-const iconButtons = [
-  <Button
-    id="icon1"
-    hasIconOnly
-    kind="ghost"
-    renderIcon={Edit16}
-    onClick={action('clicked')}
-    size="small"
-  />,
-  <Button
-    id="icon2"
-    hasIconOnly
-    kind="ghost"
-    renderIcon={Information16}
-    onClick={action('clicked')}
-    size="small"
-  />,
-  <Button
-    id="icon3"
-    hasIconOnly
-    kind="ghost"
-    renderIcon={SendAlt16}
-    onClick={action('clicked')}
-    size="small"
-  />,
-];
-
-const dropdown = (
-  <Dropdown
-    id="default"
-    titleText="Dropdown label"
-    helperText="This is some helper text"
-    label="Dropdown menu options"
-    items={items}
-    itemToString={(item) => (item ? item.text : '')}
-    onChange={action('onChange')}
-  />
-);
-
-const content = (
+const Content = ({ style }) => (
   <div
     style={{
-      'padding-bottom': '2rem',
+      ...style,
     }}
   >
     <p>
@@ -114,71 +45,91 @@ const content = (
       nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor.
       Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
     </p>
-    {dropdown}
   </div>
 );
 
-const Interactive = ({
+const handlePrimaryButtonClick = action('Primary button clicked');
+const handleSecondaryButtonClick = action('Secondary button clicked');
+
+const InPage = ({
+  isOpen,
+  isCondensed,
   direction,
-  isRail,
-  showCloseButton,
-  icons,
-  condensed,
-  variation,
-  showPrimaryandSecondaryButton,
+  type,
+  title,
+  subtitle,
+  actionItems,
+  onToggle,
+  onPrimaryButtonClick,
+  onSecondaryButtonClick,
 }) => {
-  const [open, setOpen] = useState(false);
+  // Padding would normally be done in app scss file off of classes
+  let padding;
+  if (type === 'over') {
+    padding = '1rem 1rem 1rem 1rem';
+  } else if (isOpen === true) {
+    if (direction === 'right') {
+      padding = '1rem 336px 1rem 1rem';
+    } else {
+      // direction is left
+      padding = '1rem 1rem 1rem 336px';
+    }
+  } else if (type === 'inline' && direction === 'right') {
+    padding = '1rem 4rem 1rem 1rem';
+  } else if (type === 'inline') {
+    padding = '1rem 1rem 1rem 4rem';
+  } else {
+    padding = '1rem 1rem 1rem 1rem';
+  }
+
+  let options = {};
+  if (onPrimaryButtonClick === 'yes') {
+    options = {
+      ...options,
+      onPrimaryButtonClick: handlePrimaryButtonClick,
+    };
+  }
+
+  if (onSecondaryButtonClick === 'yes') {
+    options = {
+      ...options,
+      onSecondaryButtonClick: handleSecondaryButtonClick,
+    };
+  }
+
   return (
     <div
       style={{
-        display: 'flex',
-        'flex-direction': direction === 'start' ? 'row' : 'row-reverse',
-        margin: '1rem',
-        height: '100%',
+        position: 'relative',
+        padding,
+        border: '1px solid',
+        transition: isOpen === true ? 'all 0.25s ease-in-out' : 'all 0.25s ease-in-out 0.25s',
+        minHeight: '600px',
+        maxWidth: '1046px',
       }}
     >
+      <Content />
       <SidePanel
-        open={open}
-        slideOver={variation === 'slideOver'}
-        inline={variation === 'inline'}
+        style={{
+          position: 'absolute',
+          left: direction === 'right' ? 'unset' : 0,
+          right: direction === 'right' ? 0 : 'unset',
+          top: 0,
+          bottom: 0,
+        }}
+        isOpen={isOpen}
         direction={direction}
-        title="My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet"
-        icons={icons}
-        primaryButton={showPrimaryandSecondaryButton ? primaryButton : null}
-        secondaryButton={showPrimaryandSecondaryButton ? secondaryButton : null}
-        isRail={isRail}
-        showCloseButton={showCloseButton}
-        onClose={() => setOpen(!open)}
-        condensed={condensed}
+        type={type}
+        title={title}
+        subtitle={subtitle}
+        actionItems={actionItems}
+        onToggle={onToggle}
+        isCondensed={isCondensed}
+        onPrimaryButtonClick={options.onPrimaryButtonClick}
+        onSecondaryButtonClick={options.onSecondaryButtonClick}
       >
-        {content}
+        <Content />
       </SidePanel>
-      <div style={{ padding: '1rem' }}>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et
-          enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget
-          pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet.
-          Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non
-          lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat
-          egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan
-          placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet
-          quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum
-          nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent
-          suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum
-          iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non
-          convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula.
-          Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec
-          luctus neque quam, et blandit eros accumsan at.
-        </p>
-        {dropdown}
-        <Button
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          {open ? 'Close' : 'Open'}
-        </Button>
-      </div>
     </div>
   );
 };
@@ -196,18 +147,64 @@ export default {
 };
 
 export const Default = () => (
-  <Interactive
-    direction={select('Direction', ['start', 'end'], 'start')}
-    isRail={boolean('Show Drawer (only works with inline)', false)}
-    showCloseButton={boolean('Show close button (only works with slideOver)', false)}
-    icons={boolean('Show icons', false) ? iconButtons : undefined}
-    condensed={boolean('Condensed', false)}
-    variation={select(
-      'Slide variation (Default is slideIn)',
-      ['slideOver', 'slideIn', 'inline'],
-      'slideIn'
+  <SidePanel
+    isOpen={boolean('Is open', true)}
+    direction={select('Direction', ['left', 'right'], 'left')}
+    type={select(
+      'Slide in behavior (Default is slide in)',
+      ['default', 'inline', 'over'],
+      'default'
     )}
-    showPrimaryandSecondaryButton={boolean('Show Primary and Secondary button (optional)', true)}
+    title={text(
+      'SidePanel Title text',
+      'My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet'
+    )}
+    subtitle={select(
+      'SidePanel Subtitle text',
+      ['My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet', undefined],
+      undefined
+    )}
+    actionItems={boolean('Show icons', true) ? actionItemButtons : undefined}
+    onToggle={action('Toggle clicked')}
+    isCondensed={boolean('condensed', false)}
+    onPrimaryButtonClick={select(
+      'Primary footer button',
+      [handlePrimaryButtonClick, undefined],
+      handlePrimaryButtonClick
+    )}
+    onSecondaryButtonClick={select(
+      'Secondary footer button',
+      [handleSecondaryButtonClick, undefined],
+      handleSecondaryButtonClick
+    )}
+  >
+    <Content />
+  </SidePanel>
+);
+
+export const InPageExample = () => (
+  <InPage
+    isOpen={boolean('Is open', true)}
+    direction={select('Direction', ['left', 'right'], 'left')}
+    type={select(
+      'Slide in behavior (Default is slide in)',
+      ['default', 'inline', 'over'],
+      'default'
+    )}
+    title={text(
+      'SidePanel Title text',
+      'My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet'
+    )}
+    subtitle={select(
+      'SidePanel Subtitle text',
+      ['My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet', undefined],
+      undefined
+    )}
+    actionItems={boolean('Show icons', true) ? actionItemButtons : undefined}
+    onToggle={action('Toggle clicked')}
+    isCondensed={boolean('condensed', false)}
+    onPrimaryButtonClick={select('Primary footer button', ['yes', 'no'], 'yes')}
+    onSecondaryButtonClick={select('Secondary footer button', ['yes', 'no'], 'yes')}
   />
 );
 
