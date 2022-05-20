@@ -230,3 +230,260 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
   </div>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SidePanel In Page Example 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "border": "1px solid",
+        "maxWidth": "1046px",
+        "minHeight": "600px",
+        "padding": "1rem 1rem 1rem 336px",
+        "position": "relative",
+        "transition": "all 240ms ease-in-out",
+      }
+    }
+  >
+    <div
+      style={Object {}}
+    >
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
+      </p>
+    </div>
+    <div
+      className="iot--sidepanel iot--sidepanel--start"
+      data-testid="side-panel"
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": "unset",
+          "top": 0,
+        }
+      }
+    >
+      <button
+        aria-describedby={null}
+        className="iot--sidepanel__toggle-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+        data-testid="side-panel-toggle-button"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <div
+          className="bx--assistive-text"
+          onMouseEnter={[Function]}
+        >
+          Close
+        </div>
+        <svg
+          aria-hidden="true"
+          aria-label="Close"
+          className="bx--btn__icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          role="img"
+          viewBox="0 0 32 32"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+          />
+        </svg>
+      </button>
+      <header
+        className="iot--sidepanel__header"
+      >
+        <h2
+          className="iot--sidepanel__title"
+          data-testid="side-panel-title"
+        >
+          My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet
+        </h2>
+        <div
+          className="iot--sidepanel__action-bar"
+          data-testid="side-panel-action-bar"
+        >
+          <button
+            aria-describedby={null}
+            className="iot--sidepanel__action-bar__item-1 iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="side-panel-action-button-Edit"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Edit
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Edit"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            className="iot--sidepanel__action-bar__item-2 iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="side-panel-action-button-Info"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Info
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Info"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+              />
+              <path
+                d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+              />
+            </svg>
+          </button>
+          <button
+            aria-describedby={null}
+            className="iot--sidepanel__action-bar__item-3 iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="side-panel-action-button-Send"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Send
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Send"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.71,4.29a1,1,0,0,0-1.05-.23l-22,8a1,1,0,0,0,0,1.87l9.6,3.84,3.84,9.6A1,1,0,0,0,19,28h0a1,1,0,0,0,.92-.66l8-22A1,1,0,0,0,27.71,4.29ZM19,24.2l-2.79-7L21,12.41,19.59,11l-4.83,4.83L7.8,13,25.33,6.67Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <section
+        className="iot--sidepanel__content"
+        data-testid="side-panel-content"
+        onScroll={[Function]}
+      >
+        <div
+          style={Object {}}
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a dapibus nulla. Fusce et enim et elit rutrum interdum quis eu nulla. Nulla neque neque, condimentum eget pellentesque sit amet, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet. Vivamus eu pellentesque turpis, eget ultricies lectus. Vestibulum sodales massa non lobortis interdum. Sed cursus sem in dolor tempus tempus. Pellentesque et nisi vel erat egestas ultricies. Etiam id risus nec mi laoreet suscipit. Phasellus porttitor accumsan placerat. Donec auctor nunc id erat congue, tincidunt viverra diam feugiat. Donec sit amet quam vel augue auctor posuere. Nunc maximus volutpat nulla vel vehicula. Praesent bibendum nulla at erat facilisis sodales. Aenean aliquet dui vel iaculis tincidunt. Praesent suscipit ultrices mi eget finibus. Mauris vehicula ultricies auctor. Nam vestibulum iaculis lectus, nec sodales metus lobortis non. Suspendisse nulla est, consectetur non convallis et, tristique eu risus. Sed ut tortor et nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor. Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
+          </p>
+        </div>
+      </section>
+      <div
+        className="iot--sidepanel__footer"
+        data-testid="side-panel-footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--sidepanel__footer__secondary-button iot--btn bx--btn bx--btn--secondary"
+          data-testid="side-panel-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--sidepanel__footer__primary-button iot--btn bx--btn bx--btn--primary"
+          data-testid="side-panel-primary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
