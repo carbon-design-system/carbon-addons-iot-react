@@ -107,9 +107,13 @@ describe('SidePanel Component Test', () => {
   });
 
   it('should only render subtitle if defined', () => {
-    const { rerender } = render(<SidePanel>This is content</SidePanel>);
+    const { rerender } = render(<SidePanel direction="left">This is content</SidePanel>);
     expect(screen.queryByTestId('side-panel-subtitle')).toBeNull();
-    rerender(<SidePanel {...commonProps}>This is content</SidePanel>);
+    rerender(
+      <SidePanel {...commonProps} direction="right">
+        This is content
+      </SidePanel>
+    );
     expect(screen.getByTestId('side-panel-subtitle')).toBeTruthy();
   });
 

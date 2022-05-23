@@ -22,6 +22,9 @@ describe('SidePanel', () => {
     // scroll content.
     cy.findByTestId('side-panel-content').scrollTo('bottom', { duration: 1000 });
     cy.findByTestId('side-panel').should('have.class', 'iot--sidepanel--condensed');
+    // scroll back up
+    cy.findByTestId('side-panel-content').scrollTo('top', { duration: 1000 });
+    cy.findByTestId('side-panel').should('not.have.class', 'iot--sidepanel--condensed');
   });
 
   it('should render tooltip if the title text is too long', () => {
