@@ -163,7 +163,18 @@
     }
   }
 
+  .#{$iot-prefix}--table-header-radiobutton {
+    vertical-align: middle;
+    .#{$prefix}--table-header-label {
+      overflow: visible;
+    }
+  }
+
   .#{$iot-prefix}--table-header-checkbox-resize {
+    width: 54px;
+  }
+
+  .#{$iot-prefix}--table-header-radiobutton-resize {
     width: 54px;
   }
 

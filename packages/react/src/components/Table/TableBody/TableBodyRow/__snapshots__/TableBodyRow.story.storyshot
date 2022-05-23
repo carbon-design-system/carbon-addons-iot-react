@@ -942,3 +942,106 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   </div>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableBodyRow single selected 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--data-table-container"
+  >
+    <div
+      className="bx--data-table-content"
+    >
+      <table
+        className="bx--data-table bx--data-table--no-border"
+      >
+        <tbody
+          aria-live="polite"
+        >
+          <tr
+            className="iot--table__row iot--table__row--selectable"
+            onClick={[Function]}
+          >
+            <td
+              align="start"
+              className="data-table-start"
+              data-column="string"
+              data-offset={0}
+              id="cell-tableId-rowId-string"
+              offset={0}
+            >
+              <span
+                className="iot--table__cell__offset"
+                style={
+                  Object {
+                    "--row-nesting-offset": "0px",
+                  }
+                }
+              >
+                <span
+                  className="iot--table__cell-text--no-wrap"
+                  title="My String"
+                >
+                  My String
+                </span>
+              </span>
+            </td>
+            <td
+              className="iot--row-actions-cell--table-cell"
+            >
+              <div
+                className="iot--row-actions-container"
+              >
+                <div
+                  className="iot--row-actions-container__background"
+                  data-testid="row-action-container-background"
+                  onClick={[Function]}
+                >
+                  <button
+                    aria-describedby={null}
+                    className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-end"
+                    data-testid="tableId-rowId-row-actions-button-add"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    tabIndex={0}
+                    type="button"
+                  >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Add
+                    </div>
+                    <svg
+                      aria-hidden="true"
+                      aria-label="Add"
+                      className="bx--btn__icon"
+                      fill="currentColor"
+                      focusable="false"
+                      height={32}
+                      preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      viewBox="0 0 32 32"
+                      width={32}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

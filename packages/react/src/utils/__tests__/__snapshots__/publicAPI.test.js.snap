@@ -2720,6 +2720,9 @@ Map {
             "useAutoTableLayoutForResize": Object {
               "type": "bool",
             },
+            "useRadioButtonSingleSelect": Object {
+              "type": "bool",
+            },
             "wrapCellText": Object {
               "args": Array [
                 Array [
@@ -2938,6 +2941,7 @@ Map {
       "size": undefined,
       "testId": "",
       "totalColumns": 0,
+      "useRadioButtonSingleSelect": false,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3468,6 +3472,9 @@ Map {
       },
       "truncateCellText": Object {
         "isRequired": true,
+        "type": "bool",
+      },
+      "useRadioButtonSingleSelect": Object {
         "type": "bool",
       },
       "wrapCellText": Object {
