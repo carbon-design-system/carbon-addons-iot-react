@@ -10886,63 +10886,92 @@ Map {
   },
   "SidePanel" => Object {
     "defaultProps": Object {
-      "children": null,
-      "condensed": false,
-      "direction": "start",
-      "icons": undefined,
-      "inline": false,
-      "isRail": false,
-      "onClose": undefined,
-      "open": false,
-      "primaryButton": undefined,
-      "secondaryButton": undefined,
-      "showCloseButton": false,
-      "slideOver": false,
-      "subtitle": undefined,
+      "actionItems": null,
+      "direction": "right",
+      "i18n": Object {
+        "closeIconLabel": "Close",
+        "openIconLabel": "Open",
+        "primaryButtonLabel": "Save",
+        "secondaryButtonLabel": "Cancel",
+      },
+      "isCondensed": false,
+      "isFullWidth": false,
+      "isOpen": false,
+      "onPrimaryButtonClick": undefined,
+      "onSecondaryButtonClick": undefined,
+      "onToggle": undefined,
+      "subtitle": null,
       "testId": "side-panel",
-      "title": "",
+      "title": null,
+      "type": undefined,
     },
     "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "condensed": Object {
-        "type": "bool",
-      },
-      "direction": Object {
-        "type": "string",
-      },
-      "icons": Object {
+      "actionItems": Object {
         "args": Array [
           Object {
-            "type": "node",
+            "args": Array [
+              Object {
+                "buttonCallback": Object {
+                  "type": "func",
+                },
+                "buttonIcon": Object {
+                  "type": "elementType",
+                },
+                "buttonLabel": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
           },
         ],
         "type": "arrayOf",
       },
-      "inline": Object {
+      "direction": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeIconLabel": Object {
+              "type": "string",
+            },
+            "openIconLabel": Object {
+              "type": "string",
+            },
+            "primaryButtonLabel": Object {
+              "type": "string",
+            },
+            "secondaryButtonLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isCondensed": Object {
         "type": "bool",
       },
-      "isRail": Object {
+      "isFullWidth": Object {
         "type": "bool",
       },
-      "onClose": Object {
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onPrimaryButtonClick": Object {
         "type": "func",
       },
-      "open": Object {
-        "type": "bool",
+      "onSecondaryButtonClick": Object {
+        "type": "func",
       },
-      "primaryButton": Object {
-        "type": "node",
-      },
-      "secondaryButton": Object {
-        "type": "node",
-      },
-      "showCloseButton": Object {
-        "type": "bool",
-      },
-      "slideOver": Object {
-        "type": "bool",
+      "onToggle": Object {
+        "type": "func",
       },
       "subtitle": Object {
         "type": "string",
@@ -10952,6 +10981,15 @@ Map {
       },
       "title": Object {
         "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "inline",
+            "over",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
