@@ -77,7 +77,7 @@ const defaultProps = {
 
 const baseClass = `${iotPrefix}--sidepanel`;
 
-const SidePanelAlt = ({
+const SidePanel = ({
   isOpen,
   isFullWidth,
   isCondensed,
@@ -107,7 +107,7 @@ const SidePanelAlt = ({
       : {
           icon: direction === 'right' ? OpenLeft : OpenRight,
           label: mergedI18n.openIconLabel,
-          tooltipPostion: direction === 'right' ? 'left' : 'right',
+          tooltipPostion: direction,
         };
   }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction]);
   const actionIconBtns = useMemo(
@@ -246,6 +246,6 @@ const SidePanelAlt = ({
   );
 };
 
-SidePanelAlt.propTypes = propTypes;
-SidePanelAlt.defaultProps = defaultProps;
-export default SidePanelAlt;
+SidePanel.propTypes = propTypes;
+SidePanel.defaultProps = defaultProps;
+export default SidePanel;

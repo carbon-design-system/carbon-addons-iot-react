@@ -154,8 +154,8 @@ export const Default = () => (
     direction={select('Direction', ['left', 'right'], 'left')}
     type={select(
       'Slide in behavior (Default is slide in)',
-      ['default', 'inline', 'over'],
-      'default'
+      [undefined, 'inline', 'over'],
+      undefined
     )}
     title={text(
       'SidePanel Title text',
@@ -190,8 +190,8 @@ export const InPageExample = () => (
     direction={select('Direction', ['left', 'right'], 'left')}
     type={select(
       'Slide in behavior (Default is slide in)',
-      ['default', 'inline', 'over'],
-      'default'
+      [undefined, 'inline', 'over'],
+      undefined
     )}
     title={text(
       'SidePanel Title text',
