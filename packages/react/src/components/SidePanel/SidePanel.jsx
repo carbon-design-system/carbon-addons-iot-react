@@ -98,7 +98,7 @@ const SidePanel = ({
 }) => {
   const titleRef = useRef();
   const subtitleRef = useRef();
-  const contenteRef = useRef();
+  const contentRef = useRef();
   const truncatesTitle = useHasTextOverflow(titleRef, title);
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const toggleIcon = useMemo(() => {
@@ -140,7 +140,7 @@ const SidePanel = ({
   }, [subtitle]);
 
   const delayedScrollCheck = debounce(() => {
-    if (contenteRef.current?.scrollTop !== 0) {
+    if (contentRef.current?.scrollTop !== 0) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -211,7 +211,7 @@ const SidePanel = ({
       </header>
       <section
         data-testid={`${testId}-content`}
-        ref={contenteRef}
+        ref={contentRef}
         className={`${baseClass}__content`}
         onScroll={() => setIsScrolling((prev) => !prev)}
       >
