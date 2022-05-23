@@ -1,6 +1,6 @@
 import React from 'react';
 import { actions } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { boolean, select } from '@storybook/addon-knobs';
 import { Table, TableContainer, TableBody } from 'carbon-components-react';
 import { Add32, Edit16, Stop16, TrashCan16 } from '@carbon/icons-react';
 
@@ -114,7 +114,8 @@ export const IsNotSelectable = () => (
     options={{
       ...tableBodyRowProps.options,
       hasRowActions: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
+      useRadioButtonSingleSelect: true,
     }}
   />
 );
@@ -128,12 +129,30 @@ export const IsSelectable = () => (
     options={{
       ...tableBodyRowProps.options,
       hasRowActions: true,
-      hasRowSelection: 'multi',
+      hasRowSelection: select('Single/Multi select', ['single', 'multi'], 'multi'),
+      useRadioButtonSingleSelect: boolean('Use radio button', false),
     }}
   />
 );
 
 IsSelectable.storyName = 'is selectable';
+
+IsNotSelectable.storyName = 'is not selectable';
+
+export const SingleSelect = () => (
+  <TableBodyRow
+    {...tableBodyRowProps}
+    rowActions={[{ id: 'add', renderIcon: Add32, iconDescription: 'Add' }]}
+    options={{
+      ...tableBodyRowProps.options,
+      hasRowActions: true,
+      hasRowSelection: 'single',
+      useRadioButtonSingleSelect: boolean('Use radio button', false),
+    }}
+  />
+);
+
+SingleSelect.storyName = 'single selected';
 
 export const RowActionsRunning = () => (
   <TableBodyRow
