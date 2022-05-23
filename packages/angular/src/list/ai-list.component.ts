@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@angular/core';
 import { AIListItem } from './list-item/ai-list-item.class';
 import { IconService } from 'carbon-components-angular';
-import { Bee32 } from '@carbon/icons';
+import { Bee32 } from '@carbon/icons/es/bee/32';
 
 export enum SelectionType {
   SINGLE = 'single',
