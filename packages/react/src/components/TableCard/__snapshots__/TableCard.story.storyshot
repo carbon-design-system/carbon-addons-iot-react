@@ -1,5 +1,1822 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard No range in toolbar 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "1rem4",
+        "width": "1056px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--table-card iot--card--wrapper"
+      data-testid="Card"
+      id="table-list"
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "624px",
+        }
+      }
+    >
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "576px",
+          }
+        }
+      >
+        <div
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          data-testid="table-for-card-table-list-table-container"
+        >
+          <section
+            aria-label="data table toolbar"
+            className="bx--table-toolbar"
+            data-testid="table-for-card-table-list-table-toolbar"
+          >
+            <div
+              aria-hidden={true}
+              className="bx--batch-actions iot--table-batch-actions"
+              data-testid="table-for-card-table-list-table-toolbar-batch-actions"
+              onScroll={[Function]}
+            >
+              <div
+                className="bx--batch-summary"
+              >
+                <p
+                  className="bx--batch-summary__para"
+                >
+                  <span
+                    dir="auto"
+                  >
+                    0 items selected
+                  </span>
+                </p>
+              </div>
+              <div
+                className="bx--action-list"
+              >
+                <button
+                  aria-describedby={null}
+                  aria-pressed={null}
+                  className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={-1}
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+            <label
+              className="iot--table-toolbar-secondary-title"
+            >
+              Open Alerts
+            </label>
+            <div
+              className="iot--table-tooltip-container"
+            >
+              <div
+                className="bx--tooltip__label"
+                id="card-tooltip-trigger-table-for-card-table-list"
+              >
+                
+                <div
+                  aria-describedby={null}
+                  aria-label="Toolbar tooltip"
+                  className="bx--tooltip__trigger"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <svg
+                    aria-hidden={true}
+                    description={null}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role={null}
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                    />
+                    <path
+                      d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              className="bx--toolbar-content iot--table-toolbar-content"
+              data-testid="table-for-card-table-list-table-toolbar-content"
+            >
+              <div
+                aria-labelledby="table-for-card-table-list-toolbar-search-search"
+                className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                role="search"
+              >
+                <div
+                  className="bx--search-magnifier"
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="bx--search-magnifier-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                    />
+                  </svg>
+                </div>
+                <label
+                  className="bx--label"
+                  htmlFor="table-for-card-table-list-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search-search"
+                >
+                  Search
+                </label>
+                <input
+                  autoComplete="off"
+                  className="bx--search-input"
+                  data-testid="table-for-card-table-list-table-toolbar-search"
+                  id="table-for-card-table-list-toolbar-search"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="Search"
+                  role="searchbox"
+                  tabIndex="0"
+                  type="text"
+                  value=""
+                />
+                <button
+                  aria-label="Clear search input"
+                  className="bx--search-close bx--search-close--hidden"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                data-testid="download-button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                title="Download table content"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Download table content"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M26 24v4H6V24H4v4H4a2 2 0 002 2H26a2 2 0 002-2h0V24zM26 14L24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14z"
+                  />
+                </svg>
+              </button>
+              <button
+                aria-describedby={null}
+                aria-pressed={null}
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                data-testid="filter-button"
+                disabled={false}
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                tabIndex={0}
+                title="Filters"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  aria-label="Filters"
+                  className="bx--btn__icon"
+                  fill="currentColor"
+                  focusable="false"
+                  height={20}
+                  preserveAspectRatio="xMidYMid meet"
+                  role="img"
+                  viewBox="0 0 32 32"
+                  width={20}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18,28H14a2,2,0,0,1-2-2V18.41L4.59,11A2,2,0,0,1,4,9.59V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2V9.59A2,2,0,0,1,27.41,11L20,18.41V26A2,2,0,0,1,18,28ZM6,6V9.59l8,8V26h4V17.59l8-8V6Z"
+                  />
+                </svg>
+              </button>
+              <div
+                className="iot--card--toolbar"
+                data-testid="card-toolbar"
+              />
+            </div>
+          </section>
+          <div
+            className="addons-iot-table-container iot-table-container--dropdown-height-fix"
+          >
+            <div
+              className="bx--data-table-content"
+            >
+              <table
+                className="bx--data-table bx--data-table--no-border"
+                data-testid="table-for-card-table-list"
+                id="table-for-card-table-list"
+                showHeader={true}
+                title={null}
+              >
+                <thead
+                  data-testid="table-for-card-table-list-table-head"
+                  onMouseMove={null}
+                  onMouseUp={null}
+                >
+                  <tr>
+                    <th
+                      className="bx--table-expand"
+                      data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      scope="col"
+                    />
+                    <th
+                      aria-sort="none"
+                      className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                      data-testid="table-for-card-table-list-table-head-column-alert"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
+                      width=""
+                    >
+                      <button
+                        align="start"
+                        className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                        data-column="alert"
+                        data-floating-menu-container={true}
+                        id="column-alert"
+                        onClick={[Function]}
+                        width=""
+                      >
+                        <span
+                          className="bx--table-header-label"
+                        >
+                          <span
+                            className=""
+                            title="Alert"
+                          >
+                            Alert
+                          </span>
+                        </span>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                          />
+                        </svg>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon-unsorted"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                          />
+                        </svg>
+                      </button>
+                    </th>
+                    <th
+                      aria-sort="none"
+                      className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                      data-testid="table-for-card-table-list-table-head-column-count"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
+                      width=""
+                    >
+                      <button
+                        align="start"
+                        className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                        data-column="count"
+                        data-floating-menu-container={true}
+                        id="column-count"
+                        onClick={[Function]}
+                        width=""
+                      >
+                        <span
+                          className="bx--table-header-label"
+                        >
+                          <span
+                            className=""
+                            title="Count"
+                          >
+                            Count
+                          </span>
+                        </span>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                          />
+                        </svg>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon-unsorted"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                          />
+                        </svg>
+                      </button>
+                    </th>
+                    <th
+                      aria-sort="none"
+                      className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                      data-testid="table-for-card-table-list-table-head-column-hour"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
+                      width=""
+                    >
+                      <button
+                        align="start"
+                        className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                        data-column="hour"
+                        data-floating-menu-container={true}
+                        id="column-hour"
+                        onClick={[Function]}
+                        width=""
+                      >
+                        <span
+                          className="bx--table-header-label"
+                        >
+                          <span
+                            className=""
+                            title="Hour"
+                          >
+                            Hour
+                          </span>
+                        </span>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                          />
+                        </svg>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon-unsorted"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                          />
+                        </svg>
+                      </button>
+                    </th>
+                    <th
+                      aria-sort="none"
+                      className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                      data-testid="table-for-card-table-list-table-head-column-pressure"
+                      scope="col"
+                      style={
+                        Object {
+                          "width": undefined,
+                        }
+                      }
+                      width=""
+                    >
+                      <button
+                        align="start"
+                        className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                        data-column="pressure"
+                        data-floating-menu-container={true}
+                        id="column-pressure"
+                        onClick={[Function]}
+                        width=""
+                      >
+                        <span
+                          className="bx--table-header-label"
+                        >
+                          <span
+                            className=""
+                            title="Pressure"
+                          >
+                            Pressure
+                          </span>
+                        </span>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                          />
+                        </svg>
+                        <svg
+                          aria-label="Sort rows by this header in ascending order"
+                          className="bx--table-sort__icon-unsorted"
+                          fill="currentColor"
+                          focusable="false"
+                          height={20}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 32 32"
+                          width={20}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                          />
+                        </svg>
+                      </button>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  aria-live="polite"
+                  data-testid="table-for-card-table-list-table-body"
+                >
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI010 proccess need to optimize adjust Y variables"
+                        >
+                          AHI010 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="2"
+                        >
+                          2
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 04:26"
+                        >
+                          07/23/2019 04:26
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-10-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="0"
+                        >
+                          0
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI010 proccess need to optimize adjust Y variables"
+                        >
+                          AHI010 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="5"
+                        >
+                          5
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 05:26"
+                        >
+                          07/23/2019 05:26
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-11-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="1"
+                        >
+                          1
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI005 Asset failure"
+                        >
+                          AHI005 Asset failure
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="1.2039201932"
+                        >
+                          1.2039201932
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 05:26"
+                        >
+                          07/23/2019 05:26
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-1-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="0"
+                        >
+                          0
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI003 process need to optimize adjust X variables"
+                        >
+                          AHI003 process need to optimize adjust X variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="1.10329291"
+                        >
+                          1.10329291
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 04:26"
+                        >
+                          07/23/2019 04:26
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-2-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="2"
+                        >
+                          2
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI001 proccess need to optimize."
+                        >
+                          AHI001 proccess need to optimize.
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="30"
+                        >
+                          30
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 04:30"
+                        >
+                          07/23/2019 04:30
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-6-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="68"
+                        >
+                          68
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-3-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI001 proccess need to optimize adjust Y variables"
+                        >
+                          AHI001 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-3-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="3"
+                        >
+                          3
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-3-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="08/02/2019 09:42"
+                        >
+                          08/02/2019 09:42
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-3-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="10"
+                        >
+                          10
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr
+                    className="bx--parent-row iot--expandable-tablerow"
+                    data-child-count={0}
+                    data-nesting-offset={0}
+                    data-parent-row={true}
+                    data-row-nesting={false}
+                    hasRowSelection={false}
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "--row-nesting-offset": "0px",
+                      }
+                    }
+                  >
+                    <td
+                      className="bx--table-expand"
+                      headers="expand"
+                    >
+                      <button
+                        aria-label="Click to expand content"
+                        className="bx--table-expand__button"
+                        onClick={[Function]}
+                        title="Click to expand content"
+                        type="button"
+                      >
+                        <svg
+                          aria-label="Click to expand content"
+                          className="bx--table-expand__svg"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          role="img"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                          />
+                        </svg>
+                      </button>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="alert"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-alert"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="AHI001 proccess need to optimize adjust Y variables"
+                        >
+                          AHI001 proccess need to optimize adjust Y variables
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="count"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-count"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="5"
+                        >
+                          5
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="hour"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-hour"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="07/23/2019 05:26"
+                        >
+                          07/23/2019 05:26
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      align="start"
+                      className="data-table-start iot--table__cell--sortable"
+                      data-column="pressure"
+                      data-offset={0}
+                      id="cell-table-for-card-table-list-row-4-pressure"
+                      offset={0}
+                      width=""
+                    >
+                      <span
+                        className="iot--table__cell__offset"
+                        style={
+                          Object {
+                            "--row-nesting-offset": "0px",
+                          }
+                        }
+                      >
+                        <span
+                          className=""
+                          title="0"
+                        >
+                          0
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div
+            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
+            data-testid="table-for-card-table-list-table-pagination"
+            style={
+              Object {
+                "--pagination-text-display": "flex",
+              }
+            }
+          >
+            <div
+              className="bx--pagination__left"
+            >
+              <label
+                className="bx--pagination__text"
+                htmlFor="bx-pagination-select-20"
+                id="bx-pagination-select-20-count-label"
+              >
+                Items per page:
+              </label>
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select bx--select--inline bx--select__item-count"
+                >
+                  <div
+                    className="bx--select-input--inline__wrapper"
+                  >
+                    <div
+                      className="bx--select-input__wrapper"
+                      data-invalid={null}
+                    >
+                      <select
+                        className="bx--select-input"
+                        id="bx-pagination-select-20"
+                        onChange={[Function]}
+                        value={7}
+                      >
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={7}
+                        >
+                          7
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={25}
+                        >
+                          25
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={100}
+                        >
+                          100
+                        </option>
+                      </select>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--select__arrow"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                className="bx--pagination__text bx--pagination__items-count"
+              >
+                1–7 of 11 items
+              </span>
+            </div>
+            <div
+              className="bx--pagination__right"
+            >
+              <div
+                className="bx--form-item"
+              >
+                <div
+                  className="bx--select bx--select--inline bx--select__page-number"
+                >
+                  <label
+                    className="bx--label bx--visually-hidden"
+                    htmlFor="bx-pagination-select-20-right"
+                  >
+                    Page number, of 2 pages
+                  </label>
+                  <div
+                    className="bx--select-input--inline__wrapper"
+                  >
+                    <div
+                      className="bx--select-input__wrapper"
+                      data-invalid={null}
+                    >
+                      <select
+                        className="bx--select-input"
+                        id="bx-pagination-select-20-right"
+                        onChange={[Function]}
+                        value={1}
+                      >
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={1}
+                        >
+                          1
+                        </option>
+                        <option
+                          className="bx--select-option"
+                          disabled={false}
+                          hidden={false}
+                          value={2}
+                        >
+                          2
+                        </option>
+                      </select>
+                      <svg
+                        aria-hidden={true}
+                        className="bx--select__arrow"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span
+                className="bx--pagination__text"
+              >
+                1 of 2 pages
+              </span>
+              <div
+                className="bx--pagination__control-buttons"
+              >
+                <button
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--backward bx--pagination__button--no-index bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <div
+                    className="bx--assistive-text"
+                    onMouseEnter={[Function]}
+                  >
+                    Previous page
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Previous page"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M20 24L10 16 20 8z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  aria-describedby={null}
+                  className="bx--pagination__button bx--pagination__button--forward bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-end"
+                  disabled={false}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  tabIndex={0}
+                  type="button"
+                >
+                  <div
+                    className="bx--assistive-text"
+                    onMouseEnter={[Function]}
+                  >
+                    Next page
+                  </div>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Next page"
+                    className="bx--btn__icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 32 32"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 8L22 16 12 24z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/TableCard editable 1`] = `
 <div
   className="storybook-container"
