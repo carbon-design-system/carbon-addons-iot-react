@@ -160,6 +160,8 @@ $duration-moderate-01: 150ms;
 // React styles
 .#{$iot-prefix}--sidepanel {
   background: $ui-01;
+  border-left: 1px solid $ui-03;
+  box-shadow: -2px 0 3px rgba($ui-03, 0.6);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -169,24 +171,10 @@ $duration-moderate-01: 150ms;
   transform-origin: right;
   transition: all $duration-moderate-02 ease-in-out;
   width: 320px;
-  box-shadow: -2px 0 3px rgba($ui-03, 0.6);
 
   * {
     transition: opacity $duration-moderate-02 linear $duration-moderate-02;
   }
-
-  // &::before {
-  //   background: $ui-03;
-  //   // background: rgba($ui-03, 0.3);
-  //   box-shadow: -2px 0 3px rgba($ui-03, 0.6);
-  //   content: '';
-  //   height: 100%;
-  //   left: -2px;
-  //   opacity: 0.6;
-  //   position: absolute;
-  //   top: 0;
-  //   width: 2px;
-  // }
 
   &__header {
     position: relative;
@@ -277,12 +265,9 @@ $duration-moderate-01: 150ms;
 // Left Direction styles
 .#{$iot-prefix}--sidepanel--start {
   transform-origin: left;
+  border-left: unset;
+  border-right: 1px solid $ui-03;
   box-shadow: 2px 0 2px rgba($ui-03, 0.6);
-  // &::before {
-  //   box-shadow: 2px 0 2px rgba($ui-03, 0.6);
-  //   left: unset;
-  //   right: -1px;
-  // }
 }
 
 // Slide over behavior styles
@@ -330,6 +315,8 @@ $duration-moderate-01: 150ms;
 
 // Condensed styles
 .#{$iot-prefix}--sidepanel--condensed:not(.#{$iot-prefix}--sidepanel--closed) {
+  padding: $spacing-03 $spacing-05 $spacing-05 $spacing-05;
+
   .#{$iot-prefix}--sidepanel {
     &__header::after {
       background-color: $ui-03;
