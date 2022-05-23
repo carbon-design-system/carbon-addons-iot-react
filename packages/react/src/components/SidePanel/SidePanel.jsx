@@ -140,7 +140,7 @@ const SidePanel = ({
   }, [subtitle]);
 
   const delayedScrollCheck = debounce(() => {
-    if (contenteRef.current.scrollTop !== 0) {
+    if (contenteRef.current?.scrollTop !== 0) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
