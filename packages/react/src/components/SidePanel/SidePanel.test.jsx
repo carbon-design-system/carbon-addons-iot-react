@@ -92,7 +92,7 @@ describe('SidePanel Component Test', () => {
     );
     expect(screen.queryByTestId('side-panel-toggle-button')).toBeNull();
     rerender(
-      <SidePanel {...commonProps} onToggle={mockOnToggle} isOpen>
+      <SidePanel {...commonProps} onToggle={mockOnToggle} isOpen direction="left">
         This is content
       </SidePanel>
     );
@@ -127,7 +127,7 @@ describe('SidePanel Component Test', () => {
   });
 
   it('should render footer only if callbacks are defined', () => {
-    const { rerender } = render(<SidePanel {...commonProps}>This is content</SidePanel>);
+    const { rerender } = render(<SidePanel>This is content</SidePanel>);
     expect(screen.queryByTestId('side-panel-footer')).toBeNull();
     rerender(
       <SidePanel

@@ -229,7 +229,7 @@ const SidePanelAlt = ({
             >
               {mergedI18n.secondaryButtonLabel}
             </Button>
-          ) : undefined}
+          ) : null}
           {onPrimaryButtonClick ? (
             <Button
               testId={`${testId}-primary-button`}
