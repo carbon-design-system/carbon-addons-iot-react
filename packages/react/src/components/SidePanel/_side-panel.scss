@@ -319,6 +319,15 @@ $duration-moderate-01: 150ms;
     top: 0;
   }
 }
+
+// Full width styles
+.#{$iot-prefix}--sidepanel--full-width {
+  .#{$iot-prefix}--sidepanel__content {
+    width: calc(100% + 2rem);
+    transform: translateX(-1rem);
+  }
+}
+
 // Condensed styles
 .#{$iot-prefix}--sidepanel--condensed:not(.#{$iot-prefix}--sidepanel--closed) {
   .#{$iot-prefix}--sidepanel {

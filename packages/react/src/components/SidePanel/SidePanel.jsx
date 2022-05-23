@@ -18,6 +18,8 @@ const { iotPrefix } = settings;
 const propTypes = {
   /** Whether panel is open or not */
   isOpen: PropTypes.bool,
+  /** Whether content area has any padding or not */
+  isFullWidth: PropTypes.bool,
   /** Whether panel header is condensed or not */
   isCondensed: PropTypes.bool,
   /** Optional override of behavior of side panel which is to slide in */
@@ -54,6 +56,7 @@ const propTypes = {
 
 const defaultProps = {
   isOpen: false,
+  isFullWidth: false,
   isCondensed: false,
   type: undefined,
   direction: 'right',
@@ -76,6 +79,7 @@ const baseClass = `${iotPrefix}--sidepanel`;
 
 const SidePanelAlt = ({
   isOpen,
+  isFullWidth,
   isCondensed,
   type,
   direction,
@@ -153,6 +157,7 @@ const SidePanelAlt = ({
       data-testid={testId}
       className={classnames(`${baseClass}`, {
         [`${baseClass}--closed`]: !isOpen,
+        [`${baseClass}--full-width`]: isFullWidth,
         [`${baseClass}--start`]: direction === 'left',
         [`${baseClass}--inline`]: type === 'inline',
         [`${baseClass}--slide-over`]: type === 'over',

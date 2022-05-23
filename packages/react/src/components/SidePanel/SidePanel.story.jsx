@@ -118,6 +118,7 @@ const InPage = ({
           bottom: 0,
         }}
         isOpen={isOpen}
+        isFullWidth={boolean('Content is full width', false)}
         direction={direction}
         type={type}
         title={title}
@@ -149,6 +150,7 @@ export default {
 export const Default = () => (
   <SidePanel
     isOpen={boolean('Is open', true)}
+    isFullWidth={boolean('Content is full width', false)}
     direction={select('Direction', ['left', 'right'], 'left')}
     type={select(
       'Slide in behavior (Default is slide in)',
