@@ -53,7 +53,7 @@ const dataItemsV2 = [
     label: 'Elevators',
     unit: 'floor',
     hasStreamingMetricEnabled: true,
-  }
+  },
 ];
 
 let cardConfigWithPresets;
@@ -182,7 +182,7 @@ describe('HotspotEditorDataSourceTab', () => {
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
-    
+
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
   it('pops the data items modal without downsample methods', async () => {
@@ -200,7 +200,7 @@ describe('HotspotEditorDataSourceTab', () => {
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
-  
+
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
