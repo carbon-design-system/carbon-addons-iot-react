@@ -1,5 +1,153 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card basic example with additional card size names 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "margin": 20,
+        "width": "520px",
+      }
+    }
+  >
+    <div
+      className="iot--card iot--card--wrapper"
+      data-testid="Card"
+      id="facilitycard-basic"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      role="presentation"
+      style={
+        Object {
+          "--card-default-height": "304px",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        className="iot--card--header"
+        data-testid="Card-header"
+      >
+        <span
+          className="iot--card--title"
+          data-testid="Card-title"
+          title="Card title"
+        >
+          <div
+            className="iot--card--title--text"
+            data-testid="Card-title-notip"
+          >
+            Card title
+          </div>
+        </span>
+        <div
+          className="iot--card--toolbar"
+          data-testid="Card-toolbar"
+        >
+          <div
+            className="iot--card--toolbar-date-range-wrapper"
+          >
+            <div
+              className="iot--card--toolbar-timerange-label"
+              id="timeRange"
+            >
+              Default
+            </div>
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              aria-label="open and close list of options"
+              className="iot--card--toolbar-date-range-action bx--overflow-menu bx--overflow-menu--lg"
+              data-testid="Card-toolbar-range-picker"
+              onClick={[Function]}
+              onClose={[Function]}
+              onKeyDown={[Function]}
+              open={false}
+              title="Select time range"
+              type="button"
+            >
+              <svg
+                aria-label="Select time range"
+                className="bx--overflow-menu__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21,30a8,8,0,1,1,8-8A8,8,0,0,1,21,30Zm0-14a6,6,0,1,0,6,6A6,6,0,0,0,21,16Z"
+                />
+                <path
+                  d="M22.59 25L20 22.41 20 18 22 18 22 21.59 24 23.59 22.59 25z"
+                />
+                <path
+                  d="M28,6a2,2,0,0,0-2-2H22V2H20V4H12V2H10V4H6A2,2,0,0,0,4,6V26a2,2,0,0,0,2,2h4V26H6V6h4V8h2V6h8V8h2V6h4v6h2Z"
+                />
+                <title>
+                  Select time range
+                </title>
+              </svg>
+            </button>
+          </div>
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--card--toolbar-action iot--card--toolbar-svg-wrapper bx--btn--icon-only iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="Card-toolbar-expand-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            title="Expand to fullscreen"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="Expand to fullscreen"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12,30H9V28h3V15.5664L8.4854,13.4575l1.0292-1.7148,3.5147,2.1084A2.0115,2.0115,0,0,1,14,15.5664V28A2.0023,2.0023,0,0,1,12,30Z"
+              />
+              <path
+                d="M22,30H19a2.0024,2.0024,0,0,1-2-2V17h6a4.0008,4.0008,0,0,0,3.981-4.396A4.1489,4.1489,0,0,0,22.7853,9H21.2016L21.025,8.221C20.452,5.6961,18.0308,4,15,4A6.02,6.02,0,0,0,9.5585,7.4859L9.25,8.1531l-.863-.1143A2.771,2.771,0,0,0,8,8a4,4,0,1,0,0,8v2A6,6,0,1,1,8,6c.0264,0,.0525,0,.0786.001A8.0271,8.0271,0,0,1,15,2c3.6788,0,6.6923,1.9776,7.7516,5h.0337a6.1641,6.1641,0,0,1,6.1872,5.4141A6.0011,6.0011,0,0,1,23,19l-4,0v9h3Z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div
+        className="iot--card--content"
+        data-testid="Card-content"
+        style={
+          Object {
+            "--card-content-height": "256px",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Card/Card basic stateful example with custom expand icon 1`] = `
 <div
   className="storybook-container"
