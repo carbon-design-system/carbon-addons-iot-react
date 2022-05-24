@@ -203,6 +203,7 @@ $duration-moderate-01: 150ms;
   &__title {
     @include type-style('productive-heading-03');
     @include multiline-text-overflow(2, 1.4rem);
+    color: $text-primary;
     // animation: line-clamper $duration-moderate-02 ease-in-out forwards reverse;
     margin-bottom: $spacing-03;
     margin-right: $spacing-07;
