@@ -592,3 +592,51 @@ export const WithCustomFilters = () => {
 };
 
 WithCustomFilters.storyName = 'with custom filters';
+
+export const NoRangeInToolbar = () => {
+  const size = select('size', [CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE], CARD_SIZES.LARGEWIDE);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: spacing05 + 4,
+      }}
+    >
+      <TableCard
+        title="Open Alerts"
+        id="table-list"
+        tooltip="Here's a Tooltip"
+        content={{
+          columns: tableColumns,
+          expandedRows: [
+            {
+              id: 'long_description',
+              label: 'Description',
+              linkTemplate: {
+                href: text('href', 'http://ibm.com/{pressure}'),
+              },
+            },
+            {
+              id: 'other_description',
+              label: 'Other content to show',
+            },
+            {
+              id: 'hour',
+              label: 'Time',
+              type: 'TIMESTAMP',
+            },
+          ],
+        }}
+        values={tableData}
+        onCardAction={action('onCardAction')}
+        size={size}
+        isLoading={boolean('isLoading', false)}
+        availableActions={{ range: false }}
+      />
+    </div>
+  );
+};
+
+NoRangeInToolbar.storyName = 'No range in toolbar';

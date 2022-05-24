@@ -1242,6 +1242,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SELECTIONS_ACTIONS_GROUP
         )
       : null,
+    useRadioButtonSingleSelect: shouldCreate('useRadioButtonSingleSelect')
+      ? boolean(
+          'Use radio button for single select (options.useRadioButtonSingleSelect)',
+          getDefaultValue('useRadioButtonSingleSelect'),
+          SELECTIONS_ACTIONS_GROUP
+        )
+      : null,
     selectedIds: shouldCreate('selectedIds')
       ? object(
           'Batch actions for selected rows (view.table.selectedIds)',
