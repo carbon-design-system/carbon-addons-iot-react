@@ -45,12 +45,15 @@ const dataItemsV2 = [
     dataSourceId: 'temp_last',
     label: '{high} temp',
     unit: '{unitVar}',
-    downSampleMethods: [
-      { id: 'none', text: 'None' },
-      { id: 'max', text: 'Maximum' },
-      { id: 'min', text: 'Minimum' },
-    ],
+    hasStreamingMetricEnabled: true,
   },
+  {
+    dataItemId: 'elevators',
+    dataSourceId: 'elevators',
+    label: 'Elevators',
+    unit: 'floor',
+    hasStreamingMetricEnabled: true,
+  }
 ];
 
 let cardConfigWithPresets;
@@ -160,23 +163,16 @@ describe('HotspotEditorDataSourceTab', () => {
     });
   });
 
-  it('pops the data items modal', async () => {
+  it('pops the data items modal with downsample methods', async () => {
     const onChange = jest.fn();
-    const onEditDataItem = jest.fn().mockImplementation(() => dataItemsV2);
-    const downSampleMethods = cardConfigWithPresets.content.hotspots[0];
-    downSampleMethods.content.attributes[0].downSampleMethod = [
+    const onEditDataItem = jest.fn().mockImplementation(() => [
       { id: 'none', text: 'None' },
       { id: 'max', text: 'Maximum' },
       { id: 'min', text: 'Minimum' },
-    ];
-    downSampleMethods.content.attributes[1].downSampleMethod = [
-      { id: 'none', text: 'None' },
-      { id: 'max', text: 'Maximum' },
-      { id: 'min', text: 'Minimum' },
-    ];
+    ]);
     render(
       <HotspotEditorDataSourceTab
-        hotspot={downSampleMethods}
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
         cardConfig={cardConfigWithPresets}
         dataItems={dataItemsV2}
         onChange={onChange}
@@ -186,7 +182,25 @@ describe('HotspotEditorDataSourceTab', () => {
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
-    // Card config with the elevators hotspot removed
+    
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+  });
+  it('pops the data items modal without downsample methods', async () => {
+    const onChange = jest.fn();
+    const onEditDataItem = jest.fn().mockImplementation(() => []);
+    render(
+      <HotspotEditorDataSourceTab
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        cardConfig={cardConfigWithPresets}
+        dataItems={dataItemsV2}
+        onChange={onChange}
+        translateWithId={() => {}}
+        onEditDataItem={onEditDataItem}
+      />
+    );
+    userEvent.click(screen.getAllByRole('button')[2]);
+    await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
+  
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 

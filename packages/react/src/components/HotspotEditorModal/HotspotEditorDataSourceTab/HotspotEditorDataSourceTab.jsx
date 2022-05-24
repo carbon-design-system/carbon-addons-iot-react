@@ -52,7 +52,7 @@ const propTypes = {
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
-    onEditDataItem: PropTypes.func,
+    onEditDataItem: PropTypes.func
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
@@ -75,7 +75,7 @@ const propTypes = {
   /** An object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } */
   availableDimensions: PropTypes.shape({}),
-  onEditDataItem: PropTypes.func,
+  onEditDataItem: PropTypes.func
 };
 
 const defaultProps = {
@@ -115,7 +115,7 @@ const HotspotEditorDataSourceTab = ({
   testID,
   testId,
   translateWithId,
-  onEditDataItem,
+  onEditDataItem
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -156,16 +156,16 @@ const HotspotEditorDataSourceTab = ({
   }));
 
   const handleEditButton = useCallback(
-    async (dataItem) => {
+    async(dataItem) => {
       const dataItemWithMetaData = dataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
       // Call back function for on click of edit button
       if (onEditDataItem) {
         const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        console.log(dataItem);
-        if (!isEmpty(downSampleMethods)) {
-          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        console.log(downSampleMethods)
+        if (!isEmpty(downSampleMethods)){
+          dataItemWithMetaData.downSampleMethods = downSampleMethods
         }
       }
       // need to reset the card to include the latest dataSection
