@@ -107,7 +107,7 @@ const SidePanel = ({
       : {
           icon: direction === 'right' ? OpenLeft : OpenRight,
           label: mergedI18n.openIconLabel,
-          tooltipPostion: direction,
+          tooltipPostion: direction === 'right' ? 'left' : 'right',
         };
   }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction]);
   const actionIconBtns = useMemo(
