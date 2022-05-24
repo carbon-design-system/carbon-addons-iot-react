@@ -10891,6 +10891,115 @@ Map {
       },
     },
   },
+  "SidePanel" => Object {
+    "defaultProps": Object {
+      "actionItems": null,
+      "direction": "right",
+      "i18n": Object {
+        "closeIconLabel": "Close",
+        "openIconLabel": "Open",
+        "primaryButtonLabel": "Save",
+        "secondaryButtonLabel": "Cancel",
+      },
+      "isCondensed": false,
+      "isFullWidth": false,
+      "isOpen": false,
+      "onPrimaryButtonClick": undefined,
+      "onSecondaryButtonClick": undefined,
+      "onToggle": undefined,
+      "subtitle": null,
+      "testId": "side-panel",
+      "title": null,
+      "type": undefined,
+    },
+    "propTypes": Object {
+      "actionItems": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "buttonCallback": Object {
+                  "type": "func",
+                },
+                "buttonIcon": Object {
+                  "type": "elementType",
+                },
+                "buttonLabel": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeIconLabel": Object {
+              "type": "string",
+            },
+            "openIconLabel": Object {
+              "type": "string",
+            },
+            "primaryButtonLabel": Object {
+              "type": "string",
+            },
+            "secondaryButtonLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isCondensed": Object {
+        "type": "bool",
+      },
+      "isFullWidth": Object {
+        "type": "bool",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onPrimaryButtonClick": Object {
+        "type": "func",
+      },
+      "onSecondaryButtonClick": Object {
+        "type": "func",
+      },
+      "onToggle": Object {
+        "type": "func",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "inline",
+            "over",
+          ],
+        ],
+        "type": "oneOf",
+      },
+    },
+  },
   "SuiteHeader" => Object {
     "ROUTE_TYPES": Object {
       "ABOUT": "ABOUT",

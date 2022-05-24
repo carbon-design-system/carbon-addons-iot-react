@@ -1,0 +1,80 @@
+# `SidePanel` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+The `SidePanel` component keeps users in the context of a page while they do tasks such as navigating, editing, viewing details, or configuring a resource by using a slide-in, inline, or slide-over side panel.
+
+```jsx
+import { SidePanel } from 'carbon-addons-iot-react';
+
+const actionItemButtons = [
+  {
+    buttonLabel: 'Edit',
+    buttonIcon: Edit16,
+    buttonCallback: action('Edit clicked'),
+  },
+  {
+    buttonLabel: 'Info',
+    buttonIcon: Information16,
+    buttonCallback: action('Info clicked'),
+  },
+  {
+    buttonLabel: 'Send',
+    buttonIcon: SendAlt16,
+    buttonCallback: action('Send clicked'),
+  },
+];
+
+<SidePanel
+  isOpen={true}
+  direction={'left'}
+  type={'inline'}
+  title={'My Title'}
+  subtitle={'Subtitle'}
+  actionItems={actionItems}
+  onToggle={() => setIsOpen((prev) => !prev)}
+  onPrimaryButtonClick={handlePrimaryButtonClick}
+  onSecondaryButtonClick={handleSecondaryButtonClick}
+>
+  <Content />
+</SidePanel>;
+```
+
+## Props
+
+| Name                   | Type                                                                       | Default                                                                                                    | Description                                                                                                  |
+| :--------------------- | :------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| isopen                 | bool                                                                       | false                                                                                                      | side panel is expanded or collapsed                                                                          |
+| isCondensed            | bool                                                                       | false                                                                                                      | whether the header is in condensed mode. Is triggered internally on scroll of content                        |
+| type                   | string                                                                     | undefined (slide in)                                                                                       | override the default slide in behavior to be either inline or slide over                                     |
+| direction              | string                                                                     | 'right'                                                                                                    | silde in from right or left direction                                                                        |
+| onToggle               | function                                                                   | undefined                                                                                                  | callback to add to the open and close buttons of the side panel. If undefined neither icons will be rendered |
+| title                  | string                                                                     | ''                                                                                                         | main title in header section                                                                                 |
+| subtitle               | string                                                                     | ''                                                                                                         | sub title in header section                                                                                  |
+| actionItems            | [{buttonLabel: string, buttonIcon: elementType, buttonCallback: function}] | undefined                                                                                                  | icon buttons in action bar                                                                                   |
+| testId                 | string                                                                     | 'side-panel'                                                                                               | test id passed to component                                                                                  |
+| onPrimaryButtonClick   | func                                                                       | undefined                                                                                                  | footer primary button callback, If passed in will render the primary button                                  |
+| onSecondaryButtonClick | func                                                                       | undefined                                                                                                  | footer secondary button callback, If passed in will render the secondary button                              |
+| testId                 | string                                                                     | 'side-panel'                                                                                               |                                                                                                              |
+| i18n                   | {closeIconLabel, openIconLabel, primaryButtonLabel, secondaryButtonLabel}  | closeIconLabel: 'Close', openIconLabel: 'Open', primaryButtonLabel: 'Save', secondaryButtonLabel: 'Cancel' |
+| children               | any                                                                        | undefined                                                                                                  | items rendered in content section                                                                            |
+| isFullWidth            | bool                                                                       | false                                                                                                      | option to make content extend full width of side panel                                                       |
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SidePanel)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/SidePanel/SidePanel.mdx).
