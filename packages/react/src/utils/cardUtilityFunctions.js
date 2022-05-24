@@ -90,6 +90,31 @@ export const compareGrains = (grain1, grain2) => {
   return 1;
 };
 
+export const getAdditionalCardSize = (size) => {
+  switch (size) {
+    default:
+      return size;
+    case 'Extra small, Short':
+      return 'SMALL';
+    case 'Medium, Short':
+      return 'SMALLWIDE';
+    case 'Extra large, Short':
+      return 'SMALLFULL';
+    case 'Extra small, Regular':
+      return 'MEDIUMTHIN';
+    case 'Medium, Regular':
+      return 'MEDIUM';
+    case 'Extra large, Regular':
+      return 'MEDIUM';
+    case 'Extra small, Extra tall':
+      return 'LARGETHIN';
+    case 'Medium, Extra tall':
+      return 'LARGE';
+    case 'Extra large, Extra tall':
+      return 'LARGEWIDE';
+  }
+};
+
 export const getUpdatedCardSize = (oldSize) => {
   const changedSize =
     oldSize === 'XSMALL'
@@ -113,7 +138,8 @@ export const getUpdatedCardSize = (oldSize) => {
     }
     newSize = changedSize;
   }
-  return newSize;
+
+  return newSize !== oldSize ? newSize : getAdditionalCardSize(oldSize);
 };
 
 /**
