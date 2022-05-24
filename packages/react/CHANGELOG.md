@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.56](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.55...v2.149.0-next.56) (2022-05-24)
+
+
+### Bug Fixes
+
+* **tablecard:** fix on support false value for table range ([bf7f8ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bf7f8ef0ac2111507a96714fce91994e9bf0438a))
+
+
+
+
+
 # [2.149.0-next.55](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.54...v2.149.0-next.55) (2022-05-23)
 
 
