@@ -321,19 +321,17 @@ const DataSeriesFormItem = ({
   );
 
   const handleEditButton = useCallback(
-    (dataItem, i) => {
+    async (dataItem, i) => {
       const dataItemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
+      // Call back function for on click of edit button
       if (onEditDataItem) {
-        const downSampleMethods = onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        validDataItems.forEach((validDataItem) => {
-          if (validDataItem.dataItemId === dataItem.dataItemId) {
-            return { ...validDataItem, downSampleMethods };
-          }
-          return validDataItem;
-        });
+        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(downSampleMethods)) {
+          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        }
       }
       // need to reset the card to include the latest dataSection
       onChange({

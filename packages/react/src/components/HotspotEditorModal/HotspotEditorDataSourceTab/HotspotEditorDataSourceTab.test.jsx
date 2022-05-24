@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -36,6 +36,20 @@ const dataItems = [
     dataSourceId: 'other_metric',
     label: 'Other metric',
     unit: 'lbs',
+  },
+];
+
+const dataItemsV2 = [
+  {
+    dataItemId: 'temp_last',
+    dataSourceId: 'temp_last',
+    label: '{high} temp',
+    unit: '{unitVar}',
+    downSampleMethods: [
+      { id: 'none', text: 'None' },
+      { id: 'max', text: 'Maximum' },
+      { id: 'min', text: 'Minimum' },
+    ],
   },
 ];
 
@@ -146,18 +160,32 @@ describe('HotspotEditorDataSourceTab', () => {
     });
   });
 
-  it('pops the data items modal', () => {
+  it('pops the data items modal', async () => {
     const onChange = jest.fn();
+    const onEditDataItem = jest.fn().mockImplementation(() => dataItemsV2);
+    const downSampleMethods = cardConfigWithPresets.content.hotspots[0];
+    downSampleMethods.content.attributes[0].downSampleMethod = [
+      { id: 'none', text: 'None' },
+      { id: 'max', text: 'Maximum' },
+      { id: 'min', text: 'Minimum' },
+    ];
+    downSampleMethods.content.attributes[1].downSampleMethod = [
+      { id: 'none', text: 'None' },
+      { id: 'max', text: 'Maximum' },
+      { id: 'min', text: 'Minimum' },
+    ];
     render(
       <HotspotEditorDataSourceTab
-        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        hotspot={downSampleMethods}
         cardConfig={cardConfigWithPresets}
-        dataItems={dataItems}
+        dataItems={dataItemsV2}
         onChange={onChange}
         translateWithId={() => {}}
+        onEditDataItem={onEditDataItem}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
+    await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
     // Card config with the elevators hotspot removed
     expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
@@ -349,4 +377,26 @@ describe('HotspotEditorDataSourceTab', () => {
 
     expect(screen.getByRole('option', { name: /Modified Label/i })).toBeVisible();
   });
+
+  // it('calls onChange== with the new threshold that has a dataSourceId', () => {
+  //   const onChange = jest.fn();
+  //   render(
+  //     <HotspotEditorDataSourceTab
+  //       hotspot={cardConfigWithPresets.content.hotspots[0]}
+  //       cardConfig={cardConfigWithPresets}
+  //       dataItems={dataItems}
+  //       onChange={onChange}
+  //       translateWithId={() => {}}
+  //       onEditDataItem={jest.fn()}
+  //     />
+  //   );
+  //   // edit button
+  //   userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
+  //   expect(onChange).toHaveBeenCalledWith({
+  //     dataItemId: 'temp_last',
+  //     dataSourceId: 'temp_last',
+  //     label: '{high} temp',
+  //     unit: '{unitVar}',
+  //   });
+  // });
 });
