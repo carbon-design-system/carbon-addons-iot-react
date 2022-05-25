@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.149.0-next.58](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.57...v2.149.0-next.58) (2022-05-25)
+
+
+### Bug Fixes
+
+* **suiteheader:** allow for updates to SideNav ([6a17bf8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a17bf81eed8f21faa42d1989c2f2aec24878ae7))
+
+
+
+
+
 # [2.149.0-next.57](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.56...v2.149.0-next.57) (2022-05-24)
 
 
