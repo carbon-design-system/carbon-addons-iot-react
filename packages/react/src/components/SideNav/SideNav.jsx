@@ -200,20 +200,7 @@ const SideNav = ({
         ? handleSpecificKeyDown(['Escape'], (evt) => evt.stopPropagation())
         : undefined;
       const content = searchValue ? markText(childLink.content, searchValue) : childLink.content;
-      // istanbul ignore else
-      if (link.metaData?.onClick) {
-        return (
-          <SideNavLink
-            onKeyDown={onKeyDown}
-            key={`menu-link-${link.childContent.indexOf(childLink)}-child`}
-            isActive={childLink.isActive}
-            data-testid={`${testId}-menu-item-${index}`}
-            {...childLink.metaData}
-          >
-            {content}
-          </SideNavLink>
-        );
-      }
+
       return (
         <SideNavMenuItem
           onKeyDown={onKeyDown}
