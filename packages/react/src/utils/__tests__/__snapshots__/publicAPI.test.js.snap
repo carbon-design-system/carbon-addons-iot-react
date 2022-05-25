@@ -10805,6 +10805,9 @@ Map {
                             "isRequired": true,
                             "type": "oneOfType",
                           },
+                          "isActive": Object {
+                            "type": "bool",
+                          },
                           "metaData": Object {
                             "args": Array [
                               Object {
@@ -10832,9 +10835,6 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
-                "current": Object {
-                  "type": "bool",
-                },
                 "icon": Object {
                   "args": Array [
                     Array [
@@ -10848,6 +10848,9 @@ Map {
                   ],
                   "isRequired": true,
                   "type": "oneOfType",
+                },
+                "isActive": Object {
+                  "type": "bool",
                 },
                 "isEnabled": Object {
                   "type": "bool",
@@ -11500,6 +11503,9 @@ Map {
                                   "isRequired": true,
                                   "type": "oneOfType",
                                 },
+                                "isActive": Object {
+                                  "type": "bool",
+                                },
                                 "metaData": Object {
                                   "args": Array [
                                     Object {
@@ -11527,9 +11533,6 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
-                      "current": Object {
-                        "type": "bool",
-                      },
                       "icon": Object {
                         "args": Array [
                           Array [
@@ -11543,6 +11546,9 @@ Map {
                         ],
                         "isRequired": true,
                         "type": "oneOfType",
+                      },
+                      "isActive": Object {
+                        "type": "bool",
                       },
                       "isEnabled": Object {
                         "type": "bool",
