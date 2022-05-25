@@ -159,6 +159,11 @@ const defaultProps = {
     openJSONButton: 'Open JSON editor',
     searchPlaceHolderText: 'Enter a search',
     editDataItems: 'Edit data items',
+    modalTitle: 'Edit card JSON configuration',
+    modalLabel: 'Card editor',
+    modalHelpText:
+      'The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.',
+    modalIconDescription: 'Close',
   },
   getValidDimensions: null,
   getValidDataItems: null,
