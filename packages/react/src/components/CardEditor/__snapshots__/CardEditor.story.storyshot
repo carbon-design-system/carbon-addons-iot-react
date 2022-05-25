@@ -1363,46 +1363,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -2452,46 +2452,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -3971,46 +3971,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -4900,46 +4900,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -5525,46 +5525,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -6362,46 +6362,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -7456,46 +7456,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -8431,46 +8431,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
               </div>
             </div>
           </div>
-          <div
-            className="iot--card-edit-form--footer"
-          >
-            <button
-              aria-describedby={null}
-              aria-pressed={null}
-              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-              data-testid="card-edit-form-open-editor-button"
-              disabled={false}
-              onBlur={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              onMouseEnter={[Function]}
-              onMouseLeave={[Function]}
-              tabIndex={0}
-              type="button"
-            >
-              Open JSON editor
-              <svg
-                aria-hidden={true}
-                className="bx--btn__icon"
-                fill="currentColor"
-                focusable="false"
-                height={16}
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 32 32"
-                width={16}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                />
-                <path
-                  d="M5.91 15H26.080000000000002V17H5.91z"
-                  transform="rotate(-75 15.996 16)"
-                />
-              </svg>
-            </button>
-          </div>
         </div>
+      </div>
+      <div
+        className="iot--card-editor--footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+          data-testid="card-editor-open-editor-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Open JSON editor
+          <svg
+            aria-hidden={true}
+            className="bx--btn__icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+            />
+            <path
+              d="M5.91 15H26.080000000000002V17H5.91z"
+              transform="rotate(-75 15.996 16)"
+            />
+          </svg>
+        </button>
       </div>
       <div
         className="iot--card-editor--footer"
@@ -9073,46 +9073,46 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
             </div>
-            <div
-              className="iot--card-edit-form--footer"
-            >
-              <button
-                aria-describedby={null}
-                aria-pressed={null}
-                className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-                data-testid="card-edit-form-open-editor-button"
-                disabled={false}
-                onBlur={[Function]}
-                onClick={[Function]}
-                onFocus={[Function]}
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                tabIndex={0}
-                type="button"
-              >
-                Open JSON editor
-                <svg
-                  aria-hidden={true}
-                  className="bx--btn__icon"
-                  fill="currentColor"
-                  focusable="false"
-                  height={16}
-                  preserveAspectRatio="xMidYMid meet"
-                  viewBox="0 0 32 32"
-                  width={16}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
-                  />
-                  <path
-                    d="M5.91 15H26.080000000000002V17H5.91z"
-                    transform="rotate(-75 15.996 16)"
-                  />
-                </svg>
-              </button>
-            </div>
           </div>
+        </div>
+        <div
+          className="iot--card-editor--footer"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
+            data-testid="card-editor-open-editor-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Open JSON editor
+            <svg
+              aria-hidden={true}
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M31 16L24 23 22.59 21.59 28.17 16 22.59 10.41 24 9 31 16zM1 16L8 9 9.41 10.41 3.83 16 9.41 21.59 8 23 1 16z"
+              />
+              <path
+                d="M5.91 15H26.080000000000002V17H5.91z"
+                transform="rotate(-75 15.996 16)"
+              />
+            </svg>
+          </button>
         </div>
         <div
           className="iot--card-editor--footer"

@@ -409,7 +409,7 @@ const CardEditor = ({
         <>
           <div className={`${baseClassName}--footer`}>
             <Button
-              testId={`${testID}-open-editor-button`}
+              testId={`${testID || testId}-open-editor-button`}
               kind="ghost"
               size="small"
               renderIcon={Code16}
