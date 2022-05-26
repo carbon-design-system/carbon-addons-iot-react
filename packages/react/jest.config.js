@@ -14,6 +14,7 @@ module.exports = {
     '!src/components/**/*.test.e2e.jsx',
     '!src/components/StorybookSnapshots.test.js',
     '!src/components/Table/Table.test.helpers.jsx',
+    '!src/components/Table/Table.story.helpers.jsx',
     '!src/components/Table/TableColumnCustomizationModal/tableColumnCustomizationTestUtils.js',
   ],
   coveragePathIgnorePatterns: ['/node_modules/', '/lib/', '/coverage/'],
@@ -27,7 +28,7 @@ module.exports = {
       lines: 90,
     },
     // set coverage to 90 for all items except those who are covered by e2e cypress tests
-    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow|TableColumnCustomizationModal|ListBuilder).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow|TableColumnCustomizationModal|ListBuilder|SidePanel).jsx': {
       statements: 90,
       branches: 90,
       functions: 90,
@@ -51,11 +52,11 @@ module.exports = {
       lines: 80,
     },
     './src/components/DateTimePicker/DateTimePickerV2.jsx': {
-      branches: 89,
+      branches: 84,
     },
     './src/components/DateTimePicker/DateTimePicker.jsx': {
       statements: 79,
-      branches: 80,
+      branches: 79,
       lines: 80,
       functions: 78,
     },
@@ -88,6 +89,12 @@ module.exports = {
     },
     './src/components/ListBuilder/ListBuilder.jsx': {
       functions: 88,
+    },
+    './src/components/SidePanel/SidePanel.jsx': {
+      statements: 81,
+      branches: 80,
+      lines: 86,
+      functions: 63,
     },
   },
   globals: {

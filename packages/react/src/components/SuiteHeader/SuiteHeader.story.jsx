@@ -1,11 +1,10 @@
 /* eslint-disable no-script-url */
 /* eslint-disable no-alert */
 
-import React from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
-import { ScreenOff16, Switcher24 } from '@carbon/icons-react';
-import Chip from '@carbon/icons-react/es/chip/24';
-import Dashboard from '@carbon/icons-react/es/dashboard/24';
+import { action } from '@storybook/addon-actions';
+import { ScreenOff16, Switcher24, Home24 } from '@carbon/icons-react';
 import Group from '@carbon/icons-react/es/group/24';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
 import Bee from '@carbon/icons-react/es/bee/24';
@@ -21,89 +20,6 @@ import SuiteHeaderREADME from './SuiteHeader.mdx';
 
 const { prefix } = settings;
 
-const sideNavLinks = [
-  {
-    icon: Switcher24,
-    isEnabled: true,
-    metaData: {
-      tabIndex: 0,
-      label: 'Boards',
-      element: ({ children, ...rest }) => <div {...rest}>{children}</div>,
-      // isActive: true,
-    },
-    linkContent: 'Boards',
-    childContent: [
-      {
-        metaData: {
-          label: 'Yet another link',
-          title: 'Yet another link',
-          element: 'button',
-        },
-        content: 'Yet another link',
-      },
-    ],
-  },
-  {
-    isEnabled: true,
-    icon: Chip,
-    metaData: {
-      label: 'Devices',
-      href: 'https://google.com',
-      element: 'a',
-      target: '_blank',
-    },
-    linkContent: 'Devices',
-  },
-  {
-    isEnabled: true,
-    icon: Dashboard,
-    metaData: {
-      label: 'Dashboards',
-      href: 'https://google.com',
-      element: 'a',
-      target: '_blank',
-    },
-    linkContent: 'Dashboards',
-    childContent: [
-      {
-        metaData: {
-          label: 'Link 1',
-          title: 'Link 1',
-          element: 'button',
-        },
-        content: 'Link 1',
-      },
-      {
-        metaData: {
-          label: 'Link 2',
-          title: 'Link 2',
-        },
-        content: 'Link 2',
-      },
-    ],
-  },
-  {
-    isEnabled: true,
-    icon: Group,
-    metaData: {
-      label: 'Members',
-      element: 'button',
-    },
-    linkContent: 'Members',
-    childContent: [
-      {
-        metaData: {
-          label: 'Yet another link',
-          title: 'Yet another link',
-          element: 'button',
-        },
-        content: 'Link 3',
-        isActive: true,
-      },
-    ],
-  },
-];
-
 const customActionItems = [
   {
     label: 'aHiddenIcon',
@@ -116,6 +32,7 @@ const customActionItems = [
         <NotificationOn id="notification-button" fill="white" description="Icon" />
       </span>
     ),
+    onClick: action('bell clicked'),
   },
   {
     label: 'bee',
@@ -295,7 +212,7 @@ const customApplications = [
 ];
 
 export default {
-  title: '1 - Watson IoT/SuiteHeader',
+  title: '1 - Watson IoT/UI shell/SuiteHeader',
 
   parameters: {
     component: SuiteHeader,
@@ -348,6 +265,50 @@ export const Default = () => {
 
 Default.storyName = 'default';
 
+export const NavigationalActionsBlocked = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView={boolean('isAdminView', false)}
+      routes={object('routes', {
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      applications={object('applications', [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+      onRouteChange={() => Promise.resolve(false)}
+    />
+  );
+};
+
+NavigationalActionsBlocked.storyName = 'Navigational actions blocked';
+
 export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
@@ -391,43 +352,143 @@ export const HeaderWithExtraContent = () => {
 
 HeaderWithExtraContent.storyName = 'Header with extra content';
 
-export const HeaderWithSideNav = () => (
-  <SuiteHeader
-    suiteName="Application Suite"
-    appName="Application Name"
-    userDisplayName="Admin User"
-    username="adminuser"
-    routes={{
-      profile: 'https://www.ibm.com',
-      navigator: 'https://www.ibm.com',
-      admin: 'https://www.ibm.com',
-      logout: 'https://www.ibm.com',
-      whatsNew: 'https://www.ibm.com',
-      gettingStarted: 'https://www.ibm.com',
-      documentation: 'https://www.ibm.com',
-      requestEnhancement: 'https://www.ibm.com',
-      support: 'https://www.ibm.com',
-      about: 'https://www.ibm.com',
-    }}
-    applications={[
-      {
-        id: 'monitor',
-        name: 'Monitor',
-        href: 'https://www.ibm.com',
-      },
-      {
-        id: 'health',
-        name: 'Health',
-        href: 'https://www.ibm.com',
-        isExternal: true,
-      },
-    ]}
-    sideNavProps={{
-      links: sideNavLinks,
-    }}
-  />
-);
+export const HeaderWithSideNav = () => {
+  const [linksState, setLinksState] = useState([]);
+  const onSideNavMenuItemClick = (linkLabel) => {
+    setLinksState((currentLinks) =>
+      currentLinks.map((group) => {
+        if (group.childContent) {
+          return {
+            ...group,
+            childContent: group.childContent.map((child) => ({
+              ...child,
+              isActive: linkLabel === child.metaData.label,
+            })),
+          };
+        }
 
+        return { ...group, isActive: linkLabel === group.metaData.label };
+      })
+    );
+  };
+
+  useEffect(() => {
+    setLinksState([
+      {
+        icon: Home24,
+        isEnabled: true,
+        isPinned: true,
+        metaData: {
+          onClick: () => onSideNavMenuItemClick('Home'),
+          tabIndex: 0,
+          label: 'Home',
+        },
+        linkContent: 'Home',
+      },
+      {
+        isEnabled: true,
+        icon: Switcher24,
+        metaData: {
+          label: 'Dashboards',
+          element: 'button',
+        },
+        linkContent: 'Dashboards',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 1',
+              title: 'Link 1',
+              onClick: () => onSideNavMenuItemClick('Link 1'),
+              element: 'button',
+            },
+            content: 'Link 1',
+          },
+          {
+            metaData: {
+              label: 'Link 2',
+              title: 'Link 2',
+              onClick: () => onSideNavMenuItemClick('Link 2'),
+            },
+            content: 'Link 2',
+          },
+        ],
+      },
+      {
+        isEnabled: true,
+        icon: Group,
+        metaData: {
+          label: 'Members',
+          element: 'button',
+        },
+        linkContent: 'Members',
+        childContent: [
+          {
+            metaData: {
+              label: 'Link 3',
+              title: 'Link 3',
+              onClick: () => onSideNavMenuItemClick('Link 3'),
+              element: 'button',
+            },
+            content: 'Link 3',
+            isActive: true,
+          },
+          {
+            metaData: {
+              label: 'Link 4',
+              title: 'Link 4',
+              onClick: () => onSideNavMenuItemClick('Link 4'),
+              element: 'button',
+            },
+            content: 'Link 4',
+            isActive: false,
+          },
+        ],
+      },
+    ]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <>
+      <SuiteHeader
+        suiteName="Application Suite"
+        appName="Application Name"
+        userDisplayName="Admin User"
+        username="adminuser"
+        routes={{
+          profile: 'https://www.ibm.com',
+          navigator: 'https://www.ibm.com',
+          admin: 'https://www.ibm.com',
+          logout: 'https://www.ibm.com',
+          whatsNew: 'https://www.ibm.com',
+          gettingStarted: 'https://www.ibm.com',
+          documentation: 'https://www.ibm.com',
+          requestEnhancement: 'https://www.ibm.com',
+          support: 'https://www.ibm.com',
+          about: 'https://www.ibm.com',
+        }}
+        applications={[
+          {
+            id: 'monitor',
+            name: 'Monitor',
+            href: 'https://www.ibm.com',
+          },
+          {
+            id: 'health',
+            name: 'Health',
+            href: 'https://www.ibm.com',
+            isExternal: true,
+          },
+        ]}
+        sideNavProps={{
+          links: linksState,
+        }}
+      />
+    </>
+  );
+};
+
+HeaderWithSideNav.decorators = [createElement];
 HeaderWithSideNav.storyName = 'Header with side nav';
 
 export const HeaderWithCustomSideNav = () => (

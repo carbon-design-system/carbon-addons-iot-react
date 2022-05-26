@@ -32,7 +32,11 @@ import {
   tableCancelMultiSortColumns,
   tableClearMultiSortColumns,
 } from './tableActionCreators';
-import { initialState, tableColumns } from './Table.story';
+import { getTableColumns, getInitialState } from './Table.story.helpers';
+
+const initialState = getInitialState();
+
+const tableColumns = getTableColumns();
 
 describe('table reducer', () => {
   it('nothing', () => {
@@ -717,6 +721,25 @@ describe('table reducer', () => {
       expect(turnOffRowEditActiveBar.view.table.rowActions).toHaveLength(0);
       expect(turnOffRowEditActiveBar.view.table.rowActions).toEqual([]);
       expect(turnOffRowEditActiveBar.view.toolbar.activeBar).toBeUndefined();
+
+      // It updates element used for row editing
+      const initialRowEditState = merge({}, initialState, {
+        view: {
+          toolbar: { rowEditBarButtons: <div>initial</div> },
+          table: { singleRowEditButtons: <div>initial</div> },
+        },
+      });
+      const modifiedRowEditState = tableReducer(
+        initialRowEditState,
+        tableRegister({
+          view: {
+            toolbar: { rowEditBarButtons: <div>updated</div> },
+            table: { singleRowEditButtons: <div>updated</div> },
+          },
+        })
+      );
+      expect(modifiedRowEditState.view.toolbar.rowEditBarButtons).toEqual(<div>updated</div>);
+      expect(modifiedRowEditState.view.table.singleRowEditButtons).toEqual(<div>updated</div>);
     });
   });
 });
@@ -754,11 +777,25 @@ describe('filter, search and sort', () => {
   });
 
   it('filterData with custom comparison', () => {
-    const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const dateValue = new Date();
+    const mockData = [
+      {
+        values: {
+          number: 10,
+          node: <Add20 />,
+          string: 'string',
+          null: null,
+          date: dateValue.toISOString().split('T')[0],
+        },
+      },
+    ];
     const stringFilter = { columnId: 'string', value: 'String' };
     const numberFilter = { columnId: 'number', value: 10 };
+    const dateFilter = { columnId: 'date', value: dateValue };
 
     const customFilterFunction = (columnFilterValue, value) => columnFilterValue === value;
+    const customDateFilterFunction = (columnFilterValue, value) =>
+      columnFilterValue.split('T')[0] === new Date(value).toISOString().split('T')[0];
     expect(
       filterData(
         mockData,
@@ -783,14 +820,45 @@ describe('filter, search and sort', () => {
         [{ id: 'number', filter: { filterFunction: customFilterFunction } }]
       )
     ).toHaveLength(1);
+    // date
+    expect(
+      filterData(
+        mockData,
+        [dateFilter],
+        [{ id: 'date', filter: { filterFunction: customDateFilterFunction } }]
+      )
+    ).toHaveLength(1);
   });
 
   it('searchData', () => {
-    const mockData = [{ values: { number: 10, node: <Add20 />, string: 'string', null: null } }];
+    const mockData = [
+      {
+        values: {
+          number: 10,
+          node: <Add20 />,
+          string: 'string',
+          null: null,
+          boolean: true,
+        },
+      },
+      {
+        values: {
+          number: 30,
+          node: <Add20 />,
+          string: 'text',
+          null: null,
+          boolean: false,
+        },
+      },
+    ];
     expect(searchData(mockData, 10)).toHaveLength(1);
     expect(searchData(mockData, 'string')).toHaveLength(1);
     // case insensitive
     expect(searchData(mockData, 'STRING')).toHaveLength(1);
+
+    // search boolean values
+    expect(searchData(mockData, 'false')).toHaveLength(1);
+    expect(searchData(mockData, 'true')).toHaveLength(1);
   });
 
   it('filterSearchAndSort', () => {
@@ -1015,7 +1083,7 @@ describe('filter, search and sort', () => {
 
     const applyAction = tableAdvancedFiltersApply({ advanced: { filterIds: ['test-filter'] } });
     const newState = tableReducer(myState, applyAction);
-    expect(newState.view.table.filteredData).toHaveLength(38);
+    expect(newState.view.table.filteredData).toHaveLength(36);
   });
 
   it('TABLE_ADVANCED_FILTER_APPLY - LT', () => {

@@ -11,6 +11,7 @@ import {
 import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
+import { useLangDirection } from 'use-lang-direction';
 
 import {
   TableColumnsPropTypes,
@@ -59,6 +60,7 @@ const propTypes = {
   options: PropTypes.shape({
     hasRowExpansion: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    useRadioButtonSingleSelect: PropTypes.bool,
     hasRowActions: PropTypes.bool,
     hasResize: PropTypes.bool,
     hasSingleRowEdit: PropTypes.bool,
@@ -195,6 +197,7 @@ const TableHead = ({
     hasMultiSort,
     useAutoTableLayoutForResize,
     preserveColumnWidths,
+    useRadioButtonSingleSelect,
   },
   columns,
   columnGroups,
@@ -413,6 +416,7 @@ const TableHead = ({
   const showColumnGroups = columnGroups.some(({ id }) =>
     visibleColumns.find(({ columnGroupId }) => id === columnGroupId)
   );
+  const langDir = useLangDirection();
 
   return (
     <CarbonTableHead
@@ -462,6 +466,15 @@ const TableHead = ({
               onChange={() => onSelectAll(!isSelectAllSelected)}
             />
           </TableHeader>
+        ) : hasRowSelection === 'single' && useRadioButtonSingleSelect ? (
+          <TableHeader
+            // TODO: remove deprecated 'testID' in v3
+            testId={`${testID || testId}-row-selection-column`}
+            className={classnames(`${iotPrefix}--table-header-radiobutton`, {
+              [`${iotPrefix}--table-header-radiobutton-resize`]: hasResize,
+            })}
+            translateWithId={(...args) => tableTranslateWithId(...args)}
+          />
         ) : null}
         {ordering.map((item, columnIndex) => {
           const matchingColumnMeta = columns.find((column) => column.id === item.columnId);
@@ -498,6 +511,9 @@ const TableHead = ({
           const columnBelongsToExistingGroup = columnGroups.some(
             ({ id }) => id === item.columnGroupId
           );
+
+          const rightmostColumn = langDir === 'ltr' ? lastVisibleColumn : visibleColumns[0];
+          const flipTooltipDirection = rightmostColumn === item;
 
           return !item.isHidden && matchingColumnMeta ? (
             <TableHeader
@@ -544,6 +560,7 @@ const TableHead = ({
                 truncateCellText={truncateCellText}
                 allowTooltip={false}
                 tooltip={matchingColumnMeta.tooltip}
+                tooltipDirection={flipTooltipDirection ? 'end' : undefined}
               >
                 {matchingColumnMeta.name}
               </TableCellRenderer>

@@ -161,7 +161,7 @@ test('Public API should only change with a semver change', () => {
 
   expect(PublicAPI).toMatchSnapshot();
   expect(console.warn).toHaveBeenCalledWith(
-    `Warning: The Filterable field has been deprecated on the MultiSelect object. Please import and use MultiSelect.Filterable directly.`
+    `Warning: The Filterable field has been deprecated on the MultiSelect object. Please import and use FilterableMultiSelect directly.`
   );
   expect(console.warn).toHaveBeenCalledWith(
     `Warning: The ControlledPasswordInput field has been deprecated on the TextInput object. Please import and use ControlledPasswordInput directly.`

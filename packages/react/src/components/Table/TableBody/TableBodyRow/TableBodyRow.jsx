@@ -1,7 +1,12 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { TableRow, TableExpandRow, TableCell, Checkbox } from 'carbon-components-react';
-import styled from 'styled-components';
+import {
+  TableRow,
+  TableExpandRow,
+  TableCell,
+  Checkbox,
+  RadioButton,
+} from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -13,7 +18,6 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
-import { COLORS } from '../../../../styles/styles';
 
 const { prefix, iotPrefix } = settings;
 
@@ -61,6 +65,8 @@ const propTypes = {
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
+    /** use raidon button on single selection */
+    useRadioButtonSingleSelect: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -70,7 +76,7 @@ const propTypes = {
   /** some columns might be hidden, so total columns has the overall total */
   totalColumns: PropTypes.number.isRequired,
 
-  /** contents of the row each object value is a renderable node keyed by column id */
+  /** contents of the row each object value is a render-able node keyed by column id */
   values: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.node, PropTypes.bool, PropTypes.object, PropTypes.array])
   ).isRequired,
@@ -125,6 +131,9 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+
+  /** True if this is the last child of a nested group */
+  isLastChild: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -154,240 +163,8 @@ const defaultProps = {
   locale: 'en',
   isSelectable: undefined,
   size: undefined,
+  isLastChild: false,
 };
-
-const StyledTableRow = styled(({ isSelectable, isEditMode, ...others }) => (
-  <TableRow {...others} />
-))`
-  &&& {
-    .${prefix}--checkbox {
-      ${(props) => (props.onClick && props.isSelectable !== false ? `cursor: pointer;` : ``)}
-    }
-    :hover {
-      td {
-        ${(props) =>
-          props.isSelectable === false && !props.isEditMode
-            ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-            : ``} /* turn off hover states if the row is set not selectable */
-      }
-      ${(props) =>
-        props.isSelectable === false && !props.isEditMode
-          ? `background-color: inherit; color:#565656;border-bottom-color:#dcdcdc;border-top-color:#ffffff;`
-          : ``} /* turn off hover states if the row is set not selectable */
-    }
-
-
-`;
-
-const StyledSingleSelectedTableRow = styled(({ hasRowSelection, ...props }) => (
-  <TableRow {...props} />
-))`
-  &&& {
-    background: ${COLORS.lightBlue};
-
-    td:first-of-type {
-      position: relative;
-    }
-
-    cursor: pointer;
-    td:first-of-type:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 3px;
-      background-color: ${COLORS.blue};
-      border-right: solid 1px rgb(223,227,230);
-    }
-`;
-
-const StyledTableExpandRow = styled(({ hasRowSelection, ...props }) => (
-  <TableExpandRow {...props} />
-))`
-  &&& {
-    ${// if single nested hierarchy AND there are children rows (meaning this is a parent),
-    // bolden all cells of this row
-    (props) =>
-      props['data-row-nesting'] &&
-      props['data-row-nesting'].hasSingleNestedHierarchy &&
-      props['data-child-count'] > 0
-        ? `td {
-        font-weight: bold
-      }`
-        : ``}
-
-    ${(props) =>
-      props['data-child-count'] === 0 && props['data-row-nesting']
-        ? `
-    td > button.${prefix}--table-expand__button {
-      display: none;
-    }
-    `
-        : `
-    td > button.${prefix}--table-expand__button {
-      position: relative;
-      left: ${props['data-nesting-offset']}px;
-    }
-    `}
-    ${(props) =>
-      props['data-nesting-offset'] > 0
-        ? `
-      td.${prefix}--table-expand {
-        position: relative;
-      }
-      td:first-of-type:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: ${props['data-nesting-offset']}px;
-        background-color: ${COLORS.gray20};
-        border-right: solid 1px rgb(223,227,230);
-      }
-    `
-        : `
-    `}
-    cursor: pointer;
-    td {
-      div .${prefix}--btn--ghost:hover {
-        background: ${COLORS.gray20hover};
-      }
-    }
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
-
-const StyledTableExpandRowExpanded = styled(({ hasRowSelection, ...props }) => (
-  <TableExpandRow {...props} />
-))`
-  &&& {
-    cursor: pointer;
-
-    ${// if single nested hierarchy, bolden all cells of this row
-    (props) =>
-      props['data-row-nesting'] && props['data-row-nesting'].hasSingleNestedHierarchy
-        ? `td {
-        font-weight: bold
-      }`
-        : ``}
-
-    ${(props) =>
-      props['data-row-nesting']
-        ? `
-
-        td.${prefix}--table-expand, td {
-          position: relative;
-          border-color: ${COLORS.gray20};
-        }
-        td > button.${prefix}--table-expand__button {
-          position: relative;
-          left: ${props['data-nesting-offset']}px;
-        }
-        td:first-of-type:before {
-          width: ${props['data-nesting-offset']}px;
-          background-color: rgb(229,237,237);
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
-
-const StyledExpansionTableRow = styled(({ hasRowSelection, ...props }) => <TableRow {...props} />)`
-  &&& {
-    td {
-      background-color: inherit;
-      border-left: 4px solid ${COLORS.blue};
-      border-width: 0 0 0 4px;
-      padding: 0;
-      font-weight: bold;
-    }
-
-    :hover {
-      border: inherit;
-      background-color: inherit;
-      td {
-        background-color: inherit;
-        border-left: solid ${COLORS.blue};
-        border-width: 0 0 0 4px;
-      }
-    }
-
-    ${(props) =>
-      props.hasRowSelection === 'single' && props.isSelected
-        ? `
-        background: ${COLORS.lightBlue};
-
-        td:first-of-type {
-          position: relative;
-        }
-
-        td:first-of-type:after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 3px;
-          background-color: ${COLORS.blue};
-          border-right: solid 1px rgb(223,227,230);
-        }
-        `
-        : ``}
-  }
-`;
-
-const StyledNestedSpan = styled.span`
-  position: relative;
-  left: ${(props) => props.nestingOffset}px;
-  max-width: calc(100% - ${(props) => props.nestingOffset}px);
-  display: block;
-`;
 
 const TableBodyRow = ({
   id,
@@ -406,6 +183,7 @@ const TableBodyRow = ({
     wrapCellText,
     truncateCellText,
     preserveCellWhiteSpace,
+    useRadioButtonSingleSelect,
   },
   tableActions: { onRowSelected, onRowExpanded, onRowClicked, onApplyRowAction, onClearRowError },
   isExpanded,
@@ -432,15 +210,18 @@ const TableBodyRow = ({
   singleRowEditButtons,
   showExpanderColumn,
   size,
+  isLastChild,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
+  const nestingLevelPixels = nestingLevel * 32;
+
   // if this a single hierarchy (i.e. only 1 level of nested children), do NOT show the gray offset
   const nestingOffset = hasRowNesting?.hasSingleNestedHierarchy
     ? 0
     : hasRowSelection === 'single'
-    ? nestingLevel * 16 - singleSelectionIndicatorWidth
-    : nestingLevel * 16;
+    ? nestingLevelPixels - singleSelectionIndicatorWidth
+    : nestingLevelPixels;
 
   const rowSelectionCell =
     hasRowSelection === 'multi' ? (
@@ -450,11 +231,10 @@ const TableBodyRow = ({
         onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* TODO: Replace checkbox with TableSelectRow component when onChange bug is fixed
-      https://github.com/IBM/carbon-components-react/issues/1247
-      Also move onClick logic above into TableSelectRow
-      */}
-        <StyledNestedSpan nestingOffset={nestingOffset}>
+        <span
+          className={`${iotPrefix}--table__cell__offset`}
+          style={{ '--row-nesting-offset': `${nestingOffset}px` }}
+        >
           <Checkbox
             id={`select-row-${tableId}-${id}`}
             labelText={selectRowAria}
@@ -463,7 +243,29 @@ const TableBodyRow = ({
             checked={isSelected}
             disabled={isSelectable === false}
           />
-        </StyledNestedSpan>
+        </span>
+      </TableCell>
+    ) : hasRowSelection === 'single' && useRadioButtonSingleSelect ? (
+      <TableCell
+        className={`${prefix}--radiobutton-table-cell`}
+        key={`${id}-row-selection-cell`}
+        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span
+          className={`${iotPrefix}--table__cell__offset`}
+          style={{ '--row-nesting-offset': `${nestingOffset}px` }}
+        >
+          <RadioButton
+            id={`select-row-${tableId}-${id}`}
+            name={`select-row-${tableId}-${id}`}
+            hideLabel
+            labelText={selectRowAria}
+            checked={isSelected}
+            onClick={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
+            disabled={isSelectable === false}
+          />
+        </span>
       </TableCell>
     ) : null;
 
@@ -498,7 +300,10 @@ const TableBodyRow = ({
             })}
             width={initialColumnWidth}
           >
-            <StyledNestedSpan nestingOffset={offset}>
+            <span
+              className={`${iotPrefix}--table__cell__offset`}
+              style={{ '--row-nesting-offset': `${offset}px` }}
+            >
               {col.editDataFunction && isEditMode ? (
                 col.editDataFunction({
                   value: values[col.columnId],
@@ -524,7 +329,7 @@ const TableBodyRow = ({
                   {values[col.columnId]}
                 </TableCellRenderer>
               )}
-            </StyledNestedSpan>
+            </span>
           </TableCell>
         ) : null;
       })}
@@ -558,7 +363,10 @@ const TableBodyRow = ({
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
-        <StyledTableExpandRowExpanded
+        <TableExpandRow
+          className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
+            [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+          })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
           isExpanded
@@ -581,19 +389,36 @@ const TableBodyRow = ({
               onRowClicked(id);
             }
           }}
+          style={{
+            '--row-nesting-offset': `${nestingOffset}px`,
+          }}
         >
           {tableCells}
-        </StyledTableExpandRowExpanded>
+        </TableExpandRow>
         {!hasRowNesting && (
-          <StyledExpansionTableRow className={`${iotPrefix}--expanded-tablerow`}>
+          <TableRow
+            className={classnames(`${iotPrefix}--expanded-tablerow`, {
+              [`${iotPrefix}--expanded-tablerow--singly-selected`]:
+                hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
+            })}
+          >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
-          </StyledExpansionTableRow>
+          </TableRow>
         )}
       </Fragment>
     ) : (
-      <StyledTableExpandRow
+      <TableExpandRow
         key={id}
-        className={`${iotPrefix}--expanded-tablerow`}
+        className={classnames(`${iotPrefix}--expandable-tablerow`, {
+          [`${iotPrefix}--expandable-tablerow--parent`]:
+            hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,
+          [`${iotPrefix}--expandable-tablerow--childless`]:
+            hasRowNesting && nestingChildCount === 0,
+          [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+          [`${iotPrefix}--expandable-tablerow--singly-selected`]:
+            hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
+          [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
+        })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
         data-nesting-offset={nestingOffset}
@@ -615,28 +440,37 @@ const TableBodyRow = ({
             onRowClicked(id);
           }
         }}
+        style={{
+          '--row-nesting-offset': `${nestingOffset}px`,
+        }}
       >
         {tableCells}
-      </StyledTableExpandRow>
+      </TableExpandRow>
     )
   ) : hasRowSelection === 'single' && isSelected ? (
-    <StyledSingleSelectedTableRow
+    <TableRow
+      className={classnames(`${iotPrefix}--table__row`, {
+        [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
+      })}
       key={id}
       onClick={() => {
         if (isSelectable !== false) {
           onRowClicked(id);
-          onRowSelected(id, true);
+          onRowSelected(id, !isSelected);
         }
       }}
     >
       {tableCells}
-    </StyledSingleSelectedTableRow>
+    </TableRow>
   ) : (
-    <StyledTableRow
+    <TableRow
+      className={classnames(`${iotPrefix}--table__row`, {
+        [`${iotPrefix}--table__row--unselectable`]: isSelectable === false,
+        [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
+        [`${iotPrefix}--table__row--editing`]: isEditMode,
+        [`${iotPrefix}--table__row--selected`]: isSelected,
+      })}
       key={id}
-      isSelected={isSelected}
-      isSelectable={isSelectable}
-      isEditMode={isEditMode}
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single') {
@@ -647,7 +481,7 @@ const TableBodyRow = ({
       }}
     >
       {tableCells}
-    </StyledTableRow>
+    </TableRow>
   );
 };
 

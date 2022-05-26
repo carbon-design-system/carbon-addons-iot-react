@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom description and public checkbox (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableSaveViewModal Playground 1`] = `
 <div
   className="storybook-container"
 >
@@ -62,6 +62,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <p
           className="iot--save-view-modal__body-text"
@@ -89,8 +94,225 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
+                  data-testid="TableSaveViewModal-form-title-input"
+                  disabled={false}
+                  id="save-view-modal-view-title"
+                  name="title"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <p
+            className="iot--save-view-modal__view-description"
+          >
+            Entities: 2 filters, Alerts: 3 filters
+          </p>
+          <fieldset
+            className="bx--fieldset"
+          >
+            <div
+              className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
+            >
+              <input
+                checked={false}
+                className="bx--checkbox"
+                data-testid="TableSaveViewModal-form-default-checkbox"
+                disabled={false}
+                id="save-view-modal-default-checkbox-label"
+                name="isDefault"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label
+                className="bx--checkbox-label"
+                htmlFor="save-view-modal-default-checkbox-label"
+                title={null}
+              >
+                <span
+                  className="bx--checkbox-label-text"
+                  dir="auto"
+                >
+                  Save as my default view
+                </span>
+              </label>
+            </div>
+            <div
+              className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
+            >
+              <input
+                checked={false}
+                className="bx--checkbox"
+                data-testid="TableSaveViewModal-form-public-checkbox"
+                disabled={false}
+                id="save-view-modal-public-checkbox-label"
+                name="isPublic"
+                onChange={[Function]}
+                type="checkbox"
+              />
+              <label
+                className="bx--checkbox-label"
+                htmlFor="save-view-modal-public-checkbox-label"
+                title={null}
+              >
+                <span
+                  className="bx--checkbox-label-text"
+                  dir="auto"
+                >
+                  Public view
+                </span>
+              </label>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div
+        className="bx--modal-footer iot--composed-modal-footer bx--btn-set"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--secondary"
+          data-testid="TableSaveViewModal-modal-secondary-button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--primary bx--btn--disabled"
+          data-testid="TableSaveViewModal-modal-primary-button"
+          disabled={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableSaveViewModal With custom description and public checkbox using overrides 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="bx--modal is-visible iot--composed-modal"
+    data-floating-menu-container={true}
+    data-testid="TableSaveViewModal"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onClose={[Function]}
+    onKeyDown={[Function]}
+    onTransitionEnd={[Function]}
+    open={true}
+    role="presentation"
+  >
+    <span
+      className="bx--visually-hidden"
+      role="link"
+      tabIndex="0"
+    >
+      Focus sentinel
+    </span>
+    <div
+      aria-modal="true"
+      className="bx--modal-container"
+      role="dialog"
+    >
+      <div
+        className="bx--modal-header"
+      >
+        <h3
+          className="bx--modal-header__heading bx--type-beta"
+        >
+          Save new view
+        </h3>
+        <button
+          aria-label="Close"
+          className="bx--modal-close"
+          onClick={[Function]}
+          title="Close"
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--modal-close__icon"
+            fill="currentColor"
+            focusable="false"
+            height={20}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={20}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
+      >
+        <p
+          className="iot--save-view-modal__body-text"
+        >
+          You can save the current view's settings including applied filters and search.
+        </p>
+        <form
+          data-testid="TableSaveViewModal-form"
+          onSubmit={[Function]}
+        >
+          <div
+            className="bx--form-item bx--text-input-wrapper"
+          >
+            <label
+              className="bx--label"
+              htmlFor="save-view-modal-view-title"
+            >
+              View title
+            </label>
+            <div
+              className="bx--text-input__field-outer-wrapper"
+            >
+              <div
+                className="bx--text-input__field-wrapper"
+                data-invalid={null}
+              >
+                <input
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -104,14 +326,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
           </div>
           <ul
-            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end"
+            className="bx--accordion iot--save-view-modal__view-description bx--accordion--end bx--accordion--md"
           >
             <li
               className="bx--accordion__item"
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1568"
+                aria-controls="accordion-item-1379"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -142,7 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1568"
+                id="accordion-item-1379"
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -154,7 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-                aria-controls="accordion-item-1569"
+                aria-controls="accordion-item-1380"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -185,7 +407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-                id="accordion-item-1569"
+                id="accordion-item-1380"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -198,7 +420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -225,7 +446,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -301,7 +521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Custom form (using overrides) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableSaveViewModal With custom overriden form 1`] = `
 <div
   className="storybook-container"
 >
@@ -363,6 +583,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <p
           className="iot--save-view-modal__body-text"
@@ -373,12 +598,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <div
             className="bx--form-item"
           >
-            <label
-              className="bx--label"
-              htmlFor="myTextArea"
+            <div
+              className="bx--text-area__label-wrapper"
             >
-              My custom form element
-            </label>
+              <label
+                className="bx--label"
+                htmlFor="myTextArea"
+              >
+                My custom form element
+              </label>
+            </div>
             <div
               className="bx--text-area__wrapper"
               data-invalid={null}
@@ -447,7 +676,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Default with knobs 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableSaveViewModal With demo states 1`] = `
 <div
   className="storybook-container"
 >
@@ -509,6 +738,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <p
           className="iot--save-view-modal__body-text"
@@ -536,8 +770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -553,14 +786,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <p
             className="iot--save-view-modal__view-description"
           >
-            Entities: 2 filters, Alerts: 3 filters
+            Filters: 0, Search: pinoc
           </p>
           <fieldset
             className="bx--fieldset"
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -587,7 +819,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}
@@ -663,7 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/TableSaveViewModal Prefilled 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table/User view management/TableSaveViewModal With prefilled values 1`] = `
 <div
   className="storybook-container"
 >
@@ -725,6 +956,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--modal-content"
+        style={
+          Object {
+            "maxHeight": "calc(100vh - 0px)",
+          }
+        }
       >
         <p
           className="iot--save-view-modal__body-text"
@@ -752,8 +988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 data-invalid={null}
               >
                 <input
-                  aria-describedby=""
-                  className="bx--text-input"
+                  className="bx--text-input bx--text-input--md"
                   data-testid="TableSaveViewModal-form-title-input"
                   disabled={false}
                   id="save-view-modal-view-title"
@@ -774,7 +1009,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__default-view-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={true}
@@ -801,7 +1035,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </div>
             <div
               className="bx--form-item bx--checkbox-wrapper iot--save-view-modal__public-checkbox"
-              onClick={[Function]}
             >
               <input
                 checked={false}

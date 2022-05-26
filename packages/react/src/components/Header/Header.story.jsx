@@ -150,7 +150,7 @@ const headerPanel = {
 };
 
 export default {
-  title: '1 - Watson IoT/Header',
+  title: '1 - Watson IoT/UI shell/Header',
 
   parameters: {
     component: Header,
@@ -245,6 +245,13 @@ export const SmallBreakpoint = () => (
           onClick: action('click fired'),
           btnContent: <Checkbox16 fill="white" description="icon" />,
         },
+        {
+          label: 'Header action with href',
+          onClick: action('click fired'),
+          btnContent: <Checkbox16 fill="white" description="icon" />,
+          href: 'https://www.ibm.com',
+        },
+
         ...HeaderProps.actionItems,
       ]}
       appName={text('appName', 'Maximo Application Suite')}

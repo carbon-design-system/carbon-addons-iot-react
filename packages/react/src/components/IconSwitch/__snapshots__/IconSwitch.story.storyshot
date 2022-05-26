@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch selected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher selected 1`] = `
 <div
   className="storybook-container"
 >
@@ -49,7 +49,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch unselected 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher unselected 1`] = `
 <div
   className="storybook-container"
 >
@@ -98,7 +98,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch with 2 icons in ContentSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher with 2 icons in ContentSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -199,7 +199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch with 4 icons in ContentSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher with 4 icons in ContentSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -393,7 +393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch with light version and four icons in ContentSwitcher 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher with light version and four icons in ContentSwitcher 1`] = `
 <div
   className="storybook-container"
 >
@@ -587,7 +587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/I
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/IconSwitch with light version and two icons 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Icon content switcher with light version and two icons 1`] = `
 <div
   className="storybook-container"
 >

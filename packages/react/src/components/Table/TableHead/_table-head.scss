@@ -27,7 +27,7 @@
 
     // fix positioning of order number when in multi-sort
     span.#{$iot-prefix}--table-header-label__sort-order {
-      bottom: $spacing-06;
+      bottom: $spacing-05 + $spacing-02;
     }
 
     // fix sort icon missing at xl sizes
@@ -35,26 +35,50 @@
       display: flex;
     }
 
-    th {
+    th,
+    th[aria-sort] {
       height: $spacing-10;
+    }
+
+    .#{$prefix}--table-header-label {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   &--md {
-    th {
+    th,
+    th[aria-sort] {
       height: $spacing-08;
+    }
+
+    .#{$prefix}--table-header-label {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   &--sm {
-    th {
+    th,
+    th[aria-sort] {
       height: $spacing-07;
+    }
+
+    .#{$prefix}--table-header-label {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
   &--xs {
-    th {
+    th,
+    th[aria-sort] {
       height: $spacing-06;
+    }
+
+    .#{$prefix}--table-header-label {
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -83,12 +107,12 @@
   .#{$iot-prefix}--table-header-label__sort-order {
     position: absolute;
     bottom: $spacing-04;
-    right: $spacing-04;
+    right: $spacing-02;
     font-size: 0.667rem;
     font-weight: bold;
 
     html[dir='rtl'] & {
-      left: $spacing-03;
+      left: $spacing-05;
       right: unset;
     }
   }
@@ -139,7 +163,18 @@
     }
   }
 
+  .#{$iot-prefix}--table-header-radiobutton {
+    vertical-align: middle;
+    .#{$prefix}--table-header-label {
+      overflow: visible;
+    }
+  }
+
   .#{$iot-prefix}--table-header-checkbox-resize {
+    width: 54px;
+  }
+
+  .#{$iot-prefix}--table-header-radiobutton-resize {
     width: 54px;
   }
 
@@ -167,6 +202,22 @@
 
   .#{$iot-prefix}--clear-filters-button--disabled {
     @include disabled-icon-button();
+  }
+
+  .#{$prefix}--table-sort {
+    padding-left: 0;
+    padding-right: 0;
+
+    .#{$prefix}--table-header-label,
+    .#{$prefix}--tooltip--definition {
+      padding-left: $spacing-05;
+      padding-right: 0;
+
+      [dir='rtl'] & {
+        padding-left: unset;
+        padding-right: $spacing-05;
+      }
+    }
   }
 }
 

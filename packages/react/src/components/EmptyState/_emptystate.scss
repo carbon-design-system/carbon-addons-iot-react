@@ -7,7 +7,7 @@
   flex-flow: column;
   justify-content: center;
   height: 100%;
-  padding: $spacing-09;
+  padding: $spacing-09 $spacing-09 $spacing-09 $spacing-11;
   &--icon {
     margin-bottom: $spacing-05;
     height: 80px;
@@ -23,6 +23,7 @@
     @include type-style('productive-heading-03');
     color: $text-01;
     margin-bottom: $spacing-03;
+    word-break: break-word;
   }
 
   &--text {

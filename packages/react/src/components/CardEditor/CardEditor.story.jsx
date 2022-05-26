@@ -55,7 +55,7 @@ const CardEditorInteractive = () => {
 };
 
 export default {
-  title: '2 - Watson IoT Experimental/☢️ CardEditor',
+  title: '2 - Watson IoT Experimental/☢️ DashboardEditor/☢️ CardEditor',
   decorators: [withKnobs],
 
   parameters: {
@@ -486,3 +486,74 @@ export const DynamicallyAddSpecialContentToCardEditForm = () => (
 );
 
 DynamicallyAddSpecialContentToCardEditForm.storyName = 'Dynamically add edit form content';
+
+export const ForV2TimeSeries = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        id: 'timeseries',
+        title: 'time-series-card',
+        size: 'MEDIUMWIDE',
+        type: 'TIMESERIES',
+        content: {
+          series: [
+            {
+              dataSourceId: 'v2pressure',
+              label: 'V2 Pressure',
+              color: '#1192e8',
+              downSampleMethod: 'none',
+              downSampleMethods: [],
+              hasStreamingMetricEnabled: true,
+            },
+          ],
+          dataSource: {
+            attributes: [
+              {
+                downSampleMethod: 'max',
+                attribute: 'v2pressure',
+                id: 'v2pressure',
+              },
+            ],
+          },
+          xLabel: 'Time',
+          yLabel: 'Temperature',
+          unit: '˚F',
+          includeZeroOnXaxis: true,
+          includeZeroOnYaxis: true,
+          timeDataSourceId: 'timestamp',
+        },
+        interval: 'day',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      dataItems={[
+        { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+        { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+        {
+          dataItemId: 'v2pressure',
+          dataSourceId: 'v2pressure',
+          label: 'V2 Pressure',
+          downSampleMethod: 'min',
+          downSampleMethods: [
+            { id: 'none', text: 'None' },
+            { id: 'max', text: 'Maximum' },
+            { id: 'min', text: 'Minimum' },
+            { id: 'mean', text: 'Mean' },
+            { id: 'last', text: 'Last' },
+            { id: 'sum', text: 'Sum' },
+            { id: 'standerd', text: 'Standerd deviation' },
+          ],
+        },
+      ]}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+ForV2TimeSeries.storyName = 'for V2 TimeSeries';
+
+ForV2TimeSeries.storyName = 'for V2 TimeSeries';

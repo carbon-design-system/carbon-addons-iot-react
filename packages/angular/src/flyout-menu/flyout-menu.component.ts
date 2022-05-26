@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { IconService } from 'carbon-components-angular';
 import { Filter16 } from '@carbon/icons';
 
@@ -29,6 +29,8 @@ import { Filter16 } from '@carbon/icons';
     </ng-template>
     <div
       [aiFlyoutMenu]="templateRef"
+      [isOpen]="isOpen"
+      (isOpenChange)="isOpenChange.emit($event)"
       [offset]="offset"
       [flip]="flip"
       trigger="click"
@@ -70,8 +72,9 @@ export class FlyoutMenu implements OnInit {
   }
 
   @Input() flip = false;
-
   @Input() placement: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
+  @Input() isOpen: boolean;
+  @Output() isOpenChange = new EventEmitter<boolean>();
 
   private _offset;
 

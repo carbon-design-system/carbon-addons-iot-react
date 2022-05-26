@@ -7,6 +7,8 @@ import { gray60 } from '@carbon/colors';
 
 import { CARD_LAYOUTS } from '../../constants/LayoutConstants';
 import CardIcon from '../ImageCard/CardIcon';
+import useMatchingThreshold from '../../hooks/useMatchingThreshold';
+import { Link } from '../Link';
 
 import ValueRenderer from './ValueRenderer';
 import UnitRenderer from './UnitRenderer';
@@ -17,6 +19,7 @@ const propTypes = {
     label: PropTypes.string,
     unit: PropTypes.string,
     dataSourceId: PropTypes.string,
+    measurementUnitLabel: PropTypes.string,
     // decimal precision
     precision: PropTypes.number,
     thresholds: PropTypes.arrayOf(
@@ -39,6 +42,8 @@ const propTypes = {
     color: PropTypes.string,
     trend: PropTypes.oneOf(['up', 'down']),
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
+    href: PropTypes.string,
+    onClick: PropTypes.func,
   }),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
   fontSize: PropTypes.number.isRequired,
@@ -70,7 +75,7 @@ const BEM_BASE = `${BASE_CLASS_NAME}__attribute`;
  * He also determines which threshold applies to a given attribute (perhaps that should be moved)
  */
 const Attribute = ({
-  attribute: { label, unit, thresholds, precision, dataSourceId },
+  attribute: { label, unit, thresholds, precision, dataSourceId, measurementUnitLabel },
   attributeCount,
   customFormatter,
   isEditable,
@@ -84,37 +89,16 @@ const Attribute = ({
   testId,
   onValueClick,
 }) => {
+  const matchedThreshold = useMatchingThreshold({ thresholds, value });
+
   // matching threshold will be the first match in the list, or a value of null if not isEditable
-  const matchingThreshold = thresholds
-    ? isEditable
-      ? thresholds[0]
-      : thresholds
-          .filter((t) => {
-            switch (t.comparison) {
-              case '<':
-                return !isNil(value) && value < t.value;
-              case '>':
-                return value > t.value;
-              case '=':
-                return value === t.value;
-              case '<=':
-                return !isNil(value) && value <= t.value;
-              case '>=':
-                return value >= t.value;
-              default:
-                return false;
-            }
-          })
-          .concat([null])[0]
-    : null;
+  const matchingThreshold = thresholds ? (isEditable ? thresholds[0] : matchedThreshold) : null;
 
   const valueColor =
     matchingThreshold && matchingThreshold.icon === undefined ? matchingThreshold.color : null;
 
-  // need to reduce the width size to fit multiple attributs when card layout is horizontal
+  // need to reduce the width size to fit multiple attributes when card layout is horizontal
   const attributeWidthPercentage = layout === CARD_LAYOUTS.HORIZONTAL ? 100 / attributeCount : 100;
-
-  // const shouldWrap =
 
   return (
     <>
@@ -155,6 +139,7 @@ const Attribute = ({
             isNumberValueCompact={isNumberValueCompact}
             testId={`${testId}-value`}
             dataSourceId={dataSourceId}
+            measurementUnitLabel={measurementUnitLabel}
             onClick={onValueClick}
           />
           <UnitRenderer unit={unit} testId={`${testId}-unit`} />
@@ -167,7 +152,7 @@ const Attribute = ({
               '--secondary-value-color': gray60,
             }}
           >
-            {secondaryValue.trend && secondaryValue.trend === 'up' ? (
+            {secondaryValue.trend === 'up' ? (
               <CaretUp16
                 className={`${BEM_BASE}_trend-icon`}
                 aria-label="trending up"
@@ -182,7 +167,19 @@ const Attribute = ({
                 fill={secondaryValue.color || gray60}
               />
             ) : null}
-            {secondaryValue.value}
+            {secondaryValue.href || secondaryValue.onClick ? (
+              <Link
+                data-testid={`${testId}-secondary-value--link`}
+                className={`${BEM_BASE}-secondary-value--link`}
+                href={secondaryValue?.href}
+                rel="noopener noreferrer"
+                onClick={() => secondaryValue?.onClick({ dataSourceId, secondaryValue })}
+              >
+                {secondaryValue.value}
+              </Link>
+            ) : (
+              secondaryValue.value
+            )}
           </div>
         ) : null}
       </div>

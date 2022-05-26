@@ -69,6 +69,7 @@ class FilterHeaderRow extends Component {
     tableOptions: PropTypes.shape({
       hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
       hasRowExpansion: PropTypes.bool,
+      hasRowNesting: PropTypes.bool,
       hasRowActions: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
@@ -245,7 +246,7 @@ class FilterHeaderRow extends Component {
       ordering,
       clearFilterText,
       filterText,
-      tableOptions: { hasRowSelection, hasRowExpansion, hasRowActions },
+      tableOptions: { hasRowSelection, hasRowExpansion, hasRowNesting, hasRowActions },
       isVisible,
       lightweight,
       isDisabled,
@@ -265,7 +266,7 @@ class FilterHeaderRow extends Component {
         {hasRowSelection === 'multi' ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
-        {hasRowExpansion ? (
+        {hasRowExpansion || hasRowNesting ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} />
         ) : null}
         {visibleColumns.map((c, i) => {
@@ -279,6 +280,7 @@ class FilterHeaderRow extends Component {
           };
           const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
           const isLastColumn = visibleColumns.length - 1 === i;
+          const lastVisibleColumn = visibleColumns.slice(-1)[0];
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
           const headerContent =
@@ -426,9 +428,11 @@ class FilterHeaderRow extends Component {
                 `${iotPrefix}--tableheader-filter`,
                 `${iotPrefix}--filter-header-row--header`,
                 {
-                  // This class does not make sense for undefined column widths and the corresponding
+                  // This "header-width" class does not make sense for undefined column widths and the corresponding
                   // CSS has been removed. Class is kept only for backwards compatibilty in the DOM.
                   [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
+                  [`${iotPrefix}--filter-header-row--last-column`]:
+                    column.id === lastVisibleColumn.columnId,
                 }
               )}
               data-column={column.id}

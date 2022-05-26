@@ -2,13 +2,12 @@
 @import '~carbon-components/scss/globals/scss/layout';
 @import './card-range-picker';
 @import './card-toolbar';
+@import './card-title';
 @import './data-state-renderer';
 @import '../../globals/mixins';
 
 // delcare variables
 $iot-header-padding: $spacing-05;
-$tooltipSize: $spacing-07;
-$lineHeightSize: 1.375em;
 
 .#{$iot-prefix}--card--wrapper {
   background: white;
@@ -35,72 +34,6 @@ $lineHeightSize: 1.375em;
   z-index: 2;
 }
 
-.#{$iot-prefix}--card--title {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  // min-width value is required to ensure flex child with text properly truncates
-  // https://css-tricks.com/flexbox-truncated-text/
-  min-width: 0;
-  margin-top: $spacing-03;
-  padding-right: $spacing-05;
-  width: 100%;
-
-  html[dir='rtl'] & {
-    padding-left: $spacing-05;
-    padding-right: unset;
-  }
-
-  & + *:not(.#{$iot-prefix}--card--toolbar) {
-    margin-left: $spacing-05;
-  }
-}
-
-.#{$iot-prefix}--card--header--tooltip {
-  flex-basis: $tooltipSize;
-  margin-top: $spacing-02;
-  .#{$prefix}--tooltip__trigger {
-    margin-right: $spacing-03;
-  }
-}
-
-.#{$iot-prefix}--card--title--text,
-.#{$iot-prefix}--card--subtitle--text {
-  @include multiline-text-overflow(1, $lineHeightSize);
-  word-break: break-all;
-  min-width: 3rem;
-}
-
-.#{$iot-prefix}--card--title--text--wrapped {
-  -webkit-line-clamp: 2;
-  max-height: calc(#{$lineHeightSize} * 2);
-  word-break: normal;
-}
-
-.#{$iot-prefix}--card--title--text {
-  @include type-style('productive-heading-02');
-  color: $text-01;
-  max-width: calc(100% - #{$tooltipSize});
-}
-
-.#{$iot-prefix}--card--subtitle--text {
-  @include type-style('label-01');
-  color: $text-02;
-  font-weight: normal;
-  width: 100%;
-  max-height: 1.34em;
-  max-width: calc(100% - #{$tooltipSize});
-
-  &--padded {
-    margin-right: $tooltipSize;
-  }
-
-  html[dir='rtl'] &--padded {
-    margin-left: $tooltipSize;
-    margin-right: unset;
-  }
-}
-
 .#{$iot-prefix}--card--header {
   flex: 0 0 $spacing-09;
   display: flex;
@@ -112,6 +45,10 @@ $lineHeightSize: 1.375em;
   html[dir='rtl'] & {
     padding: 0 $iot-header-padding 0 0;
   }
+}
+
+.#{$iot-prefix}--card--header--with-subtitle {
+  flex: 0 0 $spacing-10;
 }
 
 .#{$iot-prefix}--card--content {
@@ -127,6 +64,12 @@ $lineHeightSize: 1.375em;
   }
 }
 
+.#{$iot-prefix}--card__content--no-padding {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
 .#{$iot-prefix}--card--content--expanded {
   overflow-y: auto;
 }
@@ -140,9 +83,9 @@ $lineHeightSize: 1.375em;
   align-items: center;
   border-top: 1px solid $ui-03;
   display: flex;
-  height: 2.5rem;
+  height: $spacing-08;
   overflow: hidden;
-  padding: 0 $spacing-05;
+  padding: 0;
 }
 
 .#{$iot-prefix}--card--empty-message-wrapper {

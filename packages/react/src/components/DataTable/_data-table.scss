@@ -46,7 +46,7 @@ html[dir='rtl'] {
   .#{$prefix}--table-sort__icon-unsorted,
   .#{$prefix}--table-sort__icon {
     margin-right: $spacing-03;
-    margin-left: 0;
+    margin-left: $spacing-03;
   }
 
   td.data-table {
@@ -82,7 +82,8 @@ html[dir='rtl'] {
 
   // override padding on checkbox cells, so that it aligns with cell content in tables with xl size prop
   &.#{$prefix}--data-table--xl {
-    .#{$prefix}--checkbox-table-cell {
+    .#{$prefix}--checkbox-table-cell,
+    .#{$prefix}--radiobutton-table-cell {
       padding-top: $spacing-05;
     }
   }
@@ -90,7 +91,8 @@ html[dir='rtl'] {
   &.#{$prefix}--data-table--xs,
   &.#{$prefix}--data-table--sm,
   &.#{$prefix}--data-table--md {
-    .#{$prefix}--checkbox-table-cell {
+    .#{$prefix}--checkbox-table-cell,
+    .#{$prefix}--radiobutton-table-cell {
       padding-top: $spacing-01;
       padding-bottom: $spacing-01;
     }
@@ -104,6 +106,16 @@ html[dir='rtl'] {
     /* Added to undo carbon component. this needs to be removed when we redo this table */
     &::after {
       background-color: transparent !important;
+    }
+  }
+
+  .#{$prefix}--radiobutton-table-cell {
+    padding-bottom: $spacing-03;
+    padding-top: $spacing-03;
+    width: 2.5rem;
+
+    .#{$prefix}--radio-button__appearance {
+      margin-right: 0;
     }
   }
 }

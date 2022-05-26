@@ -54,6 +54,7 @@ export { default as EditPage } from './components/Page/EditPage';
 export { default as NavigationBar } from './components/NavigationBar/NavigationBar';
 export { default as Header } from './components/Header';
 export { default as SideNav } from './components/SideNav';
+export { default as SidePanel } from './components/SidePanel/SidePanel';
 export { default as SuiteHeader } from './components/SuiteHeader/SuiteHeader';
 export { default as SuiteHeaderProfile } from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export { default as SuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
@@ -66,6 +67,7 @@ export { default as suiteHeaderData } from './components/SuiteHeader/util/suiteH
 export { default as useUiResources } from './components/SuiteHeader/hooks/useUiResources';
 export { default as uiresources } from './components/SuiteHeader/util/uiresources';
 export { default as Walkme } from './components/Walkme/Walkme';
+export { default as ReadOnlyValue } from './components/ReadOnlyValue/ReadOnlyValue';
 
 // Dashboard
 export { default as Dashboard } from './components/Dashboard/Dashboard';
@@ -83,6 +85,15 @@ export { default as ImageCard } from './components/ImageCard/ImageCard';
 export { default as TableCard } from './components/TableCard/TableCard';
 export { default as GaugeCard } from './components/GaugeCard/GaugeCard';
 export { DragAndDrop } from './utils/DragAndDropUtils';
+export { default as ValueContent } from './components/ValueCard/ValueContent';
+export { default as MeterChartCard } from './components/MeterChartCard/MeterChartCard';
+export { default as SparklineChartCard } from './components/SparklineChartCard/SparklineChartCard';
+export { default as StackedAreaChartCard } from './components/StackedAreaChartCard/StackedAreaChartCard';
+
+// Charts exported
+export { MeterChart } from './components/MeterChart';
+export { AreaChart } from './components/AreaChart';
+export { StackedAreaChart } from './components/StackedAreaChart';
 
 // Experimental
 export { default as ListCard } from './components/ListCard/ListCard';
@@ -118,6 +129,7 @@ export { default as TearSheet } from './components/TearSheet/TearSheet';
 export { default as TearSheetWrapper } from './components/TearSheet/TearSheetWrapper';
 export { default as MapCard } from './components/MapCard/MapCard';
 export { default as RuleBuilder } from './components/RuleBuilder/RuleBuilder';
+export { default as ProgressBar } from './components/ProgressBar/ProgressBar';
 
 // Hooks
 export { useDNDProviderElement } from './hooks/useDNDProviderElement';

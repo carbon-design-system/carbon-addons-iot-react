@@ -1,0 +1,41 @@
+# `ReadOnlyValue` component
+
+## Table of Contents
+
+- [Getting started](#getting-started)
+- [Props](#props)
+- [External links](#external-links)
+  - [Source Code](#source-code)
+  - [Feedback](#feedback)
+
+## Getting Started
+
+The `ReadOnlyValue` is a component for information that is static and cannot be manipulated by users.
+
+```jsx
+import { ReadOnlyValue } from 'carbon-addons-iot-react';
+
+<ReadOnlyValue label="Label 01" value="input value 01" type="stacked" />
+<ReadOnlyValue label="Label 02" value="input value 02" type="stacked" />
+```
+
+## Props
+
+| Name      | Type                                                        | Default   | Description                                     |
+| :-------- | :---------------------------------------------------------- | :-------- | :---------------------------------------------- |
+| label     | string                                                      | ''        | read only label text                            |
+| value     | string                                                      | ''        | read only value text                            |
+| type      | enum: <br/>'stacked'<br/>'inline'<br/> 'inline_small' <br/> | stacked   | Type of how should be the read only be rendered |
+| testId    | string                                                      | 'testId'  | Test id for selecting the element               |
+| className | string                                                      | undefined | Custom class for component                      |
+
+## External Links
+
+### Source Code
+
+[Source code](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ReadOnlyValue)
+
+### Feedback
+
+Help us improve this component by providing feedback, asking questions on Slack, or updating this file on
+[GitHub](https://github.com/carbon-design-system/carbon-addons-iot-react/tree/next/packages/react/src/components/ReadOnlyValue/ReadOnlyValue.mdx).

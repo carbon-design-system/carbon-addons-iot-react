@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderProfile Loading state (no log out button) 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderProfile Loading state (no log out button) 1`] = `
 <div
   className="storybook-container"
 >
@@ -54,7 +54,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderProfile Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderProfile Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -115,7 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderProfile No log out button 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderProfile No log out button 1`] = `
 <div
   className="storybook-container"
 >
@@ -157,30 +157,28 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       <div
         className="iot--suite-header-profile--manage-button iot--suite-header-profile--manage-button--no-logout"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
           data-testid="suite-header-profile--profile"
-          disabled={false}
+          href="javascript:void(0)"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          rel="noopener noreferrer"
           tabIndex={0}
-          type="button"
         >
           Manage profile
-        </button>
+        </a>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/SuiteHeader/SuiteHeaderProfile default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderProfile default 1`] = `
 <div
   className="storybook-container"
 >
@@ -222,23 +220,21 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       <div
         className="iot--suite-header-profile--manage-button"
       >
-        <button
-          aria-describedby={null}
-          aria-pressed={null}
+        <a
           className="iot--btn bx--btn bx--btn--sm bx--btn--secondary"
           data-testid="suite-header-profile--profile"
-          disabled={false}
+          href="javascript:void(0)"
           onBlur={[Function]}
           onClick={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          rel="noopener noreferrer"
           tabIndex={0}
-          type="button"
         >
           Manage profile
-        </button>
+        </a>
       </div>
       <div
         className="iot--suite-header-profile--logout"

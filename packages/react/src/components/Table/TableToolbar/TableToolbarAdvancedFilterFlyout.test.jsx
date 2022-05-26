@@ -326,6 +326,122 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     });
   });
 
+  it('should handle date columns, too', () => {
+    const handleApplyFilter = jest.fn();
+    const date = new Date();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter: handleApplyFilter,
+        }}
+        columns={[
+          {
+            id: 'test-column',
+            name: 'Test Column',
+            isFilterable: false,
+            placeholderText: 'place-holder-text-for-test-column',
+          },
+          {
+            id: 'string-column',
+            name: 'String Column',
+            isFilterable: true,
+            placeholderText: 'place-holder-text-for-string-column',
+          },
+          {
+            id: 'number-column',
+            name: 'Number Column',
+            isFilterable: true,
+          },
+          {
+            id: 'select-column',
+            name: 'Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-A', id: 'option-A' },
+              { text: 'option-B', id: 'option-B' },
+              { text: 'option-C', id: 'option-C' },
+            ],
+          },
+          {
+            id: 'date-column',
+            name: 'Date Column',
+            placeholderText: 'yyyy-mm-dd',
+            isFilterable: true,
+            isDate: true,
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'number-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'select-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'date-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'number-column',
+              value: '16',
+            },
+            {
+              columnId: 'select-column',
+              value: 'option-A',
+            },
+            {
+              columnId: 'date-column',
+              value: date,
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+      />
+    );
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    expect(handleApplyFilter).toHaveBeenLastCalledWith({
+      advanced: {
+        filterIds: [],
+      },
+      simple: {
+        'select-column': 'option-A',
+        'number-column': '16',
+        'date-column': date,
+      },
+    });
+    expect(screen.getByPlaceholderText('yyyy-mm-dd').value).toEqual(
+      date.toISOString().split('T')[0]
+    );
+    userEvent.clear(screen.getByPlaceholderText('yyyy-mm-dd'));
+    userEvent.type(screen.getByPlaceholderText('yyyy-mm-dd'), '2020-01-20');
+    expect(screen.getByPlaceholderText('yyyy-mm-dd').value).toEqual('2020-01-20');
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    expect(handleApplyFilter).toHaveBeenLastCalledWith({
+      advanced: {
+        filterIds: [],
+      },
+      simple: {
+        'select-column': 'option-A',
+        'number-column': '16',
+        'date-column': new Date('2020-01-20T06:00:00.000Z'),
+      },
+    });
+  });
+
   it('should reset the filter state if on cancel is called', () => {
     const handleApplyFilter = jest.fn();
     const handleCancelFilter = jest.fn();
@@ -670,5 +786,51 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
       'data-contained-checkbox-state',
       'true'
     );
+  });
+
+  it('should not break on empty column array prop', () => {
+    const onApplyAdvancedFilter = jest.fn();
+    const onCancelAdvancedFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter,
+          onCancelAdvancedFilter,
+        }}
+        columns={[]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'test-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'string-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'test-column',
+              value: 'test-column-value',
+            },
+            {
+              columnId: 'string-column',
+              value: [
+                {
+                  id: 'string-column-value',
+                  text: 'string-column-value',
+                },
+              ],
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+        isDisabled
+      />
+    );
+
+    expect(screen.getByTestId('advanced-filter-flyout-container')).toBeVisible();
   });
 });

@@ -1,13 +1,27 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import { settings } from '../../constants/Settings';
+
 import StatefulTable from './StatefulTable';
-import { tableColumns, tableData } from './Table.story';
+import {
+  getAdvancedFilters,
+  getTableColumns as getStoryTableColumns,
+  getTableData as getStoryTableData,
+} from './Table.story.helpers';
 import { getSelectData, getTableColumns, getTableData, getWords } from './Table.test.helpers';
+
+const { prefix } = settings;
 
 describe('StatefulTable', () => {
   const words = getWords();
   const selectData = getSelectData();
+  const tableColumns = getStoryTableColumns();
+  const tableData = getStoryTableData();
+
+  beforeEach(() => {
+    cy.viewport(1680, 900);
+  });
 
   it('should search on keydown when hasFastSearch:true', () => {
     const onApplySearch = cy.stub();
@@ -149,6 +163,122 @@ describe('StatefulTable', () => {
     cy.get('tr').should('have.length', 101);
   });
 
+  it('should allow the search box to expand and contract naturally on focus when search.isExpanded is undefined', () => {
+    const onApplySearch = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onApplySearch,
+          },
+        }}
+        options={{
+          hasSearch: true,
+          hasFastSearch: false,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: undefined,
+            },
+          },
+        }}
+      />
+    );
+
+    // isn't open by default.
+    cy.findByRole('search').should('not.have.class', `${prefix}--toolbar-search-container-active`);
+
+    cy.findByPlaceholderText('Search').type('testing{enter}');
+
+    // is open now that we have a search value.
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    cy.get(document.body).click();
+    // should still be open because we have a search value, even when losing focus
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    cy.findByPlaceholderText('Search').clear();
+    cy.get(document.body).click();
+    // not be open anymore without a search value or focus
+    cy.findByRole('search').should('not.have.class', `${prefix}--toolbar-search-container-active`);
+  });
+
+  it('should force the search box to always be open when search.isExpanded:true', () => {
+    const onApplySearch = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onApplySearch,
+          },
+        }}
+        options={{
+          hasSearch: true,
+          hasFastSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+              isExpanded: true,
+            },
+          },
+        }}
+      />
+    );
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+
+    cy.findByPlaceholderText('Search')
+      .type('testing{enter}')
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('testing');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByPlaceholderText('Search')
+      .type(
+        '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}test{enter}'
+      )
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('test');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByPlaceholderText('Search').type('{backspace}{backspace}{backspace}{backspace}testing');
+
+    cy.findByPlaceholderText('Search')
+      .blur()
+      .should(() => {
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('testing');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+
+    cy.findByRole('button', { name: 'Clear search input' })
+      .click()
+      .should(() => {
+        // once on blur, once on clicking clear
+        expect(onApplySearch).to.have.been.called;
+        expect(onApplySearch).to.have.been.calledWith('');
+      });
+
+    cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
+    onApplySearch.reset();
+  });
+
   it('shouldLazyRender rows on scroll with pagination shouldLazyRender:true', () => {
     // hack to get cypress to re-draw the screen and correctly render the table
     cy.viewport(1680, 400);
@@ -199,5 +329,48 @@ describe('StatefulTable', () => {
     cy.findAllByTestId(/lazy-row/i).should('have.length', 0);
 
     cy.viewport(1680, 900);
+  });
+
+  it('should allow advanced filters and multi-sort at the same time', () => {
+    mount(
+      <StatefulTable
+        id="search-table"
+        columns={tableColumns.map((c) => ({
+          ...c,
+          isSortable: c.id === 'string' || c.id === 'select',
+        }))}
+        data={tableData}
+        options={{
+          hasAdvancedFilter: true,
+          hasMultiSort: true,
+        }}
+        view={{
+          advancedFilters: getAdvancedFilters(),
+          table: {
+            sort: [],
+          },
+        }}
+      />
+    );
+
+    // 100 rows plus header
+    cy.get('tr').should('have.length', 101);
+    cy.findByTestId('advanced-filter-flyout-button').click();
+    cy.findByRole('tab', { name: 'Advanced filters' }).click();
+    cy.findByText('Select a filter').click();
+    cy.findByText('select=Option c, boolean=false').click();
+    cy.findByRole('button', { name: 'Apply filters' }).click();
+    // 16 rows plus header
+    cy.get('tr').should('have.length', 17);
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'bottle toyota bottle 5');
+
+    cy.findAllByLabelText('open and close list of options').eq(2).click();
+    cy.findAllByText('Multi-sort').eq(0).click();
+    cy.findByRole('button', { name: 'Add column' }).click();
+    cy.findByRole('button', { name: 'Sort' }).click();
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'as eat scott 23');
+
+    cy.findAllByLabelText('Sort rows by this header in descending order').eq(0).click();
+    cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'scott pinocchio chocolate 89');
   });
 });
