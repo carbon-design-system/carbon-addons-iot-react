@@ -397,15 +397,11 @@ const CardEditor = ({
               dataItems={dataItems}
               getValidDataItems={getValidDataItems}
               getValidTimeRanges={getValidTimeRanges}
-              onValidateCardJson={onValidateCardJson}
-              onCardJsonPreview={onCardJsonPreview}
               availableDimensions={availableDimensions}
               i18n={mergedI18n}
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-              modalJsonData={modalJsonData}
-              showJsonEditor={showJsonEditor}
             />
           </>
         )}
