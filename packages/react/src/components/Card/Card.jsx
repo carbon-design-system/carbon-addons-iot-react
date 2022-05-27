@@ -546,6 +546,7 @@ const Card = (props) => {
           <ErrorMessage
             title={isSmallOrThin ? strings.noDataShortLabel : strings.noDataLabel}
             icon={isSmall ? '' : 'empty'}
+            body=""
             {...overrides?.errorMessage?.props}
           />
         ) : isSupportedType ? ( // render card content based on supported type

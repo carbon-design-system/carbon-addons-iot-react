@@ -3954,88 +3954,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--side-nav__items"
     >
       <li
-        className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
-        onKeyDown={[Function]}
-      >
-        <button
-          aria-expanded={false}
-          className="bx--side-nav__submenu"
-          onClick={[Function]}
-          type="button"
-        >
-          <div
-            className="bx--side-nav__icon"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={24}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={24}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
-              />
-            </svg>
-          </div>
-          <span
-            className="bx--side-nav__submenu-title"
-          >
-            Boards
-          </span>
-          <div
-            className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={20}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 32 32"
-              width={20}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
-              />
-            </svg>
-          </div>
-        </button>
-        <ul
-          className="bx--side-nav__menu"
-        >
-          <li
-            className="bx--side-nav__menu-item"
-          >
-            <button
-              className="bx--side-nav__link"
-              data-testid="suite-header-side-nav-menu-item-0"
-              label="Yet another link"
-              title="Yet another link"
-            >
-              <span
-                className="bx--side-nav__link-text"
-              >
-                Yet another link
-              </span>
-            </button>
-          </li>
-        </ul>
-      </li>
-      <li
         className="bx--side-nav__item"
       >
         <a
-          aria-label="Devices"
+          aria-label="Home"
           className="bx--side-nav__link"
-          data-testid="suite-header-side-nav-link-1"
-          href="https://google.com"
-          label="Devices"
-          target="_blank"
+          data-testid="suite-header-side-nav-link-0"
+          label="Home"
+          onClick={[Function]}
+          tabIndex={0}
         >
           <div
             className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -4051,17 +3978,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M11,11V21H21V11Zm8,8H13V13h6Z"
-              />
-              <path
-                d="M30,13V11H26V8a2,2,0,0,0-2-2H21V2H19V6H13V2H11V6H8A2,2,0,0,0,6,8v3H2v2H6v6H2v2H6v3a2,2,0,0,0,2,2h3v4h2V26h6v4h2V26h3a2,2,0,0,0,2-2V21h4V19H26V13ZM24,24H8V8H24Z"
+                d="M16.6123,2.2138a1.01,1.01,0,0,0-1.2427,0L1,13.4194l1.2427,1.5717L4,13.6209V26a2.0041,2.0041,0,0,0,2,2H26a2.0037,2.0037,0,0,0,2-2V13.63L29.7573,15,31,13.4282ZM18,26H14V18h4Zm2,0V18a2.0023,2.0023,0,0,0-2-2H14a2.002,2.002,0,0,0-2,2v8H6V12.0615l10-7.79,10,7.8005V26Z"
               />
             </svg>
           </div>
           <span
             className="bx--side-nav__link-text"
           >
-            Devices
+            Home
           </span>
         </a>
       </li>
@@ -4089,10 +4013,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M24 21H26V26H24zM20 16H22V26H20zM11 26a5.0059 5.0059 0 01-5-5H8a3 3 0 103-3V16a5 5 0 010 10z"
-              />
-              <path
-                d="M28,2H4A2.002,2.002,0,0,0,2,4V28a2.0023,2.0023,0,0,0,2,2H28a2.0027,2.0027,0,0,0,2-2V4A2.0023,2.0023,0,0,0,28,2Zm0,9H14V4H28ZM12,4v7H4V4ZM4,28V13H28.0007l.0013,15Z"
+                d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
               />
             </svg>
           </div>
@@ -4128,8 +4049,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <button
               className="bx--side-nav__link"
-              data-testid="suite-header-side-nav-menu-item-2"
+              data-testid="suite-header-side-nav-menu-item-1"
               label="Link 1"
+              onClick={[Function]}
               title="Link 1"
             >
               <span
@@ -4144,8 +4066,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <a
               className="bx--side-nav__link"
-              data-testid="suite-header-side-nav-menu-item-2"
+              data-testid="suite-header-side-nav-menu-item-1"
               label="Link 2"
+              onClick={[Function]}
               title="Link 2"
             >
               <span
@@ -4217,14 +4140,32 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <button
               className="bx--side-nav__link bx--side-nav__link--current"
-              data-testid="suite-header-side-nav-menu-item-3"
-              label="Yet another link"
-              title="Yet another link"
+              data-testid="suite-header-side-nav-menu-item-2"
+              label="Link 3"
+              onClick={[Function]}
+              title="Link 3"
             >
               <span
                 className="bx--side-nav__link-text"
               >
                 Link 3
+              </span>
+            </button>
+          </li>
+          <li
+            className="bx--side-nav__menu-item"
+          >
+            <button
+              className="bx--side-nav__link"
+              data-testid="suite-header-side-nav-menu-item-2"
+              label="Link 4"
+              onClick={[Function]}
+              title="Link 4"
+            >
+              <span
+                className="bx--side-nav__link-text"
+              >
+                Link 4
               </span>
             </button>
           </li>

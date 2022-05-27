@@ -2770,6 +2770,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             >
               No data
             </h3>
+            <p
+              className="iot--empty-state--text"
+              data-testid="EmptyState-body"
+            >
+              
+            </p>
           </div>
         </div>
       </div>

@@ -16,6 +16,7 @@ export const MeterChartPropTypes = {
     peak: PropTypes.number,
     meterTotal: PropTypes.number,
     meterUnit: PropTypes.string,
+    totalFormatter: PropTypes.func,
     legendPosition: PropTypes.string,
     ...ChartColorPropType,
   }),

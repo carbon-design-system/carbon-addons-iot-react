@@ -65,7 +65,8 @@ export const runSimpleFilters = (data, filters, columns) => {
         typeof value === 'number' ||
         typeof value === 'string' ||
         typeof value === 'boolean' ||
-        Array.isArray(value)
+        Array.isArray(value) ||
+        value instanceof Date
       ) {
         if (!isNil(columns)) {
           const { filter } = find(columns, { id: columnId }) || {};

@@ -25,6 +25,7 @@ export default {
 export const Basic = () => {
   const size = select('size', supportedSizes, CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'md');
+  const totalFormatter = boolean('hasTotalFormatter', false);
   return (
     <div
       style={{
@@ -38,6 +39,9 @@ export const Basic = () => {
           peak: number('content.peak', 2000),
           meterTotal: number('content.meterTotal', 1000),
           meterUnit: text('content.meterUnit', 'AppPoints'),
+          totalFormatter: totalFormatter
+            ? (total) => text('content.totalFormatter', `${total} custom formatter`)
+            : null,
           color: {
             pairing: {
               option: 5,

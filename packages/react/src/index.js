@@ -54,6 +54,7 @@ export { default as EditPage } from './components/Page/EditPage';
 export { default as NavigationBar } from './components/NavigationBar/NavigationBar';
 export { default as Header } from './components/Header';
 export { default as SideNav } from './components/SideNav';
+export { default as SidePanel } from './components/SidePanel/SidePanel';
 export { default as SuiteHeader } from './components/SuiteHeader/SuiteHeader';
 export { default as SuiteHeaderProfile } from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export { default as SuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';

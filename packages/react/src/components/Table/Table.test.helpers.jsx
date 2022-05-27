@@ -78,7 +78,10 @@ export const getTableColumns = (selectData) => [
   {
     id: 'date',
     name: 'Date',
-    filter: { placeholderText: 'pick a date' },
+    filter: {
+      placeholderText: 'pick a date',
+      filterFunction: () => {},
+    },
   },
   {
     id: 'select',
@@ -192,7 +195,7 @@ export const getTableData = (numberOfRows, words, selectData) =>
       values: {
         string: getSentence(idx, words),
         node: <Add20 />,
-        date: new Date(100000000000 + 1000000000 * idx * idx).toISOString(),
+        date: new Date(100000000000 + 1000000000 * idx * idx).toISOString().split('T')[0],
         select: selectData[idx % 3].id,
         number: idx * idx,
         boolean: idx % 2 === 0,

@@ -66,7 +66,7 @@ export const SideNavPropTypes = {
   links: PropTypes.arrayOf(
     PropTypes.shape({
       /** is current link active */
-      current: PropTypes.bool,
+      isActive: PropTypes.bool,
       /** bot show/hide link */
       isEnabled: PropTypes.bool,
       /** pins the link to the top if hasSearch is true */
@@ -105,6 +105,8 @@ export const SideNavPropTypes = {
             PropTypes.bool,
             PropTypes.func,
           ]).isRequired,
+          /** is current link active */
+          isActive: PropTypes.bool,
         })
       ),
     })

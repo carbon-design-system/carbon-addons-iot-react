@@ -13,6 +13,9 @@ packages/react/css
 packages/react/tmp
 packages/react/storybook-static
 
+// notes
+*.notes.md
+
 lib
 es
 scss

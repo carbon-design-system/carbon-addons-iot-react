@@ -8,6 +8,8 @@ import {
   Tab,
   Tabs,
   TextInput,
+  DatePicker,
+  DatePickerInput,
 } from 'carbon-components-react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
@@ -37,8 +39,15 @@ const propTypes = {
           text: PropTypes.string.isRequired,
         })
       ),
+      /** if dateOptions is empty array, assume a default format and locale */
+      dateOptions: PropTypes.shape({
+        dateFormat: PropTypes.string,
+        locale: PropTypes.string,
+      }),
       /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
       isMultiselect: PropTypes.bool,
+      /** if isDate and isFilterable are true, the table is filtered base on a date picker */
+      isDate: PropTypes.bool,
     })
   ).isRequired,
   tableState: PropTypes.shape({
@@ -309,7 +318,41 @@ const TableToolbarAdvancedFilterFlyout = ({
                       return options;
                     };
                     const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
-
+                    if (column.isDate) {
+                      return (
+                        <FormItem
+                          key={`simple-filter-item-${rowIndex}-${columnIndex}`}
+                          className={`${iotPrefix}--filter-flyout__simple-field`}
+                        >
+                          <DatePicker
+                            key={`${columnIndex}-${columnFilterValue}`}
+                            datePickerType="single"
+                            locale={column?.dateOptions?.locale || 'en'}
+                            dateFormat={column?.dateOptions?.dateFormat || 'Y-m-d'}
+                            id={`column-${rowIndex}-${columnIndex}`}
+                            value={filterState?.simple?.[column.id]}
+                            onChange={(evt) => {
+                              setFilterState((prev) => {
+                                return {
+                                  ...prev,
+                                  simple: {
+                                    ...prev.simple,
+                                    [column.id]: evt[0],
+                                  },
+                                };
+                              });
+                            }}
+                          >
+                            <DatePickerInput
+                              className={`${iotPrefix}--lelele`}
+                              placeholder={column.placeholderText || 'enter a date'}
+                              labelText={column.name}
+                              id={`column-${rowIndex}-${columnIndex}`}
+                            />
+                          </DatePicker>
+                        </FormItem>
+                      );
+                    }
                     if (column.options) {
                       if (column.isMultiselect) {
                         return (
