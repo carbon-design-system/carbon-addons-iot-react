@@ -391,5 +391,4 @@ describe('HotspotEditorDataSourceTab', () => {
 
     expect(screen.getByRole('option', { name: /Modified Label/i })).toBeVisible();
   });
-
 });
