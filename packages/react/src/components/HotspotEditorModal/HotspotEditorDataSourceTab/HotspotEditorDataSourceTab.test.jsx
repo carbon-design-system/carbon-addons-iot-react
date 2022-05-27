@@ -392,25 +392,4 @@ describe('HotspotEditorDataSourceTab', () => {
     expect(screen.getByRole('option', { name: /Modified Label/i })).toBeVisible();
   });
 
-  // it('calls onChange== with the new threshold that has a dataSourceId', () => {
-  //   const onChange = jest.fn();
-  //   render(
-  //     <HotspotEditorDataSourceTab
-  //       hotspot={cardConfigWithPresets.content.hotspots[0]}
-  //       cardConfig={cardConfigWithPresets}
-  //       dataItems={dataItems}
-  //       onChange={onChange}
-  //       translateWithId={() => {}}
-  //       onEditDataItem={jest.fn()}
-  //     />
-  //   );
-  //   // edit button
-  //   userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
-  //   expect(onChange).toHaveBeenCalledWith({
-  //     dataItemId: 'temp_last',
-  //     dataSourceId: 'temp_last',
-  //     label: '{high} temp',
-  //     unit: '{unitVar}',
-  //   });
-  // });
 });
