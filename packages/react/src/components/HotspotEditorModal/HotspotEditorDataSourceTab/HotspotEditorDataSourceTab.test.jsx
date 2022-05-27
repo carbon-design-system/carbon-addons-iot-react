@@ -182,8 +182,6 @@ describe('HotspotEditorDataSourceTab', () => {
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
-
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
   it('pops the data items modal without downsample methods', async () => {
     const onChange = jest.fn();
@@ -200,8 +198,6 @@ describe('HotspotEditorDataSourceTab', () => {
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
-
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
   });
 
   it('calls onChange with the new threshold for particular data item', () => {
