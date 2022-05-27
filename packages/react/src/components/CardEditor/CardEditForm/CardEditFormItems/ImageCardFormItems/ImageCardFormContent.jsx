@@ -56,6 +56,7 @@ const propTypes = {
   /** call back to retrieve the dynamic demo hotspots, by default just returns one example dynamic hotspot, override to return true hotspots.
    * See HotspotEditorModal propTypes for params and details */
   onFetchDynamicDemoHotspots: PropTypes.func,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -73,6 +74,7 @@ const defaultProps = {
   getValidDataItems: null,
   availableDimensions: {},
   onFetchDynamicDemoHotspots: null,
+  onEditDataItem: null,
 };
 
 const ImageCardFormItems = ({
@@ -85,6 +87,7 @@ const ImageCardFormItems = ({
   availableDimensions,
   translateWithId,
   onFetchDynamicDemoHotspots,
+  onEditDataItem,
 }) => {
   const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -119,6 +122,7 @@ const ImageCardFormItems = ({
           translateWithId={translateWithId}
           i18n={mergedI18n}
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+          onEditDataItem={onEditDataItem}
         />
       ) : null}
       <ContentFormItemTitle

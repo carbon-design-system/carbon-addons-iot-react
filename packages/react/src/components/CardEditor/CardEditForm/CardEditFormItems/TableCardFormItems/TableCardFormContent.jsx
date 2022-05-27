@@ -87,6 +87,7 @@ const propTypes = {
     table: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -113,6 +114,7 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
+  onEditDataItem: null,
 };
 
 const TableCardFormContent = ({
@@ -127,6 +129,7 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
+  onEditDataItem,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
@@ -274,6 +277,28 @@ const TableCardFormContent = ({
     [cardConfig, dataSection, onChange, removedDataItems, setSelectedDataItems]
   );
 
+  const handleEditButton = useCallback(
+    async (dataItem) => {
+      const dataItemWithMetaData = validDataItems?.find(
+        ({ dataItemId }) => dataItemId === dataItem.dataItemId
+      );
+      // Call back function for on click of edit button
+      if (onEditDataItem) {
+        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(downSampleMethods)) {
+          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        }
+      }
+      // need to reset the card to include the latest dataSection
+      setEditDataItem({
+        ...dataItemWithMetaData,
+        ...dataItem,
+      });
+      setShowEditor(true);
+    },
+    [cardConfig, onEditDataItem, validDataItems]
+  );
+
   const dataListItems = useMemo(
     () =>
       dataSection?.map((dataItem) => ({
@@ -288,13 +313,7 @@ const TableCardFormContent = ({
               hasIconOnly
               kind="ghost"
               size="small"
-              onClick={() => {
-                const dataItemWithMetaData = validDataItems.find(
-                  ({ dataItemId }) => dataItemId === dataItem.dataItemId
-                );
-                setEditDataItem({ ...dataItemWithMetaData, ...dataItem });
-                setShowEditor(true);
-              }}
+              onClick={() => handleEditButton(dataItem)}
               iconDescription={mergedI18n.edit}
               tooltipPosition="left"
               tooltipAlignment="center"
@@ -313,7 +332,7 @@ const TableCardFormContent = ({
           ],
         },
       })),
-    [dataSection, handleRemoveButton, mergedI18n.edit, mergedI18n.remove, validDataItems]
+    [dataSection, handleEditButton, handleRemoveButton, mergedI18n.edit, mergedI18n.remove]
   );
 
   return (

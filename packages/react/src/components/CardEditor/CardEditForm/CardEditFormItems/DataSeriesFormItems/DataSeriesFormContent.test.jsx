@@ -124,6 +124,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          onEditDataItem={jest.fn()}
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
@@ -216,6 +217,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          onEditDataItem={jest.fn()}
         />
       );
       const dataItemDropDown = screen.getByText('temperature');
@@ -237,6 +239,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          onEditDataItem={jest.fn()}
         />
       );
 
@@ -256,6 +259,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          onEditDataItem={jest.fn().mockImplementation(() => [])}
         />
       );
 
@@ -321,6 +325,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          onEditDataItem={jest.fn()}
         />
       );
 
