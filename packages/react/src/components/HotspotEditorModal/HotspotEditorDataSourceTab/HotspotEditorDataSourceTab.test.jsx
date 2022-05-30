@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, within, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
@@ -36,6 +36,23 @@ const dataItems = [
     dataSourceId: 'other_metric',
     label: 'Other metric',
     unit: 'lbs',
+  },
+];
+
+const dataItemsV2 = [
+  {
+    dataItemId: 'temp_last',
+    dataSourceId: 'temp_last',
+    label: '{high} temp',
+    unit: '{unitVar}',
+    hasStreamingMetricEnabled: true,
+  },
+  {
+    dataItemId: 'elevators',
+    dataSourceId: 'elevators',
+    label: 'Elevators',
+    unit: 'floor',
+    hasStreamingMetricEnabled: true,
   },
 ];
 
@@ -146,20 +163,41 @@ describe('HotspotEditorDataSourceTab', () => {
     });
   });
 
-  it('pops the data items modal', () => {
+  it('pops the data items modal with downsample methods', async () => {
     const onChange = jest.fn();
+    const onEditDataItem = jest.fn().mockImplementation(() => [
+      { id: 'none', text: 'None' },
+      { id: 'max', text: 'Maximum' },
+      { id: 'min', text: 'Minimum' },
+    ]);
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
         cardConfig={cardConfigWithPresets}
-        dataItems={dataItems}
+        dataItems={dataItemsV2}
         onChange={onChange}
         translateWithId={() => {}}
+        onEditDataItem={onEditDataItem}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
-    // Card config with the elevators hotspot removed
-    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
+  });
+  it('pops the data items modal without downsample methods', async () => {
+    const onChange = jest.fn();
+    const onEditDataItem = jest.fn().mockImplementation(() => []);
+    render(
+      <HotspotEditorDataSourceTab
+        hotspot={cardConfigWithPresets.content.hotspots[0]}
+        cardConfig={cardConfigWithPresets}
+        dataItems={dataItemsV2}
+        onChange={onChange}
+        translateWithId={() => {}}
+        onEditDataItem={onEditDataItem}
+      />
+    );
+    userEvent.click(screen.getAllByRole('button')[2]);
+    await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
   });
 
   it('calls onChange with the new threshold for particular data item', () => {

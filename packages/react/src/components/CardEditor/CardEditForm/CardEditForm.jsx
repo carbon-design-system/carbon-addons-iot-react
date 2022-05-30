@@ -74,6 +74,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -112,6 +113,7 @@ const defaultProps = {
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
+  onEditDataItem: null,
 };
 
 /**
@@ -139,6 +141,7 @@ const CardEditForm = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
+  onEditDataItem,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -174,6 +177,11 @@ const CardEditForm = ({
               onChange={onChange}
               i18n={mergedI18n}
               getValidDataItems={getValidDataItems}
+              getValidTimeRanges={getValidTimeRanges}
+              currentBreakpoint={currentBreakpoint}
+              dataSeriesItemLinks={dataSeriesItemLinks}
+              onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+              onEditDataItem={onEditDataItem}
             />
           </Tab>
         ) : null}

@@ -154,6 +154,7 @@ export const Playground = () => {
     locale,
     batchActions,
     searchIsExpanded,
+    useRadioButtonSingleSelect,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -177,6 +178,7 @@ export const Playground = () => {
         'demoCustomErrorState',
         'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
+        'useRadioButtonSingleSelect',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -347,6 +349,7 @@ export const Playground = () => {
           shouldLazyRender,
           hasRowEdit,
           hasSingleRowEdit,
+          useRadioButtonSingleSelect,
         }}
         view={{
           advancedFilters,
@@ -840,8 +843,18 @@ WithFiltering.parameters = {
 };
 
 export const WithSelectionAndBatchActions = () => {
-  const { selectedTableType, hasRowSelection, selectionCheckboxEnabled } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasRowSelection', 'selectionCheckboxEnabled'],
+  const {
+    selectedTableType,
+    hasRowSelection,
+    selectionCheckboxEnabled,
+    useRadioButtonSingleSelect,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasRowSelection',
+      'selectionCheckboxEnabled',
+      'useRadioButtonSingleSelect',
+    ],
     getDefaultValue: () => true,
   });
 
@@ -874,6 +887,7 @@ export const WithSelectionAndBatchActions = () => {
       data={data}
       options={{
         hasRowSelection,
+        useRadioButtonSingleSelect,
       }}
       view={{
         table: {

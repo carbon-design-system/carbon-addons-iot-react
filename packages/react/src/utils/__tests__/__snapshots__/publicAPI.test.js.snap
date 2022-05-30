@@ -2720,6 +2720,9 @@ Map {
             "useAutoTableLayoutForResize": Object {
               "type": "bool",
             },
+            "useRadioButtonSingleSelect": Object {
+              "type": "bool",
+            },
             "wrapCellText": Object {
               "args": Array [
                 Array [
@@ -2938,6 +2941,7 @@ Map {
       "size": undefined,
       "testId": "",
       "totalColumns": 0,
+      "useRadioButtonSingleSelect": false,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3468,6 +3472,9 @@ Map {
       },
       "truncateCellText": Object {
         "isRequired": true,
+        "type": "bool",
+      },
+      "useRadioButtonSingleSelect": Object {
         "type": "bool",
       },
       "wrapCellText": Object {
@@ -10798,6 +10805,9 @@ Map {
                             "isRequired": true,
                             "type": "oneOfType",
                           },
+                          "isActive": Object {
+                            "type": "bool",
+                          },
                           "metaData": Object {
                             "args": Array [
                               Object {
@@ -10825,9 +10835,6 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
-                "current": Object {
-                  "type": "bool",
-                },
                 "icon": Object {
                   "args": Array [
                     Array [
@@ -10841,6 +10848,9 @@ Map {
                   ],
                   "isRequired": true,
                   "type": "oneOfType",
+                },
+                "isActive": Object {
+                  "type": "bool",
                 },
                 "isEnabled": Object {
                   "type": "bool",
@@ -10881,6 +10891,115 @@ Map {
       },
       "testId": Object {
         "type": "string",
+      },
+    },
+  },
+  "SidePanel" => Object {
+    "defaultProps": Object {
+      "actionItems": null,
+      "direction": "right",
+      "i18n": Object {
+        "closeIconLabel": "Close",
+        "openIconLabel": "Open",
+        "primaryButtonLabel": "Save",
+        "secondaryButtonLabel": "Cancel",
+      },
+      "isCondensed": false,
+      "isFullWidth": false,
+      "isOpen": false,
+      "onPrimaryButtonClick": undefined,
+      "onSecondaryButtonClick": undefined,
+      "onToggle": undefined,
+      "subtitle": null,
+      "testId": "side-panel",
+      "title": null,
+      "type": undefined,
+    },
+    "propTypes": Object {
+      "actionItems": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "buttonCallback": Object {
+                  "type": "func",
+                },
+                "buttonIcon": Object {
+                  "type": "elementType",
+                },
+                "buttonLabel": Object {
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "direction": Object {
+        "args": Array [
+          Array [
+            "left",
+            "right",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "closeIconLabel": Object {
+              "type": "string",
+            },
+            "openIconLabel": Object {
+              "type": "string",
+            },
+            "primaryButtonLabel": Object {
+              "type": "string",
+            },
+            "secondaryButtonLabel": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isCondensed": Object {
+        "type": "bool",
+      },
+      "isFullWidth": Object {
+        "type": "bool",
+      },
+      "isOpen": Object {
+        "type": "bool",
+      },
+      "onPrimaryButtonClick": Object {
+        "type": "func",
+      },
+      "onSecondaryButtonClick": Object {
+        "type": "func",
+      },
+      "onToggle": Object {
+        "type": "func",
+      },
+      "subtitle": Object {
+        "type": "string",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "title": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "inline",
+            "over",
+          ],
+        ],
+        "type": "oneOf",
       },
     },
   },
@@ -11384,6 +11503,9 @@ Map {
                                   "isRequired": true,
                                   "type": "oneOfType",
                                 },
+                                "isActive": Object {
+                                  "type": "bool",
+                                },
                                 "metaData": Object {
                                   "args": Array [
                                     Object {
@@ -11411,9 +11533,6 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
-                      "current": Object {
-                        "type": "bool",
-                      },
                       "icon": Object {
                         "args": Array [
                           Array [
@@ -11427,6 +11546,9 @@ Map {
                         ],
                         "isRequired": true,
                         "type": "oneOfType",
+                      },
+                      "isActive": Object {
+                        "type": "bool",
                       },
                       "isEnabled": Object {
                         "type": "bool",
@@ -12954,6 +13076,7 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13569,6 +13692,9 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
+      "onEditDataItem": Object {
+        "type": "func",
+      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -13692,6 +13818,7 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -13896,6 +14023,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onEditDataItem": Object {
         "type": "func",
       },
       "onEditDataItems": Object {

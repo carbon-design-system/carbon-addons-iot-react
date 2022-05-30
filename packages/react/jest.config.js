@@ -28,7 +28,7 @@ module.exports = {
       lines: 90,
     },
     // set coverage to 90 for all items except those who are covered by e2e cypress tests
-    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow|TableColumnCustomizationModal|ListBuilder).jsx': {
+    './src/components/**/!(TimeSeriesCard|BarChartCard|DashboardEditor|ListTarget|PageTitleBar|DateTimePickerV2|DateTimePicker|HeaderActionGroup|DashboardEditorCardRenderer|CardCodeEditor|SimpleList|index|ListContent|List|VirtualListContent|TableMultiSortRow|TableColumnCustomizationModal|ListBuilder|SidePanel).jsx': {
       statements: 90,
       branches: 90,
       functions: 90,
@@ -89,6 +89,12 @@ module.exports = {
     },
     './src/components/ListBuilder/ListBuilder.jsx': {
       functions: 88,
+    },
+    './src/components/SidePanel/SidePanel.jsx': {
+      statements: 81,
+      branches: 80,
+      lines: 86,
+      functions: 63,
     },
   },
   globals: {
