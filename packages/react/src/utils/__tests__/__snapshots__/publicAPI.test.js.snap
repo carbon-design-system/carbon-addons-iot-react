@@ -2251,7 +2251,6 @@ Map {
       "selectAllText": "Select all",
       "showExpanderColumn": false,
       "size": undefined,
-      "testID": "",
       "testId": "",
     },
     "propTypes": Object {
