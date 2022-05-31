@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.149.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.1...v2.149.1-next.2) (2022-05-31)
+
+
+### Bug Fixes
+
+* **cardeditor:** fixed Open JSON editor button in config pane ([6280f4c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6280f4c73a7fa42e783ffa653ac8bb260877aefd))
+
+
+
+
+
 ## [2.149.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.0...v2.149.1-next.1) (2022-05-27)
 
 **Note:** Version bump only for package ibm-ai-applications
