@@ -16534,9 +16534,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
-        "type": "string",
-      },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
