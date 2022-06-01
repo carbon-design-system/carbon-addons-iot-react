@@ -107,6 +107,9 @@ describe('PieChartCard', () => {
     rerender(<PieChartCard {...props} isExpanded testID="PIE_CHART_CARD" />);
     expect(screen.getByTestId('PIE_CHART_CARD')).toBeDefined();
     expect(screen.getByTestId('PIE_CHART_CARD-table')).toBeDefined();
+    expect(console.error).toHaveBeenCalledWith(
+      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
+    );
   });
 
   it('shows loading skeleton for isLoading even for empty data  ', async () => {
