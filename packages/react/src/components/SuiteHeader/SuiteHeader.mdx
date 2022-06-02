@@ -37,12 +37,15 @@ const SuiteHeaderWithDataFetchingExample = () => {
     idleTimeoutData: null,
   });
   useEffect(() => {
-    fetch('http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
+    fetch(
+      'http://localhost:3001/internal/uiresources?id=masthead&lang=en&surveyId=test&workspaceId=workspace1',
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    )
       .then((res) => res.json())
       .then((resJson) => {
         if (resJson.error || resJson.exception) {
@@ -88,6 +91,7 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
       baseApiUrl: 'http://localhost:3001/internal',
       lang: 'en',
       surveyId: 'test',
+      workspaceId: 'workspace1',
     }).then(setData);
   }, []);
 
@@ -117,6 +121,7 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
     baseApiUrl: 'http://localhost:3001/internal',
     lang: 'en',
     surveyId: 'test',
+    workspaceId: 'workspace1',
   });
 
   return (
