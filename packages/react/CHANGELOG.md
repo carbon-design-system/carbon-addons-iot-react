@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.150.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.2...v2.150.0-next.0) (2022-06-02)
+
+
+### Features
+
+* **SuiteHeader:** Including workspaceId in the `GET /uiresources` API call to make sure that the app data returned by the api matches the selected workspace. ([d1e2d3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d1e2d3bc60f0878f8364c3292804689bc56565e3))
+
+
+
+
+
 ## [2.149.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.1...v2.149.1-next.2) (2022-05-31)
 
 
