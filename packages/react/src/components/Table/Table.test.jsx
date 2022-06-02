@@ -215,6 +215,72 @@ describe('Table', () => {
     expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
+  it('Should not render batch actions bar if no actions are defined ', () => {
+    // 100 records should have 10 pages. With max pages option we expect 5.
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: undefined,
+        }}
+      />
+    );
+    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeFalsy();
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
+          },
+        }}
+      />
+    );
+    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeTruthy();
+  });
+
+  it('Renders secondary title with item count if no batch actions or secondary title are defined ', () => {
+    // 100 records should have 10 pages. With max pages option we expect 5.
+    render(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: undefined,
+        }}
+      />
+    );
+    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeFalsy();
+    expect(screen.queryByText(/1 item selected/)).toBeTruthy();
+  });
+
   it('handles row collapse', () => {
     const wrapper = mount(
       <Table

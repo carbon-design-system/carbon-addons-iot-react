@@ -915,7 +915,7 @@ const Table = (props) => {
             }}
             data={data}
             // TODO: remove id in V3.
-            testId={`${id || testId}-table-toolbar`}
+            testId={`${id ? `${id}-` : testId ? `${testId}-` : ''}table-toolbar`}
           />
         ) : null
       }

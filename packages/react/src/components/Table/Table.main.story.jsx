@@ -848,12 +848,14 @@ export const WithSelectionAndBatchActions = () => {
     hasRowSelection,
     selectionCheckboxEnabled,
     useRadioButtonSingleSelect,
+    demoToolbarActions,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
       'hasRowSelection',
       'selectionCheckboxEnabled',
       'useRadioButtonSingleSelect',
+      'demoToolbarActions',
     ],
     getDefaultValue: () => true,
   });
@@ -882,18 +884,20 @@ export const WithSelectionAndBatchActions = () => {
 
   return (
     <MyTable
+      key={demoToolbarActions}
       actions={getTableActions()}
       columns={columns}
       data={data}
       options={{
         hasRowSelection,
         useRadioButtonSingleSelect,
+        hasSearch: true,
       }}
       view={{
         table: {
           selectedIds,
         },
-        toolbar: { batchActions },
+        toolbar: demoToolbarActions ? { batchActions } : undefined,
       }}
     />
   );
