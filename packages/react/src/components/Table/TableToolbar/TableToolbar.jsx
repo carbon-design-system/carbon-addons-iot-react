@@ -375,7 +375,7 @@ const TableToolbar = ({
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
-      ) : !hasVisibleActions ? (
+      ) : !hasVisibleActions && shouldShowBatchActions ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
       ) : null}

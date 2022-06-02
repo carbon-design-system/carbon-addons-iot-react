@@ -581,12 +581,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <section
             aria-label="data table toolbar"
             className="bx--table-toolbar"
-            data-testid="null-table-toolbar"
+            data-testid="table-toolbar"
           >
             <div
               aria-hidden={true}
               className="bx--batch-actions iot--table-batch-actions"
-              data-testid="null-table-toolbar-batch-actions"
+              data-testid="table-toolbar-batch-actions"
               onScroll={[Function]}
             >
               <div
@@ -661,7 +661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </div>
             <div
               className="bx--toolbar-content iot--table-toolbar-content"
-              data-testid="null-table-toolbar-content"
+              data-testid="table-toolbar-content"
             >
               <div
                 aria-labelledby="table-19-toolbar-search-search"
@@ -697,7 +697,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 <input
                   autoComplete="off"
                   className="bx--search-input"
-                  data-testid="null-table-toolbar-search"
+                  data-testid="table-toolbar-search"
                   id="table-19-toolbar-search"
                   onBlur={[Function]}
                   onChange={[Function]}
@@ -735,7 +735,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 aria-describedby={null}
                 aria-pressed={null}
                 className="iot--btn bx--btn bx--btn--secondary"
-                data-testid="null-table-toolbar-clear-filters-button"
+                data-testid="table-toolbar-clear-filters-button"
                 disabled={false}
                 onBlur={[Function]}
                 onClick={[Function]}
