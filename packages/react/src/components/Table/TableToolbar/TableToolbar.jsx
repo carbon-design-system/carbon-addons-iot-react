@@ -288,6 +288,20 @@ const TableToolbar = ({
   const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
   const hasVisibleActions = hasVisibleBatchActions || hasVisibleOverflowBatchActions;
 
+  const totalSelectedText = useMemo(() => {
+    if (totalSelected > 1) {
+      if (typeof i18n.itemsSelected === 'function') {
+        return i18n.itemsSelected(totalSelected);
+      }
+      return i18n.itemsSelected.replace(`{1}`, totalSelected);
+    }
+    if (typeof i18n.itemSelected === 'function') {
+      return i18n.itemSelected(totalSelected);
+    }
+    return i18n.itemSelected.replace(`{1}`, totalSelected);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, [i18n.itemSelected, i18n.itemsSelected, totalSelected]);
+
   return (
     <CarbonTableToolbar
       // TODO: remove deprecated 'testID' in v3
@@ -363,9 +377,7 @@ const TableToolbar = ({
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
       ) : !hasVisibleActions ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
-        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>
-          {totalSelected > 1 ? i18n.itemsSelected(totalSelected) : i18n.itemSelected(totalSelected)}
-        </label>
+        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
       ) : null}
       {
         // Deprecated in favor of secondaryTitle for a more general use-case

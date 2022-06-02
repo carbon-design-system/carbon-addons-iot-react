@@ -91,6 +91,7 @@ describe('Table', () => {
 
   const tableState = {
     totalSelected: 0,
+    totalItemsCount: 10,
     batchActions: [],
   };
   const view = {
@@ -122,6 +123,7 @@ describe('Table', () => {
         options={{
           ...options,
           hasAggregations: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           ...view,
@@ -130,6 +132,17 @@ describe('Table', () => {
             columns: [
               {
                 id: 'number',
+              },
+            ],
+          },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
               },
             ],
           },
@@ -168,6 +181,7 @@ describe('Table', () => {
         options={{
           ...options,
           hasAggregations: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           ...view,
@@ -176,6 +190,17 @@ describe('Table', () => {
             columns: [
               {
                 id: 'number',
+              },
+            ],
+          },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
               },
             ],
           },
@@ -469,23 +494,17 @@ describe('Table', () => {
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {
-    const tableHeaderWrapper = mount(
+    const { rerender } = render(
       <TableToolbar actions={mockActions} options={options} tableState={tableState} />
     );
     //  Should render Row count label when hasRowCountInHeader (option) property is true
-    const renderRowCountLabel = tableHeaderWrapper.find(
-      `.${iotPrefix}--table-toolbar-secondary-title`
-    );
-    expect(renderRowCountLabel).toHaveLength(1);
+    const renderRowCountLabel = screen.queryByText(/Results: 10/);
+    expect(renderRowCountLabel).toBeTruthy();
 
-    const tableHeaderWrapper2 = mount(
-      <TableToolbar actions={mockActions} options={options2} tableState={tableState} />
-    );
+    rerender(<TableToolbar actions={mockActions} options={options2} tableState={tableState} />);
     //  Should not render Row count label when hasRowCountInHeader (option2) property is false
-    const renderRowCountLabel2 = tableHeaderWrapper2.find(
-      `.${iotPrefix}--table-toolbar-secondary-title`
-    );
-    expect(renderRowCountLabel2).toHaveLength(0);
+    const renderRowCountLabel2 = screen.queryByText(/Results: 10/);
+    expect(renderRowCountLabel2).toBeFalsy();
   });
 
   it('click should trigger onDownload', () => {
@@ -1266,12 +1285,21 @@ describe('Table', () => {
         options={{
           ...initialState.options,
           hasColumnSelectionConfig: true,
+          hasRowSelection: 'multi',
         }}
         i18n={i18nTest}
         view={{
           ...initialState.view,
           toolbar: {
             activeBar: 'column',
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
           },
           table: {
             selectedIds: ['row-3'],
