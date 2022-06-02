@@ -293,12 +293,12 @@ const TableToolbar = ({
       if (typeof i18n.itemsSelected === 'function') {
         return i18n.itemsSelected(totalSelected);
       }
-      return i18n.itemsSelected.replace(`{1}`, totalSelected);
+      return `${totalSelected} ${i18n.itemsSelected}`;
     }
     if (typeof i18n.itemSelected === 'function') {
       return i18n.itemSelected(totalSelected);
     }
-    return i18n.itemSelected.replace(`{1}`, totalSelected);
+    return `${totalSelected} ${i18n.itemSelected}`;
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [i18n.itemSelected, i18n.itemsSelected, totalSelected]);
 
