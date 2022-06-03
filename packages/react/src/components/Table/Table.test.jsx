@@ -150,10 +150,7 @@ describe('Table', () => {
         testId="__table__"
       />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
-    console.error.mockReset();
+
     expect(screen.getByTestId('__table__')).toBeDefined();
     expect(screen.getByTestId('__table__-table-container')).toBeDefined();
     expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
