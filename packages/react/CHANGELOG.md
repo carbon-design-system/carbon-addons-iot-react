@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.150.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0-next.0...v2.150.0-next.1) (2022-06-03)
+
+
+### Features
+
+* **tableheader:** hide toolbar if no bactch actions and supply count ([039feb3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/039feb3156675b934d560bf0d36af6a83af79f9e))
+* **tabletoolbar:** change check to be prop based for backwards compat ([69cf408](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69cf4081fd1c36e590f3747622ad5eb8196f7968))
+
+
+
+
+
 # [2.150.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.2...v2.150.0-next.0) (2022-06-02)
 
 
