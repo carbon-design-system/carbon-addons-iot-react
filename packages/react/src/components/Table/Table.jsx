@@ -545,7 +545,7 @@ export const defaultProps = (baseProps) => ({
     toolbarTooltipLabel: 'Toolbar tooltip',
   },
   error: null,
-  // TODO: set default in v3. Leaving id for backwards compat since
+  // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
   // previously used as testId.
   testId: null,
 });
