@@ -7,6 +7,7 @@ const useUiResources = ({
   baseApiUrl,
   lang = 'en',
   surveyId = null,
+  workspaceId = null,
   fetchApi = defaultFetchApi,
   isTest = false,
 }) => {
@@ -29,6 +30,7 @@ const useUiResources = ({
         baseApiUrl,
         lang,
         surveyId,
+        workspaceId,
         fetchApi,
         isTest,
       });
@@ -38,7 +40,7 @@ const useUiResources = ({
     } finally {
       setIsLoading(false);
     }
-  }, [baseApiUrl, lang, surveyId, isTest, setIsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [baseApiUrl, lang, surveyId, workspaceId, isTest, setIsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // load actual data

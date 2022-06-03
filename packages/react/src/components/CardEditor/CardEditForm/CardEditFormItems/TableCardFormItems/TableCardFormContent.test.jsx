@@ -97,7 +97,7 @@ describe('TableCardFormContent', () => {
     });
   });
   it('fires onChange when dataItem deviceId is selected', () => {
-    render(<TableCardFormContent {...commonProps} />);
+    render(<TableCardFormContent {...commonProps} onEditDataItem={jest.fn()} />);
     // check for the temperature and pressure to be shown under data items
     const dataItemComboBox = screen.getByTestId('combo-box');
     expect(dataItemComboBox).toBeInTheDocument();
@@ -137,6 +137,7 @@ describe('TableCardFormContent', () => {
         getValidDataItems={() => [
           { dataItemId: 'validDataItem', dataSourceId: 'validDataItem', label: 'Data Item' },
         ]}
+        onEditDataItem={jest.fn()}
       />
     );
     // check for the temperature and pressure to be shown under data items
@@ -613,5 +614,55 @@ describe('TableCardFormContent', () => {
     userEvent.click(screen.getAllByRole('button')[0]);
     expect(screen.getByText('Click here!')).toBeVisible();
     expect(screen.getByText('Click here!')).toHaveAttribute('href', 'https://www.ibm.com');
+  });
+
+  it('Edit button should edit items from the data items list', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                type: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+          },
+        }}
+        onEditDataItem={jest.fn()}
+      />
+    );
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Manufacturer')).toBeDefined();
+
+    const editManufacturerButton = screen.getAllByRole('button', { name: 'Edit' })[1];
+    expect(editManufacturerButton).toBeInTheDocument();
+
+    fireEvent.click(editManufacturerButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    });
   });
 });

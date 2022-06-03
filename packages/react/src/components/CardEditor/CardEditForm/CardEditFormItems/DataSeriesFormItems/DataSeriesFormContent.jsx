@@ -106,6 +106,7 @@ const propTypes = {
     closeMenuText: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -147,6 +148,7 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
+  onEditDataItem: null,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -247,6 +249,7 @@ const DataSeriesFormItem = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
+  onEditDataItem,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -318,11 +321,18 @@ const DataSeriesFormItem = ({
   );
 
   const handleEditButton = useCallback(
-    (dataItem, i) => {
+    async (dataItem, i) => {
       const dataItemWithMetaData = validDataItems?.find(
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
+      // Call back function for on click of edit button
+      if (onEditDataItem) {
+        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(downSampleMethods)) {
+          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        }
+      }
       // need to reset the card to include the latest dataSection
       onChange({
         ...cardConfig,
@@ -344,7 +354,7 @@ const DataSeriesFormItem = ({
       });
       setShowEditor(true);
     },
-    [cardConfig, dataSection, onChange, validDataItems]
+    [cardConfig, dataSection, onChange, onEditDataItem, validDataItems]
   );
 
   const handleRemoveButton = useCallback(

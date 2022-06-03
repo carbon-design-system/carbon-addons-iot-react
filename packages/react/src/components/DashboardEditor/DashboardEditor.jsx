@@ -311,6 +311,7 @@ const propTypes = {
   onEditDataItems: PropTypes.func,
 
   testId: PropTypes.string,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -385,6 +386,7 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
   testId: 'dashboard-editor',
+  onEditDataItem: null,
 };
 
 const LAYOUTS = {
@@ -439,6 +441,7 @@ const DashboardEditor = ({
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
   testId,
+  onEditDataItem,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -817,6 +820,7 @@ const DashboardEditor = ({
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItems={onEditDataItems}
+            onEditDataItem={onEditDataItem}
           />
         </ErrorBoundary>
       </div>

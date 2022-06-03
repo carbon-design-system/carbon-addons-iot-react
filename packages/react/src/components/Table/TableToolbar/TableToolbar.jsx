@@ -58,6 +58,8 @@ const propTypes = {
   options: PropTypes.shape({
     hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
+    /* option to hide batch action toolbar */
+    hasBatchActionToolbar: PropTypes.bool,
     /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
     hasFastSearch: PropTypes.bool,
     hasFilter: PropTypes.bool,
@@ -209,6 +211,7 @@ const TableToolbar = ({
     hasRowCountInHeader,
     hasRowEdit,
     hasUserViewManagement,
+    hasBatchActionToolbar,
   },
   actions: {
     onCancelBatchAction,
@@ -284,7 +287,22 @@ const TableToolbar = ({
     (action) => action.isOverflow && action.hidden !== true
   );
 
+  const hasVisibleBatchActions = visibleBatchActions.length > 0;
   const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
+
+  const totalSelectedText = useMemo(() => {
+    if (totalSelected > 1) {
+      if (typeof i18n.itemsSelected === 'function') {
+        return i18n.itemsSelected(totalSelected);
+      }
+      return `${totalSelected} ${i18n.itemsSelected}`;
+    }
+    if (typeof i18n.itemSelected === 'function') {
+      return i18n.itemSelected(totalSelected);
+    }
+    return `${totalSelected} ${i18n.itemSelected}`;
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, [i18n.itemSelected, i18n.itemsSelected, totalSelected]);
 
   return (
     <CarbonTableToolbar
@@ -293,62 +311,76 @@ const TableToolbar = ({
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
       aria-label={i18n.toolbarLabelAria}
     >
-      <TableBatchActions
-        // TODO: remove deprecated 'testID' in v3
-        data-testid={`${testID || testId}-batch-actions`}
-        className={`${iotPrefix}--table-batch-actions`}
-        onCancel={onCancelBatchAction}
-        shouldShowBatchActions={shouldShowBatchActions}
-        totalSelected={totalSelected}
-        translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-      >
-        {visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
-          <TableBatchAction
-            key={id}
-            onClick={() => onApplyBatchAction(id)}
-            tabIndex={shouldShowBatchActions ? 0 : -1}
-            disabled={!shouldShowBatchActions || disabled}
-            {...others}
-          >
-            {labelText}
-          </TableBatchAction>
-        ))}
-        {hasVisibleOverflowBatchActions ? (
-          <OverflowMenu
-            data-testid={`${testID || testId}-batch-actions-overflow-menu`}
-            className={`${iotPrefix}--table-overflow-batch-actions`}
-            flipped={langDir === 'ltr'}
-            direction="bottom"
-            onClick={(e) => e.stopPropagation()}
-            renderIcon={OverflowMenuVertical20}
-            tabIndex={shouldShowBatchActions ? 0 : -1}
-            size="lg"
-            menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
-          >
-            {visibleOverflowBatchActions.map(
-              ({ id, labelText, disabled, hasDivider, isDelete, renderIcon, iconDescription }) => (
-                <OverflowMenuItem
-                  data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
-                  itemText={renderTableOverflowItemText({
-                    action: { renderIcon, labelText: labelText || iconDescription },
-                    className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
-                  })}
-                  disabled={!shouldShowBatchActions || disabled}
-                  onClick={() => onApplyBatchAction(id)}
-                  key={`table-batch-actions-overflow-menu-${id}`}
-                  requireTitle={!renderIcon}
-                  hasDivider={hasDivider}
-                  isDelete={isDelete}
-                  aria-label={labelText}
-                />
-              )
-            )}
-          </OverflowMenu>
-        ) : null}
-      </TableBatchActions>
+      {hasBatchActionToolbar ? (
+        <TableBatchActions
+          // TODO: remove deprecated 'testID' in v3
+          data-testid={`${testID || testId}-batch-actions`}
+          className={`${iotPrefix}--table-batch-actions`}
+          onCancel={onCancelBatchAction}
+          shouldShowBatchActions={shouldShowBatchActions}
+          totalSelected={totalSelected}
+          translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
+        >
+          {hasVisibleBatchActions &&
+            visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
+              <TableBatchAction
+                key={id}
+                onClick={() => onApplyBatchAction(id)}
+                tabIndex={shouldShowBatchActions ? 0 : -1}
+                disabled={!shouldShowBatchActions || disabled}
+                {...others}
+              >
+                {labelText}
+              </TableBatchAction>
+            ))}
+          {hasVisibleOverflowBatchActions ? (
+            <OverflowMenu
+              data-testid={`${testID || testId}-batch-actions-overflow-menu`}
+              className={`${iotPrefix}--table-overflow-batch-actions`}
+              flipped={langDir === 'ltr'}
+              direction="bottom"
+              onClick={(e) => e.stopPropagation()}
+              renderIcon={OverflowMenuVertical20}
+              tabIndex={shouldShowBatchActions ? 0 : -1}
+              size="lg"
+              menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+            >
+              {visibleOverflowBatchActions.map(
+                ({
+                  id,
+                  labelText,
+                  disabled,
+                  hasDivider,
+                  isDelete,
+                  renderIcon,
+                  iconDescription,
+                }) => (
+                  <OverflowMenuItem
+                    data-testid={`${testID || testId}-batch-actions-overflow-menu-item-${id}`}
+                    itemText={renderTableOverflowItemText({
+                      action: { renderIcon, labelText: labelText || iconDescription },
+                      className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
+                    })}
+                    disabled={!shouldShowBatchActions || disabled}
+                    onClick={() => onApplyBatchAction(id)}
+                    key={`table-batch-actions-overflow-menu-${id}`}
+                    requireTitle={!renderIcon}
+                    hasDivider={hasDivider}
+                    isDelete={isDelete}
+                    aria-label={labelText}
+                  />
+                )
+              )}
+            </OverflowMenu>
+          ) : null}
+        </TableBatchActions>
+      ) : null}
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
+      ) : !hasBatchActionToolbar && shouldShowBatchActions ? (
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
+        <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
       ) : null}
       {
         // Deprecated in favor of secondaryTitle for a more general use-case

@@ -3,6 +3,68 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.150.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0-next.1...v2.150.0-next.2) (2022-06-03)
+
+
+### Bug Fixes
+
+* **piechartcard:** removed testID proptype that is in cardproptypes ([9f642a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9f642a089a303a94e8b0e9d3167b2d8792c26788))
+* **tablehead:** update default value for tableID to prevent warning ([0d61ca0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0d61ca01ab5fe8b3419cc7c483c65b08ea415b28))
+
+
+
+
+
+# [2.150.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0-next.0...v2.150.0-next.1) (2022-06-03)
+
+
+### Features
+
+* **tableheader:** hide toolbar if no bactch actions and supply count ([039feb3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/039feb3156675b934d560bf0d36af6a83af79f9e))
+* **tabletoolbar:** change check to be prop based for backwards compat ([69cf408](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/69cf4081fd1c36e590f3747622ad5eb8196f7968))
+
+
+
+
+
+# [2.150.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.2...v2.150.0-next.0) (2022-06-02)
+
+
+### Features
+
+* **SuiteHeader:** Including workspaceId in the `GET /uiresources` API call to make sure that the app data returned by the api matches the selected workspace. ([d1e2d3b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d1e2d3bc60f0878f8364c3292804689bc56565e3))
+
+
+
+
+
+## [2.149.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.1...v2.149.1-next.2) (2022-05-31)
+
+
+### Bug Fixes
+
+* **cardeditor:** fixed Open JSON editor button in config pane ([6280f4c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6280f4c73a7fa42e783ffa653ac8bb260877aefd))
+
+
+
+
+
+## [2.149.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.1-next.0...v2.149.1-next.1) (2022-05-27)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+## [2.149.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0...v2.149.1-next.0) (2022-05-26)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
 # [2.149.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.149.0-next.58...v2.149.0) (2022-05-26)
 
 **Note:** Version bump only for package carbon-addons-iot-react

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16 } from '@carbon/icons-react';
 import { MultiSelect } from 'carbon-components-react';
+import { isEmpty } from 'lodash-es';
 
 import DataSeriesFormItemModal from '../../CardEditor/CardEditForm/CardEditFormItems/DataSeriesFormItemModal';
 import List from '../../List/List';
@@ -51,6 +52,7 @@ const propTypes = {
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
+    onEditDataItem: PropTypes.func,
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
@@ -73,6 +75,7 @@ const propTypes = {
   /** An object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } */
   availableDimensions: PropTypes.shape({}),
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -92,6 +95,7 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   testId: 'HotspotEditorDataSourceTab',
+  onEditDataItem: null,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -111,6 +115,7 @@ const HotspotEditorDataSourceTab = ({
   testID,
   testId,
   translateWithId,
+  onEditDataItem,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -149,6 +154,28 @@ const HotspotEditorDataSourceTab = ({
     ...item,
     label: initialSelectedItems.find((selected) => selected.id === item.id)?.label ?? item.label,
   }));
+
+  const handleEditButton = useCallback(
+    async (dataItem) => {
+      const dataItemWithMetaData = dataItems?.find(
+        ({ dataItemId }) => dataItemId === dataItem.dataItemId
+      );
+      // Call back function for on click of edit button
+      if (onEditDataItem) {
+        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(downSampleMethods)) {
+          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        }
+      }
+      // need to reset the card to include the latest dataSection
+      setEditDataItem({
+        ...dataItemWithMetaData,
+        ...dataItem,
+      });
+      setShowEditor(true);
+    },
+    [cardConfig, onEditDataItem, dataItems]
+  );
 
   return (
     <div data-testid={testID || testId}>
@@ -196,12 +223,7 @@ const HotspotEditorDataSourceTab = ({
                 hasIconOnly
                 kind="ghost"
                 size="small"
-                onClick={() => {
-                  setEditDataItem({
-                    ...dataItem,
-                  });
-                  setShowEditor(true);
-                }}
+                onClick={() => handleEditButton(dataItem)}
                 iconDescription={mergedI18n.editText}
               />,
             ],
