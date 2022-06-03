@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.150.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0-next.1...v2.150.0-next.2) (2022-06-03)
+
+
+### Bug Fixes
+
+* **piechartcard:** removed testID proptype that is in cardproptypes ([9f642a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9f642a089a303a94e8b0e9d3167b2d8792c26788))
+* **tablehead:** update default value for tableID to prevent warning ([0d61ca0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0d61ca01ab5fe8b3419cc7c483c65b08ea415b28))
+
+
+
+
+
 # [2.150.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0-next.0...v2.150.0-next.1) (2022-06-03)
 
 
