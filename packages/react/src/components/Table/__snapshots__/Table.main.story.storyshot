@@ -21815,11 +21815,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <section
       aria-label="data table toolbar"
       className="bx--table-toolbar"
-      data-testid="table-toolbar"
+      data-testid="null-table-toolbar"
     >
       <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
         className="bx--toolbar-content iot--table-toolbar-content"
-        data-testid="table-toolbar-content"
+        data-testid="null-table-toolbar-content"
       >
         <button
           aria-expanded={false}
@@ -24567,6 +24606,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="AsyncTable-table-toolbar"
     >
       <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="AsyncTable-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
         className="bx--toolbar-content iot--table-toolbar-content"
         data-testid="AsyncTable-table-toolbar-content"
       >
@@ -24888,6 +24966,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         className="bx--table-toolbar"
         data-testid="table-table-toolbar"
       >
+        <div
+          aria-hidden={true}
+          className="bx--batch-actions iot--table-batch-actions"
+          data-testid="table-table-toolbar-batch-actions"
+          onScroll={[Function]}
+        >
+          <div
+            className="bx--batch-summary"
+          >
+            <p
+              className="bx--batch-summary__para"
+            >
+              <span
+                dir="auto"
+              >
+                0 items selected
+              </span>
+            </p>
+          </div>
+          <div
+            className="bx--action-list"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
         <label
           className="iot--table-toolbar-secondary-title"
         >
@@ -28413,17 +28530,56 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <section
       aria-label="data table toolbar"
       className="bx--table-toolbar"
-      data-testid="table-toolbar"
+      data-testid="null-table-toolbar"
     >
       <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
         className="bx--toolbar-content iot--table-toolbar-content"
-        data-testid="table-toolbar-content"
+        data-testid="null-table-toolbar-content"
       >
         <button
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--secondary"
-          data-testid="table-toolbar-clear-filters-button"
+          data-testid="null-table-toolbar-clear-filters-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -43184,11 +43340,50 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <section
       aria-label="data table toolbar"
       className="bx--table-toolbar"
-      data-testid="table-toolbar"
+      data-testid="null-table-toolbar"
     >
       <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
         className="bx--toolbar-content iot--table-toolbar-content"
-        data-testid="table-toolbar-content"
+        data-testid="null-table-toolbar-content"
       >
         <div
           aria-labelledby="table-22-toolbar-search-search"
@@ -43224,7 +43419,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <input
             autoComplete="off"
             className="bx--search-input"
-            data-testid="table-toolbar-search"
+            data-testid="null-table-toolbar-search"
             id="table-22-toolbar-search"
             onBlur={[Function]}
             onChange={[Function]}
@@ -45914,12 +46109,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <section
       aria-label="data table toolbar"
       className="bx--table-toolbar"
-      data-testid="table-toolbar"
+      data-testid="null-table-toolbar"
     >
       <div
         aria-hidden={false}
         className="bx--batch-actions bx--batch-actions--active iot--table-batch-actions"
-        data-testid="table-toolbar-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
         onScroll={[Function]}
       >
         <div
@@ -46045,7 +46240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             aria-haspopup={true}
             aria-label="open and close list of options"
             className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg"
-            data-testid="table-toolbar-batch-actions-overflow-menu"
+            data-testid="null-table-toolbar-batch-actions-overflow-menu"
             onClick={[Function]}
             onClose={[Function]}
             onKeyDown={[Function]}
@@ -46104,7 +46299,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--toolbar-content iot--table-toolbar-content"
-        data-testid="table-toolbar-content"
+        data-testid="null-table-toolbar-content"
       >
         <div
           aria-labelledby="table-27-toolbar-search-search"
@@ -46140,7 +46335,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           <input
             autoComplete="off"
             className="bx--search-input"
-            data-testid="table-toolbar-search"
+            data-testid="null-table-toolbar-search"
             id="table-27-toolbar-search"
             onBlur={[Function]}
             onChange={[Function]}
@@ -61761,8 +61956,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     <section
       aria-label="data table toolbar"
       className="bx--table-toolbar"
-      data-testid="table-toolbar"
+      data-testid="null-table-toolbar"
     >
+      <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
       <label
         className="iot--table-toolbar-secondary-title"
       >
@@ -61814,7 +62048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       </div>
       <div
         className="bx--toolbar-content iot--table-toolbar-content"
-        data-testid="table-toolbar-content"
+        data-testid="null-table-toolbar-content"
       >
         <button
           aria-describedby={null}
