@@ -240,8 +240,7 @@ describe('Table', () => {
     expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
-  it('Should not render batch actions hasBatchActionToolbar option is false', () => {
-    // 100 records should have 10 pages. With max pages option we expect 5.
+  it('Should not render batch actions if hasBatchActionToolbar option is false', () => {
     const { rerender } = render(
       <Table
         columns={tableColumns}
@@ -287,15 +286,14 @@ describe('Table', () => {
     expect(screen.queryByTestId('__table__-table-toolbar-batch-actions')).toBeTruthy();
   });
 
-  it('Renders secondary title with item count if no batch actions or secondary title are defined ', () => {
-    // 100 records should have 10 pages. With max pages option we expect 5.
+  it('Renders secondary title with item count if hasBatchActionToolbar option is false & secondary title is not defined ', () => {
     render(
       <Table
         columns={tableColumns}
         data={largeTableData}
         expandedData={expandedData}
         actions={mockActions}
-        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        options={{ hasPagination: true, hasRowSelection: 'multi', hasBatchActionToolbar: false }}
         view={{
           ...view,
           pagination: { ...view.pagination, maxPages: 5 },
