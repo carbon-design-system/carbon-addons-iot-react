@@ -58,6 +58,8 @@ const propTypes = {
   options: PropTypes.shape({
     hasAdvancedFilter: PropTypes.bool,
     hasAggregations: PropTypes.bool,
+    /* option to hide batch action toolbar */
+    hasBatchActionToolbar: PropTypes.bool,
     /** If true, search is applied as typed. If false, only after 'Enter' is pressed */
     hasFastSearch: PropTypes.bool,
     hasFilter: PropTypes.bool,
@@ -209,6 +211,7 @@ const TableToolbar = ({
     hasRowCountInHeader,
     hasRowEdit,
     hasUserViewManagement,
+    hasBatchActionToolbar,
   },
   actions: {
     onCancelBatchAction,
@@ -286,7 +289,6 @@ const TableToolbar = ({
 
   const hasVisibleBatchActions = visibleBatchActions.length > 0;
   const hasVisibleOverflowBatchActions = visibleOverflowBatchActions.length > 0;
-  const hasVisibleActions = hasVisibleBatchActions || hasVisibleOverflowBatchActions;
 
   const totalSelectedText = useMemo(() => {
     if (totalSelected > 1) {
@@ -309,7 +311,7 @@ const TableToolbar = ({
       className={classnames(`${iotPrefix}--table-toolbar`, className)}
       aria-label={i18n.toolbarLabelAria}
     >
-      {hasVisibleActions ? (
+      {hasBatchActionToolbar ? (
         <TableBatchActions
           // TODO: remove deprecated 'testID' in v3
           data-testid={`${testID || testId}-batch-actions`}
@@ -319,17 +321,18 @@ const TableToolbar = ({
           totalSelected={totalSelected}
           translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
         >
-          {visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
-            <TableBatchAction
-              key={id}
-              onClick={() => onApplyBatchAction(id)}
-              tabIndex={shouldShowBatchActions ? 0 : -1}
-              disabled={!shouldShowBatchActions || disabled}
-              {...others}
-            >
-              {labelText}
-            </TableBatchAction>
-          ))}
+          {hasVisibleBatchActions &&
+            visibleBatchActions.map(({ id, labelText, disabled, ...others }) => (
+              <TableBatchAction
+                key={id}
+                onClick={() => onApplyBatchAction(id)}
+                tabIndex={shouldShowBatchActions ? 0 : -1}
+                disabled={!shouldShowBatchActions || disabled}
+                {...others}
+              >
+                {labelText}
+              </TableBatchAction>
+            ))}
           {hasVisibleOverflowBatchActions ? (
             <OverflowMenu
               data-testid={`${testID || testId}-batch-actions-overflow-menu`}
@@ -375,7 +378,7 @@ const TableToolbar = ({
       {secondaryTitle ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{secondaryTitle}</label>
-      ) : !hasVisibleActions && shouldShowBatchActions ? (
+      ) : !hasBatchActionToolbar && shouldShowBatchActions ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for
         <label className={`${iotPrefix}--table-toolbar-secondary-title`}>{totalSelectedText}</label>
       ) : null}

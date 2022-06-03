@@ -240,7 +240,7 @@ describe('Table', () => {
     expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
   });
 
-  it('Should not render batch actions bar if no actions are defined ', () => {
+  it('Should not render batch actions hasBatchActionToolbar option is false', () => {
     // 100 records should have 10 pages. With max pages option we expect 5.
     const { rerender } = render(
       <Table
@@ -248,16 +248,17 @@ describe('Table', () => {
         data={largeTableData}
         expandedData={expandedData}
         actions={mockActions}
-        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        options={{ hasPagination: true, hasRowSelection: 'multi', hasBatchActionToolbar: false }}
         view={{
           ...view,
           pagination: { ...view.pagination, maxPages: 5 },
           table: { ...view.table, selectedIds: ['row-3'] },
           toolbar: undefined,
         }}
+        testId="__table__"
       />
     );
-    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeFalsy();
+    expect(screen.queryByTestId('__table__-table-toolbar-batch-actions')).toBeFalsy();
     rerender(
       <Table
         columns={tableColumns}
@@ -280,9 +281,10 @@ describe('Table', () => {
             ],
           },
         }}
+        testId="__table__"
       />
     );
-    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeTruthy();
+    expect(screen.queryByTestId('__table__-table-toolbar-batch-actions')).toBeTruthy();
   });
 
   it('Renders secondary title with item count if no batch actions or secondary title are defined ', () => {

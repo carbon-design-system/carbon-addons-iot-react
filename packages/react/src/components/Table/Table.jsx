@@ -74,6 +74,9 @@ const propTypes = {
     hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    /** @TODO: Remove in major release and just show action bar when no actions are defined */
+    /* option to hide batch action toolbar */
+    hasBatchActionToolbar: PropTypes.bool,
     /** True if the rows should be expandable */
     hasRowExpansion: PropTypes.oneOfType([
       PropTypes.bool,
@@ -372,6 +375,7 @@ export const defaultProps = (baseProps) => ({
     hasPagination: false,
     hasRowSelection: false,
     hasRowExpansion: false,
+    hasBatchActionToolbar: true,
     hasRowActions: false,
     hasRowNesting: false,
     hasRowEdit: false,
@@ -541,7 +545,7 @@ export const defaultProps = (baseProps) => ({
     toolbarTooltipLabel: 'Toolbar tooltip',
   },
   error: null,
-  // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
+  // TODO: set default in v3. Leaving id for backwards compat since
   // previously used as testId.
   testId: null,
 });
@@ -887,7 +891,8 @@ const Table = (props) => {
                 'hasRowSelection',
                 'hasRowCountInHeader',
                 'hasRowEdit',
-                'hasUserViewManagement'
+                'hasUserViewManagement',
+                'hasBatchActionToolbar'
               ),
               hasFilter: Boolean(options?.hasFilter),
               hasAdvancedFilter: Boolean(options?.hasAdvancedFilter),
@@ -915,7 +920,7 @@ const Table = (props) => {
             }}
             data={data}
             // TODO: remove id in V3.
-            testId={`${id ? `${id}-` : testId ? `${testId}-` : ''}table-toolbar`}
+            testId={`${id || testId}-table-toolbar`}
           />
         ) : null
       }

@@ -892,6 +892,7 @@ export const WithSelectionAndBatchActions = () => {
         hasRowSelection,
         useRadioButtonSingleSelect,
         hasSearch: true,
+        hasBatchActionToolbar: demoToolbarActions,
       }}
       view={{
         table: {
