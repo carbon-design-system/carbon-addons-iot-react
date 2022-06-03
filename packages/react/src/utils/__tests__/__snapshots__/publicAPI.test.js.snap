@@ -653,6 +653,7 @@ Map {
       "options": Object {
         "hasAdvancedFilter": false,
         "hasAggregations": false,
+        "hasBatchActionToolbar": true,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
         "hasFastSearch": true,
@@ -1404,6 +1405,9 @@ Map {
           Object {
             "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
+              "type": "bool",
+            },
+            "hasBatchActionToolbar": Object {
               "type": "bool",
             },
             "hasColumnSelection": Object {
@@ -4445,6 +4449,9 @@ Map {
               "type": "bool",
             },
             "hasAggregations": Object {
+              "type": "bool",
+            },
+            "hasBatchActionToolbar": Object {
               "type": "bool",
             },
             "hasColumnSelection": Object {
