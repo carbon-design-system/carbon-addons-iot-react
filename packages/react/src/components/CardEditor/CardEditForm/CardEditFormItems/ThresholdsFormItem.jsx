@@ -233,6 +233,7 @@ const ThresholdsFormItem = ({
                     id={`${cardConfig.id}_value-card-threshold-value_${i}`}
                     step={1}
                     hideLabel
+                    translateWithId={translateWithId}
                     invalid={false} // don't allow invalid state
                     value={threshold.value?.toString() || 0}
                     onChange={({ imaginaryTarget }) => {
