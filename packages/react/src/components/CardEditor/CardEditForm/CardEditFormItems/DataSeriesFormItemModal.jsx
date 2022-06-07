@@ -173,8 +173,10 @@ const defaultProps = {
     dataItemSource: 'Data item source',
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
-    decimalPlaces: 'Decimal places',
+    decimalPlacesLabel: 'Decimal places',
     downSampleMethod: 'Downsample method',
+    downSampleMethodHelperText:
+      'Select an aggregation to be used to reduce the sampling rate of a large time-series data.',
   },
   editDataSeries: [],
   showEditor: false,
@@ -231,7 +233,14 @@ const DataSeriesFormItemModal = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const { clearSelectionText, openMenuText, closeMenuText, clearAllText } = mergedI18n;
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+        incrementNumberText,
+        decrementNumberText,
+      } = mergedI18n;
       switch (idToTranslate) {
         default:
           return '';
@@ -243,6 +252,10 @@ const DataSeriesFormItemModal = ({
           return openMenuText || 'Open menu';
         case 'close.menu':
           return closeMenuText || 'Close menu';
+        case 'increment.number':
+          return incrementNumberText || 'Increment number';
+        case 'decrement.number':
+          return decrementNumberText || 'Decrement number';
       }
     },
     [mergedI18n]
@@ -425,7 +438,7 @@ const DataSeriesFormItemModal = ({
             <div className={`${baseClassName}--input-group--item-end`}>
               <Dropdown
                 id={`${id}_value-card-decimal-place`}
-                titleText="Decimal places"
+                titleText={mergedI18n.decimalPlacesLabel}
                 direction="bottom"
                 label=""
                 items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
@@ -467,7 +480,7 @@ const DataSeriesFormItemModal = ({
             <div className={`${baseClassName}--input-group--item-end`}>
               <Dropdown
                 id={`${id}_value-card-decimal-place`}
-                titleText="Decimal places"
+                titleText={mergedI18n.decimalPlacesLabel}
                 direction="bottom"
                 label=""
                 items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
@@ -592,6 +605,7 @@ const DataSeriesFormItemModal = ({
                       ) || { id: 'none', text: mergedI18n.none }
                     }
                     titleText={mergedI18n.downSampleMethod}
+                    helperText={mergedI18n.downSampleMethodHelperText}
                     light
                     onChange={({ selectedItem }) => {
                       setEditDataItem({

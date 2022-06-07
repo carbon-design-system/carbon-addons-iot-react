@@ -167,6 +167,7 @@ const CardEditForm = ({
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+            onEditDataItem={onEditDataItem}
           />
         </Tab>
         {!isCustomCardWithNoSettings ? (
@@ -181,7 +182,6 @@ const CardEditForm = ({
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-              onEditDataItem={onEditDataItem}
             />
           </Tab>
         ) : null}
