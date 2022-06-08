@@ -8,19 +8,21 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 
-import TimePicker, { TimePickerSpinner } from './TimePicker';
+import { SelectItem } from '../SelectItem';
+import { TimePickerSelect } from '../TimePickerSelect';
+
+import { TimePicker } from '.';
 
 const sizes = {
-  'Large size (lg)': 'lg',
-  'Medium Size (md)': 'md',
+  'Extra large size (xl)': 'xl',
+  'Default size': undefined,
   'Small size (sm)': 'sm',
 };
 
 const props = {
   timepicker: () => ({
-    type: select('Input Type', ['single', 'range'], 'single'),
     pattern: text(
       'Regular expression for the value (pattern in <TimePicker>)',
       '(1[012]|[1-9]):[0-5][0-9](\\s)?'
@@ -35,7 +37,7 @@ const props = {
       'A valid value is required'
     ),
     maxLength: number('Maximum length (maxLength in <TimePicker>)', 5),
-    size: select('Field size (size)', sizes, 'md'),
+    size: select('Field size (size)', sizes, undefined) || undefined,
     onClick: action('onClick'),
     onChange: action('onChange'),
     onBlur: action('onBlur'),
@@ -51,13 +53,40 @@ const props = {
 };
 
 export default {
-  title: '1 - Watson IoT/TimePicker',
+  title: '3 - Carbon/TimePicker',
+  decorators: [withKnobs],
   parameters: {
     component: TimePicker,
+
+    subcomponents: {
+      TimePickerSelect,
+      SelectItem,
+    },
   },
 };
 
 export const Default = () => {
-  return <TimePickerSpinner />;
-  // return <TimePicker id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+  const selectProps = props.select();
+  return (
+    <>
+      <TimePicker id="time-picker" {...props.timepicker()} />
+      {/* <TimePickerSelect id="time-picker-select-1" {...selectProps}>
+        <SelectItem value="AM" text="AM" />
+        <SelectItem value="PM" text="PM" />
+      </TimePickerSelect>
+      <TimePickerSelect id="time-picker-select-2" {...selectProps}>
+        <SelectItem value="Time zone 1" text="Time zone 1" />
+        <SelectItem value="Time zone 2" text="Time zone 2" />
+      </TimePickerSelect> */}
+      {/* </TimePicker>  */}
+    </>
+  );
+};
+
+Default.parameters = {
+  info: {
+    text: `
+        The time picker allow users to select a time.
+      `,
+  },
 };

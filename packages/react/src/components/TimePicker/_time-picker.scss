@@ -1,1 +1,79 @@
+@import '../../globals/vars';
 @import '~carbon-components/scss/components/time-picker/time-picker';
+
+.#{$iot-prefix}--time-picker {
+  display: flex;
+  width: 16.125rem;
+}
+
+.#{$iot-prefix}--time-picker-spinner {
+  background-color: white;
+  box-shadow: 0 7px 10px 2px #ddd;
+  display: flex;
+  gap: 1px;
+  justify-content: space-between;
+  max-height: 280px;
+  overflow: hidden;
+  padding: 0 0.5rem;
+  position: relative;
+  width: 16.125rem;
+
+  &::before {
+    background: $background-brand;
+    content: '';
+    width: calc(100% - 1rem);
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-section {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80px;
+
+    &:nth-child(3) {
+      justify-content: center;
+      padding-top: 40px;
+    }
+  }
+
+  &-list {
+    position: relative;
+    width: 80px;
+    overflow: hidden;
+
+    li {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 40px;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .#{$iot-prefix}--time-picker-spinner &-button {
+    color: black;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: unset;
+    max-height: 40px;
+    width: 100%;
+
+    &--selected {
+      color: white;
+      &:hover {
+        color: black;
+      }
+    }
+
+    .#{$prefix}--btn__icon {
+      margin: 0 auto;
+    }
+  }
+}
