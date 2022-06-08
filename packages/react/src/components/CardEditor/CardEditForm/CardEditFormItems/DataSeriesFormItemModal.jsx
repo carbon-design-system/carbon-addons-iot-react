@@ -665,7 +665,7 @@ const DataSeriesFormItemModal = ({
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
-            size="xs"
+            size="md"
             isLarge={isLarge}
             footer={{
               primaryButtonLabel: mergedI18n.primaryButtonLabelText,

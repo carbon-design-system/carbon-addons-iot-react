@@ -967,7 +967,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(modalTitle).toBeInTheDocument();
   });
 
-  it('Renders the DataSeriesEditorTable as size xs by default', () => {
+  it('Renders the DataSeriesEditorTable as size md by default', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
@@ -978,10 +978,10 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const xsContainer = screen
+    const mdContainer = screen
       .getByText('Customize data series')
-      .closest(`.${prefix}--modal-container--xs`);
-    expect(xsContainer).toBeInTheDocument();
+      .closest(`.${prefix}--modal-container--md`);
+    expect(mdContainer).toBeInTheDocument();
 
     const largeContainer = screen
       .queryByText('Customize data series')
