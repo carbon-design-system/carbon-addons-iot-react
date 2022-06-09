@@ -126,6 +126,34 @@ const TimePicker = ({
 
 export const TimePickerSpinner = () => {
   const [selected, setSelected] = useState(['03', '03', 'AM']);
+  const observer = React.useRef();
+  React.useEffect(
+    () => () => {
+      // Disconnect from any old observers
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+    },
+    []
+  );
+  const lastItem = React.useCallback((node) => {
+    // Disconnect from any old observers
+    if (observer.current) {
+      observer.current.disconnect();
+    }
+    // Create a new observer
+    observer.current = new IntersectionObserver((entries) => {
+      // If lastItem is in veiwport & we have a pageToken
+      // trigger a new GET by updating pageToken state
+      if (entries[0].isIntersecting && pageToken !== null) {
+        setPageNumber(pageToken);
+      }
+    });
+    // Once component mounts tell our observer to observe it
+    if (node) {
+      observer.current?.observe(node);
+    }
+  }, []);
   const handleClick = (e, item, index) => {
     console.log(e.target);
     e.target.parentNode.parentNode.scrollTo({
@@ -623,6 +651,26 @@ export const TimePickerSpinner = () => {
           </Button>
         </li>
       </ul>
+    </div>
+  );
+};
+
+const ListSpinner = ({ className, children }) => {
+  const listItems = React.Children.map(children, (child) => {
+    return React.cloneElement(child, {
+      name: props.name,
+    });
+  });
+
+  return (
+    <div className={`${className}-spinner__section`}>
+      <Button className={`${className}-spinner__button`} renderIcon={ChevronUp16} kind="ghost" />
+      <ul className={`${iotPrefix}--time-picker-spinner-list`}>{listItems}</ul>
+      <Button
+        className={`${iotPrefix}--time-picker-spinner-button`}
+        renderIcon={ChevronDown16}
+        kind="ghost"
+      />
     </div>
   );
 };

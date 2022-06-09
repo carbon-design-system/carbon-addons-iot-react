@@ -1,0 +1,79 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--list-spinner {
+  &__section {
+    background-color: #fff;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80px;
+    max-height: 280px;
+    overflow: hidden;
+  }
+
+  &__list-container {
+    position: relative;
+    min-width: 80px;
+    min-height: 200px;
+    overflow: hidden;
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    // width: 80px;
+    // height: 200px;
+  }
+  &__list-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    // transition: background 0.25s linear;
+
+    .#{$iot-prefix}--list-spinner__list &--selected,
+    .#{$iot-prefix}--list-spinner__list &--selected .#{$iot-prefix}--btn {
+      background: $interactive-01;
+      color: white;
+      transition: background 0s linear 0.23s, color 0s linear 0.23s;
+      &:hover {
+        background: $carbon--gray-10;
+        color: black;
+      }
+    }
+  }
+
+  &__btn,
+  &__list-item .#{$iot-prefix}--btn {
+    color: black;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: unset;
+    max-height: 40px;
+    width: 100%;
+
+    .#{$prefix}--btn__icon {
+      margin: 0 auto;
+    }
+  }
+
+  &__btn {
+    z-index: 1;
+
+    &:first-child {
+      box-shadow: 0 1px 5px 4px #fff;
+    }
+
+    &:last-child {
+      box-shadow: 0 -1px 5px 4px #fff;
+    }
+  }
+}

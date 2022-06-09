@@ -1,4 +1,5 @@
 @import '../../globals/vars';
+@import 'list-spinner';
 @import '~carbon-components/scss/components/time-picker/time-picker';
 
 .#{$iot-prefix}--time-picker {

@@ -9,8 +9,16 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, number, select, text } from '@storybook/addon-knobs';
+import classnames from 'classnames';
+
+import { settings } from '../../constants/Settings';
+import useMerged from '../../hooks/useMerged';
+import Button from '../Button';
 
 import TimePicker, { TimePickerSpinner } from './TimePicker';
+import ListSpinner from './ListSpinner';
+
+const { iotPrefix } = settings;
 
 const sizes = {
   'Large size (lg)': 'lg',
@@ -57,7 +65,27 @@ export default {
   },
 };
 
+const listItems = Array.from(Array(12)).map((el, i) => {
+  const index = i + 1 < 10 ? `0${i + 1}` : i + 1;
+  return (
+    <li id={`hour-${index}`}>
+      <Button id={`hour-${index}-button`} kind="ghost">
+        {index}
+      </Button>
+    </li>
+  );
+});
+
 export const Default = () => {
-  return <TimePickerSpinner />;
-  // return <TimePicker id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+  // return <ListSpinner listItems={listItems} defaultSelectedId="hour-12" />;
+  return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+};
+
+export const ListSpinnerStory = () => {
+  return <ListSpinner listItems={listItems} defaultSelectedId="hour-12" />;
+};
+
+ListSpinnerStory.storyName = 'List spinner';
+ListSpinnerStory.parameters = {
+  component: ListSpinner,
 };
