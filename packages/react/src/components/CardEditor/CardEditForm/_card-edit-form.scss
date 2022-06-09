@@ -174,7 +174,7 @@
       width: 50%;
     }
     &--item-end {
-      width: 50%;
+      width: 100%;
 
       .#{$prefix}--number input[type='number'] {
         padding-right: 0;
@@ -191,7 +191,6 @@
     &--item-dropdown {
       margin-right: $spacing-05;
       max-width: 6rem;
-      min-width: 15%;
 
       [dir='rtl'] & {
         margin-right: 0;
