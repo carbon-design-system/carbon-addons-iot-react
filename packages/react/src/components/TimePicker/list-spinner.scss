@@ -1,5 +1,7 @@
 @import '../../globals/vars';
 
+$layer-hover-01: #e5e5e5;
+
 .#{$iot-prefix}--list-spinner {
   &__section {
     background-color: #fff;
@@ -45,7 +47,7 @@
       color: white;
       transition: background 0s linear 0.23s, color 0s linear 0.23s;
       &:hover {
-        background: $carbon--gray-10;
+        background: $layer-hover-01;
         color: black;
       }
     }

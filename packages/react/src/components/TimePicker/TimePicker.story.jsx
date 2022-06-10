@@ -82,7 +82,13 @@ export const Default = () => {
 };
 
 export const ListSpinnerStory = () => {
-  return <ListSpinner listItems={listItems} defaultSelectedId="hour-12" />;
+  return (
+    <ListSpinner
+      listItems={listItems}
+      defaultSelectedId="hour-12"
+      onChange={() => action('onChange called')}
+    />
+  );
 };
 
 ListSpinnerStory.storyName = 'List spinner';

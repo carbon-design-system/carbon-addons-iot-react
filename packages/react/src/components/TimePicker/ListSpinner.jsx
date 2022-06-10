@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import classNames from 'classnames';
@@ -11,75 +11,35 @@ const { iotPrefix } = settings;
 
 const propTypes = {
   className: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  /** Label for input (will be first, if range type) */
-  labelText: PropTypes.string.isRequired,
-  /** Specify wehether you watn the primary label to be visually hidden */
-  hideLabel: PropTypes.bool,
-  /** Optional default value for primary input */
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Specify the value for primary input */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Label for second input in range */
-  secondaryLabelText: PropTypes.string,
-  /** Specify wehether you watn the secondary label to be visually hidden */
-  hideSecondaryLabel: PropTypes.bool,
-  /** Optional default value for secondary input */
-  defaultSecondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Specify the value for secondary input */
-  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Input can be for a single time or a range - defaults to single */
-  type: PropTypes.oneOf(['single', 'range']),
-  i18n: PropTypes.shape({
-    invalidText: PropTypes.string,
-    warnTextr: PropTypes.string,
-    timeIconText: PropTypes.string,
-    placeholderText: PropTypes.string,
-  }),
-  /** Size of input */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  /** Specify whether the control is currently disabled */
-  disabled: PropTypes.bool,
-  /** Specify whether the control is currently read only */
-  readOnly: PropTypes.bool,
-  /** Specify whether the control is currently in warning state */
-  warn: PropTypes.arrayOf(PropTypes.bool),
-  /** Specify whether the control is currently in invalid state */
-  invalid: PropTypes.arrayOf(PropTypes.bool),
-  /** Optional handler that is called whenever <input> is updated */
-  onChange: PropTypes.func,
-  /** Optional handler that is called whenever <input> is clicked */
-  onClick: PropTypes.func,
   testId: PropTypes.string,
-  listItems: PropTypes.arrayOf(PropTypes.node),
+
+  i18n: PropTypes.shape({
+    previous: PropTypes.string,
+    next: PropTypes.string,
+  }),
+  /** Optional default selected item */
   defaultSelectedId: PropTypes.string,
+  /** Optional handler that is called whenever value is updated */
+  onChange: PropTypes.func,
+  /** Optional handler that is called whenever item is clicked */
+  onClick: PropTypes.func,
+  /** Array of items to render in the spinning list */
+  listItems: PropTypes.arrayOf(PropTypes.node),
+  /** Optional tag name to use instead of ul */
   containerElement: PropTypes.string,
 };
 
 const defaultProps = {
-  listItems: [],
-  defaultSelectedId: undefined,
   className: undefined,
-  hideLabel: false,
-  defaultValue: undefined,
-  secondaryLabelText: undefined,
-  hideSecondaryLabel: false,
-  defaultSecondaryValue: undefined,
-  type: 'single',
+  testId: 'list-spinner',
   i18n: {
-    invalidText: 'The time entered is invalid',
-    warnText: undefined,
-    timeIconText: 'Open time picker',
-    placeholderText: 'hh:mm',
+    previous: 'Previous item',
+    next: 'Next item',
   },
-  size: 'lg',
-  disabled: false,
-  readOnly: false,
-  warn: [false, false],
-  invalid: [false, false],
+  defaultSelectedId: undefined,
   onChange: () => {},
   onClick: () => {},
-  testId: 'timer-picker',
+  listItems: [],
   containerElement: 'ul',
 };
 
@@ -89,17 +49,20 @@ function scrollIntoView(el) {
 
 const ListSpinner = ({
   className,
-  listItems,
+  testId,
+  i18n,
   defaultSelectedId,
+  onChange,
+  onClick,
+  listItems,
   containerElement: ContainerElement,
 }) => {
   const containerRef = useRef();
   const contentRef = useRef();
-  const [selectedId, setSelectedId] = React.useState(defaultSelectedId);
-  const [height, setHeight] = React.useState(0);
+  const [selectedId, setSelectedId] = useState(defaultSelectedId);
+  const [height, setHeight] = useState(0);
 
-  const handleScroll = React.useCallback(() => {
-    console.log('scrolling');
+  const handleScroll = useCallback(() => {
     if (containerRef.current) {
       const scroll = containerRef.current.scrollTop;
       if (scroll < height || scroll >= height + height) {
@@ -108,7 +71,7 @@ const ListSpinner = ({
     }
   }, [height]);
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (contentRef.current) {
       setHeight(contentRef.current.offsetHeight * listItems.length);
       containerRef.current.scrollTop = height;
@@ -117,7 +80,8 @@ const ListSpinner = ({
 
   useEffect(() => {
     setTimeout(() => scrollIntoView(contentRef.current), 200);
-  }, [selectedId]);
+    onChange(selectedId);
+  }, [onChange, selectedId]);
 
   const listRef = useCallback(
     (node) => {
@@ -131,27 +95,24 @@ const ListSpinner = ({
     []
   );
 
-  const handleClick = (e) => {
-    if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
-      // const str = contentRef.current?.previousElementSibling.id;
-      // console.log(str.includes('-dupe'));
-      // if (str.includes('-dupe')) {
-      //   setSelectedId(str.substring(str.length - 7));
-      // } else {
-      // }
-      setSelectedId(contentRef.current?.previousElementSibling.id);
-    } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
-      // console.log(contentRef.current.nextElementSibling.id);
-      setSelectedId(contentRef.current?.nextElementSibling.id);
-    } else {
-      console.log(e.currentTarget.id);
-      setSelectedId(e.currentTarget.id);
-    }
-  };
+  const handleClick = useCallback(
+    (e) => {
+      if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
+        setSelectedId(contentRef.current?.previousElementSibling.id);
+      } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
+        setSelectedId(contentRef.current?.nextElementSibling.id);
+      } else {
+        setSelectedId(e.currentTarget.id);
+      }
+      onClick(e);
+    },
+    [onClick]
+  );
 
   const updatedList = useMemo(() => {
     const items = listItems.map((child) => {
       return React.cloneElement(child, {
+        'data-testid': `${testId}-list-item`,
         key: child.props.id,
         id: child.props.id,
         onClick: handleClick,
@@ -165,10 +126,9 @@ const ListSpinner = ({
     });
     const dupeItems = listItems.map((child) => {
       return React.cloneElement(child, {
+        'data-testid': `${testId}-list-item`,
         key: `${child.props.id}-dupe-1`,
-
         id: child.props.id,
-        // id: `${child.props.id}-dupe-1`,
         onClick: handleClick,
         className: `${iotPrefix}--list-spinner__list-item ${
           child.props.className ? `${child.props.className}-spinner__list-item` : ''
@@ -183,9 +143,9 @@ const ListSpinner = ({
 
     const dupeItems2 = listItems.map((child) => {
       return React.cloneElement(child, {
+        'data-testid': `${testId}-list-item`,
         key: `${child.props.id}-dupe-2`,
         id: child.props.id,
-        // id: `${child.props.id}-dupe-2`,
         onClick: handleClick,
         className: `${iotPrefix}--list-spinner__list-item ${
           child.props.className ? `${child.props.className}-spinner__list-item` : ''
@@ -199,15 +159,17 @@ const ListSpinner = ({
     });
 
     return [...dupeItems, ...items, ...dupeItems2];
-  }, [listItems, selectedId]);
+  }, [handleClick, listItems, selectedId, testId]);
 
   return (
     <div
+      data-testid={testId}
       className={classNames(`${iotPrefix}--list-spinner__section`, {
         [`${className}-spinner__section`]: className,
       })}
     >
       <Button
+        testId={`${testId}-prev-btn`}
         id={`${iotPrefix}--list-spinner__btn--up`}
         onClick={handleClick}
         className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
@@ -215,10 +177,10 @@ const ListSpinner = ({
         kind="ghost"
       />
       <div
-        // ref={containerRef}
         className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
       >
         <ContainerElement
+          data-testid={`${testId}-list`}
           ref={listRef}
           className={`${iotPrefix}--list-spinner__list ${className}-spinner__list`}
           onWheel={handleScroll}
@@ -228,6 +190,7 @@ const ListSpinner = ({
         </ContainerElement>
       </div>
       <Button
+        testId={`${testId}-next-btn`}
         id={`${iotPrefix}--list-spinner__btn--down`}
         onClick={handleClick}
         className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
