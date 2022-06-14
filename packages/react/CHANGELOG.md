@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.1...v2.150.1-next.2) (2022-06-14)
+
+
+### Bug Fixes
+
+* **form-size:** larger form modal ([4e9b7ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4e9b7ef76f67d77dc76cccd707e4e676c45a9f4c))
+* **threshold-input-size:** reverted size changes for input elements ([c69029c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c69029c891e7996a9bf5c45b37f4fd65ca44abc0))
+
+
+
+
+
 ## [2.150.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.0...v2.150.1-next.1) (2022-06-07)
 
 
