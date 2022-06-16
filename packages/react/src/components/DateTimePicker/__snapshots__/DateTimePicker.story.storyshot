@@ -75,6 +75,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -259,6 +264,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -426,6 +436,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -917,6 +932,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -1425,6 +1445,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -1592,6 +1617,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -2150,6 +2180,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -2326,6 +2361,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "zIndex": "calc(undefined + 20)",
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"

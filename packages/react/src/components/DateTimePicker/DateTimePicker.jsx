@@ -334,6 +334,7 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
 
   const relativeSelect = useRef(null);
+  const wrapperRef = useRef();
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const {
@@ -631,6 +632,7 @@ const DateTimePicker = ({
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
+      ref={wrapperRef}
     >
       <div
         className={`${iotPrefix}--date-time-picker__box ${
@@ -682,6 +684,8 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
+          // add 20 on top of wrapper parent's zIndex and set it on menu
+          style={{ zIndex: `calc(${wrapperRef?.current?.parentNode?.style.zIndex} + 20)` }}
           role="listbox"
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>

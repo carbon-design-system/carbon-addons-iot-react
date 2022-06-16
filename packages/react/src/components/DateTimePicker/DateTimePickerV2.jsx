@@ -308,6 +308,7 @@ const DateTimePicker = ({
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const wrapperRef = useRef();
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -697,6 +698,7 @@ const DateTimePicker = ({
         onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
+        ref={wrapperRef}
       >
         <div
           className={classnames({
@@ -766,7 +768,11 @@ const DateTimePicker = ({
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ '--wrapper-width': '20rem' }}
+              style={{
+                '--wrapper-width': '20rem',
+                // add 20 on top of wrapper parent's zIndex and set it on menu
+                zIndex: `calc(${wrapperRef?.current?.parentNode?.style.zIndex} + 20)`,
+              }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
