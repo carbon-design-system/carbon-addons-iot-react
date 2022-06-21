@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.3...v2.150.1-next.4) (2022-06-21)
+
+
+### Bug Fixes
+
+* **suiteheader:** suite header css class fix ([bcc10b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bcc10b8acafcbe7524f3ebd7d92f422325c3b2f7))
+
+
+
+
+
 ## [2.150.1-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.2...v2.150.1-next.3) (2022-06-16)
 
 **Note:** Version bump only for package ibm-ai-applications
