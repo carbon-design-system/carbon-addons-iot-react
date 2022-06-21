@@ -77,7 +77,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": 100,
             }
           }
         >
@@ -266,7 +266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -438,7 +438,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -934,7 +934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -1379,6 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       Object {
         "margin": "1.5rem",
         "width": "1056px",
+        "zIndex": 100,
       }
     }
   >
@@ -1447,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -1619,7 +1620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -2182,7 +2183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >
@@ -2363,7 +2364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "zIndex": "calc(undefined + 20)",
+              "--zIndex": undefined,
             }
           }
         >

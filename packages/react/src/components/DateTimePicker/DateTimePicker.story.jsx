@@ -64,6 +64,7 @@ export const Default = () => {
           },
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
+        style={{ zIndex: 100 }}
       />
     </div>
   );
@@ -76,6 +77,7 @@ export const SelectedPreset = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
+        zIndex: 100,
       }}
     >
       <DateTimePicker

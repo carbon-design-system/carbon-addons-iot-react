@@ -130,6 +130,7 @@
     }
 
     .#{$iot-prefix}--date-time-picker__menu {
+      --zIndex: 0;
       display: none;
       cursor: default;
       box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
@@ -138,8 +139,10 @@
       right: 0;
       width: 100%;
       background-color: $carbon--white-0;
+      z-index: var(--zIndex);
       &.#{$iot-prefix}--date-time-picker__menu-expanded {
         display: block;
+        z-index: calc(var(--zIndex) + 20);
 
         .#{$prefix}--list__item:before {
           display: none;

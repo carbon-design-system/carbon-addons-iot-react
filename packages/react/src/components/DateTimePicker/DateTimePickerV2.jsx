@@ -167,6 +167,7 @@ const propTypes = {
   hasIconOnly: PropTypes.bool,
   /** Allow repositioning the flyout menu */
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -248,6 +249,7 @@ const defaultProps = {
   id: undefined,
   hasIconOnly: false,
   menuOffset: undefined,
+  style: {},
 };
 
 const DateTimePicker = ({
@@ -271,6 +273,7 @@ const DateTimePicker = ({
   id = uuid.v4(),
   hasIconOnly,
   menuOffset,
+  style,
   ...others
 }) => {
   React.useEffect(() => {
@@ -308,7 +311,6 @@ const DateTimePicker = ({
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
-  const wrapperRef = useRef();
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -669,6 +671,7 @@ const DateTimePicker = ({
     ? -15
     : 274;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
+  const { zIndex } = style;
 
   return (
     <>
@@ -698,7 +701,6 @@ const DateTimePicker = ({
         onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
-        ref={wrapperRef}
       >
         <div
           className={classnames({
@@ -770,8 +772,7 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
               style={{
                 '--wrapper-width': '20rem',
-                // add 20 on top of wrapper parent's zIndex and set it on menu
-                zIndex: `calc(${wrapperRef?.current?.parentNode?.style.zIndex} + 20)`,
+                '--zIndex': zIndex,
               }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

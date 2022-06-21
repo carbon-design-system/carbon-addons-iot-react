@@ -198,6 +198,7 @@ const propTypes = {
   locale: PropTypes.string,
   /** Unique id of the component */
   id: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -283,6 +284,7 @@ const defaultProps = {
   light: false,
   locale: 'en',
   id: undefined,
+  style: {},
 };
 
 const DateTimePicker = ({
@@ -304,6 +306,7 @@ const DateTimePicker = ({
   light,
   locale,
   id = uuid.v4(),
+  style,
   ...others
 }) => {
   const strings = {
@@ -334,7 +337,6 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
 
   const relativeSelect = useRef(null);
-  const wrapperRef = useRef();
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const {
@@ -623,6 +625,7 @@ const DateTimePicker = ({
     (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
+  const { zIndex } = style;
 
   return (
     // Escape handler added to allow pressing escape to close the picker from any via event bubbling
@@ -632,7 +635,6 @@ const DateTimePicker = ({
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
       className={`${iotPrefix}--date-time-picker__wrapper`}
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
-      ref={wrapperRef}
     >
       <div
         className={`${iotPrefix}--date-time-picker__box ${
@@ -684,8 +686,7 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
-          // add 20 on top of wrapper parent's zIndex and set it on menu
-          style={{ zIndex: `calc(${wrapperRef?.current?.parentNode?.style.zIndex} + 20)` }}
+          style={{ '--zIndex': zIndex }}
           role="listbox"
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
