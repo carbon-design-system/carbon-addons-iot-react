@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import { boolean, text, select } from '@storybook/addon-knobs';
+import { boolean, text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing06 } from '@carbon/layout';
 
@@ -64,7 +64,7 @@ export const Default = () => {
           },
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
-        style={{ zIndex: 100 }}
+        style={{ zIndex: number('zIndex', 100) }}
       />
     </div>
   );
@@ -77,7 +77,6 @@ export const SelectedPreset = () => {
       style={{
         width: `${getCardMinSize('lg', size).x}px`,
         margin: spacing06,
-        zIndex: 100,
       }}
     >
       <DateTimePicker
