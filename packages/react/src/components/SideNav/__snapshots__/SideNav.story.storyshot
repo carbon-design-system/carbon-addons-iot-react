@@ -264,6 +264,100 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
+                  d="M20.59 22L15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"
+                />
+                <path
+                  d="M16,2A13.94,13.94,0,0,0,6,6.23V2H4v8h8V8H7.08A12,12,0,1,1,4,16H2A14,14,0,1,0,16,2Z"
+                />
+              </svg>
+            </div>
+            <span
+              className="bx--side-nav__submenu-title"
+            >
+              My recent applications
+            </span>
+            <div
+              className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                />
+              </svg>
+            </div>
+          </button>
+          <ul
+            className="bx--side-nav__menu"
+          >
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
+                label="App 1"
+                onClick={[Function]}
+                title="App 1"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 1
+                </span>
+              </button>
+            </li>
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
+                label="App 2"
+                onClick={[Function]}
+                title="App 2"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 2
+                </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            className="bx--side-nav__submenu"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="bx--side-nav__icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={24}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
                   d="M14 4H18V8H14zM4 4H8V8H4zM24 4H28V8H24zM14 14H18V18H14zM4 14H8V18H4zM24 14H28V18H24zM14 24H18V28H14zM4 24H8V28H4zM24 24H28V28H24z"
                 />
               </svg>
@@ -300,7 +394,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             >
               <button
                 className="bx--side-nav__link"
-                data-testid="side-nav-menu-item-0"
+                data-testid="side-nav-menu-item-1"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"
@@ -320,7 +414,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <a
             aria-label="Devices"
             className="bx--side-nav__link"
-            data-testid="side-nav-link-1"
+            data-testid="side-nav-link-2"
             href="https://google.com"
             label="Devices"
             target="_blank"
@@ -416,7 +510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             >
               <button
                 className="bx--side-nav__link"
-                data-testid="side-nav-menu-item-2"
+                data-testid="side-nav-menu-item-3"
                 label="Link 1"
                 onClick={[Function]}
                 title="Link 1"
@@ -433,7 +527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             >
               <a
                 className="bx--side-nav__link"
-                data-testid="side-nav-menu-item-2"
+                data-testid="side-nav-menu-item-3"
                 href="/?path=/story/watson-iot-sidenav--sidenav-component"
                 label="Link 2"
                 onClick={[Function]}
@@ -508,7 +602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             >
               <button
                 className="bx--side-nav__link"
-                data-testid="side-nav-menu-item-3"
+                data-testid="side-nav-menu-item-4"
                 label="Yet another link"
                 onClick={[Function]}
                 title="Yet another link"
@@ -5912,8 +6006,72 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
     >
+      <div
+        aria-labelledby="sidenav-search-search"
+        className="bx--search bx--search--lg"
+        role="search"
+      >
+        <div
+          className="bx--search-magnifier"
+        >
+          <svg
+            aria-hidden={true}
+            className="bx--search-magnifier-icon"
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 16 16"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+            />
+          </svg>
+        </div>
+        <label
+          className="bx--label"
+          htmlFor="sidenav-search"
+          id="sidenav-search-search"
+        >
+          Find navigation item
+        </label>
+        <input
+          autoComplete="off"
+          className="bx--search-input"
+          data-testid="side-nav-search"
+          id="sidenav-search"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Find navigation item..."
+          role="searchbox"
+          type="text"
+        />
+        <button
+          aria-label="Clear search input"
+          className="bx--search-close bx--search-close--hidden"
+          onClick={[Function]}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+            />
+          </svg>
+        </button>
+      </div>
       <ul
-        className="bx--side-nav__items"
+        className="bx--side-nav__items iot--side-nav__pinned-items"
       >
         <li
           className="bx--side-nav__item"
@@ -5950,6 +6108,121 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               Home
             </span>
           </a>
+        </li>
+      </ul>
+      <ul
+        className="bx--side-nav__items"
+      >
+        <li
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            className="bx--side-nav__submenu"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="bx--side-nav__icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={24}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.59 22L15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"
+                />
+                <path
+                  d="M16,2A13.94,13.94,0,0,0,6,6.23V2H4v8h8V8H7.08A12,12,0,1,1,4,16H2A14,14,0,1,0,16,2Z"
+                />
+              </svg>
+            </div>
+            <span
+              className="bx--side-nav__submenu-title"
+            >
+              My recent applications
+            </span>
+            <div
+              className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                />
+              </svg>
+            </div>
+          </button>
+          <ul
+            className="bx--side-nav__menu"
+          >
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
+                label="App 1"
+                onClick={[Function]}
+                title="App 1"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 1
+                </span>
+              </button>
+            </li>
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
+                label="App 2"
+                onClick={[Function]}
+                title="App 2"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 2
+                </span>
+              </button>
+            </li>
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-0"
+                label="App 3"
+                onClick={[Function]}
+                title="App 3"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 3
+                </span>
+              </button>
+            </li>
+          </ul>
         </li>
         <li
           className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"

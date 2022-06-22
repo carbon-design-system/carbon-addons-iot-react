@@ -111,6 +111,54 @@ export const SideNavPropTypes = {
       ),
     })
   ).isRequired,
+  recentLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      /** is current link active */
+      isActive: PropTypes.bool,
+      /** bot show/hide link */
+      isEnabled: PropTypes.bool,
+      /** pins the link to the top if hasSearch is true */
+      isPinned: PropTypes.bool,
+      /** extra props to pass to link component */
+      /** Example:
+          // What to render for link
+          element: PropTypes.any,
+          // trigger something instead of follow link
+          onClick: PropTypes.func,
+          // url to link to
+          href: PropTypes.string,
+      */
+      metaData: SideNavMetaDataPropType,
+      /** the icon component to render */
+      icon: CarbonIconPropType.isRequired,
+      /** string for the title of overall submenu */
+      linkContent: PropTypes.string,
+      /** array of child links to render in a subnav */
+      childContent: PropTypes.arrayOf(
+        PropTypes.shape({
+          /** props to pass to link component */
+          /** Example:
+            // What to render for link
+            element: PropTypes.any,
+            // trigger something instead of follow link
+            onClick: PropTypes.func,
+            // url to link to
+            href: PropTypes.string,
+          */
+          metaData: SideNavMetaDataPropType,
+          /** content to render inside sub menu link */
+          content: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.node,
+            PropTypes.bool,
+            PropTypes.func,
+          ]).isRequired,
+          /** is current link active */
+          isActive: PropTypes.bool,
+        })
+      ),
+    })
+  ),
   isSideNavExpanded: PropTypes.bool,
   i18n: PropTypes.shape({
     closeText: PropTypes.string,
@@ -141,6 +189,7 @@ const defaultProps = {
     searchLabelText: 'Find navigation item',
   },
   testId: 'side-nav',
+  recentLinks: [],
 };
 
 /**
@@ -173,6 +222,7 @@ const SideNav = ({
   isSideNavExpanded,
   i18n,
   testId,
+  recentLinks,
   ...props
 }) => {
   /**
@@ -264,8 +314,8 @@ const SideNav = ({
       .filter((i) => i);
 
   const [pinnedLinks, filterableLinks] = hasSearch
-    ? partition(links, (link) => link.isPinned)
-    : [[], links];
+    ? partition([...recentLinks, ...links], (link) => link.isPinned)
+    : [[], [...recentLinks, ...links]];
   const renderedPinnedLinks = renderLinks(pinnedLinks);
   const [renderedFilterableLinks, setRenderedFilterableLinks] = useState(
     renderLinks(filterableLinks)

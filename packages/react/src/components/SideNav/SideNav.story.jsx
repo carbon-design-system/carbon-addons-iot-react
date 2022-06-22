@@ -7,9 +7,11 @@ import {
   Group24,
   ParentChild24,
   Home24,
+  RecentlyViewed24,
 } from '@carbon/icons-react';
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
+import { partition } from 'lodash-es';
 
 import Header from '../Header';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
@@ -27,6 +29,40 @@ const initialTableState = getInitialState();
 React.Fragment = ({ children }) => children;
 
 const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
+
+const mostRecentLinks = [
+  {
+    icon: RecentlyViewed24,
+    isEnabled: true,
+    metaData: {
+      onClick: action('menu click'),
+      tabIndex: 0,
+      label: 'My recent applications',
+      element: RouterComponent,
+    },
+    linkContent: 'My recent applications',
+    childContent: [
+      {
+        metaData: {
+          label: 'App 1',
+          title: 'App 1',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
+        content: 'App 1',
+      },
+      {
+        metaData: {
+          label: 'App 2',
+          title: 'App 2',
+          onClick: action('inner menu click'),
+          element: 'button',
+        },
+        content: 'App 2',
+      },
+    ],
+  },
+];
 
 const links = (isActive = false) => [
   {
@@ -151,6 +187,7 @@ export const SideNavComponent = () => {
   const showDeepNesting = boolean('show deep nesting example', false);
   const enableSearch = boolean('Enable searching (hasSearch)', true);
   const demoPinnedLink = boolean('Demo pinned link during search', true);
+  const demoMostRecentLinks = boolean('Demo most recent links', true);
   const pinnedLinks = demoPinnedLink
     ? [
         {
@@ -277,6 +314,7 @@ export const SideNavComponent = () => {
               links={showDeepNesting ? deepLinks : shallowLinks}
               isSideNavExpanded={isSideNavExpanded}
               hasSearch={enableSearch}
+              recentLinks={demoMostRecentLinks ? mostRecentLinks : []}
             />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
@@ -354,6 +392,7 @@ SideNavComponent.parameters = {
 
 export const SideNavComponentWithState = () => {
   const demoPinnedLink = boolean('Demo pinned link', true);
+  const demoMostRecentLinks = boolean('Demo most recent links', true);
   const pinnedLinks = demoPinnedLink
     ? [
         {
@@ -370,8 +409,9 @@ export const SideNavComponentWithState = () => {
         },
       ]
     : [];
-
   const [linksState, setLinksState] = useState([]);
+  const [recentLinksState, setRecentLinksState] = useState([]);
+
   const onSideNavMenuItemClick = (linkLabel) => {
     setLinksState((currentLinks) =>
       currentLinks.map((group) => {
@@ -388,6 +428,22 @@ export const SideNavComponentWithState = () => {
         return group;
       })
     );
+
+    setRecentLinksState((currentLinks) => {
+      return currentLinks.map((group) => {
+        const [firstChild, restChildren] = partition(
+          group.childContent,
+          (child) => child.content === linkLabel
+        );
+        if (group.childContent) {
+          return {
+            ...group,
+            childContent: [...firstChild, ...restChildren],
+          };
+        }
+        return group;
+      });
+    });
   };
 
   useEffect(() => {
@@ -453,6 +509,49 @@ export const SideNavComponentWithState = () => {
         ],
       },
     ]);
+
+    setRecentLinksState([
+      {
+        icon: RecentlyViewed24,
+        isEnabled: true,
+        metaData: {
+          onClick: action('menu click'),
+          tabIndex: 0,
+          label: 'Boards',
+          element: RouterComponent,
+        },
+        linkContent: 'My recent applications',
+        childContent: [
+          {
+            metaData: {
+              label: 'App 1',
+              title: 'App 1',
+              onClick: () => onSideNavMenuItemClick('App 1'),
+              element: 'button',
+            },
+            content: 'App 1',
+          },
+          {
+            metaData: {
+              label: 'App 2',
+              title: 'App 2',
+              onClick: () => onSideNavMenuItemClick('App 2'),
+              element: 'button',
+            },
+            content: 'App 2',
+          },
+          {
+            metaData: {
+              label: 'App 3',
+              title: 'App 3',
+              onClick: () => onSideNavMenuItemClick('App 3'),
+              element: 'button',
+            },
+            content: 'App 3',
+          },
+        ],
+      },
+    ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -466,7 +565,12 @@ export const SideNavComponentWithState = () => {
               isSideNavExpanded={isSideNavExpanded}
               onClickSideNavExpand={onClickSideNavExpand}
             />
-            <SideNav hasSearch={false} links={linksState} isSideNavExpanded={isSideNavExpanded} />
+            <SideNav
+              hasSearch={demoPinnedLink}
+              links={linksState}
+              isSideNavExpanded={isSideNavExpanded}
+              recentLinks={demoMostRecentLinks ? recentLinksState : []}
+            />
             <div className={`${iotPrefix}--main-content`}>
               <PageTitleBar title="Title" description="Description" />
             </div>
