@@ -91,6 +91,7 @@ describe('Table', () => {
 
   const tableState = {
     totalSelected: 0,
+    totalItemsCount: 10,
     batchActions: [],
   };
   const view = {
@@ -122,6 +123,7 @@ describe('Table', () => {
         options={{
           ...options,
           hasAggregations: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           ...view,
@@ -133,14 +135,22 @@ describe('Table', () => {
               },
             ],
           },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
+          },
         }}
         testId="__table__"
       />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
-    console.error.mockReset();
+
     expect(screen.getByTestId('__table__')).toBeDefined();
     expect(screen.getByTestId('__table__-table-container')).toBeDefined();
     expect(screen.getByTestId('__table__-table-toolbar')).toBeDefined();
@@ -168,6 +178,7 @@ describe('Table', () => {
         options={{
           ...options,
           hasAggregations: true,
+          hasRowSelection: 'multi',
         }}
         view={{
           ...view,
@@ -176,6 +187,17 @@ describe('Table', () => {
             columns: [
               {
                 id: 'number',
+              },
+            ],
+          },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
               },
             ],
           },
@@ -213,6 +235,72 @@ describe('Table', () => {
       />
     );
     expect(wrapper.find(`.${prefix}--select-option`)).toHaveLength(5);
+  });
+
+  it('Should not render batch actions if hasBatchActionToolbar option is false', () => {
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi', hasBatchActionToolbar: false }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: undefined,
+        }}
+        testId="__table__"
+      />
+    );
+    expect(screen.queryByTestId('__table__-table-toolbar-batch-actions')).toBeFalsy();
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi' }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: {
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
+          },
+        }}
+        testId="__table__"
+      />
+    );
+    expect(screen.queryByTestId('__table__-table-toolbar-batch-actions')).toBeTruthy();
+  });
+
+  it('Renders secondary title with item count if hasBatchActionToolbar option is false & secondary title is not defined ', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={largeTableData}
+        expandedData={expandedData}
+        actions={mockActions}
+        options={{ hasPagination: true, hasRowSelection: 'multi', hasBatchActionToolbar: false }}
+        view={{
+          ...view,
+          pagination: { ...view.pagination, maxPages: 5 },
+          table: { ...view.table, selectedIds: ['row-3'] },
+          toolbar: undefined,
+        }}
+      />
+    );
+    expect(screen.queryByTestId('table-toolbar-batch-actions')).toBeFalsy();
+    expect(screen.queryByText(/1 item selected/)).toBeTruthy();
   });
 
   it('handles row collapse', () => {
@@ -403,23 +491,17 @@ describe('Table', () => {
   });
 
   it('validate show/hide hasRowCountInHeader property ', () => {
-    const tableHeaderWrapper = mount(
+    const { rerender } = render(
       <TableToolbar actions={mockActions} options={options} tableState={tableState} />
     );
     //  Should render Row count label when hasRowCountInHeader (option) property is true
-    const renderRowCountLabel = tableHeaderWrapper.find(
-      `.${iotPrefix}--table-toolbar-secondary-title`
-    );
-    expect(renderRowCountLabel).toHaveLength(1);
+    const renderRowCountLabel = screen.queryByText(/Results: 10/);
+    expect(renderRowCountLabel).toBeTruthy();
 
-    const tableHeaderWrapper2 = mount(
-      <TableToolbar actions={mockActions} options={options2} tableState={tableState} />
-    );
+    rerender(<TableToolbar actions={mockActions} options={options2} tableState={tableState} />);
     //  Should not render Row count label when hasRowCountInHeader (option2) property is false
-    const renderRowCountLabel2 = tableHeaderWrapper2.find(
-      `.${iotPrefix}--table-toolbar-secondary-title`
-    );
-    expect(renderRowCountLabel2).toHaveLength(0);
+    const renderRowCountLabel2 = screen.queryByText(/Results: 10/);
+    expect(renderRowCountLabel2).toBeFalsy();
   });
 
   it('click should trigger onDownload', () => {
@@ -1200,12 +1282,21 @@ describe('Table', () => {
         options={{
           ...initialState.options,
           hasColumnSelectionConfig: true,
+          hasRowSelection: 'multi',
         }}
         i18n={i18nTest}
         view={{
           ...initialState.view,
           toolbar: {
             activeBar: 'column',
+            batchActions: [
+              {
+                id: 'delete',
+                labelText: 'Delete',
+                renderIcon: TrashCan16,
+                iconDescription: 'Delete Item',
+              },
+            ],
           },
           table: {
             selectedIds: ['row-3'],

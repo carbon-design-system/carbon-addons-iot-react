@@ -74,10 +74,7 @@ describe('The RuleBuilder', () => {
         ]}
       />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
-    console.error.mockReset();
+
     expect(screen.getByTestId('rule_builder')).toBeDefined();
     expect(screen.getByTestId('rule_builder-tabs')).toBeDefined();
     expect(screen.getByTestId('rule_builder-editor')).toBeDefined();

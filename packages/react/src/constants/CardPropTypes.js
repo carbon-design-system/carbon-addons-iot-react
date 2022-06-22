@@ -416,7 +416,6 @@ export const PieCardPropTypes = {
     pieChart: OverridePropTypes,
     table: OverridePropTypes,
   }),
-  testID: PropTypes.string,
   /**
    * array of data objects from the backend for instance [{group: 'Group A', value: 50}, {group: 'Group B', value: 50}, ...]
    * The group property can be called anything since it can be mapped via the groupDataSourceId but there must at least

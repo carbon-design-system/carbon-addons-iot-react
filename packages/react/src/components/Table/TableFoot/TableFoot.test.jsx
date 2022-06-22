@@ -162,9 +162,7 @@ describe('TableFoot', () => {
         }}
       />
     );
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
+
     console.error.mockReset();
     const newFirstAggregationCell = screen.getByTestId(
       `${tableTestId}-${tableFootTestId}-aggregation-${modifiedColumns[0].id}`

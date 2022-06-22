@@ -6,6 +6,7 @@
 
   .#{$prefix}--tab-content {
     flex: 1;
+    padding-bottom: 0;
   }
 
   // give the tabs the full space available in the editor column
