@@ -292,7 +292,7 @@ const BarChartCard = ({
             timeDataSourceId,
           mapsTo: axes.bottomAxesMapsTo,
           ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL ? { domain: domainRange } : {}),
-          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
+          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL
             ? {
                 ticks: {
                   formatter: (axisValue) =>
