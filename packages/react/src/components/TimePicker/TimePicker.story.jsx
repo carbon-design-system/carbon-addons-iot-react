@@ -77,8 +77,28 @@ const listItems = Array.from(Array(12)).map((el, i) => {
 });
 
 export const Default = () => {
-  // return <ListSpinner listItems={listItems} defaultSelectedId="hour-12" />;
+  return (
+    <TimePicker
+      id="time-picker"
+      labelText={text('Label text', 'Time')}
+      secondaryLabelText={text('Secondary label text', 'Time')}
+      type={select('Type', ['single', 'range'], 'single')}
+      invalid={[false]}
+      size={select('Size', ['sm', 'md', 'lg'], 'md')}
+      light={boolean('Light variant (light in <TimePicker>)', false)}
+      disabled={boolean('Disabled (disabled in <TimePicker>)', false)}
+    />
+  );
+  // return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+};
+
+export const TimePickerSpinnerStory = () => {
   return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+};
+
+TimePickerSpinnerStory.storyName = 'TimePicker spinner';
+TimePickerSpinnerStory.parameters = {
+  component: TimePickerSpinner,
 };
 
 export const ListSpinnerStory = () => {

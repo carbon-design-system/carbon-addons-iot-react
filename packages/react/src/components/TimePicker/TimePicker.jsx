@@ -87,9 +87,12 @@ const TimePicker = ({
   size,
   disabled,
   testId,
+  warn,
+  invalid,
+  light,
   ...other
 }) => {
-  const { errorMessage, warningMessage, timeIconText, placeholderText, ...mergedI18n } = useMerged(
+  const { errorMessage, warningMessage, timeIconText, placeholderText } = useMerged(
     defaultProps.i18n,
     i18n
   );
@@ -102,22 +105,35 @@ const TimePicker = ({
           placeholder={placeholderText}
           helperText="this is cool"
           size={size}
+          warn={warn[0]}
+          invalid={invalid[0]}
+          light={light}
+          disabled={disabled}
           {...other}
         />
       ) : (
-        // <label data-testid={`${testId}-label`} htmlFor={testId}>
-        //   <p>{labelText}</p>
-        //   <input id={testId} data-testid={testId} placeholder={placeholderText} type="time" />
-        // </label>
         <>
           <TextInput
             labelText={labelText}
             placeholder={placeholderText}
             warnText="this is cool"
-            warn
+            size={size}
+            warn={warn[0]}
+            invalid={invalid[0]}
+            light={light}
+            disabled={disabled}
             {...other}
           />
-          <TextInput labelText={labelText} placeholder={placeholderText} {...other} />
+          <TextInput
+            labelText={secondaryLabelText}
+            placeholder={placeholderText}
+            size={size}
+            warn={warn[1]}
+            invalid={invalid[1]}
+            light={light}
+            disabled={disabled}
+            {...other}
+          />
         </>
       )}
     </div>

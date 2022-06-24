@@ -3,8 +3,10 @@
 @import '~carbon-components/scss/components/time-picker/time-picker';
 
 .#{$iot-prefix}--time-picker {
+  align-items: flex-end;
   display: flex;
   width: 16.125rem;
+  gap: 0.15rem;
 }
 
 .#{$iot-prefix}--time-picker-spinner {
@@ -77,4 +79,9 @@
       margin: 0 auto;
     }
   }
+}
+
+.no-scroll {
+  overflow: hidden;
+  right: 0 !important;
 }
