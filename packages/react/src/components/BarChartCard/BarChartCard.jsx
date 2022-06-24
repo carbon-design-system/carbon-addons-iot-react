@@ -292,19 +292,21 @@ const BarChartCard = ({
             timeDataSourceId,
           mapsTo: axes.bottomAxesMapsTo,
           ...(domainRange && layout === BAR_CHART_LAYOUTS.VERTICAL ? { domain: domainRange } : {}),
-          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL
+          ...(layout === BAR_CHART_LAYOUTS.HORIZONTAL && !isNil(decimalPrecision)
             ? {
                 ticks: {
                   formatter: (axisValue) =>
                     chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
                 },
               }
-            : {
+            : scaleType === 'time' && axes.bottomAxesMapsTo === 'date'
+            ? {
                 ticks: {
                   number: maxTicksPerSize,
                   formatter: formatTick,
                 },
-              }),
+              }
+            : {}),
         },
         left: {
           title: `${yLabel || ''} ${
