@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.6...v2.150.1-next.7) (2022-06-24)
+
+
+### Bug Fixes
+
+* **cardeditor:** remove children from json stringify ([5a0b528](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a0b528b257423392bc70bb695fd91e0c4987c6e))
+
+
+
+
+
+## [2.150.1-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.5...v2.150.1-next.6) (2022-06-24)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** fixed image issue on json editor save ([f4e9e25](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f4e9e25f53de98068b92e2c3f00da823a8010a1c))
+
+
+
+
+
 ## [2.150.1-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.4...v2.150.1-next.5) (2022-06-21)
 
 **Note:** Version bump only for package carbon-addons-iot-react
