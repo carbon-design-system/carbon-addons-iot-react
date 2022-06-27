@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, number, select, text } from '@storybook/addon-knobs';
+import { boolean, number, select, text, array, object } from '@storybook/addon-knobs';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
@@ -79,11 +79,22 @@ const listItems = Array.from(Array(12)).map((el, i) => {
 export const Default = () => {
   return (
     <TimePicker
+      hideLabel={boolean('Hide label', false)}
+      hideSecondaryLabel={boolean('Hide secondary label', false)}
+      className="this that"
       id="time-picker"
-      labelText={text('Label text', 'Time')}
-      secondaryLabelText={text('Secondary label text', 'Time')}
+      i18n={object('i18n', {
+        labelText: 'Time',
+        secondaryLabelText: 'Time',
+        helperText: 'This is some helper text',
+        warnText: 'you have been warned',
+      })}
       type={select('Type', ['single', 'range'], 'single')}
-      invalid={[false]}
+      invalid={[boolean('First input invalid', false), boolean('Second input invalid', false)]}
+      warn={[
+        boolean('Show first input warning state', false),
+        boolean('Show second input warning state', false),
+      ]}
       size={select('Size', ['sm', 'md', 'lg'], 'md')}
       light={boolean('Light variant (light in <TimePicker>)', false)}
       disabled={boolean('Disabled (disabled in <TimePicker>)', false)}

@@ -1,39 +1,47 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput } from 'carbon-components-react';
-import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
+import {
+  ChevronUp16,
+  ChevronDown16,
+  Time16,
+  EditOff16,
+  WarningAlt16,
+  WarningFilled,
+} from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import useMerged from '../../hooks/useMerged';
 import Button from '../Button';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 const propTypes = {
   className: PropTypes.string,
   id: PropTypes.string.isRequired,
-  /** Label for input (will be first, if range type) */
-  labelText: PropTypes.string.isRequired,
-  /** Specify wehether you watn the primary label to be visually hidden */
+  /** Optional default value for input */
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  ]),
+  /** Specify the value for input */
+  value: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  /** Specify wehether you watn the input labels to be visually hidden */
   hideLabel: PropTypes.bool,
-  /** Optional default value for primary input */
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Specify the value for primary input */
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Label for second input in range */
-  secondaryLabelText: PropTypes.string,
   /** Specify wehether you watn the secondary label to be visually hidden */
   hideSecondaryLabel: PropTypes.bool,
-  /** Optional default value for secondary input */
-  defaultSecondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  /** Specify the value for secondary input */
-  secondaryValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Input can be for a single time or a range - defaults to single */
   type: PropTypes.oneOf(['single', 'range']),
   i18n: PropTypes.shape({
+    /** Label for input (will be first, if range type) */
+    labelText: PropTypes.string.isRequired,
+    helperText: PropTypes.string,
+    /** Label for second input in range */
+    secondaryLabelText: PropTypes.string,
+    secondaryHelperText: PropTypes.string,
     invalidText: PropTypes.string,
-    warnTextr: PropTypes.string,
+    warnText: PropTypes.string,
     timeIconText: PropTypes.string,
     placeholderText: PropTypes.string,
   }),
@@ -58,9 +66,8 @@ const defaultProps = {
   className: undefined,
   hideLabel: false,
   defaultValue: undefined,
-  secondaryLabelText: undefined,
+  value: undefined,
   hideSecondaryLabel: false,
-  defaultSecondaryValue: undefined,
   type: 'single',
   i18n: {
     invalidText: 'The time entered is invalid',
@@ -68,7 +75,7 @@ const defaultProps = {
     timeIconText: 'Open time picker',
     placeholderText: 'hh:mm',
   },
-  size: 'lg',
+  size: 'md',
   disabled: false,
   readOnly: false,
   warn: [false, false],
@@ -79,9 +86,8 @@ const defaultProps = {
 };
 
 const TimePicker = ({
+  id,
   className,
-  labelText,
-  secondaryLabelText,
   type,
   i18n,
   size,
@@ -90,50 +96,168 @@ const TimePicker = ({
   warn,
   invalid,
   light,
+  hideLabel,
+  hideSecondaryLabel,
   ...other
 }) => {
-  const { errorMessage, warningMessage, timeIconText, placeholderText } = useMerged(
-    defaultProps.i18n,
-    i18n
+  const {
+    labelText,
+    secondaryLabelText,
+    helperText,
+    invalidText,
+    warnText,
+    timeIconText,
+    placeholderText,
+  } = useMerged(defaultProps.i18n, i18n);
+
+  const helpText = useMemo(
+    () => (invalid[0] || invalid[1] ? invalidText : warn[0] || warn[1] ? warnText : helperText),
+    [invalid, warn, invalidText, warnText, helperText]
   );
 
+  const icon = useMemo(() => {}, []);
+
   return (
-    <div className={`${iotPrefix}--time-picker ${className}`}>
+    <div
+      className={classnames(`${iotPrefix}--time-picker`, {
+        [className]: className,
+        [`${iotPrefix}--time-picker--light`]: light,
+        [`${iotPrefix}--time-picker--disabled`]: disabled,
+        [`${iotPrefix}--time-picker-range`]: type === 'range',
+        [`${iotPrefix}--time-picker--invalid`]: invalid[0] || invalid[1],
+        [`${iotPrefix}--time-picker--warn`]: warn[0] || warn[1],
+      })}
+    >
       {type === 'single' ? (
-        <TextInput
-          labelText={labelText}
-          placeholder={placeholderText}
-          helperText="this is cool"
-          size={size}
-          warn={warn[0]}
-          invalid={invalid[0]}
-          light={light}
-          disabled={disabled}
-          {...other}
-        />
+        <>
+          <div className={`${iotPrefix}--time-picker__wrapper`}>
+            <TextInput
+              hideLabel={hideLabel}
+              labelText={labelText}
+              placeholder={placeholderText}
+              size={size}
+              warn={warn[0]}
+              invalid={invalid[0]}
+              light={light}
+              disabled={disabled}
+            />
+            <Time16 className={classnames(`${iotPrefix}--time-picker__icon`)} />
+          </div>
+          <p
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--time-picker-range__helper-text`,
+              {
+                [`${prefix}--form__helper-text--disabled`]: disabled,
+              }
+            )}
+          >
+            {helpText}
+          </p>
+        </>
+      ) : hideSecondaryLabel && !hideLabel ? (
+        <fieldset>
+          <legend
+            id={`${id}-label`}
+            className={classnames(`${prefix}--label`, { [`${prefix}--label--disabled`]: disabled })}
+          >
+            {labelText}
+          </legend>
+          <div className={`${iotPrefix}--time-picker__wrapper`}>
+            <TextInput
+              id={`${id}-1`}
+              hideLabel={hideSecondaryLabel || hideLabel}
+              ariaLabledBy={hideSecondaryLabel ? `${id}-1` : undefined}
+              className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
+              labelText={!hideSecondaryLabel ? labelText : ''}
+              placeholder={placeholderText}
+              size={size}
+              warn={warn[0] === 'true'}
+              invalid={invalid[0] === 'true'}
+              light={light}
+              disabled={disabled}
+              invalidText={invalidText}
+              warnText={warnText}
+              // {...other}
+            />
+            <Time16 className={classnames(`${iotPrefix}--time-picker__icon`)} />
+          </div>
+          <div className={`${iotPrefix}--time-picker__wrapper`}>
+            <TextInput
+              id={`${id}-2`}
+              hideLabel={hideSecondaryLabel || hideLabel}
+              ariaLabledBy={hideSecondaryLabel ? `${id}-1` : undefined}
+              className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
+              labelText={secondaryLabelText}
+              placeholder={placeholderText}
+              size={size}
+              warn={warn[1]}
+              invalid={invalid[1]}
+              light={light}
+              disabled={disabled}
+              // {...other}
+            />
+            <Time16 className={classnames(`${iotPrefix}--time-picker__icon`)} />
+          </div>
+          <p
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--time-picker-range__helper-text`,
+              {
+                [`${prefix}--form__helper-text--disabled`]: disabled,
+              }
+            )}
+          >
+            {helpText}
+          </p>
+        </fieldset>
       ) : (
         <>
-          <TextInput
-            labelText={labelText}
-            placeholder={placeholderText}
-            warnText="this is cool"
-            size={size}
-            warn={warn[0]}
-            invalid={invalid[0]}
-            light={light}
-            disabled={disabled}
-            {...other}
-          />
-          <TextInput
-            labelText={secondaryLabelText}
-            placeholder={placeholderText}
-            size={size}
-            warn={warn[1]}
-            invalid={invalid[1]}
-            light={light}
-            disabled={disabled}
-            {...other}
-          />
+          <div className={`${iotPrefix}--time-picker__wrapper`}>
+            <TextInput
+              id={`${id}-1`}
+              ariaLabledBy={hideSecondaryLabel ? `${id}-label` : undefined}
+              hideLabel={hideLabel}
+              className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
+              labelText={!hideSecondaryLabel ? labelText : ''}
+              placeholder={placeholderText}
+              size={size}
+              warn={warn[0]}
+              invalid={invalid[0]}
+              light={light}
+              disabled={disabled}
+              // {...other}
+            />
+            <Time16 className={classnames(`${iotPrefix}--time-picker__icon`)} />
+          </div>
+          <div className={`${iotPrefix}--time-picker__wrapper`}>
+            <TextInput
+              id={`${id}-2`}
+              ariaLabledBy={hideSecondaryLabel ? `${id}-label` : undefined}
+              hideLabel={hideSecondaryLabel || hideLabel}
+              className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
+              labelText={secondaryLabelText}
+              placeholder={placeholderText}
+              size={size}
+              warn={warn[1]}
+              invalid={invalid[1]}
+              light={light}
+              disabled={disabled}
+              // {...other}
+            />
+            <Time16 className={classnames(`${iotPrefix}--time-picker__icon`)} />
+          </div>
+          <p
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--time-picker-range__helper-text`,
+              {
+                [`${prefix}--form__helper-text--disabled`]: disabled,
+              }
+            )}
+          >
+            {helpText}
+          </p>
         </>
       )}
     </div>
