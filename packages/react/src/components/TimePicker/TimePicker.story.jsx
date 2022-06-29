@@ -77,17 +77,24 @@ const listItems = Array.from(Array(12)).map((el, i) => {
 });
 
 export const Default = () => {
+  const defaultValue = [
+    select('1st default value', ['10:30am', undefined], undefined),
+    select('2nd default value', ['11:30pm', undefined], undefined),
+  ];
   return (
     <TimePicker
+      key={defaultValue[0] + defaultValue[1]}
+      defaultValue={defaultValue}
+      readOnly={boolean('Read only', false)}
       hideLabel={boolean('Hide label', false)}
       hideSecondaryLabel={boolean('Hide secondary label', false)}
       className="this that"
       id="time-picker"
       i18n={object('i18n', {
-        labelText: 'Time',
-        secondaryLabelText: 'Time',
+        labelText: 'Start',
+        secondaryLabelText: 'End',
         helperText: 'This is some helper text',
-        warnText: 'you have been warned',
+        warnText: 'You have been warned',
       })}
       type={select('Type', ['single', 'range'], 'single')}
       invalid={[boolean('First input invalid', false), boolean('Second input invalid', false)]}
