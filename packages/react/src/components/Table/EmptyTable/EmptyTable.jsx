@@ -10,8 +10,6 @@ import deprecate from '../../../internal/deprecate';
 const { iotPrefix } = settings;
 
 const propTypes = {
-  /** The unique id of the table */
-  id: PropTypes.string,
   /** Empty state to render, either a custom element or an object */
   emptyState: EmptyStatePropTypes.isRequired,
   totalColumns: PropTypes.number.isRequired,
@@ -27,13 +25,11 @@ const propTypes = {
 };
 
 const defaultProps = {
-  id: 'EmptyTable',
   onEmptyStateAction: null,
   testId: '',
 };
 
 const EmptyTable = ({
-  id,
   totalColumns,
   isFiltered,
   emptyState,
@@ -51,7 +47,6 @@ const EmptyTable = ({
   testId,
 }) => (
   <TableBody
-    id={id}
     // TODO: remove deprecated 'testID' in v3
     data-testid={testID || testId}
   >
