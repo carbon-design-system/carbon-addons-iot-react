@@ -6,7 +6,6 @@ import { Tree16, Add16 } from '@carbon/icons-react';
 import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
-import { getAdditionalCardSize } from '../../utils/cardUtilityFunctions';
 import Table from '../Table/Table';
 import Button from '../Button';
 import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
@@ -149,7 +148,7 @@ export const WithAdditionalCardSizeNames = () => {
   return (
     <div
       style={{
-        width: `${getCardMinSize(breakpoint, getAdditionalCardSize(size)).x}px`,
+        width: `${getCardMinSize(breakpoint, size).x}px`,
         margin: 20,
       }}
     >
