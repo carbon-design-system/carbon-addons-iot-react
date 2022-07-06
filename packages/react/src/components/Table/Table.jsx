@@ -74,6 +74,9 @@ const propTypes = {
     hasFastSearch: PropTypes.bool,
     hasPagination: PropTypes.bool,
     hasRowSelection: PropTypes.oneOf(['multi', 'single', false]),
+    /** @TODO: Remove in major release and just show action bar when no actions are defined */
+    /* option to hide batch action toolbar */
+    hasBatchActionToolbar: PropTypes.bool,
     /** True if the rows should be expandable */
     hasRowExpansion: PropTypes.oneOfType([
       PropTypes.bool,
@@ -372,6 +375,7 @@ export const defaultProps = (baseProps) => ({
     hasPagination: false,
     hasRowSelection: false,
     hasRowExpansion: false,
+    hasBatchActionToolbar: true,
     hasRowActions: false,
     hasRowNesting: false,
     hasRowEdit: false,
@@ -887,7 +891,8 @@ const Table = (props) => {
                 'hasRowSelection',
                 'hasRowCountInHeader',
                 'hasRowEdit',
-                'hasUserViewManagement'
+                'hasUserViewManagement',
+                'hasBatchActionToolbar'
               ),
               hasFilter: Boolean(options?.hasFilter),
               hasAdvancedFilter: Boolean(options?.hasAdvancedFilter),

@@ -148,12 +148,6 @@ let wrapper = mount(
   />
 );
 describe('Dashboard', () => {
-  it('should show an error for testID', () => {
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
-    console.error.mockReset();
-  });
   it('should be selectable with testId', () => {
     render(
       <Dashboard

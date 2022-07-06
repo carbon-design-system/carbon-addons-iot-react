@@ -311,6 +311,7 @@ const propTypes = {
   onEditDataItems: PropTypes.func,
 
   testId: PropTypes.string,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -385,6 +386,7 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
   testId: 'dashboard-editor',
+  onEditDataItem: null,
 };
 
 const LAYOUTS = {
@@ -439,6 +441,7 @@ const DashboardEditor = ({
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
   testId,
+  onEditDataItem,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -573,22 +576,35 @@ const DashboardEditor = ({
   const handleOnCardChange = useCallback(
     (cardConfig) => {
       // need to handle resetting the src of the image for image cards based on the id
-      if (cardConfig.type === CARD_TYPES.IMAGE && cardConfig.content.imgState !== 'new') {
-        // eslint-disable-next-line no-param-reassign
-        cardConfig.content.src = availableImages.find(
-          (image) => image.id === cardConfig.content.id
-        )?.src;
-      } else if (
-        cardConfig.type === CARD_TYPES.IMAGE &&
-        cardConfig.content.imgState === 'new' &&
-        !imagesToUpload.some((image) => image.id === cardConfig.content.id)
-      ) {
-        /* istanbul ignore else */
-        if (cardConfig.content.id && cardConfig.content.src) {
-          setImagesToUpload((prevImagesToUpload) => [
-            ...prevImagesToUpload,
-            { id: cardConfig.content.id, src: cardConfig.content.src },
-          ]);
+      if (cardConfig.type === CARD_TYPES.IMAGE) {
+        if (
+          cardConfig.content?.imgState !== 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = availableImages?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
+        } else if (
+          cardConfig.type === CARD_TYPES.IMAGE &&
+          cardConfig.content.imgState === 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          /* istanbul ignore else */
+          if (cardConfig.content.id && cardConfig.content.src) {
+            setImagesToUpload((prevImagesToUpload) => [
+              ...prevImagesToUpload,
+              { id: cardConfig.content.id, src: cardConfig.content.src },
+            ]);
+          }
+        } else if (
+          cardConfig.content.imgState !== 'new' &&
+          imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = imagesToUpload?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
         }
       }
 
@@ -817,6 +833,7 @@ const DashboardEditor = ({
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItems={onEditDataItems}
+            onEditDataItem={onEditDataItem}
           />
         </ErrorBoundary>
       </div>

@@ -653,6 +653,7 @@ Map {
       "options": Object {
         "hasAdvancedFilter": false,
         "hasAggregations": false,
+        "hasBatchActionToolbar": true,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
         "hasFastSearch": true,
@@ -1404,6 +1405,9 @@ Map {
           Object {
             "hasAdvancedFilter": [Function],
             "hasAggregations": Object {
+              "type": "bool",
+            },
+            "hasBatchActionToolbar": Object {
               "type": "bool",
             },
             "hasColumnSelection": Object {
@@ -2251,7 +2255,6 @@ Map {
       "selectAllText": "Select all",
       "showExpanderColumn": false,
       "size": undefined,
-      "testID": "",
       "testId": "",
     },
     "propTypes": Object {
@@ -4445,6 +4448,9 @@ Map {
               "type": "bool",
             },
             "hasAggregations": Object {
+              "type": "bool",
+            },
+            "hasBatchActionToolbar": Object {
               "type": "bool",
             },
             "hasColumnSelection": Object {
@@ -10805,6 +10811,9 @@ Map {
                             "isRequired": true,
                             "type": "oneOfType",
                           },
+                          "isActive": Object {
+                            "type": "bool",
+                          },
                           "metaData": Object {
                             "args": Array [
                               Object {
@@ -10832,9 +10841,6 @@ Map {
                   ],
                   "type": "arrayOf",
                 },
-                "current": Object {
-                  "type": "bool",
-                },
                 "icon": Object {
                   "args": Array [
                     Array [
@@ -10848,6 +10854,9 @@ Map {
                   ],
                   "isRequired": true,
                   "type": "oneOfType",
+                },
+                "isActive": Object {
+                  "type": "bool",
                 },
                 "isEnabled": Object {
                   "type": "bool",
@@ -11500,6 +11509,9 @@ Map {
                                   "isRequired": true,
                                   "type": "oneOfType",
                                 },
+                                "isActive": Object {
+                                  "type": "bool",
+                                },
                                 "metaData": Object {
                                   "args": Array [
                                     Object {
@@ -11527,9 +11539,6 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
-                      "current": Object {
-                        "type": "bool",
-                      },
                       "icon": Object {
                         "args": Array [
                           Array [
@@ -11543,6 +11552,9 @@ Map {
                         ],
                         "isRequired": true,
                         "type": "oneOfType",
+                      },
+                      "isActive": Object {
+                        "type": "bool",
                       },
                       "isEnabled": Object {
                         "type": "bool",
@@ -13070,6 +13082,7 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13685,6 +13698,9 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
+      "onEditDataItem": Object {
+        "type": "func",
+      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -13797,6 +13813,10 @@ Map {
         "closeGalleryButton": "Back",
         "editDataItems": "Edit data items",
         "galleryHeader": "Gallery",
+        "modalHelpText": "The JSON definition for this card is provided below.  You can modify this data directly to update the card configuration.",
+        "modalIconDescription": "Close",
+        "modalLabel": "Card editor",
+        "modalTitle": "Edit card JSON configuration",
         "openGalleryButton": "Add card",
         "openJSONButton": "Open JSON editor",
         "searchPlaceHolderText": "Enter a search",
@@ -13804,6 +13824,7 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
+      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -14008,6 +14029,9 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
+        "type": "func",
+      },
+      "onEditDataItem": Object {
         "type": "func",
       },
       "onEditDataItems": Object {
@@ -16601,9 +16625,7 @@ Map {
       "tabIndex": Object {
         "type": "number",
       },
-      "testID": Object {
-        "type": "string",
-      },
+      "testID": [Function],
       "testId": Object {
         "type": "string",
       },

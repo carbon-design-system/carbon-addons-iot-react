@@ -162,6 +162,7 @@ const propTypes = {
   translateWithId: PropTypes.func,
 
   testId: PropTypes.string,
+  onEditDataItem: PropTypes.func,
 };
 
 const defaultProps = {
@@ -190,6 +191,7 @@ const defaultProps = {
   open: true,
   showTooManyHotspotsInfo: false,
   label: undefined,
+  onEditDataItem: null,
   i18n: {
     fixedTypeDataSourceTabLabelText: 'Data source',
     fixedTypeTooltipTabLabelText: 'Tooltip',
@@ -259,6 +261,7 @@ const HotspotEditorModal = ({
   i18n,
   translateWithId,
   testId,
+  onEditDataItem,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -443,6 +446,7 @@ const HotspotEditorModal = ({
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
         testId={`${testId}-data-source-tab`}
+        onEditDataItem={onEditDataItem}
       />
     ) : null;
   };
