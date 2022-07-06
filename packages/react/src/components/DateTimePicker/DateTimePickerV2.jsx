@@ -770,10 +770,7 @@ const DateTimePicker = ({
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{
-                '--wrapper-width': '20rem',
-                '--zIndex': zIndex,
-              }}
+              style={{ ...style, '--wrapper-width': '20rem', '--zIndex': zIndex ?? undefined }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

@@ -686,7 +686,7 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
-          style={{ '--zIndex': zIndex }}
+          style={{ ...style, '--zIndex': zIndex ?? undefined }}
           role="listbox"
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
