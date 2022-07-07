@@ -174,7 +174,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
     const hasLinks = index === 4;
     const hasSort = index === 1;
     const hasThresholds = index === 2;
-    const hasExpandedRows = index === 3;
+    const hasExpandedRows = index === 5;
     return {
       columns: hasLinks
         ? tableColumns.map((col) => {
