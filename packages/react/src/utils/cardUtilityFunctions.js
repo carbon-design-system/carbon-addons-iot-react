@@ -113,7 +113,6 @@ export const getUpdatedCardSize = (oldSize) => {
     }
     newSize = changedSize;
   }
-
   return newSize;
 };
 

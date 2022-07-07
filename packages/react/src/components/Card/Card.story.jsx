@@ -130,60 +130,6 @@ export const Basic = () => {
 
 Basic.storyName = 'basic stateful example with custom expand icon';
 
-const additionalCardSizes = [
-  'Extra small, Short',
-  'Medium, Short',
-  'Extra large, Short',
-  'Extra small, Regular',
-  'Medium, Regular',
-  'Extra large, Regular',
-  'Extra small, Extra tall',
-  'Medium, Extra tall',
-  'Extra large, Extra tall',
-];
-export const WithAdditionalCardSizeNames = () => {
-  const size = select('size', additionalCardSizes, CARD_SIZES.MEDIUM);
-  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
-
-  return (
-    <div
-      style={{
-        width: `${getCardMinSize(breakpoint, size).x}px`,
-        margin: 20,
-      }}
-    >
-      <CardStoryStateManager>
-        <Card
-          title={text('title', 'Card title')}
-          id="facilitycard-basic"
-          size={size}
-          isLoading={boolean('isloading', false)}
-          isEmpty={boolean('isEmpty', false)}
-          isEditable={boolean('isEditable', false)}
-          breakpoint={breakpoint}
-          availableActions={object('availableActions', {
-            range: true,
-            expand: true,
-            edit: true,
-            clone: false,
-            delete: false,
-          })}
-          renderExpandIcon={Tree16}
-          onFocus={action('onFocus')}
-          tabIndex={0}
-          padding={select(
-            'Apply padding to the card content or not (padding)',
-            ['default', 'none'],
-            'default'
-          )}
-        />
-      </CardStoryStateManager>
-    </div>
-  );
-};
-
-WithAdditionalCardSizeNames.storyName = 'basic example with additional card size names';
-
 export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
