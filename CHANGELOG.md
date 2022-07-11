@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.7...v2.150.1-next.8) (2022-07-11)
+
+
+### Bug Fixes
+
+* **barchartcard:** add extra conditions for time formatter ([85468c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85468c3a5c94ca4e19699a00ea604751201ab902))
+* **barchartcard:** add updated base images ([bc824a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc824a9f8822bcc9ccf0ffba404f3b1649c43d17))
+* **barchartcard:** fix the x axis using wrong formatter ([65ac9a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65ac9a10165d0bfb3fed3b575df8bd6ddc4a79a7))
+
+
+
+
+
 ## [2.150.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.6...v2.150.1-next.7) (2022-06-24)
 
 
