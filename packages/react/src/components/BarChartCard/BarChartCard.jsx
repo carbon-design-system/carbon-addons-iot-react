@@ -299,12 +299,14 @@ const BarChartCard = ({
                     chartValueFormatter(axisValue, size, null, locale, decimalPrecision),
                 },
               }
-            : {
+            : scaleType === 'time' && axes.bottomAxesMapsTo === 'date'
+            ? {
                 ticks: {
                   number: maxTicksPerSize,
                   formatter: formatTick,
                 },
-              }),
+              }
+            : {}),
         },
         left: {
           title: `${yLabel || ''} ${
