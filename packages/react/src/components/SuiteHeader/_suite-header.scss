@@ -197,15 +197,15 @@
   &-subtitle {
     margin-left: $spacing-05;
   }
-  button.admin-icon {
+  a.admin-icon {
     .#{$prefix}--tooltip__trigger svg {
       fill: $ui-01;
     }
   }
-  button.admin-icon__hidden {
+  a.admin-icon__hidden {
     visibility: hidden !important;
   }
-  button.admin-icon__selected {
+  a.admin-icon__selected {
     background-color: $interactive-02;
     border: none;
     border-bottom: $spacing-01 solid $ui-01;
