@@ -589,7 +589,8 @@ const DataSeriesFormItemModal = ({
         )}
         {editDataItem?.type !== 'DIMENSION' &&
           editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.hasStreamingMetricEnabled && (
+          editDataItem?.hasStreamingMetricEnabled &&
+          type === CARD_TYPES.TIMESERIES && ( // Downsample methods are only alowed on Timeseries card.
             <div className={`${baseClassName}--input-group`}>
               {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
                 <div className={`${baseClassName}--input-group--item-half`}>
