@@ -516,10 +516,10 @@ export const SideNavComponentWithState = () => {
             metaData: {
               onClick: action('menu click'),
               tabIndex: 0,
-              label: 'Applications',
+              label: 'Apps',
               element: RouterComponent,
             },
-            linkContent: 'Applications',
+            linkContent: 'Apps',
             childContent: [
               {
                 metaData: {
@@ -560,10 +560,10 @@ export const SideNavComponentWithState = () => {
         metaData: {
           onClick: action('menu click'),
           tabIndex: 0,
-          label: 'Boards',
+          label: 'My recent links',
           element: RouterComponent,
         },
-        linkContent: 'My recent applications',
+        linkContent: 'My recent links',
         childContent: [
           {
             metaData: {
