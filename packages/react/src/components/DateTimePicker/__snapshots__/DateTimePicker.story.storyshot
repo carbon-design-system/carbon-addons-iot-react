@@ -267,7 +267,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -439,7 +439,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -935,7 +935,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -1448,7 +1448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -1620,7 +1620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -2183,7 +2183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >
@@ -2364,7 +2364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           role="listbox"
           style={
             Object {
-              "--zIndex": undefined,
+              "--zIndex": 0,
             }
           }
         >

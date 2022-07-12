@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -337,6 +337,7 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
 
   const relativeSelect = useRef(null);
+  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const {
@@ -625,7 +626,6 @@ const DateTimePicker = ({
     (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
-  const { zIndex } = style;
 
   return (
     // Escape handler added to allow pressing escape to close the picker from any via event bubbling
@@ -686,7 +686,7 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
-          style={{ ...style, '--zIndex': zIndex ?? undefined }}
+          style={{ ...updatedStyle }}
           role="listbox"
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>

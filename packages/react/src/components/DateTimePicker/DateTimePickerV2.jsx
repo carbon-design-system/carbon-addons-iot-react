@@ -293,6 +293,7 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
+  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
 
   // initialize the dayjs locale
   useEffect(() => {
@@ -671,7 +672,6 @@ const DateTimePicker = ({
     ? -15
     : 274;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
-  const { zIndex } = style;
 
   return (
     <>
@@ -770,7 +770,7 @@ const DateTimePicker = ({
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ ...style, '--wrapper-width': '20rem', '--zIndex': zIndex ?? undefined }}
+              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
