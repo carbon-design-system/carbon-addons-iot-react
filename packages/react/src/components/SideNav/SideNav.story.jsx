@@ -8,6 +8,7 @@ import {
   ParentChild24,
   Home24,
   RecentlyViewed24,
+  Apps24,
 } from '@carbon/icons-react';
 import { HeaderContainer } from 'carbon-components-react/es/components/UIShell';
 import { boolean } from '@storybook/addon-knobs';
@@ -37,10 +38,10 @@ const mostRecentLinks = [
     metaData: {
       onClick: action('menu click'),
       tabIndex: 0,
-      label: 'My recent applications',
+      label: 'My recent links',
       element: RouterComponent,
     },
-    linkContent: 'My recent applications',
+    linkContent: 'My recent links',
     childContent: [
       {
         metaData: {
@@ -508,6 +509,48 @@ export const SideNavComponentWithState = () => {
           },
         ],
       },
+      demoMostRecentLinks
+        ? {
+            icon: Apps24,
+            isEnabled: true,
+            metaData: {
+              onClick: action('menu click'),
+              tabIndex: 0,
+              label: 'Applications',
+              element: RouterComponent,
+            },
+            linkContent: 'Applications',
+            childContent: [
+              {
+                metaData: {
+                  label: 'App 1',
+                  title: 'App 1',
+                  onClick: () => onSideNavMenuItemClick('App 1'),
+                  element: 'button',
+                },
+                content: 'App 1',
+              },
+              {
+                metaData: {
+                  label: 'App 2',
+                  title: 'App 2',
+                  onClick: () => onSideNavMenuItemClick('App 2'),
+                  element: 'button',
+                },
+                content: 'App 2',
+              },
+              {
+                metaData: {
+                  label: 'App 3',
+                  title: 'App 3',
+                  onClick: () => onSideNavMenuItemClick('App 3'),
+                  element: 'button',
+                },
+                content: 'App 3',
+              },
+            ],
+          }
+        : {},
     ]);
 
     setRecentLinksState([

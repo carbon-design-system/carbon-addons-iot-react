@@ -274,7 +274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             <span
               className="bx--side-nav__submenu-title"
             >
-              My recent applications
+              My recent links
             </span>
             <div
               className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
@@ -6404,6 +6404,114 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                   className="bx--side-nav__link-text"
                 >
                   Link 4
+                </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+        <li
+          className="bx--side-nav__item bx--side-nav__item--icon iot--side-nav__item--depth-0"
+          onKeyDown={[Function]}
+        >
+          <button
+            aria-expanded={false}
+            className="bx--side-nav__submenu"
+            onClick={[Function]}
+            type="button"
+          >
+            <div
+              className="bx--side-nav__icon"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={24}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={24}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8,4V8H4V4Zm2-2H2v8h8Zm8,2V8H14V4Zm2-2H12v8h8Zm8,2V8H24V4Zm2-2H22v8h8ZM8,14v4H4V14Zm2-2H2v8h8Zm8,2v4H14V14Zm2-2H12v8h8Zm8,2v4H24V14Zm2-2H22v8h8ZM8,24v4H4V24Zm2-2H2v8h8Zm8,2v4H14V24Zm2-2H12v8h8Zm8,2v4H24V24Zm2-2H22v8h8Z"
+                />
+              </svg>
+            </div>
+            <span
+              className="bx--side-nav__submenu-title"
+            >
+              Applications
+            </span>
+            <div
+              className="bx--side-nav__icon bx--side-nav__icon--small bx--side-nav__submenu-chevron"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={20}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16 22L6 12 7.4 10.6 16 19.2 24.6 10.6 26 12z"
+                />
+              </svg>
+            </div>
+          </button>
+          <ul
+            className="bx--side-nav__menu"
+          >
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-3"
+                label="App 1"
+                onClick={[Function]}
+                title="App 1"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 1
+                </span>
+              </button>
+            </li>
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-3"
+                label="App 2"
+                onClick={[Function]}
+                title="App 2"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 2
+                </span>
+              </button>
+            </li>
+            <li
+              className="bx--side-nav__menu-item"
+            >
+              <button
+                className="bx--side-nav__link"
+                data-testid="side-nav-menu-item-3"
+                label="App 3"
+                onClick={[Function]}
+                title="App 3"
+              >
+                <span
+                  className="bx--side-nav__link-text"
+                >
+                  App 3
                 </span>
               </button>
             </li>
