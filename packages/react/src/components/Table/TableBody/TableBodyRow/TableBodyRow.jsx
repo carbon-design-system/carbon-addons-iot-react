@@ -282,10 +282,6 @@ const TableBodyRow = ({
         const offset = firstVisibleColIndex === idx ? nestingOffset : 0;
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
-        const sortable =
-          matchingColumnMeta && matchingColumnMeta.isSortable
-            ? matchingColumnMeta.isSortable
-            : false;
         return !col.isHidden ? (
           <TableCell
             id={`cell-${tableId}-${id}-${col.columnId}`}
@@ -296,7 +292,6 @@ const TableBodyRow = ({
             align={align}
             className={classnames(`data-table-${align}`, {
               [`${iotPrefix}--table__cell--truncate`]: truncateCellText,
-              [`${iotPrefix}--table__cell--sortable`]: sortable,
             })}
             width={initialColumnWidth}
           >
