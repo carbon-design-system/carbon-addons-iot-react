@@ -167,6 +167,7 @@ const propTypes = {
   hasIconOnly: PropTypes.bool,
   /** Allow repositioning the flyout menu */
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -248,6 +249,7 @@ const defaultProps = {
   id: undefined,
   hasIconOnly: false,
   menuOffset: undefined,
+  style: {},
 };
 
 const DateTimePicker = ({
@@ -271,6 +273,7 @@ const DateTimePicker = ({
   id = uuid.v4(),
   hasIconOnly,
   menuOffset,
+  style,
   ...others
 }) => {
   React.useEffect(() => {
@@ -290,6 +293,7 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
+  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
 
   // initialize the dayjs locale
   useEffect(() => {
@@ -766,7 +770,7 @@ const DateTimePicker = ({
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ '--wrapper-width': '20rem' }}
+              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

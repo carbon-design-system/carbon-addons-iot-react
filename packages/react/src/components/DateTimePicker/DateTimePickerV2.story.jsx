@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, text, select } from '@storybook/addon-knobs';
+import { boolean, text, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
@@ -60,6 +60,7 @@ export const Default = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 100) }}
       // renderPresetTooltipText={() => 'User tooltip'}
     />
   );
