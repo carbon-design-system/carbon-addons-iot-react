@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.8...v2.150.1-next.9) (2022-07-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add zindex knobs ([1404f50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1404f50cc9b25d55c1b90a87e23e56c0b1e0cc87))
+* **datetimepicker:** respect zindex from parent ([de8fe50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de8fe50d80ae3452d191bd0cef7c348408b49319))
+* **datetimepicker:** spread style prop and null check on zindex ([8bf6d76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bf6d76ef469ca625abe1d99ac9997a13c1f3d92))
+* **datetimepicker:** update css custom attribute ([bb2a745](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb2a74533e3914e3971b6f5d81d369adadc03363))
+* **datetimepicker:** useMemo for style object ([f200e36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f200e3603b31d8bc1b14cf06a00151e676b2d093))
+
+
+
+
+
 ## [2.150.1-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.7...v2.150.1-next.8) (2022-07-11)
 
 
