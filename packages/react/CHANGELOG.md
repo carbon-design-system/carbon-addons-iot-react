@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.9...v2.150.1-next.10) (2022-07-14)
+
+
+### Bug Fixes
+
+* **header:** set overflow-y on app switcher ([429c3ca](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/429c3cac9e66f2f08224826087c0d1622fc2137d))
+
+
+
+
+
 ## [2.150.1-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.8...v2.150.1-next.9) (2022-07-14)
 
 
