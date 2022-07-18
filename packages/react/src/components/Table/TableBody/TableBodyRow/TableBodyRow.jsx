@@ -283,7 +283,7 @@ const TableBodyRow = ({
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         const sortable =
-          matchingColumnMeta && matchingColumnMeta.isSortable
+          matchingColumnMeta && matchingColumnMeta.isSortable && matchingColumnMeta.align === 'end'
             ? matchingColumnMeta.isSortable
             : false;
         return !col.isHidden ? (
