@@ -96,11 +96,14 @@
 
 // open menu content
 .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
+  --zIndex: 0;
   padding: 0;
+  z-index: var(--zIndex);
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
     width: var(--wrapper-width);
+    z-index: calc(var(--zIndex) + 20);
 
     .#{$prefix}--list__item:before {
       display: none;

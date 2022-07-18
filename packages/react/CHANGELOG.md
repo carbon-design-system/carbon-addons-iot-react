@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.9...v2.150.1-next.10) (2022-07-14)
+
+
+### Bug Fixes
+
+* **header:** set overflow-y on app switcher ([429c3ca](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/429c3cac9e66f2f08224826087c0d1622fc2137d))
+
+
+
+
+
+## [2.150.1-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.8...v2.150.1-next.9) (2022-07-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add zindex knobs ([1404f50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1404f50cc9b25d55c1b90a87e23e56c0b1e0cc87))
+* **datetimepicker:** respect zindex from parent ([de8fe50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de8fe50d80ae3452d191bd0cef7c348408b49319))
+* **datetimepicker:** spread style prop and null check on zindex ([8bf6d76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bf6d76ef469ca625abe1d99ac9997a13c1f3d92))
+* **datetimepicker:** update css custom attribute ([bb2a745](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb2a74533e3914e3971b6f5d81d369adadc03363))
+* **datetimepicker:** useMemo for style object ([f200e36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f200e3603b31d8bc1b14cf06a00151e676b2d093))
+
+
+
+
+
+## [2.150.1-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.7...v2.150.1-next.8) (2022-07-11)
+
+
+### Bug Fixes
+
+* **barchartcard:** add extra conditions for time formatter ([85468c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85468c3a5c94ca4e19699a00ea604751201ab902))
+* **barchartcard:** add updated base images ([bc824a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bc824a9f8822bcc9ccf0ffba404f3b1649c43d17))
+* **barchartcard:** fix the x axis using wrong formatter ([65ac9a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65ac9a10165d0bfb3fed3b575df8bd6ddc4a79a7))
+
+
+
+
+
 ## [2.150.1-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.6...v2.150.1-next.7) (2022-06-24)
 
 

@@ -8807,6 +8807,7 @@ Map {
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
     },
     "propTypes": Object {
@@ -9151,6 +9152,14 @@ Map {
       "showRelativeOption": Object {
         "type": "bool",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "testId": Object {
         "type": "string",
       },
@@ -9261,6 +9270,7 @@ Map {
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
     },
     "propTypes": Object {
@@ -9620,6 +9630,14 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testId": Object {
         "type": "string",
