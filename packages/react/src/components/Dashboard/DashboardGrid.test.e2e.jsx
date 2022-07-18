@@ -174,7 +174,7 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
     const hasLinks = index === 4;
     const hasSort = index === 1;
     const hasThresholds = index === 2;
-    const hasExpandedRows = index === 5;
+    const hasExpandedRows = index === 3;
     return {
       columns: hasLinks
         ? tableColumns.map((col) => {
@@ -966,7 +966,9 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
       break;
     case 'TableCard':
       CARDS_TO_RENDER = [
-        ...Object.values(omit(CARD_SIZES, 'SMALL', 'SMALLWIDE', 'SMALLFULL')).map((size, index) => (
+        ...Object.values(
+          omit(CARD_SIZES, 'SMALL', 'SMALLWIDE', 'SMALLFULL', 'SMALLTHICK', 'MEDIUMTHICK')
+        ).map((size, index) => (
           <TableCard
             title={`TableCard - ${size}`}
             id={`tableCard-${size}`}
