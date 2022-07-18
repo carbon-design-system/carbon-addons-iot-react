@@ -968,7 +968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-0-temperature"
@@ -993,7 +993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-0-pressure"
@@ -1023,7 +1023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-1-temperature"
@@ -1048,7 +1048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-1-pressure"
@@ -1078,7 +1078,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-2-temperature"
@@ -1103,7 +1103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-2-pressure"
@@ -1133,7 +1133,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-3-temperature"
@@ -1158,7 +1158,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-3-pressure"
@@ -1188,7 +1188,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-4-temperature"
@@ -1213,7 +1213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-4-pressure"
@@ -1243,7 +1243,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-5-temperature"
@@ -1268,7 +1268,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-5-pressure"
@@ -1298,7 +1298,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 >
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="temperature"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-6-temperature"
@@ -1323,7 +1323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                   </td>
                                   <td
                                     align="start"
-                                    className="data-table-start iot--table__cell--sortable"
+                                    className="data-table-start"
                                     data-column="pressure"
                                     data-offset={0}
                                     id="cell-table-for-card-Table-sample-values-Table-6-pressure"
@@ -20363,7 +20363,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-0-temperature"
@@ -20388,7 +20388,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-0-pressure"
@@ -20418,7 +20418,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-1-temperature"
@@ -20443,7 +20443,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-1-pressure"
@@ -20473,7 +20473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-2-temperature"
@@ -20498,7 +20498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-2-pressure"
@@ -20528,7 +20528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-3-temperature"
@@ -20553,7 +20553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-3-pressure"
@@ -20583,7 +20583,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-4-temperature"
@@ -20608,7 +20608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-4-pressure"
@@ -20638,7 +20638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-5-temperature"
@@ -20663,7 +20663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-5-pressure"
@@ -20693,7 +20693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               >
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="temperature"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-6-temperature"
@@ -20718,7 +20718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                                 </td>
                                 <td
                                   align="start"
-                                  className="data-table-start iot--table__cell--sortable"
+                                  className="data-table-start"
                                   data-column="pressure"
                                   data-offset={0}
                                   id="cell-table-for-card-Table-sample-values-Table-6-pressure"
