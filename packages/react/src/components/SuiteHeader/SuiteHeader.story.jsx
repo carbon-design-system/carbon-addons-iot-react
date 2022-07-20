@@ -361,31 +361,48 @@ export const HeaderWithSideNav = () => {
   const [recentLinksState, setRecentLinksState] = useState([]);
 
   const onSideNavMenuItemClick = (linkLabel) => {
+    let activeLink;
     setLinksState((currentLinks) =>
       currentLinks.map((group) => {
         if (group.childContent) {
           return {
             ...group,
-            childContent: group.childContent.map((child) => ({
-              ...child,
-              isActive: linkLabel === child.metaData.label,
-            })),
+            childContent: group.childContent.map((child) => {
+              if (linkLabel === child.metaData.label) {
+                activeLink = {
+                  ...child,
+                  isActive: false,
+                };
+              }
+              return {
+                ...child,
+                isActive: linkLabel === child.metaData.label,
+              };
+            }),
           };
         }
 
-        return { ...group, isActive: linkLabel === group.metaData.label };
+        return group;
       })
     );
 
     setRecentLinksState((currentLinks) => {
       return currentLinks.map((group) => {
+        const recentLinks =
+          activeLink &&
+          group.childContent.filter((child) => child.metaData.label === linkLabel).length === 0
+            ? [activeLink, ...group.childContent]
+            : group.childContent;
+
         const [firstChild, restChildren] = partition(
-          group.childContent,
+          recentLinks,
           (child) => child.content === linkLabel
         );
+
         if (group.childContent) {
           return {
             ...group,
+            isActive: false,
             childContent: [...firstChild, ...restChildren],
           };
         }
