@@ -204,6 +204,7 @@ $hoverBgColor: #2c2c2c;
 .#{$prefix}--app-switcher {
   background-color: $ui-01;
   border: none;
+  overflow-y: scroll;
 }
 
 .action-btn__headerpanel {

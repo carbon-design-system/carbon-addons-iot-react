@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.10...v2.150.1-next.11) (2022-07-20)
+
+
+### Bug Fixes
+
+* **card:** add additional size names ([cd9e274](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd9e274d56c9abfc23e25ba0633463200eeb22f7))
+* **card:** added smallthick, mediumthick and largethick ([3e2cbfe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e2cbfe356d2f54b048a9500abf09efb6e2c84cf))
+* **card:** merge conflicts ([088a83c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/088a83c8747708f31301d5339d86f99f0cb408fb))
+* **card:** more snapshots updates ([13bc639](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13bc639b0e0f07a0ab8dad3f8c0b8199f098d9cd))
+* **card:** update base image ([d21dba8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d21dba801c7be6bafbd9d03f309e91a9f3b80f1d))
+* **card:** update base images ([7e6caad](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e6caad2dd647c3ff89cf2978b74f90ec16b5c07))
+* **card:** update snapshots ([156329b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/156329bc13cd0bec77c924dfd950ecb49ce3dea4))
+* **card:** update snapshots ([53ff9b7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53ff9b772ae1da2f1af27e3711ae89c3ec390d6b))
+* **card:** update tests ([9a45690](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a456906b670da15f10d3df647178e2306c14a13))
+* **card:** updated tests ([655736d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/655736da9890c72dbbd088bac35d0e13ccedc311))
+
+
+
+
+
+## [2.150.1-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.9...v2.150.1-next.10) (2022-07-14)
+
+
+### Bug Fixes
+
+* **header:** set overflow-y on app switcher ([429c3ca](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/429c3cac9e66f2f08224826087c0d1622fc2137d))
+
+
+
+
+
+## [2.150.1-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.8...v2.150.1-next.9) (2022-07-14)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add zindex knobs ([1404f50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1404f50cc9b25d55c1b90a87e23e56c0b1e0cc87))
+* **datetimepicker:** respect zindex from parent ([de8fe50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/de8fe50d80ae3452d191bd0cef7c348408b49319))
+* **datetimepicker:** spread style prop and null check on zindex ([8bf6d76](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bf6d76ef469ca625abe1d99ac9997a13c1f3d92))
+* **datetimepicker:** update css custom attribute ([bb2a745](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bb2a74533e3914e3971b6f5d81d369adadc03363))
+* **datetimepicker:** useMemo for style object ([f200e36](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f200e3603b31d8bc1b14cf06a00151e676b2d093))
+
+
+
+
+
 ## [2.150.1-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.7...v2.150.1-next.8) (2022-07-11)
 
 

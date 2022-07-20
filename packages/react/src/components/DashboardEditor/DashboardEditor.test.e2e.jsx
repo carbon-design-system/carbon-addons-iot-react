@@ -184,7 +184,7 @@ describe('DashboardEditor', () => {
         expect(mockOnCardChange).to.be.calledWith(
           {
             ...card,
-            size: CARD_SIZES.MEDIUMWIDE,
+            size: CARD_SIZES.MEDIUMTHICK,
           },
           {
             cards: [card],

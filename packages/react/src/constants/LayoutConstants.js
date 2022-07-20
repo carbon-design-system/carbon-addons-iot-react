@@ -12,11 +12,14 @@ export const CARD_SIZES = {
   SMALL: 'SMALL',
   SMALLWIDE: 'SMALLWIDE',
   SMALLFULL: 'SMALLFULL',
+  SMALLTHICK: 'SMALLTHICK',
   MEDIUMTHIN: 'MEDIUMTHIN',
   MEDIUM: 'MEDIUM',
+  MEDIUMTHICK: 'MEDIUMTHICK',
   MEDIUMWIDE: 'MEDIUMWIDE',
   LARGETHIN: 'LARGETHIN',
   LARGE: 'LARGE',
+  LARGETHICK: 'LARGETHICK',
   LARGEWIDE: 'LARGEWIDE',
 };
 
@@ -227,6 +230,30 @@ export const CARD_DIMENSIONS = {
     sm: { w: 4, h: 4 },
     xs: { w: 4, h: 4 },
   },
+  SMALLTHICK: {
+    max: { w: 12, h: 1 },
+    xl: { w: 12, h: 1 },
+    lg: { w: 12, h: 1 },
+    md: { w: 8, h: 1 },
+    sm: { w: 8, h: 1 },
+    xs: { w: 4, h: 1 },
+  },
+  MEDIUMTHICK: {
+    max: { w: 12, h: 2 },
+    xl: { w: 12, h: 2 },
+    lg: { w: 12, h: 2 },
+    md: { w: 8, h: 2 },
+    sm: { w: 8, h: 2 },
+    xs: { w: 4, h: 2 },
+  },
+  LARGETHICK: {
+    max: { w: 12, h: 4 },
+    xl: { w: 12, h: 4 },
+    lg: { w: 12, h: 4 },
+    md: { w: 8, h: 4 },
+    sm: { w: 8, h: 4 },
+    xs: { w: 4, h: 4 },
+  },
 };
 
 export const CARD_LAYOUTS = {
@@ -266,9 +293,11 @@ export const ZOOM_BAR_ENABLED_CARD_SIZES = [
 export const ALLOWED_CHART_CARD_SIZES = [
   CARD_SIZES.MEDIUM,
   CARD_SIZES.MEDIUMTHIN,
+  CARD_SIZES.MEDIUMTHICK,
   CARD_SIZES.MEDIUMWIDE,
   CARD_SIZES.LARGE,
   CARD_SIZES.LARGETHIN,
+  CARD_SIZES.LARGETHICK,
   CARD_SIZES.LARGEWIDE,
 ];
 
