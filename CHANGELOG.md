@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.10...v2.150.1-next.11) (2022-07-20)
+
+
+### Bug Fixes
+
+* **card:** add additional size names ([cd9e274](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cd9e274d56c9abfc23e25ba0633463200eeb22f7))
+* **card:** added smallthick, mediumthick and largethick ([3e2cbfe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3e2cbfe356d2f54b048a9500abf09efb6e2c84cf))
+* **card:** merge conflicts ([088a83c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/088a83c8747708f31301d5339d86f99f0cb408fb))
+* **card:** more snapshots updates ([13bc639](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13bc639b0e0f07a0ab8dad3f8c0b8199f098d9cd))
+* **card:** update base image ([d21dba8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d21dba801c7be6bafbd9d03f309e91a9f3b80f1d))
+* **card:** update base images ([7e6caad](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e6caad2dd647c3ff89cf2978b74f90ec16b5c07))
+* **card:** update snapshots ([156329b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/156329bc13cd0bec77c924dfd950ecb49ce3dea4))
+* **card:** update snapshots ([53ff9b7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53ff9b772ae1da2f1af27e3711ae89c3ec390d6b))
+* **card:** update tests ([9a45690](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a456906b670da15f10d3df647178e2306c14a13))
+* **card:** updated tests ([655736d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/655736da9890c72dbbd088bac35d0e13ccedc311))
+
+
+
+
+
 ## [2.150.1-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.9...v2.150.1-next.10) (2022-07-14)
 
 
