@@ -179,11 +179,11 @@ const TimePicker = ({
         //   console.log('WHat?!');
         //   setValueState(val);
         // } else {
-        // Timeouts push update to end of stack to allow for child we pass ref to update
-        setTimeout(() => setValueState(val));
+
+        setValueState(val);
         // }
       } else {
-        setTimeout(() => setSecondaryValueState(val));
+        setSecondaryValueState(val);
       }
     } else if (isValid || val === '') {
       if (focusedInput === 0) {
@@ -454,8 +454,8 @@ const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
   return { id: index, value: index };
 });
 
-const listItemsForVertical2 = Array.from(Array(59)).map((el, i) => {
-  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+const listItemsForVertical2 = Array.from(Array(60)).map((el, i) => {
+  const index = i < 10 ? `0${i}` : `${i}`;
   return { id: index, value: index };
 });
 
@@ -472,7 +472,7 @@ const spinnerPropTypes = {
 };
 
 const defaultSpinnerProps = {
-  value: '03:03 AM',
+  value: '',
   testId: 'time-picker-spinner',
   onChange: () => {},
 };
@@ -482,7 +482,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, 
     return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
   }, [value]);
   const secondVal = useMemo(
-    () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '03'),
+    () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '02'),
     [value]
   );
   const thirdVal = useMemo(
@@ -491,23 +491,25 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, 
     [value]
   );
   const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
+  const [callbackValue, setCallbackValue] = useState(value);
 
   useEffect(() => {
     setSelected([firstVal, secondVal, thirdVal]);
   }, [firstVal, secondVal, thirdVal]);
+  useEffect(() => {
+    onChange(callbackValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [callbackValue]);
 
-  const handleOnClick = useCallback(
-    (str, index) => {
-      setSelected((prev) => {
-        const arr = [...prev];
-        arr[index] = str;
-        const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
-        onChange(newValue);
-        return arr;
-      });
-    },
-    [onChange]
-  );
+  const handleOnClick = useCallback((str, index) => {
+    setSelected((prev) => {
+      const arr = [...prev];
+      arr[index] = str;
+      const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
+      setCallbackValue(newValue);
+      return arr;
+    });
+  }, []);
 
   const listSpinner1 = useMemo(
     () => (

@@ -1,4 +1,4 @@
-import { render, screen, act, waitFor } from '@testing-library/react';
+import { render, screen, act, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
@@ -40,19 +40,13 @@ describe('TimePicker', () => {
     expect(screen.getByTestId('time-picker-test-time-btn-2')).toBeTruthy();
   });
 
-  it.only('can take input and returns it in onChange callback', async () => {
-    // const originalDev = global.__DEV__;
-    // // global.process.NODE_ENV
-    // global.__DEV__ = true;
-    // console.log(global);
+  it('can take input and returns it in onChange callback', async () => {
     render(<TimePicker {...timePickerProps} />);
     const input = screen.getByTestId('time-picker-test-input');
     await act(() => userEvent.type(input, '09:30{space}AM', { delay: 200 }));
-
     expect(timePickerProps.onChange).toHaveBeenCalledTimes(8);
     expect(input.value).toEqual('09:30 AM');
     expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
-    // global.__DEV__ = originalDev;
   });
 
   it('opens dropdown when clock icon clicked, closes when component loses focus', async () => {
@@ -65,16 +59,19 @@ describe('TimePicker', () => {
     await waitFor(() => expect(dropdown).not.toBeInTheDocument());
   });
 
-  it('updates the value of input when list spinner button is pressed', async () => {
-    render(<TimePicker {...timePickerProps} value="09:30 AM" />);
-    const timeBtn = screen.getByTestId('time-picker-test-time-btn');
-    userEvent.click(timeBtn);
-    const prevBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-prev-btn');
-    const input = screen.getByTestId('time-picker-test-input');
-    userEvent.click(prevBtn);
-    // await waitFor(() => userEvent.click(prevBtn));
-    expect(input.value).toEqual('08:30 AM');
-  });
+  // it.only('updates the value of input when list spinner button is pressed', async () => {
+  //   render(<TimePicker {...timePickerProps} value="09:30 AM" />);
+  //   const timeBtn = screen.getByTestId('time-picker-test-time-btn');
+  //   userEvent.click(timeBtn);
+  //   const prevBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-prev-btn');
+  //   const input = screen.getByTestId('time-picker-test-input');
+  //   // console.log(prevBtn);
+  //   fireEvent.click(prevBtn);
+  //   await waitFor(() =>
+  //     fireEvent.click(screen.queryByTestId('time-picker-test-spinner-list-spinner-1-prev-btn'))
+  //   );
+  //   expect(input.value).toEqual('08:30 AM');
+  // });
 
   // it('scrolls down when you hit previous button', async () => {
   //   render(

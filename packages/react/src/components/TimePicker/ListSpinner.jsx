@@ -183,7 +183,7 @@ const ListSpinner = React.forwardRef(
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
                   const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
-                  onClick(val);
+                  setTimeout(() => onClick(val));
                   return val;
                 });
               } else {
@@ -193,7 +193,7 @@ const ListSpinner = React.forwardRef(
                     prevIndex === list.indexOf(list[list.length - 1])
                       ? list[0].id
                       : list[prevIndex + 1].id;
-                  onClick(val);
+                  setTimeout(() => onClick(val));
                   return val;
                 });
               }
@@ -249,7 +249,7 @@ const ListSpinner = React.forwardRef(
           setSelectedId((prev) => {
             const prevIndex = list.findIndex((i) => i.id === prev);
             const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
-            onClick(val);
+            setTimeout(() => onClick(val));
             return val;
           });
         } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
@@ -259,7 +259,7 @@ const ListSpinner = React.forwardRef(
               prevIndex === list.indexOf(list[list.length - 1])
                 ? list[0].id
                 : list[prevIndex + 1].id;
-            onClick(val);
+            setTimeout(() => onClick(val));
             return val;
           });
         } else {
