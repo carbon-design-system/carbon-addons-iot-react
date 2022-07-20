@@ -44,6 +44,15 @@ if (typeof window !== 'undefined') {
   // Mock the scroll function as its not implemented in jsdom
   // https://stackoverflow.com/questions/53271193/typeerror-scrollintoview-is-not-a-function
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
+  // Mock interesection observer
+  const mockIntersectionObserver = jest.fn();
+  mockIntersectionObserver.mockReturnValue({
+    observe: () => null,
+    unobserve: () => null,
+    disconnect: () => null,
+  });
+  window.IntersectionObserver = mockIntersectionObserver;
 }
 
 // Force the timezone to be the same everywhere
