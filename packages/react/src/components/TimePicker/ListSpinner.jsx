@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import useMerged from '../../hooks/useMerged';
@@ -25,6 +25,8 @@ const propTypes = {
   onClick: PropTypes.func,
   /** Array of items to render in the spinning list */
   listItems: PropTypes.arrayOf(PropTypes.node),
+  /** Array of items to render in the spinning list */
+  list: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })),
   /** Optional tag name to use instead of ul */
   containerElement: PropTypes.string,
 };
@@ -39,402 +41,314 @@ const defaultProps = {
   defaultSelectedId: undefined,
   onChange: () => {},
   onClick: () => {},
-  listItems: [],
+  list: [],
   containerElement: 'ul',
 };
 
-function scrollIntoView(el) {
+export function scrollIntoView(el) {
   el.scrollIntoView({ block: 'center' });
 }
 
-// const ListSpinner = ({
-//   className,
-//   testId,
-//   i18n,
-//   defaultSelectedId,
-//   onChange,
-//   onClick,
-//   listItems,
-//   containerElement: ContainerElement,
-// }) => {
-//   const containerRef = useRef();
-//   const contentRef = useRef();
-//   const [selectedId, setSelectedId] = useState(defaultSelectedId);
-//   const [height, setHeight] = useState(0);
+export function backwardArraySwap(arr) {
+  const newArr = [...arr];
+  const first = newArr.shift();
+  newArr.push(first);
+  // console.log('back', newArr);
+  return newArr;
+}
 
-//   useLayoutEffect(() => {
-//     if (contentRef.current) {
-//       setHeight(contentRef.current.offsetHeight * listItems.length);
-//       containerRef.current.scrollTop = height;
-//     }
-//   }, [height, listItems]);
+export function forwardArraySwap(arr) {
+  const newArr = [...arr];
+  const last = newArr.pop();
+  newArr.unshift(last);
+  // console.log('forward', newArr);
+  return newArr;
+}
 
-//   useEffect(() => {
-//     setTimeout(() => scrollIntoView(contentRef.current), 200);
-//     onChange(selectedId);
-//   }, [onChange, selectedId]);
+/**
+ *
+ * @param {*} arr - the array to opperate on
+ * @param {*} index - the index of the item to move
+ * @returns array - new array with the chosen index as 3 item in array
+ */
+export function moveToSecondIndex(arr, index) {
+  const newArr = [...arr];
+  let removed;
+  if (index > 2) {
+    // 6 - 2
+    removed = newArr.splice(0, index - 2);
+    newArr.push(...removed);
+  }
+  if (index < 2) {
+    const amnt = 2 - index;
+    // 6 - 2
+    removed = newArr.splice(-amnt, amnt);
+    newArr.unshift(...removed);
+  }
+  return newArr;
+}
 
-//   const observer = React.useRef();
-//   useEffect(() => {
-//     // Create a new observer
-//     observer.current = new IntersectionObserver(
-//       (entries) => {
-//         // If lastItem is in veiwport & we have a pageToken
-//         // trigger a new GET by updating pageToken state
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             console.log('I am in the center', entry.target);
-//           }
-//         });
-//       },
-//       {
-//         root: containerRef.current,
-//         rootMargin: '-50% 0% -50% 0%',
-//         threshold: 0,
-//       }
-//     );
-//     return () => observer.current?.disconnect();
-//   }, []);
+let ticking = false;
+let scrollEvent = false;
+let scrollPosition;
+let timer;
 
-//   const listItemsRef = React.useCallback((node) => {
-//     // Once component mounts tell our observer to observe it
-//     if (node) {
-//       observer.current?.observe(node);
-//     }
-//   }, []);
+const ListSpinner = React.forwardRef(
+  (
+    {
+      className,
+      testId,
+      i18n,
+      defaultSelectedId,
+      onChange,
+      onClick,
+      list,
+      containerElement: ContainerElement,
+    },
+    ref
+  ) => {
+    const containerRef = useRef();
+    const contentRef = useRef();
+    const [listItems, setListItems] = useState(list);
+    const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
-//   const listRef = useCallback(
-//     (node) => {
-//       if (node) {
-//         const element = node;
-//         containerRef.current = node;
-//         element.style.right = `${node.clientWidth - node.offsetWidth}px`;
-//       }
-//     },
-//     /* eslint-disable-next-line react-hooks/exhaustive-deps */
-//     []
-//   );
+    useEffect(() => {
+      setSelectedId(defaultSelectedId);
+    }, [defaultSelectedId]);
 
-//   const handleClick = useCallback(
-//     (e) => {
-//       if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
-//         setSelectedId(contentRef.current?.previousElementSibling.id);
-//       } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
-//         setSelectedId(contentRef.current?.nextElementSibling.id);
-//       } else {
-//         setSelectedId(e.currentTarget.id);
-//       }
-//       onClick(e);
-//     },
-//     [onClick]
-//   );
+    useEffect(() => {
+      // if (!scrollEvent) {
+      // setTimeout(() => {
+      const index = list.findIndex((i) => i.id === selectedId);
+      const newList = moveToSecondIndex(list, index);
+      setListItems(newList);
+      // }, 200);
+      // }
+      onChange(selectedId);
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, [onChange, selectedId]);
 
-//   const handleScroll = useCallback(() => {
-//     if (containerRef.current) {
-//       const scroll = containerRef.current.scrollTop;
-//       if (scroll < height || scroll >= height + height) {
-//         containerRef.current.scrollTop = height + (scroll % height);
-//       }
-//     }
-//   }, [height]);
+    useEffect(() => {
+      // if (scrollEvent) {
+      // scrollEvent = false;
+      // scrollIntoView(contentRef.current);
+      // }
+      // setTimeout(() => containerRef.current?.focus(), 1500);
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    }, [listItems]);
 
-//   const updatedList = useMemo(() => {
-//     const items = listItems.map((child) => {
-//       return React.cloneElement(child, {
-//         'data-testid': `${testId}-list-item`,
-//         key: child.props.id,
-//         id: child.props.id,
-//         onClick: handleClick,
-//         className: `${iotPrefix}--list-spinner__list-item ${
-//           child.props.className ? `${child.props.className}-spinner__list-item` : ''
-//         } ${
-//           child.props.id === selectedId ? `${iotPrefix}--list-spinner__list-item--selected` : ''
-//         } `,
-//         ref: child.props.id === selectedId ? contentRef : listItemsRef,
-//       });
-//     });
-//     const dupeItems = listItems.map((child) => {
-//       return React.cloneElement(child, {
-//         'data-testid': `${testId}-list-item`,
-//         key: `${child.props.id}-dupe-1`,
-//         id: child.props.id,
-//         onClick: handleClick,
-//         className: `${iotPrefix}--list-spinner__list-item ${
-//           child.props.className ? `${child.props.className}-spinner__list-item` : ''
-//         } ${
-//           `${child.props.id}-dupe-1` === selectedId
-//             ? `${iotPrefix}--list-spinner__list-item--selected`
-//             : ''
-//         }`,
-//         ref: `${child.props.id}-dupe-1` === selectedId ? contentRef : listItemsRef,
-//       });
-//     });
+    const observerRef = React.useRef();
+    useEffect(() => {
+      // Create a new observer
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && scrollEvent) {
+              // console.log('I am in the center', entry.target.childNodes[0]);
+              clearTimeout(timer);
+              timer = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
+            }
+          });
+        },
+        {
+          root: containerRef.current,
+          rootMargin: '-50% 0% -50% 0%',
+          threshold: 0,
+        }
+      );
 
-//     const dupeItems2 = listItems.map((child) => {
-//       return React.cloneElement(child, {
-//         'data-testid': `${testId}-list-item`,
-//         key: `${child.props.id}-dupe-2`,
-//         id: child.props.id,
-//         onClick: handleClick,
-//         className: `${iotPrefix}--list-spinner__list-item ${
-//           child.props.className ? `${child.props.className}-spinner__list-item` : ''
-//         } ${
-//           `${child.props.id}-dupe-2` === selectedId
-//             ? `${iotPrefix}--list-spinner__list-item--selected`
-//             : ''
-//         } `,
-//         ref: `${child.props.id}-dupe-2` === selectedId ? contentRef : listItemsRef,
-//       });
-//     });
+      return () => observerRef.current?.disconnect();
+    }, []);
 
-//     return [...dupeItems, ...items, ...dupeItems2];
-//   }, [handleClick, listItems, listItemsRef, selectedId, testId]);
-
-//   return (
-//     <div
-//       data-testid={testId}
-//       className={classNames(`${iotPrefix}--list-spinner__section`, {
-//         [`${className}-spinner__section`]: className,
-//       })}
-//     >
-//       <Button
-//         testId={`${testId}-prev-btn`}
-//         id={`${iotPrefix}--list-spinner__btn--up`}
-//         onClick={handleClick}
-//         className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
-//         renderIcon={ChevronUp16}
-//         kind="ghost"
-//       />
-//       <div
-//         className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
-//       >
-//         <ContainerElement
-//           data-testid={`${testId}-list`}
-//           ref={listRef}
-//           className={`${iotPrefix}--list-spinner__list ${className}-spinner__list`}
-//           onWheel={handleScroll}
-//           onTouchMove={handleScroll}
-//         >
-//           {updatedList}
-//         </ContainerElement>
-//       </div>
-//       <Button
-//         testId={`${testId}-next-btn`}
-//         id={`${iotPrefix}--list-spinner__btn--down`}
-//         onClick={handleClick}
-//         className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
-//         renderIcon={ChevronDown16}
-//         kind="ghost"
-//       />
-//     </div>
-//   );
-// };
-
-const ListSpinner = ({
-  className,
-  testId,
-  i18n,
-  defaultSelectedId,
-  onChange,
-  onClick,
-  listItems,
-  containerElement: ContainerElement,
-}) => {
-  const containerRef = useRef();
-  const contentRef = useRef();
-  const [selectedId, setSelectedId] = useState(defaultSelectedId);
-  const [height, setHeight] = useState(0);
-
-  useLayoutEffect(() => {
-    if (contentRef.current) {
-      setHeight(contentRef.current.offsetHeight * listItems.length);
-      containerRef.current.scrollTop = height;
-    }
-  }, [height, listItems]);
-
-  useEffect(() => {
-    setTimeout(() => scrollIntoView(contentRef.current), 200);
-    onChange(selectedId);
-  }, [onChange, selectedId]);
-
-  const observer = React.useRef();
-  useEffect(() => {
-    // Create a new observer
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // set the centered item as selected
-            console.log('I am in the center', entry.target);
-            // setSelectedId(entry.target.id);
-            // setSelectedId(contentRef.current?.previousElementSibling.id);
-          }
-        });
+    const listRef = useCallback(
+      (node) => {
+        if (node) {
+          const element = node;
+          containerRef.current = node;
+          element.style.right = `${node.clientWidth - node.offsetWidth}px`;
+        }
       },
-      {
-        root: containerRef.current,
-        rootMargin: '-50% 0% -50% 0%',
-        threshold: 0,
-      }
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      []
     );
-    return () => observer.current?.disconnect();
-  }, []);
 
-  const listItemsRef = React.useCallback((node) => {
-    // Once component mounts tell our observer to observe it
-    if (node) {
-      observer.current?.observe(node);
-    }
-  }, []);
+    const handleWheel = (e) => {
+      e.persist();
+      scrollEvent = true;
+      if (!ticking) {
+        /* eslint-disable func-names */
+        setTimeout(
+          () =>
+            window.requestIdleCallback(function () {
+              if (e.deltaY < 0) {
+                // setListItems((prev) => backwardArraySwap(prev));
+                setSelectedId((prev) => {
+                  const prevIndex = list.findIndex((i) => i.id === prev);
+                  const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+                  onClick(val);
+                  return val;
+                });
+              } else {
+                // setListItems((prev) => forwardArraySwap(prev));
+                setSelectedId((prev) => {
+                  const prevIndex = list.findIndex((i) => i.id === prev);
+                  const val =
+                    prevIndex === list.indexOf(list[list.length - 1])
+                      ? list[0].id
+                      : list[prevIndex + 1].id;
+                  onClick(val);
+                  return val;
+                });
+              }
+              ticking = false;
+            }),
+          100
+        );
 
-  const listRef = useCallback(
-    (node) => {
-      if (node) {
-        const element = node;
-        containerRef.current = node;
-        element.style.right = `${node.clientWidth - node.offsetWidth}px`;
-        // node.addEventListener('scroll', handleScroll, { passive: false });
-        // node.addEventListener('wheel', handleScroll, { passive: false });
-        // node.addEventListener('touchmove', handleScroll, { passive: false });
+        ticking = true;
       }
-    },
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    []
-  );
+    };
 
-  const handleClick = useCallback(
-    (e) => {
-      containerRef.current.classList.toggle('no-scroll');
-      if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
-        setSelectedId(contentRef.current?.previousElementSibling.id);
-      } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
-        setSelectedId(contentRef.current?.nextElementSibling.id);
-      } else {
-        setSelectedId(e.currentTarget.id);
+    const handleTouchMove = (e) => {
+      e.persist();
+      scrollEvent = true;
+      if (!ticking) {
+        /* eslint-disable func-names */
+        setTimeout(
+          () =>
+            window.requestAnimationFrame(function () {
+              if (scrollPosition - e.touches[0].pageY < 0) {
+                // setListItems((prev) => backwardArraySwap(prev));
+                setSelectedId((prev) => {
+                  const prevIndex = list.findIndex((i) => i.id === prev);
+                  return prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+                });
+              } else {
+                // setListItems((prev) => forwardArraySwap(prev));
+                setSelectedId((prev) => {
+                  const prevIndex = list.findIndex((i) => i.id === prev);
+                  return prevIndex === list.indexOf(list[list.length - 1])
+                    ? list[0].id
+                    : list[prevIndex + 1].id;
+                });
+              }
+              scrollPosition = e.touches[0].pageY;
+              ticking = false;
+            }),
+          80
+        );
+
+        ticking = true;
       }
-      onClick(e);
-      containerRef.current.classList.toggle('no-scroll');
-    },
-    [onClick]
-  );
+    };
 
-  const handleScroll = useCallback(() => {
-    // e.preventDefault();
-    // containerRef.current.scrollTop += 40;
-    if (containerRef.current) {
-      const scroll = containerRef.current.scrollTop;
-      if (scroll < height || scroll >= height + height) {
-        containerRef.current.classList.toggle('no-scroll');
-        containerRef.current.scrollTop = height + (scroll % height);
-        containerRef.current.classList.toggle('no-scroll');
-      }
-    }
-  }, [height]);
+    const handleTouchStart = (e) => {
+      e.persist();
+      scrollPosition = e.touches[0].pageY;
+    };
 
-  useEffect(() => {
-    const list = document.getElementById('#list-spinner__list');
-    if (list) {
-      list.addEventListener('scroll', handleScroll, { passive: false });
-      list.addEventListener('wheel', handleScroll, { passive: false });
-      list.addEventListener('touchmove', handleScroll, { passive: false });
-    } else {
-      console.log('wtf');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const updatedList = useMemo(() => {
-    const items = listItems.map((child) => {
-      return React.cloneElement(child, {
-        'data-testid': `${testId}-list-item`,
-        key: child.props.id,
-        id: child.props.id,
-        onClick: handleClick,
-        className: `${iotPrefix}--list-spinner__list-item ${
-          child.props.className ? `${child.props.className}-spinner__list-item` : ''
-        } ${
-          child.props.id === selectedId ? `${iotPrefix}--list-spinner__list-item--selected` : ''
-        } `,
-        ref: child.props.id === selectedId ? contentRef : listItemsRef,
-      });
-    });
-    const dupeItems = listItems.map((child) => {
-      return React.cloneElement(child, {
-        'data-testid': `${testId}-list-item`,
-        key: `${child.props.id}-dupe-1`,
-        id: child.props.id,
-        onClick: handleClick,
-        className: `${iotPrefix}--list-spinner__list-item ${
-          child.props.className ? `${child.props.className}-spinner__list-item` : ''
-        } ${
-          `${child.props.id}-dupe-1` === selectedId
-            ? `${iotPrefix}--list-spinner__list-item--selected`
-            : ''
-        }`,
-        ref: `${child.props.id}-dupe-1` === selectedId ? contentRef : listItemsRef,
-      });
-    });
-
-    const dupeItems2 = listItems.map((child) => {
-      return React.cloneElement(child, {
-        'data-testid': `${testId}-list-item`,
-        key: `${child.props.id}-dupe-2`,
-        id: child.props.id,
-        onClick: handleClick,
-        className: `${iotPrefix}--list-spinner__list-item ${
-          child.props.className ? `${child.props.className}-spinner__list-item` : ''
-        } ${
-          `${child.props.id}-dupe-2` === selectedId
-            ? `${iotPrefix}--list-spinner__list-item--selected`
-            : ''
-        } `,
-        ref: `${child.props.id}-dupe-2` === selectedId ? contentRef : listItemsRef,
-      });
-    });
-
-    return [...dupeItems, ...items, ...dupeItems2];
-  }, [handleClick, listItems, listItemsRef, selectedId, testId]);
-
-  return (
-    <div
-      data-testid={testId}
-      className={classNames(`${iotPrefix}--list-spinner__section`, {
-        [`${className}-spinner__section`]: className,
-      })}
-    >
-      <Button
-        testId={`${testId}-prev-btn`}
-        id={`${iotPrefix}--list-spinner__btn--up`}
-        onClick={handleClick}
-        className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
-        renderIcon={ChevronUp16}
-        kind="ghost"
-      />
-      <div
-        className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
+    const handleClick = useCallback(
+      (e) => {
+        scrollEvent = false;
+        if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+            onClick(val);
+            return val;
+          });
+        } else if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val =
+              prevIndex === list.indexOf(list[list.length - 1])
+                ? list[0].id
+                : list[prevIndex + 1].id;
+            onClick(val);
+            return val;
+          });
+          // setSelectedId((prev) => list[list.findIndex((i) => i.id === prev) + 1].id);
+        } else {
+          setSelectedId(e.currentTarget.id);
+          onClick(e.currentTarget.id);
+        }
+      },
+      [list, onClick]
+    );
+    const renderItems = listItems.map((el) => (
+      <li
+        ref={(node) => {
+          // Once component mounts tell our observer to observe it
+          if (node) {
+            if (el.value === selectedId) {
+              // console.log(el.value, selectedId);
+              contentRef.current = node;
+            }
+            setTimeout(() => observerRef.current?.observe(node), 0);
+          }
+        }}
+        className={classnames(`${iotPrefix}--list-spinner__list-item`, {
+          [`${iotPrefix}--list-spinner__list-item--selected`]: el.id === selectedId,
+        })}
+        key={el.id}
+        id={`${el.id}-list-item`}
+        data-selected={el.value === selectedId}
       >
-        <ContainerElement
-          id="list-spinner__list"
-          data-testid={`${testId}-list`}
-          ref={listRef}
-          className={`${iotPrefix}--list-spinner__list ${className}-spinner__list no-scroll`}
-          onWheel={handleScroll}
-          onTouchMove={handleScroll}
+        <Button
+          id={el.id}
+          kind="ghost"
+          onClick={handleClick}
+          // onBlur={(e) => console.log('IVE BEEN BLURRED! ', e.relatedTarget)}
         >
-          {updatedList}
-        </ContainerElement>
+          {el.value}
+        </Button>
+      </li>
+    ));
+
+    return (
+      <div
+        data-testid={testId}
+        className={classnames(`${iotPrefix}--list-spinner__section`, {
+          [className]: className,
+        })}
+      >
+        <Button
+          ref={ref}
+          testId={`${testId}-prev-btn`}
+          id={`${iotPrefix}--list-spinner__btn--up`}
+          onClick={handleClick}
+          className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
+          renderIcon={ChevronUp16}
+          kind="ghost"
+        />
+        <div
+          className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
+        >
+          <ContainerElement
+            data-testid={`${testId}-list`}
+            ref={listRef}
+            className={`${iotPrefix}--list-spinner__list ${className}-spinner__list`}
+            onWheel={handleWheel}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            // onWheel={handleScroll}
+            // onTouchMove={handleScroll}
+          >
+            {renderItems}
+          </ContainerElement>
+        </div>
+        <Button
+          testId={`${testId}-next-btn`}
+          id={`${iotPrefix}--list-spinner__btn--down`}
+          onClick={handleClick}
+          className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
+          renderIcon={ChevronDown16}
+          kind="ghost"
+        />
       </div>
-      <Button
-        testId={`${testId}-next-btn`}
-        id={`${iotPrefix}--list-spinner__btn--down`}
-        onClick={handleClick}
-        className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
-        renderIcon={ChevronDown16}
-        kind="ghost"
-      />
-    </div>
-  );
-};
+    );
+  }
+);
 
 ListSpinner.propTypes = propTypes;
 ListSpinner.defaultProps = defaultProps;

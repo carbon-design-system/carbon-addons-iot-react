@@ -1,20 +1,14 @@
-import React, { useMemo, useState, useRef, useEffect } from 'react';
+import React, { useMemo, useState, useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import { TextInput, Menu } from 'carbon-components-react';
-import {
-  ChevronUp16,
-  ChevronDown16,
-  Time16,
-  EditOff16,
-  WarningAltFilled16,
-  WarningFilled16,
-} from '@carbon/icons-react';
+import { TextInput } from 'carbon-components-react';
+import { Time16, EditOff16, WarningAltFilled16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
 import useMerged from '../../hooks/useMerged';
-import Button from '../Button';
+
+import ListSpinner from './ListSpinner';
 
 const { iotPrefix, prefix } = settings;
 
@@ -22,12 +16,13 @@ const propTypes = {
   className: PropTypes.string,
   id: PropTypes.string.isRequired,
   /** Optional default value for input */
-  defaultValue: PropTypes.oneOfType([
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
-  ]),
+  defaultValue: PropTypes.string,
+  /** Optional default value for secondary input (range) */
+  secondaryDefaultValue: PropTypes.string,
   /** Specify the value for input */
-  value: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
+  value: PropTypes.string,
+  /** Specify the value for secondary input (range) */
+  secondaryValue: PropTypes.string,
   /** Specify wehether you watn the input labels to be visually hidden */
   hideLabel: PropTypes.bool,
   /** Specify wehether you watn the secondary label to be visually hidden */
@@ -56,7 +51,7 @@ const propTypes = {
   warn: PropTypes.arrayOf(PropTypes.bool),
   /** Specify whether the control is currently in invalid state */
   invalid: PropTypes.arrayOf(PropTypes.bool),
-  /** Optional handler that is called whenever <input> is updated */
+  /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
   /** Optional handler that is called whenever <input> is clicked */
   onClick: PropTypes.func,
@@ -67,7 +62,9 @@ const defaultProps = {
   className: undefined,
   hideLabel: false,
   defaultValue: undefined,
+  secondaryDefaultValue: undefined,
   value: undefined,
+  secondaryValue: undefined,
   hideSecondaryLabel: false,
   type: 'single',
   i18n: {
@@ -83,7 +80,12 @@ const defaultProps = {
   invalid: [false, false],
   onChange: () => {},
   onClick: () => {},
-  testId: 'timer-picker',
+  testId: 'time-picker',
+};
+
+const validate = (newValue) => {
+  const isValid12HoursRegex = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/;
+  return isValid12HoursRegex.test(newValue) || newValue === '';
 };
 
 const TimePicker = ({
@@ -101,15 +103,32 @@ const TimePicker = ({
   hideLabel,
   hideSecondaryLabel,
   defaultValue,
+  secondaryDefaultValue,
+  value,
+  secondaryValue,
+  onChange,
 }) => {
   const inputRef = useRef();
+  const secondaryInputRef = useRef();
   const dropDownRef = useRef();
+  const container = inputRef.current;
+  const invalidProp = invalid[0];
+  const secondaryInvalidProp = invalid[1];
+  // Component state
   const [openState, setOpenState] = useState(false);
   const [position, setPosition] = useState([0, 0]);
-  const container = inputRef.current;
+  const [focusedInput, setFocusedInput] = useState(0);
+  const [valueState, setValueState] = useState(value || defaultValue || '');
+  const [secondaryValueState, setSecondaryValueState] = useState(secondaryValue || '');
+  const [invalidState, setInvalidState] = useState(invalidProp);
+  const [secondaryInvalidState, setSecondaryInvalidState] = useState(secondaryInvalidProp);
 
   useEffect(() => {
-    console.log('I be running');
+    setInvalidState(invalidProp);
+    setSecondaryInvalidState(secondaryInvalidProp);
+  }, [invalidProp, secondaryInvalidProp]);
+
+  useEffect(() => {
     if (container) {
       const { left, bottom } = container.getBoundingClientRect();
       setPosition([left, bottom]);
@@ -126,16 +145,77 @@ const TimePicker = ({
     placeholderText,
   } = useMerged(defaultProps.i18n, i18n);
 
-  const handleFocus = () => {
-    setOpenState((prev) => !prev);
+  const handleFocus = (index = 0) => {
+    // console.log(focusedInput, index, openState);
+    if (focusedInput === index && openState === true) {
+      setOpenState(false);
+    } else {
+      setOpenState(true);
+    }
+    setFocusedInput(index);
     setTimeout(() => dropDownRef.current?.focus(), 0);
   };
 
+  // const onInputChange = (e) => {
+  //   // e.preventDefault();
+  //   const {
+  //     currentTarget: { value: currentValue },
+  //   } = e;
+  //   const isValid = /[0-9:APM]/.test(currentValue);
+  //   // console.log(currentValue === 'Backspace', currentValue, isValid);
+  //   if (isValid) {
+  //     setValueState(currentValue);
+  //   }
+  //   if (onChange) {
+  //     onChange(currentValue, e, { invalid: isValid });
+  //   }
+  // };
+
+  const handleOnChange = (e) => {
+    let val = e;
+    if (typeof e === 'object') {
+      val = e.target.value;
+    }
+    const isValid = /[0-9: APM]/.test(val.substring(val.length - 1));
+    // This is pasted in or autocompleted
+    // @TODO: detect the length and run validation for as much as we can
+    if (val.length > 1) {
+      if (focusedInput === 0) {
+        setValueState(val);
+      } else {
+        setSecondaryValueState(val);
+      }
+    } else if (isValid || val === '') {
+      if (focusedInput === 0) {
+        setValueState(val);
+      } else {
+        setSecondaryValueState(val);
+      }
+    }
+    onChange(val);
+  };
+
+  const handleOnBlur = (e) => {
+    const contained =
+      dropDownRef.current?.contains(e.relatedTarget) ||
+      e.currentTarget.contains(e.relatedTarget) ||
+      e.relatedTarget?.parentNode?.classList[0].includes('iot--list-spinner') ||
+      e.relatedTarget?.parentNode?.classList[0].includes('iot--list-spinner');
+
+    if (!contained) {
+      // close dropdown and validate
+      setOpenState(false);
+      setInvalidState(!validate(inputRef.current.value));
+      if (secondaryInputRef.current) {
+        setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
+      }
+    }
+  };
+
   const inputState = useMemo(() => {
-    console.log('how many times am I rendering');
     return {
       state:
-        invalid[0] || (invalid[1] && !readOnly)
+        invalidState || (secondaryInvalidState && !readOnly)
           ? 'invalid'
           : warn[0] || (warn[1] && !readOnly)
           ? 'warn'
@@ -143,7 +223,7 @@ const TimePicker = ({
           ? 'readOnly'
           : 'default',
       firstIcon:
-        invalid[0] && !readOnly
+        invalidState && !readOnly
           ? WarningFilled16
           : warn[0] && !readOnly
           ? WarningAltFilled16
@@ -151,7 +231,7 @@ const TimePicker = ({
           ? EditOff16
           : Time16,
       secondIcon:
-        invalid[1] && !readOnly
+        secondaryInvalidState && !readOnly
           ? WarningFilled16
           : warn[1] && !readOnly
           ? WarningAltFilled16
@@ -159,18 +239,27 @@ const TimePicker = ({
           ? EditOff16
           : Time16,
       text:
-        !readOnly && (invalid[0] || invalid[1])
+        !readOnly && (invalidState || secondaryInvalidState)
           ? invalidText
           : !readOnly && (warn[0] || warn[1])
           ? warnText
           : helperText,
-      callback: !readOnly ? handleFocus : undefined,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [invalid[0], invalid[1], warn[0], warn[1], readOnly, invalidText, warnText, helperText]);
-
+  }, [
+    invalidState,
+    secondaryInvalidState,
+    warn[0],
+    warn[1],
+    readOnly,
+    invalidText,
+    warnText,
+    helperText,
+  ]);
   return (
     <div
+      onBlur={handleOnBlur}
+      data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,
         [`${iotPrefix}--time-picker--light`]: light,
@@ -179,51 +268,55 @@ const TimePicker = ({
         [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
         [`${iotPrefix}--time-picker--warn`]: inputState.state === 'warn',
       })}
-      ref={inputRef}
     >
       {type === 'single' ? (
         <>
           <div
-            className={`${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`}
+            className={classnames(
+              `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
+              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+            )}
           >
             <TextInput
-              defaultValue={defaultValue[0]}
+              onChange={handleOnChange}
+              // onBlur={handleOnBlur}
+              data-testid={`${testId}-input`}
+              id={id}
+              defaultValue={defaultValue}
+              value={valueState}
+              onFocus={() => setFocusedInput(0)}
               readOnly={readOnly}
               hideLabel={hideLabel}
               labelText={labelText}
               placeholder={placeholderText}
+              pattern={/[0-9: APM]/}
               size={size}
               warn={warn[0]}
-              invalid={invalid[0]}
+              invalid={invalidState}
               light={light}
               disabled={disabled}
+              ref={inputRef}
             />
             <button
+              testId={`${testId}-time-btn`}
               tabIndex="0"
               type="button"
               className={classnames(`${iotPrefix}--time-picker__icon`, {
-                [`${iotPrefix}--time-picker__icon--invalid`]: invalid[0],
+                [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warn[0],
               })}
-              onClick={inputState.callback}
+              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
-              <inputState.firstIcon
-                ariaHidden="true"
-                focusable={false}
-                // className={classnames(`${iotPrefix}--time-picker__icon`, {
-                //   [`${iotPrefix}--time-picker__icon--invalid`]: inputState.state === 'invalid',
-                //   [`${iotPrefix}--time-picker__icon--warn`]: inputState.state === 'warn',
-                // })}
-              />
+              <inputState.firstIcon aria-hidden="true" focusable={false} />
             </button>
           </div>
           <p
             className={classnames(`${prefix}--form__helper-text`, {
-              [`${iotPrefix}--time-picker__helper-text`]: invalid[0],
+              [`${iotPrefix}--time-picker__helper-text`]: invalidState,
               [`${prefix}--form__helper-text--disabled`]: disabled,
             })}
           >
-            {!readOnly && invalid[0] ? invalidText : !readOnly && warn[0] ? warnText : helperText}
+            {!readOnly && invalidState ? invalidText : !readOnly && warn[0] ? warnText : helperText}
           </p>
         </>
       ) : (
@@ -239,12 +332,19 @@ const TimePicker = ({
             </legend>
           ) : null}
           <div
-            className={`${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`}
+            className={classnames(
+              `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
+              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+            )}
           >
             <TextInput
+              onChange={handleOnChange}
+              data-testid={`${testId}-input-1`}
+              onFocus={() => setFocusedInput(0)}
               id={`${id}-1`}
               readOnly={readOnly}
-              defaultValue={defaultValue[0]}
+              defaultValue={defaultValue}
+              value={valueState}
               hideLabel={hideSecondaryLabel || hideLabel}
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
@@ -252,38 +352,38 @@ const TimePicker = ({
               placeholder={placeholderText}
               size={size}
               warn={warn[0]}
-              invalid={invalid[0]}
+              invalid={invalidState}
               light={light}
               disabled={disabled}
-              // {...other}
+              ref={inputRef}
             />
             <button
+              data-testid={`${testId}-time-btn-1`}
               tabIndex="0"
               type="button"
               className={classnames(`${iotPrefix}--time-picker__icon`, {
-                [`${iotPrefix}--time-picker__icon--invalid`]: invalid[0],
+                [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warn[0],
               })}
-              onClick={inputState.callback}
+              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
-              <inputState.firstIcon
-                aria-hidden="true"
-                focusable={false}
-                // className={classnames(`${iotPrefix}--time-picker__icon`, {
-                //   [`${iotPrefix}--time-picker__icon--invalid`]: invalid[0],
-                //   [`${iotPrefix}--time-picker__icon--warn`]: warn[0],
-                // })}
-                // onClick={() => console.log('click')}
-              />
+              <inputState.firstIcon aria-hidden="true" focusable={false} />
             </button>
           </div>
           <div
-            className={`${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`}
+            className={classnames(
+              `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
+              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 1 && openState }
+            )}
           >
             <TextInput
+              data-testid={`${testId}-input-1`}
               id={`${id}-2`}
+              onChange={handleOnChange}
+              onFocus={() => setFocusedInput(1)}
               readOnly={readOnly}
-              defaultValue={defaultValue[1]}
+              defaultValue={secondaryDefaultValue}
+              value={secondaryValueState}
               hideLabel={hideSecondaryLabel || hideLabel}
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
@@ -291,28 +391,22 @@ const TimePicker = ({
               placeholder={placeholderText}
               size={size}
               warn={warn[1]}
-              invalid={invalid[1]}
+              invalid={secondaryInvalidState}
               light={light}
               disabled={disabled}
-              // {...other}
+              ref={secondaryInputRef}
             />
             <button
+              data-testid={`${testId}-time-btn-2`}
               tabIndex="0"
               type="button"
               className={classnames(`${iotPrefix}--time-picker__icon`, {
-                [`${iotPrefix}--time-picker__icon--invalid`]: invalid[1],
+                [`${iotPrefix}--time-picker__icon--invalid`]: secondaryInvalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warn[1],
               })}
-              onClick={inputState.callback}
+              onClick={() => (!readOnly ? handleFocus(1) : undefined)}
             >
-              <inputState.secondIcon
-                aria-hidden="true"
-                focusable={false}
-                // className={classnames(`${iotPrefix}--time-picker__icon`, {
-                //   [`${iotPrefix}--time-picker__icon--invalid`]: invalid[1],
-                //   [`${iotPrefix}--time-picker__icon--warn`]: warn[1],
-                // })}
-              />
+              <inputState.secondIcon aria-hidden="true" focusable={false} />
             </button>
           </div>
           <p
@@ -328,27 +422,130 @@ const TimePicker = ({
           </p>
         </fieldset>
       )}
-      {openState ? <TimePickerSpinner position={position} ref={dropDownRef} /> : null}
+      {openState ? (
+        <TimePickerSpinner
+          onChange={handleOnChange}
+          focusedInput={focusedInput}
+          value={
+            focusedInput === 0
+              ? valueState || defaultValue
+              : secondaryValueState || secondaryDefaultValue
+          }
+          testId={`${testId}-spinner`}
+          position={position}
+          ref={dropDownRef}
+        />
+      ) : null}
     </div>
   );
 };
 
-export const TimePickerSpinner = React.forwardRef(({ position }, ref) => {
-  const [selected, setSelected] = useState(['03', '03', 'AM']);
-  const observer = React.useRef();
+const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
+  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+  return { id: index, value: index };
+});
 
-  const handleClick = (e, item, index) => {
-    e.target.parentNode.parentNode.scrollTo({
-      top: e.target.offsetTop - 80,
-      left: 0,
-      behavior: 'smooth',
-    });
-    setSelected((prev) => {
-      /* eslint-disable-next-line no-param-reassign */
-      prev[index] = item;
-      return [...prev];
-    });
-  };
+const listItemsForVertical2 = Array.from(Array(59)).map((el, i) => {
+  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+  return { id: index, value: index };
+});
+
+const listItemsForVertical3 = [
+  { id: 'AM', value: 'AM' },
+  { id: 'PM', value: 'PM' },
+];
+
+const spinnerPropTypes = {
+  position: PropTypes.arrayOf(PropTypes.number).isRequired,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+const defaultSpinnerProps = {
+  value: '03:03 AM',
+  onChange: () => {},
+};
+
+export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }, ref) => {
+  const firstVal = useMemo(() => {
+    return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
+  }, [value]);
+  const secondVal = useMemo(
+    () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '03'),
+    [value]
+  );
+  const thirdVal = useMemo(
+    () =>
+      /AM|PM/.test(value.substring(value.length - 2)) ? value.substring(value.length - 2) : 'AM',
+    [value]
+  );
+  const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
+
+  useEffect(() => {
+    // const stringArr = [
+    //   value.substring(0, 2),
+    //   value.substring(3, 5),
+    //   value.substring(value.length - 2),
+    // ];
+    setSelected([firstVal, secondVal, thirdVal]);
+    // if (stringArr[1] === '') {
+    //   setSelected([value.substring(0, 2), '03', 'AM']);
+    // } else {
+    //   setSelected(stringArr);
+    // }
+  }, [firstVal, secondVal, thirdVal]);
+
+  const handleOnClick = useCallback(
+    (str, index) => {
+      setSelected((prev) => {
+        const arr = [...prev];
+        arr[index] = str;
+        const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
+        onChange(newValue);
+        return arr;
+      });
+    },
+    [onChange]
+  );
+
+  const listSpinner1 = useMemo(
+    () => (
+      <ListSpinner
+        ref={ref}
+        onClick={(e) => handleOnClick(e, 0)}
+        list={listItemsForVertical}
+        defaultSelectedId={selected[0]}
+      />
+    ),
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    [selected[0]]
+  );
+  const listSpinner2 = useMemo(
+    () => (
+      <ListSpinner
+        // key={`${selected[1]}-2`}
+        onClick={(e) => handleOnClick(e, 1)}
+        list={listItemsForVertical2}
+        defaultSelectedId={selected[1]}
+      />
+    ),
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    [selected[1]]
+  );
+  const listSpinner3 = useMemo(
+    () => {
+      return (
+        <ListSpinner
+          className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
+          onClick={(e) => handleOnClick(e, 2)}
+          list={listItemsForVertical3}
+          defaultSelectedId={selected[2]}
+        />
+      );
+    },
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+    [selected[2]]
+  );
 
   const dropdown = (
     <div
@@ -358,13 +555,16 @@ export const TimePickerSpinner = React.forwardRef(({ position }, ref) => {
         top: `${position[1]}px`,
       }}
     >
-      <button type="button" ref={ref}>
-        This is the dropdown
-      </button>
+      {listSpinner1}
+      {listSpinner2}
+      {listSpinner3}
     </div>
   );
   return ReactDOM.createPortal(dropdown, document.body);
 });
+
+TimePickerSpinner.propTypes = spinnerPropTypes;
+TimePickerSpinner.defaultProps = defaultSpinnerProps;
 
 TimePicker.propTypes = propTypes;
 TimePicker.defaultProps = defaultProps;

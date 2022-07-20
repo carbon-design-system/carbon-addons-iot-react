@@ -28,33 +28,9 @@ const sizes = {
 
 const props = {
   timepicker: () => ({
-    type: select('Input Type', ['single', 'range'], 'single'),
-    pattern: text(
-      'Regular expression for the value (pattern in <TimePicker>)',
-      '(1[012]|[1-9]):[0-5][0-9](\\s)?'
-    ),
-    placeholder: text('Placeholder text (placeholder in <TimePicker>)', 'hh:mm'),
-    disabled: boolean('Disabled (disabled in <TimePicker>)', false),
-    light: boolean('Light variant (light in <TimePicker>)', false),
-    labelText: text('Label text (labelText in <TimePicker>)', 'Select a time'),
-    invalid: boolean('Show form validation UI (invalid in <TimePicker>)', false),
-    invalidText: text(
-      'Form validation UI content (invalidText in <TimePicker>)',
-      'A valid value is required'
-    ),
-    maxLength: number('Maximum length (maxLength in <TimePicker>)', 5),
-    size: select('Field size (size)', sizes, 'md'),
-    onClick: action('onClick'),
+    position: [100, 100],
+    value: '03:30',
     onChange: action('onChange'),
-    onBlur: action('onBlur'),
-  }),
-  select: () => ({
-    disabled: boolean('Disabled (disabled in <TimePickerSelect>)', false),
-    labelText: text('Label text (labelText in <TimePickerSelect>)', 'Please select'),
-    'aria-label': text(
-      "Trigger icon description ('aria-label' in <TimePickerSelect>)",
-      'open list of options'
-    ),
   }),
 };
 
@@ -65,26 +41,19 @@ export default {
   },
 };
 
-const listItems = Array.from(Array(12)).map((el, i) => {
-  const index = i + 1 < 10 ? `0${i + 1}` : i + 1;
-  return (
-    <li id={`hour-${index}`}>
-      <Button id={`hour-${index}-button`} kind="ghost">
-        {index}
-      </Button>
-    </li>
-  );
+const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
+  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+  return { id: index, value: index };
 });
 
 export const Default = () => {
-  const defaultValue = [
-    select('1st default value', ['10:30am', undefined], undefined),
-    select('2nd default value', ['11:30pm', undefined], undefined),
-  ];
+  const value = boolean('Default value', false);
+  const secondaryValue = boolean('Default secondary value', false);
   return (
     <TimePicker
-      key={defaultValue[0] + defaultValue[1]}
-      defaultValue={defaultValue}
+      key={value + secondaryValue}
+      value={value ? '02:33 PM' : undefined}
+      secondaryValue={secondaryValue ? '04:33 PM' : undefined}
       readOnly={boolean('Read only', false)}
       hideLabel={boolean('Hide label', false)}
       hideSecondaryLabel={boolean('Hide secondary label', false)}
@@ -105,13 +74,14 @@ export const Default = () => {
       size={select('Size', ['sm', 'md', 'lg'], 'md')}
       light={boolean('Light variant (light in <TimePicker>)', false)}
       disabled={boolean('Disabled (disabled in <TimePicker>)', false)}
+      onChange={action('onChange')}
     />
   );
   // return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
 };
 
 export const TimePickerSpinnerStory = () => {
-  return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
+  return <TimePickerSpinner {...props.timepicker()} />;
 };
 
 TimePickerSpinnerStory.storyName = 'TimePicker spinner';
@@ -122,9 +92,9 @@ TimePickerSpinnerStory.parameters = {
 export const ListSpinnerStory = () => {
   return (
     <ListSpinner
-      listItems={listItems}
-      defaultSelectedId="hour-12"
-      onChange={() => action('onChange called')}
+      list={listItemsForVertical}
+      defaultSelectedId="03"
+      onChange={action('onChange called')}
     />
   );
 };
