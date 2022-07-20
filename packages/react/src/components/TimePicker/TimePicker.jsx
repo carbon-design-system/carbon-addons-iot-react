@@ -51,10 +51,10 @@ const propTypes = {
   warn: PropTypes.arrayOf(PropTypes.bool),
   /** Specify whether the control is currently in invalid state */
   invalid: PropTypes.arrayOf(PropTypes.bool),
+  /** Boolean to swap for light theme */
+  light: PropTypes.bool,
   /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
-  /** Optional handler that is called whenever <input> is clicked */
-  onClick: PropTypes.func,
   testId: PropTypes.string,
 };
 
@@ -78,8 +78,8 @@ const defaultProps = {
   readOnly: false,
   warn: [false, false],
   invalid: [false, false],
+  light: false,
   onChange: () => {},
-  onClick: () => {},
   testId: 'time-picker',
 };
 
@@ -114,6 +114,8 @@ const TimePicker = ({
   const container = inputRef.current;
   const invalidProp = invalid[0];
   const secondaryInvalidProp = invalid[1];
+  const warnProp = warn[0];
+  const secondaryWarnProp = warn[1];
   // Component state
   const [openState, setOpenState] = useState(false);
   const [position, setPosition] = useState([0, 0]);
@@ -145,31 +147,22 @@ const TimePicker = ({
     placeholderText,
   } = useMerged(defaultProps.i18n, i18n);
 
+  useEffect(() => {
+    if (openState) {
+      // eslint-disable-next-line no-unused-expressions
+      dropDownRef.current?.focus();
+    }
+  }, [openState]);
+
   const handleFocus = (index = 0) => {
-    // console.log(focusedInput, index, openState);
     if (focusedInput === index && openState === true) {
       setOpenState(false);
     } else {
       setOpenState(true);
     }
     setFocusedInput(index);
-    setTimeout(() => dropDownRef.current?.focus(), 0);
+    // setTimeout(() => dropDownRef.current?.focus());
   };
-
-  // const onInputChange = (e) => {
-  //   // e.preventDefault();
-  //   const {
-  //     currentTarget: { value: currentValue },
-  //   } = e;
-  //   const isValid = /[0-9:APM]/.test(currentValue);
-  //   // console.log(currentValue === 'Backspace', currentValue, isValid);
-  //   if (isValid) {
-  //     setValueState(currentValue);
-  //   }
-  //   if (onChange) {
-  //     onChange(currentValue, e, { invalid: isValid });
-  //   }
-  // };
 
   const handleOnChange = (e) => {
     let val = e;
@@ -177,13 +170,20 @@ const TimePicker = ({
       val = e.target.value;
     }
     const isValid = /[0-9: APM]/.test(val.substring(val.length - 1));
-    // This is pasted in or autocompleted
-    // @TODO: detect the length and run validation for as much as we can
+    // @TODO: detect the length and run validation for as many as we can
+    // This value is pasted in or autocompleted
     if (val.length > 1) {
       if (focusedInput === 0) {
-        setValueState(val);
+        // Jest complains about setting state after unmount
+        // if (process.env.NODE_ENV === 'test') {
+        //   console.log('WHat?!');
+        //   setValueState(val);
+        // } else {
+        // Timeouts push update to end of stack to allow for child we pass ref to update
+        setTimeout(() => setValueState(val));
+        // }
       } else {
-        setSecondaryValueState(val);
+        setTimeout(() => setSecondaryValueState(val));
       }
     } else if (isValid || val === '') {
       if (focusedInput === 0) {
@@ -217,7 +217,7 @@ const TimePicker = ({
       state:
         invalidState || (secondaryInvalidState && !readOnly)
           ? 'invalid'
-          : warn[0] || (warn[1] && !readOnly)
+          : warnProp || (secondaryWarnProp && !readOnly)
           ? 'warn'
           : readOnly
           ? 'readOnly'
@@ -225,7 +225,7 @@ const TimePicker = ({
       firstIcon:
         invalidState && !readOnly
           ? WarningFilled16
-          : warn[0] && !readOnly
+          : warnProp && !readOnly
           ? WarningAltFilled16
           : readOnly
           ? EditOff16
@@ -233,7 +233,7 @@ const TimePicker = ({
       secondIcon:
         secondaryInvalidState && !readOnly
           ? WarningFilled16
-          : warn[1] && !readOnly
+          : secondaryWarnProp && !readOnly
           ? WarningAltFilled16
           : readOnly
           ? EditOff16
@@ -241,21 +241,21 @@ const TimePicker = ({
       text:
         !readOnly && (invalidState || secondaryInvalidState)
           ? invalidText
-          : !readOnly && (warn[0] || warn[1])
+          : !readOnly && (warnProp || secondaryWarnProp)
           ? warnText
           : helperText,
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     invalidState,
     secondaryInvalidState,
-    warn[0],
-    warn[1],
+    warnProp,
+    secondaryWarnProp,
     readOnly,
     invalidText,
     warnText,
     helperText,
   ]);
+
   return (
     <div
       onBlur={handleOnBlur}
@@ -279,7 +279,6 @@ const TimePicker = ({
           >
             <TextInput
               onChange={handleOnChange}
-              // onBlur={handleOnBlur}
               data-testid={`${testId}-input`}
               id={id}
               defaultValue={defaultValue}
@@ -291,19 +290,21 @@ const TimePicker = ({
               placeholder={placeholderText}
               pattern={/[0-9: APM]/}
               size={size}
-              warn={warn[0]}
+              warn={warnProp}
               invalid={invalidState}
               light={light}
               disabled={disabled}
               ref={inputRef}
             />
             <button
-              testId={`${testId}-time-btn`}
+              data-testid={`${testId}-time-btn`}
               tabIndex="0"
               type="button"
+              title={timeIconText}
+              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
-                [`${iotPrefix}--time-picker__icon--warn`]: warn[0],
+                [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
               })}
               onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
@@ -316,7 +317,11 @@ const TimePicker = ({
               [`${prefix}--form__helper-text--disabled`]: disabled,
             })}
           >
-            {!readOnly && invalidState ? invalidText : !readOnly && warn[0] ? warnText : helperText}
+            {!readOnly && invalidState
+              ? invalidText
+              : !readOnly && warnProp
+              ? warnText
+              : helperText}
           </p>
         </>
       ) : (
@@ -351,7 +356,7 @@ const TimePicker = ({
               labelText={!hideSecondaryLabel ? labelText : ''}
               placeholder={placeholderText}
               size={size}
-              warn={warn[0]}
+              warn={warnProp}
               invalid={invalidState}
               light={light}
               disabled={disabled}
@@ -361,9 +366,11 @@ const TimePicker = ({
               data-testid={`${testId}-time-btn-1`}
               tabIndex="0"
               type="button"
+              title={timeIconText}
+              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
-                [`${iotPrefix}--time-picker__icon--warn`]: warn[0],
+                [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
               })}
               onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
@@ -377,7 +384,7 @@ const TimePicker = ({
             )}
           >
             <TextInput
-              data-testid={`${testId}-input-1`}
+              data-testid={`${testId}-input-2`}
               id={`${id}-2`}
               onChange={handleOnChange}
               onFocus={() => setFocusedInput(1)}
@@ -390,7 +397,7 @@ const TimePicker = ({
               labelText={!hideSecondaryLabel ? secondaryLabelText : ''}
               placeholder={placeholderText}
               size={size}
-              warn={warn[1]}
+              warn={secondaryWarnProp}
               invalid={secondaryInvalidState}
               light={light}
               disabled={disabled}
@@ -400,9 +407,11 @@ const TimePicker = ({
               data-testid={`${testId}-time-btn-2`}
               tabIndex="0"
               type="button"
+              title={timeIconText}
+              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: secondaryInvalidState,
-                [`${iotPrefix}--time-picker__icon--warn`]: warn[1],
+                [`${iotPrefix}--time-picker__icon--warn`]: secondaryWarnProp,
               })}
               onClick={() => (!readOnly ? handleFocus(1) : undefined)}
             >
@@ -459,14 +468,16 @@ const spinnerPropTypes = {
   position: PropTypes.arrayOf(PropTypes.number).isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  testId: PropTypes.string,
 };
 
 const defaultSpinnerProps = {
   value: '03:03 AM',
+  testId: 'time-picker-spinner',
   onChange: () => {},
 };
 
-export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }, ref) => {
+export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, testId }, ref) => {
   const firstVal = useMemo(() => {
     return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
   }, [value]);
@@ -482,17 +493,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }
   const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
 
   useEffect(() => {
-    // const stringArr = [
-    //   value.substring(0, 2),
-    //   value.substring(3, 5),
-    //   value.substring(value.length - 2),
-    // ];
     setSelected([firstVal, secondVal, thirdVal]);
-    // if (stringArr[1] === '') {
-    //   setSelected([value.substring(0, 2), '03', 'AM']);
-    // } else {
-    //   setSelected(stringArr);
-    // }
   }, [firstVal, secondVal, thirdVal]);
 
   const handleOnClick = useCallback(
@@ -511,6 +512,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }
   const listSpinner1 = useMemo(
     () => (
       <ListSpinner
+        testId={`${testId}-list-spinner-1`}
         ref={ref}
         onClick={(e) => handleOnClick(e, 0)}
         list={listItemsForVertical}
@@ -523,7 +525,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }
   const listSpinner2 = useMemo(
     () => (
       <ListSpinner
-        // key={`${selected[1]}-2`}
+        testId={`${testId}-list-spinner-2`}
         onClick={(e) => handleOnClick(e, 1)}
         list={listItemsForVertical2}
         defaultSelectedId={selected[1]}
@@ -536,6 +538,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }
     () => {
       return (
         <ListSpinner
+          testId={`${testId}-list-spinner-3`}
           className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
           onClick={(e) => handleOnClick(e, 2)}
           list={listItemsForVertical3}
@@ -549,6 +552,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value }
 
   const dropdown = (
     <div
+      data-testid={testId}
       className={`${iotPrefix}--time-picker-spinner`}
       style={{
         left: `${position[0]}px`,

@@ -72,10 +72,12 @@ $layer-hover-01: #e5e5e5;
 
     &:first-child {
       box-shadow: 0 1px 5px 4px #fff;
+      border-width: 1.5px;
     }
 
     &:last-child {
       box-shadow: 0 -1px 5px 4px #fff;
+      border-width: 1.5px;
     }
   }
 }

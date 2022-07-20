@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback, useMemo, useLayoutEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronUp16, ChevronDown16 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -23,8 +23,6 @@ const propTypes = {
   onChange: PropTypes.func,
   /** Optional handler that is called whenever item is clicked */
   onClick: PropTypes.func,
-  /** Array of items to render in the spinning list */
-  listItems: PropTypes.arrayOf(PropTypes.node),
   /** Array of items to render in the spinning list */
   list: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })),
   /** Optional tag name to use instead of ul */
@@ -112,6 +110,8 @@ const ListSpinner = React.forwardRef(
     const [listItems, setListItems] = useState(list);
     const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
+    const { previous, next } = useMerged(defaultProps.i18n, i18n);
+
     useEffect(() => {
       setSelectedId(defaultSelectedId);
     }, [defaultSelectedId]);
@@ -144,7 +144,6 @@ const ListSpinner = React.forwardRef(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting && scrollEvent) {
-              // console.log('I am in the center', entry.target.childNodes[0]);
               clearTimeout(timer);
               timer = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
             }
@@ -181,7 +180,6 @@ const ListSpinner = React.forwardRef(
           () =>
             window.requestIdleCallback(function () {
               if (e.deltaY < 0) {
-                // setListItems((prev) => backwardArraySwap(prev));
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
                   const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
@@ -189,7 +187,6 @@ const ListSpinner = React.forwardRef(
                   return val;
                 });
               } else {
-                // setListItems((prev) => forwardArraySwap(prev));
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
                   const val =
@@ -218,13 +215,11 @@ const ListSpinner = React.forwardRef(
           () =>
             window.requestAnimationFrame(function () {
               if (scrollPosition - e.touches[0].pageY < 0) {
-                // setListItems((prev) => backwardArraySwap(prev));
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
                   return prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
                 });
               } else {
-                // setListItems((prev) => forwardArraySwap(prev));
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
                   return prevIndex === list.indexOf(list[list.length - 1])
@@ -267,7 +262,6 @@ const ListSpinner = React.forwardRef(
             onClick(val);
             return val;
           });
-          // setSelectedId((prev) => list[list.findIndex((i) => i.id === prev) + 1].id);
         } else {
           setSelectedId(e.currentTarget.id);
           onClick(e.currentTarget.id);
@@ -281,7 +275,6 @@ const ListSpinner = React.forwardRef(
           // Once component mounts tell our observer to observe it
           if (node) {
             if (el.value === selectedId) {
-              // console.log(el.value, selectedId);
               contentRef.current = node;
             }
             setTimeout(() => observerRef.current?.observe(node), 0);
@@ -294,12 +287,7 @@ const ListSpinner = React.forwardRef(
         id={`${el.id}-list-item`}
         data-selected={el.value === selectedId}
       >
-        <Button
-          id={el.id}
-          kind="ghost"
-          onClick={handleClick}
-          // onBlur={(e) => console.log('IVE BEEN BLURRED! ', e.relatedTarget)}
-        >
+        <Button id={el.id} kind="ghost" iconDescription={el.value} onClick={handleClick}>
           {el.value}
         </Button>
       </li>
@@ -317,6 +305,7 @@ const ListSpinner = React.forwardRef(
           testId={`${testId}-prev-btn`}
           id={`${iotPrefix}--list-spinner__btn--up`}
           onClick={handleClick}
+          iconDescription={previous}
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
           renderIcon={ChevronUp16}
           kind="ghost"
@@ -331,8 +320,6 @@ const ListSpinner = React.forwardRef(
             onWheel={handleWheel}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
-            // onWheel={handleScroll}
-            // onTouchMove={handleScroll}
           >
             {renderItems}
           </ContainerElement>
@@ -342,6 +329,7 @@ const ListSpinner = React.forwardRef(
           id={`${iotPrefix}--list-spinner__btn--down`}
           onClick={handleClick}
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
+          iconDescription={next}
           renderIcon={ChevronDown16}
           kind="ghost"
         />
