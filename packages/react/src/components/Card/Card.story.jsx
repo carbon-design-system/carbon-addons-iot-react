@@ -92,7 +92,12 @@ export const Basic = () => {
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: 20,
+      }}
+    >
       <CardStoryStateManager>
         <Card
           title={text('title', 'Card title')}
