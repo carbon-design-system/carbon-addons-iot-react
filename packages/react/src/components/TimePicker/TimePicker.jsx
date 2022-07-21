@@ -15,10 +15,6 @@ const { iotPrefix, prefix } = settings;
 const propTypes = {
   className: PropTypes.string,
   id: PropTypes.string.isRequired,
-  /** Optional default value for input */
-  defaultValue: PropTypes.string,
-  /** Optional default value for secondary input (range) */
-  secondaryDefaultValue: PropTypes.string,
   /** Specify the value for input */
   value: PropTypes.string,
   /** Specify the value for secondary input (range) */
@@ -58,11 +54,10 @@ const propTypes = {
   testId: PropTypes.string,
 };
 
+/* istanbul ignore next */
 const defaultProps = {
   className: undefined,
   hideLabel: false,
-  defaultValue: undefined,
-  secondaryDefaultValue: undefined,
   value: undefined,
   secondaryValue: undefined,
   hideSecondaryLabel: false,
@@ -72,6 +67,7 @@ const defaultProps = {
     warnText: undefined,
     timeIconText: 'Open time picker',
     placeholderText: 'hh:mm',
+    readOnlyBtnText: 'Read only',
   },
   size: 'md',
   disabled: false,
@@ -102,12 +98,11 @@ const TimePicker = ({
   readOnly,
   hideLabel,
   hideSecondaryLabel,
-  defaultValue,
-  secondaryDefaultValue,
   value,
   secondaryValue,
   onChange,
 }) => {
+  const init = useRef(false);
   const inputRef = useRef();
   const secondaryInputRef = useRef();
   const dropDownRef = useRef();
@@ -120,10 +115,18 @@ const TimePicker = ({
   const [openState, setOpenState] = useState(false);
   const [position, setPosition] = useState([0, 0]);
   const [focusedInput, setFocusedInput] = useState(0);
-  const [valueState, setValueState] = useState(value || defaultValue || '');
+  const [valueState, setValueState] = useState(value || '');
   const [secondaryValueState, setSecondaryValueState] = useState(secondaryValue || '');
   const [invalidState, setInvalidState] = useState(invalidProp);
   const [secondaryInvalidState, setSecondaryInvalidState] = useState(secondaryInvalidProp);
+
+  useEffect(() => {
+    if (init.current) {
+      onChange(valueState, secondaryValueState);
+    } else {
+      init.current = true;
+    }
+  }, [valueState, secondaryValueState, onChange, init]);
 
   useEffect(() => {
     setInvalidState(invalidProp);
@@ -145,6 +148,7 @@ const TimePicker = ({
     warnText,
     timeIconText,
     placeholderText,
+    readOnlyBtnText,
   } = useMerged(defaultProps.i18n, i18n);
 
   useEffect(() => {
@@ -154,14 +158,13 @@ const TimePicker = ({
     }
   }, [openState]);
 
-  const handleFocus = (index = 0) => {
+  const handleFocus = (index) => {
     if (focusedInput === index && openState === true) {
       setOpenState(false);
     } else {
       setOpenState(true);
     }
     setFocusedInput(index);
-    // setTimeout(() => dropDownRef.current?.focus());
   };
 
   const handleOnChange = (e) => {
@@ -172,16 +175,10 @@ const TimePicker = ({
     const isValid = /[0-9: APM]/.test(val.substring(val.length - 1));
     // @TODO: detect the length and run validation for as many as we can
     // This value is pasted in or autocompleted
+    // istanbul ignore else
     if (val.length > 1) {
       if (focusedInput === 0) {
-        // Jest complains about setting state after unmount
-        // if (process.env.NODE_ENV === 'test') {
-        //   console.log('WHat?!');
-        //   setValueState(val);
-        // } else {
-
         setValueState(val);
-        // }
       } else {
         setSecondaryValueState(val);
       }
@@ -192,7 +189,6 @@ const TimePicker = ({
         setSecondaryValueState(val);
       }
     }
-    onChange(val);
   };
 
   const handleOnBlur = (e) => {
@@ -206,6 +202,7 @@ const TimePicker = ({
       // close dropdown and validate
       setOpenState(false);
       setInvalidState(!validate(inputRef.current.value));
+      /* istanbul ignore else */
       if (secondaryInputRef.current) {
         setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
       }
@@ -281,7 +278,6 @@ const TimePicker = ({
               onChange={handleOnChange}
               data-testid={`${testId}-input`}
               id={id}
-              defaultValue={defaultValue}
               value={valueState}
               onFocus={() => setFocusedInput(0)}
               readOnly={readOnly}
@@ -300,11 +296,12 @@ const TimePicker = ({
               data-testid={`${testId}-time-btn`}
               tabIndex="0"
               type="button"
-              title={timeIconText}
+              title={readOnly ? readOnlyBtnText : timeIconText}
               aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
+                [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
               onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
@@ -312,6 +309,7 @@ const TimePicker = ({
             </button>
           </div>
           <p
+            data-testid={`${testId}-helpertext`}
             className={classnames(`${prefix}--form__helper-text`, {
               [`${iotPrefix}--time-picker__helper-text`]: invalidState,
               [`${prefix}--form__helper-text--disabled`]: disabled,
@@ -348,7 +346,6 @@ const TimePicker = ({
               onFocus={() => setFocusedInput(0)}
               id={`${id}-1`}
               readOnly={readOnly}
-              defaultValue={defaultValue}
               value={valueState}
               hideLabel={hideSecondaryLabel || hideLabel}
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
@@ -366,11 +363,12 @@ const TimePicker = ({
               data-testid={`${testId}-time-btn-1`}
               tabIndex="0"
               type="button"
-              title={timeIconText}
+              title={readOnly ? readOnlyBtnText : timeIconText}
               aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
+                [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
               onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
@@ -389,7 +387,6 @@ const TimePicker = ({
               onChange={handleOnChange}
               onFocus={() => setFocusedInput(1)}
               readOnly={readOnly}
-              defaultValue={secondaryDefaultValue}
               value={secondaryValueState}
               hideLabel={hideSecondaryLabel || hideLabel}
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
@@ -407,11 +404,12 @@ const TimePicker = ({
               data-testid={`${testId}-time-btn-2`}
               tabIndex="0"
               type="button"
-              title={timeIconText}
+              title={readOnly ? readOnlyBtnText : timeIconText}
               aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: secondaryInvalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: secondaryWarnProp,
+                [`${iotPrefix}--time-picker__icon--readonly`]: readOnly,
               })}
               onClick={() => (!readOnly ? handleFocus(1) : undefined)}
             >
@@ -435,11 +433,7 @@ const TimePicker = ({
         <TimePickerSpinner
           onChange={handleOnChange}
           focusedInput={focusedInput}
-          value={
-            focusedInput === 0
-              ? valueState || defaultValue
-              : secondaryValueState || secondaryDefaultValue
-          }
+          value={focusedInput === 0 ? valueState : secondaryValueState}
           testId={`${testId}-spinner`}
           position={position}
           ref={dropDownRef}
@@ -471,6 +465,7 @@ const spinnerPropTypes = {
   testId: PropTypes.string,
 };
 
+/* istanbul ignore next */
 const defaultSpinnerProps = {
   value: '',
   testId: 'time-picker-spinner',

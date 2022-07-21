@@ -29,6 +29,7 @@ const propTypes = {
   containerElement: PropTypes.string,
 };
 
+// istanbul ignore next
 const defaultProps = {
   className: undefined,
   testId: 'list-spinner',
@@ -43,15 +44,10 @@ const defaultProps = {
   containerElement: 'ul',
 };
 
-export function scrollIntoView(el) {
-  el.scrollIntoView({ block: 'center' });
-}
-
 export function backwardArraySwap(arr) {
   const newArr = [...arr];
   const first = newArr.shift();
   newArr.push(first);
-  // console.log('back', newArr);
   return newArr;
 }
 
@@ -59,7 +55,6 @@ export function forwardArraySwap(arr) {
   const newArr = [...arr];
   const last = newArr.pop();
   newArr.unshift(last);
-  // console.log('forward', newArr);
   return newArr;
 }
 
@@ -86,11 +81,6 @@ export function moveToSecondIndex(arr, index) {
   return newArr;
 }
 
-let ticking = false;
-let scrollEvent = false;
-let scrollPosition;
-let timer;
-
 const ListSpinner = React.forwardRef(
   (
     {
@@ -107,6 +97,12 @@ const ListSpinner = React.forwardRef(
   ) => {
     const containerRef = useRef();
     const contentRef = useRef();
+    const touch = useRef(false);
+    const ticking = useRef(false);
+    const scrollEvent = useRef(false);
+    const scrollPosition = useRef();
+    const timer = useRef();
+
     const [listItems, setListItems] = useState(list);
     const [selectedId, setSelectedId] = useState(defaultSelectedId);
 
@@ -117,25 +113,12 @@ const ListSpinner = React.forwardRef(
     }, [defaultSelectedId]);
 
     useEffect(() => {
-      // if (!scrollEvent) {
-      // setTimeout(() => {
       const index = list.findIndex((i) => i.id === selectedId);
       const newList = moveToSecondIndex(list, index);
       setListItems(newList);
-      // }, 200);
-      // }
       onChange(selectedId);
       /* eslint-disable-next-line react-hooks/exhaustive-deps */
     }, [onChange, selectedId]);
-
-    useEffect(() => {
-      // if (scrollEvent) {
-      // scrollEvent = false;
-      // scrollIntoView(contentRef.current);
-      // }
-      // setTimeout(() => containerRef.current?.focus(), 1500);
-      /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    }, [listItems]);
 
     const observerRef = React.useRef();
     useEffect(() => {
@@ -143,9 +126,9 @@ const ListSpinner = React.forwardRef(
       observerRef.current = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && scrollEvent) {
-              clearTimeout(timer);
-              timer = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
+            if (entry.isIntersecting && scrollEvent.current) {
+              clearTimeout(timer.current);
+              timer.current = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
             }
           });
         },
@@ -173,12 +156,12 @@ const ListSpinner = React.forwardRef(
 
     const handleWheel = (e) => {
       e.persist();
-      scrollEvent = true;
-      if (!ticking) {
+      scrollEvent.current = true;
+      if (!ticking.current) {
         /* eslint-disable func-names */
         setTimeout(
           () =>
-            window.requestIdleCallback(function () {
+            window.requestIdleCallback(() => {
               if (e.deltaY < 0) {
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
@@ -197,54 +180,58 @@ const ListSpinner = React.forwardRef(
                   return val;
                 });
               }
-              ticking = false;
+              ticking.current = false;
             }),
-          100
+          80
         );
 
-        ticking = true;
+        ticking.current = true;
       }
     };
 
     const handleTouchMove = (e) => {
       e.persist();
-      scrollEvent = true;
-      if (!ticking) {
+      scrollEvent.current = true;
+      if (!ticking.current) {
         /* eslint-disable func-names */
-        setTimeout(
-          () =>
-            window.requestAnimationFrame(function () {
-              if (scrollPosition - e.touches[0].pageY < 0) {
-                setSelectedId((prev) => {
-                  const prevIndex = list.findIndex((i) => i.id === prev);
-                  return prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
-                });
-              } else {
-                setSelectedId((prev) => {
-                  const prevIndex = list.findIndex((i) => i.id === prev);
-                  return prevIndex === list.indexOf(list[list.length - 1])
+        setTimeout(() => {
+          window.requestIdleCallback(() => {
+            if (scrollPosition.current - e.touches[0].pageY < 0) {
+              setSelectedId((prev) => {
+                const prevIndex = list.findIndex((i) => i.id === prev);
+                const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+                setTimeout(() => onClick(val));
+                return val;
+              });
+            } else {
+              setSelectedId((prev) => {
+                const prevIndex = list.findIndex((i) => i.id === prev);
+                const val =
+                  prevIndex === list.indexOf(list[list.length - 1])
                     ? list[0].id
                     : list[prevIndex + 1].id;
-                });
-              }
-              scrollPosition = e.touches[0].pageY;
-              ticking = false;
-            }),
-          80
-        );
-
-        ticking = true;
+                setTimeout(() => onClick(val));
+                return val;
+              });
+            }
+            scrollPosition.current = e.touches[0].pageY;
+            ticking.current = false;
+            touch.current = false;
+          });
+        }, 80);
+        ticking.current = true;
       }
     };
 
     const handleTouchStart = (e) => {
       e.persist();
-      scrollPosition = e.touches[0].pageY;
+      scrollPosition.current = e.touches[0].pageY;
+      touch.current = true;
     };
 
     const handleClick = useCallback(
       (e) => {
-        scrollEvent = false;
+        scrollEvent.current = false;
         if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
           setSelectedId((prev) => {
             const prevIndex = list.findIndex((i) => i.id === prev);
@@ -271,6 +258,7 @@ const ListSpinner = React.forwardRef(
     );
     const renderItems = listItems.map((el) => (
       <li
+        data-testid={`${testId}-list-item`}
         ref={(node) => {
           // Once component mounts tell our observer to observe it
           if (node) {
@@ -287,7 +275,13 @@ const ListSpinner = React.forwardRef(
         id={`${el.id}-list-item`}
         data-selected={el.value === selectedId}
       >
-        <Button id={el.id} kind="ghost" iconDescription={el.value} onClick={handleClick}>
+        <Button
+          testId={el.id === selectedId ? `${testId}-selected-item` : el.id}
+          id={el.id}
+          kind="ghost"
+          iconDescription={el.value}
+          onClick={handleClick}
+        >
           {el.value}
         </Button>
       </li>
@@ -314,6 +308,7 @@ const ListSpinner = React.forwardRef(
           className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
         >
           <ContainerElement
+            style={{ overflow: touch.current ? 'hidden' : 'auto' }}
             data-testid={`${testId}-list`}
             ref={listRef}
             className={`${iotPrefix}--list-spinner__list ${className}-spinner__list`}

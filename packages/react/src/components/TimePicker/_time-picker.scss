@@ -119,7 +119,7 @@
   }
 
   .#{prefix}--text-input__invalid-icon,
-  .#{prefix}--text-input__readonly-icon {
+  svg.#{prefix}--text-input__readonly-icon {
     display: none;
   }
 }
