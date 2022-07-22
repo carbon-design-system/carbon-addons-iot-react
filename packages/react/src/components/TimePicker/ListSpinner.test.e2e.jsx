@@ -9,18 +9,6 @@ describe('ListSpinner', () => {
     const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
     return { id: index, value: index };
   });
-  onlyOn('headless', () => {
-    it('matches image snapshot', () => {
-      const commonProps = {
-        testId: 'my-list',
-        list: listItems,
-        defaultSelectedId: '03',
-        onClick: cy.stub(),
-      };
-      mount(<ListSpinner {...commonProps} />);
-      cy.findByTestId('my-list').compareSnapshot('Button');
-    });
-  });
 
   it('updates selected when scrolled down', () => {
     const onClick = cy.stub().as('my-cb');

@@ -6,7 +6,7 @@ import { settings } from '../../constants/Settings';
 
 import TimePicker from './TimePicker';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('TimePicker', () => {
   const { IntersectionObserver: originalIntersectionObserver } = window;
@@ -157,6 +157,29 @@ describe('TimePicker', () => {
     expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
   });
 
+  it('hides and shows appropriate labels', async () => {
+    const { rerender } = render(<TimePicker {...timePickerProps} />);
+    let firstLabel = screen.queryByText('Start');
+    let secondLabel = screen.queryByText('End');
+    expect(firstLabel).toBeInTheDocument();
+    expect(secondLabel).not.toBeInTheDocument();
+    rerender(<TimePicker {...timePickerProps} type="range" />);
+    firstLabel = screen.queryByText('Start');
+    secondLabel = screen.queryByText('End');
+    expect(firstLabel).toBeInTheDocument();
+    expect(secondLabel).toBeInTheDocument();
+    rerender(<TimePicker {...timePickerProps} type="range" hideSecondaryLabel />);
+    firstLabel = screen.queryByText('Start');
+    secondLabel = screen.queryByText('End');
+    expect(firstLabel).toBeInTheDocument();
+    expect(secondLabel).not.toBeInTheDocument();
+    rerender(<TimePicker {...timePickerProps} type="range" hideLabel />);
+    firstLabel = screen.queryByText('Start');
+    secondLabel = screen.queryByText('End');
+    expect(firstLabel.classList.contains(`${prefix}--visually-hidden`)).toBeTruthy();
+    expect(secondLabel.classList.contains(`${prefix}--visually-hidden`)).toBeTruthy();
+  });
+
   it('opens dropdown when clock icon clicked, closes when component loses focus', async () => {
     render(<TimePicker {...timePickerProps} type="range" secondaryValue="09:30" />);
     const timeBtn = screen.getByTestId('time-picker-test-time-btn-1');
@@ -213,9 +236,7 @@ describe('TimePicker', () => {
   });
 
   it('updates the value of  2nd input when list spinner button is pressed', async () => {
-    render(
-      <TimePicker {...timePickerProps} type="range" hideSecondaryLabel secondaryValue="09:30 AM" />
-    );
+    render(<TimePicker {...timePickerProps} type="range" secondaryValue="09:30 AM" />);
     const timeBtn1 = screen.getByTestId('time-picker-test-time-btn-1');
     const timeBtn2 = screen.getByTestId('time-picker-test-time-btn-2');
     const input1 = screen.getByTestId('time-picker-test-input-1');

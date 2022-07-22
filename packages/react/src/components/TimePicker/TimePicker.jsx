@@ -417,6 +417,7 @@ const TimePicker = ({
             </button>
           </div>
           <p
+            data-testid={`${testId}-range__helper-text`}
             className={classnames(
               `${prefix}--form__helper-text`,
               `${iotPrefix}--time-picker-range__helper-text`,
