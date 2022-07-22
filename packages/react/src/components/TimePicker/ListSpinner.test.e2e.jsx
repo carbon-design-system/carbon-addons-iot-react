@@ -1,6 +1,5 @@
 import React from 'react';
 import { mount } from '@cypress/react';
-import { onlyOn } from '@cypress/skip-test';
 
 import ListSpinner from './ListSpinner';
 
