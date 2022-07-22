@@ -29,7 +29,7 @@ $layer-hover-01: #e5e5e5;
     overflow: auto;
     scrollbar-color: $ui-01;
     scrollbar-width: none;
-
+    /* stylelint-disable-next-line */
     &::scrollbar,
     &::-webkit-scrollbar {
       display: none;

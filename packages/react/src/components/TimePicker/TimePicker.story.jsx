@@ -8,23 +8,10 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { boolean, number, select, text, array, object } from '@storybook/addon-knobs';
-import classnames from 'classnames';
-
-import { settings } from '../../constants/Settings';
-import useMerged from '../../hooks/useMerged';
-import Button from '../Button';
+import { boolean, select, object } from '@storybook/addon-knobs';
 
 import TimePicker, { TimePickerSpinner } from './TimePicker';
 import ListSpinner from './ListSpinner';
-
-const { iotPrefix } = settings;
-
-const sizes = {
-  'Large size (lg)': 'lg',
-  'Medium Size (md)': 'md',
-  'Small size (sm)': 'sm',
-};
 
 const props = {
   timepicker: () => ({

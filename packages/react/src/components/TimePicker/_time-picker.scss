@@ -71,7 +71,7 @@
     box-sizing: content-box;
     cursor: pointer;
     height: 1rem;
-    padding: 0.25rem;
+    padding: $spacing-02;
     position: absolute;
     right: 0.5rem;
     transform: translateY(0.875rem);
@@ -185,9 +185,10 @@
   opacity: 0;
   overflow: hidden;
   overscroll-behavior: contain;
-  padding: 0 0.5rem;
+  padding: 0 $spacing-03;
   position: absolute;
   width: 16.125rem;
+  /* stylelint-disable-next-line */
   transition: opacity 0.25s;
   animation: fadeIn 0.25s forwards;
 
