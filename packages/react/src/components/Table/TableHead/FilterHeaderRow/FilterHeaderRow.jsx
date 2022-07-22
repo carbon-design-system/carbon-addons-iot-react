@@ -71,6 +71,7 @@ class FilterHeaderRow extends Component {
       hasRowExpansion: PropTypes.bool,
       hasRowNesting: PropTypes.bool,
       hasRowActions: PropTypes.bool,
+      useRadioButtonSingleSelect: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
@@ -246,7 +247,13 @@ class FilterHeaderRow extends Component {
       ordering,
       clearFilterText,
       filterText,
-      tableOptions: { hasRowSelection, hasRowExpansion, hasRowNesting, hasRowActions },
+      tableOptions: {
+        hasRowSelection,
+        hasRowExpansion,
+        hasRowNesting,
+        hasRowActions,
+        useRadioButtonSingleSelect,
+      },
       isVisible,
       lightweight,
       isDisabled,
@@ -263,7 +270,8 @@ class FilterHeaderRow extends Component {
           '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
-        {hasRowSelection === 'multi' ? (
+        {hasRowSelection === 'multi' ||
+        (hasRowSelection === 'single' && useRadioButtonSingleSelect) ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
         ) : null}
         {hasRowExpansion || hasRowNesting ? (
