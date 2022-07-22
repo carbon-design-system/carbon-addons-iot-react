@@ -123,21 +123,23 @@ const ListSpinner = React.forwardRef(
     const observerRef = React.useRef();
     useEffect(() => {
       // Create a new observer
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && scrollEvent.current) {
-              clearTimeout(timer.current);
-              timer.current = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
-            }
-          });
-        },
-        {
-          root: containerRef.current,
-          rootMargin: '-50% 0% -50% 0%',
-          threshold: 0,
-        }
-      );
+      if (window?.IntersectionObserver) {
+        observerRef.current = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && scrollEvent.current) {
+                clearTimeout(timer.current);
+                timer.current = setTimeout(setSelectedId(entry.target.childNodes[0].id), 800);
+              }
+            });
+          },
+          {
+            root: containerRef.current,
+            rootMargin: '-50% 0% -50% 0%',
+            threshold: 0,
+          }
+        );
+      }
 
       return () => observerRef.current?.disconnect();
     }, []);
