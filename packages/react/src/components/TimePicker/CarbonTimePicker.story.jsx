@@ -69,15 +69,6 @@ export const Default = () => {
   return (
     <>
       <TimePicker id="time-picker" {...props.timepicker()} />
-      {/* <TimePickerSelect id="time-picker-select-1" {...selectProps}>
-        <SelectItem value="AM" text="AM" />
-        <SelectItem value="PM" text="PM" />
-      </TimePickerSelect>
-      <TimePickerSelect id="time-picker-select-2" {...selectProps}>
-        <SelectItem value="Time zone 1" text="Time zone 1" />
-        <SelectItem value="Time zone 2" text="Time zone 2" />
-      </TimePickerSelect> */}
-      {/* </TimePicker>  */}
     </>
   );
 };
