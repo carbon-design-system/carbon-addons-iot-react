@@ -10921,6 +10921,7 @@ Map {
   "SidePanel" => Object {
     "defaultProps": Object {
       "actionItems": null,
+      "busy": false,
       "direction": "right",
       "i18n": Object {
         "closeIconLabel": "Close",
@@ -10942,24 +10943,37 @@ Map {
     "propTypes": Object {
       "actionItems": Object {
         "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "buttonCallback": Object {
-                  "type": "func",
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "buttonCallback": Object {
+                        "type": "func",
+                      },
+                      "buttonIcon": Object {
+                        "type": "elementType",
+                      },
+                      "buttonLabel": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
-                "buttonIcon": Object {
-                  "type": "elementType",
-                },
-                "buttonLabel": Object {
-                  "type": "string",
-                },
-              },
-            ],
-            "type": "shape",
-          },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
         ],
-        "type": "arrayOf",
+        "type": "oneOfType",
+      },
+      "busy": Object {
+        "type": "bool",
       },
       "direction": Object {
         "args": Array [

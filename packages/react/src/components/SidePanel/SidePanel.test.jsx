@@ -4,6 +4,7 @@ import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
+import Button from '../Button';
 
 import SidePanel from './SidePanel';
 
@@ -37,6 +38,11 @@ describe('SidePanel Component Test', () => {
       buttonCallback: sendButtonFunc,
     },
   ];
+  const actionItemSlot = (
+    <Button size="field" kind="primary">
+      Action button
+    </Button>
+  );
 
   it('should be selectable by testId', () => {
     render(
@@ -148,5 +154,35 @@ describe('SidePanel Component Test', () => {
     expect(screen.getByTestId('side-panel-primary-button')).toBeDefined();
     expect(mockOnSecondaryClick).toHaveBeenCalled();
     expect(mockOnPrimaryClick).toHaveBeenCalled();
+  });
+
+  it('should render panel in busy state and with button in actionItems slot', () => {
+    const { container } = render(
+      <SidePanel
+        {...commonProps}
+        onToggle={mockOnToggle}
+        onSecondaryButtonClick={mockOnSecondaryClick}
+        onPrimaryButtonClick={mockOnPrimaryClick}
+        actionItems={actionItemSlot}
+        isOpen
+        busy
+      >
+        This is content
+      </SidePanel>
+    );
+    expect(container.querySelector('.iot--sidepanel__toggle-button')).toHaveProperty(
+      'disabled',
+      true
+    );
+    expect(container.querySelector('.iot--sidepanel__footer__secondary-button')).toHaveProperty(
+      'disabled',
+      true
+    );
+    expect(container.querySelector('.iot--sidepanel__footer__primary-button')).toHaveProperty(
+      'disabled',
+      true
+    );
+    expect(screen.getByTestId('side-panel-action-bar')).toBeDefined();
+    expect(screen.getByTestId('Button')).toBeDefined();
   });
 });

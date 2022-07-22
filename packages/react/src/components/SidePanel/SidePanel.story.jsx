@@ -62,6 +62,7 @@ const InPage = ({
   onToggle,
   onPrimaryButtonClick,
   onSecondaryButtonClick,
+  busy,
 }) => {
   // Padding would normally be done in app scss file off of classes
   let padding;
@@ -128,6 +129,7 @@ const InPage = ({
         isCondensed={isCondensed}
         onPrimaryButtonClick={options.onPrimaryButtonClick}
         onSecondaryButtonClick={options.onSecondaryButtonClick}
+        busy={busy}
       >
         <Content />
       </SidePanel>
@@ -179,6 +181,7 @@ export const Default = () => (
       [handleSecondaryButtonClick, undefined],
       handleSecondaryButtonClick
     )}
+    busy={boolean('isBusy', false)}
   >
     <Content />
   </SidePanel>
@@ -207,6 +210,7 @@ export const InPageExample = () => (
     isCondensed={boolean('condensed', false)}
     onPrimaryButtonClick={select('Primary footer button', ['yes', 'no'], 'yes')}
     onSecondaryButtonClick={select('Secondary footer button', ['yes', 'no'], 'yes')}
+    busy={boolean('isBusy', false)}
   />
 );
 

@@ -33,13 +33,16 @@ const propTypes = {
   /** Sub title or description - will go away when content is scrolled */
   subtitle: PropTypes.string,
   /** Action items which will appear as part of header above the content */
-  actionItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      buttonLabel: PropTypes.string,
-      buttonIcon: PropTypes.elementType,
-      buttonCallback: PropTypes.func,
-    })
-  ),
+  actionItems: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        buttonLabel: PropTypes.string,
+        buttonIcon: PropTypes.elementType,
+        buttonCallback: PropTypes.func,
+      })
+    ),
+    PropTypes.node,
+  ]),
   /** Optional test id */
   testId: PropTypes.string,
   /** Callback for when Primary footer button is clicked */
@@ -52,6 +55,8 @@ const propTypes = {
     primaryButtonLabel: PropTypes.string,
     secondaryButtonLabel: PropTypes.string,
   }),
+  /** Toggle side panel busy state */
+  busy: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -73,6 +78,7 @@ const defaultProps = {
   onToggle: undefined,
   onPrimaryButtonClick: undefined,
   onSecondaryButtonClick: undefined,
+  busy: false,
 };
 
 const baseClass = `${iotPrefix}--sidepanel`;
@@ -95,6 +101,7 @@ const SidePanel = ({
   children,
   // eslint-disable-next-line react/prop-types
   style,
+  busy,
 }) => {
   const titleRef = useRef();
   const subtitleRef = useRef();
@@ -103,29 +110,36 @@ const SidePanel = ({
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const toggleIcon = useMemo(() => {
     return isOpen
-      ? { icon: Close16, label: mergedI18n.closeIconLabel, tooltipPostion: 'left' }
+      ? {
+          icon: Close16,
+          label: mergedI18n.closeIconLabel,
+          tooltipPostion: 'left',
+          disabled: busy,
+        }
       : {
           icon: direction === 'right' ? OpenLeft : OpenRight,
           label: mergedI18n.openIconLabel,
           tooltipPostion: direction === 'right' ? 'left' : 'right',
         };
-  }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction]);
+  }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction, busy]);
   const actionIconBtns = useMemo(
     () =>
       actionItems &&
-      actionItems.map((e, i) => (
-        <Button
-          testId={`${testId}-action-button-${e.buttonLabel}`}
-          className={`${baseClass}__action-bar__item-${i + 1}`}
-          key={`${e.buttonLabel}-${i}`}
-          hasIconOnly
-          iconDescription={e.buttonLabel}
-          kind="ghost"
-          renderIcon={e.buttonIcon}
-          onClick={e.buttonCallback}
-          size="small"
-        />
-      )),
+      ((Array.isArray(actionItems) &&
+        actionItems.map((e, i) => (
+          <Button
+            testId={`${testId}-action-button-${e.buttonLabel}`}
+            className={`${baseClass}__action-bar__item-${i + 1}`}
+            key={`${e.buttonLabel}-${i}`}
+            hasIconOnly
+            iconDescription={e.buttonLabel}
+            kind="ghost"
+            renderIcon={e.buttonIcon}
+            onClick={e.buttonCallback}
+            size="small"
+          />
+        ))) ||
+        actionItems),
     [actionItems, testId]
   );
   // Since subtitle is dynamic we set a css variable with the height value to animate in condensed mode
@@ -175,6 +189,7 @@ const SidePanel = ({
           renderIcon={toggleIcon.icon}
           onClick={onToggle}
           tooltipPosition={toggleIcon.tooltipPostion}
+          disabled={toggleIcon.disabled}
         />
       ) : null}
       <header className={`${baseClass}__header`}>
@@ -226,6 +241,7 @@ const SidePanel = ({
               onClick={onSecondaryButtonClick}
               tooltipPosition={toggleIcon.tooltipPostion}
               kind="secondary"
+              disabled={busy}
             >
               {mergedI18n.secondaryButtonLabel}
             </Button>
@@ -236,6 +252,7 @@ const SidePanel = ({
               className={`${baseClass}__footer__primary-button`}
               kind="primary"
               onClick={onPrimaryButtonClick}
+              loading={busy}
             >
               {mergedI18n.primaryButtonLabel}
             </Button>
