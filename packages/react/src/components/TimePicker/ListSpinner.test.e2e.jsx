@@ -31,11 +31,23 @@ describe('ListSpinner', () => {
       onClick,
     };
     mount(<ListSpinner {...commonProps} />);
+
     cy.findByTestId('my-list-list').trigger('wheel', {
       deltaX: 0,
       deltaY: 1000,
     });
     cy.get('@my-cb').should('have.been.called');
+  });
+
+  it('updates selected when swiped', () => {
+    const onClick = cy.stub().as('my-cb2');
+    const commonProps = {
+      testId: 'my-list',
+      list: listItems,
+      defaultSelectedId: '03',
+      onClick,
+    };
+    mount(<ListSpinner {...commonProps} />);
 
     cy.findByTestId('my-list-list')
       .trigger('touchstart', {
@@ -44,6 +56,6 @@ describe('ListSpinner', () => {
       .trigger('touchmove', {
         touches: [{ pageY: 1000, pageX: 0 }],
       });
-    cy.get('@my-cb').should('have.been.called');
+    cy.get('@my-cb2').should('have.been.called');
   });
 });
