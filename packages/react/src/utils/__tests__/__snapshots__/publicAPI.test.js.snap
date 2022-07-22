@@ -8688,6 +8688,140 @@ Map {
       },
     },
   },
+  "TimePicker" => Object {
+    "defaultProps": Object {
+      "className": undefined,
+      "disabled": false,
+      "hideLabel": false,
+      "hideSecondaryLabel": false,
+      "i18n": Object {
+        "invalidText": "The time entered is invalid",
+        "placeholderText": "hh:mm",
+        "readOnlyBtnText": "Read only",
+        "timeIconText": "Open time picker",
+        "warnText": undefined,
+      },
+      "invalid": Array [
+        false,
+        false,
+      ],
+      "light": false,
+      "onChange": [Function],
+      "readOnly": false,
+      "secondaryValue": undefined,
+      "size": "md",
+      "testId": "time-picker",
+      "type": "single",
+      "value": undefined,
+      "warn": Array [
+        false,
+        false,
+      ],
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "hideLabel": Object {
+        "type": "bool",
+      },
+      "hideSecondaryLabel": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "helperText": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
+              "type": "string",
+            },
+            "labelText": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "placeholderText": Object {
+              "type": "string",
+            },
+            "secondaryHelperText": Object {
+              "type": "string",
+            },
+            "secondaryLabelText": Object {
+              "type": "string",
+            },
+            "timeIconText": Object {
+              "type": "string",
+            },
+            "warnText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "invalid": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "readOnly": Object {
+        "type": "bool",
+      },
+      "secondaryValue": Object {
+        "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "lg",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "single",
+            "range",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+      "warn": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
   "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",
@@ -40942,118 +41076,6 @@ Map {
           ],
         ],
         "type": "oneOfType",
-      },
-    },
-  },
-  "TimePicker" => Object {
-    "contextType": Object {
-      "$$typeof": Symbol(react.context),
-      "Consumer": Object {
-        "$$typeof": Symbol(react.context),
-        "_calculateChangedBits": null,
-        "_context": [Circular],
-      },
-      "Provider": Object {
-        "$$typeof": Symbol(react.provider),
-        "_context": [Circular],
-      },
-      "_calculateChangedBits": null,
-      "_currentRenderer": null,
-      "_currentRenderer2": null,
-      "_currentValue": FeatureFlagScope {
-        "flags": Map {
-          "enable-css-custom-properties" => false,
-          "enable-use-controlled-state-with-value" => false,
-          "enable-css-grid" => false,
-          "enable-v11-release" => false,
-        },
-      },
-      "_currentValue2": FeatureFlagScope {
-        "flags": Map {
-          "enable-css-custom-properties" => false,
-          "enable-use-controlled-state-with-value" => false,
-          "enable-css-grid" => false,
-          "enable-v11-release" => false,
-        },
-      },
-      "_threadCount": 0,
-    },
-    "defaultProps": Object {
-      "disabled": false,
-      "invalid": false,
-      "invalidText": "Invalid time format.",
-      "light": false,
-      "maxLength": 5,
-      "onBlur": [Function],
-      "onChange": [Function],
-      "onClick": [Function],
-      "pattern": "(1[012]|[1-9]):[0-5][0-9](\\\\s)?",
-      "placeholder": "hh:mm",
-      "type": "text",
-    },
-    "propTypes": Object {
-      "children": Object {
-        "type": "node",
-      },
-      "className": Object {
-        "type": "string",
-      },
-      "disabled": Object {
-        "type": "bool",
-      },
-      "hideLabel": Object {
-        "type": "bool",
-      },
-      "id": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "invalid": Object {
-        "type": "bool",
-      },
-      "invalidText": Object {
-        "type": "node",
-      },
-      "labelText": Object {
-        "type": "node",
-      },
-      "light": Object {
-        "type": "bool",
-      },
-      "maxLength": Object {
-        "type": "number",
-      },
-      "onBlur": Object {
-        "type": "func",
-      },
-      "onChange": Object {
-        "type": "func",
-      },
-      "onClick": Object {
-        "type": "func",
-      },
-      "pattern": Object {
-        "type": "string",
-      },
-      "placeholder": Object {
-        "type": "string",
-      },
-      "size": Object {
-        "args": Array [
-          Array [
-            "sm",
-            "md",
-            "lg",
-            "xl",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "type": Object {
-        "type": "string",
-      },
-      "value": Object {
-        "type": "string",
       },
     },
   },
