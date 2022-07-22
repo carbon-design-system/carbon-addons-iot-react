@@ -966,7 +966,9 @@ const DashboardAllCardsAsResizable = ({ breakpoint, type }) => {
       break;
     case 'TableCard':
       CARDS_TO_RENDER = [
-        ...Object.values(omit(CARD_SIZES, 'SMALL', 'SMALLWIDE', 'SMALLFULL')).map((size, index) => (
+        ...Object.values(
+          omit(CARD_SIZES, 'SMALL', 'SMALLWIDE', 'SMALLFULL', 'SMALLTHICK', 'MEDIUMTHICK')
+        ).map((size, index) => (
           <TableCard
             title={`TableCard - ${size}`}
             id={`tableCard-${size}`}

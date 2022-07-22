@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Button,
@@ -198,6 +198,7 @@ const propTypes = {
   locale: PropTypes.string,
   /** Unique id of the component */
   id: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -283,6 +284,7 @@ const defaultProps = {
   light: false,
   locale: 'en',
   id: undefined,
+  style: {},
 };
 
 const DateTimePicker = ({
@@ -304,6 +306,7 @@ const DateTimePicker = ({
   light,
   locale,
   id = uuid.v4(),
+  style,
   ...others
 }) => {
   const strings = {
@@ -334,6 +337,7 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
 
   const relativeSelect = useRef(null);
+  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const {
@@ -682,6 +686,7 @@ const DateTimePicker = ({
           className={classnames(`${iotPrefix}--date-time-picker__menu`, {
             [`${iotPrefix}--date-time-picker__menu-expanded`]: isExpanded,
           })}
+          style={{ ...updatedStyle }}
           role="listbox"
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>

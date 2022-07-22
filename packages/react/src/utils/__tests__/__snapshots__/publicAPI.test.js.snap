@@ -8807,6 +8807,7 @@ Map {
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
     },
     "propTypes": Object {
@@ -9151,6 +9152,14 @@ Map {
       "showRelativeOption": Object {
         "type": "bool",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "testId": Object {
         "type": "string",
       },
@@ -9261,6 +9270,7 @@ Map {
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
     },
     "propTypes": Object {
@@ -9620,6 +9630,14 @@ Map {
       },
       "showRelativeOption": Object {
         "type": "bool",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testId": Object {
         "type": "string",
@@ -14100,6 +14118,32 @@ Map {
             "w": 4,
           },
         },
+        "LARGETHICK": Object {
+          "lg": Object {
+            "h": 4,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 4,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 4,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 4,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 4,
+            "w": 12,
+          },
+          "xs": Object {
+            "h": 4,
+            "w": 4,
+          },
+        },
         "LARGETHIN": Object {
           "lg": Object {
             "h": 4,
@@ -14172,6 +14216,32 @@ Map {
           "xl": Object {
             "h": 2,
             "w": 8,
+          },
+          "xs": Object {
+            "h": 2,
+            "w": 4,
+          },
+        },
+        "MEDIUMTHICK": Object {
+          "lg": Object {
+            "h": 2,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 2,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 2,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 2,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 2,
+            "w": 12,
           },
           "xs": Object {
             "h": 2,
@@ -14276,6 +14346,32 @@ Map {
           "xl": Object {
             "h": 1,
             "w": 16,
+          },
+          "xs": Object {
+            "h": 1,
+            "w": 4,
+          },
+        },
+        "SMALLTHICK": Object {
+          "lg": Object {
+            "h": 1,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 1,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 1,
+            "w": 12,
           },
           "xs": Object {
             "h": 1,
@@ -15360,11 +15456,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -16525,11 +16624,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -17791,11 +17893,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -22813,11 +22918,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -31586,11 +31694,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -33747,11 +33858,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -42562,13 +42676,16 @@ Map {
   },
   "CARD_SIZES" => Object {
     "LARGE": "LARGE",
+    "LARGETHICK": "LARGETHICK",
     "LARGETHIN": "LARGETHIN",
     "LARGEWIDE": "LARGEWIDE",
     "MEDIUM": "MEDIUM",
+    "MEDIUMTHICK": "MEDIUMTHICK",
     "MEDIUMTHIN": "MEDIUMTHIN",
     "MEDIUMWIDE": "MEDIUMWIDE",
     "SMALL": "SMALL",
     "SMALLFULL": "SMALLFULL",
+    "SMALLTHICK": "SMALLTHICK",
     "SMALLWIDE": "SMALLWIDE",
   },
   "CARD_ACTIONS" => Object {

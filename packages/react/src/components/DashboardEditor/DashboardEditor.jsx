@@ -576,22 +576,35 @@ const DashboardEditor = ({
   const handleOnCardChange = useCallback(
     (cardConfig) => {
       // need to handle resetting the src of the image for image cards based on the id
-      if (cardConfig.type === CARD_TYPES.IMAGE && cardConfig.content.imgState !== 'new') {
-        // eslint-disable-next-line no-param-reassign
-        cardConfig.content.src = availableImages.find(
-          (image) => image.id === cardConfig.content.id
-        )?.src;
-      } else if (
-        cardConfig.type === CARD_TYPES.IMAGE &&
-        cardConfig.content.imgState === 'new' &&
-        !imagesToUpload.some((image) => image.id === cardConfig.content.id)
-      ) {
-        /* istanbul ignore else */
-        if (cardConfig.content.id && cardConfig.content.src) {
-          setImagesToUpload((prevImagesToUpload) => [
-            ...prevImagesToUpload,
-            { id: cardConfig.content.id, src: cardConfig.content.src },
-          ]);
+      if (cardConfig.type === CARD_TYPES.IMAGE) {
+        if (
+          cardConfig.content?.imgState !== 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = availableImages?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
+        } else if (
+          cardConfig.type === CARD_TYPES.IMAGE &&
+          cardConfig.content.imgState === 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          /* istanbul ignore else */
+          if (cardConfig.content.id && cardConfig.content.src) {
+            setImagesToUpload((prevImagesToUpload) => [
+              ...prevImagesToUpload,
+              { id: cardConfig.content.id, src: cardConfig.content.src },
+            ]);
+          }
+        } else if (
+          cardConfig.content.imgState !== 'new' &&
+          imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = imagesToUpload?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
         }
       }
 

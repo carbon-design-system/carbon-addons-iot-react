@@ -967,7 +967,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(modalTitle).toBeInTheDocument();
   });
 
-  it('Renders the DataSeriesEditorTable as size xs by default', () => {
+  it('Renders the DataSeriesEditorTable as size md by default', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
@@ -978,10 +978,10 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const xsContainer = screen
+    const mdContainer = screen
       .getByText('Customize data series')
-      .closest(`.${prefix}--modal-container--xs`);
-    expect(xsContainer).toBeInTheDocument();
+      .closest(`.${prefix}--modal-container--md`);
+    expect(mdContainer).toBeInTheDocument();
 
     const largeContainer = screen
       .queryByText('Customize data series')
@@ -1325,49 +1325,14 @@ describe('DataSeriesFormItemModal', () => {
     expect(screen.queryByLabelText('DownSample Method')).not.toBeInTheDocument();
     expect(screen.getByText('Aggregation method')).toBeVisible();
   });
-  it('Version is V2 for timebased stacked bar should show Downsample method and hide grain and aggregation methods', () => {
-    const stackedTimeBasedBar = {
-      title: 'Untitled',
-      size: 'MEDIUM',
-      type: 'BAR',
-      content: {
-        type: 'STACKED',
-        layout: 'VERTICAL',
-        series: [
-          {
-            dataItemId: 'torque',
-            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
-            label: 'Torque',
-            downSampleMethod: 'mean',
-            color: '#6929c4',
-          },
-        ],
-        timeDataSourceId: 'timestamp',
-      },
-      dataSource: {},
-    };
-    const downSampleBarChartDataItem = {
-      label: 'Temperature Max',
-      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
-      color: 'red',
-      hasStreamingMetricEnabled: true,
-      downSampleMethods: [
-        { id: 'none', text: 'None' },
-        { id: 'last', text: 'Last' },
-        { id: 'mean', text: 'Mean' },
-        { id: 'max', text: 'Max' },
-        { id: 'min', text: 'Min' },
-      ],
-      downSampleMethod: 'max',
-    };
-
+  it('Version is V2 for timeseries card should show Downsample method and hide grain and aggregation methods', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
         isSummaryDashboard
-        cardConfig={stackedTimeBasedBar}
-        editDataItem={downSampleBarChartDataItem}
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItemDownSample}
       />
     );
     expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();

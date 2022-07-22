@@ -158,7 +158,7 @@ const HotspotEditorDataSourceTab = ({
   const handleEditButton = useCallback(
     async (dataItem) => {
       const dataItemWithMetaData = dataItems?.find(
-        ({ dataItemId }) => dataItemId === dataItem.dataItemId
+        ({ dataItemId }) => dataItemId === dataItem.dataSourceId
       );
       // Call back function for on click of edit button
       if (onEditDataItem) {
