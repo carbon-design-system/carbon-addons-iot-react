@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.150.1-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.11...v2.150.1-next.12) (2022-07-22)
+
+
+### Bug Fixes
+
+* **sidenav:** support recentLinks ([9da7878](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9da7878ffe0dc65a2d6a1fda54dc0d4c111f0323))
+* **sidenav:** update stories ([a121030](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a121030bac9065283698d98db65ca9c0ce6a2f75))
+* **sidenav:** update story text ([ac0d71d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac0d71dfcc5cc2c829c422073c9bdfe8ff41ebed))
+* **sidenav:** update story to show recent links state ([081584c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/081584c1c843df72bef75e3f4bd0d3013e662169))
+* **table:** add extra header cell for single select using radio button ([44680c3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/44680c3817585ad1fe512649d7acc4d57059e142))
+
+
+
+
+
 ## [2.150.1-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.10...v2.150.1-next.11) (2022-07-20)
 
 
