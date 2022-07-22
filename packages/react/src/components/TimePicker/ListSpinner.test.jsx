@@ -42,7 +42,7 @@ describe('ListSpinner', () => {
     expect(screen.getAllByTestId('my-list-list-item').length).toEqual(12);
   });
 
-  it.only('scrolls down when you hit previous button', async () => {
+  it('scrolls down when you hit previous button', async () => {
     render(
       <ListSpinner list={listItems} onClick={onClick} defaultSelectedId="10" testId="my-list" />
     );
@@ -53,23 +53,11 @@ describe('ListSpinner', () => {
     expect(
       selectedBtn.parentNode.classList.contains('iot--list-spinner__list-item--selected')
     ).toBeTruthy();
+    onClick.mockRestore();
     const tenBtn = screen.getByText(/10/);
     userEvent.click(tenBtn);
     await waitFor(() => expect(onClick.mock.calls[0][0]).toEqual('10'));
   });
-
-  // it.only('scrolling changes the selected index', async () => {
-  //   render(
-  //     <ListSpinner list={listItems} onClick={onClick} defaultSelectedId="10" testId="my-list" />
-  //   );
-  //   const list = screen.getByTestId('my-list-list');
-  //   await fireEvent.scroll(list, { y: 400 });
-  //   const selectedBtn = await screen.findByTestId('my-list-selected-item');
-  //   console.log(selectedBtn.innerHTML);
-  //   expect(
-  //     selectedBtn.parentElement.classList[1].contains('iot--list-spinner__list-item--selected')
-  //   ).toBeTruthy();
-  // });
 
   it('will return a new array with the first index moved to the end', () => {
     const list = Array.from(Array(12)).map((el, i) => i);
