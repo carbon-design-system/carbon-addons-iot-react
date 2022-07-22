@@ -194,6 +194,7 @@ const ListSpinner = React.forwardRef(
     const handleTouchMove = (e) => {
       e.persist();
       scrollEvent.current = true;
+      /* istanbul ignore else */
       if (!ticking.current) {
         /* eslint-disable func-names */
         setTimeout(() => {
