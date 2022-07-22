@@ -59,6 +59,40 @@ describe('ListSpinner', () => {
     await waitFor(() => expect(onClick.mock.calls[0][0]).toEqual('10'));
   });
 
+  it('scrolls back around when it hits the end', async () => {
+    const listItems2 = Array.from(Array(6)).map((el, i) => {
+      const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+      return { id: index, value: index };
+    });
+    render(
+      <ListSpinner list={listItems2} onClick={onClick} defaultSelectedId="01" testId="my-list" />
+    );
+    const selectedBtn = screen.getByText(/01/);
+    expect(
+      selectedBtn.parentNode.classList.contains('iot--list-spinner__list-item--selected')
+    ).toBeTruthy();
+    const prevBtn = screen.getByTestId('my-list-prev-btn');
+    const nextBtn = screen.getByTestId('my-list-next-btn');
+    userEvent.click(prevBtn);
+    userEvent.click(prevBtn);
+    userEvent.click(prevBtn);
+    userEvent.click(prevBtn);
+    userEvent.click(prevBtn);
+    userEvent.click(prevBtn);
+    expect(
+      selectedBtn.parentNode.classList.contains('iot--list-spinner__list-item--selected')
+    ).toBeTruthy();
+    userEvent.click(nextBtn);
+    userEvent.click(nextBtn);
+    userEvent.click(nextBtn);
+    userEvent.click(nextBtn);
+    userEvent.click(nextBtn);
+    userEvent.click(nextBtn);
+    expect(
+      selectedBtn.parentNode.classList.contains('iot--list-spinner__list-item--selected')
+    ).toBeTruthy();
+  });
+
   it('will return a new array with the first index moved to the end', () => {
     const list = Array.from(Array(12)).map((el, i) => i);
     const newValue = backwardArraySwap(list);
