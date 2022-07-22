@@ -66,7 +66,6 @@ export default {
 };
 
 export const Default = () => {
-  const selectProps = props.select();
   return (
     <>
       <TimePicker id="time-picker" {...props.timepicker()} />
