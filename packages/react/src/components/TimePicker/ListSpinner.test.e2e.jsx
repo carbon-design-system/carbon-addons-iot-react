@@ -36,6 +36,10 @@ describe('ListSpinner', () => {
       deltaX: 0,
       deltaY: 1000,
     });
+    cy.findByTestId('my-list-list').trigger('wheel', {
+      deltaX: 0,
+      deltaY: -1000,
+    });
     cy.get('@my-cb').should('have.been.called');
   });
 
@@ -55,6 +59,13 @@ describe('ListSpinner', () => {
       })
       .trigger('touchmove', {
         touches: [{ pageY: 1000, pageX: 0 }],
+      });
+    cy.findByTestId('my-list-list')
+      .trigger('touchstart', {
+        touches: [{ pageY: 1000, pageX: 0 }],
+      })
+      .trigger('touchmove', {
+        touches: [{ pageY: 0, pageX: 0 }],
       });
     cy.get('@my-cb2').should('have.been.called');
   });
