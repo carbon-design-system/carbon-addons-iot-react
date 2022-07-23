@@ -72,7 +72,7 @@
     "codelyzer": "5.0.0",
     "core-js": "2.6.11",
     "element-closest-polyfill": "1.0.0",
-    "file-type": "12.4.0",
+    "file-type": "16.5.4",
     "gulp": "4.0.0",
     "gulp-concat": "2.6.1",
     "gulp-tap": "1.0.1",
