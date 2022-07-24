@@ -155,8 +155,17 @@ const TimePicker = ({
     if (openState) {
       // eslint-disable-next-line no-unused-expressions
       dropDownRef.current?.focus();
+      const { left, bottom, top } = container.getBoundingClientRect();
+      const dropdownHeight = 280;
+      const dropdownBottom = bottom + dropdownHeight;
+      const dropdownPos = top - dropdownHeight;
+      if (dropdownBottom > window.innerHeight && dropdownPos > 0) {
+        setPosition([left, dropdownPos]);
+      } else {
+        setPosition([left, bottom]);
+      }
     }
-  }, [openState]);
+  }, [container, openState]);
 
   const handleFocus = (index) => {
     if (focusedInput === index && openState === true) {
