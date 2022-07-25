@@ -56,7 +56,9 @@ const propTypes = {
     secondaryButtonLabel: PropTypes.string,
   }),
   /** Toggle side panel busy state */
-  busy: PropTypes.bool,
+  isBusy: PropTypes.bool,
+  /** should the footer primary button be disabled */
+  isPrimaryButtonDisabled: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -78,7 +80,8 @@ const defaultProps = {
   onToggle: undefined,
   onPrimaryButtonClick: undefined,
   onSecondaryButtonClick: undefined,
-  busy: false,
+  isBusy: false,
+  isPrimaryButtonDisabled: false,
 };
 
 const baseClass = `${iotPrefix}--sidepanel`;
@@ -101,7 +104,8 @@ const SidePanel = ({
   children,
   // eslint-disable-next-line react/prop-types
   style,
-  busy,
+  isBusy,
+  isPrimaryButtonDisabled,
 }) => {
   const titleRef = useRef();
   const subtitleRef = useRef();
@@ -114,14 +118,14 @@ const SidePanel = ({
           icon: Close16,
           label: mergedI18n.closeIconLabel,
           tooltipPostion: 'left',
-          disabled: busy,
+          disabled: isBusy,
         }
       : {
           icon: direction === 'right' ? OpenLeft : OpenRight,
           label: mergedI18n.openIconLabel,
           tooltipPostion: direction === 'right' ? 'left' : 'right',
         };
-  }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction, busy]);
+  }, [isOpen, mergedI18n.closeIconLabel, mergedI18n.openIconLabel, direction, isBusy]);
   const actionIconBtns = useMemo(
     () =>
       actionItems &&
@@ -241,7 +245,7 @@ const SidePanel = ({
               onClick={onSecondaryButtonClick}
               tooltipPosition={toggleIcon.tooltipPostion}
               kind="secondary"
-              disabled={busy}
+              disabled={isBusy}
             >
               {mergedI18n.secondaryButtonLabel}
             </Button>
@@ -252,7 +256,8 @@ const SidePanel = ({
               className={`${baseClass}__footer__primary-button`}
               kind="primary"
               onClick={onPrimaryButtonClick}
-              loading={busy}
+              loading={isBusy}
+              disabled={isPrimaryButtonDisabled}
             >
               {mergedI18n.primaryButtonLabel}
             </Button>

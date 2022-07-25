@@ -165,7 +165,7 @@ describe('SidePanel Component Test', () => {
         onPrimaryButtonClick={mockOnPrimaryClick}
         actionItems={actionItemSlot}
         isOpen
-        busy
+        isBusy
       >
         This is content
       </SidePanel>

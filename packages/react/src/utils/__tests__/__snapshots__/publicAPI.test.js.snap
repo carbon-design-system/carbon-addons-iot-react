@@ -10921,7 +10921,6 @@ Map {
   "SidePanel" => Object {
     "defaultProps": Object {
       "actionItems": null,
-      "busy": false,
       "direction": "right",
       "i18n": Object {
         "closeIconLabel": "Close",
@@ -10929,9 +10928,11 @@ Map {
         "primaryButtonLabel": "Save",
         "secondaryButtonLabel": "Cancel",
       },
+      "isBusy": false,
       "isCondensed": false,
       "isFullWidth": false,
       "isOpen": false,
+      "isPrimaryButtonDisabled": false,
       "onPrimaryButtonClick": undefined,
       "onSecondaryButtonClick": undefined,
       "onToggle": undefined,
@@ -10972,9 +10973,6 @@ Map {
         ],
         "type": "oneOfType",
       },
-      "busy": Object {
-        "type": "bool",
-      },
       "direction": Object {
         "args": Array [
           Array [
@@ -11003,6 +11001,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isBusy": Object {
+        "type": "bool",
+      },
       "isCondensed": Object {
         "type": "bool",
       },
@@ -11010,6 +11011,9 @@ Map {
         "type": "bool",
       },
       "isOpen": Object {
+        "type": "bool",
+      },
+      "isPrimaryButtonDisabled": Object {
         "type": "bool",
       },
       "onPrimaryButtonClick": Object {
