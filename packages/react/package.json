@@ -176,7 +176,7 @@
     "@carbon/layout": "10.37.0",
     "@carbon/motion": "10.29.0",
     "@carbon/pictograms-react": "11.25.0",
-    "@carbon/telemetry": "^0.0.0-alpha.6",
+    "@carbon/telemetry": "^0.1.0",
     "@carbon/themes": "10.54.0",
     "@monaco-editor/react": "^3.6.2",
     "carbon-components": "10.56.0",

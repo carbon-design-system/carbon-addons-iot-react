@@ -100,7 +100,7 @@
   "dependencies": {
     "@ai-apps/styles": "^2.150.1-next.0",
     "@carbon/icons": "10.20.0",
-    "@carbon/telemetry": "0.0.0-alpha.6",
+    "@carbon/telemetry": "0.1.0",
     "date-fns": "^2.22.1",
     "flatpickr": "4.6.1",
     "gulp-sass": "^5.0.0"
