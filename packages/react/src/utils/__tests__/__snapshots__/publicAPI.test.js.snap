@@ -11042,9 +11042,11 @@ Map {
         "primaryButtonLabel": "Save",
         "secondaryButtonLabel": "Cancel",
       },
+      "isBusy": false,
       "isCondensed": false,
       "isFullWidth": false,
       "isOpen": false,
+      "isPrimaryButtonDisabled": false,
       "onPrimaryButtonClick": undefined,
       "onSecondaryButtonClick": undefined,
       "onToggle": undefined,
@@ -11056,24 +11058,34 @@ Map {
     "propTypes": Object {
       "actionItems": Object {
         "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "buttonCallback": Object {
-                  "type": "func",
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "buttonCallback": Object {
+                        "type": "func",
+                      },
+                      "buttonIcon": Object {
+                        "type": "elementType",
+                      },
+                      "buttonLabel": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
-                "buttonIcon": Object {
-                  "type": "elementType",
-                },
-                "buttonLabel": Object {
-                  "type": "string",
-                },
-              },
-            ],
-            "type": "shape",
-          },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
         ],
-        "type": "arrayOf",
+        "type": "oneOfType",
       },
       "direction": Object {
         "args": Array [
@@ -11103,6 +11115,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isBusy": Object {
+        "type": "bool",
+      },
       "isCondensed": Object {
         "type": "bool",
       },
@@ -11110,6 +11125,9 @@ Map {
         "type": "bool",
       },
       "isOpen": Object {
+        "type": "bool",
+      },
+      "isPrimaryButtonDisabled": Object {
         "type": "bool",
       },
       "onPrimaryButtonClick": Object {

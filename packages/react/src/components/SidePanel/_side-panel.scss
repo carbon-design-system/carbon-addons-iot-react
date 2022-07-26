@@ -165,7 +165,7 @@ $duration-moderate-01: 150ms;
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 500px;
+  min-height: 200px;
   padding: $spacing-05;
   position: relative;
   transform-origin: right;
@@ -238,10 +238,16 @@ $duration-moderate-01: 150ms;
     padding-top: $spacing-05;
     transform: translateX(-$spacing-05);
     width: calc(100% + 2rem);
-
+    margin-top: auto;
+    [dir='rtl'] & {
+      transform: translateX($spacing-05);
+    }
     &__secondary-button,
     &__primary-button {
       flex: 1;
+    }
+    &__secondary-button {
+      margin-inline-end: 0.125rem;
     }
   }
 }
