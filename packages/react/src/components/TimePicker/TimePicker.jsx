@@ -272,7 +272,7 @@ const TimePicker = ({
         [`${iotPrefix}--time-picker--disabled`]: disabled,
         [`${iotPrefix}--time-picker-range`]: type === 'range',
         [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
-        [`${iotPrefix}--time-picker--warn`]: inputState.state === 'warn',
+        [`${iotPrefix}--time-picker--warn`]: inputState.state === 'warn' || warn[0] || warn[1],
       })}
     >
       {type === 'single' ? (

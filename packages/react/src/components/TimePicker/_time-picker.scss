@@ -87,7 +87,7 @@
   }
 
   &--warn {
-    .#{$iot-prefix}--time-picker__icon--warn svg {
+    .#{$iot-prefix}--time-picker__icon--warn:not(.#{$iot-prefix}--time-picker__icon--invalid) svg {
       fill: $support-03;
       path:first-of-type {
         fill: $icon-01;
@@ -106,6 +106,12 @@
   .#{$prefix}--text-input__readonly-icon {
     display: none;
   }
+
+  .#{$prefix}--label {
+    max-width: 16.125rem;
+    overflow: hidden;
+    word-break: break-word;
+  }
 }
 
 // Remove the Carbon component error/ warning message
@@ -122,6 +128,7 @@
   .#{$iot-prefix}--time-picker__wrapper {
     grid-column: 2;
     grid-row: 1;
+    display: flex;
 
     &:first-child {
       grid-column: 1;
@@ -156,6 +163,11 @@
       grid-column: 1/3;
       grid-row: 3;
     }
+  }
+
+  .#{$prefix}--label,
+  .#{$iot-prefix}--time-picker__wrapper {
+    max-width: 8rem;
   }
 }
 
