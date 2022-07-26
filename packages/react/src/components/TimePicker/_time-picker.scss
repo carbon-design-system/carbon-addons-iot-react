@@ -16,24 +16,8 @@
     position: relative;
 
     &--selected input {
-      border: 0.125rem solid #393939;
+      border: 0.125rem solid $interactive-02;
     }
-
-    // &.#{$iot-prefix}--time-picker__wrapper-sm {
-    //   height: 32px;
-    // }
-
-    // &.#{$iot-prefix}--time-picker__wrapper-md {
-    //   height: 40px;
-    // }
-
-    // &.#{$iot-prefix}--time-picker__wrapper-lg {
-    //   height: 48px;
-    // }
-  }
-
-  .#{$prefix}--text-input-wrapper {
-    // max-height: 64px;
   }
 
   .#{$prefix}--text-input__field-outer-wrapper {
@@ -104,9 +88,9 @@
 
   &--warn {
     .#{$iot-prefix}--time-picker__icon--warn svg {
-      fill: #f1c21b;
+      fill: $support-03;
       path:first-of-type {
-        fill: #000;
+        fill: $icon-01;
         opacity: 1;
       }
     }
@@ -114,12 +98,12 @@
 
   &--invalid {
     .#{$iot-prefix}--time-picker__icon--invalid svg {
-      fill: #da1e28;
+      fill: $danger-01;
     }
   }
 
-  .#{prefix}--text-input__invalid-icon,
-  svg.#{prefix}--text-input__readonly-icon {
+  .#{$prefix}--text-input__invalid-icon,
+  .#{$prefix}--text-input__readonly-icon {
     display: none;
   }
 }
@@ -176,7 +160,7 @@
 }
 
 .#{$iot-prefix}--time-picker-spinner {
-  background-color: white;
+  background-color: $ui-01;
   box-shadow: 0 7px 10px 2px #ddd;
   display: flex;
   gap: 1px;
@@ -208,7 +192,7 @@
     z-index: 1;
 
     &:focus {
-      border-color: blue;
+      border-color: $focus;
     }
   }
 
@@ -242,7 +226,7 @@
   }
 
   .#{$iot-prefix}--time-picker-spinner &-button {
-    color: black;
+    color: $icon-01;
     justify-content: center;
     margin: 0 auto;
     min-height: unset;
@@ -250,9 +234,9 @@
     width: 100%;
 
     &--selected {
-      color: white;
+      color: $ui-01;
       &:hover {
-        color: black;
+        color: $icon-01;
       }
     }
 
