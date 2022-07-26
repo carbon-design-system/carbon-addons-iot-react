@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.0...v2.151.0-next.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* **table:** add extra padding only for align is end ([46ff5c2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46ff5c27481062fdd49315ad53ba601b3d35008e))
+* **table:** remove extra padding for sortable cell ([5561b5a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5561b5ac9a694aa045042593e39aa1ed25cecf8b))
+* **table:** update base image ([88b0618](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/88b0618c9951fa6f78383bd58c3fbf45fc5bf426))
+* **table:** update base image ([8eb64b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8eb64b8c52b885e9bf79cef0d97468c036eaf47c))
+* **table:** update base image ([2ee4f85](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2ee4f859403bc5b4e0a18288dccf421c0bda371b))
+* **table:** update base image ([d222905](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d2229056e85ae5bd1edafc671424aac069f8467f))
+* **table:** update extra padding to spacing-07 ([fe17692](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fe176928283654ab336e427c8a3af72ef21fdf20))
+* **table:** update tests ([62a4c51](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/62a4c510d3bdeb265824fff3e2503a1aa7442708))
+
+
+
+
+
 # [2.151.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.12...v2.151.0-next.0) (2022-07-26)
 
 
