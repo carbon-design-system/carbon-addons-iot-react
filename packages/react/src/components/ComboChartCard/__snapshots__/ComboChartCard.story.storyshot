@@ -681,7 +681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-1-date"
@@ -705,7 +705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-1-health"
@@ -729,7 +729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-1-age"
@@ -753,7 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-1-condition"
@@ -777,7 +777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-1-rul"
@@ -806,7 +806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-0-date"
@@ -830,7 +830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-0-health"
@@ -854,7 +854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-0-age"
@@ -878,7 +878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-0-condition"
@@ -902,7 +902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-0-rul"
@@ -931,7 +931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-24-date"
@@ -955,7 +955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-24-health"
@@ -979,7 +979,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-24-age"
@@ -1003,7 +1003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-24-condition"
@@ -1027,7 +1027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-24-rul"
@@ -1056,7 +1056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-25-date"
@@ -1080,7 +1080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-25-health"
@@ -1104,7 +1104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-25-age"
@@ -1128,7 +1128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-25-condition"
@@ -1152,7 +1152,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-25-rul"
@@ -1181,7 +1181,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-23-date"
@@ -1205,7 +1205,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-23-health"
@@ -1229,7 +1229,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-23-age"
@@ -1253,7 +1253,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-23-condition"
@@ -1277,7 +1277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-23-rul"
@@ -1306,7 +1306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-22-date"
@@ -1330,7 +1330,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-22-health"
@@ -1354,7 +1354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-22-age"
@@ -1378,7 +1378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-22-condition"
@@ -1402,7 +1402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-22-rul"
@@ -1431,7 +1431,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-21-date"
@@ -1455,7 +1455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-21-health"
@@ -1479,7 +1479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-21-age"
@@ -1503,7 +1503,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-21-condition"
@@ -1527,7 +1527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-21-rul"
@@ -1556,7 +1556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-20-date"
@@ -1580,7 +1580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-20-health"
@@ -1604,7 +1604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-20-age"
@@ -1628,7 +1628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-20-condition"
@@ -1652,7 +1652,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-20-rul"
@@ -1681,7 +1681,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-19-date"
@@ -1705,7 +1705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-19-health"
@@ -1729,7 +1729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-19-age"
@@ -1753,7 +1753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-19-condition"
@@ -1777,7 +1777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-19-rul"
@@ -1806,7 +1806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       >
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="date"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-17-date"
@@ -1830,7 +1830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="health"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-17-health"
@@ -1854,7 +1854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="age"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-17-age"
@@ -1878,7 +1878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="condition"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-17-condition"
@@ -1902,7 +1902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         </td>
                         <td
                           align="start"
-                          className="data-table-start iot--table__cell--sortable"
+                          className="data-table-start"
                           data-column="rul"
                           data-offset={0}
                           id="cell-BarChartCard-table-dataindex-17-rul"
