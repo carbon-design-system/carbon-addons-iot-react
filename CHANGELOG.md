@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.12...v2.151.0-next.0) (2022-07-26)
+
+
+### Features
+
+* **sidepanel:** extend component features ([996c63f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/996c63f7f7611c7956cc47824ea6e3311a9f3335)), closes [#3497](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3497)
+
+
+
+
+
 ## [2.150.1-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.1-next.11...v2.150.1-next.12) (2022-07-22)
 
 
