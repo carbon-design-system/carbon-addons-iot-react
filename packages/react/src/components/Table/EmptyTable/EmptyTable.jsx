@@ -51,7 +51,7 @@ const EmptyTable = ({
   testId,
 }) => (
   <TableBody
-    id={id}
+    id={`${id}-empty-table`}
     // TODO: remove deprecated 'testID' in v3
     data-testid={testID || testId}
   >
