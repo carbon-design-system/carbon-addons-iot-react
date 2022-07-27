@@ -9984,7 +9984,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-timestamp"
@@ -10009,7 +10009,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-Campus_EGL"
@@ -10034,7 +10034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-peopleCount_EnterpriseBuilding_mean"
@@ -10059,7 +10059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-headCount_EnterpriseBuilding_mean"
@@ -10084,7 +10084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-0-capacity_EnterpriseBuilding_mean"
@@ -10114,7 +10114,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-timestamp"
@@ -10139,7 +10139,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-Campus_EGL"
@@ -10164,7 +10164,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-peopleCount_EnterpriseBuilding_mean"
@@ -10189,7 +10189,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-headCount_EnterpriseBuilding_mean"
@@ -10214,7 +10214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-1-capacity_EnterpriseBuilding_mean"
@@ -10244,7 +10244,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-timestamp"
@@ -10269,7 +10269,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-Campus_EGL"
@@ -10294,7 +10294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-peopleCount_EnterpriseBuilding_mean"
@@ -10319,7 +10319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-headCount_EnterpriseBuilding_mean"
@@ -10344,7 +10344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-2-capacity_EnterpriseBuilding_mean"
@@ -10374,7 +10374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-timestamp"
@@ -10399,7 +10399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-Campus_EGL"
@@ -10424,7 +10424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-peopleCount_EnterpriseBuilding_mean"
@@ -10449,7 +10449,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-headCount_EnterpriseBuilding_mean"
@@ -10474,7 +10474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-3-capacity_EnterpriseBuilding_mean"
@@ -10504,7 +10504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-timestamp"
@@ -10529,7 +10529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-Campus_EGL"
@@ -10554,7 +10554,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-peopleCount_EnterpriseBuilding_mean"
@@ -10579,7 +10579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-headCount_EnterpriseBuilding_mean"
@@ -10604,7 +10604,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-4-capacity_EnterpriseBuilding_mean"
@@ -10634,7 +10634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-timestamp"
@@ -10659,7 +10659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-Campus_EGL"
@@ -10684,7 +10684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-peopleCount_EnterpriseBuilding_mean"
@@ -10709,7 +10709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-headCount_EnterpriseBuilding_mean"
@@ -10734,7 +10734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-5-capacity_EnterpriseBuilding_mean"
@@ -10764,7 +10764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           >
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="timestamp"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-timestamp"
@@ -10789,7 +10789,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="Campus_EGL"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-Campus_EGL"
@@ -10814,7 +10814,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="peopleCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-peopleCount_EnterpriseBuilding_mean"
@@ -10839,7 +10839,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="headCount_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-headCount_EnterpriseBuilding_mean"
@@ -10864,7 +10864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             </td>
                             <td
                               align="start"
-                              className="data-table-start iot--table__cell--sortable"
+                              className="data-table-start"
                               data-column="capacity_EnterpriseBuilding_mean"
                               data-offset={0}
                               id="cell-table-for-card-expandedcard-row-6-capacity_EnterpriseBuilding_mean"

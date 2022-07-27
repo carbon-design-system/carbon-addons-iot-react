@@ -176,7 +176,7 @@
     "@carbon/layout": "10.37.0",
     "@carbon/motion": "10.29.0",
     "@carbon/pictograms-react": "11.25.0",
-    "@carbon/telemetry": "^0.0.0-alpha.6",
+    "@carbon/telemetry": "^0.1.0",
     "@carbon/themes": "10.54.0",
     "@monaco-editor/react": "^3.6.2",
     "carbon-components": "10.56.0",
@@ -340,7 +340,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.150.1-next.7",
+  "version": "2.151.0-next.1",
   "resolutions": {
     "chokidar": "3.3.1",
     "react-grid-layout": "1.2.2"

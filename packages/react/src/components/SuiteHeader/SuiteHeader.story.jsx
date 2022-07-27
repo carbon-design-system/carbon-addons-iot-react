@@ -4,12 +4,13 @@
 import React, { createElement, useEffect, useState } from 'react';
 import { text, object, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { ScreenOff16, Switcher24, Home24 } from '@carbon/icons-react';
+import { ScreenOff16, Switcher24, Home24, RecentlyViewed24, Apps24 } from '@carbon/icons-react';
 import Group from '@carbon/icons-react/es/group/24';
 import NotificationOn from '@carbon/icons-react/es/notification/24';
 import Bee from '@carbon/icons-react/es/bee/24';
 import Car from '@carbon/icons-react/es/car/24';
 import Chat from '@carbon/icons-react/es/chat/24';
+import { partition } from 'lodash-es';
 
 import { settings } from '../../constants/Settings';
 import { Tag } from '../Tag';
@@ -19,6 +20,8 @@ import SuiteHeaderI18N from './i18n';
 import SuiteHeaderREADME from './SuiteHeader.mdx';
 
 const { prefix } = settings;
+
+const RouterComponent = ({ children, ...rest }) => <div {...rest}>{children}</div>;
 
 const customActionItems = [
   {
@@ -353,23 +356,59 @@ export const HeaderWithExtraContent = () => {
 HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => {
+  const demoMostRecentLinks = boolean('Demo most recent links', true);
   const [linksState, setLinksState] = useState([]);
+  const [recentLinksState, setRecentLinksState] = useState([]);
+
   const onSideNavMenuItemClick = (linkLabel) => {
+    let activeLink;
     setLinksState((currentLinks) =>
       currentLinks.map((group) => {
         if (group.childContent) {
           return {
             ...group,
-            childContent: group.childContent.map((child) => ({
-              ...child,
-              isActive: linkLabel === child.metaData.label,
-            })),
+            childContent: group.childContent.map((child) => {
+              if (linkLabel === child.metaData.label) {
+                activeLink = {
+                  ...child,
+                  isActive: false,
+                };
+              }
+              return {
+                ...child,
+                isActive: linkLabel === child.metaData.label,
+              };
+            }),
           };
         }
 
-        return { ...group, isActive: linkLabel === group.metaData.label };
+        return group;
       })
     );
+
+    setRecentLinksState((currentLinks) => {
+      return currentLinks.map((group) => {
+        const recentLinks =
+          activeLink &&
+          group.childContent.filter((child) => child.metaData.label === linkLabel).length === 0
+            ? [activeLink, ...group.childContent]
+            : group.childContent;
+
+        const [firstChild, restChildren] = partition(
+          recentLinks,
+          (child) => child.content === linkLabel
+        );
+
+        if (group.childContent) {
+          return {
+            ...group,
+            isActive: false,
+            childContent: [...firstChild, ...restChildren],
+          };
+        }
+        return group;
+      });
+    });
   };
 
   useEffect(() => {
@@ -444,6 +483,91 @@ export const HeaderWithSideNav = () => {
           },
         ],
       },
+      demoMostRecentLinks
+        ? {
+            icon: Apps24,
+            isEnabled: true,
+            metaData: {
+              onClick: action('menu click'),
+              tabIndex: 0,
+              label: 'Apps',
+              element: RouterComponent,
+            },
+            linkContent: 'Apps',
+            childContent: [
+              {
+                metaData: {
+                  label: 'App 1',
+                  title: 'App 1',
+                  onClick: () => onSideNavMenuItemClick('App 1'),
+                  element: 'button',
+                },
+                content: 'App 1',
+              },
+              {
+                metaData: {
+                  label: 'App 2',
+                  title: 'App 2',
+                  onClick: () => onSideNavMenuItemClick('App 2'),
+                  element: 'button',
+                },
+                content: 'App 2',
+              },
+              {
+                metaData: {
+                  label: 'App 3',
+                  title: 'App 3',
+                  onClick: () => onSideNavMenuItemClick('App 3'),
+                  element: 'button',
+                },
+                content: 'App 3',
+              },
+            ],
+          }
+        : {},
+    ]);
+
+    setRecentLinksState([
+      {
+        icon: RecentlyViewed24,
+        isEnabled: true,
+        metaData: {
+          onClick: action('menu click'),
+          tabIndex: 0,
+          label: 'My recent links',
+          element: RouterComponent,
+        },
+        linkContent: 'My recent links',
+        childContent: [
+          {
+            metaData: {
+              label: 'App 1',
+              title: 'App 1',
+              onClick: () => onSideNavMenuItemClick('App 1'),
+              element: 'button',
+            },
+            content: 'App 1',
+          },
+          {
+            metaData: {
+              label: 'App 2',
+              title: 'App 2',
+              onClick: () => onSideNavMenuItemClick('App 2'),
+              element: 'button',
+            },
+            content: 'App 2',
+          },
+          {
+            metaData: {
+              label: 'App 3',
+              title: 'App 3',
+              onClick: () => onSideNavMenuItemClick('App 3'),
+              element: 'button',
+            },
+            content: 'App 3',
+          },
+        ],
+      },
     ]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -482,6 +606,7 @@ export const HeaderWithSideNav = () => {
         ]}
         sideNavProps={{
           links: linksState,
+          recentLinks: demoMostRecentLinks ? recentLinksState : [],
         }}
       />
     </>

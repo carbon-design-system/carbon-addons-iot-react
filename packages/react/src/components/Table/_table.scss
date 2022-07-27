@@ -28,7 +28,7 @@ table.#{$prefix}--side-nav--data-table {
 }
 
 td.#{$iot-prefix}--table__cell--sortable {
-  padding-right: $spacing-09;
+  padding-right: $spacing-07;
 }
 
 .#{$iot-prefix}--data-table--resize td {
@@ -62,7 +62,7 @@ html[dir='rtl'] {
   }
 
   td.#{$iot-prefix}--table__cell--sortable {
-    padding-left: $spacing-08;
+    padding-left: $spacing-07;
   }
 }
 
