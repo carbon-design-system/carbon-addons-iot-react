@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.1...v2.151.0-next.2) (2022-07-27)
+
+
+### Bug Fixes
+
+* **emptytable:** added unique id ([ac363fa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac363fa35fafa70f47623ce4279d86f0e51a2fac))
+* **emptytable:** update tests ([4b03f88](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b03f881148008fe3b86b952c7b8c2749e5b1ae9))
+
+
+### Reverts
+
+* Revert "remove conflicting id from empty tables" ([0dec1cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0dec1cd92a806ac2c0a67b766790dd37b9cf2797))
+
+
+
+
+
 # [2.151.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.0...v2.151.0-next.1) (2022-07-26)
 
 
