@@ -1080,7 +1080,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <tbody
                             aria-live="polite"
                             data-testid="edit-table-table-empty"
-                            id="edit-table"
+                            id="edit-table-empty-table"
                           >
                             <tr
                               className="iot--empty-table--table-row"
@@ -1598,7 +1598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           <tbody
                             aria-live="polite"
                             data-testid="read-table-table-empty"
-                            id="read-table"
+                            id="read-table-empty-table"
                           >
                             <tr
                               className="iot--empty-table--table-row"

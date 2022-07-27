@@ -2052,7 +2052,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         <tbody
                           aria-live="polite"
                           data-testid="table-for-card-alert-table1-table-empty"
-                          id="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1-empty-table"
                         >
                           <tr
                             className="iot--empty-table--table-row"
@@ -4945,7 +4945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         <tbody
                           aria-live="polite"
                           data-testid="table-for-card-alert-table1-table-empty"
-                          id="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1-empty-table"
                         >
                           <tr
                             className="iot--empty-table--table-row"
@@ -7873,7 +7873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         <tbody
                           aria-live="polite"
                           data-testid="table-for-card-alert-table1-table-empty"
-                          id="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1-empty-table"
                         >
                           <tr
                             className="iot--empty-table--table-row"
@@ -13221,7 +13221,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         <tbody
                           aria-live="polite"
                           data-testid="table-for-card-alert-table1-table-empty"
-                          id="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1-empty-table"
                         >
                           <tr
                             className="iot--empty-table--table-row"
@@ -30854,7 +30854,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         <tbody
                           aria-live="polite"
                           data-testid="table-for-card-alert-table1-table-empty"
-                          id="table-for-card-alert-table1"
+                          id="table-for-card-alert-table1-empty-table"
                         >
                           <tr
                             className="iot--empty-table--table-row"
