@@ -144,18 +144,6 @@ const ListSpinner = React.forwardRef(
       return () => observerRef.current?.disconnect();
     }, []);
 
-    const listRef = useCallback(
-      (node) => {
-        if (node) {
-          const element = node;
-          containerRef.current = node;
-          element.style.right = `${node.clientWidth - node.offsetWidth}px`;
-        }
-      },
-      /* eslint-disable-next-line react-hooks/exhaustive-deps */
-      []
-    );
-
     const handleWheel = (e) => {
       e.persist();
       scrollEvent.current = true;
@@ -163,7 +151,7 @@ const ListSpinner = React.forwardRef(
         /* eslint-disable func-names */
         setTimeout(
           () =>
-            window.requestIdleCallback(() => {
+            window.requestAnimationFrame(() => {
               if (e.deltaY < 0) {
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
@@ -198,7 +186,7 @@ const ListSpinner = React.forwardRef(
       if (!ticking.current) {
         /* eslint-disable func-names */
         setTimeout(() => {
-          window.requestIdleCallback(() => {
+          window.requestAnimationFrame(() => {
             if (scrollPosition.current - e.touches[0].pageY < 0) {
               setSelectedId((prev) => {
                 const prevIndex = list.findIndex((i) => i.id === prev);
@@ -232,8 +220,35 @@ const ListSpinner = React.forwardRef(
       touch.current = true;
     };
 
+    const handleKeyPress = (e) => {
+      e.persist();
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelectedId((prev) => {
+          const prevIndex = list.findIndex((i) => i.id === prev);
+          const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+          setTimeout(() => onClick(val));
+          return val;
+        });
+        setTimeout(() => contentRef.current.childNodes[0].focus());
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelectedId((prev) => {
+          const prevIndex = list.findIndex((i) => i.id === prev);
+          const val =
+            prevIndex === list.indexOf(list[list.length - 1]) ? list[0].id : list[prevIndex + 1].id;
+          setTimeout(() => onClick(val));
+          return val;
+        });
+        setTimeout(() => contentRef.current.childNodes[0].focus());
+      }
+      return false;
+    };
+
     const handleClick = useCallback(
       (e) => {
+        e.persist();
+        e.preventDefault();
         scrollEvent.current = false;
         if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
           setSelectedId((prev) => {
@@ -256,6 +271,7 @@ const ListSpinner = React.forwardRef(
           setSelectedId(e.currentTarget.id);
           onClick(e.currentTarget.id);
         }
+        e.currentTarget.focus();
       },
       [list, onClick]
     );
@@ -281,9 +297,10 @@ const ListSpinner = React.forwardRef(
         <Button
           testId={el.id === selectedId ? `${testId}-selected-item` : el.id}
           id={el.id}
+          tabIndex={el.id === selectedId ? 0 : -1}
           kind="ghost"
           iconDescription={el.value}
-          onClick={handleClick}
+          onMouseDown={handleClick}
         >
           {el.value}
         </Button>
@@ -301,7 +318,7 @@ const ListSpinner = React.forwardRef(
           ref={ref}
           testId={`${testId}-prev-btn`}
           id={`${iotPrefix}--list-spinner__btn--up`}
-          onClick={handleClick}
+          onMouseDown={handleClick}
           iconDescription={previous}
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
           renderIcon={ChevronUp16}
@@ -311,13 +328,13 @@ const ListSpinner = React.forwardRef(
           className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
         >
           <ContainerElement
-            style={{ overflow: touch.current ? 'hidden' : 'auto' }}
             data-testid={`${testId}-list`}
-            ref={listRef}
+            ref={containerRef}
             className={`${iotPrefix}--list-spinner__list ${className}-spinner__list`}
             onWheel={handleWheel}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
+            onKeyDown={handleKeyPress}
           >
             {renderItems}
           </ContainerElement>
@@ -325,7 +342,7 @@ const ListSpinner = React.forwardRef(
         <Button
           testId={`${testId}-next-btn`}
           id={`${iotPrefix}--list-spinner__btn--down`}
-          onClick={handleClick}
+          onMouseDown={handleClick}
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
           iconDescription={next}
           renderIcon={ChevronDown16}

@@ -176,6 +176,12 @@ const TimePicker = ({
     setFocusedInput(index);
   };
 
+  const handleOnKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      setOpenState(false);
+    }
+  };
+
   const handleOnChange = (e) => {
     let val = e;
     if (typeof e === 'object') {
@@ -263,8 +269,12 @@ const TimePicker = ({
   ]);
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={openState ? 0 : -1}
       onBlur={handleOnBlur}
+      onKeyDown={handleOnKeyDown}
       data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,
