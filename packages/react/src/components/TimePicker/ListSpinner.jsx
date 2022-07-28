@@ -220,29 +220,64 @@ const ListSpinner = React.forwardRef(
       touch.current = true;
     };
 
+    // eslint-disable-next-line consistent-return
     const handleKeyPress = (e) => {
       e.persist();
-      if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelectedId((prev) => {
-          const prevIndex = list.findIndex((i) => i.id === prev);
-          const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
-          setTimeout(() => onClick(val));
-          return val;
-        });
-        setTimeout(() => contentRef.current.childNodes[0].focus());
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelectedId((prev) => {
-          const prevIndex = list.findIndex((i) => i.id === prev);
-          const val =
-            prevIndex === list.indexOf(list[list.length - 1]) ? list[0].id : list[prevIndex + 1].id;
-          setTimeout(() => onClick(val));
-          return val;
-        });
-        setTimeout(() => contentRef.current.childNodes[0].focus());
+      // istanbul ignore else
+      if (e.target.id.length === 2) {
+        // istanbul ignore else
+        if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+            setTimeout(() => onClick(val));
+            return val;
+          });
+          setTimeout(() => contentRef.current.childNodes[0].focus());
+          return false;
+        }
+        // istanbul ignore else
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val =
+              prevIndex === list.indexOf(list[list.length - 1])
+                ? list[0].id
+                : list[prevIndex + 1].id;
+            setTimeout(() => onClick(val));
+            return val;
+          });
+          setTimeout(() => contentRef.current.childNodes[0].focus());
+          return false;
+        }
       }
-      return false;
+
+      // istanbul ignore else
+      if (/\s/.test(e.key) || e.key === 'Enter') {
+        // istanbul ignore else
+        if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--up`) {
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val = prevIndex > 0 ? list[prevIndex - 1].id : list[list.length - 1].id;
+            setTimeout(() => onClick(val));
+            return val;
+          });
+        }
+        // istanbul ignore else
+        if (e.currentTarget.id === `${iotPrefix}--list-spinner__btn--down`) {
+          setSelectedId((prev) => {
+            const prevIndex = list.findIndex((i) => i.id === prev);
+            const val =
+              prevIndex === list.indexOf(list[list.length - 1])
+                ? list[0].id
+                : list[prevIndex + 1].id;
+            setTimeout(() => onClick(val));
+            return val;
+          });
+        }
+      }
     };
 
     const handleClick = useCallback(
@@ -323,6 +358,7 @@ const ListSpinner = React.forwardRef(
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}
           renderIcon={ChevronUp16}
           kind="ghost"
+          onKeyDown={handleKeyPress}
         />
         <div
           className={`${iotPrefix}--list-spinner__list-container ${className}-spinner__list-container`}
@@ -347,6 +383,7 @@ const ListSpinner = React.forwardRef(
           iconDescription={next}
           renderIcon={ChevronDown16}
           kind="ghost"
+          onKeyDown={handleKeyPress}
         />
       </div>
     );
