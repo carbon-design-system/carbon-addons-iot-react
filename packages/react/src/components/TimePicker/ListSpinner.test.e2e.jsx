@@ -9,6 +9,22 @@ describe('ListSpinner', () => {
     return { id: index, value: index };
   });
 
+  it('updates selected when arrow buttons are pressed', () => {
+    const onClick = cy.stub().as('my-cb');
+    const commonProps = {
+      testId: 'my-list',
+      list: listItems,
+      defaultSelectedId: '04',
+      onClick,
+    };
+    mount(<ListSpinner {...commonProps} />);
+
+    cy.findByTestId('my-list-list').type('{downArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '05');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '04');
+  });
+
   it('updates selected when scrolled down', () => {
     const onClick = cy.stub().as('my-cb');
     const commonProps = {
