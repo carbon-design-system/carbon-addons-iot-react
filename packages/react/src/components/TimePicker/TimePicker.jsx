@@ -157,12 +157,13 @@ const TimePicker = ({
       dropDownRef.current?.focus();
       const { left, bottom, top } = container.getBoundingClientRect();
       const dropdownHeight = 280;
+      const scrollOffset = window.pageYOffset;
       const dropdownBottom = bottom + dropdownHeight;
-      const dropdownPos = top - dropdownHeight;
+      const dropdownPos = top - dropdownHeight + scrollOffset;
       if (dropdownBottom > window.innerHeight && dropdownPos > 0) {
         setPosition([left, dropdownPos]);
       } else {
-        setPosition([left, bottom]);
+        setPosition([left, bottom + scrollOffset]);
       }
     }
   }, [container, openState]);
