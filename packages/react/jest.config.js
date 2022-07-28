@@ -97,10 +97,10 @@ module.exports = {
       functions: 63,
     },
     './src/components/TimePicker/ListSpinner.jsx': {
-      statements: 62,
-      branches: 52,
-      lines: 64,
-      functions: 53,
+      statements: 47,
+      branches: 42,
+      lines: 49,
+      functions: 38,
     },
   },
   globals: {
