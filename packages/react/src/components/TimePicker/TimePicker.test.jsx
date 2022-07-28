@@ -182,22 +182,24 @@ describe('TimePicker', () => {
 
   it('opens dropdown when clock icon clicked, closes when component loses focus', async () => {
     render(<TimePicker {...timePickerProps} type="range" secondaryValue="09:30" />);
+    const qbt = screen.queryByTestId;
     const timeBtn = screen.getByTestId('time-picker-test-time-btn-1');
     userEvent.click(timeBtn);
-    const dropdown = screen.queryByTestId('time-picker-test-spinner');
-    expect(dropdown).toBeTruthy();
+    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
     userEvent.click(timeBtn);
-    await waitFor(() => expect(dropdown).not.toBeInTheDocument());
+    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
     userEvent.click(timeBtn);
-    expect(dropdown).toBeTruthy();
+    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
     userEvent.click(document.body);
-    await waitFor(() => expect(dropdown).not.toBeInTheDocument());
+    await waitFor(() => expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument());
     expect(screen.queryByText(/The time entered is invalid/)).toBeTruthy();
     const input1 = screen.getByTestId('time-picker-test-input-1');
     const input2 = screen.getByTestId('time-picker-test-input-2');
     fireEvent.focus(input1);
     fireEvent.focus(input2);
-    expect(dropdown).not.toBeInTheDocument();
+    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
+    userEvent.click(timeBtn);
+    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
   });
 
   it('will not open dropdown if in read only state', async () => {

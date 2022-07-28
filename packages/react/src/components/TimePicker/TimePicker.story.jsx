@@ -36,33 +36,37 @@ const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
 export const Default = () => {
   const value = boolean('Default value', false);
   const secondaryValue = boolean('Default secondary value', false);
+
+  const renderBottom = boolean('render bottom', false);
   return (
-    <TimePicker
-      key={value + secondaryValue}
-      value={value ? '02:33 PM' : undefined}
-      secondaryValue={secondaryValue ? '04:33 PM' : undefined}
-      readOnly={boolean('Read only', false)}
-      hideLabel={boolean('Hide label', false)}
-      hideSecondaryLabel={boolean('Hide secondary label', false)}
-      className="this that"
-      id="time-picker"
-      i18n={object('i18n', {
-        labelText: 'Start',
-        secondaryLabelText: 'End',
-        helperText: 'This is some helper text',
-        warnText: 'You have been warned',
-      })}
-      type={select('Type', ['single', 'range'], 'single')}
-      invalid={[boolean('First input invalid', false), boolean('Second input invalid', false)]}
-      warn={[
-        boolean('Show first input warning state', false),
-        boolean('Show second input warning state', false),
-      ]}
-      size={select('Size', ['sm', 'md', 'lg'], 'md')}
-      light={boolean('Light variant (light in <TimePicker>)', false)}
-      disabled={boolean('Disabled (disabled in <TimePicker>)', false)}
-      onChange={action('onChange')}
-    />
+    <div style={{ marginTop: !renderBottom ? 0 : 'calc(100vh - 300px)' }}>
+      <TimePicker
+        key={value + secondaryValue}
+        value={value ? '02:33 PM' : undefined}
+        secondaryValue={secondaryValue ? '04:33 PM' : undefined}
+        readOnly={boolean('Read only', false)}
+        hideLabel={boolean('Hide label', false)}
+        hideSecondaryLabel={boolean('Hide secondary label', false)}
+        className="this that"
+        id="time-picker"
+        i18n={object('i18n', {
+          labelText: 'Start',
+          secondaryLabelText: 'End',
+          helperText: 'This is some helper text',
+          warnText: 'You have been warned',
+        })}
+        type={select('Type', ['single', 'range'], 'single')}
+        invalid={[boolean('First input invalid', false), boolean('Second input invalid', false)]}
+        warn={[
+          boolean('Show first input warning state', false),
+          boolean('Show second input warning state', false),
+        ]}
+        size={select('Size', ['sm', 'md', 'lg'], 'md')}
+        light={boolean('Light variant (light in <TimePicker>)', false)}
+        disabled={boolean('Disabled (disabled in <TimePicker>)', false)}
+        onChange={action('onChange')}
+      />
+    </div>
   );
   // return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
 };
