@@ -97,7 +97,7 @@ module.exports = {
       functions: 63,
     },
     './src/components/TimePicker/ListSpinner.jsx': {
-      statements: 47,
+      statements: 46,
       branches: 42,
       lines: 49,
       functions: 38,
