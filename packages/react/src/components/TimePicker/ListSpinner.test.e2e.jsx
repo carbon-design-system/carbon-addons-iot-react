@@ -35,6 +35,33 @@ describe('ListSpinner', () => {
     cy.get('@my-cb').should('have.been.calledWith', '06');
   });
 
+  it('updates selected when enter key is pressed', () => {
+    const onClick = cy.stub().as('my-cb');
+    const commonProps = {
+      testId: 'my-list',
+      list: listItems,
+      defaultSelectedId: '04',
+      onClick,
+    };
+    mount(<ListSpinner {...commonProps} />);
+
+    cy.findByTestId('my-list-next-btn').type('{enter}');
+    cy.get('@my-cb').should('have.been.calledWith', '05');
+    cy.findByTestId('my-list-next-btn').type('{enter}');
+    cy.findByTestId('my-list-next-btn').type('{enter}');
+    cy.get('@my-cb').should('have.been.calledWith', '01');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.get('@my-cb').should('have.been.calledWith', '05');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.findByTestId('my-list-prev-btn').type('{enter}');
+    cy.get('@my-cb').should('have.been.calledWith', '06');
+  });
+
   it('updates selected when scrolled down', () => {
     const onClick = cy.stub().as('my-cb');
     const commonProps = {
