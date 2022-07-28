@@ -21,8 +21,18 @@ describe('ListSpinner', () => {
 
     cy.findByTestId('my-list-list').type('{downArrow}');
     cy.get('@my-cb').should('have.been.calledWith', '05');
+    cy.findByTestId('my-list-list').type('{downArrow}');
+    cy.findByTestId('my-list-list').type('{downArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '01');
     cy.findByTestId('my-list-list').type('{upArrow}');
-    cy.get('@my-cb').should('have.been.calledWith', '04');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '05');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.findByTestId('my-list-list').type('{upArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '06');
   });
 
   it('updates selected when scrolled down', () => {
