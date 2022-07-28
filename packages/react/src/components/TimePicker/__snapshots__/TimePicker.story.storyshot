@@ -112,6 +112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -459,6 +460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
@@ -515,6 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -862,6 +865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -901,6 +905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -2448,6 +2453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -2487,6 +2493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
@@ -2584,6 +2591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onKeyDown={[Function]}
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
