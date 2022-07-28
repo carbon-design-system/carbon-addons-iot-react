@@ -5,81 +5,91 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
   className="storybook-container"
 >
   <div
-    className="iot--time-picker this that"
-    data-testid="time-picker"
-    onBlur={[Function]}
+    style={
+      Object {
+        "marginTop": 0,
+      }
+    }
   >
     <div
-      className="iot--time-picker__wrapper iot--time-picker__wrapper-md"
+      className="iot--time-picker this that"
+      data-testid="time-picker"
+      onBlur={[Function]}
+      onKeyDown={[Function]}
+      tabIndex={-1}
     >
       <div
-        className="bx--form-item bx--text-input-wrapper"
+        className="iot--time-picker__wrapper iot--time-picker__wrapper-md"
       >
-        <label
-          className="bx--label"
-          htmlFor="time-picker"
-        >
-          Start
-        </label>
         <div
-          className="bx--text-input__field-outer-wrapper"
+          className="bx--form-item bx--text-input-wrapper"
         >
-          <div
-            className="bx--text-input__field-wrapper"
-            data-invalid={null}
+          <label
+            className="bx--label"
+            htmlFor="time-picker"
           >
-            <input
-              className="bx--text-input bx--text-input--md"
-              data-testid="time-picker-input"
-              disabled={false}
-              id="time-picker"
-              onChange={[Function]}
-              onClick={[Function]}
-              onFocus={[Function]}
-              pattern={/\\[0-9: APM\\]/}
-              placeholder="hh:mm"
-              readOnly={false}
-              title="hh:mm"
-              type="text"
-              value=""
-            />
+            Start
+          </label>
+          <div
+            className="bx--text-input__field-outer-wrapper"
+          >
+            <div
+              className="bx--text-input__field-wrapper"
+              data-invalid={null}
+            >
+              <input
+                className="bx--text-input bx--text-input--md"
+                data-testid="time-picker-input"
+                disabled={false}
+                id="time-picker"
+                onChange={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                pattern={/\\[0-9: APM\\]/}
+                placeholder="hh:mm"
+                readOnly={false}
+                title="hh:mm"
+                type="text"
+                value=""
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <button
-        aria-label="Open time picker"
-        className="iot--time-picker__icon"
-        data-testid="time-picker-time-btn"
-        onClick={[Function]}
-        tabIndex="0"
-        title="Open time picker"
-        type="button"
-      >
-        <svg
-          aria-hidden={true}
-          fill="currentColor"
-          focusable={false}
-          height={16}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 32 32"
-          width={16}
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          aria-label="Open time picker"
+          className="iot--time-picker__icon"
+          data-testid="time-picker-time-btn"
+          onClick={[Function]}
+          tabIndex="0"
+          title="Open time picker"
+          type="button"
         >
-          <path
-            d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
-          />
-          <path
-            d="M20.59 22L15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"
-          />
-        </svg>
-      </button>
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable={false}
+            height={16}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 32 32"
+            width={16}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16,30A14,14,0,1,1,30,16,14,14,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12,12,0,0,0,16,4Z"
+            />
+            <path
+              d="M20.59 22L15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"
+            />
+          </svg>
+        </button>
+      </div>
+      <p
+        className="bx--form__helper-text"
+        data-testid="time-picker-helpertext"
+      >
+        This is some helper text
+      </p>
     </div>
-    <p
-      className="bx--form__helper-text"
-      data-testid="time-picker-helpertext"
-    >
-      This is some helper text
-    </p>
   </div>
 </div>
 `;
@@ -102,6 +112,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       tabIndex={0}
@@ -131,14 +142,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       <ul
         className="iot--list-spinner__list undefined-spinner__list"
         data-testid="list-spinner-list"
+        onKeyDown={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
         onWheel={[Function]}
-        style={
-          Object {
-            "overflow": "auto",
-          }
-        }
       >
         <li
           className="iot--list-spinner__list-item"
@@ -156,9 +163,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             01
@@ -180,9 +188,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             02
@@ -204,6 +213,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
@@ -228,9 +238,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             04
@@ -252,9 +263,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             05
@@ -276,9 +288,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             06
@@ -300,9 +313,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             07
@@ -324,9 +338,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             08
@@ -348,9 +363,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             09
@@ -372,9 +388,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             10
@@ -396,9 +413,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             11
@@ -420,9 +438,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onBlur={[Function]}
             onClick={[Function]}
             onFocus={[Function]}
+            onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             12
@@ -440,6 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onBlur={[Function]}
       onClick={[Function]}
       onFocus={[Function]}
+      onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       tabIndex={0}
@@ -495,6 +515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
@@ -524,14 +545,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         <ul
           className="iot--list-spinner__list undefined-spinner__list"
           data-testid="time-picker-spinner-list-spinner-1-list"
+          onKeyDown={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
           onWheel={[Function]}
-          style={
-            Object {
-              "overflow": "auto",
-            }
-          }
         >
           <li
             className="iot--list-spinner__list-item"
@@ -549,9 +566,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               01
@@ -573,9 +591,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               02
@@ -597,6 +616,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -621,9 +641,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               04
@@ -645,9 +666,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               05
@@ -669,9 +691,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               06
@@ -693,9 +716,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               07
@@ -717,9 +741,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               08
@@ -741,9 +766,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               09
@@ -765,9 +791,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               10
@@ -789,9 +816,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               11
@@ -813,9 +841,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               12
@@ -833,6 +862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
@@ -871,6 +901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
@@ -900,14 +931,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         <ul
           className="iot--list-spinner__list undefined-spinner__list"
           data-testid="time-picker-spinner-list-spinner-2-list"
+          onKeyDown={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
           onWheel={[Function]}
-          style={
-            Object {
-              "overflow": "auto",
-            }
-          }
         >
           <li
             className="iot--list-spinner__list-item"
@@ -925,9 +952,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               28
@@ -949,9 +977,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               29
@@ -973,6 +1002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -997,9 +1027,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               31
@@ -1021,9 +1052,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               32
@@ -1045,9 +1077,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               33
@@ -1069,9 +1102,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               34
@@ -1093,9 +1127,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               35
@@ -1117,9 +1152,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               36
@@ -1141,9 +1177,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               37
@@ -1165,9 +1202,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               38
@@ -1189,9 +1227,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               39
@@ -1213,9 +1252,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               40
@@ -1237,9 +1277,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               41
@@ -1261,9 +1302,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               42
@@ -1285,9 +1327,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               43
@@ -1309,9 +1352,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               44
@@ -1333,9 +1377,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               45
@@ -1357,9 +1402,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               46
@@ -1381,9 +1427,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               47
@@ -1405,9 +1452,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               48
@@ -1429,9 +1477,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               49
@@ -1453,9 +1502,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               50
@@ -1477,9 +1527,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               51
@@ -1501,9 +1552,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               52
@@ -1525,9 +1577,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               53
@@ -1549,9 +1602,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               54
@@ -1573,9 +1627,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               55
@@ -1597,9 +1652,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               56
@@ -1621,9 +1677,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               57
@@ -1645,9 +1702,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               58
@@ -1669,9 +1727,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               59
@@ -1693,9 +1752,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               00
@@ -1717,9 +1777,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               01
@@ -1741,9 +1802,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               02
@@ -1765,9 +1827,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               03
@@ -1789,9 +1852,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               04
@@ -1813,9 +1877,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               05
@@ -1837,9 +1902,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               06
@@ -1861,9 +1927,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               07
@@ -1885,9 +1952,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               08
@@ -1909,9 +1977,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               09
@@ -1933,9 +2002,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               10
@@ -1957,9 +2027,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               11
@@ -1981,9 +2052,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               12
@@ -2005,9 +2077,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               13
@@ -2029,9 +2102,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               14
@@ -2053,9 +2127,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               15
@@ -2077,9 +2152,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               16
@@ -2101,9 +2177,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               17
@@ -2125,9 +2202,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               18
@@ -2149,9 +2227,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               19
@@ -2173,9 +2252,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               20
@@ -2197,9 +2277,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               21
@@ -2221,9 +2302,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               22
@@ -2245,9 +2327,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               23
@@ -2269,9 +2352,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               24
@@ -2293,9 +2377,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               25
@@ -2317,9 +2402,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               26
@@ -2341,9 +2427,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               27
@@ -2361,6 +2448,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
@@ -2399,6 +2487,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
@@ -2428,14 +2517,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         <ul
           className="iot--list-spinner__list iot--time-picker-spinner-last-list-spinner-spinner__list"
           data-testid="time-picker-spinner-list-spinner-3-list"
+          onKeyDown={[Function]}
           onTouchMove={[Function]}
           onTouchStart={[Function]}
           onWheel={[Function]}
-          style={
-            Object {
-              "overflow": "auto",
-            }
-          }
         >
           <li
             className="iot--list-spinner__list-item iot--list-spinner__list-item--selected"
@@ -2453,6 +2538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
@@ -2477,9 +2563,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
+              onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               PM
@@ -2497,6 +2584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onBlur={[Function]}
         onClick={[Function]}
         onFocus={[Function]}
+        onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
         tabIndex={0}
