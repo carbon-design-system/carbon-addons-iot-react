@@ -151,7 +151,7 @@ const ListSpinner = React.forwardRef(
         /* eslint-disable func-names */
         setTimeout(
           () =>
-            window.requestAnimationFrame(() => {
+            setTimeout(() => {
               if (e.deltaY < 0) {
                 setSelectedId((prev) => {
                   const prevIndex = list.findIndex((i) => i.id === prev);
@@ -172,7 +172,7 @@ const ListSpinner = React.forwardRef(
               }
               ticking.current = false;
             }),
-          80
+          100
         );
 
         ticking.current = true;
@@ -186,7 +186,7 @@ const ListSpinner = React.forwardRef(
       if (!ticking.current) {
         /* eslint-disable func-names */
         setTimeout(() => {
-          window.requestAnimationFrame(() => {
+          setTimeout(() => {
             if (scrollPosition.current - e.touches[0].pageY < 0) {
               setSelectedId((prev) => {
                 const prevIndex = list.findIndex((i) => i.id === prev);
@@ -209,7 +209,7 @@ const ListSpinner = React.forwardRef(
             ticking.current = false;
             touch.current = false;
           });
-        }, 80);
+        }, 100);
         ticking.current = true;
       }
     };
