@@ -517,7 +517,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [callbackValue]);
 
-  const handleOnClick = useCallback((str, index) => {
+  const handleOnClick = (str, index) => {
     setSelected((prev) => {
       const arr = [...prev];
       arr[index] = str;
@@ -525,7 +525,7 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, 
       setCallbackValue(newValue);
       return arr;
     });
-  }, []);
+  };
 
   const listSpinner1 = useMemo(
     () => (
