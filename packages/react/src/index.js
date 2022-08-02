@@ -34,7 +34,7 @@ export { default as VirtualListContent } from './components/List/VirtualListCont
 export { default as BarChartCard } from './components/BarChartCard/BarChartCard';
 export { default as TileCatalogNew } from './components/TileCatalogNew/TileCatalogNew';
 export { default as TimePickerSpinner } from './components/TimePickerSpinner/TimePickerSpinner';
-export { default as TimePicker } from './components/TimePicker/TimePicker';
+export { default as TimePickerDropdown } from './components/TimePicker/TimePickerDropdown';
 export { default as DateTimePicker } from './components/DateTimePicker/DateTimePicker';
 export { default as DateTimePickerV2 } from './components/DateTimePicker/DateTimePickerV2';
 export { default as TableViewDropdown } from './components/Table/TableViewDropdown/TableViewDropdown';
@@ -261,6 +261,7 @@ export {
   TileBelowTheFoldContent,
   RadioTile,
   TileGroup,
+  TimePicker,
   TimePickerSelect,
   Toggle,
   ToggleSmall,

@@ -141,6 +141,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/Accordion/accordion';
 @import 'components/Breadcrumb/breadcrumb';
 @import 'components/Toolbar/toolbar';
+@import 'components/TimePicker/time-picker';
 @import 'components/Slider/slider';
 @import 'components/Tile/tile';
 @import 'components/Skeleton/skeleton';
@@ -212,7 +213,7 @@ $deprecations--message: 'Deprecated code was found, this code will be removed be
 @import 'components/List/list';
 @import 'components/ListBuilder/list-builder';
 @import 'components/TimePicker/list-spinner';
-@import 'components/TimePicker/time-picker';
+@import 'components/TimePicker/time-picker-dropdown';
 @import 'components/TearSheet/tear-sheet-wrapper';
 @import 'components/TearSheet/tear-sheet';
 @import 'components/List/ListItem/list-item';

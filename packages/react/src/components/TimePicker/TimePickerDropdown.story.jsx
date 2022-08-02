@@ -10,7 +10,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select, object } from '@storybook/addon-knobs';
 
-import TimePicker, { TimePickerSpinner } from './TimePicker';
+import TimePickerDropdown, { TimePickerSpinner } from './TimePickerDropdown';
 import ListSpinner from './ListSpinner';
 
 const props = {
@@ -22,9 +22,9 @@ const props = {
 };
 
 export default {
-  title: '1 - Watson IoT/TimePicker',
+  title: '1 - Watson IoT/TimePickerDropdown',
   parameters: {
-    component: TimePicker,
+    component: TimePickerDropdown,
   },
 };
 
@@ -40,7 +40,7 @@ export const Default = () => {
   const renderBottom = boolean('render bottom', false);
   return (
     <div style={{ marginTop: !renderBottom ? 0 : 'calc(100vh - 300px)' }}>
-      <TimePicker
+      <TimePickerDropdown
         key={value + secondaryValue}
         value={value ? '02:33 PM' : undefined}
         secondaryValue={secondaryValue ? '04:33 PM' : undefined}
@@ -62,20 +62,19 @@ export const Default = () => {
           boolean('Show second input warning state', false),
         ]}
         size={select('Size', ['sm', 'md', 'lg'], 'md')}
-        light={boolean('Light variant (light in <TimePicker>)', false)}
-        disabled={boolean('Disabled (disabled in <TimePicker>)', false)}
+        light={boolean('Light variant (light in <TimePickerDropdown>)', false)}
+        disabled={boolean('Disabled (disabled in <TimePickerDropdown>)', false)}
         onChange={action('onChange')}
       />
     </div>
   );
-  // return <TimePickerSpinner id="time-picker" className="my-table-yeah" {...props.timepicker()} />;
 };
 
 export const TimePickerSpinnerStory = () => {
   return <TimePickerSpinner {...props.timepicker()} />;
 };
 
-TimePickerSpinnerStory.storyName = 'TimePicker spinner';
+TimePickerSpinnerStory.storyName = 'TimePickerDropdown spinner';
 TimePickerSpinnerStory.parameters = {
   component: TimePickerSpinner,
 };

@@ -84,7 +84,7 @@ const validate = (newValue) => {
   return isValid12HoursRegex.test(newValue) || newValue === '';
 };
 
-const TimePicker = ({
+const TimePickerDropdown = ({
   id,
   className,
   type,
@@ -588,6 +588,6 @@ export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, 
 TimePickerSpinner.propTypes = spinnerPropTypes;
 TimePickerSpinner.defaultProps = defaultSpinnerProps;
 
-TimePicker.propTypes = propTypes;
-TimePicker.defaultProps = defaultProps;
-export default TimePicker;
+TimePickerDropdown.propTypes = propTypes;
+TimePickerDropdown.defaultProps = defaultProps;
+export default TimePickerDropdown;

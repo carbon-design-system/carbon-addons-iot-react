@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
-import TimePicker from './TimePicker';
+import TimePickerDropdown from './TimePickerDropdown';
 
-describe('TimePicker', () => {
+describe('TimePickerDropdown', () => {
   it('renders dropdown above when on bottom of page', () => {
     const onClick = cy.stub().as('my-cb');
     const timePickerProps = {
@@ -25,7 +25,7 @@ describe('TimePicker', () => {
     };
     mount(
       <div style={{ paddingTop: `calc(90vh - 100px)` }}>
-        <TimePicker {...timePickerProps} />
+        <TimePickerDropdown {...timePickerProps} />
       </div>
     );
     cy.findByTestId('time-picker-test-input').then((pos) => {
@@ -60,7 +60,7 @@ describe('TimePicker', () => {
       warn: [false, false],
       onChange: onClick,
     };
-    mount(<TimePicker {...timePickerProps} />);
+    mount(<TimePickerDropdown {...timePickerProps} />);
     cy.findByTestId('time-picker-test-input').then(() => {
       cy.findByTestId('time-picker-test-time-btn')
         .trigger('click')

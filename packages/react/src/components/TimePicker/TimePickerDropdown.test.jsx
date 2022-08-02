@@ -4,11 +4,11 @@ import React from 'react';
 
 import { settings } from '../../constants/Settings';
 
-import TimePicker from './TimePicker';
+import TimePickerDropdown from './TimePickerDropdown';
 
 const { iotPrefix, prefix } = settings;
 
-describe('TimePicker', () => {
+describe('TimePickerDropdown', () => {
   const { IntersectionObserver: originalIntersectionObserver } = window;
   beforeEach(() => {
     window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
@@ -46,7 +46,7 @@ describe('TimePicker', () => {
   };
 
   it('is selectable with testId', () => {
-    const { rerender } = render(<TimePicker {...timePickerProps} />);
+    const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     expect(screen.getByTestId('time-picker-test')).toBeTruthy();
     expect(screen.getByTestId('time-picker-test-input')).toBeTruthy();
     expect(screen.getByTestId('time-picker-test-time-btn')).toBeTruthy();
@@ -55,7 +55,12 @@ describe('TimePicker', () => {
     const dropdown = screen.queryByTestId('time-picker-test-spinner');
     expect(dropdown).toBeTruthy();
     rerender(
-      <TimePicker {...timePickerProps} type="range" value="03:30 AM" defaultValue="03:30 AM" />
+      <TimePickerDropdown
+        {...timePickerProps}
+        type="range"
+        value="03:30 AM"
+        defaultValue="03:30 AM"
+      />
     );
     expect(screen.getByTestId('time-picker-test-input-1')).toBeTruthy();
     expect(screen.getByTestId('time-picker-test-time-btn-1')).toBeTruthy();
@@ -66,7 +71,7 @@ describe('TimePicker', () => {
   it('renders the appropriate help text and icon when invalid/warn/readonly is passed', async () => {
     // test warn prop
     const { rerender } = render(
-      <TimePicker {...timePickerProps} type="range" warn={[true, false]} />
+      <TimePickerDropdown {...timePickerProps} type="range" warn={[true, false]} />
     );
     expect(
       screen
@@ -79,7 +84,7 @@ describe('TimePicker', () => {
         .classList.contains(`${iotPrefix}--time-picker__icon--warn`)
     ).toBe(false);
     expect(screen.getByText(/You have been warned/)).toBeTruthy();
-    rerender(<TimePicker {...timePickerProps} type="range" warn={[false, true]} />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" warn={[false, true]} />);
     expect(
       screen
         .getByTestId('time-picker-test-time-btn-1')
@@ -93,7 +98,7 @@ describe('TimePicker', () => {
     expect(screen.getByText(/You have been warned/)).toBeTruthy();
 
     // single warn
-    rerender(<TimePicker {...timePickerProps} warn={[true]} />);
+    rerender(<TimePickerDropdown {...timePickerProps} warn={[true]} />);
     expect(
       screen
         .getByTestId('time-picker-test-time-btn')
@@ -102,7 +107,7 @@ describe('TimePicker', () => {
     expect(screen.getByText(/You have been warned/)).toBeTruthy();
 
     // test invalid prop
-    rerender(<TimePicker {...timePickerProps} type="range" invalid={[false, true]} />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" invalid={[false, true]} />);
     expect(
       screen
         .getByTestId('time-picker-test-time-btn-1')
@@ -114,7 +119,7 @@ describe('TimePicker', () => {
         .classList.contains(`${iotPrefix}--time-picker__icon--invalid`)
     ).toBe(true);
     expect(screen.getByText(/The time entered is invalid/)).toBeTruthy();
-    rerender(<TimePicker {...timePickerProps} type="range" invalid={[true, false]} />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" invalid={[true, false]} />);
     expect(
       screen
         .getByTestId('time-picker-test-time-btn-1')
@@ -127,7 +132,7 @@ describe('TimePicker', () => {
     ).toBe(false);
     expect(screen.getByText(/The time entered is invalid/)).toBeTruthy();
     // single invalid
-    rerender(<TimePicker {...timePickerProps} invalid={[true]} />);
+    rerender(<TimePickerDropdown {...timePickerProps} invalid={[true]} />);
     expect(
       screen
         .getByTestId('time-picker-test-time-btn')
@@ -136,12 +141,12 @@ describe('TimePicker', () => {
     expect(screen.getByText(/The time entered is invalid/)).toBeTruthy();
 
     // test readonly prop
-    rerender(<TimePicker {...timePickerProps} type="range" readOnly />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" readOnly />);
     expect(screen.getAllByTitle(/Read only/).length).toEqual(2);
   });
 
   it('can take input and returns it in onChange callback', async () => {
-    const { rerender } = render(<TimePicker {...timePickerProps} />);
+    const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     timePickerProps.onChange.mockRestore();
     const input = screen.getByTestId('time-picker-test-input');
     await act(() => userEvent.type(input, '09:30{space}AM', { delay: 200 }));
@@ -149,7 +154,7 @@ describe('TimePicker', () => {
     expect(input.value).toEqual('09:30 AM');
     expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
     timePickerProps.onChange.mockRestore();
-    rerender(<TimePicker {...timePickerProps} type="range" />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" />);
     const input2 = screen.getByTestId('time-picker-test-input-2');
     await act(() => userEvent.type(input2, '09:30{space}AM', { delay: 200 }));
     expect(timePickerProps.onChange).toHaveBeenCalledTimes(8);
@@ -158,22 +163,22 @@ describe('TimePicker', () => {
   });
 
   it('hides and shows appropriate labels', async () => {
-    const { rerender } = render(<TimePicker {...timePickerProps} />);
+    const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     let firstLabel = screen.queryByText('Start');
     let secondLabel = screen.queryByText('End');
     expect(firstLabel).toBeInTheDocument();
     expect(secondLabel).not.toBeInTheDocument();
-    rerender(<TimePicker {...timePickerProps} type="range" />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" />);
     firstLabel = screen.queryByText('Start');
     secondLabel = screen.queryByText('End');
     expect(firstLabel).toBeInTheDocument();
     expect(secondLabel).toBeInTheDocument();
-    rerender(<TimePicker {...timePickerProps} type="range" hideSecondaryLabel />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" hideSecondaryLabel />);
     firstLabel = screen.queryByText('Start');
     secondLabel = screen.queryByText('End');
     expect(firstLabel).toBeInTheDocument();
     expect(secondLabel).not.toBeInTheDocument();
-    rerender(<TimePicker {...timePickerProps} type="range" hideLabel />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" hideLabel />);
     firstLabel = screen.queryByText('Start');
     secondLabel = screen.queryByText('End');
     expect(firstLabel.classList.contains(`${prefix}--visually-hidden`)).toBeTruthy();
@@ -181,7 +186,7 @@ describe('TimePicker', () => {
   });
 
   it('opens dropdown when clock icon clicked, closes when component loses focus', async () => {
-    render(<TimePicker {...timePickerProps} type="range" secondaryValue="09:30" />);
+    render(<TimePickerDropdown {...timePickerProps} type="range" secondaryValue="09:30" />);
     const qbt = screen.queryByTestId;
     const timeBtn = screen.getByTestId('time-picker-test-time-btn-1');
     userEvent.click(timeBtn);
@@ -203,13 +208,13 @@ describe('TimePicker', () => {
   });
 
   it('will not open dropdown if in read only state', async () => {
-    const { rerender } = render(<TimePicker {...timePickerProps} readOnly />);
+    const { rerender } = render(<TimePickerDropdown {...timePickerProps} readOnly />);
     const timeBtn = screen.getByTestId('time-picker-test-time-btn');
     userEvent.click(timeBtn);
     const dropdown = screen.queryByTestId('time-picker-test-spinner');
     expect(dropdown).toBeFalsy();
 
-    rerender(<TimePicker {...timePickerProps} type="range" readOnly />);
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" readOnly />);
     const timeBtn1 = screen.getByTestId('time-picker-test-time-btn-1');
     const timeBtn2 = screen.getByTestId('time-picker-test-time-btn-2');
     userEvent.click(timeBtn1);
@@ -218,7 +223,7 @@ describe('TimePicker', () => {
   });
 
   it('updates the value of input when list spinner button is pressed', async () => {
-    render(<TimePicker {...timePickerProps} value="09:30 AM" />);
+    render(<TimePickerDropdown {...timePickerProps} value="09:30 AM" />);
     const timeBtn = screen.getByTestId('time-picker-test-time-btn');
     const input = screen.getByTestId('time-picker-test-input');
     userEvent.click(timeBtn);
@@ -238,7 +243,7 @@ describe('TimePicker', () => {
   });
 
   it('updates the value of  2nd input when list spinner button is pressed', async () => {
-    render(<TimePicker {...timePickerProps} type="range" secondaryValue="09:30 AM" />);
+    render(<TimePickerDropdown {...timePickerProps} type="range" secondaryValue="09:30 AM" />);
     const timeBtn1 = screen.getByTestId('time-picker-test-time-btn-1');
     const timeBtn2 = screen.getByTestId('time-picker-test-time-btn-2');
     const input1 = screen.getByTestId('time-picker-test-input-1');
