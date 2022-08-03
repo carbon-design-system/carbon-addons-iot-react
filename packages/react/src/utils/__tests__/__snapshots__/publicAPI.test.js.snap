@@ -8688,6 +8688,140 @@ Map {
       },
     },
   },
+  "TimePickerDropdown" => Object {
+    "defaultProps": Object {
+      "className": undefined,
+      "disabled": false,
+      "hideLabel": false,
+      "hideSecondaryLabel": false,
+      "i18n": Object {
+        "invalidText": "The time entered is invalid",
+        "placeholderText": "hh:mm",
+        "readOnlyBtnText": "Read only",
+        "timeIconText": "Open time picker",
+        "warnText": undefined,
+      },
+      "invalid": Array [
+        false,
+        false,
+      ],
+      "light": false,
+      "onChange": [Function],
+      "readOnly": false,
+      "secondaryValue": undefined,
+      "size": "md",
+      "testId": "time-picker",
+      "type": "single",
+      "value": undefined,
+      "warn": Array [
+        false,
+        false,
+      ],
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "hideLabel": Object {
+        "type": "bool",
+      },
+      "hideSecondaryLabel": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "helperText": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
+              "type": "string",
+            },
+            "labelText": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "placeholderText": Object {
+              "type": "string",
+            },
+            "secondaryHelperText": Object {
+              "type": "string",
+            },
+            "secondaryLabelText": Object {
+              "type": "string",
+            },
+            "timeIconText": Object {
+              "type": "string",
+            },
+            "warnText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "invalid": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "readOnly": Object {
+        "type": "bool",
+      },
+      "secondaryValue": Object {
+        "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "lg",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "single",
+            "range",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+      "warn": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
   "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",

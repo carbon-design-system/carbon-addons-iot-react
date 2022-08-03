@@ -1,0 +1,285 @@
+@import '../../globals/vars';
+@import 'list-spinner';
+
+.#{$iot-prefix}--time-picker {
+  width: 16.125rem;
+  position: relative;
+
+  input {
+    font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier,
+      monospace;
+    padding-right: 2rem;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    &--selected input {
+      border: 0.125rem solid $interactive-02;
+    }
+  }
+
+  .#{$prefix}--text-input__field-outer-wrapper {
+    justify-content: flex-end;
+  }
+
+  .#{$iot-prefix}--time-picker__wrapper-sm & {
+    height: 1rem;
+  }
+
+  .#{$iot-prefix}--time-picker__wrapper-md & {
+    height: 1.25rem;
+  }
+
+  .#{$iot-prefix}--time-picker__wrapper-lg & .#{$prefix}--text-input__field-outer-wrapper {
+    height: 3rem;
+  }
+
+  &.#{$iot-prefix}--time-picker--invalid {
+    .#{$iot-prefix}--time-picker-range__helper-text,
+    .#{$iot-prefix}--time-picker__helper-text {
+      color: $text-error;
+    }
+  }
+
+  // icons
+  .#{$prefix}--text-input__invalid-icon {
+    display: none;
+  }
+
+  &__icon {
+    appearance: none;
+    background: none;
+    border: 0.125rem solid transparent;
+    box-sizing: content-box;
+    cursor: pointer;
+    height: 1rem;
+    padding: $spacing-02;
+    position: absolute;
+    right: 0.5rem;
+    transform: translateY(0.875rem);
+    width: 1rem;
+
+    &:focus {
+      border-color: $focus;
+    }
+
+    .#{$iot-prefix}--time-picker__wrapper-sm & {
+      bottom: 1rem;
+    }
+
+    .#{$iot-prefix}--time-picker__wrapper-md & {
+      bottom: 1.25rem;
+    }
+
+    .#{$iot-prefix}--time-picker__wrapper-lg & {
+      bottom: 1.5rem;
+    }
+
+    .#{$iot-prefix}--time-picker--disabled & svg {
+      fill: $disabled-02;
+    }
+    .#{$iot-prefix}--time-picker--disabled & {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &--warn {
+    .#{$iot-prefix}--time-picker__icon--warn:not(.#{$iot-prefix}--time-picker__icon--invalid) svg {
+      fill: $support-03;
+      path:first-of-type {
+        fill: $icon-01;
+        opacity: 1;
+      }
+    }
+  }
+
+  &--invalid {
+    .#{$iot-prefix}--time-picker__icon--invalid svg {
+      fill: $danger-01;
+    }
+  }
+
+  .#{$prefix}--text-input__invalid-icon,
+  .#{$prefix}--text-input__readonly-icon {
+    display: none;
+  }
+
+  .#{$prefix}--label {
+    max-width: 16.125rem;
+    overflow: hidden;
+    word-break: break-word;
+  }
+}
+
+// Remove the Carbon component error/ warning message
+.#{$prefix}--text-input__field-wrapper[data-invalid] ~ .#{$prefix}--form-requirement,
+.#{$prefix}--text-input__field-wrapper--warning ~ .#{$prefix}--form-requirement {
+  display: none;
+}
+
+.#{$iot-prefix}--time-picker-range {
+  display: grid;
+  gap: 0.15rem;
+  grid-template-columns: 1fr 1fr;
+
+  .#{$iot-prefix}--time-picker__wrapper {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+
+    &:first-child {
+      grid-column: 1;
+    }
+
+    .#{$prefix}--text-input__field-outer-wrapper {
+      justify-content: flex-end;
+    }
+  }
+
+  &__helper-text {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  fieldset {
+    grid-column: 1/3;
+    width: 100%;
+    display: grid;
+    gap: 0.15rem;
+    grid-template-columns: 1fr 1fr;
+
+    legend {
+      grid-column: 1/3;
+      grid-row: 1;
+
+      & + .#{$iot-prefix}--time-picker__wrapper {
+        grid-column: 1;
+      }
+    }
+
+    .#{$iot-prefix}--time-picker-range__helper-text {
+      grid-column: 1/3;
+      grid-row: 3;
+    }
+  }
+
+  .#{$prefix}--label,
+  .#{$iot-prefix}--time-picker__wrapper {
+    max-width: 8rem;
+  }
+}
+
+.#{$iot-prefix}--time-picker-spinner {
+  background-color: $ui-01;
+  box-shadow: 0 7px 10px 2px #ddd;
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  height: 280px;
+  opacity: 0;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  padding: 0 $spacing-03;
+  position: absolute;
+  width: 16.125rem;
+  /* stylelint-disable-next-line */
+  transition: opacity 0.25s;
+  animation: fadeIn 0.25s forwards;
+
+  &::before {
+    background: $background-brand;
+    content: '';
+    width: calc(100% - 1rem);
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  button {
+    appearance: none;
+    background: transparent;
+    border: 1px solid transparent;
+    z-index: 1;
+
+    &:focus {
+      border-color: $focus;
+    }
+  }
+
+  &-section {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80px;
+
+    &:nth-child(3) {
+      justify-content: center;
+      padding-top: 40px;
+    }
+  }
+
+  &-list {
+    position: relative;
+    width: 80px;
+    overflow: hidden;
+
+    li {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 40px;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .#{$iot-prefix}--time-picker-spinner &-button {
+    color: $icon-01;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: unset;
+    max-height: 40px;
+    width: 100%;
+
+    &--selected {
+      color: $ui-01;
+      &:hover {
+        color: $icon-01;
+      }
+    }
+
+    .#{$prefix}--btn__icon {
+      margin: 0 auto;
+    }
+  }
+}
+
+// Last spinner styles
+.#{$iot-prefix}--time-picker-spinner-last-list-spinner {
+  & > .#{$iot-prefix}--list-spinner__btn {
+    display: none;
+  }
+
+  .#{$iot-prefix}--list-spinner__list-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  li {
+    transform: translateY(7.5rem);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
