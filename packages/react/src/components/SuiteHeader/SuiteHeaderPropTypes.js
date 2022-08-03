@@ -26,6 +26,15 @@ export const SuiteHeaderApplicationPropTypes = {
   isExternal: PropTypes.bool,
 };
 
+export const SuiteHeaderWorkspacesPropTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  adminHref: PropTypes.string.isRequired,
+  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
+  isCurrent: PropTypes.bool,
+};
+
 export const SuiteHeaderSurveyDataPropTypes = {
   surveyLink: PropTypes.string.isRequired,
   privacyLink: PropTypes.string.isRequired,
