@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.2...v2.151.0-next.3) (2022-08-03)
+
+
+### Bug Fixes
+
+* **listspinner:** check for window before calling methods ([a742335](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a742335a7928e57adc866acf2568d803981b2fab))
+* **listspinner:** test ([f07ec6e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f07ec6e12e997da9ba1c18db0af12bde55d48521))
+* **timepicker:** add exceptions to jest ([41ce295](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/41ce29581243f3fa93a8cabbc7378038c522abb3))
+* **timepicker:** fix issues with keyboard nav ([ecef4e9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ecef4e97eb1079d9b077921f76df0e1fe0f670b0))
+* **timepicker:** fix long label issue ([87c3376](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/87c3376adccb2c8c0a301e4f909103297d79d5c6))
+* **timepicker:** refactor code that was causing warnings ([3cd711a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3cd711a575e3e9c4a173f0f90f7b33ec7789f4bb))
+* **timepicker:** remove unused variables ([19de1d1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/19de1d159d227901eb5e9f0880cf1cd5d3dc0550))
+
+
+### Features
+
+* **listspinner:** add keyboard a11y for up/down btns ([d4732e2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4732e278f3c6ef8c4a78fd0f892edb78942fb21))
+* **listspinner:** create listspinner first pass ([835a7b2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/835a7b27dcd9793b62f37468b9480b1757784abd))
+* **listspinner:** swap requestAnimation frame with setTimeout ([d5bce01](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d5bce01a50c84c6f1300d7966f5925829f0fb391))
+* **timepicker:** add awareness to dropdown positioning ([c567a4a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c567a4ad5796c0bfb18a0beafcb1ec9761eeec58))
+* **timepicker:** add validation and peformance improvments ([29df414](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29df414c8f237586a6a4aa1c6cc41e9332d084c9))
+* **timepicker:** build dropdown pieces ([25676bd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/25676bd8018c1f7da68932447b85613f5cadd85c))
+* **timepicker:** change directions for markup ([c964fb4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c964fb4479ea0cc7d1b86591933c100302a62112))
+* **timepicker:** clean up files ([a2e3610](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a2e3610eebeccb59e7eb96801ff3804ded7c3677))
+* **timepicker:** initial work for timepicker ([fa8dff7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa8dff70c026760d12708882eac30ced108cf1a2))
+
+
+
+
+
 # [2.151.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.1...v2.151.0-next.2) (2022-07-27)
 
 
