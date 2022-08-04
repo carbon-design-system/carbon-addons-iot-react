@@ -1339,29 +1339,6 @@ describe('DataSeriesFormItemModal', () => {
     expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
     expect(screen.getByText('Aggregation method')).toBeVisible();
   });
-  // it('Renders an downSample selector in summary dashboards and fires setEditDataItem', async () => {
-  //   render(
-  //     <DataSeriesFormItemModal
-  //       {...commonProps}
-  //       showEditor
-  //       isSummaryDashboard
-  //       cardConfig={timeSeriesCardConfig}
-  //       editDataItem={editTimeseriesDataItemAggregationMethodsV2}
-  //       editDataSeries={editDataSeriesTimeSeries}
-  //     />
-  //   );
-  //   const aggregationMethodDropdown = (await screen.findAllByText('None'))[1];
-  //   expect(aggregationMethodDropdown).toBeInTheDocument();
-
-  //   fireEvent.click(aggregationMethodDropdown);
-
-  //   const aggregationOption = screen.getByText('Min');
-  //   expect(aggregationOption).toBeInTheDocument();
-
-  //   fireEvent.click(aggregationOption);
-
-  //   expect(mockSetEditDataItem).toHaveBeenCalled();
-  // });
 
   it("should fallback to an empty string when V2 editDataItem.aggregationMethod doesn't exist", () => {
     const { container } = render(

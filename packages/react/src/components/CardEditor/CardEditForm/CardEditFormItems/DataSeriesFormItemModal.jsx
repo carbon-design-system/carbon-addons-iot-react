@@ -323,17 +323,6 @@ const DataSeriesFormItemModal = ({
                 </span>
               </div>
             )}
-            {/* {isTimeBasedCard &&
-                editDataItem.aggregationMethod &&
-                editDataItem.aggregationMethod === 'none' &&
-                editDataItem?.hasStreamingMetricEnabled && (
-                  <div>
-                  <Link
-                  id{}
-                  
-                  />
-                  </div>
-                )} */}
             {isTimeBasedCard &&
               editDataItem.aggregationMethod &&
               editDataItem.aggregationMethod !== 'none' &&
