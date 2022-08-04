@@ -406,7 +406,7 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
     (
-      { label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod },
+      { label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod},
       i
     ) => {
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
@@ -421,7 +421,6 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
         label,
         aggregationMethod,
         color,
-        downSampleMethod,
       };
     }
   );
@@ -436,7 +435,7 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const currentCardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod }) => {
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod}) => {
       const currentItem = currentCardAttributes?.find(
         (dataItem) => dataItem.dataSourceId === dataSourceId
       );
@@ -449,7 +448,6 @@ export const formatAttributes = (selectedItems, cardConfig) => {
         dataSourceId,
         label,
         aggregationMethod,
-        downSampleMethod,
       };
     }
   );

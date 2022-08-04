@@ -509,7 +509,7 @@ export const ForV2TimeSeries = () => (
           dataSource: {
             attributes: [
               {
-                downSampleMethod: 'max',
+                aggregationMethod: 'max',
                 attribute: 'v2pressure',
                 id: 'v2pressure',
               },

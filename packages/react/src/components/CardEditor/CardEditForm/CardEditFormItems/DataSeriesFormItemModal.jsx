@@ -167,9 +167,6 @@ const defaultProps = {
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
     decimalPlacesLabel: 'Decimal places',
-    downSampleMethod: 'Downsample method',
-    downSampleMethodHelperText:
-      'Select an aggregation to be used to reduce the sampling rate of a large time-series data.',
   },
   editDataSeries: [],
   showEditor: false,
