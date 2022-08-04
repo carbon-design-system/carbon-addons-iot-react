@@ -79,13 +79,6 @@ const propTypes = {
       })
     ),
     aggregationMethod: PropTypes.string,
-    downSampleMethods: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        text: PropTypes.string,
-      })
-    ),
-    downSampleMethod: PropTypes.string,
     grain: PropTypes.string,
     label: PropTypes.string,
     dataItemId: PropTypes.string,
@@ -273,10 +266,6 @@ const DataSeriesFormItemModal = ({
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.aggregationMethod;
 
-  const initialDownSample = validDataItems?.find(
-    ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
-  )?.downSampleMethod;
-
   const initialGrain = validDataItems?.find(
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.grain;
@@ -288,91 +277,100 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' &&
-          editDataItem?.type !== 'TIMESTAMP' &&
-          !editDataItem?.hasStreamingMetricEnabled && (
-            <div className={`${baseClassName}--input-group`}>
-              {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
+        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && (
+          <div className={`${baseClassName}--input-group`}>
+            {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <Dropdown
+                  id={`${id}_aggregation-method`}
+                  label=""
+                  direction="bottom"
+                  itemToString={(item) => item.text}
+                  items={editDataItem.aggregationMethods || []}
+                  selectedItem={
+                    editDataItem.aggregationMethods?.find(
+                      (method) => method.id === editDataItem.aggregationMethod
+                    ) || { id: 'none', text: mergedI18n.none }
+                  }
+                  titleText={mergedI18n.aggregationMethod}
+                  light
+                  onChange={({ selectedItem }) => {
+                    setEditDataItem(
+                      omit(
+                        {
+                          ...editDataItem,
+                          aggregationMethod: selectedItem.id,
+                          // if  we don't have a grain, then default to the first available
+                          ...(isTimeBasedCard && selectedItem.id !== 'none' && !editDataItem.grain
+                            ? { grain: availableGrains[0]?.id }
+                            : {}),
+                        },
+                        // if we're turning off the aggregation method, clear the input grain
+                        ...(selectedItem.id === 'none' ? ['grain'] : [])
+                      )
+                    );
+                  }}
+                />
+              </div>
+            ) : (
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
+                  {mergedI18n.aggregationMethod}
+                </FormLabel>
+                <span className={`${baseClassName}--input-group--item-half-content`}>
+                  {`${
+                    editDataItem.aggregationMethod
+                      ? editDataItem.aggregationMethod[0].toUpperCase()
+                      : ''
+                  }${editDataItem.aggregationMethod?.slice(1) || ''}`}
+                </span>
+              </div>
+            )}
+            {/* {isTimeBasedCard &&
+                editDataItem.aggregationMethod &&
+                editDataItem.aggregationMethod === 'none' &&
+                editDataItem?.hasStreamingMetricEnabled && (
+                  <div>
+                  <Link
+                  id{}
+                  
+                  />
+                  </div>
+                )} */}
+            {isTimeBasedCard &&
+              editDataItem.aggregationMethod &&
+              editDataItem.aggregationMethod !== 'none' &&
+              !editDataItem?.hasStreamingMetricEnabled && (
                 <div className={`${baseClassName}--input-group--item-half`}>
                   <Dropdown
-                    id={`${id}_aggregation-method`}
+                    id={`${id}_grain-selector`}
                     label=""
                     direction="bottom"
                     itemToString={(item) => item.text}
-                    items={editDataItem.aggregationMethods || []}
-                    selectedItem={
-                      editDataItem.aggregationMethods?.find(
-                        (method) => method.id === editDataItem.aggregationMethod
-                      ) || { id: 'none', text: mergedI18n.none }
+                    items={
+                      isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
+                        ? availableGrains.slice(
+                            availableGrains.findIndex((grain) => grain.id === initialGrain)
+                          )
+                        : availableGrains
                     }
-                    titleText={mergedI18n.aggregationMethod}
+                    selectedItem={
+                      availableGrains.find((grain) => grain.id === editDataItem.grain) ||
+                      availableGrains[0]
+                    }
+                    titleText={mergedI18n.grain}
                     light
                     onChange={({ selectedItem }) => {
-                      setEditDataItem(
-                        omit(
-                          {
-                            ...editDataItem,
-                            aggregationMethod: selectedItem.id,
-                            // if  we don't have a grain, then default to the first available
-                            ...(isTimeBasedCard && selectedItem.id !== 'none' && !editDataItem.grain
-                              ? { grain: availableGrains[0]?.id }
-                              : {}),
-                          },
-                          // if we're turning off the aggregation method, clear the input grain
-                          ...(selectedItem.id === 'none' ? ['grain'] : [])
-                        )
-                      );
+                      setEditDataItem({
+                        ...editDataItem,
+                        grain: selectedItem.id,
+                      });
                     }}
                   />
                 </div>
-              ) : (
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
-                    {mergedI18n.aggregationMethod}
-                  </FormLabel>
-                  <span className={`${baseClassName}--input-group--item-half-content`}>
-                    {`${
-                      editDataItem.aggregationMethod
-                        ? editDataItem.aggregationMethod[0].toUpperCase()
-                        : ''
-                    }${editDataItem.aggregationMethod?.slice(1) || ''}`}
-                  </span>
-                </div>
               )}
-
-              {isTimeBasedCard &&
-                editDataItem.aggregationMethod &&
-                editDataItem.aggregationMethod !== 'none' && (
-                  <div className={`${baseClassName}--input-group--item-half`}>
-                    <Dropdown
-                      id={`${id}_grain-selector`}
-                      label=""
-                      direction="bottom"
-                      itemToString={(item) => item.text}
-                      items={
-                        isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
-                          ? availableGrains.slice(
-                              availableGrains.findIndex((grain) => grain.id === initialGrain)
-                            )
-                          : availableGrains
-                      }
-                      selectedItem={
-                        availableGrains.find((grain) => grain.id === editDataItem.grain) ||
-                        availableGrains[0]
-                      }
-                      titleText={mergedI18n.grain}
-                      light
-                      onChange={({ selectedItem }) => {
-                        setEditDataItem({
-                          ...editDataItem,
-                          grain: selectedItem.id,
-                        });
-                      }}
-                    />
-                  </div>
-                )}
-            </div>
-          )}
+          </div>
+        )}
 
         <div className={`${baseClassName}--input-group`}>
           <div className={`${baseClassName}--input-group--item`}>
@@ -587,51 +585,6 @@ const DataSeriesFormItemModal = ({
             }}
           />
         )}
-        {editDataItem?.type !== 'DIMENSION' &&
-          editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.hasStreamingMetricEnabled &&
-          type === CARD_TYPES.TIMESERIES && ( // Downsample methods are only alowed on Timeseries card.
-            <div className={`${baseClassName}--input-group`}>
-              {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <Dropdown
-                    id={`${id}_downSample-method`}
-                    label=""
-                    direction="bottom"
-                    itemToString={(item) => item.text}
-                    items={editDataItem.downSampleMethods || []}
-                    selectedItem={
-                      editDataItem.downSampleMethods?.find(
-                        (method) => method.id === editDataItem.downSampleMethod
-                      ) || { id: 'none', text: mergedI18n.none }
-                    }
-                    titleText={mergedI18n.downSampleMethod}
-                    helperText={mergedI18n.downSampleMethodHelperText}
-                    light
-                    onChange={({ selectedItem }) => {
-                      setEditDataItem({
-                        ...editDataItem,
-                        downSampleMethod: selectedItem.id,
-                      });
-                    }}
-                  />
-                </div>
-              ) : (
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
-                    {mergedI18n.downSampleMethod}
-                  </FormLabel>
-                  <span className={`${baseClassName}--input-group--item-half-content`}>
-                    {`${
-                      editDataItem.downSampleMethod
-                        ? editDataItem.downSampleMethod[0].toUpperCase()
-                        : ''
-                    }${editDataItem.downSampleMethod?.slice(1) || ''}`}
-                  </span>
-                </div>
-              )}
-            </div>
-          )}
       </>
     ),
     [
@@ -650,7 +603,6 @@ const DataSeriesFormItemModal = ({
       selectedDimensionFilter,
       setEditDataItem,
       type,
-      initialDownSample,
     ]
   );
 

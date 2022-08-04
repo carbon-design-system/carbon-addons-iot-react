@@ -8,7 +8,6 @@ import { CARD_TYPES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutC
 import CardCodeEditor from '../CardCodeEditor/CardCodeEditor';
 import Button from '../Button';
 import { settings } from '../../constants/Settings';
-import deprecate from '../../internal/deprecate';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -127,12 +126,6 @@ const propTypes = {
   }),
   currentBreakpoint: PropTypes.string,
   isSummaryDashboard: PropTypes.bool,
-  // TODO: remove deprecated testID in v3
-  // eslint-disable-next-line react/require-default-props
-  testID: deprecate(
-    PropTypes.string,
-    `The 'testID' prop has been deprecated. Please use 'testId' instead.`
-  ),
   /** Id that can be used for testing */
   testId: PropTypes.string,
   /** optional link href's for each card type that will appear in a tooltip */
@@ -216,18 +209,16 @@ export const hideCardPropertiesForEditor = (card) => {
   let columns;
   if (card.content?.attributes) {
     attributes = card.content.attributes.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'grain', 'downSampleMethods'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
   if (card.content?.series) {
     series = card.content.series.map((attribute) =>
-      omit(attribute, ['aggregationMethods', 'grain', 'downSampleMethods'])
+      omit(attribute, ['aggregationMethods', 'grain'])
     );
   }
   if (card.content?.columns) {
-    columns = card.content.columns.map((column) =>
-      omit(column, ['aggregationMethods', 'grain', 'downSampleMethods'])
-    );
+    columns = card.content.columns.map((column) => omit(column, ['aggregationMethods', 'grain']));
   }
   // Need to exclued content for custom cards because the card's JSX element lives on it in this case
   if (!CARD_TYPES.hasOwnProperty(card.type) || card.type === CARD_TYPES.CUSTOM) {
@@ -307,8 +298,6 @@ const CardEditor = ({
   icons,
   i18n,
   currentBreakpoint,
-  // TODO: remove deprecated testID in v3
-  testID,
   testId,
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
@@ -342,11 +331,7 @@ const CardEditor = ({
     [cardConfig, onRenderCardEditForm]
   );
   return (
-    <div
-      className={baseClassName}
-      // TODO: remove deprecated testID in v3
-      data-testid={testID || testId}
-    >
+    <div className={baseClassName} data-testid={testId}>
       {showGallery ? (
         <div className={`${baseClassName}--header`}>
           <h2 className={`${baseClassName}--header--title`}>{mergedI18n.galleryHeader}</h2>
@@ -359,8 +344,7 @@ const CardEditor = ({
             onAddCard={onAddCard}
             supportedCardTypes={supportedCardTypes}
             i18n={mergedI18n}
-            // TODO: remove deprecated testID in v3
-            testId={`${testID || testId}-card-gallery-list`}
+            testId={`${testId}-card-gallery-list`}
           />
         ) : (
           <>
@@ -414,7 +398,7 @@ const CardEditor = ({
         <>
           <div className={`${baseClassName}--footer`}>
             <Button
-              testId={`${testID || testId}-open-editor-button`}
+              testId={`${testId}-open-editor-button`}
               kind="ghost"
               size="small"
               renderIcon={Code16}
@@ -435,8 +419,7 @@ const CardEditor = ({
               size="small"
               renderIcon={Apps16}
               onClick={onShowGallery}
-              // TODO: remove deprecated testID in v3 and pass testId to overrride defaults
-              // testId={`${testID || testId}-add-card-button`}
+              testId={`${testId}-add-card-button`}
             >
               {mergedI18n.addCardButton}
             </Button>
@@ -452,8 +435,7 @@ const CardEditor = ({
             renderIcon={Data116}
             onClick={onEditDataItems}
             iconDescription={mergedI18n.editDataItems}
-            // TODO: remove deprecated testID in v3
-            // testId={`${testID || testId}-edit-button`}
+            testId={`${testId}-edit-button`}
           >
             {mergedI18n.editDataItems}
           </Button>

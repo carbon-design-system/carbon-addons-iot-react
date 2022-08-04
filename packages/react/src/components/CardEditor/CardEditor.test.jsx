@@ -59,24 +59,8 @@ describe('CardEditor', () => {
 
   it('is selectable by testID and testId', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
-    const { rerender } = render(
-      <CardEditor
-        supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
-        onShowGallery={actions.onShowGallery}
-        onChange={actions.onChange}
-        onAddCard={actions.onAddCard}
-        onEditDataItems={actions.onEditDataItems}
-        testID="CARD_EDITOR"
-      />
-    );
 
-    expect(screen.getByTestId('CARD_EDITOR')).toBeTruthy();
-    expect(console.error).toHaveBeenCalledWith(
-      `Warning: The 'testID' prop has been deprecated. Please use 'testId' instead.`
-    );
-    console.error.mockReset();
-
-    rerender(
+    render(
       <CardEditor
         supportedCardTypes={['VALUE', 'LINECHART', 'TABLE', 'CUSTOM']}
         onShowGallery={actions.onShowGallery}
@@ -89,7 +73,6 @@ describe('CardEditor', () => {
     );
     expect(screen.getByTestId('card-editor')).toBeTruthy();
     expect(screen.getByTestId('card-editor-card-gallery-list')).toBeTruthy();
-    expect(screen.getByTestId('Button')).toBeTruthy();
   });
 
   it('fires onAddCard when user clicks on item in list', () => {

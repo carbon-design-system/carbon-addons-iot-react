@@ -159,8 +159,8 @@ const mockDataItems = [
     dataSourceId: 'v2pressure',
     label: 'V2 Pressure',
     hasStreamingMetricEnabled: true,
-    downSampleMethod: 'min',
-    downSampleMethods: [
+    aggregationMethod: 'min',
+    aggregationMethods: [
       { id: 'none', text: 'None' },
       { id: 'max', text: 'Maximum' },
       { id: 'min', text: 'Minimum' },

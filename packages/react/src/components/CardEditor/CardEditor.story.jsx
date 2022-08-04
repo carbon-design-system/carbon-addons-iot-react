@@ -501,8 +501,8 @@ export const ForV2TimeSeries = () => (
               dataSourceId: 'v2pressure',
               label: 'V2 Pressure',
               color: '#1192e8',
-              downSampleMethod: 'none',
-              downSampleMethods: [],
+              aggregationMethod: 'none',
+              aggregationMethods: [],
               hasStreamingMetricEnabled: true,
             },
           ],
@@ -537,8 +537,8 @@ export const ForV2TimeSeries = () => (
           dataItemId: 'v2pressure',
           dataSourceId: 'v2pressure',
           label: 'V2 Pressure',
-          downSampleMethod: 'min',
-          downSampleMethods: [
+          aggregationMethod: 'min',
+          aggregationMethods: [
             { id: 'none', text: 'None' },
             { id: 'max', text: 'Maximum' },
             { id: 'min', text: 'Minimum' },
