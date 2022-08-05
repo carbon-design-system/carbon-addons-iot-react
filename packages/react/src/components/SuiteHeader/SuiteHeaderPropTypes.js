@@ -26,7 +26,7 @@ export const SuiteHeaderApplicationPropTypes = {
   isExternal: PropTypes.bool,
 };
 
-export const SuiteHeaderWorkspacesPropTypes = {
+export const SuiteHeaderWorkspacePropTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,

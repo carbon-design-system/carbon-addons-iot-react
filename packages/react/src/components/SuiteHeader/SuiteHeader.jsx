@@ -19,6 +19,7 @@ import Walkme from '../Walkme/Walkme';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+import MultiWorkspaceSuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/MultiWorkspaceSuiteHeaderAppSwitcher';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import IdleLogoutConfirmationModal, {
   IdleLogoutConfirmationModalIdleTimeoutPropTypes,
@@ -27,6 +28,7 @@ import SuiteHeaderI18N from './i18n';
 import { shouldOpenInNewWindow } from './suiteHeaderUtils';
 import {
   SuiteHeaderApplicationPropTypes,
+  SuiteHeaderWorkspacePropTypes,
   SuiteHeaderI18NPropTypes,
   SuiteHeaderRoutePropTypes,
   SuiteHeaderSurveyDataPropTypes,
@@ -43,6 +45,8 @@ const defaultProps = {
   hasSideNav: false,
   routes: null,
   applications: null,
+  workspaces: null,
+  globalApplications: [],
   sideNavProps: null,
   surveyData: null,
   idleTimeoutData: null,
@@ -79,8 +83,12 @@ const propTypes = {
   hasSideNav: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
   routes: PropTypes.shape(SuiteHeaderRoutePropTypes),
-  /** Applications to render in AppSwitcher */
+  /** Applications to render in AppSwitcher (not used anymore, only kept here for backwards compatibility) */
   applications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
+  /** Workspaces and applications to render in AppSwitcher */
+  workspaces: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderWorkspacePropTypes)),
+  /** Applications that are not tied to workspaces */
+  globalApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
@@ -124,7 +132,9 @@ const SuiteHeader = ({
   hasSideNav,
   isAdminView,
   routes,
-  applications,
+  applications, // (not used anymore, only kept here for backwards compatibility)
+  workspaces,
+  globalApplications,
   sideNavProps,
   surveyData,
   idleTimeoutData,
@@ -160,6 +170,19 @@ const SuiteHeader = ({
 
   const navigatorRoute = routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
+  const isMultiWorkspace = workspaces?.length > 0;
+  // Include the current workspace label only if we are not in an admin page and multi workspace is supported
+  const currentWorkspaceComponent =
+    !isAdminView && isMultiWorkspace ? (
+      <span className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}>
+        {translate(mergedI18N.workspace, [
+          ['{workspace}', (workspaces.find((wo) => wo.isCurrent) ?? workspaces[0])?.name],
+        ])}
+      </span>
+    ) : null;
+  const extraContentComponent = extraContent ? (
+    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>{extraContent}</span>
+  ) : null;
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -286,71 +309,97 @@ const SuiteHeader = ({
               }}
               headerPanel={{
                 // eslint-disable-next-line react/prop-types
-                content: React.forwardRef(({ isExpanded }, ref) => (
-                  <SuiteHeaderAppSwitcher
-                    ref={ref}
-                    applications={applications}
-                    customApplications={customApplications}
-                    allApplicationsLink={routes?.navigator}
-                    noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
-                    onRouteChange={onRouteChange}
-                    i18n={{
-                      myApplications: mergedI18N.switcherMyApplications,
-                      allApplicationsLink: mergedI18N.switcherNavigatorLink,
-                      requestAccess: mergedI18N.switcherRequestAccess,
-                      learnMoreLink: mergedI18N.switcherLearnMoreLink,
-                    }}
-                    testId={`${testId}-app-switcher`}
-                    isExpanded={isExpanded}
-                  />
-                )),
+                content: React.forwardRef(({ isExpanded }, ref) =>
+                  workspaces ? (
+                    <MultiWorkspaceSuiteHeaderAppSwitcher
+                      ref={ref}
+                      isAdminView={isAdminView}
+                      workspaces={workspaces}
+                      globalApplications={globalApplications}
+                      customApplications={customApplications}
+                      adminLink={routes?.admin}
+                      allApplicationsLink={routes?.navigator}
+                      noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                      onRouteChange={onRouteChange}
+                      i18n={{
+                        workspace: mergedI18N.switcherWorkspace,
+                        workspaces: mergedI18N.switcherWorkspaces,
+                        workspaceAdmin: mergedI18N.switcherWorkspaceAdmin,
+                        backToAppSwitcher: mergedI18N.switcherBackToAppSwitcher,
+                        selectWorkspace: mergedI18N.switcherSelectWorkspace,
+                        availableWorkspaces: mergedI18N.switcherAvailableWorkspaces,
+                        suiteAdmin: mergedI18N.switcherSuiteAdmin,
+                        myApplications: mergedI18N.switcherMyApplications,
+                        allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                        requestAccess: mergedI18N.switcherRequestAccess,
+                        learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                      }}
+                      testId={`${testId}-app-switcher`}
+                      isExpanded={isExpanded}
+                    />
+                  ) : (
+                    <SuiteHeaderAppSwitcher
+                      ref={ref}
+                      applications={applications}
+                      customApplications={customApplications}
+                      allApplicationsLink={routes?.navigator}
+                      noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                      onRouteChange={onRouteChange}
+                      i18n={{
+                        myApplications: mergedI18N.switcherMyApplications,
+                        allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                        requestAccess: mergedI18N.switcherRequestAccess,
+                        learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                      }}
+                      testId={`${testId}-app-switcher`}
+                      isExpanded={isExpanded}
+                    />
+                  )
+                ),
               }}
               appName={suiteName}
               subtitle={
-                extraContent ? (
-                  <div>
-                    {appName}
-                    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>
-                      {extraContent}
-                    </span>
-                  </div>
-                ) : (
-                  appName
-                )
+                <div>
+                  {appName}
+                  {currentWorkspaceComponent}
+                  {extraContentComponent}
+                </div>
               }
               actionItems={[
                 ...customActionItems,
-                {
-                  id: 'admin',
-                  label: mergedI18N.administrationIcon,
-                  className: [
-                    'admin-icon',
-                    !routes?.admin ? 'admin-icon__hidden' : null,
-                    isAdminView ? 'admin-icon__selected' : null,
-                  ]
-                    .filter((i) => i)
-                    .join(' '),
-                  btnContent: (
-                    <span id="suite-header-action-item-admin">
-                      <Settings20
-                        fill="white"
-                        data-testid="admin-icon"
-                        description={mergedI18N.settingsIcon}
-                      />
-                    </span>
-                  ),
-                  onClick: async (e) => {
-                    e.preventDefault();
-                    let href = adminRoute;
-                    let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
-                    if (isAdminView) {
-                      href = navigatorRoute;
-                      routeType = SUITE_HEADER_ROUTE_TYPES.NAVIGATOR;
+                !isMultiWorkspace // Keeping legacy settings button to for backwards compatibility with pre-multiworkspace support
+                  ? {
+                      id: 'admin',
+                      label: mergedI18N.administrationIcon,
+                      className: [
+                        'admin-icon',
+                        !routes?.admin ? 'admin-icon__hidden' : null,
+                        isAdminView ? 'admin-icon__selected' : null,
+                      ]
+                        .filter((i) => i)
+                        .join(' '),
+                      btnContent: (
+                        <span id="suite-header-action-item-admin">
+                          <Settings20
+                            fill="white"
+                            data-testid="admin-icon"
+                            description={mergedI18N.settingsIcon}
+                          />
+                        </span>
+                      ),
+                      onClick: async (e) => {
+                        e.preventDefault();
+                        let href = adminRoute;
+                        let routeType = SUITE_HEADER_ROUTE_TYPES.ADMIN;
+                        if (isAdminView) {
+                          href = navigatorRoute;
+                          routeType = SUITE_HEADER_ROUTE_TYPES.NAVIGATOR;
+                        }
+                        handleOnClick(routeType, href)(e);
+                      },
+                      href: isAdminView ? navigatorRoute : adminRoute,
                     }
-                    handleOnClick(routeType, href)(e);
-                  },
-                  href: isAdminView ? navigatorRoute : adminRoute,
-                },
+                  : null,
                 {
                   id: 'help',
                   label: mergedI18N.help,

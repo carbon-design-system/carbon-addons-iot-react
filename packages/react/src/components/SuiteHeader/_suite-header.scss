@@ -196,6 +196,11 @@
   }
   &-subtitle {
     margin-left: $spacing-05;
+    &-workspace {
+      margin-left: $spacing-05;
+      padding-left: $spacing-05;
+      border-left: $text-secondary 1px solid;
+    }
   }
   a.admin-icon {
     .#{$prefix}--tooltip__trigger svg {

@@ -225,7 +225,205 @@ export default {
   },
 };
 
-export const Default = () => {
+export const AdminView = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView
+      routes={object('routes', {
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', [
+        {
+          id: 'workspace1',
+          name: 'Workspace 1',
+          href: 'https://www.ibm.com',
+          adminHref: 'https://www.ibm.com',
+          isCurrent: true,
+          applications: [
+            {
+              id: 'monitor',
+              name: 'Monitor',
+              href: 'https://www.ibm.com',
+            },
+            {
+              id: 'health',
+              name: 'Health',
+              href: 'https://www.ibm.com',
+              isExternal: false,
+            },
+          ],
+        },
+        {
+          id: 'workspace2',
+          name: 'Workspace 2',
+          href: 'https://www.ibm.com',
+          adminHref: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [
+            {
+              id: 'monitor',
+              name: 'Monitor',
+              href: 'https://www.ibm.com',
+            },
+          ],
+        },
+        {
+          id: 'workspace3',
+          name: 'Workspace 3',
+          href: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [
+            {
+              id: 'health',
+              name: 'Health',
+              href: 'https://www.ibm.com',
+            },
+            {
+              id: 'manage',
+              name: 'Manage',
+              href: 'https://www.ibm.com',
+            },
+          ],
+        },
+        {
+          id: 'workspace4',
+          name: 'Workspace 4',
+          href: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [],
+        },
+      ])}
+      globalApplications={object('globalApplications', [
+        {
+          id: 'appconnect',
+          name: 'AppConnect',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+    />
+  );
+};
+
+AdminView.storyName = 'Admin view';
+
+export const NonAdminView = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Standard User')}
+      username={text('username', 'standard')}
+      isAdminView={false}
+      routes={object('routes', {
+        profile: 'https://www.ibm.com',
+        navigator: 'https://www.ibm.com',
+        admin: 'https://www.ibm.com',
+        logout: 'https://www.ibm.com',
+        whatsNew: 'https://www.ibm.com',
+        gettingStarted: 'https://www.ibm.com',
+        documentation: 'https://www.ibm.com',
+        requestEnhancement: 'https://www.ibm.com',
+        support: 'https://www.ibm.com',
+        about: 'https://www.ibm.com',
+        workspaceId: 'workspace1',
+        domain: 'ibm.com',
+      })}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', [
+        {
+          id: 'workspace1',
+          name: 'Workspace 1',
+          href: 'https://www.ibm.com',
+          adminHref: 'https://www.ibm.com',
+          isCurrent: true,
+          applications: [
+            {
+              id: 'monitor',
+              name: 'Monitor',
+              href: 'https://www.ibm.com',
+            },
+            {
+              id: 'health',
+              name: 'Health',
+              href: 'https://www.ibm.com',
+              isExternal: false,
+            },
+          ],
+        },
+        {
+          id: 'workspace2',
+          name: 'Workspace 2',
+          href: 'https://www.ibm.com',
+          adminHref: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [
+            {
+              id: 'monitor',
+              name: 'Monitor',
+              href: 'https://www.ibm.com',
+            },
+          ],
+        },
+        {
+          id: 'workspace3',
+          name: 'Workspace 3',
+          href: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [
+            {
+              id: 'health',
+              name: 'Health',
+              href: 'https://www.ibm.com',
+            },
+            {
+              id: 'manage',
+              name: 'Manage',
+              href: 'https://www.ibm.com',
+            },
+          ],
+        },
+        {
+          id: 'workspace4',
+          name: 'Workspace 4',
+          href: 'https://www.ibm.com',
+          isCurrent: false,
+          applications: [],
+        },
+      ])}
+      globalApplications={object('globalApplications', [
+        {
+          id: 'appconnect',
+          name: 'AppConnect',
+          href: 'https://www.ibm.com',
+          isExternal: true,
+        },
+      ])}
+    />
+  );
+};
+
+NonAdminView.storyName = 'Non-admin view';
+
+export const DefaultLegacy = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
@@ -266,9 +464,9 @@ export const Default = () => {
   );
 };
 
-Default.storyName = 'default';
+DefaultLegacy.storyName = 'default (legacy)';
 
-export const NavigationalActionsBlocked = () => {
+export const NavigationalActionsBlockedLegacy = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
@@ -310,9 +508,9 @@ export const NavigationalActionsBlocked = () => {
   );
 };
 
-NavigationalActionsBlocked.storyName = 'Navigational actions blocked';
+NavigationalActionsBlockedLegacy.storyName = 'Navigational actions blocked (legacy)';
 
-export const HeaderWithExtraContent = () => {
+export const HeaderWithExtraContentLegacy = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
@@ -353,9 +551,9 @@ export const HeaderWithExtraContent = () => {
   );
 };
 
-HeaderWithExtraContent.storyName = 'Header with extra content';
+HeaderWithExtraContentLegacy.storyName = 'Header with extra content (legacy)';
 
-export const HeaderWithSideNav = () => {
+export const HeaderWithSideNavLegacy = () => {
   const demoMostRecentLinks = boolean('Demo most recent links', true);
   const [linksState, setLinksState] = useState([]);
   const [recentLinksState, setRecentLinksState] = useState([]);
@@ -613,10 +811,10 @@ export const HeaderWithSideNav = () => {
   );
 };
 
-HeaderWithSideNav.decorators = [createElement];
-HeaderWithSideNav.storyName = 'Header with side nav';
+HeaderWithSideNavLegacy.decorators = [createElement];
+HeaderWithSideNavLegacy.storyName = 'Header with side nav (legacy)';
 
-export const HeaderWithCustomSideNav = () => (
+export const HeaderWithCustomSideNavLegacy = () => (
   <SuiteHeader
     suiteName="Application Suite"
     appName="Application Name"
@@ -651,9 +849,9 @@ export const HeaderWithCustomSideNav = () => (
     onSideNavToggled={() => alert('onSideNavToggled')}
   />
 );
-HeaderWithCustomSideNav.storyName = 'Header with application-controlled side nav';
+HeaderWithCustomSideNavLegacy.storyName = 'Header with application-controlled side nav (legacy)';
 
-export const HeaderWithCustomActionItems = () => (
+export const HeaderWithCustomActionItemsLegacy = () => (
   <SuiteHeader
     suiteName="Application Suite"
     appName="Application Name"
@@ -698,9 +896,10 @@ export const HeaderWithCustomActionItems = () => (
   />
 );
 
-HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
+HeaderWithCustomActionItemsLegacy.storyName =
+  'Header with custom action items and hidden icons (legacy)';
 
-export const HeaderWithSurveyNotification = () => {
+export const HeaderWithSurveyNotificationLegacy = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
@@ -751,15 +950,15 @@ export const HeaderWithSurveyNotification = () => {
   );
 };
 
-HeaderWithSurveyNotification.storyName = 'Header with survey notification';
+HeaderWithSurveyNotificationLegacy.storyName = 'Header with survey notification (legacy)';
 
-export const LoadingState = () => {
+export const LoadingStateLegacy = () => {
   return <SuiteHeader suiteName="Application Suite" appName="Application Name" />;
 };
 
-LoadingState.storyName = 'Loading state';
+LoadingStateLegacy.storyName = 'Loading state (legacy)';
 
-export const HeaderWithIdleLogoutConfirmation = () => (
+export const HeaderWithIdleLogoutConfirmationLegacy = () => (
   <>
     <SuiteHeader
       suiteName="Application Suite"
@@ -806,4 +1005,4 @@ export const HeaderWithIdleLogoutConfirmation = () => (
   </>
 );
 
-HeaderWithIdleLogoutConfirmation.storyName = 'Header with idle user detection';
+HeaderWithIdleLogoutConfirmationLegacy.storyName = 'Header with idle user detection (legacy)';

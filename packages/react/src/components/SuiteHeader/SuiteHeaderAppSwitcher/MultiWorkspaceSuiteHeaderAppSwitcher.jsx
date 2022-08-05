@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { ArrowRight16, Bee32 } from '@carbon/icons-react';
+import { ChevronRight16, ChevronLeft16, Launch16, Bee32 } from '@carbon/icons-react';
 import { ButtonSkeleton } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
@@ -13,18 +13,22 @@ import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 import {
   SuiteHeaderApplicationPropTypes,
-  SuiteHeaderWorkspacesPropTypes,
+  SuiteHeaderWorkspacePropTypes,
 } from '../SuiteHeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 
 const defaultProps = {
   customApplications: [],
+  globalApplications: [],
   allApplicationsLink: null,
   onRouteChange: async () => true,
   i18n: {
     workspace: 'Workspace',
     workspaces: 'Workspaces',
     workspaceAdmin: 'Workspace administration',
+    backToAppSwitcher: 'Back to application switcher',
+    selectWorkspace: 'Select a workspace',
+    availableWorkspaces: 'Available workspaces',
     suiteAdmin: 'Suite administration',
     allApplicationsLink: 'All applications',
     requestAccess: 'Contact your administrator to request application access.',
@@ -34,26 +38,37 @@ const defaultProps = {
   isExpanded: false,
   workspaces: null,
   adminLink: null,
+  isAdminView: false,
 };
 
 const propTypes = {
   customApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
+  globalApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
   allApplicationsLink: PropTypes.string,
   noAccessLink: PropTypes.string.isRequired,
   onRouteChange: PropTypes.func,
   i18n: PropTypes.shape({
+    workspace: PropTypes.string,
+    workspaces: PropTypes.string,
+    workspaceAdmin: PropTypes.string,
+    backToAppSwitcher: PropTypes.string,
+    selectWorkspace: PropTypes.string,
+    availableWorkspaces: PropTypes.string,
+    suiteAdmin: PropTypes.string,
     allApplicationsLink: PropTypes.string,
     requestAccess: PropTypes.string,
     learnMoreLink: PropTypes.string,
   }),
   testId: PropTypes.string,
   isExpanded: PropTypes.bool,
-  workspaces: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderWorkspacesPropTypes)),
+  workspaces: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderWorkspacePropTypes)),
   adminLink: PropTypes.string,
+  isAdminView: PropTypes.bool,
 };
 
 const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   customApplications,
+  globalApplications,
   allApplicationsLink,
   noAccessLink,
   i18n,
@@ -62,6 +77,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   isExpanded,
   workspaces,
   adminLink,
+  isAdminView,
 }) => {
   const [isWorkspacesView, setWorkspacesView] = useState(false);
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
@@ -76,17 +92,19 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
 
   useEffect(() => {
     // Show the workspace selection list if no workspace has been selected yet
-    if (!isWorkspacesView && !selectedWorkspace && workspaces.length > 0) {
+    if (!isWorkspacesView && !selectedWorkspace && workspaces?.length > 1) {
       setWorkspacesView(true);
     }
   }, [isWorkspacesView, workspaces, selectedWorkspace]);
 
   useEffect(() => {
-    // Set the selected workspace based on the isCurrent property, if it is set
-    if (workspaces && !selectedWorkspace && !adminLink) {
+    // Set the selected workspace based on the isCurrent property
+    // If this is an admin view, don't preselect any workspace, unless there is only one available, in this case select that one
+    if (!selectedWorkspace && (!isAdminView || workspaces?.length === 1)) {
       setSelectedWorkspace(workspaces.find((wo) => wo.isCurrent));
+      setWorkspacesView(false);
     }
-  }, [workspaces, selectedWorkspace, adminLink]);
+  }, [workspaces, selectedWorkspace, isAdminView]);
 
   const handleApplicationSelected = useCallback(
     ({ href, id, isExternal }) => async (e) => {
@@ -106,10 +124,10 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     [onRouteChange]
   );
 
-  const handleWorkspaceSelected = useCallback(
+  const handleWorkspaceSelection = useCallback(
     (workspace) => async (e) => {
       const { id, href } = workspace;
-      if (adminLink) {
+      if (isAdminView) {
         setSelectedWorkspace(workspace);
         setWorkspacesView(false);
       } else {
@@ -127,7 +145,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         }
       }
     },
-    [adminLink, onRouteChange]
+    [isAdminView, onRouteChange]
   );
 
   const handleAdminRoute = useCallback(
@@ -184,7 +202,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     <ul data-testid={testId} className={baseClassName}>
       {!isWorkspacesView ? (
         <>
-          {selectedWorkspace && workspaces ? (
+          {selectedWorkspace && workspaces?.length > 1 ? (
             <>
               <li className={`${baseClassName}--app-link`}>
                 <p>{mergedI18n.workspace}</p>
@@ -196,7 +214,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                   onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
                     setWorkspacesView(true)
                   )}
-                  renderIcon={ArrowRight16}
+                  renderIcon={ChevronRight16}
                   tabIndex={tabIndex}
                 >
                   {selectedWorkspace.name}
@@ -248,6 +266,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                     onClick={eventHandler}
                     onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
                     tabIndex={tabIndex}
+                    renderIcon={isExternal ? Launch16 : null}
                     href={href}
                     rel="noopener noreferrer"
                   >
@@ -257,7 +276,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               );
             })
           )}
-          {selectedWorkspace
+          {selectedWorkspace && selectedWorkspace.adminHref
             ? (() => {
                 const eventHandler = handleWorkspaceAdminRoute(selectedWorkspace.adminHref);
                 return (
@@ -308,60 +327,99 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
+          {(adminLink && !isAdminView) || globalApplications.length > 0 ? (
+            <div className={`${baseClassName}--nav-link--separator`} />
+          ) : null}
           {adminLink ? (
-            <>
-              <div className={`${baseClassName}--nav-link--separator`} />
-              <li className={`${baseClassName}--app-link`}>
+            <li className={`${baseClassName}--app-link`}>
+              <Button
+                kind="ghost"
+                testId={`${testId}--admin`}
+                onClick={handleAdminRoute}
+                onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAdminRoute)}
+                tabIndex={tabIndex}
+                href={adminLink}
+                rel="noopener noreferrer"
+              >
+                {mergedI18n.suiteAdmin}
+              </Button>
+            </li>
+          ) : null}
+          {globalApplications.map(({ id, name, href, isExternal = false }) => {
+            const eventHandler = handleApplicationSelected({ href, id, isExternal });
+            return (
+              <li
+                id={`suite-header-application-${id}`}
+                key={`key-${id}`}
+                className={`${baseClassName}--app-link`}
+              >
                 <Button
                   kind="ghost"
-                  testId={`${testId}--admin`}
-                  onClick={handleAdminRoute}
-                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAdminRoute)}
+                  testId={`${testId}--${id}`}
+                  onClick={eventHandler}
+                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
                   tabIndex={tabIndex}
-                  href={adminLink}
+                  renderIcon={isExternal ? Launch16 : null}
+                  href={href}
                   rel="noopener noreferrer"
                 >
-                  {mergedI18n.suiteAdmin}
+                  {name}
                 </Button>
               </li>
-            </>
-          ) : null}
+            );
+          })}
         </>
       ) : (
         <>
-          {workspaces === null ? (
-            <li>
-              <div
-                className={`${baseClassName}--nav-link--loading`}
-                data-testid="suite-header-app-switcher--loading"
-              >
-                <SkeletonText paragraph lineCount={3} />
-              </div>
-            </li>
-          ) : (
-            workspaces.map((workspace) => {
-              const eventHandler = handleWorkspaceSelected(workspace);
-              return (
-                <li
-                  id={`suite-header-workspace-${workspace.id}`}
-                  key={`key-${workspace.id}`}
-                  className={`${baseClassName}--app-link`}
+          {selectedWorkspace ? (
+            <>
+              <li className={`${baseClassName}--app-link`}>
+                <Button
+                  kind="ghost"
+                  testId={`${testId}--selected-workspace`}
+                  onClick={() => setWorkspacesView(false)}
+                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
+                    setWorkspacesView(false)
+                  )}
+                  renderIcon={ChevronLeft16}
+                  tabIndex={tabIndex}
                 >
-                  <Button
-                    kind="ghost"
-                    testId={`${testId}--${workspace.id}`}
-                    onClick={eventHandler}
-                    onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                    tabIndex={tabIndex}
-                    href={!adminLink && workspace.href}
-                    rel="noopener noreferrer"
-                  >
-                    {workspace.name}
-                  </Button>
-                </li>
-              );
-            })
+                  {mergedI18n.backToAppSwitcher}
+                </Button>
+              </li>
+              <div className={`${baseClassName}--nav-link--separator`} />
+              <li className={`${baseClassName}--app-link`}>
+                <p>{mergedI18n.availableWorkspaces}</p>
+              </li>
+            </>
+          ) : (
+            <li className={`${baseClassName}--app-link`}>
+              <p>{mergedI18n.selectWorkspace}</p>
+            </li>
           )}
+          {workspaces.map((workspace) => {
+            const eventHandler = handleWorkspaceSelection(workspace);
+            return (
+              <li
+                id={`suite-header-workspace-${workspace.id}`}
+                key={`key-${workspace.id}`}
+                className={`${baseClassName}--app-link`}
+              >
+                <Button
+                  kind="icon-selection"
+                  testId={`${testId}--${workspace.id}`}
+                  onClick={eventHandler}
+                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+                  tabIndex={tabIndex}
+                  href={!isAdminView && workspace.href}
+                  selected={workspace.id === selectedWorkspace?.id}
+                  rel="noopener noreferrer"
+                >
+                  {workspace.name}
+                </Button>
+              </li>
+            );
+          })}
         </>
       )}
     </ul>
