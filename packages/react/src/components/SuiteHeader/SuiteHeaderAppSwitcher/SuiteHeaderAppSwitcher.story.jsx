@@ -4,7 +4,8 @@ import { text, object } from '@storybook/addon-knobs';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
 
 export default {
-  title: '1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher (Legacy)',
+  title:
+    '1 - Watson IoT/UI Shell/SuiteHeader/Legacy (single workspace only)/SuiteHeaderAppSwitcher',
 
   parameters: {
     component: SuiteHeaderAppSwitcher,
@@ -49,10 +50,7 @@ NoApplications.storyName = 'No applications';
 
 export const LoadingState = () => (
   <div style={{ width: '15rem', background: 'white' }}>
-    <SuiteHeaderAppSwitcher
-      allApplicationsLink="https://www.ibm.com"
-      noAccessLink="https://www.ibm.com"
-    />
+    <SuiteHeaderAppSwitcher />
   </div>
 );
 

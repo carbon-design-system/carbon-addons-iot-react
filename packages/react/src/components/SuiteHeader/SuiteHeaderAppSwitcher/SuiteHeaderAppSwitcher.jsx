@@ -101,24 +101,26 @@ const SuiteHeaderAppSwitcher = ({
   return (
     <ul data-testid={testId} className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
-        <p>{mergedI18n.myApplications}</p>
         {allApplicationsLink === null ? (
           <div className={`${baseClassName}--nav-link--button--loading`}>
             <ButtonSkeleton />
           </div>
         ) : (
-          <Button
-            kind="tertiary"
-            testId={`${testId}--all-applications`}
-            onClick={handleAllApplicationRoute}
-            onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
-            renderIcon={ArrowRight16}
-            tabIndex={tabIndex}
-            href={allApplicationsLink}
-            rel="noopener noreferrer"
-          >
-            {mergedI18n.allApplicationsLink}
-          </Button>
+          <>
+            <p>{mergedI18n.myApplications}</p>
+            <Button
+              kind="tertiary"
+              testId={`${testId}--all-applications`}
+              onClick={handleAllApplicationRoute}
+              onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], handleAllApplicationRoute)}
+              renderIcon={ArrowRight16}
+              tabIndex={tabIndex}
+              href={allApplicationsLink}
+              rel="noopener noreferrer"
+            >
+              {mergedI18n.allApplicationsLink}
+            </Button>
+          </>
         )}
       </li>
       <div className={`${baseClassName}--nav-link--separator`} />

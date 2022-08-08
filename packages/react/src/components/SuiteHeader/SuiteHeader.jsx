@@ -171,9 +171,9 @@ const SuiteHeader = ({
   const navigatorRoute = routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
   const isMultiWorkspace = workspaces?.length > 0;
-  // Include the current workspace label only if we are not in an admin page and multi workspace is supported
+  // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
   const currentWorkspaceComponent =
-    !isAdminView && isMultiWorkspace ? (
+    !isAdminView && isMultiWorkspace && workspaces?.length > 1 ? (
       <span className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}>
         {translate(mergedI18N.workspace, [
           ['{workspace}', (workspaces.find((wo) => wo.isCurrent) ?? workspaces[0])?.name],
@@ -318,7 +318,6 @@ const SuiteHeader = ({
                       globalApplications={globalApplications}
                       customApplications={customApplications}
                       adminLink={routes?.admin}
-                      allApplicationsLink={routes?.navigator}
                       noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
                       onRouteChange={onRouteChange}
                       i18n={{
@@ -367,7 +366,7 @@ const SuiteHeader = ({
               }
               actionItems={[
                 ...customActionItems,
-                !isMultiWorkspace // Keeping legacy settings button to for backwards compatibility with pre-multiworkspace support
+                !isMultiWorkspace // Keeping legacy settings button for backwards compatibility with pre-multiworkspace support
                   ? {
                       id: 'admin',
                       label: mergedI18N.administrationIcon,
