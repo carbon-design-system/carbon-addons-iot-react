@@ -11304,6 +11304,7 @@ Map {
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
       "SURVEY": "SURVEY",
+      "WORKSPACE": "WORKSPACE",
     },
     "defaultProps": Object {
       "appName": null,
@@ -11314,6 +11315,7 @@ Map {
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
       "extraContent": null,
+      "globalApplications": Array [],
       "hasSideNav": false,
       "i18n": Object {
         "about": "About",
@@ -11339,12 +11341,20 @@ Map {
         "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": "Enjoying {solutionName}?",
+        "switcherAvailableWorkspaces": "Available workspaces",
+        "switcherBackToAppSwitcher": "Back to application switcher",
         "switcherLearnMoreLink": "Learn more",
         "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
+        "switcherSelectWorkspace": "Select a workspace",
+        "switcherSuiteAdmin": "Suite administration",
+        "switcherWorkspace": "Workspace",
+        "switcherWorkspaceAdmin": "Workspace administration",
+        "switcherWorkspaces": "Workspaces",
         "userIcon": "User",
         "whatsNew": "What's new",
+        "workspace": "Workspace: {workspace}",
       },
       "idleTimeoutData": null,
       "isActionItemVisible": [Function],
@@ -11360,6 +11370,7 @@ Map {
       "username": null,
       "walkmeLang": "en",
       "walkmePath": null,
+      "workspaces": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -11531,6 +11542,33 @@ Map {
       },
       "extraContent": Object {
         "type": "element",
+      },
+      "globalApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hasSideNav": Object {
         "type": "bool",
@@ -12031,6 +12069,60 @@ Map {
       "walkmePath": Object {
         "type": "string",
       },
+      "workspaces": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "adminHref": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "applications": Object {
+                  "args": Array [
+                    Object {
+                      "href": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "isExternal": Object {
+                        "type": "bool",
+                      },
+                      "name": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "arrayOf",
+                },
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isCurrent": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
     },
   },
   "SuiteHeaderProfile" => Object {
@@ -12185,6 +12277,196 @@ Map {
       },
       "testId": Object {
         "type": "string",
+      },
+    },
+  },
+  "MultiWorkspaceSuiteHeaderAppSwitcher" => Object {
+    "defaultProps": Object {
+      "adminLink": null,
+      "customApplications": Array [],
+      "globalApplications": Array [],
+      "i18n": Object {
+        "allApplicationsLink": "All applications",
+        "availableWorkspaces": "Available workspaces",
+        "backToAppSwitcher": "Back to application switcher",
+        "learnMoreLink": "Learn more",
+        "requestAccess": "Contact your administrator to request application access.",
+        "selectWorkspace": "Select a workspace",
+        "suiteAdmin": "Suite administration",
+        "workspace": "Workspace",
+        "workspaceAdmin": "Workspace administration",
+        "workspaces": "Workspaces",
+      },
+      "isAdminView": false,
+      "isExpanded": false,
+      "onRouteChange": [Function],
+      "testId": "suite-header-app-switcher",
+      "workspaces": null,
+    },
+    "propTypes": Object {
+      "adminLink": Object {
+        "type": "string",
+      },
+      "customApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "globalApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "allApplicationsLink": Object {
+              "type": "string",
+            },
+            "availableWorkspaces": Object {
+              "type": "string",
+            },
+            "backToAppSwitcher": Object {
+              "type": "string",
+            },
+            "learnMoreLink": Object {
+              "type": "string",
+            },
+            "requestAccess": Object {
+              "type": "string",
+            },
+            "selectWorkspace": Object {
+              "type": "string",
+            },
+            "suiteAdmin": Object {
+              "type": "string",
+            },
+            "workspace": Object {
+              "type": "string",
+            },
+            "workspaceAdmin": Object {
+              "type": "string",
+            },
+            "workspaces": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isAdminView": Object {
+        "type": "bool",
+      },
+      "isExpanded": Object {
+        "type": "bool",
+      },
+      "noAccessLink": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "workspaces": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "adminHref": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "applications": Object {
+                  "args": Array [
+                    Object {
+                      "href": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "id": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                      "isExternal": Object {
+                        "type": "bool",
+                      },
+                      "name": Object {
+                        "isRequired": true,
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "arrayOf",
+                },
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isCurrent": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
     },
   },
@@ -12347,12 +12629,20 @@ Map {
       "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": "Enjoying {solutionName}?",
+      "switcherAvailableWorkspaces": "Available workspaces",
+      "switcherBackToAppSwitcher": "Back to application switcher",
       "switcherLearnMoreLink": "Learn more",
       "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
+      "switcherSelectWorkspace": "Select a workspace",
+      "switcherSuiteAdmin": "Suite administration",
+      "switcherWorkspace": "Workspace",
+      "switcherWorkspaceAdmin": "Workspace administration",
+      "switcherWorkspaces": "Workspaces",
       "userIcon": "User",
       "whatsNew": "What's new",
+      "workspace": "Workspace: {workspace}",
     },
   },
   "useSuiteHeaderData" => Object {},

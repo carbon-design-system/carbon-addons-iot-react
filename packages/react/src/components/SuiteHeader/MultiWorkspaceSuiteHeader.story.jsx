@@ -35,7 +35,7 @@ const routes = {
   support: 'https://www.ibm.com',
   about: 'https://www.ibm.com',
   workspaceId: 'workspace1',
-  domain: 'ibm.com',
+  domain: '',
 };
 
 const workspaces = [
