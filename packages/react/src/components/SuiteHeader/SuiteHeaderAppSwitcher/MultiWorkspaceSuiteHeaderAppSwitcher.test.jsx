@@ -40,7 +40,6 @@ const adminPageWorkspaces = [
         id: 'monitor',
         name: 'Monitor',
         href: 'https://www.ibm.com/2/monitor',
-        isExternal: false,
       },
       {
         id: 'manage',
@@ -88,24 +87,33 @@ const adminPageWorkspaces = [
 //   isCurrent: wo.id === 'workspace3',
 // }));
 
-const globalApplications = [
-  {
-    id: 'appconnect',
-    name: 'AppConnect',
-    href: 'https://www.ibm.com/appconnect',
-    isExternal: true,
-  },
-];
-
 const commonProps = {
   workspaces: adminPageWorkspaces,
   adminLink: 'https://www.ibm.com',
   noAccessLink: 'https://www.ibm.com',
   globalApplications: [
     {
-      id: 'appconnect',
-      name: 'AppConnect',
-      href: 'https://www.ibm.com/appconnect',
+      id: 'globalapp1',
+      name: 'Global App 1',
+      href: 'https://www.ibm.com/globalapp1',
+    },
+    {
+      id: 'globalapp2',
+      name: 'Global App 2',
+      href: 'https://www.ibm.com/globalapp2',
+      isExternal: true,
+    },
+  ],
+  customApplications: [
+    {
+      id: 'customapp1',
+      name: 'Custom Application 1',
+      href: 'https://www.ibm.com/globalapp1',
+    },
+    {
+      id: 'customapp2',
+      name: 'Custom Application 2',
+      href: 'https://www.ibm.com/globalapp2',
       isExternal: true,
     },
   ],
@@ -127,7 +135,7 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     window.location = { href: '' };
     render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
     commonProps.workspaces.forEach((workspace) =>
-      expect(screen.queryByTestId(`${testIdPrefix}--${workspace.id}`)).toBeTruthy()
+      expect(screen.getByTestId(`${testIdPrefix}--${workspace.id}`)).toBeVisible()
     );
   });
   it('renders app switcher when a workspace is selected in admin page', async () => {
@@ -135,16 +143,18 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     window.location = { href: '' };
     render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace3`));
-    expect(screen.queryByTestId(`${testIdPrefix}--selected-workspace`)).toBeTruthy();
-    expect(screen.queryByTestId(`${testIdPrefix}--all-applications`)).toBeTruthy();
+    expect(screen.getByTestId(`${testIdPrefix}--selected-workspace`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--all-applications`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--workspace-admin`)).toBeVisible();
   });
   it('keyboard navigates to the app switcher by selecting a workspace in admin page', async () => {
     delete window.location;
     window.location = { href: '' };
     render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
     await userEvent.type(screen.getByTestId(`${testIdPrefix}--workspace3`, '{enter}'));
-    expect(screen.queryByTestId(`${testIdPrefix}--selected-workspace`)).toBeTruthy();
-    expect(screen.queryByTestId(`${testIdPrefix}--all-applications`)).toBeTruthy();
+    expect(screen.getByTestId(`${testIdPrefix}--selected-workspace`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--all-applications`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--workspace-admin`)).toBeVisible();
   });
   it('renders workspace again when the change workspace button is clicked in admin page', async () => {
     delete window.location;
@@ -157,11 +167,38 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     // Click the "Change Workspace" button to go back to the workspace picker
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--selected-workspace`));
     // Make sure that the "back to app switcher" is now showing
-    expect(screen.queryByTestId(`${testIdPrefix}--back-to-switcher`)).toBeTruthy();
+    expect(screen.getByTestId(`${testIdPrefix}--back-to-switcher`)).toBeVisible();
     // Make sure the selected workspace button has the selected class
-    expect(screen.queryByTestId(`${testIdPrefix}--workspace2`)).toHaveClass(
+    expect(screen.getByTestId(`${testIdPrefix}--workspace2`)).toHaveClass(
       `${iotPrefix}--btn-icon-selection--selected`
     );
+    // Go back to the app switcher apps
+    await userEvent.click(screen.getByTestId(`${testIdPrefix}--back-to-switcher`));
+    // Check that application buttons are showing
+    expect(screen.getByTestId(`${testIdPrefix}--monitor`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--manage`)).toBeVisible();
+  });
+  it('keyboard navigates to the workspace again when the change workspace button is clicked in admin page', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
+    // Make sure that the "back to app switcher" is not showing when no workspace has been selected
+    expect(screen.queryByTestId(`${testIdPrefix}--back-to-switcher`)).toBeFalsy();
+    // Select a workspace
+    await userEvent.type(screen.getByTestId(`${testIdPrefix}--workspace2`, '{enter}'));
+    // Click the "Change Workspace" button to go back to the workspace picker
+    await userEvent.type(screen.getByTestId(`${testIdPrefix}--selected-workspace`, '{enter}'));
+    // Make sure that the "back to app switcher" is now showing
+    expect(screen.getByTestId(`${testIdPrefix}--back-to-switcher`)).toBeVisible();
+    // Make sure the selected workspace button has the selected class
+    expect(screen.getByTestId(`${testIdPrefix}--workspace2`)).toHaveClass(
+      `${iotPrefix}--btn-icon-selection--selected`
+    );
+    // Go back to the app switcher apps
+    await userEvent.type(screen.getByTestId(`${testIdPrefix}--back-to-switcher`, '{enter}'));
+    // Check that application buttons are showing
+    expect(screen.getByTestId(`${testIdPrefix}--monitor`)).toBeVisible();
+    expect(screen.getByTestId(`${testIdPrefix}--manage`)).toBeVisible();
   });
   it('clicks the workspace all applications link in admin page and gets redirected to it', async () => {
     delete window.location;
@@ -218,7 +255,7 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     // Select a workspace
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace4`));
     // Check that the empty state component is rendered
-    expect(screen.queryByTestId(`${testIdPrefix}--no-app`)).toBeTruthy();
+    expect(screen.getByTestId(`${testIdPrefix}--no-app`)).toBeVisible();
   });
   it('clicks a workspace application link in admin page and gets redirected to it', async () => {
     delete window.location;
@@ -324,26 +361,61 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
 
   it('renders app global applicatons in admin page', async () => {
     jest.spyOn(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps, 'onRouteChange');
-    render(
-      <MultiWorkspaceSuiteHeaderAppSwitcher
-        isAdminView
-        {...commonProps}
-        globalApplications={globalApplications}
-      />
-    );
+    render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace1`));
-    expect(screen.queryByTestId(`${testIdPrefix}--selected-workspace`)).toBeTruthy();
-    const globalAppButton = screen.getByTestId(`${testIdPrefix}--global-appconnect`);
+    expect(screen.getByTestId(`${testIdPrefix}--selected-workspace`)).toBeVisible();
+    const globalAppButton = screen.getByTestId(`${testIdPrefix}--global-globalapp1`);
     expect(globalAppButton).toBeVisible();
     await userEvent.click(globalAppButton);
-    const expectedGlobalAppUrl = globalApplications.find((app) => app.id === 'appconnect').href;
+    const expectedGlobalAppUrl = commonProps.globalApplications.find(
+      (app) => app.id === 'globalapp1'
+    ).href;
     expect(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
       'APPLICATION',
       expectedGlobalAppUrl,
       {
-        appId: 'appconnect',
+        appId: 'globalapp1',
       }
     );
     jest.restoreAllMocks();
+  });
+  it('renders app custom applicatons in admin page', async () => {
+    jest.spyOn(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps, 'onRouteChange');
+    render(<MultiWorkspaceSuiteHeaderAppSwitcher isAdminView {...commonProps} />);
+    await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace1`));
+    expect(screen.getByTestId(`${testIdPrefix}--selected-workspace`)).toBeVisible();
+    const globalAppButton = screen.getByTestId(`${testIdPrefix}--custom-customapp1`);
+    expect(globalAppButton).toBeVisible();
+    await userEvent.click(globalAppButton);
+    const expectedGlobalAppUrl = commonProps.customApplications.find(
+      (app) => app.id === 'customapp1'
+    ).href;
+    expect(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps.onRouteChange).toHaveBeenCalledWith(
+      'APPLICATION',
+      expectedGlobalAppUrl,
+      {
+        appId: 'customapp1',
+      }
+    );
+    jest.restoreAllMocks();
+  });
+  it('renders the app switcher in single workspace mode in admn page', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(
+      <MultiWorkspaceSuiteHeaderAppSwitcher
+        isAdminView
+        {...commonProps}
+        workspaces={[commonProps.workspaces[0]]}
+      />
+    );
+    // Check that the "back to app switcher" button is not showing because workspace picker is not supposed to show when only 1 workspace is available
+    expect(screen.queryByTestId(`${testIdPrefix}--back-to-switcher`)).toBeFalsy();
+    // Check that the "selected workspace" button it is not supposed to show when only 1 workspace is available
+    expect(screen.queryByTestId(`${testIdPrefix}--selected-workspace`)).toBeFalsy();
+    // Check that the All Applications button is visible
+    expect(screen.getByTestId(`${testIdPrefix}--all-applications`)).toBeVisible();
+    // Check that the Workspace Admin button is visible
+    expect(screen.getByTestId(`${testIdPrefix}--workspace-admin`)).toBeVisible();
   });
 });
