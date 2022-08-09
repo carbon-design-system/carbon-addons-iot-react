@@ -154,7 +154,6 @@ const SuiteHeader = ({
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const [showToast, setShowToast] = useState(surveyData !== null && surveyData !== undefined);
-  const [selectedWorkspace, setSelectedWorkspace] = useState(null);
   const translate = useCallback(
     (string, substitutions) =>
       substitutions.reduce((acc, [key, val]) => acc.replace(key, val), string),
@@ -170,24 +169,19 @@ const SuiteHeader = ({
   }, [surveyData]);
 
   const isMultiWorkspace = workspaces?.length > 0;
+  const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
   // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
   const currentWorkspaceComponent =
-    !isAdminView && isMultiWorkspace && workspaces?.length > 1 ? (
+    !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
       <span className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}>
-        {translate(mergedI18N.workspace, [['{workspace}', selectedWorkspace?.name]])}
+        {translate(mergedI18N.workspace, [['{workspace}', currentWorkspace.name]])}
       </span>
     ) : null;
   const extraContentComponent = extraContent ? (
     <span className={`${settings.iotPrefix}--suite-header-subtitle`}>{extraContent}</span>
   ) : null;
 
-  useEffect(() => {
-    if (workspaces?.length > 0) {
-      setSelectedWorkspace(workspaces.find((wo) => wo.isCurrent) ?? workspaces[0]);
-    }
-  }, [workspaces]);
-
-  const navigatorRoute = selectedWorkspace?.href || routes?.navigator || 'javascript:void(0)';
+  const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
 
   // If there are custom help links, include an extra child content entry for the separator

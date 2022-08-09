@@ -12075,27 +12075,31 @@ Map {
             "args": Array [
               Object {
                 "adminHref": Object {
-                  "isRequired": true,
                   "type": "string",
                 },
                 "applications": Object {
                   "args": Array [
                     Object {
-                      "href": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isExternal": Object {
-                        "type": "bool",
-                      },
-                      "name": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
+                      "args": Array [
+                        Object {
+                          "href": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isExternal": Object {
+                            "type": "bool",
+                          },
+                          "name": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
                     },
                   ],
                   "isRequired": true,
@@ -12299,6 +12303,7 @@ Map {
       },
       "isAdminView": false,
       "isExpanded": false,
+      "noAccessLink": null,
       "onRouteChange": [Function],
       "testId": "multi-workspace-suite-header-app-switcher",
       "workspaces": null,
@@ -12405,7 +12410,6 @@ Map {
         "type": "bool",
       },
       "noAccessLink": Object {
-        "isRequired": true,
         "type": "string",
       },
       "onRouteChange": Object {
@@ -12420,27 +12424,31 @@ Map {
             "args": Array [
               Object {
                 "adminHref": Object {
-                  "isRequired": true,
                   "type": "string",
                 },
                 "applications": Object {
                   "args": Array [
                     Object {
-                      "href": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "id": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
-                      "isExternal": Object {
-                        "type": "bool",
-                      },
-                      "name": Object {
-                        "isRequired": true,
-                        "type": "string",
-                      },
+                      "args": Array [
+                        Object {
+                          "href": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isExternal": Object {
+                            "type": "bool",
+                          },
+                          "name": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
                     },
                   ],
                   "isRequired": true,

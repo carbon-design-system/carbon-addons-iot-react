@@ -30,8 +30,8 @@ export const SuiteHeaderWorkspacePropTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  adminHref: PropTypes.string.isRequired,
-  applications: PropTypes.arrayOf(SuiteHeaderApplicationPropTypes).isRequired,
+  adminHref: PropTypes.string,
+  applications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)).isRequired,
   isCurrent: PropTypes.bool,
 };
 

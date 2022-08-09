@@ -32,7 +32,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-19"
+          id="bx--modal-header__heading--modal-21"
         >
           Do you wish to log out?
         </h3>
@@ -60,9 +60,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-19"
+        aria-labelledby="bx--modal-header__heading--modal-21"
         className="bx--modal-content"
-        id="bx--modal-body--modal-19"
+        id="bx--modal-body--modal-21"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -757,7 +757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-20"
+          id="bx--modal-header__heading--modal-22"
         >
           Do you wish to log out?
         </h3>
@@ -785,9 +785,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-20"
+        aria-labelledby="bx--modal-header__heading--modal-22"
         className="bx--modal-content"
-        id="bx--modal-body--modal-20"
+        id="bx--modal-body--modal-22"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -1970,7 +1970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-17"
+          id="bx--modal-header__heading--modal-19"
         >
           Do you wish to log out?
         </h3>
@@ -1998,9 +1998,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-17"
+        aria-labelledby="bx--modal-header__heading--modal-19"
         className="bx--modal-content"
-        id="bx--modal-body--modal-17"
+        id="bx--modal-body--modal-19"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -2688,7 +2688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-23"
+          id="bx--modal-header__heading--modal-25"
         >
           Session Timeout
         </h3>
@@ -2716,9 +2716,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-23"
+        aria-labelledby="bx--modal-header__heading--modal-25"
         className="bx--modal-content"
-        id="bx--modal-body--modal-23"
+        id="bx--modal-body--modal-25"
       >
         You will be logged out due to inactivity in 0 seconds.
       </div>
@@ -2793,7 +2793,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-24"
+          id="bx--modal-header__heading--modal-26"
         >
           Do you wish to log out?
         </h3>
@@ -2821,9 +2821,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-24"
+        aria-labelledby="bx--modal-header__heading--modal-26"
         className="bx--modal-content"
-        id="bx--modal-body--modal-24"
+        id="bx--modal-body--modal-26"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -3501,7 +3501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-18"
+          id="bx--modal-header__heading--modal-20"
         >
           Do you wish to log out?
         </h3>
@@ -3529,9 +3529,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-18"
+        aria-labelledby="bx--modal-header__heading--modal-20"
         className="bx--modal-content"
-        id="bx--modal-body--modal-18"
+        id="bx--modal-body--modal-20"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -4769,7 +4769,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-21"
+          id="bx--modal-header__heading--modal-23"
         >
           Do you wish to log out?
         </h3>
@@ -4797,9 +4797,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-21"
+        aria-labelledby="bx--modal-header__heading--modal-23"
         className="bx--modal-content"
-        id="bx--modal-body--modal-21"
+        id="bx--modal-body--modal-23"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -5471,7 +5471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-22"
+          id="bx--modal-header__heading--modal-24"
         >
           Do you wish to log out?
         </h3>
@@ -5499,9 +5499,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-22"
+        aria-labelledby="bx--modal-header__heading--modal-24"
         className="bx--modal-content"
-        id="bx--modal-body--modal-22"
+        id="bx--modal-body--modal-24"
       >
         You are logged in to Application Name as null.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -6053,7 +6053,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-16"
+          id="bx--modal-header__heading--modal-18"
         >
           Do you wish to log out?
         </h3>
@@ -6081,9 +6081,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-16"
+        aria-labelledby="bx--modal-header__heading--modal-18"
         className="bx--modal-content"
-        id="bx--modal-body--modal-16"
+        id="bx--modal-body--modal-18"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>
@@ -6755,7 +6755,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         
         <h3
           className="bx--modal-header__heading"
-          id="bx--modal-header__heading--modal-15"
+          id="bx--modal-header__heading--modal-17"
         >
           Do you wish to log out?
         </h3>
@@ -6783,9 +6783,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         </button>
       </div>
       <div
-        aria-labelledby="bx--modal-header__heading--modal-15"
+        aria-labelledby="bx--modal-header__heading--modal-17"
         className="bx--modal-content"
-        id="bx--modal-body--modal-15"
+        id="bx--modal-body--modal-17"
       >
         You are logged in to Application Name as Admin User.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.
       </div>

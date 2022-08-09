@@ -4,7 +4,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronRight16, ChevronLeft16, Launch16, Bee32 } from '@carbon/icons-react';
-import { ButtonSkeleton } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
@@ -36,6 +35,7 @@ const defaultProps = {
   testId: 'multi-workspace-suite-header-app-switcher',
   isExpanded: false,
   workspaces: null,
+  noAccessLink: null,
   adminLink: null,
   isAdminView: false,
 };
@@ -43,7 +43,7 @@ const defaultProps = {
 const propTypes = {
   customApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
   globalApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
-  noAccessLink: PropTypes.string.isRequired,
+  noAccessLink: PropTypes.string,
   onRouteChange: PropTypes.func,
   i18n: PropTypes.shape({
     workspace: PropTypes.string,
@@ -81,23 +81,29 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
 
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
-  const workspaceApplications = selectedWorkspace?.applications ?? null;
+  const workspaceApplications = workspaces ? selectedWorkspace?.applications ?? [] : null;
+  const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
 
   useEffect(() => {
-    // Show the workspace selection list if no workspace has been selected yet
-    if (!isWorkspacesView && !selectedWorkspace && workspaces?.length > 1) {
+    // Show the workspace selection list if no workspace has been selected yet and if we are in an admin page
+    if (!isWorkspacesView && !selectedWorkspace && workspaces?.length > 1 && isAdminView) {
       setWorkspacesView(true);
     }
-  }, [isWorkspacesView, workspaces, selectedWorkspace]);
+  }, [isWorkspacesView, workspaces, selectedWorkspace, isAdminView]);
 
   useEffect(() => {
-    // Set the selected workspace based on the isCurrent property
-    // If this is an admin view, don't preselect any workspace, unless there is only one available, in this case select that one
-    if (workspaces && !selectedWorkspace && (!isAdminView || workspaces.length === 1)) {
-      setSelectedWorkspace(workspaces.find((wo) => wo.isCurrent) ?? workspaces[0]);
-      setWorkspacesView(false);
+    if (!selectedWorkspace) {
+      // If only 1 workspace is available, select it regardless of whether or not we are in a workspace-based page
+      if (workspaces?.length === 1) {
+        setSelectedWorkspace(workspaces[0]);
+        setWorkspacesView(false);
+      } else if (currentWorkspace) {
+        // If there are more workspace, select the one with the isCurrent flag set
+        setSelectedWorkspace(currentWorkspace);
+        setWorkspacesView(false);
+      }
     }
-  }, [workspaces, selectedWorkspace, isAdminView]);
+  }, [workspaces, currentWorkspace, selectedWorkspace, setSelectedWorkspace]);
 
   const handleRouteChange = useCallback(
     async (event, routeType, url, isExternal = false, data = null) => {
@@ -123,7 +129,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
 
   const handleWorkspaceRoute = useCallback(
     ({ href, id }) => async (e) =>
-      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.WORKSPACE, href, false, { workspaceId: id }),
+      handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
     [handleRouteChange]
   );
 
@@ -151,7 +157,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     <ul data-testid={testId} className={baseClassName}>
       {!isWorkspacesView ? (
         <>
-          {selectedWorkspace && workspaces?.length > 1 ? (
+          {workspaces?.length > 1 ? (
             <>
               <li
                 id="suite-header-selected-workspace"
@@ -170,46 +176,42 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                   renderIcon={ChevronRight16}
                   tabIndex={tabIndex}
                 >
-                  {selectedWorkspace.name}
+                  {selectedWorkspace?.name ?? mergedI18n.selectWorkspace}
                 </Button>
               </li>
               <div className={`${baseClassName}--nav-link--separator`} />
             </>
           ) : null}
-          {selectedWorkspace && selectedWorkspace.href ? (
-            (() => {
-              const { id, href } = selectedWorkspace;
-              const eventHandler = handleWorkspaceRoute({ id, href });
-              return (
-                <li
-                  id="suite-header-all-application"
-                  key="key-all-applications"
-                  className={`${baseClassName}--app-link`}
-                >
-                  <Button
-                    kind="ghost"
-                    testId={`${testId}--all-applications`}
-                    onClick={eventHandler}
-                    onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                    tabIndex={tabIndex}
-                    href={href}
-                    rel="noopener noreferrer"
+          {selectedWorkspace && selectedWorkspace.href
+            ? (() => {
+                const { id, href } = selectedWorkspace;
+                const eventHandler = handleWorkspaceRoute({ id, href });
+                return (
+                  <li
+                    id="suite-header-all-application"
+                    key="key-all-applications"
+                    className={`${baseClassName}--app-link`}
                   >
-                    {mergedI18n.allApplicationsLink}
-                  </Button>
-                </li>
-              );
-            })()
-          ) : (
-            <div className={`${baseClassName}--nav-link--button--loading`}>
-              <ButtonSkeleton />
-            </div>
-          )}
+                    <Button
+                      kind="ghost"
+                      testId={`${testId}--all-applications`}
+                      onClick={eventHandler}
+                      onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+                      tabIndex={tabIndex}
+                      href={href}
+                      rel="noopener noreferrer"
+                    >
+                      {mergedI18n.allApplicationsLink}
+                    </Button>
+                  </li>
+                );
+              })()
+            : null}
           {workspaceApplications === null ? (
             <li>
               <div
                 className={`${baseClassName}--nav-link--loading`}
-                data-testid="suite-header-app-switcher--loading"
+                data-testid={`${testId}--loading`}
               >
                 <SkeletonText paragraph lineCount={3} />
               </div>
@@ -264,8 +266,8 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 );
               })()
             : null}
-          {workspaceApplications?.length === 0 ? (
-            <div className={`${baseClassName}--no-app`}>
+          {selectedWorkspace && workspaceApplications?.length === 0 ? (
+            <div data-testid={`${testId}--no-app`} className={`${baseClassName}--no-app`}>
               <div className="bee-icon-container">
                 <Bee32 />
                 <div className="bee-shadow" />
@@ -274,7 +276,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               <a
                 href={noAccessLink}
                 rel="noopener noreferrer"
-                data-testid="suite-header-app-switcher--no-access"
+                data-testid={`${testId}--no-access`}
                 onClick={async (e) => {
                   e.preventDefault();
                   const result = await onRouteChange(
@@ -405,7 +407,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                   onClick={eventHandler}
                   onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
                   tabIndex={tabIndex}
-                  href={!isAdminView && workspace.href}
+                  href={isAdminView ? '' : workspace.href}
                   selected={workspace.id === selectedWorkspace?.id}
                   rel="noopener noreferrer"
                 >
