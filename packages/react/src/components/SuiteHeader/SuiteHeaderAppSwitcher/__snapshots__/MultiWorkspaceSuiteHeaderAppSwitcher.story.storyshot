@@ -14,7 +14,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <li
         className="iot--suite-header-app-switcher--app-link"
@@ -22,7 +22,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--all-applications"
+          data-testid="multi-workspace-suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -42,7 +42,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--monitor"
+          data-testid="multi-workspace-suite-header-app-switcher--monitor"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -62,7 +62,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--health"
+          data-testid="multi-workspace-suite-header-app-switcher--health"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -82,7 +82,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--workspace-admin"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -105,7 +105,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--admin"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -138,7 +138,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <li
         className="iot--suite-header-app-switcher--app-link"
@@ -154,7 +154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         <button
           aria-describedby={null}
           className="iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="suite-header-app-switcher--workspace1"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace1"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -180,7 +180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         <button
           aria-describedby={null}
           className="iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="suite-header-app-switcher--workspace2"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace2"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -206,7 +206,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         <button
           aria-describedby={null}
           className="iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="suite-header-app-switcher--workspace3"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace3"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -232,7 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         <button
           aria-describedby={null}
           className="iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="suite-header-app-switcher--workspace4"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace4"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -270,7 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <div
         className="iot--suite-header-app-switcher--nav-link--button--loading"
@@ -331,7 +331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <li
         className="iot--suite-header-app-switcher--app-link"
@@ -339,7 +339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--all-applications"
+          data-testid="multi-workspace-suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -359,7 +359,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--monitor"
+          data-testid="multi-workspace-suite-header-app-switcher--monitor"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -379,7 +379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--health"
+          data-testid="multi-workspace-suite-header-app-switcher--health"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -399,7 +399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--workspace-admin"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -422,7 +422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--admin"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -455,7 +455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <li
         className="iot--suite-header-app-switcher--app-link"
@@ -468,7 +468,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--selected-workspace"
+          data-testid="multi-workspace-suite-header-app-switcher--selected-workspace"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -506,7 +506,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--all-applications"
+          data-testid="multi-workspace-suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -526,7 +526,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--monitor"
+          data-testid="multi-workspace-suite-header-app-switcher--monitor"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -546,7 +546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--health"
+          data-testid="multi-workspace-suite-header-app-switcher--health"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -566,7 +566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--workspace-admin"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -589,7 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--admin"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -622,7 +622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="multi-workspace-suite-header-app-switcher"
     >
       <li
         className="iot--suite-header-app-switcher--app-link"
@@ -635,7 +635,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--selected-workspace"
+          data-testid="multi-workspace-suite-header-app-switcher--selected-workspace"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -673,7 +673,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--all-applications"
+          data-testid="multi-workspace-suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -693,7 +693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--monitor"
+          data-testid="multi-workspace-suite-header-app-switcher--monitor"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -713,7 +713,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--health"
+          data-testid="multi-workspace-suite-header-app-switcher--health"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -733,7 +733,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--workspace-admin"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -756,7 +756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--admin"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -776,7 +776,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--global-appconnect"
+          data-testid="multi-workspace-suite-header-app-switcher--global-appconnect"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -817,7 +817,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--custom-customapp1"
+          data-testid="multi-workspace-suite-header-app-switcher--custom-customapp1"
           href="https://www.ibm.com"
           onBlur={[Function]}
           onClick={[Function]}
@@ -837,7 +837,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="iot--btn bx--btn bx--btn--ghost"
-          data-testid="suite-header-app-switcher--custom-customapp2"
+          data-testid="multi-workspace-suite-header-app-switcher--custom-customapp2"
           href="https://google.com"
           onBlur={[Function]}
           onClick={[Function]}

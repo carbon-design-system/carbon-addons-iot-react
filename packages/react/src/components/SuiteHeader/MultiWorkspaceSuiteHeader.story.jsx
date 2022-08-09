@@ -44,7 +44,7 @@ const workspaces = [
     name: 'Workspace 1',
     href: 'https://www.ibm.com',
     adminHref: 'https://www.ibm.com',
-    isCurrent: true,
+    isCurrent: false,
     applications: [
       {
         id: 'monitor',
@@ -77,7 +77,7 @@ const workspaces = [
     id: 'workspace3',
     name: 'Workspace 3',
     href: 'https://www.ibm.com',
-    isCurrent: false,
+    isCurrent: true,
     applications: [
       {
         id: 'health',

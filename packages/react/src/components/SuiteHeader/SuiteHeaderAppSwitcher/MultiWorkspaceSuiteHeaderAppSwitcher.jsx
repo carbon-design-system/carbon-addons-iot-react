@@ -33,7 +33,7 @@ const defaultProps = {
     requestAccess: 'Contact your administrator to request application access.',
     learnMoreLink: 'Learn more',
   },
-  testId: 'suite-header-app-switcher',
+  testId: 'multi-workspace-suite-header-app-switcher',
   isExpanded: false,
   workspaces: null,
   adminLink: null,
@@ -94,7 +94,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     // Set the selected workspace based on the isCurrent property
     // If this is an admin view, don't preselect any workspace, unless there is only one available, in this case select that one
     if (workspaces && !selectedWorkspace && (!isAdminView || workspaces.length === 1)) {
-      setSelectedWorkspace(workspaces.find((wo) => wo.isCurrent));
+      setSelectedWorkspace(workspaces.find((wo) => wo.isCurrent) ?? workspaces[0]);
       setWorkspacesView(false);
     }
   }, [workspaces, selectedWorkspace, isAdminView]);

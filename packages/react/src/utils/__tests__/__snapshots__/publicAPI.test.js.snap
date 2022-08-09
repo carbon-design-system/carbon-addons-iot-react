@@ -12300,7 +12300,7 @@ Map {
       "isAdminView": false,
       "isExpanded": false,
       "onRouteChange": [Function],
-      "testId": "suite-header-app-switcher",
+      "testId": "multi-workspace-suite-header-app-switcher",
       "workspaces": null,
     },
     "propTypes": Object {
