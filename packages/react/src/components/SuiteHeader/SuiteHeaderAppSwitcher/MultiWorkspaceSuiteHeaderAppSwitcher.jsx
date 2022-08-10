@@ -7,7 +7,6 @@ import { ChevronRight16, ChevronLeft16, Launch16, Bee32 } from '@carbon/icons-re
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
-import { SkeletonText } from '../../SkeletonText';
 import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 import {
@@ -121,14 +120,14 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
     [onRouteChange]
   );
 
-  const handleApplicationSelected = useCallback(
-    ({ href, id, isExternal }) => async (e) =>
+  const handleApplicationRoute = useCallback(
+    ({ id, href, isExternal }) => async (e) =>
       handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.APPLICATION, href, isExternal, { appId: id }),
     [handleRouteChange]
   );
 
   const handleWorkspaceRoute = useCallback(
-    ({ href, id }) => async (e) =>
+    ({ id, href }) => async (e) =>
       handleRouteChange(e, SUITE_HEADER_ROUTE_TYPES.NAVIGATOR, href, false, { workspaceId: id }),
     [handleRouteChange]
   );
@@ -207,40 +206,31 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 );
               })()
             : null}
-          {workspaceApplications === null ? (
-            <li>
-              <div
-                className={`${baseClassName}--nav-link--loading`}
-                data-testid={`${testId}--loading`}
-              >
-                <SkeletonText paragraph lineCount={3} />
-              </div>
-            </li>
-          ) : (
-            workspaceApplications.map(({ id, name, href, isExternal = false }) => {
-              const eventHandler = handleApplicationSelected({ href, id, isExternal });
-              return (
-                <li
-                  id={`suite-header-application-${id}`}
-                  key={`key-${id}`}
-                  className={`${baseClassName}--app-link`}
-                >
-                  <Button
-                    kind="ghost"
-                    testId={`${testId}--${id}`}
-                    onClick={eventHandler}
-                    onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                    tabIndex={tabIndex}
-                    renderIcon={isExternal ? Launch16 : null}
-                    href={href}
-                    rel="noopener noreferrer"
+          {workspaceApplications
+            ? workspaceApplications?.map(({ id, name, href, isExternal = false }) => {
+                const eventHandler = handleApplicationRoute({ id, href, isExternal });
+                return (
+                  <li
+                    id={`suite-header-application-${id}`}
+                    key={`key-${id}`}
+                    className={`${baseClassName}--app-link`}
                   >
-                    {name}
-                  </Button>
-                </li>
-              );
-            })
-          )}
+                    <Button
+                      kind="ghost"
+                      testId={`${testId}--${id}`}
+                      onClick={eventHandler}
+                      onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+                      tabIndex={tabIndex}
+                      renderIcon={isExternal ? Launch16 : null}
+                      href={href}
+                      rel="noopener noreferrer"
+                    >
+                      {name}
+                    </Button>
+                  </li>
+                );
+              })
+            : null}
           {selectedWorkspace && selectedWorkspace.adminHref
             ? (() => {
                 const { id, adminHref } = selectedWorkspace;
@@ -312,7 +302,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
             </li>
           ) : null}
           {globalApplications.map(({ id, name, href, isExternal = false }) => {
-            const eventHandler = handleApplicationSelected({ href, id, isExternal });
+            const eventHandler = handleApplicationRoute({ id, href, isExternal });
             return (
               <li
                 id={`suite-header-global-application-${id}`}
@@ -338,7 +328,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
             <div className={`${baseClassName}--nav-link--separator`} />
           ) : null}
           {customApplications.map(({ id, name, href, isExternal = false }) => {
-            const eventHandler = handleApplicationSelected({ href, id, isExternal });
+            const eventHandler = handleApplicationRoute({ id, href, isExternal });
             return (
               <li
                 id={`suite-header-custom-application-${id}`}

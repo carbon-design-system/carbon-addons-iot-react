@@ -355,14 +355,6 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     expect(window.location.href).toBe(adminPageCommonProps.noAccessLink);
   });
 
-  it('shows loading state', async () => {
-    delete window.location;
-    window.location = { href: '' };
-    render(<MultiWorkspaceSuiteHeaderAppSwitcher />);
-    // Expect skeletons
-    expect(screen.getByTestId(`${testIdPrefix}--loading`)).toBeVisible();
-  });
-
   it('calls the default onRouteChange in admin page', async () => {
     jest.spyOn(MultiWorkspaceSuiteHeaderAppSwitcher.defaultProps, 'onRouteChange');
 

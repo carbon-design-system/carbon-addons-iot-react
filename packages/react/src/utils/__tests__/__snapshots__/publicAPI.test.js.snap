@@ -12477,6 +12477,16 @@ Map {
       },
     },
   },
+  "SuiteHeaderAppSwitcherLoading" => Object {
+    "defaultProps": Object {
+      "testId": "suite-header-app-switcher",
+    },
+    "propTypes": Object {
+      "testId": Object {
+        "type": "string",
+      },
+    },
+  },
   "SuiteHeaderLogoutModal" => Object {
     "defaultProps": Object {
       "i18n": Object {

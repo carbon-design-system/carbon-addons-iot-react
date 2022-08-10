@@ -19,6 +19,7 @@ import Walkme from '../Walkme/Walkme';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+import SuiteHeaderAppSwitcherLoading from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcherLoading';
 import MultiWorkspaceSuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/MultiWorkspaceSuiteHeaderAppSwitcher';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import IdleLogoutConfirmationModal, {
@@ -339,7 +340,7 @@ const SuiteHeader = ({
                       testId={`${testId}-app-switcher`}
                       isExpanded={isExpanded}
                     />
-                  ) : (
+                  ) : applications ? (
                     <SuiteHeaderAppSwitcher
                       ref={ref}
                       applications={applications}
@@ -356,6 +357,8 @@ const SuiteHeader = ({
                       testId={`${testId}-app-switcher`}
                       isExpanded={isExpanded}
                     />
+                  ) : (
+                    <SuiteHeaderAppSwitcherLoading ref={ref} testId={`${testId}-app-switcher`} />
                   )
                 ),
               }}
@@ -363,8 +366,8 @@ const SuiteHeader = ({
               subtitle={
                 <div>
                   {appName}
-                  {currentWorkspaceComponent}
                   {extraContentComponent}
+                  {currentWorkspaceComponent}
                 </div>
               }
               actionItems={[

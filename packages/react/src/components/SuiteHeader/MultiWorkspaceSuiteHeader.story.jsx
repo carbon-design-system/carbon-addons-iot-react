@@ -758,7 +758,7 @@ export const HeaderWithCustomActionItems = () => (
   />
 );
 
-HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
+HeaderWithCustomActionItems.storyName = 'Header with custom action items';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');

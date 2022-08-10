@@ -5960,7 +5960,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 >
                   <ul
                     className="iot--suite-header-app-switcher"
-                    data-testid="suite-header-app-switcher"
+                    data-testid="suite-header-app-switcher--loading"
                   >
                     <li
                       className="iot--suite-header-app-switcher--nav-link"
@@ -5973,13 +5973,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         />
                       </div>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher--nav-link--separator"
-                    />
                     <li>
                       <div
                         className="iot--suite-header-app-switcher--nav-link--loading"
-                        data-testid="suite-header-app-switcher--loading"
                       >
                         <div>
                           <p

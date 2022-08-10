@@ -1082,4 +1082,11 @@ describe('SuiteHeader', () => {
       '0'
     );
   });
+
+  it('shows loading state', async () => {
+    render(<SuiteHeader suiteName="Application Suite" />);
+    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    // Expect skeletons
+    expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
+  });
 });

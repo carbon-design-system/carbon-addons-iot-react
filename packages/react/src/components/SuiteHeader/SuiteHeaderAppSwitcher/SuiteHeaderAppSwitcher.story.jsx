@@ -2,6 +2,7 @@ import React from 'react';
 import { text, object } from '@storybook/addon-knobs';
 
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher';
+import SuiteHeaderAppSwitcherLoading from './SuiteHeaderAppSwitcherLoading';
 
 export default {
   title:
@@ -50,7 +51,7 @@ NoApplications.storyName = 'No applications';
 
 export const LoadingState = () => (
   <div style={{ width: '15rem', background: 'white' }}>
-    <SuiteHeaderAppSwitcher />
+    <SuiteHeaderAppSwitcherLoading />
   </div>
 );
 

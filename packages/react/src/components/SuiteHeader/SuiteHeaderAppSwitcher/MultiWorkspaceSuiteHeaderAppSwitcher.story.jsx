@@ -2,6 +2,7 @@ import React from 'react';
 import { text, object } from '@storybook/addon-knobs';
 
 import MultiWorkspaceSuiteHeaderAppSwitcher from './MultiWorkspaceSuiteHeaderAppSwitcher';
+import SuiteHeaderAppSwitcherLoading from './SuiteHeaderAppSwitcherLoading';
 
 const adminPageWorkspaces = [
   {
@@ -210,7 +211,7 @@ WithCustomApplications.storyName = 'With custom applications';
 
 export const LoadingState = () => (
   <div style={{ width: '15rem', background: 'white' }}>
-    <MultiWorkspaceSuiteHeaderAppSwitcher />
+    <SuiteHeaderAppSwitcherLoading />
   </div>
 );
 

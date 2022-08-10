@@ -4,11 +4,9 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowRight16, Bee32 } from '@carbon/icons-react';
-import { ButtonSkeleton } from 'carbon-components-react';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
-import { SkeletonText } from '../../SkeletonText';
 import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 import { SuiteHeaderApplicationPropTypes } from '../SuiteHeaderPropTypes';
@@ -101,11 +99,7 @@ const SuiteHeaderAppSwitcher = ({
   return (
     <ul data-testid={testId} className={baseClassName}>
       <li className={`${baseClassName}--nav-link`}>
-        {allApplicationsLink === null ? (
-          <div className={`${baseClassName}--nav-link--button--loading`}>
-            <ButtonSkeleton />
-          </div>
-        ) : (
+        {allApplicationsLink ? (
           <>
             <p>{mergedI18n.myApplications}</p>
             <Button
@@ -121,42 +115,31 @@ const SuiteHeaderAppSwitcher = ({
               {mergedI18n.allApplicationsLink}
             </Button>
           </>
-        )}
+        ) : null}
       </li>
       <div className={`${baseClassName}--nav-link--separator`} />
-      {mergedApplications === null ? (
-        <li>
-          <div
-            className={`${baseClassName}--nav-link--loading`}
-            data-testid="suite-header-app-switcher--loading"
+      {mergedApplications?.map(({ id, name, href, isExternal = false }) => {
+        const eventHandler = handleRouteChange({ href, id, isExternal });
+        return (
+          <li
+            id={`suite-header-application-${id}`}
+            key={`key-${id}`}
+            className={`${baseClassName}--app-link`}
           >
-            <SkeletonText paragraph lineCount={3} />
-          </div>
-        </li>
-      ) : (
-        mergedApplications.map(({ id, name, href, isExternal = false }) => {
-          const eventHandler = handleRouteChange({ href, id, isExternal });
-          return (
-            <li
-              id={`suite-header-application-${id}`}
-              key={`key-${id}`}
-              className={`${baseClassName}--app-link`}
+            <Button
+              kind="ghost"
+              testId={`${testId}--${id}`}
+              onClick={eventHandler}
+              onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+              tabIndex={tabIndex}
+              href={href}
+              rel="noopener noreferrer"
             >
-              <Button
-                kind="ghost"
-                testId={`${testId}--${id}`}
-                onClick={eventHandler}
-                onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                tabIndex={tabIndex}
-                href={href}
-                rel="noopener noreferrer"
-              >
-                {name}
-              </Button>
-            </li>
-          );
-        })
-      )}
+              {name}
+            </Button>
+          </li>
+        );
+      })}
       {mergedApplications?.length === 0 ? (
         <div className={`${baseClassName}--no-app`}>
           <div className="bee-icon-container">
