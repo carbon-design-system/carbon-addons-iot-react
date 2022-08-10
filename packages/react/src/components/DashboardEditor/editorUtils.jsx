@@ -82,22 +82,13 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
     ),
-    downSampleMethod: PropTypes.string,
-    downSampleMethods: PropTypes.arrayOf(
-      PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
-    ),
+
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
     // Used for streming dataItems
     hasStreamingMetricEnabled: PropTypes.bool,
   })
 );
-
-// /** Needed to determain if we show downsample methods */
-// export const Version = {
-//   V1: 'V1',
-//   V2: 'V2',
-// };
 
 /**
  * Returns a duplicate card configuration
@@ -414,10 +405,7 @@ export const renderBreakpointInfo = (breakpoint, i18n) => {
 export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = { current: 0 }) => {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
-    (
-      { label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod },
-      i
-    ) => {
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }, i) => {
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       const currentItem = cardSeries?.find((dataItem) => dataItem.dataSourceId === dataSourceId);
       const color = currentItem?.color ?? DATAITEM_COLORS_OPTIONS[colorIndex];
@@ -430,7 +418,6 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
         label,
         aggregationMethod,
         color,
-        downSampleMethod,
       };
     }
   );
@@ -445,7 +432,7 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const currentCardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod }) => {
+    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod }) => {
       const currentItem = currentCardAttributes?.find(
         (dataItem) => dataItem.dataSourceId === dataSourceId
       );
@@ -458,7 +445,6 @@ export const formatAttributes = (selectedItems, cardConfig) => {
         dataSourceId,
         label,
         aggregationMethod,
-        downSampleMethod,
       };
     }
   );
