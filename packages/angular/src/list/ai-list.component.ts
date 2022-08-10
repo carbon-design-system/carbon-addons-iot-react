@@ -2,12 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, TemplateRef } from '@an
 import { AIListItem } from './list-item/ai-list-item.class';
 import { IconService } from 'carbon-components-angular';
 import { Bee32 } from '@carbon/icons';
-
-export enum SelectionType {
-  SINGLE = 'single',
-  MULTI = 'multi',
-}
-
+import { SelectionType } from './list.types';
 @Component({
   selector: 'ai-list',
   template: `

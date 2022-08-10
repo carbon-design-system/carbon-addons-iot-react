@@ -33,6 +33,7 @@
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": false,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "compilationMode": "partial"
   }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SelectionType } from '../ai-list.component';
+import { SelectionType } from '../list.types';
 import { AIListItem } from './ai-list-item.class';
 import { ChevronUp16, Draggable16 } from '@carbon/icons';
 import { IconService } from 'carbon-components-angular';

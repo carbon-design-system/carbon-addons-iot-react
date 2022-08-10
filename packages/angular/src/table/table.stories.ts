@@ -1,11 +1,7 @@
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import { moduleMetadata, storiesOf } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 import { ButtonModule, TableItem } from 'carbon-components-angular';
-
 import { AITableHeaderItem, AITableModel } from './table-model.class';
 import { AITableModule } from './table.module';
-
 import { EmptyStateModule } from '../empty-state-index';
 
 const simpleModel = new AITableModel();
@@ -150,17 +146,83 @@ emptyDataModel.setHeader([
   ],
 ]);
 
-storiesOf('Components/Table', module)
-  .addDecorator(
+const defaultArgTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }
+    },
+    defaultValue: 'md'
+  },
+  showSelectionColumn: { control: 'boolean', defaultValue: true },
+  striped: { control: 'boolean', defaultValue: true },
+  isDataGrid: { control: 'boolean', defaultValue: true },
+  skeleton: { control: 'boolean', defaultValue: false },
+  rowClick: {
+    action: 'click',
+    table: {
+      disable: true
+    }
+  },
+  model: {
+    table: {
+      disable: true
+    }
+  },
+  customSort: {
+    action: 'click',
+    table: {
+      disable: true
+    }
+  }
+};
+
+export default {
+  title: 'Components/Table',
+
+  decorators: [
     moduleMetadata({
       imports: [AITableModule, ButtonModule, EmptyStateModule],
     })
-  )
-  .addDecorator(withKnobs)
-  .add('Basic', () => {
-    return {
-      template: `
-        <ai-table
+  ],
+};
+
+const basicTpl = (args) => {
+  return {
+    template: `
+      <ai-table
+        [model]="model"
+        [size]="size"
+        [showSelectionColumn]="showSelectionColumn"
+        [striped]="striped"
+        [skeleton]="skeleton"
+        [isDataGrid]="isDataGrid"
+        (sort)="customSort($event)"
+        (rowClick)="rowClick($event)">
+      </ai-table>
+    `,
+    props: args
+  };
+};
+
+export const basic = basicTpl.bind({});
+basic.argTypes = defaultArgTypes;
+basic.args = {
+  model: simpleModel,
+  customSort: (index: number) => {
+    if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
+      // if already sorted flip sorting direction
+      simpleMultiHeaderModel.getClosestHeader(index).ascending =
+        simpleMultiHeaderModel.getClosestHeader(index).descending;
+    }
+    simpleMultiHeaderModel.sort(index);
+  }
+};
+
+const basicMultiheaderTpl = (args) => {
+  return {
+    template: `
+      <ai-table
           [model]="model"
           [size]="size"
           [showSelectionColumn]="showSelectionColumn"
@@ -169,65 +231,29 @@ storiesOf('Components/Table', module)
           [isDataGrid]="isDataGrid"
           (sort)="customSort($event)"
           (rowClick)="rowClick($event)">
-        </ai-table>
-		`,
-      props: {
-        model: simpleModel,
-        size: select('size', { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }, 'md'),
-        showSelectionColumn: boolean('showSelectionColumn', true),
-        striped: boolean('striped', true),
-        isDataGrid: boolean('Data grid keyboard interactions', true),
-        skeleton: boolean('Skeleton mode', false),
-        rowClick: action('row clicked'),
-        customSort: (index: number) => {
-          if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
-            // if already sorted flip sorting direction
-            simpleMultiHeaderModel.getClosestHeader(
-              index
-            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
-          }
-          simpleMultiHeaderModel.sort(index);
-        },
-      },
-    };
-  })
-  .add('Basic multiheader', () => {
-    return {
-      template: `
-			<ai-table
-				[model]="model"
-				[size]="size"
-				[showSelectionColumn]="showSelectionColumn"
-				[striped]="striped"
-				[skeleton]="skeleton"
-				[isDataGrid]="isDataGrid"
-				(sort)="customSort($event)"
-				(rowClick)="rowClick($event)">
-			</ai-table>
-		`,
-      props: {
-        model: simpleMultiHeaderModel,
-        size: select('size', { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }, 'md'),
-        showSelectionColumn: boolean('showSelectionColumn', true),
-        striped: boolean('striped', true),
-        isDataGrid: boolean('Data grid keyboard interactions', true),
-        skeleton: boolean('Skeleton mode', false),
-        rowClick: action('row clicked'),
-        customSort: (index: number) => {
-          if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
-            // if already sorted flip sorting direction
-            simpleMultiHeaderModel.getClosestHeader(
-              index
-            ).ascending = simpleMultiHeaderModel.getClosestHeader(index).descending;
-          }
-          simpleMultiHeaderModel.sort(index);
-        },
-      },
-    };
-  })
-  .add('Empty', () => {
-    return {
-      template: `
+      </ai-table>
+    `,
+    props: args,
+    name: 'Basic multiheader'
+  };
+};
+export const basicMultiheader = basicMultiheaderTpl.bind({});
+basicMultiheader.argTypes = defaultArgTypes;
+basicMultiheader.args = {
+  model: simpleMultiHeaderModel,
+  customSort: (index: number) => {
+    if (simpleMultiHeaderModel.getClosestHeader(index).sorted) {
+      // if already sorted flip sorting direction
+      simpleMultiHeaderModel.getClosestHeader(index).ascending =
+        simpleMultiHeaderModel.getClosestHeader(index).descending;
+    }
+    simpleMultiHeaderModel.sort(index);
+  }
+};
+
+const emptyTpl = (args) => {
+  return {
+    template: `
       <div class="iot--table-container bx--data-table-container">
         <div class="addons-iot-table-container">
           <div class="bx--data-table-content">
@@ -238,59 +264,96 @@ storiesOf('Components/Table', module)
                 <h3 aiEmptyStateTitle>{{ title }}</h3>
                 <p aiEmptyStateBody>{{ body }}</p>
                 <ai-empty-state-action>
-                  <button ibmButton (click)="actionOnClick()">Create some data</button>
+                  <button ibmButton (click)="actionOnClick($event)">Create some data</button>
                 </ai-empty-state-action>
               </ai-empty-state>
             </ai-table>
           </div>
         </div>
       </div>
-		`,
-      props: {
-        model: emptyDataModel,
-        icon: select(
-          'icon',
-          ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
-          'default'
-        ),
-        title: text('title', 'No data to display'),
-        body: text('body', 'Optional extra sentence or sentences'),
-        actionOnClick: () => {
-          console.log('Action button clicked');
-        },
-      },
-    };
-  })
-  .add('Complex multiheader table with move columns', () => {
-    return {
-      template: `
-        <button (click)="moveRandomColumns()">Move random columns</button>
-        <p>Moving header index {{indexFrom}} to index {{indexTo}}</p>
-        <ai-table
-          [model]="model"
-          [size]="size"
-          [showSelectionColumn]="showSelectionColumn"
-          [striped]="striped"
-          [skeleton]="skeleton"
-          [isDataGrid]="isDataGrid"
-          (rowClick)="rowClick($event)">
-        </ai-table>
-		`,
-      props: {
-        model: complexModel,
-        size: select('size', { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }, 'md'),
-        showSelectionColumn: boolean('showSelectionColumn', false),
-        striped: boolean('striped', true),
-        isDataGrid: boolean('Data grid keyboard interactions', false),
-        skeleton: boolean('Skeleton mode', false),
-        rowClick: action('row clicked'),
-        indexFrom: null,
-        indexTo: null,
-        moveRandomColumns: function () {
-          this.indexFrom = Math.floor(Math.random() * complexModel['header'][0].length);
-          this.indexTo = Math.floor(Math.random() * complexModel['header'][0].length);
-          this.model.moveColumn(this.indexFrom, this.indexTo, 0);
-        },
-      },
-    };
-  });
+    `,
+    props: args
+  };
+};
+export const empty = emptyTpl.bind({});
+empty.argTypes = {
+  icon: {
+    control: {
+      type: 'select',
+      options: ['error', 'error404', 'not-authorized', 'no-results', 'success', 'default', 'no-icon'],
+    },
+    defaultValue: 'default'
+  },
+  title: {
+    control: 'text',
+    defaultValue: 'No data to display'
+  },
+  body: {
+    control: 'text',
+    defaultValue: 'Optional extra sentence or sentences'
+  },
+  actionOnClick: {
+    action: 'click',
+    table: {
+      disable: true
+    }
+  },
+  model: {
+    table: {
+      disable: true
+    }
+  }
+};
+empty.args = {
+  model: emptyDataModel
+};
+
+const complexMultiheaderTableWithMoveColumnsTpl = (args) => {
+  return {
+    template: `
+      <button (click)="moveRandomColumns()">Move random columns</button>
+      <p>Moving header index {{indexFrom}} to index {{indexTo}}</p>
+      <ai-table
+        [model]="model"
+        [size]="size"
+        [showSelectionColumn]="showSelectionColumn"
+        [striped]="striped"
+        [skeleton]="skeleton"
+        [isDataGrid]="isDataGrid"
+        (rowClick)="rowClick($event)">
+      </ai-table>
+    `,
+    props: args,
+    name: 'Complex multiheader table with move columns'
+  };
+};
+export const complexMultiheaderTableWithMoveColumns = complexMultiheaderTableWithMoveColumnsTpl.bind({});
+complexMultiheaderTableWithMoveColumns.argTypes = {
+  ...defaultArgTypes,
+  indexFrom: {
+    table: {
+      disable: true
+    }
+  },
+  indexTo: {
+    table: {
+      disable: true
+    }
+  },
+  moveRandomColumns: {
+    action: 'click',
+    table: {
+      disable: true
+    }
+  }
+};
+complexMultiheaderTableWithMoveColumns.args = {
+  model: complexModel,
+  indexFrom: null,
+  indexTo: null,
+  moveRandomColumns: function () {
+    this.indexFrom = Math.floor(Math.random() * complexModel['header'][0].length);
+    this.indexTo = Math.floor(Math.random() * complexModel['header'][0].length);
+    this.model.moveColumn(this.indexFrom, this.indexTo, 0);
+  }
+};

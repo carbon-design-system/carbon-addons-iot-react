@@ -1,19 +1,49 @@
 import './polyfills.js';
-
-import { addDecorator, addParameters } from '@storybook/angular';
-import { withKnobs } from '@storybook/addon-knobs';
-import { CarbonG10 } from './theme';
+import { breakpoints } from '@carbon/layout';
 
 // load global styles
 require('!style-loader!css-loader!postcss-loader!sass-loader!./preview.scss');
 
-addParameters({
-  options: {
-    theme: CarbonG10,
-    showRoots: true,
-    storySort: (a, b) =>
-      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
-  },
-});
 
-addDecorator(withKnobs);
+// Set carbon viewports options
+export const parameters = {
+	viewport: {
+		viewports: {
+			sm: {
+				name: 'Small',
+				styles: {
+					width: breakpoints.sm.width,
+					height: '100%',
+				},
+			},
+			md: {
+				name: 'Medium',
+				styles: {
+					width: breakpoints.md.width,
+					height: '100%',
+				},
+			},
+			lg: {
+				name: 'Large',
+				styles: {
+					width: breakpoints.lg.width,
+					height: '100%',
+				},
+			},
+			xlg: {
+				name: 'X-Large',
+				styles: {
+					width: breakpoints.xlg.width,
+					height: '100%',
+				},
+			},
+			max: {
+				name: 'Max',
+				styles: {
+					width: breakpoints.max.width,
+					height: '100%',
+				},
+			},
+		},
+	}
+};

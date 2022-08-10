@@ -12,7 +12,7 @@ import {
   DateTimeSelection,
   RelativeRange,
   RelativeToOption,
-} from './date-time-picker.component';
+} from './date-time.types';
 
 @Component({
   selector: 'ai-custom-date-time',

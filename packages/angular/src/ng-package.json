@@ -4,7 +4,7 @@
 	"lib": {
 		"entryFile": "index.ts"
 	},
-	"whitelistedNonPeerDependencies": [
+	"allowedNonPeerDependencies": [
 		"@ai-apps/styles",
 		"flatpickr",
 		"@carbon/icons",

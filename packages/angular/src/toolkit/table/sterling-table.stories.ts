@@ -1,9 +1,5 @@
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import { moduleMetadata, storiesOf } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 import { TableHeaderItem, TableItem } from 'carbon-components-angular';
-import { Action } from 'rxjs/internal/scheduler/Action';
-
 import { SCTableModel } from './sterling-table-model.class';
 import { SCTableModule } from './sterling-table.module';
 
@@ -12,12 +8,11 @@ const simpleModel = new SCTableModel();
 simpleModel.header = [
   [
     new TableHeaderItem({
-      data:
-        'Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
-	Name Name Name Name Name Name Name Name Name Name \
-	Name',
+      data: 'Name Name Name Name Name Name Name Name Name Name \
+    Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
+    Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name Name \
+    Name Name Name Name Name Name Name Name Name Name \
+    Name',
       rowSpan: 2,
     }),
     new TableHeaderItem({ data: 'hwer', colSpan: 2, sortable: false }),
@@ -45,42 +40,86 @@ simpleModel.data = [
   ],
 ];
 
-storiesOf('Sterling Toolkit/Sterling table', module)
-  .addDecorator(
+export default {
+  title: 'Sterling Toolkit/Sterling table',
+
+  decorators: [
     moduleMetadata({
       imports: [SCTableModule],
     })
-  )
-  .addDecorator(withKnobs)
-  .add('Basic', () => {
-    return {
-      template: `
-			<sc-table
-				[model]="model"
-				[size]="size"
-				[showSelectionColumn]="showSelectionColumn"
-				[striped]="striped"
-				[skeleton]="skeleton"
-				[isDataGrid]="isDataGrid"
-				(sort)="customSort($event)"
-				(rowClick)="rowClick($event)">
-			</sc-table>
-		`,
-      props: {
-        model: simpleModel,
-        size: select('size', { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }, 'md'),
-        showSelectionColumn: boolean('showSelectionColumn', true),
-        striped: boolean('striped', true),
-        isDataGrid: boolean('Data grid keyboard interactions', true),
-        skeleton: boolean('Skeleton mode', false),
-        rowClick: action('row clicked'),
-        customSort: (index: number) => {
-          if (simpleModel.getHeader(index).sorted) {
-            // if already sorted flip sorting direction
-            simpleModel.getHeader(index).ascending = simpleModel.getHeader(index).descending;
-          }
-          simpleModel.sort(index);
-        },
-      },
-    };
-  });
+  ],
+};
+
+const basicTpl = (args) => {
+  return {
+    template: `
+      <sc-table
+          [model]="model"
+          [size]="size"
+          [showSelectionColumn]="showSelectionColumn"
+          [striped]="striped"
+          [skeleton]="skeleton"
+          [isDataGrid]="isDataGrid"
+          (sort)="customSort($event)"
+          (rowClick)="rowClick($event)">
+      </sc-table>
+    `,
+    props: args,
+    name: 'Basic'
+  };
+};
+export const basic = basicTpl.bind({});
+basic.argTypes = {
+  model: {
+    table: {
+      disable: true
+    }
+  },
+  size: {
+    control: {
+      type: 'select',
+      options: { Small: 'sm', Short: 'sh', Normal: 'md', Large: 'lg' }
+    },
+    defaultValue: 'md'
+  },
+  showSelectionColumn: {
+    control: 'boolean',
+    defaultValue: true
+  },
+  striped: {
+    control: 'boolean',
+    defaultValue: true
+  },
+  isDataGrid: {
+    control: 'boolean',
+    name: 'Data grid keyboard interactions',
+    defaultValue: true
+  },
+  skeleton: {
+    control: 'boolean',
+    name: 'Skeleton mode',
+    defaultValue: false
+  },
+  rowClick: {
+    action: 'click',
+    table: {
+      disable: true
+    }
+  },
+  customSort: {
+    action: 'function',
+    table: {
+      disable: true
+    }
+  }
+};
+basic.args = {
+  model: simpleModel,
+  customSort: (index: number) => {
+    if (simpleModel.getHeader(index).sorted) {
+      // if already sorted flip sorting direction
+      simpleModel.getHeader(index).ascending = simpleModel.getHeader(index).descending;
+    }
+    simpleModel.sort(index);
+  }
+};
