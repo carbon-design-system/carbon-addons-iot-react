@@ -4,11 +4,6 @@
   "description": "AI Applications PAL in Angular",
   "main": "index.js",
   "private": true,
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  },
   "scripts": {
     "build": "bash scripts/build.sh",
     "storybook": "start-storybook -s .storybook/public -p 6006",
