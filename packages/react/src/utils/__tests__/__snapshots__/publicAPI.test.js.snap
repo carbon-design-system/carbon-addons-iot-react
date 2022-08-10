@@ -11304,7 +11304,6 @@ Map {
       "PROFILE": "PROFILE",
       "REFERRER": "REFERRER",
       "SURVEY": "SURVEY",
-      "WORKSPACE": "WORKSPACE",
     },
     "defaultProps": Object {
       "appName": null,

@@ -173,7 +173,10 @@ const SuiteHeader = ({
   // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
   const currentWorkspaceComponent =
     !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
-      <span className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}>
+      <span
+        data-testid={`${testId}--current-workspace`}
+        className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}
+      >
         {translate(mergedI18N.workspace, [['{workspace}', currentWorkspace.name]])}
       </span>
     ) : null;
