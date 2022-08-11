@@ -2,11 +2,11 @@ import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-// import { settings } from '../../../constants/Settings';
+import { settings } from '../../../constants/Settings';
 
 import MultiWorkspaceSuiteHeaderAppSwitcher from './MultiWorkspaceSuiteHeaderAppSwitcher';
 
-// const { iotPrefix } = settings;
+const { iotPrefix } = settings;
 
 const icon =
   'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+';
@@ -185,10 +185,9 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     // Make sure that the "back to app switcher" is now showing
     expect(screen.getByTestId(`${testIdPrefix}--back-to-switcher`)).toBeVisible();
     // Make sure the selected workspace button has the selected class
-    // TODO: Commenting out the check for selected workspace for now
-    // expect(screen.getByTestId(`${testIdPrefix}--workspace-workspace2`)).toHaveClass(
-    //   `${iotPrefix}--btn-icon-selection--selected`
-    // );
+    expect(screen.getByTestId(`${testIdPrefix}--workspace-workspace2`)).toHaveClass(
+      'bx--side-nav__link--current'
+    );
     // Go back to the app switcher apps
     await userEvent.click(screen.getByTestId(`${testIdPrefix}--back-to-switcher`));
     // Check that application buttons are showing
@@ -211,10 +210,9 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     // Make sure that the "back to app switcher" is now showing
     expect(screen.getByTestId(`${testIdPrefix}--back-to-switcher`)).toBeVisible();
     // Make sure the selected workspace button has the selected class
-    // TODO: Commenting out the check for selected workspace for now
-    // expect(screen.getByTestId(`${testIdPrefix}--workspace-workspace2`)).toHaveClass(
-    //   `${iotPrefix}--btn-icon-selection--selected`
-    // );
+    expect(screen.getByTestId(`${testIdPrefix}--workspace-workspace2`)).toHaveClass(
+      'bx--side-nav__link--current'
+    );
     // Go back to the app switcher apps
     await userEvent.type(screen.getByTestId(`${testIdPrefix}--back-to-switcher`, '{enter}'));
     // Check that application buttons are showing
