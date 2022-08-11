@@ -156,10 +156,10 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   const renderNavItem = useCallback(
     (name, href, isExternal, icon, eventHandler, isSelected, keySuffix) => (
       <SideNavLink
-        id={`suite-header-${keySuffix}`}
-        key={`key-${keySuffix}`}
+        id={`${testId}--${keySuffix}`}
+        key={`${testId}--${keySuffix}`}
         className={`${baseClassName}--app-link`}
-        testId={`${testId}--${keySuffix}`}
+        data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}
         onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
         tabIndex={tabIndex}
@@ -189,8 +189,8 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           {workspaces?.length > 1 ? (
             <>
               <li
-                id="suite-header-selected-workspace"
-                key="key-selected-workspace"
+                id={`${testId}--selected-workspace`}
+                key={`${testId}--selected-workspace`}
                 className={`${baseClassName}--app-link`}
               >
                 <p>{mergedI18n.workspace}</p>
@@ -321,8 +321,8 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           {selectedWorkspace ? (
             <>
               <li
-                id="suite-header-back-to-switcher"
-                key="key-back-to-switcher"
+                id={`${testId}--back-to-switcher`}
+                key={`${testId}--back-to-switcher`}
                 className={`${baseClassName}--app-link`}
               >
                 <Button
@@ -351,7 +351,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           {workspaces.map((workspace) =>
             renderNavItem(
               workspace.name,
-              isAdminView ? '' : workspace.href,
+              isAdminView ? null : workspace.href,
               false,
               null,
               handleWorkspaceSelection(workspace),
