@@ -332,9 +332,9 @@ const DataSeriesFormItem = ({
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
       // Call back function for on click of edit button
       if (onEditDataItem) {
-        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        if (!isEmpty(downSampleMethods)) {
-          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(aggregationMethods)) {
+          dataItemWithMetaData.aggregationMethods = aggregationMethods;
         }
       }
       // need to reset the card to include the latest dataSection

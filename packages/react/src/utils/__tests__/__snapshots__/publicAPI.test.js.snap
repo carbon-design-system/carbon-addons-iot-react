@@ -13945,27 +13945,6 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
-                "downSampleMethod": Object {
-                  "type": "string",
-                },
-                "downSampleMethods": Object {
-                  "args": Array [
-                    Object {
-                      "args": Array [
-                        Object {
-                          "id": Object {
-                            "type": "string",
-                          },
-                          "text": Object {
-                            "type": "string",
-                          },
-                        },
-                      ],
-                      "type": "shape",
-                    },
-                  ],
-                  "type": "arrayOf",
-                },
                 "grain": Object {
                   "type": "string",
                 },
@@ -14810,7 +14789,6 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
