@@ -1159,13 +1159,12 @@ describe('SuiteHeader', () => {
     );
     const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
     currentWorkspace.applications.forEach((app) =>
-      expect(screen.getByTestId(`suite-header-app-switcher--${app.id}`)).toHaveAttribute(
-        'tabindex',
-        '-1'
-      )
+      expect(
+        screen.getByTestId(`suite-header-app-switcher--application-${app.id}`)
+      ).toHaveAttribute('tabindex', '-1')
     );
 
-    expect(screen.getByTestId('suite-header-app-switcher--workspace-admin')).toHaveAttribute(
+    expect(screen.getByTestId('suite-header-app-switcher--admin-workspace')).toHaveAttribute(
       'tabindex',
       '-1'
     );
@@ -1180,12 +1179,11 @@ describe('SuiteHeader', () => {
       '0'
     );
     currentWorkspace.applications.forEach((app) =>
-      expect(screen.getByTestId(`suite-header-app-switcher--${app.id}`)).toHaveAttribute(
-        'tabindex',
-        '0'
-      )
+      expect(
+        screen.getByTestId(`suite-header-app-switcher--application-${app.id}`)
+      ).toHaveAttribute('tabindex', '0')
     );
-    expect(screen.getByTestId('suite-header-app-switcher--workspace-admin')).toHaveAttribute(
+    expect(screen.getByTestId('suite-header-app-switcher--admin-workspace')).toHaveAttribute(
       'tabindex',
       '0'
     );

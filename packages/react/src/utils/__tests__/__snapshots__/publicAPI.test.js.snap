@@ -11384,6 +11384,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -11471,6 +11474,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -11549,6 +11555,9 @@ Map {
               Object {
                 "href": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
                   "type": "string",
                 },
                 "id": Object {
@@ -11664,16 +11673,40 @@ Map {
               ],
               "type": "oneOfType",
             },
+            "switcherAvailableWorkspaces": Object {
+              "type": "string",
+            },
+            "switcherBackToAppSwitcher": Object {
+              "type": "string",
+            },
             "switcherMyApplications": Object {
               "type": "string",
             },
             "switcherNavigatorLink": Object {
               "type": "string",
             },
+            "switcherSelectWorkspace": Object {
+              "type": "string",
+            },
+            "switcherSuiteAdmin": Object {
+              "type": "string",
+            },
+            "switcherWorkspace": Object {
+              "type": "string",
+            },
+            "switcherWorkspaceAdmin": Object {
+              "type": "string",
+            },
+            "switcherWorkspaces": Object {
+              "type": "string",
+            },
             "userIcon": Object {
               "type": "string",
             },
             "whatsNew": Object {
+              "type": "string",
+            },
+            "workspace": Object {
               "type": "string",
             },
           },
@@ -12085,6 +12118,9 @@ Map {
                             "isRequired": true,
                             "type": "string",
                           },
+                          "icon": Object {
+                            "type": "string",
+                          },
                           "id": Object {
                             "isRequired": true,
                             "type": "string",
@@ -12207,6 +12243,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -12232,6 +12271,9 @@ Map {
               Object {
                 "href": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
                   "type": "string",
                 },
                 "id": Object {
@@ -12320,6 +12362,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -12345,6 +12390,9 @@ Map {
               Object {
                 "href": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
                   "type": "string",
                 },
                 "id": Object {
@@ -12432,6 +12480,9 @@ Map {
                         Object {
                           "href": Object {
                             "isRequired": true,
+                            "type": "string",
+                          },
+                          "icon": Object {
                             "type": "string",
                           },
                           "id": Object {
