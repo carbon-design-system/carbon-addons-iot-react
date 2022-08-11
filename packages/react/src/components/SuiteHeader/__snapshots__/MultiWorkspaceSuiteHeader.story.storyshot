@@ -567,13 +567,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
-                    <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                    >
-                      <p>
-                        Select a workspace
-                      </p>
-                    </li>
+                    <p>
+                      Select a workspace
+                    </p>
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
@@ -1246,6 +1242,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -1329,8 +1343,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -2001,48 +2016,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -2057,6 +2072,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -2140,8 +2173,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -3260,48 +3294,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -3316,6 +3350,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -3399,8 +3451,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -3463,8 +3516,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -4130,48 +4184,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -4186,6 +4240,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -4269,8 +4341,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -5023,48 +5096,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -5079,6 +5152,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -5162,8 +5253,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -5834,48 +5926,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -5890,6 +5982,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -5973,8 +6083,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -7124,48 +7235,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -7180,6 +7291,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -7263,8 +7392,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -8484,48 +8614,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -8540,6 +8670,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -8623,8 +8771,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -9266,51 +9415,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Select a workspace
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Select a workspace
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
-                    />
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -9965,6 +10111,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -10048,8 +10212,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -10697,48 +10862,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     className="iot--suite-header-app-switcher-multiworkspace"
                     data-testid="suite-header-app-switcher"
                   >
+                    <p>
+                      Workspace
+                    </p>
                     <li
-                      className="iot--suite-header-app-switcher-multiworkspace--app-link"
-                      id="suite-header-app-switcher--selected-workspace"
+                      className="bx--side-nav__item"
                     >
-                      <p>
-                        Workspace
-                      </p>
-                      <button
-                        aria-describedby={null}
-                        aria-pressed={null}
-                        className="iot--btn bx--btn bx--btn--ghost"
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
                         data-testid="suite-header-app-switcher--selected-workspace"
-                        disabled={false}
-                        onBlur={[Function]}
+                        id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
-                        onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         tabIndex={-1}
-                        type="button"
                       >
-                        Workspace 3
-                        <svg
-                          aria-hidden={true}
-                          className="bx--btn__icon"
-                          fill="currentColor"
-                          focusable="false"
-                          height={16}
-                          preserveAspectRatio="xMidYMid meet"
-                          viewBox="0 0 16 16"
-                          width={16}
-                          xmlns="http://www.w3.org/2000/svg"
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
                         >
-                          <path
-                            d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                          />
-                        </svg>
-                      </button>
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
+                            />
+                          </svg>
+                        </div>
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -10753,6 +10918,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -10836,8 +11019,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
@@ -11492,6 +11676,24 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
+                        <div
+                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M4 2v2H2V2h2zm1-1H1v4h4V1zM9 2v2H7V2h2zm1-1H6v4h4V1zM14 2v2h-2V2h2zm1-1h-4v4h4V1zM4 7v2H2V7h2zm1-1H1v4h4V6zM9 7v2H7V7h2zm1-1H6v4h4V6zM14 7v2h-2V7h2zm1-1h-4v4h4V6zM4 12v2H2v-2h2zm1-1H1v4h4v-4zM9 12v2H7v-2h2zm1-1H6v4h4v-4zM14 12v2h-2v-2h2zm1-1h-4v4h4v-4z"
+                            />
+                          </svg>
+                        </div>
                         <span
                           className="bx--side-nav__link-text"
                         >
@@ -11575,8 +11777,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         </span>
                       </a>
                     </li>
-                    <div
-                      className="iot--suite-header-app-switcher-multiworkspace--nav-link--separator"
+                    <li
+                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+                      role="separator"
                     />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
