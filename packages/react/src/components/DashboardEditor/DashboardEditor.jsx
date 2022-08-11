@@ -311,6 +311,7 @@ const propTypes = {
   onEditDataItems: PropTypes.func,
 
   testId: PropTypes.string,
+  /** handles V2 dataItem */
   onEditDataItem: PropTypes.func,
 };
 
