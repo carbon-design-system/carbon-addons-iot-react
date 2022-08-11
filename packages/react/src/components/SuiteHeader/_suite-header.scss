@@ -190,6 +190,105 @@
   }
 }
 
+.#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
+  background-color: $ui-05;
+  padding-top: 0;
+
+  li {
+    width: 100%;
+
+    button,
+    p {
+      @include type-style('productive-heading-01');
+      display: flex;
+      align-items: center;
+      padding: $spacing-05 $spacing-05 0;
+      text-decoration: none;
+      color: $active-ui;
+    }
+  }
+
+  a {
+    align-items: center;
+  }
+
+  &--nav-link {
+    a {
+      text-decoration: none;
+    }
+    &--loading {
+      display: flex;
+      padding: $spacing-05;
+      flex-direction: column;
+      p {
+        margin-bottom: $spacing-05;
+      }
+    }
+    &--button--loading {
+      padding: $spacing-05;
+      div {
+        min-height: 40px;
+        width: 100% !important;
+      }
+    }
+    &--separator {
+      padding: 0;
+      height: 0;
+      border-bottom: 1px solid $ui-03;
+      margin: 0 $spacing-05 0 $spacing-05;
+    }
+  }
+
+  &--app-link,
+  a.#{$prefix}--side-nav__link {
+    &.bx--side-nav__link--current {
+      background-color: $background-inverse;
+      > .#{$prefix}--side-nav__link-text {
+        color: $field-01;
+      }
+    }
+    > .#{$prefix}--side-nav__link-text {
+      color: $active-ui;
+    }
+    svg {
+      fill: $active-ui;
+    }
+  }
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+    > .#{$prefix}--side-nav__link:hover {
+    svg {
+      fill: $layer-selected-inverse;
+    }
+  }
+
+  &--no-app {
+    padding: $layout-05 $spacing-07 $spacing-05;
+    .bee-icon-container {
+      display: block;
+      svg {
+        display: inherit;
+      }
+      .bee-shadow {
+        background-color: $ui-03;
+        height: $spacing-03;
+        width: $spacing-07;
+        border-radius: 50%;
+        margin-top: $spacing-02;
+      }
+    }
+    span {
+      @include type-style('body-short-01');
+      color: $text-01;
+      padding-top: $spacing-05;
+    }
+    a {
+      text-decoration: none;
+      padding: 0;
+      margin: $spacing-05 0;
+    }
+  }
+}
+
 .#{$iot-prefix}--suite-header {
   &-data {
     display: none;

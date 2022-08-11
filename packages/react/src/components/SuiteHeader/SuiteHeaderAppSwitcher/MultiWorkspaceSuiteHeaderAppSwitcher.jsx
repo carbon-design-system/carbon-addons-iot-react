@@ -4,6 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { ChevronRight16, ChevronLeft16, Launch16, Bee32 } from '@carbon/icons-react';
+import { SideNavLink } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';
 import Button from '../../Button';
@@ -79,7 +80,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   const [selectedWorkspace, setSelectedWorkspace] = useState(null);
 
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
-  const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher`;
+  const baseClassName = `${settings.iotPrefix}--suite-header-app-switcher-multiworkspace`;
   const workspaceApplications = workspaces ? selectedWorkspace?.applications ?? [] : null;
   const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
 
@@ -154,27 +155,30 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
 
   const renderNavItem = useCallback(
     (name, href, isExternal, icon, eventHandler, isSelected, keySuffix) => (
-      <li
+      <SideNavLink
         id={`suite-header-${keySuffix}`}
         key={`key-${keySuffix}`}
         className={`${baseClassName}--app-link`}
+        testId={`${testId}--${keySuffix}`}
+        onClick={eventHandler}
+        onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+        tabIndex={tabIndex}
+        renderIcon={
+          isExternal
+            ? Launch16
+            : icon
+            ? () => <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" />
+            : null
+        }
+        href={href}
+        rel="noopener noreferrer"
+        large
+        isActive={isSelected}
       >
-        {icon ? <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" /> : null}
-        <Button
-          kind="ghost"
-          testId={`${testId}--${keySuffix}`}
-          onClick={eventHandler}
-          onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-          tabIndex={tabIndex}
-          renderIcon={isExternal ? Launch16 : null}
-          href={href}
-          selected={isSelected}
-          rel="noopener noreferrer"
-        >
-          {name}
-        </Button>
-      </li>
+        {name}
+      </SideNavLink>
     ),
+
     [baseClassName, tabIndex, testId]
   );
 
