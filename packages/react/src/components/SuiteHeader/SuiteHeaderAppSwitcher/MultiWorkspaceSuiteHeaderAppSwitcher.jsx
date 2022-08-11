@@ -3,11 +3,10 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronRight16, ChevronLeft16, Launch16, Bee32 } from '@carbon/icons-react';
-import { SideNavLink } from 'carbon-components-react/es/components/UIShell';
+import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Apps16 } from '@carbon/icons-react';
+import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';
-import Button from '../../Button';
 import { shouldOpenInNewWindow } from '../suiteHeaderUtils';
 import { SUITE_HEADER_ROUTE_TYPES } from '../suiteHeaderConstants';
 import {
@@ -167,7 +166,9 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           isExternal
             ? Launch16
             : icon
-            ? () => <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" />
+            ? typeof icon === 'string'
+              ? () => <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" />
+              : icon
             : null
         }
         href={href}
@@ -188,27 +189,22 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         <>
           {workspaces?.length > 1 ? (
             <>
-              <li
+              <p>{mergedI18n.workspace}</p>
+
+              <SideNavLink
                 id={`${testId}--selected-workspace`}
                 key={`${testId}--selected-workspace`}
-                className={`${baseClassName}--app-link`}
+                className={`${baseClassName}--app-link ${baseClassName}--workpsace-selector `}
+                data-testid={`${testId}--selected-workspace`}
+                onClick={() => setWorkspacesView(true)}
+                onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () => setWorkspacesView(true))}
+                tabIndex={tabIndex}
+                renderIcon={ChevronRight16}
               >
-                <p>{mergedI18n.workspace}</p>
+                {selectedWorkspace?.name ?? mergedI18n.selectWorkspace}
+              </SideNavLink>
 
-                <Button
-                  kind="ghost"
-                  testId={`${testId}--selected-workspace`}
-                  onClick={() => setWorkspacesView(true)}
-                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
-                    setWorkspacesView(true)
-                  )}
-                  renderIcon={ChevronRight16}
-                  tabIndex={tabIndex}
-                >
-                  {selectedWorkspace?.name ?? mergedI18n.selectWorkspace}
-                </Button>
-              </li>
-              <div className={`${baseClassName}--nav-link--separator`} />
+              <SideNavDivider className={`${baseClassName}--divider`} />
             </>
           ) : null}
           {selectedWorkspace && selectedWorkspace.href
@@ -216,7 +212,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 mergedI18n.allApplicationsLink,
                 selectedWorkspace.href,
                 false,
-                null,
+                Apps16,
                 handleWorkspaceRoute({ id: selectedWorkspace.id, href: selectedWorkspace.href }),
                 false,
                 `all-applications`
@@ -276,8 +272,11 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {adminLink || globalApplications.length > 0 ? (
-            <div className={`${baseClassName}--nav-link--separator`} />
+          {((selectedWorkspace && selectedWorkspace.href) ||
+            (selectedWorkspace && selectedWorkspace.adminHref) ||
+            (selectedWorkspace && workspaceApplications?.length === 0)) &&
+          (adminLink || globalApplications.length > 0) ? (
+            <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
           {adminLink
             ? renderNavItem(
@@ -302,7 +301,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
             )
           )}
           {customApplications.length > 0 ? (
-            <div className={`${baseClassName}--nav-link--separator`} />
+            <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
           {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
             renderNavItem(
@@ -320,33 +319,28 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         <>
           {selectedWorkspace ? (
             <>
-              <li
+              <SideNavLink
                 id={`${testId}--back-to-switcher`}
                 key={`${testId}--back-to-switcher`}
                 className={`${baseClassName}--app-link`}
+                data-testid={`${testId}--back-to-switcher`}
+                onClick={() => setWorkspacesView(false)}
+                onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
+                  setWorkspacesView(false)
+                )}
+                renderIcon={ChevronLeft16}
+                tabIndex={tabIndex}
+                large
               >
-                <Button
-                  kind="ghost"
-                  testId={`${testId}--back-to-switcher`}
-                  onClick={() => setWorkspacesView(false)}
-                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () =>
-                    setWorkspacesView(false)
-                  )}
-                  renderIcon={ChevronLeft16}
-                  tabIndex={tabIndex}
-                >
-                  {mergedI18n.backToAppSwitcher}
-                </Button>
-              </li>
-              <div className={`${baseClassName}--nav-link--separator`} />
-              <li className={`${baseClassName}--app-link`}>
-                <p>{mergedI18n.availableWorkspaces}</p>
-              </li>
+                {mergedI18n.backToAppSwitcher}
+              </SideNavLink>
+
+              <SideNavDivider className={`${baseClassName}--divider`} />
+
+              <p>{mergedI18n.availableWorkspaces}</p>
             </>
           ) : (
-            <li className={`${baseClassName}--app-link`}>
-              <p>{mergedI18n.selectWorkspace}</p>
-            </li>
+            <p>{mergedI18n.selectWorkspace}</p>
           )}
           {workspaces.map((workspace) =>
             renderNavItem(
