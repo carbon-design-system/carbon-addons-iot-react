@@ -12,6 +12,8 @@ import SuiteHeaderI18N from './i18n';
 
 const { prefix } = settings;
 
+const icon =
+  'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+';
 const adminPageWorkspaces = [
   {
     id: 'workspace1',
@@ -25,6 +27,7 @@ const adminPageWorkspaces = [
         name: 'Monitor',
         href: 'https://www.ibm.com/1/monitor',
         isExternal: false,
+        icon,
       },
       {
         id: 'health',
@@ -44,12 +47,14 @@ const adminPageWorkspaces = [
         id: 'monitor',
         name: 'Monitor',
         href: 'https://www.ibm.com/2/monitor',
+        icon,
       },
       {
         id: 'manage',
         name: 'Manage',
         href: 'https://www.ibm.com/2/manage',
         isExternal: true,
+        icon,
       },
     ],
   },
@@ -65,12 +70,14 @@ const adminPageWorkspaces = [
         name: 'Health',
         href: 'https://www.ibm.com/3/health',
         isExternal: false,
+        icon,
       },
       {
         id: 'manage',
         name: 'Manage',
         href: 'https://www.ibm.com/3/manage',
         isExternal: false,
+        icon,
       },
     ],
   },

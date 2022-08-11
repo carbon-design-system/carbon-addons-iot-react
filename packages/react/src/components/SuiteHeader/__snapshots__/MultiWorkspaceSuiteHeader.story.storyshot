@@ -1281,6 +1281,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
@@ -1301,6 +1305,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -2073,6 +2081,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -2093,6 +2105,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -3313,6 +3329,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -3333,6 +3353,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -3437,6 +3461,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-custom-application-customapp1"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--custom-customapp1"
@@ -4153,6 +4181,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -4173,6 +4205,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -5027,6 +5063,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -5047,6 +5087,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -5819,6 +5863,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -5839,6 +5887,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -7093,6 +7145,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -7113,6 +7169,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -8434,6 +8494,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -8454,6 +8518,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -9837,6 +9905,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-monitor"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--monitor"
@@ -9857,6 +9929,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -10606,6 +10682,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -10626,6 +10706,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"
@@ -11326,6 +11410,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-health"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--health"
@@ -11346,6 +11434,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="iot--suite-header-app-switcher--app-link"
                       id="suite-header-application-manage"
                     >
+                      <img
+                        alt="appIcon"
+                        src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+                      />
                       <a
                         className="iot--btn bx--btn bx--btn--ghost"
                         data-testid="suite-header-app-switcher--manage"

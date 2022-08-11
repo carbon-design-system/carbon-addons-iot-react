@@ -24,6 +24,7 @@ export const SuiteHeaderApplicationPropTypes = {
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   isExternal: PropTypes.bool,
+  icon: PropTypes.string,
 };
 
 export const SuiteHeaderWorkspacePropTypes = {

@@ -152,6 +152,31 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
 
   const tabIndex = isExpanded ? 0 : -1;
 
+  const renderApplicationNavItem = useCallback(
+    (id, name, href, isExternal, icon, eventHandler, keyPrefix) => (
+      <li
+        id={`suite-header-${keyPrefix}application-${id}`}
+        key={`key-${keyPrefix}${id}`}
+        className={`${baseClassName}--app-link`}
+      >
+        {icon ? <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" /> : null}
+        <Button
+          kind="ghost"
+          testId={`${testId}--${keyPrefix}${id}`}
+          onClick={eventHandler}
+          onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
+          tabIndex={tabIndex}
+          renderIcon={isExternal ? Launch16 : null}
+          href={href}
+          rel="noopener noreferrer"
+        >
+          {name}
+        </Button>
+      </li>
+    ),
+    [baseClassName, tabIndex, testId]
+  );
+
   return (
     <ul data-testid={testId} className={baseClassName}>
       {!isWorkspacesView ? (
@@ -207,29 +232,17 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               })()
             : null}
           {workspaceApplications
-            ? workspaceApplications?.map(({ id, name, href, isExternal = false }) => {
-                const eventHandler = handleApplicationRoute({ id, href, isExternal });
-                return (
-                  <li
-                    id={`suite-header-application-${id}`}
-                    key={`key-${id}`}
-                    className={`${baseClassName}--app-link`}
-                  >
-                    <Button
-                      kind="ghost"
-                      testId={`${testId}--${id}`}
-                      onClick={eventHandler}
-                      onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                      tabIndex={tabIndex}
-                      renderIcon={isExternal ? Launch16 : null}
-                      href={href}
-                      rel="noopener noreferrer"
-                    >
-                      {name}
-                    </Button>
-                  </li>
-                );
-              })
+            ? workspaceApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
+                renderApplicationNavItem(
+                  id,
+                  name,
+                  href,
+                  isExternal,
+                  icon,
+                  handleApplicationRoute({ id, href, isExternal }),
+                  ''
+                )
+              )
             : null}
           {selectedWorkspace && selectedWorkspace.adminHref
             ? (() => {
@@ -301,55 +314,31 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </Button>
             </li>
           ) : null}
-          {globalApplications.map(({ id, name, href, isExternal = false }) => {
-            const eventHandler = handleApplicationRoute({ id, href, isExternal });
-            return (
-              <li
-                id={`suite-header-global-application-${id}`}
-                key={`key-global-${id}`}
-                className={`${baseClassName}--app-link`}
-              >
-                <Button
-                  kind="ghost"
-                  testId={`${testId}--global-${id}`}
-                  onClick={eventHandler}
-                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                  tabIndex={tabIndex}
-                  renderIcon={isExternal ? Launch16 : null}
-                  href={href}
-                  rel="noopener noreferrer"
-                >
-                  {name}
-                </Button>
-              </li>
-            );
-          })}
+          {globalApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
+            renderApplicationNavItem(
+              id,
+              name,
+              href,
+              isExternal,
+              icon,
+              handleApplicationRoute({ id, href, isExternal }),
+              'global-'
+            )
+          )}
           {customApplications.length > 0 ? (
             <div className={`${baseClassName}--nav-link--separator`} />
           ) : null}
-          {customApplications.map(({ id, name, href, isExternal = false }) => {
-            const eventHandler = handleApplicationRoute({ id, href, isExternal });
-            return (
-              <li
-                id={`suite-header-custom-application-${id}`}
-                key={`key-custom-${id}`}
-                className={`${baseClassName}--app-link`}
-              >
-                <Button
-                  kind="ghost"
-                  testId={`${testId}--custom-${id}`}
-                  onClick={eventHandler}
-                  onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
-                  tabIndex={tabIndex}
-                  renderIcon={isExternal ? Launch16 : null}
-                  href={href}
-                  rel="noopener noreferrer"
-                >
-                  {name}
-                </Button>
-              </li>
-            );
-          })}
+          {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
+            renderApplicationNavItem(
+              id,
+              name,
+              href,
+              isExternal,
+              icon,
+              handleApplicationRoute({ id, href, isExternal }),
+              'custom-'
+            )
+          )}
         </>
       ) : (
         <>
