@@ -84,11 +84,11 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
 
   useEffect(() => {
-    // Show the workspace selection list if no workspace has been selected yet and if we are in an admin page
-    if (!isWorkspacesView && !selectedWorkspace && workspaces?.length > 1 && isAdminView) {
+    // Show the workspace selection list if no workspace has been selected yet and if this is not a workspace-based page
+    if (!isWorkspacesView && !selectedWorkspace && workspaces?.length > 1 && !currentWorkspace) {
       setWorkspacesView(true);
     }
-  }, [isWorkspacesView, workspaces, selectedWorkspace, isAdminView]);
+  }, [isWorkspacesView, workspaces, selectedWorkspace, currentWorkspace]);
 
   useEffect(() => {
     if (!selectedWorkspace) {
@@ -135,14 +135,14 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
   const handleWorkspaceSelection = useCallback(
     (workspace) => async (e) => {
       const { id, href } = workspace;
-      if (isAdminView) {
+      if (currentWorkspace) {
+        handleWorkspaceRoute({ id, href })(e);
+      } else {
         setSelectedWorkspace(workspace);
         setWorkspacesView(false);
-      } else {
-        handleWorkspaceRoute({ id, href })(e);
       }
     },
-    [isAdminView, handleWorkspaceRoute]
+    [currentWorkspace, handleWorkspaceRoute]
   );
 
   const handleAdminRoute = useCallback(
@@ -207,7 +207,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               <SideNavDivider className={`${baseClassName}--divider`} />
             </>
           ) : null}
-          {selectedWorkspace && selectedWorkspace.href
+          {selectedWorkspace?.href
             ? renderNavItem(
                 mergedI18n.allApplicationsLink,
                 selectedWorkspace.href,
@@ -231,7 +231,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 )
               )
             : null}
-          {selectedWorkspace && selectedWorkspace.adminHref
+          {selectedWorkspace?.adminHref
             ? renderNavItem(
                 mergedI18n.workspaceAdmin,
                 selectedWorkspace.adminHref,
@@ -272,9 +272,10 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {((selectedWorkspace && selectedWorkspace.href) ||
-            (selectedWorkspace && selectedWorkspace.adminHref) ||
-            (selectedWorkspace && workspaceApplications?.length === 0)) &&
+          {selectedWorkspace &&
+          (selectedWorkspace.href ||
+            selectedWorkspace.adminHref ||
+            workspaceApplications?.length === 0) &&
           (adminLink || globalApplications.length > 0) ? (
             <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
@@ -285,7 +286,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 false,
                 null,
                 handleAdminRoute,
-                false,
+                isAdminView,
                 `admin`
               )
             : null}
@@ -345,7 +346,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           {workspaces.map((workspace) =>
             renderNavItem(
               workspace.name,
-              isAdminView ? null : workspace.href,
+              currentWorkspace ? workspace.href : null,
               false,
               null,
               handleWorkspaceSelection(workspace),

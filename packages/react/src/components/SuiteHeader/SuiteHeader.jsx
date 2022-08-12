@@ -366,8 +366,8 @@ const SuiteHeader = ({
               subtitle={
                 <div>
                   {appName}
-                  {extraContentComponent}
                   {currentWorkspaceComponent}
+                  {extraContentComponent}
                 </div>
               }
               actionItems={[

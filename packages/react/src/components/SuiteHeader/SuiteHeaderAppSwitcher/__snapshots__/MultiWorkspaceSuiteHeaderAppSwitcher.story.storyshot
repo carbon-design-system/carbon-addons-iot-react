@@ -176,7 +176,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -204,7 +204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -242,7 +242,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link"
           data-testid="multi-workspace-suite-header-app-switcher--admin"
           href="https://www.ibm.com"
           id="multi-workspace-suite-header-app-switcher--admin"
@@ -385,56 +385,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       data-testid="multi-workspace-suite-header-app-switcher"
     >
       <p>
-        Workspace
+        Select a workspace
       </p>
       <li
-        className="bx--side-nav__item"
-      >
-        <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
-          data-testid="multi-workspace-suite-header-app-switcher--selected-workspace"
-          id="multi-workspace-suite-header-app-switcher--selected-workspace"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          tabIndex={-1}
-        >
-          <div
-            className="bx--side-nav__icon bx--side-nav__icon--small"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-              />
-            </svg>
-          </div>
-          <span
-            className="bx--side-nav__link-text"
-          >
-            Select a workspace
-          </span>
-        </a>
-      </li>
-      <li
-        className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
-        role="separator"
-      />
-      <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
           className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
-          data-testid="multi-workspace-suite-header-app-switcher--admin"
-          href="https://www.ibm.com"
-          id="multi-workspace-suite-header-app-switcher--admin"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace1"
+          href={null}
+          id="multi-workspace-suite-header-app-switcher--workspace-workspace1"
           onClick={[Function]}
           onKeyDown={[Function]}
           rel="noopener noreferrer"
@@ -443,7 +403,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           <span
             className="bx--side-nav__link-text"
           >
-            Suite administration
+            Workspace 1
           </span>
         </a>
       </li>
@@ -452,39 +412,58 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       >
         <a
           className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
-          data-testid="multi-workspace-suite-header-app-switcher--global-application-appconnect"
-          href="https://www.ibm.com/appconnect"
-          id="multi-workspace-suite-header-app-switcher--global-application-appconnect"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace2"
+          href={null}
+          id="multi-workspace-suite-header-app-switcher--workspace-workspace2"
           onClick={[Function]}
           onKeyDown={[Function]}
           rel="noopener noreferrer"
           tabIndex={-1}
         >
-          <div
-            className="bx--side-nav__icon bx--side-nav__icon--small"
-          >
-            <svg
-              aria-hidden={true}
-              fill="currentColor"
-              focusable="false"
-              height={16}
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="0 0 16 16"
-              width={16}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13,14H3c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1h5v1H3v10h10V8h1v5C14,13.6,13.6,14,13,14z"
-              />
-              <path
-                d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
-              />
-            </svg>
-          </div>
           <span
             className="bx--side-nav__link-text"
           >
-            AppConnect
+            Workspace 2
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace3"
+          href={null}
+          id="multi-workspace-suite-header-app-switcher--workspace-workspace3"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            Workspace 3
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace4"
+          href={null}
+          id="multi-workspace-suite-header-app-switcher--workspace-workspace4"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            Workspace 4
           </span>
         </a>
       </li>
@@ -565,7 +544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -593,7 +572,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -808,7 +787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -836,7 +815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -953,7 +932,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -1124,7 +1103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -1152,7 +1131,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -1324,7 +1303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
@@ -1352,7 +1331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           >
             <img
               alt="appIcon"
-              src="data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+"
+              src="data:image/svg+xml;base64, PHN2ZyBpZD0iTWF4aW1vTW9uaXRvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0ibzJ5MXBlZWUxYSIgeDE9Ii03ODciIHkxPSI1NjkuNSIgeDI9Ii03ODIiIHkyPSI1NjkuNSIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSg4MTIgLTU1NikiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4zIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1vcGFjaXR5PSIwIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImM1ZzBzcG5kNGMiIHgxPSItLjAwMiIgeTE9IjMyLjAwNCIgeDI9IjMxLjk5OCIgeTI9Ii4wMDQiIGdyYWRpZW50VHJhbnNmb3JtPSJ0cmFuc2xhdGUoLjAwMiAtLjAwNCkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj48c3RvcCBvZmZzZXQ9Ii4xIiBzdG9wLWNvbG9yPSIjYTM2ZWZkIi8+PHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzEwNjJmYyIvPjwvbGluZWFyR3JhZGllbnQ+PG1hc2sgaWQ9IjVmOGVxODYxeWIiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTExIDIzYTEgMSAwIDAgMS0uODk1LS41NTNMNi4zODIgMTVIMnYtMmg1YTEgMSAwIDAgMSAuODk1LjU1M2wyLjg5NSA1Ljc5MUwxNi4wNDcgMi43YTEgMSAwIDAgMSAuOTMyLS43IDEuMDEgMS4wMSAwIDAgMSAuOTYuNjU4TDIxLjcgMTNIMjl2MmgtOGExIDEgMCAwIDEtLjkzOS0uNjU4bC0zLTguMjMzTDExLjk1MyAyMi4zYTEgMSAwIDAgMS0uODc0LjdIMTF6IiBzdHlsZT0iZmlsbDojZmZmIi8+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDI3LjUgMTMuNSkiIHN0eWxlPSJmaWxsOnVybCgjbzJ5MXBlZWUxYSkiIGQ9Ik0yNSAxMWg1djVoLTV6Ii8+PC9tYXNrPjwvZGVmcz48ZyBzdHlsZT0ibWFzazp1cmwoIzVmOGVxODYxeWIpIj48cGF0aCBzdHlsZT0iZmlsbDp1cmwoI2M1ZzBzcG5kNGMpIiBkPSJNMCAwaDMydjMySDB6Ii8+PC9nPjxjaXJjbGUgY3g9IjIzLjUiIGN5PSIyNSIgcj0iMiIgc3R5bGU9ImZpbGw6IzAwMWQ2YyIvPjxwYXRoIGQ9Ik0zMC43OTEgMjQuNTYxYTguMTA4IDguMTA4IDAgMCAwLTE0LjU4MiAwTDE2IDI1bC4yMDkuNDM5YTguMTA4IDguMTA4IDAgMCAwIDE0LjU4MiAwTDMxIDI1em0tNy4yOTEgNC40N0E0LjAzMSA0LjAzMSAwIDEgMSAyNy41MzIgMjVhNC4wMzUgNC4wMzUgMCAwIDEtNC4wMzIgNC4wMzF6IiBzdHlsZT0iZmlsbDojMDAxZDZjIi8+PC9zdmc+"
             />
           </div>
           <span
