@@ -1371,7 +1371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -1380,9 +1380,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -1400,11 +1401,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -2023,7 +2019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -2201,7 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -2210,9 +2206,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -2230,11 +2227,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -3301,7 +3293,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -3479,7 +3471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -3488,9 +3480,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -3508,11 +3501,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -3552,7 +3540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--custom-application-customapp2"
                         href="https://google.com"
                         id="suite-header-app-switcher--custom-application-customapp2"
@@ -3561,9 +3549,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          External Custom Application
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -3581,11 +3570,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          External Custom Application
                         </span>
                       </a>
                     </li>
@@ -4191,7 +4175,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -4369,7 +4353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -4378,9 +4362,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -4398,11 +4383,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -5103,7 +5083,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -5281,7 +5261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -5290,9 +5270,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -5310,11 +5291,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -5933,7 +5909,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -7242,7 +7218,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -7420,7 +7396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -7429,9 +7405,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -7449,11 +7426,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -8621,7 +8593,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -8799,7 +8771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -8808,9 +8780,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -8828,11 +8801,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -9422,7 +9390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -9482,7 +9450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -9491,9 +9459,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -9511,11 +9480,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -10240,7 +10204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -10249,9 +10213,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -10269,11 +10234,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -10869,7 +10829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector "
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
                         data-testid="suite-header-app-switcher--selected-workspace"
                         id="suite-header-app-switcher--selected-workspace"
                         onClick={[Function]}
@@ -11047,7 +11007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -11056,9 +11016,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -11076,11 +11037,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
@@ -11805,7 +11761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -11814,9 +11770,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         rel="noopener noreferrer"
                         tabIndex={-1}
                       >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
+                        <span
+                          className="bx--side-nav__link-text"
                         >
+                          AppConnect
                           <svg
                             aria-hidden={true}
                             fill="currentColor"
@@ -11834,11 +11791,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                               d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
                             />
                           </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          AppConnect
                         </span>
                       </a>
                     </li>
