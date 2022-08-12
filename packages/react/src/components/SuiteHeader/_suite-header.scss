@@ -232,6 +232,13 @@
       fill: $icon-03;
     }
   }
+  &--external {
+    .#{$prefix}--side-nav__link-text {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
     background-color: $hover-secondary;

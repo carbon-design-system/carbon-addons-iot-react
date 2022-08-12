@@ -3,6 +3,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Apps16 } from '@carbon/icons-react';
 import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
@@ -157,15 +158,15 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
       <SideNavLink
         id={`${testId}--${keySuffix}`}
         key={`${testId}--${keySuffix}`}
-        className={`${baseClassName}--app-link`}
+        className={classnames(`${baseClassName}--app-link`, {
+          [`${baseClassName}--external`]: isExternal,
+        })}
         data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}
         onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], eventHandler)}
         tabIndex={tabIndex}
         renderIcon={
-          isExternal
-            ? Launch16
-            : icon
+          icon
             ? typeof icon === 'string'
               ? () => <img src={`data:image/svg+xml;base64, ${icon}`} alt="appIcon" />
               : icon
@@ -177,6 +178,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         isActive={isSelected}
       >
         {name}
+        {isExternal ? <Launch16 /> : null}
       </SideNavLink>
     ),
 
@@ -194,7 +196,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               <SideNavLink
                 id={`${testId}--selected-workspace`}
                 key={`${testId}--selected-workspace`}
-                className={`${baseClassName}--app-link ${baseClassName}--workpsace-selector `}
+                className={`${baseClassName}--app-link ${baseClassName}--workpsace-selector`}
                 data-testid={`${testId}--selected-workspace`}
                 onClick={() => setWorkspacesView(true)}
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () => setWorkspacesView(true))}
