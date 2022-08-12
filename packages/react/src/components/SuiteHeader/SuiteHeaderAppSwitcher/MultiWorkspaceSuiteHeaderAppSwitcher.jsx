@@ -275,11 +275,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {selectedWorkspace &&
-          (selectedWorkspace.href ||
-            selectedWorkspace.adminHref ||
-            workspaceApplications?.length === 0) &&
-          (adminLink || globalApplications.length > 0) ? (
+          {adminLink || globalApplications.length > 0 ? (
             <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
           {adminLink
