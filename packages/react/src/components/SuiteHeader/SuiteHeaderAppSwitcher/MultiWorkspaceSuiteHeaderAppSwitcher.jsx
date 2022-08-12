@@ -160,6 +160,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         key={`${testId}--${keySuffix}`}
         className={classnames(`${baseClassName}--app-link`, {
           [`${baseClassName}--external`]: isExternal,
+          [`${baseClassName}--no-icon`]: !icon,
         })}
         data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}

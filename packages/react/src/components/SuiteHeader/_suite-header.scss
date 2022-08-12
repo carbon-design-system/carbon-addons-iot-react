@@ -239,6 +239,9 @@
       justify-content: space-between;
     }
   }
+  &--no-icon .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-08;
+  }
   .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
     > .#{$prefix}--side-nav__link:hover {
     background-color: $hover-secondary;
