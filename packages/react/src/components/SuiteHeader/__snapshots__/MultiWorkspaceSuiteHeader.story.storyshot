@@ -574,7 +574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--workspace-workspace1"
                         href={null}
                         id="suite-header-app-switcher--workspace-workspace1"
@@ -594,7 +594,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--workspace-workspace2"
                         href={null}
                         id="suite-header-app-switcher--workspace-workspace2"
@@ -614,7 +614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--workspace-workspace3"
                         href={null}
                         id="suite-header-app-switcher--workspace-workspace3"
@@ -634,7 +634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--workspace-workspace4"
                         href={null}
                         id="suite-header-app-switcher--workspace-workspace4"
@@ -1327,7 +1327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/1/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -1351,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -1371,7 +1371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -2153,7 +2153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -2177,7 +2177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -2197,7 +2197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -3427,7 +3427,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -3451,7 +3451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -3471,7 +3471,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -3540,7 +3540,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--custom-application-customapp2"
                         href="https://google.com"
                         id="suite-header-app-switcher--custom-application-customapp2"
@@ -4309,7 +4309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -4333,7 +4333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -4353,7 +4353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -5217,7 +5217,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -5241,7 +5241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -5261,7 +5261,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -6043,7 +6043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -6067,7 +6067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -7352,7 +7352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -7376,7 +7376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -7396,7 +7396,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -8727,7 +8727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -8751,7 +8751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -8771,7 +8771,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -9430,7 +9430,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -9450,7 +9450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -10160,7 +10160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/1/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -10184,7 +10184,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -10204,7 +10204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -10963,7 +10963,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -10987,7 +10987,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -11007,7 +11007,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
@@ -11717,7 +11717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin-workspace"
                         href="https://www.ibm.com/3/admin"
                         id="suite-header-app-switcher--admin-workspace"
@@ -11741,7 +11741,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -11761,7 +11761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--global-application-appconnect"
                         href="https://www.ibm.com/appconnect"
                         id="suite-header-app-switcher--global-application-appconnect"
