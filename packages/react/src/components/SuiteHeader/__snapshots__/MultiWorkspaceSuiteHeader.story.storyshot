@@ -1351,7 +1351,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -4333,7 +4333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -6067,7 +6067,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -8751,7 +8751,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
                         data-testid="suite-header-app-switcher--admin"
                         href="https://www.ibm.com"
                         id="suite-header-app-switcher--admin"
@@ -9384,56 +9384,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                     data-testid="suite-header-app-switcher"
                   >
                     <p>
-                      Workspace
+                      Select a workspace
                     </p>
-                    <li
-                      className="bx--side-nav__item"
-                    >
-                      <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
-                        data-testid="suite-header-app-switcher--selected-workspace"
-                        id="suite-header-app-switcher--selected-workspace"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        tabIndex={-1}
-                      >
-                        <div
-                          className="bx--side-nav__icon bx--side-nav__icon--small"
-                        >
-                          <svg
-                            aria-hidden={true}
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M11 8L6 13 5.3 12.3 9.6 8 5.3 3.7 6 3z"
-                            />
-                          </svg>
-                        </div>
-                        <span
-                          className="bx--side-nav__link-text"
-                        >
-                          Select a workspace
-                        </span>
-                      </a>
-                    </li>
-                    <li
-                      className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
-                      role="separator"
-                    />
                     <li
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
                         className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
-                        data-testid="suite-header-app-switcher--admin"
-                        href="https://www.ibm.com"
-                        id="suite-header-app-switcher--admin"
+                        data-testid="suite-header-app-switcher--workspace-workspace1"
+                        href={null}
+                        id="suite-header-app-switcher--workspace-workspace1"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
@@ -9442,7 +9402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         <span
                           className="bx--side-nav__link-text"
                         >
-                          Suite administration
+                          Workspace 1
                         </span>
                       </a>
                     </li>
@@ -9450,10 +9410,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                       className="bx--side-nav__item bx--side-nav__item--large"
                     >
                       <a
-                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
-                        data-testid="suite-header-app-switcher--global-application-appconnect"
-                        href="https://www.ibm.com/appconnect"
-                        id="suite-header-app-switcher--global-application-appconnect"
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        data-testid="suite-header-app-switcher--workspace-workspace2"
+                        href={null}
+                        id="suite-header-app-switcher--workspace-workspace2"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
@@ -9462,24 +9422,47 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         <span
                           className="bx--side-nav__link-text"
                         >
-                          AppConnect
-                          <svg
-                            aria-hidden={true}
-                            fill="currentColor"
-                            focusable="false"
-                            height={16}
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 16 16"
-                            width={16}
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M13,14H3c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1h5v1H3v10h10V8h1v5C14,13.6,13.6,14,13,14z"
-                            />
-                            <path
-                              d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
-                            />
-                          </svg>
+                          Workspace 2
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="bx--side-nav__item bx--side-nav__item--large"
+                    >
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        data-testid="suite-header-app-switcher--workspace-workspace3"
+                        href={null}
+                        id="suite-header-app-switcher--workspace-workspace3"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        rel="noopener noreferrer"
+                        tabIndex={-1}
+                      >
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 3
+                        </span>
+                      </a>
+                    </li>
+                    <li
+                      className="bx--side-nav__item bx--side-nav__item--large"
+                    >
+                      <a
+                        className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+                        data-testid="suite-header-app-switcher--workspace-workspace4"
+                        href={null}
+                        id="suite-header-app-switcher--workspace-workspace4"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        rel="noopener noreferrer"
+                        tabIndex={-1}
+                      >
+                        <span
+                          className="bx--side-nav__link-text"
+                        >
+                          Workspace 4
                         </span>
                       </a>
                     </li>

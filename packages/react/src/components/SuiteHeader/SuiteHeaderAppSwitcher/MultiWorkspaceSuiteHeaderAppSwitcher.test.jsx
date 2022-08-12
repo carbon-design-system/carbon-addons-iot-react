@@ -549,4 +549,30 @@ describe('MultiWorkspaceSuiteHeaderAppSwitcher', () => {
     // Check that the Workspace Admin button is visible
     expect(screen.getByTestId(`${testIdPrefix}--admin-workspace`)).toBeVisible();
   });
+  it('does not render the suite administration button when user is not an admin', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(
+      <MultiWorkspaceSuiteHeaderAppSwitcher
+        {...workspaceBasedPageCommonProps}
+        adminLink={undefined}
+      />
+    );
+    expect(screen.queryByTestId(`${testIdPrefix}--admin`)).not.toBeInTheDocument();
+  });
+  it('renders the suite administration button in selected state when in admin page', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<MultiWorkspaceSuiteHeaderAppSwitcher {...adminPageCommonProps} />);
+    await userEvent.click(screen.getByTestId(`${testIdPrefix}--workspace-workspace3`));
+    expect(screen.getByTestId(`${testIdPrefix}--admin`)).toHaveClass('bx--side-nav__link--current');
+  });
+  it('renders the suite administration button in unselected state when in workspace-based page', async () => {
+    delete window.location;
+    window.location = { href: '' };
+    render(<MultiWorkspaceSuiteHeaderAppSwitcher {...workspaceBasedPageCommonProps} />);
+    expect(screen.getByTestId(`${testIdPrefix}--admin`)).not.toHaveClass(
+      'bx--side-nav__link--current'
+    );
+  });
 });
