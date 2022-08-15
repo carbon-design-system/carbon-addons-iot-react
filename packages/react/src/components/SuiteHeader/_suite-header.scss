@@ -190,9 +190,10 @@
       display: block;
       svg {
         display: inherit;
+        fill: $ui-03;
       }
       .bee-shadow {
-        background-color: $ui-03;
+        background-color: $active-ui;
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -201,13 +202,15 @@
     }
     span {
       @include type-style('body-short-01');
-      color: $text-01;
+      color: $active-ui;
       padding-top: $spacing-05;
     }
     a {
+      @include type-style('body-short-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
+      color: $inverse-link;
     }
   }
 }
