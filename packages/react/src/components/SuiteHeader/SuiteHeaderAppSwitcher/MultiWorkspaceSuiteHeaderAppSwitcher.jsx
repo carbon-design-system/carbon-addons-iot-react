@@ -204,7 +204,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 tabIndex={tabIndex}
                 renderIcon={ChevronRight16}
               >
-                {selectedWorkspace?.name ?? mergedI18n.selectWorkspace}
+                {selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace}
               </SideNavLink>
 
               <SideNavDivider className={`${baseClassName}--divider`} />
@@ -275,11 +275,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {selectedWorkspace &&
-          (selectedWorkspace.href ||
-            selectedWorkspace.adminHref ||
-            workspaceApplications?.length === 0) &&
-          (adminLink || globalApplications.length > 0) ? (
+          {adminLink || globalApplications.length > 0 ? (
             <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
           {adminLink
@@ -348,7 +344,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           )}
           {workspaces.map((workspace) =>
             renderNavItem(
-              workspace.name,
+              workspace.name ?? workspace.id,
               currentWorkspace ? workspace.href : null,
               false,
               null,
