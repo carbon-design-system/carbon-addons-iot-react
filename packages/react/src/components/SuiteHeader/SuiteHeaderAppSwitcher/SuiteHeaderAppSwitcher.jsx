@@ -111,6 +111,7 @@ const SuiteHeaderAppSwitcher = ({
               tabIndex={tabIndex}
               href={allApplicationsLink}
               rel="noopener noreferrer"
+              className={`${baseClassName}--nav-link--button`}
             >
               {mergedI18n.allApplicationsLink}
             </Button>

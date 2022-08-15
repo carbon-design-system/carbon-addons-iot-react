@@ -97,12 +97,8 @@
   padding-top: $spacing-04;
 }
 
-.#{$iot-prefix}--suite-header .#{$prefix}--app-switcher > ul {
-  height: 100%;
-
-  li.action-btn__headerpanel-li {
-    height: 100%;
-  }
+.#{$iot-prefix}--suite-header-switcher {
+  background-color: $ui-05;
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
@@ -122,7 +118,7 @@
       align-items: center;
       padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: $text-01;
+      color: $field-02;
     }
   }
 
@@ -131,6 +127,10 @@
   }
 
   &--nav-link {
+    &--button {
+      border-color: $inverse-01;
+      color: $field-02;
+    }
     a {
       text-decoration: none;
     }
@@ -162,7 +162,7 @@
     a {
       @include type-style('productive-heading-01');
       text-decoration: none;
-      color: $text-02;
+      color: $field-02;
 
       &:hover {
         background-color: $hover-ui;
@@ -199,7 +199,6 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
-  background-color: $ui-05;
   padding-top: 0;
 
   p {

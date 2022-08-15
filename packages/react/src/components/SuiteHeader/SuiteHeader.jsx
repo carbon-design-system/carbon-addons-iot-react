@@ -312,6 +312,7 @@ const SuiteHeader = ({
                 onClickSideNavExpand(evt);
               }}
               headerPanel={{
+                className: `${settings.iotPrefix}--suite-header-switcher`,
                 // eslint-disable-next-line react/prop-types
                 content: React.forwardRef(({ isExpanded }, ref) =>
                   workspaces ? (
