@@ -102,6 +102,7 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
+  background-color: $ui-05;
   padding-top: 0;
 
   li {
@@ -127,9 +128,17 @@
   }
 
   &--nav-link {
-    &--button {
+    &--button-tertiary {
       border-color: $inverse-01;
       color: $field-02;
+    }
+    &--button-tertiary:hover {
+      color: $text-01;
+      background-color: $ui-02;
+    }
+    &--button-tertiary:active {
+      background-color: $active-ui;
+      color: $text-01;
     }
     a {
       text-decoration: none;
@@ -162,10 +171,15 @@
     a {
       @include type-style('productive-heading-01');
       text-decoration: none;
-      color: $field-02;
+      color: $inverse-link;
 
       &:hover {
-        background-color: $hover-ui;
+        background-color: $inverse-hover-ui;
+        color: $inverse-support-04;
+      }
+      &:active {
+        background-color: $active-secondary;
+        color: $inverse-support-04;
       }
     }
   }
@@ -199,6 +213,7 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
+  background-color: $ui-05;
   padding-top: 0;
 
   p {
