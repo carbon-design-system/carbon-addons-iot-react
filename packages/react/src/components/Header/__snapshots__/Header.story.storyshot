@@ -370,7 +370,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </button>
             <div
               aria-label="Header Panel"
-              className="bx--header-panel bx--app-switcher"
+              className="bx--header-panel bx--app-switcher bx--app-switcher header-panel"
               data-testid="action-btn__panel"
               tabIndex="-1"
             >

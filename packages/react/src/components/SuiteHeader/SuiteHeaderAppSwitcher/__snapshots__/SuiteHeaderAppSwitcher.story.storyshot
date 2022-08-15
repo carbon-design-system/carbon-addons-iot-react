@@ -87,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           My applications
         </p>
         <a
-          className="iot--btn bx--btn bx--btn--tertiary"
+          className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
@@ -185,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           My applications
         </p>
         <a
-          className="iot--btn bx--btn bx--btn--tertiary"
+          className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}

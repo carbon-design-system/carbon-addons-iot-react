@@ -615,7 +615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -626,7 +626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -640,7 +640,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -1788,7 +1788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -1799,7 +1799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -1813,7 +1813,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -2546,7 +2546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -2557,7 +2557,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -2571,7 +2571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -3353,7 +3353,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -3364,7 +3364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -3378,7 +3378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -4084,7 +4084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -4095,7 +4095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -4109,7 +4109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -5329,7 +5329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -5340,7 +5340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -5354,7 +5354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -5944,7 +5944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -5955,7 +5955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -6609,7 +6609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -6620,7 +6620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -6634,7 +6634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
@@ -7311,7 +7311,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           </button>
           <div
             aria-label="Header Panel"
-            className="bx--header-panel bx--app-switcher"
+            className="bx--header-panel bx--app-switcher bx--app-switcher iot--suite-header-switcher"
             data-testid="action-btn__panel"
             tabIndex="-1"
           >
@@ -7322,7 +7322,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 className="action-btn__headerpanel-li"
               >
                 <a
-                  className="bx--app-switcher undefined"
+                  className="bx--app-switcher iot--suite-header-switcher"
                   onKeyDown={[Function]}
                 >
                   <ul
@@ -7336,7 +7336,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         My applications
                       </p>
                       <a
-                        className="iot--btn bx--btn bx--btn--tertiary"
+                        className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
                         data-testid="suite-header-app-switcher--all-applications"
                         href="https://www.ibm.com"
                         onBlur={[Function]}
