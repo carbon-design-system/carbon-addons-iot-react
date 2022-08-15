@@ -204,7 +204,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 tabIndex={tabIndex}
                 renderIcon={ChevronRight16}
               >
-                {selectedWorkspace?.name ?? mergedI18n.selectWorkspace}
+                {selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace}
               </SideNavLink>
 
               <SideNavDivider className={`${baseClassName}--divider`} />
@@ -344,7 +344,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
           )}
           {workspaces.map((workspace) =>
             renderNavItem(
-              workspace.name,
+              workspace.name ?? workspace.id,
               currentWorkspace ? workspace.href : null,
               false,
               null,
