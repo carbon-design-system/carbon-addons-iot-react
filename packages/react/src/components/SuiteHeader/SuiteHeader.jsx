@@ -176,7 +176,9 @@ const SuiteHeader = ({
     !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
       <span
         data-testid={`${testId}--current-workspace`}
-        className={`${settings.iotPrefix}--suite-header-subtitle-workspace`}
+        className={classnames({
+          [`${settings.iotPrefix}--suite-header-subtitle-workspace`]: !!appName,
+        })}
       >
         {translate(mergedI18N.workspace, [['{workspace}', currentWorkspace.name]])}
       </span>
