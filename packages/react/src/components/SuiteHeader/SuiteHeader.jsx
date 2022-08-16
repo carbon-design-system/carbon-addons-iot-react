@@ -367,11 +367,13 @@ const SuiteHeader = ({
               }}
               appName={suiteName}
               subtitle={
-                <div>
-                  {appName}
-                  {currentWorkspaceComponent}
-                  {extraContentComponent}
-                </div>
+                appName || currentWorkspaceComponent || extraContentComponent ? (
+                  <div>
+                    {appName}
+                    {currentWorkspaceComponent}
+                    {extraContentComponent}
+                  </div>
+                ) : null
               }
               actionItems={[
                 ...customActionItems,
