@@ -275,7 +275,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {adminLink || globalApplications.length > 0 ? (
+          {adminLink || globalApplications?.length > 0 ? (
             <SideNavDivider className={`${baseClassName}--divider`} />
           ) : null}
           {adminLink
@@ -289,7 +289,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 `admin`
               )
             : null}
-          {globalApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
+          {globalApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
             renderNavItem(
               name,
               href,
