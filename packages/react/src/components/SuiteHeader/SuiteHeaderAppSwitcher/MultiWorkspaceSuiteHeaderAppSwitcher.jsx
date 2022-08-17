@@ -160,7 +160,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         key={`${testId}--${keySuffix}`}
         className={classnames(`${baseClassName}--app-link`, {
           [`${baseClassName}--external`]: isExternal,
-          [`${baseClassName}--no-icon`]: !icon,
+          [`${baseClassName}--no-icon`]: !icon && !isWorkspacesView,
         })}
         data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}
@@ -183,7 +183,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
       </SideNavLink>
     ),
 
-    [baseClassName, tabIndex, testId]
+    [baseClassName, tabIndex, testId, isWorkspacesView]
   );
 
   return (
