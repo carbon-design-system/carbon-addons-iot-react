@@ -28,6 +28,7 @@ const routes = {
   navigator: 'https://www.ibm.com',
   admin: 'https://www.ibm.com',
   logout: 'https://www.ibm.com',
+  logoutInactivity: 'https://www.ibm.com',
   whatsNew: 'https://www.ibm.com',
   gettingStarted: 'https://www.ibm.com',
   documentation: 'https://www.ibm.com',

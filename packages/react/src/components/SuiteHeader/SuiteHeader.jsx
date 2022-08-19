@@ -189,6 +189,17 @@ const SuiteHeader = ({
 
   const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
+  // Append originHref query parameter to the logout routes
+  const logoutRoute = window.location.href
+    ? `${routes?.logout}${routes?.logout?.includes('?') ? '&' : '?'}originHref=${encodeURIComponent(
+        window.location.href
+      )}`
+    : routes?.logout;
+  const logoutInactivityRoute = window.location.href
+    ? `${routes?.logoutInactivity}${
+        routes?.logoutInactivity?.includes('?') ? '&' : '?'
+      }originHref=${encodeURIComponent(window.location.href)}`
+    : routes?.logoutInactivity;
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -267,7 +278,7 @@ const SuiteHeader = ({
       {idleTimeoutData ? (
         <IdleLogoutConfirmationModal
           idleTimeoutData={idleTimeoutData}
-          routes={routes}
+          routes={{ ...routes, logout: logoutRoute, logoutInactivity: logoutInactivityRoute }}
           onRouteChange={onRouteChange}
           onStayLoggedIn={onStayLoggedIn}
           i18n={i18n}
@@ -276,7 +287,7 @@ const SuiteHeader = ({
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout)}
+        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute)}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
