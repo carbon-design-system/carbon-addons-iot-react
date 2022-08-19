@@ -97,7 +97,12 @@
   padding-top: $spacing-04;
 }
 
+.#{$iot-prefix}--suite-header-switcher {
+  background-color: $ui-05;
+}
+
 .#{$iot-prefix}--suite-header-app-switcher {
+  background-color: $ui-05;
   padding-top: 0;
 
   li {
@@ -114,7 +119,7 @@
       align-items: center;
       padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: $text-01;
+      color: $field-02;
     }
   }
 
@@ -123,6 +128,18 @@
   }
 
   &--nav-link {
+    &--button-tertiary {
+      border-color: $inverse-01;
+      color: $field-02;
+    }
+    &--button-tertiary:hover {
+      color: $text-01;
+      background-color: $ui-02;
+    }
+    &--button-tertiary:active {
+      background-color: $active-ui;
+      color: $text-01;
+    }
     a {
       text-decoration: none;
     }
@@ -154,10 +171,15 @@
     a {
       @include type-style('productive-heading-01');
       text-decoration: none;
-      color: $text-02;
+      color: $inverse-link;
 
       &:hover {
-        background-color: $hover-ui;
+        background-color: $inverse-hover-ui;
+        color: $inverse-support-04;
+      }
+      &:active {
+        background-color: $active-secondary;
+        color: $inverse-support-04;
       }
     }
   }
@@ -168,9 +190,10 @@
       display: block;
       svg {
         display: inherit;
+        fill: $ui-03;
       }
       .bee-shadow {
-        background-color: $ui-03;
+        background-color: $active-ui;
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -179,13 +202,109 @@
     }
     span {
       @include type-style('body-short-01');
-      color: $text-01;
+      color: $active-ui;
       padding-top: $spacing-05;
     }
     a {
+      @include type-style('body-short-01');
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
+      color: $inverse-link;
+    }
+  }
+}
+
+.#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
+  background-color: $ui-05;
+  padding-top: 0;
+
+  p {
+    @include type-style('body-short-01');
+    display: flex;
+    align-items: center;
+    padding: $spacing-05 $spacing-05 $spacing-03;
+
+    text-decoration: none;
+    color: $inverse-01;
+  }
+
+  &--divider {
+    margin: $spacing-03 0 0 0;
+  }
+
+  &--app-link,
+  a.#{$prefix}--side-nav__link {
+    &.#{$prefix}--side-nav__link--current {
+      background-color: $inverse-02;
+      > .#{$prefix}--side-nav__link-text {
+        color: $field-01;
+      }
+    }
+    > .#{$prefix}--side-nav__link-text {
+      white-space: break-spaces;
+      color: $inverse-01;
+    }
+    svg {
+      fill: $icon-03;
+    }
+  }
+  &--external {
+    .#{$prefix}--side-nav__link-text {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+  &--no-icon .#{$prefix}--side-nav__link-text {
+    padding-left: $spacing-08;
+  }
+  .#{$prefix}--side-nav__item:not(.#{$prefix}--side-nav__item--active)
+    > .#{$prefix}--side-nav__link:hover {
+    background-color: $hover-secondary;
+    .#{$prefix}--side-nav__link-text {
+      color: $inverse-01;
+    }
+    svg {
+      fill: $icon-03;
+    }
+  }
+
+  &--workpsace-selector {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    > div.#{$prefix}--side-nav__icon {
+      margin: 0;
+    }
+  }
+
+  &--no-app {
+    padding: $layout-05 $spacing-07 $spacing-05;
+    .bee-icon-container {
+      display: block;
+      svg {
+        display: inherit;
+        fill: $ui-03;
+      }
+      .bee-shadow {
+        background-color: $active-ui;
+        height: $spacing-03;
+        width: $spacing-07;
+        border-radius: 50%;
+        margin-top: $spacing-02;
+      }
+    }
+    span {
+      @include type-style('body-short-01');
+      color: $active-ui;
+      padding-top: $spacing-05;
+    }
+    a {
+      @include type-style('body-short-01');
+      text-decoration: none;
+      padding: 0;
+      margin: $spacing-05 0;
+      color: $inverse-link;
     }
   }
 }
@@ -196,6 +315,11 @@
   }
   &-subtitle {
     margin-left: $spacing-05;
+    &-workspace {
+      margin-left: $spacing-05;
+      padding-left: $spacing-05;
+      border-left: $text-secondary 1px solid;
+    }
   }
   a.admin-icon {
     .#{$prefix}--tooltip__trigger svg {

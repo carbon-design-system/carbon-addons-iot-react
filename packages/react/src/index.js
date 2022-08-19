@@ -59,6 +59,8 @@ export { default as SidePanel } from './components/SidePanel/SidePanel';
 export { default as SuiteHeader } from './components/SuiteHeader/SuiteHeader';
 export { default as SuiteHeaderProfile } from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export { default as SuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+export { default as MultiWorkspaceSuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/MultiWorkspaceSuiteHeaderAppSwitcher';
+export { default as SuiteHeaderAppSwitcherLoading } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcherLoading';
 export { default as SuiteHeaderLogoutModal } from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 export { default as IdleLogoutConfirmationModal } from './components/SuiteHeader/IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
 export { default as IdleTimer } from './components/SuiteHeader/util/IdleTimer';

@@ -31,7 +31,8 @@ const SuiteHeaderWithDataFetchingExample = () => {
     username: null,
     userDisplayName: null,
     routes: null,
-    applications: null,
+    workspaces: null,
+    globalApplications: null,
     i18n: null,
     surveyData: null,
     idleTimeoutData: null,
@@ -62,7 +63,8 @@ const SuiteHeaderWithDataFetchingExample = () => {
       userDisplayName={data.userDisplayName}
       username={data.username}
       routes={data.routes}
-      applications={data.applications}
+      workspaces={data.workspaces}
+      globalApplications={data.globalApplications}
       i18n={data.i18n}
       surveyData={data.surveyData}
       idleTimeoutData={data.idleTimeoutData}
@@ -81,7 +83,8 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
     username: null,
     userDisplayName: null,
     routes: null,
-    applications: null,
+    workspaces: null,
+    globalApplications: null,
     i18n: null,
     surveyData: null,
     idleTimeoutData: null,
@@ -102,7 +105,8 @@ const SuiteHeaderWithDataFetchingUtilExample = () => {
       userDisplayName={data.userDisplayName}
       username={data.username}
       routes={data.routes}
-      applications={data.applications}
+      workspaces={data.workspaces}
+      globalApplications={data.globalApplications}
       i18n={data.i18n}
       surveyData={data.surveyData}
       idleTimeoutData={data.idleTimeoutData}
@@ -131,7 +135,8 @@ const SuiteHeaderWithDataFetchingHookExample = () => {
       userDisplayName={data.userDisplayName}
       username={data.username}
       routes={data.routes}
-      applications={data.applications}
+      workspaces={data.workspaces}
+      globalApplications={data.globalApplications}
       i18n={data.i18n}
       surveyData={data.surveyData}
       idleTimeoutData={data.idleTimeoutData}
@@ -165,19 +170,61 @@ import { SuiteHeader } from 'carbon-addons-iot-react';
     support: 'https://www.ibm.com',
     about: 'https://www.ibm.com',
   }}
-  applications={[
+  workspaces={object('workspaces', [
     {
-      id: 'monitor',
-      name: 'Monitor',
-      href: 'https://www.ibm.com',
+      id: 'workspace1',
+      name: 'Workspace 1',
+      href: 'https://www.ibm.com/1',
+      adminHref: 'https://www.ibm.com/1/admin',
+      isCurrent: false,
+      applications: [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com/1/monitor',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com/1/health',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+      ],
     },
     {
-      id: 'health',
-      name: 'Health',
-      href: 'https://ibm.com',
+      id: 'workspace2',
+      name: 'Workspace 2',
+      href: 'https://www.ibm.com/2',
+      isCurrent: false,
+      applications: [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com/2/monitor',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+        {
+          id: 'manage',
+          name: 'Manage',
+          href: 'https://www.ibm.com/2/manage',
+          isExternal: true,
+          icon: 'base64icondata',
+        },
+      ],
+    },
+  ])}
+  globalApplications={object('globalApplications', [
+    {
+      id: 'appconnect',
+      name: 'AppConnect',
+      href: 'https://www.ibm.com',
       isExternal: true,
     },
-  ]}
+  ])}
   customActionItems={[
     {
       label: 'aHiddenIcon',
@@ -282,15 +329,57 @@ Below is a full example of various BUTTON and ANCHOR tags used in both open in n
     workspaceId: 'workspace1',
     domain: 'ibm.com',
   })}
-  applications={object('applications', [
+  workspaces={object('workspaces', [
     {
-      id: 'monitor',
-      name: 'Monitor',
-      href: 'https://www.ibm.com',
+      id: 'workspace1',
+      name: 'Workspace 1',
+      href: 'https://www.ibm.com/1',
+      adminHref: 'https://www.ibm.com/1/admin',
+      isCurrent: false,
+      applications: [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com/1/monitor',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+        {
+          id: 'health',
+          name: 'Health',
+          href: 'https://www.ibm.com/1/health',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+      ],
     },
     {
-      id: 'health',
-      name: 'Health',
+      id: 'workspace2',
+      name: 'Workspace 2',
+      href: 'https://www.ibm.com/2',
+      isCurrent: false,
+      applications: [
+        {
+          id: 'monitor',
+          name: 'Monitor',
+          href: 'https://www.ibm.com/2/monitor',
+          isExternal: false,
+          icon: 'base64icondata',
+        },
+        {
+          id: 'manage',
+          name: 'Manage',
+          href: 'https://www.ibm.com/2/manage',
+          isExternal: true,
+          icon: 'base64icondata',
+        },
+      ],
+    },
+  ])}
+  globalApplications={object('globalApplications', [
+    {
+      id: 'appconnect',
+      name: 'AppConnect',
       href: 'https://www.ibm.com',
       isExternal: true,
     },
@@ -412,7 +501,8 @@ Below is a full example of various BUTTON and ANCHOR tags used in both open in n
 | isAdminView                                          | bool     | false                             | If true, renders the admin button in Header as selected                                                                                                     |
 | hasSideNav                                           | bool     | false                             | If true, will render the hamburger icon even if no sideNavProps are provided                                                                                |
 | routes                                               | shape    | null                              | URLs for various routes on Header buttons and submenus                                                                                                      |
-| applications                                         | arrayOf  | null                              | Applications to render in AppSwitcher                                                                                                                       |
+| workspaces                                           | arrayOf  | null                              | Workspaces with applications to render in AppSwitcher                                                                                                       |
+| globalApplications                                   | arrayOf  | null                              | Global applications to render in AppSwitcher                                                                                                                |
 | sideNavProps                                         | shape    | null                              | side navigation component                                                                                                                                   |
 | surveyData                                           | shape    | null                              | If surveyData is present, show a ToastNotification                                                                                                          |
 | idleTimeoutData                                      | shape    | null                              | If idleTimeoutData is present, user inactivity detection is enabled                                                                                         |

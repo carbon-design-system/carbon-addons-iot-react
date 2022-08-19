@@ -24,6 +24,16 @@ export const SuiteHeaderApplicationPropTypes = {
   name: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   isExternal: PropTypes.bool,
+  icon: PropTypes.string,
+};
+
+export const SuiteHeaderWorkspacePropTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  adminHref: PropTypes.string,
+  applications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)).isRequired,
+  isCurrent: PropTypes.bool,
 };
 
 export const SuiteHeaderSurveyDataPropTypes = {
@@ -44,6 +54,14 @@ export const SuiteHeaderI18NPropTypes = {
   profileLogoutModalSecondaryButton: PropTypes.string,
   profileLogoutModalPrimaryButton: PropTypes.string,
   profileLogoutModalBody: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
+  workspace: PropTypes.string,
+  switcherWorkspace: PropTypes.string,
+  switcherWorkspaces: PropTypes.string,
+  switcherWorkspaceAdmin: PropTypes.string,
+  switcherBackToAppSwitcher: PropTypes.string,
+  switcherSelectWorkspace: PropTypes.string,
+  switcherAvailableWorkspaces: PropTypes.string,
+  switcherSuiteAdmin: PropTypes.string,
   switcherMyApplications: PropTypes.string,
   switcherNavigatorLink: PropTypes.string,
   whatsNew: PropTypes.string,

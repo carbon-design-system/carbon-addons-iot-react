@@ -12,7 +12,93 @@ import SuiteHeaderI18N from './i18n';
 
 const { prefix } = settings;
 
-const commonProps = {
+const icon =
+  'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+';
+const adminPageWorkspaces = [
+  {
+    id: 'workspace1',
+    name: 'Workspace 1',
+    href: 'https://www.ibm.com/1',
+    adminHref: 'https://www.ibm.com/1/admin',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com/1/monitor',
+        isExternal: false,
+        icon,
+      },
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com/1/health',
+        isExternal: false,
+      },
+    ],
+  },
+  {
+    id: 'workspace2',
+    name: 'Workspace 2',
+    href: 'https://www.ibm.com/2',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com/2/monitor',
+        icon,
+      },
+      {
+        id: 'manage',
+        name: 'Manage',
+        href: 'https://www.ibm.com/2/manage',
+        isExternal: true,
+        icon,
+      },
+    ],
+  },
+  {
+    id: 'workspace3',
+    name: 'Workspace 3',
+    href: 'https://www.ibm.com/3',
+    adminHref: 'https://www.ibm.com/3/admin',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com/3/health',
+        isExternal: false,
+        icon,
+      },
+      {
+        id: 'manage',
+        name: 'Manage',
+        href: 'https://www.ibm.com/3/manage',
+        isExternal: false,
+        icon,
+      },
+    ],
+  },
+  {
+    id: 'workspace4',
+    name: 'Workspace 4',
+    href: 'https://www.ibm.com/4',
+    adminHref: 'https://www.ibm.com/4/admin',
+    isCurrent: false,
+    applications: [],
+  },
+];
+
+const nonWorkspaceBasedPageWorkspaces = [...adminPageWorkspaces];
+
+const workspaceBasedPageWorkspaces = adminPageWorkspaces.map((wo) => ({
+  ...wo,
+  isCurrent: wo.id === 'workspace3',
+}));
+
+const adminPageCommonProps = {
   suiteName: 'Application Suite',
   appName: 'Application Name',
   userDisplayName: 'Admin User',
@@ -32,19 +118,26 @@ const commonProps = {
     support: 'https://www.ibm.com/support',
     about: 'https://www.ibm.com/about',
   },
-  applications: [
+  workspaces: adminPageWorkspaces,
+  globalApplications: [
     {
-      id: 'monitor',
-      name: 'Monitor',
-      href: 'https://www.ibm.com/monitor',
+      id: 'globalapp1',
+      name: 'Global App 1',
+      href: 'https://www.ibm.com/globalapp1',
     },
     {
-      id: 'health',
-      name: 'Health',
-      href: 'https://www.ibm.com/health',
+      id: 'globalapp2',
+      name: 'Global App 2',
+      href: 'https://www.ibm.com/globalapp2',
       isExternal: true,
     },
   ],
+};
+
+const workspaceBasedPageCommonProps = {
+  ...adminPageCommonProps,
+  workspaces: workspaceBasedPageWorkspaces,
+  isAdminView: false,
 };
 
 const idleTimeoutDataProp = {
@@ -76,7 +169,7 @@ describe('SuiteHeader', () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         sideNavProps={{
           links: [
             {
@@ -114,7 +207,7 @@ describe('SuiteHeader', () => {
   it('renders with sidenav', () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         sideNavProps={{
           links: [
             {
@@ -136,13 +229,15 @@ describe('SuiteHeader', () => {
   });
   it('renders with left sidenav toggle button (custom side nav support)', () => {
     const mockOnSideNavToggled = jest.fn();
-    render(<SuiteHeader {...commonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />);
+    render(
+      <SuiteHeader {...adminPageCommonProps} hasSideNav onSideNavToggled={mockOnSideNavToggled} />
+    );
     expect(screen.getByTitle('Open menu')).toBeInTheDocument();
     userEvent.click(screen.getByTitle('Open menu'));
     expect(mockOnSideNavToggled).toHaveBeenCalled();
   });
   it('opens and closes logout modal', () => {
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...adminPageCommonProps} />);
     expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     userEvent.click(screen.getByTestId('suite-header-profile--logout'));
     expect(screen.getByRole('presentation')).toHaveClass('is-visible');
@@ -150,62 +245,48 @@ describe('SuiteHeader', () => {
     expect(screen.getByRole('presentation')).not.toHaveClass('is-visible');
   });
   it('clicks logout link', async () => {
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...adminPageCommonProps} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
-    expect(window.location.href).toBe(commonProps.routes.logout);
+    expect(window.location.href).toBe(adminPageCommonProps.routes.logout);
   });
   it('clicks logout link (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    render(<SuiteHeader {...adminPageCommonProps} onRouteChange={async () => false} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
-    expect(window.location.href).not.toBe(commonProps.routes.logout);
+    expect(window.location.href).not.toBe(adminPageCommonProps.routes.logout);
   });
-  it('admin link from admin view takes you to navigator route', async () => {
-    render(<SuiteHeader {...commonProps} isAdminView />);
-    await userEvent.click(screen.getByTestId('admin-icon'));
-    expect(window.location.href).toBe(commonProps.routes.navigator);
-  });
-  it('admin link from admin view takes you to navigator route (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView />);
-    await userEvent.click(screen.getByTestId('admin-icon'));
-    expect(window.location.href).not.toBe(commonProps.routes.navigator);
-  });
-  it('admin link from non-admin view takes you to admin route', async () => {
-    render(<SuiteHeader {...commonProps} isAdminView={false} />);
-    await userEvent.click(screen.getByTestId('admin-icon'));
-    expect(window.location.href).toBe(commonProps.routes.admin);
-  });
-  it('admin link from non-admin view takes you to admin route (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView={false} />);
-    await userEvent.click(screen.getByTestId('admin-icon'));
-    expect(window.location.href).not.toBe(commonProps.routes.admin);
+  it('Legacy (single-workspace only) admin button should no longer be visible', async () => {
+    render(<SuiteHeader {...adminPageCommonProps} isAdminView />);
+    expect(screen.queryByTestId('admin-icon')).not.toBeInTheDocument();
   });
   it('clicks a documentation link', async () => {
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...adminPageCommonProps} />);
     await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
     expect(window.open).toHaveBeenCalledWith(
-      commonProps.routes.whatsNew,
+      adminPageCommonProps.routes.whatsNew,
       '_blank',
       'noopener noreferrer'
     );
   });
   it('clicks a documentation link (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    render(<SuiteHeader {...adminPageCommonProps} onRouteChange={async () => false} />);
     await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));
     expect(window.open).not.toHaveBeenCalled();
   });
   it('clicks about link', async () => {
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...adminPageCommonProps} />);
     await userEvent.click(screen.getByTestId('suite-header-help--about'));
-    expect(window.location.href).toBe(commonProps.routes.about);
+    expect(window.location.href).toBe(adminPageCommonProps.routes.about);
   });
   it('clicks about link (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    render(<SuiteHeader {...adminPageCommonProps} onRouteChange={async () => false} />);
     await userEvent.click(screen.getByTestId('suite-header-help--about'));
     expect(window.open).not.toHaveBeenCalled();
   });
   it('renders all i18n', () => {
     Object.keys(SuiteHeaderI18N).forEach((language) => {
-      render(<SuiteHeader {...commonProps} i18n={SuiteHeaderI18N[language]} isAdminView />);
+      render(
+        <SuiteHeader {...adminPageCommonProps} i18n={SuiteHeaderI18N[language]} isAdminView />
+      );
       expect(screen.getByRole('banner', { name: 'main header' })).toBeInTheDocument();
     });
   });
@@ -213,7 +294,7 @@ describe('SuiteHeader', () => {
     Object.keys(SuiteHeaderI18N).forEach((language) => {
       render(
         <SuiteHeader
-          {...commonProps}
+          {...adminPageCommonProps}
           i18n={{
             ...SuiteHeaderI18N[language],
             surveyTitle: (solutionName) =>
@@ -233,7 +314,7 @@ describe('SuiteHeader', () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';
     const surveyData = { surveyLink, privacyLink };
-    render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
+    render(<SuiteHeader {...adminPageCommonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
     await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyText));
     expect(window.open).toHaveBeenCalledWith(surveyLink, '_blank', 'noopener noreferrer');
@@ -244,7 +325,7 @@ describe('SuiteHeader', () => {
     const surveyData = { surveyLink, privacyLink };
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         appName={undefined}
         surveyData={surveyData}
         onRouteChange={async () => false}
@@ -258,7 +339,7 @@ describe('SuiteHeader', () => {
     const surveyLink = 'https://www.ibm.com/';
     const privacyLink = 'https://google.com';
     const surveyData = { surveyLink, privacyLink };
-    render(<SuiteHeader {...commonProps} appName={undefined} surveyData={surveyData} />);
+    render(<SuiteHeader {...adminPageCommonProps} appName={undefined} surveyData={surveyData} />);
     expect(screen.getByRole('alert')).toBeInTheDocument();
     await userEvent.click(screen.getByText(SuiteHeader.defaultProps.i18n.surveyPrivacyPolicy));
     expect(window.open).toHaveBeenCalledWith(privacyLink, '_blank', 'noopener noreferrer');
@@ -269,7 +350,7 @@ describe('SuiteHeader', () => {
     const surveyData = { surveyLink, privacyLink };
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         appName={undefined}
         surveyData={surveyData}
         onRouteChange={async () => false}
@@ -282,7 +363,7 @@ describe('SuiteHeader', () => {
   it('user closes survey notification', () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         surveyData={{
           surveyLink: 'https://www.ibm.com/',
           privacyLink: 'https://www.ibm.com/',
@@ -293,7 +374,7 @@ describe('SuiteHeader', () => {
     expect(screen.queryByRole('alert')).toBeNull();
   });
   it('active user does not see idle logout confirmation dialog', () => {
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(<SuiteHeader {...adminPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the future
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -305,7 +386,7 @@ describe('SuiteHeader', () => {
     expect(screen.getByTestId('idle-logout-confirmation')).not.toHaveClass('is-visible');
   });
   it('inactive user sees idle logout confirmation dialog', () => {
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(<SuiteHeader {...adminPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -319,8 +400,8 @@ describe('SuiteHeader', () => {
   it('inactive user does not see idle logout confirmation dialog if timeout is set to 0', () => {
     render(
       <SuiteHeader
-        {...commonProps}
-        idleTimeoutData={{ ...commonProps.idleTimeoutData, timeout: 0 }}
+        {...adminPageCommonProps}
+        idleTimeoutData={{ ...adminPageCommonProps.idleTimeoutData, timeout: 0 }}
       />
     );
     // Simulate a timestamp cookie that is in the past
@@ -337,7 +418,7 @@ describe('SuiteHeader', () => {
     const mockOnStayLoggedIn = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         idleTimeoutData={idleTimeoutDataProp}
         onStayLoggedIn={mockOnStayLoggedIn}
       />
@@ -357,7 +438,7 @@ describe('SuiteHeader', () => {
     expect(mockOnStayLoggedIn).toHaveBeenCalled();
   });
   it('user clicks Log Out on the idle logout confirmation dialog', async () => {
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(<SuiteHeader {...adminPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -370,12 +451,12 @@ describe('SuiteHeader', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).toBe(commonProps.routes.logout);
+    expect(window.location.href).toBe(adminPageCommonProps.routes.logout);
   });
   it('user clicks Log Out on the idle logout confirmation dialog (but no redirect)', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={async () => false}
         idleTimeoutData={idleTimeoutDataProp}
       />
@@ -392,10 +473,10 @@ describe('SuiteHeader', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).not.toBe(commonProps.routes.logout);
+    expect(window.location.href).not.toBe(adminPageCommonProps.routes.logout);
   });
   it('idle user waits for the logout confirmation dialog countdown to finish', async () => {
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(<SuiteHeader {...adminPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -406,12 +487,14 @@ describe('SuiteHeader', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).toBe(commonProps.routes.logoutInactivity));
+    await waitFor(() =>
+      expect(window.location.href).toBe(adminPageCommonProps.routes.logoutInactivity)
+    );
   });
   it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={async () => false}
         idleTimeoutData={idleTimeoutDataProp}
       />
@@ -426,10 +509,12 @@ describe('SuiteHeader', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity));
+    await waitFor(() =>
+      expect(window.location.href).not.toBe(adminPageCommonProps.routes.logoutInactivity)
+    );
   });
   it('renders Walkme', async () => {
-    render(<SuiteHeader {...commonProps} walkmePath="/some/test/path" walkmeLang="en" />);
+    render(<SuiteHeader {...adminPageCommonProps} walkmePath="/some/test/path" walkmeLang="en" />);
     // Make sure the scripts in Walkme component were executed
     await waitFor(() => expect(window._walkmeConfig).toEqual({ smartLoad: true }));
   });
@@ -440,7 +525,7 @@ describe('SuiteHeader', () => {
     jest.spyOn(SuiteHeader.defaultProps, 'onStayLoggedIn');
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         sideNavProps={{
           links: [
             {
@@ -489,7 +574,7 @@ describe('SuiteHeader', () => {
     const profileLogoutModalBody = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         appName={undefined}
         suiteName="PAL"
         surveyData={{
@@ -510,24 +595,24 @@ describe('SuiteHeader', () => {
   it('clicking manage profile should call onRouteChange', async () => {
     const originalHref = window.location.href;
     const onRouteChange = jest.fn().mockImplementation(() => false);
-    render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
+    render(<SuiteHeader {...adminPageCommonProps} onRouteChange={onRouteChange} />);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', adminPageCommonProps.routes.profile);
     expect(window.location.href).toEqual(originalHref);
 
     onRouteChange.mockImplementation(() => true);
     userEvent.click(screen.getByRole('menuitem', { name: 'user' }));
     await userEvent.click(screen.getByTestId('suite-header-profile--profile'));
-    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', commonProps.routes.profile);
-    expect(window.location.href).toBe(commonProps.routes.profile);
+    expect(onRouteChange).toHaveBeenCalledWith('PROFILE', adminPageCommonProps.routes.profile);
+    expect(window.location.href).toBe(adminPageCommonProps.routes.profile);
   });
 
   it('should handle keyboard navigation for actionItems and panel links', async () => {
     const onRouteChange = jest.fn().mockImplementation(() => true);
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={onRouteChange}
         customActionItems={[
           {
@@ -573,7 +658,7 @@ describe('SuiteHeader', () => {
     const onClick = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={onRouteChange}
         customActionItems={[
           {
@@ -620,7 +705,7 @@ describe('SuiteHeader', () => {
     const onRouteChange = jest.fn().mockImplementation(() => true);
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={onRouteChange}
         customActionItems={[
           {
@@ -666,7 +751,7 @@ describe('SuiteHeader', () => {
     const onClick = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={onRouteChange}
         customActionItems={[
           {
@@ -712,7 +797,7 @@ describe('SuiteHeader', () => {
   it('should handle keyboard navigation for actionItems and menu links', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         customActionItems={[
           {
             label: 'chip',
@@ -750,7 +835,7 @@ describe('SuiteHeader', () => {
     const onClick = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         customActionItems={[
           {
             label: 'chip',
@@ -789,7 +874,7 @@ describe('SuiteHeader', () => {
   it('should handle keyboard navigation for actionItems and menu buttons without an onClick', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         customActionItems={[
           {
             label: 'chip',
@@ -827,7 +912,7 @@ describe('SuiteHeader', () => {
     const onClick = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         customActionItems={[
           {
             label: 'chip',
@@ -868,7 +953,7 @@ describe('SuiteHeader', () => {
     const onKeyDown = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         customActionItems={[
           {
             label: 'chip',
@@ -912,7 +997,7 @@ describe('SuiteHeader', () => {
     const onKeyDown = jest.fn();
     render(
       <SuiteHeader
-        {...commonProps}
+        {...adminPageCommonProps}
         onRouteChange={onRouteChange}
         customActionItems={[
           {
@@ -976,11 +1061,15 @@ describe('SuiteHeader', () => {
     it('should open built-in routes in new window when holding cmd', async () => {
       const onRouteChange = jest.fn().mockImplementation(() => true);
       fakeUserAgent = 'Mac';
-      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
-      await userEvent.click(screen.getByLabelText('Administration'), { metaKey: true });
-      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
+      render(<SuiteHeader {...workspaceBasedPageCommonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('All applications'), { metaKey: true });
+      const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', currentWorkspace.href, {
+        workspaceId: currentWorkspace.id,
+      });
       expect(window.open).toHaveBeenCalledWith(
-        commonProps.routes.navigator,
+        currentWorkspace.href,
         '_blank',
         'noopener noreferrer'
       );
@@ -989,11 +1078,15 @@ describe('SuiteHeader', () => {
     it('should open built-in routes in new window when holding ctrl', async () => {
       const onRouteChange = jest.fn().mockImplementation(() => true);
       fakeUserAgent = 'Win';
-      render(<SuiteHeader {...commonProps} onRouteChange={onRouteChange} />);
-      await userEvent.click(screen.getByLabelText('Administration'), { ctrlKey: true });
-      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', commonProps.routes.navigator);
-      expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.routes.navigator,
+      render(<SuiteHeader {...workspaceBasedPageCommonProps} onRouteChange={onRouteChange} />);
+      await userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
+      const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
+      expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', currentWorkspace.href, {
+        workspaceId: currentWorkspace.id,
+      });
+      expect(window.open).toHaveBeenCalledWith(
+        currentWorkspace.href,
         '_blank',
         'noopener noreferrer'
       );
@@ -1003,7 +1096,7 @@ describe('SuiteHeader', () => {
         ctrlKey: true,
       });
       expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.routes.profile,
+        workspaceBasedPageCommonProps.routes.profile,
         '_blank',
         'noopener noreferrer'
       );
@@ -1012,7 +1105,7 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('menuitem', { name: 'Help' }));
       await userEvent.click(screen.getByTitle('About'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.routes.about,
+        workspaceBasedPageCommonProps.routes.about,
         '_blank',
         'noopener noreferrer'
       );
@@ -1021,45 +1114,57 @@ describe('SuiteHeader', () => {
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.routes.navigator,
+        currentWorkspace.href,
         '_blank',
         'noopener noreferrer'
       );
       expect(window.open).toHaveBeenCalledTimes(4);
 
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
-      await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
+      await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.applications[0].href,
+        currentWorkspace.applications[0].href,
         '_blank',
         'noopener noreferrer'
       );
       expect(window.open).toHaveBeenCalledTimes(5);
 
       userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
-      await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
+      await userEvent.click(screen.getByText('Manage'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
-        commonProps.applications[1].href,
+        currentWorkspace.applications[1].href,
         '_blank',
         'noopener noreferrer'
       );
       expect(window.open).toHaveBeenCalledTimes(6);
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByText('Workspace administration'), { ctrlKey: true });
+      expect(window.open).toHaveBeenLastCalledWith(
+        currentWorkspace.adminHref,
+        '_blank',
+        'noopener noreferrer'
+      );
+      expect(window.open).toHaveBeenCalledTimes(7);
     });
   });
 
   it('should not allow tabbing to application switcher panel items when it is closed', async () => {
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...workspaceBasedPageCommonProps} />);
     expect(screen.getByTestId('action-btn__panel')).toHaveAttribute('tabindex', '-1');
     // not tab-able when closed.
     expect(screen.getByTestId('suite-header-app-switcher--all-applications')).toHaveAttribute(
       'tabindex',
       '-1'
     );
-    expect(screen.getByTestId('suite-header-app-switcher--monitor')).toHaveAttribute(
-      'tabindex',
-      '-1'
+    const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
+    currentWorkspace.applications.forEach((app) =>
+      expect(
+        screen.getByTestId(`suite-header-app-switcher--application-${app.id}`)
+      ).toHaveAttribute('tabindex', '-1')
     );
-    expect(screen.getByTestId('suite-header-app-switcher--health')).toHaveAttribute(
+
+    expect(screen.getByTestId('suite-header-app-switcher--admin-workspace')).toHaveAttribute(
       'tabindex',
       '-1'
     );
@@ -1073,20 +1178,44 @@ describe('SuiteHeader', () => {
       'tabindex',
       '0'
     );
-    expect(screen.getByTestId('suite-header-app-switcher--monitor')).toHaveAttribute(
-      'tabindex',
-      '0'
+    currentWorkspace.applications.forEach((app) =>
+      expect(
+        screen.getByTestId(`suite-header-app-switcher--application-${app.id}`)
+      ).toHaveAttribute('tabindex', '0')
     );
-    expect(screen.getByTestId('suite-header-app-switcher--health')).toHaveAttribute(
+    expect(screen.getByTestId('suite-header-app-switcher--admin-workspace')).toHaveAttribute(
       'tabindex',
       '0'
     );
   });
 
-  it('shows loading state', async () => {
-    render(<SuiteHeader suiteName="Application Suite" />);
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
-    // Expect skeletons
-    expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
+  it('should show current workspace in the main header bar for workspace-based page with more than one workspace available', async () => {
+    render(<SuiteHeader {...workspaceBasedPageCommonProps} />);
+    expect(screen.getByTestId('suite-header--current-workspace')).toBeVisible();
+  });
+
+  it('should not show current workspace in the main header bar for workspace-based page with only one workspace available', async () => {
+    render(
+      <SuiteHeader
+        {...workspaceBasedPageCommonProps}
+        workspaces={[workspaceBasedPageWorkspaces.find((wo) => wo.isCurrent)]}
+      />
+    );
+    expect(screen.queryByTestId('suite-header--current-workspace')).not.toBeInTheDocument();
+  });
+
+  it('should not show current workspace in the main header bar for non-workspace-based page with only one workspace available', async () => {
+    render(
+      <SuiteHeader
+        {...workspaceBasedPageCommonProps}
+        workspaces={[nonWorkspaceBasedPageWorkspaces[0]]}
+      />
+    );
+    expect(screen.queryByTestId('suite-header--current-workspace')).not.toBeInTheDocument();
+  });
+
+  it('should not show current workspace in the main header bar for admin page with more than one workspace available', async () => {
+    render(<SuiteHeader {...adminPageCommonProps} />);
+    expect(screen.queryByTestId('suite-header--current-workspace')).not.toBeInTheDocument();
   });
 });
