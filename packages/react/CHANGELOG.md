@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.5...v2.151.0-next.6) (2022-08-19)
+
+
+### Bug Fixes
+
+* **suiteheader:** Adding a fallback to show the workspace ID in case workspace name has not been set for some reason. ([a0658fb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a0658fbd9185dc4ab1800193b5cf91a2a225f811))
+* **suiteheader:** Avoiding repetition when creating list items on the app switcher. ([3a35b48](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3a35b48f6509fdbd1a7cbe0f8cb1571d8c3225fb))
+* **suiteheader:** Changing the sample icon. ([b40650c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b40650cd4d4a4aaa71f6a0d734fa7c5428616abe))
+* **suiteheader:** css updates to match design ([a7d72be](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a7d72be8905f84857676e2e308c8e8a77cc007e4))
+* **suiteheader:** empty state css fixes ([139f8de](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/139f8dea5593120dff44c7cf729484d93842cf52))
+* **suiteheader:** external launcher adjustments ([ac5c397](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ac5c397d387473ab1135421344c40366c551e838))
+* **suiteheader:** Fixing a redirect issue in workspace selection in admin-mode. Fixing test ids. ([06dfdbc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/06dfdbcaf37db68e4ba60aeea16716e5bfc38ec2))
+* **suiteheader:** Fixing a runtime error when `globalApplications` is null. ([ce55767](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ce5576776ffae6067b15db1b845c5a7a0386dc9b))
+* **suiteheader:** Fixing lint errors. ([f2b5d49](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f2b5d499cdbd8b04474be3167e2a3159e06dbe3b))
+* **suiteheader:** Fixing sample icon. ([48e2df3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48e2df3c679e689c208b13cc965feaaef95f468a))
+* **suiteheader:** padding if no icon ([06e0e60](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/06e0e60b7e1decddd8ab1f5e612144dc6d8cda44))
+* **suiteheader:** Removing unnecessary logic to render a separator in the app switcher ([b87a925](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b87a925db58d8dfe3281301e02ec4c1d341bcd8b))
+* **suiteheader:** Separating the loading state of the app switcher in another component. ([b88b3af](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b88b3af6741b1e1ef441d53abccf5c77c5b321b2))
+* **suiteheader:** Small change in the selected workspace logic and updating snapshots. ([e225c97](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e225c97d95e4c1e2d4c84662fba2b7097f7d14ce))
+* **suiteheader:** small fix to avoid rendering header subtitle when it is not necessary. ([82751a6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/82751a615ae5680acc3ba37228042339b6cd0e90))
+* **suiteheader:** Some changes in the non-workspace-based page scenario per designer feedback. ([d16fd91](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d16fd91c63c28ea51a93d5302c188f4026cd2cef))
+* **suiteheader:** Updating snapshots. ([6d0921f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d0921f6ffff9f427a5e7ecbcbb3f9f84ee964da))
+* **suiteheader:** Updating snapshots. ([79eabb8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/79eabb8ef55c629663602160b836fafaf74691b0))
+
+
+### Features
+
+* **suiteheader:** Adding support for the new workspaces and globalApplications properties in SuiteHeader for multi-workspace support. ([5f44b1e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5f44b1e57c72787e714d65585a32f9fd24c738c5))
+* **suiteheader:** Adding unit tests and more stories. Fixing some parts of the logic in MultiWorkspaceSuiteHeaderAppSwitcher to include the homepage scenario (non admin, non workspace-based page). ([366369f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/366369f3c78b25eb0cdc497165a9bb915f52973a))
+* **suiteheader:** First draft of multi workspace support in SuiteHeader application switcher ([df5e6d9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df5e6d9241eccc0b4083c9a2dd1da63fd4961919))
+* **suiteheader:** Including support for a new `icon` property in the application and reducing duplicate code when rendering applications in the app switcher. ([c2c9396](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c2c9396cc5f9a4ecf7c6104c0c0ab4f08f47e311))
+* **suiteheader:** legacy suite header color updates ([4b2473d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b2473db7c830af387a4bcadf3943de55aa36d5d))
+* **suiteheader:** legacy suiteheader in black version, initial work ([3eb5da3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3eb5da3efa369fc4f9ea93527c14017bf7dd3d20))
+* **suiteheader:** Separating the stories of multi-workspace and single-workspace SuiteHeader in differente files; ([7b0b36f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7b0b36f0ad6144e3605d17d3e180524a3050fd9b))
+
+
+
+
+
 # [2.151.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.4...v2.151.0-next.5) (2022-08-17)
 
 
