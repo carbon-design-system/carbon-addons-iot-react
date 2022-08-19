@@ -66,14 +66,17 @@
 
     .#{$iot-prefix}--time-picker__wrapper-sm & {
       bottom: 1rem;
+      padding-right: 0rem;
     }
 
     .#{$iot-prefix}--time-picker__wrapper-md & {
       bottom: 1.25rem;
+      padding-right: 0rem;
     }
 
     .#{$iot-prefix}--time-picker__wrapper-lg & {
       bottom: 1.5rem;
+      padding-right: 0rem;
     }
 
     .#{$iot-prefix}--time-picker--disabled & svg {

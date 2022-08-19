@@ -29,6 +29,8 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       ? timeRange?.relative ?? timeRange.timeRangeValue
       : kind === PICKER_KINDS.ABSOLUTE
       ? timeRange?.absolute ?? timeRange.timeRangeValue
+      : kind === PICKER_KINDS.SINGLE
+      ? timeRange?.single ?? timeRange.timeSingleValue
       : timeRange?.preset ?? timeRange.timeRangeValue;
 
   if (!value) {
@@ -92,6 +94,15 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           startDate
         ).format(dateTimeMask)}`;
       }
+      break;
+    }
+    case PICKER_KINDS.SINGLE: {
+      const startDate = dayjs(value.start ?? value.startDate);
+
+      readableValue = value.startTime
+        ? `${dayjs(`${startDate.format('YYYY-MM-DD')} ${value.startTime}`).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`;
+      returnValue.single.start = new Date(readableValue).valueOf();
       break;
     }
     default:
@@ -292,7 +303,7 @@ export const useAbsoluteDateTimeValue = () => {
     const { endTime } = absoluteValue;
     const invalidStart = invalidStartDate(startTime, endTime, absoluteValue);
     const invalidEnd = invalidEndDate(startTime, endTime, absoluteValue);
-    setAbsoluteStartTimeInvalid(meta.invalid || invalidStart);
+    setAbsoluteStartTimeInvalid(meta?.invalid || invalidStart);
     setAbsoluteEndTimeInvalid(invalidEnd);
     changeAbsolutePropertyValue('startTime', startTime);
   };
@@ -301,7 +312,7 @@ export const useAbsoluteDateTimeValue = () => {
     const { startTime } = absoluteValue;
     const invalidEnd = invalidEndDate(startTime, endTime, absoluteValue);
     const invalidStart = invalidStartDate(startTime, endTime, absoluteValue);
-    setAbsoluteEndTimeInvalid(meta.invalid || invalidEnd);
+    setAbsoluteEndTimeInvalid(meta?.invalid || invalidEnd);
     setAbsoluteStartTimeInvalid(invalidStart);
     changeAbsolutePropertyValue('endTime', endTime);
   };
@@ -316,6 +327,7 @@ export const useAbsoluteDateTimeValue = () => {
     onAbsoluteStartTimeChange,
     onAbsoluteEndTimeChange,
     resetAbsoluteValue,
+    changeAbsolutePropertyValue,
   };
 };
 

@@ -8440,6 +8440,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -8710,6 +8757,7 @@ Map {
       "readOnly": false,
       "secondaryValue": undefined,
       "size": "md",
+      "style": Object {},
       "testId": "time-picker",
       "type": "single",
       "value": undefined,
@@ -8796,6 +8844,14 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testId": Object {
         "type": "string",
@@ -9301,6 +9357,7 @@ Map {
   },
   "DateTimePickerV2" => Object {
     "defaultProps": Object {
+      "datePickerType": "range",
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
       "disabled": false,
@@ -9408,6 +9465,9 @@ Map {
       "testId": "date-time-picker",
     },
     "propTypes": Object {
+      "datePickerType": Object {
+        "type": "string",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -9562,6 +9622,53 @@ Map {
                 },
               ],
               "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "SINGLE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeRangeValue": Object {
+                    "args": Array [
+                      Object {
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
+                },
+              ],
               "type": "exact",
             },
           ],
@@ -16017,6 +16124,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -17183,6 +17337,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -18452,6 +18653,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -19724,6 +19972,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -20834,6 +21129,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -22188,6 +22530,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -23477,6 +23866,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -24839,6 +25275,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -25963,6 +26446,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -27140,6 +27670,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -28216,6 +28793,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -32255,6 +32879,53 @@ Map {
                     "isRequired": true,
                     "type": "exact",
                   },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "type": "exact",
+                  },
                 ],
               ],
               "type": "oneOfType",
@@ -34420,6 +35091,53 @@ Map {
                       },
                     ],
                     "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "SINGLE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "type": "exact",
+                        },
+                      },
+                    ],
                     "type": "exact",
                   },
                 ],
@@ -43118,6 +43836,7 @@ Map {
     "ABSOLUTE": "ABSOLUTE",
     "PRESET": "PRESET",
     "RELATIVE": "RELATIVE",
+    "SINGLE": "SINGLE",
   },
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

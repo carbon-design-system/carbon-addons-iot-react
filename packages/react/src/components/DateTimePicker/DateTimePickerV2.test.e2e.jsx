@@ -13,25 +13,29 @@ const { iotPrefix } = settings;
 
 describe('DateTimePickerV2', () => {
   beforeEach(() => {
-    cy.viewport(1680, 900);
+    cy.viewport(1000, 600);
   });
+
   it('should pick a new absolute ranges', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
-      <DateTimePicker
-        onApply={onApply}
-        onCancel={onCancel}
-        id="picker-test"
-        hasTimeInput
-        defaultValue={{
-          timeRangeKind: PICKER_KINDS.ABSOLUTE,
-          timeRangeValue: {
-            start: new Date(2021, 7, 1, 12, 34, 0),
-            end: new Date(2021, 7, 6, 10, 49, 0),
-          },
-        }}
-      />
+      <div style={{ justifyContent: 'center' }}>
+        <DateTimePicker
+          onApply={onApply}
+          onCancel={onCancel}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+          style={{ zIndex: 6000 }}
+        />
+      </div>
     );
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
@@ -42,9 +46,33 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').click();
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
-    cy.findAllByLabelText('Increment hours').eq(0).click();
-    cy.findByLabelText('End time').type('{backspace}{backspace}{backspace}{backspace}{backspace}');
-    cy.findByLabelText('End time').type('12:34');
+    // open start time time picker
+    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
+    // select hours
+    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+      cy.findByText('01').click({ force: true })
+    );
+    // select minutes
+    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
+    cy.findByTestId('date-time-picker-spinner-list-spinner-2').within(() =>
+      cy.findByText('34').click({ force: true })
+    );
+    // open end time time picker
+    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
+    // select hours
+    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+      cy.findByText('12').click({ force: true })
+    );
+    // select minitues
+    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
+    cy.findByTestId('date-time-picker-spinner-list-spinner-2').within(() =>
+      cy.findByText('34').click({ force: true })
+    );
+    // select AM/PM
+    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
+    cy.findByTestId('date-time-picker-spinner-list-spinner-3').within(() =>
+      cy.findByText('PM').click({ force: true })
+    );
     cy.findByText('Apply')
       .click()
       .should(() => {
@@ -60,6 +88,7 @@ describe('DateTimePickerV2', () => {
             humanValue: '2021-08-06 13:34 to 2021-08-08 12:34',
             tooltipValue: '2021-08-06 13:34 to 2021-08-08 12:34',
           },
+          timeSingleValue: null,
         });
       });
   });
@@ -107,24 +136,25 @@ describe('DateTimePickerV2', () => {
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
 
-    cy.findByLabelText(i18n.startTimeLabel).type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
-    );
+    // cy.get('#picker-test-start-time').clear();
+    cy.get('#picker-test-start-time').type('91:35');
+    cy.get('#picker-test-end-time').type('91:35');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
-    cy.findByLabelText(i18n.startTimeLabel).type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}11:35'
+    // open start time time picker
+    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
+    // select hours
+    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+      cy.findByText('01').click({ force: true })
+    );
+    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
+    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+      cy.findByText('02').click({ force: true })
     );
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
-    cy.findByLabelText(i18n.endTimeLabel).type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}11:61'
-    );
+    cy.get('#picker-test-end-time').type('11:61 AM');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
-
-    // set time to 11:00
-    cy.findByLabelText(i18n.endTimeLabel).type('{backspace}{backspace}00');
-    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
   });
 
   it('should open the flyout when hitting enter', () => {
@@ -190,6 +220,7 @@ describe('DateTimePickerV2', () => {
             humanValue: '',
             tooltipValue: '',
           },
+          timeSingleValue: null,
         });
       });
     cy.findByTestId('date-time-picker__field').should('contain.text', '');
@@ -235,6 +266,7 @@ describe('DateTimePickerV2', () => {
               return value.includes('12:04');
             }),
           },
+          timeSingleValue: null,
         });
       });
   });
@@ -258,8 +290,8 @@ describe('DateTimePickerV2', () => {
       />
     );
 
-    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible');
-    cy.get('body').realPress('Tab');
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
+    cy.focused().type('{enter}');
     cy.findByRole('dialog').should('be.visible');
     cy.findByRole('button', { name: /2021-08-01 12:34 to 2021-08-06 10:49/ })
       .should('be.focused')
@@ -282,21 +314,11 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
     cy.focused().realPress('Tab').realPress('Tab');
-    cy.findByLabelText('Start time')
-      .should('be.focused')
-      .type('{backspace}{backspace}{backspace}{backspace}{backspace}11:35');
+    cy.get('#picker-test-start-time').should('be.focused').type('{moveToStart}{del}0');
+    cy.get('#picker-test-end-time').focus();
+    cy.get('#picker-test-end-time').should('be.focused').type('{moveToStart}{del}0');
+    cy.get('#picker-test-end-time').focus();
     cy.focused().realPress('Tab');
-    cy.findAllByTitle('Increment hours').eq(0).should('be.focused');
-    cy.focused().realPress('Tab');
-    cy.findAllByTitle('Decrement hours').eq(0).should('be.focused');
-    cy.focused().realPress('Tab');
-    cy.findByLabelText('End time')
-      .should('be.focused')
-      .type('{backspace}{backspace}{backspace}{backspace}{backspace}12:39');
-    cy.focused().realPress('Tab');
-    cy.findAllByTitle('Increment hours').eq(1).should('be.focused');
-    cy.focused().realPress('Tab');
-    cy.findAllByTitle('Decrement hours').eq(1).should('be.focused');
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');
     cy.focused().realPress('Tab');
@@ -309,13 +331,14 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: '08/13/2021',
-            endTime: '12:39',
-            humanValue: '2021-08-06 11:35 to 2021-08-13 12:39',
+            endTime: '00:49',
+            humanValue: '2021-08-06 14:34 to 2021-08-13 00:49',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
-            startTime: '11:35',
-            tooltipValue: '2021-08-06 11:35 to 2021-08-13 12:39',
+            startTime: '14:34',
+            tooltipValue: '2021-08-06 14:34 to 2021-08-13 00:49',
           },
+          timeSingleValue: null,
         });
       });
   });
@@ -378,6 +401,7 @@ describe('DateTimePickerV2', () => {
             offset: 360,
             tooltipValue: `${lastSixHours.format('YYYY-MM-DD HH:mm')} to Now`,
           },
+          timeSingleValue: null,
         });
       });
   });
@@ -470,6 +494,7 @@ describe('DateTimePickerV2', () => {
               'YYYY-MM-[12]'
             )} 00:00`,
           },
+          timeSingleValue: null,
         });
       });
   });

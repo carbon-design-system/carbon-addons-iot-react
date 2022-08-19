@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, text, select, number } from '@storybook/addon-knobs';
+import { boolean, text, select, number, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
@@ -93,6 +93,7 @@ export const SelectedRelative = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 6000) }}
     />
   );
 };
@@ -108,11 +109,40 @@ export const SelectedAbsolute = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 6000) }}
+      i18n={object('i18n', {
+        startTimeLabel: 'Start',
+        endTimeLabel: 'end',
+      })}
     />
   );
 };
 
 SelectedAbsolute.storyName = 'Selected absolute';
+
+export const SingleSelect = () => {
+  return (
+    <DateTimePicker
+      id="datetimepicker"
+      defaultValue={{
+        timeRangeKind: PICKER_KINDS.SINGLE,
+        timeSingleValue: {
+          startDate: '2020-04-01',
+          startTime: '12:34 AM',
+        },
+      }}
+      dateTimeMask="YYYY-MM-DD hh:mm A"
+      hasTimeInput={boolean('hasTimeInput', true)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
+      datePickerType="single"
+      showRelativeOption={boolean('show relative option', false)}
+      style={{ zIndex: number('zIndex', 6000) }}
+    />
+  );
+};
+
+SingleSelect.storyName = 'Single select';
 
 export const WithoutARelativeOption = () => {
   return (

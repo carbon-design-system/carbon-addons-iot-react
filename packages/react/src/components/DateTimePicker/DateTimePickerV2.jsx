@@ -20,6 +20,7 @@ import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
+import TimePickerDropdown from '../TimePicker/TimePickerDropdown';
 import { settings } from '../../constants/Settings';
 import dayjs from '../../utils/dayjs';
 import {
@@ -47,6 +48,8 @@ import {
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
+
+const customParseFormat = require('dayjs/plugin/customParseFormat');
 
 const { iotPrefix } = settings;
 
@@ -82,6 +85,15 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
       endTime: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  PropTypes.exact({
+    timeRangeKind: PropTypes.oneOf([PICKER_KINDS.SINGLE]).isRequired,
+    timeRangeValue: PropTypes.exact({
+      /** Can be a full parsable DateTime string or a Date object */
+      start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+      startDate: PropTypes.string.isRequired,
+      startTime: PropTypes.string.isRequired,
+    }),
+  }),
 ]);
 
 const propTypes = {
@@ -167,6 +179,8 @@ const propTypes = {
   hasIconOnly: PropTypes.bool,
   /** Allow repositioning the flyout menu */
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
+  /** Date picker types are single and range, default is range */
+  datePickerType: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -249,6 +263,7 @@ const defaultProps = {
   id: undefined,
   hasIconOnly: false,
   menuOffset: undefined,
+  datePickerType: 'range',
   style: {},
 };
 
@@ -273,6 +288,7 @@ const DateTimePicker = ({
   id = uuid.v4(),
   hasIconOnly,
   menuOffset,
+  datePickerType,
   style,
   ...others
 }) => {
@@ -349,6 +365,9 @@ const DateTimePicker = ({
   } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
   const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
 
+  const [singleDateValue, setSingleDateValue] = useState(null);
+  const [singleTimeValue, setSingleTimeValue] = useState(null);
+
   const dateTimePickerBaseValue = {
     kind: '',
     preset: {
@@ -368,6 +387,10 @@ const DateTimePicker = ({
       endDate: null,
       endTime: null,
     },
+    single: {
+      startDate: null,
+      startTime: null,
+    },
   };
 
   /**
@@ -382,8 +405,13 @@ const DateTimePicker = ({
     if (isCustomRange) {
       if (customRangeKind === PICKER_KINDS.RELATIVE) {
         value.relative = relativeValue;
-      } else {
+      } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = absoluteValue;
+      } else {
+        value.single = {
+          ...singleDateValue,
+          startTime: singleTimeValue,
+        };
       }
       value.kind = customRangeKind;
     } else {
@@ -413,12 +441,12 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
-      if (absoluteValue || relativeValue) {
+      if (absoluteValue || relativeValue || singleDateValue || singleTimeValue) {
         renderValue();
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [absoluteValue, relativeValue]
+    [absoluteValue, relativeValue, singleDateValue, singleTimeValue]
   );
 
   const onDatePickerChange = ([start, end], _, flatpickr) => {
@@ -427,6 +455,8 @@ const DateTimePicker = ({
     );
 
     const daysDidntChange =
+      start &&
+      end &&
       dayjs(absoluteValue.start).isSame(dayjs(start)) &&
       dayjs(absoluteValue.end).isSame(dayjs(end));
 
@@ -478,6 +508,14 @@ const DateTimePicker = ({
     );
   };
 
+  const onSingleDatePickerChange = (start) => {
+    const newSingleDate = { ...singleDateValue };
+    newSingleDate.start = start;
+    newSingleDate.startDate = dayjs(newSingleDate.start).format('MM/DD/YYYY');
+
+    setSingleDateValue(newSingleDate);
+  };
+
   const onPresetClick = (preset) => {
     setSelectedPreset(preset.id ?? preset.offset);
     renderValue(preset);
@@ -486,7 +524,9 @@ const DateTimePicker = ({
   const parseDefaultValue = (parsableValue) => {
     const currentCustomRangeKind = showRelativeOption
       ? PICKER_KINDS.RELATIVE
-      : PICKER_KINDS.ABSOLUTE;
+      : datePickerType === 'range'
+      ? PICKER_KINDS.ABSOLUTE
+      : PICKER_KINDS.SINGLE;
     if (parsableValue !== null) {
       if (parsableValue.timeRangeKind === PICKER_KINDS.PRESET) {
         // preset
@@ -503,8 +543,23 @@ const DateTimePicker = ({
         setRelativeValue(parsableValue.timeRangeValue);
       }
 
+      if (parsableValue.timeRangeKind === PICKER_KINDS.SINGLE) {
+        // single
+        const single = { ...parsableValue.timeSingleValue };
+        resetRelativeValue();
+        setIsCustomRange(true);
+        setCustomRangeKind(PICKER_KINDS.SINGLE);
+        if (!single.hasOwnProperty('start')) {
+          single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
+        }
+        single.startDate = dayjs(single.start).format('MM/DD/YYYY');
+        single.startTime = dayjs(single.start).format('HH:mm A');
+        setSingleDateValue(single);
+      }
+
       if (parsableValue.timeRangeKind === PICKER_KINDS.ABSOLUTE) {
         // absolute
+        // range
         const absolute = { ...parsableValue.timeRangeValue };
         resetRelativeValue();
         setIsCustomRange(true);
@@ -562,7 +617,11 @@ const DateTimePicker = ({
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
-    : getIntervalValue({ currentValue, strings, dateTimeMask, humanValue });
+    : datePickerType === 'range'
+    ? getIntervalValue({ currentValue, strings, dateTimeMask, humanValue })
+    : datePickerType === 'singe'
+    ? humanValue
+    : dateTimeMask;
 
   const disableRelativeApply =
     isCustomRange &&
@@ -583,11 +642,19 @@ const DateTimePicker = ({
     const returnValue = {
       timeRangeKind: value.kind,
       timeRangeValue: null,
+      timeSingleValue: null,
     };
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
         returnValue.timeRangeValue = {
           ...value.absolute,
+          humanValue,
+          tooltipValue,
+        };
+        break;
+      case PICKER_KINDS.SINGLE:
+        returnValue.timeSingleValue = {
+          ...value.single,
           humanValue,
           tooltipValue,
         };
@@ -673,6 +740,57 @@ const DateTimePicker = ({
     : 274;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
+  const formatDateAndTime = (date, time, format) => dayjs(`${date} ${time}`).format(format);
+
+  const onRangeValueChange = (startTime, endTime, invalidStartTime, invalidEndTime) => {
+    if (startTime) {
+      onAbsoluteStartTimeChange(
+        formatDateAndTime(absoluteValue?.startDate, startTime, 'HH:mm'),
+        null,
+        { invalid: invalidStartTime }
+      );
+    }
+    if (endTime) {
+      onAbsoluteEndTimeChange(
+        formatDateAndTime(absoluteValue?.endDate, endTime, 'HH:mm', { invalid: invalidEndTime })
+      );
+    }
+  };
+
+  const TimeSpinner = () => {
+    dayjs.extend(customParseFormat);
+    const isSingleSelect = datePickerType === 'single';
+    const startTime = isSingleSelect
+      ? singleTimeValue
+      : formatDateAndTime(absoluteValue?.startDate, absoluteValue?.startTime, 'hh:mm A');
+    const endTime = formatDateAndTime(absoluteValue?.endDate, absoluteValue?.endTime, 'hh:mm A');
+
+    return (
+      <TimePickerDropdown
+        className={`${iotPrefix}--time-picker-dropdown`}
+        id={id}
+        value={startTime}
+        secondaryValue={endTime}
+        hideLabel={!strings.startTimeLabel}
+        hideSecondaryLabel={!strings.endTimeLabel}
+        onChange={(startSate, endState, invalidStartTime, invalidEndTime) =>
+          isSingleSelect
+            ? setSingleTimeValue(startSate)
+            : onRangeValueChange(startSate, endState, invalidStartTime, invalidEndTime)
+        }
+        type={singleDateValue ? 'single' : 'range'}
+        invalid={[absoluteStartTimeInvalid, absoluteEndTimeInvalid]}
+        i18n={{
+          labelText: strings.startTimeLabel,
+          secondaryLabelText: strings.endTimeLabel,
+        }}
+        size="sm"
+        testId={testId}
+        style={updatedStyle}
+      />
+    );
+  };
+
   return (
     <>
       <div
@@ -696,9 +814,9 @@ const DateTimePicker = ({
 
           onFieldInteraction(event);
         })}
-        onFocus={toggleTooltip}
+        // onFocus={toggleTooltip}
         onBlur={toggleTooltip}
-        onMouseEnter={toggleTooltip}
+        // onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
       >
@@ -951,13 +1069,21 @@ const DateTimePicker = ({
                         className={`${iotPrefix}--date-time-picker__datepicker`}
                       >
                         <DatePicker
-                          datePickerType="range"
+                          datePickerType={datePickerType}
                           dateFormat="m/d/Y"
                           ref={handleDatePickerRef}
-                          onChange={onDatePickerChange}
+                          onChange={
+                            datePickerType === 'single'
+                              ? onSingleDatePickerChange
+                              : onDatePickerChange
+                          }
                           onClose={onDatePickerClose}
                           value={
-                            absoluteValue ? [absoluteValue.startDate, absoluteValue.endDate] : ''
+                            absoluteValue && datePickerType === 'range'
+                              ? [absoluteValue.startDate, absoluteValue.endDate]
+                              : singleDateValue && datePickerType === 'single'
+                              ? [singleDateValue.startDate]
+                              : null
                           }
                           locale={locale}
                         >
@@ -966,43 +1092,18 @@ const DateTimePicker = ({
                             id={`${id}-date-picker-input-start`}
                             hideLabel
                           />
-                          <DatePickerInput
-                            labelText=""
-                            id={`${id}-date-picker-input-end`}
-                            hideLabel
-                          />
+
+                          {datePickerType === 'range' ? (
+                            <DatePickerInput
+                              labelText=""
+                              id={`${id}-date-picker-input-end`}
+                              hideLabel
+                            />
+                          ) : null}
                         </DatePicker>
                       </div>
                       {hasTimeInput ? (
-                        <FormGroup
-                          legendText=""
-                          className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                        >
-                          <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
-                            <TimePickerSpinner
-                              id={`${id}-start-time`}
-                              invalid={absoluteStartTimeInvalid}
-                              labelText={strings.startTimeLabel}
-                              value={absoluteValue ? absoluteValue.startTime : '00:00'}
-                              i18n={i18n}
-                              onChange={onAbsoluteStartTimeChange}
-                              spinner
-                              autoComplete="off"
-                              light
-                            />
-                            <TimePickerSpinner
-                              id={`${id}-end-time`}
-                              invalid={absoluteEndTimeInvalid}
-                              labelText={strings.endTimeLabel}
-                              value={absoluteValue ? absoluteValue.endTime : '00:00'}
-                              i18n={i18n}
-                              onChange={onAbsoluteEndTimeChange}
-                              spinner
-                              autoComplete="off"
-                              light
-                            />
-                          </div>
-                        </FormGroup>
+                        <TimeSpinner />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
                       )}

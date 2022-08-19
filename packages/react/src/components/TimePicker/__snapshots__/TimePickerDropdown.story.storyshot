@@ -26,7 +26,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <label
             className="bx--label"
-            htmlFor="time-picker"
+            htmlFor="time-picker-start-time"
           >
             Start
           </label>
@@ -41,7 +41,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 className="bx--text-input bx--text-input--md"
                 data-testid="time-picker-input"
                 disabled={false}
-                id="time-picker"
+                id="time-picker-start-time"
                 onChange={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
@@ -498,6 +498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
     data-testid="time-picker-spinner"
     style={
       Object {
+        "--zIndex": 0,
         "left": "100px",
         "top": "100px",
       }
