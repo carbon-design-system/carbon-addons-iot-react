@@ -384,7 +384,7 @@ const TimeSeriesCard = ({
         id: timeDataSourceId,
         name: capitalize(timeDataSourceId),
         isSortable: true,
-        type: 'TIMESTAMP',
+        columnType: 'TIMESTAMP',
       },
     ];
     // then the rest in series order

@@ -141,6 +141,7 @@ const propTypes = {
   }),
   onEditDataItems: PropTypes.func,
   onEditDataItem: PropTypes.func,
+  addAggregation: PropTypes.func,
 };
 
 const defaultProps = {
@@ -175,6 +176,7 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   onEditDataItems: null,
   onEditDataItem: null,
+  addAggregation: null,
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -304,6 +306,7 @@ const CardEditor = ({
   onFetchDynamicDemoHotspots,
   onEditDataItems,
   onEditDataItem,
+  addAggregation,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -390,6 +393,7 @@ const CardEditor = ({
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
               onEditDataItem={onEditDataItem}
+              addAggregation={addAggregation}
             />
           </>
         )}

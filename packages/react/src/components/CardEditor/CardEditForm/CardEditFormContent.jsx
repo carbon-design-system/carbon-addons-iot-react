@@ -108,6 +108,7 @@ const propTypes = {
     image: PropTypes.string,
   }),
   onEditDataItem: PropTypes.func,
+  addAggregation: PropTypes.func,
 };
 
 const defaultProps = {
@@ -121,6 +122,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   onEditDataItem: null,
+  addAggregation: null,
 };
 
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
@@ -151,6 +153,7 @@ const CardEditFormContent = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
   onEditDataItem,
+  addAggregation
 }) => {
   const { type, timeRange, renderEditContent } = cardConfig;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -190,6 +193,7 @@ const CardEditFormContent = ({
           translateWithId={handleTranslation}
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
           onEditDataItem={onEditDataItem}
+          addAggregation={addAggregation}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
@@ -206,6 +210,7 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
           onEditDataItem={onEditDataItem}
+          addAggregation={addAggregation}
         />
       ) : type === CARD_TYPES.BAR ||
         type === CARD_TYPES.TIMESERIES ||
@@ -226,6 +231,7 @@ const CardEditFormContent = ({
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
           onEditDataItem={onEditDataItem}
+          addAggregation={addAggregation}
         />
       ) : null}
       {Array.isArray(editContentSections) // render the content sections for all types of card if set

@@ -75,6 +75,8 @@ const propTypes = {
     image: PropTypes.string,
   }),
   onEditDataItem: PropTypes.func,
+  addAggregation: PropTypes.func,
+  
 };
 
 const defaultProps = {
@@ -114,6 +116,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   onEditDataItem: null,
+  addAggregation: null,
 };
 
 /**
@@ -142,6 +145,7 @@ const CardEditForm = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
   onEditDataItem,
+  addAggregation,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -168,6 +172,7 @@ const CardEditForm = ({
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItem={onEditDataItem}
+            addAggregation={addAggregation}
           />
         </Tab>
         {!isCustomCardWithNoSettings ? (

@@ -313,6 +313,7 @@ const propTypes = {
   testId: PropTypes.string,
   /** handles V2 dataItem */
   onEditDataItem: PropTypes.func,
+  addAggregation: PropTypes.func,
 };
 
 const defaultProps = {
@@ -388,6 +389,7 @@ const defaultProps = {
   onEditDataItems: null,
   testId: 'dashboard-editor',
   onEditDataItem: null,
+  addAggregation: null,
 };
 
 const LAYOUTS = {
@@ -443,6 +445,7 @@ const DashboardEditor = ({
   onEditDataItems,
   testId,
   onEditDataItem,
+  addAggregation,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -835,6 +838,7 @@ const DashboardEditor = ({
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItems={onEditDataItems}
             onEditDataItem={onEditDataItem}
+            addAggregation={addAggregation}
           />
         </ErrorBoundary>
       </div>

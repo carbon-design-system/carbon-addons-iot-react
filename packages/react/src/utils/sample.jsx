@@ -2530,7 +2530,7 @@ export const tableColumns = [
     dataSourceId: 'hour',
     label: 'Hour',
     priority: 2,
-    type: 'TIMESTAMP',
+    columnType: 'TIMESTAMP',
   },
   {
     dataSourceId: 'pressure',
@@ -2555,7 +2555,7 @@ export const tableColumnsWithLinks = [
     dataSourceId: 'hour',
     label: 'Hour',
     priority: 2,
-    type: 'TIMESTAMP',
+    columnType: 'TIMESTAMP',
   },
   {
     dataSourceId: 'pressure',

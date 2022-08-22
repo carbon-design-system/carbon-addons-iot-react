@@ -15,7 +15,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt32 } from '@carbon/icons-react';
+import { WarningAlt32, Add16 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';
@@ -27,6 +27,7 @@ import { TextInput } from '../../../TextInput';
 import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
+import Button from '../../../Button'
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -67,10 +68,12 @@ const propTypes = {
   }),
   showEditor: PropTypes.bool,
   setShowEditor: PropTypes.func,
+  addAggregation: PropTypes.func,
   editDataItem: PropTypes.shape({
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
+    columnType: PropTypes.string,
     hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
@@ -110,6 +113,7 @@ const propTypes = {
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
   isLarge: PropTypes.bool,
+  testId: PropTypes.string,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -179,6 +183,8 @@ const defaultProps = {
   isSummaryDashboard: false,
   isLarge: false,
   validDataItems: [],
+  addAggregation: null,
+  testId: 'aggregation-methods',
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -209,6 +215,8 @@ const DataSeriesFormItemModal = ({
   onChange,
   i18n,
   isLarge,
+  addAggregation,
+  testId,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -217,7 +225,7 @@ const DataSeriesFormItemModal = ({
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
     (type === CARD_TYPES.TABLE &&
-      content?.columns?.find((column) => column.type === 'TIMESTAMP')) ||
+      content?.columns?.find((column) => column.columnType === 'TIMESTAMP')) ||
     (content?.type === BAR_CHART_TYPES.SIMPLE && content?.timeDataSourceId) ||
     (content?.type === BAR_CHART_TYPES.STACKED && content?.timeDataSourceId);
 
@@ -274,7 +282,8 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && (
+        {((editDataItem?.hasStreamingMetricEnabled && (editDataItem?.type === 'METRIC'|| (editDataItem?.type === 'DERIVED_METRIC' &&  editDataItem.type === 'TRANSFORMER'))) 
+        || (editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'))&& (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -323,10 +332,27 @@ const DataSeriesFormItemModal = ({
                 </span>
               </div>
             )}
+              {editDataItem?.hasStreamingMetricEnabled && (
+                 <div className={`${baseClassName}--input-group--item-half`}>
+                <Button 
+                key="edit-data-item"
+                kind="ghost"
+                size="large"
+                // renderIcon={Add16}
+                icon="add"
+                onClick={() => addAggregation(editDataItem)} 
+                iconDescription={mergedI18n.addAggregation}
+                testId={`${testId}-aggregaton-button`}
+              >
+                {mergedI18n.addAggregation}
+              </Button>
+              </div>
+            )}
+
             {isTimeBasedCard &&
-              editDataItem.aggregationMethod &&
+              (editDataItem.aggregationMethod &&
               editDataItem.aggregationMethod !== 'none' &&
-              !editDataItem?.hasStreamingMetricEnabled && (
+              (!editDataItem.hasStreamingMetricEnabled)) && (
                 <div className={`${baseClassName}--input-group--item-half`}>
                   <Dropdown
                     id={`${id}_grain-selector`}
@@ -573,23 +599,7 @@ const DataSeriesFormItemModal = ({
         )}
       </>
     ),
-    [
-      availableDimensions,
-      availableGrains,
-      baseClassName,
-      cardConfig,
-      editDataItem,
-      handleTranslation,
-      id,
-      initialAggregation,
-      initialGrain,
-      isSummaryDashboard,
-      isTimeBasedCard,
-      mergedI18n,
-      selectedDimensionFilter,
-      setEditDataItem,
-      type,
-    ]
+    [addAggregation, availableDimensions, availableGrains, baseClassName, cardConfig, editDataItem, handleTranslation, id, initialAggregation, initialGrain, isSummaryDashboard, isTimeBasedCard, mergedI18n, selectedDimensionFilter, setEditDataItem, testId, type]
   );
 
   return (

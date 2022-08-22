@@ -13782,6 +13782,7 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "addAggregation": null,
       "availableDimensions": Object {},
       "availableImages": Array [],
       "breakpointSwitcher": null,
@@ -13866,6 +13867,9 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "addAggregation": Object {
+        "type": "func",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -14534,6 +14538,7 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "addAggregation": null,
       "availableDimensions": Object {},
       "cardConfig": null,
       "currentBreakpoint": "xl",
@@ -14576,6 +14581,9 @@ Map {
       "testId": "card-editor",
     },
     "propTypes": Object {
+      "addAggregation": Object {
+        "type": "func",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},

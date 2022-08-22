@@ -109,6 +109,7 @@ const propTypes = {
   }),
   translateWithId: PropTypes.func.isRequired,
   onEditDataItem: PropTypes.func,
+  addAggregation: PropTypes.func,
 };
 
 const defaultProps = {
@@ -153,6 +154,7 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   onEditDataItem: null,
+  addAggregation: null,
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -254,6 +256,7 @@ const DataSeriesFormItem = ({
   dataSeriesItemLinks,
   translateWithId,
   onEditDataItem,
+  addAggregation,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -454,6 +457,7 @@ const DataSeriesFormItem = ({
         dataSection={dataSection}
         onChange={onChange}
         i18n={mergedI18n}
+        addAggregation={addAggregation}
       />
       <ContentFormItemTitle
         title={mergedI18n.dataItemEditorSectionTitle}
