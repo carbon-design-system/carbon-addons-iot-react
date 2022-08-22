@@ -15,6 +15,7 @@ import {
   validThresholdIcons,
   validThresholdColors,
   validHotspotIcons,
+  DashboardEditorActionsPropTypes,
 } from '../DashboardEditor/editorUtils';
 import useSizeObserver from '../../hooks/useSizeObserver';
 
@@ -162,7 +163,7 @@ const propTypes = {
   translateWithId: PropTypes.func,
 
   testId: PropTypes.string,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -191,7 +192,6 @@ const defaultProps = {
   open: true,
   showTooManyHotspotsInfo: false,
   label: undefined,
-  onEditDataItem: null,
   i18n: {
     fixedTypeDataSourceTabLabelText: 'Data source',
     fixedTypeTooltipTabLabelText: 'Tooltip',
@@ -219,6 +219,13 @@ const defaultProps = {
     }
   },
   testId: 'hotspot-editor-modal',
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const getSelectedHotspotsList = (selectedHotspot, hotspots) => {
@@ -261,7 +268,7 @@ const HotspotEditorModal = ({
   i18n,
   translateWithId,
   testId,
-  onEditDataItem,
+  actions,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -446,7 +453,7 @@ const HotspotEditorModal = ({
         dataItems={myDataItems}
         onChange={updateHotspotDataSource}
         testId={`${testId}-data-source-tab`}
-        onEditDataItem={onEditDataItem}
+        actions={actions}
       />
     ) : null;
   };

@@ -9,6 +9,7 @@ import List from '../../List/List';
 import Button from '../../Button/Button';
 import { settings } from '../../../constants/Settings';
 import deprecate from '../../../internal/deprecate';
+import { DashboardEditorActionsPropTypes } from '../../DashboardEditor/editorUtils';
 
 const { iotPrefix } = settings;
 
@@ -52,7 +53,6 @@ const propTypes = {
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
-    onEditDataItem: PropTypes.func,
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
@@ -75,7 +75,7 @@ const propTypes = {
   /** An object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } */
   availableDimensions: PropTypes.shape({}),
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -95,7 +95,13 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   testId: 'HotspotEditorDataSourceTab',
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -115,7 +121,7 @@ const HotspotEditorDataSourceTab = ({
   testID,
   testId,
   translateWithId,
-  onEditDataItem,
+  actions: { onEditDataItem },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 

@@ -24,9 +24,14 @@ import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import { TextInput } from '../../../TextInput';
-import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
+import {
+  handleDataItemEdit,
+  DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
+} from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
+import Button from '../../../Button';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
@@ -71,6 +76,7 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
+    columnType: PropTypes.string,
     hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
@@ -110,6 +116,7 @@ const propTypes = {
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
   isLarge: PropTypes.bool,
+  testId: PropTypes.string,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -130,6 +137,7 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -179,6 +187,14 @@ const defaultProps = {
   isSummaryDashboard: false,
   isLarge: false,
   validDataItems: [],
+  testId: 'aggregation-methods',
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -209,6 +225,10 @@ const DataSeriesFormItemModal = ({
   onChange,
   i18n,
   isLarge,
+  testId,
+  actions: {
+    dataSeriesFormActions: { hideAggregationsDropDown, onAddAggregations },
+  },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -217,7 +237,7 @@ const DataSeriesFormItemModal = ({
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
     (type === CARD_TYPES.TABLE &&
-      content?.columns?.find((column) => column.type === 'TIMESTAMP')) ||
+      content?.columns?.find((column) => column.columnType === 'TIMESTAMP')) ||
     (content?.type === BAR_CHART_TYPES.SIMPLE && content?.timeDataSourceId) ||
     (content?.type === BAR_CHART_TYPES.STACKED && content?.timeDataSourceId);
 
@@ -274,7 +294,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP' && (
+        {hideAggregationsDropDown(editDataItem) && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -323,10 +343,26 @@ const DataSeriesFormItemModal = ({
                 </span>
               </div>
             )}
+            {editDataItem?.hasStreamingMetricEnabled && (
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <Button
+                  key="edit-data-item"
+                  kind="ghost"
+                  size="large"
+                  icon="add"
+                  onClick={() => onAddAggregations(editDataItem)}
+                  iconDescription={mergedI18n.addAggregation}
+                  testId={`${testId}-aggregaton-button`}
+                >
+                  {mergedI18n.addAggregation}
+                </Button>
+              </div>
+            )}
+
             {isTimeBasedCard &&
               editDataItem.aggregationMethod &&
               editDataItem.aggregationMethod !== 'none' &&
-              !editDataItem?.hasStreamingMetricEnabled && (
+              !editDataItem.hasStreamingMetricEnabled && (
                 <div className={`${baseClassName}--input-group--item-half`}>
                   <Dropdown
                     id={`${id}_grain-selector`}
@@ -573,23 +609,7 @@ const DataSeriesFormItemModal = ({
         )}
       </>
     ),
-    [
-      availableDimensions,
-      availableGrains,
-      baseClassName,
-      cardConfig,
-      editDataItem,
-      handleTranslation,
-      id,
-      initialAggregation,
-      initialGrain,
-      isSummaryDashboard,
-      isTimeBasedCard,
-      mergedI18n,
-      selectedDimensionFilter,
-      setEditDataItem,
-      type,
-    ]
+    [availableDimensions, availableGrains, baseClassName, cardConfig, editDataItem, handleTranslation, hideAggregationsDropDown, id, initialAggregation, initialGrain, isSummaryDashboard, isTimeBasedCard, mergedI18n, onAddAggregations, selectedDimensionFilter, setEditDataItem, testId, type]
   );
 
   return (

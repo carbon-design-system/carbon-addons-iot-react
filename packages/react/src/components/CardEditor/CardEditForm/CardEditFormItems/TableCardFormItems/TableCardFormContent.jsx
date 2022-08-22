@@ -9,6 +9,7 @@ import { settings } from '../../../../../constants/Settings';
 import {
   handleDataSeriesChange,
   DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -87,7 +88,7 @@ const propTypes = {
     table: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -114,7 +115,13 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const TableCardFormContent = ({
@@ -129,7 +136,7 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onEditDataItem,
+  actions: { onEditDataItem },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {

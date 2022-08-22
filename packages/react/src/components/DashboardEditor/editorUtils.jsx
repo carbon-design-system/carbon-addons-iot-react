@@ -505,7 +505,7 @@ export const handleDataSeriesChange = (
               dataSourceId: 'timestamp',
               dataItemId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             };
       const existingDimensionColumns = Array.isArray(content?.columns)
@@ -667,3 +667,11 @@ export const renderDefaultIconByName = (iconName, iconProps = {}) => {
   // eslint-disable-next-line react/prop-types
   return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
 };
+
+export const DashboardEditorActionsPropTypes = PropTypes.shape({
+  onEditDataItem: PropTypes.func,
+  dataSeriesFormActions: PropTypes.shape({
+    hideAggregationsDropDown: PropTypes.func,
+    onAddAggregations: PropTypes.func,
+  }),
+});

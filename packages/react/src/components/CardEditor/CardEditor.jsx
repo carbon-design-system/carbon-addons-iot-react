@@ -8,6 +8,7 @@ import { CARD_TYPES, DASHBOARD_EDITOR_CARD_TYPES } from '../../constants/LayoutC
 import CardCodeEditor from '../CardCodeEditor/CardCodeEditor';
 import Button from '../Button';
 import { settings } from '../../constants/Settings';
+import { DashboardEditorActionsPropTypes } from '../DashboardEditor/editorUtils';
 
 import CardGalleryList from './CardGalleryList/CardGalleryList';
 import CardEditForm from './CardEditForm/CardEditForm';
@@ -140,7 +141,7 @@ const propTypes = {
     image: PropTypes.string,
   }),
   onEditDataItems: PropTypes.func,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -174,7 +175,13 @@ const defaultProps = {
   testId: 'card-editor',
   dataSeriesItemLinks: null,
   onEditDataItems: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const baseClassName = `${iotPrefix}--card-editor`;
@@ -303,7 +310,7 @@ const CardEditor = ({
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
   onEditDataItems,
-  onEditDataItem,
+  actions,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -389,7 +396,7 @@ const CardEditor = ({
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-              onEditDataItem={onEditDataItem}
+              actions={actions}
             />
           </>
         )}

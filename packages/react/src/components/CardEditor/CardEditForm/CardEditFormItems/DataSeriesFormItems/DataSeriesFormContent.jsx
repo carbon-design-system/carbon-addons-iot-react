@@ -10,6 +10,7 @@ import {
   DATAITEM_COLORS_OPTIONS,
   handleDataSeriesChange,
   DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -108,7 +109,7 @@ const propTypes = {
     decrementNumberText: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -152,7 +153,13 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -253,8 +260,9 @@ const DataSeriesFormItem = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onEditDataItem,
+  actions,
 }) => {
+  const { onEditDataItem } = actions;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
@@ -454,6 +462,7 @@ const DataSeriesFormItem = ({
         dataSection={dataSection}
         onChange={onChange}
         i18n={mergedI18n}
+        actions={actions}
       />
       <ContentFormItemTitle
         title={mergedI18n.dataItemEditorSectionTitle}

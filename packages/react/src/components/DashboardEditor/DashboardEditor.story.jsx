@@ -159,16 +159,6 @@ const mockDataItems = [
     dataSourceId: 'v2pressure',
     label: 'V2 Pressure',
     hasStreamingMetricEnabled: true,
-    aggregationMethod: 'min',
-    aggregationMethods: [
-      { id: 'none', text: 'None' },
-      { id: 'max', text: 'Maximum' },
-      { id: 'min', text: 'Minimum' },
-      { id: 'mean', text: 'Mean' },
-      { id: 'last', text: 'Last' },
-      { id: 'sum', text: 'Sum' },
-      { id: 'standerd', text: 'Standerd deviation' },
-    ],
   },
 ];
 
@@ -197,6 +187,11 @@ export const Default = () => (
     onDelete={action('onDelete')}
     onCancel={action('onCancel')}
     onSubmit={action('onSubmit')}
+    // onEditDataItem={action('onEditDataItem')}
+    onEditDataItem={(cardConfig, dataItem, dataItemWithMetaData) => dataItem.hasStreamingMetricEnabled ? [
+      { id: 'none', text: 'None' },
+      { id: 'last', text: 'Last' },
+    ]: []} 
     onImageDelete={action('onImageDelete')}
     onLayoutChange={action('onLayoutChange')}
     isSubmitDisabled={boolean('isSubmitDisabled', false)}
