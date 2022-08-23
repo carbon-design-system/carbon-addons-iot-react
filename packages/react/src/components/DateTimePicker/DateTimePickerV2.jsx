@@ -168,6 +168,7 @@ const propTypes = {
     hours: PropTypes.string,
     minutes: PropTypes.string,
     number: PropTypes.string,
+    timePickerInvalidText: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -257,6 +258,7 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
     number: 'number',
+    timePickerInvalidText: undefined,
   },
   light: false,
   locale: 'en',
@@ -783,6 +785,7 @@ const DateTimePicker = ({
         i18n={{
           labelText: strings.startTimeLabel,
           secondaryLabelText: strings.endTimeLabel,
+          invalidText: strings.timePickerInvalidText,
         }}
         size="sm"
         testId={testId}

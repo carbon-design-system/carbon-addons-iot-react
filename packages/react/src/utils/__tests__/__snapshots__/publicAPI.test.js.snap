@@ -9388,6 +9388,7 @@ Map {
         "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
         "startTimeLabel": "Start time",
+        "timePickerInvalidText": undefined,
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
@@ -9770,6 +9771,9 @@ Map {
               "type": "string",
             },
             "startTimeLabel": Object {
+              "type": "string",
+            },
+            "timePickerInvalidText": Object {
               "type": "string",
             },
             "toLabel": Object {

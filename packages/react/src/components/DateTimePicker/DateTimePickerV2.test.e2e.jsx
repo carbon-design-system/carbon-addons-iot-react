@@ -136,9 +136,8 @@ describe('DateTimePickerV2', () => {
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
 
-    // cy.get('#picker-test-start-time').clear();
-    cy.get('#picker-test-start-time').type('91:35');
-    cy.get('#picker-test-end-time').type('91:35');
+    cy.get('#picker-test-1').type('91:35');
+    cy.get('#picker-test-2').type('91:35');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
     // open start time time picker
@@ -153,7 +152,7 @@ describe('DateTimePickerV2', () => {
     );
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
-    cy.get('#picker-test-end-time').type('11:61 AM');
+    cy.get('#picker-test-2').type('11:61 AM');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
   });
 
@@ -314,10 +313,11 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
     cy.focused().realPress('Tab').realPress('Tab');
-    cy.get('#picker-test-start-time').should('be.focused').type('{moveToStart}{del}0');
-    cy.get('#picker-test-end-time').focus();
-    cy.get('#picker-test-end-time').should('be.focused').type('{moveToStart}{del}0');
-    cy.get('#picker-test-end-time').focus();
+    cy.get('#picker-test-1').should('be.focused').type('{moveToStart}{del}0');
+    // lost focus need to fix in code
+    cy.get('#picker-test-2').focus();
+    cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}0');
+    cy.get('#picker-test-2').focus();
     cy.focused().realPress('Tab');
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');

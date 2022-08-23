@@ -137,6 +137,9 @@ export const SingleSelect = () => {
       onCancel={action('onCancel')}
       datePickerType="single"
       showRelativeOption={boolean('show relative option', false)}
+      i18n={object('i18n', {
+        timePickerInvalidText: 'A valid value is required',
+      })}
       style={{ zIndex: number('zIndex', 6000) }}
     />
   );

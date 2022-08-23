@@ -302,7 +302,7 @@ const TimePickerDropdown = ({
             <TextInput
               onChange={handleOnChange}
               data-testid={`${testId}-input`}
-              id={`${id}-start-time`}
+              id={id}
               value={valueState}
               onFocus={() => setFocusedInput(0)}
               readOnly={readOnly}
@@ -369,7 +369,7 @@ const TimePickerDropdown = ({
               onChange={handleOnChange}
               data-testid={`${testId}-input-1`}
               onFocus={() => setFocusedInput(0)}
-              id={`${id}-start-time`}
+              id={`${id}-1`}
               readOnly={readOnly}
               value={valueState}
               hideLabel={hideSecondaryLabel || hideLabel}
@@ -408,7 +408,7 @@ const TimePickerDropdown = ({
           >
             <TextInput
               data-testid={`${testId}-input-2`}
-              id={`${id}-end-time`}
+              id={`${id}-2`}
               onChange={handleOnChange}
               onFocus={() => setFocusedInput(1)}
               readOnly={readOnly}
