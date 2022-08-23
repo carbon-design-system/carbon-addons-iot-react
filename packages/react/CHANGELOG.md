@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.7...v2.151.0-next.8) (2022-08-23)
+
+
+### Bug Fixes
+
+* **suiteheader:** Appending the `originHref` to the logout routes using the `URL` object instead of doing it manually. ([9dc3b73](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9dc3b7371bb2aaafa4b05a88f9dc3273586b1e77))
+
+
+
+
+
 # [2.151.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.6...v2.151.0-next.7) (2022-08-19)
 
 
