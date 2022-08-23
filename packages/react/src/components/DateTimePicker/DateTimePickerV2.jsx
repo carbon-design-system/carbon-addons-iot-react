@@ -87,13 +87,13 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
   }).isRequired,
   PropTypes.exact({
     timeRangeKind: PropTypes.oneOf([PICKER_KINDS.SINGLE]).isRequired,
-    timeRangeValue: PropTypes.exact({
+    timeSingleValue: PropTypes.exact({
       /** Can be a full parsable DateTime string or a Date object */
       start: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
       startDate: PropTypes.string.isRequired,
       startTime: PropTypes.string.isRequired,
-    }),
-  }),
+    }).isRequired,
+  }).isRequired,
 ]);
 
 const propTypes = {
@@ -814,9 +814,9 @@ const DateTimePicker = ({
 
           onFieldInteraction(event);
         })}
-        // onFocus={toggleTooltip}
+        onFocus={toggleTooltip}
         onBlur={toggleTooltip}
-        // onMouseEnter={toggleTooltip}
+        onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
       >
