@@ -5166,7 +5166,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
             onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             role="button"
             style={
@@ -5320,7 +5322,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             id="Card-toolbar-iot--date-time-pickerv2__wrapper"
             onBlur={[Function]}
             onClick={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             role="button"
             style={
