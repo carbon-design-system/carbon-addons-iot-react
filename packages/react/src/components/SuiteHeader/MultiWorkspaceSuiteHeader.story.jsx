@@ -39,16 +39,100 @@ const routes = {
   domain: '',
 };
 
-const applications = [
+const icon =
+  'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIKICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0ibGltZSIKICAgICAgc3Ryb2tlPSJibGFjayIgLz4KPC9zdmc+';
+
+const adminPageWorkspaces = [
   {
-    id: 'monitor',
-    name: 'Monitor',
-    href: 'https://www.ibm.com',
+    id: 'workspace1',
+    name: 'Workspace 1',
+    href: 'https://www.ibm.com/1',
+    adminHref: 'https://www.ibm.com/1/admin',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com/1/monitor',
+        isExternal: false,
+        icon,
+      },
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com/1/health',
+        isExternal: false,
+        icon,
+      },
+    ],
   },
   {
-    id: 'health',
-    name: 'Health',
-    href: 'https://google.com',
+    id: 'workspace2',
+    name: 'Workspace 2',
+    href: 'https://www.ibm.com/2',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'monitor',
+        name: 'Monitor',
+        href: 'https://www.ibm.com/2/monitor',
+        isExternal: false,
+        icon,
+      },
+      {
+        id: 'manage',
+        name: 'Manage',
+        href: 'https://www.ibm.com/2/manage',
+        isExternal: true,
+        icon,
+      },
+    ],
+  },
+  {
+    id: 'workspace3',
+    name: 'Workspace 3',
+    href: 'https://www.ibm.com/3',
+    adminHref: 'https://www.ibm.com/3/admin',
+    isCurrent: false,
+    applications: [
+      {
+        id: 'health',
+        name: 'Health',
+        href: 'https://www.ibm.com/3/health',
+        isExternal: false,
+        icon,
+      },
+      {
+        id: 'manage',
+        name: 'Manage',
+        href: 'https://www.ibm.com/3/manage',
+        isExternal: false,
+        icon,
+      },
+    ],
+  },
+  {
+    id: 'workspace4',
+    name: 'Workspace 4',
+    href: 'https://www.ibm.com/4',
+    adminHref: 'https://www.ibm.com/4/admin',
+    isCurrent: false,
+    applications: [],
+  },
+];
+
+const nonWorkspaceBasedPageWorkspaces = [...adminPageWorkspaces];
+
+const workspaceBasedPageWorkspaces = adminPageWorkspaces.map((wo) => ({
+  ...wo,
+  isCurrent: wo.id === 'workspace3',
+}));
+
+const globalApplications = [
+  {
+    id: 'appconnect',
+    name: 'AppConnect',
+    href: 'https://www.ibm.com/appconnect',
     isExternal: true,
   },
 ];
@@ -235,17 +319,18 @@ const customApplications = [
     id: 'customapp1',
     name: 'Custom Application',
     href: 'https://www.ibm.com',
+    icon,
   },
   {
     id: 'customapp2',
-    name: 'Another Custom Application',
+    name: 'External Custom Application',
     href: 'https://google.com',
     isExternal: true,
   },
 ];
 
 export default {
-  title: '1 - Watson IoT/UI shell/SuiteHeader/Legacy (single workspace only)',
+  title: '1 - Watson IoT/UI shell/SuiteHeader/Multi-workspace',
 
   parameters: {
     component: SuiteHeader,
@@ -255,7 +340,7 @@ export default {
   },
 };
 
-export const Default = () => {
+export const AdminPage = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
@@ -263,15 +348,111 @@ export const Default = () => {
       appName={text('appName', 'Application Name')}
       userDisplayName={text('userDisplayName', 'Admin User')}
       username={text('username', 'adminuser')}
-      isAdminView={boolean('isAdminView', false)}
+      isAdminView
       routes={object('routes', routes)}
       i18n={SuiteHeaderI18N[language]}
-      applications={object('applications', applications)}
+      workspaces={object('workspaces', adminPageWorkspaces)}
+      globalApplications={object('globalApplications', globalApplications)}
     />
   );
 };
 
-Default.storyName = 'default';
+AdminPage.storyName = 'Admin page - Many workspaces';
+
+export const WorkspaceBasedPage = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Standard User')}
+      username={text('username', 'standard')}
+      isAdminView={false}
+      routes={object('routes', routes)}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', workspaceBasedPageWorkspaces)}
+      globalApplications={object('globalApplications', globalApplications)}
+    />
+  );
+};
+
+WorkspaceBasedPage.storyName = 'Workspace-based page - Many workspaces';
+
+export const NonWorkspaceBasedPage = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Standard User')}
+      username={text('username', 'standard')}
+      isAdminView={false}
+      routes={object('routes', routes)}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', nonWorkspaceBasedPageWorkspaces)}
+      globalApplications={object('globalApplications', globalApplications)}
+    />
+  );
+};
+
+NonWorkspaceBasedPage.storyName = 'Non-workspace-based page - Many workspaces';
+
+export const AdminPageSingleWorkspace = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView
+      routes={object('routes', routes)}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', [adminPageWorkspaces[0]])}
+      globalApplications={object('globalApplications', globalApplications)}
+    />
+  );
+};
+
+AdminPageSingleWorkspace.storyName = 'Admin page - Single workspace';
+
+export const WorkspaceBasedPageSingleWorkspace = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Standard User')}
+      username={text('username', 'standard')}
+      isAdminView={false}
+      routes={object('routes', routes)}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', [workspaceBasedPageWorkspaces.find((wo) => wo.isCurrent)])}
+      globalApplications={object('globalApplications', globalApplications)}
+    />
+  );
+};
+
+WorkspaceBasedPageSingleWorkspace.storyName = 'Workspace-based page - Single workspace';
+
+export const NonWorkspaceBasedPageSingleWorkspace = () => {
+  const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
+  return (
+    <SuiteHeader
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Standard User')}
+      username={text('username', 'standard')}
+      isAdminView={false}
+      routes={object('routes', routes)}
+      i18n={SuiteHeaderI18N[language]}
+      workspaces={object('workspaces', [nonWorkspaceBasedPageWorkspaces[0]])}
+      globalApplications={object('globalApplications', globalApplications)}
+    />
+  );
+};
+
+NonWorkspaceBasedPageSingleWorkspace.storyName = 'Non-workspace-based page - Single workspace';
 
 export const NavigationalActionsBlocked = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -281,10 +462,11 @@ export const NavigationalActionsBlocked = () => {
       appName={text('appName', 'Application Name')}
       userDisplayName={text('userDisplayName', 'Admin User')}
       username={text('username', 'adminuser')}
-      isAdminView={boolean('isAdminView', false)}
+      isAdminView={boolean('isAdminView', true)}
       routes={object('routes', routes)}
       i18n={SuiteHeaderI18N[language]}
-      applications={object('applications', applications)}
+      workspaces={object('workspaces', workspaceBasedPageWorkspaces)}
+      globalApplications={object('globalApplications', globalApplications)}
       onRouteChange={() => Promise.resolve(false)}
     />
   );
@@ -296,18 +478,19 @@ export const HeaderWithExtraContent = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
   return (
     <SuiteHeader
-      suiteName="Application Suite"
-      appName="Application Name"
-      extraContent={<Tag size="sm">Admin Mode</Tag>}
-      userDisplayName="Admin User"
-      username="adminuser"
-      routes={routes}
+      suiteName={text('suiteName', 'Application Suite')}
+      appName={text('appName', 'Application Name')}
+      userDisplayName={text('userDisplayName', 'Admin User')}
+      username={text('username', 'adminuser')}
+      isAdminView={boolean('isAdminView', true)}
+      routes={object('routes', routes)}
       i18n={SuiteHeaderI18N[language]}
-      applications={object('applications', applications)}
+      workspaces={object('workspaces', workspaceBasedPageWorkspaces)}
+      globalApplications={object('globalApplications', globalApplications)}
+      extraContent={<Tag size="sm">Extra content</Tag>}
     />
   );
 };
-
 HeaderWithExtraContent.storyName = 'Header with extra content';
 
 export const HeaderWithSideNav = () => {
@@ -534,8 +717,9 @@ export const HeaderWithSideNav = () => {
         appName="Application Name"
         userDisplayName="Admin User"
         username="adminuser"
+        isAdminView={boolean('isAdminView', true)}
         routes={routes}
-        applications={applications}
+        workspaces={object('workspaces', workspaceBasedPageWorkspaces)}
         sideNavProps={{
           links: linksState,
           recentLinks: demoMostRecentLinks ? recentLinksState : [],
@@ -555,7 +739,8 @@ export const HeaderWithCustomSideNav = () => (
     userDisplayName="Admin User"
     username="adminuser"
     routes={routes}
-    applications={applications}
+    workspaces={workspaceBasedPageWorkspaces}
+    globalApplications={globalApplications}
     hasSideNav
     onSideNavToggled={() => alert('onSideNavToggled')}
   />
@@ -569,7 +754,8 @@ export const HeaderWithCustomActionItems = () => (
     userDisplayName="Admin User"
     username="adminuser"
     routes={routes}
-    applications={applications}
+    workspaces={workspaceBasedPageWorkspaces}
+    globalApplications={globalApplications}
     customActionItems={customActionItems}
     customHelpLinks={customHelpLinks}
     customProfileLinks={customProfileLinks}
@@ -583,7 +769,7 @@ export const HeaderWithCustomActionItems = () => (
   />
 );
 
-HeaderWithCustomActionItems.storyName = 'Header with custom action items and hidden icons';
+HeaderWithCustomActionItems.storyName = 'Header with custom action items';
 
 export const HeaderWithSurveyNotification = () => {
   const language = select('Language', Object.keys(SuiteHeaderI18N), 'en');
@@ -604,7 +790,8 @@ export const HeaderWithSurveyNotification = () => {
             .replace('{solutionName}', solutionName)
             .replace('{userName}', userName),
       }}
-      applications={object('applications', applications)}
+      workspaces={workspaceBasedPageWorkspaces}
+      globalApplications={globalApplications}
       surveyData={object('survey', {
         surveyLink: 'https://www.ibm.com',
         privacyLink: 'https://www.ibm.com',
@@ -634,7 +821,8 @@ export const HeaderWithIdleLogoutConfirmation = () => (
         countdown: 10,
         cookieName: '_user_inactivity_timeout',
       }}
-      applications={applications}
+      workspaces={workspaceBasedPageWorkspaces}
+      globalApplications={globalApplications}
     />
     <p>The logout confirmation dialog will show up after 10 seconds of inactivity.</p>
     <p>

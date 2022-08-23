@@ -142,12 +142,12 @@ describe('DataSeriesFormItemModal', () => {
     manufacturer: ['Rentech', 'GHI Industries'],
   };
 
-  const editTimeseriesDataItemDownSample = {
+  const editTimeseriesDataItemAggregationMethodsV2 = {
     label: 'Temperature',
     dataSourceId: 'temperature',
     hasStreamingMetricEnabled: true,
     color: 'red',
-    downSampleMethods: [
+    aggregationMethods: [
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -1332,56 +1332,33 @@ describe('DataSeriesFormItemModal', () => {
         showEditor
         isSummaryDashboard
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItemDownSample}
+        editDataItem={editTimeseriesDataItemAggregationMethodsV2}
       />
     );
     expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();
     expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
-    expect(screen.getByText('Downsample method')).toBeVisible();
-  });
-  it('Renders an downSample selector in summary dashboards and fires setEditDataItem', async () => {
-    render(
-      <DataSeriesFormItemModal
-        {...commonProps}
-        showEditor
-        isSummaryDashboard
-        cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItemDownSample}
-        editDataSeries={editDataSeriesTimeSeries}
-      />
-    );
-    const downSampleDropdown = (await screen.findAllByText('None'))[1];
-    expect(downSampleDropdown).toBeInTheDocument();
-
-    fireEvent.click(downSampleDropdown);
-
-    const downSampleOption = screen.getByText('Min');
-    expect(downSampleOption).toBeInTheDocument();
-
-    fireEvent.click(downSampleOption);
-
-    expect(mockSetEditDataItem).toHaveBeenCalled();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
   });
 
-  it("should fallback to an empty string when editDataItem.downSampleMethod doesn't exist", () => {
+  it("should fallback to an empty string when V2 editDataItem.aggregationMethod doesn't exist", () => {
     const { container } = render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItemDownSample}
+        editDataItem={editTimeseriesDataItemAggregationMethodsV2}
         editDataSeries={editDataSeriesTimeSeries}
         isSummaryDashboard
         validDataItems={[
           {
             dataItemId: 'testItemId',
             dataSourceId: 'temperature',
-            downSampleMethod: 'min',
+            aggregationMethod: 'min',
           },
         ]}
       />
     );
-    expect(screen.getByText('Downsample method')).toBeVisible();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
     expect(
       container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)
     ).toHaveLength(1);

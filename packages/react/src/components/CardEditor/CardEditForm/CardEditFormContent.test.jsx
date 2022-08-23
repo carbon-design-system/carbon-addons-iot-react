@@ -34,6 +34,7 @@ const cardConfig = {
 
 const mockOnChange = jest.fn();
 const mockGetValidTimeRanges = jest.fn(() => ['last2Hours']);
+const mockGetValidTimeRangesWithEmptyArray = jest.fn(() => []);
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -65,6 +66,17 @@ describe('CardEditFormContent', () => {
       );
       const timeRangeSelector = screen.getAllByLabelText('Time range');
       expect(timeRangeSelector[0].innerHTML).toEqual(expect.stringContaining('last2Hours'));
+    });
+    it('Should hide the timerange selector', () => {
+      render(
+        <CardEditFormContent
+          cardConfig={{ ...cardConfig }}
+          onChange={mockOnChange}
+          getValidTimeRanges={mockGetValidTimeRangesWithEmptyArray}
+        />
+      );
+      const timeRangeSelector = screen.queryByLabelText('Time range');
+      expect(timeRangeSelector).not.toBeInTheDocument();
     });
   });
   describe('handleTranslationCallback', () => {

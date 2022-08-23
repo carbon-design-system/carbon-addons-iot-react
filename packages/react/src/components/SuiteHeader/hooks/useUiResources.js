@@ -18,6 +18,8 @@ const useUiResources = ({
     userDisplayName: null,
     routes: null,
     applications: null,
+    workspaces: null,
+    globalApplications: null,
     i18n: null,
     surveyData: null,
     idleTimeoutData: null,

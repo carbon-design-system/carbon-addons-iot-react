@@ -90,6 +90,7 @@ const HeaderActionPanel = ({
               })
             : classnames(`${carbonPrefix}--app-switcher`, {
                 [item.childContent[0].className]: item.childContent[0].className,
+                [item.childContent[0].metaData.className]: item.childContent[0].metaData.className,
               })
         }
         expanded={isExpanded}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEmpty } from 'lodash-es';
 
 import {
   CARD_SIZES,
@@ -207,34 +208,36 @@ const CommonCardEditFormFields = ({
           titleText={mergedI18n.size}
         />
       </div>
-      <div className={`${baseClassName}--input`}>
-        <Dropdown
-          key={`card_${id}`}
-          id={`${id}_time_range`}
-          label={mergedI18n.selectATimeRange}
-          title={mergedI18n.selectATimeRange}
-          direction="bottom"
-          itemToString={(item) => item.text}
-          items={validTimeRangeOptions}
-          selectedItem={validTimeRangeOptions.find(
-            // This is a hacky workaround for a carbon issue
-            (validTimeRangeOption) => validTimeRangeOption.id === cardConfig.timeRange
-          )}
-          light
-          translateWithId={translateWithId}
-          onChange={({ selectedItem }) => {
-            const timeRangeInterval = selectedItem.id;
-            const { range } = timeRangeToJSON[timeRangeInterval];
-            setSelectedTimeRange(timeRangeInterval);
-            onChange({
-              ...cardConfig,
-              timeRange: timeRangeInterval,
-              dataSource: { ...cardConfig.dataSource, range },
-            });
-          }}
-          titleText={mergedI18n.timeRange}
-        />
-      </div>
+      {isEmpty(validTimeRangeOptions) ? null : (
+        <div className={`${baseClassName}--input`}>
+          <Dropdown
+            key={`card_${id}`}
+            id={`${id}_time_range`}
+            label={mergedI18n.selectATimeRange}
+            title={mergedI18n.selectATimeRange}
+            direction="bottom"
+            itemToString={(item) => item.text}
+            items={validTimeRangeOptions}
+            selectedItem={validTimeRangeOptions.find(
+              // This is a hacky workaround for a carbon issue
+              (validTimeRangeOption) => validTimeRangeOption.id === cardConfig.timeRange
+            )}
+            light
+            translateWithId={translateWithId}
+            onChange={({ selectedItem }) => {
+              const timeRangeInterval = selectedItem.id;
+              const { range } = timeRangeToJSON[timeRangeInterval];
+              setSelectedTimeRange(timeRangeInterval);
+              onChange({
+                ...cardConfig,
+                timeRange: timeRangeInterval,
+                dataSource: { ...cardConfig.dataSource, range },
+              });
+            }}
+            titleText={mergedI18n.timeRange}
+          />
+        </div>
+      )}
     </>
   );
 };

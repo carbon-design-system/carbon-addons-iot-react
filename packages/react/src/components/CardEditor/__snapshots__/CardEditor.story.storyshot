@@ -1411,7 +1411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2500,7 +2500,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -4019,7 +4019,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -4948,7 +4948,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -5573,7 +5573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -6410,7 +6410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -7504,7 +7504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -8479,7 +8479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -9121,7 +9121,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Button"
+            data-testid="card-editor-add-card-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}

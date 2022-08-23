@@ -4491,6 +4491,36 @@ exports[`Storybook Snapshot tests and console checks Storyshots 0 - Overview/Get
                   className="bx--structured-list-td"
                   role="cell"
                 >
+                  MultiWorkspaceSuiteHeaderAppSwitcher
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
+                  SuiteHeaderAppSwitcherLoading
+                </div>
+              </div>
+              <div
+                className="bx--structured-list-row"
+                role="row"
+              >
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                />
+                <div
+                  className="bx--structured-list-td"
+                  role="cell"
+                >
                   SuiteHeaderLogoutModal
                 </div>
               </div>

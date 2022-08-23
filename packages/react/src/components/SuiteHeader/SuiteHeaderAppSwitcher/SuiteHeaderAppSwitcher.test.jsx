@@ -105,18 +105,6 @@ describe('SuiteHeaderAppSwitcher', () => {
     await userEvent.click(screen.getByTestId('suite-header-app-switcher--no-access'));
     expect(window.location.href).not.toBe(commonProps.noAccessLink);
   });
-  it('shows loading state', async () => {
-    delete window.location;
-    window.location = { href: '' };
-    render(
-      <SuiteHeaderAppSwitcher
-        allApplicationsLink="https://www.ibm.com"
-        noAccessLink="https://www.ibm.com"
-      />
-    );
-    // Expect skeletons
-    expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
-  });
 
   it('calls the default onRouteChange', async () => {
     jest.spyOn(SuiteHeaderAppSwitcher.defaultProps, 'onRouteChange');
