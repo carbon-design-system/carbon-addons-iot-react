@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import {
   DatePicker,
@@ -742,57 +742,33 @@ const DateTimePicker = ({
     : 274;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
+  dayjs.extend(customParseFormat);
   const formatDateAndTime = (date, time, format) => dayjs(`${date} ${time}`).format(format);
 
-  const onRangeValueChange = (startTime, endTime, invalidStartTime, invalidEndTime) => {
-    if (startTime) {
-      onAbsoluteStartTimeChange(
-        formatDateAndTime(absoluteValue?.startDate, startTime, 'HH:mm'),
-        null,
-        { invalid: invalidStartTime }
-      );
-    }
-    if (endTime) {
-      onAbsoluteEndTimeChange(
-        formatDateAndTime(absoluteValue?.endDate, endTime, 'HH:mm', { invalid: invalidEndTime })
-      );
-    }
-  };
+  const onRangeValueChange = useCallback(
+    (startTime, endTime, invalidStartTime, invalidEndTime) =>
+      absoluteValue && startTime
+        ? onAbsoluteStartTimeChange(
+            formatDateAndTime(absoluteValue?.startDate, startTime, 'HH:mm'),
+            null,
+            { invalid: invalidStartTime }
+          )
+        : absoluteValue && endTime
+        ? onAbsoluteEndTimeChange(
+            formatDateAndTime(absoluteValue?.endDate, endTime, 'HH:mm', {
+              invalid: invalidEndTime,
+            })
+          )
+        : null,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
-  const TimeSpinner = () => {
-    dayjs.extend(customParseFormat);
-    const isSingleSelect = datePickerType === 'single';
-    const startTime = isSingleSelect
-      ? singleTimeValue
-      : formatDateAndTime(absoluteValue?.startDate, absoluteValue?.startTime, 'hh:mm A');
-    const endTime = formatDateAndTime(absoluteValue?.endDate, absoluteValue?.endTime, 'hh:mm A');
-
-    return (
-      <TimePickerDropdown
-        className={`${iotPrefix}--time-picker-dropdown`}
-        id={id}
-        value={startTime}
-        secondaryValue={endTime}
-        hideLabel={!strings.startTimeLabel}
-        hideSecondaryLabel={!strings.endTimeLabel}
-        onChange={(startSate, endState, invalidStartTime, invalidEndTime) =>
-          isSingleSelect
-            ? setSingleTimeValue(startSate)
-            : onRangeValueChange(startSate, endState, invalidStartTime, invalidEndTime)
-        }
-        type={singleDateValue ? 'single' : 'range'}
-        invalid={[absoluteStartTimeInvalid, absoluteEndTimeInvalid]}
-        i18n={{
-          labelText: strings.startTimeLabel,
-          secondaryLabelText: strings.endTimeLabel,
-          invalidText: strings.timePickerInvalidText,
-        }}
-        size="sm"
-        testId={testId}
-        style={updatedStyle}
-      />
-    );
-  };
+  const isSingleSelect = datePickerType === 'single';
+  const startTime = isSingleSelect
+    ? singleTimeValue
+    : formatDateAndTime(absoluteValue?.startDate, absoluteValue?.startTime, 'hh:mm A');
+  const endTime = formatDateAndTime(absoluteValue?.endDate, absoluteValue?.endTime, 'hh:mm A');
 
   return (
     <>
@@ -1106,7 +1082,34 @@ const DateTimePicker = ({
                         </DatePicker>
                       </div>
                       {hasTimeInput ? (
-                        <TimeSpinner />
+                        <TimePickerDropdown
+                          className={`${iotPrefix}--time-picker-dropdown`}
+                          id={id}
+                          value={startTime}
+                          secondaryValue={endTime}
+                          hideLabel={!strings.startTimeLabel}
+                          hideSecondaryLabel={!strings.endTimeLabel}
+                          onChange={(startState, endState, invalidStartTime, invalidEndTime) =>
+                            isSingleSelect
+                              ? setTimeout(() => setSingleTimeValue(startState), 5000)
+                              : onRangeValueChange(
+                                  startState,
+                                  endState,
+                                  invalidStartTime,
+                                  invalidEndTime
+                                )
+                          }
+                          type={isSingleSelect ? 'single' : 'range'}
+                          invalid={[absoluteStartTimeInvalid, absoluteEndTimeInvalid]}
+                          i18n={{
+                            labelText: strings.startTimeLabel,
+                            secondaryLabelText: strings.endTimeLabel,
+                            invalidText: strings.timePickerInvalidText,
+                          }}
+                          size="sm"
+                          testId={testId}
+                          style={updatedStyle}
+                        />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
                       )}
