@@ -1091,7 +1091,7 @@ const DateTimePicker = ({
                           hideSecondaryLabel={!strings.endTimeLabel}
                           onChange={(startState, endState, invalidStartTime, invalidEndTime) =>
                             isSingleSelect
-                              ? setTimeout(() => setSingleTimeValue(startState), 5000)
+                              ? setSingleTimeValue(startState)
                               : onRangeValueChange(
                                   startState,
                                   endState,
