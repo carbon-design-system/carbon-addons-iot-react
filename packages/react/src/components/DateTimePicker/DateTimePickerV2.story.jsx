@@ -200,6 +200,7 @@ export const LightVersion = () => {
       hasIconOnly={boolean('hasIconOnly', false)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
+      style={{ zIndex: number('zIndex', 6000) }}
     />
   );
 };
@@ -220,6 +221,7 @@ export const IconOnly = () => {
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
         hasIconOnly={boolean('hasIconOnly', true)}
+        style={{ zIndex: number('zIndex', 6000) }}
       />
     </div>
   );
