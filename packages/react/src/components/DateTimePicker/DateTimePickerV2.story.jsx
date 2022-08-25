@@ -60,8 +60,7 @@ export const Default = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      style={{ zIndex: number('zIndex', 100) }}
-      // renderPresetTooltipText={() => 'User tooltip'}
+      style={{ zIndex: number('zIndex', 6000) }}
     />
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import {
   DatePicker,
@@ -312,6 +312,7 @@ const DateTimePicker = ({
     [i18n]
   );
   const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
+  const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 
   // initialize the dayjs locale
   useEffect(() => {
@@ -330,17 +331,7 @@ const DateTimePicker = ({
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
-  const {
-    absoluteValue,
-    setAbsoluteValue,
-    absoluteStartTimeInvalid,
-    setAbsoluteStartTimeInvalid,
-    absoluteEndTimeInvalid,
-    setAbsoluteEndTimeInvalid,
-    onAbsoluteStartTimeChange,
-    onAbsoluteEndTimeChange,
-    resetAbsoluteValue,
-  } = useAbsoluteDateTimeValue();
+  const { absoluteValue, setAbsoluteValue, resetAbsoluteValue } = useAbsoluteDateTimeValue();
 
   const {
     relativeValue,
@@ -369,6 +360,10 @@ const DateTimePicker = ({
 
   const [singleDateValue, setSingleDateValue] = useState(null);
   const [singleTimeValue, setSingleTimeValue] = useState(null);
+  const [rangeStartTimeValue, setRangeStartTimeValue] = useState(null);
+  const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
+  const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
+  const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -394,6 +389,8 @@ const DateTimePicker = ({
       startTime: null,
     },
   };
+  dayjs.extend(customParseFormat);
+  const formatDateAndTime = (date, time, format) => dayjs(`${date} ${time}`).format(format);
 
   /**
    * Transforms a default or selected value into a full blown returnable object
@@ -408,7 +405,21 @@ const DateTimePicker = ({
       if (customRangeKind === PICKER_KINDS.RELATIVE) {
         value.relative = relativeValue;
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
-        value.absolute = absoluteValue;
+        const formatedStartTime = formatDateAndTime(
+          absoluteValue?.startDate,
+          rangeStartTimeValue,
+          'HH:mm'
+        );
+        const formatedEndTime = formatDateAndTime(
+          absoluteValue?.endDate,
+          rangeEndTimeValue,
+          'HH:mm'
+        );
+        value.absolute = {
+          ...absoluteValue,
+          startTime: formatedStartTime,
+          endTime: formatedEndTime,
+        };
       } else {
         value.single = {
           ...singleDateValue,
@@ -443,12 +454,26 @@ const DateTimePicker = ({
 
   useEffect(
     () => {
-      if (absoluteValue || relativeValue || singleDateValue || singleTimeValue) {
+      if (
+        absoluteValue ||
+        relativeValue ||
+        singleDateValue ||
+        singleTimeValue ||
+        rangeStartTimeValue ||
+        rangeEndTimeValue
+      ) {
         renderValue();
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [absoluteValue, relativeValue, singleDateValue, singleTimeValue]
+    [
+      absoluteValue,
+      relativeValue,
+      singleDateValue,
+      singleTimeValue,
+      rangeStartTimeValue,
+      rangeEndTimeValue,
+    ]
   );
 
   const onDatePickerChange = ([start, end], _, flatpickr) => {
@@ -501,11 +526,8 @@ const DateTimePicker = ({
 
     setAbsoluteValue(newAbsolute);
 
-    // Update end and start time invalid state when date changed
-    setAbsoluteEndTimeInvalid(
-      invalidEndDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
-    );
-    setAbsoluteStartTimeInvalid(
+    setInvalidRangeStartTime((newAbsolute.startTime, newAbsolute.endTime, newAbsolute));
+    setInvalidRangeEndTime(
       invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
     );
   };
@@ -557,6 +579,7 @@ const DateTimePicker = ({
         single.startDate = dayjs(single.start).format('MM/DD/YYYY');
         single.startTime = dayjs(single.start).format('HH:mm A');
         setSingleDateValue(single);
+        setSingleTimeValue(single.startTime);
       }
 
       if (parsableValue.timeRangeKind === PICKER_KINDS.ABSOLUTE) {
@@ -577,6 +600,10 @@ const DateTimePicker = ({
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
         absolute.endTime = dayjs(absolute.end).format('HH:mm');
         setAbsoluteValue(absolute);
+        setRangeStartTimeValue(
+          formatDateAndTime(absolute.startDate, absolute.startTime, 'hh:mm A')
+        );
+        setRangeEndTimeValue(formatDateAndTime(absolute.endDate, absolute.endTime, 'hh:mm A'));
       }
     } else {
       resetAbsoluteValue();
@@ -633,9 +660,12 @@ const DateTimePicker = ({
   const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
-    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
+    (invalidRangeStartTime || invalidRangeEndTime);
 
-  const disableApply = disableRelativeApply || disableAbsoluteApply;
+  const disableSingleApply =
+    isCustomRange && customRangeKind === PICKER_KINDS.SINGLE && invalidRangeStartTime;
+
+  const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
 
   const onApplyClick = () => {
     setIsExpanded(false);
@@ -742,33 +772,22 @@ const DateTimePicker = ({
     : 274;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
-  dayjs.extend(customParseFormat);
-  const formatDateAndTime = (date, time, format) => dayjs(`${date} ${time}`).format(format);
+  const handleRangeTimeValueChange = (
+    startState,
+    endState,
+    invalidStartTimeState,
+    invalidEndTimeState
+  ) => {
+    setRangeStartTimeValue(startState);
+    setRangeEndTimeValue(endState);
+    setInvalidRangeStartTime(invalidStartTimeState);
+    setInvalidRangeEndTime(invalidEndTimeState);
+  };
 
-  const onRangeValueChange = useCallback(
-    (startTime, endTime, invalidStartTime, invalidEndTime) =>
-      absoluteValue && startTime
-        ? onAbsoluteStartTimeChange(
-            formatDateAndTime(absoluteValue?.startDate, startTime, 'HH:mm'),
-            null,
-            { invalid: invalidStartTime }
-          )
-        : absoluteValue && endTime
-        ? onAbsoluteEndTimeChange(
-            formatDateAndTime(absoluteValue?.endDate, endTime, 'HH:mm', {
-              invalid: invalidEndTime,
-            })
-          )
-        : null,
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
-
-  const isSingleSelect = datePickerType === 'single';
-  const startTime = isSingleSelect
-    ? singleTimeValue
-    : formatDateAndTime(absoluteValue?.startDate, absoluteValue?.startTime, 'hh:mm A');
-  const endTime = formatDateAndTime(absoluteValue?.endDate, absoluteValue?.endTime, 'hh:mm A');
+  const handleSingleTimeValueChange = (startState, invalidStartTimeState) => {
+    setSingleTimeValue(startState);
+    setInvalidRangeStartTime(invalidStartTimeState);
+  };
 
   return (
     <>
@@ -1085,22 +1104,48 @@ const DateTimePicker = ({
                         <TimePickerDropdown
                           className={`${iotPrefix}--time-picker-dropdown`}
                           id={id}
-                          value={startTime}
-                          secondaryValue={endTime}
+                          value={isSingleSelect ? singleTimeValue : rangeStartTimeValue}
+                          secondaryValue={rangeEndTimeValue}
                           hideLabel={!strings.startTimeLabel}
                           hideSecondaryLabel={!strings.endTimeLabel}
-                          onChange={(startState, endState, invalidStartTime, invalidEndTime) =>
+                          onChange={(
+                            startState,
+                            endState,
+                            invalidStartTimeState,
+                            invalidEndTimeState
+                          ) =>
                             isSingleSelect
-                              ? setSingleTimeValue(startState)
-                              : onRangeValueChange(
+                              ? handleSingleTimeValueChange(startState, invalidStartTimeState)
+                              : handleRangeTimeValueChange(
                                   startState,
                                   endState,
-                                  invalidStartTime,
-                                  invalidEndTime
+                                  invalidStartTimeState,
+                                  invalidEndTimeState
                                 )
                           }
                           type={isSingleSelect ? 'single' : 'range'}
-                          invalid={[absoluteStartTimeInvalid, absoluteEndTimeInvalid]}
+                          invalid={[
+                            absoluteValue &&
+                              invalidStartDate(
+                                formatDateAndTime(
+                                  absoluteValue?.startDate,
+                                  rangeStartTimeValue,
+                                  'HH:mm'
+                                ),
+                                absoluteValue?.endTime,
+                                absoluteValue
+                              ),
+                            absoluteValue &&
+                              invalidEndDate(
+                                absoluteValue?.startTime,
+                                formatDateAndTime(
+                                  absoluteValue?.endDate,
+                                  rangeEndTimeValue,
+                                  'HH:mm'
+                                ),
+                                absoluteValue
+                              ),
+                          ]}
                           i18n={{
                             labelText: strings.startTimeLabel,
                             secondaryLabelText: strings.endTimeLabel,

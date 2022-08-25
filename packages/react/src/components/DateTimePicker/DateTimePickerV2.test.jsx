@@ -229,15 +229,15 @@ describe('DateTimePickerV2', () => {
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
     );
     // select miniute
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
     );
     // select AM/PM
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('AM')
     );
+
+    screen.getByTestId('date-time-picker-spinner').blur();
 
     // open end time picker
     userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
@@ -246,16 +246,14 @@ describe('DateTimePickerV2', () => {
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
     );
     // select minute
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
     );
     // select AM/PM
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
     );
-
+    screen.getByTestId('date-time-picker-spinner').blur();
     userEvent.click(screen.getByText('Apply'));
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
@@ -270,9 +268,11 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should render with a predefined single select date and time', () => {
+    const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        onApply={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
         hasTimeInput
@@ -293,6 +293,7 @@ describe('DateTimePickerV2', () => {
     // first open the menu
     userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
 
+    const startTime = screen.getByTestId('date-time-picker-input');
     // open time picker
     userEvent.click(screen.getByTestId('date-time-picker-time-btn'));
 
@@ -301,20 +302,17 @@ describe('DateTimePickerV2', () => {
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
     );
     // select miniute
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
     );
     // select AM/PM
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn'));
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
     );
 
+    expect(startTime).toHaveValue('05:03 PM');
     expect(screen.getByText('2020-04-01 05:03 PM')).toBeVisible();
-
-    userEvent.click(screen.getByText('Apply'));
-    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should switch from relative to absolute and then to preset', () => {
@@ -446,6 +444,8 @@ describe('DateTimePickerV2', () => {
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('01')
     );
+    screen.getByTestId('date-time-picker-spinner').blur();
+
     expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
 
     userEvent.click(screen.getByText('Back'));
@@ -702,8 +702,8 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getByText('Custom Range'));
     userEvent.click(screen.getByText('Absolute'));
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('Invalid Date');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('Invalid Date');
+    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('');
+    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('');
   });
 
   it('should not show the Custom Range link when showCustomRangeLink:false', () => {
@@ -842,67 +842,68 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getByTestId('date-time-picker__field'));
 
     const timeRange = screen.getByTestId('date-time-picker__field');
+    const startTime = screen.getByTestId('date-time-picker-input-1');
+    const endTime = screen.getByTestId('date-time-picker-input-2');
 
     expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-01 11:49');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // 2020-04-01 13:34 to 2020-04-01 11:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('01')
+    userEvent.type(
+      startTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:34 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('11:49 AM');
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('11:49 AM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 11:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // 2020-04-01 13:34 to 2020-04-01 12:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('12')
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:49 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('12:49 PM');
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('12:49 PM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 12:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // 2020-04-01 13:34 to 2020-04-01 13:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('01')
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:49 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('49')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('01:49 PM');
+    endTime.blur();
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('01:49 PM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 13:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:50 to 2020-04-01 13:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('51')
+    userEvent.type(
+      startTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:50 PM'
     );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:51 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('01:49 PM');
-    expect(timeRange).toHaveTextContent('2020-04-01 13:51 to 2020-04-01 13:49');
-    // expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(startTime).toHaveValue('01:50 PM');
+    expect(endTime).toHaveValue('01:49 PM');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-01 13:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // userEvent.type(screen.getByTestId('date-time-picker-input-1'), '{backspace}');
     // userEvent.type(screen.getByTestId('date-time-picker-input-2'), '{backspace}');
     // expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('Invalid Date');
     // expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('Invalid Date');
     // expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}51 PM');
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}9999'
+    );
+    endTime.blur();
+    expect(startTime).toHaveValue('01:51 PM');
+    expect(endTime).toHaveValue('9999');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
   });
 
   it('should enable apply button when absolute DatePicker input has start and end date in different dates', async () => {
@@ -933,84 +934,60 @@ describe('DateTimePickerV2', () => {
 
     // Get start and end time inputs
     const timeRange = screen.getByTestId('date-time-picker__field');
+    const startTime = screen.getByTestId('date-time-picker-input-1');
+    const endTime = screen.getByTestId('date-time-picker-input-2');
 
     expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-06 11:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-06 11:49
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('01')
+    userEvent.type(
+      startTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:34 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('11:49 AM');
+
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('11:49 AM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 11:49');
 
     // 2020-04-01 13:34 to 2020-04-06 12:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('12')
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:49 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('12:49 PM');
+    endTime.blur();
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('12:49 PM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 12:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-06 13:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('01')
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:49 PM'
     );
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('49')
-    );
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:34 PM');
-    expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('01:49 PM');
+    expect(startTime).toHaveValue('01:34 PM');
+    expect(endTime).toHaveValue('01:49 PM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 13:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:50 to 2020-04-06 13:49
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
-    userEvent.click(
-      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('50')
+    userEvent.type(
+      startTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:50 PM'
     );
     expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('01:50 PM');
     expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('01:49 PM');
     expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-06 13:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
-    const input1 = screen.getByTestId('date-time-picker-input-1');
-    // const input2 = screen.getByTestId('date-time-picker-input-2');
-
-    fireEvent.change(input1, {
-      target: { value: '{backspace}' },
-    });
-
-    expect(screen.getByTestId('date-time-picker-input-1')).toHaveValue('Invalid Date');
-
-    // userEvent.click(input2);
-
-    // screen.getByTestId('date-time-picker-input-2').focus();
-    // userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
-    // fireEvent.change(input2, {
-    //   target: { value: '{backspace}' },
-    // });
-    // const endTime = await screen.findByTestId('date-time-picker-input-2');
-
-    // await waitFor(() => expect(endTime.value).toEqual('Invalid Date'));
-    // expect(screen.getByTestId('date-time-picker-input-2')).toHaveValue('Invalid Date');
-    // const applyButton = await screen.findByText(i18n.applyBtnLabel);
-
-    // await waitFor(() => expect(applyButton).toBeDisabled());
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}51 PM');
+    userEvent.type(
+      endTime,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}9999'
+    );
+    expect(startTime).toHaveValue('01:51 PM');
+    expect(endTime).toHaveValue('9999');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
   });
 });

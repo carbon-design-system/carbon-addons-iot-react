@@ -303,7 +303,7 @@ export const useAbsoluteDateTimeValue = () => {
     const { endTime } = absoluteValue;
     const invalidStart = invalidStartDate(startTime, endTime, absoluteValue);
     const invalidEnd = invalidEndDate(startTime, endTime, absoluteValue);
-    setAbsoluteStartTimeInvalid(meta?.invalid || invalidStart);
+    setAbsoluteStartTimeInvalid(meta.invalid || invalidStart);
     setAbsoluteEndTimeInvalid(invalidEnd);
     changeAbsolutePropertyValue('startTime', startTime);
   };
@@ -312,7 +312,7 @@ export const useAbsoluteDateTimeValue = () => {
     const { startTime } = absoluteValue;
     const invalidEnd = invalidEndDate(startTime, endTime, absoluteValue);
     const invalidStart = invalidStartDate(startTime, endTime, absoluteValue);
-    setAbsoluteEndTimeInvalid(meta?.invalid || invalidEnd);
+    setAbsoluteEndTimeInvalid(meta.invalid || invalidEnd);
     setAbsoluteStartTimeInvalid(invalidStart);
     changeAbsolutePropertyValue('endTime', endTime);
   };
