@@ -417,8 +417,8 @@ const DateTimePicker = ({
         );
         value.absolute = {
           ...absoluteValue,
-          startTime: formatedStartTime,
-          endTime: formatedEndTime,
+          startTime: hasTimeInput ? formatedStartTime : '00:00',
+          endTime: hasTimeInput ? formatedEndTime : '00:00',
         };
       } else {
         value.single = {

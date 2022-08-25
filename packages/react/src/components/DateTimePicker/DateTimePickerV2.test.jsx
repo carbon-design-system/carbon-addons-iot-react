@@ -646,7 +646,7 @@ describe('DateTimePickerV2', () => {
       />
     );
 
-    userEvent.click(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49'));
+    userEvent.click(screen.getByText('2021-08-01 00:00 to 2021-08-06 00:00'));
     expect(screen.queryByLabelText('Start time')).toBeNull();
     expect(screen.queryByLabelText('End time')).toBeNull();
   });

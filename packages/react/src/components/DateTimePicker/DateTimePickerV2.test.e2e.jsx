@@ -46,32 +46,10 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').click();
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
-    // open start time time picker
-    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
-    // select hours
-    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-      cy.findByText('01').click({ force: true })
-    );
-    // select minutes
-    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
-    cy.findByTestId('date-time-picker-spinner-list-spinner-2').within(() =>
-      cy.findByText('34').click({ force: true })
-    );
-    // open end time time picker
-    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
-    // select hours
-    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-      cy.findByText('12').click({ force: true })
-    );
-    // select minitues
-    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
-    cy.findByTestId('date-time-picker-spinner-list-spinner-2').within(() =>
-      cy.findByText('34').click({ force: true })
-    );
-    // select AM/PM
-    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
-    cy.findByTestId('date-time-picker-spinner-list-spinner-3').within(() =>
-      cy.findByText('PM').click({ force: true })
+    cy.get('#picker-test-1').clear();
+    cy.get('#picker-test-1').type('{moveToStart}{del}{del}01');
+    cy.get('#picker-test-2').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:34 PM'
     );
     cy.findByText('Apply')
       .click()
@@ -136,20 +114,24 @@ describe('DateTimePickerV2', () => {
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
 
-    cy.get('#picker-test-1').type('91:35');
-    cy.get('#picker-test-2').type('91:35');
+    cy.get('#picker-test-1').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
+    );
+    // cy.get('#picker-test-2').type('91:35');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
-    // open start time time picker
-    cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
-    // select hours
-    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-      cy.findByText('01').click({ force: true })
-    );
-    cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
-    cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-      cy.findByText('02').click({ force: true })
-    );
+    cy.get('#picker-test-1').type('{movetostart}{del}1');
+
+    // // open start time time picker
+    // cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
+    // // select hours
+    // cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+    //   cy.findByText('01').click({ force: true })
+    // );
+    // cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
+    // cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
+    //   cy.findByText('02').click({ force: true })
+    // );
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
     cy.get('#picker-test-2').type('11:61 AM');
@@ -314,10 +296,10 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
     cy.focused().realPress('Tab').realPress('Tab');
     cy.get('#picker-test-1').should('be.focused').type('{moveToStart}{del}0');
-    // lost focus need to fix in code
-    cy.get('#picker-test-2').focus();
-    cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}0');
-    cy.get('#picker-test-2').focus();
+    cy.focused().realPress('Tab');
+    cy.focused().realPress('Tab');
+    cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}{del}12');
+
     cy.focused().realPress('Tab');
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');
