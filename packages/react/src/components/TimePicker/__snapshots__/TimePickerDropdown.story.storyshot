@@ -16,6 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="time-picker"
       onBlur={[Function]}
       onKeyDown={[Function]}
+      onKeyUp={[Function]}
       tabIndex={-1}
     >
       <div
