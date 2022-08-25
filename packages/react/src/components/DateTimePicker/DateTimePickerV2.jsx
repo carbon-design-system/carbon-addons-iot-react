@@ -526,7 +526,9 @@ const DateTimePicker = ({
 
     setAbsoluteValue(newAbsolute);
 
-    setInvalidRangeStartTime((newAbsolute.startTime, newAbsolute.endTime, newAbsolute));
+    setInvalidRangeStartTime(
+      invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
+    );
     setInvalidRangeEndTime(
       invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
     );
@@ -577,7 +579,7 @@ const DateTimePicker = ({
           single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
         }
         single.startDate = dayjs(single.start).format('MM/DD/YYYY');
-        single.startTime = dayjs(single.start).format('HH:mm A');
+        single.startTime = dayjs(single.start).format('hh:mm A');
         setSingleDateValue(single);
         setSingleTimeValue(single.startTime);
       }
