@@ -141,6 +141,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
   };
   const multiExtraAction = {
     id: 'extramultiaction',
+    icon: Tree16,
     children: [
       {
         id: 'firstItem',
