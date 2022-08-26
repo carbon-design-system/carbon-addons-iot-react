@@ -175,7 +175,7 @@ const CardToolbar = ({
       extraActions.children && extraActions.children.length ? (
         <OverflowMenu
           flipped={overflowMenuPosition}
-          title={mergedI18n.overflowMenuDescription}
+          title={extraActions.iconDescription || mergedI18n.extraActionLabel}
           iconDescription={extraActions.iconDescription || mergedI18n.extraActionLabel}
           {...(extraActions.icon ? { renderIcon: extraActions.icon } : {})}
         >
@@ -195,7 +195,6 @@ const CardToolbar = ({
         <ToolbarSVGWrapper
           title={extraActions.iconDescription || mergedI18n.extraActionLabel}
           onClick={() => (extraActions.callback ? extraActions.callback(extraActions) : null)}
-          iconDescription={extraActions.iconDescription || mergedI18n.extraActionLabel}
           renderIcon={extraActions.icon}
           testId={`${testId}-extra-single-action`}
           disabled={extraActions.disabled}

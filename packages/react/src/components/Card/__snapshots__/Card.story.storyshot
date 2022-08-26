@@ -986,7 +986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -1395,7 +1395,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--empty-state--content"
           >
-            
+
             <h3
               className="iot--empty-state--title"
               data-testid="EmptyState-title"
@@ -1406,7 +1406,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -1522,7 +1522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--empty-state--content"
           >
-            
+
             <h3
               className="iot--empty-state--title"
               data-testid="EmptyState-title"
@@ -1533,7 +1533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -1649,7 +1649,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           <div
             className="iot--empty-state--content"
           >
-            
+
             <h3
               className="iot--empty-state--title"
               data-testid="EmptyState-title"
@@ -1660,7 +1660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -2031,7 +2031,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -2402,7 +2402,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -2773,7 +2773,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -3144,7 +3144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -3515,7 +3515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -3886,7 +3886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -4257,7 +4257,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -4628,7 +4628,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -4999,7 +4999,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               className="iot--empty-state--text"
               data-testid="EmptyState-body"
             >
-              
+
             </p>
           </div>
         </div>
@@ -5469,7 +5469,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             className="bx--tooltip__label iot--card--header--tooltip"
             id="card-tooltip-trigger-facilitycard-basic"
           >
-            
+
             <div
               aria-describedby={null}
               aria-label="Tooltip info icon"
@@ -5575,7 +5575,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               focusable="false"
               height={16}
               preserveAspectRatio="xMidYMid meet"
-              role="img"
               viewBox="0 0 32 32"
               width={16}
               xmlns="http://www.w3.org/2000/svg"
@@ -6071,9 +6070,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <p>
-          Content width is 
+          Content width is
           500
-           and height is 
+           and height is
           452
         </p>
       </div>
