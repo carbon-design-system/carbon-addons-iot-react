@@ -49,8 +49,6 @@ import {
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
 
-const customParseFormat = require('dayjs/plugin/customParseFormat');
-
 const { iotPrefix } = settings;
 
 export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
@@ -331,7 +329,12 @@ const DateTimePicker = ({
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
-  const { absoluteValue, setAbsoluteValue, resetAbsoluteValue } = useAbsoluteDateTimeValue();
+  const {
+    absoluteValue,
+    setAbsoluteValue,
+    resetAbsoluteValue,
+    format12hourTo24hour,
+  } = useAbsoluteDateTimeValue();
 
   const {
     relativeValue,
@@ -389,9 +392,6 @@ const DateTimePicker = ({
       startTime: null,
     },
   };
-  dayjs.extend(customParseFormat);
-  const formatDateAndTime = (date, time, format) => dayjs(`${date} ${time}`).format(format);
-
   /**
    * Transforms a default or selected value into a full blown returnable object
    * @param {Object} [preset] clicked preset
@@ -405,25 +405,15 @@ const DateTimePicker = ({
       if (customRangeKind === PICKER_KINDS.RELATIVE) {
         value.relative = relativeValue;
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
-        const formatedStartTime = formatDateAndTime(
-          absoluteValue?.startDate,
-          rangeStartTimeValue,
-          'HH:mm'
-        );
-        const formatedEndTime = formatDateAndTime(
-          absoluteValue?.endDate,
-          rangeEndTimeValue,
-          'HH:mm'
-        );
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput ? formatedStartTime : '00:00',
-          endTime: hasTimeInput ? formatedEndTime : '00:00',
+          startTime: hasTimeInput ? format12hourTo24hour(rangeStartTimeValue) : '00:00',
+          endTime: hasTimeInput ? format12hourTo24hour(rangeEndTimeValue) : '00:00',
         };
       } else {
         value.single = {
           ...singleDateValue,
-          startTime: singleTimeValue,
+          startTime: hasTimeInput ? format12hourTo24hour(singleTimeValue) : '00:00',
         };
       }
       value.kind = customRangeKind;
@@ -525,7 +515,6 @@ const DateTimePicker = ({
     }
 
     setAbsoluteValue(newAbsolute);
-
     setInvalidRangeStartTime(
       invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
     );
@@ -568,22 +557,6 @@ const DateTimePicker = ({
         setCustomRangeKind(currentCustomRangeKind);
         setRelativeValue(parsableValue.timeRangeValue);
       }
-
-      if (parsableValue.timeRangeKind === PICKER_KINDS.SINGLE) {
-        // single
-        const single = { ...parsableValue.timeSingleValue };
-        resetRelativeValue();
-        setIsCustomRange(true);
-        setCustomRangeKind(PICKER_KINDS.SINGLE);
-        if (!single.hasOwnProperty('start')) {
-          single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
-        }
-        single.startDate = dayjs(single.start).format('MM/DD/YYYY');
-        single.startTime = dayjs(single.start).format('hh:mm A');
-        setSingleDateValue(single);
-        setSingleTimeValue(single.startTime);
-      }
-
       if (parsableValue.timeRangeKind === PICKER_KINDS.ABSOLUTE) {
         // absolute
         // range
@@ -598,14 +571,27 @@ const DateTimePicker = ({
           absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
-        absolute.startTime = dayjs(absolute.start).format('HH:mm');
+        absolute.startTime = dayjs(absolute.start).format('hh:mm A');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
-        absolute.endTime = dayjs(absolute.end).format('HH:mm');
+        absolute.endTime = dayjs(absolute.end).format('hh:mm A');
         setAbsoluteValue(absolute);
-        setRangeStartTimeValue(
-          formatDateAndTime(absolute.startDate, absolute.startTime, 'hh:mm A')
-        );
-        setRangeEndTimeValue(formatDateAndTime(absolute.endDate, absolute.endTime, 'hh:mm A'));
+        setRangeStartTimeValue(absolute.startTime);
+        setRangeEndTimeValue(absolute.endTime);
+      }
+
+      if (parsableValue.timeRangeKind === PICKER_KINDS.SINGLE) {
+        // single
+        const single = { ...parsableValue.timeSingleValue };
+        resetRelativeValue();
+        setIsCustomRange(true);
+        setCustomRangeKind(PICKER_KINDS.SINGLE);
+        if (!single.hasOwnProperty('start')) {
+          single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
+        }
+        single.startDate = dayjs(single.start).format('MM/DD/YYYY');
+        single.startTime = dayjs(single.start).format('hh:mm A');
+        setSingleDateValue(single);
+        setSingleTimeValue(single.startTime);
       }
     } else {
       resetAbsoluteValue();
@@ -782,8 +768,13 @@ const DateTimePicker = ({
   ) => {
     setRangeStartTimeValue(startState);
     setRangeEndTimeValue(endState);
-    setInvalidRangeStartTime(invalidStartTimeState);
-    setInvalidRangeEndTime(invalidEndTimeState);
+    setInvalidRangeStartTime(
+      (absoluteValue && invalidStartDate(startState, endState, absoluteValue)) ||
+        invalidStartTimeState
+    );
+    setInvalidRangeEndTime(
+      (absoluteValue && invalidEndDate(startState, endState, absoluteValue)) || invalidEndTimeState
+    );
   };
 
   const handleSingleTimeValueChange = (startState, invalidStartTimeState) => {
@@ -1126,28 +1117,7 @@ const DateTimePicker = ({
                                 )
                           }
                           type={isSingleSelect ? 'single' : 'range'}
-                          invalid={[
-                            absoluteValue &&
-                              invalidStartDate(
-                                formatDateAndTime(
-                                  absoluteValue?.startDate,
-                                  rangeStartTimeValue,
-                                  'HH:mm'
-                                ),
-                                absoluteValue?.endTime,
-                                absoluteValue
-                              ),
-                            absoluteValue &&
-                              invalidEndDate(
-                                absoluteValue?.startTime,
-                                formatDateAndTime(
-                                  absoluteValue?.endDate,
-                                  rangeEndTimeValue,
-                                  'HH:mm'
-                                ),
-                                absoluteValue
-                              ),
-                          ]}
+                          invalid={[invalidRangeStartTime, invalidRangeEndTime]}
                           i18n={{
                             labelText: strings.startTimeLabel,
                             secondaryLabelText: strings.endTimeLabel,

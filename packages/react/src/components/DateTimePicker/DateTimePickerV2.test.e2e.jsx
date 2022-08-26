@@ -115,23 +115,12 @@ describe('DateTimePickerV2', () => {
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
 
     cy.get('#picker-test-1').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35'
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35 AM'
     );
-    // cy.get('#picker-test-2').type('91:35');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
     cy.get('#picker-test-1').type('{movetostart}{del}1');
 
-    // // open start time time picker
-    // cy.findByTestId('date-time-picker-time-btn-1').trigger('click');
-    // // select hours
-    // cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-    //   cy.findByText('01').click({ force: true })
-    // );
-    // cy.findByTestId('date-time-picker-time-btn-2').trigger('click');
-    // cy.findByTestId('date-time-picker-spinner-list-spinner-1').within(() =>
-    //   cy.findByText('02').click({ force: true })
-    // );
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
     cy.get('#picker-test-2').type('11:61 AM');

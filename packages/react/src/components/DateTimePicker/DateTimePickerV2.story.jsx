@@ -104,6 +104,7 @@ export const SelectedAbsolute = () => {
     <DateTimePicker
       id="datetimepicker"
       defaultValue={defaultAbsoluteValue}
+      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
@@ -127,7 +128,7 @@ export const SingleSelect = () => {
         timeRangeKind: PICKER_KINDS.SINGLE,
         timeSingleValue: {
           startDate: '2020-04-01',
-          startTime: '12:34 AM',
+          startTime: '12:34',
         },
       }}
       dateTimeMask="YYYY-MM-DD hh:mm A"

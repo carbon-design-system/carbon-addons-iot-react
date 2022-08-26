@@ -125,11 +125,16 @@ const TimePickerDropdown = ({
 
   useEffect(() => {
     if (init.current) {
-      onChange(valueState, secondaryValueState, invalidState, secondaryInvalidState);
+      onChange(
+        valueState,
+        secondaryValueState,
+        !validate(valueState),
+        !validate(secondaryValueState)
+      );
     } else {
       init.current = true;
     }
-  }, [valueState, secondaryValueState, onChange, init, invalidState, secondaryInvalidState]);
+  }, [onChange, secondaryValueState, valueState, init]);
 
   useEffect(() => {
     setInvalidState(invalidProp);
@@ -142,8 +147,6 @@ const TimePickerDropdown = ({
       setPosition([left, bottom]);
     }
   }, [container, hideLabel]);
-
-  // const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
 
   const {
     labelText,
@@ -226,13 +229,8 @@ const TimePickerDropdown = ({
       e.relatedTarget?.parentNode?.classList[0].includes('iot--list-spinner');
 
     if (!contained) {
-      // close dropdown and validate
+      // close dropdown
       setOpenState(false);
-      setInvalidState(!validate(inputRef.current.value));
-      /* istanbul ignore else */
-      if (secondaryInputRef.current) {
-        setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
-      }
     }
   };
 
@@ -529,6 +527,7 @@ export const TimePickerSpinner = React.forwardRef(
     useEffect(() => {
       setSelected([firstVal, secondVal, thirdVal]);
     }, [firstVal, secondVal, thirdVal]);
+
     useEffect(() => {
       onChange(callbackValue);
       // eslint-disable-next-line react-hooks/exhaustive-deps
