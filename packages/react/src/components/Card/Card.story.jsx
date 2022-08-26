@@ -137,11 +137,13 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const singleExtraAction = {
     id: 'extrasingleaction',
     icon: Add16,
+    iconDescription: 'Add',
     callback: action('extra single action icon clicked.'),
   };
   const multiExtraAction = {
     id: 'extramultiaction',
     icon: Tree16,
+    iconDescription: 'Settings',
     children: [
       {
         id: 'firstItem',
