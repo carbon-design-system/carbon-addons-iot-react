@@ -5564,7 +5564,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="Action Label"
+            title="Add"
             type="button"
           >
             <svg
