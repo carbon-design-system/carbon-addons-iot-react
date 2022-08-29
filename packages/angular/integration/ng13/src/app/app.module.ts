@@ -8,17 +8,17 @@ import { ContextMenuModule, DialogModule, IconModule } from 'carbon-components-a
 import { ButtonMenuModule, ListModule } from '@ai-apps/angular';
 
 @NgModule({
-	declarations: [AppComponent],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		ButtonMenuModule,
-		ListModule,
-		ContextMenuModule,
-		DialogModule,
-		IconModule,
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ButtonMenuModule,
+    ListModule,
+    ContextMenuModule,
+    DialogModule,
+    IconModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,12 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DropdownModule } from 'carbon-components-angular/dropdown';
-import { ButtonModule } from 'carbon-components-angular';
+import { ContextMenuModule, DialogModule, IconModule } from 'carbon-components-angular';
+import { ButtonMenuModule, ListModule } from '@ai-apps/angular';
 
 @NgModule({
 	declarations: [AppComponent],
-	imports: [BrowserModule, AppRoutingModule, ButtonModule, DropdownModule],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		ButtonMenuModule,
+		ListModule,
+		ContextMenuModule,
+		DialogModule,
+		IconModule,
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
