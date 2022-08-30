@@ -161,6 +161,7 @@ const propTypes = {
     applyBtnLabel: PropTypes.string,
     cancelBtnLabel: PropTypes.string,
     backBtnLabel: PropTypes.string,
+    resetBtnLabel: PropTypes.string,
     increment: PropTypes.string,
     decrement: PropTypes.string,
     hours: PropTypes.string,
@@ -251,6 +252,7 @@ const defaultProps = {
     applyBtnLabel: 'Apply',
     cancelBtnLabel: 'Cancel',
     backBtnLabel: 'Back',
+    resetBtnLabel: 'Clear',
     increment: 'Increment',
     decrement: 'Decrement',
     hours: 'hours',
@@ -413,7 +415,8 @@ const DateTimePicker = ({
       } else {
         value.single = {
           ...singleDateValue,
-          startTime: hasTimeInput ? format12hourTo24hour(singleTimeValue) : '00:00',
+          startTime:
+            hasTimeInput && singleTimeValue !== '' ? format12hourTo24hour(singleTimeValue) : null,
         };
       }
       value.kind = customRangeKind;
@@ -709,11 +712,18 @@ const DateTimePicker = ({
     }
   };
 
+  const onClearClick = (event) => {
+    event.stopPropagation();
+    setSingleDateValue({ start: null, startDate: null });
+    setSingleTimeValue('');
+    // setInvalidSingleDateValue()
+  };
+
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
     return (
       <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
-        {isCustomRange ? (
+        {isCustomRange && !isSingleSelect ? (
           <Button
             kind="secondary"
             className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
@@ -723,6 +733,18 @@ const DateTimePicker = ({
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
           >
             {strings.backBtnLabel}
+          </Button>
+        ) : isSingleSelect ? (
+          <Button
+            kind="secondary"
+            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
+            size="field"
+            {...others}
+            onClick={onClearClick}
+            onMouseDown={(e) => e.preventDefault()}
+            // onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+          >
+            {strings.resetBtnLabel}
           </Button>
         ) : (
           <Button
@@ -742,6 +764,7 @@ const DateTimePicker = ({
           {...others}
           onClick={onApplyClick}
           onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
+          onMouseDown={(e) => e.preventDefault()}
           size="field"
           disabled={disableApply}
         >

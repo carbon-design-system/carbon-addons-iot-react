@@ -122,9 +122,25 @@ const TimePickerDropdown = ({
   const [secondaryValueState, setSecondaryValueState] = useState(secondaryValue || '');
   const [invalidState, setInvalidState] = useState(invalidProp);
   const [secondaryInvalidState, setSecondaryInvalidState] = useState(secondaryInvalidProp);
+  const [resetInitialValue, setResetInitialValue] = useState(true);
+
+  useEffect(
+    () => {
+      if (resetInitialValue) {
+        setValueState(value);
+        setResetInitialValue(false);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [value]
+  );
 
   useEffect(() => {
     if (init.current) {
+      if (value === valueState) {
+        setResetInitialValue(true);
+      }
+
       onChange(
         valueState,
         secondaryValueState,
@@ -134,7 +150,7 @@ const TimePickerDropdown = ({
     } else {
       init.current = true;
     }
-  }, [onChange, secondaryValueState, valueState, init]);
+  }, [onChange, secondaryValueState, valueState, init, value]);
 
   useEffect(() => {
     setInvalidState(invalidProp);

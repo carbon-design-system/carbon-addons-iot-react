@@ -9387,6 +9387,7 @@ Map {
         "relativeLabel": "Relative",
         "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
+        "resetBtnLabel": "Clear",
         "startTimeLabel": "Start time",
         "timePickerInvalidText": undefined,
         "toLabel": "to",
@@ -9768,6 +9769,9 @@ Map {
               "type": "arrayOf",
             },
             "relativeToLabel": Object {
+              "type": "string",
+            },
+            "resetBtnLabel": Object {
               "type": "string",
             },
             "startTimeLabel": Object {

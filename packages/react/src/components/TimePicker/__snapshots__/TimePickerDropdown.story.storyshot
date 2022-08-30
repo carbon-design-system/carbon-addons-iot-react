@@ -51,7 +51,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 readOnly={false}
                 title="hh:mm"
                 type="text"
-                value=""
               />
             </div>
           </div>

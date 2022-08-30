@@ -15,6 +15,9 @@ const customParseFormat = require('dayjs/plugin/customParseFormat');
  * @returns HH:mm time object
  */
 export const format12hourTo24hour = (time12hour) => {
+  if (time12hour === '' || !time12hour) {
+    return '00:00';
+  }
   const [time, modifier] = time12hour.split(' ');
 
   // eslint-disable-next-line prefer-const
@@ -128,6 +131,11 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       break;
     }
     case PICKER_KINDS.SINGLE: {
+      if (!value.start && !value.startDate) {
+        readableValue = dateTimeMask;
+        returnValue.single.start = null;
+        break;
+      }
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
         const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
