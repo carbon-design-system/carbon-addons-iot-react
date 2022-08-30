@@ -588,13 +588,13 @@ const DateTimePicker = ({
         resetRelativeValue();
         setIsCustomRange(true);
         setCustomRangeKind(PICKER_KINDS.SINGLE);
-        if (!single.hasOwnProperty('start')) {
+        if (!single.hasOwnProperty('start') && single.startDate && single.startTime) {
           single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
         }
-        single.startDate = dayjs(single.start).format('MM/DD/YYYY');
-        single.startTime = dayjs(single.start).format('hh:mm A');
+        single.startDate = single.start ? dayjs(single.start).format('MM/DD/YYYY') : null;
+        single.startTime = single.start ? dayjs(single.start).format('hh:mm A') : null;
         setSingleDateValue(single);
-        setSingleTimeValue(single.startTime);
+        setSingleTimeValue(single.startTime ?? '');
       }
     } else {
       resetAbsoluteValue();
@@ -712,10 +712,11 @@ const DateTimePicker = ({
     }
   };
 
-  const onClearClick = (event) => {
-    event.stopPropagation();
+  const onClearClick = () => {
+    // event.stopPropagation();
     setSingleDateValue({ start: null, startDate: null });
     setSingleTimeValue('');
+    setIsExpanded(false);
     // setInvalidSingleDateValue()
   };
 

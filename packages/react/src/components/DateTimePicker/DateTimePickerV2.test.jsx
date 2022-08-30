@@ -315,6 +315,28 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
+  it('should render with a predefined single select when default start date and start time are null', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: null,
+            startTime: null,
+          },
+        }}
+      />
+    );
+    // default value is YYYY-MM-DD hh:mm A
+    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+  });
+
   it('should switch from relative to absolute and then to preset', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />);
 
