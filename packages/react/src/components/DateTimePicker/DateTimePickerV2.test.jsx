@@ -337,6 +337,37 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
   });
 
+  it('should clear date and time fields when click clear button in single select', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+
+    userEvent.click(screen.getByText(/clear/i));
+
+    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    expect(screen.queryByRole('dialog')).toBeNull();
+  });
+
   it('should switch from relative to absolute and then to preset', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />);
 

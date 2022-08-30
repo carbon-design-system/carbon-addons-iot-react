@@ -713,11 +713,9 @@ const DateTimePicker = ({
   };
 
   const onClearClick = () => {
-    // event.stopPropagation();
     setSingleDateValue({ start: null, startDate: null });
     setSingleTimeValue('');
     setIsExpanded(false);
-    // setInvalidSingleDateValue()
   };
 
   // eslint-disable-next-line react/prop-types
@@ -738,12 +736,12 @@ const DateTimePicker = ({
         ) : isSingleSelect ? (
           <Button
             kind="secondary"
-            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-back`}
+            className={`${iotPrefix}--date-time-picker__menu-btn ${iotPrefix}--date-time-picker__menu-btn-reset`}
             size="field"
             {...others}
             onClick={onClearClick}
             onMouseDown={(e) => e.preventDefault()}
-            // onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+            onKeyUp={handleSpecificKeyDown(['Enter', ' '], onClearClick)}
           >
             {strings.resetBtnLabel}
           </Button>

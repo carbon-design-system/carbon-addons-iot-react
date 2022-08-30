@@ -19,9 +19,9 @@ const propTypes = {
   value: PropTypes.string,
   /** Specify the value for secondary input (range) */
   secondaryValue: PropTypes.string,
-  /** Specify wehether you watn the input labels to be visually hidden */
+  /** Specify whether the input labels to be visually hidden */
   hideLabel: PropTypes.bool,
-  /** Specify wehether you watn the secondary label to be visually hidden */
+  /** Specify whether the secondary label to be visually hidden */
   hideSecondaryLabel: PropTypes.bool,
   /** Input can be for a single time or a range - defaults to single */
   type: PropTypes.oneOf(['single', 'range']),
