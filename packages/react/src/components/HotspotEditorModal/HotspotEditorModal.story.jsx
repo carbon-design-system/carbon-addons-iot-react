@@ -14,7 +14,7 @@ import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 const commonActions = {
-  onEditDataItem: (cardConfig, dataItem ) =>
+  onEditDataItem: (cardConfig, dataItem) =>
     dataItem.hasStreamingMetricEnabled
       ? [
           { id: 'none', text: 'None' },
