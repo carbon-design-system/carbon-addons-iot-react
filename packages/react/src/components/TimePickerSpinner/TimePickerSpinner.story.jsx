@@ -6,7 +6,7 @@ import { spacing05 } from '@carbon/layout';
 import TimePickerSpinner, { TIMEGROUPS } from './TimePickerSpinner';
 
 export default {
-  title: '1 - Watson IoT/Date time range selector/TimePickerSpinner',
+  title: '1 - Watson IoT/TimePickerSpinner',
 
   parameters: {
     component: TimePickerSpinner,
