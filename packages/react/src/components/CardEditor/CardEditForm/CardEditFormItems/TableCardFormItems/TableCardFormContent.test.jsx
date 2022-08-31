@@ -24,7 +24,7 @@ const commonProps = {
       dataSourceId: 'deviceid',
       label: 'deviceid',
       destination: 'groupBy',
-      type: 'DIMENSION',
+      dataItemType: 'DIMENSION',
     },
   ],
   availableDimensions: {
@@ -47,7 +47,7 @@ const commonProps = {
     dataSeriesFormActions: {
       hideAggregationsDropDown: jest.fn(
         (editDataItem) =>
-          editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
       onAddAggregations: jest.fn(),
     },
@@ -97,7 +97,7 @@ describe('TableCardFormContent', () => {
             // dataSourceId is generated with a uuid to stay unique
             dataSourceId: 'deviceid',
             dataItemId: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -185,7 +185,7 @@ describe('TableCardFormContent', () => {
             dataSourceId: 'manufacturer',
             destination: 'groupBy',
             label: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -208,7 +208,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -237,7 +237,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -286,7 +286,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -338,7 +338,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -394,7 +394,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -429,7 +429,7 @@ describe('TableCardFormContent', () => {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
             dataItemId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -453,7 +453,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -502,7 +502,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -541,7 +541,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -578,7 +578,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { dataItemId: '__temperature__', dataSourceId: 'temperature' },
         ],
@@ -643,7 +643,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],

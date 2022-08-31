@@ -57,6 +57,7 @@ const propTypes = {
           dataSourceId: PropTypes.string,
           label: PropTypes.string,
           type: PropTypes.string,
+          dataItemType: PropTypes.string,
         })
       ),
       type: PropTypes.string,
@@ -75,7 +76,10 @@ const propTypes = {
   editDataItem: PropTypes.shape({
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
+    /** Maps to data item columnType */
     type: PropTypes.string,
+    /** Maps to data item type */
+    dataItemType: PropTypes.string,
     hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({

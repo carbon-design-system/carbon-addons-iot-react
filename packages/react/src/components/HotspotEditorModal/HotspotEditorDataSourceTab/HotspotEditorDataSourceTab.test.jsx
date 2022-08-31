@@ -60,7 +60,8 @@ const commonActions = {
     onEditDataItem: jest.fn().mockImplementation(() => []),
     dataSeriesFormActions: {
       hideAggregationsDropDown: jest.fn(
-        (editDataItem) => editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+        (editDataItem) =>
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
       onAddAggregations: jest.fn(),
     },
@@ -187,7 +188,7 @@ describe('HotspotEditorDataSourceTab', () => {
         dataSeriesFormActions: {
           hideAggregationsDropDown: jest.fn(
             (editDataItem) =>
-              editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+              editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
           ),
           onAddAggregations: jest.fn(),
         },

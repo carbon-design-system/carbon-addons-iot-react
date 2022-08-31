@@ -41,7 +41,7 @@ const commonActions = {
       : [],
   dataSeriesFormActions: {
     hideAggregationsDropDown: (editDataItem) =>
-      editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
     onAddAggregations: action('onAddAggregations'),
   },
 };
@@ -151,7 +151,7 @@ const mockDataItems = [
   },
   {
     dataItemId: 'firmware',
-    type: 'DIMENSION',
+    dataItemType: 'DIMENSION',
     dataSourceId: 'firmware',
     label: 'firmware',
     aggregationMethods: [
@@ -161,7 +161,7 @@ const mockDataItems = [
   },
   {
     dataItemId: 'manufacturer',
-    type: 'DIMENSION',
+    dataItemType: 'DIMENSION',
     dataSourceId: 'manufacturer',
     label: 'manufacturer',
     aggregationMethods: [

@@ -43,7 +43,7 @@ const commonProps = {
     dataSeriesFormActions: {
       hideAggregationsDropDown: jest.fn(
         (editDataItem) =>
-          editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
       onAddAggregations: jest.fn(),
     },

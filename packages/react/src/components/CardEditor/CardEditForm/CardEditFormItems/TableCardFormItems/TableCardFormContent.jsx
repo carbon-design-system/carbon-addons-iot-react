@@ -33,7 +33,7 @@ const propTypes = {
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
           type: PropTypes.string,
-          type: PropTypes.string,
+          dataItemType: PropTypes.string,
         })
       ),
       thresholds: PropTypes.arrayOf(
@@ -419,7 +419,7 @@ const TableCardFormContent = ({
                   dataItemId: i.id,
                   dataSourceId: i.id,
                   label: i.text,
-                  type: 'DIMENSION',
+                  dataItemType: 'DIMENSION',
                   destination: 'groupBy',
                 })),
                 cardConfig,

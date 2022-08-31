@@ -405,7 +405,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
@@ -474,7 +474,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {

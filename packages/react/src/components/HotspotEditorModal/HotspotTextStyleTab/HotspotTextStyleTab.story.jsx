@@ -32,7 +32,7 @@ const commonActions = {
       : [],
   dataSeriesFormActions: {
     hideAggregationsDropDown: (editDataItem) =>
-      editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
     onAddAggregations: action('onAddAggregations'),
   },
 };
