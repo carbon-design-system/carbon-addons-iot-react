@@ -38,6 +38,16 @@ const commonProps = {
     'TABLE',
     'CUSTOM',
   ],
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'
+      ),
+      onAddAggregations: jest.fn(),
+    },
+  },
 };
 
 describe('DashboardEditor', () => {

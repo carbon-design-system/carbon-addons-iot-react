@@ -43,10 +43,6 @@
     }
   }
 
-  .addAggregation{
-    padding-top: 1.5rem;
-  }
-
   &--content {
     flex: 1;
     height: 100%;
@@ -285,4 +281,8 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
     // need to make room for 2 actions
     padding-right: $layout-05;
   }
+}
+
+.addAggregation {
+  margin-top: 1.2rem;
 }

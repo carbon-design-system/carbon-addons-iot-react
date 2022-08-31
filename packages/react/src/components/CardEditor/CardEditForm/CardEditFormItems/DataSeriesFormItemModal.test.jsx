@@ -19,6 +19,7 @@ describe('DataSeriesFormItemModal', () => {
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
   const mockSetEditDataSeries = jest.fn();
+
   const groupedBarConfig = {
     title: 'Untitled',
     size: 'MEDIUM',
@@ -162,6 +163,13 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
+    actions: {
+      onEditDataItem: jest.fn().mockImplementation(() => []),
+      dataSeriesFormActions: {
+        hideAggregationsDropDown: jest.fn(() => true),
+        onAddAggregations: jest.fn(),
+      },
+    },
   };
 
   it('Renders for timeseries card data', () => {
@@ -459,7 +467,7 @@ describe('DataSeriesFormItemModal', () => {
             dataSourceId: 'timestamp',
             dataItemId: 'timestamp',
             label: 'Timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
             sort: 'DESC',
           },
           {
@@ -473,7 +481,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'torque',
             dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
             label: 'Torque',
-            aggregationMethod: "max"
+            aggregationMethod: 'max',
           },
           {
             dataItemId: 'temperature',

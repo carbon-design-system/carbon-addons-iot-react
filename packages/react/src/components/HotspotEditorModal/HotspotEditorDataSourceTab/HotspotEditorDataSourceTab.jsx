@@ -121,7 +121,7 @@ const HotspotEditorDataSourceTab = ({
   testID,
   testId,
   translateWithId,
-  actions: { onEditDataItem },
+  actions,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -131,6 +131,7 @@ const HotspotEditorDataSourceTab = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
+  const { onEditDataItem } = actions;
 
   const handleSelectionChange = ({ selectedItems }) => {
     const newArray = [];
@@ -167,6 +168,7 @@ const HotspotEditorDataSourceTab = ({
         ({ dataItemId }) => dataItemId === dataItem.dataSourceId
       );
       // Call back function for on click of edit button
+      /* istanbul ignore else */
       if (onEditDataItem) {
         const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
         if (!isEmpty(aggregationMethods)) {
@@ -196,6 +198,7 @@ const HotspotEditorDataSourceTab = ({
         availableDimensions={availableDimensions}
         onChange={onChange}
         i18n={mergedI18n}
+        actions={actions}
       />
       <div className={`${baseClassName}--input`}>
         <MultiSelect

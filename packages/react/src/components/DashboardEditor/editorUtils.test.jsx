@@ -16,6 +16,19 @@ import {
   handleKeyDown,
 } from './editorUtils';
 
+// export const commonActions ={
+//   actions: {
+//     onEditDataItem: jest.fn().mockImplementation(() => []),
+//     dataSeriesFormActions: {
+//       hideAggregationsDropDown: jest.fn(
+//         (editDataItem) => editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'
+//       ),
+//       onAddAggregations: jest.fn(),
+//     },
+//   },
+
+// }
+
 describe('editorUtils', () => {
   const cardConfig = {
     id: 'Timeseries',
@@ -379,7 +392,7 @@ describe('editorUtils', () => {
               dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
@@ -429,7 +442,7 @@ describe('editorUtils', () => {
           aggregationMethod: 'last',
           label: 'Key 3',
           dataSourceId: 'key3',
-          type: 'TIMESTAMP',
+          columnType: 'TIMESTAMP',
         },
       ];
       const newCard = handleDataSeriesChange(
@@ -441,7 +454,7 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
                 sort: 'DESC',
               },
               {
@@ -461,7 +474,7 @@ describe('editorUtils', () => {
             {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
@@ -494,7 +507,7 @@ describe('editorUtils', () => {
               aggregationMethod: 'last',
               label: 'Key 3',
               dataSourceId: 'key3',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
             },
           ],
         },
@@ -518,7 +531,7 @@ describe('editorUtils', () => {
               dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             },
             {
@@ -545,7 +558,7 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 dataSourceId: 'manufacturer',
@@ -575,7 +588,7 @@ describe('editorUtils', () => {
             {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
             },
             {
               dataSourceId: 'manufacturer',

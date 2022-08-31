@@ -460,7 +460,7 @@ export const WithRowExpansionAndRowSpecificLinkVariables = () => {
             {
               id: 'hour',
               label: 'Time',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
             },
           ],
         }}
@@ -554,7 +554,7 @@ export const WithCustomFilters = () => {
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   const tableColumnsWithCustomFilters = tableColumns.map((column) =>
-    column.type !== 'TIMESTAMP'
+    column.columnType !== 'TIMESTAMP'
       ? column
       : {
           ...column,
@@ -625,7 +625,7 @@ export const NoRangeInToolbar = () => {
             {
               id: 'hour',
               label: 'Time',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
             },
           ],
         }}

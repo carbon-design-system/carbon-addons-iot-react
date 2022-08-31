@@ -97,11 +97,21 @@ const dataItems = [
   { dataSourceId: 'temperature', label: 'Temperature', dataItemId: 'temperature' },
   { dataSourceId: 'pressure', label: 'Pressure', dataItemId: 'pressure' },
 ];
-
 const mockOnChange = jest.fn();
 const mockGetValidDataItems = jest.fn(() => dataItems);
 const mockSetSelectedDataItems = jest.fn();
-
+const commonActions = {
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'
+      ),
+      onAddAggregations: jest.fn(),
+    },
+  },
+};
 afterEach(() => {
   jest.clearAllMocks();
 });
@@ -124,7 +134,8 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          onEditDataItem={jest.fn()}
+          // onEditDataItem={jest.fn()}
+          {...commonActions}
         />
       );
       expect(mockGetValidDataItems).toHaveBeenCalled();
@@ -138,6 +149,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
       expect(screen.getByText('Data')).toBeInTheDocument();
@@ -150,6 +162,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={[]}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
       expect(screen.queryByText('Data')).toBeNull();
@@ -162,6 +175,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
       const dataItemDropDown = screen.getByRole('combobox', {
@@ -217,7 +231,8 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          onEditDataItem={jest.fn()}
+          // onEditDataItem={jest.fn()}
+          {...commonActions}
         />
       );
       const dataItemDropDown = screen.getByText('temperature');
@@ -239,7 +254,8 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          onEditDataItem={jest.fn()}
+          // onEditDataItem={jest.fn()}
+          {...commonActions}
         />
       );
 
@@ -260,6 +276,7 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
           onEditDataItem={jest.fn().mockImplementation(() => [])}
+          {...commonActions}
         />
       );
 
@@ -282,6 +299,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
 
@@ -296,7 +314,7 @@ describe('DataSeriesFormItem', () => {
       fireEvent.click(pressureOption);
       expect(mockOnChange).toHaveBeenCalled();
     });
-    it('Opens the editor modal', () => {
+    it('Opens the editor modal', async () => {
       render(
         <DataSeriesFormItem
           cardConfig={groupedBarCardConfig}
@@ -304,6 +322,7 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
 
@@ -312,7 +331,7 @@ describe('DataSeriesFormItem', () => {
       });
       expect(editButton).toBeInTheDocument();
 
-      fireEvent.click(editButton);
+      await fireEvent.click(editButton);
 
       const modalTitle = screen.getByText('Customize data series');
       expect(modalTitle).toBeInTheDocument();
@@ -326,6 +345,7 @@ describe('DataSeriesFormItem', () => {
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
           onEditDataItem={jest.fn()}
+          {...commonActions}
         />
       );
 
@@ -337,7 +357,7 @@ describe('DataSeriesFormItem', () => {
       const editDataItemModal = screen.getByText('Data item');
       expect(editDataItemModal).toBeInTheDocument();
     });
-    it('handles row actions for dataItems for timeSeries', () => {
+    it('handles row actions for dataItems for timeSeries', async () => {
       render(
         <DataSeriesFormItem
           cardConfig={{
@@ -351,13 +371,14 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
+          {...commonActions}
         />
       );
 
       const dataItemRowAction = screen.getByRole('button', {
         name: 'Edit',
       });
-      fireEvent.click(dataItemRowAction);
+      await fireEvent.click(dataItemRowAction);
 
       const editDataItemModal = screen.getByText('Customize data series');
       expect(editDataItemModal).toBeInTheDocument();
@@ -474,6 +495,7 @@ describe('DataSeriesFormItem', () => {
                 return 'Close';
             }
           })}
+          {...commonActions}
         />
       );
       const dataItemsDropdown = screen.getByRole('button', {
@@ -491,7 +513,7 @@ describe('DataSeriesFormItem', () => {
       // click the edit icon on the data item
       const editButton = screen.getAllByRole('button', { name: 'Edit' })[0];
       expect(editButton).toBeInTheDocument();
-      fireEvent.click(editButton);
+      await fireEvent.click(editButton);
 
       userEvent.type(screen.getByDisplayValue('Temperature'), 'changed label');
       expect(mockOnChange).toHaveBeenCalled();

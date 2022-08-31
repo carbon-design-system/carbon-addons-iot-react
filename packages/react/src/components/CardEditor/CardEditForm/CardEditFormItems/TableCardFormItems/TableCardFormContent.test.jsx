@@ -42,6 +42,16 @@ const commonProps = {
         return 'Clear selection';
     }
   }),
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'
+      ),
+      onAddAggregations: jest.fn(),
+    },
+  },
 };
 
 describe('TableCardFormContent', () => {
@@ -79,7 +89,7 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'deviceid',
@@ -97,7 +107,7 @@ describe('TableCardFormContent', () => {
     });
   });
   it('fires onChange when dataItem deviceId is selected', () => {
-    render(<TableCardFormContent {...commonProps} onEditDataItem={jest.fn()} />);
+    render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
     const dataItemComboBox = screen.getByTestId('combo-box');
     expect(dataItemComboBox).toBeInTheDocument();
@@ -115,7 +125,7 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Temperature',
@@ -167,7 +177,7 @@ describe('TableCardFormContent', () => {
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             label: 'Timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
             sort: 'DESC',
           },
           {
@@ -193,7 +203,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -222,7 +232,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -252,7 +262,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -270,7 +280,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -304,7 +314,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -322,7 +332,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -357,7 +367,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -378,7 +388,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -413,7 +423,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -429,7 +439,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('edit mode with dataitems adds threshold correctly', () => {
+  it('edit mode with dataitems adds threshold correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -438,7 +448,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -458,7 +468,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText(/Add threshold/));
     fireEvent.click(screen.queryByText('Save'));
@@ -478,7 +488,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('edit mode with dataitems leaves threshold blank correctly', () => {
+  it('edit mode with dataitems leaves threshold blank correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -487,7 +497,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -507,7 +517,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText('Save'));
     expect(mockOnChange).toHaveBeenCalledWith({
@@ -517,7 +527,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('should set thresholds in dataSection if they exist', () => {
+  it('should set thresholds in dataSection if they exist', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -526,7 +536,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -550,7 +560,8 @@ describe('TableCardFormContent', () => {
       <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
     );
 
-    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
     expect(screen.getByTitle('#da1e28')).toBeVisible();
   });
   it("should fallback to dataItemId if label isn't given in column", () => {
@@ -562,7 +573,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -627,7 +638,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -658,7 +669,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            type: 'TIMESTAMP',
+            columnType: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],

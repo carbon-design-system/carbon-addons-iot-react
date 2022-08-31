@@ -33,6 +33,7 @@ const propTypes = {
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
           type: PropTypes.string,
+          columnType: PropTypes.string,
         })
       ),
       thresholds: PropTypes.arrayOf(
@@ -136,8 +137,9 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  actions: { onEditDataItem },
+  actions,
 }) => {
+  const { onEditDataItem } = actions;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
     content: { columns, thresholds },
@@ -354,6 +356,7 @@ const TableCardFormContent = ({
         availableDimensions={availableDimensions}
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
+        actions={actions}
       />
       <ContentFormItemTitle
         title={mergedI18n.tableColumnEditorSectionTitle}

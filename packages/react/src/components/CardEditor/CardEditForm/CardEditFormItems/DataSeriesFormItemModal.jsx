@@ -15,7 +15,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt32 } from '@carbon/icons-react';
+import { WarningAlt32, Add16 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';
@@ -163,6 +163,8 @@ const defaultProps = {
     dataItemEditorDataItemAddThreshold: 'Add threshold',
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
+    dataItemEditorAddAggregationMethodLabel: 'Add aggregation method',
+    dataItemEditorAddAggregationMethodDescription: 'Add aggregation method',
     source: 'Source data item',
     aggregationMethod: 'Aggregation method',
     grain: 'Grain',
@@ -188,6 +190,7 @@ const defaultProps = {
   isLarge: false,
   validDataItems: [],
   testId: 'aggregation-methods',
+
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
@@ -226,6 +229,7 @@ const DataSeriesFormItemModal = ({
   i18n,
   isLarge,
   testId,
+
   actions: {
     dataSeriesFormActions: { hideAggregationsDropDown, onAddAggregations },
   },
@@ -343,26 +347,26 @@ const DataSeriesFormItemModal = ({
                 </span>
               </div>
             )}
-            {editDataItem?.hasStreamingMetricEnabled && (
-              <div className={`${baseClassName}--input-group--item-half`}>
+            {editDataItem?.hasStreamingMetricEnabled && onAddAggregations && (
+              <div className="addAggregation">
                 <Button
+                  className="addAggregation"
                   key="edit-data-item"
                   kind="ghost"
                   size="large"
-                  icon="add"
+                  renderIcon={Add16}
                   onClick={() => onAddAggregations(editDataItem)}
-                  iconDescription={mergedI18n.addAggregation}
+                  iconDescription={mergedI18n.dataItemEditorAddAggregationMethodDescription}
                   testId={`${testId}-aggregaton-button`}
                 >
-                  {mergedI18n.addAggregation}
+                  {mergedI18n.dataItemEditorAddAggregationMethodLabel}
                 </Button>
               </div>
             )}
-
             {isTimeBasedCard &&
               editDataItem.aggregationMethod &&
               editDataItem.aggregationMethod !== 'none' &&
-              !editDataItem.hasStreamingMetricEnabled && (
+              !editDataItem?.hasStreamingMetricEnabled && (
                 <div className={`${baseClassName}--input-group--item-half`}>
                   <Dropdown
                     id={`${id}_grain-selector`}
@@ -609,7 +613,26 @@ const DataSeriesFormItemModal = ({
         )}
       </>
     ),
-    [availableDimensions, availableGrains, baseClassName, cardConfig, editDataItem, handleTranslation, hideAggregationsDropDown, id, initialAggregation, initialGrain, isSummaryDashboard, isTimeBasedCard, mergedI18n, onAddAggregations, selectedDimensionFilter, setEditDataItem, testId, type]
+    [
+      availableDimensions,
+      availableGrains,
+      baseClassName,
+      cardConfig,
+      editDataItem,
+      handleTranslation,
+      hideAggregationsDropDown,
+      id,
+      initialAggregation,
+      initialGrain,
+      isSummaryDashboard,
+      isTimeBasedCard,
+      mergedI18n,
+      onAddAggregations,
+      selectedDimensionFilter,
+      setEditDataItem,
+      testId,
+      type,
+    ]
   );
 
   return (

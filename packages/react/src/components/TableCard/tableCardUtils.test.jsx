@@ -33,7 +33,7 @@ describe('tableCardUtils', () => {
     it('encode timestamp value', () => {
       const columns = createColumnsWithFormattedLinks([
         { linkTemplate: { href: 'https://www.ibm.com?{time}' } },
-        { dataSourceId: 'time', type: 'TIMESTAMP' },
+        { dataSourceId: 'time', columnType: 'TIMESTAMP' },
       ]);
       render(columns[0].renderDataFunction({ value: 'Link', row: { time: 1618431426000 } }));
       expect(screen.getByText('Link')).toHaveAttribute(
@@ -44,7 +44,7 @@ describe('tableCardUtils', () => {
     it('should fallback to empty variables array if no linkTemplate.href given', () => {
       const columns = createColumnsWithFormattedLinks([
         { linkTemplate: { target: '_blank' } },
-        { dataSourceId: 'time', type: 'TIMESTAMP' },
+        { dataSourceId: 'time', columnType: 'TIMESTAMP' },
       ]);
       render(columns[0].renderDataFunction({ value: 'Link', row: { time: 1618431426000 } }));
       expect(screen.getByText('Link')).not.toHaveAttribute('href');
@@ -137,10 +137,10 @@ describe('determineFilterFunction', () => {
     const customPlaceholderText = 'customPlaceholdertext';
     const mockColumns = [
       // no filter on timestamp
-      { type: 'TIMESTAMP', name: 'columnName' },
+      { columnType: 'TIMESTAMP', name: 'columnName' },
       {
         // a filter on timestamp
-        type: 'TIMESTAMP',
+        columnType: 'TIMESTAMP',
         name: 'columnNameWithFilter',
         filter: { name: 'my existing filter' },
       },
@@ -154,13 +154,13 @@ describe('determineFilterFunction', () => {
       },
       {
         // a filter on timestamp
-        type: 'TIMESTAMP',
+        columnType: 'TIMESTAMP',
         name: 'columnNameWithFilter',
         filter: { name: 'my existing filter', filterFunction: customFilterFunction },
       },
       {
         // a custom placeholder text
-        type: 'TIMESTAMP',
+        columnType: 'TIMESTAMP',
         name: 'columnNameWithFilter',
         filter: {
           name: 'my existing filter',

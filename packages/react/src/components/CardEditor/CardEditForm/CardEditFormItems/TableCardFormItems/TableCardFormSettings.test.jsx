@@ -71,7 +71,7 @@ describe('TableCardFormSettings', () => {
               {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
             ],
           },
@@ -93,7 +93,7 @@ describe('TableCardFormSettings', () => {
               {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 dataSourceId: 'manufacturer',
@@ -122,7 +122,7 @@ describe('TableCardFormSettings', () => {
               {
                 dataSourceId: 'timestamp',
                 label: 'Timestamp',
-                type: 'TIMESTAMP',
+                columnType: 'TIMESTAMP',
               },
               {
                 dataSourceId: 'manufacturer',
@@ -143,7 +143,7 @@ describe('TableCardFormSettings', () => {
             {
               dataSourceId: 'timestamp',
               label: 'Timestamp',
-              type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             },
             {

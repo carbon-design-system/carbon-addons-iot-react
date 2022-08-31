@@ -286,7 +286,9 @@ const TableCard = ({
   const filteredTimestampColumns = useMemo(
     () =>
       columns
-        .map((column) => (column.type && column.type === 'TIMESTAMP' ? column.dataSourceId : null))
+        .map((column) =>
+          column.columnType && column.columnType === 'TIMESTAMP' ? column.dataSourceId : null
+        )
         .filter((i) => !isNil(i)),
     [columns]
   );
@@ -475,7 +477,7 @@ const TableCard = ({
                             </p>
                             <span key={`${item.id}-value`}>
                               {item
-                                ? item.type === 'TIMESTAMP'
+                                ? item.columnType === 'TIMESTAMP'
                                   ? dayjs(dataItem.values[item.id]).format('L HH:mm')
                                   : dataItem.values[item.id]
                                 : null}

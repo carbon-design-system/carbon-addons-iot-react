@@ -22,6 +22,21 @@ import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 import HotspotTextStyleTab from './HotspotTextStyleTab';
 import HotspotTextStyleTabREADME from './HotspotTextStyleTabREADME.mdx';
 
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hideAggregationsDropDown: (editDataItem) =>
+      editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
+
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotTextStyleTab',
   decorators: [withKnobs],
@@ -75,6 +90,7 @@ export const Default = () => {
         }}
         translateWithId={() => {}}
         light={isLight}
+        actions={commonActions}
       />
     );
   };
@@ -113,6 +129,7 @@ export const UsingHotspotStateHook = () => {
         onChange={updateTextHotspotStyle}
         onDelete={deleteSelectedHotspot}
         translateWithId={() => {}}
+        actions={commonActions}
       />
     );
   };

@@ -1057,6 +1057,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <select
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hideAggregationsDropDown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--select-input"
                       defaultValue="DataType2"
                       id="select-1"
@@ -3665,6 +3674,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <select
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hideAggregationsDropDown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--select-input"
                       defaultValue="DataType2"
                       id="select-1"
@@ -4618,6 +4636,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hideAggregationsDropDown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--text-input bx--text-input--md"
                       disabled={false}
                       id="custom-content-textinput"
