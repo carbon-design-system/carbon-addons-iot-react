@@ -33,9 +33,9 @@
   "license": "Apache-2.0",
   "author": "IBM",
   "peerDependencies": {
-    "@angular/common": "^9.0.0 || ^10.0.0 || ^11.0.0",
-    "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0",
-    "@angular/forms": "^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@angular/common": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "@angular/core": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "@angular/forms": "^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
     "carbon-components": "^10.0.0",
     "carbon-components-angular": "^4.0.0",
     "rxjs": "^6.0.0",
