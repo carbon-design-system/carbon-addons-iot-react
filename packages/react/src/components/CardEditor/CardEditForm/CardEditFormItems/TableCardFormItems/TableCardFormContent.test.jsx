@@ -47,7 +47,7 @@ const commonProps = {
     dataSeriesFormActions: {
       hideAggregationsDropDown: jest.fn(
         (editDataItem) =>
-          editDataItem?.type !== 'DIMENSION' && editDataItem?.columnType !== 'TIMESTAMP'
+          editDataItem?.type !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
       onAddAggregations: jest.fn(),
     },
@@ -89,7 +89,7 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'deviceid',
@@ -125,7 +125,7 @@ describe('TableCardFormContent', () => {
             sort: 'DESC',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Temperature',
@@ -177,7 +177,7 @@ describe('TableCardFormContent', () => {
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             label: 'Timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
             sort: 'DESC',
           },
           {
@@ -203,7 +203,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -232,7 +232,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -262,7 +262,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -280,7 +280,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -314,7 +314,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -332,7 +332,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -367,7 +367,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -388,7 +388,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -423,7 +423,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -448,7 +448,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -497,7 +497,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -536,7 +536,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -573,7 +573,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           {
             label: 'Manufacturer',
@@ -638,7 +638,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Timestamp',
                 dataSourceId: 'timestamp',
-                columnType: 'TIMESTAMP',
+                type: 'TIMESTAMP',
               },
               {
                 label: 'Manufacturer',
@@ -669,7 +669,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Timestamp',
             dataSourceId: 'timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],

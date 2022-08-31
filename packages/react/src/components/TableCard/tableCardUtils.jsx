@@ -43,7 +43,7 @@ export const createColumnsWithFormattedLinks = (columns) => {
               );
               const variableValue =
                 // format the TIMESTAMP type columns
-                matchingColumn?.columnType === 'TIMESTAMP'
+                matchingColumn?.type === 'TIMESTAMP'
                   ? dayjs(row[variable]).format('L HH:mm')
                   : row[variable];
               // encode value so the URL can be valid
@@ -134,7 +134,7 @@ export const timeStampFilterFunction = (cellValue, filterValue) => {
  */
 export const determineFilterFunction = (column, defaultFilterStringPlaceholdText) => {
   return {
-    ...(column.columnType === 'TIMESTAMP' ? { filterFunction: timeStampFilterFunction } : {}), // only add custom filter for timestamps
+    ...(column.type === 'TIMESTAMP' ? { filterFunction: timeStampFilterFunction } : {}), // only add custom filter for timestamps
     placeholderText: defaultFilterStringPlaceholdText,
     ...(column.filter ? column.filter : {}), // preserve their custom filter fields too
   };

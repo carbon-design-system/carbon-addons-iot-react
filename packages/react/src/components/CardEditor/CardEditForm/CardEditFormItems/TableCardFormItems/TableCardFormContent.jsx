@@ -33,7 +33,7 @@ const propTypes = {
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
           type: PropTypes.string,
-          columnType: PropTypes.string,
+          type: PropTypes.string,
         })
       ),
       thresholds: PropTypes.arrayOf(

@@ -505,7 +505,7 @@ export const handleDataSeriesChange = (
               dataSourceId: 'timestamp',
               dataItemId: 'timestamp',
               label: 'Timestamp',
-              columnType: 'TIMESTAMP',
+              type: 'TIMESTAMP',
               sort: 'DESC',
             };
       const existingDimensionColumns = Array.isArray(content?.columns)

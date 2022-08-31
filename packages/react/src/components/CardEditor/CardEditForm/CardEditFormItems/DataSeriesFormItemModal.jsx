@@ -76,7 +76,6 @@ const propTypes = {
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
     type: PropTypes.string,
-    columnType: PropTypes.string,
     hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
@@ -241,7 +240,7 @@ const DataSeriesFormItemModal = ({
   const isTimeBasedCard =
     type === CARD_TYPES.TIMESERIES ||
     (type === CARD_TYPES.TABLE &&
-      content?.columns?.find((column) => column.columnType === 'TIMESTAMP')) ||
+      content?.columns?.find((column) => column.type === 'TIMESTAMP')) ||
     (content?.type === BAR_CHART_TYPES.SIMPLE && content?.timeDataSourceId) ||
     (content?.type === BAR_CHART_TYPES.STACKED && content?.timeDataSourceId);
 

@@ -168,7 +168,7 @@ const TableCardFormSettings = ({ cardConfig, onChange, i18n, translateWithId }) 
                         $set: updateColumnSort(
                           cardConfig?.content?.columns,
                           selectedItem,
-                          existingColumn?.columnType === 'TIMESTAMP' ? 'DESC' : 'ASC'
+                          existingColumn?.type === 'TIMESTAMP' ? 'DESC' : 'ASC'
                         ),
                       },
                     },

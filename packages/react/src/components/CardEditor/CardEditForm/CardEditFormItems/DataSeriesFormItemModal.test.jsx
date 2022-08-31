@@ -467,7 +467,7 @@ describe('DataSeriesFormItemModal', () => {
             dataSourceId: 'timestamp',
             dataItemId: 'timestamp',
             label: 'Timestamp',
-            columnType: 'TIMESTAMP',
+            type: 'TIMESTAMP',
             sort: 'DESC',
           },
           {
