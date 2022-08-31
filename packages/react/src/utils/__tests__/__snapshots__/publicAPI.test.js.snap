@@ -13970,6 +13970,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "dataItemType": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "isRequired": true,
                   "type": "string",
@@ -13981,6 +13984,9 @@ Map {
                   "type": "bool",
                 },
                 "label": Object {
+                  "type": "string",
+                },
+                "type": Object {
                   "type": "string",
                 },
               },
