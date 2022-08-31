@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.9...v2.151.0-next.10) (2022-08-31)
+
+
+### Bug Fixes
+
+* **react:** scoping style to time picker dropdown ([d757780](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7577801b6f03c61b80598a18277a8efa72f6b5b))
+
+
+
+
+
 # [2.151.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.8...v2.151.0-next.9) (2022-08-31)
 
 
