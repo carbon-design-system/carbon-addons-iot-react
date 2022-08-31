@@ -845,7 +845,15 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__field`}
             >
               {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
-                <span title={humanValue}>{humanValue}</span>
+                <span
+                  className={classnames({
+                    [`${iotPrefix}--date-time-picker__disabled`]:
+                      isSingleSelect && !singleDateValue.startDate,
+                  })}
+                  title={humanValue}
+                >
+                  {humanValue}
+                </span>
               ) : humanValue ? (
                 <TooltipDefinition
                   align="start"
