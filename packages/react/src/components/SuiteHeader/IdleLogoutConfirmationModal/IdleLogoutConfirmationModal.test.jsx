@@ -10,8 +10,8 @@ import IdleLogoutConfirmationModal from './IdleLogoutConfirmationModal';
 
 const commonProps = {
   routes: {
-    logout: 'https://www.ibm.com',
-    logoutInactivity: 'https://www.ibm.com',
+    logout: 'https://www.ibm.com/logout',
+    logoutInactivity: 'https://www.ibm.com/inactivity',
     domain: '',
   },
   idleTimeoutData: { countdown: 10, timeout: 10, cookieName: '_user_inactivity_timeout' },
@@ -20,6 +20,14 @@ const commonProps = {
 const TIME_INTERVAL = 1000;
 
 describe('IdleLogoutConfirmationModal', () => {
+  const originHref = 'https://ibm.com';
+  const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
+    originHref
+  )}`;
+  const expectedLogoutInactivityRoute = `${
+    commonProps.routes.logoutInactivity
+  }?originHref=${encodeURIComponent(originHref)}`;
+
   let originalWindowLocation;
   let originalWindowDocumentCookie;
   beforeEach(() => {
@@ -27,7 +35,7 @@ describe('IdleLogoutConfirmationModal', () => {
     originalWindowLocation = { ...window.location };
     originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
-    window.location = { href: '' };
+    window.location = { href: 'https://ibm.com' };
     window.open = jest.fn();
   });
 
@@ -123,6 +131,23 @@ describe('IdleLogoutConfirmationModal', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
+    expect(window.location.href).toBe(expectedLogoutRoute);
+  });
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref)', async () => {
+    window.location = { href: '' };
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
+    );
+    await userEvent.click(modalLogoutButton);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
   it('user clicks Log Out on the idle logout confirmation dialog (but no redirect)', async () => {
@@ -142,6 +167,21 @@ describe('IdleLogoutConfirmationModal', () => {
     expect(window.location.href).not.toBe(commonProps.routes.logout);
   });
   it('idle user waits for the logout confirmation dialog countdown to finish', async () => {
+    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
+    });
+    // Go to the future by a little more than commonProps.idleTimeoutData.countdown seconds
+    MockDate.set(Date.now() + (commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
+  });
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref)', async () => {
+    window.location = { href: '' };
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
@@ -179,7 +219,7 @@ describe('IdleLogoutConfirmationModal', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).toBe(commonProps.routes.logout);
+    expect(window.location.href).toBe(expectedLogoutRoute);
   });
   it('user has logged out in another tab (but no redirect)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);

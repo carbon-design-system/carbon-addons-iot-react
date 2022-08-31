@@ -189,17 +189,17 @@ const SuiteHeader = ({
 
   const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
-  // Append originHref query parameter to the logout routes
-  const logoutRoute = window.location.href
-    ? `${routes?.logout}${routes?.logout?.includes('?') ? '&' : '?'}originHref=${encodeURIComponent(
-        window.location.href
-      )}`
-    : routes?.logout;
-  const logoutInactivityRoute = window.location.href
-    ? `${routes?.logoutInactivity}${
-        routes?.logoutInactivity?.includes('?') ? '&' : '?'
-      }originHref=${encodeURIComponent(window.location.href)}`
-    : routes?.logoutInactivity;
+  // Append originHref query parameter to the logout route
+  let logoutRoute = routes?.logout;
+  try {
+    const url = new URL(routes.logout);
+    if (window.location.href) {
+      url.searchParams.append('originHref', window.location.href);
+      logoutRoute = url.href;
+    }
+  } catch (e) {
+    logoutRoute = routes?.logout;
+  }
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -278,7 +278,7 @@ const SuiteHeader = ({
       {idleTimeoutData ? (
         <IdleLogoutConfirmationModal
           idleTimeoutData={idleTimeoutData}
-          routes={{ ...routes, logout: logoutRoute, logoutInactivity: logoutInactivityRoute }}
+          routes={routes}
           onRouteChange={onRouteChange}
           onStayLoggedIn={onStayLoggedIn}
           i18n={i18n}
