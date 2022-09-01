@@ -97,12 +97,15 @@
   padding-top: $spacing-04;
 }
 
-.#{$iot-prefix}--suite-header-switcher {
-  background-color: $ui-05;
+.#{$iot-prefix}--suite-header .#{$prefix}--app-switcher > ul {
+  height: 100%;
+
+  li.action-btn__headerpanel-li {
+    height: 100%;
+  }
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
-  background-color: $ui-05;
   padding-top: 0;
 
   li {
@@ -119,7 +122,7 @@
       align-items: center;
       padding: $spacing-05 $spacing-05 0;
       text-decoration: none;
-      color: $field-02;
+      color: $text-01;
     }
   }
 
@@ -128,18 +131,6 @@
   }
 
   &--nav-link {
-    &--button-tertiary {
-      border-color: $inverse-01;
-      color: $field-02;
-    }
-    &--button-tertiary:hover {
-      color: $text-01;
-      background-color: $ui-02;
-    }
-    &--button-tertiary:active {
-      background-color: $active-ui;
-      color: $text-01;
-    }
     a {
       text-decoration: none;
     }
@@ -171,16 +162,7 @@
     a {
       @include type-style('productive-heading-01');
       text-decoration: none;
-      color: $inverse-link;
-
-      &:hover {
-        background-color: $inverse-hover-ui;
-        color: $inverse-support-04;
-      }
-      &:active {
-        background-color: $active-secondary;
-        color: $inverse-support-04;
-      }
+      color: $text-02;
     }
   }
 
@@ -190,10 +172,9 @@
       display: block;
       svg {
         display: inherit;
-        fill: $ui-03;
       }
       .bee-shadow {
-        background-color: $active-ui;
+        background-color: $ui-03;
         height: $spacing-03;
         width: $spacing-07;
         border-radius: 50%;
@@ -202,7 +183,7 @@
     }
     span {
       @include type-style('body-short-01');
-      color: $active-ui;
+      color: $text-01;
       padding-top: $spacing-05;
     }
     a {
@@ -210,7 +191,6 @@
       text-decoration: none;
       padding: 0;
       margin: $spacing-05 0;
-      color: $inverse-link;
     }
   }
 }
