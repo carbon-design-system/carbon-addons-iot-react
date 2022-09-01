@@ -45,7 +45,6 @@ const fixture = {
       profileLogoutModalPrimaryButton: 'Log out',
       profileLogoutModalBody:
         'You are logged in to {solutionName} as {userName}.  Logging out also logs you out of each application that is open in the same browser.  To ensure a secure log out, close all open browser windows.',
-      workspace: 'Workspace: {workspace}',
       switcherWorkspace: 'Workspace',
       switcherWorkspaces: 'Workspaces',
       switcherWorkspaceAdmin: 'Workspace administration',
@@ -53,6 +52,7 @@ const fixture = {
       switcherSelectWorkspace: 'Select a workspace',
       switcherAvailableWorkspaces: 'Available workspaces',
       switcherSuiteAdmin: 'Suite administration',
+      global: 'Global / other',
       switcherMyApplications: 'My applications',
       switcherNavigatorLink: 'All applications',
       switcherLearnMoreLink: 'Learn more',

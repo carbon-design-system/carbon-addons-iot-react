@@ -11321,6 +11321,7 @@ Map {
         "administrationIcon": "Administration",
         "documentation": "Documentation",
         "gettingStarted": "Getting started",
+        "global": "Global / other",
         "help": "Help",
         "logout": "Logout",
         "profileLogoutButton": "Log out",
@@ -11353,7 +11354,6 @@ Map {
         "switcherWorkspaces": "Workspaces",
         "userIcon": "User",
         "whatsNew": "What's new",
-        "workspace": "Workspace: {workspace}",
       },
       "idleTimeoutData": null,
       "isActionItemVisible": [Function],
@@ -11596,6 +11596,9 @@ Map {
             "gettingStarted": Object {
               "type": "string",
             },
+            "global": Object {
+              "type": "string",
+            },
             "help": Object {
               "type": "string",
             },
@@ -11704,9 +11707,6 @@ Map {
               "type": "string",
             },
             "whatsNew": Object {
-              "type": "string",
-            },
-            "workspace": Object {
               "type": "string",
             },
           },
@@ -12334,6 +12334,7 @@ Map {
         "allApplicationsLink": "All applications",
         "availableWorkspaces": "Available workspaces",
         "backToAppSwitcher": "Back to application switcher",
+        "global": "Global / other",
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
         "selectWorkspace": "Select a workspace",
@@ -12678,6 +12679,7 @@ Map {
       "administrationIcon": "Administration",
       "documentation": "Documentation",
       "gettingStarted": "Getting started",
+      "global": "Global / other",
       "help": "Help",
       "logout": "Logout",
       "profileLogoutButton": "Log out",
@@ -12710,7 +12712,6 @@ Map {
       "switcherWorkspaces": "Workspaces",
       "userIcon": "User",
       "whatsNew": "What's new",
-      "workspace": "Workspace: {workspace}",
     },
   },
   "useSuiteHeaderData" => Object {},

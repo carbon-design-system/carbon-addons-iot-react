@@ -211,6 +211,7 @@
 
   &--divider {
     margin: $spacing-03 0 0 0;
+    background-color: $interactive-02;
   }
 
   &--app-link,
@@ -295,7 +296,7 @@
   }
   &-subtitle {
     margin-left: $spacing-05;
-    &-workspace {
+    &-appname {
       margin-left: $spacing-05;
       padding-left: $spacing-05;
       border-left: $text-secondary 1px solid;
@@ -323,6 +324,11 @@
       display: flex;
       align-items: center;
     }
+  }
+
+  .#{$iot-prefix}--header__subtitle {
+    padding: 0 $spacing-05;
+    min-height: unset;
   }
 
   .#{$prefix}--header__menu {

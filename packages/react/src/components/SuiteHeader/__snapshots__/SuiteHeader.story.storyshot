@@ -179,7 +179,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -881,7 +886,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -2094,7 +2104,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
           <span
             className="iot--suite-header-subtitle"
           >
@@ -2917,7 +2932,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -3648,7 +3668,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -4893,7 +4918,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -5583,7 +5613,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -6173,7 +6208,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>
@@ -6875,7 +6915,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="iot--header__subtitle"
       >
         <div>
-          Application Name
+          <span
+            className=""
+            data-testid="suite-header--appName"
+          >
+            Application Name
+          </span>
         </div>
       </div>
     </a>

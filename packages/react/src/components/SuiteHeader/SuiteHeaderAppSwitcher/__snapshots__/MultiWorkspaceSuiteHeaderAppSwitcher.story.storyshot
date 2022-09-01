@@ -23,7 +23,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace1"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace1"
@@ -43,7 +43,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace2"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace2"
@@ -63,7 +63,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace3"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace3"
@@ -83,7 +83,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace4"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace4"
@@ -96,6 +96,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--side-nav__link-text"
           >
             Workspace 4
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+        role="separator"
+      />
+      <p>
+        Global / other
+      </p>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link bx--side-nav__link--current iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
+          href="https://www.ibm.com"
+          id="multi-workspace-suite-header-app-switcher--admin"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            Suite administration
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
+          data-testid="multi-workspace-suite-header-app-switcher--global-application-appconnect"
+          href="https://www.ibm.com/appconnect"
+          id="multi-workspace-suite-header-app-switcher--global-application-appconnect"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            AppConnect
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13,14H3c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1h5v1H3v10h10V8h1v5C14,13.6,13.6,14,13,14z"
+              />
+              <path
+                d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
+              />
+            </svg>
           </span>
         </a>
       </li>
@@ -238,6 +302,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
         role="separator"
       />
+      <p>
+        Global / other
+      </p>
       <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >
@@ -387,7 +454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace1"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace1"
@@ -407,7 +474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace2"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace2"
@@ -427,7 +494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace3"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace3"
@@ -447,7 +514,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
-          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link"
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
           data-testid="multi-workspace-suite-header-app-switcher--workspace-workspace4"
           href={null}
           id="multi-workspace-suite-header-app-switcher--workspace-workspace4"
@@ -460,6 +527,70 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             className="bx--side-nav__link-text"
           >
             Workspace 4
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
+        role="separator"
+      />
+      <p>
+        Global / other
+      </p>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--no-icon"
+          data-testid="multi-workspace-suite-header-app-switcher--admin"
+          href="https://www.ibm.com"
+          id="multi-workspace-suite-header-app-switcher--admin"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            Suite administration
+          </span>
+        </a>
+      </li>
+      <li
+        className="bx--side-nav__item bx--side-nav__item--large"
+      >
+        <a
+          className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--external iot--suite-header-app-switcher-multiworkspace--no-icon"
+          data-testid="multi-workspace-suite-header-app-switcher--global-application-appconnect"
+          href="https://www.ibm.com/appconnect"
+          id="multi-workspace-suite-header-app-switcher--global-application-appconnect"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          rel="noopener noreferrer"
+          tabIndex={-1}
+        >
+          <span
+            className="bx--side-nav__link-text"
+          >
+            AppConnect
+            <svg
+              aria-hidden={true}
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13,14H3c-0.6,0-1-0.4-1-1V3c0-0.6,0.4-1,1-1h5v1H3v10h10V8h1v5C14,13.6,13.6,14,13,14z"
+              />
+              <path
+                d="M10 1L10 2 13.3 2 9 6.3 9.7 7 14 2.7 14 6 15 6 15 1z"
+              />
+            </svg>
           </span>
         </a>
       </li>
@@ -602,6 +733,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
         role="separator"
       />
+      <p>
+        Global / other
+      </p>
       <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >
@@ -684,7 +818,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         Workspace
       </p>
       <li
-        className="bx--side-nav__item"
+        className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
           className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
@@ -841,6 +975,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
         role="separator"
       />
+      <p>
+        Global / other
+      </p>
       <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >
@@ -992,7 +1129,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         Workspace
       </p>
       <li
-        className="bx--side-nav__item"
+        className="bx--side-nav__item bx--side-nav__item--large"
       >
         <a
           className="bx--side-nav__link iot--suite-header-app-switcher-multiworkspace--app-link iot--suite-header-app-switcher-multiworkspace--workpsace-selector"
@@ -1149,6 +1286,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
         role="separator"
       />
+      <p>
+        Global / other
+      </p>
       <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >
@@ -1345,6 +1485,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--side-nav__divider iot--suite-header-app-switcher-multiworkspace--divider"
         role="separator"
       />
+      <p>
+        Global / other
+      </p>
       <li
         className="bx--side-nav__item bx--side-nav__item--large"
       >

@@ -28,6 +28,7 @@ const defaultProps = {
     selectWorkspace: 'Select a workspace',
     availableWorkspaces: 'Available workspaces',
     suiteAdmin: 'Suite administration',
+    global: 'Global / other',
     allApplicationsLink: 'All applications',
     requestAccess: 'Contact your administrator to request application access.',
     learnMoreLink: 'Learn more',
@@ -160,7 +161,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         key={`${testId}--${keySuffix}`}
         className={classnames(`${baseClassName}--app-link`, {
           [`${baseClassName}--external`]: isExternal,
-          [`${baseClassName}--no-icon`]: !icon && !isWorkspacesView,
+          [`${baseClassName}--no-icon`]: !icon,
         })}
         data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}
@@ -203,6 +204,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () => setWorkspacesView(true))}
                 tabIndex={tabIndex}
                 renderIcon={ChevronRight16}
+                large
               >
                 {selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace}
               </SideNavLink>
@@ -275,45 +277,6 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {adminLink || globalApplications?.length > 0 ? (
-            <SideNavDivider className={`${baseClassName}--divider`} />
-          ) : null}
-          {adminLink
-            ? renderNavItem(
-                mergedI18n.suiteAdmin,
-                adminLink,
-                false,
-                null,
-                handleAdminRoute,
-                isAdminView,
-                `admin`
-              )
-            : null}
-          {globalApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
-            renderNavItem(
-              name,
-              href,
-              isExternal,
-              icon,
-              handleApplicationRoute({ id, href, isExternal }),
-              false,
-              `global-application-${id}`
-            )
-          )}
-          {customApplications.length > 0 ? (
-            <SideNavDivider className={`${baseClassName}--divider`} />
-          ) : null}
-          {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
-            renderNavItem(
-              name,
-              href,
-              isExternal,
-              icon,
-              handleApplicationRoute({ id, href, isExternal }),
-              false,
-              `custom-application-${id}`
-            )
-          )}
         </>
       ) : (
         <>
@@ -354,6 +317,48 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
             )
           )}
         </>
+      )}
+      {adminLink || globalApplications?.length > 0 ? (
+        <>
+          <SideNavDivider className={`${baseClassName}--divider`} />
+          <p>{mergedI18n.global}</p>
+        </>
+      ) : null}
+      {adminLink
+        ? renderNavItem(
+            mergedI18n.suiteAdmin,
+            adminLink,
+            false,
+            null,
+            handleAdminRoute,
+            isAdminView,
+            `admin`
+          )
+        : null}
+      {globalApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
+        renderNavItem(
+          name,
+          href,
+          isExternal,
+          icon,
+          handleApplicationRoute({ id, href, isExternal }),
+          false,
+          `global-application-${id}`
+        )
+      )}
+      {customApplications.length > 0 ? (
+        <SideNavDivider className={`${baseClassName}--divider`} />
+      ) : null}
+      {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
+        renderNavItem(
+          name,
+          href,
+          isExternal,
+          icon,
+          handleApplicationRoute({ id, href, isExternal }),
+          false,
+          `custom-application-${id}`
+        )
       )}
     </ul>
   );
