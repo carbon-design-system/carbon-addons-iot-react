@@ -147,7 +147,7 @@ describe('DataSeriesFormItemModal', () => {
     label: 'Temperature',
     dataSourceId: 'temperature',
     hasStreamingMetricEnabled: true,
-    type: 'METRIC',
+    dataItemType: 'METRIC',
     color: 'red',
     aggregationMethods: [
       { id: 'last', text: 'Last' },

@@ -147,7 +147,6 @@ describe('TableCardFormContent', () => {
         getValidDataItems={() => [
           { dataItemId: 'validDataItem', dataSourceId: 'validDataItem', label: 'Data Item' },
         ]}
-        onEditDataItem={jest.fn()}
       />
     );
     // check for the temperature and pressure to be shown under data items
@@ -649,7 +648,6 @@ describe('TableCardFormContent', () => {
             ],
           },
         }}
-        onEditDataItem={jest.fn()}
       />
     );
     // All of the existing columns should be rendered in the data section

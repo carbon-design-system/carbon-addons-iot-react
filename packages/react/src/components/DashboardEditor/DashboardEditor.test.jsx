@@ -27,7 +27,6 @@ const commonProps = {
   onSubmit: mockOnSubmit,
   onDelete: jest.fn(),
   onCardSelect: jest.fn(),
-  onEditDataItems: jest.fn(),
   supportedCardTypes: [
     'TIMESERIES',
     'SIMPLE_BAR',

@@ -134,7 +134,6 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          // onEditDataItem={jest.fn()}
           {...commonActions}
         />
       );
@@ -231,7 +230,6 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          // onEditDataItem={jest.fn()}
           {...commonActions}
         />
       );
@@ -254,7 +252,6 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          // onEditDataItem={jest.fn()}
           {...commonActions}
         />
       );
@@ -344,7 +341,6 @@ describe('DataSeriesFormItem', () => {
           dataItems={dataItems}
           setSelectedDataItems={mockSetSelectedDataItems}
           translateWithId={jest.fn()}
-          onEditDataItem={jest.fn()}
           {...commonActions}
         />
       );
