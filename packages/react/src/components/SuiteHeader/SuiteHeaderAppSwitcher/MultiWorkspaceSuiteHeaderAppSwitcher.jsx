@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Apps16 } from '@carbon/icons-react';
+import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Grid16 } from '@carbon/icons-react';
 import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';
@@ -217,7 +217,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 mergedI18n.allApplicationsLink,
                 selectedWorkspace.href,
                 false,
-                Apps16,
+                Grid16,
                 handleWorkspaceRoute({ id: selectedWorkspace.id, href: selectedWorkspace.href }),
                 false,
                 `all-applications`
