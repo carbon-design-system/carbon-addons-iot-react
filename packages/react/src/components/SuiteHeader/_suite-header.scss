@@ -223,7 +223,7 @@
       }
     }
     > .#{$prefix}--side-nav__link-text {
-      white-space: break-spaces;
+      white-space: nowrap;
       color: $inverse-01;
     }
     svg {

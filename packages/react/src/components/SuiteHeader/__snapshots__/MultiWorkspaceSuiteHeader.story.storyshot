@@ -630,6 +630,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 1"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -650,6 +651,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 2"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -670,6 +672,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -690,6 +693,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 4"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -717,6 +721,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -737,6 +742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -1401,6 +1407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -1439,6 +1446,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Monitor"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -1467,6 +1475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -1495,6 +1504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -1522,6 +1532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -1542,6 +1553,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -2235,6 +2247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -2277,6 +2290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -2315,6 +2329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -2343,6 +2358,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -2371,6 +2387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -2398,6 +2415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -2418,6 +2436,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -3559,6 +3578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -3601,6 +3621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -3639,6 +3660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -3667,6 +3689,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -3695,6 +3718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -3722,6 +3746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -3742,6 +3767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -3783,6 +3809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Custom Application"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -3811,6 +3838,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="External Custom Application"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -4492,6 +4520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -4534,6 +4563,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -4572,6 +4602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -4600,6 +4631,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -4628,6 +4660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -4655,6 +4688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -4675,6 +4709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -5450,6 +5485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -5492,6 +5528,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -5530,6 +5567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -5558,6 +5596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -5586,6 +5625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -5613,6 +5653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -5633,6 +5674,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -6327,6 +6369,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -6369,6 +6412,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -6407,6 +6451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -6435,6 +6480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -6463,6 +6509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -6490,6 +6537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -7686,6 +7734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -7728,6 +7777,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -7766,6 +7816,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -7794,6 +7845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -7822,6 +7874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -7849,6 +7902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -7869,6 +7923,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -9117,6 +9172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -9159,6 +9215,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -9197,6 +9254,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -9225,6 +9283,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -9253,6 +9312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -9280,6 +9340,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -9300,6 +9361,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -9967,6 +10029,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 1"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -9987,6 +10050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 2"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10007,6 +10071,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10027,6 +10092,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace 4"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10054,6 +10120,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10074,6 +10141,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10738,6 +10806,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -10776,6 +10845,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Monitor"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -10804,6 +10874,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -10832,6 +10903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10859,6 +10931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -10879,6 +10952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -11549,6 +11623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         tabIndex={-1}
+                        title="Workspace 3"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -11591,6 +11666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -11629,6 +11705,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -11657,6 +11734,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -11685,6 +11763,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -11712,6 +11791,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -11732,6 +11812,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -12396,6 +12477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="All applications"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -12434,6 +12516,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Health"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -12462,6 +12545,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Manage"
                       >
                         <div
                           className="bx--side-nav__icon bx--side-nav__icon--small"
@@ -12490,6 +12574,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Workspace administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -12517,6 +12602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="Suite administration"
                       >
                         <span
                           className="bx--side-nav__link-text"
@@ -12537,6 +12623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                         onKeyDown={[Function]}
                         rel="noopener noreferrer"
                         tabIndex={-1}
+                        title="AppConnect"
                       >
                         <span
                           className="bx--side-nav__link-text"

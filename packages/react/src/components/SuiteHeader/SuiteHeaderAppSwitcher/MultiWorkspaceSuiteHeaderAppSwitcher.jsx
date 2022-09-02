@@ -178,14 +178,18 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         rel="noopener noreferrer"
         large
         isActive={isSelected}
+        title={name}
       >
         {name}
         {isExternal ? <Launch16 /> : null}
       </SideNavLink>
     ),
 
-    [baseClassName, tabIndex, testId, isWorkspacesView]
+    [baseClassName, tabIndex, testId]
   );
+
+  const selectedWorkspaceLabel =
+    selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace;
 
   return (
     <ul data-testid={testId} className={baseClassName}>
@@ -205,8 +209,9 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 tabIndex={tabIndex}
                 renderIcon={ChevronRight16}
                 large
+                title={selectedWorkspaceLabel}
               >
-                {selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace}
+                {selectedWorkspaceLabel}
               </SideNavLink>
 
               <SideNavDivider className={`${baseClassName}--divider`} />
@@ -294,6 +299,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 renderIcon={ChevronLeft16}
                 tabIndex={tabIndex}
                 large
+                title={mergedI18n.backToAppSwitcher}
               >
                 {mergedI18n.backToAppSwitcher}
               </SideNavLink>
