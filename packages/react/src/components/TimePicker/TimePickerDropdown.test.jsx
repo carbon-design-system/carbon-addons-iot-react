@@ -197,6 +197,7 @@ describe('TimePickerDropdown', () => {
     expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
     userEvent.click(document.body);
     await waitFor(() => expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument());
+    expect(screen.queryByText(/The time entered is invalid/)).toBeTruthy();
     const input1 = screen.getByTestId('time-picker-test-input-1');
     const input2 = screen.getByTestId('time-picker-test-input-2');
     fireEvent.focus(input1);

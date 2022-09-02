@@ -14,6 +14,7 @@ import {
 import { settings } from '../../constants/Settings';
 
 import DateTimePicker from './DateTimePickerV2';
+import DateTimePickerProps from './DateTimePickerV2WithTimeSpinner';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePickerV2.story';
 
 const defaultPresets = [
@@ -221,6 +222,31 @@ describe('DateTimePickerV2', () => {
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
 
+    userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+
+    userEvent.click(screen.getAllByLabelText('Increment hours')[1]);
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 11:49')).toBeVisible();
+
+    userEvent.click(screen.getByText('Apply'));
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
+  });
+
+  it('should render with a predefined absolute range with new time picker', () => {
+    render(
+      <DateTimePicker
+        useNewTimeSpinner
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+      />
+    );
+
+    // default value starts at   '2020-04-01' at 12:34 to 2020-04-06 at 10:49
+    expect(screen.getByText('2020-04-01 12:34 to 2020-04-06 10:49')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
     // open start time picker
     userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
 
@@ -258,20 +284,12 @@ describe('DateTimePickerV2', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('should go back to presets when cancel button is picked on Absolute screen', () => {
-    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
-
-    // first open the menu
-    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
-    userEvent.click(screen.getByText(/Back/));
-    expect(screen.getByText(/Custom Range/i)).toBeInTheDocument();
-  });
-
   it('should render with a predefined single select date and time', () => {
-    const { i18n } = DateTimePicker.defaultProps;
+    const { i18n } = DateTimePickerProps.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        useNewTimeSpinner
         onApply={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
@@ -296,7 +314,6 @@ describe('DateTimePickerV2', () => {
     const startTime = screen.getByTestId('date-time-picker-input');
     // open time picker
     userEvent.click(screen.getByTestId('date-time-picker-time-btn'));
-
     // select hour
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
@@ -319,6 +336,7 @@ describe('DateTimePickerV2', () => {
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        useNewTimeSpinner
         onApply={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
@@ -341,6 +359,7 @@ describe('DateTimePickerV2', () => {
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        useNewTimeSpinner
         onApply={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
@@ -368,8 +387,40 @@ describe('DateTimePickerV2', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
+  it('should go back to presets when cancel button is picked on Absolute screen', () => {
+    render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    userEvent.click(screen.getByText(/Back/));
+    expect(screen.getByText(/Custom Range/i)).toBeInTheDocument();
+  });
+
   it('should switch from relative to absolute and then to preset', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultRelativeValue} />);
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
+    // There should only be one on the relative page
+    expect(screen.getAllByTitle(/Increment hours/).length).toEqual(1);
+
+    userEvent.click(screen.getAllByText('Absolute')[0]);
+
+    // There should be two on the Absolute page
+    expect(screen.getAllByTitle(/Increment hours/).length).toEqual(2);
+
+    userEvent.click(screen.getAllByText('Absolute')[0]);
+  });
+
+  it('should switch from relative to absolute and then to preset with new time picker', () => {
+    render(
+      <DateTimePicker
+        useNewTimeSpinner
+        {...dateTimePickerProps}
+        defaultValue={defaultRelativeValue}
+      />
+    );
 
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
@@ -490,6 +541,34 @@ describe('DateTimePickerV2', () => {
     // first open the menu
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
 
+    userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 10:49')).toBeVisible();
+
+    userEvent.click(screen.getByText('Back'));
+    userEvent.click(screen.getByText('Cancel'));
+
+    expect(dateTimePickerProps.onCancel).toHaveBeenCalled();
+    expect(screen.getByText('2020-04-01 12:34 to 2020-04-06 10:49')).toBeVisible();
+  });
+
+  it('should render with programmatically set absolute range with new time spinner', () => {
+    const { rerender } = render(<DateTimePicker useNewTimeSpinner {...dateTimePickerProps} />);
+
+    expect(screen.getByText(PRESET_VALUES[0].label)).toBeVisible();
+
+    rerender(
+      <DateTimePicker
+        useNewTimeSpinner
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+      />
+    );
+
+    expect(screen.getByText('2020-04-01 12:34 to 2020-04-06 10:49')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
     // open start time picker
     userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
 
@@ -510,6 +589,30 @@ describe('DateTimePickerV2', () => {
 
   it('changing the absolute range and applying', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
+    // first open the menu and select custom range
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    // Select custom range
+    expect(screen.getByText(/Custom range/i)).toBeInTheDocument();
+    userEvent.click(screen.getByText(/Custom range/i));
+    // Select absolute
+    expect(screen.getByText(/Absolute/)).toBeInTheDocument();
+    userEvent.click(screen.getByText(/Absolute/i));
+    userEvent.click(screen.getByLabelText('April 10, 2020'));
+    userEvent.click(screen.getByLabelText('April 11, 2020'));
+    expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
+    userEvent.click(screen.getByText('Apply'));
+    // This should be displayed
+    expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
+  });
+
+  it('changing the absolute range and applying with new time spinner', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+        useNewTimeSpinner
+      />
+    );
     // first open the menu and select custom range
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
     // Select custom range
@@ -589,7 +692,7 @@ describe('DateTimePickerV2', () => {
       },
     ];
 
-    const i18nDefault = DateTimePicker.defaultProps.i18n;
+    const i18nDefault = DateTimePickerProps.defaultProps.i18n;
 
     const relatives = [
       {
@@ -699,7 +802,7 @@ describe('DateTimePickerV2', () => {
       />
     );
 
-    userEvent.click(screen.getByText('2021-08-01 00:00 to 2021-08-06 00:00'));
+    userEvent.click(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49'));
     expect(screen.queryByLabelText('Start time')).toBeNull();
     expect(screen.queryByLabelText('End time')).toBeNull();
   });
@@ -725,6 +828,7 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     expect(screen.getByText('minutes')).toBeInTheDocument();
   });
+
   it('should render light when given', () => {
     const { container } = render(
       <DateTimePicker
@@ -748,8 +852,19 @@ describe('DateTimePickerV2', () => {
       1
     );
   });
+
   it('should fallback to 00:00 for absolute times when none given', () => {
     render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('00:00');
+  });
+
+  it('should fallback to 00:00 for absolute times when none given (new time spinner)', () => {
+    render(<DateTimePicker useNewTimeSpinner {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
@@ -768,6 +883,7 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     expect(screen.queryByText('Custom Range')).toBeNull();
   });
+
   it('should show relative labels', () => {
     render(
       <DateTimePicker
@@ -819,7 +935,7 @@ describe('DateTimePickerV2', () => {
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText('Apply')).toBeEnabled();
     const numberInput = screen.getByLabelText(
       'Numeric input field with increment and decrement buttons'
@@ -843,12 +959,12 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when relative TimePickerSpinner input is invalid', () => {
-    const { i18n } = DateTimePicker.defaultProps;
+    const { i18n } = DateTimePickerProps.defaultProps;
     render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
     const relativeToTime = screen.getByPlaceholderText('hh:mm');
     expect(relativeToTime).toBeValid();
@@ -870,11 +986,80 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day', () => {
-    const { i18n } = DateTimePicker.defaultProps;
+    const { i18n } = DateTimePickerProps.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2020, 3, 1, 12, 34, 0),
+            end: new Date(2020, 3, 1, 11, 49, 0),
+            startDate: '2020-04-01',
+            startTime: '12:34',
+            endDate: '2020-04-01',
+            endTime: '11:49',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+
+    // Get start and end time inputs
+    const startTime = screen.getAllByTestId('time-picker-spinner')[0];
+    const endTime = screen.getAllByTestId('time-picker-spinner')[1];
+
+    const timeRange = screen.getByTestId('date-time-picker__field');
+
+    expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-01 11:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-01 11:49
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:34');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('11:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 11:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+
+    // 2020-04-01 13:34 to 2020-04-01 12:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}12:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('12:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 12:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+
+    // 2020-04-01 13:34 to 2020-04-01 13:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-01 13:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:50 to 2020-04-01 13:49
+    userEvent.type(startTime, '{backspace}{backspace}50');
+    expect(startTime).toHaveValue('13:50');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-01 13:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
+  it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day (with new time spinner)', () => {
+    const { i18n } = DateTimePickerProps.defaultProps;
 
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        useNewTimeSpinner
         id="picker-test"
         hasTimeInput
         defaultValue={{
@@ -959,12 +1144,81 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
   });
 
-  it('should enable apply button when absolute DatePicker input has start and end date in different dates', async () => {
-    const { i18n } = DateTimePicker.defaultProps;
+  it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
+    const { i18n } = DateTimePickerProps.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2020, 3, 1, 12, 34, 0),
+            end: new Date(2020, 3, 6, 11, 49, 0),
+            startDate: '2020-04-01',
+            startTime: '12:34',
+            endDate: '2020-04-06',
+            endTime: '11:49',
+          },
+        }}
+      />
+    );
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+
+    // Get start and end time inputs
+    const startTime = screen.getAllByTestId('time-picker-spinner')[0];
+    const endTime = screen.getAllByTestId('time-picker-spinner')[1];
+
+    const timeRange = screen.getByTestId('date-time-picker__field');
+
+    expect(timeRange).toHaveTextContent('2020-04-01 12:34 to 2020-04-06 11:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 11:49
+    userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:34');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('11:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 11:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 12:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}12:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('12:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 12:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:34 to 2020-04-06 13:49
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:49');
+    expect(startTime).toHaveValue('13:34');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 13:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    // 2020-04-01 13:50 to 2020-04-06 13:49
+    userEvent.type(startTime, '{backspace}{backspace}50');
+    expect(startTime).toHaveValue('13:50');
+    expect(endTime).toHaveValue('13:49');
+    expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-06 13:49');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+
+    userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}9999');
+    userEvent.type(startTime, '{backspace}{backspace}51');
+    expect(startTime).toHaveValue('13:51');
+    expect(endTime).toHaveValue('9999');
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
+  it('should enable apply button when absolute DatePicker input has start and end date in different dates (with new time spinner)', async () => {
+    const { i18n } = DateTimePickerProps.defaultProps;
 
     render(
       <DateTimePicker
         {...dateTimePickerProps}
+        useNewTimeSpinner
         id="picker-test"
         testId="date-time-picker"
         hasTimeInput

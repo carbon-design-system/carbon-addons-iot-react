@@ -1,13 +1,12 @@
 import { cloneDeep } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { settings } from '../../constants/Settings';
 import { PICKER_KINDS, INTERVAL_VALUES, RELATIVE_VALUES } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
-
-const customParseFormat = require('dayjs/plugin/customParseFormat');
 
 /** convert time from format hh:mm A to HH:mm
  * *
@@ -254,6 +253,17 @@ export const isValidDate = (date, time) => {
 };
 
 /**
+ * 12 hour time validator
+ *
+ * @param {string} time The time string to check
+ * @returns bool
+ */
+export const isValid12HourTime = (time) => {
+  const isValid12HoursRegex = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/;
+  return isValid12HoursRegex.test(time) || time === '';
+};
+
+/**
  * Simple function to handle keeping flatpickr open when it would normally close
  *
  * @param {*} range unused
@@ -378,6 +388,7 @@ export const useAbsoluteDateTimeValue = () => {
     resetAbsoluteValue,
     changeAbsolutePropertyValue,
     format12hourTo24hour,
+    isValid12HourTime,
   };
 };
 

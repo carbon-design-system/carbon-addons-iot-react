@@ -122,35 +122,14 @@ const TimePickerDropdown = ({
   const [secondaryValueState, setSecondaryValueState] = useState(secondaryValue || '');
   const [invalidState, setInvalidState] = useState(invalidProp);
   const [secondaryInvalidState, setSecondaryInvalidState] = useState(secondaryInvalidProp);
-  const [resetInitialValue, setResetInitialValue] = useState(true);
-
-  useEffect(
-    () => {
-      if (resetInitialValue) {
-        setValueState(value);
-        setResetInitialValue(false);
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [value]
-  );
 
   useEffect(() => {
     if (init.current) {
-      if (value === valueState) {
-        setResetInitialValue(true);
-      }
-
-      onChange(
-        valueState,
-        secondaryValueState,
-        !validate(valueState),
-        !validate(secondaryValueState)
-      );
+      onChange(valueState, secondaryValueState);
     } else {
       init.current = true;
     }
-  }, [onChange, secondaryValueState, valueState, init, value]);
+  }, [onChange, secondaryValueState, valueState, init]);
 
   useEffect(() => {
     setInvalidState(invalidProp);
@@ -245,8 +224,13 @@ const TimePickerDropdown = ({
       e.relatedTarget?.parentNode?.classList[0].includes('iot--list-spinner');
 
     if (!contained) {
-      // close dropdown
+      // close dropdown and validate
       setOpenState(false);
+      setInvalidState(!validate(inputRef.current.value));
+      /* istanbul ignore else */
+      if (secondaryInputRef.current) {
+        setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
+      }
     }
   };
 

@@ -124,6 +124,7 @@ export const SingleSelect = () => {
   return (
     <DateTimePicker
       id="datetimepicker"
+      useNewTimeSpinner
       defaultValue={{
         timeRangeKind: PICKER_KINDS.SINGLE,
         timeSingleValue: {
@@ -146,6 +147,27 @@ export const SingleSelect = () => {
 };
 
 SingleSelect.storyName = 'Single select';
+export const SelectedAbsoluteWithNewTimeSpinner = () => {
+  return (
+    <DateTimePicker
+      id="datetimepicker"
+      useNewTimeSpinner
+      defaultValue={defaultAbsoluteValue}
+      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      hasTimeInput={boolean('hasTimeInput', true)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
+      hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 6000) }}
+      i18n={object('i18n', {
+        startTimeLabel: 'Start',
+        endTimeLabel: 'end',
+      })}
+    />
+  );
+};
+
+SelectedAbsoluteWithNewTimeSpinner.storyName = 'Range select with new time spinner';
 
 export const WithoutARelativeOption = () => {
   return (

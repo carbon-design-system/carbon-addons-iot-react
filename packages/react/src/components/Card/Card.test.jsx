@@ -317,7 +317,6 @@ describe('Card', () => {
         offset: 24 * 60,
         tooltipValue: '2018-09-20 08:57 to Now',
       },
-      timeSingleValue: null,
     });
 
     expect(screen.getByTestId('Card-subtitle')).toHaveTextContent('2018-09-20 08:57 to Now');
