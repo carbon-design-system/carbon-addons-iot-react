@@ -10730,6 +10730,7 @@ Map {
       "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
+      "showCloseIconWhenPanelExpanded": false,
       "skipto": "#main-content",
       "subtitle": null,
       "testId": "header",
@@ -10850,6 +10851,9 @@ Map {
       },
       "shortAppName": Object {
         "type": "string",
+      },
+      "showCloseIconWhenPanelExpanded": Object {
+        "type": "bool",
       },
       "skipto": Object {
         "type": "string",

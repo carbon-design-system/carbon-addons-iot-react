@@ -554,6 +554,7 @@ const SuiteHeader = ({
                   ],
                 },
               ].filter((i) => i)}
+              showCloseIconWhenPanelExpanded
               {...otherHeaderProps}
             />
             {sideNavProps ? (
