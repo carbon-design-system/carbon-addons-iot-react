@@ -147,6 +147,7 @@ export const SingleSelect = () => {
 };
 
 SingleSelect.storyName = 'Single select';
+
 export const SelectedAbsoluteWithNewTimeSpinner = () => {
   return (
     <DateTimePicker
@@ -157,7 +158,6 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
-      hasIconOnly={boolean('hasIconOnly', false)}
       style={{ zIndex: number('zIndex', 6000) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',

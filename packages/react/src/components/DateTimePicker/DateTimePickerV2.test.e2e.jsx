@@ -255,6 +255,39 @@ describe('DateTimePickerV2', () => {
     cy.findByText('Custom range').should('be.visible');
   });
 
+  it('should open the flyout when hitting enter (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ width: '600px', padding: '3rem', marginLeft: '300px' }}>
+        <DateTimePicker
+          useNewTimeSpinner
+          onApply={onApply}
+          onCancel={onCancel}
+          id="picker-test"
+          hasTimeInput
+          hasIconOnly
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      </div>
+    );
+
+    cy.findByTestId('date-time-picker-datepicker-flyout-button').trigger('keydown', {
+      key: 'Home',
+    });
+    cy.findByText('Custom range').should('not.exist');
+    cy.findByTestId('date-time-picker-datepicker-flyout-button').trigger('keydown', {
+      key: 'Enter',
+    });
+    cy.findByText('Custom range').should('be.visible');
+  });
+
   it('should not parse when relativeToWhen is empty', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
@@ -574,6 +607,20 @@ describe('DateTimePickerV2', () => {
     cy.findByText('Last 12 hours').should('not.exist');
   });
 
+  it('should close when `Escape` is pressed (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" useNewTimeSpinner />
+    );
+
+    cy.get('body').realPress('Tab');
+    cy.focused().type('{enter}');
+    cy.findByText('Last 12 hours').should('be.visible');
+    cy.focused().type('{esc}');
+    cy.findByText('Last 12 hours').should('not.exist');
+  });
+
   it("should do nothing when `ArrowDown` is pressed if it isn't open.", () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
@@ -650,6 +697,58 @@ describe('DateTimePickerV2', () => {
               'YYYY-MM-[12]'
             )} 00:00`,
           },
+        });
+      });
+  });
+
+  it('should pick ranges across months (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    // the calendar in Flatpickr does not respect MockDate or cy.clock, so we must resort to using
+    // the current date, but picking specific days to test and format the dynamic output as expected
+    const now = dayjs();
+    const thisMonthLabel = now.format(`MMMM [12], YYYY`);
+    const lastMonth = now.subtract(1, 'month');
+    const lastMonthLabel = lastMonth.format(`MMMM [20], YYYY`);
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput={false}
+        useNewTimeSpinner
+      />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).should('be.visible').click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get(`.flatpickr-prev-month`).click();
+    cy.findByLabelText(lastMonthLabel).click();
+    cy.findByLabelText(lastMonthLabel).should('have.class', 'selected');
+    cy.get(`.flatpickr-next-month`).click();
+    cy.findByLabelText(thisMonthLabel).click();
+    cy.findByLabelText(thisMonthLabel).should('have.class', 'selected');
+    cy.findByRole('button', { name: 'Apply' })
+      .click()
+      .should(() => {
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'ABSOLUTE',
+          timeRangeValue: {
+            end: Cypress.sinon.match.any,
+            endDate: now.format(`MM/[12]/YYYY`),
+            endTime: '00:00',
+            start: Cypress.sinon.match.any,
+            startDate: lastMonth.format(`MM/[20]/YYYY`),
+            startTime: '00:00',
+            humanValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
+              'YYYY-MM-[12]'
+            )} 00:00`,
+            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
+              'YYYY-MM-[12]'
+            )} 00:00`,
+          },
+          timeSingleValue: null,
         });
       });
   });

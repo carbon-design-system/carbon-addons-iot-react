@@ -799,7 +799,6 @@ const DateTimePicker = ({
   };
 
   const handleSingleTimeValueChange = (startState) => {
-    console.log('render');
     setSingleTimeValue(startState);
     setInvalidRangeStartTime(!isValid12HourTime(startState));
   };
