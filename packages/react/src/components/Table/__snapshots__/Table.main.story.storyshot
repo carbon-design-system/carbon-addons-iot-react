@@ -33278,7 +33278,53 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     className="iot--row-actions-container__background"
                     data-testid="row-action-container-background"
                     onClick={[Function]}
-                  />
+                  >
+                    <button
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                      aria-label="More actions"
+                      className="iot--row-actions-cell--overflow-menu bx--overflow-menu bx--overflow-menu--md"
+                      data-testid="table-28-row-9-row-actions-cell-overflow"
+                      id="table-28-row-9-row-actions-cell-overflow"
+                      onClick={[Function]}
+                      onClose={[Function]}
+                      onKeyDown={[Function]}
+                      open={false}
+                      type="button"
+                    >
+                      <svg
+                        aria-label="More actions"
+                        className="bx--overflow-menu__icon"
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role="img"
+                        viewBox="0 0 32 32"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle
+                          cx="16"
+                          cy="8"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="16"
+                          r="2"
+                        />
+                        <circle
+                          cx="16"
+                          cy="24"
+                          r="2"
+                        />
+                        <title>
+                          More actions
+                        </title>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               </td>
             </tr>
