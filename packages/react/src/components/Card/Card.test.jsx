@@ -618,11 +618,13 @@ describe('Card', () => {
     const singleExtraAction = {
       id: 'extrasingleaction',
       icon: Add16,
+      iconDescription: 'Add',
       callback: mockExtraSingle,
     };
     const singleExtraDisabledAction = {
       id: 'extrasingleaction',
       icon: Add16,
+      iconDescription: 'Add',
       disabled: true,
       callback: mockExtraSingle,
     };
