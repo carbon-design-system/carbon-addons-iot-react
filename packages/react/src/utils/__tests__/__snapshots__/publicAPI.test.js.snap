@@ -8287,7 +8287,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -15584,7 +15740,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -16596,7 +16908,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -17709,7 +18177,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -18823,7 +19447,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -19779,7 +20559,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -20975,7 +21911,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -22110,7 +23202,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -23314,7 +24562,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -24284,7 +25688,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -25303,7 +26863,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -26225,7 +27941,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -30106,7 +31978,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -32117,7 +34145,163 @@ Map {
             Object {
               "type": "string",
             },
-            undefined,
+            Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "PRESET",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "id": Object {
+                                "type": "string",
+                              },
+                              "label": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "offset": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "RELATIVE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "lastInterval": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "lastNumber": Object {
+                                "isRequired": true,
+                                "type": "number",
+                              },
+                              "relativeToTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "relativeToWhen": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                  Object {
+                    "args": Array [
+                      Object {
+                        "timeRangeKind": Object {
+                          "args": Array [
+                            Array [
+                              "ABSOLUTE",
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOf",
+                        },
+                        "timeRangeValue": Object {
+                          "args": Array [
+                            Object {
+                              "end": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "endDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "endTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "start": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "string",
+                                    },
+                                    Object {
+                                      "args": Array [
+                                        [Function],
+                                      ],
+                                      "type": "instanceOf",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
+                              },
+                              "startDate": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                              "startTime": Object {
+                                "isRequired": true,
+                                "type": "string",
+                              },
+                            },
+                          ],
+                          "isRequired": true,
+                          "type": "exact",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
           ],
         ],
         "type": "oneOfType",
