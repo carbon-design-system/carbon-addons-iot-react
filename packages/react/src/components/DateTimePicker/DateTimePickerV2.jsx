@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as uuid from 'uuid';
 
-import DateTimePickerNew, { propTypes } from './DateTimePickerV2WithTimeSpinner';
+import DateTimePickerNew, { propTypes, defaultProps } from './DateTimePickerV2WithTimeSpinner';
 import DateTimePickerOld from './DateTimePickerV2WithoutTimeSpinner';
 
 const DateTimePicker = ({
@@ -93,6 +93,7 @@ DateTimePicker.propTypes = {
 };
 
 DateTimePicker.defaultProps = {
+  ...defaultProps,
   useNewTimeSpinner: false,
 };
 

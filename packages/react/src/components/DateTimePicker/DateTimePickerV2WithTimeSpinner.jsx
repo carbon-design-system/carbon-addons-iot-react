@@ -184,7 +184,7 @@ export const propTypes = {
   style: PropTypes.objectOf(PropTypes.string),
 };
 
-const defaultProps = {
+export const defaultProps = {
   testId: 'date-time-picker',
   defaultValue: null,
   dateTimeMask: 'YYYY-MM-DD HH:mm',
