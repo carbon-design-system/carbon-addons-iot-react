@@ -106,6 +106,7 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
+  overflow-y: hidden;
   padding-top: 0;
 
   li {
@@ -196,6 +197,7 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
+  overflow-y: auto;
   background-color: $ui-05;
   padding-top: 0;
 

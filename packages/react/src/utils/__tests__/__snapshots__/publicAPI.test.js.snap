@@ -11325,7 +11325,6 @@ Map {
         "administrationIcon": "Administration",
         "documentation": "Documentation",
         "gettingStarted": "Getting started",
-        "global": "Global / other",
         "help": "Help",
         "logout": "Logout",
         "profileLogoutButton": "Log out",
@@ -11347,6 +11346,7 @@ Map {
         "surveyTitle": "Enjoying {solutionName}?",
         "switcherAvailableWorkspaces": "Available workspaces",
         "switcherBackToAppSwitcher": "Back to applications",
+        "switcherGlobal": "Global / other",
         "switcherLearnMoreLink": "Learn more",
         "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
@@ -11600,9 +11600,6 @@ Map {
             "gettingStarted": Object {
               "type": "string",
             },
-            "global": Object {
-              "type": "string",
-            },
             "help": Object {
               "type": "string",
             },
@@ -11684,6 +11681,9 @@ Map {
               "type": "string",
             },
             "switcherBackToAppSwitcher": Object {
+              "type": "string",
+            },
+            "switcherGlobal": Object {
               "type": "string",
             },
             "switcherMyApplications": Object {
@@ -12683,7 +12683,6 @@ Map {
       "administrationIcon": "Administration",
       "documentation": "Documentation",
       "gettingStarted": "Getting started",
-      "global": "Global / other",
       "help": "Help",
       "logout": "Logout",
       "profileLogoutButton": "Log out",
@@ -12705,6 +12704,7 @@ Map {
       "surveyTitle": "Enjoying {solutionName}?",
       "switcherAvailableWorkspaces": "Available workspaces",
       "switcherBackToAppSwitcher": "Back to applications",
+      "switcherGlobal": "Global / other",
       "switcherLearnMoreLink": "Learn more",
       "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",

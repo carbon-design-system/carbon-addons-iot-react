@@ -351,6 +351,7 @@ const SuiteHeader = ({
                         selectWorkspace: mergedI18N.switcherSelectWorkspace,
                         availableWorkspaces: mergedI18N.switcherAvailableWorkspaces,
                         suiteAdmin: mergedI18N.switcherSuiteAdmin,
+                        global: mergedI18N.switcherGlobal,
                         myApplications: mergedI18N.switcherMyApplications,
                         allApplicationsLink: mergedI18N.switcherNavigatorLink,
                         requestAccess: mergedI18N.switcherRequestAccess,

@@ -61,7 +61,7 @@ export const SuiteHeaderI18NPropTypes = {
   switcherSelectWorkspace: PropTypes.string,
   switcherAvailableWorkspaces: PropTypes.string,
   switcherSuiteAdmin: PropTypes.string,
-  global: PropTypes.string,
+  switcherGlobal: PropTypes.string,
   switcherMyApplications: PropTypes.string,
   switcherNavigatorLink: PropTypes.string,
   whatsNew: PropTypes.string,

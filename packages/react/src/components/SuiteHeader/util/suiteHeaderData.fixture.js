@@ -391,7 +391,7 @@ const fixture = {
     switcherSelectWorkspace: 'Select a workspace',
     switcherAvailableWorkspaces: 'Available workspaces',
     switcherSuiteAdmin: 'Suite administration',
-    global: 'Global / other',
+    switcherGlobal: 'Global / other',
     surveyPrivacyPolicy: 'Privacy Policy',
     switcherLearnMoreLink: 'Learn more',
     switcherNavigatorLink: 'All applications',
