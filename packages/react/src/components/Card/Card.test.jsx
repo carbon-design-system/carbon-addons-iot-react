@@ -658,7 +658,23 @@ describe('Card', () => {
     };
 
     // Test single icon button action
+
+    // when there is no icon description use the global Action Label
     const { rerender } = render(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={{ ...singleExtraAction, iconDescription: null }}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    expect(mockExtraSingle).toHaveBeenCalled();
+    jest.resetAllMocks();
+
+    render(
       <Card
         {...cardProps}
         size={CARD_SIZES.LARGE}
@@ -716,7 +732,7 @@ describe('Card', () => {
       />
     );
     fireEvent.click(screen.getAllByTitle('Settings')[0]);
-    const firstItem = await screen.findByText('Item1');
+    let firstItem = await screen.findByText('Item1');
     fireEvent.click(firstItem);
     expect(mockExtraMultiple).toHaveBeenCalled();
 
@@ -735,6 +751,24 @@ describe('Card', () => {
     // Reopen menu to verify hidden item
     fireEvent.click(screen.getAllByTitle('Settings')[0]);
     expect(screen.queryByText('Item4')).not.toBeInTheDocument();
+    jest.resetAllMocks();
+
+    // when there is no icon description use the global Action Label
+    rerender(
+      <Card
+        {...cardProps}
+        size={CARD_SIZES.LARGE}
+        extraActions={{ ...multiExtraAction, icon: Tree16, iconDescription: null }}
+        availableActions={{
+          extra: true,
+        }}
+      />
+    );
+    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+
+    firstItem = await screen.findByText('Item1');
+    fireEvent.click(firstItem);
+    expect(mockExtraMultiple).toHaveBeenCalled();
   });
 
   it('should not have padding when padding="none"', () => {
