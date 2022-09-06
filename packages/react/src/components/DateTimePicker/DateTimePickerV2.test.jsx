@@ -14,7 +14,6 @@ import {
 import { settings } from '../../constants/Settings';
 
 import DateTimePicker from './DateTimePickerV2';
-import DateTimePickerProps from './DateTimePickerV2WithTimeSpinner';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePickerV2.story';
 
 const defaultPresets = [
@@ -436,7 +435,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should render with a predefined single select date and time', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
@@ -972,7 +971,7 @@ describe('DateTimePickerV2', () => {
       },
     ];
 
-    const i18nDefault = DateTimePickerProps.defaultProps.i18n;
+    const i18nDefault = DateTimePicker.defaultProps.i18n;
 
     const relatives = [
       {
@@ -1352,7 +1351,7 @@ describe('DateTimePickerV2', () => {
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText('Apply')).toBeEnabled();
     const numberInput = screen.getByLabelText(
       'Numeric input field with increment and decrement buttons'
@@ -1380,7 +1379,7 @@ describe('DateTimePickerV2', () => {
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText('Apply')).toBeEnabled();
     const numberInput = screen.getByLabelText(
       'Numeric input field with increment and decrement buttons'
@@ -1404,12 +1403,12 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when relative TimePickerSpinner input is invalid', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
     const relativeToTime = screen.getByPlaceholderText('hh:mm');
     expect(relativeToTime).toBeValid();
@@ -1431,12 +1430,12 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when relative TimePickerSpinner input is invalid (new time spinner)', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     render(<DateTimePicker useNewTimeSpinner {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
-    userEvent.click(screen.queryByText(DateTimePickerProps.defaultProps.i18n.customRangeLinkLabel));
+    userEvent.click(screen.queryByText(DateTimePicker.defaultProps.i18n.customRangeLinkLabel));
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
     const relativeToTime = screen.getByPlaceholderText('hh:mm');
     expect(relativeToTime).toBeValid();
@@ -1458,7 +1457,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
@@ -1526,7 +1525,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner input is invalid on the same day (with new time spinner)', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
 
     render(
       <DateTimePicker
@@ -1617,7 +1616,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
@@ -1685,7 +1684,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should enable apply button when absolute DatePicker input has start and end date in different dates (with new time spinner)', async () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
 
     render(
       <DateTimePicker

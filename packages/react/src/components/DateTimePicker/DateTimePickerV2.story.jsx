@@ -103,6 +103,7 @@ export const SelectedAbsolute = () => {
   return (
     <DateTimePicker
       id="datetimepicker"
+      useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
       defaultValue={defaultAbsoluteValue}
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
@@ -146,7 +147,7 @@ export const SingleSelect = () => {
   );
 };
 
-SingleSelect.storyName = 'Single select';
+SingleSelect.storyName = 'Single select with new time spinner';
 
 export const SelectedAbsoluteWithNewTimeSpinner = () => {
   return (

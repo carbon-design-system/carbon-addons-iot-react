@@ -8,7 +8,6 @@ import dayjs from '../../utils/dayjs';
 import { INTERVAL_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
 import DateTimePicker from './DateTimePickerV2';
-import DateTimePickerProps from './DateTimePickerV2WithTimeSpinner';
 
 const { iotPrefix } = settings;
 
@@ -173,7 +172,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when relative TimePickerSpinner input is invalid ', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" hasTimeInput />);
@@ -192,7 +191,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner inputs are invalid ', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -236,7 +235,7 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should disable apply button when absolute TimePickerSpinner inputs are invalid (new time spinner) ', () => {
-    const { i18n } = DateTimePickerProps.defaultProps;
+    const { i18n } = DateTimePicker.defaultProps;
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
