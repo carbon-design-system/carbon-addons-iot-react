@@ -914,7 +914,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Single select 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Single select with new time spinner 1`] = `
 <div
   className="storybook-container"
 >
