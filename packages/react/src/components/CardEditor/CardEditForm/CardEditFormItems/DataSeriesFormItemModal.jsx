@@ -351,10 +351,9 @@ const DataSeriesFormItemModal = ({
               </div>
             )}
             {editDataItem?.hasStreamingMetricEnabled && onAddAggregations && (
-              <div className="addAggregation">
+              <div className={`${iotPrefix}--add-aggregation`}>
                 <Button
-                  className="addAggregation"
-                  key="edit-data-item"
+                  className={`${iotPrefix}--add-aggregation__btn`}
                   kind="ghost"
                   size="large"
                   renderIcon={Add16}
