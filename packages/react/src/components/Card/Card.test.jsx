@@ -618,16 +618,19 @@ describe('Card', () => {
     const singleExtraAction = {
       id: 'extrasingleaction',
       icon: Add16,
+      iconDescription: 'Add',
       callback: mockExtraSingle,
     };
     const singleExtraDisabledAction = {
       id: 'extrasingleaction',
       icon: Add16,
+      iconDescription: 'Add',
       disabled: true,
       callback: mockExtraSingle,
     };
     const multiExtraAction = {
       id: 'extramultiaction',
+      iconDescription: 'Settings',
       children: [
         {
           id: 'firstItem',
@@ -665,7 +668,7 @@ describe('Card', () => {
         }}
       />
     );
-    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    fireEvent.click(screen.getAllByTitle('Add')[0]);
     expect(mockExtraSingle).toHaveBeenCalled();
     jest.resetAllMocks();
 
@@ -680,7 +683,7 @@ describe('Card', () => {
         }}
       />
     );
-    expect(screen.getAllByTitle('Action Label')[0]).toBeDisabled();
+    expect(screen.getAllByTitle('Add')[0]).toBeDisabled();
     expect(mockExtraSingle).not.toHaveBeenCalled();
     jest.resetAllMocks();
 
@@ -697,7 +700,7 @@ describe('Card', () => {
         }}
       />
     );
-    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    fireEvent.click(screen.getAllByTitle('Add')[0]);
     expect(mockExtraSingle).toHaveBeenCalled();
     jest.resetAllMocks();
 
@@ -712,25 +715,25 @@ describe('Card', () => {
         }}
       />
     );
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getAllByTitle('Settings')[0]);
     const firstItem = await screen.findByText('Item1');
     fireEvent.click(firstItem);
     expect(mockExtraMultiple).toHaveBeenCalled();
 
     // Reopen menu
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getAllByTitle('Settings')[0]);
     mockExtraMultiple.mockClear();
     const secondItem = await screen.findByText('Item2');
     fireEvent.click(secondItem);
     expect(mockExtraMultiple).toHaveBeenCalled();
 
     // Reopen menu to verify disabled item
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getAllByTitle('Settings')[0]);
     const thirdItem = await screen.findByText('Item3');
     expect(thirdItem.closest('button')).toBeDisabled();
 
     // Reopen menu to verify hidden item
-    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
+    fireEvent.click(screen.getAllByTitle('Settings')[0]);
     expect(screen.queryByText('Item4')).not.toBeInTheDocument();
   });
 
