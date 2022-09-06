@@ -94,7 +94,7 @@ export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
   }).isRequired,
 ]);
 
-const propTypes = {
+export const propTypes = {
   testId: PropTypes.string,
   /** default value for the picker */
   defaultValue: DateTimePickerDefaultValuePropTypes,
@@ -367,8 +367,8 @@ const DateTimePicker = ({
 
   const [singleDateValue, setSingleDateValue] = useState(null);
   const [singleTimeValue, setSingleTimeValue] = useState(null);
-  const [rangeStartTimeValue, setRangeStartTimeValue] = useState(null);
-  const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
+  const [rangeStartTimeValue, setRangeStartTimeValue] = useState('');
+  const [rangeEndTimeValue, setRangeEndTimeValue] = useState('');
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
 
