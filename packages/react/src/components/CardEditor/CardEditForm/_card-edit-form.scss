@@ -283,6 +283,8 @@ div.#{$iot-prefix}--card-edit-form--data-item-list {
   }
 }
 
-.#{$iot-prefix}--add-aggregation__btn {
-  margin-top: $spacing-06;
+.#{$iot-prefix}--add-aggregation {
+  &__btn {
+    margin-top: $spacing-06;
+  }
 }
