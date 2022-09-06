@@ -24,7 +24,7 @@ const defaultProps = {
     workspace: 'Workspace',
     workspaces: 'Workspaces',
     workspaceAdmin: 'Workspace administration',
-    backToAppSwitcher: 'Back to application switcher',
+    backToAppSwitcher: 'Back to applications',
     selectWorkspace: 'Select a workspace',
     availableWorkspaces: 'Available workspaces',
     suiteAdmin: 'Suite administration',

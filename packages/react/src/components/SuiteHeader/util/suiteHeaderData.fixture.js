@@ -387,7 +387,7 @@ const fixture = {
     switcherWorkspace: 'Workspace',
     switcherWorkspaces: 'Workspaces',
     switcherWorkspaceAdmin: 'Workspace administration',
-    switcherBackToAppSwitcher: 'Back to application switcher',
+    switcherBackToAppSwitcher: 'Back to applications',
     switcherSelectWorkspace: 'Select a workspace',
     switcherAvailableWorkspaces: 'Available workspaces',
     switcherSuiteAdmin: 'Suite administration',
