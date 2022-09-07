@@ -186,12 +186,6 @@ const TimePickerDropdown = ({
     }
   };
 
-  const handleOnKeyUp = (e) => {
-    if (e.key === 'Enter') {
-      setOpenState(true);
-    }
-  };
-
   const handleOnChange = (e) => {
     let val = e;
     if (typeof e === 'object') {
@@ -285,7 +279,6 @@ const TimePickerDropdown = ({
       tabIndex={openState ? 0 : -1}
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
-      onKeyUp={handleOnKeyUp}
       data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,

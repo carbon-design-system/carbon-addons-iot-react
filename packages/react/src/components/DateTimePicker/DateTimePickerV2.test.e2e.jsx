@@ -545,14 +545,14 @@ describe('DateTimePickerV2', () => {
     cy.focused().realPress('Tab').realPress('Tab');
     cy.get('#picker-test-1').should('be.focused').type('{moveToStart}{del}0');
     cy.focused().realPress('Tab');
-    cy.focused().realPress('Enter');
+    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
     cy.focused().realPress('Escape');
     cy.findByTestId('date-time-picker-spinner').should('not.exist');
     cy.get('#picker-test-2').focus();
     cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}{del}12');
     cy.focused().realPress('Tab');
-    cy.focused().realPress('Enter');
+    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
     cy.focused().realPress('Escape');
     cy.findByTestId('date-time-picker-spinner').should('not.exist');

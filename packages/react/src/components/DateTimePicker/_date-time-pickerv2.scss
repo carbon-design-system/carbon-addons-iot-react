@@ -129,6 +129,9 @@
       .#{$iot-prefix}--time-picker-dropdown {
         z-index: calc(var(--zIndex) + 40);
       }
+      .#{$iot-prefix}--time-picker-dropdown button {
+        padding-right: $spacing-02;
+      }
     }
   }
 
