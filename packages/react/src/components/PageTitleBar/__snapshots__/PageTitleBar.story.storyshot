@@ -278,8 +278,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="column-selection-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -291,6 +290,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Column Selection"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Column Selection
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Column Selection"
@@ -311,8 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="filter-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -324,6 +328,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Filters"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Filters
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Filters"
@@ -344,8 +354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="row-edit-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -357,6 +366,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Edit rows"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Edit rows
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Edit rows"
@@ -2480,8 +2495,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="column-selection-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -2493,6 +2507,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Column Selection"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Column Selection
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Column Selection"
@@ -2513,8 +2533,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="filter-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -2526,6 +2545,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Filters"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Filters
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Filters"
@@ -2546,8 +2571,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                     </button>
                     <button
                       aria-describedby={null}
-                      aria-pressed={null}
-                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                      className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                       data-testid="row-edit-button"
                       disabled={false}
                       onBlur={[Function]}
@@ -2559,6 +2583,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       title="Edit rows"
                       type="button"
                     >
+                      <div
+                        className="bx--assistive-text"
+                        onMouseEnter={[Function]}
+                      >
+                        Edit rows
+                      </div>
                       <svg
                         aria-hidden="true"
                         aria-label="Edit rows"
