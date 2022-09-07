@@ -38,7 +38,7 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
           [`${iotPrefix}--table-toolbar-button-active`]: isActive, // https://github.com/carbon-design-system/carbon/issues/6160
         }
       )}
-      kind="ghost"
+      kind="icon-selection"
       onClick={onClick}
       title={description}
       iconDescription={description}
