@@ -3186,14 +3186,14 @@ describe('Table', () => {
       );
 
       expect(screen.getByTitle('View off toolbar')).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').firstChild).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').firstChild).toHaveAttribute(
+      expect(screen.getByTitle('View off toolbar').lastChild).toBeVisible();
+      expect(screen.getByTitle('View off toolbar').lastChild).toHaveAttribute(
         'aria-label',
         'View off toolbar'
       );
       expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').firstChild).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').firstChild).toHaveAttribute(
+      expect(screen.getByTitle('Arrow right toolbar').lastChild).toBeVisible();
+      expect(screen.getByTitle('Arrow right toolbar').lastChild).toHaveAttribute(
         'aria-label',
         'Arrow right toolbar'
       );
