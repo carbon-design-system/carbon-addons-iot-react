@@ -102,6 +102,7 @@ const propTypes = {
     openMenuAria: PropTypes.string,
     closeMenuAria: PropTypes.string,
     clearSelectionAria: PropTypes.string,
+    toolbarIconLabelText: PropTypes.string,
   }),
 };
 
@@ -159,6 +160,7 @@ const defaultProps = {
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
     clearFilterAria: 'Clear filter',
+    toolbarIconLabelText: 'Toggle advanced filters',
   },
 };
 
@@ -194,6 +196,7 @@ const TableToolbarAdvancedFilterFlyout = ({
     closeMenuAria,
     clearSelectionAria,
     clearFilterAria,
+    toolbarIconLabelText,
   } = {
     ...defaultProps.i18n,
     ...(i18n ?? {}),
@@ -254,7 +257,7 @@ const TableToolbarAdvancedFilterFlyout = ({
   return (
     <FlyoutMenu
       testId="advanced-filter-flyout"
-      iconDescription="advanced-filter-flyout-icon"
+      iconDescription={toolbarIconLabelText}
       direction={FlyoutMenuDirection.BottomEnd}
       renderIcon={Filter20}
       hideTooltip={false}
