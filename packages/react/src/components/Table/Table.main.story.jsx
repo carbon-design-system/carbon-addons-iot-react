@@ -1138,6 +1138,7 @@ export const WithToolbar = () => {
       buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
       onApply={action('Flyout Menu Apply Clicked')}
       onCancel={action('Flyout Menu Cancel Clicked')}
+      hideTooltip={false}
     >
       Example of custom toolbar content inserting a FlyoutMenu
     </FlyoutMenu>
