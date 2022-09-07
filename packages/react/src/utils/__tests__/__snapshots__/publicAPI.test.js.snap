@@ -12756,7 +12756,17 @@ Map {
         "type": "oneOf",
       },
       "value": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
