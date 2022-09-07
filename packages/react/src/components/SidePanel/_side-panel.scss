@@ -325,6 +325,11 @@ $duration-moderate-01: 150ms;
   padding: $spacing-03 $spacing-05 $spacing-05 $spacing-05;
 
   .#{$iot-prefix}--sidepanel {
+    &__header {
+      min-height: $spacing-08;
+      flex-shrink: 0;
+    }
+
     &__header::after {
       background-color: $ui-03;
     }

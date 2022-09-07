@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.12...v2.151.0-next.13) (2022-09-02)
+
+
+### Bug Fixes
+
+* **sidepanel:** close btn overflows header without icons ([1b07764](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b07764b2a73d79686ad8d4092ba8059e987ee5d)), closes [#3516](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3516)
+
+
+
+
+
+# [2.151.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.11...v2.151.0-next.12) (2022-09-01)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.151.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.10...v2.151.0-next.11) (2022-08-31)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
 # [2.151.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.9...v2.151.0-next.10) (2022-08-31)
 
 
