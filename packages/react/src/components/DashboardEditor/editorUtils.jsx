@@ -77,6 +77,10 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
      * because the dataSourceId is subject to change */
     dataItemId: PropTypes.string.isRequired,
     dataSourceId: PropTypes.string.isRequired,
+    /** Maps to data item columnType */
+    type: PropTypes.string,
+    /** Maps to data item type */
+    dataItemType: PropTypes.string,
     label: PropTypes.string,
     aggregationMethod: PropTypes.string,
     aggregationMethods: PropTypes.arrayOf(
@@ -489,12 +493,14 @@ export const handleDataSeriesChange = (
       // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
       const existingAttributeColumns = Array.isArray(content?.columns)
         ? content.columns.filter(
-            (col) => col.type !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
+            (col) => col.dataItemType !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
           )
         : [];
 
       // find the new attributes to add because we're adding dimensions later
-      const attributeColumns = selectedItems.filter((dataItem) => dataItem.type !== 'DIMENSION');
+      const attributeColumns = selectedItems.filter(
+        (dataItem) => dataItem.dataItemType !== 'DIMENSION'
+      );
 
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
@@ -509,11 +515,11 @@ export const handleDataSeriesChange = (
               sort: 'DESC',
             };
       const existingDimensionColumns = Array.isArray(content?.columns)
-        ? content.columns.filter((col) => col.type === 'DIMENSION')
+        ? content.columns.filter((col) => col.dataItemType === 'DIMENSION')
         : [];
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems.filter((col) => col.type === 'DIMENSION');
+      const dimensionColumns = selectedItems.filter((col) => col.dataItemType === 'DIMENSION');
       const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
 
       // for raw table cards, the dimensions columns go in the attributes section
@@ -667,3 +673,11 @@ export const renderDefaultIconByName = (iconName, iconProps = {}) => {
   // eslint-disable-next-line react/prop-types
   return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
 };
+
+export const DashboardEditorActionsPropTypes = PropTypes.shape({
+  onEditDataItem: PropTypes.func,
+  dataSeriesFormActions: PropTypes.shape({
+    hideAggregationsDropDown: PropTypes.func,
+    onAddAggregations: PropTypes.func,
+  }),
+});

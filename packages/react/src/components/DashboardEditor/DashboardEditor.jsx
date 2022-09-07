@@ -18,6 +18,7 @@ import {
   renderBreakpointInfo,
   DataItemsPropTypes,
   renderDefaultIconByName,
+  DashboardEditorActionsPropTypes,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
@@ -309,10 +310,8 @@ const propTypes = {
   /** should we allow resizing cards dynamically */
   isCardResizable: PropTypes.bool,
   onEditDataItems: PropTypes.func,
-
   testId: PropTypes.string,
-  /** handles V2 dataItem */
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -387,7 +386,13 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
   testId: 'dashboard-editor',
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const LAYOUTS = {
@@ -442,7 +447,7 @@ const DashboardEditor = ({
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
   testId,
-  onEditDataItem,
+  actions,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -834,7 +839,7 @@ const DashboardEditor = ({
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItems={onEditDataItems}
-            onEditDataItem={onEditDataItem}
+            actions={actions}
           />
         </ErrorBoundary>
       </div>

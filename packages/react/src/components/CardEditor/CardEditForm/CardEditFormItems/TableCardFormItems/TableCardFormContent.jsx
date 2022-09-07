@@ -9,6 +9,7 @@ import { settings } from '../../../../../constants/Settings';
 import {
   handleDataSeriesChange,
   DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -32,6 +33,7 @@ const propTypes = {
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
           type: PropTypes.string,
+          dataItemType: PropTypes.string,
         })
       ),
       thresholds: PropTypes.arrayOf(
@@ -87,7 +89,7 @@ const propTypes = {
     table: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -114,7 +116,13 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const TableCardFormContent = ({
@@ -129,8 +137,9 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onEditDataItem,
+  actions,
 }) => {
+  const { onEditDataItem } = actions;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
     content: { columns, thresholds },
@@ -347,6 +356,7 @@ const TableCardFormContent = ({
         availableDimensions={availableDimensions}
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
+        actions={actions}
       />
       <ContentFormItemTitle
         title={mergedI18n.tableColumnEditorSectionTitle}
@@ -409,7 +419,7 @@ const TableCardFormContent = ({
                   dataItemId: i.id,
                   dataSourceId: i.id,
                   label: i.text,
-                  type: 'DIMENSION',
+                  dataItemType: 'DIMENSION',
                   destination: 'groupBy',
                 })),
                 cardConfig,
