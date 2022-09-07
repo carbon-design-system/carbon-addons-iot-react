@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.13...v2.151.0-next.14) (2022-09-07)
+
+
+### Bug Fixes
+
+* updating the scss ([6246fd6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6246fd6eaeb325c699a6b6f7dfee50e841dd587f))
+* **requested changes:** change request ([590854c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/590854c887028221201d4afba3197c4bbf09ef84))
+* change type to dataItemType ([157947d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/157947d9b93f6c61b094c032d80cba81c2fc4977))
+* failing cypres test case ([8e105ac](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e105ac4fe9b6bf7b6af1dfeff37fddcb6d1a89c))
+* update the snapshot ([d271f65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d271f65e2c0662e0fc2ecd6c97227409d32cb34c))
+* **DataSeriesFormItemModal:** Added button and logic for dynamic aggregation dropdown ([b255076](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b25507667ed2bbb5ad5cb2ef1c4bdd853d7cc079))
+* **DataSeriesFormItemModal:** Added button and logic for dynamic aggregation dropdown ([325aab7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/325aab790fa17f7d3c11fb47471cd60abe75de3a))
+
+
+
+
+
 # [2.151.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.12...v2.151.0-next.13) (2022-09-02)
 
 
