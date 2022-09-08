@@ -199,6 +199,8 @@ const CardToolbar = ({
           testId={`${testId}-extra-single-action`}
           disabled={extraActions.disabled}
         />
+      ) : Array.isArray(extraActions) && extraActions.some((action) => action.content) ? (
+        extraActions.map((action) => action.content)
       ) : null
     ) : null;
 

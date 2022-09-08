@@ -545,7 +545,7 @@ const isEditable = true;
 
 ## Extra actions
 
-You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, or a three-dot icon with many custom actions inside of it.
+You can use extraActions on a Card. Which can be used in the card toolbar to either display a single icon with a unique action, a three-dot icon with many custom actions inside of it, or even a custom component.
 
 ```jsx
 // Card with single icon extra action.
@@ -618,6 +618,18 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
 />
 ```
 
+```jsx
+// Card with extra action custom elements
+<Card
+  {...cardProps}
+  size={CARD_SIZES.LARGE}
+  availableActions={{
+    extra: true,
+  }}
+  extraActions={[{ id: 'idItem', content: <div>custom element</div> }]}
+/>
+```
+
 ## Props
 
 | Name                             | Type                                                                                                                                                  | Default                                                                   | Description                                                                                                                                                                                       |
@@ -663,7 +675,7 @@ You can use extraActions on a Card. Which can be used in the card toolbar to eit
 | dashboardColumns.sm              | number                                                                                                                                                |                                                                           |                                                                                                                                                                                                   |
 | dashboardColumns.xs              | number                                                                                                                                                |                                                                           |                                                                                                                                                                                                   |
 | cardDimensions                   | shape [see cardDimensions Prop](#carddimensions-prop)                                                                                                 |                                                                           | array of configurable sizes to dimensions. The numbered sizes represent the number of columns and rows the card spans at that size and breakpoint.                                                |
-| extraActions                     | shape                                                                                                                                                 |                                                                           | extra action object to either display single icon or array of items to be displayed as overflow items.                                                                                            |
+| extraActions                     | shape, array                                                                                                                                          |                                                                           | extra action object to either display single icon, array of items to be displayed as overflow items, or array with custom content.                                                                |
 | overrides                        | shape                                                                                                                                                 |                                                                           | allow overriding the component used in Error and Empty states                                                                                                                                     |
 | overrides.errorMessage           | shape                                                                                                                                                 |                                                                           |                                                                                                                                                                                                   |
 | overrides.errorMessage.component | Element                                                                                                                                               |                                                                           | By default this is the PAL EmptyState component. The title, body, and icon are passed to this element to be render either an empty or error state                                                 |
