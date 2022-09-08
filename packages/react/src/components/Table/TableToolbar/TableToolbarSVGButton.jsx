@@ -40,7 +40,6 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
       )}
       kind="icon-selection"
       onClick={onClick}
-      title={description}
       iconDescription={description}
       testId={testId}
     />
