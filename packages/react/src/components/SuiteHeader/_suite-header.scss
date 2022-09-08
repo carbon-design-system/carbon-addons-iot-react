@@ -98,15 +98,13 @@
 }
 
 .#{$iot-prefix}--suite-header .#{$prefix}--app-switcher > ul {
-  height: 100%;
-
   li.action-btn__headerpanel-li {
     height: 100%;
   }
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
-  overflow-y: hidden;
+  overflow-y: auto;
   padding-top: 0;
 
   li {
