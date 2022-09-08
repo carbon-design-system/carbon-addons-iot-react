@@ -31,6 +31,21 @@ import DashboardEditor from './DashboardEditor';
 export const Experimental = () => <StoryNotice componentName="DashboardEditor" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hideAggregationsDropDown: (editDataItem) =>
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
+
 export const images = [
   {
     id: 'assemblyline',
@@ -136,7 +151,7 @@ const mockDataItems = [
   },
   {
     dataItemId: 'firmware',
-    type: 'DIMENSION',
+    dataItemType: 'DIMENSION',
     dataSourceId: 'firmware',
     label: 'firmware',
     aggregationMethods: [
@@ -146,7 +161,7 @@ const mockDataItems = [
   },
   {
     dataItemId: 'manufacturer',
-    type: 'DIMENSION',
+    dataItemType: 'DIMENSION',
     dataSourceId: 'manufacturer',
     label: 'manufacturer',
     aggregationMethods: [
@@ -159,16 +174,6 @@ const mockDataItems = [
     dataSourceId: 'v2pressure',
     label: 'V2 Pressure',
     hasStreamingMetricEnabled: true,
-    aggregationMethod: 'min',
-    aggregationMethods: [
-      { id: 'none', text: 'None' },
-      { id: 'max', text: 'Maximum' },
-      { id: 'min', text: 'Minimum' },
-      { id: 'mean', text: 'Mean' },
-      { id: 'last', text: 'Last' },
-      { id: 'sum', text: 'Sum' },
-      { id: 'standerd', text: 'Standerd deviation' },
-    ],
   },
 ];
 
@@ -197,6 +202,7 @@ export const Default = () => (
     onDelete={action('onDelete')}
     onCancel={action('onCancel')}
     onSubmit={action('onSubmit')}
+    actions={commonActions}
     onImageDelete={action('onImageDelete')}
     onLayoutChange={action('onLayoutChange')}
     isSubmitDisabled={boolean('isSubmitDisabled', false)}
@@ -425,6 +431,7 @@ export const WithInitialValue = () => (
     onCancel={action('onCancel')}
     onSubmit={action('onSubmit')}
     onLayoutChange={action('onLayoutChange')}
+    hideAggregationsDropDown={action('hideAggregationsDropDown')}
     supportedCardTypes={[
       'TIMESERIES',
       'SIMPLE_BAR',
@@ -444,6 +451,7 @@ export const WithInitialValue = () => (
     isLoading={boolean('isLoading', false)}
     isSubmitDisabled={boolean('isSubmitDisabled', false)}
     isSubmitLoading={boolean('isSubmitLoading', false)}
+    actions={commonActions}
   />
 );
 
@@ -650,6 +658,7 @@ export const SummaryDashboardWithInitialValue = () => (
       isLoading={boolean('isLoading', false)}
       isSubmitDisabled={boolean('isSubmitDisabled', false)}
       isSubmitLoading={boolean('isSubmitLoading', false)}
+      actions={commonActions}
     />
   </div>
 );
@@ -719,6 +728,7 @@ export const WithCustomOnCardChange = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     isLoading={boolean('isLoading', false)}
+    actions={commonActions}
   />
 );
 
@@ -771,6 +781,7 @@ export const WithNotifications = () => (
       </>
     }
     isLoading={boolean('isLoading', false)}
+    actions={commonActions}
   />
 );
 
@@ -804,6 +815,7 @@ export const WithBreakpointSwitcher = () => (
       ]}
       breakpointSwitcher={{ enabled: true }}
       isLoading={boolean('isLoading', false)}
+      actions={commonActions}
     />
   </div>
 );
@@ -905,6 +917,7 @@ export const CustomCardPreviewRenderer = () => (
       );
     }}
     isLoading={boolean('isLoading', false)}
+    actions={commonActions}
   />
 );
 
@@ -1202,6 +1215,7 @@ export const I18N = () => (
       <Link href="www.ibm.com">Favorites</Link>,
     ]}
     isLoading={boolean('isLoading', false)}
+    actions={commonActions}
   />
 );
 
@@ -1227,6 +1241,7 @@ export const WithCustomCards = () => {
           },
           isSelectable: true,
         }))}
+        actions={commonActions}
       />
     </div>
   );
@@ -1411,6 +1426,7 @@ export const WithCustomCards = () => {
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
       isLoading={boolean('isLoading', false)}
+      actions={commonActions}
     />
   );
 };
@@ -1494,6 +1510,7 @@ export const withGetDefaultCard = () => {
         <Link href="www.ibm.com">Favorites</Link>,
       ]}
       isLoading={boolean('isLoading', false)}
+      actions={commonActions}
     />
   );
 };

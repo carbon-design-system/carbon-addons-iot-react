@@ -10,6 +10,21 @@ import { useHotspotEditorState } from '../hooks/hotspotStateHook';
 import HotspotEditorDataSourceTab from './HotspotEditorDataSourceTab';
 import HotspotEditorDataSourceTabREADME from './HotspotEditorDataSourceTabREADME.mdx';
 
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hideAggregationsDropDown: (editDataItem) =>
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
+
 export default {
   title: '2 - Watson IoT Experimental/☢️ HotSpotEditorModal/HotspotEditorDataSourceTab',
   decorators: [withKnobs],
@@ -161,6 +176,7 @@ export const WithStateInStory = () => {
             updateHotspotDataSource(newData);
             action('onChange')(newData);
           }}
+          actions={commonActions}
         />
       </div>
     );
@@ -194,6 +210,7 @@ export const WithPresetValues = () => {
             updateHotspotDataSource(newData);
             action('onChange')(newData);
           }}
+          actions={commonActions}
         />
       </div>
     );

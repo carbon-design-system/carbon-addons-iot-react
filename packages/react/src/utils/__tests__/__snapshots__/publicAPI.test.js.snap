@@ -13787,6 +13787,13 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hideAggregationsDropDown": null,
+          "onAddAggregations": null,
+        },
+        "onEditDataItem": null,
+      },
       "availableDimensions": Object {},
       "availableImages": Array [],
       "breakpointSwitcher": null,
@@ -13842,7 +13849,6 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13871,6 +13877,29 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hideAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -13946,6 +13975,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "dataItemType": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "isRequired": true,
                   "type": "string",
@@ -13957,6 +13989,9 @@ Map {
                   "type": "bool",
                 },
                 "label": Object {
+                  "type": "string",
+                },
+                "type": Object {
                   "type": "string",
                 },
               },
@@ -14437,9 +14472,6 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
-      "onEditDataItem": Object {
-        "type": "func",
-      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -14539,6 +14571,13 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hideAggregationsDropDown": null,
+          "onAddAggregations": null,
+        },
+        "onEditDataItem": null,
+      },
       "availableDimensions": Object {},
       "cardConfig": null,
       "currentBreakpoint": "xl",
@@ -14563,7 +14602,6 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -14581,6 +14619,29 @@ Map {
       "testId": "card-editor",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hideAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -14768,9 +14829,6 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
-        "type": "func",
-      },
-      "onEditDataItem": Object {
         "type": "func",
       },
       "onEditDataItems": Object {

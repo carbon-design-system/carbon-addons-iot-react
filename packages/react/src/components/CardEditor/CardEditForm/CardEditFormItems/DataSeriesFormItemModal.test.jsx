@@ -19,6 +19,7 @@ describe('DataSeriesFormItemModal', () => {
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
   const mockSetEditDataSeries = jest.fn();
+
   const groupedBarConfig = {
     title: 'Untitled',
     size: 'MEDIUM',
@@ -146,6 +147,7 @@ describe('DataSeriesFormItemModal', () => {
     label: 'Temperature',
     dataSourceId: 'temperature',
     hasStreamingMetricEnabled: true,
+    dataItemType: 'METRIC',
     color: 'red',
     aggregationMethods: [
       { id: 'last', text: 'Last' },
@@ -161,6 +163,13 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
+    actions: {
+      onEditDataItem: jest.fn().mockImplementation(() => []),
+      dataSeriesFormActions: {
+        hideAggregationsDropDown: jest.fn(() => true),
+        onAddAggregations: jest.fn(),
+      },
+    },
   };
 
   it('Renders for timeseries card data', () => {
@@ -396,7 +405,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
@@ -465,13 +474,14 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
             dataItemId: 'torque',
             dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
             label: 'Torque',
+            aggregationMethod: 'max',
           },
           {
             dataItemId: 'temperature',
@@ -489,6 +499,7 @@ describe('DataSeriesFormItemModal', () => {
 
     const aggregatedBarChartDataItem = {
       label: 'Temperature Max',
+      hasStreamingMetricEnabled: false,
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
       aggregationMethods: [

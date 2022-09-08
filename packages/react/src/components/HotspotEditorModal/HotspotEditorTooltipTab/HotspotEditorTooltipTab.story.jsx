@@ -9,6 +9,21 @@ import { hotspotTypes, useHotspotEditorState } from '../hooks/hotspotStateHook';
 import HotspotEditorTooltipTab from './HotspotEditorTooltipTab';
 import HotspotEditorTooltipTabREADME from './HotspotEditorTooltipTabREADME.mdx';
 
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hideAggregationsDropDown: (editDataItem) =>
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
+
 const selectableIcons = [
   {
     id: 'InformationSquareFilled24',
@@ -60,6 +75,7 @@ export const WithStateInStory = () => {
           onChange={handleOnChange}
           onDelete={action('onDelete')}
           translateWithId={() => {}}
+          actions={commonActions}
         />
       </div>
     );
@@ -93,6 +109,7 @@ export const WithHotspotStateHook = () => {
           onChange={updateHotspotTooltip}
           onDelete={deleteSelectedHotspot}
           translateWithId={() => {}}
+          actions={commonActions}
         />
       </div>
     );
@@ -121,6 +138,7 @@ export const WithPresetValuesAndCustomColors = () => {
         onChange={action('onChange')}
         onDelete={action('onDelete')}
         translateWithId={() => {}}
+        actions={commonActions}
       />
     </div>
   );
@@ -137,6 +155,7 @@ export const WithInfoMessage = () => {
         onChange={action('onChange')}
         onDelete={action('onDelete')}
         translateWithId={() => {}}
+        actions={commonActions}
       />
     </div>
   );
