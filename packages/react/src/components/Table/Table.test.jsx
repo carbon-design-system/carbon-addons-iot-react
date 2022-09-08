@@ -3130,8 +3130,13 @@ describe('Table', () => {
     });
 
     it('should render icons given various renderIcon types', async () => {
+      const tableId = '123456';
+      const viewOffActionId = 'off-in-toolbar';
+      const arrowRightActionId = 'arrow-right-in-toolbar';
+
       render(
         <Table
+          id={tableId}
           testId="icon-render"
           columns={tableColumns}
           data={[tableData[0]]}
@@ -3170,12 +3175,12 @@ describe('Table', () => {
                   isOverflow: true,
                 },
                 {
-                  id: 'off-in-toolbar',
+                  id: viewOffActionId,
                   renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
                   labelText: 'View off toolbar',
                 },
                 {
-                  id: 'arrow-right-in-toolbar',
+                  id: arrowRightActionId,
                   renderIcon: ArrowRight16,
                   labelText: 'Arrow right toolbar',
                 },
@@ -3185,18 +3190,19 @@ describe('Table', () => {
         />
       );
 
-      expect(screen.getByTitle('View off toolbar')).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').lastChild).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').lastChild).toHaveAttribute(
-        'aria-label',
-        'View off toolbar'
+      const viewOffIconButton = screen.getByTestId(
+        `${tableId}-toolbar-actions-button-${viewOffActionId}`
       );
-      expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').lastChild).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').lastChild).toHaveAttribute(
-        'aria-label',
-        'Arrow right toolbar'
+      expect(viewOffIconButton).toBeVisible();
+      expect(viewOffIconButton.lastChild).toBeVisible();
+      expect(viewOffIconButton.lastChild).toHaveAttribute('aria-label', 'View off toolbar');
+
+      const arrowRightIconButton = screen.getByTestId(
+        `${tableId}-toolbar-actions-button-${arrowRightActionId}`
       );
+      expect(arrowRightIconButton).toBeVisible();
+      expect(arrowRightIconButton.lastChild).toBeVisible();
+      expect(arrowRightIconButton.lastChild).toHaveAttribute('aria-label', 'Arrow right toolbar');
 
       userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /a-warning-label/ })).toBeVisible();
