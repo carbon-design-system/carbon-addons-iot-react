@@ -1735,7 +1735,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -1773,7 +1772,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div
@@ -4638,7 +4636,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -4676,7 +4673,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div
@@ -7576,7 +7572,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -7614,7 +7609,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div
@@ -9597,7 +9591,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -9635,7 +9628,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div
@@ -12944,7 +12936,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -12982,7 +12973,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div
@@ -30587,7 +30577,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Download table content"
                         type="button"
                       >
                         <div
@@ -30625,7 +30614,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onMouseEnter={[Function]}
                         onMouseLeave={[Function]}
                         tabIndex={0}
-                        title="Filters"
                         type="button"
                       >
                         <div

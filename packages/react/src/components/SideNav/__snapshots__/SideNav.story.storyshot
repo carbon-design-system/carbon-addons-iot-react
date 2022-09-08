@@ -852,7 +852,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Column Selection"
                 type="button"
               >
                 <div
@@ -890,7 +889,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
                 <div
@@ -928,7 +926,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Edit rows"
                 type="button"
               >
                 <div

@@ -3560,7 +3560,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
           tabIndex={0}
-          title="Column Selection"
           type="button"
         >
           <div
