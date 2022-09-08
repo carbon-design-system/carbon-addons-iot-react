@@ -42,6 +42,8 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
       onClick={onClick}
       iconDescription={description}
       testId={testId}
+      tooltipAlignment="center"
+      tooltipPosition="bottom"
     />
   );
 };
