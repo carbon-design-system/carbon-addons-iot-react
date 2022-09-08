@@ -729,12 +729,12 @@ describe('TableCard', () => {
       expect(screen.queryByTitle('Count __Severity__')).toBeInTheDocument();
       expect(screen.queryAllByLabelText('__Search__')[0]).toBeInTheDocument();
       expect(screen.queryByPlaceholderText('__Search__')).toBeInTheDocument();
-      expect(screen.queryByTitle('__Filters__')).toBeInTheDocument();
+      expect(screen.queryByText('__Filters__')).toBeInTheDocument();
       expect(screen.queryByText('__Previous page__')).toBeInTheDocument();
       expect(screen.queryByText('__Next page__')).toBeInTheDocument();
       expect(screen.queryByText('__1–10 of 11 items__')).toBeInTheDocument();
       expect(screen.queryAllByLabelText('__Click to expand content__')[0]).toBeInTheDocument();
-      expect(screen.queryByTitle('__Download table content__')).toBeInTheDocument();
+      expect(screen.queryByText('__Download table content__')).toBeInTheDocument();
     });
 
     it('translates filters', () => {
@@ -932,7 +932,7 @@ describe('TableCard', () => {
         testID="TABLE_CARD"
       />
     );
-    userEvent.click(screen.getByTitle('Filters'));
+    userEvent.click(screen.getByText('Filters'));
     const alertFilterInput = screen.getAllByPlaceholderText('Type and hit enter to apply')[0];
     expect(alertFilterInput).toHaveAttribute('id', 'alert');
     expect(alertFilterInput).toBeVisible();
