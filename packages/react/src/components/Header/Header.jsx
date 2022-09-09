@@ -53,6 +53,8 @@ const propTypes = {
   isActionItemVisible: PropTypes.func,
   /** allows setting aria-label on side-nav menu button correctly */
   isSideNavExpanded: PropTypes.bool,
+  /** Make sure the Close icon is always displayed in the HeaderActionPanel action item when the panel is expanded */
+  showCloseIconWhenPanelExpanded: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -73,6 +75,7 @@ const defaultProps = {
   testId: 'header',
   isActionItemVisible: () => true,
   isSideNavExpanded: false,
+  showCloseIconWhenPanelExpanded: false,
 };
 
 /**
@@ -95,6 +98,7 @@ const Header = ({
   testId,
   isActionItemVisible,
   isSideNavExpanded,
+  showCloseIconWhenPanelExpanded,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const theShortAppName = shortAppName || appName;
@@ -146,6 +150,7 @@ const Header = ({
         i18n={mergedI18n}
         testId={`${testId}-action-group`}
         isActionItemVisible={isActionItemVisible}
+        showCloseIconWhenPanelExpanded={showCloseIconWhenPanelExpanded}
       />
     </CarbonHeader>
   );
