@@ -659,6 +659,55 @@ describe('stateful table with real reducer', () => {
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
       expect(screen.getByText('1–10 of 11 items')).toBeVisible();
     });
+    it('toolbar icon is disabled when isDisabled prop set to true', () => {
+      render(
+        <StatefulTable
+          id="advanced-filters-disabled-icon"
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasFilter: false,
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              ...initialState.view.toolbar,
+              isDisabled: true,
+              advancedFilterFlyoutOpen: false,
+            },
+            selectedAdvancedFilterIds: ['my-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ALL',
+                  rules: [
+                    {
+                      id: 'rsiru4rjba',
+                      columnId: 'date',
+                      operand: 'CONTAINS',
+                      value: '19',
+                    },
+                    {
+                      id: '34bvyub9jq',
+                      columnId: 'boolean',
+                      operand: 'EQ',
+                      value: 'true',
+                    },
+                  ],
+                },
+              },
+            ],
+          }}
+        />
+      );
+      const advancedFilterToolbarIcon = screen.getByTestId('advanced-filter-flyout-button');
+      expect(advancedFilterToolbarIcon).toBeVisible();
+      expect(advancedFilterToolbarIcon).toBeDisabled();
+    });
   });
   it('properly changes state of child and parent row selections', () => {
     const onRowSelectedMock = jest.fn();
