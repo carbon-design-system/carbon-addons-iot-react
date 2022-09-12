@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.15...v2.151.0-next.16) (2022-09-12)
+
+
+### Bug Fixes
+
+* **statefultable:** filter handler on button click ([68a1137](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/68a11377d195f929e64c9bcf8e728653f000b591)), closes [#3460](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3460)
+* **table:** loop in overflow menu state update ([591d6cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/591d6cdf1cbd237e87e9514b7e12e05e325946a1)), closes [#3359](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3359)
+
+
+
+
+
 # [2.151.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.14...v2.151.0-next.15) (2022-09-09)
 
 
