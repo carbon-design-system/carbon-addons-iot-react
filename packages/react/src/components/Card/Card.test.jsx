@@ -764,7 +764,7 @@ describe('Card', () => {
         }}
       />
     );
-    fireEvent.click(screen.getAllByTitle('Action Label')[0]);
+    fireEvent.click(screen.getAllByTitle('Open and close list of options')[0]);
 
     firstItem = await screen.findByText('Item1');
     fireEvent.click(firstItem);

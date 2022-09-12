@@ -175,8 +175,8 @@ const CardToolbar = ({
       extraActions.children && extraActions.children.length ? (
         <OverflowMenu
           flipped={overflowMenuPosition}
-          title={extraActions.iconDescription || mergedI18n.extraActionLabel}
-          iconDescription={extraActions.iconDescription || mergedI18n.extraActionLabel}
+          title={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
+          iconDescription={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
           {...(extraActions.icon ? { renderIcon: extraActions.icon } : {})}
         >
           {extraActions.children.map((child, i) =>
