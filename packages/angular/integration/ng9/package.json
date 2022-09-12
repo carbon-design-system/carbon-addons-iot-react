@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+	  "@ai-apps/angular": "latest",
     "@angular/animations": "~9.1.12",
     "@angular/common": "~9.1.12",
     "@angular/compiler": "~9.1.12",

@@ -267,10 +267,6 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).not.toBe(expectedLogoutRoute);
   });
-  it('Legacy (single-workspace only) admin button should no longer be visible', async () => {
-    render(<SuiteHeader {...adminPageCommonProps} isAdminView />);
-    expect(screen.queryByTestId('admin-icon')).not.toBeInTheDocument();
-  });
   it('clicks a documentation link', async () => {
     render(<SuiteHeader {...adminPageCommonProps} />);
     await userEvent.click(screen.getByTestId('suite-header-help--whatsNew'));

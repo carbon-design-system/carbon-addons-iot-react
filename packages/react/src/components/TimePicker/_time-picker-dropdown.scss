@@ -111,12 +111,11 @@
     overflow: hidden;
     word-break: break-word;
   }
-}
-
-// Remove the Carbon component error/ warning message
-.#{$prefix}--text-input__field-wrapper[data-invalid] ~ .#{$prefix}--form-requirement,
-.#{$prefix}--text-input__field-wrapper--warning ~ .#{$prefix}--form-requirement {
-  display: none;
+  // Remove the Carbon component error/ warning message
+  .#{$prefix}--text-input__field-wrapper[data-invalid] ~ .#{$prefix}--form-requirement,
+  .#{$prefix}--text-input__field-wrapper--warning ~ .#{$prefix}--form-requirement {
+    display: none;
+  }
 }
 
 .#{$iot-prefix}--time-picker-range {

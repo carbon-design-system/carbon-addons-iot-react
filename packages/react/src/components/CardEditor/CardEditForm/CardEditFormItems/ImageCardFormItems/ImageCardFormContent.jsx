@@ -4,7 +4,10 @@ import { Close16, Scale32 } from '@carbon/icons-react';
 import { omit } from 'lodash-es';
 
 import Button from '../../../../Button';
-import { DataItemsPropTypes } from '../../../../DashboardEditor/editorUtils';
+import {
+  DashboardEditorActionsPropTypes,
+  DataItemsPropTypes,
+} from '../../../../DashboardEditor/editorUtils';
 import HotspotEditorModal from '../../../../HotspotEditorModal/HotspotEditorModal';
 import { settings } from '../../../../../constants/Settings';
 import ContentFormItemTitle from '../ContentFormItemTitle';
@@ -56,7 +59,7 @@ const propTypes = {
   /** call back to retrieve the dynamic demo hotspots, by default just returns one example dynamic hotspot, override to return true hotspots.
    * See HotspotEditorModal propTypes for params and details */
   onFetchDynamicDemoHotspots: PropTypes.func,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -74,7 +77,13 @@ const defaultProps = {
   getValidDataItems: null,
   availableDimensions: {},
   onFetchDynamicDemoHotspots: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: null,
+    dataSeriesFormActions: {
+      hideAggregationsDropDown: null,
+      onAddAggregations: null,
+    },
+  },
 };
 
 const ImageCardFormItems = ({
@@ -87,7 +96,7 @@ const ImageCardFormItems = ({
   availableDimensions,
   translateWithId,
   onFetchDynamicDemoHotspots,
-  onEditDataItem,
+  actions,
 }) => {
   const [isHotspotModalShowing, setIsHotspotModalShowing] = useState(false);
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -122,7 +131,7 @@ const ImageCardFormItems = ({
           translateWithId={translateWithId}
           i18n={mergedI18n}
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-          onEditDataItem={onEditDataItem}
+          actions={actions}
         />
       ) : null}
       <ContentFormItemTitle

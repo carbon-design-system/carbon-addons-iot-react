@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Apps16 } from '@carbon/icons-react';
+import { ChevronRight16, ChevronLeft16, Launch16, Bee32, Grid16 } from '@carbon/icons-react';
 import { SideNavLink, SideNavDivider } from 'carbon-components-react/es/components/UIShell';
 
 import { settings } from '../../../constants/Settings';
@@ -24,10 +24,11 @@ const defaultProps = {
     workspace: 'Workspace',
     workspaces: 'Workspaces',
     workspaceAdmin: 'Workspace administration',
-    backToAppSwitcher: 'Back to application switcher',
+    backToAppSwitcher: 'Back to applications',
     selectWorkspace: 'Select a workspace',
     availableWorkspaces: 'Available workspaces',
     suiteAdmin: 'Suite administration',
+    global: 'Global / other',
     allApplicationsLink: 'All applications',
     requestAccess: 'Contact your administrator to request application access.',
     learnMoreLink: 'Learn more',
@@ -160,7 +161,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         key={`${testId}--${keySuffix}`}
         className={classnames(`${baseClassName}--app-link`, {
           [`${baseClassName}--external`]: isExternal,
-          [`${baseClassName}--no-icon`]: !icon && !isWorkspacesView,
+          [`${baseClassName}--no-icon`]: !icon,
         })}
         data-testid={`${testId}--${keySuffix}`}
         onClick={eventHandler}
@@ -177,14 +178,18 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
         rel="noopener noreferrer"
         large
         isActive={isSelected}
+        title={name}
       >
         {name}
         {isExternal ? <Launch16 /> : null}
       </SideNavLink>
     ),
 
-    [baseClassName, tabIndex, testId, isWorkspacesView]
+    [baseClassName, tabIndex, testId]
   );
+
+  const selectedWorkspaceLabel =
+    selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace;
 
   return (
     <ul data-testid={testId} className={baseClassName}>
@@ -203,8 +208,10 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 onKeyDown={handleSpecificKeyDown(['Enter', 'Space'], () => setWorkspacesView(true))}
                 tabIndex={tabIndex}
                 renderIcon={ChevronRight16}
+                large
+                title={selectedWorkspaceLabel}
               >
-                {selectedWorkspace?.name ?? selectedWorkspace?.id ?? mergedI18n.selectWorkspace}
+                {selectedWorkspaceLabel}
               </SideNavLink>
 
               <SideNavDivider className={`${baseClassName}--divider`} />
@@ -215,7 +222,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 mergedI18n.allApplicationsLink,
                 selectedWorkspace.href,
                 false,
-                Apps16,
+                Grid16,
                 handleWorkspaceRoute({ id: selectedWorkspace.id, href: selectedWorkspace.href }),
                 false,
                 `all-applications`
@@ -275,45 +282,6 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
               </a>
             </div>
           ) : null}
-          {adminLink || globalApplications?.length > 0 ? (
-            <SideNavDivider className={`${baseClassName}--divider`} />
-          ) : null}
-          {adminLink
-            ? renderNavItem(
-                mergedI18n.suiteAdmin,
-                adminLink,
-                false,
-                null,
-                handleAdminRoute,
-                isAdminView,
-                `admin`
-              )
-            : null}
-          {globalApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
-            renderNavItem(
-              name,
-              href,
-              isExternal,
-              icon,
-              handleApplicationRoute({ id, href, isExternal }),
-              false,
-              `global-application-${id}`
-            )
-          )}
-          {customApplications.length > 0 ? (
-            <SideNavDivider className={`${baseClassName}--divider`} />
-          ) : null}
-          {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
-            renderNavItem(
-              name,
-              href,
-              isExternal,
-              icon,
-              handleApplicationRoute({ id, href, isExternal }),
-              false,
-              `custom-application-${id}`
-            )
-          )}
         </>
       ) : (
         <>
@@ -331,6 +299,7 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
                 renderIcon={ChevronLeft16}
                 tabIndex={tabIndex}
                 large
+                title={mergedI18n.backToAppSwitcher}
               >
                 {mergedI18n.backToAppSwitcher}
               </SideNavLink>
@@ -354,6 +323,48 @@ const MultiWorkspaceSuiteHeaderAppSwitcher = ({
             )
           )}
         </>
+      )}
+      {adminLink || globalApplications?.length > 0 ? (
+        <>
+          <SideNavDivider className={`${baseClassName}--divider`} />
+          <p>{mergedI18n.global}</p>
+        </>
+      ) : null}
+      {adminLink
+        ? renderNavItem(
+            mergedI18n.suiteAdmin,
+            adminLink,
+            false,
+            null,
+            handleAdminRoute,
+            isAdminView,
+            `admin`
+          )
+        : null}
+      {globalApplications?.map(({ id, name, href, isExternal = false, icon = null }) =>
+        renderNavItem(
+          name,
+          href,
+          isExternal,
+          icon,
+          handleApplicationRoute({ id, href, isExternal }),
+          false,
+          `global-application-${id}`
+        )
+      )}
+      {customApplications.length > 0 ? (
+        <SideNavDivider className={`${baseClassName}--divider`} />
+      ) : null}
+      {customApplications.map(({ id, name, href, isExternal = false, icon = null }) =>
+        renderNavItem(
+          name,
+          href,
+          isExternal,
+          icon,
+          handleApplicationRoute({ id, href, isExternal }),
+          false,
+          `custom-application-${id}`
+        )
       )}
     </ul>
   );

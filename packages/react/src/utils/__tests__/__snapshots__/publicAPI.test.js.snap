@@ -10804,6 +10804,7 @@ Map {
       "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
+      "showCloseIconWhenPanelExpanded": false,
       "skipto": "#main-content",
       "subtitle": null,
       "testId": "header",
@@ -10924,6 +10925,9 @@ Map {
       },
       "shortAppName": Object {
         "type": "string",
+      },
+      "showCloseIconWhenPanelExpanded": Object {
+        "type": "bool",
       },
       "skipto": Object {
         "type": "string",
@@ -11415,7 +11419,8 @@ Map {
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": "Enjoying {solutionName}?",
         "switcherAvailableWorkspaces": "Available workspaces",
-        "switcherBackToAppSwitcher": "Back to application switcher",
+        "switcherBackToAppSwitcher": "Back to applications",
+        "switcherGlobal": "Global / other",
         "switcherLearnMoreLink": "Learn more",
         "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
@@ -11427,7 +11432,6 @@ Map {
         "switcherWorkspaces": "Workspaces",
         "userIcon": "User",
         "whatsNew": "What's new",
-        "workspace": "Workspace: {workspace}",
       },
       "idleTimeoutData": null,
       "isActionItemVisible": [Function],
@@ -11753,6 +11757,9 @@ Map {
             "switcherBackToAppSwitcher": Object {
               "type": "string",
             },
+            "switcherGlobal": Object {
+              "type": "string",
+            },
             "switcherMyApplications": Object {
               "type": "string",
             },
@@ -11778,9 +11785,6 @@ Map {
               "type": "string",
             },
             "whatsNew": Object {
-              "type": "string",
-            },
-            "workspace": Object {
               "type": "string",
             },
           },
@@ -12407,7 +12411,8 @@ Map {
       "i18n": Object {
         "allApplicationsLink": "All applications",
         "availableWorkspaces": "Available workspaces",
-        "backToAppSwitcher": "Back to application switcher",
+        "backToAppSwitcher": "Back to applications",
+        "global": "Global / other",
         "learnMoreLink": "Learn more",
         "requestAccess": "Contact your administrator to request application access.",
         "selectWorkspace": "Select a workspace",
@@ -12772,7 +12777,8 @@ Map {
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": "Enjoying {solutionName}?",
       "switcherAvailableWorkspaces": "Available workspaces",
-      "switcherBackToAppSwitcher": "Back to application switcher",
+      "switcherBackToAppSwitcher": "Back to applications",
+      "switcherGlobal": "Global / other",
       "switcherLearnMoreLink": "Learn more",
       "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",
@@ -12784,7 +12790,6 @@ Map {
       "switcherWorkspaces": "Workspaces",
       "userIcon": "User",
       "whatsNew": "What's new",
-      "workspace": "Workspace: {workspace}",
     },
   },
   "useSuiteHeaderData" => Object {},
@@ -12830,7 +12835,17 @@ Map {
         "type": "oneOf",
       },
       "value": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -13856,6 +13871,13 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hideAggregationsDropDown": null,
+          "onAddAggregations": null,
+        },
+        "onEditDataItem": null,
+      },
       "availableDimensions": Object {},
       "availableImages": Array [],
       "breakpointSwitcher": null,
@@ -13911,7 +13933,6 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13940,6 +13961,29 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hideAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -14015,6 +14059,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "dataItemType": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "isRequired": true,
                   "type": "string",
@@ -14026,6 +14073,9 @@ Map {
                   "type": "bool",
                 },
                 "label": Object {
+                  "type": "string",
+                },
+                "type": Object {
                   "type": "string",
                 },
               },
@@ -14506,9 +14556,6 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
-      "onEditDataItem": Object {
-        "type": "func",
-      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -14608,6 +14655,13 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hideAggregationsDropDown": null,
+          "onAddAggregations": null,
+        },
+        "onEditDataItem": null,
+      },
       "availableDimensions": Object {},
       "cardConfig": null,
       "currentBreakpoint": "xl",
@@ -14632,7 +14686,6 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -14650,6 +14703,29 @@ Map {
       "testId": "card-editor",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hideAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -14837,9 +14913,6 @@ Map {
       },
       "onChange": Object {
         "isRequired": true,
-        "type": "func",
-      },
-      "onEditDataItem": Object {
         "type": "func",
       },
       "onEditDataItems": Object {

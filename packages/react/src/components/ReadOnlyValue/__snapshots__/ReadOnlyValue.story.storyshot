@@ -70,6 +70,102 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue basic stacked with custom value 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "heigh": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value"
+      data-testid="read-only-value"
+    >
+      <label
+        data-testid="read-only-value--label"
+        htmlFor="readonly-Label"
+      >
+        Label
+        <div
+          id="readonly-Label"
+        >
+          <div>
+            custom div component
+          </div>
+        </div>
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="read-only-value"
+    >
+      <label
+        data-testid="read-only-value--label"
+        htmlFor="readonly-Label"
+      >
+        Label
+        <div
+          id="readonly-Label"
+        >
+          <div>
+            custom div component 
+            <a
+              className="bx--link"
+              href="www.ibm.com"
+              rel={null}
+            >
+              Link
+            </a>
+          </div>
+        </div>
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value"
+      data-testid="read-only-value"
+    >
+      <label
+        data-testid="read-only-value--label"
+        htmlFor="readonly-Label"
+      >
+        Label
+        <div
+          id="readonly-Label"
+        >
+          <div>
+            custom div component
+            <ul
+              className="bx--list--unordered"
+            >
+              <li
+                className="bx--list__item"
+              >
+                Unordered List level 1
+              </li>
+              <li
+                className="bx--list__item"
+              >
+                Unordered List level 1
+              </li>
+              <li
+                className="bx--list__item"
+              >
+                Unordered List level 1
+              </li>
+            </ul>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue multiple values - inline 1`] = `
 <div
   className="storybook-container"

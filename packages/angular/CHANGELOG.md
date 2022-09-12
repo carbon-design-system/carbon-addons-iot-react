@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.9](https://github.com/IBM/carbon-components-angular/compare/v2.151.0-next.8...v2.151.0-next.9) (2022-08-31)
+
+
+### Bug Fixes
+
+* adding angular 12 and 13 to peer dependencies ([76ff324](https://github.com/IBM/carbon-components-angular/commit/76ff324412f035f5741e2e755d043331dce7412d))
+* **angular:** disable ivy compilation ([1d9969d](https://github.com/IBM/carbon-components-angular/commit/1d9969d2d59e3c6ac87ee3e769709a4d1073cab9))
+
+
+
+
+
 # [2.151.0-next.0](https://github.com/IBM/carbon-components-angular/compare/v2.150.1-next.12...v2.151.0-next.0) (2022-07-26)
 
 **Note:** Version bump only for package @ai-apps/angular

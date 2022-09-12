@@ -33,6 +33,7 @@ const defaultProps = {
   i18n: {
     closeMenu: 'close menu',
   },
+  showCloseIconWhenPanelExpanded: false,
   /* eslint-enable react/default-props-match-prop-types */
 };
 
@@ -50,6 +51,7 @@ const HeaderActionPanel = ({
   renderLabel,
   i18n,
   inOverflow,
+  showCloseIconWhenPanelExpanded,
 }) => {
   const mergedI18n = useMemo(
     () => ({
@@ -72,7 +74,7 @@ const HeaderActionPanel = ({
       >
         {renderLabel ? (
           item.label
-        ) : isExpanded && inOverflow ? (
+        ) : isExpanded && (inOverflow || showCloseIconWhenPanelExpanded) ? (
           <Close16 fill={white} description={mergedI18n.closeMenu} />
         ) : (
           item.btnContent

@@ -1,5 +1,5 @@
+import { AIListItem } from '@ai-apps/angular';
 import { Component } from '@angular/core';
-import { ListItem } from 'carbon-components-angular';
 
 @Component({
 	selector: 'app-root',
@@ -7,22 +7,12 @@ import { ListItem } from 'carbon-components-angular';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-	items: ListItem[] = [
-		{
-			content: 'One',
-			selected: false,
-		},
-		{
-			content: 'Two',
-			selected: false,
-		},
-		{
-			content: 'Three',
-			selected: false,
-		},
-		{
-			content: 'Four',
-			selected: false,
-		},
+	items = [
+		new AIListItem({ value: 'Canada', isSelectable: true }),
+		new AIListItem({ value: 'Brazil', isSelectable: true }),
+		new AIListItem({ value: 'Columbia', isSelectable: true }),
+		new AIListItem({ value: 'United States of America', isSelectable: true }),
+		new AIListItem({ value: 'Uruguay', isSelectable: true }),
+		new AIListItem({ value: 'Spain', isSelectable: true }),
 	];
 }

@@ -3,6 +3,76 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.14...v2.151.0-next.15) (2022-09-09)
+
+
+### Bug Fixes
+
+* **doc:** small fix in doc ([ad61b2f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad61b2f9a30deff6808a60a7b8783db3d7920390))
+
+
+### Features
+
+* **readonlyvalue:** support to node type in value property ([4af3140](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4af3140d4ae582ebdb83005711f8a05194ecf328))
+
+
+
+
+
+# [2.151.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.13...v2.151.0-next.14) (2022-09-07)
+
+
+### Bug Fixes
+
+* updating the scss ([6246fd6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6246fd6eaeb325c699a6b6f7dfee50e841dd587f))
+* **requested changes:** change request ([590854c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/590854c887028221201d4afba3197c4bbf09ef84))
+* change type to dataItemType ([157947d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/157947d9b93f6c61b094c032d80cba81c2fc4977))
+* failing cypres test case ([8e105ac](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8e105ac4fe9b6bf7b6af1dfeff37fddcb6d1a89c))
+* update the snapshot ([d271f65](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d271f65e2c0662e0fc2ecd6c97227409d32cb34c))
+* **DataSeriesFormItemModal:** Added button and logic for dynamic aggregation dropdown ([b255076](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b25507667ed2bbb5ad5cb2ef1c4bdd853d7cc079))
+
+
+
+
+
+# [2.151.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.12...v2.151.0-next.13) (2022-09-02)
+
+
+### Bug Fixes
+
+* **sidepanel:** close btn overflows header without icons ([1b07764](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b07764b2a73d79686ad8d4092ba8059e987ee5d)), closes [#3516](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3516)
+
+
+
+
+
+# [2.151.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.11...v2.151.0-next.12) (2022-09-01)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.151.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.10...v2.151.0-next.11) (2022-08-31)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.151.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.9...v2.151.0-next.10) (2022-08-31)
+
+
+### Bug Fixes
+
+* **react:** scoping style to time picker dropdown ([d757780](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d7577801b6f03c61b80598a18277a8efa72f6b5b))
+
+
+
+
+
 # [2.151.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.7...v2.151.0-next.8) (2022-08-23)
 
 
