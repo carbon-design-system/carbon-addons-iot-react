@@ -641,7 +641,7 @@ const DateTimePicker = ({
     ? renderPresetTooltipText(currentValue)
     : datePickerType === 'range'
     ? getIntervalValue({ currentValue, strings, dateTimeMask, humanValue })
-    : datePickerType === 'singe'
+    : isSingleSelect
     ? humanValue
     : dateTimeMask;
 
