@@ -19,9 +19,9 @@ const propTypes = {
   value: PropTypes.string,
   /** Specify the value for secondary input (range) */
   secondaryValue: PropTypes.string,
-  /** Specify wehether you watn the input labels to be visually hidden */
+  /** Specify whether the input labels to be visually hidden */
   hideLabel: PropTypes.bool,
-  /** Specify wehether you watn the secondary label to be visually hidden */
+  /** Specify whether the secondary label to be visually hidden */
   hideSecondaryLabel: PropTypes.bool,
   /** Input can be for a single time or a range - defaults to single */
   type: PropTypes.oneOf(['single', 'range']),
@@ -52,6 +52,7 @@ const propTypes = {
   /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
   testId: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 /* istanbul ignore next */
@@ -77,6 +78,7 @@ const defaultProps = {
   light: false,
   onChange: () => {},
   testId: 'time-picker',
+  style: {},
 };
 
 const validate = (newValue) => {
@@ -101,6 +103,7 @@ const TimePickerDropdown = ({
   value,
   secondaryValue,
   onChange,
+  style,
 }) => {
   const init = useRef(false);
   const inputRef = useRef();
@@ -126,7 +129,7 @@ const TimePickerDropdown = ({
     } else {
       init.current = true;
     }
-  }, [valueState, secondaryValueState, onChange, init]);
+  }, [onChange, secondaryValueState, valueState, init]);
 
   useEffect(() => {
     setInvalidState(invalidProp);
@@ -458,6 +461,7 @@ const TimePickerDropdown = ({
           testId={`${testId}-spinner`}
           position={position}
           ref={dropDownRef}
+          style={style}
         />
       ) : null}
     </div>
@@ -484,6 +488,7 @@ const spinnerPropTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   testId: PropTypes.string,
+  style: PropTypes.objectOf(propTypes.string),
 };
 
 /* istanbul ignore next */
@@ -491,99 +496,105 @@ const defaultSpinnerProps = {
   value: '',
   testId: 'time-picker-spinner',
   onChange: () => {},
+  style: {},
 };
 
-export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, testId }, ref) => {
-  const firstVal = useMemo(() => {
-    return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
-  }, [value]);
-  const secondVal = useMemo(
-    () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '02'),
-    [value]
-  );
-  const thirdVal = useMemo(
-    () =>
-      /AM|PM/.test(value.substring(value.length - 2)) ? value.substring(value.length - 2) : 'AM',
-    [value]
-  );
-  const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
-  const [callbackValue, setCallbackValue] = useState(value);
+export const TimePickerSpinner = React.forwardRef(
+  ({ onChange, position, value, testId, style }, ref) => {
+    const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
+    const firstVal = useMemo(() => {
+      return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
+    }, [value]);
+    const secondVal = useMemo(
+      () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '02'),
+      [value]
+    );
+    const thirdVal = useMemo(
+      () =>
+        /AM|PM/.test(value.substring(value.length - 2)) ? value.substring(value.length - 2) : 'AM',
+      [value]
+    );
+    const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
+    const [callbackValue, setCallbackValue] = useState(value);
 
-  useEffect(() => {
-    setSelected([firstVal, secondVal, thirdVal]);
-  }, [firstVal, secondVal, thirdVal]);
-  useEffect(() => {
-    onChange(callbackValue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [callbackValue]);
+    useEffect(() => {
+      setSelected([firstVal, secondVal, thirdVal]);
+    }, [firstVal, secondVal, thirdVal]);
 
-  const handleOnClick = (str, index) => {
-    setSelected((prev) => {
-      const arr = [...prev];
-      arr[index] = str;
-      const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
-      setCallbackValue(newValue);
-      return arr;
-    });
-  };
+    useEffect(() => {
+      onChange(callbackValue);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [callbackValue]);
 
-  const listSpinner1 = useMemo(
-    () => (
-      <ListSpinner
-        testId={`${testId}-list-spinner-1`}
-        ref={ref}
-        onClick={(e) => handleOnClick(e, 0)}
-        list={listItemsForVertical}
-        defaultSelectedId={selected[0]}
-      />
-    ),
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[0]]
-  );
-  const listSpinner2 = useMemo(
-    () => (
-      <ListSpinner
-        testId={`${testId}-list-spinner-2`}
-        onClick={(e) => handleOnClick(e, 1)}
-        list={listItemsForVertical2}
-        defaultSelectedId={selected[1]}
-      />
-    ),
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[1]]
-  );
-  const listSpinner3 = useMemo(
-    () => {
-      return (
+    const handleOnClick = (str, index) => {
+      setSelected((prev) => {
+        const arr = [...prev];
+        arr[index] = str;
+        const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
+        setCallbackValue(newValue);
+        return arr;
+      });
+    };
+
+    const listSpinner1 = useMemo(
+      () => (
         <ListSpinner
-          testId={`${testId}-list-spinner-3`}
-          className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
-          onClick={(e) => handleOnClick(e, 2)}
-          list={listItemsForVertical3}
-          defaultSelectedId={selected[2]}
+          testId={`${testId}-list-spinner-1`}
+          ref={ref}
+          onClick={(e) => handleOnClick(e, 0)}
+          list={listItemsForVertical}
+          defaultSelectedId={selected[0]}
         />
-      );
-    },
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[2]]
-  );
+      ),
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[0]]
+    );
+    const listSpinner2 = useMemo(
+      () => (
+        <ListSpinner
+          testId={`${testId}-list-spinner-2`}
+          onClick={(e) => handleOnClick(e, 1)}
+          list={listItemsForVertical2}
+          defaultSelectedId={selected[1]}
+        />
+      ),
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[1]]
+    );
+    const listSpinner3 = useMemo(
+      () => {
+        return (
+          <ListSpinner
+            testId={`${testId}-list-spinner-3`}
+            className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
+            onClick={(e) => handleOnClick(e, 2)}
+            list={listItemsForVertical3}
+            defaultSelectedId={selected[2]}
+          />
+        );
+      },
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[2]]
+    );
 
-  const dropdown = (
-    <div
-      data-testid={testId}
-      className={`${iotPrefix}--time-picker-spinner`}
-      style={{
-        left: `${position[0]}px`,
-        top: `${position[1]}px`,
-      }}
-    >
-      {listSpinner1}
-      {listSpinner2}
-      {listSpinner3}
-    </div>
-  );
-  return ReactDOM.createPortal(dropdown, document.body);
-});
+    const dropdown = (
+      <div
+        data-testid={testId}
+        className={`${iotPrefix}--time-picker-spinner`}
+        style={{
+          ...updatedStyle,
+          left: `${position[0]}px`,
+          top: `${position[1]}px`,
+        }}
+      >
+        {listSpinner1}
+        {listSpinner2}
+        {listSpinner3}
+      </div>
+    );
+    return ReactDOM.createPortal(dropdown, document.body);
+  }
+);
 
 TimePickerSpinner.propTypes = spinnerPropTypes;
 TimePickerSpinner.defaultProps = defaultSpinnerProps;
