@@ -47,19 +47,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
           className="iot--card--toolbar"
           data-testid="Card-toolbar"
         >
-          <a
-            className="iot--btn bx--btn bx--btn--md bx--btn--ghost"
-            data-testid="Button"
-            href="https://www.ibm.com"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onMouseEnter={[Function]}
-            onMouseLeave={[Function]}
-            tabIndex={0}
-          >
-            IBM site
-          </a>
           <div
             className="bx--content-switcher"
             onChange={[Function]}
@@ -165,10 +152,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         data-testid="Card-content"
         style={
           Object {
-            "--card-content-height": "256px",
+            "--card-content-height": "216px",
           }
         }
       />
+      <div
+        className="iot--card--footer--wrapper"
+        data-testid="Card-footer"
+      >
+        <button
+          aria-describedby={null}
+          aria-pressed={null}
+          className="iot--btn bx--btn bx--btn--md bx--btn--ghost"
+          data-testid="Button"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Footer Content
+        </button>
+      </div>
     </div>
   </div>
 </div>

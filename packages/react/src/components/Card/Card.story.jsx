@@ -902,15 +902,12 @@ export const BasicWithCustomAction = () => {
             ['default', 'none'],
             'default'
           )}
+          footerContent={() => (
+            <Button size="field" kind="ghost">
+              Footer Content
+            </Button>
+          )}
           extraActions={[
-            {
-              id: 'linkDirectio',
-              content: (
-                <Button kind="ghost" size="field" href="https://www.ibm.com">
-                  IBM site
-                </Button>
-              ),
-            },
             {
               id: 'switcherLink',
               content: (

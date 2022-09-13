@@ -200,7 +200,12 @@ const CardToolbar = ({
           disabled={extraActions.disabled}
         />
       ) : Array.isArray(extraActions) && extraActions.some((action) => action.content) ? (
-        extraActions.map((action) => action.content)
+        <div
+          className={`${iotPrefix}--card--toolbar-action--custom-actions`}
+          data-testid={`${testId}-extra-actions`}
+        >
+          {extraActions.map((action) => action.content)}
+        </div>
       ) : null
     ) : null;
 
