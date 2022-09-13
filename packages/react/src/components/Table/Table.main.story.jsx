@@ -934,6 +934,16 @@ export const WithInlineActions = () => {
       getHiddenRowAction(),
       getHiddenOverflowRowAction(),
     ]),
+    null,
+    null,
+    null,
+    null,
+    null,
+    objectWithSubstitution('Row actions for row-9 (data[9].rowActions)', [
+      getOverflowEditRowAction(),
+      getOverflowAddRowAction(),
+      getOverflowDeleteRowAction(),
+    ]),
   ];
 
   const rowActionsState = object(

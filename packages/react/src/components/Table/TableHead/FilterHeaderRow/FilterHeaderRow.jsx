@@ -410,6 +410,7 @@ class FilterHeaderRow extends Component {
                       [`${iotPrefix}--clear-filters-button--disabled`]: isDisabled,
                     })}
                     tabIndex={isDisabled ? '-1' : '0'}
+                    onMouseDown={(event) => event.preventDefault()}
                     onClick={(event) => {
                       if (!isDisabled) {
                         this.handleClearFilter(event, column);

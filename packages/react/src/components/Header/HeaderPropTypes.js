@@ -61,4 +61,5 @@ export const HeaderActionPropTypes = {
     closeMenu: PropTypes.string,
   }),
   inOverflow: PropTypes.bool,
+  showCloseIconWhenPanelExpanded: PropTypes.bool,
 };
