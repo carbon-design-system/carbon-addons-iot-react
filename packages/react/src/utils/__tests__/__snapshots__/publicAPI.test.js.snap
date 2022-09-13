@@ -8083,6 +8083,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -15971,6 +15979,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -17089,6 +17105,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -18395,6 +18419,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -19762,6 +19794,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -20800,6 +20840,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -22223,6 +22271,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -23429,6 +23485,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -24816,6 +24880,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -25938,6 +26010,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -27117,6 +27197,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -28190,6 +28278,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
@@ -32209,6 +32305,14 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -34091,6 +34195,14 @@ Map {
                     },
                   ],
                   "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
+            "content": Object {
+              "args": Array [
+                Object {
+                  "type": "node",
                 },
               ],
               "type": "arrayOf",
