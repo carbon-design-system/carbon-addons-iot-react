@@ -8710,6 +8710,7 @@ Map {
       "readOnly": false,
       "secondaryValue": undefined,
       "size": "md",
+      "style": Object {},
       "testId": "time-picker",
       "type": "single",
       "value": undefined,
@@ -8796,6 +8797,14 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "testId": Object {
         "type": "string",
@@ -9301,6 +9310,7 @@ Map {
   },
   "DateTimePickerV2" => Object {
     "defaultProps": Object {
+      "datePickerType": "range",
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
       "disabled": false,
@@ -9328,7 +9338,9 @@ Map {
         "relativeLabel": "Relative",
         "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
+        "resetBtnLabel": "Clear",
         "startTimeLabel": "Start time",
+        "timePickerInvalidText": undefined,
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
@@ -9406,8 +9418,12 @@ Map {
       "showRelativeOption": true,
       "style": Object {},
       "testId": "date-time-picker",
+      "useNewTimeSpinner": false,
     },
     "propTypes": Object {
+      "datePickerType": Object {
+        "type": "string",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -9564,6 +9580,55 @@ Map {
               "isRequired": true,
               "type": "exact",
             },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "SINGLE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeSingleValue": Object {
+                    "args": Array [
+                      Object {
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
           ],
         ],
         "type": "oneOfType",
@@ -9658,7 +9723,13 @@ Map {
             "relativeToLabel": Object {
               "type": "string",
             },
+            "resetBtnLabel": Object {
+              "type": "string",
+            },
             "startTimeLabel": Object {
+              "type": "string",
+            },
+            "timePickerInvalidText": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -9775,6 +9846,9 @@ Map {
       },
       "testId": Object {
         "type": "string",
+      },
+      "useNewTimeSpinner": Object {
+        "type": "bool",
       },
     },
   },
@@ -43527,6 +43601,7 @@ Map {
     "ABSOLUTE": "ABSOLUTE",
     "PRESET": "PRESET",
     "RELATIVE": "RELATIVE",
+    "SINGLE": "SINGLE",
   },
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

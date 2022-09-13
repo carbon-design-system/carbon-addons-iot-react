@@ -86,6 +86,10 @@
         bottom: 0;
         pointer-events: none;
       }
+
+      .#{$iot-prefix}--date-time-picker__disabled {
+        opacity: 0.5;
+      }
     }
   }
 
@@ -122,6 +126,12 @@
       width: var(--wrapper-width);
       padding-top: $spacing-05;
       padding-bottom: $spacing-07;
+      .#{$iot-prefix}--time-picker-dropdown {
+        z-index: calc(var(--zIndex) + 40);
+      }
+      .#{$iot-prefix}--time-picker-dropdown button {
+        padding-right: $spacing-02;
+      }
     }
   }
 
@@ -143,6 +153,9 @@
 
   // hide the date picker inputs
   .#{$prefix}--date-picker--range {
+    position: absolute;
+  }
+  .#{$prefix}--date-picker--single {
     position: absolute;
   }
   .#{$prefix}--date-picker-container {
