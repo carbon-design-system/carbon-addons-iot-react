@@ -253,10 +253,7 @@ const ThresholdsFormItem = ({
                 renderIcon={TrashCan32}
                 kind="ghost"
                 onClick={() => {
-                  const thresholdIndex = thresholds.findIndex((item) => item.id === threshold.id);
-                  const filteredThresholds = thresholds.filter(
-                    (item, index) => index !== thresholdIndex
-                  );
+                  const filteredThresholds = thresholds.filter((item) => item.id !== threshold.id);
                   onChange(filteredThresholds.map((item) => omit(item, 'id')));
                   setThresholds(filteredThresholds);
                 }}
