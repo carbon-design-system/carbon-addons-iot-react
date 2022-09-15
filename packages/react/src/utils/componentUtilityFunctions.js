@@ -17,6 +17,7 @@ import {
   svgAttributes,
   eventHandlers,
 } from '../constants/HTMLAttributes';
+import { FILTER_EMPTY_STRING } from '../constants/Filters';
 
 import dayjs from './dayjs';
 
@@ -323,12 +324,23 @@ export const getCardMinSize = (
 };
 
 /**
+ * Checks if function argument is an empty string
+ * @param {string} str argument to be checked
+ * @returns {Boolean} is empty string or not
+ */
+export const isEmptyString = (str) => typeof str === 'string' && str.length === 0;
+
+/**
  * Searches through an array of keys for a searchTerm match
  * @param {Array<string>} keys to be searched
  * @param {string} searchTerm
  * @returns {Boolean} found or not
  */
 export const caseInsensitiveSearch = (keys, searchTerm) => {
+  if (searchTerm === FILTER_EMPTY_STRING) {
+    return keys.some((key) => isEmptyString(key));
+  }
+
   return keys.some((key) => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
 

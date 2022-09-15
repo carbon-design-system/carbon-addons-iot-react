@@ -12,11 +12,28 @@ import { memoize, debounce, isEqual } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 
-import { defaultFunction, handleEnterKeyDown } from '../../../../utils/componentUtilityFunctions';
+import {
+  defaultFunction,
+  handleEnterKeyDown,
+  isEmptyString,
+} from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
+import { FILTER_EMPTY_STRING } from '../../../../constants/Filters';
 import ComboBox from '../../../ComboBox/ComboBox';
 
 const { iotPrefix, prefix } = settings;
+
+const getFilterValue = (selectedItem) => {
+  if (selectedItem === null) {
+    return '';
+  }
+
+  if (isEmptyString(selectedItem.id)) {
+    return FILTER_EMPTY_STRING;
+  }
+
+  return selectedItem.id;
+};
 
 class FilterHeaderRow extends Component {
   static propTypes = {
@@ -351,7 +368,17 @@ class FilterHeaderRow extends Component {
                   initialSelectedItem={{
                     id: columnStateValue,
                     text: (
-                      column.options.find((option) => option.id === columnStateValue) || {
+                      column.options.find((option) => {
+                        if (columnStateValue === FILTER_EMPTY_STRING && option.id === '') {
+                          return true;
+                        }
+
+                        if (option.id === '') {
+                          return false;
+                        }
+
+                        return option.id === columnStateValue;
+                      }) || {
                         text: '',
                       }
                     ).text, // eslint-disable-line react/destructuring-assignment
@@ -362,7 +389,7 @@ class FilterHeaderRow extends Component {
                       (state) => ({
                         filterValues: {
                           ...state.filterValues,
-                          [column.id]: selectedItem === null ? '' : selectedItem.id,
+                          [column.id]: getFilterValue(selectedItem),
                         },
                       }),
                       this.handleApplyFilter
