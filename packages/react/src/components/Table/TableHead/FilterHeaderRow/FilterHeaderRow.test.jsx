@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import * as utils from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 import { keyboardKeys } from '../../../../constants/KeyCodeConstants';
+import { FILTER_EMPTY_STRING } from '../../../../constants/Filters';
 
 import FilterHeaderRow from './FilterHeaderRow';
 
@@ -749,5 +750,83 @@ describe('FilterHeaderRow', () => {
 
     expect(screen.getByPlaceholderText('col1')).toHaveFocus();
     expect(screen.getByPlaceholderText('col2')).not.toHaveFocus();
+  });
+
+  it('should call filter handler with empty string filter', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            options: [
+              {
+                id: '',
+                text: 'empty string',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: 'test1',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getAllByRole('option')[0]);
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledTimes(1);
+    expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('empty string');
+  });
+
+  it('should pass empty string filter value to handler', () => {
+    const columnId = 'col1';
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: columnId,
+            isFilterable: true,
+            options: [
+              {
+                id: '',
+                text: 'empty string',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId,
+            value: 'test1',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getAllByRole('option')[0]);
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
+      [columnId]: FILTER_EMPTY_STRING,
+    });
   });
 });
