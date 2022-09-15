@@ -34,7 +34,9 @@ import {
   addColumnGroupIds,
   getTableActions,
   getTableColumns,
+  getTableColumnWithEmptySelectFilter,
   getTableData,
+  getTableDataWithEmptySelectFilter,
   getTableToolbarActions,
   getExpandedData,
   getDefaultOrdering,
@@ -698,14 +700,30 @@ WithAggregations.parameters = {
 };
 
 export const WithFiltering = () => {
-  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
-    getDefaultValue: (knobName) => knobName !== 'hasAdvancedFilter',
+  const { selectedTableType, hasFilter, hasAdvancedFilter, hasEmptyFilterOption } = getTableKnobs({
+    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter', 'hasEmptyFilterOption'],
+    getDefaultValue: (knobName) => {
+      if (knobName === 'hasAdvancedFilter') {
+        return false;
+      }
+
+      if (knobName === 'hasEmptyFilterOption') {
+        return false;
+      }
+
+      return true;
+    },
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const data = getTableData().slice(0, 30);
-  const columns = getTableColumns().map((col) =>
+  const data = hasEmptyFilterOption
+    ? getTableDataWithEmptySelectFilter().slice(0, 30)
+    : getTableData().slice(0, 30);
+
+  const columns = (hasEmptyFilterOption
+    ? getTableColumnWithEmptySelectFilter()
+    : getTableColumns()
+  ).map((col) =>
     col.id === 'object'
       ? {
           ...col,

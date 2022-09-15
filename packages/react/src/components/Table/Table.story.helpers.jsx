@@ -89,6 +89,15 @@ export const getSelectDataOptions = () => [
   },
 ];
 
+const getSelectDataOptionsWithEmptyOption = () => {
+  const selectOptions = getSelectDataOptions();
+  selectOptions.splice(2, 1, {
+    id: '',
+    text: '',
+  });
+  return selectOptions;
+};
+
 export const getTableActions = () => ({
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -270,6 +279,16 @@ export const getTableColumns = () => [
   },
 ];
 
+export const getTableColumnWithEmptySelectFilter = () => {
+  const tableColumns = getTableColumns();
+  tableColumns.splice(2, 1, {
+    id: 'select',
+    name: 'Select',
+    filter: { placeholderText: 'pick an option', options: getSelectDataOptionsWithEmptyOption() },
+  });
+  return tableColumns;
+};
+
 export const getTableToolbarActions = () => [
   {
     id: 'edit',
@@ -349,6 +368,20 @@ export const getTableData = () =>
   Array(100)
     .fill(0)
     .map((i, idx) => getNewRow(idx));
+
+export const getTableDataWithEmptySelectFilter = () =>
+  Array(100)
+    .fill(0)
+    .map((i, idx) => {
+      const row = getNewRow(idx);
+      return {
+        ...row,
+        values: {
+          ...row.values,
+          select: getSelectDataOptionsWithEmptyOption()[idx % 3].id,
+        },
+      };
+    });
 
 export const getDrillDownRowAction = () => ({
   id: 'drilldown',
@@ -1045,6 +1078,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Enable advanced filters (options.hasAdvancedFilter) ☢️',
           getDefaultValue('hasAdvancedFilter'),
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasEmptyFilterOption: shouldCreate('hasEmptyFilterOption')
+      ? boolean(
+          'Show empty string option in Select filter',
+          getDefaultValue('hasEmptyFilterOption'),
           SORT_FILTER_GROUP
         )
       : null,
