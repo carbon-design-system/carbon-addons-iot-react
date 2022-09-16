@@ -907,33 +907,31 @@ export const BasicWithCustomAction = () => {
               Footer Content
             </Button>
           )}
-          extraActions={[
-            {
-              id: 'switcherLink',
-              content: (
-                <ContentSwitcher
-                  onChange={action('onChangeSwitcher')}
-                  selectedIndex={0}
-                  style={{ height: 'auto' }}
-                >
-                  <IconSwitch
-                    name="one"
-                    onClick={action('Tree icon')}
-                    text="Graphical View"
-                    renderIcon={Tree16}
-                    size="small"
-                  />
-                  <IconSwitch
-                    name="two"
-                    onClick={action('Add icon')}
-                    text="Source View"
-                    renderIcon={Add16}
-                    size="small"
-                  />
-                </ContentSwitcher>
-              ),
-            },
-          ]}
+          extraActions={{
+            id: 'switcherLink',
+            content: (
+              <ContentSwitcher
+                onChange={action('onChangeSwitcher')}
+                selectedIndex={0}
+                style={{ height: 'auto' }}
+              >
+                <IconSwitch
+                  name="one"
+                  onClick={action('Tree icon')}
+                  text="Graphical View"
+                  renderIcon={Tree16}
+                  size="small"
+                />
+                <IconSwitch
+                  name="two"
+                  onClick={action('Add icon')}
+                  text="Source View"
+                  renderIcon={Add16}
+                  size="small"
+                />
+              </ContentSwitcher>
+            ),
+          }}
         />
       </CardStoryStateManager>
     </div>
