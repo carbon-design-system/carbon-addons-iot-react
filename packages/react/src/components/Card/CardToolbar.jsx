@@ -199,6 +199,13 @@ const CardToolbar = ({
           testId={`${testId}-extra-single-action`}
           disabled={extraActions.disabled}
         />
+      ) : extraActions.content ? (
+        <div
+          className={`${iotPrefix}--card--toolbar-action--custom-actions`}
+          data-testid={`${testId}-extra-actions`}
+        >
+          {extraActions.content}
+        </div>
       ) : null
     ) : null;
 
