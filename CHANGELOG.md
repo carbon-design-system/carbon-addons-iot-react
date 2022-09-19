@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.16...v2.151.0-next.17) (2022-09-19)
+
+
+### Bug Fixes
+
+* **card:** adding more testcases for the card component ([65fa9b3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65fa9b32b22007d4b8f7ca8c239d94deb30c681e))
+* **card:** fixing based on review comments ([6d5714f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d5714f410aa28a802f41160e0995171d740047c))
+* **datetimepicerv2:** fix ids and css ([6cc6fdd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6cc6fddff72f3de74430367899ff72f474f615fe))
+* **datetimepicerv2:** fix losing focus on time input ([132e06c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/132e06c4a71f6d9fc31a4b25169187fcf43bb979))
+* **datetimepicker:** change format for other browsers ([8970029](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89700299e620fda084d07cfbbf80110fac71ad0d))
+* **datetimepicker2:** remove setTimeout ([7665318](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7665318b3a13a494922608bf87e7835921bdb417))
+* **datetimepickerv2:** add more tests ([248286a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/248286aaf01e380bd9c264736bad57b5f592c718))
+* **datetimepickerv2:** fix css in a different scope ([c411d21](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c411d2139d702a79f55362701f715c1147e5354b))
+* **datetimepickerv2:** fix enter key not working ([7e69f68](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e69f68538865e3be1591d9587225e0f8d355ec5))
+* **datetimepickerv2:** fix format ([9ac2342](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9ac2342b9b6b8c77902065d5e3629bfdd9a166bd))
+* **datetimepickerv2:** fix import ([183411f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/183411fffaf82f88b80580e2d941d419ad991cf0))
+* **datetimepickerv2:** fix import ([f5d49ea](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f5d49eaf44a83e7422316af83f86acf570749c39))
+* **datetimepickerv2:** fix more tests ([b7ef0fb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b7ef0fb6549c653f485c21552cc5ce4b1892c12f))
+* **datetimepickerv2:** fix props ([7caa87d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7caa87df1ce3f9cfc4b674cf074a0d901414b035))
+* **datetimepickerv2:** fix publicApi ([4d3221f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4d3221f8531bd02a4a9517deb99accb61002ba4e))
+* **datetimepickerv2:** grey out datemaskvalue for single select ([b85d3bc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b85d3bc3f9f38564230c9bb720ed0f9680f8b1e7))
+* **datetimepickerv2:** revert changes in timepickerdropdown ([7a56a90](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7a56a908bc8af68347ee40d9044d3c90f38059a2))
+* **datetimepickerv2:** support null value for single select ([a13859f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a13859f2ae92f4cad646dfd8454b09b891cdad30))
+* **datetimepickerv2:** tooltips ([0af3ac9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0af3ac9cabf84443e59063db884e0a69888604c6))
+* **datetimepickerv2:** uncomments ([c13e666](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c13e666ffe4b4913dafed1c7d8c008069cb3c815))
+* **datetimepickerv2:** update invalid state ([b24142f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b24142f1f7aac3aac84f7bb0e5be493d7e1b774c))
+* **datetimepickerv2:** update snapshots ([92fa316](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/92fa3168bc3637c57daec3e30cc57399cbb3983f))
+* **datetimepickerv2:** update snapshots ([966eaa4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/966eaa49ad0cdb8df2675ec7bdfa9fbbf91d597b))
+* **datetimepickerv2:** update story ([fca8a8d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fca8a8d01ccec3fa9d48eee81f1f826c0e2f56ce))
+* **datetimepickerv2:** update story zindex ([35c248a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/35c248a4b508b14a7415933ffbb170d6e9d5ac2a))
+* **datetimepickerv2:** update tests ([4273a64](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4273a64e5f53ae52b3387c6e76bf45d93cbedf1f))
+* **datetimepickerv2:** update tests ([e754f37](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e754f37832df1896d706a4963566e755dbe92389))
+
+
+### Features
+
+* **card:** adding tooltip to the card extra actions ([ae02278](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ae0227830c8a3d626d41df12a7f01d59bc0c0785))
+* **datetimepicker:** single select and new time spinner ([59bf437](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/59bf4372cf180a908d4b838845819b703e7715ad))
+* **datetimepickerv2:** add clear button for single select ([1ad5d30](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1ad5d30146b1ed0945bb893360c04de7f3a31829))
+
+
+
+
+
 # [2.151.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.15...v2.151.0-next.16) (2022-09-12)
 
 
