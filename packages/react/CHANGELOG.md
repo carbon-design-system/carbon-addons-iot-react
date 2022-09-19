@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.19...v2.151.0-next.20) (2022-09-19)
+
+
+### Features
+
+* **editorutils:** add meta data of the data source ([20bbea8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20bbea8cbf93c22c595db807d588b5c269e234f1))
+
+
+
+
+
 # [2.151.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.18...v2.151.0-next.19) (2022-09-19)
 
 
