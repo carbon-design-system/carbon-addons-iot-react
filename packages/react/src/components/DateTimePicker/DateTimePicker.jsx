@@ -16,7 +16,7 @@ import {
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -305,7 +305,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id = uuidv4(),
   style,
   ...others
 }) => {
