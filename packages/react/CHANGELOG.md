@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.18...v2.151.0-next.19) (2022-09-19)
+
+
+### Bug Fixes
+
+* **breadcrumn:** text-overflow:ecllipse not working ([506ba75](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/506ba754e57df437aed90ec22c9948ec1550bf8c))
+* **sidenav:** search blocked by links ([fcd4af9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fcd4af99fcdb396d5d6314d771fb3a52dff06180))
+
+
+
+
+
 # [2.151.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.17...v2.151.0-next.18) (2022-09-19)
 
 
