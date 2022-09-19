@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.17...v2.151.0-next.18) (2022-09-19)
+
+
+### Bug Fixes
+
+* **card:** support to content at node ([d53338a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d53338ac93e3cb0ab55e6e439b5a660b945d8f7e))
+* **tabletoolbar:** add prop to disable advanced filter button ([f1ac0a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1ac0a47b0be3d90d5dfa9af6bc97f400815c2bd)), closes [#3361](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3361)
+
+
+### Features
+
+* **card:** support to custom extraactions in card ([d828886](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d82888621580ad4fcff0b469008820b04496eee4))
+
+
+
+
+
 # [2.151.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.16...v2.151.0-next.17) (2022-09-19)
 
 
