@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -257,6 +257,22 @@ const TableToolbar = ({
   const langDir = useLangDirection();
   const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
 
+  /**
+   * Needed to force update component if search input is cleared from outside of TableToolbar
+   * Reference: https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
+   */
+  const [forceRenderCount, setForceRenderCount] = useState(0);
+
+  useEffect(() => {
+    if (document.activeElement?.tagName === 'INPUT') {
+      return;
+    }
+
+    if (search.defaultValue === '') {
+      setForceRenderCount((prevValue) => prevValue + 1);
+    }
+  }, [search.defaultValue]);
+
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
     className: `${iotPrefix}--table-toolbar-aggregations__overflow-menu-content`,
@@ -420,8 +436,8 @@ const TableToolbar = ({
                 // The userViewManagement also needs to be able to set the search.defaultValue
                 // while typing without loosing input focus.
                 hasUserViewManagement
-                  ? 'table-toolbar-search'
-                  : `table-toolbar-search${search.defaultValue}${search.value}`
+                  ? `table-toolbar-search-${forceRenderCount}`
+                  : `table-toolbar-search-user-view-${forceRenderCount}`
               }
               defaultValue={search.defaultValue || search.value}
               className="table-toolbar-search"
