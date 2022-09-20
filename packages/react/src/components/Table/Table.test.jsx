@@ -578,8 +578,33 @@ describe('Table', () => {
     expect(rowEditBarButton).toBeTruthy();
   });
 
-  it('toolbar search should render with default value', () => {
-    const wrapper = mount(
+  it('toolbar search should render with default value', async () => {
+    const tableId = 'table';
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'ferrari',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('ferrari');
+  });
+
+  it('toolbar search should change value after typing', () => {
+    render(
       <Table
         columns={tableColumns}
         data={[tableData[0]]}
@@ -594,23 +619,13 @@ describe('Table', () => {
             },
           },
         }}
+        id="table"
       />
     );
-
-    expect(wrapper.find(`.${prefix}--search-input`)).toHaveLength(1);
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
-
-    wrapper.setProps({
-      view: { toolbar: { search: { defaultValue: 'ferrari' } } },
-    });
-    wrapper.update();
-
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('ferrari');
-
-    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
-    wrapper.update();
-
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+    expect(screen.getByTestId('table-table-toolbar-search')).toBeInTheDocument();
+    expect(screen.getByTestId('table-table-toolbar-search')).toHaveValue('');
+    userEvent.type(screen.getByTestId('table-table-toolbar-search'), 'ferrari');
+    expect(screen.getByTestId('table-table-toolbar-search')).toHaveValue('ferrari');
   });
 
   it('should call onApplySearch when typing in the search box with hasFastSearch:true', () => {
