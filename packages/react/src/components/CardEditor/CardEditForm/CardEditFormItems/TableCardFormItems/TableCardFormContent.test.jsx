@@ -85,6 +85,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             label: 'Timestamp',
             sort: 'DESC',
             dataItemId: 'timestamp',
@@ -121,6 +122,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             label: 'Timestamp',
             sort: 'DESC',
             dataItemId: 'timestamp',
@@ -173,6 +175,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             label: 'Timestamp',

@@ -966,6 +966,7 @@ export const CardPropTypes = {
         hidden: PropTypes.bool,
       })
     ),
+    content: PropTypes.node,
   }),
   overrides: PropTypes.shape({
     errorMessage: OverridePropTypes,

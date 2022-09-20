@@ -256,6 +256,7 @@ const TableToolbarAdvancedFilterFlyout = ({
       testId="advanced-filter-flyout"
       iconDescription="advanced-filter-flyout-icon"
       direction={FlyoutMenuDirection.BottomEnd}
+      disabled={isDisabled}
       renderIcon={Filter20}
       light
       isOpen={advancedFilterFlyoutOpen}

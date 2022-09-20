@@ -538,6 +538,7 @@ const TableToolbar = ({
                 advancedFilterFlyoutOpen,
                 ordering,
                 hasFastFilter: hasAdvancedFilter === 'onKeyPress',
+                isDisabled,
               }}
               i18n={{
                 ...pick(
