@@ -122,7 +122,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   ]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
-  const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
+  const initialDefaultSearch = view?.toolbar?.search?.defaultValue || '';
 
   const { onChangePage } = pagination || {};
   const {
