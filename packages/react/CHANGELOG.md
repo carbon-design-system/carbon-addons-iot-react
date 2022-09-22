@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.20...v2.151.0-next.21) (2022-09-22)
+
+
+### Features
+
+* **dashboardeditor:** send card configuration on card select ([89ae7dc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/89ae7dca287d07f2bc79450334823be906ba7a99))
+
+
+
+
+
 # [2.151.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.19...v2.151.0-next.20) (2022-09-19)
 
 
