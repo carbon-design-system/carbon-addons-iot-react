@@ -14,7 +14,7 @@ import {
   ListItem,
   TooltipDefinition,
 } from 'carbon-components-react';
-import { Calendar16 } from '@carbon/icons-react';
+import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -39,7 +39,7 @@ import {
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const PICKER_KINDS = {
   PRESET: 'PRESET',
@@ -151,6 +151,8 @@ const propTypes = {
   expanded: PropTypes.bool,
   /** disable the input */
   disabled: PropTypes.bool,
+  /** specify the input in invalid state */
+  invalid: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
   /** show the custom range link */
@@ -171,6 +173,7 @@ const propTypes = {
     toLabel: PropTypes.string,
     toNowLabel: PropTypes.string,
     calendarLabel: PropTypes.string,
+    invalidLabel: PropTypes.string,
     presetLabels: PropTypes.arrayOf(PropTypes.string),
     intervalLabels: PropTypes.arrayOf(PropTypes.string),
     relativeLabels: PropTypes.arrayOf(PropTypes.string),
@@ -191,6 +194,7 @@ const propTypes = {
     hours: PropTypes.string,
     minutes: PropTypes.string,
     number: PropTypes.string,
+    invalidText: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -244,6 +248,7 @@ const defaultProps = {
   ],
   expanded: false,
   disabled: false,
+  invalid: false,
   showRelativeOption: true,
   showCustomRangeLink: true,
   hasTimeInput: true,
@@ -254,6 +259,7 @@ const defaultProps = {
     toLabel: 'to',
     toNowLabel: 'to Now',
     calendarLabel: 'Calendar',
+    invalidLabel: 'Invalid',
     presetLabels: [
       'Last 30 minutes',
       'Last 1 hour',
@@ -280,6 +286,7 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
     number: 'number',
+    invalidText: 'The date time entered is invalid',
   },
   light: false,
   locale: 'en',
@@ -296,6 +303,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -637,9 +645,10 @@ const DateTimePicker = ({
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
     >
       <div
-        className={`${iotPrefix}--date-time-picker__box ${
-          light ? `${iotPrefix}--date-time-picker__box--light` : ''
-        }`}
+        className={classnames(`${iotPrefix}--date-time-picker__box`, {
+          [`${iotPrefix}--date-time-picker__box--light`]: light,
+          [`${iotPrefix}--date-time-picker__box--invalid`]: invalid,
+        })}
       >
         <div
           data-testid={`${testId}__field`}
@@ -666,10 +675,21 @@ const DateTimePicker = ({
               {humanValue}
             </TooltipDefinition>
           ) : null}
-          <Calendar16
-            aria-label={strings.calendarLabel}
-            className={`${iotPrefix}--date-time-picker__icon`}
-          />
+          {invalid ? (
+            <WarningFilled16
+              data-testid={`${testId}__invalid-icon`}
+              aria-label={strings.invalidLabel}
+              className={classnames(
+                `${iotPrefix}--date-time-picker__icon`,
+                `${iotPrefix}--date-time-picker__icon--invalid`
+              )}
+            />
+          ) : (
+            <Calendar16
+              aria-label={strings.calendarLabel}
+              className={`${iotPrefix}--date-time-picker__icon`}
+            />
+          )}
           {!isExpanded && isTooltipOpen ? (
             <Tooltip
               open={isTooltipOpen}
@@ -977,6 +997,16 @@ const DateTimePicker = ({
           </div>
         </div>
       </div>
+      {invalid ? (
+        <p
+          className={classnames(
+            `${prefix}--form__helper-text`,
+            `${iotPrefix}--date-time-picker__helper-text--invalid`
+          )}
+        >
+          {strings.invalidText}
+        </p>
+      ) : null}
     </div>
   );
 };

@@ -8861,7 +8861,9 @@ Map {
           "months",
           "years",
         ],
+        "invalidLabel": "Invalid",
         "invalidNumberLabel": "Number is not valid",
+        "invalidText": "The date time entered is invalid",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
@@ -8909,6 +8911,7 @@ Map {
           "value": "YEARS",
         },
       ],
+      "invalid": false,
       "light": false,
       "locale": "en",
       "onApply": null,
@@ -9170,7 +9173,13 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "invalidLabel": Object {
+              "type": "string",
+            },
             "invalidNumberLabel": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
               "type": "string",
             },
             "lastLabel": Object {
@@ -9237,6 +9246,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "invalid": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",
@@ -9334,6 +9346,7 @@ Map {
         "increment": "Increment",
         "intervalLabels": Array [],
         "invalidNumberLabel": "Number is not valid",
+        "invalidText": "The date time entered is invalid",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
@@ -9374,6 +9387,7 @@ Map {
           "value": "YEARS",
         },
       ],
+      "invalid": false,
       "light": false,
       "locale": "en",
       "menuOffset": undefined,
@@ -9695,6 +9709,9 @@ Map {
             "invalidNumberLabel": Object {
               "type": "string",
             },
+            "invalidText": Object {
+              "type": "string",
+            },
             "lastLabel": Object {
               "type": "string",
             },
@@ -9765,6 +9782,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "invalid": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",

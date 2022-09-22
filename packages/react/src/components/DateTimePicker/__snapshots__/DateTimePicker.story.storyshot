@@ -19,7 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -398,7 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -894,7 +894,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1390,7 +1390,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1579,7 +1579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1740,12 +1740,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             className="bx--number__controls"
                           >
                             <button
-                              aria-label="Decrement number"
+                              aria-label="undefined undefined"
                               className="bx--number__control-btn down-icon"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex="-1"
-                              title="Decrement number"
+                              title="undefined undefined"
                               type="button"
                             >
                               <svg
@@ -1768,12 +1768,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               className="bx--number__rule-divider"
                             />
                             <button
-                              aria-label="Increment number"
+                              aria-label="undefined undefined"
                               className="bx--number__control-btn up-icon"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex="-1"
-                              title="Increment number"
+                              title="undefined undefined"
                               type="button"
                             >
                               <svg
@@ -2125,7 +2125,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -2306,7 +2306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"

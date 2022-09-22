@@ -13,7 +13,7 @@ import {
   OrderedList,
   ListItem,
 } from 'carbon-components-react';
-import { Calendar16 } from '@carbon/icons-react';
+import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
@@ -48,7 +48,7 @@ import {
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
   PropTypes.exact({
@@ -116,6 +116,8 @@ const propTypes = {
   expanded: PropTypes.bool,
   /** disable the input */
   disabled: PropTypes.bool,
+  /** specify the input in invalid state */
+  invalid: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
   /** show the custom range link */
@@ -156,6 +158,7 @@ const propTypes = {
     hours: PropTypes.string,
     minutes: PropTypes.string,
     number: PropTypes.string,
+    invalidText: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -213,6 +216,7 @@ const defaultProps = {
   ],
   expanded: false,
   disabled: false,
+  invalid: false,
   showRelativeOption: true,
   showCustomRangeLink: true,
   hasTimeInput: true,
@@ -243,6 +247,7 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
     number: 'number',
+    invalidText: 'The date time entered is invalid',
   },
   light: false,
   locale: 'en',
@@ -261,6 +266,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -706,6 +712,7 @@ const DateTimePicker = ({
           className={classnames({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
+            [`${iotPrefix}--date-time-picker__box--invalid`]: invalid,
           })}
         >
           {!hasIconOnly ? (
@@ -743,11 +750,12 @@ const DateTimePicker = ({
           <FlyoutMenu
             isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
-            renderIcon={Calendar16}
+            renderIcon={invalid ? WarningFilled16 : Calendar16}
             disabled={false}
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
+              className: invalid ? `${iotPrefix}--date-time-picker--trigger-button-invalid` : '',
             }}
             hideTooltip
             iconDescription={strings.calendarLabel}
@@ -1013,6 +1021,16 @@ const DateTimePicker = ({
             </div>
           </FlyoutMenu>
         </div>
+        {invalid ? (
+          <p
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--date-time-picker__helper-text--invalid`
+            )}
+          >
+            {strings.invalidText}
+          </p>
+        ) : null}
       </div>
     </>
   );
