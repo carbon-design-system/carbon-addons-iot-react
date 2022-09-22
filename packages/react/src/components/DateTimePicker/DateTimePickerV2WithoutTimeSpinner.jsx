@@ -1021,7 +1021,7 @@ const DateTimePicker = ({
             </div>
           </FlyoutMenu>
         </div>
-        {invalid ? (
+        {invalid && !hasIconOnly ? (
           <p
             className={classnames(
               `${prefix}--form__helper-text`,
