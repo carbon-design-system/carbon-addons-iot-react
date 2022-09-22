@@ -142,7 +142,7 @@ const TableCardFormContent = ({
   const { onEditDataItem } = actions;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
-    content: { columns, thresholds },
+    content: { columns },
   } = cardConfig;
 
   const [showEditor, setShowEditor] = useState(false);
@@ -156,16 +156,9 @@ const TableCardFormContent = ({
       Array.isArray(columns)
         ? columns.map((column) => ({
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            ...(!isEmpty(thresholds) // only set thresholds if they exist
-              ? {
-                  thresholds: thresholds?.filter(
-                    (threshold) => column.dataSourceId === threshold.dataSourceId
-                  ),
-                }
-              : {}),
           }))
         : [],
-    [columns, thresholds]
+    [columns]
   );
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
@@ -258,6 +251,10 @@ const TableCardFormContent = ({
       const filteredColumns = dataSection.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
+      // Filter existing thresholds
+      const filteredThresholds = cardConfig?.content?.thresholds?.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
       // Need to determine whether we should remove these from the groupBy section
       const filteredGroupBy = cardConfig?.dataSource?.groupBy?.filter(
         (groupByItem) => groupByItem !== dataItem.dataSourceId
@@ -274,12 +271,18 @@ const TableCardFormContent = ({
         updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
       }
 
+      const updatedContent = {
+        ...cardConfig.content,
+        columns: filteredColumns,
+      };
+
+      if (isEmpty(filteredThresholds)) {
+        delete updatedContent.thresholds;
+      }
+
       onChange({
         ...cardConfig,
-        content: {
-          ...cardConfig.content,
-          columns: filteredColumns,
-        },
+        content: updatedContent,
         ...updatedDataSource,
       });
     },
