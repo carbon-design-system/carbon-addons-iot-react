@@ -30580,6 +30580,7 @@ Map {
         "render": [Function],
       },
       "renderInPortal": false,
+      "style": Object {},
       "tabIndex": 0,
       "testId": "flyout-menu",
       "tooltipClassName": "",
@@ -30709,6 +30710,14 @@ Map {
       },
       "renderInPortal": Object {
         "type": "bool",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "tabIndex": Object {
         "type": "number",

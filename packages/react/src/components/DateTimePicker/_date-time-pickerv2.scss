@@ -107,7 +107,6 @@
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
     width: var(--wrapper-width);
-    z-index: calc(var(--zIndex) + 20);
 
     .#{$prefix}--list__item:before {
       display: none;
@@ -126,9 +125,6 @@
       width: var(--wrapper-width);
       padding-top: $spacing-05;
       padding-bottom: $spacing-07;
-      .#{$iot-prefix}--time-picker-dropdown {
-        z-index: calc(var(--zIndex) + 40);
-      }
       .#{$iot-prefix}--time-picker-dropdown button {
         padding-right: $spacing-02;
       }
