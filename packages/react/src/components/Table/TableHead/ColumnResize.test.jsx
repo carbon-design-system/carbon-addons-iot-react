@@ -519,9 +519,9 @@ describe('ColumnResize', () => {
                 showExpanderColumn={false}
                 ref={ref}
                 currentColumnWidths={{
-                  test: { width: 100, id: 'test' },
+                  test: { width: 150, id: 'test' },
                   'second-test': {
-                    width: 100,
+                    width: 150,
                     id: 'second-test',
                   },
                 }}
@@ -561,7 +561,7 @@ describe('ColumnResize', () => {
       },
       {
         id: 'second-test',
-        width: 70,
+        width: 170,
       },
     ]);
     jest.clearAllMocks();
@@ -649,9 +649,9 @@ describe('ColumnResize', () => {
                 showExpanderColumn={false}
                 ref={ref}
                 currentColumnWidths={{
-                  test: { width: 100, id: 'test' },
+                  test: { width: 150, id: 'test' },
                   'second-test': {
-                    width: 100,
+                    width: 150,
                     id: 'second-test',
                   },
                 }}
@@ -690,11 +690,11 @@ describe('ColumnResize', () => {
     expect(onResize).toHaveBeenCalledWith([
       {
         id: 'test',
-        width: 130,
+        width: 170,
       },
       {
         id: 'second-test',
-        width: 70,
+        width: 130,
       },
     ]);
     jest.clearAllMocks();

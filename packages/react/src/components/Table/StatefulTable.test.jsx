@@ -845,7 +845,7 @@ describe('stateful table with real reducer', () => {
       const handles = screen.getAllByLabelText('Resize column');
       fireEvent.mouseDown(handles[0]);
       fireEvent.mouseMove(handles[0], {
-        clientX: 196,
+        clientX: 176,
       });
       fireEvent.mouseUp(handles[0]);
     };
@@ -864,16 +864,16 @@ describe('stateful table with real reducer', () => {
       expect.objectContaining({
         instanceId: null,
         payload: [
-          { id: 'string', name: 'String', width: '200px' },
-          { id: 'boolean', name: 'Boolean', width: '100px' },
+          { id: 'string', name: 'String', width: '180px' },
+          { id: 'boolean', name: 'Boolean', width: '120px' },
         ],
         type: 'TABLE_COLUMN_RESIZE',
       })
     );
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.clearAllMocks();
@@ -909,8 +909,8 @@ describe('stateful table with real reducer', () => {
     expect(reducer.baseTableReducer).not.toHaveBeenCalled();
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.resetAllMocks();

@@ -432,9 +432,9 @@ describe('Table', () => {
     fireEvent.click(toggleHideCol2Button);
 
     expect(mockActions.table.onColumnResize).toHaveBeenCalledWith([
-      { id: 'col1', name: 'Column 1', width: '150px' },
-      { id: 'col2', name: 'Column 2', width: '100px' },
-      { id: 'col3', name: 'Column 3', width: '150px' },
+      { id: 'col1', name: 'Column 1', width: '225px' },
+      { id: 'col2', name: 'Column 2', width: '150px' },
+      { id: 'col3', name: 'Column 3', width: '225px' },
     ]);
 
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
