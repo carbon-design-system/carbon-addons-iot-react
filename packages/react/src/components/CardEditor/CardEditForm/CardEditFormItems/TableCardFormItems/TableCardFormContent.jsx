@@ -142,7 +142,7 @@ const TableCardFormContent = ({
   const { onEditDataItem } = actions;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
-    content: { columns },
+    content: { columns, thresholds },
   } = cardConfig;
 
   const [showEditor, setShowEditor] = useState(false);
@@ -151,15 +151,23 @@ const TableCardFormContent = ({
   const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
-  const dataSection = useMemo(
-    () =>
-      Array.isArray(columns)
-        ? columns.map((column) => ({
+  const dataSection = useMemo(() => {
+    const a = Array.isArray(columns)
+      ? columns.map((column) => {
+          const filteredThresholds =
+            thresholds?.filter((threshold) => column.dataSourceId === threshold.dataSourceId) || [];
+          return {
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-          }))
-        : [],
-    [columns]
-  );
+            ...(!isEmpty(filteredThresholds) // only set thresholds if they exist
+              ? {
+                  thresholds: filteredThresholds,
+                }
+              : {}),
+          };
+        })
+      : [];
+    return a;
+  }, [columns, thresholds]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -276,6 +284,7 @@ const TableCardFormContent = ({
         columns: filteredColumns,
       };
 
+      /* istanbul ignore else */
       if (isEmpty(filteredThresholds)) {
         delete updatedContent.thresholds;
       }
