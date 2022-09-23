@@ -603,6 +603,76 @@ describe('Table', () => {
     expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('ferrari');
   });
 
+  it('toolbar search should rerender with different search value', () => {
+    const tableId = 'table';
+
+    const { rerender } = render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
+
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('');
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'ferrari',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
+
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('ferrari');
+
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
+
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('');
+  });
+
   it('toolbar search should change value after typing', () => {
     render(
       <Table
