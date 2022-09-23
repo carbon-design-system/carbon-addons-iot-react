@@ -122,7 +122,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   ]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
-  const initialDefaultSearch = view?.toolbar?.search?.defaultValue || '';
+  const defaultSearch = view?.toolbar?.search?.defaultValue || '';
+  const initialDefaultSearch = view?.toolbar?.initialDefaultSearch || '';
 
   const { onChangePage } = pagination || {};
   const {
@@ -350,9 +351,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           ...view?.toolbar,
           search: {
             ...view?.toolbar?.search,
-            defaultValue: initialDefaultSearch,
+            defaultValue: defaultSearch,
           },
           customToolbarContent,
+          initialDefaultSearch,
         },
         pagination: {
           ...view.pagination,

@@ -268,9 +268,7 @@ const TableToolbar = ({
       return;
     }
 
-    if (search.defaultValue === '') {
-      setForceRenderCount((prevValue) => prevValue + 1);
-    }
+    setForceRenderCount((prevValue) => prevValue + 1);
   }, [search.defaultValue]);
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
