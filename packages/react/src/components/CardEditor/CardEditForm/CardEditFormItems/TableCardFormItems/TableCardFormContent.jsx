@@ -226,7 +226,8 @@ const TableCardFormContent = ({
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
     (card) => {
-      const allThresholds = [];
+      // Consider existing thresholds outside columns
+      const allThresholds = thresholds?.map((threshold) => ({ ...threshold })) || [];
       // the table card is looking for the thresholds on the main content object
       const updatedColumns = card?.content?.columns?.map(
         // eslint-disable-next-line no-unused-vars
@@ -251,7 +252,7 @@ const TableCardFormContent = ({
         },
       });
     },
-    [onChange]
+    [onChange, thresholds]
   );
 
   const handleRemoveButton = useCallback(
@@ -282,6 +283,7 @@ const TableCardFormContent = ({
       const updatedContent = {
         ...cardConfig.content,
         columns: filteredColumns,
+        thresholds: filteredThresholds,
       };
 
       /* istanbul ignore else */
