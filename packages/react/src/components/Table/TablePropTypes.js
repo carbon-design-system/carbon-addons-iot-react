@@ -49,15 +49,15 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
 
 export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.shape({
-    message: PropTypes.string.isRequired,
+    message: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
     messageBody: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* Show a different message if no content is in the table matching the filters */
-    messageWithFilters: PropTypes.string,
-    messageWithFiltersBody: PropTypes.string,
+    messageWithFilters: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    messageWithFiltersBody: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* If a label is not provided, no action button will be rendered */
-    buttonLabel: PropTypes.string,
+    buttonLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* Show a different button label if no content is in the table matching the filters */
-    buttonLabelWithFilters: PropTypes.string,
+    buttonLabelWithFilters: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   }),
   /* If a React element is provided, it will be rendered in place of the default */
   PropTypes.element,
