@@ -112,3 +112,7 @@ return (
 
 Note! From a UX perspective it is not recommended to have both column filters and the built in search enabled at the
 same time.
+
+### Empty search results
+
+If table data does not contain any of the results from the particular search, then `EmptyTable` will be displayed. Reference to this component can be found [here](#empty-state). In order to clear search value from `EmptyTable` the prop `i18n.emptyButtonLabelWithFilters` should be provided to the `Table`, this would display a button with action to reset search value to an empty string.
