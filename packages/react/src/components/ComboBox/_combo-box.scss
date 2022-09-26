@@ -45,34 +45,34 @@
       right: $spacing-03;
       z-index: z('overlay') + 1;
       // half the height of the input/first list item
-      bottom: calc(#{$ai-apps-combobox-input-negative-height} / 2);
+      bottom: calc(#{$ai-apps-combobox-input-negative-height} * 0.5);
       // offset bottom calculation by half the height of the text (so it's vertically centered)
       transform: translateY(50%);
     }
     // when helperText is present, it's height must be accounted for
     &.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
-        (#{$ai-apps-combobox-input-negative-height} / 2) + #{$ai-apps-combobox-helper-text-height}
+        (#{$ai-apps-combobox-input-negative-height} * 0.5) + #{$ai-apps-combobox-helper-text-height}
       );
     }
 
     // sm field size variant
     &.#{$iot-prefix}--combobox-size-sm::after {
-      bottom: calc(#{$ai-apps-combobox-input-negative-height-sm} / 2);
+      bottom: calc(#{$ai-apps-combobox-input-negative-height-sm} * 0.5);
     }
     &.#{$iot-prefix}--combobox-size-sm.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
-        (#{$ai-apps-combobox-input-negative-height-sm} / 2) + #{$ai-apps-combobox-helper-text-height}
+        (#{$ai-apps-combobox-input-negative-height-sm} * 0.5) + #{$ai-apps-combobox-helper-text-height}
       );
     }
 
     // xl field size variant
     &.#{$iot-prefix}--combobox-size-xl::after {
-      bottom: calc(#{$ai-apps-combobox-input-negative-height-xl} / 2);
+      bottom: calc(#{$ai-apps-combobox-input-negative-height-xl} * 0.5);
     }
     &.#{$iot-prefix}--combobox-size-xl.#{$iot-prefix}--combobox-helper-text::after {
       bottom: calc(
-        (#{$ai-apps-combobox-input-negative-height-xl} / 2) + #{$ai-apps-combobox-helper-text-height}
+        (#{$ai-apps-combobox-input-negative-height-xl} * 0.5) + #{$ai-apps-combobox-helper-text-height}
       );
     }
   }
