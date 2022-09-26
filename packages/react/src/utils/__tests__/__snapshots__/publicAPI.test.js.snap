@@ -494,23 +494,33 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "node",
+                    "type": "string",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "node",
+                    "type": "string",
                   },
                   "message": Object {
                     "isRequired": true,
-                    "type": "node",
+                    "type": "string",
                   },
                   "messageBody": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "messageWithFilters": Object {
-                    "type": "node",
+                    "type": "string",
                   },
                   "messageWithFiltersBody": Object {
-                    "type": "node",
+                    "type": "string",
                   },
                 },
               ],
@@ -1759,23 +1769,33 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "node",
+                                "type": "string",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "node",
+                                "type": "string",
                               },
                               "message": Object {
                                 "isRequired": true,
-                                "type": "node",
+                                "type": "string",
                               },
                               "messageBody": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "messageWithFilters": Object {
-                                "type": "node",
+                                "type": "string",
                               },
                               "messageWithFiltersBody": Object {
-                                "type": "node",
+                                "type": "string",
                               },
                             },
                           ],
