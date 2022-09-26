@@ -1740,12 +1740,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                             className="bx--number__controls"
                           >
                             <button
-                              aria-label="undefined undefined"
+                              aria-label="Decrement number"
                               className="bx--number__control-btn down-icon"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex="-1"
-                              title="undefined undefined"
+                              title="Decrement number"
                               type="button"
                             >
                               <svg
@@ -1768,12 +1768,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                               className="bx--number__rule-divider"
                             />
                             <button
-                              aria-label="undefined undefined"
+                              aria-label="Increment number"
                               className="bx--number__control-btn up-icon"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex="-1"
-                              title="undefined undefined"
+                              title="Increment number"
                               type="button"
                             >
                               <svg

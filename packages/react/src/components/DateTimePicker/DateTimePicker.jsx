@@ -816,9 +816,9 @@ const DateTimePicker = ({
                           onChange={onRelativeLastNumberChange}
                           translateWithId={(messageId) =>
                             messageId === 'increment.number'
-                              ? `${i18n.increment} ${i18n.number}`
+                              ? `${strings.increment} ${strings.number}`
                               : messageId === 'decrement.number'
-                              ? `${i18n.decrement} ${i18n.number}`
+                              ? `${strings.decrement} ${strings.number}`
                               : null
                           }
                         />
