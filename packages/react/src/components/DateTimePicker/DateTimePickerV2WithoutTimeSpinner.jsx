@@ -315,6 +315,7 @@ const DateTimePicker = ({
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
+  const [invalidState, setInvalidState] = useState(invalid);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
@@ -582,6 +583,8 @@ const DateTimePicker = ({
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
+  useEffect(() => setInvalidState(invalid || disableApply), [invalid, disableApply]);
+
   const onApplyClick = () => {
     setIsExpanded(false);
     const value = renderValue();
@@ -712,7 +715,7 @@ const DateTimePicker = ({
           className={classnames({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
-            [`${iotPrefix}--date-time-picker__box--invalid`]: invalid,
+            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
           })}
         >
           {!hasIconOnly ? (
@@ -750,12 +753,14 @@ const DateTimePicker = ({
           <FlyoutMenu
             isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
-            renderIcon={invalid ? WarningFilled16 : Calendar16}
+            renderIcon={invalidState ? WarningFilled16 : Calendar16}
             disabled={false}
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
-              className: invalid ? `${iotPrefix}--date-time-picker--trigger-button-invalid` : '',
+              className: invalidState
+                ? `${iotPrefix}--date-time-picker--trigger-button-invalid`
+                : '',
             }}
             hideTooltip
             iconDescription={strings.calendarLabel}
@@ -1021,7 +1026,7 @@ const DateTimePicker = ({
             </div>
           </FlyoutMenu>
         </div>
-        {invalid && !hasIconOnly ? (
+        {invalidState && !hasIconOnly ? (
           <p
             className={classnames(
               `${prefix}--form__helper-text`,

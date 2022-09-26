@@ -343,6 +343,7 @@ const DateTimePicker = ({
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
+  const [invalidState, setInvalidState] = useState(invalid);
 
   const relativeSelect = useRef(null);
   const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
@@ -635,6 +636,8 @@ const DateTimePicker = ({
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
+  useEffect(() => setInvalidState(invalid || disableApply), [invalid, disableApply]);
+
   return (
     // Escape handler added to allow pressing escape to close the picker from any via event bubbling
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -647,7 +650,7 @@ const DateTimePicker = ({
       <div
         className={classnames(`${iotPrefix}--date-time-picker__box`, {
           [`${iotPrefix}--date-time-picker__box--light`]: light,
-          [`${iotPrefix}--date-time-picker__box--invalid`]: invalid,
+          [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
         })}
       >
         <div
@@ -675,7 +678,7 @@ const DateTimePicker = ({
               {humanValue}
             </TooltipDefinition>
           ) : null}
-          {invalid ? (
+          {invalidState ? (
             <WarningFilled16
               data-testid={`${testId}__invalid-icon`}
               aria-label={strings.invalidLabel}
@@ -997,7 +1000,7 @@ const DateTimePicker = ({
           </div>
         </div>
       </div>
-      {invalid ? (
+      {invalidState ? (
         <p
           className={classnames(
             `${prefix}--form__helper-text`,

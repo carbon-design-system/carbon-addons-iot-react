@@ -488,7 +488,7 @@ const spinnerPropTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   testId: PropTypes.string,
-  style: PropTypes.objectOf(propTypes.string),
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 /* istanbul ignore next */

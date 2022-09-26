@@ -170,6 +170,8 @@
 }
 
 .#{$iot-prefix}--time-picker-spinner {
+  --zIndex: 0;
+  z-index: var(--zIndex);
   background-color: $ui-01;
   box-shadow: 0 7px 10px 2px #ddd;
   display: flex;
