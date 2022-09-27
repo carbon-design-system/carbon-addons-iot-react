@@ -1791,4 +1791,22 @@ describe('DateTimePickerV2', () => {
         .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
     ).toBe(true);
   });
+
+  it('should disable menu button when disabled is set', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled />);
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+    ).toBe(true);
+  });
+
+  it('should disable menu button when disabled is set (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled useNewTimeSpinner />);
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+    ).toBe(true);
+  });
 });

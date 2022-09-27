@@ -61,6 +61,7 @@ export const Default = () => {
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
@@ -83,6 +84,7 @@ export const SelectedPreset = () => {
       hasIconOnly={boolean('hasIconOnly', false)}
       style={{ zIndex: number('zIndex', 0) }}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
       })}
@@ -103,6 +105,7 @@ export const SelectedRelative = () => {
       hasIconOnly={boolean('hasIconOnly', false)}
       style={{ zIndex: number('zIndex', 0) }}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
       })}
@@ -124,6 +127,7 @@ export const SelectedAbsolute = () => {
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',
@@ -155,6 +159,7 @@ export const SingleSelect = () => {
       datePickerType="single"
       showRelativeOption={boolean('show relative option', false)}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       i18n={object('i18n', {
         timePickerInvalidText: 'A valid value is required',
         invalidText: 'The date time entered is invalid',
@@ -183,6 +188,7 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
         invalidText: 'The date time entered is invalid',
       })}
       invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
     />
   );
 };
@@ -265,6 +271,8 @@ export const IconOnly = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         hasIconOnly={boolean('hasIconOnly', true)}
         style={{ zIndex: number('zIndex', 0) }}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
       />
     </div>
   );

@@ -959,4 +959,13 @@ describe('DateTimePicker', () => {
         .classList.contains(`${iotPrefix}--date-time-picker__icon--invalid`)
     ).toBe(true);
   });
+
+  it('should disable menu button when disabled is set', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled />);
+    expect(
+      screen
+        .getByRole('img', { name: /calendar/i })
+        .classList.contains(`${iotPrefix}--date-time-picker__icon--disabled`)
+    ).toBe(true);
+  });
 });

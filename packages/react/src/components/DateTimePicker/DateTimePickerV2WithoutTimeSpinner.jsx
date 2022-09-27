@@ -292,7 +292,7 @@ const DateTimePicker = ({
   }, []);
 
   const langDir = useLangDirection();
-  const strings = useMemo(
+  const mergedI18n = useMemo(
     () => ({
       ...defaultProps.i18n,
       ...i18n,
@@ -409,7 +409,7 @@ const DateTimePicker = ({
       value.kind = PICKER_KINDS.PRESET;
     }
     setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
     setHumanValue(parsedValue.readableValue);
 
     return {
@@ -569,7 +569,7 @@ const DateTimePicker = ({
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
-    : getIntervalValue({ currentValue, strings, dateTimeMask, humanValue });
+    : getIntervalValue({ currentValue, mergedI18n, dateTimeMask, humanValue });
 
   const disableRelativeApply =
     isCustomRange &&
@@ -644,7 +644,7 @@ const DateTimePicker = ({
             onClick={toggleIsCustomRange}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
           >
-            {strings.backBtnLabel}
+            {mergedI18n.backBtnLabel}
           </Button>
         ) : (
           <Button
@@ -655,7 +655,7 @@ const DateTimePicker = ({
             {...others}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
           >
-            {strings.cancelBtnLabel}
+            {mergedI18n.cancelBtnLabel}
           </Button>
         )}
         <Button
@@ -667,7 +667,7 @@ const DateTimePicker = ({
           size="field"
           disabled={disableApply}
         >
-          {strings.applyBtnLabel}
+          {mergedI18n.applyBtnLabel}
         </Button>
       </div>
     );
@@ -687,7 +687,9 @@ const DateTimePicker = ({
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
-        className={`${iotPrefix}--date-time-pickerv2__wrapper`}
+        className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
+          [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
+        })}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
         onClick={onFieldInteraction}
@@ -716,6 +718,7 @@ const DateTimePicker = ({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
             [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
+            [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
           })}
         >
           {!hasIconOnly ? (
@@ -724,13 +727,20 @@ const DateTimePicker = ({
               className={`${iotPrefix}--date-time-picker__field`}
             >
               {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
-                <span title={humanValue}>{humanValue}</span>
+                <span
+                  className={classnames({
+                    [`${iotPrefix}--date-time-picker__disabled`]: disabled,
+                  })}
+                  title={humanValue}
+                >
+                  {humanValue}
+                </span>
               ) : humanValue ? (
                 <TooltipDefinition
                   align="start"
                   direction="bottom"
                   tooltipText={tooltipValue}
-                  triggerClassName=""
+                  triggerClassName={disabled ? `${iotPrefix}--date-time-picker__disabled` : ''}
                 >
                   {humanValue}
                 </TooltipDefinition>
@@ -754,16 +764,18 @@ const DateTimePicker = ({
             isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
             renderIcon={invalidState ? WarningFilled16 : Calendar16}
-            disabled={false}
+            disabled={disabled}
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
               className: invalidState
                 ? `${iotPrefix}--date-time-picker--trigger-button-invalid`
+                : disabled
+                ? `${iotPrefix}--date-time-picker--trigger-button-disabled`
                 : '',
             }}
             hideTooltip
-            iconDescription={strings.calendarLabel}
+            iconDescription={mergedI18n.calendarLabel}
             passive={false}
             triggerId="test-trigger-id-2"
             light={light}
@@ -811,7 +823,7 @@ const DateTimePicker = ({
                         className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
                         tabIndex={0}
                       >
-                        {strings.customRangeLinkLabel}
+                        {mergedI18n.customRangeLinkLabel}
                       </ListItem>
                     ) : null}
                     {presets.map((preset, i) => {
@@ -831,7 +843,7 @@ const DateTimePicker = ({
                           )}
                           tabIndex={0}
                         >
-                          {strings.presetLabels[i] || preset.label}
+                          {mergedI18n.presetLabels[i] || preset.label}
                         </ListItem>
                       );
                     })}
@@ -844,7 +856,7 @@ const DateTimePicker = ({
                 >
                   {showRelativeOption ? (
                     <FormGroup
-                      legendText={strings.customRangeLabel}
+                      legendText={mergedI18n.customRangeLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <RadioButtonGroup
@@ -855,7 +867,7 @@ const DateTimePicker = ({
                         <RadioButton
                           value={PICKER_KINDS.RELATIVE}
                           id={`${id}-relative`}
-                          labelText={strings.relativeLabel}
+                          labelText={mergedI18n.relativeLabel}
                           onKeyDown={handleSpecificKeyDown(
                             ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                             onNavigateRadioButton
@@ -864,7 +876,7 @@ const DateTimePicker = ({
                         <RadioButton
                           value={PICKER_KINDS.ABSOLUTE}
                           id={`${id}-absolute`}
-                          labelText={strings.absoluteLabel}
+                          labelText={mergedI18n.absoluteLabel}
                           onKeyDown={handleSpecificKeyDown(
                             ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                             onNavigateRadioButton
@@ -876,13 +888,13 @@ const DateTimePicker = ({
                   {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
                     <>
                       <FormGroup
-                        legendText={strings.lastLabel}
+                        legendText={mergedI18n.lastLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                       >
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <NumberInput
                             id={`${id}-last-number`}
-                            invalidText={strings.invalidNumberLabel}
+                            invalidText={mergedI18n.invalidNumberLabel}
                             step={1}
                             min={0}
                             value={relativeValue ? relativeValue.lastNumber : 0}
@@ -911,7 +923,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={interval.value}
-                                  text={strings.intervalLabels[i] || interval.label}
+                                  text={mergedI18n.intervalLabels[i] || interval.label}
                                 />
                               );
                             })}
@@ -919,7 +931,7 @@ const DateTimePicker = ({
                         </div>
                       </FormGroup>
                       <FormGroup
-                        legendText={strings.relativeToLabel}
+                        legendText={mergedI18n.relativeToLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                       >
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
@@ -937,7 +949,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={relative.value}
-                                  text={strings.relativeLabels[i] || relative.label}
+                                  text={mergedI18n.relativeLabels[i] || relative.label}
                                 />
                               );
                             })}
@@ -995,7 +1007,7 @@ const DateTimePicker = ({
                             <TimePickerSpinner
                               id={`${id}-start-time`}
                               invalid={absoluteStartTimeInvalid}
-                              labelText={strings.startTimeLabel}
+                              labelText={mergedI18n.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : '00:00'}
                               i18n={i18n}
                               onChange={onAbsoluteStartTimeChange}
@@ -1006,7 +1018,7 @@ const DateTimePicker = ({
                             <TimePickerSpinner
                               id={`${id}-end-time`}
                               invalid={absoluteEndTimeInvalid}
-                              labelText={strings.endTimeLabel}
+                              labelText={mergedI18n.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : '00:00'}
                               i18n={i18n}
                               onChange={onAbsoluteEndTimeChange}
@@ -1033,7 +1045,7 @@ const DateTimePicker = ({
               `${iotPrefix}--date-time-picker__helper-text--invalid`
             )}
           >
-            {strings.invalidText}
+            {mergedI18n.invalidText}
           </p>
         ) : null}
       </div>

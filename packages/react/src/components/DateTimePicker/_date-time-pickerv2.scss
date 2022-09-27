@@ -104,6 +104,15 @@
   .#{$iot-prefix}--date-time-picker__helper-text--invalid {
     color: $text-error;
   }
+
+  .#{$iot-prefix}--date-time-picker__box--disabled {
+    border: none;
+  }
+}
+
+.#{$iot-prefix}--date-time-pickerv2__wrapper--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 // open menu content
@@ -267,7 +276,11 @@
   fill: $danger-01;
 }
 
-// s
+.#{$iot-prefix}--date-time-picker--trigger-button-disabled.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
+  svg.bx--btn__icon
+  path {
+  fill: $disabled-02;
+}
 
 // allow the bottom border from the field to become visible (but not in the iconOnly case)
 .#{$iot-prefix}--date-time-picker--tooltip {

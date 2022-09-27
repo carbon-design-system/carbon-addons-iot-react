@@ -65,6 +65,7 @@ export const Default = () => {
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
         invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
         i18n={object('i18n', {
           invalidText: 'The date time entered is invalid',
         })}
@@ -93,6 +94,7 @@ export const SelectedPreset = () => {
         onApply={action('onApply')}
         onCancel={action('onCancel')}
         invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
         i18n={object('i18n', {
           invalidText: 'The date time entered is invalid',
         })}
@@ -119,6 +121,7 @@ export const SelectedRelative = () => {
         onApply={action('onApply')}
         onCancel={action('onCancel')}
         invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
         i18n={object('i18n', {
           invalidText: 'The date time entered is invalid',
         })}
@@ -145,6 +148,7 @@ export const SelectedAbsolute = () => {
         onApply={action('onApply')}
         onCancel={action('onCancel')}
         invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
         i18n={object('i18n', {
           invalidText: 'The date time entered is invalid',
         })}

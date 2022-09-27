@@ -123,6 +123,14 @@
         fill: $danger-01;
       }
 
+      .#{$iot-prefix}--date-time-picker__icon--disabled {
+        fill: $disabled-02;
+      }
+
+      .#{$iot-prefix}--date-time-picker__disabled {
+        opacity: 0.5;
+      }
+
       .#{$iot-prefix}--date-time-picker__tooltip-trigger {
         position: absolute;
         left: 0;
@@ -131,6 +139,10 @@
         bottom: 0;
         pointer-events: none;
       }
+    }
+
+    .#{$iot-prefix}--date-time-picker__field--disabled {
+      border: none;
     }
 
     .#{$iot-prefix}--date-time-picker__menu {
@@ -260,6 +272,11 @@
   }
 }
 
+.#{$iot-prefix}--date-time-picker__wrapper--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 html[dir='rtl'] {
   .#{$iot-prefix}--date-time-picker__wrapper {
     .#{$prefix}--number {
@@ -287,6 +304,7 @@ html[dir='rtl'] {
           left: $spacing-05;
         }
       }
+
       .#{$iot-prefix}--date-time-picker__menu {
         .#{$iot-prefix}--date-time-picker__menu-scroll {
           .#{$iot-prefix}--date-time-picker__listitem {
