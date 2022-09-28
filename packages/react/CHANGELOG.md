@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.23...v2.151.0-next.24) (2022-09-28)
+
+
+### Bug Fixes
+
+* **timeseriescard:** overlay alert for the specific line ([b7e928e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b7e928e7f5521b525e10ab158c185bbbd6ed0c7b))
+
+
+
+
+
 # [2.151.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.22...v2.151.0-next.23) (2022-09-26)
 
 
