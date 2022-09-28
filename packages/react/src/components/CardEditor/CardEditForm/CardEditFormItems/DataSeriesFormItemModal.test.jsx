@@ -167,6 +167,7 @@ describe('DataSeriesFormItemModal', () => {
       onEditDataItem: jest.fn().mockImplementation(() => []),
       dataSeriesFormActions: {
         hideAggregationsDropDown: jest.fn(() => true),
+        hideDataFilterDropdown: jest.fn(() => true),
         onAddAggregations: jest.fn(),
       },
     },

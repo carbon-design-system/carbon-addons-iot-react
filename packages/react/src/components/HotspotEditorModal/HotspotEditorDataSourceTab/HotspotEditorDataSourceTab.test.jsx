@@ -63,6 +63,7 @@ const commonActions = {
         (editDataItem) =>
           editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
+      hideDataFilterDropdown: jest.fn(),
       onAddAggregations: jest.fn(),
     },
   },
@@ -190,6 +191,7 @@ describe('HotspotEditorDataSourceTab', () => {
             (editDataItem) =>
               editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
           ),
+          hideDataFilterDropdown: jest.fn(),
           onAddAggregations: jest.fn(),
         },
       },

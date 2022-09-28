@@ -716,6 +716,7 @@ export const DashboardEditorActionsPropTypes = PropTypes.shape({
   onEditDataItem: PropTypes.func,
   dataSeriesFormActions: PropTypes.shape({
     hideAggregationsDropDown: PropTypes.func,
+    hideDataFilterDropdown: PropTypes.func,
     onAddAggregations: PropTypes.func,
   }),
 });
