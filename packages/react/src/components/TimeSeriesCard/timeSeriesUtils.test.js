@@ -3,7 +3,6 @@ import { every, omit } from 'lodash-es';
 import { COLORS } from '../../constants/LayoutConstants';
 import { CHART_COLORS } from '../../constants/CardPropTypes';
 import { barChartData } from '../../utils/barChartDataSample';
-import { findMatchingAlertRange, handleTooltip } from '../../utils/cardUtilityFunctions';
 import dayjs from '../../utils/dayjs';
 
 import {
@@ -250,88 +249,6 @@ describe('timeSeriesUtils', () => {
     );
   });
 
-  it('findMatchingAlertRange', () => {
-    const data = {
-      date: new Date(1573073951),
-    };
-    const alertRange = [
-      {
-        startTimestamp: 1573073950,
-        endTimestamp: 1573073951,
-        color: '#FF0000',
-        details: 'Alert details',
-      },
-    ];
-    const matchingAlertRange = findMatchingAlertRange(alertRange, data);
-    expect(matchingAlertRange).toHaveLength(1);
-    expect(matchingAlertRange[0].color).toEqual('#FF0000');
-    expect(matchingAlertRange[0].details).toEqual('Alert details');
-  });
-
-  describe('handleTooltip', () => {
-    // handle edge case were there is no date data available for the tooltip to increase
-    // branch testing coverage
-    it('should not add date if missing', () => {
-      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
-      const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
-      expect(updatedTooltip).toEqual(defaultTooltip);
-    });
-    it('should not throw error if dataOrHoveredElement is undefined', () => {
-      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
-      const updatedTooltip = handleTooltip(undefined, defaultTooltip, [], 'Detected alert:');
-      expect(updatedTooltip).toEqual(defaultTooltip);
-    });
-    it('should add date', () => {
-      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
-      // the date is from 2017
-      const updatedTooltip = handleTooltip(
-        { date: new Date(1500000000000) },
-        defaultTooltip,
-        [],
-        'Detected alert:'
-      );
-      expect(updatedTooltip).not.toEqual(defaultTooltip);
-      expect(updatedTooltip).toContain('<ul');
-      expect(updatedTooltip).toContain('2017');
-    });
-    it('with __data__ and GMT', () => {
-      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
-      // the date is from 2017
-      const updatedTooltip = handleTooltip(
-        { __data__: { date: new Date(1500000000000) } },
-        defaultTooltip,
-        [],
-        'Detected alert:',
-        true,
-        'dddd' // custom format
-      );
-      expect(updatedTooltip).not.toEqual(defaultTooltip);
-      expect(updatedTooltip).toContain('<ul');
-      expect(updatedTooltip).toContain('Friday');
-    });
-    it('should add alert ranges if they exist', () => {
-      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
-      // the date is from 2017
-      const updatedTooltip = handleTooltip(
-        [{ date: new Date(1573073950) }],
-        defaultTooltip,
-        [
-          {
-            startTimestamp: 1573073950,
-            endTimestamp: 1573073951,
-            color: '#FF0000',
-            details: 'Alert details',
-          },
-        ],
-        'Detected alert:'
-      );
-      expect(updatedTooltip).not.toEqual(defaultTooltip);
-      expect(updatedTooltip).toContain('<ul');
-      expect(updatedTooltip).toContain('Detected alert:');
-      expect(updatedTooltip).toContain('Alert details');
-    });
-  });
-
   describe('formatChartData', () => {
     it("handles series that aren't an array", () => {
       const series = {
@@ -347,21 +264,25 @@ describe('timeSeriesUtils', () => {
         )
       ).toEqual([
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-09T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 447,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-10T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 450,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-11T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 512,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-12T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 565,
@@ -384,21 +305,25 @@ describe('timeSeriesUtils', () => {
         )
       ).toEqual([
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-09T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 447,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-10T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 450,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-11T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 512,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-12T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 565,
@@ -423,21 +348,25 @@ describe('timeSeriesUtils', () => {
         )
       ).toEqual([
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-09T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 447,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-10T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 450,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-11T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 512,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-12T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 565,
@@ -466,41 +395,49 @@ describe('timeSeriesUtils', () => {
 
       expect(formatChartData('timestamp', series, barChartData.timestamps)).toEqual([
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-09T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 447,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-10T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 450,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-11T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 512,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-12T16:23:45.000Z'),
           group: 'Amsterdam',
           value: 565,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-09T16:23:45.000Z'),
           group: 'New York',
           value: 528,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-10T16:23:45.000Z'),
           group: 'New York',
           value: 365,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-11T16:23:45.000Z'),
           group: 'New York',
           value: 442,
         },
         {
+          dataSourceId: 'particles',
           date: new Date('2020-02-12T16:23:45.000Z'),
           group: 'New York',
           value: 453,
