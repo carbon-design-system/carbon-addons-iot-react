@@ -441,6 +441,73 @@ describe('TableCardFormContent', () => {
       },
     });
   });
+  it('should remove threshold attribute from content when last threshold gets deleted', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                dataItemType: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'manufacturer',
+                comparison: '>',
+                value: 5,
+                icon: 'Warning alt',
+                color: '#da1e28',
+                severity: 1,
+              },
+            ],
+          },
+          dataSource: {
+            attributes: [
+              {
+                id: 'manufacturer',
+                attribute: 'manufacturer',
+                eventName: 'event1',
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    const removeTemperatureButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeTemperatureButton).toBeInTheDocument();
+
+    fireEvent.click(removeTemperatureButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Temperature',
+            dataSourceId: 'temperature',
+          },
+        ],
+      },
+    });
+  });
   it('edit mode with dataitems adds threshold correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
