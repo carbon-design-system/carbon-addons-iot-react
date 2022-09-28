@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.24...v2.151.0-next.25) (2022-09-28)
+
+
+### Bug Fixes
+
+* **tabelcardformcontent:** update threshold section ([98ac11f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/98ac11fc3278458d376de548a5a236b56df71036))
+* **tablecardformcontent:** discard threshold from columns ([92d0b16](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/92d0b16aaf06c25fb04962776800c4138e7a54d2))
+* **tablecardformcontent:** remove empty threshold attributes ([ca99da1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ca99da10de05d78af20772b257dc3dca3c362276))
+
+
+
+
+
 # [2.151.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.23...v2.151.0-next.24) (2022-09-28)
 
 
