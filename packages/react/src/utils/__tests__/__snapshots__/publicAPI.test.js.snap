@@ -13973,6 +13973,9 @@ Map {
                   "hideAggregationsDropDown": Object {
                     "type": "func",
                   },
+                  "hideDataFilterDropdown": Object {
+                    "type": "func",
+                  },
                   "onAddAggregations": Object {
                     "type": "func",
                   },
@@ -14713,6 +14716,9 @@ Map {
               "args": Array [
                 Object {
                   "hideAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "hideDataFilterDropdown": Object {
                     "type": "func",
                   },
                   "onAddAggregations": Object {
