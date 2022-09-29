@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.25...v2.151.0-next.26) (2022-09-29)
+
+
+### Bug Fixes
+
+* **listitem:** update snapshot ([e15cd56](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e15cd56c82623e597ece328c514b18b333827da3))
+* **listitem:** use value for empty hover text ([d73c453](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d73c453bf7a7fb98138f2b9fb7d6c6e232bab301))
+* **listproptypes:** add new prop to structure ([01df237](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/01df23768d62b386df8221db0b18e077a2dba8f0))
+
+
+### Features
+
+* **listitem:** accept hover text ([bffbaeb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bffbaebfeab8113fab67ad1f89026dba8329afc0))
+
+
+
+
+
 # [2.151.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.24...v2.151.0-next.25) (2022-09-28)
 
 
