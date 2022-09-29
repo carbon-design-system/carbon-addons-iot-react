@@ -78,6 +78,10 @@
       box-shadow: 0 -1px 5px 4px $ui-01;
       border-width: 1.5px;
     }
+
+    &:hover {
+      color: $icon-01;
+    }
   }
   /* stylelint-enable declaration-property-unit-blacklist */
 }
