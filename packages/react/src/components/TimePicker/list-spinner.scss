@@ -1,7 +1,5 @@
 @import '../../globals/vars';
 
-$layer-hover-01: #e5e5e5;
-
 .#{$iot-prefix}--list-spinner {
   &__section {
     align-items: flex-start;
@@ -49,8 +47,7 @@ $layer-hover-01: #e5e5e5;
     .#{$iot-prefix}--list-spinner__list &--selected .#{$iot-prefix}--btn {
       color: $ui-01;
       &:hover {
-        background: $layer-hover-01;
-        color: $icon-01;
+        background: $button-primary-hover;
       }
     }
   }
