@@ -6663,6 +6663,9 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
+                      "title": Object {
+                        "type": "string",
+                      },
                       "value": Object {
                         "type": "string",
                       },
@@ -6944,6 +6947,9 @@ Map {
                           },
                         ],
                         "type": "arrayOf",
+                      },
+                      "title": Object {
+                        "type": "string",
                       },
                       "value": Object {
                         "type": "string",
@@ -7245,6 +7251,9 @@ Map {
                           },
                         ],
                         "type": "arrayOf",
+                      },
+                      "title": Object {
+                        "type": "string",
                       },
                       "value": Object {
                         "type": "string",
@@ -29848,6 +29857,9 @@ Map {
                           },
                         ],
                         "type": "arrayOf",
+                      },
+                      "title": Object {
+                        "type": "string",
                       },
                       "value": Object {
                         "type": "string",
