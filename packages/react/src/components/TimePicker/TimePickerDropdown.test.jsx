@@ -68,7 +68,7 @@ describe('TimePickerDropdown', () => {
     expect(screen.getByTestId('time-picker-test-time-btn-2')).toBeTruthy();
   });
 
-  it('renders the appropriate help text and icon when invalid/warn/readonly is passed', async () => {
+  it('renders the appropriate help text and icon when invalid/warn/readonly is passed', () => {
     // test warn prop
     const { rerender } = render(
       <TimePickerDropdown {...timePickerProps} type="range" warn={[true, false]} />
@@ -162,7 +162,7 @@ describe('TimePickerDropdown', () => {
     expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
   });
 
-  it('hides and shows appropriate labels', async () => {
+  it('hides and shows appropriate labels', () => {
     const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     let firstLabel = screen.queryByText('Start');
     let secondLabel = screen.queryByText('End');
@@ -207,7 +207,7 @@ describe('TimePickerDropdown', () => {
     expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
   });
 
-  it('will not open dropdown if in read only state', async () => {
+  it('will not open dropdown if in read only state', () => {
     const { rerender } = render(<TimePickerDropdown {...timePickerProps} readOnly />);
     const timeBtn = screen.getByTestId('time-picker-test-time-btn');
     userEvent.click(timeBtn);
@@ -264,5 +264,23 @@ describe('TimePickerDropdown', () => {
     act(() => userEvent.click(pmBtn));
     await waitFor(() => expect(input2.value).toEqual('10:20 PM'));
     expect(input1.value).toEqual('');
+  });
+
+  it('should hide meridiem spinner if in 24h format', () => {
+    render(<TimePickerDropdown {...timePickerProps} is24hours />);
+
+    userEvent.click(screen.getByTestId('time-picker-test-time-btn'));
+
+    expect(screen.queryByText('AM')).not.toBeInTheDocument();
+    expect(screen.queryByText('PM')).not.toBeInTheDocument();
+  });
+
+  it('should be in invalid state if meridiem is typed entered into input', () => {
+    render(<TimePickerDropdown {...timePickerProps} is24hours />);
+    const input = screen.getByTestId('time-picker-test-input');
+    userEvent.type(input, '09:30{space}AM');
+    input.blur();
+    expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
+    expect(input).toBeInvalid();
   });
 });
