@@ -3,8 +3,6 @@
 $layer-hover-01: #e5e5e5;
 
 .#{$iot-prefix}--list-spinner {
-  --zIndex: 0;
-  z-index: calc(var(--zIndex) + 20);
   &__section {
     align-items: flex-start;
     display: flex;

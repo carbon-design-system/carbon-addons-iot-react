@@ -15,7 +15,7 @@ import {
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
 
@@ -287,7 +287,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id = uuidv4(),
   hasIconOnly,
   menuOffset,
   datePickerType,
@@ -311,7 +311,6 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
-  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 
   // initialize the dayjs locale
@@ -906,10 +905,11 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
+            style={style}
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
+              style={{ '--wrapper-width': '20rem' }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
@@ -1146,7 +1146,7 @@ const DateTimePicker = ({
                           }}
                           size="sm"
                           testId={testId}
-                          style={updatedStyle}
+                          style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
                         />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />

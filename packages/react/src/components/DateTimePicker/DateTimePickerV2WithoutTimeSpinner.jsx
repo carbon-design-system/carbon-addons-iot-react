@@ -15,7 +15,7 @@ import {
 } from 'carbon-components-react';
 import { Calendar16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
 
@@ -270,7 +270,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id = uuidv4(),
   hasIconOnly,
   menuOffset,
   style,

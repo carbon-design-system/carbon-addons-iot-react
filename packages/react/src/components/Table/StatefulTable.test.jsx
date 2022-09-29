@@ -504,6 +504,58 @@ describe('stateful table with real reducer', () => {
       }
     });
   });
+  it('should display empty table state when no search results', () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.change(searchField, { target: { value: 'irrelevant search 123123' } });
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+  });
+  it('should apply callback when clear filter button clicked', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'irrelevant search 123123',
+            },
+          },
+        }}
+        id="table"
+        i18n={{
+          emptyButtonLabelWithFilters: 'Clear all filters',
+        }}
+      />
+    );
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+    expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalledTimes(1);
+  });
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
@@ -658,6 +710,55 @@ describe('stateful table with real reducer', () => {
       );
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
       expect(screen.getByText('1–10 of 11 items')).toBeVisible();
+    });
+    it('toolbar icon is disabled when isDisabled prop set to true', () => {
+      render(
+        <StatefulTable
+          id="advanced-filters-disabled-icon"
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasFilter: false,
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              ...initialState.view.toolbar,
+              isDisabled: true,
+              advancedFilterFlyoutOpen: false,
+            },
+            selectedAdvancedFilterIds: ['my-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ALL',
+                  rules: [
+                    {
+                      id: 'rsiru4rjba',
+                      columnId: 'date',
+                      operand: 'CONTAINS',
+                      value: '19',
+                    },
+                    {
+                      id: '34bvyub9jq',
+                      columnId: 'boolean',
+                      operand: 'EQ',
+                      value: 'true',
+                    },
+                  ],
+                },
+              },
+            ],
+          }}
+        />
+      );
+      const advancedFilterToolbarIcon = screen.getByTestId('advanced-filter-flyout-button');
+      expect(advancedFilterToolbarIcon).toBeVisible();
+      expect(advancedFilterToolbarIcon).toBeDisabled();
     });
   });
   it('properly changes state of child and parent row selections', () => {

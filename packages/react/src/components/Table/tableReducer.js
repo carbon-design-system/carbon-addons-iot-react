@@ -511,7 +511,7 @@ export const tableReducer = (state = {}, action) => {
         : get(view, 'table.ordering') || get(state, 'view.table.ordering');
 
       // update the search if a new one is passed
-      const searchFromState = get(state, 'view.toolbar.search');
+      const searchFromState = get(view, 'toolbar.search');
 
       // if hasUserViewManagement is active we rely on defaultValue
       const searchTermFromState = hasUserViewManagement

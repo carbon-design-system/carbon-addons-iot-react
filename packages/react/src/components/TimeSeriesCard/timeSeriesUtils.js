@@ -240,6 +240,7 @@ export const formatChartData = (timeDataSourceId = 'timestamp', series, values) 
                     : new Date(dataItem[timeDataSourceId]),
                 value: dataItem[dataSourceId],
                 group: label,
+                dataSourceId,
               });
             }
           });
@@ -271,10 +272,10 @@ export const formatColors = (series) => {
 
 /**
  * Determines the dot stroke color (the border of the data point)
- * @param {string} datasetLabel
- * @param {string} label
- * @param {Object} data
- * @param {string} originalStrokeColor from carbon charts
+ * @param {string} datasetLabel --> map to group property
+ * @param {string} label --> map to key property
+ * @param {Object} data --> map to value property
+ * @param {string} originalStrokeColor --> map to defaultStrokeColor. Default setting from carbon charts
  * @returns {string} stroke color
  */
 export const applyStrokeColor = (alertRanges) => (
@@ -292,10 +293,10 @@ export const applyStrokeColor = (alertRanges) => (
 
 /**
  * Determines the dot fill color based on matching alerts
- * @param {string} datasetLabel
- * @param {string} label
- * @param {Object} data
- * @param {string} originalFillColor from carbon charts
+ * @param {string} datasetLabel --> map to group property
+ * @param {string} label --> map to key property
+ * @param {Object} data --> map to value property
+ * @param {string} originalFillColor --> map to defaultFillColor property. Default setting from carbon charts
  * @returns {string} fill color
  */
 export const applyFillColor = (alertRanges) => (datasetLabel, label, data, originalFillColor) => {
@@ -308,10 +309,10 @@ export const applyFillColor = (alertRanges) => (datasetLabel, label, data, origi
 
 /**
  * Determines if the dot is filled based on matching alerts
- * @param {string} datasetLabel
- * @param {string} label
- * @param {Object} data
- * @param {Boolean} isFilled default setting from carbon charts
+ * @param {string} datasetLabel --> map to group property
+ * @param {string} label --> map to key property
+ * @param {Object} data --> map to value property
+ * @param {Boolean} isFilled  --> map to defaultFilled property. Default setting from carbon charts
  * @returns {Boolean}
  */
 export const applyIsFilled = (alertRanges) => (datasetLabel, label, data, isFilled) => {

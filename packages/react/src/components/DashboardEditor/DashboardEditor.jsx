@@ -511,9 +511,11 @@ const DashboardEditor = ({
       setSelectedCardId(id);
       /* istanbul ignore else */
       if (onCardSelect) {
-        onCardSelect(id);
+        const cardConfig = dashboardJson.cards.find((card) => card.id === id);
+        onCardSelect(cardConfig);
       }
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [onCardSelect]
   );
 
