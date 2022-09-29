@@ -331,7 +331,7 @@ const ListItem = ({
                 [`${iotPrefix}--list-item--category`]: isCategory,
                 [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
               })}
-              title={title ?? value}
+              title={title || value}
             >
               {value}
             </div>
