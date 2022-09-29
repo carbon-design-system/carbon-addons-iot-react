@@ -45,10 +45,9 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 onChange={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
-                pattern={/\\[0-9: APM\\]/}
-                placeholder="hh:mm"
+                placeholder="hh:mm XM"
                 readOnly={false}
-                title="hh:mm"
+                title="hh:mm XM"
                 type="text"
                 value=""
               />
