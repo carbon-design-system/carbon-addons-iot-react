@@ -16,6 +16,7 @@ export const ListItemPropTypes = {
     /** The nodes should be Carbon Tags components */
     tags: PropTypes.arrayOf(PropTypes.node),
     value: PropTypes.string,
+    title: PropTypes.string,
   }),
   /** boolean to define load more row is needed */
   hasLoadMore: PropTypes.bool,
