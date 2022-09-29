@@ -955,4 +955,11 @@ describe('DateTimePicker', () => {
     userEvent.type(screen.getByLabelText('Absolute'), '{arrowdown}');
     expect(screen.getByLabelText('Relative')).toBeChecked();
   });
+
+  it('should be able to generate default id', () => {
+    render(<DateTimePicker {...dateTimePickerProps} testId="date-time-picker" />);
+    expect(screen.getByTestId('date-time-picker').getAttribute('id')).toMatch(
+      /-iot--date-time-picker__wrapper/
+    );
+  });
 });

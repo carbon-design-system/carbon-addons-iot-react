@@ -653,8 +653,9 @@ const DateTimePicker = ({
   const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
-    (invalidRangeStartTime || invalidRangeEndTime);
-
+    (invalidRangeStartTime ||
+      invalidRangeEndTime ||
+      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
   const disableSingleApply =
     isCustomRange && customRangeKind === PICKER_KINDS.SINGLE && invalidRangeStartTime;
 

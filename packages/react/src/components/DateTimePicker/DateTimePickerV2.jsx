@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as uuid from 'uuid';
 
 import DateTimePickerNew, { propTypes, defaultProps } from './DateTimePickerV2WithTimeSpinner';
 import DateTimePickerOld from './DateTimePickerV2WithoutTimeSpinner';
@@ -24,7 +23,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id,
   hasIconOnly,
   menuOffset,
   datePickerType,
