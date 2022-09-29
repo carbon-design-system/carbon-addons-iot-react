@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import dayjs from 'dayjs';
 import { TextInput } from 'carbon-components-react';
 import { Time16, EditOff16, WarningAltFilled16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
@@ -11,6 +12,26 @@ import useMerged from '../../hooks/useMerged';
 import ListSpinner from './ListSpinner';
 
 const { iotPrefix, prefix } = settings;
+
+const timeUtils = {
+  AVAILABLE_FORMATS: 'hhHHmmA',
+  get12Hours: (selectedTime, currentTime) =>
+    /(0[1-9])|(1[0-2])/.test(selectedTime.substring(0, 2))
+      ? selectedTime.substring(0, 2)
+      : currentTime.substring(0, 2),
+  get24Hours: (selectedTime, currentTime) =>
+    /(0[1-9]|1[0-9]|2[0-3])/.test(selectedTime.substring(0, 2))
+      ? selectedTime.substring(0, 2)
+      : currentTime.substring(2, 4),
+  getMinutes: (selectedTime, currentTime) =>
+    /[0-5][0-9]/.test(selectedTime.substring(3, 5))
+      ? selectedTime.substring(3, 5)
+      : currentTime.substring(4, 6),
+  getMeridiem: (selectedTime, currentTime) =>
+    /AM|PM/.test(selectedTime.substring(selectedTime.length - 2))
+      ? selectedTime.substring(selectedTime.length - 2)
+      : currentTime.substring(6),
+};
 
 const propTypes = {
   className: PropTypes.string,
@@ -36,6 +57,7 @@ const propTypes = {
     warnText: PropTypes.string,
     timeIconText: PropTypes.string,
     placeholderText: PropTypes.string,
+    placeholderText24h: PropTypes.string,
   }),
   /** Size of input */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
@@ -53,6 +75,7 @@ const propTypes = {
   onChange: PropTypes.func,
   testId: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
+  is24hours: PropTypes.bool,
 };
 
 /* istanbul ignore next */
@@ -67,7 +90,8 @@ const defaultProps = {
     invalidText: 'The time entered is invalid',
     warnText: undefined,
     timeIconText: 'Open time picker',
-    placeholderText: 'hh:mm',
+    placeholderText: 'hh:mm XM',
+    placeholderText24h: 'hh:mm',
     readOnlyBtnText: 'Read only',
   },
   size: 'md',
@@ -79,11 +103,14 @@ const defaultProps = {
   onChange: () => {},
   testId: 'time-picker',
   style: {},
+  is24hours: false,
 };
 
-const validate = (newValue) => {
-  const isValid12HoursRegex = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/;
-  return isValid12HoursRegex.test(newValue) || newValue === '';
+const validate = (newValue, is24hours) => {
+  if (is24hours) {
+    return /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/.test(newValue) || newValue === '';
+  }
+  return /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/.test(newValue) || newValue === '';
 };
 
 const TimePickerDropdown = ({
@@ -104,6 +131,7 @@ const TimePickerDropdown = ({
   secondaryValue,
   onChange,
   style,
+  is24hours,
 }) => {
   const init = useRef(false);
   const inputRef = useRef();
@@ -151,6 +179,7 @@ const TimePickerDropdown = ({
     warnText,
     timeIconText,
     placeholderText,
+    placeholderText24h,
     readOnlyBtnText,
   } = useMerged(defaultProps.i18n, i18n);
 
@@ -220,10 +249,10 @@ const TimePickerDropdown = ({
     if (!contained) {
       // close dropdown and validate
       setOpenState(false);
-      setInvalidState(!validate(inputRef.current.value));
+      setInvalidState(!validate(inputRef.current.value, is24hours));
       /* istanbul ignore else */
       if (secondaryInputRef.current) {
-        setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
+        setSecondaryInvalidState(!validate(secondaryInputRef.current.value, is24hours));
       }
     }
   };
@@ -282,6 +311,7 @@ const TimePickerDropdown = ({
       data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,
+        [`${iotPrefix}--time-picker--24h`]: is24hours,
         [`${iotPrefix}--time-picker--light`]: light,
         [`${iotPrefix}--time-picker--disabled`]: disabled,
         [`${iotPrefix}--time-picker-range`]: type === 'range',
@@ -306,8 +336,7 @@ const TimePickerDropdown = ({
               readOnly={readOnly}
               hideLabel={hideLabel}
               labelText={labelText}
-              placeholder={placeholderText}
-              pattern={/[0-9: APM]/}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={warnProp}
               invalid={invalidState}
@@ -374,7 +403,7 @@ const TimePickerDropdown = ({
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
               labelText={!hideSecondaryLabel ? labelText : ''}
-              placeholder={placeholderText}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={warnProp}
               invalid={invalidState}
@@ -415,7 +444,7 @@ const TimePickerDropdown = ({
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
               labelText={!hideSecondaryLabel ? secondaryLabelText : ''}
-              placeholder={placeholderText}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={secondaryWarnProp}
               invalid={secondaryInvalidState}
@@ -462,23 +491,26 @@ const TimePickerDropdown = ({
           position={position}
           ref={dropDownRef}
           style={style}
+          is24hours={is24hours}
         />
       ) : null}
     </div>
   );
 };
 
-const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
+const listItemsForVertical24Hours = Array.from(Array(23)).map((el, i) => {
   const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
   return { id: index, value: index };
 });
 
-const listItemsForVertical2 = Array.from(Array(60)).map((el, i) => {
+const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(0, 12);
+
+const listItemsForVerticalMinutes = Array.from(Array(60)).map((el, i) => {
   const index = i < 10 ? `0${i}` : `${i}`;
   return { id: index, value: index };
 });
 
-const listItemsForVertical3 = [
+const listItemsForVerticalMeridiem = [
   { id: 'AM', value: 'AM' },
   { id: 'PM', value: 'PM' },
 ];
@@ -489,6 +521,7 @@ const spinnerPropTypes = {
   onChange: PropTypes.func,
   testId: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
+  is24hours: PropTypes.bool,
 };
 
 /* istanbul ignore next */
@@ -497,23 +530,27 @@ const defaultSpinnerProps = {
   testId: 'time-picker-spinner',
   onChange: () => {},
   style: {},
+  is24hours: false,
 };
 
 export const TimePickerSpinner = React.forwardRef(
-  ({ onChange, position, value, testId, style }, ref) => {
+  ({ onChange, position, value, testId, style, is24hours }, ref) => {
+    const currentTime = dayjs().format(timeUtils.AVAILABLE_FORMATS);
+
     const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
-    const firstVal = useMemo(() => {
-      return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
-    }, [value]);
-    const secondVal = useMemo(
-      () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '02'),
-      [value]
-    );
-    const thirdVal = useMemo(
+    const firstVal = useMemo(
       () =>
-        /AM|PM/.test(value.substring(value.length - 2)) ? value.substring(value.length - 2) : 'AM',
-      [value]
+        is24hours
+          ? timeUtils.get24Hours(value, currentTime)
+          : timeUtils.get12Hours(value, currentTime),
+      [value, is24hours, currentTime]
     );
+    const secondVal = useMemo(() => timeUtils.getMinutes(value, currentTime), [value, currentTime]);
+    const thirdVal = useMemo(() => (is24hours ? '' : timeUtils.getMeridiem(value, currentTime)), [
+      is24hours,
+      value,
+      currentTime,
+    ]);
     const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
     const [callbackValue, setCallbackValue] = useState(value);
 
@@ -530,7 +567,7 @@ export const TimePickerSpinner = React.forwardRef(
       setSelected((prev) => {
         const arr = [...prev];
         arr[index] = str;
-        const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
+        const newValue = is24hours ? `${arr[0]}:${arr[1]}` : `${arr[0]}:${arr[1]} ${arr[2]}`;
         setCallbackValue(newValue);
         return arr;
       });
@@ -542,7 +579,7 @@ export const TimePickerSpinner = React.forwardRef(
           testId={`${testId}-list-spinner-1`}
           ref={ref}
           onClick={(e) => handleOnClick(e, 0)}
-          list={listItemsForVertical}
+          list={is24hours ? listItemsForVertical24Hours : listItemsForVertical12Hours}
           defaultSelectedId={selected[0]}
         />
       ),
@@ -554,7 +591,7 @@ export const TimePickerSpinner = React.forwardRef(
         <ListSpinner
           testId={`${testId}-list-spinner-2`}
           onClick={(e) => handleOnClick(e, 1)}
-          list={listItemsForVertical2}
+          list={listItemsForVerticalMinutes}
           defaultSelectedId={selected[1]}
         />
       ),
@@ -570,7 +607,7 @@ export const TimePickerSpinner = React.forwardRef(
               [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === 'PM',
             })}
             onClick={(e) => handleOnClick(e, 2)}
-            list={listItemsForVertical3}
+            list={listItemsForVerticalMeridiem}
             defaultSelectedId={selected[2]}
           />
         );
@@ -582,7 +619,9 @@ export const TimePickerSpinner = React.forwardRef(
     const dropdown = (
       <div
         data-testid={testId}
-        className={`${iotPrefix}--time-picker-spinner`}
+        className={classnames(`${iotPrefix}--time-picker-spinner`, {
+          [`${iotPrefix}--time-picker-spinner--24h`]: is24hours,
+        })}
         style={{
           ...updatedStyle,
           left: `${position[0]}px`,
@@ -591,7 +630,7 @@ export const TimePickerSpinner = React.forwardRef(
       >
         {listSpinner1}
         {listSpinner2}
-        {listSpinner3}
+        {is24hours ? null : listSpinner3}
       </div>
     );
     return ReactDOM.createPortal(dropdown, document.body);

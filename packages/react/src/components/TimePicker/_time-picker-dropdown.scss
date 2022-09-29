@@ -5,6 +5,10 @@
   width: 16.125rem;
   position: relative;
 
+  &--24h {
+    width: 13.125rem;
+  }
+
   input {
     font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier,
       monospace;
@@ -187,6 +191,10 @@
   /* stylelint-disable-next-line */
   transition: opacity 0.25s;
   animation: fadeIn 0.25s forwards;
+
+  &--24h {
+    width: 13.125rem;
+  }
 
   &::before {
     background: $background-brand;
