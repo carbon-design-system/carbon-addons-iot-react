@@ -566,7 +566,9 @@ export const TimePickerSpinner = React.forwardRef(
         return (
           <ListSpinner
             testId={`${testId}-list-spinner-3`}
-            className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
+            className={classnames(`${iotPrefix}--time-picker-spinner-last-list-spinner`, {
+              [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === 'PM',
+            })}
             onClick={(e) => handleOnClick(e, 2)}
             list={listItemsForVertical3}
             defaultSelectedId={selected[2]}

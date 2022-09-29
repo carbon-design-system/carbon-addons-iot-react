@@ -274,6 +274,12 @@
   li {
     transform: translateY(7.5rem);
   }
+
+  &--PM {
+    li:last-of-type {
+      transform: translateY(2.5rem);
+    }
+  }
 }
 
 @keyframes fadeIn {
