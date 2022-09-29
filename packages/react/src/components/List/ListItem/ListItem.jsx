@@ -38,8 +38,9 @@ const ListItemPropTypes = {
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
-  /** string value or callback render function */
+  /** text displayed on hover */
   title: PropTypes.string,
+  /** string value or callback render function */
   secondaryValue: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.func,
