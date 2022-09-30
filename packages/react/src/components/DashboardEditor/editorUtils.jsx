@@ -713,10 +713,41 @@ export const renderDefaultIconByName = (iconName, iconProps = {}) => {
 };
 
 export const DashboardEditorActionsPropTypes = PropTypes.shape({
+  /** Call back function for on click of edit button, returns aggregationMethods for a selcted dataSource
+   * onEditDataItem(cardConfig: card properties, dataItem: selected dataItem, dataItemWithMetaData: selected dataItem with meta data);
+   * return {object}: returns aggregationMethods for a selcted dataSource
+   * ex:
+   *[
+      {
+          "id": "none",
+          "text": "None"
+      },
+      {
+          "id": "mean",
+          "text": "Mean",
+      },
+      {
+          "id": "min",
+          "text": "Minimum",
+      }
+    ]
+   */
   onEditDataItem: PropTypes.func,
+  /** Form actions for dataSeries modal */
   dataSeriesFormActions: PropTypes.shape({
-    hideAggregationsDropDown: PropTypes.func,
-    hideDataFilterDropdown: PropTypes.func,
+    /** callback function to determine aggregation dropdown visibility
+     * hasAggregationsDropDown(editDataItem: selected dataSource)
+     * return {boolean} : true or false
+     */
+    hasAggregationsDropDown: PropTypes.func,
+    /** callback function to determine dataFilter dropdown visibility
+     * hasDataFilterDropdown(cardProps: card properties)
+     * return {boolean} : true or false
+     */
+    hasDataFilterDropdown: PropTypes.func,
+    /** callback function on click of Add aggregation method label
+     * onAddAggregations(editDataItem: selected dataSource)
+     */
     onAddAggregations: PropTypes.func,
   }),
 });

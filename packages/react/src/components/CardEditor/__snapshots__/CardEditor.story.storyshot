@@ -1060,8 +1060,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       actions={
                         Object {
                           "dataSeriesFormActions": Object {
-                            "hideAggregationsDropDown": [Function],
-                            "hideDataFilterDropdown": [Function],
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
                             "onAddAggregations": [Function],
                           },
                           "onEditDataItem": [Function],
@@ -3678,8 +3678,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       actions={
                         Object {
                           "dataSeriesFormActions": Object {
-                            "hideAggregationsDropDown": [Function],
-                            "hideDataFilterDropdown": [Function],
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
                             "onAddAggregations": [Function],
                           },
                           "onEditDataItem": [Function],
@@ -4641,8 +4641,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       actions={
                         Object {
                           "dataSeriesFormActions": Object {
-                            "hideAggregationsDropDown": [Function],
-                            "hideDataFilterDropdown": [Function],
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
                             "onAddAggregations": [Function],
                           },
                           "onEditDataItem": [Function],

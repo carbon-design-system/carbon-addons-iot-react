@@ -197,8 +197,8 @@ const defaultProps = {
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      hideDataFilterDropdown: null,
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
       onAddAggregations: null,
     },
   },
@@ -233,9 +233,8 @@ const DataSeriesFormItemModal = ({
   i18n,
   isLarge,
   testId,
-
   actions: {
-    dataSeriesFormActions: { hideAggregationsDropDown, onAddAggregations, hideDataFilterDropdown },
+    dataSeriesFormActions: { hasAggregationsDropDown, onAddAggregations, hasDataFilterDropdown },
   },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -302,7 +301,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {hideAggregationsDropDown(editDataItem) && (
+        {hasAggregationsDropDown(editDataItem) && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -529,7 +528,7 @@ const DataSeriesFormItemModal = ({
           </div>
         )}
 
-        {hideDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
+        {hasDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
           <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
             <div
               className={classnames({
@@ -622,8 +621,8 @@ const DataSeriesFormItemModal = ({
       cardConfig,
       editDataItem,
       handleTranslation,
-      hideAggregationsDropDown,
-      hideDataFilterDropdown,
+      hasAggregationsDropDown,
+      hasDataFilterDropdown,
       id,
       initialAggregation,
       initialGrain,

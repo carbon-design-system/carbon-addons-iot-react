@@ -222,7 +222,7 @@ const defaultProps = {
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
+      hasAggregationsDropDown: null,
       onAddAggregations: null,
     },
   },

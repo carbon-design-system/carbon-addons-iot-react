@@ -19,9 +19,9 @@ const commonActions = {
         ]
       : [],
   dataSeriesFormActions: {
-    hideAggregationsDropDown: (editDataItem) =>
+    hasAggregationsDropDown: (editDataItem) =>
       editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
-    hideDataFilterDropdown: action('hideDataFilterDropdown'),
+    hasDataFilterDropdown: action('hasDataFilterDropdown'),
     onAddAggregations: action('onAddAggregations'),
   },
 };
