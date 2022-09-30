@@ -10354,8 +10354,18 @@ Map {
               "type": "oneOf",
             },
             "label": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "node",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
               "isRequired": true,
-              "type": "string",
+              "type": "oneOfType",
             },
             "onClick": Object {
               "isRequired": true,
@@ -10426,8 +10436,18 @@ Map {
         "type": "string",
       },
       "title": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
         "isRequired": true,
-        "type": "string",
+        "type": "oneOfType",
       },
     },
   },
