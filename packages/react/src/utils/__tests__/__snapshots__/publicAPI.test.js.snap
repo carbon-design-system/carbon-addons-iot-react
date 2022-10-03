@@ -494,23 +494,83 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "message": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
                     "isRequired": true,
-                    "type": "node",
+                    "type": "oneOfType",
                   },
                   "messageBody": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "messageWithFilters": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "messageWithFiltersBody": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -1759,23 +1819,83 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "message": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
                                 "isRequired": true,
-                                "type": "node",
+                                "type": "oneOfType",
                               },
                               "messageBody": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "messageWithFilters": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "messageWithFiltersBody": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                             },
                           ],
@@ -10243,8 +10363,18 @@ Map {
               "type": "oneOf",
             },
             "label": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "node",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
               "isRequired": true,
-              "type": "string",
+              "type": "oneOfType",
             },
             "onClick": Object {
               "isRequired": true,
@@ -10315,8 +10445,18 @@ Map {
         "type": "string",
       },
       "title": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
         "isRequired": true,
-        "type": "string",
+        "type": "oneOfType",
       },
     },
   },
