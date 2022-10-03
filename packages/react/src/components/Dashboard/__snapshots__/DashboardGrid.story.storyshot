@@ -2111,7 +2111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
             }
           >
             <div
-              className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+              className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
               data-testid="table-for-card-tableCard-table-container"
             >
               <section

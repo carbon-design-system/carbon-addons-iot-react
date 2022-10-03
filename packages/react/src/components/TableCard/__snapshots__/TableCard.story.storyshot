@@ -33,7 +33,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -1850,7 +1850,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -3230,7 +3230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -4615,7 +4615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -6475,7 +6475,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-undefined"
                 id="table-for-card-undefined"
-                showHeader={true}
+                showHeader={false}
                 title={null}
               >
                 <thead
@@ -7126,7 +7126,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -8277,7 +8277,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -10480,7 +10480,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -12523,7 +12523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -14186,7 +14186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
@@ -16056,7 +16056,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-table-list-table-container"
         >
           <section
