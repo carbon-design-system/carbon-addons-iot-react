@@ -25389,7 +25389,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   scope="col"
                   style={
                     Object {
-                      "width": 110,
+                      "width": 150,
                     }
                   }
                 >

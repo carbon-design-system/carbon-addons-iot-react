@@ -8,6 +8,10 @@
   position: relative;
   padding-top: $spacing-08;
 
+  & .bx--text-input {
+    text-overflow: ellipsis;
+  }
+
   &-tags {
     margin-bottom: $spacing-03;
 
