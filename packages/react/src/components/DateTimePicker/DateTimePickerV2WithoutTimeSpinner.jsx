@@ -683,7 +683,7 @@ const DateTimePicker = ({
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
   return (
-    <>
+    <div className={`${iotPrefix}--date-time-pickerv2`}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
@@ -1049,7 +1049,7 @@ const DateTimePicker = ({
           </p>
         ) : null}
       </div>
-    </>
+    </div>
   );
 };
 

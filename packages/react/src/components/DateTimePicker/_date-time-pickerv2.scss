@@ -111,7 +111,6 @@
 }
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--disabled {
-  cursor: not-allowed;
   pointer-events: none;
 }
 
@@ -351,4 +350,8 @@ html[dir='rtl'] {
 
 .#{$iot-prefix}--card--toolbar .#{$iot-prefix}--date-time-pickerv2__wrapper:focus {
   outline: none;
+}
+
+.#{$iot-prefix}--date-time-pickerv2 {
+  cursor: not-allowed;
 }

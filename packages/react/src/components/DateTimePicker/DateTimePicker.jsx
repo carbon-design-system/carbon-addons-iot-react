@@ -653,6 +653,7 @@ const DateTimePicker = ({
         className={classnames(`${iotPrefix}--date-time-picker__box`, {
           [`${iotPrefix}--date-time-picker__box--light`]: light,
           [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
+          [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
         })}
       >
         <div

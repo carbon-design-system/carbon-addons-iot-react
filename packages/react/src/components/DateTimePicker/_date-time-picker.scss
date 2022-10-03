@@ -267,6 +267,10 @@
     outline: 2px solid $danger-01;
   }
 
+  .#{$iot-prefix}--date-time-picker__box--disabled {
+    pointer-events: none;
+  }
+
   .#{$iot-prefix}--date-time-picker__helper-text--invalid {
     color: $text-error;
   }
@@ -274,7 +278,6 @@
 
 .#{$iot-prefix}--date-time-picker__wrapper--disabled {
   cursor: not-allowed;
-  pointer-events: none;
 }
 
 html[dir='rtl'] {
