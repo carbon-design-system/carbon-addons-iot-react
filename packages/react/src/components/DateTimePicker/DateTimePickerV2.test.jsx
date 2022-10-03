@@ -27,6 +27,7 @@ const defaultPresets = [
 const { iotPrefix, prefix } = settings;
 
 const dateTimePickerProps = {
+  testId: 'date-time-picker',
   onCancel: jest.fn(),
   onApply: jest.fn(),
 };
@@ -35,6 +36,8 @@ const i18n = {
   presetLabels: ['Last 30 minutes', 'Missed in translation'],
   intervalLabels: ['minutes', 'Missed in translation'],
   relativeLabels: ['Missed in translation'],
+  invalidText: 'The date time entered is invalid',
+  invalidLabel: 'Invalid',
 };
 
 describe('DateTimePickerV2', () => {
@@ -1767,5 +1770,43 @@ describe('DateTimePickerV2', () => {
     expect(startTime).toHaveValue('01:51 PM');
     expect(endTime).toHaveValue('9999');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
+  it('should show invalid text when in invalid state', () => {
+    render(<DateTimePicker {...dateTimePickerProps} i18n={i18n} invalid />);
+    expect(screen.getByText(i18n.invalidText)).toBeInTheDocument();
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+    ).toBe(true);
+  });
+
+  it('should show invalid text when in invalid state (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} i18n={i18n} invalid useNewTimeSpinner />);
+    expect(screen.getByText(i18n.invalidText)).toBeInTheDocument();
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+    ).toBe(true);
+  });
+
+  it('should disable menu button when disabled is set', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled />);
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+    ).toBe(true);
+  });
+
+  it('should disable menu button when disabled is set (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled useNewTimeSpinner />);
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+    ).toBe(true);
   });
 });

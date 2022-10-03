@@ -27,6 +27,7 @@ const defaultPresets = [
 ];
 
 const dateTimePickerProps = {
+  testId: 'date-time-picker',
   onCancel: jest.fn(),
   onApply: jest.fn(),
 };
@@ -35,6 +36,8 @@ const i18n = {
   presetLabels: ['Last 30 minutes', 'Missed in translation'],
   intervalLabels: ['minutes', 'Missed in translation'],
   relativeLabels: ['Missed in translation'],
+  invalidText: 'The date time entered is invalid',
+  invalidLabel: 'Invalid',
 };
 
 describe('DateTimePicker', () => {
@@ -944,5 +947,25 @@ describe('DateTimePicker', () => {
     // absolute ↓ relative
     userEvent.type(screen.getByLabelText('Absolute'), '{arrowdown}');
     expect(screen.getByLabelText('Relative')).toBeChecked();
+  });
+
+  it('should show invalid text when in invalid state', () => {
+    render(<DateTimePicker {...dateTimePickerProps} i18n={i18n} invalid />);
+    expect(screen.getByText(i18n.invalidText)).toBeInTheDocument();
+    expect(screen.getByLabelText(i18n.invalidLabel)).toBeInTheDocument();
+    expect(
+      screen
+        .getByTestId(`${dateTimePickerProps.testId}__invalid-icon`)
+        .classList.contains(`${iotPrefix}--date-time-picker__icon--invalid`)
+    ).toBe(true);
+  });
+
+  it('should disable menu button when disabled is set', () => {
+    render(<DateTimePicker {...dateTimePickerProps} disabled />);
+    expect(
+      screen
+        .getByRole('img', { name: /calendar/i })
+        .classList.contains(`${iotPrefix}--date-time-picker__icon--disabled`)
+    ).toBe(true);
   });
 });
