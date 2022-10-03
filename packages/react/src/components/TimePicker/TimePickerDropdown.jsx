@@ -260,9 +260,17 @@ const TimePickerDropdown = ({
   const inputState = useMemo(() => {
     return {
       state:
-        invalidState || (secondaryInvalidState && !readOnly)
+        invalidState && !readOnly
           ? 'invalid'
-          : warnProp || (secondaryWarnProp && !readOnly)
+          : warnProp && !readOnly
+          ? 'warn'
+          : readOnly
+          ? 'readOnly'
+          : 'default',
+      secondaryState:
+        secondaryInvalidState && !readOnly
+          ? 'invalid'
+          : secondaryWarnProp && !readOnly
           ? 'warn'
           : readOnly
           ? 'readOnly'
@@ -283,10 +291,11 @@ const TimePickerDropdown = ({
           : readOnly
           ? EditOff16
           : Time16,
-      text:
-        !readOnly && (invalidState || secondaryInvalidState)
+      text: !readOnly && invalidState ? invalidText : !readOnly && warnProp ? warnText : helperText,
+      secondaryText:
+        !readOnly && secondaryInvalidState
           ? invalidText
-          : !readOnly && (warnProp || secondaryWarnProp)
+          : !readOnly && secondaryWarnProp
           ? warnText
           : helperText,
     };
@@ -315,8 +324,8 @@ const TimePickerDropdown = ({
         [`${iotPrefix}--time-picker--light`]: light,
         [`${iotPrefix}--time-picker--disabled`]: disabled,
         [`${iotPrefix}--time-picker-range`]: type === 'range',
-        [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
-        [`${iotPrefix}--time-picker--warn`]: inputState.state === 'warn' || warn[0] || warn[1],
+        [`${iotPrefix}--time-picker--warn`]:
+          inputState.state === 'warn' || inputState.secondaryState === 'warn' || warn[0] || warn[1],
       })}
     >
       {type === 'single' ? (
@@ -324,7 +333,10 @@ const TimePickerDropdown = ({
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
+              }
             )}
           >
             <TextInput
@@ -365,6 +377,7 @@ const TimePickerDropdown = ({
             className={classnames(`${prefix}--form__helper-text`, {
               [`${iotPrefix}--time-picker__helper-text`]: invalidState,
               [`${prefix}--form__helper-text--disabled`]: disabled,
+              [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
             })}
           >
             {!readOnly && invalidState
@@ -389,7 +402,10 @@ const TimePickerDropdown = ({
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
+              }
             )}
           >
             <TextInput
@@ -430,7 +446,10 @@ const TimePickerDropdown = ({
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 1 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 1 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.secondaryState === 'invalid',
+              }
             )}
           >
             <TextInput
@@ -475,10 +494,24 @@ const TimePickerDropdown = ({
               `${iotPrefix}--time-picker-range__helper-text`,
               {
                 [`${prefix}--form__helper-text--disabled`]: disabled,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
               }
             )}
           >
             {inputState.text}
+          </p>
+          <p
+            data-testid={`${testId}-range__helper-text--secondary`}
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--time-picker-range__helper-text--secondary`,
+              {
+                [`${prefix}--form__helper-text--disabled`]: disabled,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.secondaryState === 'invalid',
+              }
+            )}
+          >
+            {inputState.secondaryText}
           </p>
         </fieldset>
       )}
