@@ -10480,7 +10480,7 @@ Map {
       "onDelete": null,
       "searchPlaceHolderText": "Search image by file name",
       "searchProperty": "id",
-      "testId": "ComposedModal",
+      "testId": "image-gallery-modal",
     },
     "propTypes": Object {
       "children": Object {
