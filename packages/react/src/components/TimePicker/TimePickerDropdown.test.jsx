@@ -145,6 +145,52 @@ describe('TimePickerDropdown', () => {
     expect(screen.getAllByTitle(/Read only/).length).toEqual(2);
   });
 
+  it('should display only secondary invalid state if 2nd invalid prop passed', () => {
+    const { rerender } = render(
+      <TimePickerDropdown {...timePickerProps} type="range" invalid={[false, true]} />
+    );
+
+    const firstInput = screen.getByTestId('time-picker-test-input-1');
+    const secondaryInput = screen.getByTestId('time-picker-test-input-2');
+
+    expect(secondaryInput).toBeInvalid();
+    expect(firstInput).not.toBeInvalid();
+
+    expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
+    expect(screen.getByText('This is some helper text')).toBeInTheDocument();
+
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" invalid={[true, false]} />);
+
+    expect(firstInput).toBeInvalid();
+    expect(secondaryInput).not.toBeInvalid();
+
+    expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
+    expect(screen.getByText('This is some helper text')).toBeInTheDocument();
+  });
+
+  it('should display only secondary warn state if 2nd warn prop passed', () => {
+    const { rerender } = render(
+      <TimePickerDropdown {...timePickerProps} type="range" warn={[false, true]} />
+    );
+
+    const firstInput = screen.getByTestId('time-picker-test-input-1');
+    const secondaryInput = screen.getByTestId('time-picker-test-input-2');
+
+    expect(secondaryInput).toHaveClass('bx--text-input--warning');
+    expect(firstInput).not.toHaveClass('bx--text-input--warning');
+
+    expect(screen.getByText('You have been warned')).toBeInTheDocument();
+    expect(screen.getByText('This is some helper text')).toBeInTheDocument();
+
+    rerender(<TimePickerDropdown {...timePickerProps} type="range" warn={[true, false]} />);
+
+    expect(firstInput).toHaveClass('bx--text-input--warning');
+    expect(secondaryInput).not.toHaveClass('bx--text-input--warning');
+
+    expect(screen.getByText('You have been warned')).toBeInTheDocument();
+    expect(screen.getByText('This is some helper text')).toBeInTheDocument();
+  });
+
   it('can take input and returns it in onChange callback', async () => {
     const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     timePickerProps.onChange.mockRestore();
