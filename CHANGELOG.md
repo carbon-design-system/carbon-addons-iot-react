@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.28...v2.151.0-next.29) (2022-10-03)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add cursor and pointer event ([65df6d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65df6d70b2a578bc17708b27251b21c8268b118a))
+* **datetimepicker:** add cursor not allowed ([ca5a881](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ca5a881292a0e4b286237ed3efffc6019de6d170))
+* **datetimepicker:** should use strings instead ([0160cbf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0160cbfba7bd04a5d6060fdb292666a9eb3df877))
+* **datetimepicker:** support disabled props ([d59b280](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d59b280e5b34a6ea61587137dcd3804d07656ea9))
+* **datetimepicker:** support invalid state ([1a5c635](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1a5c6355c5ff29dc4971047755df93ff3f3bdd64))
+* **datetimepickerv2:** no show invalid text for hasIconOnly ([c5b80bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5b80bfb2c860ae5d3c10ab64b2b907ff2660c5a))
+
+
+
+
+
 # [2.151.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.27...v2.151.0-next.28) (2022-10-03)
 
 
