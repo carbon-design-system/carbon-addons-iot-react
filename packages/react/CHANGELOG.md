@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.26...v2.151.0-next.27) (2022-10-03)
+
+
+### Bug Fixes
+
+* **emptystate:** adjust proptypes schema ([ade32db](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ade32db8f8032fc43fbd1c2ca28ec42a421704c2)), closes [#3370](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3370)
+* **emptystate:** adjust proptypes schema with backward compatibility ([0aeda1e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0aeda1e8d8aba1b231e2904dc82f60a6d6ce261c))
+* **table:** increase min width for filterable column ([05637eb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05637eb6788be383d724d59c1ceaa98898c3291f)), closes [#3387](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3387)
+
+
+
+
+
 # [2.151.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.25...v2.151.0-next.26) (2022-09-29)
 
 
