@@ -60,7 +60,12 @@ export const Default = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      style={{ zIndex: number('zIndex', 6000) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
     />
   );
 };
@@ -77,6 +82,12 @@ export const SelectedPreset = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
     />
   );
 };
@@ -92,7 +103,12 @@ export const SelectedRelative = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      style={{ zIndex: number('zIndex', 6000) }}
+      style={{ zIndex: number('zIndex', 0) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
     />
   );
 };
@@ -110,10 +126,13 @@ export const SelectedAbsolute = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      style={{ zIndex: number('zIndex', 6000) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',
-        endTimeLabel: 'end',
+        endTimeLabel: 'End',
+        invalidText: 'The date time entered is invalid',
       })}
     />
   );
@@ -139,10 +158,13 @@ export const SingleSelect = () => {
       onCancel={action('onCancel')}
       datePickerType="single"
       showRelativeOption={boolean('show relative option', false)}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
       i18n={object('i18n', {
         timePickerInvalidText: 'A valid value is required',
+        invalidText: 'The date time entered is invalid',
       })}
-      style={{ zIndex: number('zIndex', 6000) }}
+      style={{ zIndex: number('zIndex', 0) }}
     />
   );
 };
@@ -159,11 +181,14 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
-      style={{ zIndex: number('zIndex', 6000) }}
+      style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',
         endTimeLabel: 'end',
+        invalidText: 'The date time entered is invalid',
       })}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
     />
   );
 };
@@ -224,7 +249,7 @@ export const LightVersion = () => {
       hasIconOnly={boolean('hasIconOnly', false)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
-      style={{ zIndex: number('zIndex', 6000) }}
+      style={{ zIndex: number('zIndex', 0) }}
     />
   );
 };
@@ -245,7 +270,9 @@ export const IconOnly = () => {
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
         hasIconOnly={boolean('hasIconOnly', true)}
-        style={{ zIndex: number('zIndex', 6000) }}
+        style={{ zIndex: number('zIndex', 0) }}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
       />
     </div>
   );

@@ -618,11 +618,11 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
  *
  * @returns {string} an interval string, starting point in time to now
  */
-export const getIntervalValue = ({ currentValue, strings, dateTimeMask, humanValue }) => {
+export const getIntervalValue = ({ currentValue, mergedI18n, dateTimeMask, humanValue }) => {
   if (currentValue) {
     if (currentValue.kind === PICKER_KINDS.PRESET) {
       return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
-        strings.toNowLabel
+        mergedI18n.toNowLabel
       }`;
     }
     return humanValue;
