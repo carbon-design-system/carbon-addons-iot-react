@@ -220,10 +220,10 @@ const defaultProps = {
   },
   testId: 'hotspot-editor-modal',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: () => {},
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: () => {},
+      onAddAggregations: () => {},
     },
   },
 };

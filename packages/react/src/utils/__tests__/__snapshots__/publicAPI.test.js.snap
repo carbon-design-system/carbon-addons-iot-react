@@ -13876,10 +13876,10 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hasAggregationsDropDown": null,
-          "onAddAggregations": null,
+          "hasAggregationsDropDown": [Function],
+          "onAddAggregations": [Function],
         },
-        "onEditDataItem": null,
+        "onEditDataItem": [Function],
       },
       "availableDimensions": Object {},
       "availableImages": Array [],
@@ -14663,10 +14663,10 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hasAggregationsDropDown": null,
-          "onAddAggregations": null,
+          "hasAggregationsDropDown": [Function],
+          "onAddAggregations": [Function],
         },
-        "onEditDataItem": null,
+        "onEditDataItem": [Function],
       },
       "availableDimensions": Object {},
       "cardConfig": null,

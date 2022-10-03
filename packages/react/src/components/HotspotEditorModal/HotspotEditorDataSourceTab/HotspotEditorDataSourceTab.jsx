@@ -96,10 +96,10 @@ const defaultProps = {
   availableDimensions: {},
   testId: 'HotspotEditorDataSourceTab',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: () => {},
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: () => {},
+      onAddAggregations: () => {},
     },
   },
 };

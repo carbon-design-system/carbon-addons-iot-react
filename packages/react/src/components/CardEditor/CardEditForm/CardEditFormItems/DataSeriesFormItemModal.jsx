@@ -195,11 +195,11 @@ const defaultProps = {
   testId: 'aggregation-methods',
 
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: () => {},
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: () => {},
+      hasDataFilterDropdown: () => {},
+      onAddAggregations: () => {},
     },
   },
 };
