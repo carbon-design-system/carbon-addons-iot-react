@@ -567,7 +567,7 @@ const TableCard = ({
             className={classnames(`${iotPrefix}--table-card__table`, {
               [`${iotPrefix}--table-card__table--expanded`]: isExpanded,
               [`${iotPrefix}--table-card__table--hide-header`]:
-                showHeader !== undefined ? showHeader : false,
+                showHeader !== undefined ? !showHeader : false,
               [`${iotPrefix}--table-card__table--with-data`]: data?.length > 0,
             })}
             columns={columnsToRender}
