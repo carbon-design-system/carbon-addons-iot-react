@@ -78,10 +78,11 @@ const defaultProps = {
   availableDimensions: {},
   onFetchDynamicDemoHotspots: null,
   actions: {
-    onEditDataItem: () => {},
+    onEditDataItem: null,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: () => {},
-      onAddAggregations: () => {},
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
+      onAddAggregations: null,
     },
   },
 };

@@ -124,10 +124,11 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   actions: {
-    onEditDataItem: () => {},
+    onEditDataItem: null,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: () => {},
-      onAddAggregations: () => {},
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
+      onAddAggregations: null,
     },
   },
 };

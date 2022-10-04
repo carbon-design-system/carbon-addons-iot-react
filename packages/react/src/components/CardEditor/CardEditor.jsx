@@ -176,10 +176,11 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   onEditDataItems: null,
   actions: {
-    onEditDataItem: () => {},
+    onEditDataItem: null,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: () => {},
-      onAddAggregations: () => {},
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
+      onAddAggregations: null,
     },
   },
 };

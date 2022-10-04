@@ -193,13 +193,12 @@ const defaultProps = {
   isLarge: false,
   validDataItems: [],
   testId: 'aggregation-methods',
-
   actions: {
-    onEditDataItem: () => {},
+    onEditDataItem: null,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: () => {},
-      hasDataFilterDropdown: () => {},
-      onAddAggregations: () => {},
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
+      onAddAggregations: null,
     },
   },
 };
@@ -301,7 +300,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {hasAggregationsDropDown(editDataItem) && (
+        {hasAggregationsDropDown && hasAggregationsDropDown(editDataItem) && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -528,71 +527,72 @@ const DataSeriesFormItemModal = ({
           </div>
         )}
 
-        {hasDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
-          <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
-            <div
-              className={classnames({
-                [`${baseClassName}--input-group--item`]: !isEmpty(editDataItem.dataFilter),
-                [`${baseClassName}--input-group--item-half`]:
-                  isEmpty(editDataItem.dataFilter) ||
-                  (!isEmpty(editDataItem.dataFilter) &&
-                    !availableDimensions[selectedDimensionFilter]),
-              })}
-            >
-              <Dropdown
-                id={`${id}_data-filter-key`}
-                label=""
-                translateWithId={handleTranslation}
-                direction="bottom"
-                items={[mergedI18n.none, ...Object.keys(availableDimensions)]}
-                light
-                selectedItem={selectedDimensionFilter || mergedI18n.none}
-                onChange={({ selectedItem }) => {
-                  if (selectedItem !== mergedI18n.none) {
-                    const dataFilter = {
-                      [selectedItem]: availableDimensions[selectedItem].sort()[0],
-                    };
-                    setEditDataItem({
-                      ...editDataItem,
-                      dataFilter,
-                    });
-                  } else {
-                    setEditDataItem({
-                      ...omit(editDataItem, 'dataFilter'),
-                    });
-                  }
-                }}
-                titleText={mergedI18n.dataItemEditorDataItemFilter}
-              />
-            </div>
-            {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] && (
-              <div className={`${baseClassName}--input-group--item-end`}>
+        {hasDataFilterDropdown &&
+          hasDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
+            <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
+              <div
+                className={classnames({
+                  [`${baseClassName}--input-group--item`]: !isEmpty(editDataItem.dataFilter),
+                  [`${baseClassName}--input-group--item-half`]:
+                    isEmpty(editDataItem.dataFilter) ||
+                    (!isEmpty(editDataItem.dataFilter) &&
+                      !availableDimensions[selectedDimensionFilter]),
+                })}
+              >
                 <Dropdown
-                  id={`${id}_data-filter-value`}
+                  id={`${id}_data-filter-key`}
                   label=""
+                  translateWithId={handleTranslation}
                   direction="bottom"
-                  items={availableDimensions[selectedDimensionFilter]?.sort()}
+                  items={[mergedI18n.none, ...Object.keys(availableDimensions)]}
                   light
-                  itemToString={(item) => item?.toString()}
-                  selectedItem={
-                    editDataItem.dataFilter
-                      ? editDataItem.dataFilter[selectedDimensionFilter]
-                      : undefined
-                  }
+                  selectedItem={selectedDimensionFilter || mergedI18n.none}
                   onChange={({ selectedItem }) => {
-                    const dataFilter = {
-                      [selectedDimensionFilter]: selectedItem,
-                    };
-                    setEditDataItem({
-                      ...editDataItem,
-                      dataFilter,
-                    });
+                    if (selectedItem !== mergedI18n.none) {
+                      const dataFilter = {
+                        [selectedItem]: availableDimensions[selectedItem].sort()[0],
+                      };
+                      setEditDataItem({
+                        ...editDataItem,
+                        dataFilter,
+                      });
+                    } else {
+                      setEditDataItem({
+                        ...omit(editDataItem, 'dataFilter'),
+                      });
+                    }
                   }}
+                  titleText={mergedI18n.dataItemEditorDataItemFilter}
                 />
               </div>
-            )}
-          </div>
-        )}
+              {!isEmpty(editDataItem.dataFilter) && availableDimensions[selectedDimensionFilter] && (
+                <div className={`${baseClassName}--input-group--item-end`}>
+                  <Dropdown
+                    id={`${id}_data-filter-value`}
+                    label=""
+                    direction="bottom"
+                    items={availableDimensions[selectedDimensionFilter]?.sort()}
+                    light
+                    itemToString={(item) => item?.toString()}
+                    selectedItem={
+                      editDataItem.dataFilter
+                        ? editDataItem.dataFilter[selectedDimensionFilter]
+                        : undefined
+                    }
+                    onChange={({ selectedItem }) => {
+                      const dataFilter = {
+                        [selectedDimensionFilter]: selectedItem,
+                      };
+                      setEditDataItem({
+                        ...editDataItem,
+                        dataFilter,
+                      });
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          )}
 
         {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE || type === CARD_TYPES.TABLE) && (
           <ThresholdsFormItem
