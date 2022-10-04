@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.29...v2.151.0-next.30) (2022-10-04)
+
+
+### Bug Fixes
+
+* **imagehotspot:** image hotspots label left align ([d4d20e0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4d20e0b7f1fc3696d5cc9d8f759977312413da6))
+* **sass:** remove [@use](https://github.com/use) declaration ([22217b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/22217b63f0d8af39272fcd84e642e41cbf6a3fe6)), closes [#3581](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3581)
+* **tablecard:** added showHeader toggle to story ([3a8b1a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3a8b1a4ddfa7ee2fe49f9c9b385de16a65ce843b))
+* **tablecard:** corrected showHeader usage ([09b9efc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/09b9efc513ca52d5c3c6f9d1304733a9c72308d9))
+* **tablecardtest:** fix TableCard e2e test case attemp ([ec432a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ec432a3abb0b748cca0caf74cb848afdce068f48))
+
+
+
+
+
 # [2.151.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.28...v2.151.0-next.29) (2022-10-03)
 
 
