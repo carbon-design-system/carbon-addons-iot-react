@@ -29,10 +29,10 @@
   padding-bottom: $spacing-03;
   max-width: calc(100vw - 20rem);
   @media screen and (min-width: $two-pane) {
-    max-width: calc(math.div(100vw, 2) - 15rem);
+    max-width: calc(100vw * 0.5 - 15rem);
   }
   @media screen and (min-width: $three-pane) {
-    max-width: calc(math.div(100vw, 3) - 15rem);
+    max-width: calc(100vw / 3 - 15rem);
   }
 }
 

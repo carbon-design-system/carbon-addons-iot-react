@@ -2,12 +2,6 @@
 // 🌍 Global
 //-------------------------
 
-// Enable math module to handle dividing operations due to deprecation of " / " operator
-// Reference https://sass-lang.com/documentation/breaking-changes/slash-div
-/* stylelint-disable */
-@use "sass:math";
-/* stylelint-enable */
-
 /// If true, includes font face mixins in `_css--font-face.scss` depending on the `css--plex` feature flag
 /// @access public
 /// @type Bool
