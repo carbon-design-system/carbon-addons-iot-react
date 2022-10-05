@@ -35,6 +35,7 @@ export default {
 
 export const BasicWKnobs = () => {
   const value = text('value', 'List Item');
+  const title = text('title', 'List Item title/hover text');
   const secondaryValue = text('secondaryValue', undefined);
   const iconName = select('icon', ['none', 'Star16', 'StarFilled16']);
   const iconComponent =
@@ -89,6 +90,7 @@ export const BasicWKnobs = () => {
         {...dndProps}
         id="list-item"
         value={value}
+        title={title}
         secondaryValue={secondaryValue}
         icon={iconComponent ? React.createElement(iconComponent) : null}
         iconPosition={select('iconPosition', ['left', 'right'], 'right')}

@@ -45,10 +45,11 @@ const commonProps = {
   actions: {
     onEditDataItem: jest.fn().mockImplementation(() => []),
     dataSeriesFormActions: {
-      hideAggregationsDropDown: jest.fn(
+      hasAggregationsDropDown: jest.fn(
         (editDataItem) =>
           editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
+      hasDataFilterDropdown: jest.fn(),
       onAddAggregations: jest.fn(),
     },
   },
@@ -438,6 +439,73 @@ describe('TableCardFormContent', () => {
       dataSource: {
         groupBy: ['manufacturer'],
         timeGrain: 'hour',
+      },
+    });
+  });
+  it('should remove threshold attribute from content when last threshold gets deleted', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                dataItemType: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'manufacturer',
+                comparison: '>',
+                value: 5,
+                icon: 'Warning alt',
+                color: '#da1e28',
+                severity: 1,
+              },
+            ],
+          },
+          dataSource: {
+            attributes: [
+              {
+                id: 'manufacturer',
+                attribute: 'manufacturer',
+                eventName: 'event1',
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    const removeTemperatureButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeTemperatureButton).toBeInTheDocument();
+
+    fireEvent.click(removeTemperatureButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Temperature',
+            dataSourceId: 'temperature',
+          },
+        ],
       },
     });
   });

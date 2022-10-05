@@ -40,7 +40,7 @@ const commonActions = {
         ]
       : [],
   dataSeriesFormActions: {
-    hideAggregationsDropDown: (editDataItem) =>
+    hasAggregationsDropDown: (editDataItem) =>
       editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
     onAddAggregations: action('onAddAggregations'),
   },
@@ -431,7 +431,7 @@ export const WithInitialValue = () => (
     onCancel={action('onCancel')}
     onSubmit={action('onSubmit')}
     onLayoutChange={action('onLayoutChange')}
-    hideAggregationsDropDown={action('hideAggregationsDropDown')}
+    hasAggregationsDropDown={action('hasAggregationsDropDown')}
     supportedCardTypes={[
       'TIMESERIES',
       'SIMPLE_BAR',

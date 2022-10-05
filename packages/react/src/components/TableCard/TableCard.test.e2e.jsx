@@ -16,7 +16,7 @@ describe('TableCard', () => {
           title="Open Alerts"
           content={{
             columns: tableColumns,
-            showHeader: false,
+            showHeader: true,
           }}
           values={tableData.slice(0, 1)}
           size={CARD_SIZES.LARGE}

@@ -504,6 +504,58 @@ describe('stateful table with real reducer', () => {
       }
     });
   });
+  it('should display empty table state when no search results', () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.change(searchField, { target: { value: 'irrelevant search 123123' } });
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+  });
+  it('should apply callback when clear filter button clicked', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'irrelevant search 123123',
+            },
+          },
+        }}
+        id="table"
+        i18n={{
+          emptyButtonLabelWithFilters: 'Clear all filters',
+        }}
+      />
+    );
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+    expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalledTimes(1);
+  });
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
@@ -845,7 +897,7 @@ describe('stateful table with real reducer', () => {
       const handles = screen.getAllByLabelText('Resize column');
       fireEvent.mouseDown(handles[0]);
       fireEvent.mouseMove(handles[0], {
-        clientX: 196,
+        clientX: 176,
       });
       fireEvent.mouseUp(handles[0]);
     };
@@ -864,16 +916,16 @@ describe('stateful table with real reducer', () => {
       expect.objectContaining({
         instanceId: null,
         payload: [
-          { id: 'string', name: 'String', width: '200px' },
-          { id: 'boolean', name: 'Boolean', width: '100px' },
+          { id: 'string', name: 'String', width: '180px' },
+          { id: 'boolean', name: 'Boolean', width: '120px' },
         ],
         type: 'TABLE_COLUMN_RESIZE',
       })
     );
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.clearAllMocks();
@@ -909,8 +961,8 @@ describe('stateful table with real reducer', () => {
     expect(reducer.baseTableReducer).not.toHaveBeenCalled();
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.resetAllMocks();

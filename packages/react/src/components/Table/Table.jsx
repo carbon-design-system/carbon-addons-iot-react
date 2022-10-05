@@ -658,6 +658,10 @@ const Table = (props) => {
     if (actions.toolbar && actions.toolbar.onApplySearch) {
       actions.toolbar.onApplySearch('');
     }
+
+    if (searchValue.current) {
+      searchValue.current = '';
+    }
   };
 
   const handleOnColumnResize = (resizedCols) => {

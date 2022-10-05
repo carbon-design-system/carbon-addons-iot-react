@@ -190,7 +190,7 @@ const ListContent = ({
     const isIndeterminate = indeterminateIds.includes(item.id);
 
     const {
-      content: { value, secondaryValue, icon, rowActions, tags },
+      content: { value, title, secondaryValue, icon, rowActions, tags },
       isSelectable,
       isCategory,
       disabled,
@@ -208,6 +208,7 @@ const ListContent = ({
           index={index}
           key={`${item.id}-list-item-${level}-${value}`}
           nestingLevel={item?.children && item.children.length > 0 ? level - 1 : level}
+          title={title}
           value={value}
           icon={
             editingStyleIsMultiple(editingStyle) || (isSelectable && isCheckboxMultiSelect) ? (

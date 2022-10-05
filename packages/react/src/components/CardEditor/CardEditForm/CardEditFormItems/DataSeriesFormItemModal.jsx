@@ -193,11 +193,11 @@ const defaultProps = {
   isLarge: false,
   validDataItems: [],
   testId: 'aggregation-methods',
-
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
       onAddAggregations: null,
     },
   },
@@ -232,9 +232,8 @@ const DataSeriesFormItemModal = ({
   i18n,
   isLarge,
   testId,
-
   actions: {
-    dataSeriesFormActions: { hideAggregationsDropDown, onAddAggregations },
+    dataSeriesFormActions: { hasAggregationsDropDown, onAddAggregations, hasDataFilterDropdown },
   },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -301,7 +300,7 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {hideAggregationsDropDown(editDataItem) && (
+        {hasAggregationsDropDown && hasAggregationsDropDown(editDataItem) && (
           <div className={`${baseClassName}--input-group`}>
             {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
               <div className={`${baseClassName}--input-group--item-half`}>
@@ -528,8 +527,8 @@ const DataSeriesFormItemModal = ({
           </div>
         )}
 
-        {isSummaryDashboard &&
-          type !== CARD_TYPES.TABLE && ( // only show data filter in summary dashboards
+        {hasDataFilterDropdown &&
+          hasDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
             <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
               <div
                 className={classnames({
@@ -622,7 +621,8 @@ const DataSeriesFormItemModal = ({
       cardConfig,
       editDataItem,
       handleTranslation,
-      hideAggregationsDropDown,
+      hasAggregationsDropDown,
+      hasDataFilterDropdown,
       id,
       initialAggregation,
       initialGrain,

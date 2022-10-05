@@ -119,7 +119,8 @@ const defaultProps = {
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
+      hasAggregationsDropDown: null,
+      hasDataFilterDropdown: null,
       onAddAggregations: null,
     },
   },
@@ -151,22 +152,23 @@ const TableCardFormContent = ({
   const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
-  const dataSection = useMemo(
-    () =>
-      Array.isArray(columns)
-        ? columns.map((column) => ({
+  const dataSection = useMemo(() => {
+    const a = Array.isArray(columns)
+      ? columns.map((column) => {
+          const filteredThresholds =
+            thresholds?.filter((threshold) => column.dataSourceId === threshold.dataSourceId) || [];
+          return {
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            ...(!isEmpty(thresholds) // only set thresholds if they exist
+            ...(!isEmpty(filteredThresholds) // only set thresholds if they exist
               ? {
-                  thresholds: thresholds?.filter(
-                    (threshold) => column.dataSourceId === threshold.dataSourceId
-                  ),
+                  thresholds: filteredThresholds,
                 }
               : {}),
-          }))
-        : [],
-    [columns, thresholds]
-  );
+          };
+        })
+      : [];
+    return a;
+  }, [columns, thresholds]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -225,7 +227,8 @@ const TableCardFormContent = ({
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
     (card) => {
-      const allThresholds = [];
+      // Consider existing thresholds outside columns
+      const allThresholds = thresholds?.map((threshold) => ({ ...threshold })) || [];
       // the table card is looking for the thresholds on the main content object
       const updatedColumns = card?.content?.columns?.map(
         // eslint-disable-next-line no-unused-vars
@@ -250,12 +253,16 @@ const TableCardFormContent = ({
         },
       });
     },
-    [onChange]
+    [onChange, thresholds]
   );
 
   const handleRemoveButton = useCallback(
     (dataItem) => {
       const filteredColumns = dataSection.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
+      // Filter existing thresholds
+      const filteredThresholds = cardConfig?.content?.thresholds?.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
       // Need to determine whether we should remove these from the groupBy section
@@ -274,12 +281,20 @@ const TableCardFormContent = ({
         updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
       }
 
+      const updatedContent = {
+        ...cardConfig.content,
+        columns: filteredColumns,
+        thresholds: filteredThresholds,
+      };
+
+      /* istanbul ignore else */
+      if (isEmpty(filteredThresholds)) {
+        delete updatedContent.thresholds;
+      }
+
       onChange({
         ...cardConfig,
-        content: {
-          ...cardConfig.content,
-          columns: filteredColumns,
-        },
+        content: updatedContent,
         ...updatedDataSource,
       });
     },
