@@ -202,17 +202,6 @@ const TimePickerDropdown = ({
       } else {
         setPosition([left, bottom + scrollOffset]);
       }
-
-      const currentTimeFormat = is24hours ? '24' : '12';
-      if (focusedInput === 0 && !value) {
-        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
-      }
-
-      if (focusedInput === 1 && !secondaryValue) {
-        setSecondaryValueState(
-          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
-        );
-      }
     }
   }, [container, openState, focusedInput, is24hours, value, secondaryValue]);
 
@@ -229,6 +218,17 @@ const TimePickerDropdown = ({
     setFocusedInput(index);
     if (!readOnly) {
       handleOpenDropdown(index);
+
+      const currentTimeFormat = is24hours ? '24' : '12';
+      if (index === 0 && !value) {
+        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
+      }
+
+      if (index === 1 && !secondaryValue) {
+        setSecondaryValueState(
+          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
+        );
+      }
     }
   };
 
