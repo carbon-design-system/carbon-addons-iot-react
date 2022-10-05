@@ -147,12 +147,8 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.get('#picker-test-1').clear();
-    cy.get('#picker-test-1')
-      .click()
-      .focus()
-      .type(
-        '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:34 PM'
-      );
+    cy.get('#picker-test-1').click().focus().type('{moveToStart}{del}{del}01');
+
     cy.get('#picker-test-2')
       .click()
       .focus()
@@ -267,18 +263,18 @@ describe('DateTimePickerV2', () => {
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
     cy.get('#picker-test-1').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}9:35 AM'
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35 AM'
     );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
     cy.get('#picker-test-1').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}1:35 AM'
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}11:35 AM'
     );
 
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
     cy.get('#picker-test-2').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}1:61 AM'
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}11:61 AM'
     );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
   });
