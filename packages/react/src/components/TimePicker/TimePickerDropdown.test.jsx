@@ -1,6 +1,7 @@
 import { render, screen, act, waitFor, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import MockDate from 'mockdate';
 
 import { settings } from '../../constants/Settings';
 
@@ -11,6 +12,7 @@ const { iotPrefix, prefix } = settings;
 describe('TimePickerDropdown', () => {
   const { IntersectionObserver: originalIntersectionObserver } = window;
   beforeEach(() => {
+    MockDate.set(1356067800000);
     window.IntersectionObserver = jest.fn().mockImplementation((callback) => {
       callback([{ isIntersecting: false }]);
 
@@ -26,6 +28,7 @@ describe('TimePickerDropdown', () => {
     window.IntersectionObserver = originalIntersectionObserver;
     jest.restoreAllMocks();
     jest.resetAllMocks();
+    MockDate.reset();
   });
   const timePickerProps = {
     readOnly: false,
@@ -49,9 +52,7 @@ describe('TimePickerDropdown', () => {
     const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     expect(screen.getByTestId('time-picker-test')).toBeTruthy();
     expect(screen.getByTestId('time-picker-test-input')).toBeTruthy();
-    expect(screen.getByTestId('time-picker-test-time-btn')).toBeTruthy();
-    const timeBtn = screen.getByTestId('time-picker-test-time-btn');
-    userEvent.click(timeBtn);
+    fireEvent.focus(screen.getByTestId('time-picker-test-input'));
     const dropdown = screen.queryByTestId('time-picker-test-spinner');
     expect(dropdown).toBeTruthy();
     rerender(
@@ -63,9 +64,7 @@ describe('TimePickerDropdown', () => {
       />
     );
     expect(screen.getByTestId('time-picker-test-input-1')).toBeTruthy();
-    expect(screen.getByTestId('time-picker-test-time-btn-1')).toBeTruthy();
     expect(screen.getByTestId('time-picker-test-input-2')).toBeTruthy();
-    expect(screen.getByTestId('time-picker-test-time-btn-2')).toBeTruthy();
   });
 
   it('renders the appropriate help text and icon when invalid/warn/readonly is passed', () => {
@@ -195,17 +194,23 @@ describe('TimePickerDropdown', () => {
     const { rerender } = render(<TimePickerDropdown {...timePickerProps} />);
     timePickerProps.onChange.mockRestore();
     const input = screen.getByTestId('time-picker-test-input');
-    await act(() => userEvent.type(input, '09:30{space}AM', { delay: 200 }));
-    expect(timePickerProps.onChange).toHaveBeenCalledTimes(8);
+    userEvent.type(
+      input,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}09:30{space}AM'
+    );
+    expect(timePickerProps.onChange).toHaveBeenCalledTimes(17);
     expect(input.value).toEqual('09:30 AM');
-    expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
+    expect(timePickerProps.onChange.mock.calls[16][0]).toEqual('09:30 AM');
     timePickerProps.onChange.mockRestore();
     rerender(<TimePickerDropdown {...timePickerProps} type="range" />);
     const input2 = screen.getByTestId('time-picker-test-input-2');
-    await act(() => userEvent.type(input2, '09:30{space}AM', { delay: 200 }));
-    expect(timePickerProps.onChange).toHaveBeenCalledTimes(8);
+    userEvent.type(
+      input2,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}09:30{space}AM'
+    );
+    expect(timePickerProps.onChange).toHaveBeenCalledTimes(17);
     expect(input2.value).toEqual('09:30 AM');
-    expect(timePickerProps.onChange.mock.calls[7][0]).toEqual('09:30 AM');
+    expect(timePickerProps.onChange.mock.calls[16][0]).toEqual('09:30 AM');
   });
 
   it('hides and shows appropriate labels', () => {
@@ -231,26 +236,20 @@ describe('TimePickerDropdown', () => {
     expect(secondLabel.classList.contains(`${prefix}--visually-hidden`)).toBeTruthy();
   });
 
-  it('opens dropdown when clock icon clicked, closes when component loses focus', async () => {
-    render(<TimePickerDropdown {...timePickerProps} type="range" secondaryValue="09:30" />);
+  it('opens dropdown when input field is focused, closes on when component loses focus', async () => {
+    render(<TimePickerDropdown {...timePickerProps} type="range" />);
     const qbt = screen.queryByTestId;
-    const timeBtn = screen.getByTestId('time-picker-test-time-btn-1');
-    userEvent.click(timeBtn);
-    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
-    userEvent.click(timeBtn);
-    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
-    userEvent.click(timeBtn);
-    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
-    userEvent.click(document.body);
-    await waitFor(() => expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument());
-    expect(screen.queryByText(/The time entered is invalid/)).toBeTruthy();
     const input1 = screen.getByTestId('time-picker-test-input-1');
-    const input2 = screen.getByTestId('time-picker-test-input-2');
     fireEvent.focus(input1);
-    fireEvent.focus(input2);
-    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
-    userEvent.click(timeBtn);
     expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
+    fireEvent.blur(input1);
+    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
+
+    const input2 = screen.getByTestId('time-picker-test-input-2');
+    fireEvent.focus(input2);
+    expect(qbt('time-picker-test-spinner')).toBeInTheDocument();
+    fireEvent.blur(input2);
+    expect(qbt('time-picker-test-spinner')).not.toBeInTheDocument();
   });
 
   it('will not open dropdown if in read only state', () => {
@@ -270,9 +269,8 @@ describe('TimePickerDropdown', () => {
 
   it('updates the value of input when list spinner button is pressed', async () => {
     render(<TimePickerDropdown {...timePickerProps} value="09:30 AM" />);
-    const timeBtn = screen.getByTestId('time-picker-test-time-btn');
     const input = screen.getByTestId('time-picker-test-input');
-    userEvent.click(timeBtn);
+    fireEvent.focus(input);
     const prevBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-prev-btn');
     const nextBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-next-btn');
     const tenBtn = screen.getAllByText(/10/)[0];
@@ -290,12 +288,9 @@ describe('TimePickerDropdown', () => {
 
   it('updates the value of  2nd input when list spinner button is pressed', async () => {
     render(<TimePickerDropdown {...timePickerProps} type="range" secondaryValue="09:30 AM" />);
-    const timeBtn1 = screen.getByTestId('time-picker-test-time-btn-1');
-    const timeBtn2 = screen.getByTestId('time-picker-test-time-btn-2');
     const input1 = screen.getByTestId('time-picker-test-input-1');
     const input2 = screen.getByTestId('time-picker-test-input-2');
-    userEvent.click(timeBtn1);
-    userEvent.click(timeBtn2);
+    fireEvent.focus(input2);
     const prevBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-prev-btn');
     const nextBtn = screen.queryByTestId('time-picker-test-spinner-list-spinner-1-next-btn');
     const tenBtn = screen.getAllByText(/10/)[0];
@@ -315,18 +310,136 @@ describe('TimePickerDropdown', () => {
   it('should hide meridiem spinner if in 24h format', () => {
     render(<TimePickerDropdown {...timePickerProps} is24hours />);
 
-    userEvent.click(screen.getByTestId('time-picker-test-time-btn'));
+    fireEvent.focus(screen.queryByTestId('time-picker-test-input'));
 
-    expect(screen.queryByText('AM')).not.toBeInTheDocument();
-    expect(screen.queryByText('PM')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('time-picker-test-spinner-list-spinner-1')).toBeInTheDocument();
+    expect(screen.queryByTestId('time-picker-test-spinner-list-spinner-2')).toBeInTheDocument();
+    expect(screen.queryByTestId('time-picker-test-spinner-list-spinner-3')).not.toBeInTheDocument();
   });
 
-  it('should be in invalid state if meridiem is typed entered into input', () => {
+  it('should be in invalid state if meridiem is typed into 24h input', () => {
     render(<TimePickerDropdown {...timePickerProps} is24hours />);
     const input = screen.getByTestId('time-picker-test-input');
-    userEvent.type(input, '09:30{space}AM');
-    input.blur();
+    fireEvent.change(input, { target: { value: '09:33 AM' } });
+    fireEvent.blur(input);
+
     expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
     expect(input).toBeInvalid();
+  });
+
+  it('should populate time value in input on focus', () => {
+    render(<TimePickerDropdown {...timePickerProps} type="range" />);
+    const input1 = screen.getByTestId('time-picker-test-input-1');
+    const input2 = screen.getByTestId('time-picker-test-input-2');
+    fireEvent.focus(input1);
+    expect(input1.value).toEqual('11:30 PM');
+    fireEvent.focus(input2);
+    expect(input2.value).toEqual('11:30 PM');
+  });
+
+  it('should not populate time value on focus if correct value already filled in', () => {
+    render(
+      <TimePickerDropdown
+        {...timePickerProps}
+        type="range"
+        value="08:30 AM"
+        secondaryValue="09:30 AM"
+      />
+    );
+    const input1 = screen.getByTestId('time-picker-test-input-1');
+    const input2 = screen.getByTestId('time-picker-test-input-2');
+    fireEvent.focus(input1);
+    expect(input1.value).toEqual('08:30 AM');
+    fireEvent.focus(input2);
+    expect(input2.value).toEqual('09:30 AM');
+
+    userEvent.type(
+      input1,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}11:30{space}AM'
+    );
+
+    userEvent.type(
+      input2,
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}06:30{space}AM'
+    );
+
+    userEvent.click(document.body);
+
+    fireEvent.focus(input1);
+    expect(input1.value).toEqual('11:30 AM');
+    fireEvent.focus(input2);
+    expect(input2.value).toEqual('06:30 AM');
+  });
+
+  it('should display invalid state if typed characters outside of 24h format', async () => {
+    render(<TimePickerDropdown {...timePickerProps} />);
+    const input = screen.getByTestId('time-picker-test-input');
+    userEvent.type(input, 'fdsfsdfsdf');
+    expect(input.value).toEqual('11:30 PMfdsfsdfsdf');
+    userEvent.click(document.body);
+    await waitFor(() => {
+      expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
+    });
+  });
+
+  it('should move focus in spinner if left or right arrows pressed', () => {
+    render(<TimePickerDropdown {...timePickerProps} />);
+    const input = screen.getByTestId('time-picker-test-input');
+    input.focus();
+    userEvent.type(input, '{arrowdown}');
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item')
+    ).toHaveFocus();
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item'),
+      '{arrowright}'
+    );
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item')
+    ).toHaveFocus();
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item'),
+      '{arrowright}'
+    );
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-3-selected-item')
+    ).toHaveFocus();
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-3-selected-item'),
+      '{arrowleft}'
+    );
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item')
+    ).toHaveFocus();
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item'),
+      '{arrowleft}'
+    );
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item')
+    ).toHaveFocus();
+  });
+
+  it('should close dropdown spinner on enter keyboard press', () => {
+    render(<TimePickerDropdown {...timePickerProps} />);
+    const input = screen.getByTestId('time-picker-test-input');
+    input.focus();
+    userEvent.type(input, '{arrowdown}');
+    expect(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item')
+    ).toHaveFocus();
+
+    const spinnerDropdown = screen.getByTestId('time-picker-test-spinner');
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item'),
+      '{enter}'
+    );
+    expect(input).toHaveFocus();
+    expect(spinnerDropdown).not.toBeInTheDocument();
   });
 });
