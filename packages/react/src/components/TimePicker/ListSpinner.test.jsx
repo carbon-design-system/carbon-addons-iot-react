@@ -93,6 +93,37 @@ describe('ListSpinner', () => {
     ).toBeTruthy();
   });
 
+  it('should apply callbacks when user presses right or left arrow', () => {
+    const rightArrowCallback = jest.fn();
+    const leftArrowCallback = jest.fn();
+    render(
+      <ListSpinner
+        list={listItems}
+        onRightArrowClick={rightArrowCallback}
+        onLeftArrowClick={leftArrowCallback}
+        defaultSelectedId="10"
+        testId="my-list"
+      />
+    );
+
+    const selected = screen.getByTestId('my-list-selected-item');
+    userEvent.type(selected, '{arrowright}');
+    expect(rightArrowCallback).toHaveBeenCalledTimes(1);
+    userEvent.type(selected, '{arrowleft}{arrowleft}');
+    expect(leftArrowCallback).toHaveBeenCalledTimes(2);
+  });
+
+  it('should scroll value if arrow up or arrow down is pressed', () => {
+    const onChange = jest.fn();
+    render(
+      <ListSpinner list={listItems} defaultSelectedId="10" testId="my-list" onChange={onChange} />
+    );
+
+    const selected = screen.getByTestId('my-list-selected-item');
+    userEvent.type(selected, '{arrowup}{arrowdown}{arrowdown}');
+    expect(onChange).toHaveBeenCalledTimes(4);
+  });
+
   it('will return a new array with the first index moved to the end', () => {
     const list = Array.from(Array(12)).map((el, i) => i);
     const newValue = backwardArraySwap(list);
