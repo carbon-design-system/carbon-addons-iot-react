@@ -169,7 +169,7 @@
     }
   }
 
-  .#{$prefix}--label,
+  .#{$prefix}--label:not(legend),
   .#{$iot-prefix}--time-picker__wrapper {
     max-width: 8rem;
   }
