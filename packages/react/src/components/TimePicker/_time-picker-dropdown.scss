@@ -53,7 +53,7 @@
     background: none;
     border: 0.125rem solid transparent;
     box-sizing: content-box;
-    cursor: pointer;
+    pointer-events: none;
     height: 1rem;
     padding: $spacing-02;
     position: absolute;

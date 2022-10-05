@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import useMerged from '../../hooks/useMerged';
 import Button from '../Button';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 
 const { iotPrefix } = settings;
 
@@ -23,6 +24,10 @@ const propTypes = {
   onChange: PropTypes.func,
   /** Optional handler that is called whenever item is clicked */
   onClick: PropTypes.func,
+  /** Optional handler that is called whenever right arrow is clicked */
+  onRightArrowClick: PropTypes.func,
+  /** Optional handler that is called whenever left arrow is clicked */
+  onLeftArrowClick: PropTypes.func,
   /** Array of items to render in the spinning list */
   list: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.string, value: PropTypes.string })),
   /** Optional tag name to use instead of ul */
@@ -40,6 +45,8 @@ const defaultProps = {
   defaultSelectedId: undefined,
   onChange: () => {},
   onClick: () => {},
+  onRightArrowClick: () => {},
+  onLeftArrowClick: () => {},
   list: [],
   containerElement: 'ul',
 };
@@ -90,6 +97,8 @@ const ListSpinner = React.forwardRef(
       defaultSelectedId,
       onChange,
       onClick,
+      onRightArrowClick,
+      onLeftArrowClick,
       list,
       containerElement: ContainerElement,
     },
@@ -226,7 +235,7 @@ const ListSpinner = React.forwardRef(
       // istanbul ignore else
       if (e.target.id.length === 2) {
         // istanbul ignore else
-        if (e.key === 'ArrowUp') {
+        if (e.key === keyboardKeys.UP) {
           e.preventDefault();
           setSelectedId((prev) => {
             const prevIndex = list.findIndex((i) => i.id === prev);
@@ -238,7 +247,7 @@ const ListSpinner = React.forwardRef(
           return false;
         }
         // istanbul ignore else
-        if (e.key === 'ArrowDown') {
+        if (e.key === keyboardKeys.DOWN) {
           e.preventDefault();
           setSelectedId((prev) => {
             const prevIndex = list.findIndex((i) => i.id === prev);
@@ -251,6 +260,14 @@ const ListSpinner = React.forwardRef(
           });
           setTimeout(() => contentRef.current.childNodes[0].focus());
           return false;
+        }
+        // istanbul ignore else
+        if (e.key === keyboardKeys.RIGHT) {
+          onRightArrowClick(e);
+        }
+        // istanbul ignore else
+        if (e.key === keyboardKeys.LEFT) {
+          onLeftArrowClick(e);
         }
       }
 
@@ -330,9 +347,10 @@ const ListSpinner = React.forwardRef(
         data-selected={el.value === selectedId}
       >
         <Button
+          ref={el.id === selectedId ? ref : null}
           testId={el.id === selectedId ? `${testId}-selected-item` : el.id}
           id={el.id}
-          tabIndex={el.id === selectedId ? 0 : -1}
+          tabIndex={-1}
           kind="ghost"
           iconDescription={el.value}
           onMouseDown={handleClick}
@@ -350,7 +368,7 @@ const ListSpinner = React.forwardRef(
         })}
       >
         <Button
-          ref={ref}
+          tabIndex={-1}
           testId={`${testId}-prev-btn`}
           id={`${iotPrefix}--list-spinner__btn--up`}
           onMouseDown={handleClick}
@@ -377,6 +395,7 @@ const ListSpinner = React.forwardRef(
         </div>
         <Button
           testId={`${testId}-next-btn`}
+          tabIndex={-1}
           id={`${iotPrefix}--list-spinner__btn--down`}
           onMouseDown={handleClick}
           className={`${iotPrefix}--list-spinner__btn ${className}-spinner__btn`}

@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef, useEffect } from 'react';
+import React, { useMemo, useState, useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
@@ -7,14 +7,21 @@ import { Time16, EditOff16, WarningAltFilled16, WarningFilled16 } from '@carbon/
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 import useMerged from '../../hooks/useMerged';
 
 import ListSpinner from './ListSpinner';
 
 const { iotPrefix, prefix } = settings;
 
+const TIME_FORMAT = {
+  12: 'hh:mm A',
+  24: 'HH:mm',
+};
+
+const AVAILABLE_FORMATS = 'hhHHmmA';
+
 const timeUtils = {
-  AVAILABLE_FORMATS: 'hhHHmmA',
   get12Hours: (selectedTime, currentTime) =>
     /(0[1-9])|(1[0-2])/.test(selectedTime.substring(0, 2))
       ? selectedTime.substring(0, 2)
@@ -185,8 +192,6 @@ const TimePickerDropdown = ({
 
   useEffect(() => {
     if (openState) {
-      // eslint-disable-next-line no-unused-expressions
-      dropDownRef.current?.focus();
       const { left, bottom, top } = container.getBoundingClientRect();
       const dropdownHeight = 280;
       const scrollOffset = window.pageYOffset;
@@ -197,10 +202,21 @@ const TimePickerDropdown = ({
       } else {
         setPosition([left, bottom + scrollOffset]);
       }
-    }
-  }, [container, openState]);
 
-  const handleFocus = (index) => {
+      const currentTimeFormat = is24hours ? '24' : '12';
+      if (focusedInput === 0 && !value) {
+        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
+      }
+
+      if (focusedInput === 1 && !secondaryValue) {
+        setSecondaryValueState(
+          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
+        );
+      }
+    }
+  }, [container, openState, focusedInput, is24hours, value, secondaryValue]);
+
+  const handleOpenDropdown = (index) => {
     if (focusedInput === index && openState === true) {
       setOpenState(false);
     } else {
@@ -209,9 +225,27 @@ const TimePickerDropdown = ({
     setFocusedInput(index);
   };
 
+  const handleOnFocus = (index) => {
+    setFocusedInput(index);
+    if (!readOnly) {
+      handleOpenDropdown(index);
+    }
+  };
+
   const handleOnKeyDown = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === keyboardKeys.ESCAPE) {
       setOpenState(false);
+    }
+
+    if (e.key === keyboardKeys.DOWN && dropDownRef.current) {
+      dropDownRef.current.focus();
+    }
+  };
+
+  const handleOnKeyUp = (e) => {
+    if (e.key === keyboardKeys.ENTER && inputRef.current) {
+      setOpenState(false);
+      inputRef.current.focus();
     }
   };
 
@@ -313,10 +347,9 @@ const TimePickerDropdown = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={openState ? 0 : -1}
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
+      onKeyUp={handleOnKeyUp}
       data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,
@@ -344,7 +377,7 @@ const TimePickerDropdown = ({
               data-testid={`${testId}-input`}
               id={id}
               value={valueState}
-              onFocus={() => setFocusedInput(0)}
+              onFocus={() => handleOnFocus(0)}
               readOnly={readOnly}
               hideLabel={hideLabel}
               labelText={labelText}
@@ -356,21 +389,17 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={inputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
                 [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
               <inputState.firstIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <p
             data-testid={`${testId}-helpertext`}
@@ -411,7 +440,7 @@ const TimePickerDropdown = ({
             <TextInput
               onChange={handleOnChange}
               data-testid={`${testId}-input-1`}
-              onFocus={() => setFocusedInput(0)}
+              onFocus={() => handleOnFocus(0)}
               id={`${id}-1`}
               readOnly={readOnly}
               value={valueState}
@@ -427,21 +456,17 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={inputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn-1`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
                 [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
               <inputState.firstIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <div
             className={classnames(
@@ -456,7 +481,7 @@ const TimePickerDropdown = ({
               data-testid={`${testId}-input-2`}
               id={`${id}-2`}
               onChange={handleOnChange}
-              onFocus={() => setFocusedInput(1)}
+              onFocus={() => handleOnFocus(1)}
               readOnly={readOnly}
               value={secondaryValueState}
               hideLabel={hideSecondaryLabel || hideLabel}
@@ -471,21 +496,17 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={secondaryInputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn-2`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: secondaryInvalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: secondaryWarnProp,
                 [`${iotPrefix}--time-picker__icon--readonly`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(1) : undefined)}
             >
               <inputState.secondIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <p
             data-testid={`${testId}-range__helper-text`}
@@ -568,7 +589,7 @@ const defaultSpinnerProps = {
 
 export const TimePickerSpinner = React.forwardRef(
   ({ onChange, position, value, testId, style, is24hours }, ref) => {
-    const currentTime = dayjs().format(timeUtils.AVAILABLE_FORMATS);
+    const currentTime = dayjs().format(AVAILABLE_FORMATS);
 
     const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
     const firstVal = useMemo(
@@ -586,6 +607,12 @@ export const TimePickerSpinner = React.forwardRef(
     ]);
     const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
     const [callbackValue, setCallbackValue] = useState(value);
+    const [, setFocusedSpinner] = useState(0);
+
+    const secondSpinnerRef = useRef();
+    const thirdSpinnerRef = useRef();
+
+    const numberOfSpinners = is24hours ? 2 : 3;
 
     useEffect(() => {
       setSelected([firstVal, secondVal, thirdVal]);
@@ -606,6 +633,45 @@ export const TimePickerSpinner = React.forwardRef(
       });
     };
 
+    /* eslint-disable no-unused-expressions */
+    const handleRightArrowClick = useCallback(() => {
+      setFocusedSpinner((prevValue) => {
+        const nextSelected = (prevValue + 1) % numberOfSpinners;
+        if (nextSelected === 0) {
+          ref?.current.focus();
+        }
+
+        if (nextSelected === 1) {
+          secondSpinnerRef?.current.focus();
+        }
+
+        if (nextSelected === 2) {
+          thirdSpinnerRef?.current.focus();
+        }
+        return nextSelected;
+      });
+    }, [numberOfSpinners, ref]);
+
+    const handleLeftArrowClick = useCallback(() => {
+      const stepBehind = is24hours ? 1 : 2;
+      setFocusedSpinner((prevValue) => {
+        const nextSelected = (prevValue + stepBehind) % numberOfSpinners;
+        if (nextSelected === 0) {
+          ref?.current.focus();
+        }
+
+        if (nextSelected === 1) {
+          secondSpinnerRef?.current.focus();
+        }
+
+        if (nextSelected === 2) {
+          thirdSpinnerRef?.current.focus();
+        }
+        return nextSelected;
+      });
+    }, [is24hours, numberOfSpinners, ref]);
+    /* eslint-enable no-unused-expressions */
+
     const listSpinner1 = useMemo(
       () => (
         <ListSpinner
@@ -614,6 +680,8 @@ export const TimePickerSpinner = React.forwardRef(
           onClick={(e) => handleOnClick(e, 0)}
           list={is24hours ? listItemsForVertical24Hours : listItemsForVertical12Hours}
           defaultSelectedId={selected[0]}
+          onRightArrowClick={handleRightArrowClick}
+          onLeftArrowClick={handleLeftArrowClick}
         />
       ),
       /* eslint-disable-next-line react-hooks/exhaustive-deps */
@@ -623,9 +691,12 @@ export const TimePickerSpinner = React.forwardRef(
       () => (
         <ListSpinner
           testId={`${testId}-list-spinner-2`}
+          ref={secondSpinnerRef}
           onClick={(e) => handleOnClick(e, 1)}
           list={listItemsForVerticalMinutes}
           defaultSelectedId={selected[1]}
+          onRightArrowClick={handleRightArrowClick}
+          onLeftArrowClick={handleLeftArrowClick}
         />
       ),
       /* eslint-disable-next-line react-hooks/exhaustive-deps */
@@ -636,12 +707,15 @@ export const TimePickerSpinner = React.forwardRef(
         return (
           <ListSpinner
             testId={`${testId}-list-spinner-3`}
+            ref={thirdSpinnerRef}
             className={classnames(`${iotPrefix}--time-picker-spinner-last-list-spinner`, {
               [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === 'PM',
             })}
             onClick={(e) => handleOnClick(e, 2)}
             list={listItemsForVerticalMeridiem}
             defaultSelectedId={selected[2]}
+            onRightArrowClick={handleRightArrowClick}
+            onLeftArrowClick={handleLeftArrowClick}
           />
         );
       },
