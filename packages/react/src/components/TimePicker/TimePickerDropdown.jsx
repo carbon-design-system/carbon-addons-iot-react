@@ -552,12 +552,12 @@ const TimePickerDropdown = ({
   );
 };
 
-const listItemsForVertical24Hours = Array.from(Array(23)).map((el, i) => {
-  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+const listItemsForVertical24Hours = Array.from(Array(24)).map((el, i) => {
+  const index = i < 10 ? `0${i}` : `${i}`;
   return { id: index, value: index };
 });
 
-const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(0, 12);
+const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(1, 13);
 
 const listItemsForVerticalMinutes = Array.from(Array(60)).map((el, i) => {
   const index = i < 10 ? `0${i}` : `${i}`;
