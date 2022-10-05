@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.30...v2.151.0-next.31) (2022-10-05)
+
+
+### Bug Fixes
+
+* **dashboardeditorections:** default actions updated to no-op ([eae6717](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eae6717039996a9251575b612115d3f460b646cc))
+* **dataseriesformcontentmodal:** added datafilter for v2 devicetypes ([cfcbab6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cfcbab61bef2c4fc981473ec9f59984b1cd98165))
+* **dataseriesformitemmodal:** added condition check ([8824547](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/88245475c1c08e07c192fed073f63efca0210a15))
+* **dataseriesformitemmodal:** added test cases and docs ([d645853](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d6458530d723977a6e737b44f9a995ec4edbf595))
+* **dataseriesformitemmodal:** updated test cases ([4c5d51f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c5d51f5a0bce4c5937a52ac69fca8a562be98e1))
+* **publicapi:** updated snapshot ([353f49d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/353f49d9d13f6f267c6867d45f781ab664a10ad2))
+
+
+
+
+
 # [2.151.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.29...v2.151.0-next.30) (2022-10-04)
 
 
