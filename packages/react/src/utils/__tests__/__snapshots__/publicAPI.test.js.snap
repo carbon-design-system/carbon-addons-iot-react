@@ -14045,7 +14045,8 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hideAggregationsDropDown": null,
+          "hasAggregationsDropDown": null,
+          "hasDataFilterDropdown": null,
           "onAddAggregations": null,
         },
         "onEditDataItem": null,
@@ -14139,7 +14140,10 @@ Map {
             "dataSeriesFormActions": Object {
               "args": Array [
                 Object {
-                  "hideAggregationsDropDown": Object {
+                  "hasAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "hasDataFilterDropdown": Object {
                     "type": "func",
                   },
                   "onAddAggregations": Object {
@@ -14829,7 +14833,8 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hideAggregationsDropDown": null,
+          "hasAggregationsDropDown": null,
+          "hasDataFilterDropdown": null,
           "onAddAggregations": null,
         },
         "onEditDataItem": null,
@@ -14881,7 +14886,10 @@ Map {
             "dataSeriesFormActions": Object {
               "args": Array [
                 Object {
-                  "hideAggregationsDropDown": Object {
+                  "hasAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "hasDataFilterDropdown": Object {
                     "type": "func",
                   },
                   "onAddAggregations": Object {

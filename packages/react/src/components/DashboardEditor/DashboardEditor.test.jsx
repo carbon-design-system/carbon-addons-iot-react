@@ -40,10 +40,11 @@ const commonProps = {
   actions: {
     onEditDataItem: jest.fn().mockImplementation(() => []),
     dataSeriesFormActions: {
-      hideAggregationsDropDown: jest.fn(
+      hasAggregationsDropDown: jest.fn(
         (editDataItem) =>
           editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
       ),
+      hasDataFilterDropdown: jest.fn(),
       onAddAggregations: jest.fn(),
     },
   },
