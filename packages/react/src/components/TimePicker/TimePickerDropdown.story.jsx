@@ -49,6 +49,7 @@ export const Default = () => {
         hideSecondaryLabel={boolean('Hide secondary label', false)}
         className="this that"
         id="time-picker"
+        is24hours={boolean('24-hour format (is24hours)', false)}
         i18n={object('i18n', {
           labelText: 'Start',
           secondaryLabelText: 'End',
@@ -71,7 +72,12 @@ export const Default = () => {
 };
 
 export const TimePickerSpinnerStory = () => {
-  return <TimePickerSpinner {...props.timepicker()} />;
+  return (
+    <TimePickerSpinner
+      {...props.timepicker()}
+      is24hours={boolean('24-hour format (is24hours)', false)}
+    />
+  );
 };
 
 TimePickerSpinnerStory.storyName = 'TimePickerDropdown spinner';

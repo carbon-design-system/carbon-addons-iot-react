@@ -8828,7 +8828,8 @@ Map {
       "hideSecondaryLabel": false,
       "i18n": Object {
         "invalidText": "The time entered is invalid",
-        "placeholderText": "hh:mm",
+        "placeholderText": "hh:mm XM",
+        "placeholderText24h": "hh:mm",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,
@@ -8837,6 +8838,7 @@ Map {
         false,
         false,
       ],
+      "is24hours": false,
       "light": false,
       "onChange": [Function],
       "readOnly": false,
@@ -8880,6 +8882,9 @@ Map {
             "placeholderText": Object {
               "type": "string",
             },
+            "placeholderText24h": Object {
+              "type": "string",
+            },
             "secondaryHelperText": Object {
               "type": "string",
             },
@@ -8907,6 +8912,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "is24hours": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",
