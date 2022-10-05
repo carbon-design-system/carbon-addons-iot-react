@@ -398,7 +398,7 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
 
     // open start time picker
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-1'));
 
     // select hour
     userEvent.click(
@@ -416,7 +416,7 @@ describe('DateTimePickerV2', () => {
     screen.getByTestId('date-time-picker-spinner').blur();
 
     // open end time picker
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-2'));
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-2'));
     // select hour
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
@@ -463,7 +463,7 @@ describe('DateTimePickerV2', () => {
 
     const startTime = screen.getByTestId('date-time-picker-input');
     // open time picker
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn'));
+    fireEvent.focus(screen.getByTestId('date-time-picker-input'));
     // select hour
     userEvent.click(
       within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
@@ -830,7 +830,7 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
 
     // open start time picker
-    userEvent.click(screen.getByTestId('date-time-picker-time-btn-1'));
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-1'));
 
     // select hour
     userEvent.click(
@@ -1558,6 +1558,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // 2020-04-01 13:34 to 2020-04-01 11:49
+    fireEvent.focus(startTime);
     userEvent.type(
       startTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:34 PM'
@@ -1568,6 +1569,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     // 2020-04-01 13:34 to 2020-04-01 12:49
+    fireEvent.focus(endTime);
     userEvent.type(
       endTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:49 PM'
@@ -1589,6 +1591,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:50 to 2020-04-01 13:49
+    fireEvent.focus(startTime);
     userEvent.type(
       startTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:50 PM'
@@ -1605,6 +1608,8 @@ describe('DateTimePickerV2', () => {
     // expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
 
     userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}51 PM');
+
+    fireEvent.focus(endTime);
     userEvent.type(
       endTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}9999'
@@ -1719,6 +1724,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-06 11:49
+    fireEvent.focus(startTime);
     userEvent.type(
       startTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:34 PM'
@@ -1729,6 +1735,7 @@ describe('DateTimePickerV2', () => {
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 to 2020-04-06 11:49');
 
     // 2020-04-01 13:34 to 2020-04-06 12:49
+    fireEvent.focus(endTime);
     userEvent.type(
       endTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:49 PM'
@@ -1740,6 +1747,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-06 13:49
+    fireEvent.focus(endTime);
     userEvent.type(
       endTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:49 PM'
@@ -1750,6 +1758,7 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:50 to 2020-04-06 13:49
+    fireEvent.focus(startTime);
     userEvent.type(
       startTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}01:50 PM'
@@ -1759,7 +1768,10 @@ describe('DateTimePickerV2', () => {
     expect(timeRange).toHaveTextContent('2020-04-01 13:50 to 2020-04-06 13:49');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
+    fireEvent.focus(startTime);
     userEvent.type(startTime, '{backspace}{backspace}{backspace}{backspace}{backspace}51 PM');
+
+    fireEvent.focus(endTime);
     userEvent.type(
       endTime,
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}9999'
