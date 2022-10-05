@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.31...v2.151.0-next.32) (2022-10-05)
+
+
+### Bug Fixes
+
+* **timepicker:** single label max width for range time picker ([513254b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/513254b8cd61506341949dab2997d55e0b9edc8c)), closes [#3515](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3515)
+
+
+### Features
+
+* **timepicker:** add support for 24 hours format ([fa944a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa944a96b64c111f13291d7fc7d12148b622162f)), closes [#3575](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3575)
+* **timepicker:** create single focus state on time input ([2013634](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20136340a51e410338ce9b5a6023aabeaa39bfe0)), closes [#3566](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3566)
+* **timepicker:** separate helper text for range type ([6b7828e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b7828eead2de56cb846f7782fe3ad1ef0fddae0)), closes [#3566](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3566)
+
+
+
+
+
 # [2.151.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.30...v2.151.0-next.31) (2022-10-05)
 
 
