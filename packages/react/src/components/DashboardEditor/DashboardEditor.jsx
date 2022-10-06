@@ -23,6 +23,9 @@ import {
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** Dashboard title */
   title: PropTypes.node,
@@ -389,8 +392,8 @@ const defaultProps = {
   actions: {
     onEditDataItem: null,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
       onAddAggregations: null,
     },
   },
