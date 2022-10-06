@@ -390,11 +390,11 @@ const defaultProps = {
   onEditDataItems: null,
   testId: 'dashboard-editor',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
       hasAggregationsDropDown: noop,
       hasDataFilterDropdown: noop,
-      onAddAggregations: null,
+      onAddAggregations: noop,
     },
   },
 };

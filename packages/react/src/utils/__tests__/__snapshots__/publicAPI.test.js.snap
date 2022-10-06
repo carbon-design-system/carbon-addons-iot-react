@@ -14055,9 +14055,9 @@ Map {
         "dataSeriesFormActions": Object {
           "hasAggregationsDropDown": [Function],
           "hasDataFilterDropdown": [Function],
-          "onAddAggregations": null,
+          "onAddAggregations": [Function],
         },
-        "onEditDataItem": null,
+        "onEditDataItem": [Function],
       },
       "availableDimensions": Object {},
       "availableImages": Array [],
@@ -14841,11 +14841,11 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hasAggregationsDropDown": null,
-          "hasDataFilterDropdown": null,
-          "onAddAggregations": null,
+          "hasAggregationsDropDown": [Function],
+          "hasDataFilterDropdown": [Function],
+          "onAddAggregations": [Function],
         },
-        "onEditDataItem": null,
+        "onEditDataItem": [Function],
       },
       "availableDimensions": Object {},
       "cardConfig": null,

@@ -13,6 +13,9 @@ import { DashboardEditorActionsPropTypes } from '../../DashboardEditor/editorUti
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** The hotspot for which the data source settings should be changed. */
   hotspot: PropTypes.shape({
@@ -96,11 +99,11 @@ const defaultProps = {
   availableDimensions: {},
   testId: 'HotspotEditorDataSourceTab',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

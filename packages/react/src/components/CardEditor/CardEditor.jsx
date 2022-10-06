@@ -15,6 +15,9 @@ import CardEditForm from './CardEditForm/CardEditForm';
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** card data being edited */
   cardConfig: PropTypes.shape({
@@ -176,11 +179,11 @@ const defaultProps = {
   dataSeriesItemLinks: null,
   onEditDataItems: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };
