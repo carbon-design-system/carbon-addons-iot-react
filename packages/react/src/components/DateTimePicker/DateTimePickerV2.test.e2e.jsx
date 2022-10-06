@@ -147,10 +147,14 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.get('#picker-test-1').clear();
-    cy.get('#picker-test-1').type('{moveToStart}{del}{del}01');
-    cy.get('#picker-test-2').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:34 PM'
-    );
+    cy.get('#picker-test-1').click().focus().type('{moveToStart}{del}{del}01');
+
+    cy.get('#picker-test-2')
+      .click()
+      .focus()
+      .type(
+        '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:34 PM'
+      );
     cy.findByText('Apply')
       .click()
       .should(() => {
@@ -258,17 +262,20 @@ describe('DateTimePickerV2', () => {
     );
 
     cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
-
     cy.get('#picker-test-1').type(
       '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35 AM'
     );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
-    cy.get('#picker-test-1').type('{movetostart}{del}1');
+    cy.get('#picker-test-1').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}11:35 AM'
+    );
 
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
-    cy.get('#picker-test-2').type('11:61 AM');
+    cy.get('#picker-test-2').type(
+      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}11:61 AM'
+    );
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
   });
 
@@ -543,20 +550,17 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
     cy.focused().realPress('Tab').realPress('Tab');
+
     cy.get('#picker-test-1').should('be.focused').type('{moveToStart}{del}0');
-    cy.focused().realPress('Tab');
-    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
-    cy.focused().realPress('Escape');
+    cy.focused().realPress('Enter');
     cy.findByTestId('date-time-picker-spinner').should('not.exist');
-    cy.get('#picker-test-2').focus();
+
+    cy.focused().realPress('Tab');
     cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}{del}12');
-    cy.focused().realPress('Tab');
-    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
-    cy.focused().realPress('Escape');
-    cy.findByTestId('date-time-picker-spinner').should('not.exist');
-    cy.get('#picker-test-2').focus();
+    cy.focused().realPress('Enter');
+
     cy.focused().realPress('Tab');
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');

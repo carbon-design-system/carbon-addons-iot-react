@@ -29,7 +29,7 @@ const icons = {
 
 const props = {
   /** Title of empty state */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
   /** Description of empty state */
   body: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   /** Optional image of state */
@@ -39,7 +39,7 @@ const props = {
   ]),
   /** Optional action for container */
   action: PropTypes.shape({
-    label: PropTypes.string.isRequired,
+    label: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
     onClick: PropTypes.func.isRequired,
     /** primary, secondary, etc from carbon */
     kind: PropTypes.oneOf([...ButtonKinds, 'icon-selection']),

@@ -16,6 +16,9 @@ import ContentFormItemTitle from './CardEditFormItems/ContentFormItemTitle';
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** card data value */
   cardConfig: PropTypes.shape({
@@ -124,10 +127,11 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

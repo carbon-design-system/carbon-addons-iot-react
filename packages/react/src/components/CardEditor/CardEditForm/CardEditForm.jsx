@@ -14,6 +14,9 @@ import CardEditFormSettings from './CardEditFormSettings';
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** card data value */
   cardConfig: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -117,10 +120,11 @@ const defaultProps = {
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

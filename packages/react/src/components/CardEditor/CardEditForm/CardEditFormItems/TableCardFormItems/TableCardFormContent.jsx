@@ -21,6 +21,9 @@ import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   cardConfig: PropTypes.shape({
     id: PropTypes.string,
@@ -117,10 +120,11 @@ const defaultProps = {
   availableDimensions: {},
   dataSeriesItemLinks: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

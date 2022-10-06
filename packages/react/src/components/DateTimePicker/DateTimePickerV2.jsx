@@ -14,6 +14,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -40,6 +41,7 @@ const DateTimePicker = ({
       relatives={relatives}
       expanded={expanded}
       disabled={disabled}
+      invalid={invalid}
       showRelativeOption={showRelativeOption}
       showCustomRangeLink={showCustomRangeLink}
       hasTimeInput={hasTimeInput}
@@ -66,6 +68,7 @@ const DateTimePicker = ({
       relatives={relatives}
       expanded={expanded}
       disabled={disabled}
+      invalid={invalid}
       showRelativeOption={showRelativeOption}
       showCustomRangeLink={showCustomRangeLink}
       hasTimeInput={hasTimeInput}

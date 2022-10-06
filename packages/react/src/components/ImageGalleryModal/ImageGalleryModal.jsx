@@ -96,9 +96,7 @@ const defaultProps = {
   modalSecondaryButtonLabelText: 'Cancel',
   modalCloseIconDescriptionText: 'Close',
   searchPlaceHolderText: 'Search image by file name',
-  // TODO: update this default in v3 to match the component.
-  // kept here for backwards compat.
-  testId: 'ComposedModal',
+  testId: 'image-gallery-modal',
 };
 
 const ImageGalleryModal = ({

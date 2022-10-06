@@ -3,6 +3,133 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.33...v2.151.0-next.34) (2022-10-06)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** enable to clear time input value ([6511a1d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6511a1d0cb1d655d549cc40441ad9d21f222d0b2)), closes [#3585](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3585)
+* **timepicker:** add 00 in 24 hours format ([eaa96fe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eaa96febdf5522dbba1be700b477c10d1a0f65ef))
+
+
+
+
+
+# [2.151.0-next.33](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.32...v2.151.0-next.33) (2022-10-06)
+
+**Note:** Version bump only for package ibm-ai-applications
+
+
+
+
+
+# [2.151.0-next.32](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.31...v2.151.0-next.32) (2022-10-05)
+
+
+### Bug Fixes
+
+* **timepicker:** single label max width for range time picker ([513254b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/513254b8cd61506341949dab2997d55e0b9edc8c)), closes [#3515](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3515)
+
+
+### Features
+
+* **timepicker:** add support for 24 hours format ([fa944a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fa944a96b64c111f13291d7fc7d12148b622162f)), closes [#3575](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3575)
+* **timepicker:** create single focus state on time input ([2013634](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/20136340a51e410338ce9b5a6023aabeaa39bfe0)), closes [#3566](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3566)
+* **timepicker:** separate helper text for range type ([6b7828e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b7828eead2de56cb846f7782fe3ad1ef0fddae0)), closes [#3566](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3566)
+
+
+
+
+
+# [2.151.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.30...v2.151.0-next.31) (2022-10-05)
+
+
+### Bug Fixes
+
+* **dashboardeditorections:** default actions updated to no-op ([eae6717](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eae6717039996a9251575b612115d3f460b646cc))
+* **dataseriesformcontentmodal:** added datafilter for v2 devicetypes ([cfcbab6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cfcbab61bef2c4fc981473ec9f59984b1cd98165))
+* **dataseriesformitemmodal:** added condition check ([8824547](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/88245475c1c08e07c192fed073f63efca0210a15))
+* **dataseriesformitemmodal:** added test cases and docs ([d645853](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d6458530d723977a6e737b44f9a995ec4edbf595))
+* **dataseriesformitemmodal:** updated test cases ([4c5d51f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c5d51f5a0bce4c5937a52ac69fca8a562be98e1))
+* **publicapi:** updated snapshot ([353f49d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/353f49d9d13f6f267c6867d45f781ab664a10ad2))
+
+
+
+
+
+# [2.151.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.29...v2.151.0-next.30) (2022-10-04)
+
+
+### Bug Fixes
+
+* **imagehotspot:** image hotspots label left align ([d4d20e0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4d20e0b7f1fc3696d5cc9d8f759977312413da6))
+* **sass:** remove [@use](https://github.com/use) declaration ([22217b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/22217b63f0d8af39272fcd84e642e41cbf6a3fe6)), closes [#3581](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3581)
+* **tablecard:** added showHeader toggle to story ([3a8b1a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3a8b1a4ddfa7ee2fe49f9c9b385de16a65ce843b))
+* **tablecard:** corrected showHeader usage ([09b9efc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/09b9efc513ca52d5c3c6f9d1304733a9c72308d9))
+* **tablecardtest:** fix TableCard e2e test case attemp ([ec432a3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ec432a3abb0b748cca0caf74cb848afdce068f48))
+
+
+
+
+
+# [2.151.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.28...v2.151.0-next.29) (2022-10-03)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add cursor and pointer event ([65df6d7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/65df6d70b2a578bc17708b27251b21c8268b118a))
+* **datetimepicker:** add cursor not allowed ([ca5a881](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ca5a881292a0e4b286237ed3efffc6019de6d170))
+* **datetimepicker:** should use strings instead ([0160cbf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0160cbfba7bd04a5d6060fdb292666a9eb3df877))
+* **datetimepicker:** support disabled props ([d59b280](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d59b280e5b34a6ea61587137dcd3804d07656ea9))
+* **datetimepicker:** support invalid state ([1a5c635](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1a5c6355c5ff29dc4971047755df93ff3f3bdd64))
+* **datetimepickerv2:** no show invalid text for hasIconOnly ([c5b80bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c5b80bfb2c860ae5d3c10ab64b2b907ff2660c5a))
+
+
+
+
+
+# [2.151.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.27...v2.151.0-next.28) (2022-10-03)
+
+
+### Bug Fixes
+
+* **dashboardEditor:** send card JSON on card select ([5a5e397](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a5e3977c8abe354a5ee99009401d4da560c6b00))
+
+
+
+
+
+# [2.151.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.26...v2.151.0-next.27) (2022-10-03)
+
+
+### Bug Fixes
+
+* **emptystate:** adjust proptypes schema ([ade32db](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ade32db8f8032fc43fbd1c2ca28ec42a421704c2)), closes [#3370](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3370)
+* **emptystate:** adjust proptypes schema with backward compatibility ([0aeda1e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0aeda1e8d8aba1b231e2904dc82f60a6d6ce261c))
+* **table:** increase min width for filterable column ([05637eb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05637eb6788be383d724d59c1ceaa98898c3291f)), closes [#3387](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3387)
+
+
+
+
+
+# [2.151.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.25...v2.151.0-next.26) (2022-09-29)
+
+
+### Bug Fixes
+
+* **listitem:** update snapshot ([e15cd56](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e15cd56c82623e597ece328c514b18b333827da3))
+* **listitem:** use value for empty hover text ([d73c453](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d73c453bf7a7fb98138f2b9fb7d6c6e232bab301))
+* **listproptypes:** add new prop to structure ([01df237](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/01df23768d62b386df8221db0b18e077a2dba8f0))
+
+
+### Features
+
+* **listitem:** accept hover text ([bffbaeb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bffbaebfeab8113fab67ad1f89026dba8329afc0))
+
+
+
+
+
 # [2.151.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.24...v2.151.0-next.25) (2022-09-28)
 
 

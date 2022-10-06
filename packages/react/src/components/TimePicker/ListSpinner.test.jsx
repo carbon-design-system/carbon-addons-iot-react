@@ -93,6 +93,37 @@ describe('ListSpinner', () => {
     ).toBeTruthy();
   });
 
+  it('should apply callbacks when user presses right or left arrow', () => {
+    const rightArrowCallback = jest.fn();
+    const leftArrowCallback = jest.fn();
+    render(
+      <ListSpinner
+        list={listItems}
+        onRightArrowClick={rightArrowCallback}
+        onLeftArrowClick={leftArrowCallback}
+        defaultSelectedId="10"
+        testId="my-list"
+      />
+    );
+
+    const selected = screen.getByTestId('my-list-selected-item');
+    userEvent.type(selected, '{arrowright}');
+    expect(rightArrowCallback).toHaveBeenCalledTimes(1);
+    userEvent.type(selected, '{arrowleft}{arrowleft}');
+    expect(leftArrowCallback).toHaveBeenCalledTimes(2);
+  });
+
+  it('should scroll value if arrow up or arrow down is pressed', () => {
+    const onChange = jest.fn();
+    render(
+      <ListSpinner list={listItems} defaultSelectedId="10" testId="my-list" onChange={onChange} />
+    );
+
+    const selected = screen.getByTestId('my-list-selected-item');
+    userEvent.type(selected, '{arrowup}{arrowdown}{arrowdown}');
+    expect(onChange).toHaveBeenCalledTimes(4);
+  });
+
   it('will return a new array with the first index moved to the end', () => {
     const list = Array.from(Array(12)).map((el, i) => i);
     const newValue = backwardArraySwap(list);
@@ -105,7 +136,7 @@ describe('ListSpinner', () => {
     expect(newValue.toString()).toEqual('11,0,1,2,3,4,5,6,7,8,9,10');
   });
 
-  it('shifts so that selected index moves to the second index location', () => {
+  it('shifts so that selected index moves to the second index location (12h format)', () => {
     const list = Array.from(Array(12)).map((el, i) => i);
     let newValue = moveToSecondIndex(list, 6);
     expect(newValue.toString()).toEqual('4,5,6,7,8,9,10,11,0,1,2,3');
@@ -113,5 +144,21 @@ describe('ListSpinner', () => {
     expect(newValue.toString()).toEqual('6,7,8,9,10,11,0,1,2,3,4,5');
     newValue = moveToSecondIndex(list, 11);
     expect(newValue.toString()).toEqual('9,10,11,0,1,2,3,4,5,6,7,8');
+  });
+
+  it('shifts so that selected index moves to the second index location (24h format)', () => {
+    const list = Array.from(Array(24)).map((el, i) => i);
+    let newValue = moveToSecondIndex(list, 5);
+    expect(newValue.toString()).toEqual(
+      '3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,1,2'
+    );
+    newValue = moveToSecondIndex(newValue, 5);
+    expect(newValue.toString()).toEqual(
+      '6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,1,2,3,4,5'
+    );
+    newValue = moveToSecondIndex(list, 14);
+    expect(newValue.toString()).toEqual(
+      '12,13,14,15,16,17,18,19,20,21,22,23,0,1,2,3,4,5,6,7,8,9,10,11'
+    );
   });
 });
