@@ -27,6 +27,9 @@ import DynamicHotspotSourcePicker from './DynamicHotspotSourcePicker/DynamicHots
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const selectableColors = [
   { carbonColor: gray50, name: 'gray' },
   { carbonColor: red50, name: 'red' },
@@ -220,11 +223,11 @@ const defaultProps = {
   },
   testId: 'hotspot-editor-modal',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

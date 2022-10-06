@@ -37,6 +37,9 @@ import ThresholdsFormItem from './ThresholdsFormItem';
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /* card value */
   cardConfig: PropTypes.shape({
@@ -194,11 +197,11 @@ const defaultProps = {
   validDataItems: [],
   testId: 'aggregation-methods',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hasAggregationsDropDown: null,
-      hasDataFilterDropdown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };
