@@ -14053,8 +14053,8 @@ Map {
     "defaultProps": Object {
       "actions": Object {
         "dataSeriesFormActions": Object {
-          "hasAggregationsDropDown": null,
-          "hasDataFilterDropdown": null,
+          "hasAggregationsDropDown": [Function],
+          "hasDataFilterDropdown": [Function],
           "onAddAggregations": null,
         },
         "onEditDataItem": null,
