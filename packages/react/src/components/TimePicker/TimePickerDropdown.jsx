@@ -202,17 +202,6 @@ const TimePickerDropdown = ({
       } else {
         setPosition([left, bottom + scrollOffset]);
       }
-
-      const currentTimeFormat = is24hours ? '24' : '12';
-      if (focusedInput === 0 && !value) {
-        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
-      }
-
-      if (focusedInput === 1 && !secondaryValue) {
-        setSecondaryValueState(
-          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
-        );
-      }
     }
   }, [container, openState, focusedInput, is24hours, value, secondaryValue]);
 
@@ -229,6 +218,17 @@ const TimePickerDropdown = ({
     setFocusedInput(index);
     if (!readOnly) {
       handleOpenDropdown(index);
+
+      const currentTimeFormat = is24hours ? '24' : '12';
+      if (index === 0 && !value) {
+        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
+      }
+
+      if (index === 1 && !secondaryValue) {
+        setSecondaryValueState(
+          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
+        );
+      }
     }
   };
 
@@ -552,12 +552,12 @@ const TimePickerDropdown = ({
   );
 };
 
-const listItemsForVertical24Hours = Array.from(Array(23)).map((el, i) => {
-  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
+const listItemsForVertical24Hours = Array.from(Array(24)).map((el, i) => {
+  const index = i < 10 ? `0${i}` : `${i}`;
   return { id: index, value: index };
 });
 
-const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(0, 12);
+const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(1, 13);
 
 const listItemsForVerticalMinutes = Array.from(Array(60)).map((el, i) => {
   const index = i < 10 ? `0${i}` : `${i}`;
