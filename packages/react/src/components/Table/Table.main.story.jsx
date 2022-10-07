@@ -495,7 +495,6 @@ export const WithSearching = () => {
             defaultValue,
             defaultExpanded: searchFieldDefaultExpanded,
             isExpanded: searchIsExpanded,
-            onExpand: action('onExpand'),
           },
         },
       }}
