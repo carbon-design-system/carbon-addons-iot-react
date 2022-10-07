@@ -317,6 +317,8 @@ const propTypes = {
       onToggleAggregations: PropTypes.func,
       /** fired when clicking a 'toolbarAction' in the table toolbar */
       onApplyToolbarAction: PropTypes.func,
+      /** fired when focus/blur on search bar in the table toolbar */
+      onSearchExpand: PropTypes.func,
     }),
     /** table wide actions */
     table: PropTypes.shape({
@@ -875,7 +877,8 @@ const Table = (props) => {
                 'onChangeAdvancedFilter',
                 'onRemoveAdvancedFilter',
                 'onToggleAdvancedFilter',
-                'onApplyToolbarAction'
+                'onApplyToolbarAction',
+                'onSearchExpand'
               ),
               onToggleAggregations,
               onApplySearch: (value) => {

@@ -298,8 +298,14 @@ export const TableSearchPropTypes = PropTypes.shape({
   ),
   defaultValue: PropTypes.string,
   defaultExpanded: PropTypes.bool,
-  onChange: PropTypes.func,
-  onExpand: PropTypes.func,
+  onChange: deprecate(
+    PropTypes.func,
+    '\n The prop `onChange` has been deprecated in favor of `onApplySearch` in table actions object'
+  ),
+  onExpand: deprecate(
+    PropTypes.func,
+    '\n The prop `onExpand` has been deprecated in favor of `onSearchExpand` in table actions object'
+  ),
   isExpanded: PropTypes.bool,
 });
 
