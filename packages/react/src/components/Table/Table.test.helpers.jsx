@@ -48,6 +48,7 @@ export const getMockActions = (mockFunctionProvider) => ({
     onApplySearch: mockFunctionProvider(),
     onDownloadCSV: mockFunctionProvider(),
     onShowRowEdit: mockFunctionProvider(),
+    onSearchExpand: mockFunctionProvider(),
   },
   table: {
     onRowSelected: mockFunctionProvider(),
