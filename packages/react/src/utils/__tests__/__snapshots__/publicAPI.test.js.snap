@@ -906,6 +906,9 @@ Map {
                   "onRemoveAdvancedFilter": Object {
                     "type": "func",
                   },
+                  "onSearchExpand": Object {
+                    "type": "func",
+                  },
                   "onShowRowEdit": Object {
                     "type": "func",
                   },
@@ -2164,12 +2167,8 @@ Map {
                         "isExpanded": Object {
                           "type": "bool",
                         },
-                        "onChange": Object {
-                          "type": "func",
-                        },
-                        "onExpand": Object {
-                          "type": "func",
-                        },
+                        "onChange": [Function],
+                        "onExpand": [Function],
                         "value": [Function],
                       },
                     ],
@@ -4317,6 +4316,9 @@ Map {
             "onDownloadCSV": Object {
               "type": "func",
             },
+            "onSearchExpand": Object {
+              "type": "func",
+            },
             "onShowRowEdit": Object {
               "type": "func",
             },
@@ -5121,12 +5123,8 @@ Map {
                   "isExpanded": Object {
                     "type": "bool",
                   },
-                  "onChange": Object {
-                    "type": "func",
-                  },
-                  "onExpand": Object {
-                    "type": "func",
-                  },
+                  "onChange": [Function],
+                  "onExpand": [Function],
                   "value": [Function],
                 },
               ],
