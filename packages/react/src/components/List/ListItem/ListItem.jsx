@@ -38,6 +38,8 @@ const ListItemPropTypes = {
   selected: PropTypes.bool,
   expanded: PropTypes.bool,
   value: PropTypes.string.isRequired,
+  /** text displayed on hover */
+  title: PropTypes.string,
   /** string value or callback render function */
   secondaryValue: PropTypes.oneOfType([
     PropTypes.string,
@@ -110,6 +112,7 @@ const ListItemDefaultProps = {
   selectedItemRef: null,
   tags: null,
   preventRowFocus: false,
+  title: null,
 };
 
 const ListItem = ({
@@ -124,6 +127,7 @@ const ListItem = ({
   selected,
   disabled,
   value,
+  title,
   secondaryValue,
   rowActions,
   renderDropTargets,
@@ -328,7 +332,7 @@ const ListItem = ({
                 [`${iotPrefix}--list-item--category`]: isCategory,
                 [`${iotPrefix}--list-item--content--values__disabled`]: disabled,
               })}
-              title={value}
+              title={title || value}
             >
               {value}
             </div>

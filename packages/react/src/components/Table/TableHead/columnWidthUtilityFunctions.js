@@ -6,8 +6,8 @@ import warning from 'warning';
  * of a table's column widths.
  */
 
-// This width must be able to fit the elipsis of a truncated text + sort arrows
-export const MIN_COLUMN_WIDTH = 62;
+// This width must be able to fit the elipsis of a truncated text + sort arrows + combobox dropdown (for filter)
+export const MIN_COLUMN_WIDTH = 120;
 // This width can be used when adding a new column without a width.
 export const DEFAULT_COLUMN_WIDTH = 150;
 

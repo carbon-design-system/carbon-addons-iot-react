@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.29...v2.151.0-next.30) (2022-10-04)
+
+
+### Bug Fixes
+
+* **imagehotspot:** image hotspots label left align ([d4d20e0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4d20e0b7f1fc3696d5cc9d8f759977312413da6))
+
+
+
+
+
 ## [2.150.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.150.0...v2.150.1-next.0) (2022-06-06)
 
 **Note:** Version bump only for package @ai-apps/styles

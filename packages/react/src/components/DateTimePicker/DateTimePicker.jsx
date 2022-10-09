@@ -14,9 +14,9 @@ import {
   ListItem,
   TooltipDefinition,
 } from 'carbon-components-react';
-import { Calendar16 } from '@carbon/icons-react';
+import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
@@ -39,7 +39,7 @@ import {
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const PICKER_KINDS = {
   PRESET: 'PRESET',
@@ -151,6 +151,8 @@ const propTypes = {
   expanded: PropTypes.bool,
   /** disable the input */
   disabled: PropTypes.bool,
+  /** specify the input in invalid state */
+  invalid: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
   /** show the custom range link */
@@ -171,6 +173,7 @@ const propTypes = {
     toLabel: PropTypes.string,
     toNowLabel: PropTypes.string,
     calendarLabel: PropTypes.string,
+    invalidLabel: PropTypes.string,
     presetLabels: PropTypes.arrayOf(PropTypes.string),
     intervalLabels: PropTypes.arrayOf(PropTypes.string),
     relativeLabels: PropTypes.arrayOf(PropTypes.string),
@@ -191,6 +194,7 @@ const propTypes = {
     hours: PropTypes.string,
     minutes: PropTypes.string,
     number: PropTypes.string,
+    invalidText: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -244,6 +248,7 @@ const defaultProps = {
   ],
   expanded: false,
   disabled: false,
+  invalid: false,
   showRelativeOption: true,
   showCustomRangeLink: true,
   hasTimeInput: true,
@@ -254,6 +259,7 @@ const defaultProps = {
     toLabel: 'to',
     toNowLabel: 'to Now',
     calendarLabel: 'Calendar',
+    invalidLabel: 'Invalid',
     presetLabels: [
       'Last 30 minutes',
       'Last 1 hour',
@@ -280,6 +286,7 @@ const defaultProps = {
     hours: 'hours',
     minutes: 'minutes',
     number: 'number',
+    invalidText: 'The date time entered is invalid',
   },
   light: false,
   locale: 'en',
@@ -296,6 +303,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -305,11 +313,11 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id = uuidv4(),
   style,
   ...others
 }) => {
-  const strings = {
+  const mergedI18n = {
     ...defaultProps.i18n,
     ...i18n,
   };
@@ -335,6 +343,7 @@ const DateTimePicker = ({
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
+  const [invalidState, setInvalidState] = useState(invalid);
 
   const relativeSelect = useRef(null);
   const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
@@ -420,7 +429,7 @@ const DateTimePicker = ({
       value.kind = PICKER_KINDS.PRESET;
     }
     setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
     setHumanValue(parsedValue.readableValue);
 
     return {
@@ -613,7 +622,7 @@ const DateTimePicker = ({
 
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
-    : getIntervalValue({ currentValue, strings, dateTimeMask, humanValue });
+    : getIntervalValue({ currentValue, mergedI18n, dateTimeMask, humanValue });
 
   const disableRelativeApply =
     isCustomRange &&
@@ -627,23 +636,31 @@ const DateTimePicker = ({
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
+  useEffect(() => setInvalidState(invalid || disableApply), [invalid, disableApply]);
+
   return (
     // Escape handler added to allow pressing escape to close the picker from any via event bubbling
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       data-testid={testId}
       id={`${id}-${iotPrefix}--date-time-picker__wrapper`}
-      className={`${iotPrefix}--date-time-picker__wrapper`}
+      className={classnames(`${iotPrefix}--date-time-picker__wrapper`, {
+        [`${iotPrefix}--date-time-picker__wrapper--disabled`]: disabled,
+      })}
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
     >
       <div
-        className={`${iotPrefix}--date-time-picker__box ${
-          light ? `${iotPrefix}--date-time-picker__box--light` : ''
-        }`}
+        className={classnames(`${iotPrefix}--date-time-picker__box`, {
+          [`${iotPrefix}--date-time-picker__box--light`]: light,
+          [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
+          [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
+        })}
       >
         <div
           data-testid={`${testId}__field`}
-          className={`${iotPrefix}--date-time-picker__field`}
+          className={classnames(`${iotPrefix}--date-time-picker__field`, {
+            [`${iotPrefix}--date-time-picker__field--disabled`]: disabled,
+          })}
           role="button"
           onClick={onFieldInteraction}
           /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
@@ -655,21 +672,41 @@ const DateTimePicker = ({
           tabIndex={0}
         >
           {isExpanded || (currentValue && currentValue.kind !== PICKER_KINDS.PRESET) ? (
-            <span title={humanValue}>{humanValue}</span>
+            <span
+              className={classnames({
+                [`${iotPrefix}--date-time-picker__disabled`]: disabled,
+              })}
+              title={humanValue}
+            >
+              {humanValue}
+            </span>
           ) : humanValue ? (
             <TooltipDefinition
               align="center"
               direction="bottom"
               tooltipText={tooltipValue}
-              triggerClassName=""
+              triggerClassName={disabled ? `${iotPrefix}--date-time-picker__disabled` : ''}
             >
               {humanValue}
             </TooltipDefinition>
           ) : null}
-          <Calendar16
-            aria-label={strings.calendarLabel}
-            className={`${iotPrefix}--date-time-picker__icon`}
-          />
+          {invalidState ? (
+            <WarningFilled16
+              data-testid={`${testId}__invalid-icon`}
+              aria-label={mergedI18n.invalidLabel}
+              className={classnames(
+                `${iotPrefix}--date-time-picker__icon`,
+                `${iotPrefix}--date-time-picker__icon--invalid`
+              )}
+            />
+          ) : (
+            <Calendar16
+              aria-label={mergedI18n.calendarLabel}
+              className={classnames(`${iotPrefix}--date-time-picker__icon`, {
+                [`${iotPrefix}--date-time-picker__icon--disabled`]: disabled,
+              })}
+            />
+          )}
           {!isExpanded && isTooltipOpen ? (
             <Tooltip
               open={isTooltipOpen}
@@ -712,7 +749,7 @@ const DateTimePicker = ({
                       className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--custom`}
                       tabIndex={0}
                     >
-                      {strings.customRangeLinkLabel}
+                      {mergedI18n.customRangeLinkLabel}
                     </ListItem>
                   ) : null}
                   {presets.map((preset, i) => {
@@ -732,7 +769,7 @@ const DateTimePicker = ({
                           }
                         )}
                       >
-                        {strings.presetLabels[i] || preset.label}
+                        {mergedI18n.presetLabels[i] || preset.label}
                       </ListItem>
                     );
                   })}
@@ -742,7 +779,7 @@ const DateTimePicker = ({
               <div className={`${iotPrefix}--date-time-picker__custom-wrapper`}>
                 {showRelativeOption ? (
                   <FormGroup
-                    legendText={strings.customRangeLabel}
+                    legendText={mergedI18n.customRangeLabel}
                     className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                   >
                     <RadioButtonGroup
@@ -753,7 +790,7 @@ const DateTimePicker = ({
                       <RadioButton
                         value={PICKER_KINDS.RELATIVE}
                         id={`${id}-relative`}
-                        labelText={strings.relativeLabel}
+                        labelText={mergedI18n.relativeLabel}
                         onKeyDown={handleSpecificKeyDown(
                           ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                           onNavigateRadioButton
@@ -762,7 +799,7 @@ const DateTimePicker = ({
                       <RadioButton
                         value={PICKER_KINDS.ABSOLUTE}
                         id={`${id}-absolute`}
-                        labelText={strings.absoluteLabel}
+                        labelText={mergedI18n.absoluteLabel}
                         onKeyDown={handleSpecificKeyDown(
                           ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                           onNavigateRadioButton
@@ -774,7 +811,7 @@ const DateTimePicker = ({
                 {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
                   <div>
                     <FormGroup
-                      legendText={strings.lastLabel}
+                      legendText={mergedI18n.lastLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <div
@@ -785,7 +822,7 @@ const DateTimePicker = ({
                       >
                         <NumberInput
                           id={`${id}-last-number`}
-                          invalidText={strings.invalidNumberLabel}
+                          invalidText={mergedI18n.invalidNumberLabel}
                           step={1}
                           min={0}
                           light
@@ -793,9 +830,9 @@ const DateTimePicker = ({
                           onChange={onRelativeLastNumberChange}
                           translateWithId={(messageId) =>
                             messageId === 'increment.number'
-                              ? `${i18n.increment} ${i18n.number}`
+                              ? `${mergedI18n.increment} ${mergedI18n.number}`
                               : messageId === 'decrement.number'
-                              ? `${i18n.decrement} ${i18n.number}`
+                              ? `${mergedI18n.decrement} ${mergedI18n.number}`
                               : null
                           }
                         />
@@ -814,7 +851,7 @@ const DateTimePicker = ({
                               <SelectItem
                                 key={i}
                                 value={interval.value}
-                                text={strings.intervalLabels[i] || interval.label}
+                                text={mergedI18n.intervalLabels[i] || interval.label}
                               />
                             );
                           })}
@@ -822,7 +859,7 @@ const DateTimePicker = ({
                       </div>
                     </FormGroup>
                     <FormGroup
-                      legendText={strings.relativeToLabel}
+                      legendText={mergedI18n.relativeToLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <div
@@ -849,8 +886,9 @@ const DateTimePicker = ({
                                 key={i}
                                 value={relative.value}
                                 text={
-                                  strings.relativeLabels.filter((x) => x === relative.label)[0] ||
-                                  relative.label
+                                  mergedI18n.relativeLabels.filter(
+                                    (x) => x === relative.label
+                                  )[0] || relative.label
                                 }
                               />
                             );
@@ -907,7 +945,7 @@ const DateTimePicker = ({
                           <TimePickerSpinner
                             id={`${id}-start-time`}
                             invalid={absoluteStartTimeInvalid}
-                            labelText={strings.startTimeLabel}
+                            labelText={mergedI18n.startTimeLabel}
                             value={absoluteValue ? absoluteValue.startTime : '00:00'}
                             i18n={i18n}
                             onChange={onAbsoluteStartTimeChange}
@@ -918,7 +956,7 @@ const DateTimePicker = ({
                           <TimePickerSpinner
                             id={`${id}-end-time`}
                             invalid={absoluteEndTimeInvalid}
-                            labelText={strings.endTimeLabel}
+                            labelText={mergedI18n.endTimeLabel}
                             value={absoluteValue ? absoluteValue.endTime : '00:00'}
                             i18n={i18n}
                             onChange={onAbsoluteEndTimeChange}
@@ -947,7 +985,7 @@ const DateTimePicker = ({
                 /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
                 onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
               >
-                {strings.backBtnLabel}
+                {mergedI18n.backBtnLabel}
               </Button>
             ) : (
               <Button
@@ -959,7 +997,7 @@ const DateTimePicker = ({
                 /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
                 onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
               >
-                {strings.cancelBtnLabel}
+                {mergedI18n.cancelBtnLabel}
               </Button>
             )}
             <Button
@@ -972,11 +1010,21 @@ const DateTimePicker = ({
               size="field"
               disabled={disableApply}
             >
-              {strings.applyBtnLabel}
+              {mergedI18n.applyBtnLabel}
             </Button>
           </div>
         </div>
       </div>
+      {invalidState ? (
+        <p
+          className={classnames(
+            `${prefix}--form__helper-text`,
+            `${iotPrefix}--date-time-picker__helper-text--invalid`
+          )}
+        >
+          {mergedI18n.invalidText}
+        </p>
+      ) : null}
     </div>
   );
 };

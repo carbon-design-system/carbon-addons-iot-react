@@ -24,7 +24,7 @@ const commonProps = {
       dataSourceId: 'deviceid',
       label: 'deviceid',
       destination: 'groupBy',
-      type: 'DIMENSION',
+      dataItemType: 'DIMENSION',
     },
   ],
   availableDimensions: {
@@ -42,6 +42,17 @@ const commonProps = {
         return 'Clear selection';
     }
   }),
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+      ),
+      hasDataFilterDropdown: jest.fn(),
+      onAddAggregations: jest.fn(),
+    },
+  },
 };
 
 describe('TableCardFormContent', () => {
@@ -75,6 +86,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             label: 'Timestamp',
             sort: 'DESC',
             dataItemId: 'timestamp',
@@ -87,7 +99,7 @@ describe('TableCardFormContent', () => {
             // dataSourceId is generated with a uuid to stay unique
             dataSourceId: 'deviceid',
             dataItemId: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -97,7 +109,7 @@ describe('TableCardFormContent', () => {
     });
   });
   it('fires onChange when dataItem deviceId is selected', () => {
-    render(<TableCardFormContent {...commonProps} onEditDataItem={jest.fn()} />);
+    render(<TableCardFormContent {...commonProps} />);
     // check for the temperature and pressure to be shown under data items
     const dataItemComboBox = screen.getByTestId('combo-box');
     expect(dataItemComboBox).toBeInTheDocument();
@@ -111,6 +123,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             label: 'Timestamp',
             sort: 'DESC',
             dataItemId: 'timestamp',
@@ -137,7 +150,6 @@ describe('TableCardFormContent', () => {
         getValidDataItems={() => [
           { dataItemId: 'validDataItem', dataSourceId: 'validDataItem', label: 'Data Item' },
         ]}
-        onEditDataItem={jest.fn()}
       />
     );
     // check for the temperature and pressure to be shown under data items
@@ -164,6 +176,7 @@ describe('TableCardFormContent', () => {
       content: {
         columns: [
           {
+            columnType: 'TIMESTAMP',
             dataItemId: 'timestamp',
             dataSourceId: 'timestamp',
             label: 'Timestamp',
@@ -175,7 +188,7 @@ describe('TableCardFormContent', () => {
             dataSourceId: 'manufacturer',
             destination: 'groupBy',
             label: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -198,7 +211,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -227,7 +240,7 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -276,7 +289,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -328,7 +341,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -384,7 +397,7 @@ describe('TableCardFormContent', () => {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
                 dataItemId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
@@ -419,7 +432,7 @@ describe('TableCardFormContent', () => {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
             dataItemId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
         ],
       },
@@ -429,7 +442,74 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('edit mode with dataitems adds threshold correctly', () => {
+  it('should remove threshold attribute from content when last threshold gets deleted', () => {
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        cardConfig={{
+          ...commonCardConfig,
+          content: {
+            columns: [
+              {
+                label: 'Timestamp',
+                dataSourceId: 'timestamp',
+                type: 'TIMESTAMP',
+              },
+              {
+                label: 'Manufacturer',
+                dataSourceId: 'manufacturer',
+                dataItemId: 'manufacturer',
+                dataItemType: 'DIMENSION',
+              },
+              { label: 'Temperature', dataSourceId: 'temperature' },
+            ],
+            thresholds: [
+              {
+                dataSourceId: 'manufacturer',
+                comparison: '>',
+                value: 5,
+                icon: 'Warning alt',
+                color: '#da1e28',
+                severity: 1,
+              },
+            ],
+          },
+          dataSource: {
+            attributes: [
+              {
+                id: 'manufacturer',
+                attribute: 'manufacturer',
+                eventName: 'event1',
+              },
+            ],
+          },
+        }}
+      />
+    );
+
+    const removeTemperatureButton = screen.getAllByRole('button', { name: 'Remove' })[1];
+    expect(removeTemperatureButton).toBeInTheDocument();
+
+    fireEvent.click(removeTemperatureButton);
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Temperature',
+            dataSourceId: 'temperature',
+          },
+        ],
+      },
+    });
+  });
+  it('edit mode with dataitems adds threshold correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -443,7 +523,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -458,7 +538,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText(/Add threshold/));
     fireEvent.click(screen.queryByText('Save'));
@@ -478,7 +558,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('edit mode with dataitems leaves threshold blank correctly', () => {
+  it('edit mode with dataitems leaves threshold blank correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -492,7 +572,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -507,7 +587,7 @@ describe('TableCardFormContent', () => {
     expect(screen.queryByText('Manufacturer')).toBeDefined();
 
     // Popup the Data Item Editor
-    fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
     expect(screen.queryByText('Customize data series')).toBeDefined();
     fireEvent.click(screen.queryByText('Save'));
     expect(mockOnChange).toHaveBeenCalledWith({
@@ -517,7 +597,7 @@ describe('TableCardFormContent', () => {
       },
     });
   });
-  it('should set thresholds in dataSection if they exist', () => {
+  it('should set thresholds in dataSection if they exist', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
       ...commonCardConfig,
@@ -531,7 +611,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { label: 'Temperature', dataSourceId: 'temperature' },
         ],
@@ -550,7 +630,8 @@ describe('TableCardFormContent', () => {
       <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
     );
 
-    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
     expect(screen.getByTitle('#da1e28')).toBeVisible();
   });
   it("should fallback to dataItemId if label isn't given in column", () => {
@@ -567,7 +648,7 @@ describe('TableCardFormContent', () => {
           {
             label: 'Manufacturer',
             dataSourceId: 'manufacturer',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
           },
           { dataItemId: '__temperature__', dataSourceId: 'temperature' },
         ],
@@ -632,13 +713,12 @@ describe('TableCardFormContent', () => {
               {
                 label: 'Manufacturer',
                 dataSourceId: 'manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               { label: 'Temperature', dataSourceId: 'temperature' },
             ],
           },
         }}
-        onEditDataItem={jest.fn()}
       />
     );
     // All of the existing columns should be rendered in the data section

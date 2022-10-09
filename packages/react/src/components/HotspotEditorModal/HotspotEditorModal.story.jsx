@@ -13,6 +13,20 @@ import HotspotEditorModalREADME from './HotspotEditorModalREADME.mdx';
 
 export const Experimental = () => <StoryNotice componentName="ColorDropdown" experimental />;
 Experimental.storyName = experimentalStoryTitle;
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hasAggregationsDropDown: (editDataItem) =>
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
 
 const selectableIcons = [
   {
@@ -125,6 +139,7 @@ export const Empty = () => {
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
       displayOption={myDisplayOption}
+      actions={commonActions}
     />
   );
 };
@@ -156,6 +171,7 @@ export const EmptyWithGetValidDataItemsCallback = () => {
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
       displayOption={myDisplayOption}
+      actions={commonActions}
     />
   );
 };
@@ -283,6 +299,7 @@ export const WithExistingHotspots = () => {
       onFetchDynamicDemoHotspots={getDemoHotspots}
       onSave={action('onSave')}
       displayOption={myDisplayOption}
+      actions={commonActions}
     />
   );
 };
@@ -329,6 +346,7 @@ export const WithExistingDynamicHotspots = () => {
       onSave={action('onSave')}
       showTooManyHotspotsInfo={boolean('showTooManyHotspotsInfo', true)}
       displayOption={myDisplayOption}
+      actions={commonActions}
     />
   );
 };

@@ -114,6 +114,20 @@ const getDemoDynamicHotspots = () => [
   },
 ];
 
+const commonActions = {
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+      ),
+      hasDataFilterDropdown: jest.fn(),
+      onAddAggregations: jest.fn(),
+    },
+  },
+};
+
 const loading = HotspotEditorModal.defaultProps.i18n.loadingDynamicHotspotsText;
 
 describe('HotspotEditorModal', () => {
@@ -153,6 +167,7 @@ describe('HotspotEditorModal', () => {
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         onSave={onSave}
+        {...commonActions}
       />
     );
 
@@ -199,6 +214,7 @@ describe('HotspotEditorModal', () => {
         }}
         onSave={jest.fn()}
         testId="hotspot_editor_modal"
+        {...commonActions}
       />
     );
 
@@ -223,6 +239,7 @@ describe('HotspotEditorModal', () => {
         onSave={jest.fn()}
         testId="hotspot_editor_modal"
         showTooManyHotspotsInfo
+        {...commonActions}
       />
     );
 
@@ -252,6 +269,7 @@ describe('HotspotEditorModal', () => {
           return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
         }}
         onSave={jest.fn()}
+        {...commonActions}
       />
     );
 
@@ -312,6 +330,7 @@ describe('HotspotEditorModal', () => {
           return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
         }}
         onSave={jest.fn()}
+        {...commonActions}
       />
     );
 
@@ -368,6 +387,7 @@ describe('HotspotEditorModal', () => {
           return new Promise((resolve) => resolve(getDemoDynamicHotspots()));
         }}
         onSave={jest.fn()}
+        {...commonActions}
       />
     );
 
@@ -414,6 +434,7 @@ describe('HotspotEditorModal', () => {
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         onSave={onSave}
+        {...commonActions}
       />
     );
 
@@ -447,6 +468,7 @@ describe('HotspotEditorModal', () => {
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
         onSave={onSave}
+        {...commonActions}
       />
     );
 
@@ -544,6 +566,7 @@ describe('HotspotEditorModal', () => {
         onClose={jest.fn()}
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}
+        {...commonActions}
       />
     );
 
@@ -568,7 +591,7 @@ describe('HotspotEditorModal', () => {
     fireEvent.click(screen.getByText('Select data items'));
     fireEvent.click(screen.getByRole('option', { name: /pressure/i }));
 
-    fireEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
+    await fireEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
     fireEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
     fireEvent.click(screen.getByRole('button', { name: 'Update' }));
 
@@ -636,6 +659,7 @@ describe('HotspotEditorModal', () => {
         onFetchDynamicDemoHotspots={jest.fn()}
         onSave={onSave}
         showTooManyHotspotsInfo
+        {...commonActions}
       />
     );
 

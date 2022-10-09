@@ -11,7 +11,7 @@ import { TimeRangeOptionsPropTypes } from '../../constants/CardPropTypes';
 import { CARD_ACTIONS } from '../../constants/LayoutConstants';
 import DateTimePicker, {
   DateTimePickerDefaultValuePropTypes,
-} from '../DateTimePicker/DateTimePickerV2';
+} from '../DateTimePicker/DateTimePickerV2WithoutTimeSpinner';
 import Button from '../Button';
 import { PRESET_VALUES } from '../../constants/DateConstants';
 
@@ -175,8 +175,9 @@ const CardToolbar = ({
       extraActions.children && extraActions.children.length ? (
         <OverflowMenu
           flipped={overflowMenuPosition}
-          title={mergedI18n.overflowMenuDescription}
-          iconDescription={mergedI18n.overflowMenuDescription}
+          title={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
+          iconDescription={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
+          {...(extraActions.icon ? { renderIcon: extraActions.icon } : {})}
         >
           {extraActions.children.map((child, i) =>
             !child.hidden ? (
@@ -192,13 +193,19 @@ const CardToolbar = ({
         </OverflowMenu>
       ) : extraActions.icon ? (
         <ToolbarSVGWrapper
-          title={mergedI18n.extraActionLabel}
+          title={extraActions.iconDescription || mergedI18n.extraActionLabel}
           onClick={() => (extraActions.callback ? extraActions.callback(extraActions) : null)}
-          iconDescription={mergedI18n.extraActionLabel}
           renderIcon={extraActions.icon}
           testId={`${testId}-extra-single-action`}
           disabled={extraActions.disabled}
         />
+      ) : extraActions.content ? (
+        <div
+          className={`${iotPrefix}--card--toolbar-action--custom-actions`}
+          data-testid={`${testId}-extra-actions`}
+        >
+          {extraActions.content}
+        </div>
       ) : null
     ) : null;
 

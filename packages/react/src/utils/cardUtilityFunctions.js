@@ -456,10 +456,12 @@ export const findMatchingThresholds = (thresholds, item, columnId) => {
 
 /** compare the current datapoint to a list of alert ranges */
 export const findMatchingAlertRange = (alertRanges, data) => {
-  const currentDataPoint = Array.isArray(data) ? data[0]?.date : data?.date;
+  const currentData = Array.isArray(data) ? data[0] : data;
+
+  const { date: currentDataPoint, dataSourceId } = currentData || {};
 
   if (!currentDataPoint) {
-    return false;
+    return [];
   }
 
   const currentDatapointTimestamp = currentDataPoint.valueOf();
@@ -468,7 +470,10 @@ export const findMatchingAlertRange = (alertRanges, data) => {
     alertRanges.filter(
       (alert) =>
         currentDatapointTimestamp <= alert.endTimestamp &&
-        currentDatapointTimestamp >= alert.startTimestamp
+        currentDatapointTimestamp >= alert.startTimestamp &&
+        (alert?.inputSource?.dataSourceIds && dataSourceId // If there is input data sources provided use them to do the filter
+          ? alert.inputSource.dataSourceIds.includes(dataSourceId)
+          : true)
     )
   );
 };

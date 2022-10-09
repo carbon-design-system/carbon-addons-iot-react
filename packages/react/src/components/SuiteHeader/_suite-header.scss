@@ -98,14 +98,13 @@
 }
 
 .#{$iot-prefix}--suite-header .#{$prefix}--app-switcher > ul {
-  height: 100%;
-
   li.action-btn__headerpanel-li {
     height: 100%;
   }
 }
 
 .#{$iot-prefix}--suite-header-app-switcher {
+  overflow-y: auto;
   padding-top: 0;
 
   li {
@@ -196,6 +195,7 @@
 }
 
 .#{$iot-prefix}--suite-header-app-switcher-multiworkspace {
+  overflow-y: auto;
   background-color: $ui-05;
   padding-top: 0;
 
@@ -211,6 +211,7 @@
 
   &--divider {
     margin: $spacing-03 0 0 0;
+    background-color: $interactive-02;
   }
 
   &--app-link,
@@ -222,7 +223,7 @@
       }
     }
     > .#{$prefix}--side-nav__link-text {
-      white-space: break-spaces;
+      white-space: nowrap;
       color: $inverse-01;
     }
     svg {
@@ -295,7 +296,7 @@
   }
   &-subtitle {
     margin-left: $spacing-05;
-    &-workspace {
+    &-appname {
       margin-left: $spacing-05;
       padding-left: $spacing-05;
       border-left: $text-secondary 1px solid;
@@ -323,6 +324,11 @@
       display: flex;
       align-items: center;
     }
+  }
+
+  .#{$iot-prefix}--header__subtitle {
+    padding: 0 $spacing-05;
+    min-height: unset;
   }
 
   .#{$prefix}--header__menu {

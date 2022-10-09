@@ -4,6 +4,7 @@ export const PICKER_KINDS = {
   PRESET: 'PRESET',
   RELATIVE: 'RELATIVE',
   ABSOLUTE: 'ABSOLUTE',
+  SINGLE: 'SINGLE',
 };
 
 export const PRESET_VALUES = [

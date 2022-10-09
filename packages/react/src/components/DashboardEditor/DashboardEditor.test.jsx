@@ -27,7 +27,6 @@ const commonProps = {
   onSubmit: mockOnSubmit,
   onDelete: jest.fn(),
   onCardSelect: jest.fn(),
-  onEditDataItems: jest.fn(),
   supportedCardTypes: [
     'TIMESERIES',
     'SIMPLE_BAR',
@@ -38,6 +37,17 @@ const commonProps = {
     'TABLE',
     'CUSTOM',
   ],
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+      ),
+      hasDataFilterDropdown: jest.fn(),
+      onAddAggregations: jest.fn(),
+    },
+  },
 };
 
 describe('DashboardEditor', () => {
@@ -217,7 +227,7 @@ describe('DashboardEditor', () => {
     // there should now be two cards with the same title
     expect(screen.getAllByText('value card')).toHaveLength(2);
     // card select should have been called
-    expect(commonProps.onCardSelect).toHaveBeenCalled();
+    expect(commonProps.onCardSelect).toHaveBeenCalledWith(mockValueCard);
   });
 
   it('selecting remove card should remove card', () => {
@@ -300,7 +310,14 @@ describe('DashboardEditor', () => {
     expect(addCardBtn).toBeInTheDocument();
     fireEvent.click(addCardBtn);
     // card select should have been called
-    expect(commonProps.onCardSelect).toHaveBeenCalled();
+    expect(commonProps.onCardSelect).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: { allowNavigation: true, columns: [], showHeader: true },
+        size: 'LARGE',
+        title: 'Untitled',
+        type: 'TABLE',
+      })
+    );
   });
 
   it('selecting submit should fire onSubmit', () => {

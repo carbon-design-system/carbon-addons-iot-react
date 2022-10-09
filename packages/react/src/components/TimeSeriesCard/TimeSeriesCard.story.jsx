@@ -328,9 +328,17 @@ export const HighlightAlertRanges = () => {
               label: 'Temperature',
               dataSourceId: 'temperature',
             },
+            {
+              label: 'Pressure',
+              dataSourceId: 'pressure',
+            },
+            {
+              label: 'Humidity',
+              dataSourceId: 'humidity',
+            },
           ],
           xLabel: 'Time',
-          yLabel: 'Temperature (˚F)',
+          yLabel: 'Temperature and Pressure',
           includeZeroOnXaxis: true,
           includeZeroOnYaxis: true,
           timeDataSourceId: 'timestamp',
@@ -340,12 +348,27 @@ export const HighlightAlertRanges = () => {
               endTimestamp: 1572486422000,
               color: '#FF0000',
               details: 'Alert name',
+              inputSource: {
+                dataSourceIds: ['pressure'],
+              },
             },
             {
               startTimestamp: 1572313622000,
               endTimestamp: 1572824320000,
               color: '#FFCC00',
               details: 'Less severe',
+              inputSource: {
+                dataSourceIds: ['temperature'],
+              },
+            },
+            {
+              startTimestamp: 1572651520000,
+              endTimestamp: 1572651520000,
+              color: '#00FF00',
+              details: 'Check humidity Alert',
+              inputSource: {
+                dataSourceIds: ['humidity'],
+              },
             },
           ],
           addSpaceOnEdges: 1,

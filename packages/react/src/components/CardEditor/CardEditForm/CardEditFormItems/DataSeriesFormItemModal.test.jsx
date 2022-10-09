@@ -19,6 +19,7 @@ describe('DataSeriesFormItemModal', () => {
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
   const mockSetEditDataSeries = jest.fn();
+
   const groupedBarConfig = {
     title: 'Untitled',
     size: 'MEDIUM',
@@ -146,6 +147,7 @@ describe('DataSeriesFormItemModal', () => {
     label: 'Temperature',
     dataSourceId: 'temperature',
     hasStreamingMetricEnabled: true,
+    dataItemType: 'METRIC',
     color: 'red',
     aggregationMethods: [
       { id: 'last', text: 'Last' },
@@ -161,6 +163,14 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
+    actions: {
+      onEditDataItem: jest.fn().mockImplementation(() => []),
+      dataSeriesFormActions: {
+        hasAggregationsDropDown: jest.fn(() => true),
+        hasDataFilterDropdown: jest.fn(() => true),
+        onAddAggregations: jest.fn(),
+      },
+    },
   };
 
   it('Renders for timeseries card data', () => {
@@ -178,6 +188,58 @@ describe('DataSeriesFormItemModal', () => {
     const legendColorLabel = screen.getByText('Line color');
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
+
+    const dataFilter = screen.getByRole('listbox', { name: 'Data filter' });
+    expect(dataFilter).toBeInTheDocument();
+
+    const aggregationDropdown = screen.getByRole('listbox', { name: 'Aggregation method' });
+    expect(aggregationDropdown).toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without datafilter', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasDataFilterDropdown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Data filter');
+    expect(dataFilter).not.toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without aggregation dropdown', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasAggregationsDropDown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Aggregation method');
+    expect(dataFilter).not.toBeInTheDocument();
   });
   it('Non-timebased simple bar should hide grain', () => {
     const simpleNonTimeBasedBar = {
@@ -396,7 +458,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
@@ -465,13 +527,14 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
             dataItemId: 'torque',
             dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
             label: 'Torque',
+            aggregationMethod: 'max',
           },
           {
             dataItemId: 'temperature',
@@ -489,6 +552,7 @@ describe('DataSeriesFormItemModal', () => {
 
     const aggregatedBarChartDataItem = {
       label: 'Temperature Max',
+      hasStreamingMetricEnabled: false,
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
       aggregationMethods: [

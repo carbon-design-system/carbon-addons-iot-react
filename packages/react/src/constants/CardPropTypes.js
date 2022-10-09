@@ -16,7 +16,7 @@ import {
 
 import { bundledIconNames } from '../utils/bundledIcons';
 import deprecate from '../internal/deprecate';
-import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2';
+import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2WithoutTimeSpinner';
 
 import {
   CARD_LAYOUTS,
@@ -966,6 +966,7 @@ export const CardPropTypes = {
         hidden: PropTypes.bool,
       })
     ),
+    content: PropTypes.node,
   }),
   overrides: PropTypes.shape({
     errorMessage: OverridePropTypes,

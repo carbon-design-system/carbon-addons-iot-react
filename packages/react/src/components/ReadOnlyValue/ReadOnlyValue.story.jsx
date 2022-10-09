@@ -1,5 +1,6 @@
 import React from 'react';
 import { text } from '@storybook/addon-knobs';
+import { Link, UnorderedList, ListItem } from 'carbon-components-react';
 
 import ReadOnlyValueREADME from './ReadOnlyValue.mdx';
 import ReadOnlyValue from './ReadOnlyValue';
@@ -49,6 +50,36 @@ export const MultipleValuesStacked = () => (
 
 MultipleValuesStacked.storyName = 'multiple values - stacked';
 
+export const BasicStackedWithCustomValue = () => (
+  <div style={{ width: '100%', heigh: 'calc(100vh - 100px)' }}>
+    <ReadOnlyValue label="Label" value={<div>custom div component</div>} type="stacked" />
+    <ReadOnlyValue
+      label="Label"
+      value={
+        <div>
+          custom div component <Link href="www.ibm.com">Link</Link>
+        </div>
+      }
+      type="stacked"
+    />
+    <ReadOnlyValue
+      label="Label"
+      value={
+        <div>
+          custom div component
+          <UnorderedList>
+            <ListItem>Unordered List level 1</ListItem>
+            <ListItem>Unordered List level 1</ListItem>
+            <ListItem>Unordered List level 1</ListItem>
+          </UnorderedList>
+        </div>
+      }
+      type="stacked"
+    />
+  </div>
+);
+
+BasicStackedWithCustomValue.storyName = 'basic stacked with custom value';
 export const BasicInline = () => (
   <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
     <ReadOnlyValue label="Label" value="input value" type="inline" />

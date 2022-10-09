@@ -13,6 +13,8 @@ import {
   chartValueFormatter,
   increaseSmallCardSize,
   findMatchingThresholds,
+  findMatchingAlertRange,
+  handleTooltip,
 } from '../cardUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
@@ -1509,6 +1511,162 @@ describe('cardUtilityFunctions', () => {
         { airflow_mean: null }
       );
       expect(zeroMatchingThreshold2).toHaveLength(0);
+    });
+  });
+
+  describe('findMatchingAlertRange', () => {
+    it('with out dataSourceId filter', () => {
+      // Alert with out dataSourceId filter to provide backward compatibility
+      const data = {
+        date: new Date(1573073951),
+      };
+      const alertRange = [
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details',
+        },
+      ];
+      const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+      expect(matchingAlertRange).toHaveLength(1);
+      expect(matchingAlertRange[0].color).toEqual('#FF0000');
+      expect(matchingAlertRange[0].details).toEqual('Alert details');
+    });
+    it('with dataSourceId filter', () => {
+      // alert with dataSourceId filter
+      const data = {
+        date: new Date(1573073951),
+        dataSourceId: 'myDataSourceId1',
+      };
+      const alertRange = [
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details 1',
+          inputSource: {
+            dataSourceIds: ['myDataSourceId1', 'myDataSourceId2'],
+          },
+        },
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details 2',
+          inputSource: {
+            dataSourceIds: ['myDataSourceId3', 'myDataSourceId4'],
+          },
+        },
+      ];
+      const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+      expect(matchingAlertRange).toHaveLength(1);
+      expect(matchingAlertRange[0].color).toEqual('#FF0000');
+      expect(matchingAlertRange[0].details).toEqual('Alert details 1');
+    });
+    it('with and with out dataSourceId filter', () => {
+      // alert with dataSourceId filter
+      const data = {
+        date: new Date(1573073951),
+        dataSourceId: 'myDataSourceId1',
+      };
+      const alertRange = [
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details 1',
+          inputSource: {
+            dataSourceIds: ['myDataSourceId1', 'myDataSourceId2'],
+          },
+        },
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details 2',
+          inputSource: {
+            dataSourceIds: undefined,
+          },
+        },
+        {
+          startTimestamp: 1573073950,
+          endTimestamp: 1573073951,
+          color: '#FF0000',
+          details: 'Alert details 3',
+        },
+      ];
+      const matchingAlertRange = findMatchingAlertRange(alertRange, data);
+      expect(matchingAlertRange).toHaveLength(3);
+      expect(matchingAlertRange[0].color).toEqual('#FF0000');
+      expect(matchingAlertRange[0].details).toEqual('Alert details 1');
+
+      expect(matchingAlertRange[1].color).toEqual('#FF0000');
+      expect(matchingAlertRange[1].details).toEqual('Alert details 2');
+    });
+  });
+
+  describe('handleTooltip', () => {
+    // handle edge case were there is no date data available for the tooltip to increase
+    // branch testing coverage
+    it('should not add date if missing', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip([], defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
+    it('should not throw error if dataOrHoveredElement is undefined', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      const updatedTooltip = handleTooltip(undefined, defaultTooltip, [], 'Detected alert:');
+      expect(updatedTooltip).toEqual(defaultTooltip);
+    });
+    it('should add date', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        { date: new Date(1500000000000) },
+        defaultTooltip,
+        [],
+        'Detected alert:'
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('2017');
+    });
+    it('with __data__ and GMT', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        { __data__: { date: new Date(1500000000000) } },
+        defaultTooltip,
+        [],
+        'Detected alert:',
+        true,
+        'dddd' // custom format
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('Friday');
+    });
+    it('should add alert ranges if they exist', () => {
+      const defaultTooltip = '<ul><li>existing tooltip</li></ul>';
+      // the date is from 2017
+      const updatedTooltip = handleTooltip(
+        [{ date: new Date(1573073950) }],
+        defaultTooltip,
+        [
+          {
+            startTimestamp: 1573073950,
+            endTimestamp: 1573073951,
+            color: '#FF0000',
+            details: 'Alert details',
+          },
+        ],
+        'Detected alert:'
+      );
+      expect(updatedTooltip).not.toEqual(defaultTooltip);
+      expect(updatedTooltip).toContain('<ul');
+      expect(updatedTooltip).toContain('Detected alert:');
+      expect(updatedTooltip).toContain('Alert details');
     });
   });
 });

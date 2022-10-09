@@ -5,136 +5,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
-  >
-    <div
-      className="iot--date-time-picker__box--full"
-    >
-      <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
-      >
-        <span
-          className="bx--tooltip--definition bx--tooltip--a11y"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        >
-          <button
-            aria-describedby="definition-tooltip-12"
-            className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            Last 30 minutes
-          </button>
-          <span
-            className="bx--assistive-text"
-            id="definition-tooltip-12"
-            role="tooltip"
-          >
-            2018-10-28 07:04 to Now
-          </span>
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-        >
-          <div
-            aria-describedby={null}
-            aria-expanded={false}
-            aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
-            onBlur={[Function]}
-            onClick={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Icon only 1`] = `
-<div
-  className="storybook-container"
->
-  <div
-    style={
-      Object {
-        "paddingLeft": "20rem",
-      }
-    }
+    className="iot--date-time-pickerv2"
   >
     <div
       className="iot--date-time-pickerv2__wrapper"
@@ -149,14 +20,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
       role="button"
       style={
         Object {
-          "--wrapper-width": "3rem",
+          "--wrapper-width": "20rem",
         }
       }
       tabIndex={0}
     >
       <div
-        className=""
+        className="iot--date-time-picker__box--full"
       >
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className="bx--tooltip--definition bx--tooltip--a11y"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-describedby="definition-tooltip-12"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              Last 30 minutes
+            </button>
+            <span
+              className="bx--assistive-text"
+              id="definition-tooltip-12"
+              role="tooltip"
+            >
+              2018-10-28 07:04 to Now
+            </span>
+          </span>
+        </div>
         <div
           className="iot--flyout-menu iot--flyout-menu__bottom"
           data-testid="date-time-picker-datepicker-flyout-container"
@@ -169,7 +67,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           <button
             aria-describedby={null}
             aria-label="Calendar"
-            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="date-time-picker-datepicker-flyout-button"
             disabled={false}
             onBlur={[Function]}
@@ -231,124 +129,238 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Icon only 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "paddingLeft": "20rem",
+      }
+    }
+  >
+    <div
+      className="iot--date-time-pickerv2"
+    >
+      <div
+        className="iot--date-time-pickerv2__wrapper"
+        data-testid="date-time-picker"
+        id="datetimepicker-iot--date-time-pickerv2__wrapper"
+        onBlur={[Function]}
+        onClick={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        role="button"
+        style={
+          Object {
+            "--wrapper-width": "3rem",
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className=""
+        >
+          <div
+            className="iot--flyout-menu iot--flyout-menu__bottom"
+            data-testid="date-time-picker-datepicker-flyout-container"
+            style={
+              Object {
+                "--tooltip-visibility": "hidden",
+              }
+            }
+          >
+            <button
+              aria-describedby={null}
+              aria-label="Calendar"
+              className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="date-time-picker-datepicker-flyout-button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Calendar
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Calendar"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+                />
+              </svg>
+            </button>
+            <div
+              className="iot--flyout-menu--tooltip-anchor"
+            >
+              <div
+                aria-describedby={null}
+                aria-expanded={false}
+                aria-label="Calendar"
+                className="bx--tooltip__label"
+                id="test-trigger-id-2"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onContextMenu={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
+                role="button"
+                tabIndex={0}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Light version 1`] = `
 <div
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full iot--date-time-picker__box--light"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full iot--date-time-picker__box--light"
       >
-        <span
-          className="bx--tooltip--definition bx--tooltip--a11y"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className="bx--tooltip--definition bx--tooltip--a11y"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-describedby="definition-tooltip-20"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              Last 30 minutes
+            </button>
+            <span
+              className="bx--assistive-text"
+              id="definition-tooltip-20"
+              role="tooltip"
+            >
+              2018-10-28 07:04 to Now
+            </span>
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
         >
           <button
-            aria-describedby="definition-tooltip-20"
-            className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            Last 30 minutes
-          </button>
-          <span
-            className="bx--assistive-text"
-            id="definition-tooltip-20"
-            role="tooltip"
-          >
-            2018-10-28 07:04 to Now
-          </span>
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom iot--flyout-menu__light"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-        >
-          <div
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -361,102 +373,220 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker25-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker25-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          title="01/04/2020 12:34 to 06/04/2020 10:49"
-        >
-          01/04/2020 12:34 to 06/04/2020 10:49
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
         <div
-          className="iot--flyout-menu--tooltip-anchor"
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
         >
-          <div
+          <span
+            className=""
+            title="01/04/2020 12:34 to 06/04/2020 10:49"
+          >
+            01/04/2020 12:34 to 06/04/2020 10:49
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Range select with new time spinner 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--date-time-pickerv2"
+  >
+    <div
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        className="iot--date-time-picker__box--full"
+      >
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className=""
+            title="2020-04-01 12:34 to 2020-04-06 10:49"
+          >
+            2020-04-01 12:34 to 2020-04-06 10:49
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Calendar"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -469,102 +599,107 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          title="2020-04-01 12:34 to 2020-04-06 10:49"
-        >
-          2020-04-01 12:34 to 2020-04-06 10:49
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
         <div
-          className="iot--flyout-menu--tooltip-anchor"
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
         >
-          <div
+          <span
+            className=""
+            title="2020-04-01 12:34 to 2020-04-06 10:49"
+          >
+            2020-04-01 12:34 to 2020-04-06 10:49
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -577,119 +712,123 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          className="bx--tooltip--definition bx--tooltip--a11y"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className="bx--tooltip--definition bx--tooltip--a11y"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-describedby="definition-tooltip-14"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              Last 12 hours
+            </button>
+            <span
+              className="bx--assistive-text"
+              id="definition-tooltip-14"
+              role="tooltip"
+            >
+              2018-10-27 19:34 to Now
+            </span>
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
         >
           <button
-            aria-describedby="definition-tooltip-14"
-            className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            Last 12 hours
-          </button>
-          <span
-            className="bx--assistive-text"
-            id="definition-tooltip-14"
-            role="tooltip"
-          >
-            2018-10-27 19:34 to Now
-          </span>
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-        >
-          <div
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -702,102 +841,220 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          title="2018-10-28 13:10 to 2018-10-28 13:30"
-        >
-          2018-10-28 13:10 to 2018-10-28 13:30
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
         <div
-          className="iot--flyout-menu--tooltip-anchor"
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
         >
-          <div
+          <span
+            className=""
+            title="2018-10-28 13:10 to 2018-10-28 13:30"
+          >
+            2018-10-28 13:10 to 2018-10-28 13:30
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT Experimental/☢️ DateTimePickerV2 Single select with new time spinner 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--date-time-pickerv2"
+  >
+    <div
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
+    >
+      <div
+        className="iot--date-time-picker__box--full"
+      >
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className=""
+            title="2020-04-01 12:34 PM"
+          >
+            2020-04-01 12:34 PM
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
+        >
+          <button
+            aria-describedby={null}
+            aria-label="Calendar"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -810,119 +1067,123 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          className="bx--tooltip--definition bx--tooltip--a11y"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className="bx--tooltip--definition bx--tooltip--a11y"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-describedby="definition-tooltip-18"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              Last 12 hours
+            </button>
+            <span
+              className="bx--assistive-text"
+              id="definition-tooltip-18"
+              role="tooltip"
+            >
+              2018-10-27 19:34 to Now
+            </span>
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
         >
           <button
-            aria-describedby="definition-tooltip-18"
-            className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            Last 12 hours
-          </button>
-          <span
-            className="bx--assistive-text"
-            id="definition-tooltip-18"
-            role="tooltip"
-          >
-            2018-10-27 19:34 to Now
-          </span>
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-        >
-          <div
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -935,119 +1196,123 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   className="storybook-container"
 >
   <div
-    className="iot--date-time-pickerv2__wrapper"
-    data-testid="date-time-picker"
-    id="datetimepicker-iot--date-time-pickerv2__wrapper"
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    role="button"
-    style={
-      Object {
-        "--wrapper-width": "20rem",
-      }
-    }
-    tabIndex={0}
+    className="iot--date-time-pickerv2"
   >
     <div
-      className="iot--date-time-picker__box--full"
+      className="iot--date-time-pickerv2__wrapper"
+      data-testid="date-time-picker"
+      id="datetimepicker-iot--date-time-pickerv2__wrapper"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      role="button"
+      style={
+        Object {
+          "--wrapper-width": "20rem",
+        }
+      }
+      tabIndex={0}
     >
       <div
-        className="iot--date-time-picker__field"
-        data-testid="date-time-picker__field"
+        className="iot--date-time-picker__box--full"
       >
-        <span
-          className="bx--tooltip--definition bx--tooltip--a11y"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
+        <div
+          className="iot--date-time-picker__field"
+          data-testid="date-time-picker__field"
+        >
+          <span
+            className="bx--tooltip--definition bx--tooltip--a11y"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              aria-describedby="definition-tooltip-16"
+              className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              type="button"
+            >
+              Last 12 hours
+            </button>
+            <span
+              className="bx--assistive-text"
+              id="definition-tooltip-16"
+              role="tooltip"
+            >
+              2018-10-27 19:34 to Now
+            </span>
+          </span>
+        </div>
+        <div
+          className="iot--flyout-menu iot--flyout-menu__bottom"
+          data-testid="date-time-picker-datepicker-flyout-container"
+          style={
+            Object {
+              "--tooltip-visibility": "hidden",
+            }
+          }
         >
           <button
-            aria-describedby="definition-tooltip-16"
-            className="bx--tooltip__trigger bx--tooltip--a11y bx--tooltip__trigger--definition bx--tooltip--bottom bx--tooltip--align-start"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            type="button"
-          >
-            Last 12 hours
-          </button>
-          <span
-            className="bx--assistive-text"
-            id="definition-tooltip-16"
-            role="tooltip"
-          >
-            2018-10-27 19:34 to Now
-          </span>
-        </span>
-      </div>
-      <div
-        className="iot--flyout-menu iot--flyout-menu__bottom"
-        data-testid="date-time-picker-datepicker-flyout-container"
-        style={
-          Object {
-            "--tooltip-visibility": "hidden",
-          }
-        }
-      >
-        <button
-          aria-describedby={null}
-          aria-label="Calendar"
-          className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
-          data-testid="date-time-picker-datepicker-flyout-button"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          tabIndex={-1}
-          type="button"
-        >
-          <div
-            className="bx--assistive-text"
-            onMouseEnter={[Function]}
-          >
-            Calendar
-          </div>
-          <svg
-            aria-hidden="true"
-            aria-label="Calendar"
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            role="img"
-            viewBox="0 0 32 32"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
-            />
-          </svg>
-        </button>
-        <div
-          className="iot--flyout-menu--tooltip-anchor"
-        >
-          <div
             aria-describedby={null}
-            aria-expanded={false}
             aria-label="Calendar"
-            className="bx--tooltip__label"
-            id="test-trigger-id-2"
+            className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+            data-testid="date-time-picker-datepicker-flyout-button"
+            disabled={false}
             onBlur={[Function]}
             onClick={[Function]}
-            onContextMenu={[Function]}
             onFocus={[Function]}
-            onKeyDown={[Function]}
-            onMouseOut={[Function]}
-            onMouseOver={[Function]}
-            role="button"
-            tabIndex={0}
-          />
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              Calendar
+            </div>
+            <svg
+              aria-hidden="true"
+              aria-label="Calendar"
+              className="bx--btn__icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              viewBox="0 0 32 32"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26,4h-4V2h-2v2h-8V2h-2v2H6C4.9,4,4,4.9,4,6v20c0,1.1,0.9,2,2,2h20c1.1,0,2-0.9,2-2V6C28,4.9,27.1,4,26,4z M26,26H6V12h20	V26z M26,10H6V6h4v2h2V6h8v2h2V6h4V10z"
+              />
+            </svg>
+          </button>
+          <div
+            className="iot--flyout-menu--tooltip-anchor"
+          >
+            <div
+              aria-describedby={null}
+              aria-expanded={false}
+              aria-label="Calendar"
+              className="bx--tooltip__label"
+              id="test-trigger-id-2"
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              role="button"
+              tabIndex={0}
+            />
+          </div>
         </div>
       </div>
     </div>

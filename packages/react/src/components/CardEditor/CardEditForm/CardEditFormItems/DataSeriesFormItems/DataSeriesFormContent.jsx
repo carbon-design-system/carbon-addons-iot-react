@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import { omit, isEmpty } from 'lodash-es';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
@@ -10,6 +10,7 @@ import {
   DATAITEM_COLORS_OPTIONS,
   handleDataSeriesChange,
   DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -22,6 +23,9 @@ import ContentFormItemTitle from '../ContentFormItemTitle';
 import BarChartDataSeriesContent from './BarChartDataSeriesContent';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /* card value */
@@ -108,7 +112,7 @@ const propTypes = {
     decrementNumberText: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -152,7 +156,14 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -253,8 +264,9 @@ const DataSeriesFormItem = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onEditDataItem,
+  actions,
 }) => {
+  const { onEditDataItem } = actions;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
   const [showEditor, setShowEditor] = useState(false);
@@ -300,7 +312,7 @@ const DataSeriesFormItem = ({
             dataSourceId:
               itemWithMetaData?.destination === 'groupBy'
                 ? selectedItem.id
-                : `${selectedItem.id}_${uuid.v4()}`,
+                : `${selectedItem.id}_${uuidv4()}`,
           },
         ];
         // need to remove the category if the card is a stacked timeseries bar
@@ -454,6 +466,7 @@ const DataSeriesFormItem = ({
         dataSection={dataSection}
         onChange={onChange}
         i18n={mergedI18n}
+        actions={actions}
       />
       <ContentFormItemTitle
         title={mergedI18n.dataItemEditorSectionTitle}
@@ -516,7 +529,7 @@ const DataSeriesFormItem = ({
                   {
                     id: selectedItem,
                     ...(itemWithMetaData && { ...itemWithMetaData }),
-                    dataSourceId: `${selectedItem}_${uuid.v4()}`,
+                    dataSourceId: `${selectedItem}_${uuidv4()}`,
                   },
                 ],
                 cardConfig,

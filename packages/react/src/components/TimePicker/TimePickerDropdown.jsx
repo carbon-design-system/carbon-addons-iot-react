@@ -1,16 +1,44 @@
-import React, { useMemo, useState, useRef, useEffect } from 'react';
+import React, { useMemo, useState, useRef, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import dayjs from 'dayjs';
 import { TextInput } from 'carbon-components-react';
 import { Time16, EditOff16, WarningAltFilled16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
 
 import { settings } from '../../constants/Settings';
+import { keyboardKeys } from '../../constants/KeyCodeConstants';
 import useMerged from '../../hooks/useMerged';
 
 import ListSpinner from './ListSpinner';
 
 const { iotPrefix, prefix } = settings;
+
+const TIME_FORMAT = {
+  12: 'hh:mm A',
+  24: 'HH:mm',
+};
+
+const AVAILABLE_FORMATS = 'hhHHmmA';
+
+const timeUtils = {
+  get12Hours: (selectedTime, currentTime) =>
+    /(0[1-9])|(1[0-2])/.test(selectedTime.substring(0, 2))
+      ? selectedTime.substring(0, 2)
+      : currentTime.substring(0, 2),
+  get24Hours: (selectedTime, currentTime) =>
+    /(0[1-9]|1[0-9]|2[0-3])/.test(selectedTime.substring(0, 2))
+      ? selectedTime.substring(0, 2)
+      : currentTime.substring(2, 4),
+  getMinutes: (selectedTime, currentTime) =>
+    /[0-5][0-9]/.test(selectedTime.substring(3, 5))
+      ? selectedTime.substring(3, 5)
+      : currentTime.substring(4, 6),
+  getMeridiem: (selectedTime, currentTime) =>
+    /AM|PM/.test(selectedTime.substring(selectedTime.length - 2))
+      ? selectedTime.substring(selectedTime.length - 2)
+      : currentTime.substring(6),
+};
 
 const propTypes = {
   className: PropTypes.string,
@@ -19,9 +47,9 @@ const propTypes = {
   value: PropTypes.string,
   /** Specify the value for secondary input (range) */
   secondaryValue: PropTypes.string,
-  /** Specify wehether you watn the input labels to be visually hidden */
+  /** Specify whether the input labels to be visually hidden */
   hideLabel: PropTypes.bool,
-  /** Specify wehether you watn the secondary label to be visually hidden */
+  /** Specify whether the secondary label to be visually hidden */
   hideSecondaryLabel: PropTypes.bool,
   /** Input can be for a single time or a range - defaults to single */
   type: PropTypes.oneOf(['single', 'range']),
@@ -36,6 +64,7 @@ const propTypes = {
     warnText: PropTypes.string,
     timeIconText: PropTypes.string,
     placeholderText: PropTypes.string,
+    placeholderText24h: PropTypes.string,
   }),
   /** Size of input */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
@@ -52,6 +81,8 @@ const propTypes = {
   /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
   testId: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
+  is24hours: PropTypes.bool,
 };
 
 /* istanbul ignore next */
@@ -66,7 +97,8 @@ const defaultProps = {
     invalidText: 'The time entered is invalid',
     warnText: undefined,
     timeIconText: 'Open time picker',
-    placeholderText: 'hh:mm',
+    placeholderText: 'hh:mm XM',
+    placeholderText24h: 'hh:mm',
     readOnlyBtnText: 'Read only',
   },
   size: 'md',
@@ -77,11 +109,15 @@ const defaultProps = {
   light: false,
   onChange: () => {},
   testId: 'time-picker',
+  style: {},
+  is24hours: false,
 };
 
-const validate = (newValue) => {
-  const isValid12HoursRegex = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/;
-  return isValid12HoursRegex.test(newValue) || newValue === '';
+const validate = (newValue, is24hours) => {
+  if (is24hours) {
+    return /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/.test(newValue) || newValue === '';
+  }
+  return /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/.test(newValue) || newValue === '';
 };
 
 const TimePickerDropdown = ({
@@ -101,6 +137,8 @@ const TimePickerDropdown = ({
   value,
   secondaryValue,
   onChange,
+  style,
+  is24hours,
 }) => {
   const init = useRef(false);
   const inputRef = useRef();
@@ -126,7 +164,7 @@ const TimePickerDropdown = ({
     } else {
       init.current = true;
     }
-  }, [valueState, secondaryValueState, onChange, init]);
+  }, [onChange, secondaryValueState, valueState, init]);
 
   useEffect(() => {
     setInvalidState(invalidProp);
@@ -148,13 +186,12 @@ const TimePickerDropdown = ({
     warnText,
     timeIconText,
     placeholderText,
+    placeholderText24h,
     readOnlyBtnText,
   } = useMerged(defaultProps.i18n, i18n);
 
   useEffect(() => {
     if (openState) {
-      // eslint-disable-next-line no-unused-expressions
-      dropDownRef.current?.focus();
       const { left, bottom, top } = container.getBoundingClientRect();
       const dropdownHeight = 280;
       const scrollOffset = window.pageYOffset;
@@ -166,9 +203,9 @@ const TimePickerDropdown = ({
         setPosition([left, bottom + scrollOffset]);
       }
     }
-  }, [container, openState]);
+  }, [container, openState, focusedInput, is24hours, value, secondaryValue]);
 
-  const handleFocus = (index) => {
+  const handleOpenDropdown = (index) => {
     if (focusedInput === index && openState === true) {
       setOpenState(false);
     } else {
@@ -177,9 +214,38 @@ const TimePickerDropdown = ({
     setFocusedInput(index);
   };
 
+  const handleOnFocus = (index) => {
+    setFocusedInput(index);
+    if (!readOnly) {
+      handleOpenDropdown(index);
+
+      const currentTimeFormat = is24hours ? '24' : '12';
+      if (index === 0 && !value) {
+        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
+      }
+
+      if (index === 1 && !secondaryValue) {
+        setSecondaryValueState(
+          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
+        );
+      }
+    }
+  };
+
   const handleOnKeyDown = (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === keyboardKeys.ESCAPE) {
       setOpenState(false);
+    }
+
+    if (e.key === keyboardKeys.DOWN && dropDownRef.current) {
+      dropDownRef.current.focus();
+    }
+  };
+
+  const handleOnKeyUp = (e) => {
+    if (e.key === keyboardKeys.ENTER && inputRef.current) {
+      setOpenState(false);
+      inputRef.current.focus();
     }
   };
 
@@ -217,10 +283,10 @@ const TimePickerDropdown = ({
     if (!contained) {
       // close dropdown and validate
       setOpenState(false);
-      setInvalidState(!validate(inputRef.current.value));
+      setInvalidState(!validate(inputRef.current.value, is24hours));
       /* istanbul ignore else */
       if (secondaryInputRef.current) {
-        setSecondaryInvalidState(!validate(secondaryInputRef.current.value));
+        setSecondaryInvalidState(!validate(secondaryInputRef.current.value, is24hours));
       }
     }
   };
@@ -228,9 +294,17 @@ const TimePickerDropdown = ({
   const inputState = useMemo(() => {
     return {
       state:
-        invalidState || (secondaryInvalidState && !readOnly)
+        invalidState && !readOnly
           ? 'invalid'
-          : warnProp || (secondaryWarnProp && !readOnly)
+          : warnProp && !readOnly
+          ? 'warn'
+          : readOnly
+          ? 'readOnly'
+          : 'default',
+      secondaryState:
+        secondaryInvalidState && !readOnly
+          ? 'invalid'
+          : secondaryWarnProp && !readOnly
           ? 'warn'
           : readOnly
           ? 'readOnly'
@@ -251,10 +325,11 @@ const TimePickerDropdown = ({
           : readOnly
           ? EditOff16
           : Time16,
-      text:
-        !readOnly && (invalidState || secondaryInvalidState)
+      text: !readOnly && invalidState ? invalidText : !readOnly && warnProp ? warnText : helperText,
+      secondaryText:
+        !readOnly && secondaryInvalidState
           ? invalidText
-          : !readOnly && (warnProp || secondaryWarnProp)
+          : !readOnly && secondaryWarnProp
           ? warnText
           : helperText,
     };
@@ -272,18 +347,18 @@ const TimePickerDropdown = ({
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={openState ? 0 : -1}
       onBlur={handleOnBlur}
       onKeyDown={handleOnKeyDown}
+      onKeyUp={handleOnKeyUp}
       data-testid={testId}
       className={classnames(`${iotPrefix}--time-picker`, {
         [className]: className,
+        [`${iotPrefix}--time-picker--24h`]: is24hours,
         [`${iotPrefix}--time-picker--light`]: light,
         [`${iotPrefix}--time-picker--disabled`]: disabled,
         [`${iotPrefix}--time-picker-range`]: type === 'range',
-        [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
-        [`${iotPrefix}--time-picker--warn`]: inputState.state === 'warn' || warn[0] || warn[1],
+        [`${iotPrefix}--time-picker--warn`]:
+          inputState.state === 'warn' || inputState.secondaryState === 'warn' || warn[0] || warn[1],
       })}
     >
       {type === 'single' ? (
@@ -291,7 +366,10 @@ const TimePickerDropdown = ({
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
+              }
             )}
           >
             <TextInput
@@ -299,12 +377,11 @@ const TimePickerDropdown = ({
               data-testid={`${testId}-input`}
               id={id}
               value={valueState}
-              onFocus={() => setFocusedInput(0)}
+              onFocus={() => handleOnFocus(0)}
               readOnly={readOnly}
               hideLabel={hideLabel}
               labelText={labelText}
-              placeholder={placeholderText}
-              pattern={/[0-9: APM]/}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={warnProp}
               invalid={invalidState}
@@ -312,27 +389,24 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={inputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
                 [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
               <inputState.firstIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <p
             data-testid={`${testId}-helpertext`}
             className={classnames(`${prefix}--form__helper-text`, {
               [`${iotPrefix}--time-picker__helper-text`]: invalidState,
               [`${prefix}--form__helper-text--disabled`]: disabled,
+              [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
             })}
           >
             {!readOnly && invalidState
@@ -357,13 +431,16 @@ const TimePickerDropdown = ({
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 0 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
+              }
             )}
           >
             <TextInput
               onChange={handleOnChange}
               data-testid={`${testId}-input-1`}
-              onFocus={() => setFocusedInput(0)}
+              onFocus={() => handleOnFocus(0)}
               id={`${id}-1`}
               readOnly={readOnly}
               value={valueState}
@@ -371,7 +448,7 @@ const TimePickerDropdown = ({
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
               labelText={!hideSecondaryLabel ? labelText : ''}
-              placeholder={placeholderText}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={warnProp}
               invalid={invalidState}
@@ -379,40 +456,39 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={inputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn-1`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: invalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: warnProp,
                 [`${iotPrefix}--time-picker__icon--readonl`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(0) : undefined)}
             >
               <inputState.firstIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <div
             className={classnames(
               `${iotPrefix}--time-picker__wrapper ${iotPrefix}--time-picker__wrapper-${size}`,
-              { [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 1 && openState }
+              {
+                [`${iotPrefix}--time-picker__wrapper--selected`]: focusedInput === 1 && openState,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.secondaryState === 'invalid',
+              }
             )}
           >
             <TextInput
               data-testid={`${testId}-input-2`}
               id={`${id}-2`}
               onChange={handleOnChange}
-              onFocus={() => setFocusedInput(1)}
+              onFocus={() => handleOnFocus(1)}
               readOnly={readOnly}
               value={secondaryValueState}
               hideLabel={hideSecondaryLabel || hideLabel}
               aria-labelledby={hideSecondaryLabel ? `${id}-label` : undefined}
               className={`${iotPrefix}--time-picker-range__text-input-wrapper`}
               labelText={!hideSecondaryLabel ? secondaryLabelText : ''}
-              placeholder={placeholderText}
+              placeholder={is24hours ? placeholderText24h : placeholderText}
               size={size}
               warn={secondaryWarnProp}
               invalid={secondaryInvalidState}
@@ -420,21 +496,17 @@ const TimePickerDropdown = ({
               disabled={disabled}
               ref={secondaryInputRef}
             />
-            <button
+            <div
               data-testid={`${testId}-time-btn-2`}
-              tabIndex="0"
-              type="button"
               title={readOnly ? readOnlyBtnText : timeIconText}
-              aria-label={timeIconText}
               className={classnames(`${iotPrefix}--time-picker__icon`, {
                 [`${iotPrefix}--time-picker__icon--invalid`]: secondaryInvalidState,
                 [`${iotPrefix}--time-picker__icon--warn`]: secondaryWarnProp,
                 [`${iotPrefix}--time-picker__icon--readonly`]: readOnly,
               })}
-              onClick={() => (!readOnly ? handleFocus(1) : undefined)}
             >
               <inputState.secondIcon aria-hidden="true" focusable={false} />
-            </button>
+            </div>
           </div>
           <p
             data-testid={`${testId}-range__helper-text`}
@@ -443,10 +515,24 @@ const TimePickerDropdown = ({
               `${iotPrefix}--time-picker-range__helper-text`,
               {
                 [`${prefix}--form__helper-text--disabled`]: disabled,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.state === 'invalid',
               }
             )}
           >
             {inputState.text}
+          </p>
+          <p
+            data-testid={`${testId}-range__helper-text--secondary`}
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--time-picker-range__helper-text--secondary`,
+              {
+                [`${prefix}--form__helper-text--disabled`]: disabled,
+                [`${iotPrefix}--time-picker--invalid`]: inputState.secondaryState === 'invalid',
+              }
+            )}
+          >
+            {inputState.secondaryText}
           </p>
         </fieldset>
       )}
@@ -458,23 +544,27 @@ const TimePickerDropdown = ({
           testId={`${testId}-spinner`}
           position={position}
           ref={dropDownRef}
+          style={style}
+          is24hours={is24hours}
         />
       ) : null}
     </div>
   );
 };
 
-const listItemsForVertical = Array.from(Array(12)).map((el, i) => {
-  const index = i + 1 < 10 ? `0${i + 1}` : `${i + 1}`;
-  return { id: index, value: index };
-});
-
-const listItemsForVertical2 = Array.from(Array(60)).map((el, i) => {
+const listItemsForVertical24Hours = Array.from(Array(24)).map((el, i) => {
   const index = i < 10 ? `0${i}` : `${i}`;
   return { id: index, value: index };
 });
 
-const listItemsForVertical3 = [
+const listItemsForVertical12Hours = listItemsForVertical24Hours.slice(1, 13);
+
+const listItemsForVerticalMinutes = Array.from(Array(60)).map((el, i) => {
+  const index = i < 10 ? `0${i}` : `${i}`;
+  return { id: index, value: index };
+});
+
+const listItemsForVerticalMeridiem = [
   { id: 'AM', value: 'AM' },
   { id: 'PM', value: 'PM' },
 ];
@@ -484,6 +574,8 @@ const spinnerPropTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func,
   testId: PropTypes.string,
+  style: PropTypes.objectOf(PropTypes.string),
+  is24hours: PropTypes.bool,
 };
 
 /* istanbul ignore next */
@@ -491,99 +583,166 @@ const defaultSpinnerProps = {
   value: '',
   testId: 'time-picker-spinner',
   onChange: () => {},
+  style: {},
+  is24hours: false,
 };
 
-export const TimePickerSpinner = React.forwardRef(({ onChange, position, value, testId }, ref) => {
-  const firstVal = useMemo(() => {
-    return /(0[1-9])|(1[0-2])/.test(value.substring(0, 2)) ? value.substring(0, 2) : '03';
-  }, [value]);
-  const secondVal = useMemo(
-    () => (/[0-5][0-9]/.test(value.substring(3, 5)) ? value.substring(3, 5) : '02'),
-    [value]
-  );
-  const thirdVal = useMemo(
-    () =>
-      /AM|PM/.test(value.substring(value.length - 2)) ? value.substring(value.length - 2) : 'AM',
-    [value]
-  );
-  const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
-  const [callbackValue, setCallbackValue] = useState(value);
+export const TimePickerSpinner = React.forwardRef(
+  ({ onChange, position, value, testId, style, is24hours }, ref) => {
+    const currentTime = dayjs().format(AVAILABLE_FORMATS);
 
-  useEffect(() => {
-    setSelected([firstVal, secondVal, thirdVal]);
-  }, [firstVal, secondVal, thirdVal]);
-  useEffect(() => {
-    onChange(callbackValue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [callbackValue]);
+    const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
+    const firstVal = useMemo(
+      () =>
+        is24hours
+          ? timeUtils.get24Hours(value, currentTime)
+          : timeUtils.get12Hours(value, currentTime),
+      [value, is24hours, currentTime]
+    );
+    const secondVal = useMemo(() => timeUtils.getMinutes(value, currentTime), [value, currentTime]);
+    const thirdVal = useMemo(() => (is24hours ? '' : timeUtils.getMeridiem(value, currentTime)), [
+      is24hours,
+      value,
+      currentTime,
+    ]);
+    const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
+    const [callbackValue, setCallbackValue] = useState(value);
+    const [, setFocusedSpinner] = useState(0);
 
-  const handleOnClick = (str, index) => {
-    setSelected((prev) => {
-      const arr = [...prev];
-      arr[index] = str;
-      const newValue = `${arr[0]}:${arr[1]} ${arr[2]}`;
-      setCallbackValue(newValue);
-      return arr;
-    });
-  };
+    const secondSpinnerRef = useRef();
+    const thirdSpinnerRef = useRef();
 
-  const listSpinner1 = useMemo(
-    () => (
-      <ListSpinner
-        testId={`${testId}-list-spinner-1`}
-        ref={ref}
-        onClick={(e) => handleOnClick(e, 0)}
-        list={listItemsForVertical}
-        defaultSelectedId={selected[0]}
-      />
-    ),
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[0]]
-  );
-  const listSpinner2 = useMemo(
-    () => (
-      <ListSpinner
-        testId={`${testId}-list-spinner-2`}
-        onClick={(e) => handleOnClick(e, 1)}
-        list={listItemsForVertical2}
-        defaultSelectedId={selected[1]}
-      />
-    ),
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[1]]
-  );
-  const listSpinner3 = useMemo(
-    () => {
-      return (
+    const numberOfSpinners = is24hours ? 2 : 3;
+
+    useEffect(() => {
+      setSelected([firstVal, secondVal, thirdVal]);
+    }, [firstVal, secondVal, thirdVal]);
+
+    useEffect(() => {
+      onChange(callbackValue);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [callbackValue]);
+
+    const handleOnClick = (str, index) => {
+      setSelected((prev) => {
+        const arr = [...prev];
+        arr[index] = str;
+        const newValue = is24hours ? `${arr[0]}:${arr[1]}` : `${arr[0]}:${arr[1]} ${arr[2]}`;
+        setCallbackValue(newValue);
+        return arr;
+      });
+    };
+
+    /* eslint-disable no-unused-expressions */
+    const handleRightArrowClick = useCallback(() => {
+      setFocusedSpinner((prevValue) => {
+        const nextSelected = (prevValue + 1) % numberOfSpinners;
+        if (nextSelected === 0) {
+          ref?.current.focus();
+        }
+
+        if (nextSelected === 1) {
+          secondSpinnerRef?.current.focus();
+        }
+
+        if (nextSelected === 2) {
+          thirdSpinnerRef?.current.focus();
+        }
+        return nextSelected;
+      });
+    }, [numberOfSpinners, ref]);
+
+    const handleLeftArrowClick = useCallback(() => {
+      const stepBehind = is24hours ? 1 : 2;
+      setFocusedSpinner((prevValue) => {
+        const nextSelected = (prevValue + stepBehind) % numberOfSpinners;
+        if (nextSelected === 0) {
+          ref?.current.focus();
+        }
+
+        if (nextSelected === 1) {
+          secondSpinnerRef?.current.focus();
+        }
+
+        if (nextSelected === 2) {
+          thirdSpinnerRef?.current.focus();
+        }
+        return nextSelected;
+      });
+    }, [is24hours, numberOfSpinners, ref]);
+    /* eslint-enable no-unused-expressions */
+
+    const listSpinner1 = useMemo(
+      () => (
         <ListSpinner
-          testId={`${testId}-list-spinner-3`}
-          className={`${iotPrefix}--time-picker-spinner-last-list-spinner`}
-          onClick={(e) => handleOnClick(e, 2)}
-          list={listItemsForVertical3}
-          defaultSelectedId={selected[2]}
+          testId={`${testId}-list-spinner-1`}
+          ref={ref}
+          onClick={(e) => handleOnClick(e, 0)}
+          list={is24hours ? listItemsForVertical24Hours : listItemsForVertical12Hours}
+          defaultSelectedId={selected[0]}
+          onRightArrowClick={handleRightArrowClick}
+          onLeftArrowClick={handleLeftArrowClick}
         />
-      );
-    },
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-    [selected[2]]
-  );
+      ),
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[0]]
+    );
+    const listSpinner2 = useMemo(
+      () => (
+        <ListSpinner
+          testId={`${testId}-list-spinner-2`}
+          ref={secondSpinnerRef}
+          onClick={(e) => handleOnClick(e, 1)}
+          list={listItemsForVerticalMinutes}
+          defaultSelectedId={selected[1]}
+          onRightArrowClick={handleRightArrowClick}
+          onLeftArrowClick={handleLeftArrowClick}
+        />
+      ),
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[1]]
+    );
+    const listSpinner3 = useMemo(
+      () => {
+        return (
+          <ListSpinner
+            testId={`${testId}-list-spinner-3`}
+            ref={thirdSpinnerRef}
+            className={classnames(`${iotPrefix}--time-picker-spinner-last-list-spinner`, {
+              [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === 'PM',
+            })}
+            onClick={(e) => handleOnClick(e, 2)}
+            list={listItemsForVerticalMeridiem}
+            defaultSelectedId={selected[2]}
+            onRightArrowClick={handleRightArrowClick}
+            onLeftArrowClick={handleLeftArrowClick}
+          />
+        );
+      },
+      /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      [selected[2]]
+    );
 
-  const dropdown = (
-    <div
-      data-testid={testId}
-      className={`${iotPrefix}--time-picker-spinner`}
-      style={{
-        left: `${position[0]}px`,
-        top: `${position[1]}px`,
-      }}
-    >
-      {listSpinner1}
-      {listSpinner2}
-      {listSpinner3}
-    </div>
-  );
-  return ReactDOM.createPortal(dropdown, document.body);
-});
+    const dropdown = (
+      <div
+        data-testid={testId}
+        className={classnames(`${iotPrefix}--time-picker-spinner`, {
+          [`${iotPrefix}--time-picker-spinner--24h`]: is24hours,
+        })}
+        style={{
+          ...updatedStyle,
+          left: `${position[0]}px`,
+          top: `${position[1]}px`,
+        }}
+      >
+        {listSpinner1}
+        {listSpinner2}
+        {is24hours ? null : listSpinner3}
+      </div>
+    );
+    return ReactDOM.createPortal(dropdown, document.body);
+  }
+);
 
 TimePickerSpinner.propTypes = spinnerPropTypes;
 TimePickerSpinner.defaultProps = defaultSpinnerProps;

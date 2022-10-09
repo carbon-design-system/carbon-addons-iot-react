@@ -95,19 +95,19 @@ const DashboardEditorCardRenderer = React.memo(
 
     const handleOnCardKeyDown = useCallback(
       (e) => {
-        handleKeyDown(e, setSelectedCardId, cardConfig.id);
+        handleKeyDown(e, setSelectedCardId, cardConfig);
       },
-      [cardConfig.id, setSelectedCardId]
+      [cardConfig, setSelectedCardId]
     );
 
     const handleOnCardMouseDown = useCallback(
       (e) => {
-        handleOnClick(setSelectedCardId, cardConfig.id);
+        handleOnClick(setSelectedCardId, cardConfig);
         cardConfig.onMouseDown(e);
       },
       // Need to disable the eslint role because I don't want to regen if any other part of cardConfig changes
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      [cardConfig.id, cardConfig.onMouseDown, setSelectedCardId]
+      [cardConfig, cardConfig.onMouseDown, setSelectedCardId]
     );
     // Need to memoize these card props at this level to improve performance
     const cardProps = useMemo(

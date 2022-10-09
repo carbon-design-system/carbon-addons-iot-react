@@ -989,6 +989,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   className="bx--list-box__selection"
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
+                                  onMouseDown={[Function]}
                                   role="button"
                                   tabIndex="0"
                                   title="Clear filter"
@@ -3203,6 +3204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   className="bx--list-box__selection"
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
+                                  onMouseDown={[Function]}
                                   role="button"
                                   tabIndex="0"
                                   title="Clear filter"

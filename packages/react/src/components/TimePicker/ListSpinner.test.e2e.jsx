@@ -62,6 +62,46 @@ describe('ListSpinner', () => {
     cy.get('@my-cb').should('have.been.calledWith', '06');
   });
 
+  it('updates selected when arrow up or arrow down are pressed', () => {
+    const onClick = cy.stub().as('my-cb');
+    const commonProps = {
+      testId: 'my-list',
+      list: listItems,
+      defaultSelectedId: '04',
+      onClick,
+    };
+    mount(<ListSpinner {...commonProps} />);
+
+    cy.findByTestId('my-list-selected-item').type('{upArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '03');
+    cy.findByTestId('my-list-selected-item').type('{downArrow}');
+    cy.findByTestId('my-list-selected-item').type('{downArrow}');
+    cy.findByTestId('my-list-selected-item').type('{downArrow}');
+    cy.get('@my-cb').should('have.been.calledWith', '06');
+  });
+
+  it('should apply callbacks when arrow left or arrow right are pressed', () => {
+    const rightArrowCallback = cy.stub().as('right-cb');
+    const leftArrowCallback = cy.stub().as('left-cb');
+    const commonProps = {
+      testId: 'my-list',
+      list: listItems,
+      defaultSelectedId: '04',
+    };
+    mount(
+      <ListSpinner
+        {...commonProps}
+        onRightArrowClick={rightArrowCallback}
+        onLeftArrowClick={leftArrowCallback}
+      />
+    );
+
+    cy.findByTestId('my-list-selected-item').type('{leftArrow}');
+    cy.get('@left-cb').should('have.been.called');
+    cy.findByTestId('my-list-selected-item').type('{rightArrow}');
+    cy.get('@right-cb').should('have.been.called');
+  });
+
   it('updates selected when scrolled down', () => {
     const onClick = cy.stub().as('my-cb');
     const commonProps = {

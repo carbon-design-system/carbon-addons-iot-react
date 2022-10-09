@@ -23,6 +23,7 @@ const defaultProps = {
     closeMenu: 'Close menu',
   },
   inOverflow: false,
+  showCloseIconWhenPanelExpanded: false,
 };
 
 /**
@@ -44,6 +45,7 @@ const HeaderAction = ({
   onClose,
   i18n,
   inOverflow,
+  showCloseIconWhenPanelExpanded,
 }) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const parentContainerRef = useRef(null);
@@ -121,6 +123,7 @@ const HeaderAction = ({
             renderLabel={renderLabel}
             i18n={mergedI18n}
             inOverflow={inOverflow}
+            showCloseIconWhenPanelExpanded={showCloseIconWhenPanelExpanded}
           />
         ) : (
           // otherwise render a submenu type dropdown
