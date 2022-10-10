@@ -117,6 +117,7 @@ const adminPageCommonProps = {
     requestEnhancement: 'https://www.ibm.com/request',
     support: 'https://www.ibm.com/support',
     about: 'https://www.ibm.com/about',
+    domain: '',
   },
   workspaces: adminPageWorkspaces,
   globalApplications: [

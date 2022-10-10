@@ -113,7 +113,12 @@ const IdleLogoutConfirmationModal = ({
   const [stayLoggedInButtonDisabled, setStayLoggedInButtonDisabled] = useState(false);
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    if (idleTimeoutData && idleTimeoutData?.timeout > 0 && routes?.domain) {
+    if (
+      idleTimeoutData &&
+      idleTimeoutData?.timeout > 0 &&
+      routes?.domain !== null &&
+      routes?.domain !== undefined
+    ) {
       const timer = new IdleTimer({
         timeout: idleTimeoutData.timeout,
         countdown: idleTimeoutData.countdown,
