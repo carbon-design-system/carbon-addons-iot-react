@@ -2,7 +2,9 @@
 
 .#{$iot-prefix}--table-expand__button {
   &.bx--btn--sm {
-    min-height: 1rem;
+    min-height: unset;
+    height: calc(100% + 1px);
+
     padding-top: 0;
     padding-bottom: 0;
   }
