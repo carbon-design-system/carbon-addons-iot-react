@@ -16,17 +16,30 @@ const propTypes = {
   isActive: PropTypes.bool,
   /** is the button disabled */
   disabled: PropTypes.bool,
+  tooltipAlignment: PropTypes.oneOf(['start', 'center', 'end']),
+  tooltipPosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
 };
 
 const defaultProps = {
   isActive: false,
   disabled: false,
+  tooltipAlignment: 'center',
+  tooltipPosition: 'bottom',
 };
 
 /**
  * Toolbar button that renders an icon only button
  */
-const TableToolbarSVGButton = ({ onClick, testId, className, description, isActive, ...rest }) => {
+const TableToolbarSVGButton = ({
+  onClick,
+  testId,
+  className,
+  description,
+  isActive,
+  tooltipAlignment,
+  tooltipPosition,
+  ...rest
+}) => {
   return (
     <Button
       {...rest}
@@ -42,8 +55,8 @@ const TableToolbarSVGButton = ({ onClick, testId, className, description, isActi
       onClick={onClick}
       iconDescription={description}
       testId={testId}
-      tooltipAlignment="center"
-      tooltipPosition="bottom"
+      tooltipAlignment={tooltipAlignment}
+      tooltipPosition={tooltipPosition}
     />
   );
 };
