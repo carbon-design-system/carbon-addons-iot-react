@@ -1,12 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TableRow,
-  TableExpandRow,
-  TableCell,
-  Checkbox,
-  RadioButton,
-} from 'carbon-components-react';
+import { TableRow, TableCell, Checkbox, RadioButton } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -18,6 +12,8 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
+
+import TableExpandRow from './TableExpandRow';
 
 const { prefix, iotPrefix } = settings;
 
@@ -392,6 +388,7 @@ const TableBodyRow = ({
           style={{
             '--row-nesting-offset': `${nestingOffset}px`,
           }}
+          rowId={id}
         >
           {tableCells}
         </TableExpandRow>
@@ -443,6 +440,7 @@ const TableBodyRow = ({
         style={{
           '--row-nesting-offset': `${nestingOffset}px`,
         }}
+        rowId={id}
       >
         {tableCells}
       </TableExpandRow>
