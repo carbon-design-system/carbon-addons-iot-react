@@ -129,7 +129,7 @@ describe('stateful table with real reducer', () => {
       screen
         .getByText('whiteboard can eat 2')
         .closest('tr')
-        .querySelector(`.${prefix}--table-expand__button`)
+        .querySelector(`.${iotPrefix}--table-expand__button`)
     );
     expect(screen.getByText('whiteboard can eat 2A')).toBeTruthy();
     userEvent.click(screen.getByTestId(`${tableId}-row-2_A-row-actions-cell-overflow`));
@@ -143,19 +143,19 @@ describe('stateful table with real reducer', () => {
       screen
         .getByText('can pinocchio whiteboard 4')
         .closest('tr')
-        .querySelector(`.${prefix}--table-expand__button`)
+        .querySelector(`.${iotPrefix}--table-expand__button`)
     );
     userEvent.click(
       screen
         .getByText('can pinocchio whiteboard 4B')
         .closest('tr')
-        .querySelector(`.${prefix}--table-expand__button`)
+        .querySelector(`.${iotPrefix}--table-expand__button`)
     );
     userEvent.click(
       screen
         .getByText('can pinocchio whiteboard 4B-2')
         .closest('tr')
-        .querySelector(`.${prefix}--table-expand__button`)
+        .querySelector(`.${iotPrefix}--table-expand__button`)
     );
     expect(screen.getByText('can pinocchio whiteboard 4B-2-B')).toBeTruthy();
     userEvent.click(screen.getByTestId(`${tableId}-row-4_B-2-B-row-actions-cell-overflow`));
