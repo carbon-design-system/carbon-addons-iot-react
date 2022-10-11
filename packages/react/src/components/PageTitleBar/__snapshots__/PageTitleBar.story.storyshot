@@ -1770,7 +1770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             <button
                               aria-describedby={null}
                               aria-label="Click to expand content"
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-expand__button iot--table-expand__button--open iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-start"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-expand__button iot--table-expand__button--open iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
                               data-testid="expand-icon-button-row-4"
                               disabled={false}
                               onBlur={[Function]}
@@ -4015,7 +4015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             <button
                               aria-describedby={null}
                               aria-label="Click to expand content"
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-expand__button iot--table-expand__button--open iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-start"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-expand__button iot--table-expand__button--open iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
                               data-testid="expand-icon-button-row-4"
                               disabled={false}
                               onBlur={[Function]}
