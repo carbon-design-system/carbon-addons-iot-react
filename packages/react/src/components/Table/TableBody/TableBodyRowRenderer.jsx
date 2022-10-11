@@ -101,6 +101,8 @@ const propTypes = {
   rows: TableRowsPropTypes,
   /** True if this row is the last child of a nested group */
   isLastChild: PropTypes.bool,
+  /** True if this row is the last child of visible rows */
+  isLastInView: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -140,6 +142,7 @@ const defaultProps = {
   testId: '',
   totalColumns: 0,
   isLastChild: false,
+  isLastInView: false,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -185,6 +188,7 @@ const TableBodyRowRenderer = (props) => {
     truncateCellText,
     wrapCellText,
     isLastChild,
+    isLastInView,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -274,6 +278,7 @@ const TableBodyRowRenderer = (props) => {
       showExpanderColumn={showExpanderColumn}
       size={size}
       isLastChild={isLastChild}
+      isLastInView={isLastInView}
     />
   ) : (
     <TableBodyLoadMoreRow

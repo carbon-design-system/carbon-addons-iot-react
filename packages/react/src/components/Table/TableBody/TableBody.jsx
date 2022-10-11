@@ -260,7 +260,7 @@ const TableBody = ({
 
   return (
     <CarbonTableBody data-testid={testID || testId}>
-      {rows.map((row) => (
+      {rows.map((row, i) => (
         <TableBodyRowRenderer
           key={row.id}
           actionFailedText={actionFailedText}
@@ -305,6 +305,7 @@ const TableBody = ({
           totalColumns={totalColumns}
           truncateCellText={truncateCellText}
           wrapCellText={wrapCellText}
+          isLastInView={i === rows.length - 1}
         />
       ))}
     </CarbonTableBody>
