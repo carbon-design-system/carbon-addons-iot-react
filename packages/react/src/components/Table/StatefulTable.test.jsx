@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
 import { merge, pick } from 'lodash-es';
-import { screen, render, fireEvent, act } from '@testing-library/react';
+import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
 
@@ -502,6 +502,37 @@ describe('stateful table with real reducer', () => {
       } else {
         expect(box).toHaveProperty('checked', false);
       }
+    });
+  });
+  it('should execute callback upon opening/closing search input', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.focus(searchField);
+    expect(mockActions.toolbar.onSearchExpand).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onSearchExpand.mock.calls[0][0]).toEqual([expect.anything(), true]);
+    act(() => fireEvent.blur(searchField));
+    await waitFor(() => {
+      expect(mockActions.toolbar.onSearchExpand.mock.calls[1][0]).toEqual([
+        expect.anything(),
+        false,
+      ]);
     });
   });
   it('should display empty table state when no search results', () => {

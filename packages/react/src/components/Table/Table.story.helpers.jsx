@@ -117,6 +117,7 @@ export const getTableActions = () => ({
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
     onApplyToolbarAction: action('onApplyToolbarAction'),
+    onSearchExpand: action('onSearchExpand'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
