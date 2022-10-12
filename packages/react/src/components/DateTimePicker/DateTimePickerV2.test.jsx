@@ -540,6 +540,38 @@ describe('DateTimePickerV2', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
+  it('should disable button when clear time picker input in single select', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+
+    userEvent.clear(screen.getByTestId('date-time-picker-input'));
+
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
   it('should go back to presets when cancel button is picked on absolute screen', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
 
