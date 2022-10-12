@@ -264,6 +264,17 @@ export const isValid12HourTime = (time) => {
 };
 
 /**
+ * 24 hour time validator
+ *
+ * @param {string} time The time string to check
+ * @returns bool
+ */
+export const isValid24HourTime = (time) => {
+  const isValid24HoursRegex = /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/;
+  return isValid24HoursRegex.test(time) || time === '';
+};
+
+/**
  * Simple function to handle keeping flatpickr open when it would normally close
  *
  * @param {*} range unused
@@ -389,6 +400,7 @@ export const useAbsoluteDateTimeValue = () => {
     changeAbsolutePropertyValue,
     format12hourTo24hour,
     isValid12HourTime,
+    isValid24HourTime,
   };
 };
 

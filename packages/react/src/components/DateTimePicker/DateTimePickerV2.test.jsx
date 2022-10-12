@@ -437,7 +437,54 @@ describe('DateTimePickerV2', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('should render with a predefined single select date and time', () => {
+  it('should render with a predefined absolute range (new time spinner and 24 hour format time)', () => {
+    render(
+      <DateTimePicker
+        useNewTimeSpinner
+        is24hours
+        {...dateTimePickerProps}
+        defaultValue={defaultAbsoluteValue}
+      />
+    );
+
+    // default value starts at   '2020-04-01' at 12:34 to 2020-04-06 at 10:49
+    expect(screen.getByText('2020-04-01 12:34 to 2020-04-06 10:49')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
+    // open start time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-1'));
+
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('13')
+    );
+    // select miniute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('34')
+    );
+
+    screen.getByTestId('date-time-picker-spinner').blur();
+
+    // open end time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-2'));
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('11')
+    );
+    // select minute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('49')
+    );
+
+    screen.getByTestId('date-time-picker-spinner').blur();
+    expect(screen.getByText('2020-04-01 13:34 to 2020-04-06 11:49')).toBeVisible();
+    userEvent.click(screen.getByText('Apply'));
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
+  });
+
+  it('should render with a predefined single select date and 12 hours time format time', () => {
     const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
@@ -482,6 +529,51 @@ describe('DateTimePickerV2', () => {
 
     expect(startTime).toHaveValue('05:03 PM');
     expect(screen.getByText('2020-04-01 05:03 PM')).toBeVisible();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+  });
+
+  it('should render with a predefined single select date and 24 hours time format time', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        useNewTimeSpinner
+        is24hours
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD HH:mm"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByText(/2020-04-01 12:34/i)[0]);
+
+    const startTime = screen.getByTestId('date-time-picker-input');
+    // open time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input'));
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
+    );
+    // select miniute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
+    );
+
+    expect(startTime).toHaveValue('05:03');
+    expect(screen.getByText('2020-04-01 05:03')).toBeVisible();
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 

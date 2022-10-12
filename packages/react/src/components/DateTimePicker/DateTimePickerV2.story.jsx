@@ -50,6 +50,8 @@ export const Default = () => {
     <DateTimePicker
       id="datetimepicker"
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      useNewTimeSpinner={boolean('useNewTimeSpinner', true)}
+      is24hours={boolean('is24hours', true)}
       relatives={[
         {
           label: 'Yesterday',
@@ -120,6 +122,7 @@ export const SelectedAbsolute = () => {
     <DateTimePicker
       id="datetimepicker"
       useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
+      is24hours={boolean('is24hours', true)}
       defaultValue={defaultAbsoluteValue}
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
@@ -141,10 +144,12 @@ export const SelectedAbsolute = () => {
 SelectedAbsolute.storyName = 'Selected absolute';
 
 export const SingleSelect = () => {
+  const is24hours = boolean('is24hours', true);
   return (
     <DateTimePicker
       id="datetimepicker"
       useNewTimeSpinner
+      is24hours={is24hours}
       defaultValue={{
         timeRangeKind: PICKER_KINDS.SINGLE,
         timeSingleValue: {
@@ -152,7 +157,7 @@ export const SingleSelect = () => {
           startTime: '12:34',
         },
       }}
-      dateTimeMask="YYYY-MM-DD hh:mm A"
+      dateTimeMask={is24hours ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD hh:mm A'}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
@@ -172,12 +177,22 @@ export const SingleSelect = () => {
 SingleSelect.storyName = 'Single select with new time spinner';
 
 export const SelectedAbsoluteWithNewTimeSpinner = () => {
+  const is24hours = boolean('is24hours', false);
   return (
     <DateTimePicker
       id="datetimepicker"
       useNewTimeSpinner
-      defaultValue={defaultAbsoluteValue}
-      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      is24hours={is24hours}
+      defaultValue={{
+        timeRangeKind: PICKER_KINDS.ABSOLUTE,
+        timeRangeValue: {
+          startDate: '2020-04-01',
+          startTime: '12:34',
+          endDate: '2020-04-06',
+          endTime: '10:49',
+        },
+      }}
+      dateTimeMask={is24hours ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD hh:mm A'}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}

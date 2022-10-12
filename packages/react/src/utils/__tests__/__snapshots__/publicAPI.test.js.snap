@@ -8829,7 +8829,7 @@ Map {
       "i18n": Object {
         "invalidText": "The time entered is invalid",
         "placeholderText": "hh:mm XM",
-        "placeholderText24h": "hh:mm",
+        "placeholderText24h": "HH:mm",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,
@@ -9525,6 +9525,7 @@ Map {
         },
       ],
       "invalid": false,
+      "is24hours": false,
       "light": false,
       "locale": "en",
       "menuOffset": undefined,
@@ -9921,6 +9922,9 @@ Map {
         "type": "arrayOf",
       },
       "invalid": Object {
+        "type": "bool",
+      },
+      "is24hours": Object {
         "type": "bool",
       },
       "light": Object {
