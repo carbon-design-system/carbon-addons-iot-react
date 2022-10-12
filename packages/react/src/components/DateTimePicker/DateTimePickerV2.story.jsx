@@ -51,7 +51,6 @@ export const Default = () => {
       id="datetimepicker"
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       useNewTimeSpinner={boolean('useNewTimeSpinner', true)}
-      is24hours={boolean('is24hours', true)}
       relatives={[
         {
           label: 'Yesterday',
@@ -157,7 +156,7 @@ export const SingleSelect = () => {
           startTime: '12:34',
         },
       }}
-      dateTimeMask={is24hours ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD hh:mm A'}
+      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
@@ -183,16 +182,8 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       id="datetimepicker"
       useNewTimeSpinner
       is24hours={is24hours}
-      defaultValue={{
-        timeRangeKind: PICKER_KINDS.ABSOLUTE,
-        timeRangeValue: {
-          startDate: '2020-04-01',
-          startTime: '12:34',
-          endDate: '2020-04-06',
-          endTime: '10:49',
-        },
-      }}
-      dateTimeMask={is24hours ? 'YYYY-MM-DD HH:mm' : 'YYYY-MM-DD hh:mm A'}
+      defaultValue={defaultAbsoluteValue}
+      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}

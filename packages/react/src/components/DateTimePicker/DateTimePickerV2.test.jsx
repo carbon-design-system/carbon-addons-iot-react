@@ -385,7 +385,7 @@ describe('DateTimePickerV2', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('should render with a predefined absolute range (new time spinner)', () => {
+  it('should render with a predefined absolute range (new time spinner and 12 hours time)', () => {
     render(
       <DateTimePicker
         useNewTimeSpinner
@@ -437,7 +437,61 @@ describe('DateTimePickerV2', () => {
     expect(dateTimePickerProps.onApply).toHaveBeenCalled();
   });
 
-  it('should render with a predefined absolute range (new time spinner and 24 hour format time)', () => {
+  it('should respect datetimemask prior to is24hours for range select', () => {
+    render(
+      <DateTimePicker
+        useNewTimeSpinner
+        is24hours
+        {...dateTimePickerProps}
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        defaultValue={defaultAbsoluteValue}
+      />
+    );
+
+    // default value starts at   '2020-04-01' at 12:34 to 2020-04-06 at 10:49
+    expect(screen.getByText('2020-04-01 12:34 PM to 2020-04-06 10:49 AM')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+
+    // open start time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-1'));
+
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
+    );
+    // select miniute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
+    );
+    // select AM/PM
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('AM')
+    );
+
+    screen.getByTestId('date-time-picker-spinner').blur();
+
+    // open end time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input-2'));
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
+    );
+    // select minute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
+    );
+    // select AM/PM
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
+    );
+    screen.getByTestId('date-time-picker-spinner').blur();
+    userEvent.click(screen.getByText('Apply'));
+    expect(dateTimePickerProps.onApply).toHaveBeenCalled();
+  });
+
+  it('should render with a predefined absolute range (new time spinner and 24 hours format time)', () => {
     render(
       <DateTimePicker
         useNewTimeSpinner
@@ -490,6 +544,55 @@ describe('DateTimePickerV2', () => {
       <DateTimePicker
         {...dateTimePickerProps}
         useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+
+    const startTime = screen.getByTestId('date-time-picker-input');
+    // open time picker
+    fireEvent.focus(screen.getByTestId('date-time-picker-input'));
+    // select hour
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-1')).getByText('05')
+    );
+    // select miniute
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-2')).getByText('03')
+    );
+    // select AM/PM
+    userEvent.click(
+      within(screen.getByTestId('date-time-picker-spinner-list-spinner-3')).getByText('PM')
+    );
+
+    expect(startTime).toHaveValue('05:03 PM');
+    expect(screen.getByText('2020-04-01 05:03 PM')).toBeVisible();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
+  });
+
+  it('should respect datetimemask prior to is24hours for single select', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        useNewTimeSpinner
+        is24hours
         onApply={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
