@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.34...v2.151.0-next.35) (2022-10-12)
+
+
+### Bug Fixes
+
+* **SuiteHeader:** If routes.domain has not been set, don't initialize IdleTimer because the cookie domain will default to the page domain. ([873cc78](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/873cc78f185c28f755e41dcd623464fdba27763f))
+* **SuiteHeader:** Increasing protection for undefined domain and fixing some unit tests. ([b5f43ad](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b5f43ad381820ae8db3c30e959fcd68efeca8388))
+* **table:** create table action on search expand ([fb02504](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/fb02504da5526a2cad2af38e8b98534f3cf19b37)), closes [#3341](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3341)
+* **tearsheet:** doc not generate props ([bda3577](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bda3577de849f7069799d46ec68b4a6db466c553))
+
+
+
+
+
 # [2.151.0-next.34](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.33...v2.151.0-next.34) (2022-10-06)
 
 
