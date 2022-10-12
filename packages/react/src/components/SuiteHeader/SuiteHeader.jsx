@@ -278,7 +278,7 @@ const SuiteHeader = ({
           onCloseButtonClick={() => setShowToast(false)}
         />
       ) : null}
-      {idleTimeoutData ? (
+      {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
           idleTimeoutData={idleTimeoutData}
           routes={routes}
