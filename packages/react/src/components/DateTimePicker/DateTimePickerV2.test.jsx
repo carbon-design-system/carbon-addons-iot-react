@@ -540,6 +540,38 @@ describe('DateTimePickerV2', () => {
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
+  it('should disable button when clear time picker input in single select', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+
+    // first open the menu
+    userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+
+    userEvent.clear(screen.getByTestId('date-time-picker-input'));
+
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
   it('should go back to presets when cancel button is picked on absolute screen', () => {
     render(<DateTimePicker {...dateTimePickerProps} defaultValue={defaultAbsoluteValue} />);
 
@@ -1042,6 +1074,8 @@ describe('DateTimePickerV2', () => {
     expect(screen.queryByText(i18nDefault.startTimeLabel)).not.toBeInTheDocument();
     expect(screen.queryByText(i18nDefault.endTimeLabel)).not.toBeInTheDocument();
     // click apply
+    expect(screen.getByText(i18nTest.applyBtnLabel)).toBeDisabled();
+    userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
     expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
 
@@ -1623,6 +1657,28 @@ describe('DateTimePickerV2', () => {
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
   });
 
+  it('should disable apply button when switching from presets to relative then to absolute with empty startDate and endDate', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
+  it('should disable apply button when switching from presets to relative then to absolute with empty startDate and endDate (new time spinner)', () => {
+    const { i18n } = DateTimePicker.defaultProps;
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" useNewTimeSpinner />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
   it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
     const { i18n } = DateTimePicker.defaultProps;
     render(
@@ -1782,6 +1838,20 @@ describe('DateTimePickerV2', () => {
     expect(startTime).toHaveValue('01:51 PM');
     expect(endTime).toHaveValue('9999');
     expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+  });
+
+  it('should be able to generate default id', () => {
+    render(<DateTimePicker {...dateTimePickerProps} testId="date-time-picker" />);
+    expect(screen.getByTestId('date-time-picker').getAttribute('id')).toMatch(
+      /-iot--date-time-pickerv2__wrapper/
+    );
+  });
+
+  it('should be able to generate default id (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} testId="date-time-picker" useNewTimeSpinner />);
+    expect(screen.getByTestId('date-time-picker').getAttribute('id')).toMatch(
+      /-iot--date-time-pickerv2__wrapper/
+    );
   });
 
   it('should show invalid text when in invalid state', () => {
