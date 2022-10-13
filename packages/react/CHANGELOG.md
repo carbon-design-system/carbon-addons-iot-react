@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.35...v2.151.0-next.36) (2022-10-13)
+
+
+### Bug Fixes
+
+* **datetimepicker:** disable apply button when absolute value is emtpy ([3783273](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3783273b557bd1c762ad7dccb90f7e5bf6e1dd46))
+* **datetimepickerv2:** add one more test ([bfee964](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bfee964e6e1615e45fac3ac116be7504bed15842))
+* **datetimepickerv2:** disable apply button when clear time ([0938ee1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0938ee17fa5c0a01db9d05326206bfd249bff420))
+* **datetimepickerv2:** disable apply button when empty value ([4968b02](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4968b02c41ae45ffeb32a6d05133e1f280faa2db))
+
+
+
+
+
 # [2.151.0-next.35](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.34...v2.151.0-next.35) (2022-10-12)
 
 
