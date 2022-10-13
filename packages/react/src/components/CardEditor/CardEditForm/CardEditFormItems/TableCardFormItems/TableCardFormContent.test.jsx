@@ -745,4 +745,78 @@ describe('TableCardFormContent', () => {
       },
     });
   });
+
+  it('edit mode with dataitems ', async () => {
+    const dataItemWithMetaData = {
+      aggregationMethod: 'none',
+      aggregationMethods: [
+        { id: 'none', text: 'None' },
+        { id: 'mean', text: 'Mean' },
+      ],
+      columnType: 'NUMBER',
+      dataItemId: 'pressure',
+      dataItemType: 'METRIC',
+      dataSourceId: 'pressure',
+      eventName: 'event1',
+      grain: undefined,
+      hasStreamingMetricEnabled: true,
+      kpiFunctionDto: undefined,
+      label: 'Pressure',
+      type: 'NUMBER',
+      uuid: '03a70b66-f0d2-4efc-a83e-6d4172e25720',
+    };
+    const aggregationMethods = [
+      { id: 'none', text: 'None' },
+      { id: 'mean', text: 'Mean' },
+    ];
+    const mockOnChange1 = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Pressure',
+            dataSourceId: 'pressure',
+            dataItemType: 'METRIC',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature' },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange1}
+        cardConfig={mockCardConfig}
+        actions={{
+          onEditDataItem: jest.fn().mockImplementation(() => aggregationMethods),
+          dataSeriesFormActions: {
+            hasAggregationsDropDown: jest.fn(
+              (editDataItem) =>
+                editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+            ),
+            hasDataFilterDropdown: jest.fn(),
+            onAddAggregations: jest.fn(),
+          },
+        }}
+      />
+    );
+
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Pressure')).toBeDefined();
+
+    // Popup the Data Item Editor
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
+    expect(screen.queryByText('Pressure')).toBeDefined();
+    fireEvent.click(screen.queryByText('Save'));
+    expect(mockOnChange1).toHaveBeenCalledWith('x');
+  });
 });
