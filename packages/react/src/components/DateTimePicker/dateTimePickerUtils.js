@@ -8,7 +8,7 @@ import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
 
-/** convert time from format hh:mm A to HH:mm
+/** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
  * *
  * @param {Object} object hh:mm A time oject
  * @returns HH:mm time object
@@ -18,6 +18,10 @@ export const format12hourTo24hour = (time12hour) => {
     return '00:00';
   }
   const [time, modifier] = time12hour.split(' ');
+
+  if (!modifier) {
+    return time12hour;
+  }
 
   // eslint-disable-next-line prefer-const
   let [hours, minutes] = time.split(':');

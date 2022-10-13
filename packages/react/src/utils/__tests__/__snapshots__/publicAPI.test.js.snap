@@ -9525,7 +9525,6 @@ Map {
         },
       ],
       "invalid": false,
-      "is24hours": false,
       "light": false,
       "locale": "en",
       "menuOffset": undefined,
@@ -9922,9 +9921,6 @@ Map {
         "type": "arrayOf",
       },
       "invalid": Object {
-        "type": "bool",
-      },
-      "is24hours": Object {
         "type": "bool",
       },
       "light": Object {

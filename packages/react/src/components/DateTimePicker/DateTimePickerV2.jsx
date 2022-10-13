@@ -29,7 +29,6 @@ const DateTimePicker = ({
   hasIconOnly,
   menuOffset,
   datePickerType,
-  is24hours,
   style,
   ...others
 }) => {
@@ -57,7 +56,6 @@ const DateTimePicker = ({
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
       datePickerType={datePickerType}
-      is24hours={is24hours}
       style={style}
       others={others}
     />

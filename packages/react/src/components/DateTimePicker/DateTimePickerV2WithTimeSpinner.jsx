@@ -184,8 +184,6 @@ export const propTypes = {
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
   /** Date picker types are single and range, default is range */
   datePickerType: PropTypes.string,
-  /** Default 24-hour  */
-  is24hours: PropTypes.bool,
   style: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -273,7 +271,6 @@ export const defaultProps = {
   hasIconOnly: false,
   menuOffset: undefined,
   datePickerType: 'range',
-  is24hours: false,
   style: {},
 };
 
@@ -300,7 +297,6 @@ const DateTimePicker = ({
   hasIconOnly,
   menuOffset,
   datePickerType,
-  is24hours,
   style,
   ...others
 }) => {
@@ -322,12 +318,11 @@ const DateTimePicker = ({
     [i18n]
   );
 
-  const amPmModifier = dateTimeMask.split(' ')[2];
-  const is24hoursFormat = useMemo(() => (amPmModifier ? false : is24hours), [
-    amPmModifier,
-    is24hours,
-  ]);
-
+  const is24hours = useMemo(() => {
+    const [, time] = dateTimeMask.split(' ');
+    const hoursMask = time.split(':')[0];
+    return hoursMask === 'HH';
+  }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 
   // initialize the dayjs locale
@@ -353,7 +348,6 @@ const DateTimePicker = ({
     absoluteValue,
     setAbsoluteValue,
     resetAbsoluteValue,
-    format12hourTo24hour,
     isValid12HourTime,
     isValid24HourTime,
   } = useAbsoluteDateTimeValue();
@@ -429,26 +423,13 @@ const DateTimePicker = ({
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput
-            ? is24hoursFormat
-              ? rangeStartTimeValue
-              : format12hourTo24hour(rangeStartTimeValue)
-            : '00:00',
-          endTime: hasTimeInput
-            ? is24hoursFormat
-              ? rangeEndTimeValue
-              : format12hourTo24hour(rangeEndTimeValue)
-            : '00:00',
+          startTime: hasTimeInput ? rangeStartTimeValue : '00:00',
+          endTime: hasTimeInput ? rangeEndTimeValue : '00:00',
         };
       } else {
         value.single = {
           ...singleDateValue,
-          startTime:
-            hasTimeInput && singleTimeValue !== ''
-              ? is24hoursFormat
-                ? singleTimeValue
-                : format12hourTo24hour(singleTimeValue)
-              : null,
+          startTime: hasTimeInput && singleTimeValue !== '' ? singleTimeValue : null,
         };
       }
       value.kind = customRangeKind;
@@ -606,11 +587,11 @@ const DateTimePicker = ({
           absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
-        absolute.startTime = is24hoursFormat
+        absolute.startTime = is24hours
           ? dayjs(absolute.start).format('HH:mm')
           : dayjs(absolute.start).format('hh:mm A');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
-        absolute.endTime = is24hoursFormat
+        absolute.endTime = is24hours
           ? dayjs(absolute.end).format('HH:mm')
           : dayjs(absolute.end).format('hh:mm A');
         setAbsoluteValue(absolute);
@@ -629,7 +610,7 @@ const DateTimePicker = ({
         }
         single.startDate = single.start ? dayjs(single.start).format('MM/DD/YYYY') : null;
         single.startTime = single.start
-          ? is24hoursFormat
+          ? is24hours
             ? dayjs(single.start).format('HH:mm')
             : dayjs(single.start).format('hh:mm A')
           : null;
@@ -830,18 +811,18 @@ const DateTimePicker = ({
     setRangeEndTimeValue(endState);
     setInvalidRangeStartTime(
       (absoluteValue && invalidStartDate(startState, endState, absoluteValue)) ||
-        (is24hoursFormat ? !isValid24HourTime(startState) : !isValid12HourTime(startState))
+        (is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState))
     );
     setInvalidRangeEndTime(
       (absoluteValue && invalidEndDate(startState, endState, absoluteValue)) ||
-        (is24hoursFormat ? !isValid24HourTime(endState) : !isValid12HourTime(endState))
+        (is24hours ? !isValid24HourTime(endState) : !isValid12HourTime(endState))
     );
   };
 
   const handleSingleTimeValueChange = (startState) => {
     setSingleTimeValue(startState);
     setInvalidRangeStartTime(
-      is24hoursFormat ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
+      is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
     );
   };
 
@@ -1198,7 +1179,7 @@ const DateTimePicker = ({
                           size="sm"
                           testId={testId}
                           style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
-                          is24hours={is24hoursFormat}
+                          is24hours={is24hours}
                         />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
