@@ -312,7 +312,7 @@ const TableCardFormContent = ({
       // Call back function for on click of edit button
       if (onEditDataItem) {
         const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        if (!isEmpty(aggregationMethods)) {
+        if (dataItemWithMetaData && !isEmpty(aggregationMethods)) {
           dataItemWithMetaData.aggregationMethods = aggregationMethods;
         }
       }

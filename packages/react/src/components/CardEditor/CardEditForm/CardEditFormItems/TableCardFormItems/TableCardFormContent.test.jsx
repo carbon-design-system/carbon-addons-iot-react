@@ -172,7 +172,6 @@ describe('TableCardFormContent', () => {
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
-      ...commonCardConfig,
       content: {
         columns: [
           {
@@ -744,5 +743,76 @@ describe('TableCardFormContent', () => {
         ],
       },
     });
+  });
+
+  it('edit mode with dataitems ', async () => {
+    const aggregationMethods = [
+      { id: 'none', text: 'None' },
+      { id: 'mean', text: 'Mean' },
+    ];
+    const dataItemWithMetaData = {
+      aggregationMethod: 'none',
+      aggregationMethods,
+      columnType: 'NUMBER',
+      dataItemId: 'pressure',
+      dataItemType: 'METRIC',
+      dataSourceId: 'pressure',
+      eventName: 'event1',
+      grain: undefined,
+      hasStreamingMetricEnabled: true,
+      kpiFunctionDto: undefined,
+      label: 'Pressure',
+      type: 'NUMBER',
+      uuid: '03a70b66-f0d2-4efc-a83e-6d4172e25720',
+    };
+
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Pressure',
+            dataSourceId: 'pressure',
+            dataItemType: 'METRIC',
+          },
+          { label: 'Temperature', dataSourceId: 'temperature', dataItemType: 'METRIC' },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+        actions={{
+          ...commonProps.actions,
+          onEditDataItem: jest.fn().mockImplementation(() => aggregationMethods),
+        }}
+      />
+    );
+
+    // All of the existing columns should be rendered in the data section
+    expect(screen.queryByText('Temperature')).toBeDefined();
+    expect(screen.queryByText('Timestamp')).toBeDefined();
+    expect(screen.queryByText('Pressure')).toBeDefined();
+
+    // Popup the Data Item Editor
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
+    expect(screen.queryByText('Pressure')).toBeDefined();
+
+    const aggregationMethodListbox = screen.getByRole('listbox', { name: 'Aggregation method' });
+
+    expect(aggregationMethodListbox).toBeInTheDocument();
+    await userEvent.selectOptions(aggregationMethodListbox, 'Mean');
+
+    fireEvent.click(screen.queryByText('Save'));
+    expect(mockOnChange).toHaveBeenCalledWith('x');
   });
 });
