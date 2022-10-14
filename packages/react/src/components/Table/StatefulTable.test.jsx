@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { merge, pick } from 'lodash-es';
+import { merge, pick, cloneDeep } from 'lodash-es';
 import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
@@ -602,6 +602,50 @@ describe('stateful table with real reducer', () => {
       )
     ).not.toThrowError();
   });
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled and activeBar is undefined', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+    initialStateCopy.view.toolbar.activeBar = undefined;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" after rerender with new props', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const { rerender } = render(<StatefulTable {...initialState} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.getByText('Clear all filters')).toBeInTheDocument();
+
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    rerender(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
   describe('AdvancedFilters', () => {
     it('properly filters the table when advancedRules have simple logic', async () => {
       const { container } = render(
