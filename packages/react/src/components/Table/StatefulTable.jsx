@@ -106,6 +106,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     initialState.toolbar.initialDefaultSearch,
     initialState.toolbar.search,
     initialState.toolbar.isDisabled,
+    initialState.toolbar.hideClearAllFiltersButton,
     initialState.table.isSelectAllSelected,
     initialState.table.isSelectAllIndeterminate,
     initialState.table.selectedIds,

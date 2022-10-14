@@ -239,6 +239,8 @@ const propTypes = {
       rowEditBarButtons: PropTypes.node,
       /** extra actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
       toolbarActions: TableToolbarActionsPropType,
+      /** force hide Clear all filters button in toolbar */
+      hideClearAllFiltersButton: PropTypes.bool,
     }),
     table: PropTypes.shape({
       isSelectAllSelected: PropTypes.bool,
@@ -417,6 +419,7 @@ export const defaultProps = (baseProps) => ({
       advancedFilterFlyoutOpen: false,
       batchActions: [],
       search: {},
+      hideClearAllFiltersButton: false,
     },
     table: {
       expandedIds: [],
@@ -924,6 +927,7 @@ const Table = (props) => {
                 'advancedFilterFlyoutOpen',
                 'toolbarActions'
               ),
+              hideClearAllFiltersButton: view.toolbar.hideClearAllFiltersButton,
             }}
             data={data}
             // TODO: remove id in V3.

@@ -566,6 +566,7 @@ export const tableReducer = (state = {}, action) => {
               $set: activeBar,
             },
             rowEditBarButtons: { $set: get(view, 'toolbar.rowEditBarButtons') },
+            hideClearAllFiltersButton: { $set: get(view, 'toolbar.hideClearAllFiltersButton') },
           },
           table: {
             ordering: { $set: ordering },
