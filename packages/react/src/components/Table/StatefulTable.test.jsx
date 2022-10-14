@@ -587,6 +587,34 @@ describe('stateful table with real reducer', () => {
     fireEvent.click(clearFiltersButton);
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalledTimes(1);
   });
+  it('should preserve search when all filters has been cleared', async () => {
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.search = {
+      defaultValue: 'irrelevant search 123123',
+    };
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const emptyState = screen.getByTestId('EmptyState');
+    const clearAllFiltersButton = screen.getByText('Clear all filters');
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    const comboBoxFilter = screen.getByDisplayValue('option-B');
+
+    expect(emptyState).toBeInTheDocument();
+    expect(clearAllFiltersButton).toBeInTheDocument();
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(comboBoxFilter).toBeInTheDocument();
+
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+
+    // Filtering by search has been preserved
+    expect(emptyState).toBeInTheDocument();
+
+    // Column filters has been reset
+    expect(clearAllFiltersButton).not.toBeInTheDocument();
+    expect(whiteboardFilter).not.toBeInTheDocument();
+    expect(comboBoxFilter).not.toBeInTheDocument();
+  });
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
