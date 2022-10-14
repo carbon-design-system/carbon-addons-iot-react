@@ -265,7 +265,8 @@ export const filterSearchAndSort = (
   columns,
   advancedFilters = []
 ) => {
-  const { value: searchValue } = search;
+  const { value, defaultValue } = search;
+  const searchValue = value ?? defaultValue;
   const filteredData = filterData(data, filters, columns, advancedFilters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
