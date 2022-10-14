@@ -781,6 +781,7 @@ Map {
         "toolbar": Object {
           "advancedFilterFlyoutOpen": false,
           "batchActions": Array [],
+          "hideClearAllFiltersButton": false,
           "search": Object {},
         },
       },
@@ -2148,6 +2149,9 @@ Map {
                   },
                   "customToolbarContent": Object {
                     "type": "node",
+                  },
+                  "hideClearAllFiltersButton": Object {
+                    "type": "bool",
                   },
                   "isDisabled": Object {
                     "type": "bool",
@@ -5082,6 +5086,9 @@ Map {
                 ],
               ],
               "type": "oneOf",
+            },
+            "hideClearAllFiltersButton": Object {
+              "type": "bool",
             },
             "isDisabled": Object {
               "type": "bool",

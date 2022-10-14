@@ -155,6 +155,7 @@ export const Playground = () => {
     batchActions,
     searchIsExpanded,
     useRadioButtonSingleSelect,
+    hideClearAllFiltersButton,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -179,6 +180,7 @@ export const Playground = () => {
         'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
         'useRadioButtonSingleSelect',
+        'hideClearAllFiltersButton',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -368,6 +370,7 @@ export const Playground = () => {
               defaultExpanded: searchFieldDefaultExpanded,
               isExpanded: searchIsExpanded,
             },
+            hideClearAllFiltersButton,
           },
           table: {
             emptyState,
@@ -697,9 +700,29 @@ WithAggregations.parameters = {
 };
 
 export const WithFiltering = () => {
-  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
-    getDefaultValue: (knobName) => knobName !== 'hasAdvancedFilter',
+  const {
+    selectedTableType,
+    hasFilter,
+    hasAdvancedFilter,
+    hideClearAllFiltersButton,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasFilter',
+      'hasAdvancedFilter',
+      'hideClearAllFiltersButton',
+    ],
+    getDefaultValue: (knobName) => {
+      if (knobName === 'hasAdvancedFilter') {
+        return false;
+      }
+
+      if (knobName === 'hideClearAllFiltersButton') {
+        return false;
+      }
+
+      return true;
+    },
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
@@ -800,6 +823,7 @@ export const WithFiltering = () => {
           toolbar: {
             activeBar,
             advancedFilterFlyoutOpen,
+            hideClearAllFiltersButton,
           },
         }}
       />

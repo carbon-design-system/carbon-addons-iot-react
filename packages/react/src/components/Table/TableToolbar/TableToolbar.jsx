@@ -173,6 +173,8 @@ const propTypes = {
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     /** toolbar actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
     toolbarActions: TableToolbarActionsPropType,
+    /** force hide Clear all filters button in toolbar */
+    hideClearAllFiltersButton: PropTypes.bool,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowsPropTypes.isRequired,
@@ -249,6 +251,7 @@ const TableToolbar = ({
     columns,
     ordering,
     toolbarActions,
+    hideClearAllFiltersButton,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -476,7 +479,7 @@ const TableToolbar = ({
               }}
             />
           ) : null}
-          {totalFilters > 0 ? (
+          {totalFilters > 0 && !hideClearAllFiltersButton ? (
             <Button
               kind="secondary"
               onClick={onClearAllFilters}
