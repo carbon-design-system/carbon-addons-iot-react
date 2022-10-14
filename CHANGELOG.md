@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.38](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.37...v2.151.0-next.38) (2022-10-14)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** make sure datetimemask is respected ([216d445](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/216d445ba2acad077cc626849ed0507ba485bbdd))
+* **datetimepickerv2:** remove is24hours prop and clean up code ([9dbe312](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9dbe312a4776981c1495503504dc483bb80b7d05))
+
+
+### Features
+
+* **datetimepickerv2:** support both 12 and 24 time format ([5637229](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5637229294bcb29c9a253cfa29c94ead0b148c95))
+
+
+
+
+
 # [2.151.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.36...v2.151.0-next.37) (2022-10-14)
 
 
