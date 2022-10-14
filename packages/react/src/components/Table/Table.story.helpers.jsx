@@ -1049,6 +1049,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SORT_FILTER_GROUP
         )
       : null,
+    hideClearAllFiltersButton: shouldCreate('hideClearAllFiltersButton')
+      ? boolean(
+          'Hide clear all filters button (view.toolbar.hideClearAllFiltersButton)',
+          getDefaultValue('hideClearAllFiltersButton'),
+          SORT_FILTER_GROUP
+        )
+      : null,
 
     // SEARCH_GROUP
     hasSearch: shouldCreate('hasSearch')
