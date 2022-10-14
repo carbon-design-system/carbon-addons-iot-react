@@ -98,7 +98,7 @@ const defaultProps = {
     warnText: undefined,
     timeIconText: 'Open time picker',
     placeholderText: 'hh:mm XM',
-    placeholderText24h: 'hh:mm',
+    placeholderText24h: 'HH:mm',
     readOnlyBtnText: 'Read only',
   },
   size: 'md',

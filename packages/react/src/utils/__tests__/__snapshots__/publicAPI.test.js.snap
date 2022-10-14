@@ -8834,7 +8834,7 @@ Map {
       "i18n": Object {
         "invalidText": "The time entered is invalid",
         "placeholderText": "hh:mm XM",
-        "placeholderText24h": "hh:mm",
+        "placeholderText24h": "HH:mm",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,

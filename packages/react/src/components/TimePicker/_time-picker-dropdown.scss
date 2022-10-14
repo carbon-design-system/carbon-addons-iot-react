@@ -195,8 +195,6 @@
   animation: fadeIn 0.25s forwards;
 
   &--24h {
-    width: 13.125rem;
-
     & .#{$iot-prefix}--list-spinner__section {
       width: 6rem;
     }

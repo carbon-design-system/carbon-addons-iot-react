@@ -317,6 +317,12 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
+
+  const is24hours = useMemo(() => {
+    const [, time] = dateTimeMask.split(' ');
+    const hoursMask = time.split(':')[0];
+    return hoursMask === 'HH';
+  }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 
   // initialize the dayjs locale
@@ -342,8 +348,8 @@ const DateTimePicker = ({
     absoluteValue,
     setAbsoluteValue,
     resetAbsoluteValue,
-    format12hourTo24hour,
     isValid12HourTime,
+    isValid24HourTime,
   } = useAbsoluteDateTimeValue();
 
   const {
@@ -417,14 +423,13 @@ const DateTimePicker = ({
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput ? format12hourTo24hour(rangeStartTimeValue) : '00:00',
-          endTime: hasTimeInput ? format12hourTo24hour(rangeEndTimeValue) : '00:00',
+          startTime: hasTimeInput ? rangeStartTimeValue : '00:00',
+          endTime: hasTimeInput ? rangeEndTimeValue : '00:00',
         };
       } else {
         value.single = {
           ...singleDateValue,
-          startTime:
-            hasTimeInput && singleTimeValue !== '' ? format12hourTo24hour(singleTimeValue) : null,
+          startTime: hasTimeInput && singleTimeValue !== '' ? singleTimeValue : null,
         };
       }
       value.kind = customRangeKind;
@@ -582,9 +587,13 @@ const DateTimePicker = ({
           absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
-        absolute.startTime = dayjs(absolute.start).format('hh:mm A');
+        absolute.startTime = is24hours
+          ? dayjs(absolute.start).format('HH:mm')
+          : dayjs(absolute.start).format('hh:mm A');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
-        absolute.endTime = dayjs(absolute.end).format('hh:mm A');
+        absolute.endTime = is24hours
+          ? dayjs(absolute.end).format('HH:mm')
+          : dayjs(absolute.end).format('hh:mm A');
         setAbsoluteValue(absolute);
         setRangeStartTimeValue(absolute.startTime);
         setRangeEndTimeValue(absolute.endTime);
@@ -600,7 +609,11 @@ const DateTimePicker = ({
           single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
         }
         single.startDate = single.start ? dayjs(single.start).format('MM/DD/YYYY') : null;
-        single.startTime = single.start ? dayjs(single.start).format('hh:mm A') : null;
+        single.startTime = single.start
+          ? is24hours
+            ? dayjs(single.start).format('HH:mm')
+            : dayjs(single.start).format('hh:mm A')
+          : null;
         setSingleDateValue(single);
         setSingleTimeValue(single.startTime ?? '');
       }
@@ -802,17 +815,19 @@ const DateTimePicker = ({
     setRangeEndTimeValue(endState);
     setInvalidRangeStartTime(
       (absoluteValue && invalidStartDate(startState, endState, absoluteValue)) ||
-        !isValid12HourTime(startState)
+        (is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState))
     );
     setInvalidRangeEndTime(
       (absoluteValue && invalidEndDate(startState, endState, absoluteValue)) ||
-        !isValid12HourTime(endState)
+        (is24hours ? !isValid24HourTime(endState) : !isValid12HourTime(endState))
     );
   };
 
   const handleSingleTimeValueChange = (startState) => {
     setSingleTimeValue(startState);
-    setInvalidRangeStartTime(!isValid12HourTime(startState));
+    setInvalidRangeStartTime(
+      is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
+    );
   };
 
   return (
@@ -1168,6 +1183,7 @@ const DateTimePicker = ({
                           size="sm"
                           testId={testId}
                           style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
+                          is24hours={is24hours}
                         />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
