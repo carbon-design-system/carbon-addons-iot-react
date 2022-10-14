@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.37](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.36...v2.151.0-next.37) (2022-10-14)
+
+
+### Bug Fixes
+
+* **table:** preserve search when clear all filters clicked ([58b4afd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/58b4afd6ba366a47f7adf3e9451a04460adbd43a)), closes [#3597](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3597)
+
+
+### Features
+
+* **table:** add prop to hide clear all filters button ([4c35fe4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c35fe46b610e0764c86f0fbf249941820e84e93)), closes [#3597](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3597)
+
+
+
+
+
 # [2.151.0-next.36](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.35...v2.151.0-next.36) (2022-10-13)
 
 
