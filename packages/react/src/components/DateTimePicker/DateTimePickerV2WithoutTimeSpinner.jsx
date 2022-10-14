@@ -770,11 +770,10 @@ const DateTimePicker = ({
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
-              className: invalidState
-                ? `${iotPrefix}--date-time-picker--trigger-button-invalid`
-                : disabled
-                ? `${iotPrefix}--date-time-picker--trigger-button-disabled`
-                : '',
+              className: classnames(`${iotPrefix}--date-time-picker--trigger-button`, {
+                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalid,
+                [`${iotPrefix}--date-time-picker--trigger-button--disabled`]: disabled,
+              }),
             }}
             hideTooltip
             iconDescription={mergedI18n.calendarLabel}

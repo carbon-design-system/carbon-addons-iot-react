@@ -269,13 +269,17 @@
   margin-top: -0.35rem;
 }
 
-.#{$iot-prefix}--date-time-picker--trigger-button-invalid.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
+.#{$iot-prefix}--date-time-picker--trigger-button.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+  overflow: hidden;
+}
+
+.#{$iot-prefix}--date-time-picker--trigger-button--invalid.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
   svg.bx--btn__icon
   path {
   fill: $danger-01;
 }
 
-.#{$iot-prefix}--date-time-picker--trigger-button-disabled.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
+.#{$iot-prefix}--date-time-picker--trigger-button--disabled.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
   svg.bx--btn__icon
   path {
   fill: $disabled-02;

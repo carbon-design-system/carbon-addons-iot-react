@@ -1860,7 +1860,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--invalid`)
     ).toBe(true);
   });
 
@@ -1870,7 +1870,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--invalid`)
     ).toBe(true);
   });
 
@@ -1879,7 +1879,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
   });
 
@@ -1888,7 +1888,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
   });
 });
