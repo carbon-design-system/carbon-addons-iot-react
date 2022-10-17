@@ -120,7 +120,7 @@ const defaultProps = {
   availableDimensions: {},
   dataSeriesItemLinks: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
       hasAggregationsDropDown: noop,
       hasDataFilterDropdown: noop,
