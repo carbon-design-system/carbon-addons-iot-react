@@ -894,7 +894,7 @@ const DateTimePicker = ({
                   {humanValue}
                 </TooltipDefinition>
               ) : null}
-              {!isExpanded && isTooltipOpen ? (
+              {!isExpanded && isTooltipOpen && !isSingleSelect ? (
                 <Tooltip
                   open={isTooltipOpen}
                   showIcon={false}
