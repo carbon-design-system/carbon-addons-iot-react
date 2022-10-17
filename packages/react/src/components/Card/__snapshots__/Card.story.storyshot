@@ -5383,7 +5383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   <button
                     aria-describedby={null}
                     aria-label="Calendar"
-                    className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--flyout-menu--trigger-button iot--date-time-picker--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="date-time-picker-datepicker-flyout-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -5543,7 +5543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   <button
                     aria-describedby={null}
                     aria-label="Calendar"
-                    className="iot--flyout-menu--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                    className="iot--flyout-menu--trigger-button iot--date-time-picker--trigger-button iot--btn bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="date-time-picker-datepicker-flyout-button"
                     disabled={false}
                     onBlur={[Function]}
