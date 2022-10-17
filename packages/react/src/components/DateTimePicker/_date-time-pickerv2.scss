@@ -101,13 +101,13 @@
     outline: 2px solid $danger-01;
   }
 
-  .#{$iot-prefix}--date-time-picker__helper-text--invalid {
-    color: $text-error;
-  }
-
   .#{$iot-prefix}--date-time-picker__box--disabled {
     border: none;
   }
+}
+
+.#{$iot-prefix}--date-time-picker__helper-text--invalid {
+  color: $text-error;
 }
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--disabled {
