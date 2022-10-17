@@ -626,8 +626,15 @@ describe('TableCardFormContent', () => {
       },
     };
     render(
-      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} onEditDataItem={jest.fn().mockImplementation(() => [ { id: 'none', text: 'None' },
-      { id: 'mean', text: 'Mean' }])} />
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+        onEditDataItem={jest.fn().mockImplementation(() => [
+          { id: 'none', text: 'None' },
+          { id: 'mean', text: 'Mean' },
+        ])}
+      />
     );
 
     await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);
