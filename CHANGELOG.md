@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.40...v2.151.0-next.41) (2022-10-17)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** move invalid text out of flyout menu ([f93e8b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f93e8b87310ff7f0cc9f938c624d4f42e8eb38e4))
+
+
+
+
+
 # [2.151.0-next.40](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.39...v2.151.0-next.40) (2022-10-17)
 
 
