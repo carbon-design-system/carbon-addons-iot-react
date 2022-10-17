@@ -1,10 +1,6 @@
 @import '../../globals/vars';
 
-$layer-hover-01: #e5e5e5;
-
 .#{$iot-prefix}--list-spinner {
-  --zIndex: 0;
-  z-index: calc(var(--zIndex) + 20);
   &__section {
     align-items: flex-start;
     display: flex;
@@ -51,8 +47,7 @@ $layer-hover-01: #e5e5e5;
     .#{$iot-prefix}--list-spinner__list &--selected .#{$iot-prefix}--btn {
       color: $ui-01;
       &:hover {
-        background: $layer-hover-01;
-        color: $icon-01;
+        background: $button-primary-hover;
       }
     }
   }
@@ -82,6 +77,10 @@ $layer-hover-01: #e5e5e5;
     &:last-child {
       box-shadow: 0 -1px 5px 4px $ui-01;
       border-width: 1.5px;
+    }
+
+    &:hover {
+      color: $icon-01;
     }
   }
   /* stylelint-enable declaration-property-unit-blacklist */

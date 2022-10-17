@@ -265,7 +265,8 @@ export const filterSearchAndSort = (
   columns,
   advancedFilters = []
 ) => {
-  const { value: searchValue } = search;
+  const { value, defaultValue } = search;
+  const searchValue = value ?? defaultValue;
   const filteredData = filterData(data, filters, columns, advancedFilters);
   const searchedData =
     searchValue && searchValue !== '' ? searchData(filteredData, searchValue) : filteredData;
@@ -511,7 +512,7 @@ export const tableReducer = (state = {}, action) => {
         : get(view, 'table.ordering') || get(state, 'view.table.ordering');
 
       // update the search if a new one is passed
-      const searchFromState = get(state, 'view.toolbar.search');
+      const searchFromState = get(view, 'toolbar.search');
 
       // if hasUserViewManagement is active we rely on defaultValue
       const searchTermFromState = hasUserViewManagement
@@ -566,6 +567,7 @@ export const tableReducer = (state = {}, action) => {
               $set: activeBar,
             },
             rowEditBarButtons: { $set: get(view, 'toolbar.rowEditBarButtons') },
+            hideClearAllFiltersButton: { $set: get(view, 'toolbar.hideClearAllFiltersButton') },
           },
           table: {
             ordering: { $set: ordering },

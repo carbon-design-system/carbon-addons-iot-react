@@ -115,13 +115,14 @@ describe('DateTimePickerV2', () => {
       });
   });
 
-  it('should pick a new absolute ranges (new time spinner)', () => {
+  it('should pick a new absolute ranges (new time spinner 24 hours with AM/PM)', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
       <div style={{ justifyContent: 'center' }}>
         <DateTimePicker
           useNewTimeSpinner
+          dateTimeMask="YYYY-MM-DD HH:mm A"
           onApply={onApply}
           onCancel={onCancel}
           id="picker-test"
@@ -138,7 +139,7 @@ describe('DateTimePickerV2', () => {
       </div>
     );
 
-    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
+    cy.findByText('2021-08-01 12:34 PM to 2021-08-06 10:49 AM').should('be.visible').click();
 
     cy.findByText('Custom range').should('be.visible');
     cy.findByText('August').should('be.visible');
@@ -147,10 +148,12 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.get('#picker-test-1').clear();
-    cy.get('#picker-test-1').type('{moveToStart}{del}{del}01');
-    cy.get('#picker-test-2').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:34 PM'
-    );
+    cy.get('#picker-test-1').click().focus().type('{moveToStart}{del}{del}13');
+
+    cy.get('#picker-test-2')
+      .click()
+      .focus()
+      .type('{backspace}{backspace}{backspace}{backspace}{backspace}12:34');
     cy.findByText('Apply')
       .click()
       .should(() => {
@@ -163,8 +166,69 @@ describe('DateTimePickerV2', () => {
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
             startTime: '13:34',
-            humanValue: '2021-08-06 13:34 to 2021-08-08 12:34',
-            tooltipValue: '2021-08-06 13:34 to 2021-08-08 12:34',
+            humanValue: '2021-08-06 13:34 PM to 2021-08-08 12:34 PM',
+            tooltipValue: '2021-08-06 13:34 PM to 2021-08-08 12:34 PM',
+          },
+          timeSingleValue: null,
+        });
+      });
+  });
+
+  it('should pick a new absolute ranges (new time spinner 12 hours with AM/PM)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ justifyContent: 'center' }}>
+        <DateTimePicker
+          useNewTimeSpinner
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          onApply={onApply}
+          onCancel={onCancel}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+          style={{ zIndex: 6000 }}
+        />
+      </div>
+    );
+
+    cy.findByText('2021-08-01 12:34 PM to 2021-08-06 10:49 AM').should('be.visible').click();
+
+    cy.findByText('Custom range').should('be.visible');
+    cy.findByText('August').should('be.visible');
+    cy.findByLabelText('Year').should('have.value', '2021');
+    cy.findByLabelText('August 8, 2021').click();
+    cy.findByLabelText('August 8, 2021').should('have.class', 'selected');
+    cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
+    cy.get('#picker-test-1').clear();
+    cy.get('#picker-test-1').click().focus().type('{moveToStart}{del}{del}01');
+
+    cy.get('#picker-test-2')
+      .click()
+      .focus()
+      .type(
+        '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}12:34 PM'
+      );
+    cy.findByText('Apply')
+      .click()
+      .should(() => {
+        expect(onApply).to.be.calledWith({
+          timeRangeKind: 'ABSOLUTE',
+          timeRangeValue: {
+            end: Cypress.sinon.match.any,
+            endDate: '08/08/2021',
+            endTime: '12:34 PM',
+            start: Cypress.sinon.match.any,
+            startDate: '08/06/2021',
+            startTime: '01:34 PM',
+            humanValue: '2021-08-06 01:34 PM to 2021-08-08 12:34 PM',
+            tooltipValue: '2021-08-06 01:34 PM to 2021-08-08 12:34 PM',
           },
           timeSingleValue: null,
         });
@@ -241,6 +305,7 @@ describe('DateTimePickerV2', () => {
     mount(
       <DateTimePicker
         useNewTimeSpinner
+        dateTimeMask="YYYY-MM-DD HH:mm A"
         onApply={onApply}
         onCancel={onCancel}
         id="picker-test"
@@ -257,18 +322,15 @@ describe('DateTimePickerV2', () => {
       />
     );
 
-    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').should('be.visible').click();
-
-    cy.get('#picker-test-1').type(
-      '{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}{backspace}91:35 AM'
-    );
+    cy.findByText('2021-08-01 12:34 PM to 2021-08-06 10:49 AM').should('be.visible').click();
+    cy.get('#picker-test-1').type('{backspace}{backspace}{backspace}{backspace}{backspace}91:35');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
 
-    cy.get('#picker-test-1').type('{movetostart}{del}1');
+    cy.get('#picker-test-1').type('{backspace}{backspace}{backspace}{backspace}{backspace}11:35');
 
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
 
-    cy.get('#picker-test-2').type('11:61 AM');
+    cy.get('#picker-test-2').type('{backspace}{backspace}{backspace}{backspace}{backspace}11:61');
     cy.findByText(i18n.applyBtnLabel).should('be.disabled');
   });
 
@@ -543,20 +605,17 @@ describe('DateTimePickerV2', () => {
     cy.findByLabelText('August 6, 2021').should('have.class', 'selected');
     cy.findByLabelText('August 13, 2021').should('have.class', 'selected');
     cy.focused().realPress('Tab').realPress('Tab');
+
     cy.get('#picker-test-1').should('be.focused').type('{moveToStart}{del}0');
-    cy.focused().realPress('Tab');
-    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
-    cy.focused().realPress('Escape');
+    cy.focused().realPress('Enter');
     cy.findByTestId('date-time-picker-spinner').should('not.exist');
-    cy.get('#picker-test-2').focus();
+
+    cy.focused().realPress('Tab');
     cy.get('#picker-test-2').should('be.focused').type('{moveToStart}{del}{del}12');
-    cy.focused().realPress('Tab');
-    cy.focused().realPress('Space');
     cy.findByTestId('date-time-picker-spinner').should('exist');
-    cy.focused().realPress('Escape');
-    cy.findByTestId('date-time-picker-spinner').should('not.exist');
-    cy.get('#picker-test-2').focus();
+    cy.focused().realPress('Enter');
+
     cy.focused().realPress('Tab');
     cy.focused().realPress('Tab');
     cy.focused().should('contain.text', 'Back');
@@ -570,12 +629,12 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: '08/13/2021',
-            endTime: '00:49',
-            humanValue: '2021-08-06 14:34 to 2021-08-13 00:49',
+            endTime: '12:49',
+            humanValue: '2021-08-06 02:34 to 2021-08-13 12:49',
             start: Cypress.sinon.match.any,
             startDate: '08/06/2021',
-            startTime: '14:34',
-            tooltipValue: '2021-08-06 14:34 to 2021-08-13 00:49',
+            startTime: '02:34',
+            tooltipValue: '2021-08-06 02:34 to 2021-08-13 12:49',
           },
           timeSingleValue: null,
         });

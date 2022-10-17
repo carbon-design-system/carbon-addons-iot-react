@@ -5,6 +5,10 @@
   width: 16.125rem;
   position: relative;
 
+  &--24h {
+    width: 13.125rem;
+  }
+
   input {
     font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier,
       monospace;
@@ -15,7 +19,7 @@
     position: relative;
 
     &--selected input {
-      border: 0.125rem solid $interactive-02;
+      outline: 0.0625rem solid $ui-05;
     }
   }
 
@@ -35,11 +39,8 @@
     height: 3rem;
   }
 
-  &.#{$iot-prefix}--time-picker--invalid {
-    .#{$iot-prefix}--time-picker-range__helper-text,
-    .#{$iot-prefix}--time-picker__helper-text {
-      color: $text-error;
-    }
+  .#{$iot-prefix}--time-picker--invalid {
+    color: $text-error;
   }
 
   // icons
@@ -52,7 +53,7 @@
     background: none;
     border: 0.125rem solid transparent;
     box-sizing: content-box;
-    cursor: pointer;
+    pointer-events: none;
     height: 1rem;
     padding: $spacing-02;
     position: absolute;
@@ -158,18 +159,25 @@
     }
 
     .#{$iot-prefix}--time-picker-range__helper-text {
-      grid-column: 1/3;
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .#{$iot-prefix}--time-picker-range__helper-text--secondary {
+      grid-column: 2;
       grid-row: 3;
     }
   }
 
-  .#{$prefix}--label,
+  .#{$prefix}--label:not(legend),
   .#{$iot-prefix}--time-picker__wrapper {
     max-width: 8rem;
   }
 }
 
 .#{$iot-prefix}--time-picker-spinner {
+  --zIndex: 0;
+  z-index: var(--zIndex);
   background-color: $ui-01;
   box-shadow: 0 7px 10px 2px #ddd;
   display: flex;
@@ -185,6 +193,15 @@
   /* stylelint-disable-next-line */
   transition: opacity 0.25s;
   animation: fadeIn 0.25s forwards;
+
+  &--24h {
+    & .#{$iot-prefix}--list-spinner__section {
+      width: 6rem;
+    }
+    & .#{$iot-prefix}--list-spinner__list-container {
+      width: 6rem;
+    }
+  }
 
   &::before {
     background: $background-brand;
@@ -271,6 +288,12 @@
 
   li {
     transform: translateY(7.5rem);
+  }
+
+  &--PM {
+    li:last-of-type {
+      transform: translateY(2.5rem);
+    }
   }
 }
 

@@ -157,6 +157,7 @@ export const Playground = () => {
     batchActions,
     searchIsExpanded,
     useRadioButtonSingleSelect,
+    hideClearAllFiltersButton,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -181,6 +182,7 @@ export const Playground = () => {
         'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
         'useRadioButtonSingleSelect',
+        'hideClearAllFiltersButton',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -370,6 +372,7 @@ export const Playground = () => {
               defaultExpanded: searchFieldDefaultExpanded,
               isExpanded: searchIsExpanded,
             },
+            hideClearAllFiltersButton,
           },
           table: {
             emptyState,
@@ -497,7 +500,6 @@ export const WithSearching = () => {
             defaultValue,
             defaultExpanded: searchFieldDefaultExpanded,
             isExpanded: searchIsExpanded,
-            onExpand: action('onExpand'),
           },
         },
       }}
@@ -700,10 +702,26 @@ WithAggregations.parameters = {
 };
 
 export const WithFiltering = () => {
-  const { selectedTableType, hasFilter, hasAdvancedFilter, hasEmptyFilterOption } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter', 'hasEmptyFilterOption'],
+  const {
+    selectedTableType,
+    hasFilter,
+    hasAdvancedFilter,
+    hideClearAllFiltersButton,
+    hasEmptyFilterOption,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasFilter',
+      'hasAdvancedFilter',
+      'hideClearAllFiltersButton',
+      'hasEmptyFilterOption',
+    ],
     getDefaultValue: (knobName) => {
       if (knobName === 'hasAdvancedFilter') {
+        return false;
+      }
+
+      if (knobName === 'hideClearAllFiltersButton') {
         return false;
       }
 
@@ -819,6 +837,7 @@ export const WithFiltering = () => {
           toolbar: {
             activeBar,
             advancedFilterFlyoutOpen,
+            hideClearAllFiltersButton,
           },
         }}
       />

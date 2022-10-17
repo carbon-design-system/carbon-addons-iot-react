@@ -25,6 +25,8 @@ only search on values of the type strings, numbers and booleans and there is no 
 column props sortFunction and filterFunction. In order to search on complex types a programmatic search
 implementation is needed.
 
+Two actions are triggered when a user opens search input field. First, the callback `onSearchExpand` will be called upon opening/closing. This callback has 2 arguments: event and expand state. Second, boolean parameter `isExpanded` indicating current search input state.
+
 ### Simple search code example
 
 The example below shows how to enable search for the StatefulTable with a default search value set on initial
@@ -112,3 +114,7 @@ return (
 
 Note! From a UX perspective it is not recommended to have both column filters and the built in search enabled at the
 same time.
+
+### Empty search results
+
+If table data does not contain any of the results from the particular search, then `EmptyTable` will be displayed. Reference to this component can be found [here](#empty-state). In order to clear search value from `EmptyTable` the prop `i18n.emptyButtonLabelWithFilters` should be provided to the `Table`, this would display a button with action to reset search value to an empty string.

@@ -15,6 +15,9 @@ import { ImageCardValuesPropType } from '../../../../../constants/CardPropTypes'
 
 const { iotPrefix, prefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /* card value */
   cardConfig: PropTypes.shape({
@@ -78,10 +81,11 @@ const defaultProps = {
   availableDimensions: {},
   onFetchDynamicDemoHotspots: null,
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };

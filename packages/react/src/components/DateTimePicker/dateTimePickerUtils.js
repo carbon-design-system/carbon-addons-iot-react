@@ -8,7 +8,7 @@ import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
 
-/** convert time from format hh:mm A to HH:mm
+/** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
  * *
  * @param {Object} object hh:mm A time oject
  * @returns HH:mm time object
@@ -18,6 +18,10 @@ export const format12hourTo24hour = (time12hour) => {
     return '00:00';
   }
   const [time, modifier] = time12hour.split(' ');
+
+  if (!modifier) {
+    return time12hour;
+  }
 
   // eslint-disable-next-line prefer-const
   let [hours, minutes] = time.split(':');
@@ -264,6 +268,17 @@ export const isValid12HourTime = (time) => {
 };
 
 /**
+ * 24 hour time validator
+ *
+ * @param {string} time The time string to check
+ * @returns bool
+ */
+export const isValid24HourTime = (time) => {
+  const isValid24HoursRegex = /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/;
+  return isValid24HoursRegex.test(time) || time === '';
+};
+
+/**
  * Simple function to handle keeping flatpickr open when it would normally close
  *
  * @param {*} range unused
@@ -389,6 +404,7 @@ export const useAbsoluteDateTimeValue = () => {
     changeAbsolutePropertyValue,
     format12hourTo24hour,
     isValid12HourTime,
+    isValid24HourTime,
   };
 };
 
@@ -618,11 +634,11 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
  *
  * @returns {string} an interval string, starting point in time to now
  */
-export const getIntervalValue = ({ currentValue, strings, dateTimeMask, humanValue }) => {
+export const getIntervalValue = ({ currentValue, mergedI18n, dateTimeMask, humanValue }) => {
   if (currentValue) {
     if (currentValue.kind === PICKER_KINDS.PRESET) {
       return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
-        strings.toNowLabel
+        mergedI18n.toNowLabel
       }`;
     }
     return humanValue;

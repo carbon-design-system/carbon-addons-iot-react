@@ -19,7 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -398,7 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -413,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="01/04/2020 12:34 to 06/04/2020 10:49"
           >
             01/04/2020 12:34 to 06/04/2020 10:49
@@ -894,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -909,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="2020-04-01 12:34 to 2020-04-06 10:49"
           >
             2020-04-01 12:34 to 2020-04-06 10:49
@@ -1390,7 +1392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1579,7 +1581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1594,6 +1596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="2018-10-28 13:10 to 2018-10-28 13:30"
           >
             2018-10-28 13:10 to 2018-10-28 13:30
@@ -2125,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -2306,7 +2309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"

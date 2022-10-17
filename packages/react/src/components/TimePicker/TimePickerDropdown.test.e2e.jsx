@@ -29,8 +29,8 @@ describe('TimePickerDropdown', () => {
       </div>
     );
     cy.findByTestId('time-picker-test-input').then((pos) => {
-      cy.findByTestId('time-picker-test-time-btn')
-        .trigger('click')
+      cy.findByTestId('time-picker-test-input')
+        .trigger('focus')
         .then(() => {
           cy.findByTestId('time-picker-test-spinner').then((pos2) => {
             expect(pos[0].getBoundingClientRect().top).to.be.equal(
@@ -62,8 +62,8 @@ describe('TimePickerDropdown', () => {
     };
     mount(<TimePickerDropdown {...timePickerProps} />);
     cy.findByTestId('time-picker-test-input').then(() => {
-      cy.findByTestId('time-picker-test-time-btn')
-        .trigger('click')
+      cy.findByTestId('time-picker-test-input')
+        .trigger('focus')
         .then(() => {
           cy.findByTestId('time-picker-test-spinner').should('exist');
         })

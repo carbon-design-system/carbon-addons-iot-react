@@ -13,9 +13,9 @@ import {
   OrderedList,
   ListItem,
 } from 'carbon-components-react';
-import { Calendar16 } from '@carbon/icons-react';
+import { Calendar16, WarningFilled16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
 
@@ -49,7 +49,7 @@ import {
   useRelativeDateTimeValue,
 } from './dateTimePickerUtils';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 export const DateTimePickerDefaultValuePropTypes = PropTypes.oneOfType([
   PropTypes.exact({
@@ -126,6 +126,8 @@ export const propTypes = {
   expanded: PropTypes.bool,
   /** disable the input */
   disabled: PropTypes.bool,
+  /** specify the input in invalid state */
+  invalid: PropTypes.bool,
   /** show the relative custom range picker */
   showRelativeOption: PropTypes.bool,
   /** show the custom range link */
@@ -168,6 +170,7 @@ export const propTypes = {
     minutes: PropTypes.string,
     number: PropTypes.string,
     timePickerInvalidText: PropTypes.string,
+    invalidText: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -227,6 +230,7 @@ export const defaultProps = {
   ],
   expanded: false,
   disabled: false,
+  invalid: false,
   showRelativeOption: true,
   showCustomRangeLink: true,
   hasTimeInput: true,
@@ -259,6 +263,7 @@ export const defaultProps = {
     minutes: 'minutes',
     number: 'number',
     timePickerInvalidText: undefined,
+    invalidText: 'The date time entered is invalid',
   },
   light: false,
   locale: 'en',
@@ -278,6 +283,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -287,7 +293,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id = uuidv4(),
   hasIconOnly,
   menuOffset,
   datePickerType,
@@ -304,14 +310,19 @@ const DateTimePicker = ({
   }, []);
 
   const langDir = useLangDirection();
-  const strings = useMemo(
+  const mergedI18n = useMemo(
     () => ({
       ...defaultProps.i18n,
       ...i18n,
     }),
     [i18n]
   );
-  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
+
+  const is24hours = useMemo(() => {
+    const [, time] = dateTimeMask.split(' ');
+    const hoursMask = time.split(':')[0];
+    return hoursMask === 'HH';
+  }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 
   // initialize the dayjs locale
@@ -329,6 +340,7 @@ const DateTimePicker = ({
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
   const [defaultSingleDateValue, SetDefaultSingleDateValue] = useState(false);
+  const [invalidState, setInvalidState] = useState(invalid);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
@@ -336,8 +348,8 @@ const DateTimePicker = ({
     absoluteValue,
     setAbsoluteValue,
     resetAbsoluteValue,
-    format12hourTo24hour,
     isValid12HourTime,
+    isValid24HourTime,
   } = useAbsoluteDateTimeValue();
 
   const {
@@ -411,14 +423,13 @@ const DateTimePicker = ({
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput ? format12hourTo24hour(rangeStartTimeValue) : '00:00',
-          endTime: hasTimeInput ? format12hourTo24hour(rangeEndTimeValue) : '00:00',
+          startTime: hasTimeInput ? rangeStartTimeValue : '00:00',
+          endTime: hasTimeInput ? rangeEndTimeValue : '00:00',
         };
       } else {
         value.single = {
           ...singleDateValue,
-          startTime:
-            hasTimeInput && singleTimeValue !== '' ? format12hourTo24hour(singleTimeValue) : null,
+          startTime: hasTimeInput && singleTimeValue !== '' ? singleTimeValue : null,
         };
       }
       value.kind = customRangeKind;
@@ -438,7 +449,7 @@ const DateTimePicker = ({
       value.kind = PICKER_KINDS.PRESET;
     }
     setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, strings.toLabel);
+    const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
     setHumanValue(parsedValue.readableValue);
 
     return {
@@ -576,9 +587,13 @@ const DateTimePicker = ({
           absolute.end = dayjs(`${absolute.endDate} ${absolute.endTime}`).valueOf();
         }
         absolute.startDate = dayjs(absolute.start).format('MM/DD/YYYY');
-        absolute.startTime = dayjs(absolute.start).format('hh:mm A');
+        absolute.startTime = is24hours
+          ? dayjs(absolute.start).format('HH:mm')
+          : dayjs(absolute.start).format('hh:mm A');
         absolute.endDate = dayjs(absolute.end).format('MM/DD/YYYY');
-        absolute.endTime = dayjs(absolute.end).format('hh:mm A');
+        absolute.endTime = is24hours
+          ? dayjs(absolute.end).format('HH:mm')
+          : dayjs(absolute.end).format('hh:mm A');
         setAbsoluteValue(absolute);
         setRangeStartTimeValue(absolute.startTime);
         setRangeEndTimeValue(absolute.endTime);
@@ -594,7 +609,11 @@ const DateTimePicker = ({
           single.start = dayjs(`${single.startDate} ${single.startTime}`).valueOf();
         }
         single.startDate = single.start ? dayjs(single.start).format('MM/DD/YYYY') : null;
-        single.startTime = single.start ? dayjs(single.start).format('hh:mm A') : null;
+        single.startTime = single.start
+          ? is24hours
+            ? dayjs(single.start).format('HH:mm')
+            : dayjs(single.start).format('hh:mm A')
+          : null;
         setSingleDateValue(single);
         setSingleTimeValue(single.startTime ?? '');
       }
@@ -640,7 +659,7 @@ const DateTimePicker = ({
   const tooltipValue = renderPresetTooltipText
     ? renderPresetTooltipText(currentValue)
     : datePickerType === 'range'
-    ? getIntervalValue({ currentValue, strings, dateTimeMask, humanValue })
+    ? getIntervalValue({ currentValue, mergedI18n, dateTimeMask, humanValue })
     : isSingleSelect
     ? humanValue
     : dateTimeMask;
@@ -653,12 +672,18 @@ const DateTimePicker = ({
   const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
-    (invalidRangeStartTime || invalidRangeEndTime);
+    (invalidRangeStartTime ||
+      invalidRangeEndTime ||
+      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
 
   const disableSingleApply =
-    isCustomRange && customRangeKind === PICKER_KINDS.SINGLE && invalidRangeStartTime;
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.SINGLE &&
+    (invalidRangeStartTime || singleTimeValue === '');
 
   const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
+
+  useEffect(() => setInvalidState(invalid || disableApply), [invalid, disableApply]);
 
   const onApplyClick = () => {
     setIsExpanded(false);
@@ -734,7 +759,7 @@ const DateTimePicker = ({
             onClick={toggleIsCustomRange}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
           >
-            {strings.backBtnLabel}
+            {mergedI18n.backBtnLabel}
           </Button>
         ) : isSingleSelect ? (
           <Button
@@ -746,7 +771,7 @@ const DateTimePicker = ({
             onMouseDown={(e) => e.preventDefault()}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onClearClick)}
           >
-            {strings.resetBtnLabel}
+            {mergedI18n.resetBtnLabel}
           </Button>
         ) : (
           <Button
@@ -757,7 +782,7 @@ const DateTimePicker = ({
             {...others}
             onKeyUp={handleSpecificKeyDown(['Enter', ' '], onCancelClick)}
           >
-            {strings.cancelBtnLabel}
+            {mergedI18n.cancelBtnLabel}
           </Button>
         )}
         <Button
@@ -770,7 +795,7 @@ const DateTimePicker = ({
           size="field"
           disabled={disableApply}
         >
-          {strings.applyBtnLabel}
+          {mergedI18n.applyBtnLabel}
         </Button>
       </div>
     );
@@ -790,25 +815,29 @@ const DateTimePicker = ({
     setRangeEndTimeValue(endState);
     setInvalidRangeStartTime(
       (absoluteValue && invalidStartDate(startState, endState, absoluteValue)) ||
-        !isValid12HourTime(startState)
+        (is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState))
     );
     setInvalidRangeEndTime(
       (absoluteValue && invalidEndDate(startState, endState, absoluteValue)) ||
-        !isValid12HourTime(endState)
+        (is24hours ? !isValid24HourTime(endState) : !isValid12HourTime(endState))
     );
   };
 
   const handleSingleTimeValueChange = (startState) => {
     setSingleTimeValue(startState);
-    setInvalidRangeStartTime(!isValid12HourTime(startState));
+    setInvalidRangeStartTime(
+      is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
+    );
   };
 
   return (
-    <>
+    <div className={`${iotPrefix}--date-time-pickerv2`}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
-        className={`${iotPrefix}--date-time-pickerv2__wrapper`}
+        className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
+          [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
+        })}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
         onClick={onFieldInteraction}
@@ -836,6 +865,8 @@ const DateTimePicker = ({
           className={classnames({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
+            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
+            [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
           })}
         >
           {!hasIconOnly ? (
@@ -847,7 +878,7 @@ const DateTimePicker = ({
                 <span
                   className={classnames({
                     [`${iotPrefix}--date-time-picker__disabled`]:
-                      isSingleSelect && !singleDateValue.startDate,
+                      disabled || (isSingleSelect && !singleDateValue.startDate),
                   })}
                   title={humanValue}
                 >
@@ -858,7 +889,7 @@ const DateTimePicker = ({
                   align="start"
                   direction="bottom"
                   tooltipText={tooltipValue}
-                  triggerClassName=""
+                  triggerClassName={disabled ? `${iotPrefix}--date-time-picker__disabled` : ''}
                 >
                   {humanValue}
                 </TooltipDefinition>
@@ -881,14 +912,19 @@ const DateTimePicker = ({
           <FlyoutMenu
             isOpen={isExpanded}
             buttonSize={hasIconOnly ? 'default' : 'small'}
-            renderIcon={Calendar16}
-            disabled={false}
+            renderIcon={invalidState ? WarningFilled16 : Calendar16}
+            disabled={disabled}
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
+              className: invalidState
+                ? `${iotPrefix}--date-time-picker--trigger-button-invalid`
+                : disabled
+                ? `${iotPrefix}--date-time-picker--trigger-button-disabled`
+                : '',
             }}
             hideTooltip
-            iconDescription={strings.calendarLabel}
+            iconDescription={mergedI18n.calendarLabel}
             passive={false}
             triggerId="test-trigger-id-2"
             light={light}
@@ -905,10 +941,11 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
+            style={style}
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
+              style={{ '--wrapper-width': '20rem' }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
@@ -936,7 +973,7 @@ const DateTimePicker = ({
                         className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
                         tabIndex={0}
                       >
-                        {strings.customRangeLinkLabel}
+                        {mergedI18n.customRangeLinkLabel}
                       </ListItem>
                     ) : null}
                     {presets.map((preset, i) => {
@@ -956,7 +993,7 @@ const DateTimePicker = ({
                           )}
                           tabIndex={0}
                         >
-                          {strings.presetLabels[i] || preset.label}
+                          {mergedI18n.presetLabels[i] || preset.label}
                         </ListItem>
                       );
                     })}
@@ -969,7 +1006,7 @@ const DateTimePicker = ({
                 >
                   {showRelativeOption ? (
                     <FormGroup
-                      legendText={strings.customRangeLabel}
+                      legendText={mergedI18n.customRangeLabel}
                       className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                     >
                       <RadioButtonGroup
@@ -980,7 +1017,7 @@ const DateTimePicker = ({
                         <RadioButton
                           value={PICKER_KINDS.RELATIVE}
                           id={`${id}-relative`}
-                          labelText={strings.relativeLabel}
+                          labelText={mergedI18n.relativeLabel}
                           onKeyDown={handleSpecificKeyDown(
                             ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                             onNavigateRadioButton
@@ -989,7 +1026,7 @@ const DateTimePicker = ({
                         <RadioButton
                           value={PICKER_KINDS.ABSOLUTE}
                           id={`${id}-absolute`}
-                          labelText={strings.absoluteLabel}
+                          labelText={mergedI18n.absoluteLabel}
                           onKeyDown={handleSpecificKeyDown(
                             ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
                             onNavigateRadioButton
@@ -1001,13 +1038,13 @@ const DateTimePicker = ({
                   {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
                     <>
                       <FormGroup
-                        legendText={strings.lastLabel}
+                        legendText={mergedI18n.lastLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                       >
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                           <NumberInput
                             id={`${id}-last-number`}
-                            invalidText={strings.invalidNumberLabel}
+                            invalidText={mergedI18n.invalidNumberLabel}
                             step={1}
                             min={0}
                             value={relativeValue ? relativeValue.lastNumber : 0}
@@ -1036,7 +1073,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={interval.value}
-                                  text={strings.intervalLabels[i] || interval.label}
+                                  text={mergedI18n.intervalLabels[i] || interval.label}
                                 />
                               );
                             })}
@@ -1044,7 +1081,7 @@ const DateTimePicker = ({
                         </div>
                       </FormGroup>
                       <FormGroup
-                        legendText={strings.relativeToLabel}
+                        legendText={mergedI18n.relativeToLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                       >
                         <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
@@ -1062,7 +1099,7 @@ const DateTimePicker = ({
                                 <SelectItem
                                   key={i}
                                   value={relative.value}
-                                  text={strings.relativeLabels[i] || relative.label}
+                                  text={mergedI18n.relativeLabels[i] || relative.label}
                                 />
                               );
                             })}
@@ -1129,8 +1166,8 @@ const DateTimePicker = ({
                           key={defaultSingleDateValue}
                           value={isSingleSelect ? singleTimeValue : rangeStartTimeValue}
                           secondaryValue={rangeEndTimeValue}
-                          hideLabel={!strings.startTimeLabel}
-                          hideSecondaryLabel={!strings.endTimeLabel}
+                          hideLabel={!mergedI18n.startTimeLabel}
+                          hideSecondaryLabel={!mergedI18n.endTimeLabel}
                           onChange={(startState, endState) =>
                             isSingleSelect
                               ? handleSingleTimeValueChange(startState)
@@ -1139,13 +1176,14 @@ const DateTimePicker = ({
                           type={isSingleSelect ? 'single' : 'range'}
                           invalid={[invalidRangeStartTime, invalidRangeEndTime]}
                           i18n={{
-                            labelText: strings.startTimeLabel,
-                            secondaryLabelText: strings.endTimeLabel,
-                            invalidText: strings.timePickerInvalidText,
+                            labelText: mergedI18n.startTimeLabel,
+                            secondaryLabelText: mergedI18n.endTimeLabel,
+                            invalidText: mergedI18n.timePickerInvalidText,
                           }}
                           size="sm"
                           testId={testId}
-                          style={updatedStyle}
+                          style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
+                          is24hours={is24hours}
                         />
                       ) : (
                         <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
@@ -1157,8 +1195,18 @@ const DateTimePicker = ({
             </div>
           </FlyoutMenu>
         </div>
+        {invalidState && !hasIconOnly ? (
+          <p
+            className={classnames(
+              `${prefix}--form__helper-text`,
+              `${iotPrefix}--date-time-picker__helper-text--invalid`
+            )}
+          >
+            {mergedI18n.invalidText}
+          </p>
+        ) : null}
       </div>
-    </>
+    </div>
   );
 };
 

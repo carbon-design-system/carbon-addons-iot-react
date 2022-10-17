@@ -166,7 +166,8 @@ describe('DataSeriesFormItemModal', () => {
     actions: {
       onEditDataItem: jest.fn().mockImplementation(() => []),
       dataSeriesFormActions: {
-        hideAggregationsDropDown: jest.fn(() => true),
+        hasAggregationsDropDown: jest.fn(() => true),
+        hasDataFilterDropdown: jest.fn(() => true),
         onAddAggregations: jest.fn(),
       },
     },
@@ -187,6 +188,58 @@ describe('DataSeriesFormItemModal', () => {
     const legendColorLabel = screen.getByText('Line color');
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
+
+    const dataFilter = screen.getByRole('listbox', { name: 'Data filter' });
+    expect(dataFilter).toBeInTheDocument();
+
+    const aggregationDropdown = screen.getByRole('listbox', { name: 'Aggregation method' });
+    expect(aggregationDropdown).toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without datafilter', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasDataFilterDropdown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Data filter');
+    expect(dataFilter).not.toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without aggregation dropdown', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasAggregationsDropDown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Aggregation method');
+    expect(dataFilter).not.toBeInTheDocument();
   });
   it('Non-timebased simple bar should hide grain', () => {
     const simpleNonTimeBasedBar = {

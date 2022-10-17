@@ -23,6 +23,9 @@ import {
 
 const { iotPrefix } = settings;
 
+/* istanbul ignore next */
+const noop = () => {};
+
 const propTypes = {
   /** Dashboard title */
   title: PropTypes.node,
@@ -387,10 +390,11 @@ const defaultProps = {
   onEditDataItems: null,
   testId: 'dashboard-editor',
   actions: {
-    onEditDataItem: null,
+    onEditDataItem: noop,
     dataSeriesFormActions: {
-      hideAggregationsDropDown: null,
-      onAddAggregations: null,
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
     },
   },
 };
@@ -507,11 +511,11 @@ const DashboardEditor = ({
    * callback to parent when the card is selected
    */
   const handleCardSelect = useCallback(
-    (id) => {
-      setSelectedCardId(id);
+    (card) => {
+      setSelectedCardId(card?.id);
       /* istanbul ignore else */
       if (onCardSelect) {
-        onCardSelect(id);
+        onCardSelect(card);
       }
     },
     [onCardSelect]
@@ -533,12 +537,11 @@ const DashboardEditor = ({
           ? onCardChange(defaultCard, dashboardJson)
           : defaultCard;
 
-      // eslint-disable-next-line no-shadow
-      setDashboardJson((dashboardJson) => ({
-        ...dashboardJson,
-        cards: [...dashboardJson.cards, cardConfig],
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: [...prevDashboardJson.cards, cardConfig],
       }));
-      handleCardSelect(cardConfig.id);
+      handleCardSelect(cardConfig);
       setNeedsScroll(true);
     },
     [customGetDefaultCard, dashboardJson, handleCardSelect, mergedI18n, onCardChange]
@@ -550,16 +553,18 @@ const DashboardEditor = ({
    */
   const duplicateCard = useCallback(
     (id) => {
-      setDashboardJson((dashboard) => {
-        const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
-        const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
-        dashboard.cards.splice(originalCardIndex, 0, cardConfig);
+      let selectedCard;
+      setDashboardJson((prevDashboardJson) => {
+        selectedCard = prevDashboardJson.cards.find((card) => card.id === id);
+        const cardConfig = getDuplicateCard(selectedCard);
+        const originalCardIndex = prevDashboardJson.cards.findIndex((card) => card.id === id);
+        prevDashboardJson.cards.splice(originalCardIndex, 0, cardConfig);
         return {
-          ...dashboard,
-          cards: dashboard.cards,
+          ...prevDashboardJson,
+          cards: prevDashboardJson.cards,
         };
       });
-      handleCardSelect(id);
+      handleCardSelect(selectedCard);
       setNeedsScroll(true);
     },
     [handleCardSelect]
@@ -571,10 +576,9 @@ const DashboardEditor = ({
    */
   const removeCard = useCallback(
     (id) =>
-      // eslint-disable-next-line no-shadow
-      setDashboardJson((dashboardJson) => ({
-        ...dashboardJson,
-        cards: dashboardJson.cards.filter((i) => i.id !== id),
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: prevDashboardJson.cards.filter((i) => i.id !== id),
       })),
     []
   );
@@ -615,12 +619,12 @@ const DashboardEditor = ({
       }
 
       // TODO: this is really inefficient
-      setDashboardJson((oldJSON) => ({
-        ...oldJSON,
-        cards: oldJSON.cards.map((card) =>
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: prevDashboardJson.cards.map((card) =>
           card.id === cardConfig.id
             ? onCardChange
-              ? onCardChange(cardConfig, oldJSON)
+              ? onCardChange(cardConfig, prevDashboardJson)
               : cardConfig
             : card
         ),
@@ -660,7 +664,8 @@ const DashboardEditor = ({
     [dashboardJson.cards, handleOnCardChange, selectedCardId]
   );
   const handleEditTitle = useCallback(
-    (newTitle) => setDashboardJson((oldJSON) => ({ ...oldJSON, title: newTitle })),
+    (newTitle) =>
+      setDashboardJson((prevDashboardJson) => ({ ...prevDashboardJson, title: newTitle })),
     []
   );
 
@@ -753,8 +758,7 @@ const DashboardEditor = ({
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
                   deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
-                  // TODO: pass testId in v3 to override defaults
-                  // testId={`${testId}-image-gallery-modal`}
+                  testId={`${testId}-image-gallery-modal`}
                 />
                 <DashboardGrid
                   isEditable
@@ -767,8 +771,8 @@ const DashboardEditor = ({
                     if (onLayoutChange) {
                       onLayoutChange(newLayout, newLayouts);
                     }
-                    setDashboardJson((oldDashboard) => ({
-                      ...oldDashboard,
+                    setDashboardJson((prevDashboardJson) => ({
+                      ...prevDashboardJson,
                       layouts: newLayouts,
                     }));
                   }}

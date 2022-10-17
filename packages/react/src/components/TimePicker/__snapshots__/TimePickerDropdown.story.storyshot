@@ -16,7 +16,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="time-picker"
       onBlur={[Function]}
       onKeyDown={[Function]}
-      tabIndex={-1}
+      onKeyUp={[Function]}
     >
       <div
         className="iot--time-picker__wrapper iot--time-picker__wrapper-md"
@@ -45,24 +45,19 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 onChange={[Function]}
                 onClick={[Function]}
                 onFocus={[Function]}
-                pattern={/\\[0-9: APM\\]/}
-                placeholder="hh:mm"
+                placeholder="hh:mm XM"
                 readOnly={false}
-                title="hh:mm"
+                title="hh:mm XM"
                 type="text"
                 value=""
               />
             </div>
           </div>
         </div>
-        <button
-          aria-label="Open time picker"
+        <div
           className="iot--time-picker__icon"
           data-testid="time-picker-time-btn"
-          onClick={[Function]}
-          tabIndex="0"
           title="Open time picker"
-          type="button"
         >
           <svg
             aria-hidden={true}
@@ -81,7 +76,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               d="M20.59 22L15 16.41 15 7 17 7 17 15.58 22 20.59 20.59 22z"
             />
           </svg>
-        </button>
+        </div>
       </div>
       <p
         className="bx--form__helper-text"
@@ -116,7 +111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      tabIndex={0}
+      tabIndex={-1}
       type="button"
     >
       <svg
@@ -217,7 +212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onMouseDown={[Function]}
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
-            tabIndex={0}
+            tabIndex={-1}
             type="button"
           >
             03
@@ -464,7 +459,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       onMouseDown={[Function]}
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
-      tabIndex={0}
+      tabIndex={-1}
       type="button"
     >
       <svg
@@ -522,7 +517,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg
@@ -623,7 +618,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               03
@@ -870,7 +865,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg
@@ -910,7 +905,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg
@@ -1011,7 +1006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               30
@@ -2458,7 +2453,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg
@@ -2498,7 +2493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg
@@ -2549,7 +2544,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onMouseDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
-              tabIndex={0}
+              tabIndex={-1}
               type="button"
             >
               AM
@@ -2596,7 +2591,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         onMouseDown={[Function]}
         onMouseEnter={[Function]}
         onMouseLeave={[Function]}
-        tabIndex={0}
+        tabIndex={-1}
         type="button"
       >
         <svg

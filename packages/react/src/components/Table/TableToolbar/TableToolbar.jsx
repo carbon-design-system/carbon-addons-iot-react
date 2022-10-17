@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -120,6 +120,7 @@ const propTypes = {
     onApplySearch: PropTypes.func,
     onDownloadCSV: PropTypes.func,
     onApplyToolbarAction: PropTypes.func,
+    onSearchExpand: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -172,6 +173,8 @@ const propTypes = {
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     /** toolbar actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
     toolbarActions: TableToolbarActionsPropType,
+    /** force hide Clear all filters button in toolbar */
+    hideClearAllFiltersButton: PropTypes.bool,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowsPropTypes.isRequired,
@@ -229,6 +232,7 @@ const TableToolbar = ({
     onChangeAdvancedFilter,
     onToggleAdvancedFilter,
     onApplyToolbarAction,
+    onSearchExpand,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -247,6 +251,7 @@ const TableToolbar = ({
     columns,
     ordering,
     toolbarActions,
+    hideClearAllFiltersButton,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -255,7 +260,21 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
-  const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
+  const { isExpanded: searchIsExpanded, onExpand, ...search } = searchProp ?? {};
+
+  /**
+   * Needed to force update component if search input is cleared from outside of TableToolbar
+   * Reference: https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
+   */
+  const [forceRenderCount, setForceRenderCount] = useState(0);
+
+  useEffect(() => {
+    if (document.activeElement?.tagName === 'INPUT') {
+      return;
+    }
+
+    setForceRenderCount((prevValue) => prevValue + 1);
+  }, [search.defaultValue]);
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -420,8 +439,8 @@ const TableToolbar = ({
                 // The userViewManagement also needs to be able to set the search.defaultValue
                 // while typing without loosing input focus.
                 hasUserViewManagement
-                  ? 'table-toolbar-search'
-                  : `table-toolbar-search${search.defaultValue}${search.value}`
+                  ? `table-toolbar-search-${forceRenderCount}`
+                  : `table-toolbar-search-user-view-${forceRenderCount}`
               }
               defaultValue={search.defaultValue || search.value}
               className="table-toolbar-search"
@@ -454,9 +473,13 @@ const TableToolbar = ({
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
               expanded={searchIsExpanded || undefined}
+              onExpand={(...args) => {
+                if (onExpand) onExpand(args); // Deprecated callback
+                if (onSearchExpand) onSearchExpand(args);
+              }}
             />
           ) : null}
-          {totalFilters > 0 ? (
+          {totalFilters > 0 && !hideClearAllFiltersButton ? (
             <Button
               kind="secondary"
               onClick={onClearAllFilters}
@@ -522,6 +545,7 @@ const TableToolbar = ({
                 advancedFilterFlyoutOpen,
                 ordering,
                 hasFastFilter: hasAdvancedFilter === 'onKeyPress',
+                isDisabled,
               }}
               i18n={{
                 ...pick(

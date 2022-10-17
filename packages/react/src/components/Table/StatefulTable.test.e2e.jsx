@@ -73,7 +73,9 @@ describe('StatefulTable', () => {
       />
     );
     cy.get('tr').should('have.length', 101);
+
     cy.findByRole('searchbox')
+      .focus()
       .type('Ia2eQMSi8i{enter}')
       .should(() => {
         expect(onApplySearch).to.have.been.callCount(1);
@@ -110,7 +112,9 @@ describe('StatefulTable', () => {
     );
     // 100 rows plus the header
     cy.get('tr').should('have.length', 101);
+
     cy.findByRole('searchbox')
+      .focus()
       .type('Ia2eQMSi8i')
       .should(() => {
         expect(onApplySearch).to.have.been.callCount(10);
@@ -147,7 +151,9 @@ describe('StatefulTable', () => {
     );
     // 100 rows plus the header
     cy.get('tr').should('have.length', 101);
+
     cy.findByRole('searchbox')
+      .focus()
       .type('Ia2eQMSi8i{enter}')
       .should(() => {
         expect(onApplySearch).to.have.been.callCount(1);
@@ -192,7 +198,7 @@ describe('StatefulTable', () => {
     // isn't open by default.
     cy.findByRole('search').should('not.have.class', `${prefix}--toolbar-search-container-active`);
 
-    cy.findByPlaceholderText('Search').type('testing{enter}');
+    cy.findByRole('searchbox').focus().type('testing{enter}');
 
     // is open now that we have a search value.
     cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
@@ -233,7 +239,8 @@ describe('StatefulTable', () => {
 
     cy.findByRole('search').should('have.class', `${prefix}--toolbar-search-container-active`);
 
-    cy.findByPlaceholderText('Search')
+    cy.findByRole('searchbox')
+      .focus()
       .type('testing{enter}')
       .should(() => {
         expect(onApplySearch).to.have.been.called;

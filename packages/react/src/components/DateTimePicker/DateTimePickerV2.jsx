@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as uuid from 'uuid';
 
 import DateTimePickerNew, { propTypes, defaultProps } from './DateTimePickerV2WithTimeSpinner';
 import DateTimePickerOld from './DateTimePickerV2WithoutTimeSpinner';
@@ -15,6 +14,7 @@ const DateTimePicker = ({
   relatives,
   expanded,
   disabled,
+  invalid,
   showRelativeOption,
   showCustomRangeLink,
   hasTimeInput,
@@ -24,7 +24,7 @@ const DateTimePicker = ({
   i18n,
   light,
   locale,
-  id = uuid.v4(),
+  id,
   hasIconOnly,
   menuOffset,
   datePickerType,
@@ -41,6 +41,7 @@ const DateTimePicker = ({
       relatives={relatives}
       expanded={expanded}
       disabled={disabled}
+      invalid={invalid}
       showRelativeOption={showRelativeOption}
       showCustomRangeLink={showCustomRangeLink}
       hasTimeInput={hasTimeInput}
@@ -67,6 +68,7 @@ const DateTimePicker = ({
       relatives={relatives}
       expanded={expanded}
       disabled={disabled}
+      invalid={invalid}
       showRelativeOption={showRelativeOption}
       showCustomRangeLink={showCustomRangeLink}
       hasTimeInput={hasTimeInput}
