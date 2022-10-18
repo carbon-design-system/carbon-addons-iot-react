@@ -8381,6 +8381,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -9572,6 +9575,7 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderInPortal": true,
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
@@ -9991,6 +9995,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "renderPresetTooltipText": Object {
         "type": "func",
@@ -15661,6 +15668,7 @@ Map {
       "overrides": undefined,
       "padding": "default",
       "renderExpandIcon": undefined,
+      "renderInPortal": false,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,
@@ -16479,6 +16487,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -17650,6 +17661,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -18922,6 +18936,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -20216,6 +20233,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -21334,6 +21354,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -21746,6 +21769,7 @@ Map {
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
+      "renderInPortal": false,
       "size": "LARGE",
       "values": Array [],
     },
@@ -22680,6 +22704,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -23959,6 +23986,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -25346,6 +25376,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -26474,6 +26507,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -27653,6 +27689,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -28733,6 +28772,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -32763,6 +32805,9 @@ Map {
       "renderIconByName": Object {
         "type": "func",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "resizeHandles": Object {
         "type": "array",
       },
@@ -34926,6 +34971,9 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
+      },
+      "renderInPortal": Object {
+        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",

@@ -78,6 +78,8 @@ const propTypes = {
   testId: PropTypes.string,
   locale: PropTypes.string,
   dateTimeMask: PropTypes.string,
+  /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
+  renderInPortal: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -108,6 +110,7 @@ const defaultProps = {
   },
   testId: 'card-toolbar',
   dateTimeMask: 'YYYY-MM-DD HH:mm',
+  renderInPortal: false,
 };
 
 const CardToolbar = ({
@@ -125,6 +128,7 @@ const CardToolbar = ({
   locale,
   dateTimeMask,
   extraActions,
+  renderInPortal,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const langDir = useLangDirection();
@@ -277,6 +281,7 @@ const CardToolbar = ({
             )}
             defaultValue={timeRange}
             onApply={handleDateTimePickerChange}
+            renderInPortal={renderInPortal}
           />
         )
       ) : null}

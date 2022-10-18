@@ -67,6 +67,7 @@ export const Default = () => {
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
       })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -89,6 +90,7 @@ export const SelectedPreset = () => {
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
       })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -110,6 +112,7 @@ export const SelectedRelative = () => {
       i18n={object('i18n', {
         invalidText: 'The date time entered is invalid',
       })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -135,6 +138,7 @@ export const SelectedAbsolute = () => {
         endTimeLabel: 'End',
         invalidText: 'The date time entered is invalid',
       })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -168,6 +172,7 @@ export const SingleSelect = () => {
         invalidText: 'The date time entered is invalid',
       })}
       style={{ zIndex: number('zIndex', 0) }}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -194,6 +199,7 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       })}
       invalid={boolean('invalid', false)}
       disabled={boolean('disabled', false)}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };

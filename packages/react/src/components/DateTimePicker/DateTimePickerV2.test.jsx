@@ -1967,4 +1967,54 @@ describe('DateTimePickerV2', () => {
         .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
   });
+
+  it('should render in a portal when renderInPortal:true', () => {
+    render(<DateTimePicker {...dateTimePickerProps} renderInPortal />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(0);
+  });
+
+  it('should render in a portal when renderInPortal:true (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} useNewTimeSpinner renderInPortal />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(0);
+  });
+
+  it('should render as a child when renderInPortal:false', () => {
+    render(<DateTimePicker {...dateTimePickerProps} renderInPortal={false} />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelector('.iot--flyout-menu--tooltip-anchor')
+    ).toHaveAttribute('data-floating-menu-container', 'true');
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(1);
+  });
+
+  it('should render as a child when renderInPortal:false (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} useNewTimeSpinner renderInPortal={false} />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelector('.iot--flyout-menu--tooltip-anchor')
+    ).toHaveAttribute('data-floating-menu-container', 'true');
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(1);
+  });
 });

@@ -184,6 +184,8 @@ export const propTypes = {
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
   /** Date picker types are single and range, default is range */
   datePickerType: PropTypes.string,
+  /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
+  renderInPortal: PropTypes.bool,
   style: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -271,6 +273,7 @@ export const defaultProps = {
   hasIconOnly: false,
   menuOffset: undefined,
   datePickerType: 'range',
+  renderInPortal: true,
   style: {},
 };
 
@@ -297,6 +300,7 @@ const DateTimePicker = ({
   hasIconOnly,
   menuOffset,
   datePickerType,
+  renderInPortal,
   style,
   ...others
 }) => {
@@ -935,7 +939,7 @@ const DateTimePicker = ({
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
-            renderInPortal
+            renderInPortal={renderInPortal}
             tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
