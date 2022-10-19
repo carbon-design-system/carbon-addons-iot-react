@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.42](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.41...v2.151.0-next.42) (2022-10-19)
+
+
+### Bug Fixes
+
+* **onEditDataItem:** timestamp bug ([1f1141d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1f1141dd02f6a6730672d5bff89aed2dddb4b4c2))
+* **onEditDataItem:** timestamp bug ([7a04bb9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7a04bb99fe3d38e3ccb9ca157baa1e18ae3f1595))
+* **tableCardFormContent:** added noop back ([5ff6c9b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5ff6c9b1c6def211294e1df92d9235ea03c18c88))
+* **tableCardFormContent.test:** failing ci ([ffcb731](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ffcb731b1fecce9a93b8c53e31af5bc879b40171))
+
+
+
+
+
 # [2.151.0-next.41](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.40...v2.151.0-next.41) (2022-10-17)
 
 
