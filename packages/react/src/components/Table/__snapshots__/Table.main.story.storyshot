@@ -37271,7 +37271,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="expand"
+                headers="row-1-row-expand"
               >
                 <button
                   aria-label="Click to collapse content"
@@ -40312,7 +40312,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="expand"
+                headers="row-1-row-expand"
               >
                 <button
                   aria-label="Click to collapse content"
