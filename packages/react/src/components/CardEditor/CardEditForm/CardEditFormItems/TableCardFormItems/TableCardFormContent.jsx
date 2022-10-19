@@ -230,8 +230,18 @@ const TableCardFormContent = ({
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
     (card) => {
-      // Consider existing thresholds outside columns
-      const allThresholds = thresholds?.map((threshold) => ({ ...threshold })) || [];
+      // Get datasource from columns with thresholds
+      const columnThresholdDataSource =
+        card?.content?.columns
+          ?.filter((column) => column?.thresholds?.length)
+          ?.map((column) => column.dataSourceId) || [];
+
+      // Consider existing thresholds outside columns and filter existing thresholds from edited column
+      const allThresholds =
+        thresholds
+          ?.filter(({ dataSourceId }) => !columnThresholdDataSource.includes(dataSourceId))
+          ?.map((threshold) => ({ ...threshold })) || [];
+
       // the table card is looking for the thresholds on the main content object
       const updatedColumns = card?.content?.columns?.map(
         // eslint-disable-next-line no-unused-vars
