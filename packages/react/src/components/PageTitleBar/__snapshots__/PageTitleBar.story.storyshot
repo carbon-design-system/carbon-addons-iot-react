@@ -398,6 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           <th
                             className="bx--table-expand"
                             data-testid="null-table-head-row-expansion-column"
+                            id="expand"
                             scope="col"
                           />
                           <th
@@ -2601,6 +2602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           <th
                             className="bx--table-expand"
                             data-testid="null-table-head-row-expansion-column"
+                            id="expand"
                             scope="col"
                           />
                           <th

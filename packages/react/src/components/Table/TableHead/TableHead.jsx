@@ -436,6 +436,7 @@ const TableHead = ({
       >
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
+            id="expand"
             // TODO: remove deprecated 'testID' in v3
             data-testid={`${testID || testId}-row-expansion-column`}
             className={classnames({

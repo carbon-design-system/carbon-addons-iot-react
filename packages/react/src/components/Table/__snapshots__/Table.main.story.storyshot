@@ -36750,6 +36750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <th
                 className="bx--table-expand"
                 data-testid="null-table-head-row-expansion-column"
+                id="expand"
                 scope="col"
               />
               <th
@@ -37271,7 +37272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="row-1-row-expand"
+                headers="expand"
               >
                 <button
                   aria-label="Click to collapse content"
@@ -39791,6 +39792,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <th
                 className="bx--table-expand"
                 data-testid="null-table-head-row-expansion-column"
+                id="expand"
                 scope="col"
               />
               <th
@@ -40312,7 +40314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="row-1-row-expand"
+                headers="expand"
               >
                 <button
                   aria-label="Click to collapse content"

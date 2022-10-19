@@ -295,6 +295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="expand"
                       scope="col"
                     />
                     <th
@@ -8625,6 +8626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="expand"
                       scope="col"
                     />
                     <th
@@ -12871,6 +12873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="expand"
                       scope="col"
                     />
                     <th
@@ -16368,6 +16371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="expand"
                       scope="col"
                     />
                     <th
