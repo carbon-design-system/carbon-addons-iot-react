@@ -17,7 +17,6 @@ import {
   svgAttributes,
   eventHandlers,
 } from '../constants/HTMLAttributes';
-import { FILTER_EMPTY_STRING } from '../constants/Filters';
 
 import dayjs from './dayjs';
 
@@ -337,10 +336,6 @@ export const isEmptyString = (str) => typeof str === 'string' && str.length === 
  * @returns {Boolean} found or not
  */
 export const caseInsensitiveSearch = (keys, searchTerm) => {
-  if (searchTerm === FILTER_EMPTY_STRING) {
-    return keys.some((key) => isEmptyString(key));
-  }
-
   return keys.some((key) => key.toLowerCase().includes(searchTerm.toLowerCase()));
 };
 
