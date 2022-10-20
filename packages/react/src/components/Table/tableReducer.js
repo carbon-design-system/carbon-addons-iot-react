@@ -570,6 +570,24 @@ export const tableReducer = (state = {}, action) => {
           )
         );
 
+      const columns = get(state, 'columns');
+      const filtersInit = get(state, 'view.filters');
+
+      // allow filtering by empty string during the table initialization
+      const filters = filtersInit.map((filter) => {
+        if (isEmptyString(filter.value)) {
+          const emptyFilterId = filter.columnId;
+          const columnWithEmptyFilter = columns.find((el) => el.id === emptyFilterId);
+          if (!isEmpty(columnWithEmptyFilter.filter.options)) {
+            return {
+              ...filter,
+              value: FILTER_EMPTY_STRING,
+            };
+          }
+        }
+        return filter;
+      });
+
       const activeBar = view?.toolbar?.activeBar;
       return update(state, {
         data: {
@@ -596,8 +614,8 @@ export const tableReducer = (state = {}, action) => {
                 updatedData,
                 get(state, 'view.table.sort'),
                 { value: searchTermFromState },
-                get(state, 'view.filters'),
-                get(state, 'columns'),
+                filters,
+                columns,
                 selectedAdvancedFilters
               ),
             },
