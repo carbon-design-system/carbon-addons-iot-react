@@ -777,7 +777,7 @@ describe('FilterHeaderRow', () => {
         filters={[
           {
             columnId: 'col1',
-            value: 'test1',
+            value: 'two',
           },
         ]}
       />
@@ -785,7 +785,7 @@ describe('FilterHeaderRow', () => {
 
     expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
     userEvent.click(screen.getByPlaceholderText('Choose an option'));
-    userEvent.click(screen.getAllByRole('option')[0]);
+    userEvent.click(screen.getByText('empty string'));
     expect(commonFilterProps.onApplyFilter).toHaveBeenCalledTimes(1);
     expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('empty string');
   });
@@ -816,7 +816,7 @@ describe('FilterHeaderRow', () => {
         filters={[
           {
             columnId,
-            value: 'test1',
+            value: 'two',
           },
         ]}
       />
@@ -824,9 +824,142 @@ describe('FilterHeaderRow', () => {
 
     expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
     userEvent.click(screen.getByPlaceholderText('Choose an option'));
-    userEvent.click(screen.getAllByRole('option')[0]);
+    userEvent.click(screen.getByText('empty string'));
     expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
       [columnId]: FILTER_EMPTY_STRING,
+    });
+  });
+
+  it('should render filter with initial select empty string option', () => {
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: 'col1',
+            isFilterable: true,
+            options: [
+              {
+                id: '',
+                text: 'empty string',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnId: 'col1',
+            value: '',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('empty string');
+  });
+
+  it('should pass an array of selected items to callback when isMultiselect', () => {
+    jest.resetAllMocks();
+    const columnIdOne = 'col1';
+
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: columnIdOne,
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: 'one',
+                text: 'One',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnIdOne,
+            value: 'one',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByText('One'));
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
+      [columnIdOne]: ['One'],
+    });
+
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByText('Two'));
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
+      [columnIdOne]: ['One', 'Two'],
+    });
+  });
+
+  it('should pass an array of selected items to callback when isMultiselect with empty string filter', () => {
+    jest.resetAllMocks();
+    const columnIdOne = 'col1';
+
+    render(
+      <FilterHeaderRow
+        showExpanderColumn
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }]}
+        columns={[
+          {
+            id: columnIdOne,
+            isFilterable: true,
+            isMultiselect: true,
+            options: [
+              {
+                id: '',
+                text: 'Emptiness',
+              },
+              {
+                id: 'two',
+                text: 'Two',
+              },
+            ],
+          },
+        ]}
+        filters={[
+          {
+            columnIdOne,
+            value: 'two',
+          },
+        ]}
+      />
+    );
+
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByText('Emptiness'));
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
+      [columnIdOne]: [FILTER_EMPTY_STRING],
+    });
+
+    userEvent.click(screen.getByPlaceholderText('Choose an option'));
+    userEvent.click(screen.getByText('Two'));
+    expect(commonFilterProps.onApplyFilter).toHaveBeenCalledWith({
+      [columnIdOne]: [FILTER_EMPTY_STRING, 'Two'],
     });
   });
 });
