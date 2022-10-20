@@ -320,6 +320,7 @@ const TableCardFormContent = ({
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
       // Call back function for on click of edit button
+      /* istanbul ignore else */
       if (onEditDataItem) {
         const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
         if (!isEmpty(aggregationMethods)) {

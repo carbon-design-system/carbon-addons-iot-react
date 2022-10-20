@@ -558,6 +558,88 @@ describe('TableCardFormContent', () => {
       },
     });
   });
+
+  it('edit mode with dataitems edits threshold correctly', async () => {
+    const mockOnChange = jest.fn();
+    const mockCardConfig = {
+      ...commonCardConfig,
+      content: {
+        columns: [
+          {
+            label: 'Timestamp',
+            dataSourceId: 'timestamp',
+            type: 'TIMESTAMP',
+          },
+          {
+            label: 'Manufacturer',
+            dataSourceId: 'manufacturer',
+            dataItemType: 'DIMENSION',
+          },
+          {
+            label: 'Temperature',
+            dataSourceId: 'temperature',
+          },
+        ],
+        thresholds: [
+          {
+            color: '#da1e28',
+            comparison: '<',
+            dataSourceId: 'temperature',
+            icon: 'Warning alt',
+            value: 10,
+          },
+          {
+            color: '#da1e28',
+            comparison: '<',
+            dataSourceId: 'manufacturer',
+            icon: 'Warning alt',
+            value: 0,
+          },
+        ],
+      },
+    };
+    render(
+      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+    );
+
+    const th1Expected = expect.objectContaining({
+      color: '#da1e28',
+      comparison: '<',
+      dataSourceId: 'temperature',
+      icon: 'Warning alt',
+      value: 10,
+    });
+
+    const th2Expected = expect.objectContaining({
+      color: '#da1e28',
+      comparison: '<',
+      dataSourceId: 'manufacturer',
+      icon: 'Warning alt',
+      value: 0,
+    });
+
+    const th3Expected = expect.objectContaining({
+      color: '#da1e28',
+      comparison: '>',
+      dataSourceId: 'manufacturer',
+      icon: 'Warning alt',
+      value: 0,
+    });
+
+    // Ensure save does not duplicate thresholds
+    await fireEvent.click(screen.queryAllByLabelText('Edit')[1]);
+    expect(screen.queryByText('Customize data series')).toBeDefined();
+    fireEvent.click(screen.queryByText(/Add threshold/));
+    fireEvent.click(screen.queryByText('Save'));
+    expect(mockOnChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        content: expect.objectContaining({
+          thresholds: expect.arrayContaining([th1Expected, th2Expected, th3Expected]),
+        }),
+      })
+    );
+  });
+
   it('edit mode with dataitems leaves threshold blank correctly', async () => {
     const mockOnChange = jest.fn();
     const mockCardConfig = {
