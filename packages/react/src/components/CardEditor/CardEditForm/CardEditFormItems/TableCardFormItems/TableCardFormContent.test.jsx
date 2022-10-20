@@ -172,7 +172,6 @@ describe('TableCardFormContent', () => {
     // the callback for onChange should be called
     expect(mockOnChange).toHaveBeenCalledWith({
       ...commonCardConfig,
-      ...commonCardConfig,
       content: {
         columns: [
           {
@@ -627,7 +626,15 @@ describe('TableCardFormContent', () => {
       },
     };
     render(
-      <TableCardFormContent {...commonProps} onChange={mockOnChange} cardConfig={mockCardConfig} />
+      <TableCardFormContent
+        {...commonProps}
+        onChange={mockOnChange}
+        cardConfig={mockCardConfig}
+        onEditDataItem={jest.fn().mockImplementation(() => [
+          { id: 'none', text: 'None' },
+          { id: 'mean', text: 'Mean' },
+        ])}
+      />
     );
 
     await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[1]);

@@ -1932,8 +1932,10 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--invalid`)
     ).toBe(true);
+    userEvent.click(screen.getByText(i18n.invalidText));
+    expect(screen.queryByRole('dialog', { 'aria-labelledby': 'flyout-tooltip' })).toBeNull();
   });
 
   it('should show invalid text when in invalid state (new time spinner)', () => {
@@ -1942,8 +1944,10 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-invalid`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--invalid`)
     ).toBe(true);
+    userEvent.click(screen.getByText(i18n.invalidText));
+    expect(screen.queryByRole('dialog', { 'aria-labelledby': 'flyout-tooltip' })).toBeNull();
   });
 
   it('should disable menu button when disabled is set', () => {
@@ -1951,7 +1955,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
   });
 
@@ -1960,7 +1964,7 @@ describe('DateTimePickerV2', () => {
     expect(
       screen
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
-        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button-disabled`)
+        .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
   });
 });
