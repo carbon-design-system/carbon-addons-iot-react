@@ -18,7 +18,14 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../../constants/Settings';
 import FlyoutMenu, { FlyoutMenuDirection } from '../../FlyoutMenu/FlyoutMenu';
-import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
+import {
+  defaultFunction,
+  handleEnterKeyDown,
+  getFilterValue,
+  getAppliedFilterText,
+  getMultiSelectItems,
+  getMultiselectFilterValue,
+} from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix, prefix } = settings;
 
@@ -368,15 +375,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                             label={column.placeholderText || 'Choose an option'}
                             itemToString={itemToString('text')}
                             titleText={column.name}
-                            initialSelectedItems={
-                              Array.isArray(columnFilterValue)
-                                ? columnFilterValue.map((value) =>
-                                    typeof value !== 'object' ? { id: value, text: value } : value
-                                  )
-                                : columnFilterValue
-                                ? [{ id: columnFilterValue, text: columnFilterValue }]
-                                : []
-                            }
+                            initialSelectedItems={getMultiSelectItems(column, columnFilterValue)}
                             onChange={(evt) => {
                               const { selectedItems } = evt;
                               setFilterState((prev) => {
@@ -384,7 +383,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                                   ...prev,
                                   simple: {
                                     ...prev.simple,
-                                    [column.id]: selectedItems.map((item) => item.text),
+                                    [column.id]: selectedItems.map(getMultiselectFilterValue),
                                   },
                                 };
                               });
@@ -403,11 +402,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           itemToString={itemToString('text')}
                           initialSelectedItem={{
                             id: columnFilterValue,
-                            text: (
-                              column.options.find((option) => option.id === columnFilterValue) || {
-                                text: '',
-                              }
-                            ).text,
+                            text: getAppliedFilterText(column, columnFilterValue),
                           }}
                           placeholder={column.placeholderText || 'Choose an option'}
                           titleText={column.name}
@@ -418,7 +413,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                                 ...prev,
                                 simple: {
                                   ...prev.simple,
-                                  [column.id]: selectedItem === null ? '' : selectedItem.id,
+                                  [column.id]: getFilterValue(selectedItem),
                                 },
                               };
                             });
