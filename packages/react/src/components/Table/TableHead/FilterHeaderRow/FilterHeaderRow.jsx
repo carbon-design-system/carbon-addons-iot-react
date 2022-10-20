@@ -8,7 +8,7 @@ import {
   FilterableMultiSelect,
 } from 'carbon-components-react';
 import { Close16 } from '@carbon/icons-react';
-import { memoize, debounce, isEqual } from 'lodash-es';
+import { memoize, debounce, isEqual, isNil } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 
@@ -16,6 +16,10 @@ import {
   defaultFunction,
   handleEnterKeyDown,
   isEmptyString,
+  getFilterValue,
+  getAppliedFilterText,
+  getMultiselectFilterValue,
+  getMultiSelectItems,
 } from '../../../../utils/componentUtilityFunctions';
 import { settings } from '../../../../constants/Settings';
 import { FILTER_EMPTY_STRING } from '../../../../constants/Filters';
@@ -23,16 +27,17 @@ import ComboBox from '../../../ComboBox/ComboBox';
 
 const { iotPrefix, prefix } = settings;
 
-const getFilterValue = (selectedItem) => {
-  if (selectedItem === null) {
-    return '';
-  }
-
-  if (isEmptyString(selectedItem.id)) {
+const getFilterForState = (filters, col) => {
+  const appliedFilter = filters.find((i) => i.columnId === col.id);
+  if (appliedFilter && col.options && isEmptyString(appliedFilter.value)) {
     return FILTER_EMPTY_STRING;
   }
 
-  return selectedItem.id;
+  if (appliedFilter && !isNil(appliedFilter.value)) {
+    return appliedFilter.value;
+  }
+
+  return '';
 };
 
 class FilterHeaderRow extends Component {
@@ -136,11 +141,7 @@ class FilterHeaderRow extends Component {
     filterValues: this.props.columns.reduce(
       (acc, curr) => ({
         ...acc,
-        [curr.id]: (
-          this.props.filters.find((i) => i.columnId === curr.id) || {
-            value: '',
-          }
-        ).value,
+        [curr.id]: getFilterForState(this.props.filters, curr),
       }),
       {}
     ),
@@ -153,7 +154,7 @@ class FilterHeaderRow extends Component {
       const newFilters = props.columns.reduce(
         (acc, curr) => ({
           ...acc,
-          [curr.id]: (props.filters.find((i) => i.columnId === curr.id) || { value: '' }).value,
+          [curr.id]: getFilterForState(props.filters, curr),
         }),
         {}
       );
@@ -330,21 +331,13 @@ class FilterHeaderRow extends Component {
                   items={memoizeColumnOptions(column.options)}
                   label={column.placeholderText || 'Choose an option'}
                   itemToString={(item) => item.text}
-                  initialSelectedItems={
-                    Array.isArray(columnStateValue)
-                      ? columnStateValue.map((value) =>
-                          typeof value !== 'object' ? { id: value, text: value } : value
-                        )
-                      : columnStateValue
-                      ? [{ id: columnStateValue, text: columnStateValue }]
-                      : []
-                  }
+                  initialSelectedItems={getMultiSelectItems(column, columnStateValue)}
                   onChange={(evt) => {
                     this.setState(
                       (state) => ({
                         filterValues: {
                           ...state.filterValues,
-                          [column.id]: evt.selectedItems.map((item) => item.text),
+                          [column.id]: evt.selectedItems.map(getMultiselectFilterValue),
                         },
                       }),
                       this.handleApplyFilter
@@ -367,21 +360,7 @@ class FilterHeaderRow extends Component {
                   itemToString={(item) => (item ? item.text : '')}
                   initialSelectedItem={{
                     id: columnStateValue,
-                    text: (
-                      column.options.find((option) => {
-                        if (columnStateValue === FILTER_EMPTY_STRING && option.id === '') {
-                          return true;
-                        }
-
-                        if (option.id === '') {
-                          return false;
-                        }
-
-                        return option.id === columnStateValue;
-                      }) || {
-                        text: '',
-                      }
-                    ).text, // eslint-disable-line react/destructuring-assignment
+                    text: getAppliedFilterText(column, columnStateValue),
                   }}
                   placeholder={column.placeholderText || 'Choose an option'}
                   onChange={(selectedItem) => {
