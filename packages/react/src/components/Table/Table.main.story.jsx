@@ -34,7 +34,6 @@ import {
   addColumnGroupIds,
   getTableActions,
   getTableColumns,
-  getTableColumnWithEmptySelectFilter,
   getTableData,
   getTableDataWithEmptySelectFilter,
   getTableToolbarActions,
@@ -59,6 +58,7 @@ import {
   getCustomErrorState,
   getCustomToolbarContentElement,
   getSelectDataOptions,
+  decorateTableColumns,
 } from './Table.story.helpers';
 import MockApiClient from './AsyncTable/MockApiClient';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -158,6 +158,8 @@ export const Playground = () => {
     searchIsExpanded,
     useRadioButtonSingleSelect,
     hideClearAllFiltersButton,
+    hasEmptyFilterOption,
+    hasMultiSelectFilter,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -183,6 +185,8 @@ export const Playground = () => {
         'hasOnlyPageData',
         'useRadioButtonSingleSelect',
         'hideClearAllFiltersButton',
+        'hasEmptyFilterOption',
+        'hasMultiSelectFilter',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -267,7 +271,11 @@ export const Playground = () => {
   const toolbarActions = demoToolbarActions ? getTableToolbarActions() : undefined;
   const customToolbarContent = demoCustomToolbarContent ? customToolbarContentElement : undefined;
   const expandedData = hasRowExpansion ? getExpandedData(data) : [];
-  const columns = [...(demoEmptyColumns ? [] : getTableColumns())]
+  const columns = [
+    ...(demoEmptyColumns
+      ? []
+      : decorateTableColumns(getTableColumns(), hasEmptyFilterOption, hasMultiSelectFilter)),
+  ]
     .map((column, index) => ({
       ...column,
       isSortable: (hasMultiSort || demoSingleSort) && index !== 1,
@@ -708,6 +716,7 @@ export const WithFiltering = () => {
     hasAdvancedFilter,
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
+    hasMultiSelectFilter,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
@@ -715,6 +724,7 @@ export const WithFiltering = () => {
       'hasAdvancedFilter',
       'hideClearAllFiltersButton',
       'hasEmptyFilterOption',
+      'hasMultiSelectFilter',
     ],
     getDefaultValue: (knobName) => {
       if (knobName === 'hasAdvancedFilter') {
@@ -729,6 +739,10 @@ export const WithFiltering = () => {
         return false;
       }
 
+      if (knobName === 'hasMultiSelectFilter') {
+        return false;
+      }
+
       return true;
     },
   });
@@ -738,9 +752,10 @@ export const WithFiltering = () => {
     ? getTableDataWithEmptySelectFilter().slice(0, 30)
     : getTableData().slice(0, 30);
 
-  const columns = (hasEmptyFilterOption
-    ? getTableColumnWithEmptySelectFilter()
-    : getTableColumns()
+  const columns = decorateTableColumns(
+    getTableColumns(),
+    hasEmptyFilterOption,
+    hasMultiSelectFilter
   ).map((col) =>
     col.id === 'object'
       ? {

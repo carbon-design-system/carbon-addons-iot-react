@@ -13,6 +13,7 @@ import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
 import EmptyState from '../EmptyState';
 import Dropdown from '../Dropdown/Dropdown';
+import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -93,7 +94,7 @@ const getSelectDataOptionsWithEmptyOption = () => {
   const selectOptions = getSelectDataOptions();
   selectOptions.splice(2, 1, {
     id: '',
-    text: '',
+    text: EMPTY_STRING_DISPLAY_VALUE,
   });
   return selectOptions;
 };
@@ -279,16 +280,6 @@ export const getTableColumns = () => [
     },
   },
 ];
-
-export const getTableColumnWithEmptySelectFilter = () => {
-  const tableColumns = getTableColumns();
-  tableColumns.splice(2, 1, {
-    id: 'select',
-    name: 'Select',
-    filter: { placeholderText: 'pick an option', options: getSelectDataOptionsWithEmptyOption() },
-  });
-  return tableColumns;
-};
 
 export const getTableToolbarActions = () => [
   {
@@ -1096,6 +1087,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SORT_FILTER_GROUP
         )
       : null,
+    hasMultiSelectFilter: shouldCreate('hasMultiSelectFilter')
+      ? boolean(
+          'Allow multi-select in Select filter',
+          getDefaultValue('hasMultiSelectFilter'),
+          SORT_FILTER_GROUP
+        )
+      : null,
 
     // SEARCH_GROUP
     hasSearch: shouldCreate('hasSearch')
@@ -1674,4 +1672,46 @@ export const getInitialState = () => {
       },
     },
   };
+};
+
+const withEmptySelectFilter = (columns) => {
+  const selectFilterIndex = columns.findIndex((el) => el.id === 'select');
+  columns.splice(selectFilterIndex, 1, {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      ...columns[selectFilterIndex].filter,
+      options: getSelectDataOptionsWithEmptyOption(),
+    },
+  });
+  return columns;
+};
+
+const withMultiSelect = (columns) => {
+  const selectFilterIndex = columns.findIndex((el) => el.id === 'select');
+  columns.splice(selectFilterIndex, 1, {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      ...columns[selectFilterIndex].filter,
+      isMultiselect: true,
+    },
+  });
+  return columns;
+};
+
+export const decorateTableColumns = (columnsInit, hasEmptyFilterOption, hasMultiSelectFilter) => {
+  if (hasEmptyFilterOption && !hasMultiSelectFilter) {
+    return withEmptySelectFilter(columnsInit);
+  }
+
+  if (hasMultiSelectFilter && !hasEmptyFilterOption) {
+    return withMultiSelect(columnsInit);
+  }
+
+  if (hasMultiSelectFilter && hasEmptyFilterOption) {
+    return withMultiSelect(withEmptySelectFilter(columnsInit));
+  }
+
+  return columnsInit;
 };
