@@ -32,7 +32,12 @@ import {
   tableCancelMultiSortColumns,
   tableClearMultiSortColumns,
 } from './tableActionCreators';
-import { getTableColumns, getInitialState } from './Table.story.helpers';
+import {
+  getTableColumns,
+  getInitialState,
+  getTableDataWithEmptySelectFilter,
+  decorateTableColumns,
+} from './Table.story.helpers';
 
 const initialState = getInitialState();
 
@@ -740,6 +745,31 @@ describe('table reducer', () => {
       );
       expect(modifiedRowEditState.view.toolbar.rowEditBarButtons).toEqual(<div>updated</div>);
       expect(modifiedRowEditState.view.table.singleRowEditButtons).toEqual(<div>updated</div>);
+    });
+
+    it('REGISTER_TABLE with empty string filtering', () => {
+      const modifiedInitialState = getInitialState();
+      const hasEmptyFilterOption = true;
+      const hasMultiSelectFilter = false;
+
+      modifiedInitialState.columns = decorateTableColumns(
+        getTableColumns(),
+        hasEmptyFilterOption,
+        hasMultiSelectFilter
+      );
+
+      modifiedInitialState.data = getTableDataWithEmptySelectFilter();
+
+      modifiedInitialState.view.filters = [
+        {
+          columnId: 'select',
+          value: '',
+        },
+      ];
+
+      const tableWithEmptyStringFilter = tableReducer(modifiedInitialState, tableRegister({}));
+
+      expect(tableWithEmptyStringFilter.view.table.filteredData).toHaveLength(33);
     });
   });
 });
