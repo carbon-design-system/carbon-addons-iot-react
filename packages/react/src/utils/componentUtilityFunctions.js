@@ -11,6 +11,7 @@ import {
   ROW_HEIGHT,
   DASHBOARD_COLUMNS,
 } from '../constants/LayoutConstants';
+import { FILTER_EMPTY_STRING, EMPTY_STRING_DISPLAY_VALUE } from '../constants/Filters';
 import {
   reactAttributes,
   htmlAttributes,
@@ -459,4 +460,97 @@ export const handleSpecificKeyDown = (keys, callback) => (evt) => {
   if (keys.includes(evt.key)) {
     callback(evt);
   }
+};
+
+/**
+ * Returns filter id (includes special constant for empty string)
+ * @param {string} selectedItem filter value
+ * @returns {string}
+ */
+export const getFilterValue = (selectedItem) => {
+  if (selectedItem === null) {
+    return '';
+  }
+
+  if (isEmptyString(selectedItem.id)) {
+    return FILTER_EMPTY_STRING;
+  }
+
+  return selectedItem.id;
+};
+
+/**
+ * Returns filter id for multiselect (includes special constant for empty string)
+ * @param {string} selectedItem filter value
+ * @returns {string}
+ */
+export const getMultiselectFilterValue = (selectedItem) => {
+  if (isEmptyString(selectedItem.id)) {
+    return FILTER_EMPTY_STRING;
+  }
+
+  return selectedItem.text;
+};
+
+/**
+ * Returns filter text (includes check for empty string)
+ * @param {Object} column table column containing applied filter
+ * @param {*} filterValue
+ * @returns {string} text to display in input field
+ */
+export const getAppliedFilterText = (column, filterValue) => {
+  const filter = column.options.find((option) => {
+    if (filterValue === FILTER_EMPTY_STRING && option.id === '') {
+      return true;
+    }
+
+    if (option.id === '') {
+      return false;
+    }
+
+    return option.id === filterValue;
+  });
+
+  if (filter) {
+    return filter.text;
+  }
+
+  return '';
+};
+
+const getSelectedItem = (value, emptyValue) => {
+  if (typeof value === 'object') {
+    return value;
+  }
+
+  if (value === FILTER_EMPTY_STRING) {
+    return { id: '', text: emptyValue };
+  }
+
+  return { id: value, text: value };
+};
+
+/**
+ * Returns array with selected filters (includes check for empty string)
+ * @param {Object} column table column containing applied filter
+ * @param {*} filterValue
+ * @returns {Object[]} selected filters
+ */
+export const getMultiSelectItems = (column, filterValue) => {
+  const filterWithEmptyString = column?.options.find((filter) => isEmptyString(filter.id));
+  const displayEmptyValue = filterWithEmptyString?.text ?? EMPTY_STRING_DISPLAY_VALUE;
+
+  if (Array.isArray(filterValue)) {
+    return filterValue.map((value) => getSelectedItem(value, displayEmptyValue));
+  }
+
+  if (filterValue === FILTER_EMPTY_STRING) {
+    return [{ id: '', text: displayEmptyValue }];
+  }
+
+  if (filterValue) {
+    return [{ id: filterValue, text: filterValue }];
+  }
+
+  return [];
 };
