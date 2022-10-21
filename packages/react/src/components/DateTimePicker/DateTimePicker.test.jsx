@@ -767,6 +767,16 @@ describe('DateTimePicker', () => {
     expect(applyBytton).toBeDisabled();
   });
 
+  it('should disable apply button when switching from presets to relative then to absolute with empty startDate and endDate', () => {
+    render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
+    jest.runAllTimers();
+
+    userEvent.click(screen.getByTestId('date-time-picker__field'));
+    userEvent.click(screen.getByText('Custom Range'));
+    userEvent.click(screen.getByText('Absolute'));
+    expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
+  });
+
   it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
     const { i18n } = DateTimePicker.defaultProps;
 
@@ -949,6 +959,12 @@ describe('DateTimePicker', () => {
     expect(screen.getByLabelText('Relative')).toBeChecked();
   });
 
+  it('should be able to generate default id', () => {
+    render(<DateTimePicker {...dateTimePickerProps} testId="date-time-picker" />);
+    expect(screen.getByTestId('date-time-picker').getAttribute('id')).toMatch(
+      /-iot--date-time-picker__wrapper/
+    );
+  });
   it('should show invalid text when in invalid state', () => {
     render(<DateTimePicker {...dateTimePickerProps} i18n={i18n} invalid />);
     expect(screen.getByText(i18n.invalidText)).toBeInTheDocument();

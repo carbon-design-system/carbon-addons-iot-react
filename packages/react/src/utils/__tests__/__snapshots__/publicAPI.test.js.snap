@@ -781,6 +781,7 @@ Map {
         "toolbar": Object {
           "advancedFilterFlyoutOpen": false,
           "batchActions": Array [],
+          "hideClearAllFiltersButton": false,
           "search": Object {},
         },
       },
@@ -904,6 +905,9 @@ Map {
                     "type": "func",
                   },
                   "onRemoveAdvancedFilter": Object {
+                    "type": "func",
+                  },
+                  "onSearchExpand": Object {
                     "type": "func",
                   },
                   "onShowRowEdit": Object {
@@ -2146,6 +2150,9 @@ Map {
                   "customToolbarContent": Object {
                     "type": "node",
                   },
+                  "hideClearAllFiltersButton": Object {
+                    "type": "bool",
+                  },
                   "isDisabled": Object {
                     "type": "bool",
                   },
@@ -2164,12 +2171,8 @@ Map {
                         "isExpanded": Object {
                           "type": "bool",
                         },
-                        "onChange": Object {
-                          "type": "func",
-                        },
-                        "onExpand": Object {
-                          "type": "func",
-                        },
+                        "onChange": [Function],
+                        "onExpand": [Function],
                         "value": [Function],
                       },
                     ],
@@ -4317,6 +4320,9 @@ Map {
             "onDownloadCSV": Object {
               "type": "func",
             },
+            "onSearchExpand": Object {
+              "type": "func",
+            },
             "onShowRowEdit": Object {
               "type": "func",
             },
@@ -5081,6 +5087,9 @@ Map {
               ],
               "type": "oneOf",
             },
+            "hideClearAllFiltersButton": Object {
+              "type": "bool",
+            },
             "isDisabled": Object {
               "type": "bool",
             },
@@ -5121,12 +5130,8 @@ Map {
                   "isExpanded": Object {
                     "type": "bool",
                   },
-                  "onChange": Object {
-                    "type": "func",
-                  },
-                  "onExpand": Object {
-                    "type": "func",
-                  },
+                  "onChange": [Function],
+                  "onExpand": [Function],
                   "value": [Function],
                 },
               ],
@@ -8829,7 +8834,7 @@ Map {
       "i18n": Object {
         "invalidText": "The time entered is invalid",
         "placeholderText": "hh:mm XM",
-        "placeholderText24h": "hh:mm",
+        "placeholderText24h": "HH:mm",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,

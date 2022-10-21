@@ -120,6 +120,7 @@ const propTypes = {
     onApplySearch: PropTypes.func,
     onDownloadCSV: PropTypes.func,
     onApplyToolbarAction: PropTypes.func,
+    onSearchExpand: PropTypes.func,
   }).isRequired,
   /**
    * Inbound tableState
@@ -172,6 +173,8 @@ const propTypes = {
     selectedAdvancedFilterIds: PropTypes.arrayOf(PropTypes.string),
     /** toolbar actions that can appear in an overflow menu in the toolbar (same menu as toggle aggregations) */
     toolbarActions: TableToolbarActionsPropType,
+    /** force hide Clear all filters button in toolbar */
+    hideClearAllFiltersButton: PropTypes.bool,
   }).isRequired,
   /** Row value data for the body of the table */
   data: TableRowsPropTypes.isRequired,
@@ -229,6 +232,7 @@ const TableToolbar = ({
     onChangeAdvancedFilter,
     onToggleAdvancedFilter,
     onApplyToolbarAction,
+    onSearchExpand,
   },
   tableState: {
     advancedFilterFlyoutOpen,
@@ -247,6 +251,7 @@ const TableToolbar = ({
     columns,
     ordering,
     toolbarActions,
+    hideClearAllFiltersButton,
   },
   data,
   // TODO: remove deprecated 'testID' in v3
@@ -255,7 +260,7 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
-  const { isExpanded: searchIsExpanded, ...search } = searchProp ?? {};
+  const { isExpanded: searchIsExpanded, onExpand, ...search } = searchProp ?? {};
 
   /**
    * Needed to force update component if search input is cleared from outside of TableToolbar
@@ -468,9 +473,13 @@ const TableToolbar = ({
               // TODO: remove deprecated 'testID' in v3
               data-testid={`${testID || testId}-search`}
               expanded={searchIsExpanded || undefined}
+              onExpand={(...args) => {
+                if (onExpand) onExpand(args); // Deprecated callback
+                if (onSearchExpand) onSearchExpand(args);
+              }}
             />
           ) : null}
-          {totalFilters > 0 ? (
+          {totalFilters > 0 && !hideClearAllFiltersButton ? (
             <Button
               kind="secondary"
               onClick={onClearAllFilters}

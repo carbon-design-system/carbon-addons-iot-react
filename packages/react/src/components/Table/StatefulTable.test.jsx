@@ -1,7 +1,7 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { merge, pick } from 'lodash-es';
-import { screen, render, fireEvent, act } from '@testing-library/react';
+import { merge, pick, cloneDeep } from 'lodash-es';
+import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
 
@@ -504,6 +504,37 @@ describe('stateful table with real reducer', () => {
       }
     });
   });
+  it('should execute callback upon opening/closing search input', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.focus(searchField);
+    expect(mockActions.toolbar.onSearchExpand).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onSearchExpand.mock.calls[0][0]).toEqual([expect.anything(), true]);
+    act(() => fireEvent.blur(searchField));
+    await waitFor(() => {
+      expect(mockActions.toolbar.onSearchExpand.mock.calls[1][0]).toEqual([
+        expect.anything(),
+        false,
+      ]);
+    });
+  });
   it('should display empty table state when no search results', () => {
     render(
       <StatefulTable
@@ -556,6 +587,34 @@ describe('stateful table with real reducer', () => {
     fireEvent.click(clearFiltersButton);
     expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalledTimes(1);
   });
+  it('should preserve search when all filters has been cleared', async () => {
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.search = {
+      defaultValue: 'irrelevant search 123123',
+    };
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const emptyState = screen.getByTestId('EmptyState');
+    const clearAllFiltersButton = screen.getByText('Clear all filters');
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    const comboBoxFilter = screen.getByDisplayValue('option-B');
+
+    expect(emptyState).toBeInTheDocument();
+    expect(clearAllFiltersButton).toBeInTheDocument();
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(comboBoxFilter).toBeInTheDocument();
+
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+
+    // Filtering by search has been preserved
+    expect(emptyState).toBeInTheDocument();
+
+    // Column filters has been reset
+    expect(clearAllFiltersButton).not.toBeInTheDocument();
+    expect(whiteboardFilter).not.toBeInTheDocument();
+    expect(comboBoxFilter).not.toBeInTheDocument();
+  });
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
@@ -571,6 +630,50 @@ describe('stateful table with real reducer', () => {
       )
     ).not.toThrowError();
   });
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled and activeBar is undefined', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+    initialStateCopy.view.toolbar.activeBar = undefined;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" after rerender with new props', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const { rerender } = render(<StatefulTable {...initialState} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.getByText('Clear all filters')).toBeInTheDocument();
+
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    rerender(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
   describe('AdvancedFilters', () => {
     it('properly filters the table when advancedRules have simple logic', async () => {
       const { container } = render(

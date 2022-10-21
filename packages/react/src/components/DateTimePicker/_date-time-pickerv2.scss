@@ -101,13 +101,13 @@
     outline: 2px solid $danger-01;
   }
 
-  .#{$iot-prefix}--date-time-picker__helper-text--invalid {
-    color: $text-error;
-  }
-
   .#{$iot-prefix}--date-time-picker__box--disabled {
     border: none;
   }
+}
+
+.#{$iot-prefix}--date-time-picker__helper-text--invalid {
+  color: $text-error;
 }
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--disabled {
@@ -141,9 +141,6 @@
       width: var(--wrapper-width);
       padding-top: $spacing-05;
       padding-bottom: $spacing-07;
-      .#{$iot-prefix}--time-picker-dropdown button {
-        padding-right: $spacing-02;
-      }
     }
   }
 
@@ -269,13 +266,17 @@
   margin-top: -0.35rem;
 }
 
-.#{$iot-prefix}--date-time-picker--trigger-button-invalid.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
+.#{$iot-prefix}--date-time-picker--trigger-button.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+  overflow: hidden;
+}
+
+.#{$iot-prefix}--date-time-picker--trigger-button--invalid.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
   svg.bx--btn__icon
   path {
   fill: $danger-01;
 }
 
-.#{$iot-prefix}--date-time-picker--trigger-button-disabled.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
+.#{$iot-prefix}--date-time-picker--trigger-button--disabled.#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger
   svg.bx--btn__icon
   path {
   fill: $disabled-02;

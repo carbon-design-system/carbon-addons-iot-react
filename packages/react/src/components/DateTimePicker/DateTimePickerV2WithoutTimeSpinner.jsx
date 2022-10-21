@@ -579,7 +579,9 @@ const DateTimePicker = ({
   const disableAbsoluteApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
-    (absoluteStartTimeInvalid || absoluteEndTimeInvalid);
+    (absoluteStartTimeInvalid ||
+      absoluteEndTimeInvalid ||
+      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
@@ -768,11 +770,10 @@ const DateTimePicker = ({
             buttonProps={{
               tooltipPosition: 'top',
               tabIndex: -1,
-              className: invalidState
-                ? `${iotPrefix}--date-time-picker--trigger-button-invalid`
-                : disabled
-                ? `${iotPrefix}--date-time-picker--trigger-button-disabled`
-                : '',
+              className: classnames(`${iotPrefix}--date-time-picker--trigger-button`, {
+                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalid,
+                [`${iotPrefix}--date-time-picker--trigger-button--disabled`]: disabled,
+              }),
             }}
             hideTooltip
             iconDescription={mergedI18n.calendarLabel}
@@ -1038,17 +1039,17 @@ const DateTimePicker = ({
             </div>
           </FlyoutMenu>
         </div>
-        {invalidState && !hasIconOnly ? (
-          <p
-            className={classnames(
-              `${prefix}--form__helper-text`,
-              `${iotPrefix}--date-time-picker__helper-text--invalid`
-            )}
-          >
-            {mergedI18n.invalidText}
-          </p>
-        ) : null}
       </div>
+      {invalidState && !hasIconOnly ? (
+        <p
+          className={classnames(
+            `${prefix}--form__helper-text`,
+            `${iotPrefix}--date-time-picker__helper-text--invalid`
+          )}
+        >
+          {mergedI18n.invalidText}
+        </p>
+      ) : null}
     </div>
   );
 };

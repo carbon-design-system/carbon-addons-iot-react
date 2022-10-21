@@ -50,6 +50,7 @@ export const Default = () => {
     <DateTimePicker
       id="datetimepicker"
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      useNewTimeSpinner={boolean('useNewTimeSpinner', true)}
       relatives={[
         {
           label: 'Yesterday',
@@ -141,9 +142,11 @@ export const SelectedAbsolute = () => {
 SelectedAbsolute.storyName = 'Selected absolute';
 
 export const SingleSelect = () => {
+  const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
   return (
     <DateTimePicker
       id="datetimepicker"
+      key={dateTimeMask}
       useNewTimeSpinner
       defaultValue={{
         timeRangeKind: PICKER_KINDS.SINGLE,
@@ -152,7 +155,7 @@ export const SingleSelect = () => {
           startTime: '12:34',
         },
       }}
-      dateTimeMask="YYYY-MM-DD hh:mm A"
+      dateTimeMask={dateTimeMask}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
@@ -172,12 +175,14 @@ export const SingleSelect = () => {
 SingleSelect.storyName = 'Single select with new time spinner';
 
 export const SelectedAbsoluteWithNewTimeSpinner = () => {
+  const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
   return (
     <DateTimePicker
       id="datetimepicker"
+      key={dateTimeMask}
       useNewTimeSpinner
       defaultValue={defaultAbsoluteValue}
-      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      dateTimeMask={dateTimeMask}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
