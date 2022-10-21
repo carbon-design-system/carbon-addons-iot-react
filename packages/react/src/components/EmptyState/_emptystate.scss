@@ -3,6 +3,8 @@
 @import '../../globals/typography';
 
 .#{$iot-prefix}--empty-state {
+  $parent-container: &;
+
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -12,6 +14,11 @@
     margin-bottom: $spacing-05;
     height: 80px;
     width: auto;
+
+    #{$parent-container}--inline & {
+      grid-row: 1/5;
+      grid-column: 1/2;
+    }
   }
 
   &--icon--sm {
@@ -21,6 +28,14 @@
   &--content {
     max-width: 30rem;
     overflow-wrap: break-word;
+
+    #{$parent-container}--inline & {
+      display: grid;
+    }
+
+    #{$parent-container}--inline &--with-gap {
+      column-gap: $spacing-05;
+    }
   }
 
   &--title {
@@ -28,6 +43,10 @@
     color: $text-01;
     margin-bottom: $spacing-03;
     word-break: break-word;
+
+    #{$parent-container}--inline & {
+      grid-column: 2/2;
+    }
   }
 
   &--title--sm {
@@ -38,15 +57,27 @@
   &--text {
     color: $text-01;
     @include type-style('body-short-01');
+
+    #{$parent-container}--inline & {
+      grid-column: 2/2;
+    }
   }
 
   &--action {
     margin-top: $spacing-05;
+
+    #{$parent-container}--inline & {
+      grid-column: 2/2;
+    }
   }
 
   &--link {
     margin-top: $spacing-05;
     @include type-style('body-short-01');
     color: $interactive-01;
+
+    #{$parent-container}--inline & {
+      grid-column: 2/2;
+    }
   }
 }

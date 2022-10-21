@@ -69,6 +69,8 @@ const props = {
   testId: PropTypes.string,
   /** Size of the empty state */
   size: PropTypes.oneOf([DEFAULT_SIZE, SMALL_SIZE]),
+  /** Arrangement of the empty state */
+  arrangement: PropTypes.oneOf(['stacked', 'inline']),
 };
 
 const defaultProps = {
@@ -78,6 +80,7 @@ const defaultProps = {
   className: '',
   testId: 'EmptyState',
   size: 'default',
+  arrangement: 'stacked',
 };
 
 /**
@@ -94,15 +97,22 @@ const EmptyState = ({
   testId,
   testID,
   size,
+  arrangement,
 }) => {
   const isSmall = size === SMALL_SIZE;
   return (
     <div
-      className={classnames(`${iotPrefix}--empty-state`, className)}
+      className={classnames(`${iotPrefix}--empty-state`, className, {
+        [`${iotPrefix}--empty-state--inline`]: arrangement === 'inline',
+      })}
       // TODO: remove deprecated testID in v3.
       data-testid={testID || testId}
     >
-      <div className={`${iotPrefix}--empty-state--content`}>
+      <div
+        className={classnames(`${iotPrefix}--empty-state--content`, {
+          [`${iotPrefix}--empty-state--content--with-gap`]: !!icon,
+        })}
+      >
         {icon &&
           React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
             className: classnames(`${iotPrefix}--empty-state--icon`, {
