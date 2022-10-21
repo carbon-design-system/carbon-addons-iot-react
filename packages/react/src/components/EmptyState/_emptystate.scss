@@ -14,6 +14,10 @@
     width: auto;
   }
 
+  &--icon--sm {
+    height: 64px;
+  }
+
   &--content {
     max-width: 30rem;
     overflow-wrap: break-word;
@@ -24,6 +28,11 @@
     color: $text-01;
     margin-bottom: $spacing-03;
     word-break: break-word;
+  }
+
+  &--title--sm {
+    @include type-style('productive-heading-02');
+    margin-bottom: $spacing-02;
   }
 
   &--text {

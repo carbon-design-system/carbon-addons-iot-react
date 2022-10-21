@@ -27,6 +27,15 @@ const icons = {
   success: SuccessImage,
 };
 
+const smallIconProps = {
+  width: 64,
+  height: 64,
+  viewBox: '0 0 80 80',
+};
+
+const SMALL_SIZE = 'small';
+const DEFAULT_SIZE = 'default';
+
 const props = {
   /** Title of empty state */
   title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
@@ -58,6 +67,8 @@ const props = {
   ),
   /** Specify a testid for testing this component */
   testId: PropTypes.string,
+  /** Size of the empty state */
+  size: PropTypes.oneOf([DEFAULT_SIZE, SMALL_SIZE]),
 };
 
 const defaultProps = {
@@ -66,13 +77,25 @@ const defaultProps = {
   icon: '',
   className: '',
   testId: 'EmptyState',
+  size: 'default',
 };
 
 /**
  * Component to set empty states
  * For reference, visit https://pages.github.ibm.com/ai-applications/design/components/empty-states/usage/
  */
-const EmptyState = ({ title, icon, body, action, secondaryAction, className, testId, testID }) => {
+const EmptyState = ({
+  title,
+  icon,
+  body,
+  action,
+  secondaryAction,
+  className,
+  testId,
+  testID,
+  size,
+}) => {
+  const isSmall = size === SMALL_SIZE;
   return (
     <div
       className={classnames(`${iotPrefix}--empty-state`, className)}
@@ -82,12 +105,17 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
       <div className={`${iotPrefix}--empty-state--content`}>
         {icon &&
           React.createElement(typeof icon === 'string' ? icons[icon] : icon, {
-            className: `${iotPrefix}--empty-state--icon`,
+            className: classnames(`${iotPrefix}--empty-state--icon`, {
+              [`${iotPrefix}--empty-state--icon--sm`]: isSmall,
+            }),
             alt: '',
             'data-testid': `${testID || testId}-icon`,
+            ...(isSmall && smallIconProps),
           })}
         <h3
-          className={`${iotPrefix}--empty-state--title`}
+          className={classnames(`${iotPrefix}--empty-state--title`, {
+            [`${iotPrefix}--empty-state--title--sm`]: isSmall,
+          })}
           // TODO: remove deprecated testID in v3.
           data-testid={`${testID || testId}-title`}
         >
@@ -110,7 +138,11 @@ const EmptyState = ({ title, icon, body, action, secondaryAction, className, tes
             // TODO: remove deprecated testID in v3.
             data-testid={`${testID || testId}-action`}
           >
-            <Button kind={action.kind} onClick={action.onClick} size="field">
+            <Button
+              kind={action.kind}
+              onClick={action.onClick}
+              size={isSmall ? SMALL_SIZE : 'field'}
+            >
               {action.label}
             </Button>
           </div>
