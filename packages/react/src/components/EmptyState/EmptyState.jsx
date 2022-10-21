@@ -110,7 +110,7 @@ const EmptyState = ({
     >
       <div
         className={classnames(`${iotPrefix}--empty-state--content`, {
-          [`${iotPrefix}--empty-state--content--with-gap`]: !!icon,
+          [`${iotPrefix}--empty-state--content--with-gap`]: arrangement === 'inline' && !!icon,
         })}
       >
         {icon &&
