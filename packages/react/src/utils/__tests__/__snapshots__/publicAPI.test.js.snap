@@ -10370,9 +10370,11 @@ Map {
   "EmptyState" => Object {
     "defaultProps": Object {
       "action": null,
+      "arrangement": "stacked",
       "className": "",
       "icon": "",
       "secondaryAction": null,
+      "size": "default",
       "testId": "EmptyState",
     },
     "propTypes": Object {
@@ -10416,6 +10418,15 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "arrangement": Object {
+        "args": Array [
+          Array [
+            "stacked",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
       },
       "body": Object {
         "args": Array [
@@ -10472,6 +10483,15 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
       },
       "testID": [Function],
       "testId": Object {
