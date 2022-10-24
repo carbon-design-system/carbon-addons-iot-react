@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.45...v2.151.0-next.46) (2022-10-24)
+
+
+### Features
+
+* **emptystate:** add arrangement prop ([2c25d84](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2c25d849b83a3f50d479b434c8195e9806792b2b)), closes [#3545](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3545)
+* **emptystate:** add small size prop ([21edc96](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/21edc967094706834e2295c31bae23c87c7998dd)), closes [#3545](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3545)
+
+
+
+
+
 # [2.151.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.44...v2.151.0-next.45) (2022-10-24)
 
 
