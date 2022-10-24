@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.45](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.44...v2.151.0-next.45) (2022-10-24)
+
+
+### Bug Fixes
+
+* **table:** add tableid-expand to expand header and row ([dee0373](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dee0373fd136b6a8a784d071a732179e75eeca15))
+* **tablebodyrow:** add expandHeader ([13fa917](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/13fa917b85d5bcd6ce0ab3efd9322bd876aec8d1))
+* **tablecardformcontent:** remove duplicate thresholds ([66e21d6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/66e21d68dff686452a6902d884ccbe7bf4e3fc80))
+* **tablehead:** add id on tableexpandheader ([0216735](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0216735d8ad7d2a7b458eeb4464eb582b4a574fe))
+
+
+
+
+
 # [2.151.0-next.44](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.43...v2.151.0-next.44) (2022-10-19)
 
 
