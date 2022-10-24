@@ -398,6 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           <th
                             className="bx--table-expand"
                             data-testid="null-table-head-row-expansion-column"
+                            id="table-12-expand"
                             scope="col"
                           />
                           <th
@@ -1351,7 +1352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                         >
                           <td
                             className="bx--table-expand"
-                            headers="expand"
+                            headers="table-12-expand"
                           >
                             <button
                               aria-label="Click to expand content"
@@ -1737,7 +1738,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                         >
                           <td
                             className="bx--table-expand"
-                            headers="expand"
+                            headers="table-12-expand"
                           >
                             <button
                               aria-label="Click to expand content"
@@ -2601,6 +2602,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                           <th
                             className="bx--table-expand"
                             data-testid="null-table-head-row-expansion-column"
+                            id="table-13-expand"
                             scope="col"
                           />
                           <th
@@ -3554,7 +3556,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                         >
                           <td
                             className="bx--table-expand"
-                            headers="expand"
+                            headers="table-13-expand"
                           >
                             <button
                               aria-label="Click to expand content"
@@ -3940,7 +3942,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                         >
                           <td
                             className="bx--table-expand"
-                            headers="expand"
+                            headers="table-13-expand"
                           >
                             <button
                               aria-label="Click to expand content"
