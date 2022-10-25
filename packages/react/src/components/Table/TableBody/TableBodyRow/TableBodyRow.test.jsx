@@ -419,8 +419,8 @@ describe('TableBodyRow', () => {
     expect(mockActions.onRowClicked).toHaveBeenCalledWith(tableRowProps.id);
   });
 
-  it('calls onRowSelected & onRowClicked when selected rows with hasRowSelection:"single" and radio buttoon are clicked', () => {
-    render(
+  it('calls only onRowSelected when selected rows with hasRowSelection:"single" and radio button are clicked', () => {
+    const { container } = render(
       <TableBodyRow
         {...tableRowProps}
         tableActions={mockActions}
@@ -438,9 +438,10 @@ describe('TableBodyRow', () => {
     );
     expect(mockActions.onRowSelected).not.toHaveBeenCalled();
     expect(mockActions.onRowClicked).not.toHaveBeenCalled();
-    userEvent.click(screen.getByRole('cell', { name: 'value1' }));
+    userEvent.click(container.querySelector('input'));
     expect(mockActions.onRowSelected).toHaveBeenCalledWith(tableRowProps.id, true);
-    expect(mockActions.onRowClicked).toHaveBeenCalledWith(tableRowProps.id);
+    // Click on radio button does not fire onRowClicked
+    expect(mockActions.onRowClicked).not.toHaveBeenCalledWith(tableRowProps.id);
   });
 
   it('does not call onRowSelected when expanded rows with hasRowSelection:"single" are clicked if isSelectable:"false"', () => {
