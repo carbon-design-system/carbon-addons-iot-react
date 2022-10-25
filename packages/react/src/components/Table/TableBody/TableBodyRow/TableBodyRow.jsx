@@ -457,7 +457,9 @@ const TableBodyRow = ({
       onClick={() => {
         if (isSelectable !== false) {
           onRowClicked(id);
-          onRowSelected(id, !isSelected);
+          if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
+            onRowSelected(id, !isSelected);
+          }
         }
       }}
     >
@@ -474,7 +476,7 @@ const TableBodyRow = ({
       key={id}
       onClick={() => {
         if (isSelectable !== false) {
-          if (hasRowSelection === 'single') {
+          if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
             onRowSelected(id, true);
           }
           onRowClicked(id);
