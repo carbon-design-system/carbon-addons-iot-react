@@ -249,7 +249,6 @@ const TableBodyRow = ({
       <TableCell
         className={`${prefix}--radiobutton-table-cell`}
         key={`${id}-row-selection-cell`}
-        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
         onClick={(e) => e.stopPropagation()}
       >
         <span
