@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.151.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.46...v2.151.0-next.47) (2022-10-25)
+
+
+### Bug Fixes
+
+* **table:** remove duplicating onRowSelected callback ([33f2deb](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/33f2deba88b13c1029110656c13ac4eea5610710)), closes [#3616](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3616)
+
+
+
+
+
 # [2.151.0-next.46](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.45...v2.151.0-next.46) (2022-10-24)
 
 
