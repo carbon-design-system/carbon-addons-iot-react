@@ -132,6 +132,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
+.#{$iot-prefix}--table__row--background td {
+  background-color: $ui-03;
+}
+
 .#{$iot-prefix}--table__row--singly-selected,
 .#{$iot-prefix}--expandable-tablerow--singly-selected {
   cursor: pointer;

@@ -452,6 +452,7 @@ const TableBodyRow = ({
     <TableRow
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
+        [`${iotPrefix}--table__row--background`]: isSelected,
       })}
       key={id}
       onClick={() => {
