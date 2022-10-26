@@ -29,6 +29,7 @@ const DateTimePicker = ({
   menuOffset,
   datePickerType,
   renderInPortal,
+  useAutoPositioning,
   style,
   ...others
 }) => {
@@ -57,6 +58,7 @@ const DateTimePicker = ({
       menuOffset={menuOffset}
       datePickerType={datePickerType}
       renderInPortal={renderInPortal}
+      useAutoPositioning={useAutoPositioning}
       style={style}
       others={others}
     />
@@ -85,6 +87,7 @@ const DateTimePicker = ({
       menuOffset={menuOffset}
       datePickerType={datePickerType}
       renderInPortal={renderInPortal}
+      useAutoPositioning={useAutoPositioning}
       style={style}
       others={others}
     />

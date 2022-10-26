@@ -9581,6 +9581,7 @@ Map {
       "showRelativeOption": true,
       "style": Object {},
       "testId": "date-time-picker",
+      "useAutoPositioning": false,
       "useNewTimeSpinner": false,
     },
     "propTypes": Object {
@@ -10018,6 +10019,9 @@ Map {
       },
       "testId": Object {
         "type": "string",
+      },
+      "useAutoPositioning": Object {
+        "type": "bool",
       },
       "useNewTimeSpinner": Object {
         "type": "bool",

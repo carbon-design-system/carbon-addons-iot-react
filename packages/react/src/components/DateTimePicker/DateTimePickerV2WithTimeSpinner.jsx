@@ -186,6 +186,8 @@ export const propTypes = {
   datePickerType: PropTypes.string,
   /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
   renderInPortal: PropTypes.bool,
+  /** Auto reposition if flyout menu offscreen */
+  useAutoPositioning: PropTypes.bool,
   style: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -274,6 +276,7 @@ export const defaultProps = {
   menuOffset: undefined,
   datePickerType: 'range',
   renderInPortal: true,
+  useAutoPositioning: false,
   style: {},
 };
 
@@ -301,6 +304,7 @@ const DateTimePicker = ({
   menuOffset,
   datePickerType,
   renderInPortal,
+  useAutoPositioning,
   style,
   ...others
 }) => {
@@ -940,6 +944,7 @@ const DateTimePicker = ({
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
+            useAutoPositioning={useAutoPositioning}
             tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
