@@ -152,6 +152,7 @@ export const SingleSelect = () => {
       id="datetimepicker"
       key={dateTimeMask}
       useNewTimeSpinner
+      useAutoPositioning={boolean('useAutoPositioning', true)}
       defaultValue={{
         timeRangeKind: PICKER_KINDS.SINGLE,
         timeSingleValue: {
@@ -186,6 +187,7 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       id="datetimepicker"
       key={dateTimeMask}
       useNewTimeSpinner
+      useAutoPositioning={boolean('useAutoPositioning', true)}
       defaultValue={defaultAbsoluteValue}
       dateTimeMask={dateTimeMask}
       hasTimeInput={boolean('hasTimeInput', true)}

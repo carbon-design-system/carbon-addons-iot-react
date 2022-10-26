@@ -689,7 +689,7 @@ const DateTimePicker = ({
     ? 0
     : hasIconOnly
     ? -15
-    : 274;
+    : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
   return (
