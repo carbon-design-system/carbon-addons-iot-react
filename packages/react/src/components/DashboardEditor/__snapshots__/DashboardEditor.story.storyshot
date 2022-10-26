@@ -692,7 +692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           >
                             <button
                               aria-describedby={null}
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                               data-testid="download-button"
                               disabled={true}
                               onBlur={[Function]}
@@ -729,7 +729,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             </button>
                             <button
                               aria-describedby={null}
-                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                              className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                               data-testid="filter-button"
                               disabled={true}
                               onBlur={[Function]}
@@ -20095,7 +20095,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                         >
                           <button
                             aria-describedby={null}
-                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="download-button"
                             disabled={true}
                             onBlur={[Function]}
@@ -20132,7 +20132,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                           </button>
                           <button
                             aria-describedby={null}
-                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+                            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                             data-testid="filter-button"
                             disabled={true}
                             onBlur={[Function]}
