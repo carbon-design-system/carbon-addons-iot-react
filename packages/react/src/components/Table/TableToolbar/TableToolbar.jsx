@@ -363,6 +363,7 @@ const TableToolbar = ({
               tabIndex={shouldShowBatchActions ? 0 : -1}
               size="lg"
               menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+              withCarbonTooltip
             >
               {visibleOverflowBatchActions.map(
                 ({
@@ -603,6 +604,7 @@ const TableToolbar = ({
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
               onOpen={() => setIsOpen(true)}
               onClose={() => setIsOpen(false)}
+              withCarbonTooltip
             >
               {hasAggregations && (
                 <OverflowMenuItem
