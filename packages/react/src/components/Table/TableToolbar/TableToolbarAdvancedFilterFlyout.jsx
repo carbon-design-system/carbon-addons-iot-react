@@ -332,7 +332,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           className={`${iotPrefix}--filter-flyout__simple-field`}
                         >
                           <DatePicker
-                            key={`${columnIndex}-${columnFilterValue}`}
+                            key={`datepicker-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                             datePickerType="single"
                             locale={column?.dateOptions?.locale || 'en'}
                             dateFormat={column?.dateOptions?.dateFormat || 'Y-m-d'}
@@ -365,7 +365,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                         return (
                           <FilterableMultiSelect
                             className={`${iotPrefix}--filter-flyout__simple-field`}
-                            key={`${columnIndex}-${columnFilterValue}`}
+                            key={`multiselect-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}
                             aria-label={filterAria}
                             placeholder={column.placeholderText || 'Choose an option'}
@@ -393,7 +393,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                       return (
                         <ComboBox
                           className={`${iotPrefix}--filter-flyout__simple-field`}
-                          key={columnFilterValue}
+                          key={`combobox-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                           id={`column-${columnIndex}`}
                           aria-label={filterAria}
                           translateWithId={handleTranslation}
