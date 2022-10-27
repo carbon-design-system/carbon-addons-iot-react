@@ -43,6 +43,11 @@
     & > label {
       margin-right: 100%;
     }
+
+    .#{$prefix}--list-box__selection,
+    .#{$prefix}--list-box__menu-icon {
+      padding-right: 0;
+    }
   }
 
   .#{$prefix}--tag__close-icon {
