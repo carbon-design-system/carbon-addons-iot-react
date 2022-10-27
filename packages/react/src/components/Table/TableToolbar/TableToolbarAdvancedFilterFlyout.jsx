@@ -317,8 +317,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                 >
                   {aRow.map((aColumn, columnIndex) => {
                     const column = columns.find((item) => aColumn.columnId === item.id);
-                    const { value: columnFilterValue } =
-                      filters?.find((filter) => filter.columnId === column.id) ?? {};
+                    const columnFilterValue = filterState?.simple[column.id];
                     const filterColumnOptions = (options) => {
                       options.sort((a, b) => {
                         return a.text.localeCompare(b.text, { sensitivity: 'base' });
