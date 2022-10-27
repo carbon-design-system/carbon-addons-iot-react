@@ -9,9 +9,10 @@
     @include type-style('productive-heading-02');
     padding-top: $spacing-04;
   }
-}
-.#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
-  overflow-x: hidden; // scrolling should be handled inside the table, not between the card and the table
+  &.#{$iot-prefix}--card--wrapper {
+    // Allow tooltips to display
+    overflow: visible;
+  }
 }
 
 .#{$iot-prefix}--table-card--overflow-menu {
@@ -57,7 +58,6 @@
   flex: inherit;
   height: 100%;
   position: relative;
-  overflow-y: hidden;
   .#{$prefix}--pagination {
     position: absolute;
     bottom: 0;
