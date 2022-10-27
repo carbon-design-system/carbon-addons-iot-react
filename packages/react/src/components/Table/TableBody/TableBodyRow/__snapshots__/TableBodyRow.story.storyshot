@@ -367,7 +367,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <td
               className="bx--table-expand"
-              headers="expand"
+              headers="tableId-expand"
             >
               <button
                 aria-describedby={null}
@@ -522,7 +522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <td
               className="bx--table-expand"
-              headers="expand"
+              headers="tableId-expand"
             >
               <button
                 aria-describedby={null}
@@ -722,7 +722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <td
               className="bx--table-expand"
-              headers="expand"
+              headers="tableId-expand"
             >
               <button
                 aria-describedby={null}
@@ -882,7 +882,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           >
             <td
               className="bx--table-expand"
-              headers="expand"
+              headers="tableId-expand"
             >
               <button
                 aria-describedby={null}

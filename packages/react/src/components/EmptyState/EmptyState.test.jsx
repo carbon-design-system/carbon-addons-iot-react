@@ -11,8 +11,11 @@ import {
   EmptystateNoresultsIcon as NoResultImage,
 } from '../../icons/static';
 import { DashboardIcon as CustomIcon } from '../../icons/components';
+import { settings } from '../../constants/Settings';
 
 import EmptyState from './EmptyState';
+
+const { prefix, iotPrefix } = settings;
 
 const title = 'Titletest';
 const body = 'Titlebody';
@@ -142,6 +145,42 @@ describe('EmptyState', () => {
 
     expect(screen.getByText('This is a node body')).toBeVisible();
     expect(console.error).not.toHaveBeenCalled();
+    jest.resetAllMocks();
+  });
+
+  it('should add class for inline arrangement', () => {
+    render(<EmptyState {...commonProps} arrangement="inline" testId={testID} />);
+
+    expect(screen.getByTestId(testID)).toHaveClass(`${iotPrefix}--empty-state--inline`);
+  });
+
+  it('should add column gap for layout if icon is present', () => {
+    render(<EmptyState {...commonProps} arrangement="inline" testId={testID} icon="empty" />);
+
+    expect(screen.getByTestId(testID).firstChild).toHaveClass(
+      `${iotPrefix}--empty-state--content--with-gap`
+    );
+  });
+
+  it('should add class for small empty state', () => {
+    const actionLabel = 'TestButton';
+    const actionOnClick = jest.fn();
+
+    render(
+      <EmptyState
+        {...commonProps}
+        action={{ ...action(actionLabel, actionOnClick) }}
+        size="small"
+        testId={testID}
+        icon="empty"
+      />
+    );
+
+    expect(screen.getByTestId(`${testID}-icon`)).toHaveClass(`${iotPrefix}--empty-state--icon--sm`);
+    expect(screen.getByTestId(`${testID}-title`)).toHaveClass(
+      `${iotPrefix}--empty-state--title--sm`
+    );
+    expect(screen.getByTestId(`${testID}-action`).firstChild).toHaveClass(`${prefix}--btn--sm`);
     jest.resetAllMocks();
   });
 });

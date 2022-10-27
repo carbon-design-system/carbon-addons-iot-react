@@ -36785,6 +36785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <th
                 className="bx--table-expand"
                 data-testid="null-table-head-row-expansion-column"
+                id="table-23-expand"
                 scope="col"
               />
               <th
@@ -37035,7 +37036,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -37322,7 +37323,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -37625,7 +37626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -37919,7 +37920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -38206,7 +38207,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -38500,7 +38501,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -38794,7 +38795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -39081,7 +39082,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -39375,7 +39376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -39669,7 +39670,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-23-expand"
               >
                 <button
                   aria-describedby={null}
@@ -39976,6 +39977,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <th
                 className="bx--table-expand"
                 data-testid="null-table-head-row-expansion-column"
+                id="table-24-expand"
                 scope="col"
               />
               <th
@@ -40226,7 +40228,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -40513,7 +40515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               <td
                 className="bx--table-expand"
                 data-previous-value="collapsed"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -40807,7 +40809,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -41101,7 +41103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -41419,7 +41421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -41713,7 +41715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -42000,7 +42002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -42294,7 +42296,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -42588,7 +42590,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -42875,7 +42877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -43169,7 +43171,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}
@@ -43463,7 +43465,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             >
               <td
                 className="bx--table-expand"
-                headers="expand"
+                headers="table-24-expand"
               >
                 <button
                   aria-describedby={null}

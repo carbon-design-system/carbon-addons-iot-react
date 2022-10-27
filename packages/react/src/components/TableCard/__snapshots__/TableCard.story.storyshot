@@ -303,6 +303,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -588,7 +589,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -747,7 +748,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -906,7 +907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -1065,7 +1066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -1224,7 +1225,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -1383,7 +1384,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -1542,7 +1543,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -8786,6 +8787,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -9071,7 +9073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -9274,7 +9276,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -9475,7 +9477,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -9678,7 +9680,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -9881,7 +9883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -10082,7 +10084,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -10283,7 +10285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -13153,6 +13155,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -13373,7 +13376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -13507,7 +13510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -13641,7 +13644,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -13775,7 +13778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -13909,7 +13912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -14043,7 +14046,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -14177,7 +14180,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -16771,6 +16774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -17186,7 +17190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -17389,7 +17393,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -17592,7 +17596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -17795,7 +17799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -17998,7 +18002,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -18277,7 +18281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
@@ -18511,7 +18515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-describedby={null}
