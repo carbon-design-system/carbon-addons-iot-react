@@ -139,21 +139,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-expanded={false}
             aria-haspopup={true}
-            aria-label="open and close list of options"
-            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg"
+            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg bx--btn--icon-only iot--tooltip-svg-wrapper iot--overflow-menu-icon iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="table-table-toolbar-batch-actions-overflow-menu"
+            disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
             onClose={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             open={false}
             tabIndex={-1}
             type="button"
           >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              open and close list of options
+            </div>
             <svg
+              aria-hidden="true"
               aria-label="open and close list of options"
-              className="bx--overflow-menu__icon"
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={20}
@@ -178,9 +190,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 cy="24"
                 r="2"
               />
-              <title>
-                open and close list of options
-              </title>
             </svg>
           </button>
           <button
@@ -21861,20 +21870,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         data-testid="null-table-toolbar-content"
       >
         <button
+          aria-describedby={null}
           aria-expanded={false}
           aria-haspopup={true}
-          aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md bx--btn--icon-only iot--tooltip-svg-wrapper iot--overflow-menu-icon iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="table-head--overflow"
+          disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           open={false}
+          tabIndex={0}
           type="button"
         >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          >
+            open and close list of options
+          </div>
           <svg
+            aria-hidden="true"
             aria-label="open and close list of options"
-            className="bx--overflow-menu__icon iot--table-toolbar-aggregations__overflow-icon"
+            className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
             height={20}
@@ -21899,9 +21921,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               cy="24"
               r="2"
             />
-            <title>
-              open and close list of options
-            </title>
           </svg>
         </button>
       </div>
@@ -24650,7 +24669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-describedby={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="column-selection-button"
           disabled={false}
           onBlur={[Function]}
@@ -24687,7 +24706,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </button>
         <button
           aria-describedby={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="filter-button"
           disabled={false}
           onBlur={[Function]}
@@ -25024,7 +25043,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         >
           <button
             aria-describedby={null}
-            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+            className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="row-edit-button"
             disabled={false}
             onBlur={[Function]}
@@ -28605,7 +28624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </button>
         <button
           aria-describedby={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="filter-button"
           disabled={false}
           onBlur={[Function]}
@@ -46629,21 +46648,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </svg>
           </button>
           <button
+            aria-describedby={null}
             aria-expanded={false}
             aria-haspopup={true}
-            aria-label="open and close list of options"
-            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg"
+            className="iot--table-overflow-batch-actions bx--overflow-menu bx--overflow-menu--lg bx--btn--icon-only iot--tooltip-svg-wrapper iot--overflow-menu-icon iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
             data-testid="null-table-toolbar-batch-actions-overflow-menu"
+            disabled={false}
+            onBlur={[Function]}
             onClick={[Function]}
             onClose={[Function]}
+            onFocus={[Function]}
             onKeyDown={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
             open={false}
             tabIndex={0}
             type="button"
           >
+            <div
+              className="bx--assistive-text"
+              onMouseEnter={[Function]}
+            >
+              open and close list of options
+            </div>
             <svg
+              aria-hidden="true"
               aria-label="open and close list of options"
-              className="bx--overflow-menu__icon"
+              className="bx--btn__icon"
               fill="currentColor"
               focusable="false"
               height={20}
@@ -46668,9 +46699,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 cy="24"
                 r="2"
               />
-              <title>
-                open and close list of options
-              </title>
             </svg>
           </button>
           <button
@@ -62445,7 +62473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       >
         <button
           aria-describedby={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="download-button"
           disabled={false}
           onBlur={[Function]}
@@ -62482,7 +62510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
         </button>
         <button
           aria-describedby={null}
-          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
+          className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--table-toolbar-button-active iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="table-31-toolbar-actions-button-toggle"
           disabled={false}
           onBlur={[Function]}
@@ -62518,20 +62546,33 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </svg>
         </button>
         <button
+          aria-describedby={null}
           aria-expanded={false}
           aria-haspopup={true}
-          aria-label="open and close list of options"
-          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md"
+          className="iot--table-toolbar-aggregations__overflow-menu bx--overflow-menu bx--overflow-menu--md bx--btn--icon-only iot--tooltip-svg-wrapper iot--overflow-menu-icon iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
           data-testid="table-head--overflow"
+          disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
           onClose={[Function]}
+          onFocus={[Function]}
           onKeyDown={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
           open={false}
+          tabIndex={0}
           type="button"
         >
+          <div
+            className="bx--assistive-text"
+            onMouseEnter={[Function]}
+          >
+            open and close list of options
+          </div>
           <svg
+            aria-hidden="true"
             aria-label="open and close list of options"
-            className="bx--overflow-menu__icon iot--table-toolbar-aggregations__overflow-icon"
+            className="bx--btn__icon"
             fill="currentColor"
             focusable="false"
             height={20}
@@ -62556,9 +62597,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               cy="24"
               r="2"
             />
-            <title>
-              open and close list of options
-            </title>
           </svg>
         </button>
         <div
