@@ -479,6 +479,7 @@ export const DashboardAllCardsAsResizable = () => {
   const titleTextTooltip = boolean('Demo titleTextTooltip', false) ? (
     <div>I am shown in tooltip that auto adjusts in position</div>
   ) : undefined;
+  const withToolbarTooltips = boolean('Enable toolbar tooltips in TableCard', false);
 
   const barChartCardValues = [
     {
@@ -722,6 +723,7 @@ export const DashboardAllCardsAsResizable = () => {
       onCardAction={() => {}}
       size={currentSizes.tableCard}
       isResizable={isResizable}
+      withToolbarTooltips={withToolbarTooltips}
     />,
     <ImageCard
       titleTextTooltip={titleTextTooltip}
