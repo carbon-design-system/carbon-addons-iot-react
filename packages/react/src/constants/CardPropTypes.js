@@ -130,7 +130,12 @@ export const ValueContentPropTypes = {
 export const TableCardPropTypes = {
   tooltip: PropTypes.node,
   title: PropTypes.string,
-  size: PropTypes.oneOf([CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE]),
+  size: PropTypes.oneOf([
+    CARD_SIZES.MEDIUM,
+    CARD_SIZES.MEDIUMWIDE,
+    CARD_SIZES.LARGE,
+    CARD_SIZES.LARGEWIDE,
+  ]),
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
@@ -230,6 +235,8 @@ export const TableCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
+  /** Display tooltips in the table toolbar (will reset overflow property) */
+  withToolbarTooltips: PropTypes.bool,
 };
 
 /** carbon charts legend truncation options */

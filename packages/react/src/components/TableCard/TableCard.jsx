@@ -67,6 +67,7 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
+  withToolbarTooltips: true,
 };
 
 const TableCard = ({
@@ -91,6 +92,7 @@ const TableCard = ({
   testID,
   testId,
   className,
+  withToolbarTooltips,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -550,7 +552,9 @@ const TableCard = ({
       locale={locale}
       resizeHandles={resizeHandles}
       hideHeader
-      className={classnames(`${iotPrefix}--table-card`, className)}
+      className={classnames(`${iotPrefix}--table-card`, className, {
+        [`${iotPrefix}--table-card--with-tooltips`]: withToolbarTooltips,
+      })}
       // Use the Table's loading state rather than Card's
       isLoading={false}
       // TODO: remove deprecated testID in v3.

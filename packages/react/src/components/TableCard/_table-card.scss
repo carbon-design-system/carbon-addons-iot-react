@@ -9,9 +9,29 @@
     @include type-style('productive-heading-02');
     padding-top: $spacing-04;
   }
+  .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
+    overflow-x: hidden;
+  }
+}
+
+.#{$iot-prefix}--table-card--with-tooltips {
+  // Resetting min-height since its height was more than its parent's
+  .#{$iot-prefix}-table-container--dropdown-height-fix {
+    min-height: unset;
+    .#{$prefix}--data-table-content {
+      min-height: unset;
+    }
+  }
+
+  // Allow tooltips to display
   &.#{$iot-prefix}--card--wrapper {
-    // Allow tooltips to display
     overflow: visible;
+  }
+  .#{$iot-prefix}--table-card__table {
+    overflow-y: visible;
+  }
+  .#{$iot-prefix}--card--content .#{$iot-prefix}--table-container {
+    overflow-x: visible;
   }
 }
 
@@ -58,6 +78,7 @@
   flex: inherit;
   height: 100%;
   position: relative;
+  overflow-y: hidden;
   .#{$prefix}--pagination {
     position: absolute;
     bottom: 0;
