@@ -446,25 +446,23 @@ class IotOverflowMenu extends Component {
       id,
       ariaLabel,
       children,
-      iconDescription,
+      iconDescription, // Not used, preserved for PropTypes compatibility
       direction,
       flipped,
       focusTrap,
       menuOffset,
       menuOffsetFlip,
-      iconClass,
-      onClick,
-      onOpen,
-      // eslint-disable-next-line no-unused-vars
-      selectorPrimaryFocus = '[data-floating-menu-primary-focus]',
+      iconClass, // Not used, preserved for PropTypes compatibility
+      onOpen, // Not to pollute DOM
+      selectorPrimaryFocus,
       renderIcon: IconElement,
       // eslint-disable-next-line react/prop-types
       innerRef: ref,
       menuOptionsClass,
       light,
-      size = 'md',
+      size,
       'data-testid': testId,
-      langDir,
+      langDir, // Not to pollute DOM
       tooltipPosition,
       className,
       ...other
