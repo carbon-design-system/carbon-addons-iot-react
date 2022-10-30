@@ -21768,6 +21768,7 @@ Map {
       "locale": "en",
       "size": "LARGE",
       "values": Array [],
+      "withToolbarTooltips": false,
     },
     "displayName": "TableCard",
     "propTypes": Object {
@@ -23049,6 +23050,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "withToolbarTooltips": Object {
+        "type": "bool",
       },
     },
   },
