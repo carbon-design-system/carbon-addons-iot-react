@@ -130,12 +130,7 @@ export const ValueContentPropTypes = {
 export const TableCardPropTypes = {
   tooltip: PropTypes.node,
   title: PropTypes.string,
-  size: PropTypes.oneOf([
-    CARD_SIZES.MEDIUM,
-    CARD_SIZES.MEDIUMWIDE,
-    CARD_SIZES.LARGE,
-    CARD_SIZES.LARGEWIDE,
-  ]),
+  size: PropTypes.oneOf([CARD_SIZES.LARGE, CARD_SIZES.LARGEWIDE]),
   content: PropTypes.shape({
     columns: PropTypes.arrayOf(
       PropTypes.shape({
