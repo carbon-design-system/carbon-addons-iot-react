@@ -12,7 +12,7 @@ import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
 } from 'carbon-components-react/es/internal/FloatingMenu';
-import { OverflowMenuVertical16 } from '@carbon/icons-react';
+import { OverflowMenuVertical20 } from '@carbon/icons-react';
 import { useLangDirection } from 'use-lang-direction';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
@@ -217,7 +217,7 @@ class IotOverflowMenu extends Component {
     menuOptionsClass: '',
     light: false,
     langDir: 'ltr',
-    renderIcon: OverflowMenuVertical16,
+    renderIcon: OverflowMenuVertical20,
     selectorPrimaryFocus: '[data-overflow-menu-primary-focus]',
     tooltipAlignment: 'center',
     tooltipPosition: 'top',
