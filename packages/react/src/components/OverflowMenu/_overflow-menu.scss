@@ -6,4 +6,9 @@ button.#{$prefix}--overflow-menu {
 
 button.#{$iot-prefix}--overflow-menu-icon {
   justify-content: center;
+
+  .#{$prefix}--btn__icon {
+    width: initial;
+    height: initial;
+  }
 }
