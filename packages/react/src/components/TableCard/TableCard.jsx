@@ -67,7 +67,7 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
-  withToolbarTooltips: true,
+  withToolbarTooltips: false,
 };
 
 const TableCard = ({
