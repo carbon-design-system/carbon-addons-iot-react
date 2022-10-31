@@ -21773,7 +21773,7 @@ Map {
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
-      "renderInPortal": false,
+      "renderDateDropdownInPortal": true,
       "size": "LARGE",
       "values": Array [],
     },

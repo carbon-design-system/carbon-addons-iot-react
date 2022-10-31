@@ -110,7 +110,7 @@ const defaultProps = {
   },
   testId: 'card-toolbar',
   dateTimeMask: 'YYYY-MM-DD HH:mm',
-  renderDateDropdownInPortal: false,
+  renderDateDropdownInPortal: true,
 };
 
 const CardToolbar = ({
