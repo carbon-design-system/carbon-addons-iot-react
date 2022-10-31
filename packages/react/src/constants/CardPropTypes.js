@@ -972,5 +972,5 @@ export const CardPropTypes = {
     errorMessage: OverridePropTypes,
   }),
   /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
-  renderInPortal: PropTypes.bool,
+  renderDateDropdownInPortal: PropTypes.bool,
 };
