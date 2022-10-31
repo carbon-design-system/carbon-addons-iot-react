@@ -15671,8 +15671,8 @@ Map {
       "onTouchStart": undefined,
       "overrides": undefined,
       "padding": "default",
+      "renderDateDropdownInPortal": true,
       "renderExpandIcon": undefined,
-      "renderInPortal": false,
       "rowHeight": Object {
         "lg": 144,
         "max": 144,

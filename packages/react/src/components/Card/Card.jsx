@@ -215,7 +215,7 @@ export const defaultProps = {
     extra: false,
   },
   renderExpandIcon: undefined,
-  renderInPortal: false,
+  renderDateDropdownInPortal: true,
   rowHeight: ROW_HEIGHT,
   breakpoint: DASHBOARD_SIZES.LARGE,
   cardDimensions: CARD_DIMENSIONS,
@@ -300,7 +300,7 @@ const Card = (props) => {
     onCardAction,
     availableActions,
     renderExpandIcon,
-    renderInPortal,
+    renderDateDropdownInPortal,
     breakpoint,
     i18n,
     style,
@@ -449,7 +449,7 @@ const Card = (props) => {
       width={cardSize.width}
       availableActions={mergedAvailableActions}
       renderExpandIcon={renderExpandIcon}
-      renderInPortal={renderInPortal}
+      renderDateDropdownInPortal={renderDateDropdownInPortal}
       i18n={strings}
       isEditable={isEditable}
       isExpanded={isExpanded}

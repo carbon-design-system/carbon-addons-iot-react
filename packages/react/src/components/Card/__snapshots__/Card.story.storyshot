@@ -5420,7 +5420,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   </button>
                   <div
                     className="iot--flyout-menu--tooltip-anchor"
-                    data-floating-menu-container={true}
                   >
                     <div
                       aria-describedby={null}
@@ -5581,7 +5580,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   </button>
                   <div
                     className="iot--flyout-menu--tooltip-anchor"
-                    data-floating-menu-container={true}
                   >
                     <div
                       aria-describedby={null}
