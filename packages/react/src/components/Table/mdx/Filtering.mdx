@@ -204,6 +204,87 @@ return (
 );
 ```
 
+### Filtering with an empty string in select (or multiselect) dropdown
+
+To enable filtering (single) with an empty string follow the example below:
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={[
+      {
+        id: 'string',
+        name: 'String',
+        filter: { placeholderText: 'enter a string' },
+      },
+      {
+        id: 'select',
+        name: 'Select',
+        filter: {
+          placeholderText: 'enter a date',
+          options: [
+            {
+              id: 'option-A',
+              text: 'option-A',
+            },
+            {
+              id: '',
+              text: 'Unspecified', // this text will be display in the input field
+            },
+          ],
+        },
+      },
+    ]}
+    data={data}
+    options={{
+      hasFilter: true,
+    }}
+  />
+);
+```
+
+To enable filtering (multiselect) with an empty string follow the example below:
+
+```jsx
+...
+
+return (
+  <StatefulTable
+    columns={[
+      {
+        id: 'string',
+        name: 'String',
+        filter: { placeholderText: 'enter a string' },
+      },
+      {
+        id: 'select',
+        name: 'Select',
+        filter: {
+          placeholderText: 'enter a date',
+          isMultiselect: true,
+          options: [
+            {
+              id: 'option-A',
+              text: 'option-A',
+            },
+            {
+              id: '',
+              text: 'Unspecified', // this text will be display in the input field
+            },
+          ],
+        },
+      },
+    ]}
+    data={data}
+    options={{
+      hasFilter: true,
+    }}
+  />
+);
+```
+
 ### ☢️ Advanced Filtering (Experimental)
 
 Advanced filtering is experimental and may be subject to change, so it's usage in production is discouraged, but it can be enabled by passing the `options.hasAdvancedFilters=true`. The advanced filters are created with the `RuleBuilder` component (also experimental), and are passed to the table via the `view.advancedFilters` prop. The currently selected advanced filters are passed via the `view.selectedAdvancedFilterIds` as an array of advanced filter ids. Opening the advanced filter flyout is managed via the `view.toolbar.advancedFilterFlyoutOpen=true` prop. Advanced filtering also includes simple filtering, and can be passed with the same `view.filters` prop as an array of objects with a columnId and value key.

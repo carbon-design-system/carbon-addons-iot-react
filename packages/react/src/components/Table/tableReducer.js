@@ -6,7 +6,9 @@ import {
   getSortedData,
   caseInsensitiveSearch,
   sortTableData,
+  isEmptyString,
 } from '../../utils/componentUtilityFunctions';
+import { FILTER_EMPTY_STRING } from '../../constants/Filters';
 
 import {
   TABLE_PAGE_CHANGE,
@@ -45,6 +47,20 @@ import {
 import { baseTableReducer } from './baseTableReducer';
 import { findRow } from './tableUtilities';
 
+const searchWithEmptyString = (keys, searchTerm, baseSearch) => {
+  if (searchTerm === FILTER_EMPTY_STRING) {
+    return keys.some((key) => isEmptyString(key));
+  }
+  return baseSearch(keys, searchTerm);
+};
+
+const arraySearchWithEmptyString = (arr, item) => {
+  if (arr.includes(FILTER_EMPTY_STRING) && isEmptyString(item)) {
+    return true;
+  }
+  return arr.includes(item);
+};
+
 /**
  * Default function to compare value 1 and 2
  * @param {*} value1, filter value
@@ -55,7 +71,7 @@ export const defaultComparison = (value1, value2) =>
   !isNil(value1) && typeof value1 === 'number' // only if the column value filter is not null/undefined
     ? value1 === Number(value2) // for a number type, attempt to convert filter to number and direct compare
     : !isNil(value1) && // type string do a lowercase includes comparison
-      caseInsensitiveSearch([value1?.toString()], value2?.toString());
+      searchWithEmptyString([value1?.toString()], value2?.toString(), caseInsensitiveSearch);
 
 export const runSimpleFilters = (data, filters, columns) => {
   return data.filter(({ values }) =>
@@ -76,7 +92,7 @@ export const runSimpleFilters = (data, filters, columns) => {
               acc &&
               (filterFunction
                 ? filterFunction(values[columnId], value)
-                : value.includes(values[columnId]))
+                : arraySearchWithEmptyString(value, values[columnId]))
             );
           }
           return (
@@ -87,7 +103,7 @@ export const runSimpleFilters = (data, filters, columns) => {
           );
         }
         if (Array.isArray(value) && !isEmpty(value)) {
-          return acc && value.includes(values[columnId]);
+          return acc && arraySearchWithEmptyString(value, values[columnId]);
         }
         return acc && defaultComparison(values[columnId], value);
       }
@@ -202,7 +218,11 @@ export const searchData = (data, searchString) =>
               typeof value === 'boolean'
             ) {
               if (!isNil(value)) {
-                return caseInsensitiveSearch([value.toString()], searchString.toString());
+                return searchWithEmptyString(
+                  [value.toString()],
+                  searchString.toString(),
+                  caseInsensitiveSearch
+                );
               }
             }
 
@@ -550,6 +570,24 @@ export const tableReducer = (state = {}, action) => {
           )
         );
 
+      const columns = get(state, 'columns');
+      const filtersInit = get(state, 'view.filters');
+
+      // allow filtering by empty string during the table initialization
+      const filters = filtersInit.map((filter) => {
+        if (isEmptyString(filter.value)) {
+          const emptyFilterId = filter.columnId;
+          const columnWithEmptyFilter = columns.find((el) => el.id === emptyFilterId);
+          if (!isEmpty(columnWithEmptyFilter.filter.options)) {
+            return {
+              ...filter,
+              value: FILTER_EMPTY_STRING,
+            };
+          }
+        }
+        return filter;
+      });
+
       const activeBar = view?.toolbar?.activeBar;
       return update(state, {
         data: {
@@ -576,8 +614,8 @@ export const tableReducer = (state = {}, action) => {
                 updatedData,
                 get(state, 'view.table.sort'),
                 { value: searchTermFromState },
-                get(state, 'view.filters'),
-                get(state, 'columns'),
+                filters,
+                columns,
                 selectedAdvancedFilters
               ),
             },

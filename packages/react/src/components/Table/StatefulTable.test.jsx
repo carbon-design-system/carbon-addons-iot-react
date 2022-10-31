@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
+import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
 import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
@@ -18,7 +19,14 @@ import {
   getTableColumns,
 } from './Table.test.helpers';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
-import { addChildRows, getInitialState, getRowActions, getTableData } from './Table.story.helpers';
+import {
+  addChildRows,
+  getInitialState,
+  getRowActions,
+  getTableData,
+  decorateTableColumns,
+  getTableDataWithEmptySelectFilter,
+} from './Table.story.helpers';
 
 const { prefix, iotPrefix } = settings;
 const mockActions = getMockActions(jest.fn);
@@ -271,6 +279,156 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionA).toHaveLength(4);
     expect(fourthFilteredRowsOptionB).toHaveLength(3);
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
+    expect(fourthItemCount).toBeInTheDocument();
+  });
+  it('select should filter properly with empty string value', async () => {
+    const hasEmptyFilterOption = true;
+    const hasMultiSelectFilter = false;
+
+    const { container } = render(
+      <StatefulTable
+        columns={decorateTableColumns(
+          getTableColumns(),
+          hasEmptyFilterOption,
+          hasMultiSelectFilter
+        )}
+        data={getTableDataWithEmptySelectFilter()}
+        actions={mockActions}
+        options={initialState.options}
+        view={{
+          filters: [
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: 'filter',
+          },
+          pagination: {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 1,
+          },
+        }}
+      />
+    );
+
+    // start off with a filter of option-B.
+    // Note: each options length count has an extra item due to the multiselect having the same title attribute as the row cell
+    const initialFilteredRowsOptionA = screen.queryByTitle('option-A');
+    const initialFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const initialItemCount = screen.getByText('1–10 of 33 items');
+    expect(initialFilteredRowsOptionA).toBeNull();
+    expect(initialFilteredRowsOptionB).toHaveLength(11);
+    expect(initialItemCount).toBeInTheDocument();
+
+    // next select a filter with empty string option
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: EMPTY_STRING_DISPLAY_VALUE }));
+    const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const secondFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const secondItemCount = screen.getByText('1–10 of 33 items');
+    expect(secondFilteredRowsOptionA).toEqual([]);
+    expect(secondFilteredRowsOptionB).toEqual([]);
+    expect(secondItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next select a filter with option-A
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: 'option-A' }));
+    const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const thirdFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const thirdItemCount = screen.getByText('1–10 of 34 items');
+    expect(thirdFilteredRowsOptionA).toHaveLength(11);
+    expect(thirdFilteredRowsOptionB).toEqual([]);
+    expect(thirdItemCount).toBeInTheDocument();
+
+    // next clear all filters from the select
+    const clearSelectBox = screen.getByLabelText('Clear selection');
+    expect(clearSelectBox).toBeInTheDocument();
+    userEvent.click(clearSelectBox);
+    const fourthFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const fourthFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const fourthItemCount = screen.getByText('1–10 of 100 items');
+    expect(fourthFilteredRowsOptionA).toHaveLength(4);
+    expect(fourthFilteredRowsOptionB).toHaveLength(3);
+    expect(fourthItemCount).toBeInTheDocument();
+  });
+
+  it('multiselect should filter properly with empty string value', async () => {
+    const hasEmptyFilterOption = true;
+    const hasMultiSelectFilter = true;
+
+    const { container } = render(
+      <StatefulTable
+        columns={decorateTableColumns(
+          getTableColumns(),
+          hasEmptyFilterOption,
+          hasMultiSelectFilter
+        )}
+        data={getTableDataWithEmptySelectFilter()}
+        actions={mockActions}
+        options={initialState.options}
+        view={{
+          filters: [
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: 'filter',
+          },
+          pagination: {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 1,
+          },
+        }}
+      />
+    );
+
+    // start off with a filter of option-B.
+    // Note: each options length count has an extra item due to the multiselect having the same title attribute as the row cell
+    const initialFilteredRowsOptionA = screen.queryByTitle('option-A');
+    const initialFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const initialItemCount = screen.getByText('1–10 of 33 items');
+    expect(initialFilteredRowsOptionA).toBeNull();
+    expect(initialFilteredRowsOptionB).toHaveLength(10);
+    expect(initialItemCount).toBeInTheDocument();
+
+    // next select a filter with empty string option
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: EMPTY_STRING_DISPLAY_VALUE }));
+    const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const secondFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const secondItemCount = screen.getByText('1–10 of 66 items');
+    expect(secondFilteredRowsOptionA).toEqual([]);
+    expect(secondFilteredRowsOptionB).toHaveLength(5);
+    expect(secondItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next remove select from filter with option-B
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: 'option-B' }));
+    const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const thirdFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const thirdItemCount = screen.getByText('1–10 of 33 items');
+    expect(thirdFilteredRowsOptionA).toEqual([]);
+    expect(thirdFilteredRowsOptionB).toEqual([]);
+    expect(thirdItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next clear all filters from the select
+    const clearSelectBox = screen.getByLabelText('Clear selection');
+    expect(clearSelectBox).toBeInTheDocument();
+    userEvent.click(clearSelectBox);
+    const fourthFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const fourthFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const fourthItemCount = screen.getByText('1–10 of 100 items');
+    expect(fourthFilteredRowsOptionA).toHaveLength(4);
+    expect(fourthFilteredRowsOptionB).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
   });
   it('multiselect should filter properly with no pre-selected filters', async () => {

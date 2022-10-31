@@ -18,7 +18,14 @@ import PropTypes from 'prop-types';
 
 import { settings } from '../../../constants/Settings';
 import FlyoutMenu, { FlyoutMenuDirection } from '../../FlyoutMenu/FlyoutMenu';
-import { defaultFunction, handleEnterKeyDown } from '../../../utils/componentUtilityFunctions';
+import {
+  defaultFunction,
+  handleEnterKeyDown,
+  getFilterValue,
+  getAppliedFilterText,
+  getMultiSelectItems,
+  getMultiselectFilterValue,
+} from '../../../utils/componentUtilityFunctions';
 
 const { iotPrefix, prefix } = settings;
 
@@ -310,8 +317,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                 >
                   {aRow.map((aColumn, columnIndex) => {
                     const column = columns.find((item) => aColumn.columnId === item.id);
-                    const { value: columnFilterValue } =
-                      filters?.find((filter) => filter.columnId === column.id) ?? {};
+                    const columnFilterValue = filterState?.simple[column.id];
                     const filterColumnOptions = (options) => {
                       options.sort((a, b) => {
                         return a.text.localeCompare(b.text, { sensitivity: 'base' });
@@ -326,7 +332,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           className={`${iotPrefix}--filter-flyout__simple-field`}
                         >
                           <DatePicker
-                            key={`${columnIndex}-${columnFilterValue}`}
+                            key={`datepicker-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                             datePickerType="single"
                             locale={column?.dateOptions?.locale || 'en'}
                             dateFormat={column?.dateOptions?.dateFormat || 'Y-m-d'}
@@ -359,7 +365,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                         return (
                           <FilterableMultiSelect
                             className={`${iotPrefix}--filter-flyout__simple-field`}
-                            key={`${columnIndex}-${columnFilterValue}`}
+                            key={`multiselect-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                             id={`column-${rowIndex}-${columnIndex}`}
                             aria-label={filterAria}
                             placeholder={column.placeholderText || 'Choose an option'}
@@ -368,15 +374,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                             label={column.placeholderText || 'Choose an option'}
                             itemToString={itemToString('text')}
                             titleText={column.name}
-                            initialSelectedItems={
-                              Array.isArray(columnFilterValue)
-                                ? columnFilterValue.map((value) =>
-                                    typeof value !== 'object' ? { id: value, text: value } : value
-                                  )
-                                : columnFilterValue
-                                ? [{ id: columnFilterValue, text: columnFilterValue }]
-                                : []
-                            }
+                            initialSelectedItems={getMultiSelectItems(column, columnFilterValue)}
                             onChange={(evt) => {
                               const { selectedItems } = evt;
                               setFilterState((prev) => {
@@ -384,7 +382,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                                   ...prev,
                                   simple: {
                                     ...prev.simple,
-                                    [column.id]: selectedItems.map((item) => item.text),
+                                    [column.id]: selectedItems.map(getMultiselectFilterValue),
                                   },
                                 };
                               });
@@ -395,7 +393,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                       return (
                         <ComboBox
                           className={`${iotPrefix}--filter-flyout__simple-field`}
-                          key={columnFilterValue}
+                          key={`combobox-${rowIndex}-${columnIndex}-${columnFilterValue}`}
                           id={`column-${columnIndex}`}
                           aria-label={filterAria}
                           translateWithId={handleTranslation}
@@ -403,11 +401,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                           itemToString={itemToString('text')}
                           initialSelectedItem={{
                             id: columnFilterValue,
-                            text: (
-                              column.options.find((option) => option.id === columnFilterValue) || {
-                                text: '',
-                              }
-                            ).text,
+                            text: getAppliedFilterText(column, columnFilterValue),
                           }}
                           placeholder={column.placeholderText || 'Choose an option'}
                           titleText={column.name}
@@ -418,7 +412,7 @@ const TableToolbarAdvancedFilterFlyout = ({
                                 ...prev,
                                 simple: {
                                   ...prev.simple,
-                                  [column.id]: selectedItem === null ? '' : selectedItem.id,
+                                  [column.id]: getFilterValue(selectedItem),
                                 },
                               };
                             });
