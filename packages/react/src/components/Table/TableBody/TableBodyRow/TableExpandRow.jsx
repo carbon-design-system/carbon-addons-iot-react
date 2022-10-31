@@ -4,7 +4,7 @@ import React from 'react';
 import { ChevronRight16 } from '@carbon/icons-react';
 import { TableCell } from 'carbon-components-react';
 
-import TableToolbarSVGButton from '../../TableToolbar/TableToolbarSVGButton';
+import Button from '../../../Button';
 import { settings } from '../../../../constants/Settings';
 
 const { prefix, iotPrefix } = settings;
@@ -98,19 +98,25 @@ const TableExpandRow = ({
         data-previous-value={previousValue}
         headers={expandHeader}
       >
-        <TableToolbarSVGButton
+        <Button
           aria-label={ariaLabel}
           testId={`expand-icon-button-${rowId}`}
-          className={cx(`${iotPrefix}--table-expand__button`, {
-            [`${iotPrefix}--table-expand__button--open`]: !isExpanded,
-            [`${iotPrefix}--table-expand__button--close`]: isExpanded,
-          })}
+          className={cx(
+            `${prefix}--btn--icon-only`,
+            `${iotPrefix}--tooltip-svg-wrapper`,
+            `${iotPrefix}--table-expand__button`,
+            {
+              [`${iotPrefix}--table-expand__button--open`]: !isExpanded,
+              [`${iotPrefix}--table-expand__button--close`]: isExpanded,
+            }
+          )}
           onClick={onExpand}
-          description={expandIconDescription}
+          iconDescription={expandIconDescription}
           renderIcon={ChevronRight16}
           size="sm"
           tooltipAlignment={langDir === 'ltr' ? 'start' : 'end'}
           tooltipPosition={isLastInView ? 'top' : 'bottom'}
+          kind="icon-selection"
         />
       </TableCell>
       {children}
