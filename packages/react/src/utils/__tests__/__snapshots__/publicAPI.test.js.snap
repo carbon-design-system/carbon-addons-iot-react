@@ -8362,6 +8362,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -9572,11 +9575,13 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderInPortal": true,
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
       "style": Object {},
       "testId": "date-time-picker",
+      "useAutoPositioning": false,
       "useNewTimeSpinner": false,
     },
     "propTypes": Object {
@@ -9992,6 +9997,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "renderPresetTooltipText": Object {
         "type": "func",
       },
@@ -10011,6 +10019,9 @@ Map {
       },
       "testId": Object {
         "type": "string",
+      },
+      "useAutoPositioning": Object {
+        "type": "bool",
       },
       "useNewTimeSpinner": Object {
         "type": "bool",
@@ -15680,6 +15691,7 @@ Map {
       "onTouchStart": undefined,
       "overrides": undefined,
       "padding": "default",
+      "renderDateDropdownInPortal": true,
       "renderExpandIcon": undefined,
       "rowHeight": Object {
         "lg": 144,
@@ -16480,6 +16492,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -17651,6 +17666,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -18923,6 +18941,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -20217,6 +20238,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -21335,6 +21359,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -21766,6 +21793,7 @@ Map {
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
+      "renderDateDropdownInPortal": true,
       "size": "LARGE",
       "values": Array [],
     },
@@ -22681,6 +22709,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -23960,6 +23991,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -25347,6 +25381,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -26475,6 +26512,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -27654,6 +27694,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -28734,6 +28777,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -32764,6 +32810,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -34927,6 +34976,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",

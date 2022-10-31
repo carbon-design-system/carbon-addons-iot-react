@@ -28,6 +28,8 @@ const DateTimePicker = ({
   hasIconOnly,
   menuOffset,
   datePickerType,
+  renderInPortal,
+  useAutoPositioning,
   style,
   ...others
 }) => {
@@ -55,6 +57,8 @@ const DateTimePicker = ({
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
       datePickerType={datePickerType}
+      renderInPortal={renderInPortal}
+      useAutoPositioning={useAutoPositioning}
       style={style}
       others={others}
     />
@@ -82,6 +86,8 @@ const DateTimePicker = ({
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
       datePickerType={datePickerType}
+      renderInPortal={renderInPortal}
+      useAutoPositioning={useAutoPositioning}
       style={style}
       others={others}
     />

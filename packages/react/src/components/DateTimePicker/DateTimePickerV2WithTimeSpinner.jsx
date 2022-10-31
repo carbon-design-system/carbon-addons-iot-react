@@ -184,6 +184,10 @@ export const propTypes = {
   menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
   /** Date picker types are single and range, default is range */
   datePickerType: PropTypes.string,
+  /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
+  renderInPortal: PropTypes.bool,
+  /** Auto reposition if flyout menu offscreen */
+  useAutoPositioning: PropTypes.bool,
   style: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -271,6 +275,8 @@ export const defaultProps = {
   hasIconOnly: false,
   menuOffset: undefined,
   datePickerType: 'range',
+  renderInPortal: true,
+  useAutoPositioning: false,
   style: {},
 };
 
@@ -297,6 +303,8 @@ const DateTimePicker = ({
   hasIconOnly,
   menuOffset,
   datePickerType,
+  renderInPortal,
+  useAutoPositioning,
   style,
   ...others
 }) => {
@@ -807,7 +815,7 @@ const DateTimePicker = ({
     ? 0
     : hasIconOnly
     ? -15
-    : 274;
+    : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
   const handleRangeTimeValueChange = (startState, endState) => {
@@ -935,7 +943,8 @@ const DateTimePicker = ({
             direction={FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
-            renderInPortal
+            renderInPortal={renderInPortal}
+            useAutoPositioning={useAutoPositioning}
             tooltipClassName={classnames(`${iotPrefix}--date-time-picker--tooltip`, {
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
