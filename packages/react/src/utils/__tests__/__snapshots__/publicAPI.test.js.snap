@@ -8362,6 +8362,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -8380,9 +8383,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -16473,6 +16473,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -16491,9 +16494,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -17647,6 +17647,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -17665,9 +17668,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -18922,6 +18922,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -18940,9 +18943,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -20218,6 +20218,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -20236,9 +20239,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -21339,6 +21339,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -21357,9 +21360,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -22690,6 +22690,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -22708,9 +22711,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -23972,6 +23972,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -23990,9 +23993,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -25361,6 +25361,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -25379,9 +25382,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -26493,6 +26493,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -26511,9 +26514,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -27674,6 +27674,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -27692,9 +27695,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -28758,6 +28758,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -28776,9 +28779,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -32790,6 +32790,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -32808,9 +32811,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
@@ -34957,6 +34957,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -34975,9 +34978,6 @@ Map {
       },
       "renderIconByName": Object {
         "type": "func",
-      },
-      "renderInPortal": Object {
-        "type": "bool",
       },
       "resizeHandles": Object {
         "type": "array",
