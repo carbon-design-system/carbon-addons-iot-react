@@ -106,6 +106,7 @@ const FlyoutMenu = ({
   onChange,
   isOpen,
   renderInPortal,
+  triggerClassName,
   style,
 }) => {
   const [isControlledOpen, setIsOpen] = useState(defaultOpen);
@@ -287,6 +288,7 @@ const FlyoutMenu = ({
             tabIndex={tabIndex}
             useAutoPositioning={false}
             onChange={onChange}
+            triggerClassName={triggerClassName}
           >
             <div
               className={classnames(`${iotPrefix}--flyout-menu--content`, tooltipContentClassName)}
@@ -331,6 +333,11 @@ const propTypes = {
    * The CSS class names of the tooltip content.
    */
   tooltipContentClassName: PropTypes.string,
+
+  /**
+   * The CSS class names of the trigger UI.
+   */
+  triggerClassName: PropTypes.string,
 
   /**
    * whether to send focus to the tooltip when it's expanded
@@ -450,6 +457,7 @@ const defaultProps = {
   children: undefined,
   tooltipClassName: '',
   tooltipContentClassName: '',
+  triggerClassName: '',
   tooltipFocusTrap: true,
   passive: false,
   hideTooltip: true,

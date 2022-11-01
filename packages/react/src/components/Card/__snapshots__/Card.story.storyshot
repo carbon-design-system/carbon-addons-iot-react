@@ -5425,7 +5425,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       aria-describedby={null}
                       aria-expanded={false}
                       aria-label="Calendar"
-                      className="bx--tooltip__label"
+                      className="bx--tooltip__label iot--date-time-picker--trigger-flyout-tooltip"
                       id="test-trigger-id-2"
                       onBlur={[Function]}
                       onClick={[Function]}
@@ -5585,7 +5585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       aria-describedby={null}
                       aria-expanded={false}
                       aria-label="Calendar"
-                      className="bx--tooltip__label"
+                      className="bx--tooltip__label iot--date-time-picker--trigger-flyout-tooltip"
                       id="test-trigger-id-2"
                       onBlur={[Function]}
                       onClick={[Function]}

@@ -949,6 +949,7 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
+            triggerClassName={`${iotPrefix}--date-time-picker--trigger-flyout-tooltip`}
             style={style}
           >
             <div
