@@ -35,6 +35,7 @@ import {
   getTableActions,
   getTableColumns,
   getTableData,
+  getTableDataWithEmptySelectFilter,
   getTableToolbarActions,
   getExpandedData,
   getDefaultOrdering,
@@ -57,6 +58,7 @@ import {
   getCustomErrorState,
   getCustomToolbarContentElement,
   getSelectDataOptions,
+  decorateTableColumns,
 } from './Table.story.helpers';
 import MockApiClient from './AsyncTable/MockApiClient';
 import AsyncTable from './AsyncTable/AsyncTable';
@@ -155,6 +157,9 @@ export const Playground = () => {
     batchActions,
     searchIsExpanded,
     useRadioButtonSingleSelect,
+    hideClearAllFiltersButton,
+    hasEmptyFilterOption,
+    hasMultiSelectFilter,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -179,6 +184,9 @@ export const Playground = () => {
         'demoColumnOverflowMenuItems',
         'hasOnlyPageData',
         'useRadioButtonSingleSelect',
+        'hideClearAllFiltersButton',
+        'hasEmptyFilterOption',
+        'hasMultiSelectFilter',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -263,7 +271,11 @@ export const Playground = () => {
   const toolbarActions = demoToolbarActions ? getTableToolbarActions() : undefined;
   const customToolbarContent = demoCustomToolbarContent ? customToolbarContentElement : undefined;
   const expandedData = hasRowExpansion ? getExpandedData(data) : [];
-  const columns = [...(demoEmptyColumns ? [] : getTableColumns())]
+  const columns = [
+    ...(demoEmptyColumns
+      ? []
+      : decorateTableColumns(getTableColumns(), hasEmptyFilterOption, hasMultiSelectFilter)),
+  ]
     .map((column, index) => ({
       ...column,
       isSortable: (hasMultiSort || demoSingleSort) && index !== 1,
@@ -368,6 +380,7 @@ export const Playground = () => {
               defaultExpanded: searchFieldDefaultExpanded,
               isExpanded: searchIsExpanded,
             },
+            hideClearAllFiltersButton,
           },
           table: {
             emptyState,
@@ -495,7 +508,6 @@ export const WithSearching = () => {
             defaultValue,
             defaultExpanded: searchFieldDefaultExpanded,
             isExpanded: searchIsExpanded,
-            onExpand: action('onExpand'),
           },
         },
       }}
@@ -698,14 +710,53 @@ WithAggregations.parameters = {
 };
 
 export const WithFiltering = () => {
-  const { selectedTableType, hasFilter, hasAdvancedFilter } = getTableKnobs({
-    knobsToCreate: ['selectedTableType', 'hasFilter', 'hasAdvancedFilter'],
-    getDefaultValue: (knobName) => knobName !== 'hasAdvancedFilter',
+  const {
+    selectedTableType,
+    hasFilter,
+    hasAdvancedFilter,
+    hideClearAllFiltersButton,
+    hasEmptyFilterOption,
+    hasMultiSelectFilter,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasFilter',
+      'hasAdvancedFilter',
+      'hideClearAllFiltersButton',
+      'hasEmptyFilterOption',
+      'hasMultiSelectFilter',
+    ],
+    getDefaultValue: (knobName) => {
+      if (knobName === 'hasAdvancedFilter') {
+        return false;
+      }
+
+      if (knobName === 'hideClearAllFiltersButton') {
+        return false;
+      }
+
+      if (knobName === 'hasEmptyFilterOption') {
+        return false;
+      }
+
+      if (knobName === 'hasMultiSelectFilter') {
+        return false;
+      }
+
+      return true;
+    },
   });
 
   const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
-  const data = getTableData().slice(0, 30);
-  const columns = getTableColumns().map((col) =>
+  const data = hasEmptyFilterOption
+    ? getTableDataWithEmptySelectFilter().slice(0, 30)
+    : getTableData().slice(0, 30);
+
+  const columns = decorateTableColumns(
+    getTableColumns(),
+    hasEmptyFilterOption,
+    hasMultiSelectFilter
+  ).map((col) =>
     col.id === 'object'
       ? {
           ...col,
@@ -801,6 +852,7 @@ export const WithFiltering = () => {
           toolbar: {
             activeBar,
             advancedFilterFlyoutOpen,
+            hideClearAllFiltersButton,
           },
         }}
       />
@@ -933,6 +985,16 @@ export const WithInlineActions = () => {
     objectWithSubstitution('Row actions for row-3 (data[3].rowActions)', [
       getHiddenRowAction(),
       getHiddenOverflowRowAction(),
+    ]),
+    null,
+    null,
+    null,
+    null,
+    null,
+    objectWithSubstitution('Row actions for row-9 (data[9].rowActions)', [
+      getOverflowEditRowAction(),
+      getOverflowAddRowAction(),
+      getOverflowDeleteRowAction(),
     ]),
   ];
 

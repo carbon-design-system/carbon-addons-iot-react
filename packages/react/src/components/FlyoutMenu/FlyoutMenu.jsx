@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { SettingsAdjust16 as SettingsAdjust } from '@carbon/icons-react';
@@ -106,10 +106,12 @@ const FlyoutMenu = ({
   onChange,
   isOpen,
   renderInPortal,
+  style,
 }) => {
   const [isControlledOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
   const buttonRef = useRef(null);
+  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
 
   const getFlyoutMenuOffset = React.useCallback(
     (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
@@ -191,8 +193,11 @@ const FlyoutMenu = ({
       ) {
         const { top = 0, left = 0 } = menuOffset;
 
-        propTop = top;
-        propLeft = left;
+        // set menuOffset only when it is not repositioned, when repositioned the menuOffset does not apply to the new direction anymore
+        if (flyoutDirection === direction) {
+          propTop = top;
+          propLeft = left;
+        }
       }
 
       return {
@@ -200,7 +205,7 @@ const FlyoutMenu = ({
         left: leftOffset + propLeft,
       };
     },
-    [menuOffset]
+    [direction, menuOffset]
   );
 
   const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
@@ -222,9 +227,7 @@ const FlyoutMenu = ({
   return (
     <div
       data-testid={`${testId}-container`}
-      style={{
-        '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible',
-      }}
+      style={{ '--tooltip-visibility': hideTooltip ? 'hidden' : 'visible' }}
       ref={buttonRef}
       className={classnames(
         [`${iotPrefix}--flyout-menu`],
@@ -287,6 +290,7 @@ const FlyoutMenu = ({
           >
             <div
               className={classnames(`${iotPrefix}--flyout-menu--content`, tooltipContentClassName)}
+              style={updatedStyle}
             >
               {children}
             </div>
@@ -432,6 +436,8 @@ const propTypes = {
 
   /** by default the flyout menu will render as a child, if you set this to true it will render outside of the current DOM in a portal */
   renderInPortal: PropTypes.bool,
+
+  style: PropTypes.objectOf(PropTypes.string),
 };
 
 const defaultProps = {
@@ -467,6 +473,7 @@ const defaultProps = {
   useAutoPositioning: false,
   onChange: () => {},
   renderInPortal: false,
+  style: {},
 };
 
 FlyoutMenu.propTypes = propTypes;

@@ -9,8 +9,12 @@ import List from '../../List/List';
 import Button from '../../Button/Button';
 import { settings } from '../../../constants/Settings';
 import deprecate from '../../../internal/deprecate';
+import { DashboardEditorActionsPropTypes } from '../../DashboardEditor/editorUtils';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /** The hotspot for which the data source settings should be changed. */
@@ -52,7 +56,6 @@ const propTypes = {
     dataItemEditorDataItemAddThreshold: PropTypes.string,
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
-    onEditDataItem: PropTypes.func,
   }),
   /** Callback i18n function for translating ListBoxMenuIcon SVG title in the MultiSelect component */
   translateWithId: PropTypes.func.isRequired,
@@ -75,7 +78,7 @@ const propTypes = {
   /** An object where the keys are available dimensions and the values are the values available for those dimensions
    *  ex: { manufacturer: ['Rentech', 'GHI Industries'], deviceid: ['73000', '73001', '73002'] } */
   availableDimensions: PropTypes.shape({}),
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -95,7 +98,14 @@ const defaultProps = {
   dataItems: [],
   availableDimensions: {},
   testId: 'HotspotEditorDataSourceTab',
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 export const formatDataItemsForDropdown = (dataItems) =>
@@ -115,7 +125,7 @@ const HotspotEditorDataSourceTab = ({
   testID,
   testId,
   translateWithId,
-  onEditDataItem,
+  actions,
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
 
@@ -125,6 +135,7 @@ const HotspotEditorDataSourceTab = ({
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
   const initialSelectedItems = formatDataItemsForDropdown(selectedItemsArray);
+  const { onEditDataItem } = actions;
 
   const handleSelectionChange = ({ selectedItems }) => {
     const newArray = [];
@@ -158,13 +169,14 @@ const HotspotEditorDataSourceTab = ({
   const handleEditButton = useCallback(
     async (dataItem) => {
       const dataItemWithMetaData = dataItems?.find(
-        ({ dataItemId }) => dataItemId === dataItem.dataItemId
+        ({ dataItemId }) => dataItemId === dataItem.dataSourceId
       );
       // Call back function for on click of edit button
+      /* istanbul ignore else */
       if (onEditDataItem) {
-        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        if (!isEmpty(downSampleMethods)) {
-          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (!isEmpty(aggregationMethods)) {
+          dataItemWithMetaData.aggregationMethods = aggregationMethods;
         }
       }
       // need to reset the card to include the latest dataSection
@@ -190,6 +202,7 @@ const HotspotEditorDataSourceTab = ({
         availableDimensions={availableDimensions}
         onChange={onChange}
         i18n={mergedI18n}
+        actions={actions}
       />
       <div className={`${baseClassName}--input`}>
         <MultiSelect

@@ -25,7 +25,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
           >
             <div
               className="iot--list-item--content--values--value"
-              title="List Item"
+              title="List Item title/hover text"
             >
               List Item
             </div>

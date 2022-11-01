@@ -16,7 +16,7 @@ import {
 
 import { bundledIconNames } from '../utils/bundledIcons';
 import deprecate from '../internal/deprecate';
-import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2';
+import { DateTimePickerDefaultValuePropTypes } from '../components/DateTimePicker/DateTimePickerV2WithoutTimeSpinner';
 
 import {
   CARD_LAYOUTS,
@@ -966,8 +966,11 @@ export const CardPropTypes = {
         hidden: PropTypes.bool,
       })
     ),
+    content: PropTypes.node,
   }),
   overrides: PropTypes.shape({
     errorMessage: OverridePropTypes,
   }),
+  /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
+  renderDateDropdownInPortal: PropTypes.bool,
 };

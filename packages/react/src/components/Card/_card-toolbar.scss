@@ -42,6 +42,13 @@
     height: auto;
     width: auto;
   }
+  &--custom-actions {
+    padding-top: $spacing-03;
+    padding-right: $spacing-05;
+  }
+  [dir='rtl'] &--custom-actions {
+    padding-left: $spacing-05;
+  }
 }
 
 .#{$iot-prefix}--card--toolbar-svg-wrapper {

@@ -2,13 +2,14 @@ import React, { useState, useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Edit16, Subtract16 } from '@carbon/icons-react';
 import { isEmpty, omit } from 'lodash-es';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import hash from 'object-hash';
 
 import { settings } from '../../../../../constants/Settings';
 import {
   handleDataSeriesChange,
   DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
 } from '../../../../DashboardEditor/editorUtils';
 import Button from '../../../../Button';
 import List from '../../../../List/List';
@@ -19,6 +20,9 @@ import ContentFormItemTitle from '../ContentFormItemTitle';
 import { CARD_SIZES, CARD_TYPES } from '../../../../../constants/LayoutConstants';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   cardConfig: PropTypes.shape({
@@ -32,6 +36,7 @@ const propTypes = {
           label: PropTypes.string,
           dataSourceId: PropTypes.string,
           type: PropTypes.string,
+          dataItemType: PropTypes.string,
         })
       ),
       thresholds: PropTypes.arrayOf(
@@ -87,7 +92,7 @@ const propTypes = {
     table: PropTypes.string,
   }),
   translateWithId: PropTypes.func.isRequired,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -114,7 +119,14 @@ const defaultProps = {
   selectedDataItems: [],
   availableDimensions: {},
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 const TableCardFormContent = ({
@@ -129,8 +141,9 @@ const TableCardFormContent = ({
   i18n,
   dataSeriesItemLinks,
   translateWithId,
-  onEditDataItem,
+  actions,
 }) => {
+  const { onEditDataItem } = actions;
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const {
     content: { columns, thresholds },
@@ -142,22 +155,23 @@ const TableCardFormContent = ({
   const [removedDataItems, setRemovedDataItems] = useState([]);
 
   // Initialize the selected columns if its not currently set
-  const dataSection = useMemo(
-    () =>
-      Array.isArray(columns)
-        ? columns.map((column) => ({
+  const dataSection = useMemo(() => {
+    const a = Array.isArray(columns)
+      ? columns.map((column) => {
+          const filteredThresholds =
+            thresholds?.filter((threshold) => column.dataSourceId === threshold.dataSourceId) || [];
+          return {
             ...column, // dataSection expects the thresholds to be in the column definition, though the table expects them to be in content
-            ...(!isEmpty(thresholds) // only set thresholds if they exist
+            ...(!isEmpty(filteredThresholds) // only set thresholds if they exist
               ? {
-                  thresholds: thresholds?.filter(
-                    (threshold) => column.dataSourceId === threshold.dataSourceId
-                  ),
+                  thresholds: filteredThresholds,
                 }
               : {}),
-          }))
-        : [],
-    [columns, thresholds]
-  );
+          };
+        })
+      : [];
+    return a;
+  }, [columns, thresholds]);
 
   const baseClassName = `${iotPrefix}--card-edit-form`;
 
@@ -204,7 +218,7 @@ const TableCardFormContent = ({
           dataSourceId:
             itemWithMetaData?.destination === 'groupBy'
               ? selectedItem.id
-              : `${selectedItem.id}_${uuid.v4()}`,
+              : `${selectedItem.id}_${uuidv4()}`,
         },
       ];
       const newCard = handleDataSeriesChange(selectedItems, cardConfig, null, null);
@@ -216,7 +230,18 @@ const TableCardFormContent = ({
   // need to handle thresholds from the DataSeriesFormItemModal and convert it to the right format
   const handleDataItemModalChanges = useCallback(
     (card) => {
-      const allThresholds = [];
+      // Get datasource from columns with thresholds
+      const columnThresholdDataSource =
+        card?.content?.columns
+          ?.filter((column) => column?.thresholds?.length)
+          ?.map((column) => column.dataSourceId) || [];
+
+      // Consider existing thresholds outside columns and filter existing thresholds from edited column
+      const allThresholds =
+        thresholds
+          ?.filter(({ dataSourceId }) => !columnThresholdDataSource.includes(dataSourceId))
+          ?.map((threshold) => ({ ...threshold })) || [];
+
       // the table card is looking for the thresholds on the main content object
       const updatedColumns = card?.content?.columns?.map(
         // eslint-disable-next-line no-unused-vars
@@ -241,12 +266,16 @@ const TableCardFormContent = ({
         },
       });
     },
-    [onChange]
+    [onChange, thresholds]
   );
 
   const handleRemoveButton = useCallback(
     (dataItem) => {
       const filteredColumns = dataSection.filter(
+        (item) => item.dataSourceId !== dataItem.dataSourceId
+      );
+      // Filter existing thresholds
+      const filteredThresholds = cardConfig?.content?.thresholds?.filter(
         (item) => item.dataSourceId !== dataItem.dataSourceId
       );
       // Need to determine whether we should remove these from the groupBy section
@@ -265,12 +294,20 @@ const TableCardFormContent = ({
         updatedDataSource = { dataSource: { ...omit(cardConfig.dataSource, 'groupBy') } };
       }
 
+      const updatedContent = {
+        ...cardConfig.content,
+        columns: filteredColumns,
+        thresholds: filteredThresholds,
+      };
+
+      /* istanbul ignore else */
+      if (isEmpty(filteredThresholds)) {
+        delete updatedContent.thresholds;
+      }
+
       onChange({
         ...cardConfig,
-        content: {
-          ...cardConfig.content,
-          columns: filteredColumns,
-        },
+        content: updatedContent,
         ...updatedDataSource,
       });
     },
@@ -283,10 +320,11 @@ const TableCardFormContent = ({
         ({ dataItemId }) => dataItemId === dataItem.dataItemId
       );
       // Call back function for on click of edit button
+      /* istanbul ignore else */
       if (onEditDataItem) {
-        const downSampleMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
-        if (!isEmpty(downSampleMethods)) {
-          dataItemWithMetaData.downSampleMethods = downSampleMethods;
+        const aggregationMethods = await onEditDataItem(cardConfig, dataItem, dataItemWithMetaData);
+        if (dataItemWithMetaData && !isEmpty(aggregationMethods)) {
+          dataItemWithMetaData.aggregationMethods = aggregationMethods;
         }
       }
       // need to reset the card to include the latest dataSection
@@ -347,6 +385,7 @@ const TableCardFormContent = ({
         availableDimensions={availableDimensions}
         onChange={handleDataItemModalChanges}
         i18n={mergedI18n}
+        actions={actions}
       />
       <ContentFormItemTitle
         title={mergedI18n.tableColumnEditorSectionTitle}
@@ -409,7 +448,7 @@ const TableCardFormContent = ({
                   dataItemId: i.id,
                   dataSourceId: i.id,
                   label: i.text,
-                  type: 'DIMENSION',
+                  dataItemType: 'DIMENSION',
                   destination: 'groupBy',
                 })),
                 cardConfig,

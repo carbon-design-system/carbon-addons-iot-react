@@ -4,12 +4,18 @@ import PropTypes from 'prop-types';
 import { CARD_DIMENSIONS, CARD_TYPES } from '../../../constants/LayoutConstants';
 import { settings } from '../../../constants/Settings';
 import { Tabs, Tab } from '../../Tabs';
-import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
+import {
+  DashboardEditorActionsPropTypes,
+  DataItemsPropTypes,
+} from '../../DashboardEditor/editorUtils';
 
 import CardEditFormContent from './CardEditFormContent';
 import CardEditFormSettings from './CardEditFormSettings';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /** card data value */
@@ -74,7 +80,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -113,7 +119,14 @@ const defaultProps = {
   currentBreakpoint: 'xl',
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 /**
@@ -141,7 +154,7 @@ const CardEditForm = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
-  onEditDataItem,
+  actions,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -167,6 +180,7 @@ const CardEditForm = ({
             currentBreakpoint={currentBreakpoint}
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
+            actions={actions}
           />
         </Tab>
         {!isCustomCardWithNoSettings ? (
@@ -181,7 +195,6 @@ const CardEditForm = ({
               currentBreakpoint={currentBreakpoint}
               dataSeriesItemLinks={dataSeriesItemLinks}
               onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-              onEditDataItem={onEditDataItem}
             />
           </Tab>
         ) : null}

@@ -173,5 +173,5 @@ export const Default = () => <StandardTearSheet />;
 export default {
   title: '1 - Watson IoT/TearSheet',
   decorators: [withKnobs],
-  component: Default,
+  component: TearSheet,
 };

@@ -18,6 +18,22 @@ import CardEditor from './CardEditor';
 export const Experimental = () => <StoryNotice componentName="CardEditor" experimental />;
 Experimental.storyName = experimentalStoryTitle;
 
+const commonActions = {
+  onEditDataItem: (cardConfig, dataItem) =>
+    dataItem.hasStreamingMetricEnabled
+      ? [
+          { id: 'none', text: 'None' },
+          { id: 'last', text: 'Last' },
+        ]
+      : [],
+  dataSeriesFormActions: {
+    hasAggregationsDropDown: (editDataItem) =>
+      editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP',
+    hasDataFilterDropdown: action('hasDataFilterDropdown'),
+    onAddAggregations: action('onAddAggregations'),
+  },
+};
+
 const CardEditorInteractive = () => {
   const defaultCard = {
     title: 'New card',
@@ -143,6 +159,7 @@ export const ForTimeSeries = () => (
       errors={{}}
       onShowGallery={action('onShowGallery')}
       onChange={action('onChange')}
+      actions={commonActions}
       dataItems={[
         { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
         { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
@@ -234,6 +251,7 @@ export const ForImage = () => (
         { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
       ]}
       onAddCard={action('onAddCard')}
+      actions={commonActions}
     />
   </div>
 );
@@ -282,6 +300,7 @@ export const WithTooltipLink = () => (
       onChange={action('onChange')}
       onAddCard={action('onAddCard')}
       dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+      actions={commonActions}
     />
   </div>
 );
@@ -298,6 +317,7 @@ const renderCustomEditContent = (onChange, cardConfig) => {
           value={cardConfig.title}
           labelText="Title"
           onChange={(event) => onChange({ ...cardConfig, title: event.currentTarget.value })}
+          actions={commonActions}
         />
       ),
     },
@@ -355,6 +375,7 @@ export const TimeSeriesCardWithCustom = () => {
         onChange={action('onChange')}
         onAddCard={action('onAddCard')}
         dataSeriesItemLinks={{ value: 'www.ibm.com' }}
+        actions={commonActions}
       />
     </div>
   );
@@ -376,6 +397,7 @@ const renderCustomDataTypeSelector = (onChange, card, dataTypes, selectedDataTyp
           }}
           id="select-1"
           defaultValue={selectedDataType}
+          actions={commonActions}
         >
           {dataTypes.map((dataType) => (
             <SelectItem key={dataType} value={dataType} text={dataType} />
@@ -436,6 +458,7 @@ export const TableCardWithCustom = () => {
             action('getValidDimensions')(cardConfig);
             return { dimension1: ['value1', 'value2'], dimension2: ['value3', 'value4'] };
           }}
+          actions={commonActions}
         />
       </div>
     );
@@ -481,6 +504,7 @@ export const DynamicallyAddSpecialContentToCardEditForm = () => (
       onShowGallery={action('onShowGallery')}
       onChange={action('onChange')}
       onAddCard={action('onAddCard')}
+      actions={commonActions}
     />
   </div>
 );
@@ -501,15 +525,15 @@ export const ForV2TimeSeries = () => (
               dataSourceId: 'v2pressure',
               label: 'V2 Pressure',
               color: '#1192e8',
-              downSampleMethod: 'none',
-              downSampleMethods: [],
+              aggregationMethod: 'none',
+              aggregationMethods: [],
               hasStreamingMetricEnabled: true,
             },
           ],
           dataSource: {
             attributes: [
               {
-                downSampleMethod: 'max',
+                aggregationMethod: 'max',
                 attribute: 'v2pressure',
                 id: 'v2pressure',
               },
@@ -537,8 +561,8 @@ export const ForV2TimeSeries = () => (
           dataItemId: 'v2pressure',
           dataSourceId: 'v2pressure',
           label: 'V2 Pressure',
-          downSampleMethod: 'min',
-          downSampleMethods: [
+          aggregationMethod: 'min',
+          aggregationMethods: [
             { id: 'none', text: 'None' },
             { id: 'max', text: 'Maximum' },
             { id: 'min', text: 'Minimum' },
@@ -550,6 +574,7 @@ export const ForV2TimeSeries = () => (
         },
       ]}
       onAddCard={action('onAddCard')}
+      actions={commonActions}
     />
   </div>
 );

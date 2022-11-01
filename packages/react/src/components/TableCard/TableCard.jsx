@@ -67,6 +67,7 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
+  renderDateDropdownInPortal: true,
 };
 
 const TableCard = ({
@@ -91,6 +92,7 @@ const TableCard = ({
   testID,
   testId,
   className,
+  renderDateDropdownInPortal,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -532,6 +534,7 @@ const TableCard = ({
       width={newSize.width}
       timeRange={timeRange}
       timeRangeOptions={timeRangeOptions}
+      renderDateDropdownInPortal={renderDateDropdownInPortal}
     />
   );
 
@@ -567,7 +570,7 @@ const TableCard = ({
             className={classnames(`${iotPrefix}--table-card__table`, {
               [`${iotPrefix}--table-card__table--expanded`]: isExpanded,
               [`${iotPrefix}--table-card__table--hide-header`]:
-                showHeader !== undefined ? showHeader : false,
+                showHeader !== undefined ? !showHeader : false,
               [`${iotPrefix}--table-card__table--with-data`]: data?.length > 0,
             })}
             columns={columnsToRender}

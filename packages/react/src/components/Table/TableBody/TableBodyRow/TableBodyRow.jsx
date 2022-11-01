@@ -249,7 +249,6 @@ const TableBodyRow = ({
       <TableCell
         className={`${prefix}--radiobutton-table-cell`}
         key={`${id}-row-selection-cell`}
-        onChange={isSelectable !== false ? () => onRowSelected(id, !isSelected) : null}
         onClick={(e) => e.stopPropagation()}
       >
         <span
@@ -283,7 +282,7 @@ const TableBodyRow = ({
         const align =
           matchingColumnMeta && matchingColumnMeta.align ? matchingColumnMeta.align : 'start';
         const sortable =
-          matchingColumnMeta && matchingColumnMeta.isSortable
+          matchingColumnMeta && matchingColumnMeta.isSortable && matchingColumnMeta.align === 'end'
             ? matchingColumnMeta.isSortable
             : false;
         return !col.isHidden ? (
@@ -364,6 +363,7 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
+          expandHeader={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           })}
@@ -409,6 +409,7 @@ const TableBodyRow = ({
     ) : (
       <TableExpandRow
         key={id}
+        expandHeader={`${tableId}-expand`}
         className={classnames(`${iotPrefix}--expandable-tablerow`, {
           [`${iotPrefix}--expandable-tablerow--parent`]:
             hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,
@@ -451,12 +452,15 @@ const TableBodyRow = ({
     <TableRow
       className={classnames(`${iotPrefix}--table__row`, {
         [`${iotPrefix}--table__row--singly-selected`]: isSelected && !useRadioButtonSingleSelect,
+        [`${iotPrefix}--table__row--background`]: isSelected,
       })}
       key={id}
       onClick={() => {
         if (isSelectable !== false) {
           onRowClicked(id);
-          onRowSelected(id, !isSelected);
+          if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
+            onRowSelected(id, !isSelected);
+          }
         }
       }}
     >
@@ -473,7 +477,7 @@ const TableBodyRow = ({
       key={id}
       onClick={() => {
         if (isSelectable !== false) {
-          if (hasRowSelection === 'single') {
+          if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
             onRowSelected(id, true);
           }
           onRowClicked(id);

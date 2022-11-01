@@ -82,6 +82,29 @@ const IdleLogoutConfirmationModal = ({
     []
   );
 
+  // Append originHref query parameter to the logout routes
+  let logoutRoute = routes?.logout;
+  try {
+    const url = new URL(routes.logout);
+    if (window.location.href) {
+      url.searchParams.append('originHref', window.location.href);
+      logoutRoute = url.href;
+    }
+  } catch (e) {
+    logoutRoute = routes?.logout;
+  }
+
+  let logoutInactivityRoute = routes?.logoutInactivity;
+  try {
+    const url = new URL(routes.logoutInactivity);
+    if (window.location.href) {
+      url.searchParams.append('originHref', window.location.href);
+      logoutInactivityRoute = url.href;
+    }
+  } catch (e) {
+    logoutInactivityRoute = routes?.logoutInactivity;
+  }
+
   // This state is just to force the recreation of the IdleTimer object in the useEffect below
   const [restartIdleTimer, setRestartIdleTimer] = useState(false);
   // Countdown state. If countdown is greater than zero, logout confirmation dialog is going to be displayed
@@ -90,7 +113,12 @@ const IdleLogoutConfirmationModal = ({
   const [stayLoggedInButtonDisabled, setStayLoggedInButtonDisabled] = useState(false);
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    if (idleTimeoutData && idleTimeoutData?.timeout > 0 && routes) {
+    if (
+      idleTimeoutData &&
+      idleTimeoutData?.timeout > 0 &&
+      routes?.domain !== null &&
+      routes?.domain !== undefined
+    ) {
       const timer = new IdleTimer({
         timeout: idleTimeoutData.timeout,
         countdown: idleTimeoutData.countdown,
@@ -102,16 +130,16 @@ const IdleLogoutConfirmationModal = ({
         onIdleTimeout: async () => {
           const result = await onRouteChange(
             SUITE_HEADER_ROUTE_TYPES.LOGOUT,
-            routes.logoutInactivity
+            logoutInactivityRoute
           );
           if (result) {
-            window.location.href = routes.logoutInactivity;
+            window.location.href = logoutInactivityRoute;
           }
         },
         onCookieCleared: async () => {
-          const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes.logout);
+          const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute);
           if (result) {
-            window.location.href = routes.logout;
+            window.location.href = logoutRoute;
           }
         },
         onRestart: () => {
@@ -124,7 +152,15 @@ const IdleLogoutConfirmationModal = ({
         timer.cleanUp();
       };
     }
-  }, [restartIdleTimer, idleTimeoutData, routes, onRouteChange, onStayLoggedIn]);
+  }, [
+    restartIdleTimer,
+    idleTimeoutData,
+    routes,
+    logoutInactivityRoute,
+    logoutRoute,
+    onRouteChange,
+    onStayLoggedIn,
+  ]);
 
   return (
     <Modal
@@ -140,9 +176,9 @@ const IdleLogoutConfirmationModal = ({
       onSecondarySubmit={async () => {
         // Disable the "Stay Logged in" button after the "Log out" button is clicked
         setStayLoggedInButtonDisabled(true);
-        const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout);
+        const result = await onRouteChange(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute);
         if (result) {
-          window.location.href = routes?.logout;
+          window.location.href = logoutRoute;
         }
       }}
       onRequestSubmit={() => {

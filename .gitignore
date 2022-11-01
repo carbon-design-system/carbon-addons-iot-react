@@ -63,3 +63,6 @@ packages/react/cypress/snapshots/
 packages/react/cypress-visual-report/
 packages/react/cypress-visual-screenshots/comparison/
 packages/react/cypress-visual-screenshots/diff
+
+# ignore local python virtual environement
+localvenv/

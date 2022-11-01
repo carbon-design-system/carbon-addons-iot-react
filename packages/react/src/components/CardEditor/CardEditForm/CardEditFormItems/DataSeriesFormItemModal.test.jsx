@@ -19,6 +19,7 @@ describe('DataSeriesFormItemModal', () => {
   const mockSetShowEditor = jest.fn();
   const mockSetEditDataItem = jest.fn();
   const mockSetEditDataSeries = jest.fn();
+
   const groupedBarConfig = {
     title: 'Untitled',
     size: 'MEDIUM',
@@ -142,12 +143,13 @@ describe('DataSeriesFormItemModal', () => {
     manufacturer: ['Rentech', 'GHI Industries'],
   };
 
-  const editTimeseriesDataItemDownSample = {
+  const editTimeseriesDataItemAggregationMethodsV2 = {
     label: 'Temperature',
     dataSourceId: 'temperature',
     hasStreamingMetricEnabled: true,
+    dataItemType: 'METRIC',
     color: 'red',
-    downSampleMethods: [
+    aggregationMethods: [
       { id: 'last', text: 'Last' },
       { id: 'mean', text: 'Mean' },
       { id: 'max', text: 'Max' },
@@ -161,6 +163,14 @@ describe('DataSeriesFormItemModal', () => {
     setEditDataItem: mockSetEditDataItem,
     setEditDataSeries: mockSetEditDataSeries,
     availableDimensions,
+    actions: {
+      onEditDataItem: jest.fn().mockImplementation(() => []),
+      dataSeriesFormActions: {
+        hasAggregationsDropDown: jest.fn(() => true),
+        hasDataFilterDropdown: jest.fn(() => true),
+        onAddAggregations: jest.fn(),
+      },
+    },
   };
 
   it('Renders for timeseries card data', () => {
@@ -178,6 +188,58 @@ describe('DataSeriesFormItemModal', () => {
     const legendColorLabel = screen.getByText('Line color');
     expect(label).toBeInTheDocument();
     expect(legendColorLabel).toBeInTheDocument();
+
+    const dataFilter = screen.getByRole('listbox', { name: 'Data filter' });
+    expect(dataFilter).toBeInTheDocument();
+
+    const aggregationDropdown = screen.getByRole('listbox', { name: 'Aggregation method' });
+    expect(aggregationDropdown).toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without datafilter', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasDataFilterDropdown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Data filter');
+    expect(dataFilter).not.toBeInTheDocument();
+  });
+  it('Renders for timeseries card data without aggregation dropdown', () => {
+    render(
+      <DataSeriesFormItemModal
+        {...{
+          ...commonProps,
+          actions: {
+            ...commonProps.actions,
+            dataSeriesFormActions: {
+              ...commonProps.actions.dataSeriesFormActions,
+              hasAggregationsDropDown: jest.fn(() => false),
+            },
+          },
+        }}
+        showEditor
+        cardConfig={timeSeriesCardConfig}
+        editDataItem={editTimeseriesDataItem}
+        editDataSeries={editDataSeriesTimeSeries}
+      />
+    );
+
+    const dataFilter = screen.queryByText('Aggregation method');
+    expect(dataFilter).not.toBeInTheDocument();
   });
   it('Non-timebased simple bar should hide grain', () => {
     const simpleNonTimeBasedBar = {
@@ -396,7 +458,7 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
@@ -465,13 +527,14 @@ describe('DataSeriesFormItemModal', () => {
             dataItemId: 'deviceid',
             dataSourceId: 'deviceid',
             label: 'deviceid',
-            type: 'DIMENSION',
+            dataItemType: 'DIMENSION',
             destination: 'groupBy',
           },
           {
             dataItemId: 'torque',
             dataSourceId: 'torque_308e4cf2-7da1-4dd1-be90-d99db81da6f5',
             label: 'Torque',
+            aggregationMethod: 'max',
           },
           {
             dataItemId: 'temperature',
@@ -489,6 +552,7 @@ describe('DataSeriesFormItemModal', () => {
 
     const aggregatedBarChartDataItem = {
       label: 'Temperature Max',
+      hasStreamingMetricEnabled: false,
       dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
       color: 'red',
       aggregationMethods: [
@@ -967,7 +1031,7 @@ describe('DataSeriesFormItemModal', () => {
     expect(modalTitle).toBeInTheDocument();
   });
 
-  it('Renders the DataSeriesEditorTable as size xs by default', () => {
+  it('Renders the DataSeriesEditorTable as size md by default', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
@@ -978,10 +1042,10 @@ describe('DataSeriesFormItemModal', () => {
       />
     );
 
-    const xsContainer = screen
+    const mdContainer = screen
       .getByText('Customize data series')
-      .closest(`.${prefix}--modal-container--xs`);
-    expect(xsContainer).toBeInTheDocument();
+      .closest(`.${prefix}--modal-container--md`);
+    expect(mdContainer).toBeInTheDocument();
 
     const largeContainer = screen
       .queryByText('Customize data series')
@@ -1325,98 +1389,40 @@ describe('DataSeriesFormItemModal', () => {
     expect(screen.queryByLabelText('DownSample Method')).not.toBeInTheDocument();
     expect(screen.getByText('Aggregation method')).toBeVisible();
   });
-  it('Version is V2 for timebased stacked bar should show Downsample method and hide grain and aggregation methods', () => {
-    const stackedTimeBasedBar = {
-      title: 'Untitled',
-      size: 'MEDIUM',
-      type: 'BAR',
-      content: {
-        type: 'STACKED',
-        layout: 'VERTICAL',
-        series: [
-          {
-            dataItemId: 'torque',
-            dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
-            label: 'Torque',
-            downSampleMethod: 'mean',
-            color: '#6929c4',
-          },
-        ],
-        timeDataSourceId: 'timestamp',
-      },
-      dataSource: {},
-    };
-    const downSampleBarChartDataItem = {
-      label: 'Temperature Max',
-      dataSourceId: 'torque_565ba583-dc00-4ee2-a480-5ed7d3e47ab1',
-      color: 'red',
-      hasStreamingMetricEnabled: true,
-      downSampleMethods: [
-        { id: 'none', text: 'None' },
-        { id: 'last', text: 'Last' },
-        { id: 'mean', text: 'Mean' },
-        { id: 'max', text: 'Max' },
-        { id: 'min', text: 'Min' },
-      ],
-      downSampleMethod: 'max',
-    };
-
-    render(
-      <DataSeriesFormItemModal
-        {...commonProps}
-        showEditor
-        isSummaryDashboard
-        cardConfig={stackedTimeBasedBar}
-        editDataItem={downSampleBarChartDataItem}
-      />
-    );
-    expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();
-    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
-    expect(screen.getByText('Downsample method')).toBeVisible();
-  });
-  it('Renders an downSample selector in summary dashboards and fires setEditDataItem', async () => {
+  it('Version is V2 for timeseries card should show Downsample method and hide grain and aggregation methods', () => {
     render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
         isSummaryDashboard
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItemDownSample}
-        editDataSeries={editDataSeriesTimeSeries}
+        editDataItem={editTimeseriesDataItemAggregationMethodsV2}
       />
     );
-    const downSampleDropdown = (await screen.findAllByText('None'))[1];
-    expect(downSampleDropdown).toBeInTheDocument();
-
-    fireEvent.click(downSampleDropdown);
-
-    const downSampleOption = screen.getByText('Min');
-    expect(downSampleOption).toBeInTheDocument();
-
-    fireEvent.click(downSampleOption);
-
-    expect(mockSetEditDataItem).toHaveBeenCalled();
+    expect(screen.queryByLabelText('Aggregation Method')).not.toBeInTheDocument();
+    expect(screen.queryByLabelText('Grain')).not.toBeInTheDocument();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
   });
 
-  it("should fallback to an empty string when editDataItem.downSampleMethod doesn't exist", () => {
+  it("should fallback to an empty string when V2 editDataItem.aggregationMethod doesn't exist", () => {
     const { container } = render(
       <DataSeriesFormItemModal
         {...commonProps}
         showEditor
         cardConfig={timeSeriesCardConfig}
-        editDataItem={editTimeseriesDataItemDownSample}
+        editDataItem={editTimeseriesDataItemAggregationMethodsV2}
         editDataSeries={editDataSeriesTimeSeries}
         isSummaryDashboard
         validDataItems={[
           {
             dataItemId: 'testItemId',
             dataSourceId: 'temperature',
-            downSampleMethod: 'min',
+            aggregationMethod: 'min',
           },
         ]}
       />
     );
-    expect(screen.getByText('Downsample method')).toBeVisible();
+    expect(screen.getByText('Aggregation method')).toBeVisible();
     expect(
       container.querySelectorAll(`.${iotPrefix}--card-edit-form--input-group--item-half-content`)
     ).toHaveLength(1);

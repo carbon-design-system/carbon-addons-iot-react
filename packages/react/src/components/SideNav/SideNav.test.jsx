@@ -1,6 +1,13 @@
 import React from 'react';
-import { Switcher24, Chip24, Group24, ParentChild24, Home24 } from '@carbon/icons-react';
-import { render, screen } from '@testing-library/react';
+import {
+  Switcher24,
+  Chip24,
+  Group24,
+  ParentChild24,
+  Home24,
+  RecentlyViewed24,
+} from '@carbon/icons-react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
@@ -93,6 +100,40 @@ describe('SideNav', () => {
         element: 'a',
       },
       linkContent: 'Boards',
+    },
+  ];
+
+  const mostRecentLinks = [
+    {
+      icon: RecentlyViewed24,
+      isEnabled: true,
+      metaData: {
+        onClick: jest.fn(),
+        tabIndex: 0,
+        label: 'My recent applications',
+        element: 'a',
+      },
+      linkContent: 'My recent applications',
+      childContent: [
+        {
+          metaData: {
+            label: 'App 1',
+            title: 'App 1',
+            onClick: jest.fn(),
+            element: 'button',
+          },
+          content: 'App 1',
+        },
+        {
+          metaData: {
+            label: 'App 2',
+            title: 'App 2',
+            onClick: jest.fn(),
+            element: 'button',
+          },
+          content: 'App 2',
+        },
+      ],
     },
   ];
 
@@ -578,5 +619,14 @@ describe('SideNav', () => {
     expect(screen.getByLabelText('Boards').closest('ul')).not.toHaveClass(
       `${iotPrefix}--side-nav__pinned-items`
     );
+  });
+
+  it('should show mostRecentLinks', () => {
+    render(<SideNav {...mockProps} recentLinks={mostRecentLinks} />);
+
+    expect(screen.queryByText('My recent applications')).toBeDefined();
+    fireEvent.click(screen.getByText('My recent applications'));
+    expect(screen.queryByText('App 1')).toBeDefined();
+    expect(screen.queryByText('App 2')).toBeDefined();
   });
 });

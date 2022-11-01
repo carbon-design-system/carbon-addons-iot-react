@@ -1,0 +1,87 @@
+@import '../../globals/vars';
+
+.#{$iot-prefix}--list-spinner {
+  &__section {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 5rem;
+    max-height: 17.5rem;
+    overflow: hidden;
+  }
+
+  &__list-container {
+    position: relative;
+    min-width: 5rem;
+    min-height: 12.5rem;
+    overflow: hidden;
+  }
+
+  &__list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    scrollbar-color: $ui-01;
+    scrollbar-width: none;
+    /* stylelint-disable-next-line */
+    &::scrollbar,
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+    }
+  }
+  &__list-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 2.5rem;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    .#{$iot-prefix}--list-spinner__list &--selected,
+    .#{$iot-prefix}--list-spinner__list &--selected .#{$iot-prefix}--btn {
+      color: $ui-01;
+      &:hover {
+        background: $button-primary-hover;
+      }
+    }
+  }
+
+  &__btn,
+  &__list-item .#{$iot-prefix}--btn {
+    color: $icon-01;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: unset;
+    max-height: 2.5rem;
+    width: 100%;
+
+    .#{$prefix}--btn__icon {
+      margin: 0 auto;
+    }
+  }
+
+  /* stylelint-disable declaration-property-unit-blacklist */
+  &__btn {
+    z-index: 1;
+    &:first-child {
+      box-shadow: 0 1px 5px 4px $ui-01;
+      border-width: 1.5px;
+    }
+
+    &:last-child {
+      box-shadow: 0 -1px 5px 4px $ui-01;
+      border-width: 1.5px;
+    }
+
+    &:hover {
+      color: $icon-01;
+    }
+  }
+  /* stylelint-enable declaration-property-unit-blacklist */
+}

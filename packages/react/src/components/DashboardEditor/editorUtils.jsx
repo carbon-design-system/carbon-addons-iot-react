@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { isNil, uniqBy, isEmpty } from 'lodash-es';
 import {
   purple70,
@@ -77,27 +77,22 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
      * because the dataSourceId is subject to change */
     dataItemId: PropTypes.string.isRequired,
     dataSourceId: PropTypes.string.isRequired,
+    /** Maps to data item columnType */
+    type: PropTypes.string,
+    /** Maps to data item type */
+    dataItemType: PropTypes.string,
     label: PropTypes.string,
     aggregationMethod: PropTypes.string,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
     ),
-    downSampleMethod: PropTypes.string,
-    downSampleMethods: PropTypes.arrayOf(
-      PropTypes.shape({ id: PropTypes.string, text: PropTypes.string })
-    ),
+
     /** Grain is needed in summary dashboard editors */
     grain: PropTypes.string,
     // Used for streming dataItems
     hasStreamingMetricEnabled: PropTypes.bool,
   })
 );
-
-// /** Needed to determain if we show downsample methods */
-// export const Version = {
-//   V1: 'V1',
-//   V2: 'V2',
-// };
 
 /**
  * Returns a duplicate card configuration
@@ -106,7 +101,7 @@ export const DataItemsPropTypes = PropTypes.arrayOf(
  */
 export const getDuplicateCard = (cardConfig) => ({
   ...cardConfig,
-  id: uuid.v4(),
+  id: uuidv4(),
 });
 
 /**
@@ -126,7 +121,7 @@ export const getDefaultCard = (type, i18n) => {
   };
 
   const baseCardProps = {
-    id: uuid.v4(),
+    id: uuidv4(),
     title: i18n.defaultCardTitle,
     size: defaultSizeForType[type] ?? CARD_SIZES.MEDIUM,
     ...(type.includes(CARD_TYPES.BAR) ? { type: CARD_TYPES.BAR } : { type }),
@@ -415,7 +410,18 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
   const cardSeries = cardConfig?.content?.series;
   const series = selectedItems.map(
     (
-      { label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod },
+      {
+        label: unEditedLabel,
+        dataItemId,
+        dataSourceId,
+        aggregationMethod,
+        eventName,
+        dataItemType,
+        columnType,
+        uuid,
+        kpiFunctionDto,
+        hasStreamingMetricEnabled,
+      },
       i
     ) => {
       const colorIndex = (removedItemsCountRef.current + i) % DATAITEM_COLORS_OPTIONS.length;
@@ -430,7 +436,12 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
         label,
         aggregationMethod,
         color,
-        downSampleMethod,
+        eventName,
+        dataItemType,
+        columnType,
+        uuid,
+        kpiFunctionDto,
+        hasStreamingMetricEnabled,
       };
     }
   );
@@ -445,7 +456,18 @@ export const formatSeries = (selectedItems, cardConfig, removedItemsCountRef = {
 export const formatAttributes = (selectedItems, cardConfig) => {
   const currentCardAttributes = cardConfig?.content?.attributes;
   const attributes = selectedItems.map(
-    ({ label: unEditedLabel, dataItemId, dataSourceId, aggregationMethod, downSampleMethod }) => {
+    ({
+      label: unEditedLabel,
+      dataItemId,
+      dataSourceId,
+      aggregationMethod,
+      eventName,
+      dataItemType,
+      columnType,
+      uuid,
+      kpiFunctionDto,
+      hasStreamingMetricEnabled,
+    }) => {
       const currentItem = currentCardAttributes?.find(
         (dataItem) => dataItem.dataSourceId === dataSourceId
       );
@@ -458,7 +480,12 @@ export const formatAttributes = (selectedItems, cardConfig) => {
         dataSourceId,
         label,
         aggregationMethod,
-        downSampleMethod,
+        eventName,
+        dataItemType,
+        columnType,
+        uuid,
+        kpiFunctionDto,
+        hasStreamingMetricEnabled,
       };
     }
   );
@@ -503,12 +530,14 @@ export const handleDataSeriesChange = (
       // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
       const existingAttributeColumns = Array.isArray(content?.columns)
         ? content.columns.filter(
-            (col) => col.type !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
+            (col) => col.dataItemType !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
           )
         : [];
 
       // find the new attributes to add because we're adding dimensions later
-      const attributeColumns = selectedItems.filter((dataItem) => dataItem.type !== 'DIMENSION');
+      const attributeColumns = selectedItems.filter(
+        (dataItem) => dataItem.dataItemType !== 'DIMENSION'
+      );
 
       // start off with a default timestamp column if we don't already have one
       const timestampColumn =
@@ -520,14 +549,15 @@ export const handleDataSeriesChange = (
               dataItemId: 'timestamp',
               label: 'Timestamp',
               type: 'TIMESTAMP',
+              columnType: 'TIMESTAMP',
               sort: 'DESC',
             };
       const existingDimensionColumns = Array.isArray(content?.columns)
-        ? content.columns.filter((col) => col.type === 'DIMENSION')
+        ? content.columns.filter((col) => col.dataItemType === 'DIMENSION')
         : [];
 
       // new dimension columns should go right after the timestamp column
-      const dimensionColumns = selectedItems.filter((col) => col.type === 'DIMENSION');
+      const dimensionColumns = selectedItems.filter((col) => col.dataItemType === 'DIMENSION');
       const allDimensionColumns = existingDimensionColumns.concat(dimensionColumns);
 
       // for raw table cards, the dimensions columns go in the attributes section
@@ -681,3 +711,43 @@ export const renderDefaultIconByName = (iconName, iconProps = {}) => {
   // eslint-disable-next-line react/prop-types
   return <div style={{ color: iconProps.fill }}>{iconToRender}</div>;
 };
+
+export const DashboardEditorActionsPropTypes = PropTypes.shape({
+  /** Call back function for on click of edit button, returns aggregationMethods for a selcted dataSource
+   * onEditDataItem(cardConfig: card properties, dataItem: selected dataItem, dataItemWithMetaData: selected dataItem with meta data);
+   * return {object}: returns aggregationMethods for a selcted dataSource
+   * ex:
+   *[
+      {
+          "id": "none",
+          "text": "None"
+      },
+      {
+          "id": "mean",
+          "text": "Mean",
+      },
+      {
+          "id": "min",
+          "text": "Minimum",
+      }
+    ]
+   */
+  onEditDataItem: PropTypes.func,
+  /** Form actions for dataSeries modal */
+  dataSeriesFormActions: PropTypes.shape({
+    /** callback function to determine aggregation dropdown visibility
+     * hasAggregationsDropDown(editDataItem: selected dataSource)
+     * return {boolean} : true or false
+     */
+    hasAggregationsDropDown: PropTypes.func,
+    /** callback function to determine dataFilter dropdown visibility
+     * hasDataFilterDropdown(cardProps: card properties)
+     * return {boolean} : true or false
+     */
+    hasDataFilterDropdown: PropTypes.func,
+    /** callback function on click of Add aggregation method label
+     * onAddAggregations(editDataItem: selected dataSource)
+     */
+    onAddAggregations: PropTypes.func,
+  }),
+});

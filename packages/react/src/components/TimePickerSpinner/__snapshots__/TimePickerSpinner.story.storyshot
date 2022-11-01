@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/TimePickerSpinner Default timeGroup to minutes 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimePickerSpinner Default timeGroup to minutes 1`] = `
 <div
   className="storybook-container"
 >
@@ -115,7 +115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/TimePickerSpinner With spinner 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimePickerSpinner With spinner 1`] = `
 <div
   className="storybook-container"
 >
@@ -230,7 +230,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/TimePickerSpinner With state for input validation 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/TimePickerSpinner With state for input validation 1`] = `
 <div
   className="storybook-container"
 >

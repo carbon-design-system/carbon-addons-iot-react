@@ -50,6 +50,7 @@ export const WithMultipleActions = () => {
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
           columns: tableColumns,
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableDataWithActions}
         onCardAction={action('onCardAction')}
@@ -102,6 +103,7 @@ export const WithLinks = () => {
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
           columns: tableLinkColumns,
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableLinkData}
         onCardAction={action('onCardAction')}
@@ -227,6 +229,7 @@ export const WithThresholdsPrecisionAndExpandedRows = () => {
               label: 'Temperature',
             },
           ],
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableData}
         onCardAction={action('onCardAction')}
@@ -316,6 +319,7 @@ export const WithThresholdsOnlyWithIcon = () => {
         content={{
           columns: [...tableColumns.slice(0, 1), tableColumns[2]],
           thresholds,
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableData}
         onCardAction={action('onCardAction')}
@@ -381,6 +385,7 @@ export const WithMatchingThresholds = () => {
               ),
             },
           ],
+          showHeader: boolean('showHeader', true),
         }}
         values={
           boolean('no data', false) ? [] : tableData.map((i) => ({ id: i.id, values: i.values }))
@@ -416,6 +421,7 @@ export const WithCustomColumnWidthAndSort = () => {
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
           columns: tableCustomColumns,
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableData}
         onCardAction={action('onCardAction')}
@@ -463,6 +469,7 @@ export const WithRowExpansionAndRowSpecificLinkVariables = () => {
               type: 'TIMESTAMP',
             },
           ],
+          showHeader: boolean('showHeader', true),
         }}
         values={boolean('no data', false) ? [] : tableData}
         onCardAction={action('onCardAction')}
@@ -505,6 +512,7 @@ export const NoRowActions = () => {
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
           columns: tableColumns,
+          showHeader: boolean('showHeader', true),
         }}
         values={
           boolean('no data', false) ? [] : tableData.map((i) => ({ id: i.id, values: i.values }))
@@ -536,6 +544,7 @@ export const Editable = () => {
         tooltip={text('Tooltip text', "Here's a Tooltip")}
         content={{
           columns: tableColumns,
+          showHeader: boolean('showHeader', true),
         }}
         isEditable
         availableActions={{ edit: true, clone: true, delete: true }}
@@ -579,6 +588,7 @@ export const WithCustomFilters = () => {
         title="Open Alerts"
         content={{
           columns: tableColumnsWithCustomFilters,
+          showHeader: boolean('showHeader', false),
         }}
         values={boolean('no data', false) ? [] : tableData}
         filters={[{ columnId: 'alert', value: 'failure' }]}

@@ -13,6 +13,7 @@ import { Checkbox } from '../Checkbox';
 import { TextInput } from '../TextInput';
 import EmptyState from '../EmptyState';
 import Dropdown from '../Dropdown/Dropdown';
+import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
 const STATUS = {
   RUNNING: 'RUNNING',
@@ -89,6 +90,15 @@ export const getSelectDataOptions = () => [
   },
 ];
 
+const getSelectDataOptionsWithEmptyOption = () => {
+  const selectOptions = getSelectDataOptions();
+  selectOptions.splice(2, 1, {
+    id: '',
+    text: EMPTY_STRING_DISPLAY_VALUE,
+  });
+  return selectOptions;
+};
+
 export const getTableActions = () => ({
   pagination: {
     /** Specify a callback for when the current page or page size is changed. This callback is passed an object parameter containing the current page and the current page size */
@@ -117,6 +127,7 @@ export const getTableActions = () => ({
     // can be readded in V3.
     // onToggleAggregations: action('onToggleAggregations'),
     onApplyToolbarAction: action('onApplyToolbarAction'),
+    onSearchExpand: action('onSearchExpand'),
   },
   table: {
     onRowClicked: action('onRowClicked'),
@@ -349,6 +360,20 @@ export const getTableData = () =>
   Array(100)
     .fill(0)
     .map((i, idx) => getNewRow(idx));
+
+export const getTableDataWithEmptySelectFilter = () =>
+  Array(100)
+    .fill(0)
+    .map((i, idx) => {
+      const row = getNewRow(idx);
+      return {
+        ...row,
+        values: {
+          ...row.values,
+          select: getSelectDataOptionsWithEmptyOption()[idx % 3].id,
+        },
+      };
+    });
 
 export const getDrillDownRowAction = () => ({
   id: 'drilldown',
@@ -1048,6 +1073,27 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           SORT_FILTER_GROUP
         )
       : null,
+    hideClearAllFiltersButton: shouldCreate('hideClearAllFiltersButton')
+      ? boolean(
+          'Hide clear all filters button (view.toolbar.hideClearAllFiltersButton)',
+          getDefaultValue('hideClearAllFiltersButton'),
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasEmptyFilterOption: shouldCreate('hasEmptyFilterOption')
+      ? boolean(
+          'Show empty string option in Select filter',
+          getDefaultValue('hasEmptyFilterOption'),
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasMultiSelectFilter: shouldCreate('hasMultiSelectFilter')
+      ? boolean(
+          'Allow multi-select in Select filter',
+          getDefaultValue('hasMultiSelectFilter'),
+          SORT_FILTER_GROUP
+        )
+      : null,
 
     // SEARCH_GROUP
     hasSearch: shouldCreate('hasSearch')
@@ -1626,4 +1672,46 @@ export const getInitialState = () => {
       },
     },
   };
+};
+
+const withEmptySelectFilter = (columns) => {
+  const selectFilterIndex = columns.findIndex((el) => el.id === 'select');
+  columns.splice(selectFilterIndex, 1, {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      ...columns[selectFilterIndex].filter,
+      options: getSelectDataOptionsWithEmptyOption(),
+    },
+  });
+  return columns;
+};
+
+const withMultiSelect = (columns) => {
+  const selectFilterIndex = columns.findIndex((el) => el.id === 'select');
+  columns.splice(selectFilterIndex, 1, {
+    id: 'select',
+    name: 'Select',
+    filter: {
+      ...columns[selectFilterIndex].filter,
+      isMultiselect: true,
+    },
+  });
+  return columns;
+};
+
+export const decorateTableColumns = (columnsInit, hasEmptyFilterOption, hasMultiSelectFilter) => {
+  if (hasEmptyFilterOption && !hasMultiSelectFilter) {
+    return withEmptySelectFilter(columnsInit);
+  }
+
+  if (hasMultiSelectFilter && !hasEmptyFilterOption) {
+    return withMultiSelect(columnsInit);
+  }
+
+  if (hasMultiSelectFilter && hasEmptyFilterOption) {
+    return withMultiSelect(withEmptySelectFilter(columnsInit));
+  }
+
+  return columnsInit;
 };

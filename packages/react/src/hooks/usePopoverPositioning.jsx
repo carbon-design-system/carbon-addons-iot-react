@@ -206,7 +206,7 @@ export const usePopoverPositioning = ({
             tooltipElement.setAttribute('data-floating-menu-direction', 'left');
           } else if (isOverflowMenu) {
             setAdjustedFlipped(true);
-            setAdjustedDirection('bottom');
+            setAdjustedDirection((prevDirection) => (prevDirection === 'top' ? 'top' : 'bottom'));
             tooltipElement.setAttribute('data-floating-menu-direction', 'bottom');
           } else {
             setAdjustedDirection('left');
@@ -239,7 +239,7 @@ export const usePopoverPositioning = ({
             tooltipElement.setAttribute('data-floating-menu-direction', 'right');
           } else if (isOverflowMenu) {
             setAdjustedFlipped(false);
-            setAdjustedDirection('bottom');
+            setAdjustedDirection((prevDirection) => (prevDirection === 'top' ? 'top' : 'bottom'));
             tooltipElement.setAttribute('data-floating-menu-direction', 'bottom');
           } else {
             setAdjustedDirection('right');

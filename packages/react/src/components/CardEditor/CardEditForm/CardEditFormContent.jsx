@@ -2,7 +2,10 @@ import React, { useState, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import { CARD_TYPES } from '../../../constants/LayoutConstants';
-import { DataItemsPropTypes } from '../../DashboardEditor/editorUtils';
+import {
+  DashboardEditorActionsPropTypes,
+  DataItemsPropTypes,
+} from '../../DashboardEditor/editorUtils';
 import { settings } from '../../../constants/Settings';
 
 import CommonCardEditFormFields from './CommonCardEditFormFields';
@@ -12,6 +15,9 @@ import TableCardFormContent from './CardEditFormItems/TableCardFormItems/TableCa
 import ContentFormItemTitle from './CardEditFormItems/ContentFormItemTitle';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /** card data value */
@@ -107,7 +113,7 @@ const propTypes = {
     table: PropTypes.string,
     image: PropTypes.string,
   }),
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -120,7 +126,14 @@ const defaultProps = {
   availableDimensions: {},
   isSummaryDashboard: false,
   dataSeriesItemLinks: null,
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 export const handleTranslationCallback = (idToTranslate, mergedI18n) => {
@@ -150,7 +163,7 @@ const CardEditFormContent = ({
   dataSeriesItemLinks,
   // eslint-disable-next-line react/prop-types
   onFetchDynamicDemoHotspots,
-  onEditDataItem,
+  actions,
 }) => {
   const { type, timeRange, renderEditContent } = cardConfig;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
@@ -189,7 +202,7 @@ const CardEditFormContent = ({
           availableDimensions={availableDimensions}
           translateWithId={handleTranslation}
           onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
-          onEditDataItem={onEditDataItem}
+          actions={actions}
         />
       ) : type === CARD_TYPES.TABLE ? (
         <TableCardFormContent
@@ -205,7 +218,7 @@ const CardEditFormContent = ({
           availableDimensions={availableDimensions}
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
-          onEditDataItem={onEditDataItem}
+          actions={actions}
         />
       ) : type === CARD_TYPES.BAR ||
         type === CARD_TYPES.TIMESERIES ||
@@ -225,7 +238,7 @@ const CardEditFormContent = ({
           i18n={mergedI18n}
           dataSeriesItemLinks={dataSeriesItemLinks}
           translateWithId={handleTranslation}
-          onEditDataItem={onEditDataItem}
+          actions={actions}
         />
       ) : null}
       {Array.isArray(editContentSections) // render the content sections for all types of card if set

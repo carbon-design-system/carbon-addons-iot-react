@@ -49,15 +49,15 @@ export const RowActionsStatePropTypes = PropTypes.arrayOf(
 
 export const EmptyStatePropTypes = PropTypes.oneOfType([
   PropTypes.shape({
-    message: PropTypes.node.isRequired,
-    messageBody: PropTypes.node,
+    message: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
+    messageBody: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* Show a different message if no content is in the table matching the filters */
-    messageWithFilters: PropTypes.node,
-    messageWithFiltersBody: PropTypes.node,
+    messageWithFilters: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+    messageWithFiltersBody: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* If a label is not provided, no action button will be rendered */
-    buttonLabel: PropTypes.node,
+    buttonLabel: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /* Show a different button label if no content is in the table matching the filters */
-    buttonLabelWithFilters: PropTypes.node,
+    buttonLabelWithFilters: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   }),
   /* If a React element is provided, it will be rendered in place of the default */
   PropTypes.element,
@@ -298,8 +298,14 @@ export const TableSearchPropTypes = PropTypes.shape({
   ),
   defaultValue: PropTypes.string,
   defaultExpanded: PropTypes.bool,
-  onChange: PropTypes.func,
-  onExpand: PropTypes.func,
+  onChange: deprecate(
+    PropTypes.func,
+    '\n The prop `onChange` has been deprecated in favor of `onApplySearch` in table actions object'
+  ),
+  onExpand: deprecate(
+    PropTypes.func,
+    '\n The prop `onExpand` has been deprecated in favor of `onSearchExpand` in table actions object'
+  ),
   isExpanded: PropTypes.bool,
 });
 

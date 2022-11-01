@@ -34,6 +34,7 @@ export { default as VirtualListContent } from './components/List/VirtualListCont
 export { default as BarChartCard } from './components/BarChartCard/BarChartCard';
 export { default as TileCatalogNew } from './components/TileCatalogNew/TileCatalogNew';
 export { default as TimePickerSpinner } from './components/TimePickerSpinner/TimePickerSpinner';
+export { default as TimePickerDropdown } from './components/TimePicker/TimePickerDropdown';
 export { default as DateTimePicker } from './components/DateTimePicker/DateTimePicker';
 export { default as DateTimePickerV2 } from './components/DateTimePicker/DateTimePickerV2';
 export { default as TableViewDropdown } from './components/Table/TableViewDropdown/TableViewDropdown';
@@ -58,6 +59,8 @@ export { default as SidePanel } from './components/SidePanel/SidePanel';
 export { default as SuiteHeader } from './components/SuiteHeader/SuiteHeader';
 export { default as SuiteHeaderProfile } from './components/SuiteHeader/SuiteHeaderProfile/SuiteHeaderProfile';
 export { default as SuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+export { default as MultiWorkspaceSuiteHeaderAppSwitcher } from './components/SuiteHeader/SuiteHeaderAppSwitcher/MultiWorkspaceSuiteHeaderAppSwitcher';
+export { default as SuiteHeaderAppSwitcherLoading } from './components/SuiteHeader/SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcherLoading';
 export { default as SuiteHeaderLogoutModal } from './components/SuiteHeader/SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 export { default as IdleLogoutConfirmationModal } from './components/SuiteHeader/IdleLogoutConfirmationModal/IdleLogoutConfirmationModal';
 export { default as IdleTimer } from './components/SuiteHeader/util/IdleTimer';

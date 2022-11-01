@@ -494,23 +494,83 @@ Map {
               "args": Array [
                 Object {
                   "buttonLabel": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "buttonLabelWithFilters": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "message": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
                     "isRequired": true,
-                    "type": "node",
+                    "type": "oneOfType",
                   },
                   "messageBody": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "messageWithFilters": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "messageWithFiltersBody": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "node",
+                        },
+                        Object {
+                          "type": "string",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                 },
               ],
@@ -721,6 +781,7 @@ Map {
         "toolbar": Object {
           "advancedFilterFlyoutOpen": false,
           "batchActions": Array [],
+          "hideClearAllFiltersButton": false,
           "search": Object {},
         },
       },
@@ -844,6 +905,9 @@ Map {
                     "type": "func",
                   },
                   "onRemoveAdvancedFilter": Object {
+                    "type": "func",
+                  },
+                  "onSearchExpand": Object {
                     "type": "func",
                   },
                   "onShowRowEdit": Object {
@@ -1759,23 +1823,83 @@ Map {
                           "args": Array [
                             Object {
                               "buttonLabel": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "buttonLabelWithFilters": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "message": Object {
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
                                 "isRequired": true,
-                                "type": "node",
+                                "type": "oneOfType",
                               },
                               "messageBody": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "messageWithFilters": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                               "messageWithFiltersBody": Object {
-                                "type": "node",
+                                "args": Array [
+                                  Array [
+                                    Object {
+                                      "type": "node",
+                                    },
+                                    Object {
+                                      "type": "string",
+                                    },
+                                  ],
+                                ],
+                                "type": "oneOfType",
                               },
                             },
                           ],
@@ -2026,6 +2150,9 @@ Map {
                   "customToolbarContent": Object {
                     "type": "node",
                   },
+                  "hideClearAllFiltersButton": Object {
+                    "type": "bool",
+                  },
                   "isDisabled": Object {
                     "type": "bool",
                   },
@@ -2044,12 +2171,8 @@ Map {
                         "isExpanded": Object {
                           "type": "bool",
                         },
-                        "onChange": Object {
-                          "type": "func",
-                        },
-                        "onExpand": Object {
-                          "type": "func",
-                        },
+                        "onChange": [Function],
+                        "onExpand": [Function],
                         "value": [Function],
                       },
                     ],
@@ -4197,6 +4320,9 @@ Map {
             "onDownloadCSV": Object {
               "type": "func",
             },
+            "onSearchExpand": Object {
+              "type": "func",
+            },
             "onShowRowEdit": Object {
               "type": "func",
             },
@@ -4961,6 +5087,9 @@ Map {
               ],
               "type": "oneOf",
             },
+            "hideClearAllFiltersButton": Object {
+              "type": "bool",
+            },
             "isDisabled": Object {
               "type": "bool",
             },
@@ -5001,12 +5130,8 @@ Map {
                   "isExpanded": Object {
                     "type": "bool",
                   },
-                  "onChange": Object {
-                    "type": "func",
-                  },
-                  "onExpand": Object {
-                    "type": "func",
-                  },
+                  "onChange": [Function],
+                  "onExpand": [Function],
                   "value": [Function],
                 },
               ],
@@ -6663,6 +6788,9 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
+                      "title": Object {
+                        "type": "string",
+                      },
                       "value": Object {
                         "type": "string",
                       },
@@ -6944,6 +7072,9 @@ Map {
                           },
                         ],
                         "type": "arrayOf",
+                      },
+                      "title": Object {
+                        "type": "string",
                       },
                       "value": Object {
                         "type": "string",
@@ -7245,6 +7376,9 @@ Map {
                           },
                         ],
                         "type": "arrayOf",
+                      },
+                      "title": Object {
+                        "type": "string",
                       },
                       "value": Object {
                         "type": "string",
@@ -8083,6 +8217,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -8224,6 +8361,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -8688,6 +8828,157 @@ Map {
       },
     },
   },
+  "TimePickerDropdown" => Object {
+    "defaultProps": Object {
+      "className": undefined,
+      "disabled": false,
+      "hideLabel": false,
+      "hideSecondaryLabel": false,
+      "i18n": Object {
+        "invalidText": "The time entered is invalid",
+        "placeholderText": "hh:mm XM",
+        "placeholderText24h": "HH:mm",
+        "readOnlyBtnText": "Read only",
+        "timeIconText": "Open time picker",
+        "warnText": undefined,
+      },
+      "invalid": Array [
+        false,
+        false,
+      ],
+      "is24hours": false,
+      "light": false,
+      "onChange": [Function],
+      "readOnly": false,
+      "secondaryValue": undefined,
+      "size": "md",
+      "style": Object {},
+      "testId": "time-picker",
+      "type": "single",
+      "value": undefined,
+      "warn": Array [
+        false,
+        false,
+      ],
+    },
+    "propTypes": Object {
+      "className": Object {
+        "type": "string",
+      },
+      "disabled": Object {
+        "type": "bool",
+      },
+      "hideLabel": Object {
+        "type": "bool",
+      },
+      "hideSecondaryLabel": Object {
+        "type": "bool",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "helperText": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
+              "type": "string",
+            },
+            "labelText": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "placeholderText": Object {
+              "type": "string",
+            },
+            "placeholderText24h": Object {
+              "type": "string",
+            },
+            "secondaryHelperText": Object {
+              "type": "string",
+            },
+            "secondaryLabelText": Object {
+              "type": "string",
+            },
+            "timeIconText": Object {
+              "type": "string",
+            },
+            "warnText": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "id": Object {
+        "isRequired": true,
+        "type": "string",
+      },
+      "invalid": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "is24hours": Object {
+        "type": "bool",
+      },
+      "light": Object {
+        "type": "bool",
+      },
+      "onChange": Object {
+        "type": "func",
+      },
+      "readOnly": Object {
+        "type": "bool",
+      },
+      "secondaryValue": Object {
+        "type": "string",
+      },
+      "size": Object {
+        "args": Array [
+          Array [
+            "sm",
+            "md",
+            "lg",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "type": Object {
+        "args": Array [
+          Array [
+            "single",
+            "range",
+          ],
+        ],
+        "type": "oneOf",
+      },
+      "value": Object {
+        "type": "string",
+      },
+      "warn": Object {
+        "args": Array [
+          Object {
+            "type": "bool",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
   "DateTimePicker" => Object {
     "defaultProps": Object {
       "dateTimeMask": "YYYY-MM-DD HH:mm",
@@ -8715,7 +9006,9 @@ Map {
           "months",
           "years",
         ],
+        "invalidLabel": "Invalid",
         "invalidNumberLabel": "Number is not valid",
+        "invalidText": "The date time entered is invalid",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
@@ -8763,6 +9056,7 @@ Map {
           "value": "YEARS",
         },
       ],
+      "invalid": false,
       "light": false,
       "locale": "en",
       "onApply": null,
@@ -8807,6 +9101,7 @@ Map {
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
     },
     "propTypes": Object {
@@ -9023,7 +9318,13 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "invalidLabel": Object {
+              "type": "string",
+            },
             "invalidNumberLabel": Object {
+              "type": "string",
+            },
+            "invalidText": Object {
               "type": "string",
             },
             "lastLabel": Object {
@@ -9091,6 +9392,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "invalid": Object {
+        "type": "bool",
+      },
       "light": Object {
         "type": "bool",
       },
@@ -9151,6 +9455,14 @@ Map {
       "showRelativeOption": Object {
         "type": "bool",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "testId": Object {
         "type": "string",
       },
@@ -9158,6 +9470,7 @@ Map {
   },
   "DateTimePickerV2" => Object {
     "defaultProps": Object {
+      "datePickerType": "range",
       "dateTimeMask": "YYYY-MM-DD HH:mm",
       "defaultValue": null,
       "disabled": false,
@@ -9178,6 +9491,7 @@ Map {
         "increment": "Increment",
         "intervalLabels": Array [],
         "invalidNumberLabel": "Number is not valid",
+        "invalidText": "The date time entered is invalid",
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
@@ -9185,7 +9499,9 @@ Map {
         "relativeLabel": "Relative",
         "relativeLabels": Array [],
         "relativeToLabel": "Relative to",
+        "resetBtnLabel": "Clear",
         "startTimeLabel": "Start time",
+        "timePickerInvalidText": undefined,
         "toLabel": "to",
         "toNowLabel": "to Now",
       },
@@ -9216,6 +9532,7 @@ Map {
           "value": "YEARS",
         },
       ],
+      "invalid": false,
       "light": false,
       "locale": "en",
       "menuOffset": undefined,
@@ -9258,12 +9575,19 @@ Map {
           "value": "YESTERDAY",
         },
       ],
+      "renderInPortal": true,
       "renderPresetTooltipText": null,
       "showCustomRangeLink": true,
       "showRelativeOption": true,
+      "style": Object {},
       "testId": "date-time-picker",
+      "useAutoPositioning": false,
+      "useNewTimeSpinner": false,
     },
     "propTypes": Object {
+      "datePickerType": Object {
+        "type": "string",
+      },
       "dateTimeMask": Object {
         "type": "string",
       },
@@ -9386,6 +9710,55 @@ Map {
                           "isRequired": true,
                           "type": "string",
                         },
+                        "start": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "string",
+                              },
+                              Object {
+                                "args": Array [
+                                  [Function],
+                                ],
+                                "type": "instanceOf",
+                              },
+                            ],
+                          ],
+                          "type": "oneOfType",
+                        },
+                        "startDate": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "startTime": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "isRequired": true,
+                    "type": "exact",
+                  },
+                },
+              ],
+              "isRequired": true,
+              "type": "exact",
+            },
+            Object {
+              "args": Array [
+                Object {
+                  "timeRangeKind": Object {
+                    "args": Array [
+                      Array [
+                        "SINGLE",
+                      ],
+                    ],
+                    "isRequired": true,
+                    "type": "oneOf",
+                  },
+                  "timeSingleValue": Object {
+                    "args": Array [
+                      Object {
                         "start": Object {
                           "args": Array [
                             Array [
@@ -9483,6 +9856,9 @@ Map {
             "invalidNumberLabel": Object {
               "type": "string",
             },
+            "invalidText": Object {
+              "type": "string",
+            },
             "lastLabel": Object {
               "type": "string",
             },
@@ -9514,7 +9890,13 @@ Map {
             "relativeToLabel": Object {
               "type": "string",
             },
+            "resetBtnLabel": Object {
+              "type": "string",
+            },
             "startTimeLabel": Object {
+              "type": "string",
+            },
+            "timePickerInvalidText": Object {
               "type": "string",
             },
             "toLabel": Object {
@@ -9547,6 +9929,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "invalid": Object {
+        "type": "bool",
       },
       "light": Object {
         "type": "bool",
@@ -9612,6 +9997,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "renderInPortal": Object {
+        "type": "bool",
+      },
       "renderPresetTooltipText": Object {
         "type": "func",
       },
@@ -9621,8 +10009,22 @@ Map {
       "showRelativeOption": Object {
         "type": "bool",
       },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
+      },
       "testId": Object {
         "type": "string",
+      },
+      "useAutoPositioning": Object {
+        "type": "bool",
+      },
+      "useNewTimeSpinner": Object {
+        "type": "bool",
       },
     },
   },
@@ -9979,9 +10381,11 @@ Map {
   "EmptyState" => Object {
     "defaultProps": Object {
       "action": null,
+      "arrangement": "stacked",
       "className": "",
       "icon": "",
       "secondaryAction": null,
+      "size": "default",
       "testId": "EmptyState",
     },
     "propTypes": Object {
@@ -10005,8 +10409,18 @@ Map {
               "type": "oneOf",
             },
             "label": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "node",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
               "isRequired": true,
-              "type": "string",
+              "type": "oneOfType",
             },
             "onClick": Object {
               "isRequired": true,
@@ -10015,6 +10429,15 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "arrangement": Object {
+        "args": Array [
+          Array [
+            "stacked",
+            "inline",
+          ],
+        ],
+        "type": "oneOf",
       },
       "body": Object {
         "args": Array [
@@ -10072,13 +10495,32 @@ Map {
         ],
         "type": "shape",
       },
+      "size": Object {
+        "args": Array [
+          Array [
+            "default",
+            "small",
+          ],
+        ],
+        "type": "oneOf",
+      },
       "testID": [Function],
       "testId": Object {
         "type": "string",
       },
       "title": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "node",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
         "isRequired": true,
-        "type": "string",
+        "type": "oneOfType",
       },
     },
   },
@@ -10102,7 +10544,7 @@ Map {
       "onDelete": null,
       "searchPlaceHolderText": "Search image by file name",
       "searchProperty": "id",
-      "testId": "ComposedModal",
+      "testId": "image-gallery-modal",
     },
     "propTypes": Object {
       "children": Object {
@@ -10578,6 +11020,7 @@ Map {
       "isSideNavExpanded": false,
       "onClickSideNavExpand": null,
       "prefix": "IBM",
+      "showCloseIconWhenPanelExpanded": false,
       "skipto": "#main-content",
       "subtitle": null,
       "testId": "header",
@@ -10699,6 +11142,9 @@ Map {
       "shortAppName": Object {
         "type": "string",
       },
+      "showCloseIconWhenPanelExpanded": Object {
+        "type": "bool",
+      },
       "skipto": Object {
         "type": "string",
       },
@@ -10738,6 +11184,7 @@ Map {
         "submenuLabel": "dropdown",
       },
       "isSideNavExpanded": false,
+      "recentLinks": Array [],
       "testId": "side-nav",
     },
     "propTypes": Object {
@@ -10895,6 +11342,119 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "recentLinks": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "childContent": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "content": Object {
+                            "args": Array [
+                              Array [
+                                Object {
+                                  "type": "string",
+                                },
+                                Object {
+                                  "type": "node",
+                                },
+                                Object {
+                                  "type": "bool",
+                                },
+                                Object {
+                                  "type": "func",
+                                },
+                              ],
+                            ],
+                            "isRequired": true,
+                            "type": "oneOfType",
+                          },
+                          "isActive": Object {
+                            "type": "bool",
+                          },
+                          "metaData": Object {
+                            "args": Array [
+                              Object {
+                                "element": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "func",
+                                      },
+                                    ],
+                                  ],
+                                  "type": "oneOfType",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "type": "arrayOf",
+                },
+                "icon": Object {
+                  "args": Array [
+                    Array [
+                      Object {
+                        "type": "func",
+                      },
+                      Object {
+                        "type": "object",
+                      },
+                    ],
+                  ],
+                  "isRequired": true,
+                  "type": "oneOfType",
+                },
+                "isActive": Object {
+                  "type": "bool",
+                },
+                "isEnabled": Object {
+                  "type": "bool",
+                },
+                "isPinned": Object {
+                  "type": "bool",
+                },
+                "linkContent": Object {
+                  "type": "string",
+                },
+                "metaData": Object {
+                  "args": Array [
+                    Object {
+                      "element": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "string",
+                            },
+                            Object {
+                              "type": "func",
+                            },
+                          ],
+                        ],
+                        "type": "oneOfType",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
       "testId": Object {
         "type": "string",
       },
@@ -10910,9 +11470,11 @@ Map {
         "primaryButtonLabel": "Save",
         "secondaryButtonLabel": "Cancel",
       },
+      "isBusy": false,
       "isCondensed": false,
       "isFullWidth": false,
       "isOpen": false,
+      "isPrimaryButtonDisabled": false,
       "onPrimaryButtonClick": undefined,
       "onSecondaryButtonClick": undefined,
       "onToggle": undefined,
@@ -10924,24 +11486,34 @@ Map {
     "propTypes": Object {
       "actionItems": Object {
         "args": Array [
-          Object {
-            "args": Array [
-              Object {
-                "buttonCallback": Object {
-                  "type": "func",
+          Array [
+            Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "buttonCallback": Object {
+                        "type": "func",
+                      },
+                      "buttonIcon": Object {
+                        "type": "elementType",
+                      },
+                      "buttonLabel": Object {
+                        "type": "string",
+                      },
+                    },
+                  ],
+                  "type": "shape",
                 },
-                "buttonIcon": Object {
-                  "type": "elementType",
-                },
-                "buttonLabel": Object {
-                  "type": "string",
-                },
-              },
-            ],
-            "type": "shape",
-          },
+              ],
+              "type": "arrayOf",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
         ],
-        "type": "arrayOf",
+        "type": "oneOfType",
       },
       "direction": Object {
         "args": Array [
@@ -10971,6 +11543,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isBusy": Object {
+        "type": "bool",
+      },
       "isCondensed": Object {
         "type": "bool",
       },
@@ -10978,6 +11553,9 @@ Map {
         "type": "bool",
       },
       "isOpen": Object {
+        "type": "bool",
+      },
+      "isPrimaryButtonDisabled": Object {
         "type": "bool",
       },
       "onPrimaryButtonClick": Object {
@@ -11030,6 +11608,7 @@ Map {
       "customHelpLinks": Array [],
       "customProfileLinks": Array [],
       "extraContent": null,
+      "globalApplications": Array [],
       "hasSideNav": false,
       "i18n": Object {
         "about": "About",
@@ -11055,10 +11634,18 @@ Map {
         "surveyPrivacyPolicy": "Privacy Policy",
         "surveyText": "Click here to help us improve the product",
         "surveyTitle": "Enjoying {solutionName}?",
+        "switcherAvailableWorkspaces": "Available workspaces",
+        "switcherBackToAppSwitcher": "Back to applications",
+        "switcherGlobal": "Global / other",
         "switcherLearnMoreLink": "Learn more",
         "switcherMyApplications": "My applications",
         "switcherNavigatorLink": "All applications",
         "switcherRequestAccess": "Contact your administrator to request application access",
+        "switcherSelectWorkspace": "Select a workspace",
+        "switcherSuiteAdmin": "Suite administration",
+        "switcherWorkspace": "Workspace",
+        "switcherWorkspaceAdmin": "Workspace administration",
+        "switcherWorkspaces": "Workspaces",
         "userIcon": "User",
         "whatsNew": "What's new",
       },
@@ -11076,6 +11663,7 @@ Map {
       "username": null,
       "walkmeLang": "en",
       "walkmePath": null,
+      "workspaces": null,
     },
     "propTypes": Object {
       "appName": Object {
@@ -11088,6 +11676,9 @@ Map {
               Object {
                 "href": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
                   "type": "string",
                 },
                 "id": Object {
@@ -11177,6 +11768,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -11247,6 +11841,36 @@ Map {
       },
       "extraContent": Object {
         "type": "element",
+      },
+      "globalApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
       "hasSideNav": Object {
         "type": "bool",
@@ -11343,10 +11967,34 @@ Map {
               ],
               "type": "oneOfType",
             },
+            "switcherAvailableWorkspaces": Object {
+              "type": "string",
+            },
+            "switcherBackToAppSwitcher": Object {
+              "type": "string",
+            },
+            "switcherGlobal": Object {
+              "type": "string",
+            },
             "switcherMyApplications": Object {
               "type": "string",
             },
             "switcherNavigatorLink": Object {
+              "type": "string",
+            },
+            "switcherSelectWorkspace": Object {
+              "type": "string",
+            },
+            "switcherSuiteAdmin": Object {
+              "type": "string",
+            },
+            "switcherWorkspace": Object {
+              "type": "string",
+            },
+            "switcherWorkspaceAdmin": Object {
+              "type": "string",
+            },
+            "switcherWorkspaces": Object {
               "type": "string",
             },
             "userIcon": Object {
@@ -11593,6 +12241,119 @@ Map {
               "isRequired": true,
               "type": "arrayOf",
             },
+            "recentLinks": Object {
+              "args": Array [
+                Object {
+                  "args": Array [
+                    Object {
+                      "childContent": Object {
+                        "args": Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "content": Object {
+                                  "args": Array [
+                                    Array [
+                                      Object {
+                                        "type": "string",
+                                      },
+                                      Object {
+                                        "type": "node",
+                                      },
+                                      Object {
+                                        "type": "bool",
+                                      },
+                                      Object {
+                                        "type": "func",
+                                      },
+                                    ],
+                                  ],
+                                  "isRequired": true,
+                                  "type": "oneOfType",
+                                },
+                                "isActive": Object {
+                                  "type": "bool",
+                                },
+                                "metaData": Object {
+                                  "args": Array [
+                                    Object {
+                                      "element": Object {
+                                        "args": Array [
+                                          Array [
+                                            Object {
+                                              "type": "string",
+                                            },
+                                            Object {
+                                              "type": "func",
+                                            },
+                                          ],
+                                        ],
+                                        "type": "oneOfType",
+                                      },
+                                    },
+                                  ],
+                                  "type": "shape",
+                                },
+                              },
+                            ],
+                            "type": "shape",
+                          },
+                        ],
+                        "type": "arrayOf",
+                      },
+                      "icon": Object {
+                        "args": Array [
+                          Array [
+                            Object {
+                              "type": "func",
+                            },
+                            Object {
+                              "type": "object",
+                            },
+                          ],
+                        ],
+                        "isRequired": true,
+                        "type": "oneOfType",
+                      },
+                      "isActive": Object {
+                        "type": "bool",
+                      },
+                      "isEnabled": Object {
+                        "type": "bool",
+                      },
+                      "isPinned": Object {
+                        "type": "bool",
+                      },
+                      "linkContent": Object {
+                        "type": "string",
+                      },
+                      "metaData": Object {
+                        "args": Array [
+                          Object {
+                            "element": Object {
+                              "args": Array [
+                                Array [
+                                  Object {
+                                    "type": "string",
+                                  },
+                                  Object {
+                                    "type": "func",
+                                  },
+                                ],
+                              ],
+                              "type": "oneOfType",
+                            },
+                          },
+                        ],
+                        "type": "shape",
+                      },
+                    },
+                  ],
+                  "type": "shape",
+                },
+              ],
+              "type": "arrayOf",
+            },
             "testId": Object {
               "type": "string",
             },
@@ -11633,6 +12394,67 @@ Map {
       },
       "walkmePath": Object {
         "type": "string",
+      },
+      "workspaces": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "adminHref": Object {
+                  "type": "string",
+                },
+                "applications": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "href": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "icon": Object {
+                            "type": "string",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isExternal": Object {
+                            "type": "bool",
+                          },
+                          "name": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "arrayOf",
+                },
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isCurrent": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
       },
     },
   },
@@ -11715,6 +12537,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "icon": Object {
+                  "type": "string",
+                },
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
@@ -11740,6 +12565,9 @@ Map {
               Object {
                 "href": Object {
                   "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
                   "type": "string",
                 },
                 "id": Object {
@@ -11786,6 +12614,220 @@ Map {
       "onRouteChange": Object {
         "type": "func",
       },
+      "testId": Object {
+        "type": "string",
+      },
+    },
+  },
+  "MultiWorkspaceSuiteHeaderAppSwitcher" => Object {
+    "defaultProps": Object {
+      "adminLink": null,
+      "customApplications": Array [],
+      "globalApplications": Array [],
+      "i18n": Object {
+        "allApplicationsLink": "All applications",
+        "availableWorkspaces": "Available workspaces",
+        "backToAppSwitcher": "Back to applications",
+        "global": "Global / other",
+        "learnMoreLink": "Learn more",
+        "requestAccess": "Contact your administrator to request application access.",
+        "selectWorkspace": "Select a workspace",
+        "suiteAdmin": "Suite administration",
+        "workspace": "Workspace",
+        "workspaceAdmin": "Workspace administration",
+        "workspaces": "Workspaces",
+      },
+      "isAdminView": false,
+      "isExpanded": false,
+      "noAccessLink": null,
+      "onRouteChange": [Function],
+      "testId": "multi-workspace-suite-header-app-switcher",
+      "workspaces": null,
+    },
+    "propTypes": Object {
+      "adminLink": Object {
+        "type": "string",
+      },
+      "customApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "globalApplications": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "icon": Object {
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isExternal": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+      "i18n": Object {
+        "args": Array [
+          Object {
+            "allApplicationsLink": Object {
+              "type": "string",
+            },
+            "availableWorkspaces": Object {
+              "type": "string",
+            },
+            "backToAppSwitcher": Object {
+              "type": "string",
+            },
+            "learnMoreLink": Object {
+              "type": "string",
+            },
+            "requestAccess": Object {
+              "type": "string",
+            },
+            "selectWorkspace": Object {
+              "type": "string",
+            },
+            "suiteAdmin": Object {
+              "type": "string",
+            },
+            "workspace": Object {
+              "type": "string",
+            },
+            "workspaceAdmin": Object {
+              "type": "string",
+            },
+            "workspaces": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "isAdminView": Object {
+        "type": "bool",
+      },
+      "isExpanded": Object {
+        "type": "bool",
+      },
+      "noAccessLink": Object {
+        "type": "string",
+      },
+      "onRouteChange": Object {
+        "type": "func",
+      },
+      "testId": Object {
+        "type": "string",
+      },
+      "workspaces": Object {
+        "args": Array [
+          Object {
+            "args": Array [
+              Object {
+                "adminHref": Object {
+                  "type": "string",
+                },
+                "applications": Object {
+                  "args": Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "href": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "icon": Object {
+                            "type": "string",
+                          },
+                          "id": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                          "isExternal": Object {
+                            "type": "bool",
+                          },
+                          "name": Object {
+                            "isRequired": true,
+                            "type": "string",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                  ],
+                  "isRequired": true,
+                  "type": "arrayOf",
+                },
+                "href": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "id": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+                "isCurrent": Object {
+                  "type": "bool",
+                },
+                "name": Object {
+                  "isRequired": true,
+                  "type": "string",
+                },
+              },
+            ],
+            "type": "shape",
+          },
+        ],
+        "type": "arrayOf",
+      },
+    },
+  },
+  "SuiteHeaderAppSwitcherLoading" => Object {
+    "defaultProps": Object {
+      "testId": "suite-header-app-switcher",
+    },
+    "propTypes": Object {
       "testId": Object {
         "type": "string",
       },
@@ -11950,10 +12992,18 @@ Map {
       "surveyPrivacyPolicy": "Privacy Policy",
       "surveyText": "Click here to help us improve the product",
       "surveyTitle": "Enjoying {solutionName}?",
+      "switcherAvailableWorkspaces": "Available workspaces",
+      "switcherBackToAppSwitcher": "Back to applications",
+      "switcherGlobal": "Global / other",
       "switcherLearnMoreLink": "Learn more",
       "switcherMyApplications": "My applications",
       "switcherNavigatorLink": "All applications",
       "switcherRequestAccess": "Contact your administrator to request application access",
+      "switcherSelectWorkspace": "Select a workspace",
+      "switcherSuiteAdmin": "Suite administration",
+      "switcherWorkspace": "Workspace",
+      "switcherWorkspaceAdmin": "Workspace administration",
+      "switcherWorkspaces": "Workspaces",
       "userIcon": "User",
       "whatsNew": "What's new",
     },
@@ -12001,7 +13051,17 @@ Map {
         "type": "oneOf",
       },
       "value": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "string",
+            },
+            Object {
+              "type": "node",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },
@@ -13027,6 +14087,14 @@ Map {
   },
   "DashboardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hasAggregationsDropDown": [Function],
+          "hasDataFilterDropdown": [Function],
+          "onAddAggregations": [Function],
+        },
+        "onEditDataItem": [Function],
+      },
       "availableDimensions": Object {},
       "availableImages": Array [],
       "breakpointSwitcher": null,
@@ -13082,7 +14150,6 @@ Map {
       "onCardJsonPreview": null,
       "onCardSelect": null,
       "onDelete": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onExport": null,
       "onFetchDynamicDemoHotspots": [Function],
@@ -13111,6 +14178,32 @@ Map {
       "title": "",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hasAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "hasDataFilterDropdown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -13186,30 +14279,12 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "dataItemType": Object {
+                  "type": "string",
+                },
                 "dataSourceId": Object {
                   "isRequired": true,
                   "type": "string",
-                },
-                "downSampleMethod": Object {
-                  "type": "string",
-                },
-                "downSampleMethods": Object {
-                  "args": Array [
-                    Object {
-                      "args": Array [
-                        Object {
-                          "id": Object {
-                            "type": "string",
-                          },
-                          "text": Object {
-                            "type": "string",
-                          },
-                        },
-                      ],
-                      "type": "shape",
-                    },
-                  ],
-                  "type": "arrayOf",
                 },
                 "grain": Object {
                   "type": "string",
@@ -13218,6 +14293,9 @@ Map {
                   "type": "bool",
                 },
                 "label": Object {
+                  "type": "string",
+                },
+                "type": Object {
                   "type": "string",
                 },
               },
@@ -13698,9 +14776,6 @@ Map {
       "onDelete": Object {
         "type": "func",
       },
-      "onEditDataItem": Object {
-        "type": "func",
-      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -13800,6 +14875,14 @@ Map {
   },
   "CardEditor" => Object {
     "defaultProps": Object {
+      "actions": Object {
+        "dataSeriesFormActions": Object {
+          "hasAggregationsDropDown": [Function],
+          "hasDataFilterDropdown": [Function],
+          "onAddAggregations": [Function],
+        },
+        "onEditDataItem": [Function],
+      },
       "availableDimensions": Object {},
       "cardConfig": null,
       "currentBreakpoint": "xl",
@@ -13824,7 +14907,6 @@ Map {
       "icons": null,
       "isSummaryDashboard": false,
       "onCardJsonPreview": null,
-      "onEditDataItem": null,
       "onEditDataItems": null,
       "onRenderCardEditForm": null,
       "onValidateCardJson": null,
@@ -13842,6 +14924,32 @@ Map {
       "testId": "card-editor",
     },
     "propTypes": Object {
+      "actions": Object {
+        "args": Array [
+          Object {
+            "dataSeriesFormActions": Object {
+              "args": Array [
+                Object {
+                  "hasAggregationsDropDown": Object {
+                    "type": "func",
+                  },
+                  "hasDataFilterDropdown": Object {
+                    "type": "func",
+                  },
+                  "onAddAggregations": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+            "onEditDataItem": Object {
+              "type": "func",
+            },
+          },
+        ],
+        "type": "shape",
+      },
       "availableDimensions": Object {
         "args": Array [
           Object {},
@@ -14031,9 +15139,6 @@ Map {
         "isRequired": true,
         "type": "func",
       },
-      "onEditDataItem": Object {
-        "type": "func",
-      },
       "onEditDataItems": Object {
         "type": "func",
       },
@@ -14055,7 +15160,6 @@ Map {
         ],
         "type": "arrayOf",
       },
-      "testID": [Function],
       "testId": Object {
         "type": "string",
       },
@@ -14094,6 +15198,32 @@ Map {
           "xl": Object {
             "h": 4,
             "w": 8,
+          },
+          "xs": Object {
+            "h": 4,
+            "w": 4,
+          },
+        },
+        "LARGETHICK": Object {
+          "lg": Object {
+            "h": 4,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 4,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 4,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 4,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 4,
+            "w": 12,
           },
           "xs": Object {
             "h": 4,
@@ -14172,6 +15302,32 @@ Map {
           "xl": Object {
             "h": 2,
             "w": 8,
+          },
+          "xs": Object {
+            "h": 2,
+            "w": 4,
+          },
+        },
+        "MEDIUMTHICK": Object {
+          "lg": Object {
+            "h": 2,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 2,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 2,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 2,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 2,
+            "w": 12,
           },
           "xs": Object {
             "h": 2,
@@ -14276,6 +15432,32 @@ Map {
           "xl": Object {
             "h": 1,
             "w": 16,
+          },
+          "xs": Object {
+            "h": 1,
+            "w": 4,
+          },
+        },
+        "SMALLTHICK": Object {
+          "lg": Object {
+            "h": 1,
+            "w": 12,
+          },
+          "max": Object {
+            "h": 1,
+            "w": 12,
+          },
+          "md": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "sm": Object {
+            "h": 1,
+            "w": 8,
+          },
+          "xl": Object {
+            "h": 1,
+            "w": 12,
           },
           "xs": Object {
             "h": 1,
@@ -14509,6 +15691,7 @@ Map {
       "onTouchStart": undefined,
       "overrides": undefined,
       "padding": "default",
+      "renderDateDropdownInPortal": true,
       "renderExpandIcon": undefined,
       "rowHeight": Object {
         "lg": 144,
@@ -15087,6 +16270,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -15307,6 +16493,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -15360,11 +16549,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -16206,6 +17398,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -16472,6 +17667,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -16525,11 +17723,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -17509,6 +18710,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -17738,6 +18942,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -17791,11 +18998,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -18869,6 +20079,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -19024,6 +20237,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -19911,6 +21127,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -20139,6 +21358,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -20571,6 +21793,7 @@ Map {
         "weeklyLabel": "Weekly",
       },
       "locale": "en",
+      "renderDateDropdownInPortal": true,
       "size": "LARGE",
       "values": Array [],
     },
@@ -21330,6 +22553,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -21483,6 +22709,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -22540,6 +23769,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -22760,6 +23992,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -22813,11 +24048,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -23920,6 +25158,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -24139,6 +25380,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -25046,6 +26290,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -25265,6 +26512,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -26221,6 +27471,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -26440,6 +27693,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -27298,6 +28554,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -27518,6 +28777,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
       },
       "renderEditContent": Object {
         "type": "func",
@@ -28843,6 +30105,9 @@ Map {
                         ],
                         "type": "arrayOf",
                       },
+                      "title": Object {
+                        "type": "string",
+                      },
                       "value": Object {
                         "type": "string",
                       },
@@ -29574,6 +30839,7 @@ Map {
         "render": [Function],
       },
       "renderInPortal": false,
+      "style": Object {},
       "tabIndex": 0,
       "testId": "flyout-menu",
       "tooltipClassName": "",
@@ -29703,6 +30969,14 @@ Map {
       },
       "renderInPortal": Object {
         "type": "bool",
+      },
+      "style": Object {
+        "args": Array [
+          Object {
+            "type": "string",
+          },
+        ],
+        "type": "objectOf",
       },
       "tabIndex": Object {
         "type": "number",
@@ -31313,6 +32587,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -31533,6 +32810,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -31586,11 +32866,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -33196,6 +34479,9 @@ Map {
               ],
               "type": "arrayOf",
             },
+            "content": Object {
+              "type": "node",
+            },
             "disabled": Object {
               "type": "bool",
             },
@@ -33691,6 +34977,9 @@ Map {
         ],
         "type": "oneOf",
       },
+      "renderDateDropdownInPortal": Object {
+        "type": "bool",
+      },
       "renderEditContent": Object {
         "type": "func",
       },
@@ -33747,11 +35036,14 @@ Map {
             "SMALL",
             "SMALLWIDE",
             "SMALLFULL",
+            "SMALLTHICK",
             "MEDIUMTHIN",
             "MEDIUM",
+            "MEDIUMTHICK",
             "MEDIUMWIDE",
             "LARGETHIN",
             "LARGE",
+            "LARGETHICK",
             "LARGEWIDE",
           ],
         ],
@@ -42562,13 +43854,16 @@ Map {
   },
   "CARD_SIZES" => Object {
     "LARGE": "LARGE",
+    "LARGETHICK": "LARGETHICK",
     "LARGETHIN": "LARGETHIN",
     "LARGEWIDE": "LARGEWIDE",
     "MEDIUM": "MEDIUM",
+    "MEDIUMTHICK": "MEDIUMTHICK",
     "MEDIUMTHIN": "MEDIUMTHIN",
     "MEDIUMWIDE": "MEDIUMWIDE",
     "SMALL": "SMALL",
     "SMALLFULL": "SMALLFULL",
+    "SMALLTHICK": "SMALLTHICK",
     "SMALLWIDE": "SMALLWIDE",
   },
   "CARD_ACTIONS" => Object {
@@ -42622,6 +43917,7 @@ Map {
     "ABSOLUTE": "ABSOLUTE",
     "PRESET": "PRESET",
     "RELATIVE": "RELATIVE",
+    "SINGLE": "SINGLE",
   },
   "tableActions" => Object {
     "TABLE_ACTION_APPLY": "TABLE_ACTION_APPLY",

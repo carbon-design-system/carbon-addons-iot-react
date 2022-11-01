@@ -1057,6 +1057,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <select
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--select-input"
                       defaultValue="DataType2"
                       id="select-1"
@@ -1411,7 +1421,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -2500,7 +2510,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -3665,6 +3675,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <select
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--select-input"
                       defaultValue="DataType2"
                       id="select-1"
@@ -4019,7 +4039,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -4618,6 +4638,16 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     data-invalid={null}
                   >
                     <input
+                      actions={
+                        Object {
+                          "dataSeriesFormActions": Object {
+                            "hasAggregationsDropDown": [Function],
+                            "hasDataFilterDropdown": [Function],
+                            "onAddAggregations": [Function],
+                          },
+                          "onEditDataItem": [Function],
+                        }
+                      }
                       className="bx--text-input bx--text-input--md"
                       disabled={false}
                       id="custom-content-textinput"
@@ -4948,7 +4978,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -5573,7 +5603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -6410,7 +6440,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -7504,7 +7534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -8479,7 +8509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
           aria-describedby={null}
           aria-pressed={null}
           className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-          data-testid="Button"
+          data-testid="card-editor-add-card-button"
           disabled={false}
           onBlur={[Function]}
           onClick={[Function]}
@@ -9121,7 +9151,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             aria-describedby={null}
             aria-pressed={null}
             className="iot--btn bx--btn bx--btn--sm bx--btn--ghost"
-            data-testid="Button"
+            data-testid="card-editor-add-card-button"
             disabled={false}
             onBlur={[Function]}
             onClick={[Function]}

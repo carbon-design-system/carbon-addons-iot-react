@@ -1,11 +1,12 @@
 import { mount } from 'enzyme';
 import React from 'react';
-import { merge, pick } from 'lodash-es';
-import { screen, render, fireEvent, act } from '@testing-library/react';
+import { merge, pick, cloneDeep } from 'lodash-es';
+import { screen, render, fireEvent, act, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Screen16, ViewOff16 } from '@carbon/icons-react';
 
 import { settings } from '../../constants/Settings';
+import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
 import * as reducer from './baseTableReducer';
 import StatefulTable from './StatefulTable';
@@ -18,7 +19,14 @@ import {
   getTableColumns,
 } from './Table.test.helpers';
 import RowActionsCell from './TableBody/RowActionsCell/RowActionsCell';
-import { addChildRows, getInitialState, getRowActions, getTableData } from './Table.story.helpers';
+import {
+  addChildRows,
+  getInitialState,
+  getRowActions,
+  getTableData,
+  decorateTableColumns,
+  getTableDataWithEmptySelectFilter,
+} from './Table.story.helpers';
 
 const { prefix, iotPrefix } = settings;
 const mockActions = getMockActions(jest.fn);
@@ -273,6 +281,156 @@ describe('stateful table with real reducer', () => {
     expect(fourthFilteredRowsOptionC).toHaveLength(3);
     expect(fourthItemCount).toBeInTheDocument();
   });
+  it('select should filter properly with empty string value', async () => {
+    const hasEmptyFilterOption = true;
+    const hasMultiSelectFilter = false;
+
+    const { container } = render(
+      <StatefulTable
+        columns={decorateTableColumns(
+          getTableColumns(),
+          hasEmptyFilterOption,
+          hasMultiSelectFilter
+        )}
+        data={getTableDataWithEmptySelectFilter()}
+        actions={mockActions}
+        options={initialState.options}
+        view={{
+          filters: [
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: 'filter',
+          },
+          pagination: {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 1,
+          },
+        }}
+      />
+    );
+
+    // start off with a filter of option-B.
+    // Note: each options length count has an extra item due to the multiselect having the same title attribute as the row cell
+    const initialFilteredRowsOptionA = screen.queryByTitle('option-A');
+    const initialFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const initialItemCount = screen.getByText('1–10 of 33 items');
+    expect(initialFilteredRowsOptionA).toBeNull();
+    expect(initialFilteredRowsOptionB).toHaveLength(11);
+    expect(initialItemCount).toBeInTheDocument();
+
+    // next select a filter with empty string option
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: EMPTY_STRING_DISPLAY_VALUE }));
+    const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const secondFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const secondItemCount = screen.getByText('1–10 of 33 items');
+    expect(secondFilteredRowsOptionA).toEqual([]);
+    expect(secondFilteredRowsOptionB).toEqual([]);
+    expect(secondItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next select a filter with option-A
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: 'option-A' }));
+    const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const thirdFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const thirdItemCount = screen.getByText('1–10 of 34 items');
+    expect(thirdFilteredRowsOptionA).toHaveLength(11);
+    expect(thirdFilteredRowsOptionB).toEqual([]);
+    expect(thirdItemCount).toBeInTheDocument();
+
+    // next clear all filters from the select
+    const clearSelectBox = screen.getByLabelText('Clear selection');
+    expect(clearSelectBox).toBeInTheDocument();
+    userEvent.click(clearSelectBox);
+    const fourthFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const fourthFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const fourthItemCount = screen.getByText('1–10 of 100 items');
+    expect(fourthFilteredRowsOptionA).toHaveLength(4);
+    expect(fourthFilteredRowsOptionB).toHaveLength(3);
+    expect(fourthItemCount).toBeInTheDocument();
+  });
+
+  it('multiselect should filter properly with empty string value', async () => {
+    const hasEmptyFilterOption = true;
+    const hasMultiSelectFilter = true;
+
+    const { container } = render(
+      <StatefulTable
+        columns={decorateTableColumns(
+          getTableColumns(),
+          hasEmptyFilterOption,
+          hasMultiSelectFilter
+        )}
+        data={getTableDataWithEmptySelectFilter()}
+        actions={mockActions}
+        options={initialState.options}
+        view={{
+          filters: [
+            {
+              columnId: 'select',
+              value: 'option-B',
+            },
+          ],
+          toolbar: {
+            activeBar: 'filter',
+          },
+          pagination: {
+            pageSize: 10,
+            pageSizes: [10, 20, 30],
+            page: 1,
+          },
+        }}
+      />
+    );
+
+    // start off with a filter of option-B.
+    // Note: each options length count has an extra item due to the multiselect having the same title attribute as the row cell
+    const initialFilteredRowsOptionA = screen.queryByTitle('option-A');
+    const initialFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const initialItemCount = screen.getByText('1–10 of 33 items');
+    expect(initialFilteredRowsOptionA).toBeNull();
+    expect(initialFilteredRowsOptionB).toHaveLength(10);
+    expect(initialItemCount).toBeInTheDocument();
+
+    // next select a filter with empty string option
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: EMPTY_STRING_DISPLAY_VALUE }));
+    const secondFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const secondFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const secondItemCount = screen.getByText('1–10 of 66 items');
+    expect(secondFilteredRowsOptionA).toEqual([]);
+    expect(secondFilteredRowsOptionB).toHaveLength(5);
+    expect(secondItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next remove select from filter with option-B
+    userEvent.click(screen.getByPlaceholderText('pick an option'));
+    userEvent.click(screen.getByRole('option', { name: 'option-B' }));
+    const thirdFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const thirdFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const thirdItemCount = screen.getByText('1–10 of 33 items');
+    expect(thirdFilteredRowsOptionA).toEqual([]);
+    expect(thirdFilteredRowsOptionB).toEqual([]);
+    expect(thirdItemCount).toBeInTheDocument();
+    expect(container.querySelectorAll('tr')).toHaveLength(12);
+
+    // next clear all filters from the select
+    const clearSelectBox = screen.getByLabelText('Clear selection');
+    expect(clearSelectBox).toBeInTheDocument();
+    userEvent.click(clearSelectBox);
+    const fourthFilteredRowsOptionA = screen.queryAllByTitle('option-A');
+    const fourthFilteredRowsOptionB = screen.queryAllByTitle('option-B');
+    const fourthItemCount = screen.getByText('1–10 of 100 items');
+    expect(fourthFilteredRowsOptionA).toHaveLength(4);
+    expect(fourthFilteredRowsOptionB).toHaveLength(3);
+    expect(fourthItemCount).toBeInTheDocument();
+  });
   it('multiselect should filter properly with no pre-selected filters', async () => {
     render(
       <StatefulTable
@@ -504,6 +662,117 @@ describe('stateful table with real reducer', () => {
       }
     });
   });
+  it('should execute callback upon opening/closing search input', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.focus(searchField);
+    expect(mockActions.toolbar.onSearchExpand).toHaveBeenCalledTimes(1);
+    expect(mockActions.toolbar.onSearchExpand.mock.calls[0][0]).toEqual([expect.anything(), true]);
+    act(() => fireEvent.blur(searchField));
+    await waitFor(() => {
+      expect(mockActions.toolbar.onSearchExpand.mock.calls[1][0]).toEqual([
+        expect.anything(),
+        false,
+      ]);
+    });
+  });
+  it('should display empty table state when no search results', () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    const searchField = screen.queryByRole('searchbox');
+    fireEvent.change(searchField, { target: { value: 'irrelevant search 123123' } });
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+  });
+  it('should apply callback when clear filter button clicked', async () => {
+    render(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'irrelevant search 123123',
+            },
+          },
+        }}
+        id="table"
+        i18n={{
+          emptyButtonLabelWithFilters: 'Clear all filters',
+        }}
+      />
+    );
+    expect(screen.getByTestId('EmptyState')).toBeInTheDocument();
+    expect(screen.getByTestId('EmptyState')).toBeVisible();
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+    expect(mockActions.toolbar.onClearAllFilters).toHaveBeenCalledTimes(1);
+  });
+  it('should preserve search when all filters has been cleared', async () => {
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.search = {
+      defaultValue: 'irrelevant search 123123',
+    };
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const emptyState = screen.getByTestId('EmptyState');
+    const clearAllFiltersButton = screen.getByText('Clear all filters');
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    const comboBoxFilter = screen.getByDisplayValue('option-B');
+
+    expect(emptyState).toBeInTheDocument();
+    expect(clearAllFiltersButton).toBeInTheDocument();
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(comboBoxFilter).toBeInTheDocument();
+
+    const clearFiltersButton = screen.getByRole('button', { name: 'Clear all filters' });
+    fireEvent.click(clearFiltersButton);
+
+    // Filtering by search has been preserved
+    expect(emptyState).toBeInTheDocument();
+
+    // Column filters has been reset
+    expect(clearAllFiltersButton).not.toBeInTheDocument();
+    expect(whiteboardFilter).not.toBeInTheDocument();
+    expect(comboBoxFilter).not.toBeInTheDocument();
+  });
   it('should use callback fallbacks when props not passed', () => {
     expect(() =>
       render(
@@ -519,6 +788,50 @@ describe('stateful table with real reducer', () => {
       )
     ).not.toThrowError();
   });
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" button if prop hideClearAllFiltersButton enabled and activeBar is undefined', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+    initialStateCopy.view.toolbar.activeBar = undefined;
+
+    render(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
+  it('should hide "Clear all filters" after rerender with new props', async () => {
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+
+    const { rerender } = render(<StatefulTable {...initialState} actions={mockActions} />);
+
+    const whiteboardFilter = await screen.findByDisplayValue('whiteboard');
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.getByText('Clear all filters')).toBeInTheDocument();
+
+    const initialStateCopy = cloneDeep(initialState);
+    initialStateCopy.view.toolbar.hideClearAllFiltersButton = true;
+
+    rerender(<StatefulTable {...initialStateCopy} actions={mockActions} />);
+
+    expect(whiteboardFilter).toBeInTheDocument();
+    expect(screen.getByDisplayValue('option-B')).toBeInTheDocument();
+    expect(screen.queryByText('Clear all filters')).toBeNull();
+  });
+
   describe('AdvancedFilters', () => {
     it('properly filters the table when advancedRules have simple logic', async () => {
       const { container } = render(
@@ -659,6 +972,55 @@ describe('stateful table with real reducer', () => {
       expect(container.querySelectorAll('tbody > tr')).toHaveLength(10);
       expect(screen.getByText('1–10 of 11 items')).toBeVisible();
     });
+    it('toolbar icon is disabled when isDisabled prop set to true', () => {
+      render(
+        <StatefulTable
+          id="advanced-filters-disabled-icon"
+          {...initialState}
+          options={{
+            ...initialState.options,
+            hasFilter: false,
+            hasAdvancedFilter: true,
+          }}
+          view={{
+            ...initialState.view,
+            toolbar: {
+              ...initialState.view.toolbar,
+              isDisabled: true,
+              advancedFilterFlyoutOpen: false,
+            },
+            selectedAdvancedFilterIds: ['my-filter'],
+            advancedFilters: [
+              {
+                filterId: 'my-filter',
+                filterTitleText: 'My Filter',
+                filterRules: {
+                  id: '14p5ho3pcu',
+                  groupLogic: 'ALL',
+                  rules: [
+                    {
+                      id: 'rsiru4rjba',
+                      columnId: 'date',
+                      operand: 'CONTAINS',
+                      value: '19',
+                    },
+                    {
+                      id: '34bvyub9jq',
+                      columnId: 'boolean',
+                      operand: 'EQ',
+                      value: 'true',
+                    },
+                  ],
+                },
+              },
+            ],
+          }}
+        />
+      );
+      const advancedFilterToolbarIcon = screen.getByTestId('advanced-filter-flyout-button');
+      expect(advancedFilterToolbarIcon).toBeVisible();
+      expect(advancedFilterToolbarIcon).toBeDisabled();
+    });
   });
   it('properly changes state of child and parent row selections', () => {
     const onRowSelectedMock = jest.fn();
@@ -796,7 +1158,7 @@ describe('stateful table with real reducer', () => {
       const handles = screen.getAllByLabelText('Resize column');
       fireEvent.mouseDown(handles[0]);
       fireEvent.mouseMove(handles[0], {
-        clientX: 196,
+        clientX: 176,
       });
       fireEvent.mouseUp(handles[0]);
     };
@@ -815,16 +1177,16 @@ describe('stateful table with real reducer', () => {
       expect.objectContaining({
         instanceId: null,
         payload: [
-          { id: 'string', name: 'String', width: '200px' },
-          { id: 'boolean', name: 'Boolean', width: '100px' },
+          { id: 'string', name: 'String', width: '180px' },
+          { id: 'boolean', name: 'Boolean', width: '120px' },
         ],
         type: 'TABLE_COLUMN_RESIZE',
       })
     );
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.clearAllMocks();
@@ -860,8 +1222,8 @@ describe('stateful table with real reducer', () => {
     expect(reducer.baseTableReducer).not.toHaveBeenCalled();
 
     expect(onColumnResize).toHaveBeenCalledWith([
-      { id: 'string', name: 'String', width: '200px' },
-      { id: 'boolean', name: 'Boolean', width: '100px' },
+      { id: 'string', name: 'String', width: '180px' },
+      { id: 'boolean', name: 'Boolean', width: '120px' },
     ]);
 
     jest.resetAllMocks();

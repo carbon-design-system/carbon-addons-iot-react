@@ -376,6 +376,7 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              columnType: 'TIMESTAMP',
               dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
@@ -447,7 +448,7 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
             ],
           },
@@ -467,7 +468,7 @@ describe('editorUtils', () => {
             {
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
-              type: 'DIMENSION',
+              dataItemType: 'DIMENSION',
             },
             {
               id: 'key1',
@@ -506,7 +507,7 @@ describe('editorUtils', () => {
           dataItemId: 'manufacturer',
           dataSourceId: 'manufacturer',
           label: 'Manufacturer',
-          type: 'DIMENSION',
+          dataItemType: 'DIMENSION',
         },
       ];
       const newCard = handleDataSeriesChange(selectedItems, mockTableCard, () => {}, null, true);
@@ -515,6 +516,7 @@ describe('editorUtils', () => {
         content: {
           columns: [
             {
+              columnType: 'TIMESTAMP',
               dataItemId: 'timestamp',
               dataSourceId: 'timestamp',
               label: 'Timestamp',
@@ -525,7 +527,7 @@ describe('editorUtils', () => {
               dataItemId: 'manufacturer',
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
-              type: 'DIMENSION',
+              dataItemType: 'DIMENSION',
             },
           ],
         },
@@ -533,8 +535,8 @@ describe('editorUtils', () => {
     });
     it('handleDataSeriesChange existing card should correctly add the columns for new table card dimensions', () => {
       const selectedItems = [
-        { id: 'manufacturer', text: 'Manufacturer', type: 'DIMENSION' },
-        { id: 'deviceid', text: 'Device', type: 'DIMENSION' },
+        { id: 'manufacturer', text: 'Manufacturer', dataItemType: 'DIMENSION' },
+        { id: 'deviceid', text: 'Device', dataItemType: 'DIMENSION' },
       ];
       const newCard = handleDataSeriesChange(
         selectedItems,
@@ -550,12 +552,12 @@ describe('editorUtils', () => {
               {
                 dataSourceId: 'manufacturer',
                 label: 'Manufacturer',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               {
                 dataSourceId: 'deviceid',
                 label: 'Device',
-                type: 'DIMENSION',
+                dataItemType: 'DIMENSION',
               },
               {
                 dataSourceId: 'key1',
@@ -580,12 +582,12 @@ describe('editorUtils', () => {
             {
               dataSourceId: 'manufacturer',
               label: 'Manufacturer',
-              type: 'DIMENSION',
+              dataItemType: 'DIMENSION',
             },
             {
               dataSourceId: 'deviceid',
               label: 'Device',
-              type: 'DIMENSION',
+              dataItemType: 'DIMENSION',
             },
             {
               dataSourceId: 'key1',

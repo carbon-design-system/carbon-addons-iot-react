@@ -15,7 +15,7 @@ import {
   teal50,
   cyan90,
 } from '@carbon/colors';
-import { WarningAlt32 } from '@carbon/icons-react';
+import { WarningAlt32, Add16 } from '@carbon/icons-react';
 import { FormLabel } from 'carbon-components-react';
 import classnames from 'classnames';
 import { isEmpty, omit } from 'lodash-es';
@@ -24,13 +24,21 @@ import { settings } from '../../../../constants/Settings';
 import { Dropdown } from '../../../Dropdown';
 import ComposedModal from '../../../ComposedModal';
 import { TextInput } from '../../../TextInput';
-import { handleDataItemEdit, DataItemsPropTypes } from '../../../DashboardEditor/editorUtils';
+import {
+  handleDataItemEdit,
+  DataItemsPropTypes,
+  DashboardEditorActionsPropTypes,
+} from '../../../DashboardEditor/editorUtils';
 import ColorDropdown from '../../../ColorDropdown/ColorDropdown';
 import { BAR_CHART_TYPES, CARD_TYPES } from '../../../../constants/LayoutConstants';
+import Button from '../../../Button';
 
 import ThresholdsFormItem from './ThresholdsFormItem';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /* card value */
@@ -52,6 +60,7 @@ const propTypes = {
           dataSourceId: PropTypes.string,
           label: PropTypes.string,
           type: PropTypes.string,
+          dataItemType: PropTypes.string,
         })
       ),
       type: PropTypes.string,
@@ -70,7 +79,10 @@ const propTypes = {
   editDataItem: PropTypes.shape({
     dataSourceId: PropTypes.string,
     dataFilter: PropTypes.objectOf(PropTypes.string),
+    /** Maps to data item columnType */
     type: PropTypes.string,
+    /** Maps to data item type */
+    dataItemType: PropTypes.string,
     hasStreamingMetricEnabled: PropTypes.bool,
     aggregationMethods: PropTypes.arrayOf(
       PropTypes.shape({
@@ -79,13 +91,6 @@ const propTypes = {
       })
     ),
     aggregationMethod: PropTypes.string,
-    downSampleMethods: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        text: PropTypes.string,
-      })
-    ),
-    downSampleMethod: PropTypes.string,
     grain: PropTypes.string,
     label: PropTypes.string,
     dataItemId: PropTypes.string,
@@ -117,6 +122,7 @@ const propTypes = {
   validDataItems: DataItemsPropTypes,
   isSummaryDashboard: PropTypes.bool,
   isLarge: PropTypes.bool,
+  testId: PropTypes.string,
   i18n: PropTypes.shape({
     dataItemEditorDataItemTitle: PropTypes.string,
     dataItemEditorDataItemLabel: PropTypes.string,
@@ -137,6 +143,7 @@ const propTypes = {
     primaryButtonLabelText: PropTypes.string,
     secondaryButtonLabelText: PropTypes.string,
   }),
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -162,6 +169,8 @@ const defaultProps = {
     dataItemEditorDataItemAddThreshold: 'Add threshold',
     dataItemEditorBarColor: 'Bar color',
     dataItemEditorLineColor: 'Line color',
+    dataItemEditorAddAggregationMethodLabel: 'Add aggregation method',
+    dataItemEditorAddAggregationMethodDescription: 'Add aggregation method',
     source: 'Source data item',
     aggregationMethod: 'Aggregation method',
     grain: 'Grain',
@@ -173,8 +182,7 @@ const defaultProps = {
     dataItemSource: 'Data item source',
     primaryButtonLabelText: 'Save',
     secondaryButtonLabelText: 'Cancel',
-    decimalPlaces: 'Decimal places',
-    downSampleMethod: 'Downsample method',
+    decimalPlacesLabel: 'Decimal places',
   },
   editDataSeries: [],
   showEditor: false,
@@ -187,6 +195,15 @@ const defaultProps = {
   isSummaryDashboard: false,
   isLarge: false,
   validDataItems: [],
+  testId: 'aggregation-methods',
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 const DATAITEM_COLORS_OPTIONS = [
@@ -217,6 +234,10 @@ const DataSeriesFormItemModal = ({
   onChange,
   i18n,
   isLarge,
+  testId,
+  actions: {
+    dataSeriesFormActions: { hasAggregationsDropDown, onAddAggregations, hasDataFilterDropdown },
+  },
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
   const { id, type, content } = cardConfig;
@@ -231,7 +252,14 @@ const DataSeriesFormItemModal = ({
 
   const handleTranslation = useCallback(
     (idToTranslate) => {
-      const { clearSelectionText, openMenuText, closeMenuText, clearAllText } = mergedI18n;
+      const {
+        clearSelectionText,
+        openMenuText,
+        closeMenuText,
+        clearAllText,
+        incrementNumberText,
+        decrementNumberText,
+      } = mergedI18n;
       switch (idToTranslate) {
         default:
           return '';
@@ -243,6 +271,10 @@ const DataSeriesFormItemModal = ({
           return openMenuText || 'Open menu';
         case 'close.menu':
           return closeMenuText || 'Close menu';
+        case 'increment.number':
+          return incrementNumberText || 'Increment number';
+        case 'decrement.number':
+          return decrementNumberText || 'Decrement number';
       }
     },
     [mergedI18n]
@@ -260,10 +292,6 @@ const DataSeriesFormItemModal = ({
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.aggregationMethod;
 
-  const initialDownSample = validDataItems?.find(
-    ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
-  )?.downSampleMethod;
-
   const initialGrain = validDataItems?.find(
     ({ dataSourceId }) => dataSourceId === editDataItem.dataSourceId
   )?.grain;
@@ -275,91 +303,104 @@ const DataSeriesFormItemModal = ({
   const DataEditorContent = useMemo(
     () => (
       <>
-        {editDataItem?.type !== 'DIMENSION' &&
-          editDataItem?.type !== 'TIMESTAMP' &&
-          !editDataItem?.hasStreamingMetricEnabled && (
-            <div className={`${baseClassName}--input-group`}>
-              {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
+        {hasAggregationsDropDown && hasAggregationsDropDown(editDataItem) && (
+          <div className={`${baseClassName}--input-group`}>
+            {!initialAggregation || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <Dropdown
+                  id={`${id}_aggregation-method`}
+                  label=""
+                  direction="bottom"
+                  itemToString={(item) => item.text}
+                  items={editDataItem.aggregationMethods || []}
+                  selectedItem={
+                    editDataItem.aggregationMethods?.find(
+                      (method) => method.id === editDataItem.aggregationMethod
+                    ) || { id: 'none', text: mergedI18n.none }
+                  }
+                  titleText={mergedI18n.aggregationMethod}
+                  light
+                  onChange={({ selectedItem }) => {
+                    setEditDataItem(
+                      omit(
+                        {
+                          ...editDataItem,
+                          aggregationMethod: selectedItem.id,
+                          // if  we don't have a grain, then default to the first available
+                          ...(isTimeBasedCard && selectedItem.id !== 'none' && !editDataItem.grain
+                            ? { grain: availableGrains[0]?.id }
+                            : {}),
+                        },
+                        // if we're turning off the aggregation method, clear the input grain
+                        ...(selectedItem.id === 'none' ? ['grain'] : [])
+                      )
+                    );
+                  }}
+                />
+              </div>
+            ) : (
+              <div className={`${baseClassName}--input-group--item-half`}>
+                <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
+                  {mergedI18n.aggregationMethod}
+                </FormLabel>
+                <span className={`${baseClassName}--input-group--item-half-content`}>
+                  {`${
+                    editDataItem.aggregationMethod
+                      ? editDataItem.aggregationMethod[0].toUpperCase()
+                      : ''
+                  }${editDataItem.aggregationMethod?.slice(1) || ''}`}
+                </span>
+              </div>
+            )}
+            {editDataItem?.hasStreamingMetricEnabled && onAddAggregations && (
+              <div className={`${iotPrefix}--add-aggregation`}>
+                <Button
+                  className={`${iotPrefix}--add-aggregation__btn`}
+                  kind="ghost"
+                  size="large"
+                  renderIcon={Add16}
+                  onClick={() => onAddAggregations(editDataItem)}
+                  iconDescription={mergedI18n.dataItemEditorAddAggregationMethodDescription}
+                  testId={`${testId}-aggregaton-button`}
+                >
+                  {mergedI18n.dataItemEditorAddAggregationMethodLabel}
+                </Button>
+              </div>
+            )}
+            {isTimeBasedCard &&
+              editDataItem.aggregationMethod &&
+              editDataItem.aggregationMethod !== 'none' &&
+              !editDataItem?.hasStreamingMetricEnabled && (
                 <div className={`${baseClassName}--input-group--item-half`}>
                   <Dropdown
-                    id={`${id}_aggregation-method`}
+                    id={`${id}_grain-selector`}
                     label=""
                     direction="bottom"
                     itemToString={(item) => item.text}
-                    items={editDataItem.aggregationMethods || []}
-                    selectedItem={
-                      editDataItem.aggregationMethods?.find(
-                        (method) => method.id === editDataItem.aggregationMethod
-                      ) || { id: 'none', text: mergedI18n.none }
+                    items={
+                      isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
+                        ? availableGrains.slice(
+                            availableGrains.findIndex((grain) => grain.id === initialGrain)
+                          )
+                        : availableGrains
                     }
-                    titleText={mergedI18n.aggregationMethod}
+                    selectedItem={
+                      availableGrains.find((grain) => grain.id === editDataItem.grain) ||
+                      availableGrains[0]
+                    }
+                    titleText={mergedI18n.grain}
                     light
                     onChange={({ selectedItem }) => {
-                      setEditDataItem(
-                        omit(
-                          {
-                            ...editDataItem,
-                            aggregationMethod: selectedItem.id,
-                            // if  we don't have a grain, then default to the first available
-                            ...(isTimeBasedCard && selectedItem.id !== 'none' && !editDataItem.grain
-                              ? { grain: availableGrains[0]?.id }
-                              : {}),
-                          },
-                          // if we're turning off the aggregation method, clear the input grain
-                          ...(selectedItem.id === 'none' ? ['grain'] : [])
-                        )
-                      );
+                      setEditDataItem({
+                        ...editDataItem,
+                        grain: selectedItem.id,
+                      });
                     }}
                   />
                 </div>
-              ) : (
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
-                    {mergedI18n.aggregationMethod}
-                  </FormLabel>
-                  <span className={`${baseClassName}--input-group--item-half-content`}>
-                    {`${
-                      editDataItem.aggregationMethod
-                        ? editDataItem.aggregationMethod[0].toUpperCase()
-                        : ''
-                    }${editDataItem.aggregationMethod?.slice(1) || ''}`}
-                  </span>
-                </div>
               )}
-
-              {isTimeBasedCard &&
-                editDataItem.aggregationMethod &&
-                editDataItem.aggregationMethod !== 'none' && (
-                  <div className={`${baseClassName}--input-group--item-half`}>
-                    <Dropdown
-                      id={`${id}_grain-selector`}
-                      label=""
-                      direction="bottom"
-                      itemToString={(item) => item.text}
-                      items={
-                        isSummaryDashboard && initialAggregation // limit options for aggregated metrics in a summary dash
-                          ? availableGrains.slice(
-                              availableGrains.findIndex((grain) => grain.id === initialGrain)
-                            )
-                          : availableGrains
-                      }
-                      selectedItem={
-                        availableGrains.find((grain) => grain.id === editDataItem.grain) ||
-                        availableGrains[0]
-                      }
-                      titleText={mergedI18n.grain}
-                      light
-                      onChange={({ selectedItem }) => {
-                        setEditDataItem({
-                          ...editDataItem,
-                          grain: selectedItem.id,
-                        });
-                      }}
-                    />
-                  </div>
-                )}
-            </div>
-          )}
+          </div>
+        )}
 
         <div className={`${baseClassName}--input-group`}>
           <div className={`${baseClassName}--input-group--item`}>
@@ -425,7 +466,7 @@ const DataSeriesFormItemModal = ({
             <div className={`${baseClassName}--input-group--item-end`}>
               <Dropdown
                 id={`${id}_value-card-decimal-place`}
-                titleText="Decimal places"
+                titleText={mergedI18n.decimalPlacesLabel}
                 direction="bottom"
                 label=""
                 items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
@@ -467,7 +508,7 @@ const DataSeriesFormItemModal = ({
             <div className={`${baseClassName}--input-group--item-end`}>
               <Dropdown
                 id={`${id}_value-card-decimal-place`}
-                titleText="Decimal places"
+                titleText={mergedI18n.decimalPlacesLabel}
                 direction="bottom"
                 label=""
                 items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
@@ -489,8 +530,8 @@ const DataSeriesFormItemModal = ({
           </div>
         )}
 
-        {isSummaryDashboard &&
-          type !== CARD_TYPES.TABLE && ( // only show data filter in summary dashboards
+        {hasDataFilterDropdown &&
+          hasDataFilterDropdown(cardConfig) && ( // only show data filter in summary dashboards or instance dashboard for DEVICE_TYPE
             <div className={`${baseClassName}--input-group ${baseClassName}--input-group--bottom `}>
               <div
                 className={classnames({
@@ -574,49 +615,6 @@ const DataSeriesFormItemModal = ({
             }}
           />
         )}
-        {editDataItem?.type !== 'DIMENSION' &&
-          editDataItem?.type !== 'TIMESTAMP' &&
-          editDataItem?.hasStreamingMetricEnabled && (
-            <div className={`${baseClassName}--input-group`}>
-              {!initialDownSample || !isSummaryDashboard ? ( // selector should only be use-able in an instance dash or if there is no initial aggregation
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <Dropdown
-                    id={`${id}_downSample-method`}
-                    label=""
-                    direction="bottom"
-                    itemToString={(item) => item.text}
-                    items={editDataItem.downSampleMethods || []}
-                    selectedItem={
-                      editDataItem.downSampleMethods?.find(
-                        (method) => method.id === editDataItem.downSampleMethod
-                      ) || { id: 'none', text: mergedI18n.none }
-                    }
-                    titleText={mergedI18n.downSampleMethod}
-                    light
-                    onChange={({ selectedItem }) => {
-                      setEditDataItem({
-                        ...editDataItem,
-                        downSampleMethod: selectedItem.id,
-                      });
-                    }}
-                  />
-                </div>
-              ) : (
-                <div className={`${baseClassName}--input-group--item-half`}>
-                  <FormLabel className={`${baseClassName}--input-group--item-half-label`}>
-                    {mergedI18n.downSampleMethod}
-                  </FormLabel>
-                  <span className={`${baseClassName}--input-group--item-half-content`}>
-                    {`${
-                      editDataItem.downSampleMethod
-                        ? editDataItem.downSampleMethod[0].toUpperCase()
-                        : ''
-                    }${editDataItem.downSampleMethod?.slice(1) || ''}`}
-                  </span>
-                </div>
-              )}
-            </div>
-          )}
       </>
     ),
     [
@@ -626,16 +624,19 @@ const DataSeriesFormItemModal = ({
       cardConfig,
       editDataItem,
       handleTranslation,
+      hasAggregationsDropDown,
+      hasDataFilterDropdown,
       id,
       initialAggregation,
       initialGrain,
       isSummaryDashboard,
       isTimeBasedCard,
       mergedI18n,
+      onAddAggregations,
       selectedDimensionFilter,
       setEditDataItem,
+      testId,
       type,
-      initialDownSample,
     ]
   );
 
@@ -651,7 +652,7 @@ const DataSeriesFormItemModal = ({
                   ? mergedI18n.dataItemEditorValueCardTitle
                   : mergedI18n.dataItemEditorDataSeriesTitle,
             }}
-            size="xs"
+            size="md"
             isLarge={isLarge}
             footer={{
               primaryButtonLabel: mergedI18n.primaryButtonLabelText,

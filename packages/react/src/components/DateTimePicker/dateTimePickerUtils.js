@@ -1,11 +1,38 @@
 import { cloneDeep } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { settings } from '../../constants/Settings';
 import { PICKER_KINDS, INTERVAL_VALUES, RELATIVE_VALUES } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
+
+/** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
+ * *
+ * @param {Object} object hh:mm A time oject
+ * @returns HH:mm time object
+ */
+export const format12hourTo24hour = (time12hour) => {
+  if (time12hour === '' || !time12hour) {
+    return '00:00';
+  }
+  const [time, modifier] = time12hour.split(' ');
+
+  if (!modifier) {
+    return time12hour;
+  }
+
+  // eslint-disable-next-line prefer-const
+  let [hours, minutes] = time.split(':');
+  if (hours === '12') {
+    hours = '00';
+  }
+  if (modifier === 'PM') {
+    hours = parseInt(hours, 10) + 12;
+  }
+  return `${hours}:${minutes}`;
+};
 
 /**
  * Parses a value object into a human readable value
@@ -29,6 +56,8 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       ? timeRange?.relative ?? timeRange.timeRangeValue
       : kind === PICKER_KINDS.ABSOLUTE
       ? timeRange?.absolute ?? timeRange.timeRangeValue
+      : kind === PICKER_KINDS.SINGLE
+      ? timeRange?.single ?? timeRange.timeSingleValue
       : timeRange?.preset ?? timeRange.timeRangeValue;
 
   if (!value) {
@@ -36,6 +65,8 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
   }
 
   const returnValue = cloneDeep(timeRange);
+  dayjs.extend(customParseFormat);
+
   switch (kind) {
     case PICKER_KINDS.RELATIVE: {
       let endDate = dayjs();
@@ -70,18 +101,26 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
     case PICKER_KINDS.ABSOLUTE: {
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
-        startDate = startDate.hours(value.startTime.split(':')[0]);
-        startDate = startDate.minutes(value.startTime.split(':')[1]);
+        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
+        const formatedStartTime = is12hour
+          ? format12hourTo24hour(value.startTime)
+          : value.startTime;
+        startDate = startDate.hours(formatedStartTime.split(':')[0]);
+        startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
       if (!returnValue.absolute) {
         returnValue.absolute = {};
       }
+
       returnValue.absolute.start = new Date(startDate.valueOf());
+
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
-          endDate = endDate.hours(value.endTime.split(':')[0]);
-          endDate = endDate.minutes(value.endTime.split(':')[1]);
+          const is12hour = dayjs(value.endTime, 'hh:mm A', true).isValid();
+          const formatedEndTime = is12hour ? format12hourTo24hour(value.endTime) : value.endTime;
+          endDate = endDate.hours(formatedEndTime.split(':')[0]);
+          endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         }
         returnValue.absolute.end = new Date(endDate.valueOf());
         readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
@@ -92,6 +131,25 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           startDate
         ).format(dateTimeMask)}`;
       }
+      break;
+    }
+    case PICKER_KINDS.SINGLE: {
+      if (!value.start && !value.startDate) {
+        readableValue = dateTimeMask;
+        returnValue.single.start = null;
+        break;
+      }
+      let startDate = dayjs(value.start ?? value.startDate);
+      if (value.startTime) {
+        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
+        const formatedStartTime = is12hour
+          ? format12hourTo24hour(value.startTime)
+          : value.startTime;
+        startDate = startDate.hours(formatedStartTime.split(':')[0]);
+        startDate = startDate.minutes(formatedStartTime.split(':')[1]);
+      }
+      returnValue.single.start = new Date(startDate.valueOf());
+      readableValue = `${dayjs(startDate).format(dateTimeMask)}`;
       break;
     }
     default:
@@ -199,6 +257,28 @@ export const isValidDate = (date, time) => {
 };
 
 /**
+ * 12 hour time validator
+ *
+ * @param {string} time The time string to check
+ * @returns bool
+ */
+export const isValid12HourTime = (time) => {
+  const isValid12HoursRegex = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/;
+  return isValid12HoursRegex.test(time) || time === '';
+};
+
+/**
+ * 24 hour time validator
+ *
+ * @param {string} time The time string to check
+ * @returns bool
+ */
+export const isValid24HourTime = (time) => {
+  const isValid24HoursRegex = /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/;
+  return isValid24HoursRegex.test(time) || time === '';
+};
+
+/**
  * Simple function to handle keeping flatpickr open when it would normally close
  *
  * @param {*} range unused
@@ -216,13 +296,15 @@ export const onDatePickerClose = (range, single, flatpickr) => {
 // Validates absolute start date
 export const invalidStartDate = (startTime, endTime, absoluteValues) => {
   // If start and end date have been selected
+  const formatedStartTime = format12hourTo24hour(startTime);
+  const formatedEndTime = format12hourTo24hour(endTime);
   if (
     absoluteValues.hasOwnProperty('start') &&
     absoluteValues.hasOwnProperty('end') &&
-    isValidDate(new Date(absoluteValues.start), startTime)
+    isValidDate(new Date(absoluteValues.start), formatedStartTime)
   ) {
-    const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-    const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+    const startDate = new Date(`${absoluteValues.startDate} ${formatedStartTime}`);
+    const endDate = new Date(`${absoluteValues.endDate} ${formatedEndTime}`);
     return startDate >= endDate;
   }
   // Return invalid date if start time and end date not selected or if inputted time is not valid
@@ -238,15 +320,18 @@ export const invalidStartDate = (startTime, endTime, absoluteValues) => {
  */
 export const invalidEndDate = (startTime, endTime, absoluteValues) => {
   // If start and end date have been selected
+  const formatedStartTime = format12hourTo24hour(startTime);
+  const formatedEndTime = format12hourTo24hour(endTime);
   if (
     absoluteValues.hasOwnProperty('start') &&
     absoluteValues.hasOwnProperty('end') &&
-    isValidDate(new Date(absoluteValues.end), endTime)
+    isValidDate(new Date(absoluteValues.end), formatedEndTime)
   ) {
-    const startDate = new Date(`${absoluteValues.startDate} ${startTime}`);
-    const endDate = new Date(`${absoluteValues.endDate} ${endTime}`);
+    const startDate = new Date(`${absoluteValues.startDate} ${formatedStartTime}`);
+    const endDate = new Date(`${absoluteValues.endDate} ${formatedEndTime}`);
     return startDate >= endDate;
   }
+
   // Return invalid date if start time and end date not selected or if inputted time is not valid
   return true;
 };
@@ -316,6 +401,10 @@ export const useAbsoluteDateTimeValue = () => {
     onAbsoluteStartTimeChange,
     onAbsoluteEndTimeChange,
     resetAbsoluteValue,
+    changeAbsolutePropertyValue,
+    format12hourTo24hour,
+    isValid12HourTime,
+    isValid24HourTime,
   };
 };
 
@@ -545,11 +634,11 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
  *
  * @returns {string} an interval string, starting point in time to now
  */
-export const getIntervalValue = ({ currentValue, strings, dateTimeMask, humanValue }) => {
+export const getIntervalValue = ({ currentValue, mergedI18n, dateTimeMask, humanValue }) => {
   if (currentValue) {
     if (currentValue.kind === PICKER_KINDS.PRESET) {
       return `${dayjs().subtract(currentValue.preset.offset, 'minutes').format(dateTimeMask)} ${
-        strings.toNowLabel
+        mergedI18n.toNowLabel
       }`;
     }
     return humanValue;

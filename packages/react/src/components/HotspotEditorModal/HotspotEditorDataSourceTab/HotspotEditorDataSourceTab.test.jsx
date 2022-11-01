@@ -55,7 +55,19 @@ const dataItemsV2 = [
     hasStreamingMetricEnabled: true,
   },
 ];
-
+const commonActions = {
+  actions: {
+    onEditDataItem: jest.fn().mockImplementation(() => []),
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: jest.fn(
+        (editDataItem) =>
+          editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+      ),
+      hasDataFilterDropdown: jest.fn(),
+      onAddAggregations: jest.fn(),
+    },
+  },
+};
 let cardConfigWithPresets;
 
 describe('HotspotEditorDataSourceTab', () => {
@@ -98,6 +110,7 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItems}
         onChange={onChange}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     userEvent.click(
@@ -129,6 +142,7 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItems}
         onChange={onChange}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     userEvent.click(
@@ -165,11 +179,23 @@ describe('HotspotEditorDataSourceTab', () => {
 
   it('pops the data items modal with downsample methods', async () => {
     const onChange = jest.fn();
-    const onEditDataItem = jest.fn().mockImplementation(() => [
-      { id: 'none', text: 'None' },
-      { id: 'max', text: 'Maximum' },
-      { id: 'min', text: 'Minimum' },
-    ]);
+    const commonActionsWithData = {
+      actions: {
+        onEditDataItem: jest.fn().mockImplementation(() => [
+          { id: 'none', text: 'None' },
+          { id: 'max', text: 'Maximum' },
+          { id: 'min', text: 'Minimum' },
+        ]),
+        dataSeriesFormActions: {
+          hasAggregationsDropDown: jest.fn(
+            (editDataItem) =>
+              editDataItem?.dataItemType !== 'DIMENSION' && editDataItem?.type !== 'TIMESTAMP'
+          ),
+          hasDataFilterDropdown: jest.fn(),
+          onAddAggregations: jest.fn(),
+        },
+      },
+    };
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
@@ -177,7 +203,7 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItemsV2}
         onChange={onChange}
         translateWithId={() => {}}
-        onEditDataItem={onEditDataItem}
+        {...commonActionsWithData}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
@@ -185,7 +211,6 @@ describe('HotspotEditorDataSourceTab', () => {
   });
   it('pops the data items modal without downsample methods', async () => {
     const onChange = jest.fn();
-    const onEditDataItem = jest.fn().mockImplementation(() => []);
     render(
       <HotspotEditorDataSourceTab
         hotspot={cardConfigWithPresets.content.hotspots[0]}
@@ -193,14 +218,14 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItemsV2}
         onChange={onChange}
         translateWithId={() => {}}
-        onEditDataItem={onEditDataItem}
+        {...commonActions}
       />
     );
     userEvent.click(screen.getAllByRole('button')[2]);
     await waitFor(() => expect(screen.getByRole('dialog')).toBeInTheDocument());
   });
 
-  it('calls onChange with the new threshold for particular data item', () => {
+  it('calls onChange with the new threshold for particular data item', async () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
@@ -209,11 +234,12 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItems}
         onChange={onChange}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
 
     // edit button
-    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
 
     userEvent.click(
       screen.getByRole('button', {
@@ -240,7 +266,7 @@ describe('HotspotEditorDataSourceTab', () => {
     });
   });
 
-  it('calls onChange with the new threshold that has a dataSourceId', () => {
+  it('calls onChange with the new threshold that has a dataSourceId', async () => {
     const onChange = jest.fn();
     render(
       <HotspotEditorDataSourceTab
@@ -249,10 +275,11 @@ describe('HotspotEditorDataSourceTab', () => {
         dataItems={dataItems}
         onChange={onChange}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     // edit button
-    userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Edit' })[0]);
     // add threshold
     userEvent.click(screen.getByRole('button', { name: 'Add threshold' }));
     // increment value of threshold
@@ -306,6 +333,7 @@ describe('HotspotEditorDataSourceTab', () => {
         ]}
         onChange={() => {}}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     userEvent.click(
@@ -340,6 +368,7 @@ describe('HotspotEditorDataSourceTab', () => {
         ]}
         onChange={() => {}}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     userEvent.click(
@@ -377,6 +406,7 @@ describe('HotspotEditorDataSourceTab', () => {
         ]}
         onChange={() => {}}
         translateWithId={() => {}}
+        {...commonActions}
       />
     );
     userEvent.click(

@@ -218,5 +218,7 @@ export const Playground = () => (
       label: text('secondaryAction.label', 'Secondary action'),
       onClick: action('secondaryAction onClick'),
     }}
+    size={select('size', ['default', 'small'], 'default')}
+    arrangement={select('arrangement', ['stacked', 'inline'], 'stacked')}
   />
 );

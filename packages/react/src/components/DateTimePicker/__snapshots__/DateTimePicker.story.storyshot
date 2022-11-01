@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Default 1`] = `
 <div
   className="storybook-container"
 >
@@ -19,7 +19,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -75,6 +75,12 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 100,
+              "zIndex": 100,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -184,7 +190,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Light version 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Light version 1`] = `
 <div
   className="storybook-container"
 >
@@ -259,6 +265,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -368,7 +379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Locale 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Locale 1`] = `
 <div
   className="storybook-container"
 >
@@ -387,7 +398,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -402,6 +413,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="01/04/2020 12:34 to 06/04/2020 10:49"
           >
             01/04/2020 12:34 to 06/04/2020 10:49
@@ -426,6 +438,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -859,7 +876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected absolute 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected absolute 1`] = `
 <div
   className="storybook-container"
 >
@@ -878,7 +895,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -893,6 +910,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="2020-04-01 12:34 to 2020-04-06 10:49"
           >
             2020-04-01 12:34 to 2020-04-06 10:49
@@ -917,6 +935,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -1350,7 +1373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected preset 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected preset 1`] = `
 <div
   className="storybook-container"
 >
@@ -1369,7 +1392,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1425,6 +1448,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -1534,7 +1562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Selected relative 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Selected relative 1`] = `
 <div
   className="storybook-container"
 >
@@ -1553,7 +1581,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -1568,6 +1596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
           tabIndex={0}
         >
           <span
+            className=""
             title="2018-10-28 13:10 to 2018-10-28 13:30"
           >
             2018-10-28 13:10 to 2018-10-28 13:30
@@ -1592,6 +1621,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -2075,7 +2109,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Without a custom range link 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Without a custom range link 1`] = `
 <div
   className="storybook-container"
 >
@@ -2094,7 +2128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -2150,6 +2184,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"
@@ -2251,7 +2290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector/DateTime Picker Without a relative option 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Date time range selector Without a relative option 1`] = `
 <div
   className="storybook-container"
 >
@@ -2270,7 +2309,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
       onKeyDown={[Function]}
     >
       <div
-        className="iot--date-time-picker__box "
+        className="iot--date-time-picker__box"
       >
         <div
           className="iot--date-time-picker__field"
@@ -2326,6 +2365,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         <div
           className="iot--date-time-picker__menu"
           role="listbox"
+          style={
+            Object {
+              "--zIndex": 0,
+            }
+          }
         >
           <div
             className="iot--date-time-picker__menu-scroll"

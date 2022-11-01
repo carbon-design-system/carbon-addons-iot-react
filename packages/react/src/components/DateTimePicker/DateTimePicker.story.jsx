@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import { boolean, text, select } from '@storybook/addon-knobs';
+import { boolean, text, select, number, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { spacing06 } from '@carbon/layout';
 
@@ -36,7 +36,7 @@ export const defaultAbsoluteValue = {
 };
 
 export default {
-  title: '1 - Watson IoT/Date time range selector/DateTime Picker',
+  title: '1 - Watson IoT/Date time range selector',
   parameters: {
     docs: {
       inlineStories: false,
@@ -64,6 +64,12 @@ export const Default = () => {
           },
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
+        i18n={object('i18n', {
+          invalidText: 'The date time entered is invalid',
+        })}
+        style={{ zIndex: number('zIndex', 100) }}
       />
     </div>
   );
@@ -87,6 +93,11 @@ export const SelectedPreset = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
+        i18n={object('i18n', {
+          invalidText: 'The date time entered is invalid',
+        })}
       />
     </div>
   );
@@ -109,6 +120,11 @@ export const SelectedRelative = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
+        i18n={object('i18n', {
+          invalidText: 'The date time entered is invalid',
+        })}
       />
     </div>
   );
@@ -131,6 +147,11 @@ export const SelectedAbsolute = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
+        i18n={object('i18n', {
+          invalidText: 'The date time entered is invalid',
+        })}
       />
     </div>
   );

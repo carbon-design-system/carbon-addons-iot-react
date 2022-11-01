@@ -18,9 +18,13 @@ import {
   renderBreakpointInfo,
   DataItemsPropTypes,
   renderDefaultIconByName,
+  DashboardEditorActionsPropTypes,
 } from './editorUtils';
 
 const { iotPrefix } = settings;
+
+/* istanbul ignore next */
+const noop = () => {};
 
 const propTypes = {
   /** Dashboard title */
@@ -309,9 +313,8 @@ const propTypes = {
   /** should we allow resizing cards dynamically */
   isCardResizable: PropTypes.bool,
   onEditDataItems: PropTypes.func,
-
   testId: PropTypes.string,
-  onEditDataItem: PropTypes.func,
+  actions: DashboardEditorActionsPropTypes,
 };
 
 const defaultProps = {
@@ -386,7 +389,14 @@ const defaultProps = {
   onFetchDynamicDemoHotspots: () => Promise.resolve([{ x: 50, y: 50, type: 'fixed' }]),
   onEditDataItems: null,
   testId: 'dashboard-editor',
-  onEditDataItem: null,
+  actions: {
+    onEditDataItem: noop,
+    dataSeriesFormActions: {
+      hasAggregationsDropDown: noop,
+      hasDataFilterDropdown: noop,
+      onAddAggregations: noop,
+    },
+  },
 };
 
 const LAYOUTS = {
@@ -441,7 +451,7 @@ const DashboardEditor = ({
   onFetchDynamicDemoHotspots, // needed for the HotspotEditorModal, see the proptypes for more details
   onEditDataItems,
   testId,
-  onEditDataItem,
+  actions,
 }) => {
   React.useEffect(() => {
     if (__DEV__) {
@@ -501,11 +511,11 @@ const DashboardEditor = ({
    * callback to parent when the card is selected
    */
   const handleCardSelect = useCallback(
-    (id) => {
-      setSelectedCardId(id);
+    (card) => {
+      setSelectedCardId(card?.id);
       /* istanbul ignore else */
       if (onCardSelect) {
-        onCardSelect(id);
+        onCardSelect(card);
       }
     },
     [onCardSelect]
@@ -527,12 +537,11 @@ const DashboardEditor = ({
           ? onCardChange(defaultCard, dashboardJson)
           : defaultCard;
 
-      // eslint-disable-next-line no-shadow
-      setDashboardJson((dashboardJson) => ({
-        ...dashboardJson,
-        cards: [...dashboardJson.cards, cardConfig],
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: [...prevDashboardJson.cards, cardConfig],
       }));
-      handleCardSelect(cardConfig.id);
+      handleCardSelect(cardConfig);
       setNeedsScroll(true);
     },
     [customGetDefaultCard, dashboardJson, handleCardSelect, mergedI18n, onCardChange]
@@ -544,16 +553,18 @@ const DashboardEditor = ({
    */
   const duplicateCard = useCallback(
     (id) => {
-      setDashboardJson((dashboard) => {
-        const cardConfig = getDuplicateCard(dashboard.cards.find((card) => card.id === id));
-        const originalCardIndex = dashboard.cards.findIndex((card) => card.id === id);
-        dashboard.cards.splice(originalCardIndex, 0, cardConfig);
+      let selectedCard;
+      setDashboardJson((prevDashboardJson) => {
+        selectedCard = prevDashboardJson.cards.find((card) => card.id === id);
+        const cardConfig = getDuplicateCard(selectedCard);
+        const originalCardIndex = prevDashboardJson.cards.findIndex((card) => card.id === id);
+        prevDashboardJson.cards.splice(originalCardIndex, 0, cardConfig);
         return {
-          ...dashboard,
-          cards: dashboard.cards,
+          ...prevDashboardJson,
+          cards: prevDashboardJson.cards,
         };
       });
-      handleCardSelect(id);
+      handleCardSelect(selectedCard);
       setNeedsScroll(true);
     },
     [handleCardSelect]
@@ -565,10 +576,9 @@ const DashboardEditor = ({
    */
   const removeCard = useCallback(
     (id) =>
-      // eslint-disable-next-line no-shadow
-      setDashboardJson((dashboardJson) => ({
-        ...dashboardJson,
-        cards: dashboardJson.cards.filter((i) => i.id !== id),
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: prevDashboardJson.cards.filter((i) => i.id !== id),
       })),
     []
   );
@@ -576,32 +586,45 @@ const DashboardEditor = ({
   const handleOnCardChange = useCallback(
     (cardConfig) => {
       // need to handle resetting the src of the image for image cards based on the id
-      if (cardConfig.type === CARD_TYPES.IMAGE && cardConfig.content.imgState !== 'new') {
-        // eslint-disable-next-line no-param-reassign
-        cardConfig.content.src = availableImages.find(
-          (image) => image.id === cardConfig.content.id
-        )?.src;
-      } else if (
-        cardConfig.type === CARD_TYPES.IMAGE &&
-        cardConfig.content.imgState === 'new' &&
-        !imagesToUpload.some((image) => image.id === cardConfig.content.id)
-      ) {
-        /* istanbul ignore else */
-        if (cardConfig.content.id && cardConfig.content.src) {
-          setImagesToUpload((prevImagesToUpload) => [
-            ...prevImagesToUpload,
-            { id: cardConfig.content.id, src: cardConfig.content.src },
-          ]);
+      if (cardConfig.type === CARD_TYPES.IMAGE) {
+        if (
+          cardConfig.content?.imgState !== 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = availableImages?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
+        } else if (
+          cardConfig.type === CARD_TYPES.IMAGE &&
+          cardConfig.content.imgState === 'new' &&
+          !imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          /* istanbul ignore else */
+          if (cardConfig.content.id && cardConfig.content.src) {
+            setImagesToUpload((prevImagesToUpload) => [
+              ...prevImagesToUpload,
+              { id: cardConfig.content.id, src: cardConfig.content.src },
+            ]);
+          }
+        } else if (
+          cardConfig.content.imgState !== 'new' &&
+          imagesToUpload.some((image) => image.id === cardConfig.content.id)
+        ) {
+          // eslint-disable-next-line no-param-reassign
+          cardConfig.content.src = imagesToUpload?.find(
+            (image) => image.id === cardConfig.content.id
+          )?.src;
         }
       }
 
       // TODO: this is really inefficient
-      setDashboardJson((oldJSON) => ({
-        ...oldJSON,
-        cards: oldJSON.cards.map((card) =>
+      setDashboardJson((prevDashboardJson) => ({
+        ...prevDashboardJson,
+        cards: prevDashboardJson.cards.map((card) =>
           card.id === cardConfig.id
             ? onCardChange
-              ? onCardChange(cardConfig, oldJSON)
+              ? onCardChange(cardConfig, prevDashboardJson)
               : cardConfig
             : card
         ),
@@ -641,7 +664,8 @@ const DashboardEditor = ({
     [dashboardJson.cards, handleOnCardChange, selectedCardId]
   );
   const handleEditTitle = useCallback(
-    (newTitle) => setDashboardJson((oldJSON) => ({ ...oldJSON, title: newTitle })),
+    (newTitle) =>
+      setDashboardJson((prevDashboardJson) => ({ ...prevDashboardJson, title: newTitle })),
     []
   );
 
@@ -734,8 +758,7 @@ const DashboardEditor = ({
                   deleteLabelText={i18n.imageGalleryDeleteLabelText}
                   deleteModalLabelText={i18n.imageGalleryDeleteModalLabelText}
                   deleteModalTitleText={i18n.imageGalleryDeleteModalTitleText}
-                  // TODO: pass testId in v3 to override defaults
-                  // testId={`${testId}-image-gallery-modal`}
+                  testId={`${testId}-image-gallery-modal`}
                 />
                 <DashboardGrid
                   isEditable
@@ -748,8 +771,8 @@ const DashboardEditor = ({
                     if (onLayoutChange) {
                       onLayoutChange(newLayout, newLayouts);
                     }
-                    setDashboardJson((oldDashboard) => ({
-                      ...oldDashboard,
+                    setDashboardJson((prevDashboardJson) => ({
+                      ...prevDashboardJson,
                       layouts: newLayouts,
                     }));
                   }}
@@ -820,7 +843,7 @@ const DashboardEditor = ({
             dataSeriesItemLinks={dataSeriesItemLinks}
             onFetchDynamicDemoHotspots={onFetchDynamicDemoHotspots}
             onEditDataItems={onEditDataItems}
-            onEditDataItem={onEditDataItem}
+            actions={actions}
           />
         </ErrorBoundary>
       </div>

@@ -2,12 +2,14 @@ import React from 'react';
 import { text, select, boolean, object, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Tree16, Add16 } from '@carbon/icons-react';
+import { ContentSwitcher } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import Table from '../Table/Table';
 import Button from '../Button';
+import IconSwitch from '../IconSwitch/IconSwitch';
 import { INTERVAL_VALUES, RELATIVE_VALUES, PICKER_KINDS } from '../../constants/DateConstants';
 
 import CardREADME from './Card.mdx';
@@ -92,7 +94,12 @@ export const Basic = () => {
   const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
 
   return (
-    <div style={{ width: `${getCardMinSize(breakpoint, size).x}px`, margin: 20 }}>
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: 20,
+      }}
+    >
       <CardStoryStateManager>
         <Card
           title={text('title', 'Card title')}
@@ -132,10 +139,13 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
   const singleExtraAction = {
     id: 'extrasingleaction',
     icon: Add16,
+    iconDescription: 'Add',
     callback: action('extra single action icon clicked.'),
   };
   const multiExtraAction = {
     id: 'extramultiaction',
+    icon: Tree16,
+    iconDescription: 'Settings',
     children: [
       {
         id: 'firstItem',
@@ -858,3 +868,77 @@ ImplementingACustomCard.parameters = {
    `,
   },
 };
+
+export const BasicWithCustomAction = () => {
+  const size = select('size', Object.keys(CARD_SIZES), CARD_SIZES.MEDIUM);
+  const breakpoint = select('breakpoint', ['lg', 'md', 'sm', 'xs'], 'lg');
+
+  return (
+    <div
+      style={{
+        width: `${getCardMinSize(breakpoint, size).x}px`,
+        margin: 20,
+      }}
+    >
+      <CardStoryStateManager>
+        <Card
+          title={text('title', 'Card title')}
+          id="facilitycard-basic"
+          size={size}
+          isLoading={boolean('isloading', false)}
+          isEmpty={boolean('isEmpty', false)}
+          isEditable={boolean('isEditable', false)}
+          breakpoint={breakpoint}
+          availableActions={object('availableActions', {
+            range: false,
+            expand: false,
+            edit: false,
+            clone: false,
+            delete: false,
+            extra: true,
+          })}
+          renderExpandIcon={Tree16}
+          onFocus={action('onFocus')}
+          tabIndex={0}
+          padding={select(
+            'Apply padding to the card content or not (padding)',
+            ['default', 'none'],
+            'default'
+          )}
+          footerContent={() => (
+            <Button size="field" kind="ghost">
+              Footer Content
+            </Button>
+          )}
+          extraActions={{
+            id: 'switcherLink',
+            content: (
+              <ContentSwitcher
+                onChange={action('onChangeSwitcher')}
+                selectedIndex={0}
+                style={{ height: 'auto' }}
+              >
+                <IconSwitch
+                  name="one"
+                  onClick={action('Tree icon')}
+                  text="Graphical View"
+                  renderIcon={Tree16}
+                  size="small"
+                />
+                <IconSwitch
+                  name="two"
+                  onClick={action('Add icon')}
+                  text="Source View"
+                  renderIcon={Add16}
+                  size="small"
+                />
+              </ContentSwitcher>
+            ),
+          }}
+        />
+      </CardStoryStateManager>
+    </div>
+  );
+};
+
+BasicWithCustomAction.storyName = 'basic example with custom actions';

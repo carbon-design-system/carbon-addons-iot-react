@@ -19,6 +19,8 @@ import Walkme from '../Walkme/Walkme';
 
 import SuiteHeaderProfile from './SuiteHeaderProfile/SuiteHeaderProfile';
 import SuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcher';
+import SuiteHeaderAppSwitcherLoading from './SuiteHeaderAppSwitcher/SuiteHeaderAppSwitcherLoading';
+import MultiWorkspaceSuiteHeaderAppSwitcher from './SuiteHeaderAppSwitcher/MultiWorkspaceSuiteHeaderAppSwitcher';
 import SuiteHeaderLogoutModal from './SuiteHeaderLogoutModal/SuiteHeaderLogoutModal';
 import IdleLogoutConfirmationModal, {
   IdleLogoutConfirmationModalIdleTimeoutPropTypes,
@@ -27,6 +29,7 @@ import SuiteHeaderI18N from './i18n';
 import { shouldOpenInNewWindow } from './suiteHeaderUtils';
 import {
   SuiteHeaderApplicationPropTypes,
+  SuiteHeaderWorkspacePropTypes,
   SuiteHeaderI18NPropTypes,
   SuiteHeaderRoutePropTypes,
   SuiteHeaderSurveyDataPropTypes,
@@ -43,6 +46,8 @@ const defaultProps = {
   hasSideNav: false,
   routes: null,
   applications: null,
+  workspaces: null,
+  globalApplications: [],
   sideNavProps: null,
   surveyData: null,
   idleTimeoutData: null,
@@ -79,8 +84,12 @@ const propTypes = {
   hasSideNav: PropTypes.bool,
   /** URLs for various routes on Header buttons and submenus */
   routes: PropTypes.shape(SuiteHeaderRoutePropTypes),
-  /** Applications to render in AppSwitcher */
+  /** Applications to render in AppSwitcher (not used anymore, only kept here for backwards compatibility) */
   applications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
+  /** Workspaces and applications to render in AppSwitcher */
+  workspaces: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderWorkspacePropTypes)),
+  /** Applications that are not tied to workspaces */
+  globalApplications: PropTypes.arrayOf(PropTypes.shape(SuiteHeaderApplicationPropTypes)),
   /** side navigation component */
   sideNavProps: PropTypes.shape(SideNavPropTypes),
   /** If surveyData is present, show a ToastNotification */
@@ -124,7 +133,9 @@ const SuiteHeader = ({
   hasSideNav,
   isAdminView,
   routes,
-  applications,
+  applications, // (not used anymore, only kept here for backwards compatibility)
+  workspaces,
+  globalApplications,
   sideNavProps,
   surveyData,
   idleTimeoutData,
@@ -158,8 +169,40 @@ const SuiteHeader = ({
     }
   }, [surveyData]);
 
-  const navigatorRoute = routes?.navigator || 'javascript:void(0)';
+  const isMultiWorkspace = workspaces?.length > 0;
+  const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
+  // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
+  const currentWorkspaceComponent =
+    !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
+      <span data-testid={`${testId}--current-workspace`}>{currentWorkspace.name}</span>
+    ) : null;
+  const appNameComponent = appName ? (
+    <span
+      data-testid={`${testId}--appName`}
+      className={classnames({
+        [`${settings.iotPrefix}--suite-header-subtitle-appname`]: !!currentWorkspaceComponent,
+      })}
+    >
+      {appName}
+    </span>
+  ) : null;
+  const extraContentComponent = extraContent ? (
+    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>{extraContent}</span>
+  ) : null;
+
+  const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
+  // Append originHref query parameter to the logout route
+  let logoutRoute = routes?.logout;
+  try {
+    const url = new URL(routes.logout);
+    if (window.location.href) {
+      url.searchParams.append('originHref', window.location.href);
+      logoutRoute = url.href;
+    }
+  } catch (e) {
+    logoutRoute = routes?.logout;
+  }
 
   // If there are custom help links, include an extra child content entry for the separator
   const mergedCustomHelpLinks =
@@ -235,7 +278,7 @@ const SuiteHeader = ({
           onCloseButtonClick={() => setShowToast(false)}
         />
       ) : null}
-      {idleTimeoutData ? (
+      {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
           idleTimeoutData={idleTimeoutData}
           routes={routes}
@@ -247,7 +290,7 @@ const SuiteHeader = ({
       <SuiteHeaderLogoutModal
         isOpen={showLogoutModal}
         onClose={() => setShowLogoutModal(false)}
-        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, routes?.logout)}
+        onLogout={handleOnClick(SUITE_HEADER_ROUTE_TYPES.LOGOUT, logoutRoute)}
         i18n={{
           heading: mergedI18N.profileLogoutModalHeading,
           primaryButton: mergedI18N.profileLogoutModalPrimaryButton,
@@ -285,38 +328,69 @@ const SuiteHeader = ({
                 onClickSideNavExpand(evt);
               }}
               headerPanel={{
+                className: `${settings.iotPrefix}--suite-header-app-switcher${
+                  workspaces ? '-multiworkspace' : ''
+                }`,
                 // eslint-disable-next-line react/prop-types
-                content: React.forwardRef(({ isExpanded }, ref) => (
-                  <SuiteHeaderAppSwitcher
-                    ref={ref}
-                    applications={applications}
-                    customApplications={customApplications}
-                    allApplicationsLink={routes?.navigator}
-                    noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
-                    onRouteChange={onRouteChange}
-                    i18n={{
-                      myApplications: mergedI18N.switcherMyApplications,
-                      allApplicationsLink: mergedI18N.switcherNavigatorLink,
-                      requestAccess: mergedI18N.switcherRequestAccess,
-                      learnMoreLink: mergedI18N.switcherLearnMoreLink,
-                    }}
-                    testId={`${testId}-app-switcher`}
-                    isExpanded={isExpanded}
-                  />
-                )),
+                content: React.forwardRef(({ isExpanded }, ref) =>
+                  workspaces ? (
+                    <MultiWorkspaceSuiteHeaderAppSwitcher
+                      ref={ref}
+                      isAdminView={isAdminView}
+                      workspaces={workspaces}
+                      globalApplications={globalApplications}
+                      customApplications={customApplications}
+                      adminLink={routes?.admin}
+                      noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                      onRouteChange={onRouteChange}
+                      i18n={{
+                        workspace: mergedI18N.switcherWorkspace,
+                        workspaces: mergedI18N.switcherWorkspaces,
+                        workspaceAdmin: mergedI18N.switcherWorkspaceAdmin,
+                        backToAppSwitcher: mergedI18N.switcherBackToAppSwitcher,
+                        selectWorkspace: mergedI18N.switcherSelectWorkspace,
+                        availableWorkspaces: mergedI18N.switcherAvailableWorkspaces,
+                        suiteAdmin: mergedI18N.switcherSuiteAdmin,
+                        global: mergedI18N.switcherGlobal,
+                        myApplications: mergedI18N.switcherMyApplications,
+                        allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                        requestAccess: mergedI18N.switcherRequestAccess,
+                        learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                      }}
+                      testId={`${testId}-app-switcher`}
+                      isExpanded={isExpanded}
+                    />
+                  ) : applications ? (
+                    <SuiteHeaderAppSwitcher
+                      ref={ref}
+                      applications={applications}
+                      customApplications={customApplications}
+                      allApplicationsLink={routes?.navigator}
+                      noAccessLink={routes?.gettingStarted || 'javascript:void(0)'}
+                      onRouteChange={onRouteChange}
+                      i18n={{
+                        myApplications: mergedI18N.switcherMyApplications,
+                        allApplicationsLink: mergedI18N.switcherNavigatorLink,
+                        requestAccess: mergedI18N.switcherRequestAccess,
+                        learnMoreLink: mergedI18N.switcherLearnMoreLink,
+                      }}
+                      testId={`${testId}-app-switcher`}
+                      isExpanded={isExpanded}
+                    />
+                  ) : (
+                    <SuiteHeaderAppSwitcherLoading ref={ref} testId={`${testId}-app-switcher`} />
+                  )
+                ),
               }}
               appName={suiteName}
               subtitle={
-                extraContent ? (
+                appNameComponent || currentWorkspaceComponent || extraContentComponent ? (
                   <div>
-                    {appName}
-                    <span className={`${settings.iotPrefix}--suite-header-subtitle`}>
-                      {extraContent}
-                    </span>
+                    {currentWorkspaceComponent}
+                    {appNameComponent}
+                    {extraContentComponent}
                   </div>
-                ) : (
-                  appName
-                )
+                ) : null
               }
               actionItems={[
                 ...customActionItems,
@@ -483,6 +557,7 @@ const SuiteHeader = ({
                   ],
                 },
               ].filter((i) => i)}
+              showCloseIconWhenPanelExpanded
               {...otherHeaderProps}
             />
             {sideNavProps ? (

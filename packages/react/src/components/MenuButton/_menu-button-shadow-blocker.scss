@@ -148,7 +148,7 @@ $shadow-blocker-border-width: rem(1px);
     .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--btn--ghost:focus:not(:active) {
       @function calculate-middle($size) {
         @return calc(
-          ((#{$size} - #{$shadow-blocker-height}) / 2) - #{$shadow-blocker-border-width}
+          ((#{$size} - #{$shadow-blocker-height}) * 0.5) - #{$shadow-blocker-border-width}
         );
       }
 
@@ -172,7 +172,8 @@ $shadow-blocker-border-width: rem(1px);
       .#{$prefix}--btn.#{$prefix}--btn--icon-only.#{$prefix}--btn--ghost:focus:not(:active) {
         @function calculate-negative-middle($size) {
           @return calc(
-            (((#{$size} - #{$shadow-blocker-height}) / 2) + #{$shadow-blocker-border-width}) * (-1)
+            (((#{$size} - #{$shadow-blocker-height}) * 0.5) + #{$shadow-blocker-border-width}) *
+              (-1)
           );
         }
 

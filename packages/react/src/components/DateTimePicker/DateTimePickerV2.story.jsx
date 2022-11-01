@@ -1,5 +1,5 @@
 import React from 'react';
-import { boolean, text, select } from '@storybook/addon-knobs';
+import { boolean, text, select, number, object } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import StoryNotice, { experimentalStoryTitle } from '../../internal/StoryNotice';
@@ -50,6 +50,7 @@ export const Default = () => {
     <DateTimePicker
       id="datetimepicker"
       dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+      useNewTimeSpinner={boolean('useNewTimeSpinner', true)}
       relatives={[
         {
           label: 'Yesterday',
@@ -60,7 +61,13 @@ export const Default = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
-      // renderPresetTooltipText={() => 'User tooltip'}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -77,6 +84,13 @@ export const SelectedPreset = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -92,6 +106,13 @@ export const SelectedRelative = () => {
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      i18n={object('i18n', {
+        invalidText: 'The date time entered is invalid',
+      })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
@@ -102,16 +123,90 @@ export const SelectedAbsolute = () => {
   return (
     <DateTimePicker
       id="datetimepicker"
+      useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
       defaultValue={defaultAbsoluteValue}
+      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
       hasTimeInput={boolean('hasTimeInput', true)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
       hasIconOnly={boolean('hasIconOnly', false)}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      style={{ zIndex: number('zIndex', 0) }}
+      i18n={object('i18n', {
+        startTimeLabel: 'Start',
+        endTimeLabel: 'End',
+        invalidText: 'The date time entered is invalid',
+      })}
+      renderInPortal={boolean('renderInPortal', true)}
     />
   );
 };
 
 SelectedAbsolute.storyName = 'Selected absolute';
+
+export const SingleSelect = () => {
+  const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
+  return (
+    <DateTimePicker
+      id="datetimepicker"
+      key={dateTimeMask}
+      useNewTimeSpinner
+      useAutoPositioning={boolean('useAutoPositioning', true)}
+      defaultValue={{
+        timeRangeKind: PICKER_KINDS.SINGLE,
+        timeSingleValue: {
+          startDate: '2020-04-01',
+          startTime: '12:34',
+        },
+      }}
+      dateTimeMask={dateTimeMask}
+      hasTimeInput={boolean('hasTimeInput', true)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
+      datePickerType="single"
+      showRelativeOption={boolean('show relative option', false)}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      i18n={object('i18n', {
+        timePickerInvalidText: 'A valid value is required',
+        invalidText: 'The date time entered is invalid',
+      })}
+      style={{ zIndex: number('zIndex', 0) }}
+      renderInPortal={boolean('renderInPortal', true)}
+    />
+  );
+};
+
+SingleSelect.storyName = 'Single select with new time spinner';
+
+export const SelectedAbsoluteWithNewTimeSpinner = () => {
+  const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
+  return (
+    <DateTimePicker
+      id="datetimepicker"
+      key={dateTimeMask}
+      useNewTimeSpinner
+      useAutoPositioning={boolean('useAutoPositioning', true)}
+      defaultValue={defaultAbsoluteValue}
+      dateTimeMask={dateTimeMask}
+      hasTimeInput={boolean('hasTimeInput', true)}
+      onApply={action('onApply')}
+      onCancel={action('onCancel')}
+      style={{ zIndex: number('zIndex', 0) }}
+      i18n={object('i18n', {
+        startTimeLabel: 'Start',
+        endTimeLabel: 'end',
+        invalidText: 'The date time entered is invalid',
+      })}
+      invalid={boolean('invalid', false)}
+      disabled={boolean('disabled', false)}
+      renderInPortal={boolean('renderInPortal', true)}
+    />
+  );
+};
+
+SelectedAbsoluteWithNewTimeSpinner.storyName = 'Range select with new time spinner';
 
 export const WithoutARelativeOption = () => {
   return (
@@ -167,6 +262,7 @@ export const LightVersion = () => {
       hasIconOnly={boolean('hasIconOnly', false)}
       onApply={action('onApply')}
       onCancel={action('onCancel')}
+      style={{ zIndex: number('zIndex', 0) }}
     />
   );
 };
@@ -187,6 +283,9 @@ export const IconOnly = () => {
         ]}
         hasTimeInput={boolean('hasTimeInput', true)}
         hasIconOnly={boolean('hasIconOnly', true)}
+        style={{ zIndex: number('zIndex', 0) }}
+        invalid={boolean('invalid', false)}
+        disabled={boolean('disabled', false)}
       />
     </div>
   );

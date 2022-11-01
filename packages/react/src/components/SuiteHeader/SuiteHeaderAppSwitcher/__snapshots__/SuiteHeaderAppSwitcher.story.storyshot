@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher Loading state 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/Legacy (single workspace only)/SuiteHeaderAppSwitcher Loading state 1`] = `
 <div
   className="storybook-container"
 >
@@ -14,52 +14,22 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
   >
     <ul
       className="iot--suite-header-app-switcher"
-      data-testid="suite-header-app-switcher"
+      data-testid="suite-header-app-switcher--loading"
     >
       <li
         className="iot--suite-header-app-switcher--nav-link"
       >
-        <p>
-          My applications
-        </p>
-        <a
-          className="iot--btn bx--btn bx--btn--tertiary"
-          data-testid="suite-header-app-switcher--all-applications"
-          href="https://www.ibm.com"
-          onBlur={[Function]}
-          onClick={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-          rel="noopener noreferrer"
-          tabIndex={-1}
+        <div
+          className="iot--suite-header-app-switcher--nav-link--button--loading"
         >
-          All applications
-          <svg
-            aria-hidden={true}
-            className="bx--btn__icon"
-            fill="currentColor"
-            focusable="false"
-            height={16}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 16 16"
-            width={16}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.3 3.7L13.1 7.5 1 7.5 1 8.5 13.1 8.5 9.3 12.3 10 13 15 8 10 3z"
-            />
-          </svg>
-        </a>
+          <div
+            className="bx--skeleton bx--btn"
+          />
+        </div>
       </li>
-      <div
-        className="iot--suite-header-app-switcher--nav-link--separator"
-      />
       <li>
         <div
           className="iot--suite-header-app-switcher--nav-link--loading"
-          data-testid="suite-header-app-switcher--loading"
         >
           <div>
             <p
@@ -94,7 +64,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher No applications 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/Legacy (single workspace only)/SuiteHeaderAppSwitcher No applications 1`] = `
 <div
   className="storybook-container"
 >
@@ -117,7 +87,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           My applications
         </p>
         <a
-          className="iot--btn bx--btn bx--btn--tertiary"
+          className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}
@@ -192,7 +162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
 </div>
 `;
 
-exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/SuiteHeaderAppSwitcher default 1`] = `
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/UI Shell/SuiteHeader/Legacy (single workspace only)/SuiteHeaderAppSwitcher default 1`] = `
 <div
   className="storybook-container"
 >
@@ -215,7 +185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
           My applications
         </p>
         <a
-          className="iot--btn bx--btn bx--btn--tertiary"
+          className="iot--suite-header-app-switcher--nav-link--button-tertiary iot--btn bx--btn bx--btn--tertiary"
           data-testid="suite-header-app-switcher--all-applications"
           href="https://www.ibm.com"
           onBlur={[Function]}

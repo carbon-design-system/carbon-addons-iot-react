@@ -106,6 +106,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     initialState.toolbar.initialDefaultSearch,
     initialState.toolbar.search,
     initialState.toolbar.isDisabled,
+    initialState.toolbar.hideClearAllFiltersButton,
     initialState.table.isSelectAllSelected,
     initialState.table.isSelectAllIndeterminate,
     initialState.table.selectedIds,
@@ -122,7 +123,8 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   ]);
 
   const columns = hasUserViewManagement ? state.columns : initialColumns;
-  const initialDefaultSearch = state?.view?.toolbar?.initialDefaultSearch || '';
+  const defaultSearch = view?.toolbar?.search?.defaultValue || '';
+  const initialDefaultSearch = view?.toolbar?.initialDefaultSearch || '';
 
   const { onChangePage } = pagination || {};
   const {
@@ -142,6 +144,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onCreateAdvancedFilter,
     onToggleAggregations,
     onApplyToolbarAction,
+    onSearchExpand,
   } = toolbar || {};
   const {
     onChangeSort,
@@ -230,6 +233,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       },
       onApplyToolbarAction: (action) => {
         callbackParent(onApplyToolbarAction, action);
+      },
+      onSearchExpand: (action) => {
+        callbackParent(onSearchExpand, action);
       },
       onDownloadCSV,
     },
@@ -350,9 +356,10 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
           ...view?.toolbar,
           search: {
             ...view?.toolbar?.search,
-            defaultValue: initialDefaultSearch,
+            defaultValue: defaultSearch,
           },
           customToolbarContent,
+          initialDefaultSearch,
         },
         pagination: {
           ...view.pagination,

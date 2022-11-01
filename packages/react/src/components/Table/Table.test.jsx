@@ -432,9 +432,9 @@ describe('Table', () => {
     fireEvent.click(toggleHideCol2Button);
 
     expect(mockActions.table.onColumnResize).toHaveBeenCalledWith([
-      { id: 'col1', name: 'Column 1', width: '150px' },
-      { id: 'col2', name: 'Column 2', width: '100px' },
-      { id: 'col3', name: 'Column 3', width: '150px' },
+      { id: 'col1', name: 'Column 1', width: '225px' },
+      { id: 'col2', name: 'Column 2', width: '150px' },
+      { id: 'col3', name: 'Column 3', width: '225px' },
     ]);
 
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
@@ -578,8 +578,35 @@ describe('Table', () => {
     expect(rowEditBarButton).toBeTruthy();
   });
 
-  it('toolbar search should render with default value', () => {
-    const wrapper = mount(
+  it('toolbar search should render with default value', async () => {
+    const tableId = 'table';
+
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'ferrari',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('ferrari');
+  });
+
+  it('toolbar search should rerender with different search value', () => {
+    const tableId = 'table';
+
+    const { rerender } = render(
       <Table
         columns={tableColumns}
         data={[tableData[0]]}
@@ -594,23 +621,81 @@ describe('Table', () => {
             },
           },
         }}
+        id={tableId}
       />
     );
 
-    expect(wrapper.find(`.${prefix}--search-input`)).toHaveLength(1);
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('');
 
-    wrapper.setProps({
-      view: { toolbar: { search: { defaultValue: 'ferrari' } } },
-    });
-    wrapper.update();
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: 'ferrari',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
 
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('ferrari');
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('ferrari');
 
-    wrapper.setProps({ view: { toolbar: { search: { defaultValue: '' } } } });
-    wrapper.update();
+    rerender(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id={tableId}
+      />
+    );
 
-    expect(wrapper.find(`.${prefix}--search-input`).prop('value')).toEqual('');
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${tableId}-table-toolbar-search`)).toHaveValue('');
+  });
+
+  it('toolbar search should change value after typing', () => {
+    render(
+      <Table
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={mockActions}
+        options={{
+          hasSearch: true,
+        }}
+        view={{
+          toolbar: {
+            search: {
+              defaultValue: '',
+            },
+          },
+        }}
+        id="table"
+      />
+    );
+    expect(screen.getByTestId('table-table-toolbar-search')).toBeInTheDocument();
+    expect(screen.getByTestId('table-table-toolbar-search')).toHaveValue('');
+    userEvent.type(screen.getByTestId('table-table-toolbar-search'), 'ferrari');
+    expect(screen.getByTestId('table-table-toolbar-search')).toHaveValue('ferrari');
   });
 
   it('should call onApplySearch when typing in the search box with hasFastSearch:true', () => {

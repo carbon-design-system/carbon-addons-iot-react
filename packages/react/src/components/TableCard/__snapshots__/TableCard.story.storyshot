@@ -295,6 +295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -579,7 +580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -608,7 +609,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -633,7 +634,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-count"
@@ -658,7 +659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -683,7 +684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -723,7 +724,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -752,7 +753,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -777,7 +778,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-count"
@@ -802,7 +803,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -827,7 +828,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -867,7 +868,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -896,7 +897,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -921,7 +922,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-count"
@@ -946,7 +947,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -971,7 +972,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -1011,7 +1012,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -1040,7 +1041,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -1065,7 +1066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-count"
@@ -1090,7 +1091,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -1115,7 +1116,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -1155,7 +1156,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -1184,7 +1185,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -1209,7 +1210,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-count"
@@ -1234,7 +1235,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -1259,7 +1260,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -1299,7 +1300,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -1328,7 +1329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -1353,7 +1354,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-count"
@@ -1378,7 +1379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -1403,7 +1404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -1443,7 +1444,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -1472,7 +1473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -1497,7 +1498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-count"
@@ -1522,7 +1523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -1547,7 +1548,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -2293,7 +2294,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-0-alert"
@@ -2318,7 +2319,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-0-hour"
@@ -2343,7 +2344,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-0-pressure"
@@ -2373,7 +2374,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-1-alert"
@@ -2398,7 +2399,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-1-hour"
@@ -2423,7 +2424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-1-pressure"
@@ -2453,7 +2454,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-2-alert"
@@ -2478,7 +2479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-2-hour"
@@ -2503,7 +2504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-2-pressure"
@@ -2533,7 +2534,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-3-alert"
@@ -2558,7 +2559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-3-hour"
@@ -2583,7 +2584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-3-pressure"
@@ -2613,7 +2614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-4-alert"
@@ -2638,7 +2639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-4-hour"
@@ -2663,7 +2664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-4-pressure"
@@ -2693,7 +2694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-5-alert"
@@ -2718,7 +2719,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-5-hour"
@@ -2743,7 +2744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-5-pressure"
@@ -2773,7 +2774,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-6-alert"
@@ -2798,7 +2799,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-6-hour"
@@ -2823,7 +2824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-sample-values-table-list-6-pressure"
@@ -3782,7 +3783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -3807,7 +3808,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -3832,7 +3833,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -3862,7 +3863,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -3887,7 +3888,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -3912,7 +3913,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -3942,7 +3943,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -3967,7 +3968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -3992,7 +3993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -4022,7 +4023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -4047,7 +4048,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -4072,7 +4073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -4102,7 +4103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -4127,7 +4128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -4152,7 +4153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -4182,7 +4183,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -4207,7 +4208,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -4232,7 +4233,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -4262,7 +4263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -4287,7 +4288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -4312,7 +4313,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -5196,7 +5197,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -5221,7 +5222,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-count"
@@ -5246,7 +5247,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -5271,7 +5272,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -5301,7 +5302,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-alert"
@@ -5326,7 +5327,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-count"
@@ -5351,7 +5352,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-hour"
@@ -5376,7 +5377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-pressure"
@@ -5406,7 +5407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-alert"
@@ -5431,7 +5432,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-count"
@@ -5456,7 +5457,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-hour"
@@ -5481,7 +5482,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-pressure"
@@ -5511,7 +5512,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-8-alert"
@@ -5536,7 +5537,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-8-count"
@@ -5561,7 +5562,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-8-hour"
@@ -5586,7 +5587,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-8-pressure"
@@ -5616,7 +5617,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -5641,7 +5642,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-count"
@@ -5666,7 +5667,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -5691,7 +5692,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -5721,7 +5722,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -5746,7 +5747,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-count"
@@ -5771,7 +5772,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -5796,7 +5797,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -5826,7 +5827,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -5851,7 +5852,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-count"
@@ -5876,7 +5877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -5901,7 +5902,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -6203,7 +6204,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
         }
       >
         <div
-          className="iot--table-card__table iot--table-card__table--with-data iot--table-container bx--data-table-container"
+          className="iot--table-card__table iot--table-card__table--hide-header iot--table-card__table--with-data iot--table-container bx--data-table-container"
           data-testid="table-for-card-undefined-table-container"
         >
           <section
@@ -6475,7 +6476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 className="bx--data-table bx--data-table--no-border"
                 data-testid="table-for-card-undefined"
                 id="table-for-card-undefined"
-                showHeader={true}
+                showHeader={false}
                 title={null}
               >
                 <thead
@@ -6756,7 +6757,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-undefined-row-1-alert"
@@ -6781,7 +6782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-undefined-row-1-count"
@@ -6806,7 +6807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-undefined-row-1-hour"
@@ -6831,7 +6832,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-undefined-row-1-pressure"
@@ -7577,7 +7578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -7602,7 +7603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-deviceId"
@@ -7638,7 +7639,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -7663,7 +7664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-deviceId"
@@ -7699,7 +7700,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -7724,7 +7725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-deviceId"
@@ -7760,7 +7761,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -7785,7 +7786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-deviceId"
@@ -7821,7 +7822,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-pressure"
@@ -7846,7 +7847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-5-deviceId"
@@ -7882,7 +7883,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -7907,7 +7908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-deviceId"
@@ -7943,7 +7944,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-pressure"
@@ -7968,7 +7969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="deviceId"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-7-deviceId"
@@ -8625,6 +8626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -8909,7 +8911,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -8938,7 +8940,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -8963,7 +8965,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-iconColumn-count"
@@ -9032,7 +9034,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -9057,7 +9059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -9097,7 +9099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -9126,7 +9128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -9151,7 +9153,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-count"
@@ -9218,7 +9220,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -9243,7 +9245,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -9283,7 +9285,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -9312,7 +9314,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -9337,7 +9339,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-iconColumn-count"
@@ -9406,7 +9408,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -9431,7 +9433,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -9471,7 +9473,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -9500,7 +9502,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -9525,7 +9527,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-iconColumn-count"
@@ -9594,7 +9596,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -9619,7 +9621,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -9659,7 +9661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -9688,7 +9690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -9713,7 +9715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-iconColumn-count"
@@ -9780,7 +9782,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -9805,7 +9807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -9845,7 +9847,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -9874,7 +9876,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -9899,7 +9901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-iconColumn-count"
@@ -9966,7 +9968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -9991,7 +9993,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -10031,7 +10033,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -10060,7 +10062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -10085,7 +10087,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-iconColumn-count"
@@ -10152,7 +10154,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -10177,7 +10179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -11088,7 +11090,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -11113,7 +11115,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-count"
@@ -11138,7 +11140,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -11163,7 +11165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -11254,7 +11256,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -11279,7 +11281,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-count"
@@ -11304,7 +11306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -11329,7 +11331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -11420,7 +11422,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -11445,7 +11447,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-count"
@@ -11470,7 +11472,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -11495,7 +11497,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -11586,7 +11588,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -11611,7 +11613,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-count"
@@ -11636,7 +11638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -11661,7 +11663,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -11752,7 +11754,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -11777,7 +11779,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-count"
@@ -11802,7 +11804,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -11827,7 +11829,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -11918,7 +11920,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -11943,7 +11945,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-count"
@@ -11968,7 +11970,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -11993,7 +11995,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -12084,7 +12086,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -12109,7 +12111,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-count"
@@ -12134,7 +12136,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -12159,7 +12161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -12871,6 +12873,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -13090,7 +13093,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13119,7 +13122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -13144,7 +13147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -13169,7 +13172,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -13209,7 +13212,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13238,7 +13241,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -13263,7 +13266,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -13288,7 +13291,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -13328,7 +13331,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13357,7 +13360,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -13382,7 +13385,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -13407,7 +13410,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -13447,7 +13450,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13476,7 +13479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -13501,7 +13504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -13526,7 +13529,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -13566,7 +13569,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13595,7 +13598,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -13620,7 +13623,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -13645,7 +13648,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -13685,7 +13688,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13714,7 +13717,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -13739,7 +13742,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -13764,7 +13767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -13804,7 +13807,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -13833,7 +13836,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -13858,7 +13861,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -13883,7 +13886,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"
@@ -14767,7 +14770,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -14792,7 +14795,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -14817,7 +14820,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-iconColumn-count"
@@ -14886,7 +14889,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-iconColumn-pressure"
@@ -14913,7 +14916,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -14938,7 +14941,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -14963,7 +14966,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-count"
@@ -14985,7 +14988,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-pressure"
@@ -15012,7 +15015,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -15037,7 +15040,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -15062,7 +15065,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-iconColumn-count"
@@ -15131,7 +15134,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-iconColumn-pressure"
@@ -15158,7 +15161,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -15183,7 +15186,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -15208,7 +15211,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-iconColumn-count"
@@ -15277,7 +15280,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-iconColumn-pressure"
@@ -15304,7 +15307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -15329,7 +15332,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -15354,7 +15357,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-iconColumn-count"
@@ -15421,7 +15424,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-iconColumn-pressure"
@@ -15493,7 +15496,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -15518,7 +15521,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -15543,7 +15546,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-iconColumn-count"
@@ -15612,7 +15615,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-iconColumn-pressure"
@@ -15684,7 +15687,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -15709,7 +15712,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -15734,7 +15737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-iconColumn-count"
@@ -15756,7 +15759,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-iconColumn-pressure"
@@ -16368,6 +16371,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     <th
                       className="bx--table-expand"
                       data-testid="table-for-card-table-list-table-head-row-expansion-column"
+                      id="table-for-card-table-list-expand"
                       scope="col"
                     />
                     <th
@@ -16782,7 +16786,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -16811,7 +16815,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-alert"
@@ -16836,7 +16840,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-iconColumn-count"
@@ -16858,7 +16862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-count"
@@ -16883,7 +16887,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-hour"
@@ -16908,7 +16912,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-iconColumn-pressure"
@@ -16930,7 +16934,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-10-pressure"
@@ -16970,7 +16974,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -16999,7 +17003,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-alert"
@@ -17024,7 +17028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-count"
@@ -17046,7 +17050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-count"
@@ -17071,7 +17075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-hour"
@@ -17096,7 +17100,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-iconColumn-pressure"
@@ -17118,7 +17122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-11-pressure"
@@ -17158,7 +17162,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -17187,7 +17191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-alert"
@@ -17212,7 +17216,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-iconColumn-count"
@@ -17234,7 +17238,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-count"
@@ -17259,7 +17263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-hour"
@@ -17284,7 +17288,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-iconColumn-pressure"
@@ -17306,7 +17310,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-1-pressure"
@@ -17346,7 +17350,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -17375,7 +17379,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-alert"
@@ -17400,7 +17404,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-iconColumn-count"
@@ -17422,7 +17426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-count"
@@ -17447,7 +17451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-hour"
@@ -17472,7 +17476,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-iconColumn-pressure"
@@ -17494,7 +17498,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-2-pressure"
@@ -17534,7 +17538,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -17563,7 +17567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-alert"
@@ -17588,7 +17592,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-iconColumn-count"
@@ -17655,7 +17659,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-count"
@@ -17680,7 +17684,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-hour"
@@ -17705,7 +17709,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-iconColumn-pressure"
@@ -17758,7 +17762,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-6-pressure"
@@ -17798,7 +17802,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -17827,7 +17831,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-alert"
@@ -17852,7 +17856,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-iconColumn-count"
@@ -17874,7 +17878,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-count"
@@ -17899,7 +17903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-hour"
@@ -17924,7 +17928,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-iconColumn-pressure"
@@ -17977,7 +17981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-3-pressure"
@@ -18017,7 +18021,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   >
                     <td
                       className="bx--table-expand"
-                      headers="expand"
+                      headers="table-for-card-table-list-expand"
                     >
                       <button
                         aria-label="Click to expand content"
@@ -18046,7 +18050,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="alert"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-alert"
@@ -18071,7 +18075,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-iconColumn-count"
@@ -18093,7 +18097,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="count"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-count"
@@ -18118,7 +18122,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="hour"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-hour"
@@ -18143,7 +18147,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="iconColumn-pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-iconColumn-pressure"
@@ -18165,7 +18169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </td>
                     <td
                       align="start"
-                      className="data-table-start iot--table__cell--sortable"
+                      className="data-table-start"
                       data-column="pressure"
                       data-offset={0}
                       id="cell-table-for-card-table-list-row-4-pressure"

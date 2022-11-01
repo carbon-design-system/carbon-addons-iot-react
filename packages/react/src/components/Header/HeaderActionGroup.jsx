@@ -25,6 +25,7 @@ const propTypes = {
   testId: PropTypes.string,
   /** Returns true, if the icon should be shown. (actionItem) => {} */
   isActionItemVisible: PropTypes.func.isRequired,
+  showCloseIconWhenPanelExpanded: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -33,6 +34,7 @@ const defaultProps = {
     openMenu: 'Open menu',
   },
   testId: 'header-action-group',
+  showCloseIconWhenPanelExpanded: false,
 };
 
 const findFirstVisible = (el) => {
@@ -50,7 +52,13 @@ const findFirstVisible = (el) => {
  * Renders all the actions that can be clicked to navigate, open header panels (side panels),
  * or dropdown menus, passing an onToggleExpansion to each action
  */
-const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) => {
+const HeaderActionGroup = ({
+  actionItems,
+  i18n,
+  testId,
+  isActionItemVisible,
+  showCloseIconWhenPanelExpanded,
+}) => {
   const overFlowContainerRef = useRef(null);
   const [overflowItems, setOverflowItems] = useState([]);
   const breakpoint = useRef(null);
@@ -237,6 +245,7 @@ const HeaderActionGroup = ({ actionItems, i18n, testId, isActionItemVisible }) =
                   index={i}
                   key={`header-action-item-${item.label}-${i}`}
                   testId={`header-action-item-${item.label}`}
+                  showCloseIconWhenPanelExpanded={showCloseIconWhenPanelExpanded}
                 />
               ))
           )
