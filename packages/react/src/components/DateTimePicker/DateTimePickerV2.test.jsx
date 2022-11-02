@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { render, fireEvent, screen, within } from '@testing-library/react';
+import { render, fireEvent, screen, within, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import '@testing-library/jest-dom/extend-expect';
@@ -12,6 +12,7 @@ import {
   PICKER_KINDS,
 } from '../../constants/DateConstants';
 import { settings } from '../../constants/Settings';
+import { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
 
 import DateTimePicker from './DateTimePickerV2';
 import { defaultAbsoluteValue, defaultRelativeValue } from './DateTimePickerV2.story';
@@ -39,6 +40,17 @@ const i18n = {
   invalidText: 'The date time entered is invalid',
   invalidLabel: 'Invalid',
 };
+
+const generateBoundingClientRect = ({ x, y, height = 50, width = 50 }) => () => ({
+  x,
+  y,
+  height,
+  width,
+  top: y,
+  bottom: y + height,
+  left: x,
+  right: x + width,
+});
 
 describe('DateTimePickerV2', () => {
   beforeEach(() => {
@@ -1966,5 +1978,502 @@ describe('DateTimePickerV2', () => {
         .getByTestId(`${dateTimePickerProps.testId}-datepicker-flyout-button`)
         .classList.contains(`${iotPrefix}--date-time-picker--trigger-button--disabled`)
     ).toBe(true);
+  });
+
+  it('should render in a portal when renderInPortal:true', () => {
+    render(<DateTimePicker {...dateTimePickerProps} renderInPortal />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(0);
+  });
+
+  it('should render in a portal when renderInPortal:true (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} useNewTimeSpinner renderInPortal />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(0);
+  });
+
+  it('should render as a child when renderInPortal:false', () => {
+    render(<DateTimePicker {...dateTimePickerProps} renderInPortal={false} />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelector('.iot--flyout-menu--tooltip-anchor')
+    ).toHaveAttribute('data-floating-menu-container', 'true');
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(1);
+  });
+
+  it('should render as a child when renderInPortal:false (new time spinner)', () => {
+    render(<DateTimePicker {...dateTimePickerProps} useNewTimeSpinner renderInPortal={false} />);
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelector('.iot--flyout-menu--tooltip-anchor')
+    ).toHaveAttribute('data-floating-menu-container', 'true');
+    expect(
+      screen
+        .getByTestId('date-time-picker-datepicker-flyout-container')
+        .querySelectorAll(`#flyout-tooltip`)
+    ).toHaveLength(1);
+  });
+
+  it('when flyout menu offscreen top left render direction to  RightStart', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: -200,
+        y: -200,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        testId={testId}
+        useNewTimeSpinner
+        useAutoPositioning
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 20,
+      y: 20,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.RightStart}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout offscreen top right render direction to LeftStart', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 1200,
+        y: -200,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 1000,
+      y: 20,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftStart}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen bottom left render direction to TopStart', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: -200,
+        y: 800,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 20,
+      y: 748,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.TopStart}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen bottom right render direction to TopEnd', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 1200,
+        y: 800,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 1000,
+      y: 748,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.TopEnd}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen top render direction as BottomEnd', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 300,
+        y: -70,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 500,
+      y: 20,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen right render direction as LeftEnd', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 1200,
+        y: 300,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 1200,
+      y: 300,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftEnd}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen bottom render direction as TopEnd', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: 300,
+        y: 1000,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 300,
+      y: 700,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.TopEnd}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('when flyout menu offscreen left render direction as RightStart', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: -200,
+        y: 300,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          useAutoPositioning
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 20,
+      y: 300,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.RightStart}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+  });
+
+  it('should renders normally with default direction bottomEnd when autopositioning off', () => {
+    const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
+    const mockGetBoundingClientRect = jest.fn(
+      generateBoundingClientRect({
+        x: -200,
+        y: 300,
+        height: 134,
+        width: 278,
+      })
+    );
+    Element.prototype.getBoundingClientRect = mockGetBoundingClientRect;
+    const testId = 'picker-test';
+    act(() => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          testId={testId}
+          useNewTimeSpinner
+          onApply={jest.fn()}
+          datePickerType="single"
+          dateTimeMask="YYYY-MM-DD hh:mm A"
+          hasTimeInput
+          showRelativeOption={false}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34 AM',
+            },
+          }}
+        />
+      );
+    });
+
+    const button = screen.getByTestId(`${testId}-datepicker-flyout-button`);
+    button.getBoundingClientRect = generateBoundingClientRect({
+      x: 20,
+      y: 300,
+    });
+
+    userEvent.click(button);
+    const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
+
+    expect(
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
+    ).toBe(true);
+    Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 });

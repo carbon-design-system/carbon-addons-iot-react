@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { FILTER_EMPTY_STRING } from '../../../constants/Filters';
+
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 
 const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
@@ -832,5 +834,171 @@ describe('TableToolbarAdvancedFilterFlyout', () => {
     );
 
     expect(screen.getByTestId('advanced-filter-flyout-container')).toBeVisible();
+  });
+
+  it('should pass empty string filter value to handler', () => {
+    const handleApplyFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter: handleApplyFilter,
+        }}
+        columns={[
+          {
+            id: 'select-column',
+            name: 'Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-A', id: 'option-A' },
+              { text: 'option-B', id: 'option-B' },
+              { text: 'Emptiness', id: '' },
+            ],
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'select-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'select-column',
+              value: 'option-A',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+          isDisabled: false,
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByLabelText('Select Column'));
+    userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('Emptiness'));
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    expect(handleApplyFilter).toHaveBeenLastCalledWith({
+      advanced: {
+        filterIds: [],
+      },
+      simple: {
+        'select-column': FILTER_EMPTY_STRING,
+      },
+    });
+  });
+
+  it('should render filter with initial select empty string option', () => {
+    const handleApplyFilter = jest.fn();
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter: handleApplyFilter,
+        }}
+        columns={[
+          {
+            id: 'select-column',
+            name: 'Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-A', id: 'option-A' },
+              { text: 'option-B', id: 'option-B' },
+              { text: 'Emptiness', id: '' },
+            ],
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'select-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'select-column',
+              value: '',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+          isDisabled: false,
+        }}
+      />
+    );
+    expect(screen.getByPlaceholderText('Choose an option')).toBeVisible();
+    expect(screen.getByPlaceholderText('Choose an option')).toHaveValue('');
+  });
+
+  it('should pass an array of selected items to callback when isMultiselect with empty string filter', () => {
+    const handleApplyFilter = jest.fn();
+
+    render(
+      <TableToolbarAdvancedFilterFlyout
+        actions={{
+          onApplyAdvancedFilter: handleApplyFilter,
+        }}
+        columns={[
+          {
+            id: 'select-column',
+            name: 'Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-A', id: 'option-A' },
+              { text: 'option-B', id: 'option-B' },
+              { text: 'option-C', id: 'option-C' },
+            ],
+          },
+          {
+            id: 'multi-select-column',
+            name: 'Multi-Select Column',
+            isFilterable: true,
+            options: [
+              { text: 'option-X', id: 'option-X' },
+              { text: 'option-Y', id: 'option-Y' },
+              { text: 'Emptiness', id: '' },
+            ],
+            isMultiselect: true,
+          },
+        ]}
+        i18n={null}
+        tableState={{
+          ordering: [
+            {
+              isHidden: false,
+              columnId: 'select-column',
+            },
+            {
+              isHidden: false,
+              columnId: 'multi-select-column',
+            },
+          ],
+          filters: [
+            {
+              columnId: 'select-column',
+              value: 'option-A',
+            },
+          ],
+          advancedFilterFlyoutOpen: true,
+        }}
+      />
+    );
+
+    userEvent.click(screen.getByLabelText('Multi-Select Column'));
+    userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('Emptiness'));
+
+    userEvent.click(screen.getByLabelText('Multi-Select Column'));
+    userEvent.click(within(screen.getByTestId('advanced-filter-flyout')).getByText('option-X'));
+
+    userEvent.click(screen.getByRole('button', { name: 'Apply filters' }));
+    expect(handleApplyFilter).toHaveBeenLastCalledWith({
+      advanced: {
+        filterIds: [],
+      },
+      simple: {
+        'select-column': 'option-A',
+        'multi-select-column': [FILTER_EMPTY_STRING, 'option-X'],
+      },
+    });
   });
 });

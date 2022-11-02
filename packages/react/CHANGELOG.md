@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.151.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0...v2.151.1-next.0) (2022-11-01)
+
+
+
+# [2.151.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.47...v2.151.0-next.48) (2022-10-31)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.151.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.47...v2.151.0) (2022-11-01)
+# [2.151.0-next.48](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.47...v2.151.0-next.48) (2022-10-31)
+
+
+### Bug Fixes
+
+* **advancedfilters:** react unique key issue ([6c69e17](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c69e170353480bfd943d3de746c4c7cfdeda83a))
+* **advancedfilters:** show previous selected value ([b17a36e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b17a36e5c5b9105ffc745c2017c133b8070bd194))
+* **cardproptypes:** update prop name ([3967583](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/396758369180128d811fc61a1089f5b9715a850b))
+* **cardtoolbar:** change prop name to renderDateDropdownInPortal ([df48a91](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df48a911c815ea029005fabc1208cd0d477846aa))
+* **cardtoolbar:** default renderDateDropdownInPortal to true ([5db3a95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5db3a95ee4199c004546aac48d15f427a7ad602c))
+* **dashboardgrid:** update image ([d9ee29f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9ee29fe5b7dcceafaefa4b6ab0ff5de98845837))
+* **datetimepickerv1:** update snapshots ([18f5388](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/18f53888827b4e198214c49826fce229a41d55bb))
+* **datetimepickerv2:** add renderInPortal prop ([79f2e91](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/79f2e9149052bb72aaf028a81a6ac491bd7eab92))
+* **datetimepickerv2:** add useAutoPositioning prop ([763817d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/763817d6f4d396e3c5dc2a443189d466a5e5fa40))
+* **datetimepickerv2:** update images ([f20ca20](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f20ca2079865ded85055f0ab166d7db3f965d0de))
+* **flyoutmenu:** images update ([4a89595](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4a89595c30d50217b66e4af24a90ac3355d4208a))
+* **flyoutmenu:** issues in rtl ([53c5e47](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53c5e4797da11d24439a78410181267c00d2da31))
+* **tableheaderrow:** enable filtering by an empty string ([01fffa9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/01fffa9482773a68aaf94e14d78e96e77f0eff0e)), closes [#3529](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3529)
+
+
+
+
+
 # [2.151.0-next.47](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0-next.46...v2.151.0-next.47) (2022-10-25)
 
 

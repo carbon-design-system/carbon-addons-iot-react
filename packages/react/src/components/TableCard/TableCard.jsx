@@ -67,6 +67,7 @@ const defaultProps = {
     closeLabel: 'Close',
     expandLabel: 'Expand to fullscreen',
   },
+  renderDateDropdownInPortal: true,
   withToolbarTooltips: false,
 };
 
@@ -92,6 +93,7 @@ const TableCard = ({
   testID,
   testId,
   className,
+  renderDateDropdownInPortal,
   withToolbarTooltips,
   ...others
 }) => {
@@ -534,6 +536,7 @@ const TableCard = ({
       width={newSize.width}
       timeRange={timeRange}
       timeRangeOptions={timeRangeOptions}
+      renderDateDropdownInPortal={renderDateDropdownInPortal}
     />
   );
 

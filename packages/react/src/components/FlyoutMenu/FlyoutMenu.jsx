@@ -193,8 +193,11 @@ const FlyoutMenu = ({
       ) {
         const { top = 0, left = 0 } = menuOffset;
 
-        propTop = top;
-        propLeft = left;
+        // set menuOffset only when it is not repositioned, when repositioned the menuOffset does not apply to the new direction anymore
+        if (flyoutDirection === direction) {
+          propTop = top;
+          propLeft = left;
+        }
       }
 
       return {
@@ -202,7 +205,7 @@ const FlyoutMenu = ({
         left: leftOffset + propLeft,
       };
     },
-    [menuOffset]
+    [direction, menuOffset]
   );
 
   const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
