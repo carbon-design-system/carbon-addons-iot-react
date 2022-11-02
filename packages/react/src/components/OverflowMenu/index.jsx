@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { OverflowMenu as CarbonOverflowMenu } from 'carbon-components-react';
@@ -207,11 +208,6 @@ class IotOverflowMenu extends Component {
     focusTrap: true,
     iconClass: '',
     open: false,
-    onClick: () => {},
-    onKeyDown: () => {},
-    onClose: () => {},
-    onOpen: () => {},
-    onFocus: () => {},
     menuOffset: getMenuOffset,
     menuOffsetFlip: getMenuOffset,
     menuOptionsClass: '',
@@ -266,7 +262,7 @@ class IotOverflowMenu extends Component {
   componentDidUpdate(_, prevState) {
     const { onClose } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
-    if (!this.state.open && prevState.open) {
+    if (!this.state.open && prevState.open && onClose) {
       onClose();
     }
   }
@@ -297,16 +293,24 @@ class IotOverflowMenu extends Component {
         ...prevState,
         open: !prevState.open,
       }));
-      this.props.onClick(evt);
+      const { onClick } = this.props;
+      if (onClick) {
+        onClick(evt);
+      }
     }
   };
 
   handleKeyPress = (evt) => {
+    const { onKeyDown } = this.props;
     if (
       this.state.open &&
       keyCodeMatches(evt, [keys.ArrowUp, keys.ArrowRight, keys.ArrowDown, keys.ArrowLeft])
     ) {
       evt.preventDefault();
+    }
+
+    if (onKeyDown) {
+      onKeyDown(evt);
     }
 
     // Close the overflow menu on escape
@@ -341,7 +345,10 @@ class IotOverflowMenu extends Component {
         if (onCloseMenu) {
           onCloseMenu();
         }
-        this.props.onClose();
+        const { onClose } = this.props;
+        if (onClose) {
+          onClose();
+        }
       }
     );
   };
@@ -435,7 +442,10 @@ class IotOverflowMenu extends Component {
         },
         !hasFocusin
       );
-      this.props.onOpen();
+      const { onOpen } = this.props;
+      if (onOpen) {
+        onOpen();
+      }
     }
   };
 
