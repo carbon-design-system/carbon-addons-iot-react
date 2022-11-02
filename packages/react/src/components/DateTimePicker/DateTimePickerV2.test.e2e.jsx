@@ -54,10 +54,11 @@ describe('DateTimePickerV2', () => {
 
     cy.findAllByLabelText('Calendar').eq(0).click();
 
+    let previousTop;
     cy.get('#flyout-tooltip')
       .then(getRect)
       .then((rect) => {
-        expect(rect.top).equal(34.5);
+        previousTop = rect.top;
       });
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
@@ -65,7 +66,7 @@ describe('DateTimePickerV2', () => {
     cy.get('#flyout-tooltip')
       .then(getRect)
       .then((rect) => {
-        expect(rect.top).equal(74.5);
+        expect(rect.top).equal(previousTop + 40);
       });
   });
 
@@ -105,10 +106,11 @@ describe('DateTimePickerV2', () => {
 
     cy.findAllByLabelText('Calendar').eq(0).click();
 
+    let previousLeft;
     cy.get('#flyout-tooltip')
       .then(getRect)
       .then((rect) => {
-        expect(rect.left).equal(-19);
+        previousLeft = rect.left;
       });
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
@@ -116,7 +118,113 @@ describe('DateTimePickerV2', () => {
     cy.get('#flyout-tooltip')
       .then(getRect)
       .then((rect) => {
-        expect(rect.left).equal(16);
+        expect(rect.left).equal(previousLeft + 35);
+      });
+  });
+
+  it('should re-position the flyout when scrolling parent to bottom (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            useNewTimeSpinner
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousTop;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousTop = rect.top;
+      });
+
+    cy.get('#parent').scrollTo('top', { duration: 1000 });
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.top).equal(previousTop + 40);
+      });
+  });
+
+  it('should re-position the flyout when scrolling parent to the right (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            useNewTimeSpinner
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousLeft;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousLeft = rect.left;
+      });
+
+    cy.get('#parent').scrollTo('left', { duration: 1000 });
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.left).equal(previousLeft + 35);
       });
   });
 
