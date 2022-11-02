@@ -52,9 +52,6 @@ const propTypes = {
    * direction of document
    */
   langDir: PropTypes.oneOf(['ltr', 'rtl']),
-
-  /** True if this row is the last child of visible rows */
-  isLastInView: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -64,7 +61,6 @@ const defaultProps = {
   expandIconDescription: 'Click to expand content',
   isSelected: false,
   langDir: 'ltr',
-  isLastInView: false,
 };
 
 const TableExpandRow = ({
@@ -78,7 +74,6 @@ const TableExpandRow = ({
   expandHeader,
   rowId,
   langDir,
-  isLastInView,
   ...rest
 }) => {
   const className = cx(
@@ -115,7 +110,7 @@ const TableExpandRow = ({
           renderIcon={ChevronRight16}
           size="sm"
           tooltipAlignment={langDir === 'ltr' ? 'start' : 'end'}
-          tooltipPosition={isLastInView ? 'top' : 'bottom'}
+          tooltipPosition="top"
           kind="icon-selection"
         />
       </TableCell>

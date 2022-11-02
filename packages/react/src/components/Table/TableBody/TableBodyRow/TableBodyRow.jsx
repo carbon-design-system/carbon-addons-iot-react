@@ -130,8 +130,6 @@ const propTypes = {
 
   /** True if this is the last child of a nested group */
   isLastChild: PropTypes.bool,
-  /** True if this row is the last child of visible rows */
-  isLastInView: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -162,7 +160,6 @@ const defaultProps = {
   isSelectable: undefined,
   size: undefined,
   isLastChild: false,
-  isLastInView: false,
 };
 
 const TableBodyRow = ({
@@ -210,7 +207,6 @@ const TableBodyRow = ({
   showExpanderColumn,
   size,
   isLastChild,
-  isLastInView,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -394,7 +390,6 @@ const TableBodyRow = ({
           }}
           rowId={id}
           langDir={langDir}
-          isLastInView={isLastInView}
         >
           {tableCells}
         </TableExpandRow>
@@ -449,7 +444,6 @@ const TableBodyRow = ({
         }}
         rowId={id}
         langDir={langDir}
-        isLastInView={isLastInView}
       >
         {tableCells}
       </TableExpandRow>
