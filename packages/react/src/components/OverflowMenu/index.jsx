@@ -283,6 +283,7 @@ class IotOverflowMenu extends Component {
   }
 
   componentWillUnmount() {
+    /* istanbul ignore if */
     if (typeof this._hBlurTimeout === 'number') {
       clearTimeout(this._hBlurTimeout);
       this._hBlurTimeout = undefined;
@@ -312,6 +313,7 @@ class IotOverflowMenu extends Component {
     if (keyCodeMatches(evt, [keys.Escape])) {
       const wasOpen = this.state.open;
       this.closeMenu(() => {
+        /* istanbul ignore else */
         if (wasOpen) {
           this.focusMenuEl();
         }
@@ -346,6 +348,7 @@ class IotOverflowMenu extends Component {
 
   focusMenuEl = () => {
     const { current: triggerEl } = this._triggerRef;
+    /* istanbul ignore else */
     if (triggerEl) {
       triggerEl.focus();
     }
@@ -362,6 +365,7 @@ class IotOverflowMenu extends Component {
    */
   handleOverflowMenuItemFocus = ({ currentIndex, direction }) => {
     const enabledIndices = React.Children.toArray(this.props.children).reduce((acc, curr, i) => {
+      /* istanbul ignore else */
       if (!curr.props.disabled) {
         acc.push(i);
       }
@@ -404,6 +408,7 @@ class IotOverflowMenu extends Component {
    * @private
    */
   _handlePlace = (menuBody) => {
+    /* istanbul ignore else */
     if (menuBody) {
       this._menuBody = menuBody;
       const hasFocusin = 'onfocusin' in window;
@@ -414,7 +419,9 @@ class IotOverflowMenu extends Component {
         (event) => {
           const target = ClickListener.getEventTarget(event);
           const { current: triggerEl } = this._triggerRef;
+          /* istanbul ignore else */
           if (typeof target.matches === 'function') {
+            /* istanbul ignore if */
             if (
               !menuBody.contains(target) &&
               triggerEl &&
