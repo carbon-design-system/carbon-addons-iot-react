@@ -12,8 +12,112 @@ import DateTimePicker from './DateTimePickerV2';
 const { iotPrefix } = settings;
 
 describe('DateTimePickerV2', () => {
+  const getRect = ($el) => $el[0].getBoundingClientRect();
+
   beforeEach(() => {
     cy.viewport(1680, 900);
+  });
+
+  it('should re-position the flyout when scrolling parent to bottom', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.top).equal(34.5);
+      });
+
+    cy.get('#parent').scrollTo('top', { duration: 1000 });
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.top).equal(74.5);
+      });
+  });
+
+  it('should re-position the flyout when scrolling parent to the right', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.left).equal(-19);
+      });
+
+    cy.get('#parent').scrollTo('left', { duration: 1000 });
+
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        expect(rect.left).equal(16);
+      });
   });
 
   it('should pick a new absolute ranges', () => {
