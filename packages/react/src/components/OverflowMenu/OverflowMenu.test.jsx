@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
@@ -354,6 +354,19 @@ describe('IotOverflowMenu', () => {
     userEvent.click(trigger);
 
     expect(mockOnClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('should invoke onFocus callback when menu is focused', () => {
+    const onFocus = jest.fn();
+    render(
+      <OverflowMenu onFocus={onFocus} testId={testId} withCarbonTooltip>
+        <OverflowMenuItem itemText="Option 1" />
+      </OverflowMenu>
+    );
+
+    fireEvent.focus(screen.getByTestId(testId));
+
+    expect(onFocus).toHaveBeenCalledTimes(1);
   });
 
   it('should be in a closed state after Escape is pressed', () => {

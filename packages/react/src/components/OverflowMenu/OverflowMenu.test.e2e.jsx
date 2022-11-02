@@ -248,4 +248,58 @@ describe('IotOverflowMenu', () => {
     cy.focused().realPress('Escape');
     cy.findByTestId('tooltip-1').should('be.focused');
   });
+
+  it('should invoke callbacks', () => {
+    const onClick = cy.stub();
+    const onFocus = cy.stub();
+    const onKeyDown = cy.stub();
+    const onClose = cy.stub();
+    const onOpen = cy.stub();
+
+    mount(
+      <OverflowMenuExample
+        overflowMenuProps={{
+          ...defaultProps.menu(),
+          flipped: true,
+          direction: 'bottom',
+          useAutoPositioning: true,
+          withCarbonTooltip: true,
+          testId: 'tooltip-1',
+          onClick,
+          onFocus,
+          onKeyDown,
+          onClose,
+          onOpen,
+        }}
+        overflowMenuItemProps={defaultProps.menuItem()}
+      />
+    );
+
+    cy.findByTestId('tooltip-1')
+      .focus()
+      .should(() => {
+        expect(onFocus).to.be.calledOnce;
+      });
+
+    cy.findByTestId('tooltip-1')
+      .click()
+      .should(() => {
+        expect(onClick).to.be.calledOnce;
+        expect(onOpen).to.be.calledOnce;
+      });
+
+    cy.findByTestId('tooltip-1')
+      .click()
+      .should(() => {
+        expect(onClose).to.be.calledOnce;
+      });
+
+    cy.get('body').realPress('Tab');
+    cy.focused()
+      .type('{enter}')
+      .should(() => {
+        expect(onKeyDown).to.be.calledOnce;
+        expect(onOpen).to.be.calledOnce;
+      });
+  });
 });
