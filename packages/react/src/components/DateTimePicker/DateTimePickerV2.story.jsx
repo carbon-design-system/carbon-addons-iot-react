@@ -121,25 +121,40 @@ SelectedRelative.storyName = 'Selected relative';
 
 export const SelectedAbsolute = () => {
   return (
-    <DateTimePicker
-      id="datetimepicker"
-      useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
-      defaultValue={defaultAbsoluteValue}
-      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
-      hasTimeInput={boolean('hasTimeInput', true)}
-      onApply={action('onApply')}
-      onCancel={action('onCancel')}
-      hasIconOnly={boolean('hasIconOnly', false)}
-      invalid={boolean('invalid', false)}
-      disabled={boolean('disabled', false)}
-      style={{ zIndex: number('zIndex', 0) }}
-      i18n={object('i18n', {
-        startTimeLabel: 'Start',
-        endTimeLabel: 'End',
-        invalidText: 'The date time entered is invalid',
-      })}
-      renderInPortal={boolean('renderInPortal', true)}
-    />
+    <div style={{ backgroundColor: 'blue' }}>
+      <div
+        id="parent"
+        style={{
+          height: '20rem',
+          paddingTop: '10rem',
+          paddingBottom: '1000rem',
+          paddingLeft: '1rem',
+          width: 400,
+          backgroundColor: 'red',
+          overflow: 'scroll',
+        }}
+      >
+        <DateTimePicker
+          id="datetimepicker"
+          useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
+          defaultValue={defaultAbsoluteValue}
+          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+          hasTimeInput={boolean('hasTimeInput', true)}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+          hasIconOnly={boolean('hasIconOnly', false)}
+          invalid={boolean('invalid', false)}
+          disabled={boolean('disabled', false)}
+          style={{ zIndex: number('zIndex', 0) }}
+          i18n={object('i18n', {
+            startTimeLabel: 'Start',
+            endTimeLabel: 'End',
+            invalidText: 'The date time entered is invalid',
+          })}
+          renderInPortal={boolean('renderInPortal', true)}
+        />
+      </div>
+    </div>
   );
 };
 
@@ -148,33 +163,48 @@ SelectedAbsolute.storyName = 'Selected absolute';
 export const SingleSelect = () => {
   const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
   return (
-    <DateTimePicker
-      id="datetimepicker"
-      key={dateTimeMask}
-      useNewTimeSpinner
-      useAutoPositioning={boolean('useAutoPositioning', true)}
-      defaultValue={{
-        timeRangeKind: PICKER_KINDS.SINGLE,
-        timeSingleValue: {
-          startDate: '2020-04-01',
-          startTime: '12:34',
-        },
-      }}
-      dateTimeMask={dateTimeMask}
-      hasTimeInput={boolean('hasTimeInput', true)}
-      onApply={action('onApply')}
-      onCancel={action('onCancel')}
-      datePickerType="single"
-      showRelativeOption={boolean('show relative option', false)}
-      invalid={boolean('invalid', false)}
-      disabled={boolean('disabled', false)}
-      i18n={object('i18n', {
-        timePickerInvalidText: 'A valid value is required',
-        invalidText: 'The date time entered is invalid',
-      })}
-      style={{ zIndex: number('zIndex', 0) }}
-      renderInPortal={boolean('renderInPortal', true)}
-    />
+    <div style={{ backgroundColor: 'blue' }}>
+      <div
+        id="parent"
+        style={{
+          height: '20rem',
+          paddingTop: '10rem',
+          paddingBottom: '1000rem',
+          paddingLeft: '1rem',
+          width: 300,
+          backgroundColor: 'red',
+          overflow: 'scroll',
+        }}
+      >
+        <DateTimePicker
+          id="datetimepicker"
+          key={dateTimeMask}
+          useNewTimeSpinner
+          useAutoPositioning={boolean('useAutoPositioning', true)}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34',
+            },
+          }}
+          dateTimeMask={dateTimeMask}
+          hasTimeInput={boolean('hasTimeInput', true)}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+          datePickerType="single"
+          showRelativeOption={boolean('show relative option', false)}
+          invalid={boolean('invalid', false)}
+          disabled={boolean('disabled', false)}
+          i18n={object('i18n', {
+            timePickerInvalidText: 'A valid value is required',
+            invalidText: 'The date time entered is invalid',
+          })}
+          style={{ zIndex: number('zIndex', 0) }}
+          renderInPortal={boolean('renderInPortal', true)}
+        />
+      </div>
+    </div>
   );
 };
 

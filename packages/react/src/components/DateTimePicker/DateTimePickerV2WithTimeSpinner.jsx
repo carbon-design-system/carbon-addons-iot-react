@@ -188,7 +188,7 @@ export const propTypes = {
   renderInPortal: PropTypes.bool,
   /** Auto reposition if flyout menu offscreen */
   useAutoPositioning: PropTypes.bool,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 export const defaultProps = {
@@ -349,9 +349,21 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
   const [defaultSingleDateValue, SetDefaultSingleDateValue] = useState(false);
   const [invalidState, setInvalidState] = useState(invalid);
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const containerRef = useRef();
+  const updatedStyle = useMemo(
+    () => ({
+      ...style,
+      '--zIndex': style.zIndex ?? 0,
+      scrollTop: top,
+      scrollLeft: left,
+    }),
+    [style, top, left]
+  );
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -838,8 +850,21 @@ const DateTimePicker = ({
     );
   };
 
+  const getPosition = () => {
+    setLeft(containerRef.current?.parentNode.scrollLeft);
+    setTop(containerRef.current?.parentNode.scrollTop);
+  };
+
+  // Re-calculate X and Y when the parent is scrolled by the user
+  useEffect(() => {
+    const currentNode = containerRef.current?.parentNode;
+    if (currentNode) {
+      currentNode.addEventListener('scroll', getPosition);
+    }
+  }, []);
+
   return (
-    <div className={`${iotPrefix}--date-time-pickerv2`}>
+    <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
@@ -949,7 +974,7 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
-            style={style}
+            style={updatedStyle}
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}

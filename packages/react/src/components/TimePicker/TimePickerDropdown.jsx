@@ -81,7 +81,7 @@ const propTypes = {
   /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
   testId: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   is24hours: PropTypes.bool,
 };
 
