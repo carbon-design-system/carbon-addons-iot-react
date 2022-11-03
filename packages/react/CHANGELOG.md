@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.151.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.1-next.0...v2.151.1-next.1) (2022-11-03)
+
+
+### Bug Fixes
+
+* **table:** preserve pagination state during row edit mode ([85b4f80](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85b4f809ba84a8639e4b252830d14d58810f6f32))
+
+
+
+
+
 ## [2.151.1-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.0...v2.151.1-next.0) (2022-11-01)
 
 
