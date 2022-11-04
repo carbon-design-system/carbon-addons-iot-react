@@ -442,4 +442,31 @@ describe('TimePickerDropdown', () => {
     expect(input).toHaveFocus();
     expect(spinnerDropdown).not.toBeInTheDocument();
   });
+
+  it('should allow to pick midnight', async () => {
+    render(<TimePickerDropdown {...timePickerProps} value="23:59" is24hours />);
+    const input = screen.getByTestId('time-picker-test-input');
+    input.focus();
+    expect(input.value).toEqual('23:59');
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item'),
+      '{arrowdown}'
+    );
+
+    userEvent.type(
+      screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item'),
+      '{arrowdown}'
+    );
+
+    await waitFor(() => {
+      expect(
+        screen.getByTestId('time-picker-test-spinner-list-spinner-1-selected-item').textContent
+      ).toBe('00');
+      expect(
+        screen.getByTestId('time-picker-test-spinner-list-spinner-2-selected-item').textContent
+      ).toBe('00');
+      expect(input.value).toEqual('00:00');
+    });
+  });
 });
