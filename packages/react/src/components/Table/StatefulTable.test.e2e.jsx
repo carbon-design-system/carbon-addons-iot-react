@@ -6,6 +6,7 @@ import { settings } from '../../constants/Settings';
 import StatefulTable from './StatefulTable';
 import {
   getAdvancedFilters,
+  getInitialState,
   getTableColumns as getStoryTableColumns,
   getTableData as getStoryTableData,
 } from './Table.story.helpers';
@@ -402,5 +403,17 @@ describe('StatefulTable', () => {
     cy.findByTestId('download-button').should('have.class', `${prefix}--tooltip--align-center`);
     cy.findByTestId('filter-button').should('have.class', `${prefix}--tooltip--align-center`);
     cy.findByTestId('row-edit-button').should('have.class', `${prefix}--tooltip--align-end`);
+  });
+
+  it('should preserve current page during rowEdit mode', () => {
+    const initialState = getInitialState();
+
+    mount(<StatefulTable id="pagination-table" {...initialState} />);
+
+    cy.findByTestId('pagination-table-table-pagination').findAllByRole('button').last().click();
+    cy.findByText('2 of 2 pages').should('be.visible');
+
+    cy.findByTestId('row-edit-button').click();
+    cy.findByText('2 of 2 pages').should('be.visible');
   });
 });
