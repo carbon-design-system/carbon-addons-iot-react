@@ -125,7 +125,7 @@ describe('IotOverflowMenu', () => {
     cy.findByTestId('tooltip-2').should('be.visible');
     cy.findByTestId('tooltip-3').should('be.visible');
 
-    cy.findByTestId('tooltip-1').should('have.class', `${prefix}--tooltip--align-center`);
+    cy.findByTestId('tooltip-1').should('have.class', `${prefix}--tooltip--align-start`);
     cy.findByTestId('tooltip-2').should('have.class', `${prefix}--tooltip--align-center`);
     cy.findByTestId('tooltip-3').should('have.class', `${prefix}--tooltip--align-end`);
   });
