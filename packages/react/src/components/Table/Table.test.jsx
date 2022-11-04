@@ -2860,6 +2860,16 @@ describe('Table', () => {
   });
 
   it('should throw a prop-type warning if float used for maxPages', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+      bottom: 34,
+      height: 24,
+      left: 1140,
+      right: 1213,
+      top: 10,
+      width: 72,
+      x: 1140,
+      y: 10,
+    }));
     const { __DEV__ } = global;
     global.__DEV__ = true;
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -2916,6 +2926,16 @@ describe('Table', () => {
     });
 
     it('should render only visible rows when shouldLazyRender:true', () => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        bottom: 34,
+        height: 24,
+        left: 1140,
+        right: 1213,
+        top: 10,
+        width: 72,
+        x: 1140,
+        y: 10,
+      }));
       let isIntersecting = true;
       const observer = {
         observe: jest.fn().mockImplementation(() => {
@@ -2958,6 +2978,16 @@ describe('Table', () => {
     });
 
     it('should match the correct number of columns when lazy rendering', () => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        bottom: 34,
+        height: 24,
+        left: 1140,
+        right: 1213,
+        top: 10,
+        width: 72,
+        x: 1140,
+        y: 10,
+      }));
       let isIntersecting = true;
       const observer = {
         observe: jest.fn().mockImplementation(() => {

@@ -380,4 +380,27 @@ describe('StatefulTable', () => {
     cy.findAllByLabelText('Sort rows by this header in descending order').eq(0).click();
     cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'scott pinocchio chocolate 89');
   });
+
+  it('should auto-position tooltips in table toolbar', () => {
+    const onDownloadCSV = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onDownloadCSV,
+          },
+        }}
+        options={{
+          hasRowEdit: true,
+          hasFilter: true,
+        }}
+      />
+    );
+
+    cy.findByTestId('download-button').should('have.class', `${prefix}--tooltip--align-center`);
+    cy.findByTestId('filter-button').should('have.class', `${prefix}--tooltip--align-center`);
+    cy.findByTestId('row-edit-button').should('have.class', `${prefix}--tooltip--align-end`);
+  });
 });
