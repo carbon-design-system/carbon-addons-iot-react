@@ -14,7 +14,6 @@ import FloatingMenu, {
   DIRECTION_BOTTOM,
 } from 'carbon-components-react/es/internal/FloatingMenu';
 import { OverflowMenuVertical20 } from '@carbon/icons-react';
-import { useLangDirection } from 'use-lang-direction';
 
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
 import { settings } from '../../constants/Settings';
@@ -32,16 +31,6 @@ const on = (element, ...args) => {
       return null;
     },
   };
-};
-
-const checkOverflowX = (parent, child, langDir) => {
-  if (langDir === 'ltr') {
-    const childRect = child.getBoundingClientRect();
-    const parentRect = parent.getBoundingClientRect();
-    return childRect.left + childRect.width > parentRect.left + parentRect.width;
-  }
-
-  return child.getBoundingClientRect().left < parent.getBoundingClientRect().left;
 };
 
 class IotOverflowMenu extends Component {
@@ -179,11 +168,6 @@ class IotOverflowMenu extends Component {
     'data-testid': PropTypes.string.isRequired,
 
     /**
-     * Direction of the text
-     */
-    langDir: PropTypes.oneOf(['ltr', 'rtl']),
-
-    /**
      * Specify the alignment of the tooltip to the icon-only button.
      * Can be one of: start, center, or end.
      */
@@ -212,7 +196,6 @@ class IotOverflowMenu extends Component {
     menuOffsetFlip: getMenuOffset,
     menuOptionsClass: '',
     light: false,
-    langDir: 'ltr',
     renderIcon: OverflowMenuVertical20,
     selectorPrimaryFocus: '[data-overflow-menu-primary-focus]',
     tooltipAlignment: 'center',
@@ -241,20 +224,22 @@ class IotOverflowMenu extends Component {
   _triggerRef = React.createRef();
 
   componentDidMount() {
-    const { langDir } = this.props;
     const tooltip = this._triggerRef.current.querySelector(`.${carbonPrefix}--assistive-text`);
     const parent = this._triggerRef.current.parentElement;
     if (tooltip && parent) {
-      const hasOverflowX = checkOverflowX(parent, tooltip, langDir);
+      const childRect = tooltip.getBoundingClientRect();
+      const parentRect = parent.getBoundingClientRect();
+
+      let overflowPosition = null;
+      if (childRect.left + childRect.width > parentRect.left + parentRect.width) {
+        overflowPosition = 'end';
+      } else if (childRect.left < parentRect.left) {
+        overflowPosition = 'start';
+      }
 
       this.setState((prevState) => ({
         ...prevState,
-        tooltipAlignment:
-          hasOverflowX && langDir === 'ltr'
-            ? 'end'
-            : hasOverflowX
-            ? 'start'
-            : prevState.tooltipAlignment,
+        tooltipAlignment: overflowPosition || prevState.tooltipAlignment,
       }));
     }
   }
@@ -479,7 +464,6 @@ class IotOverflowMenu extends Component {
       light,
       size,
       'data-testid': testId,
-      langDir, // Not to pollute DOM
       tooltipPosition,
       className,
       ...other
@@ -581,7 +565,6 @@ export const OverflowMenu = ({
   withCarbonTooltip,
   ...props
 }) => {
-  const langDir = useLangDirection();
   const [calculateMenuOffset, { adjustedDirection, adjustedFlipped }] = usePopoverPositioning({
     direction,
     flipped,
@@ -599,7 +582,6 @@ export const OverflowMenu = ({
         flipped={adjustedFlipped}
         menuOffset={calculateMenuOffset}
         menuOffsetFlip={calculateMenuOffset}
-        langDir={langDir}
       />
     );
   }
