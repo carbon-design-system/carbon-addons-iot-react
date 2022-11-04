@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -18,6 +18,7 @@ const propTypes = {
   disabled: PropTypes.bool,
   tooltipAlignment: PropTypes.oneOf(['start', 'center', 'end']),
   tooltipPosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+  langDir: PropTypes.oneOf(['ltr', 'rtl']),
 };
 
 const defaultProps = {
@@ -25,6 +26,7 @@ const defaultProps = {
   disabled: false,
   tooltipAlignment: 'center',
   tooltipPosition: 'top',
+  langDir: 'ltr',
 };
 
 /**
@@ -38,11 +40,37 @@ const TableToolbarSVGButton = ({
   isActive,
   tooltipAlignment,
   tooltipPosition,
+  langDir,
   ...rest
 }) => {
+  const [adjustedTooltipAlignment, setAdjustedTooltipAlignment] = useState(tooltipAlignment);
+
   return (
     <Button
       {...rest}
+      ref={(node) => {
+        /* istanbul ignore else */
+        if (node) {
+          const tooltip = node.querySelector(`.${prefix}--assistive-text`);
+          if (!tooltip) {
+            return;
+          }
+          const childRect = tooltip.getBoundingClientRect();
+          const parentRect = node.parentElement.getBoundingClientRect();
+          /* istanbul ignore else */
+          if (
+            langDir === 'ltr' &&
+            childRect.left + childRect.width > parentRect.left + parentRect.width
+          ) {
+            setAdjustedTooltipAlignment('end');
+            return;
+          }
+          /* istanbul ignore else */
+          if (langDir === 'rtl' && childRect.left < parentRect.left) {
+            setAdjustedTooltipAlignment('start');
+          }
+        }
+      }}
       className={classnames(
         `${prefix}--btn--icon-only`,
         `${iotPrefix}--tooltip-svg-wrapper`,
@@ -55,7 +83,7 @@ const TableToolbarSVGButton = ({
       onClick={onClick}
       iconDescription={description}
       testId={testId}
-      tooltipAlignment={tooltipAlignment}
+      tooltipAlignment={adjustedTooltipAlignment}
       tooltipPosition={tooltipPosition}
     />
   );
