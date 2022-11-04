@@ -523,6 +523,11 @@ export const tableReducer = (state = {}, action) => {
       const { view, totalItems, hasUserViewManagement } = action.payload;
       const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
+
+      const activeBar = view?.toolbar?.activeBar;
+      const activeBarFromState = state.view?.toolbar?.activeBar;
+      const rowEditMode = activeBarFromState === 'rowEdit';
+
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
       // update the column ordering if I'm passed new columns
@@ -541,7 +546,7 @@ export const tableReducer = (state = {}, action) => {
 
       const nextPageSize = paginationFromState.pageSize || pageSize;
       const nextTotalItems = totalItems || updatedData.length;
-      const nextPage = page || 1;
+      const nextPage = rowEditMode ? paginationFromState.page : page || 1;
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: nextTotalItems },
@@ -588,7 +593,6 @@ export const tableReducer = (state = {}, action) => {
         return filter;
       });
 
-      const activeBar = view?.toolbar?.activeBar;
       return update(state, {
         data: {
           $set: updatedData,
