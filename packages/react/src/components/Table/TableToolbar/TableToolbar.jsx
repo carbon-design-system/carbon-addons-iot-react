@@ -433,6 +433,7 @@ const TableToolbar = ({
           {hasSearch ? (
             <TableToolbarSearch
               {...search}
+              aria-label="search"
               key={
                 // If hasUserViewManagement is active the whole table is regenerated when a new
                 // view is loaded so we probably don't need this key-gen fix to preset a search text.
