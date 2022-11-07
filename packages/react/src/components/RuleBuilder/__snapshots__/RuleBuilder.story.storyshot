@@ -936,6 +936,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             Search
                           </label>
                           <input
+                            aria-label="search"
                             autoComplete="off"
                             className="bx--search-input"
                             data-testid="edit-table-table-toolbar-search"
@@ -1454,6 +1455,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             Search
                           </label>
                           <input
+                            aria-label="search"
                             autoComplete="off"
                             className="bx--search-input"
                             data-testid="read-table-table-toolbar-search"
@@ -6584,6 +6586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             Search
                           </label>
                           <input
+                            aria-label="search"
                             autoComplete="off"
                             className="bx--search-input"
                             data-testid="edit-table-table-toolbar-search"
@@ -6876,6 +6879,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             Search
                           </label>
                           <input
+                            aria-label="search"
                             autoComplete="off"
                             className="bx--search-input"
                             data-testid="read-table-table-toolbar-search"

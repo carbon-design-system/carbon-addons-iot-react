@@ -43466,6 +43466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             Search
           </label>
           <input
+            aria-label="search"
             autoComplete="off"
             className="bx--search-input"
             data-testid="null-table-toolbar-search"
@@ -46382,6 +46383,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             Search
           </label>
           <input
+            aria-label="search"
             autoComplete="off"
             className="bx--search-input"
             data-testid="null-table-toolbar-search"

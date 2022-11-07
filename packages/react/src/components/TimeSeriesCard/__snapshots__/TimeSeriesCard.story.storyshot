@@ -1023,6 +1023,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     Search
                   </label>
                   <input
+                    aria-label="search"
                     autoComplete="off"
                     className="bx--search-input"
                     data-testid="TimeSeries-table-table-toolbar-search"
