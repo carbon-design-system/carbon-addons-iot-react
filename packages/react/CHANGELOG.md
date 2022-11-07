@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.1...v2.152.0-next.2) (2022-11-07)
+
+
+### Bug Fixes
+
+* **timepickerdropdown:** adjust regex for midnight ([99804d2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/99804d231f16e9c8c5aba0d8b846c5b6e2e7db0b)), closes [#3630](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3630)
+
+
+
+
+
 # [2.152.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.151.1...v2.152.0-next.1) (2022-11-04)
 
 
