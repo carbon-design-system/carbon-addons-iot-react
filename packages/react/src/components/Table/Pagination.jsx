@@ -24,6 +24,8 @@ const SizedPagination = ({
   ...rest
 }) => {
   const [{ width }, paginationRef] = useSizeObserver({ initialWidth: 500 });
+  const isCompact = width < 500;
+
   return (
     <>
       <Pagination
@@ -36,9 +38,10 @@ const SizedPagination = ({
           [`${iotPrefix}--pagination--hide-page`]:
             isItemPerPageHidden || width < PAGINATION_MIN_WIDTH_LG_BREAKPOINT,
           [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
+          [`${iotPrefix}--pagination--flex-end`]: isCompact,
         })}
         style={{
-          '--pagination-text-display': width < 500 ? 'none' : 'flex',
+          '--pagination-text-display': isCompact ? 'none' : 'flex',
         }}
       />
     </>

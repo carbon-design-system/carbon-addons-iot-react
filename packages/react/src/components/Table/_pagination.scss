@@ -1,6 +1,12 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--pagination {
+  overflow-x: hidden;
+
+  &--flex-end {
+    justify-content: flex-end;
+  }
+
   .#{$prefix}--pagination__left {
     margin: auto auto auto 0;
 
