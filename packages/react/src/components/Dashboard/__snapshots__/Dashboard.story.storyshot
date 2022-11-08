@@ -1686,7 +1686,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
@@ -4580,7 +4580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
@@ -7509,7 +7509,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
@@ -9523,7 +9523,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-expandedcard-table-toolbar-search"
@@ -12859,7 +12859,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-alert-table1-table-toolbar-search"
@@ -30493,7 +30493,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                           Search
                         </label>
                         <input
-                          aria-label="search"
+                          aria-label="Search"
                           autoComplete="off"
                           className="bx--search-input"
                           data-testid="table-for-card-alert-table1-table-toolbar-search"

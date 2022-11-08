@@ -2199,7 +2199,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       Search
                     </label>
                     <input
-                      aria-label="search"
+                      aria-label="Search"
                       autoComplete="off"
                       className="bx--search-input"
                       data-testid="table-for-card-tableCard-table-toolbar-search"

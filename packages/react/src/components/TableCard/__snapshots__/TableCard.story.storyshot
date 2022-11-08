@@ -165,7 +165,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -3364,7 +3364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -4750,7 +4750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -6295,7 +6295,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-undefined-table-toolbar-search"
@@ -7263,7 +7263,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -8415,7 +8415,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -10620,7 +10620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -12664,7 +12664,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -14329,7 +14329,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
@@ -16200,7 +16200,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   Search
                 </label>
                 <input
-                  aria-label="search"
+                  aria-label="Search"
                   autoComplete="off"
                   className="bx--search-input"
                   data-testid="table-for-card-table-list-table-toolbar-search"
