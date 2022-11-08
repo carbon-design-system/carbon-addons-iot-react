@@ -169,6 +169,7 @@ export const I18NPropTypes = PropTypes.shape({
   /** toolbar */
   searchLabel: PropTypes.string,
   searchPlaceholder: PropTypes.string,
+  searchAria: PropTypes.string,
   clearAllFilters: PropTypes.string,
   columnSelectionButtonAria: PropTypes.string,
   columnSelectionConfig: PropTypes.string,
@@ -247,6 +248,7 @@ export const defaultI18NPropTypes = {
   editButtonAria: 'Edit rows',
   searchLabel: 'Search',
   searchPlaceholder: 'Search',
+  searchAria: 'Search',
   clearFilterAria: 'Clear filter',
   filterAria: 'Filter',
   openMenuAria: 'Open menu',

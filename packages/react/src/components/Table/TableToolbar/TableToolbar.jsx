@@ -88,6 +88,7 @@ const propTypes = {
     editButtonAria: PropTypes.string,
     searchLabel: PropTypes.string,
     searchPlaceholder: PropTypes.string,
+    searchAria: PropTypes.string,
     batchCancel: PropTypes.string,
     itemsSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     itemSelected: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
@@ -433,7 +434,7 @@ const TableToolbar = ({
           {hasSearch ? (
             <TableToolbarSearch
               {...search}
-              aria-label="search"
+              aria-label={i18n.searchAria}
               key={
                 // If hasUserViewManagement is active the whole table is regenerated when a new
                 // view is loaded so we probably don't need this key-gen fix to preset a search text.
