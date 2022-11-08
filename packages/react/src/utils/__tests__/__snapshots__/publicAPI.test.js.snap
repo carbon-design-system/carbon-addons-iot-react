@@ -698,6 +698,7 @@ Map {
         "pageNumberAria": "Page Number",
         "pageRange": [Function],
         "rowCountInHeader": [Function],
+        "searchAria": "Search",
         "searchLabel": "Search",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
@@ -1431,6 +1432,9 @@ Map {
             },
             "rowCountInHeader": Object {
               "type": "func",
+            },
+            "searchAria": Object {
+              "type": "string",
             },
             "searchLabel": Object {
               "type": "string",
@@ -2364,6 +2368,7 @@ Map {
         "pageNumberAria": "Page Number",
         "pageRange": [Function],
         "rowCountInHeader": [Function],
+        "searchAria": "Search",
         "searchLabel": "Search",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
@@ -2756,6 +2761,9 @@ Map {
             },
             "rowCountInHeader": Object {
               "type": "func",
+            },
+            "searchAria": Object {
+              "type": "string",
             },
             "searchLabel": Object {
               "type": "string",
@@ -4274,6 +4282,7 @@ Map {
         "pageNumberAria": "Page Number",
         "pageRange": [Function],
         "rowCountInHeader": [Function],
+        "searchAria": "Search",
         "searchLabel": "Search",
         "searchPlaceholder": "Search",
         "selectAllAria": "Select all items",
@@ -4547,6 +4556,9 @@ Map {
             },
             "rowCountInHeader": Object {
               "type": "func",
+            },
+            "searchAria": Object {
+              "type": "string",
             },
             "searchLabel": Object {
               "type": "string",
