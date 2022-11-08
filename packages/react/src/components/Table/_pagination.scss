@@ -17,6 +17,10 @@
   }
 }
 .#{$iot-prefix}--pagination--hide-page {
+  .#{$prefix}--pagination__left {
+    padding: 0 $spacing-05 0 $spacing-05;
+  }
+
   .#{$prefix}--pagination__left .#{$prefix}--pagination__text:first-child,
   .#{$prefix}--pagination__left span:first-child,
   .#{$prefix}--pagination__left .#{$prefix}--form-item {
