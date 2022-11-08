@@ -84,4 +84,9 @@ html[dir='rtl'] {
       }
     }
   }
+
+  // Hide vertical scrollbar in RTL
+  .#{$iot-prefix}--pagination {
+    overflow-y: hidden;
+  }
 }
