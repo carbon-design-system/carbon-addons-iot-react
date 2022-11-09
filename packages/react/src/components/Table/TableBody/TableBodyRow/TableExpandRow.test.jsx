@@ -68,7 +68,7 @@ describe('TableExpandRow', () => {
     await waitFor(() => expect(screen.getByText('Click to expand')).toBeVisible());
   });
 
-  it('should auto-position tooltip base of laguage direction', () => {
+  it('should auto-position tooltip based on language direction', () => {
     const { rerender } = render(
       <TableExpandRow
         ariaLabel="Click to expand"
