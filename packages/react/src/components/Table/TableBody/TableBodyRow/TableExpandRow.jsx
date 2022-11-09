@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ChevronRight16 } from '@carbon/icons-react';
@@ -76,7 +76,7 @@ const TableExpandRow = ({
   langDir,
   ...rest
 }) => {
-  const className = cx(
+  const className = classnames(
     {
       [`${prefix}--parent-row`]: true,
       [`${prefix}--expandable-row`]: isExpanded,
@@ -96,7 +96,7 @@ const TableExpandRow = ({
         <Button
           aria-label={ariaLabel}
           testId={`expand-icon-button-${rowId}`}
-          className={cx(
+          className={classnames(
             `${prefix}--btn--icon-only`,
             `${iotPrefix}--tooltip-svg-wrapper`,
             `${iotPrefix}--table-expand__button`,
