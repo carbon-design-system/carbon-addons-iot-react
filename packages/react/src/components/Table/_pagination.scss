@@ -3,8 +3,22 @@
 .#{$iot-prefix}--pagination {
   overflow-x: hidden;
 
-  &--flex-end {
-    justify-content: flex-end;
+  &--compact {
+    .#{$prefix}--pagination__right {
+      width: 100%;
+    }
+
+    .#{$prefix}--select-input {
+      border-right: 1px solid $ui-03;
+    }
+
+    .#{$prefix}--select__page-number .#{$prefix}--select-input {
+      border-left: none;
+    }
+
+    .#{$prefix}--pagination__control-buttons {
+      margin-left: auto;
+    }
   }
 
   .#{$prefix}--pagination__left {
