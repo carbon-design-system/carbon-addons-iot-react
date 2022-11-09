@@ -101,7 +101,6 @@ const TableExpandRow = ({
             `${iotPrefix}--tooltip-svg-wrapper`,
             `${iotPrefix}--table-expand__button`,
             {
-              [`${iotPrefix}--table-expand__button--open`]: !isExpanded,
               [`${iotPrefix}--table-expand__button--close`]: isExpanded,
             }
           )}
