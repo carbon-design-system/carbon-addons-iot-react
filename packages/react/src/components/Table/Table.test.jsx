@@ -314,7 +314,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find(`.${iotPrefix}--table-expand__button`).at(0).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(0).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 
@@ -328,7 +328,7 @@ describe('Table', () => {
         view={view}
       />
     );
-    wrapper.find(`.${iotPrefix}--table-expand__button`).at(1).simulate('click');
+    wrapper.find(`.${prefix}--table-expand__button`).at(1).simulate('click');
     expect(mockActions.table.onRowExpanded).toHaveBeenCalled();
   });
 

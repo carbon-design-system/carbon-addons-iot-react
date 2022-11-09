@@ -97,9 +97,9 @@ const TableExpandRow = ({
           aria-label={ariaLabel}
           testId={`expand-icon-button-${rowId}`}
           className={classnames(
-            `${prefix}--btn--icon-only`,
-            `${iotPrefix}--tooltip-svg-wrapper`,
+            `${prefix}--table-expand__button`,
             `${iotPrefix}--table-expand__button`,
+            `${iotPrefix}--tooltip-svg-wrapper`,
             {
               [`${iotPrefix}--table-expand__button--close`]: isExpanded,
             }
