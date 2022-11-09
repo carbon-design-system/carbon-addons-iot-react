@@ -9,6 +9,7 @@ import { keys, matches as keyCodeMatches } from 'carbon-components-react/es/inte
 import ClickListener from 'carbon-components-react/es/internal/ClickListener';
 import { PrefixContext } from 'carbon-components-react/es/internal/usePrefix';
 import mergeRefs from 'carbon-components-react/es/tools/mergeRefs';
+import { useLangDirection } from 'use-lang-direction';
 import FloatingMenu, {
   DIRECTION_TOP,
   DIRECTION_BOTTOM,
@@ -178,6 +179,11 @@ class IotOverflowMenu extends Component {
      * Can be either top, right, bottom, or left.
      */
     tooltipPosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
+
+    /**
+     * Language direction
+     */
+    langDir: PropTypes.oneOf(['ltr', 'rtl']),
   };
 
   // eslint-disable-next-line react/sort-comp
@@ -201,6 +207,7 @@ class IotOverflowMenu extends Component {
     tooltipAlignment: 'center',
     tooltipPosition: 'top',
     size: 'md',
+    langDir: 'ltr',
   };
 
   /**
@@ -224,31 +231,20 @@ class IotOverflowMenu extends Component {
   _triggerRef = React.createRef();
 
   componentDidMount() {
-    const tooltip = this._triggerRef.current.querySelector(`.${carbonPrefix}--assistive-text`);
-    const parent = this._triggerRef.current.parentElement;
-    if (tooltip && parent) {
-      const childRect = tooltip.getBoundingClientRect();
-      const parentRect = parent.getBoundingClientRect();
-
-      let overflowPosition = null;
-      if (childRect.left + childRect.width > parentRect.left + parentRect.width) {
-        overflowPosition = 'end';
-      } else if (childRect.left < parentRect.left) {
-        overflowPosition = 'start';
-      }
-
-      this.setState((prevState) => ({
-        ...prevState,
-        tooltipAlignment: overflowPosition || prevState.tooltipAlignment,
-      }));
-    }
+    const correctAlignment = this._getNewAlignment();
+    this._updateAlignment(correctAlignment);
   }
 
-  componentDidUpdate(_, prevState) {
-    const { onClose } = this.props;
+  componentDidUpdate(prevProps, prevState) {
+    const { onClose, langDir } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     if (!this.state.open && prevState.open && onClose) {
       onClose();
+    }
+
+    if (prevProps.langDir !== langDir) {
+      const correctAlignment = this._getNewAlignment();
+      this._updateAlignment(correctAlignment);
     }
   }
 
@@ -442,6 +438,45 @@ class IotOverflowMenu extends Component {
     return (triggerEl && triggerEl.closest('[data-floating-menu-container]')) || document.body;
   };
 
+  /**
+   * Updates state for tooltip alignment.
+   * @param {string} newAlignment Correct alignment.
+   * @private
+   */
+  _updateAlignment(newAlignment) {
+    this.setState((prevState) => ({
+      ...prevState,
+      tooltipAlignment: newAlignment,
+    }));
+  }
+
+  /**
+   * Returns correct tooltip alignment.
+   * @return {string} Correct alignment.
+   * @private
+   */
+  _getNewAlignment() {
+    const tooltip = this._triggerRef.current.querySelector(`.${carbonPrefix}--assistive-text`);
+    const container = this._triggerRef.current.parentElement;
+
+    if (tooltip && container) {
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      if (tooltipRect.left + tooltipRect.width > containerRect.left + containerRect.width) {
+        return 'end';
+      }
+
+      if (tooltipRect.left < containerRect.left) {
+        return 'start';
+      }
+
+      return 'center';
+    }
+
+    return 'center';
+  }
+
   render() {
     const prefix = this.context;
     const {
@@ -466,6 +501,7 @@ class IotOverflowMenu extends Component {
       'data-testid': testId,
       tooltipPosition,
       className,
+      langDir, // Not to pollute DOM
       ...other
     } = this.props;
 
@@ -573,6 +609,8 @@ export const OverflowMenu = ({
     useAutoPositioning,
   });
 
+  const langDir = useLangDirection();
+
   if (withCarbonTooltip) {
     return (
       <IotOverflowMenu
@@ -582,6 +620,7 @@ export const OverflowMenu = ({
         flipped={adjustedFlipped}
         menuOffset={calculateMenuOffset}
         menuOffsetFlip={calculateMenuOffset}
+        langDir={langDir}
       />
     );
   }
