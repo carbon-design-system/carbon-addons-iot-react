@@ -359,7 +359,7 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
-          expandHeader={`${tableId}-expand`}
+          expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           })}
@@ -407,7 +407,7 @@ const TableBodyRow = ({
     ) : (
       <TableExpandRow
         key={id}
-        expandHeader={`${tableId}-expand`}
+        expandHeaderId={`${tableId}-expand`}
         className={classnames(`${iotPrefix}--expandable-tablerow`, {
           [`${iotPrefix}--expandable-tablerow--parent`]:
             hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,

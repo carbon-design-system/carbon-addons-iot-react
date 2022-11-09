@@ -20,7 +20,7 @@ const propTypes = {
   /**
    * The id of the matching th node in the table head. Addresses a11y concerns outlined here: https://www.ibm.com/able/guidelines/ci162/info_and_relationships.html and https://www.w3.org/TR/WCAG20-TECHS/H43
    */
-  expandHeader: PropTypes.string,
+  expandHeaderId: PropTypes.string,
 
   /**
    * The description of the chevron right icon, to be put in its SVG `<title>` element.
@@ -57,7 +57,7 @@ const propTypes = {
 const defaultProps = {
   children: [],
   className: '',
-  expandHeader: 'expand',
+  expandHeaderId: 'expand',
   expandIconDescription: 'Click to expand content',
   isSelected: false,
   langDir: 'ltr',
@@ -71,7 +71,7 @@ const TableExpandRow = ({
   onExpand,
   expandIconDescription,
   isSelected,
-  expandHeader,
+  expandHeaderId,
   rowId,
   langDir,
   ...rest
@@ -91,7 +91,7 @@ const TableExpandRow = ({
       <TableCell
         className={`${prefix}--table-expand`}
         data-previous-value={previousValue}
-        headers={expandHeader}
+        headers={expandHeaderId}
       >
         <Button
           aria-label={ariaLabel}
