@@ -278,19 +278,24 @@ describe('IotOverflowMenu', () => {
   });
 
   it('should be in a closed state after handleOutsideClick() is invoked', () => {
+    // Deriving elements from baseElement due to React.createPortal
+    // reference https://github.com/testing-library/react-testing-library/issues/62
     const { baseElement } = render(
       <OverflowMenu testId={testId} withCarbonTooltip>
         <OverflowMenuItem itemText="Option 1" />
       </OverflowMenu>
     );
 
-    expect(baseElement.querySelector('ul')).toBeNull();
+    expect(baseElement.querySelector('[role="menu"]')).toBeNull();
 
     const trigger = screen.getByTestId(testId);
     userEvent.click(trigger);
 
+    expect(baseElement.querySelector('[role="menu"]')).toBeDefined();
+    console.log(baseElement.querySelector('[role="menu"]'));
+
     userEvent.click(document.body);
-    expect(baseElement.querySelector('ul')).toBeNull();
+    expect(baseElement.querySelector('[role="menu"]')).toBeNull();
   });
 
   it('should render custom icon', () => {
