@@ -230,8 +230,6 @@ export const TableCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
-  /** Display tooltips in the table toolbar (will reset overflow property) */
-  withToolbarTooltips: PropTypes.bool,
 };
 
 /** carbon charts legend truncation options */
