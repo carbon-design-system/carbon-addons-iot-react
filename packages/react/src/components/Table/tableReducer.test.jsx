@@ -258,6 +258,41 @@ describe('table reducer', () => {
       );
     });
 
+    it('TABLE_COLUMN_SORT with search', () => {
+      const searchString = 'toyota';
+      const sortColumnAction = tableColumnSort(tableColumns[0].id);
+
+      const tableFiltered = tableReducer(initialState, tableSearchApply(searchString));
+      expect(tableFiltered.view.toolbar.search.defaultValue).toEqual(searchString);
+      expect(tableFiltered.view.pagination.page).toEqual(1);
+
+      // First sort ASC
+      expect(tableFiltered.view.table.sort).toBeUndefined();
+      const tableSorted = tableReducer(tableFiltered, sortColumnAction);
+      expect(tableSorted.view.table.sort.columnId).toEqual(tableColumns[0].id);
+      expect(tableSorted.view.table.sort.direction).toEqual('ASC');
+      // Order should be changed in the filteredData
+      expect(tableFiltered.data).not.toEqual(tableSorted.view.table.filteredData);
+
+      // Then sort DESC
+      const tableSortedDesc = tableReducer(tableSorted, sortColumnAction);
+      expect(tableSortedDesc.view.table.sort.columnId).toEqual(tableColumns[0].id);
+      expect(tableSortedDesc.view.table.sort.direction).toEqual('DESC');
+      // The previous sorted data shouldn't match
+      expect(tableSorted.data).not.toEqual(tableSortedDesc.view.table.filteredData);
+
+      // Then sort by default
+      const tableSortedNone = tableReducer(tableSortedDesc, sortColumnAction);
+      const filteredTable = tableReducer(initialState, tableRegister({ data: initialState.data }));
+      const filteredTableSearch = tableReducer(filteredTable, tableSearchApply(searchString));
+
+      expect(tableSortedNone.view.table.sort).toBeUndefined();
+      // Data should no longer be sorted but should be filtered
+      expect(filteredTableSearch.view.table.filteredData).toEqual(
+        tableSortedNone.view.table.filteredData
+      );
+    });
+
     it('TABLE_COLUMN_SORT multisort', () => {
       const multiSortState = merge({}, initialState, {
         view: {
