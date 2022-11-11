@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
-// import userEvent from '@testing-library/user-event';
 
 import ContentFormItemTitle from './ContentFormItemTitle';
 
@@ -31,5 +31,18 @@ describe('ContentFormItemTitle', () => {
     );
     // tooltip should render
     expect(screen.queryByText('tooltipText')).toBeDefined();
+  });
+  it('should open new tab for tooltip link', () => {
+    render(
+      <ContentFormItemTitle
+        title="external source"
+        tooltip={{ tooltipText: 'tooltipText', href: 'http://www.cnn.com', linkText: 'Info' }}
+      />
+    );
+
+    const infoBtn = screen.getByRole('button');
+    userEvent.click(infoBtn);
+
+    expect(screen.getByText('Info').closest('a')).toHaveAttribute('target', '_blank');
   });
 });
