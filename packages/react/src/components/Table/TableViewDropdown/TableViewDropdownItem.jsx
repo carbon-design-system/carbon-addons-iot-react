@@ -25,7 +25,7 @@ const defaultProps = {
 };
 
 const TableViewDropdownItem = ({
-  item: { customAction, text, icon: Icon },
+  item: { customAction, text, icon: Icon, tooltip },
   isSelected,
   activeViewEdited,
   i18n,
@@ -37,7 +37,7 @@ const TableViewDropdownItem = ({
   return (
     <div
       data-testid={testID}
-      title={`${text}${showEdited ? editedPostfix : ''}`}
+      title={tooltip || `${text}${showEdited ? editedPostfix : ''}`}
       className={classNames(`${iotPrefix}--view-dropdown__item`, {
         [`${iotPrefix}--view-dropdown__item-link`]: customAction,
       })}
