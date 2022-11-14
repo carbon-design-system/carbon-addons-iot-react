@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.3...v2.152.0-next.4) (2022-11-14)
+
+
+### Features
+
+* **contentformitemtitle:** new tab for tooltip link ([f7fdca0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7fdca061890aea744047905bcccd51c77c9dcc8))
+
+
+
+
+
 # [2.152.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.2...v2.152.0-next.3) (2022-11-09)
 
 
