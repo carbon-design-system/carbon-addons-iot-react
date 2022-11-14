@@ -2,6 +2,8 @@ import React from 'react';
 import { merge, omit } from 'lodash-es';
 import { Add20 } from '@carbon/icons-react';
 
+import { fillArrWithRowIds } from '../../utils/tableReducer';
+
 import { tableReducer, filterData, searchData, filterSearchAndSort } from './tableReducer';
 import {
   tableRegister,
@@ -33,10 +35,12 @@ import {
   tableClearMultiSortColumns,
 } from './tableActionCreators';
 import {
+  addChildRows,
   getTableColumns,
   getInitialState,
   getTableDataWithEmptySelectFilter,
   decorateTableColumns,
+  getTableData,
 } from './Table.story.helpers';
 
 const initialState = getInitialState();
@@ -444,6 +448,44 @@ describe('table reducer', () => {
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllSelected).toEqual(false);
       expect(tableWithPreviouslySelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
     });
+
+    it('TABLE_ROW_SELECT should indicate that all rows have been selected, including nesting', () => {
+      const initialState = getInitialState();
+      initialState.data = getTableData().map((row, index) => addChildRows(row, index));
+      expect(initialState.view.table.selectedIds).toEqual([]);
+
+      // Select all
+      const tableWithSelectedAll = tableReducer(initialState, tableRowSelectAll(true));
+      const allRowsId = [];
+      initialState.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+      expect(tableWithSelectedAll.view.table.selectedIds.length).toEqual(allRowsId.length);
+      expect(tableWithSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
+      expect(tableWithSelectedAll.view.table.isSelectAllSelected).toEqual(true);
+
+      // Unselect some nested row
+      const nestedRowIdIndex = allRowsId.findIndex((id) => id === 'row-4_B-2-A');
+      const rowsId = [
+        ...allRowsId.slice(0, nestedRowIdIndex),
+        ...allRowsId.slice(nestedRowIdIndex + 1, allRowsId.length),
+      ];
+      const tableWithUnSelectedRow = tableReducer(
+        tableWithSelectedAll,
+        tableRowSelect(rowsId, 'multi')
+      );
+      expect(tableWithUnSelectedRow.view.table.selectedIds.length).toEqual(allRowsId.length - 1);
+      expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithUnSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
+
+      // Select a row
+      const tableWithSelectedRow = tableReducer(
+        tableWithUnSelectedRow,
+        tableRowSelect(allRowsId, 'multi')
+      );
+      expect(tableWithSelectedRow.view.table.selectedIds.length).toEqual(allRowsId.length);
+      expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(true);
+      expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(false);
+    });
+
     it('TABLE_ROW_SELECT_ALL', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
       // Select all
@@ -459,6 +501,45 @@ describe('table reducer', () => {
       expect(tableWithUnSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
       expect(tableWithUnSelectedAll.view.table.isSelectAllSelected).toEqual(false);
     });
+
+    it('TABLE_ROW_SELECT_ALL with nested rows', () => {
+      const initialState = getInitialState();
+      initialState.data = getTableData().map((row, index) => addChildRows(row, index));
+      expect(initialState.view.table.selectedIds).toEqual([]);
+
+      // Select all
+      const tableWithSelectedAll = tableReducer(initialState, tableRowSelectAll(true));
+      const allRowsId = [];
+      initialState.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+      expect(tableWithSelectedAll.view.table.selectedIds.length).toEqual(allRowsId.length);
+      expect(tableWithSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
+      expect(tableWithSelectedAll.view.table.isSelectAllSelected).toEqual(true);
+
+      // Unselect all
+      const tableWithUnSelectedAll = tableReducer(tableWithSelectedAll, tableRowSelectAll(false));
+      expect(tableWithUnSelectedAll.view.table.selectedIds.length).toEqual(0);
+      expect(tableWithUnSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
+      expect(tableWithUnSelectedAll.view.table.isSelectAllSelected).toEqual(false);
+    });
+
+    it('TABLE_ROW_SELECT_ALL with nested rows should skip non selectable rows', () => {
+      const initialState = getInitialState();
+      initialState.data = getTableData().map((row, index) => addChildRows(row, index));
+      expect(initialState.view.table.selectedIds).toEqual([]);
+
+      // Changing rows to be non selectable
+      initialState.data[0].isSelectable = false;
+      initialState.data[1].isSelectable = false;
+
+      // Select all
+      const tableWithSelectedAll = tableReducer(initialState, tableRowSelectAll(true));
+      const allRowsId = [];
+      initialState.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+      expect(tableWithSelectedAll.view.table.selectedIds.length).toEqual(allRowsId.length);
+      expect(tableWithSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
+      expect(tableWithSelectedAll.view.table.isSelectAllSelected).toEqual(true);
+    });
+
     it('TABLE_ROW_EXPAND', () => {
       expect(initialState.view.table.expandedIds).toEqual([]);
       // Expanded row
