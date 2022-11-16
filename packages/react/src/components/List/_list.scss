@@ -17,6 +17,29 @@
     &__full-height {
       overflow-y: unset;
     }
+
+    &--w-horizontal-scrollbar .#{$iot-prefix}--list-item {
+      overflow: unset;
+
+      &--content--values--main {
+        column-gap: $spacing-05;
+      }
+
+      &--content--values--value {
+        overflow: visible;
+        text-overflow: unset;
+      }
+    }
+
+    &__full-height__support {
+      overflow-x: auto;
+    }
+
+    &__scrollbar__support {
+      display: inline-flex;
+      flex-direction: column;
+      min-width: 100%;
+    }
   }
 
   &__full-height {
