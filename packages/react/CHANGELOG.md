@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.4...v2.152.0-next.5) (2022-11-16)
+
+
+### Features
+
+* **hierarchylist:** add prop to enable horizontal scrollbar ([6de51cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6de51cd6274c248d56633a13e9920f7084392087)), closes [#3639](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3639)
+
+
+
+
+
 # [2.152.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.3...v2.152.0-next.4) (2022-11-14)
 
 
