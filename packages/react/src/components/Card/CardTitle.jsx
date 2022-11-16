@@ -63,6 +63,7 @@ export const CardTitle = (
         triggerClassName={classnames(
           `${iotPrefix}--card--title--text__overflow`,
           `${iotPrefix}--card--title--text`,
+          `${iotPrefix}--card-heading-clickable`,
           {
             [`${iotPrefix}--card--title--text--wrapped`]:
               hasTitleWrap && !subtitle && !hasExternalTitleTextTooltip,
@@ -110,9 +111,13 @@ export const CardTitle = (
         data-testid={`${testId}-subtitle`}
         ref={subTitleRef}
         showIcon={false}
-        triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-          [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
-        })}
+        triggerClassName={classnames(
+          `${iotPrefix}--card--subtitle--text`,
+          `${iotPrefix}--card-heading-clickable`,
+          {
+            [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
+          }
+        )}
         triggerText={subtitle}
       >
         {subtitle}
