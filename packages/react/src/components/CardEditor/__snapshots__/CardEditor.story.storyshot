@@ -2263,6 +2263,376 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                 </div>
               </div>
+              <div
+                className="iot--card-edit-form--form-section"
+              >
+                <div>
+                  Data
+                </div>
+                <div>
+                  <div
+                    className="bx--tooltip__label"
+                    id="card-edit-form-Data"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="bx--tooltip__trigger"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <svg
+                        aria-hidden={true}
+                        description={null}
+                        fill="currentColor"
+                        focusable="false"
+                        height={16}
+                        preserveAspectRatio="xMidYMid meet"
+                        role={null}
+                        viewBox="0 0 16 16"
+                        width={16}
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.5 11L8.5 6.5 6.5 6.5 6.5 7.5 7.5 7.5 7.5 11 6 11 6 12 10 12 10 11zM8 3.5c-.4 0-.8.3-.8.8S7.6 5 8 5c.4 0 .8-.3.8-.8S8.4 3.5 8 3.5z"
+                        />
+                        <path
+                          d="M8,15c-3.9,0-7-3.1-7-7s3.1-7,7-7s7,3.1,7,7S11.9,15,8,15z M8,2C4.7,2,2,4.7,2,8s2.7,6,6,6s6-2.7,6-6S11.3,2,8,2z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--card-edit-form--input"
+              >
+                <div
+                  className="iot--combobox"
+                  data-edit-option-text="Create"
+                  data-testid="combo-wrapper"
+                  onBlur={[Function]}
+                  onKeyDown={[Function]}
+                >
+                  <div
+                    className="bx--list-box__wrapper"
+                  >
+                    <label
+                      className="bx--label"
+                      dir="auto"
+                      htmlFor="calculated_dataSourceIds-combobox"
+                      id="downshift-2-label"
+                    >
+                      Data item
+                    </label>
+                    <div
+                      className="bx--combo-box iot--combobox-input bx--list-box bx--list-box--light"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                    >
+                      <div
+                        className="bx--list-box__field"
+                      >
+                        <input
+                          aria-activedescendant={null}
+                          aria-autocomplete="list"
+                          aria-controls={null}
+                          aria-expanded={false}
+                          aria-haspopup="listbox"
+                          aria-labelledby={null}
+                          autoComplete="off"
+                          className="bx--text-input bx--text-input--empty"
+                          data-testid="editor--data-series--combobox"
+                          disabled={false}
+                          id="calculated_dataSourceIds-combobox"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          placeholder="Filter"
+                          role="combobox"
+                          tabIndex="0"
+                          title=""
+                          type="text"
+                          value=""
+                        />
+                        
+                        <button
+                          aria-haspopup={true}
+                          aria-label="Open menu"
+                          className="bx--list-box__menu-icon"
+                          data-toggle={true}
+                          disabled={false}
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseUp={[Function]}
+                          role="button"
+                          tabIndex="-1"
+                          title="Open menu"
+                          type="button"
+                        >
+                          <svg
+                            aria-hidden={true}
+                            fill="currentColor"
+                            focusable="false"
+                            height={16}
+                            preserveAspectRatio="xMidYMid meet"
+                            viewBox="0 0 16 16"
+                            width={16}
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                      <div
+                        aria-label="Choose an item"
+                        aria-labelledby={null}
+                        className="bx--list-box__menu"
+                        id="downshift-2-menu"
+                        role="listbox"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="iot--list iot--card-edit-form--data-item-list"
+                data-testid="list"
+              >
+                <div
+                  className="iot--list-header-container"
+                  data-testid="list-header"
+                />
+                <div
+                  className="iot--list--content"
+                >
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item"
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Discharge flow"
+                            >
+                              Discharge flow
+                            </div>
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
+                                onMouseEnter={[Function]}
+                              >
+                                Edit
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Edit"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
+                                onMouseEnter={[Function]}
+                              >
+                                Remove
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 15H24V17H8z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="iot--list-item-parent"
+                    data-floating-menu-container={true}
+                  >
+                    <div
+                      className="iot--list-item"
+                    >
+                      <div
+                        className="iot--list-item--content"
+                      >
+                        <div
+                          className="iot--list-item--content--values"
+                        >
+                          <div
+                            className="iot--list-item--content--values--main"
+                          >
+                            <div
+                              className="iot--list-item--content--values--value"
+                              title="Max Discharge %"
+                            >
+                              Max Discharge %
+                            </div>
+                          </div>
+                          <div
+                            className="iot--list-item--content--row-actions"
+                            onClick={[Function]}
+                            onKeyPress={[Function]}
+                          >
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
+                                onMouseEnter={[Function]}
+                              >
+                                Edit
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Edit"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M2 26H30V28H2zM25.4 9c.8-.8.8-2 0-2.8 0 0 0 0 0 0l-3.6-3.6c-.8-.8-2-.8-2.8 0 0 0 0 0 0 0l-15 15V24h6.4L25.4 9zM20.4 4L24 7.6l-3 3L17.4 7 20.4 4zM6 22v-3.6l10-10 3.6 3.6-10 10H6z"
+                                />
+                              </svg>
+                            </button>
+                            <button
+                              aria-describedby={null}
+                              className="iot--btn bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--left bx--tooltip--align-center"
+                              data-testid="Button"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                              tabIndex={0}
+                              type="button"
+                            >
+                              <div
+                                className="bx--assistive-text"
+                                onMouseEnter={[Function]}
+                              >
+                                Remove
+                              </div>
+                              <svg
+                                aria-hidden="true"
+                                aria-label="Remove"
+                                className="bx--btn__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8 15H24V17H8z"
+                                />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div
