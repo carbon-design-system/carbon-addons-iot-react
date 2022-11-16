@@ -77,7 +77,12 @@ const propTypes = {
   selectedItemRef: HtmlElementRefProp,
   /** called after the row has expanded or collapsed and is passed the array of expanded ids */
   onExpandedChange: PropTypes.func,
+  /** enables horizontal scrollbar to appear if content is wider then container */
+  enableHorizontalScrollbar: PropTypes.bool,
 };
+
+const ConditionalWrapper = ({ condition, wrapper, children }) =>
+  condition ? wrapper(children) : children;
 
 const defaultProps = {
   editingStyle: null,
@@ -112,6 +117,7 @@ const defaultProps = {
   testId: 'list',
   toggleExpansion: () => {},
   onExpandedChange: null,
+  enableHorizontalScrollbar: false,
 };
 
 const getAdjustedNestingLevel = (items, currentLevel) =>
@@ -145,6 +151,7 @@ const ListContent = ({
   i18n,
   selectedItemRef,
   onExpandedChange,
+  enableHorizontalScrollbar,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
 
@@ -313,19 +320,34 @@ const ListContent = ({
         {
           // If FullHeight, the content's overflow shouldn't be hidden
           [`${iotPrefix}--list--content__full-height`]: isFullHeight,
+          [`${iotPrefix}--list--content--w-horizontal-scrollbar`]: enableHorizontalScrollbar,
         },
         `${iotPrefix}--list--content`
       )}
     >
-      {!isLoading ? (
-        <>{listItems.length ? listItems : renderEmptyContent()}</>
-      ) : (
-        <SkeletonText
-          className={`${iotPrefix}--list--skeleton`}
-          width="90%"
-          data-testid={`${testId}-loading`}
-        />
-      )}
+      <ConditionalWrapper
+        condition={isFullHeight && enableHorizontalScrollbar}
+        wrapper={(children) => (
+          <div className={`${iotPrefix}--list--content__full-height__support`}>{children}</div>
+        )}
+      >
+        <ConditionalWrapper
+          condition={enableHorizontalScrollbar}
+          wrapper={(children) => (
+            <div className={`${iotPrefix}--list--content__scrollbar__support`}>{children}</div>
+          )}
+        >
+          {!isLoading ? (
+            <>{listItems.length ? listItems : renderEmptyContent()}</>
+          ) : (
+            <SkeletonText
+              className={`${iotPrefix}--list--skeleton`}
+              width="90%"
+              data-testid={`${testId}-loading`}
+            />
+          )}
+        </ConditionalWrapper>
+      </ConditionalWrapper>
     </div>
   );
 };

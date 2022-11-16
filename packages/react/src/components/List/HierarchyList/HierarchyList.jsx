@@ -108,6 +108,8 @@ const propTypes = {
   emptyState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
   /** content shown if list is empty on search */
   emptySearchState: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
+  /** enables horizontal scrollbar to appear if content is wider then container */
+  enableHorizontalScrollbar: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -152,6 +154,7 @@ const defaultProps = {
   searchId: null,
   emptyState: 'No list items to show',
   emptySearchState: 'No results found',
+  enableHorizontalScrollbar: false,
 };
 
 /**
@@ -260,6 +263,7 @@ const HierarchyList = ({
   searchId,
   emptyState,
   emptySearchState,
+  enableHorizontalScrollbar,
 }) => {
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const initialExpandedIds = expandedIdsProp?.length > 0 ? expandedIdsProp : defaultExpandedIds;
@@ -584,6 +588,7 @@ const HierarchyList = ({
         emptyState={emptyState}
         emptySearchState={emptySearchState}
         onExpandedChange={onExpandedChange}
+        enableHorizontalScrollbar={enableHorizontalScrollbar}
       />
     </>
   );
