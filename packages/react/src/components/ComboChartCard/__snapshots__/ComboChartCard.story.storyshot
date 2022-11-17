@@ -2378,6 +2378,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             
             <div
               aria-describedby={null}
+              aria-expanded={false}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
@@ -2829,6 +2830,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
             
             <div
               aria-describedby={null}
+              aria-expanded={false}
               aria-label="Tooltip info icon"
               className="bx--tooltip__trigger"
               onBlur={[Function]}
