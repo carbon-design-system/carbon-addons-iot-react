@@ -564,6 +564,86 @@ describe('Card', () => {
         expect(screen.getByTestId('Card-subtitle')).toBeVisible();
         expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
       });
+
+      it('should display tooltip on card title click', () => {
+        const title =
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+        const testId = 'Card-title-tooltip';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title={title}
+            subtitle="Lorem ipsum"
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: title }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
+      });
+
+      it('should display tooltip on card subtitle click', () => {
+        const testId = 'Card-subtitle';
+        const subtitle =
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title="Lorem ipsum"
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: subtitle }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
+      });
+
+      it('should display tooltip on card info icon click', () => {
+        const testId = 'Card-tooltip';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title="Lorem ipsum"
+            subtitle="Lorem ipsum dolor"
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+            tooltip={<p>this is the external tooltip content</p>}
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: 'Tooltip info icon' }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
+      });
     });
   });
 
