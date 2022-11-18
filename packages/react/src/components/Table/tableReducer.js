@@ -482,7 +482,13 @@ export const tableReducer = (state = {}, action) => {
                   nextSortDir,
                   isTimestampColumn
                 )
-            : filterData(state.data, state.view.filters, state.columns); // reset to original filters
+            : filterSearchAndSort(
+                state.data,
+                null,
+                { value: state.view.toolbar.search?.defaultValue },
+                get(state, 'view.filters'),
+                get(state, 'columns')
+              );
       }
       return baseTableReducer(
         update(state, {
