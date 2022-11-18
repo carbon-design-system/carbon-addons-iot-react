@@ -218,12 +218,6 @@ class IotOverflowMenu extends Component {
   _hFocusIn = null;
 
   /**
-   * The timeout handle for handling `blur` event.
-   * @private
-   */
-  _hBlurTimeout;
-
-  /**
    * The element ref of the tooltip's trigger button.
    * @type {React.RefObject<Element>}
    * @private
@@ -257,14 +251,6 @@ class IotOverflowMenu extends Component {
           prevOpen: open,
           tooltipAlignment,
         };
-  }
-
-  componentWillUnmount() {
-    /* istanbul ignore if */
-    if (typeof this._hBlurTimeout === 'number') {
-      clearTimeout(this._hBlurTimeout);
-      this._hBlurTimeout = undefined;
-    }
   }
 
   handleClick = (evt) => {
