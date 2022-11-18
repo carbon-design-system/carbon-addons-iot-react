@@ -1,6 +1,8 @@
 import update from 'immutability-helper';
 import { get } from 'lodash-es';
 
+import { fillArrWithRowIds } from '../../utils/tableReducer';
+
 import {
   TABLE_PAGE_CHANGE,
   TABLE_FILTER_APPLY,
@@ -261,7 +263,10 @@ export const baseTableReducer = (state = {}, action) => {
       const { selectedIds, hasRowSelection } = action.payload;
       const isMultiSelect = hasRowSelection === 'multi';
       const isClearing = isMultiSelect && selectedIds.length === 0;
-      const isSelectingAll = isMultiSelect && selectedIds.length === state.data.length;
+
+      const allRowsId = [];
+      state.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+      const isSelectingAll = isMultiSelect && selectedIds.length === allRowsId.length;
 
       return update(state, {
         view: {
@@ -281,6 +286,12 @@ export const baseTableReducer = (state = {}, action) => {
     }
     case TABLE_ROW_SELECT_ALL: {
       const { isSelected } = action.payload;
+
+      const selectedIds = [];
+      if (isSelected) {
+        state.data.forEach((row) => fillArrWithRowIds(row, selectedIds));
+      }
+
       return update(state, {
         view: {
           table: {
@@ -288,9 +299,7 @@ export const baseTableReducer = (state = {}, action) => {
               $set: isSelected,
             },
             selectedIds: {
-              $set: isSelected
-                ? state.data.filter((i) => i.isSelectable !== false).map((i) => i.id)
-                : [],
+              $set: selectedIds,
             },
             isSelectAllIndeterminate: {
               $set: false,
