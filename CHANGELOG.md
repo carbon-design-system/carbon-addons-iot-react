@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.6...v2.152.0-next.7) (2022-11-18)
+
+
+### Bug Fixes
+
+* **table:** preserve search filter after resetting sorting ([df93863](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df93863499c6289dbfc5e09ddf465be766561a70)), closes [#3491](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3491)
+
+
+
+
+
 # [2.152.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.5...v2.152.0-next.6) (2022-11-18)
 
 
