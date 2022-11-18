@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.5...v2.152.0-next.6) (2022-11-18)
+
+
+### Bug Fixes
+
+* **tablereducer:** select all action includes nested rows ([a9f01bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a9f01bf64411209b3518ad624eb48a851fef3273)), closes [#3641](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3641)
+
+
+
+
+
 # [2.152.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.4...v2.152.0-next.5) (2022-11-16)
 
 
