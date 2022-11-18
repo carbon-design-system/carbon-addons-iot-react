@@ -395,7 +395,7 @@ class IotOverflowMenu extends Component {
           const { current: triggerEl } = this._triggerRef;
           /* istanbul ignore else */
           if (typeof target.matches === 'function') {
-            /* istanbul ignore if */
+            /* istanbul ignore else */
             if (
               !menuBody.contains(target) &&
               triggerEl &&
