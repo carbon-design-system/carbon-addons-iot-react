@@ -28,8 +28,11 @@ describe('TableToolbarSVGButton', () => {
   });
 
   it('should auto-position tooltip', () => {
+    const formOriginalGetBoundingClientRect = HTMLFormElement.prototype.getBoundingClientRect;
+    const divOriginalGetBoundingClientRect = HTMLDivElement.prototype.getBoundingClientRect;
+
     // form element used only as a wrapper to mock getBoundingClientRect
-    jest.spyOn(HTMLFormElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+    HTMLFormElement.prototype.getBoundingClientRect = jest.fn(() => ({
       bottom: 96,
       height: 48,
       left: 48,
@@ -40,7 +43,7 @@ describe('TableToolbarSVGButton', () => {
       y: 48,
     }));
 
-    jest.spyOn(HTMLDivElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+    HTMLDivElement.prototype.getBoundingClientRect = jest.fn(() => ({
       bottom: 34,
       height: 24,
       left: 963.3125,
@@ -63,11 +66,17 @@ describe('TableToolbarSVGButton', () => {
     );
 
     expect(screen.getByTestId('test-button')).toHaveClass(`${prefix}--tooltip--align-end`);
+
+    HTMLFormElement.prototype.getBoundingClientRect = formOriginalGetBoundingClientRect;
+    HTMLDivElement.prototype.getBoundingClientRect = divOriginalGetBoundingClientRect;
   });
 
   it('should auto-position tooltip in LTR mode', () => {
+    const formOriginalGetBoundingClientRect = HTMLFormElement.prototype.getBoundingClientRect;
+    const divOriginalGetBoundingClientRect = HTMLDivElement.prototype.getBoundingClientRect;
+
     // form element used only as a wrapper to mock getBoundingClientRect
-    jest.spyOn(HTMLFormElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+    HTMLFormElement.prototype.getBoundingClientRect = jest.fn(() => ({
       bottom: 96,
       height: 48,
       left: 48,
@@ -78,7 +87,7 @@ describe('TableToolbarSVGButton', () => {
       y: 48,
     }));
 
-    jest.spyOn(HTMLDivElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+    HTMLDivElement.prototype.getBoundingClientRect = jest.fn(() => ({
       bottom: 34,
       height: 24,
       left: 47,
@@ -102,5 +111,8 @@ describe('TableToolbarSVGButton', () => {
     );
 
     expect(screen.getByTestId('test-button')).toHaveClass(`${prefix}--tooltip--align-start`);
+
+    HTMLFormElement.prototype.getBoundingClientRect = formOriginalGetBoundingClientRect;
+    HTMLDivElement.prototype.getBoundingClientRect = divOriginalGetBoundingClientRect;
   });
 });
