@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Tooltip } from 'carbon-components-react';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
+import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
+import { getTooltipMenuOffset } from '../Tooltip';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
@@ -54,6 +56,13 @@ export const CardTitle = (
   const hasTitleTooltipFromTruncation = truncatesTitle && !titleTextTooltip;
   const hasInfoIconTooltip = infoIconTooltip && !hasExternalTitleTextTooltip;
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
+
+  const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
+    direction: 'bottom',
+    menuOffset: getTooltipMenuOffset,
+    useAutoPositioning: true,
+    isOverflowMenu: true, // Needed to preserve default direction (bottom)
+  });
 
   const [tooltipsState, setTooltipsState] = useState({
     title: false,
@@ -121,7 +130,9 @@ export const CardTitle = (
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
       <Tooltip
-        autoOrientation
+        align="center"
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
         ref={titleRef}
         showIcon={false}
