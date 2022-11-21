@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.6...v2.152.0-next.7) (2022-11-18)
+
+
+### Bug Fixes
+
+* **table:** preserve search filter after resetting sorting ([df93863](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df93863499c6289dbfc5e09ddf465be766561a70)), closes [#3491](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3491)
+
+
+
+
+
+# [2.152.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.5...v2.152.0-next.6) (2022-11-18)
+
+
+### Bug Fixes
+
+* **tablereducer:** select all action includes nested rows ([a9f01bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a9f01bf64411209b3518ad624eb48a851fef3273)), closes [#3641](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3641)
+
+
+
+
+
+# [2.152.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.4...v2.152.0-next.5) (2022-11-16)
+
+
+### Features
+
+* **hierarchylist:** add prop to enable horizontal scrollbar ([6de51cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6de51cd6274c248d56633a13e9920f7084392087)), closes [#3639](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3639)
+
+
+
+
+
 # [2.152.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.3...v2.152.0-next.4) (2022-11-14)
 
 

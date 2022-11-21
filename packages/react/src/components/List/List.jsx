@@ -100,6 +100,8 @@ const propTypes = {
   loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
   /** called after the row has expanded or collapsed and is passed the array of expanded ids */
   onExpandedChange: PropTypes.func,
+  /** enables horizontal scrollbar to appear if content is wider then container */
+  enableHorizontalScrollbar: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -141,6 +143,7 @@ const defaultProps = {
   testId: 'list',
   handleLoadMore: () => {},
   onExpandedChange: null,
+  enableHorizontalScrollbar: false,
 };
 
 const List = forwardRef((props, ref) => {
@@ -177,6 +180,7 @@ const List = forwardRef((props, ref) => {
     handleLoadMore,
     loadingMoreIds,
     onExpandedChange,
+    enableHorizontalScrollbar,
   } = props;
   const mergedI18n = useMemo(() => ({ ...defaultProps.i18n, ...i18n }), [i18n]);
   const ListHeader = overrides?.header?.component || DefaultListHeader;
@@ -230,6 +234,7 @@ const List = forwardRef((props, ref) => {
           i18n={mergedI18n}
           lockedIds={lockedIds}
           onExpandedChange={onExpandedChange}
+          enableHorizontalScrollbar={enableHorizontalScrollbar}
           {...overrides?.content?.props}
         />
         {pagination && !isLoading ? (
