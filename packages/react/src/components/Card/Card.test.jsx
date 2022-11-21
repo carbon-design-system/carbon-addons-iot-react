@@ -376,6 +376,25 @@ describe('Card', () => {
   });
 
   describe('tooltips', () => {
+    const originalGetBoundingClientRect = HTMLDivElement.prototype.getBoundingClientRect;
+
+    beforeEach(() => {
+      HTMLDivElement.prototype.getBoundingClientRect = jest.fn(() => ({
+        bottom: 76,
+        height: 68,
+        left: 122,
+        right: 410,
+        top: 8,
+        width: 288,
+        x: 122,
+        y: 8,
+      }));
+    });
+
+    afterEach(() => {
+      HTMLDivElement.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+
     it('should warn on combining tooltip and titleTextTooltip', () => {
       const { __DEV__ } = global;
       global.__DEV__ = true;
