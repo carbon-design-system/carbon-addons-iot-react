@@ -100,7 +100,7 @@ export const CardTitle = (
     }
   }, []);
 
-  // Ignore window event listeners from Jest testing
+  // ignore due to window event listeners
   /* istanbul ignore next */
   useEffect(() => {
     const handleScroll = () => {
