@@ -203,8 +203,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -213,9 +212,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -236,8 +240,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -246,9 +249,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -570,6 +578,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-10"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -583,15 +592,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-10"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -714,6 +737,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-11"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -727,15 +751,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-11"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -858,6 +896,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-1"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -871,15 +910,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-1"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1002,6 +1055,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-2"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -1015,15 +1069,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-2"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1146,6 +1214,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-6"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -1159,15 +1228,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-6"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1290,6 +1373,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-3"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -1303,15 +1387,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-3"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1434,6 +1532,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-4"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -1447,15 +1546,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-4"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -1953,8 +2066,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             >
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={true}
                 onBlur={[Function]}
@@ -1963,9 +2075,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -1986,8 +2103,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost bx--btn--disabled"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--btn--disabled bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={true}
                 onBlur={[Function]}
@@ -1996,9 +2112,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -3401,8 +3522,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -3411,9 +3531,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -3434,8 +3559,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -3444,9 +3568,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -4786,8 +4915,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -4796,9 +4924,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -4819,8 +4952,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -4829,9 +4961,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -6346,8 +6483,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -6356,9 +6492,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -6379,8 +6520,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -6389,9 +6529,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -7297,8 +7442,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -7307,9 +7451,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -7330,8 +7479,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -7340,9 +7488,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -8448,8 +8601,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -8458,9 +8610,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -8481,8 +8638,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -8491,9 +8647,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -8901,6 +9062,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-10"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -8914,15 +9076,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-10"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -9089,6 +9265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-11"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -9102,15 +9279,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-11"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -9275,6 +9466,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-1"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -9288,15 +9480,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-1"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -9463,6 +9669,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-2"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -9476,15 +9683,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-2"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -9651,6 +9872,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-6"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -9664,15 +9886,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-6"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -9837,6 +10073,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-3"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -9850,15 +10087,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-3"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -10023,6 +10274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-4"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -10036,15 +10288,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-4"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -10652,8 +10918,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -10662,9 +10927,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -10685,8 +10955,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -10695,9 +10964,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -12695,8 +12969,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -12705,9 +12978,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -12728,8 +13006,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -12738,9 +13015,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -13083,6 +13365,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-10"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13096,15 +13379,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-10"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13202,6 +13499,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-11"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13215,15 +13513,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-11"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13321,6 +13633,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-1"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13334,15 +13647,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-1"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13440,6 +13767,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-2"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13453,15 +13781,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-2"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13559,6 +13901,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-6"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13572,15 +13915,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-6"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13678,6 +14035,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-3"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13691,15 +14049,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-3"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -13797,6 +14169,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-4"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -13810,15 +14183,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-4"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -14359,8 +14746,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -14369,9 +14755,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -14392,8 +14783,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -14402,9 +14792,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -16229,8 +16624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="download-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -16239,9 +16633,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Download table content"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Download table content
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Download table content"
@@ -16262,8 +16661,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <button
                 aria-describedby={null}
-                aria-pressed={null}
-                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                 data-testid="filter-button"
                 disabled={false}
                 onBlur={[Function]}
@@ -16272,9 +16670,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 tabIndex={0}
-                title="Filters"
                 type="button"
               >
+                <div
+                  className="bx--assistive-text"
+                  onMouseEnter={[Function]}
+                >
+                  Filters
+                </div>
                 <svg
                   aria-hidden="true"
                   aria-label="Filters"
@@ -16776,6 +17179,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-10"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -16789,15 +17193,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-10"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -16964,6 +17382,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-11"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -16977,15 +17396,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-11"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -17152,6 +17585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-1"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -17165,15 +17599,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-1"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -17340,6 +17788,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-2"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -17353,15 +17802,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-2"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -17528,6 +17991,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-6"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -17541,15 +18005,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-6"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -17792,6 +18270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-3"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -17805,15 +18284,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-3"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}
@@ -18011,6 +18504,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     data-nesting-offset={0}
                     data-parent-row={true}
                     data-row-nesting={false}
+                    data-testid="expand-row-row-4"
                     hasRowSelection={false}
                     onClick={[Function]}
                     style={
@@ -18024,15 +18518,29 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       headers="table-for-card-table-list-expand"
                     >
                       <button
+                        aria-describedby={null}
                         aria-label="Click to expand content"
-                        className="bx--table-expand__button"
+                        className="bx--table-expand__button iot--table-expand__button iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--sm bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-start"
+                        data-testid="expand-icon-button-row-4"
+                        disabled={false}
+                        onBlur={[Function]}
                         onClick={[Function]}
-                        title="Click to expand content"
+                        onFocus={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        tabIndex={0}
                         type="button"
                       >
+                        <div
+                          className="bx--assistive-text"
+                          onMouseEnter={[Function]}
+                        >
+                          Click to expand content
+                        </div>
                         <svg
+                          aria-hidden="true"
                           aria-label="Click to expand content"
-                          className="bx--table-expand__svg"
+                          className="bx--btn__icon"
                           fill="currentColor"
                           focusable="false"
                           height={16}

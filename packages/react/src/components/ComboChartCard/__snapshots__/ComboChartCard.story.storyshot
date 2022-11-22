@@ -270,8 +270,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </div>
                   <button
                     aria-describedby={null}
-                    aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="download-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -280,9 +279,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     tabIndex={0}
-                    title="Download table content"
                     type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Download table content
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Download table content"
@@ -303,8 +307,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                   </button>
                   <button
                     aria-describedby={null}
-                    aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="filter-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -313,9 +316,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     tabIndex={0}
-                    title="Filters"
                     type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Filters
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Filters"

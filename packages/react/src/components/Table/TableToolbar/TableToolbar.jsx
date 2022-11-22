@@ -363,6 +363,7 @@ const TableToolbar = ({
               tabIndex={shouldShowBatchActions ? 0 : -1}
               size="lg"
               menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
+              withCarbonTooltip
             >
               {visibleOverflowBatchActions.map(
                 ({
@@ -499,6 +500,7 @@ const TableToolbar = ({
               testId="download-button"
               renderIcon={Download20}
               disabled={isDisabled}
+              langDir={langDir}
             />
           ) : null}
           {hasColumnSelection ? (
@@ -509,6 +511,7 @@ const TableToolbar = ({
               testId="column-selection-button"
               renderIcon={Column20}
               disabled={isDisabled}
+              langDir={langDir}
             />
           ) : null}
           {hasFilter ? (
@@ -519,6 +522,7 @@ const TableToolbar = ({
               testId="filter-button"
               renderIcon={Filter20}
               disabled={isDisabled}
+              langDir={langDir}
             />
           ) : null}
           {hasAdvancedFilter ? (
@@ -574,6 +578,7 @@ const TableToolbar = ({
               testId="row-edit-button"
               renderIcon={Edit20}
               disabled={isDisabled}
+              langDir={langDir}
             />
           ) : null}
           {visibleToolbarActions.map((action) => {
@@ -589,6 +594,7 @@ const TableToolbar = ({
                 key={`${tableId}-toolbar-actions-button-${action.id}`}
                 renderIcon={action.renderIcon}
                 disabled={isDisabled || action.disabled}
+                langDir={langDir}
               />
             );
           })}
@@ -603,6 +609,7 @@ const TableToolbar = ({
               iconClass={`${iotPrefix}--table-toolbar-aggregations__overflow-icon`}
               onOpen={() => setIsOpen(true)}
               onClose={() => setIsOpen(false)}
+              withCarbonTooltip
             >
               {hasAggregations && (
                 <OverflowMenuItem
