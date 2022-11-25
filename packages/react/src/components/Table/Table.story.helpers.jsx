@@ -61,7 +61,13 @@ const getBoolean = (index) => {
   return index % 2 === 0;
 };
 
-export const getSelectTextWrappingOptions = () => ['always', 'never', 'auto', 'alwaysTruncate'];
+export const getSelectTextWrappingOptions = () => [
+  'always',
+  'never',
+  'auto',
+  'alwaysTruncate',
+  'expand',
+];
 
 export const getSelectDataOptions = () => [
   {
