@@ -4,6 +4,7 @@ import { TableRow, TableCell, Checkbox, RadioButton } from 'carbon-components-re
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
+import { WrapCellTextPropTypes } from '../../../../constants/SharedPropTypes';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import {
@@ -57,7 +58,7 @@ const propTypes = {
     ]),
     hasRowActions: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+    wrapCellText: WrapCellTextPropTypes.isRequired,
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,

@@ -5,6 +5,7 @@ import { Tooltip, TooltipDefinition } from 'carbon-components-react';
 import warning from 'warning';
 
 import { settings } from '../../../constants/Settings';
+import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 
 const { iotPrefix } = settings;
 
@@ -15,7 +16,7 @@ const propTypes = {
     PropTypes.object,
     PropTypes.array,
   ]),
-  wrapText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+  wrapText: WrapCellTextPropTypes.isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   allowTooltip: PropTypes.bool,
   /** What locale should the number be rendered in */

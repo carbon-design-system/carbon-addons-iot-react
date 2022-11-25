@@ -9,6 +9,7 @@ import warning from 'warning';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
+import { WrapCellTextPropTypes } from '../../constants/SharedPropTypes';
 import FilterTags from '../FilterTags/FilterTags';
 import { RuleGroupPropType } from '../RuleBuilder/RuleBuilderPropTypes';
 import experimental from '../../internal/experimental';
@@ -137,8 +138,9 @@ const propTypes = {
      * always - Wrap if needed for all table column configurations
      * never - Tables with dynamic columns widths grow larger and tables with fixed or resizable columns truncate.
      * alwaysTruncate - Always truncate if needed for all table column configurations
+     * expand - Expand to fit text width (by horizontal scrollbar) for table with fixed columns
      */
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']),
+    wrapCellText: WrapCellTextPropTypes,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
   }),

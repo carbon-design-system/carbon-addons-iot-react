@@ -3,6 +3,7 @@ import { pick } from 'lodash-es';
 import PropTypes from 'prop-types';
 
 import useVisibilityObserver from '../../../hooks/useVisibilityObserver';
+import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import {
   ExpandedRowsPropTypes,
   RowActionsStatePropTypes,
@@ -54,7 +55,7 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+  wrapCellText: WrapCellTextPropTypes.isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,
