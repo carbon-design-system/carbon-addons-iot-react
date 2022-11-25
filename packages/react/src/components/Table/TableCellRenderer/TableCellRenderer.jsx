@@ -76,7 +76,7 @@ const TableCellRenderer = ({
   const mySpanRef = React.createRef();
   const myClasses = classnames({
     [`${iotPrefix}--table__cell-text--truncate`]: wrapText !== 'always' && truncateCellText,
-    [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never',
+    [`${iotPrefix}--table__cell-text--no-wrap`]: wrapText === 'never' || wrapText === 'expand',
     [`${iotPrefix}--table__cell-text--preserve`]: preserveCellWhiteSpace,
   });
 

@@ -228,7 +228,9 @@ const TableBodyRow = ({
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className={`${iotPrefix}--table__cell__offset`}
+          className={classnames(`${iotPrefix}--table__cell__offset`, {
+            [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
+          })}
           style={{ '--row-nesting-offset': `${nestingOffset}px` }}
         >
           <Checkbox
@@ -248,7 +250,9 @@ const TableBodyRow = ({
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className={`${iotPrefix}--table__cell__offset`}
+          className={classnames(`${iotPrefix}--table__cell__offset`, {
+            [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
+          })}
           style={{ '--row-nesting-offset': `${nestingOffset}px` }}
         >
           <RadioButton
@@ -296,7 +300,9 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <span
-              className={`${iotPrefix}--table__cell__offset`}
+              className={classnames(`${iotPrefix}--table__cell__offset`, {
+                [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
+              })}
               style={{ '--row-nesting-offset': `${offset}px` }}
             >
               {col.editDataFunction && isEditMode ? (
