@@ -6,6 +6,7 @@ import { settings } from '../../constants/Settings';
 import StatefulTable from './StatefulTable';
 import {
   getAdvancedFilters,
+  getInitialState,
   getTableColumns as getStoryTableColumns,
   getTableData as getStoryTableData,
 } from './Table.story.helpers';
@@ -379,5 +380,40 @@ describe('StatefulTable', () => {
 
     cy.findAllByLabelText('Sort rows by this header in descending order').eq(0).click();
     cy.get('tr').eq(1).find('td').eq(0).should('have.text', 'scott pinocchio chocolate 89');
+  });
+
+  it('should auto-position tooltips in table toolbar', () => {
+    const onDownloadCSV = cy.stub();
+    mount(
+      <StatefulTable
+        columns={tableColumns}
+        data={[tableData[0]]}
+        actions={{
+          toolbar: {
+            onDownloadCSV,
+          },
+        }}
+        options={{
+          hasRowEdit: true,
+          hasFilter: true,
+        }}
+      />
+    );
+
+    cy.findByTestId('download-button').should('have.class', `${prefix}--tooltip--align-center`);
+    cy.findByTestId('filter-button').should('have.class', `${prefix}--tooltip--align-center`);
+    cy.findByTestId('row-edit-button').should('have.class', `${prefix}--tooltip--align-end`);
+  });
+
+  it('should preserve current page during rowEdit mode', () => {
+    const initialState = getInitialState();
+
+    mount(<StatefulTable id="pagination-table" {...initialState} />);
+
+    cy.findByTestId('pagination-table-table-pagination').findAllByRole('button').last().click();
+    cy.findByText('2 of 2 pages').should('be.visible');
+
+    cy.findByTestId('row-edit-button').click();
+    cy.findByText('2 of 2 pages').should('be.visible');
   });
 });

@@ -1,12 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TableRow,
-  TableExpandRow,
-  TableCell,
-  Checkbox,
-  RadioButton,
-} from 'carbon-components-react';
+import { TableRow, TableCell, Checkbox, RadioButton } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
@@ -18,6 +12,8 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
+
+import TableExpandRow from './TableExpandRow';
 
 const { prefix, iotPrefix } = settings;
 
@@ -363,7 +359,7 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
-          expandHeader={`${tableId}-expand`}
+          expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           })}
@@ -392,6 +388,8 @@ const TableBodyRow = ({
           style={{
             '--row-nesting-offset': `${nestingOffset}px`,
           }}
+          rowId={id}
+          langDir={langDir}
         >
           {tableCells}
         </TableExpandRow>
@@ -409,7 +407,7 @@ const TableBodyRow = ({
     ) : (
       <TableExpandRow
         key={id}
-        expandHeader={`${tableId}-expand`}
+        expandHeaderId={`${tableId}-expand`}
         className={classnames(`${iotPrefix}--expandable-tablerow`, {
           [`${iotPrefix}--expandable-tablerow--parent`]:
             hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,
@@ -444,6 +442,8 @@ const TableBodyRow = ({
         style={{
           '--row-nesting-offset': `${nestingOffset}px`,
         }}
+        rowId={id}
+        langDir={langDir}
       >
         {tableCells}
       </TableExpandRow>

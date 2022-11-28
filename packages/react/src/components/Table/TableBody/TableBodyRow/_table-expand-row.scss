@@ -1,0 +1,24 @@
+@import '../../../../globals/vars';
+
+.#{$iot-prefix}--table-expand__button {
+  &.#{$prefix}--btn--sm {
+    min-height: unset;
+    height: calc(100% + 1px);
+
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.#{$prefix}--btn--icon-only {
+    padding-right: $spacing-03;
+    padding-left: $spacing-03;
+  }
+
+  & svg {
+    transform: rotate(90deg);
+  }
+
+  &--close svg {
+    transform: rotate(270deg);
+  }
+}

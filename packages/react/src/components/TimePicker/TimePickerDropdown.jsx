@@ -27,7 +27,7 @@ const timeUtils = {
       ? selectedTime.substring(0, 2)
       : currentTime.substring(0, 2),
   get24Hours: (selectedTime, currentTime) =>
-    /(0[1-9]|1[0-9]|2[0-3])/.test(selectedTime.substring(0, 2))
+    /^(2[0-3]|[01]?[0-9])$/.test(selectedTime.substring(0, 2))
       ? selectedTime.substring(0, 2)
       : currentTime.substring(2, 4),
   getMinutes: (selectedTime, currentTime) =>

@@ -1906,7 +1906,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-184"
+                    aria-controls="accordion-item-188"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1937,7 +1937,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-184"
+                    id="accordion-item-188"
                   >
                     <div
                       className="toggle-group"
@@ -1985,7 +1985,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-185"
+                    aria-controls="accordion-item-189"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2016,7 +2016,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-185"
+                    id="accordion-item-189"
                   >
                     More Map settings
                   </div>
@@ -2027,7 +2027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-186"
+                    aria-controls="accordion-item-190"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2058,7 +2058,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-186"
+                    id="accordion-item-190"
                   >
                     Even more settings
                   </div>
@@ -2237,8 +2237,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </div>
                   <button
                     aria-describedby={null}
-                    aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="download-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -2247,9 +2246,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     tabIndex={0}
-                    title="Download table content"
                     type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Download table content
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Download table content"
@@ -2270,8 +2274,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <button
                     aria-describedby={null}
-                    aria-pressed={null}
-                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn bx--btn bx--btn--ghost"
+                    className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
                     data-testid="filter-button"
                     disabled={false}
                     onBlur={[Function]}
@@ -2280,9 +2283,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                     onMouseEnter={[Function]}
                     onMouseLeave={[Function]}
                     tabIndex={0}
-                    title="Filters"
                     type="button"
                   >
+                    <div
+                      className="bx--assistive-text"
+                      onMouseEnter={[Function]}
+                    >
+                      Filters
+                    </div>
                     <svg
                       aria-hidden="true"
                       aria-label="Filters"

@@ -325,10 +325,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 }
 
 .#{$iot-prefix}--expandable-tablerow--childless {
-  td {
-    > button.#{$prefix}--table-expand__button {
-      display: none;
-    }
+  & .#{$prefix}--table-expand button.#{$iot-prefix}--table-expand__button {
+    display: none;
   }
 }
 

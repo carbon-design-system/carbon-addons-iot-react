@@ -703,7 +703,7 @@ const DateTimePicker = ({
 
   const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
 
-  useEffect(() => setInvalidState(invalid || disableApply), [invalid, disableApply]);
+  useEffect(() => setInvalidState(invalid), [invalid]);
 
   const onApplyClick = () => {
     setIsExpanded(false);

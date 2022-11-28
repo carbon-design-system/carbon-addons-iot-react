@@ -153,7 +153,11 @@ describe('TableBodyRow', () => {
     // Ignores the callback even though shouldExpandOnRowClick is true
     expect(mockActions.onRowExpanded).not.toHaveBeenCalled();
 
-    const expandButton = screen.getByTitle('click to expand');
+    const expandButton = screen.getByTestId('expand-icon-button-tableRow');
+
+    // Verify tooltip text
+    expect(within(expandButton).getByText('click to expand')).toBeTruthy();
+
     expect(expandButton).toBeInTheDocument();
 
     fireEvent.click(expandButton);
@@ -191,7 +195,11 @@ describe('TableBodyRow', () => {
     // Ignores the callback even though shouldExpandOnRowClick is true
     expect(mockActions.onRowExpanded).toHaveBeenCalledTimes(1);
 
-    const expandButton = screen.getByTitle('click to expand');
+    const expandButton = screen.getByTestId('expand-icon-button-tableRow');
+
+    // Verify tooltip text
+    expect(within(expandButton).getByText('click to expand')).toBeTruthy();
+
     expect(expandButton).toBeInTheDocument();
     expect(expandButton).toHaveStyle('display: inline-block');
 

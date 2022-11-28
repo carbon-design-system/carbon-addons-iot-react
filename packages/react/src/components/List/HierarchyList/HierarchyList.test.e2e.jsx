@@ -307,6 +307,166 @@ describe('HierarchyList', () => {
       });
   });
 
+  it('should expand to adjust height if isFullHeight enabled', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+    mount(
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          isFullHeight
+          items={getInitialItems()}
+          pageSize="sm"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['Chicago White Sox', 'New York Mets']}
+        />
+      </div>
+    );
+
+    cy.get(`.${iotPrefix}--list-item`).eq(7).should('be.visible');
+  });
+
+  it('should show scrollbar if isFullHeight is disabled', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+    mount(
+      <div style={{ width: 400, height: 300 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          isFullHeight={false}
+          items={getInitialItems()}
+          pageSize="sm"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['Chicago White Sox', 'New York Mets']}
+        />
+      </div>
+    );
+
+    cy.get(`.${iotPrefix}--list-item`).eq(6).should('not.be.visible');
+    cy.get(`.${iotPrefix}--list-item`).eq(7).should('not.be.visible');
+
+    cy.get(`.${iotPrefix}--list--content`).scrollTo('bottom');
+
+    cy.get(`.${iotPrefix}--list-item`).eq(6).should('be.visible');
+    cy.get(`.${iotPrefix}--list-item`).eq(7).should('be.visible');
+  });
+
+  it('should show horizontal scrollbar if enableHorizontalScrollbar is enabled', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+
+    const items = getInitialItems();
+
+    items[1].children[1].content.secondaryValue = 'Secondary value';
+
+    mount(
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          isFullHeight={false}
+          enableHorizontalScrollbar
+          items={items}
+          pageSize="sm"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['Chicago White Sox', 'New York Mets']}
+        />
+      </div>
+    );
+
+    cy.findByText('Secondary value').should('not.be.visible');
+
+    cy.get(`.${iotPrefix}--list--content`).scrollTo('bottomRight');
+
+    cy.findByText('Secondary value').should('be.visible');
+  });
+
+  it('should truncate the text if enableHorizontalScrollbar is disabled', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+
+    mount(
+      <div style={{ width: 400, height: 400 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          isFullHeight
+          enableHorizontalScrollbar={false}
+          items={getInitialItems()}
+          pageSize="sm"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['Chicago White Sox', 'New York Mets']}
+        />
+      </div>
+    );
+
+    cy.get(`.${iotPrefix}--list-item`).eq(6).should('be.visible');
+
+    cy.get(`.${iotPrefix}--list-item`)
+      .eq(6)
+      .contains(/Michael Conforto/)
+      .then((listItem) => {
+        const { offsetWidth, scrollWidth } = listItem[0];
+        const isEllipsisActive = offsetWidth < scrollWidth;
+        expect(isEllipsisActive).to.eq(true);
+      });
+  });
+
+  it('should adjust to content height and enable horizontal scrollbar', () => {
+    const onSelect = cy.stub();
+    const onListUpdated = cy.stub();
+
+    const items = getInitialItems();
+
+    items[1].children[1].content.secondaryValue = 'Secondary value';
+
+    mount(
+      <div style={{ width: 400, height: 300 }}>
+        <HierarchyList
+          title="MLB Expanded List"
+          isFullHeight
+          enableHorizontalScrollbar
+          items={items}
+          pageSize="sm"
+          isLoading={false}
+          isLargeRow={false}
+          onListUpdated={onListUpdated}
+          hasSearch
+          hasDeselection
+          onSelect={onSelect}
+          defaultExpandedIds={['Chicago White Sox', 'New York Mets']}
+        />
+      </div>
+    );
+
+    cy.get(`.${iotPrefix}--list-item`).eq(6).should('be.visible');
+    cy.get(`.${iotPrefix}--list-item`).eq(7).should('be.visible');
+    // Hidden by scrollbar
+    cy.findByText('Secondary value').should('not.be.visible');
+
+    cy.get(`.${iotPrefix}--list--content__full-height__support`).scrollTo('right');
+
+    cy.findByText('Secondary value').should('be.visible');
+  });
+
   describe('isVirtualList', () => {
     it('maintains search state when drag-and-drop happens', () => {
       const onListUpdated = cy.stub();
