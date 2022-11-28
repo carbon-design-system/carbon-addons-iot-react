@@ -149,7 +149,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
       returnValue.single.start = new Date(startDate.valueOf());
-      readableValue = `${dayjs(startDate).format(dateTimeMask)}`;
+      readableValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
       break;
     }
     default:
