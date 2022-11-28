@@ -30846,7 +30846,6 @@ Map {
       "tooltipContentClassName": "",
       "tooltipFocusTrap": true,
       "tooltipId": "flyout-tooltip",
-      "triggerClassName": "",
       "triggerId": "flyout-trigger-id",
       "useAutoPositioning": false,
     },
@@ -30995,9 +30994,6 @@ Map {
         "type": "bool",
       },
       "tooltipId": Object {
-        "type": "string",
-      },
-      "triggerClassName": Object {
         "type": "string",
       },
       "triggerId": Object {

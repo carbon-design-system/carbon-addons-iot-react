@@ -296,10 +296,6 @@
   }
 }
 
-.#{$prefix}--tooltip__label.#{$iot-prefix}--date-time-picker--trigger-flyout-tooltip:focus {
-  outline: none;
-}
-
 html[dir='rtl'] {
   .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
     .#{$iot-prefix}--date-time-picker__fields-wrapper {
