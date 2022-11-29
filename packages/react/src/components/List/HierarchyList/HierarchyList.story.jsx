@@ -86,6 +86,95 @@ export const StatefulListWithNestedSearching = () => (
 
 StatefulListWithNestedSearching.storyName = 'Stateful list with nested searching';
 
+export const WithDeepNesting = () => (
+  <div style={{ width: 400, height: 400 }}>
+    <HierarchyList
+      title={text('Title', 'MLB Expanded List')}
+      buttons={[addButton]}
+      isFullHeight={boolean('isFullHeight', true)}
+      items={[
+        ...Object.keys(sampleHierarchy.MLB['American League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['American League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+              secondaryValue: sampleHierarchy.MLB['American League'][team][player],
+            },
+            isSelectable: true,
+            children: [
+              {
+                id: `${team}_${player}_lorem`,
+                content: {
+                  value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                  secondaryValue: 'Secondary',
+                },
+                isSelectable: true,
+              },
+              {
+                id: `${team}_${player}_lorem_action`,
+                content: {
+                  value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+                  rowActions: () => (
+                    <OverflowMenu title="data-item-menu" size="sm" flipped={document.dir !== 'rtl'}>
+                      <OverflowMenuItem
+                        itemText="Configure"
+                        onClick={() => console.log('Configure')}
+                      />
+                      <OverflowMenuItem
+                        itemText="Delete"
+                        onClick={() => console.log('Delete')}
+                        isDelete
+                        hasDivider
+                      />
+                    </OverflowMenu>
+                  ),
+                },
+                isSelectable: true,
+              },
+            ],
+          })),
+        })),
+        ...Object.keys(sampleHierarchy.MLB['National League']).map((team) => ({
+          id: team,
+          isCategory: true,
+          content: {
+            value: team,
+          },
+          children: Object.keys(sampleHierarchy.MLB['National League'][team]).map((player) => ({
+            id: `${team}_${player}`,
+            content: {
+              value: player,
+              secondaryValue: sampleHierarchy.MLB['National League'][team][player],
+            },
+            isSelectable: true,
+          })),
+        })),
+      ]}
+      hasSearch={boolean('hasSearch', true)}
+      pageSize={select('Page Size', ['sm', 'lg', 'xl', undefined], 'sm')}
+      isLoading={boolean('isLoading', false)}
+      isLargeRow={boolean('isLargeRow', false)}
+      onSelect={action('onSelect')}
+      hasDeselection={boolean('hasDeselection', true)}
+      i18n={object('i18n', {
+        searchPlaceHolderText: 'Search',
+      })}
+      hasMultiSelect={boolean('hasMultiSelect', false)}
+      isVirtualList={boolean('hasVirtualList', false)}
+      expandedIds={array('A comma separated list of expandedIds (expandedIds)', [], ',')}
+      onExpandedChange={action('onExpandedChange')}
+      enableHorizontalScrollbar={boolean('Enable horizontal scrollbar', true)}
+    />
+  </div>
+);
+
+WithDeepNesting.storyName = 'With deep nesting';
+
 export const WithDefaultSelectedId = () => (
   <div style={{ width: 400, height: 400 }}>
     <HierarchyList

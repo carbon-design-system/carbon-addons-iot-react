@@ -3,6 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.8...v2.152.0-next.9) (2022-11-29)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** overrides scss ([c2a36c6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c2a36c60f8cb0eaeb0051c69e491c5fd3b16ce83))
+
+
+
+
+
+# [2.152.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.7...v2.152.0-next.8) (2022-11-22)
+
+
+### Bug Fixes
+
+* **table:** change tooltip style to carbon-like ([28dec41](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/28dec41fb5eeb3e34486efa5de346e1860881034)), closes [#3510](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3510)
+* **tableexpandrow:** add sass variable for prefix ([56a2511](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/56a2511f8766bd93919f473e2e367e3e35444c9b))
+
+
+### Features
+
+* **overflowmenu:** create IotOverflowMenu based on Carbon ([53eb6ad](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/53eb6ad76d37907e968af925fba7e0905d911a6a))
+* **tabletoobar:** add auto-positioning for tooltips ([e77786f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e77786fa8e198eade34b321fad6641c15f52531b))
+
+
+
+
+
+# [2.152.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.6...v2.152.0-next.7) (2022-11-18)
+
+
+### Bug Fixes
+
+* **table:** preserve search filter after resetting sorting ([df93863](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/df93863499c6289dbfc5e09ddf465be766561a70)), closes [#3491](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3491)
+
+
+
+
+
+# [2.152.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.5...v2.152.0-next.6) (2022-11-18)
+
+
+### Bug Fixes
+
+* **tablereducer:** select all action includes nested rows ([a9f01bf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a9f01bf64411209b3518ad624eb48a851fef3273)), closes [#3641](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3641)
+
+
+
+
+
+# [2.152.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.4...v2.152.0-next.5) (2022-11-16)
+
+
+### Features
+
+* **hierarchylist:** add prop to enable horizontal scrollbar ([6de51cd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6de51cd6274c248d56633a13e9920f7084392087)), closes [#3639](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3639)
+
+
+
+
+
+# [2.152.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.3...v2.152.0-next.4) (2022-11-14)
+
+
+### Features
+
+* **contentformitemtitle:** new tab for tooltip link ([f7fdca0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f7fdca061890aea744047905bcccd51c77c9dcc8))
+
+
+
+
+
 # [2.152.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.2...v2.152.0-next.3) (2022-11-09)
 
 

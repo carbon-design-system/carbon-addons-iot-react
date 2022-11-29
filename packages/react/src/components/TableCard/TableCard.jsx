@@ -3,6 +3,7 @@ import { OverflowMenu, OverflowMenuItem, Link } from 'carbon-components-react';
 import { isNil, uniqBy, cloneDeep, capitalize } from 'lodash-es';
 import { OverflowMenuVertical16 } from '@carbon/icons-react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 import dayjs from '../../utils/dayjs';
 import { CardPropTypes, TableCardPropTypes } from '../../constants/CardPropTypes';
@@ -68,6 +69,7 @@ const defaultProps = {
     expandLabel: 'Expand to fullscreen',
   },
   renderDateDropdownInPortal: true,
+  withToolbarTooltips: false,
 };
 
 const TableCard = ({
@@ -93,6 +95,7 @@ const TableCard = ({
   testId,
   className,
   renderDateDropdownInPortal,
+  withToolbarTooltips,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -553,7 +556,9 @@ const TableCard = ({
       locale={locale}
       resizeHandles={resizeHandles}
       hideHeader
-      className={classnames(`${iotPrefix}--table-card`, className)}
+      className={classnames(`${iotPrefix}--table-card`, className, {
+        [`${iotPrefix}--table-card--with-tooltips`]: withToolbarTooltips,
+      })}
       // Use the Table's loading state rather than Card's
       isLoading={false}
       // TODO: remove deprecated testID in v3.
@@ -641,7 +646,14 @@ const TableCard = ({
   );
 };
 
-TableCard.propTypes = { ...CardPropTypes, ...TableCardPropTypes };
+TableCard.propTypes = {
+  ...CardPropTypes,
+  ...TableCardPropTypes,
+  ...{
+    /** Display tooltips in the table toolbar (will reset overflow property) */
+    withToolbarTooltips: PropTypes.bool,
+  },
+};
 TableCard.displayName = 'TableCard';
 TableCard.defaultProps = defaultProps;
 TableCard.defaultProps.i18n = {

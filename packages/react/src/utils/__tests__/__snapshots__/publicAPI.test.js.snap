@@ -6516,6 +6516,7 @@ Map {
       "editingStyle": null,
       "emptySearchState": "No results found",
       "emptyState": "No list items to show",
+      "enableHorizontalScrollbar": false,
       "expandedIds": Array [],
       "getAllowedDropIds": null,
       "hasDeselection": true,
@@ -6612,6 +6613,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "enableHorizontalScrollbar": Object {
+        "type": "bool",
       },
       "expandedIds": Object {
         "args": Array [
@@ -6863,6 +6867,7 @@ Map {
       "editingStyle": null,
       "emptySearchState": "No results found",
       "emptyState": "No list items to show",
+      "enableHorizontalScrollbar": false,
       "expandedIds": Array [],
       "getAllowedDropIds": null,
       "handleLoadMore": [Function],
@@ -6930,6 +6935,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "enableHorizontalScrollbar": Object {
+        "type": "bool",
       },
       "expandedIds": Object {
         "args": Array [
@@ -21799,6 +21807,7 @@ Map {
       "renderDateDropdownInPortal": true,
       "size": "LARGE",
       "values": Array [],
+      "withToolbarTooltips": false,
     },
     "displayName": "TableCard",
     "propTypes": Object {
@@ -23083,6 +23092,9 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "withToolbarTooltips": Object {
+        "type": "bool",
       },
     },
   },
@@ -29878,6 +29890,7 @@ Map {
       "editingStyle": null,
       "emptySearchState": "No results found",
       "emptyState": "No list items to show",
+      "enableHorizontalScrollbar": false,
       "expandedIds": Array [],
       "getAllowedDropIds": null,
       "handleLoadMore": [Function],
@@ -29959,6 +29972,9 @@ Map {
           ],
         ],
         "type": "oneOfType",
+      },
+      "enableHorizontalScrollbar": Object {
+        "type": "bool",
       },
       "expandedIds": Object {
         "args": Array [

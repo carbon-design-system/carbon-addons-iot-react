@@ -34,6 +34,7 @@ const defaultProps = {
     onKeyDown: action('onKeyDown'),
     onClose: action('onClose'),
     onOpen: action('onOpen'),
+    withCarbonTooltip: boolean('Enable Carbon tooltip (withCarbonTooltip)', false),
   }),
   menuItem: () => ({
     className: 'some-class',

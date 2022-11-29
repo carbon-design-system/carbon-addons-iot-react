@@ -2940,6 +2940,498 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/L
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With deep nesting 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": 400,
+        "width": 400,
+      }
+    }
+  >
+    <div
+      className="iot--list iot--list__full-height"
+      data-testid="list"
+    >
+      <div
+        className="iot--list-header-container"
+        data-testid="list-header"
+      >
+        <div
+          className="iot--list-header"
+        >
+          <div
+            className="iot--list-header--title"
+          >
+            MLB Expanded List
+          </div>
+          <div
+            className="iot--list-header--btn-container"
+          >
+            <button
+              aria-describedby={null}
+              aria-pressed={null}
+              className="iot--btn bx--btn bx--btn--sm bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+              data-testid="Button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="bx--assistive-text"
+                onMouseEnter={[Function]}
+              >
+                Add
+              </div>
+              <svg
+                aria-hidden="true"
+                aria-label="Add"
+                className="bx--btn__icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          className="iot--list-header--search"
+        >
+          <div
+            aria-labelledby="iot--list-header--search-search"
+            className="bx--search bx--search--lg"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="iot--list-header--search"
+              id="iot--list-header--search-search"
+            >
+              Search
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="list-header-search-input"
+              id="iot--list-header--search"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Search"
+              role="searchbox"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--content__full-height iot--list--content--w-horizontal-scrollbar iot--list--content"
+      >
+        <div
+          className="iot--list--content__full-height__support"
+        >
+          <div
+            className="iot--list--content__scrollbar__support"
+          >
+            <div
+              className="iot--list-item-parent"
+              data-floating-menu-container={true}
+            >
+              <div
+                className="iot--list-item"
+              >
+                <div
+                  aria-label="Expand"
+                  className="iot--list-item--expand-icon"
+                  data-testid="expand-icon"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                  title="Expand"
+                >
+                  <svg
+                    aria-label="Expand-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value iot--list-item--category"
+                        title="Chicago White Sox"
+                      >
+                        Chicago White Sox
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              data-floating-menu-container={true}
+            >
+              <div
+                className="iot--list-item"
+              >
+                <div
+                  aria-label="Expand"
+                  className="iot--list-item--expand-icon"
+                  data-testid="expand-icon"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                  title="Expand"
+                >
+                  <svg
+                    aria-label="Expand-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value iot--list-item--category"
+                        title="New York Yankees"
+                      >
+                        New York Yankees
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              data-floating-menu-container={true}
+            >
+              <div
+                className="iot--list-item"
+              >
+                <div
+                  aria-label="Expand"
+                  className="iot--list-item--expand-icon"
+                  data-testid="expand-icon"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                  title="Expand"
+                >
+                  <svg
+                    aria-label="Expand-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value iot--list-item--category"
+                        title="Houston Astros"
+                      >
+                        Houston Astros
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              data-floating-menu-container={true}
+            >
+              <div
+                className="iot--list-item"
+              >
+                <div
+                  aria-label="Expand"
+                  className="iot--list-item--expand-icon"
+                  data-testid="expand-icon"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                  title="Expand"
+                >
+                  <svg
+                    aria-label="Expand-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value iot--list-item--category"
+                        title="Atlanta Braves"
+                      >
+                        Atlanta Braves
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="iot--list-item-parent"
+              data-floating-menu-container={true}
+            >
+              <div
+                className="iot--list-item"
+              >
+                <div
+                  aria-label="Expand"
+                  className="iot--list-item--expand-icon"
+                  data-testid="expand-icon"
+                  onClick={[Function]}
+                  onKeyPress={[Function]}
+                  role="button"
+                  tabIndex={0}
+                  title="Expand"
+                >
+                  <svg
+                    aria-label="Expand-icon"
+                    fill="currentColor"
+                    focusable="false"
+                    height={16}
+                    preserveAspectRatio="xMidYMid meet"
+                    role="img"
+                    viewBox="0 0 16 16"
+                    width={16}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 11L3 6 3.7 5.3 8 9.6 12.3 5.3 13 6z"
+                    />
+                  </svg>
+                </div>
+                <div
+                  className="iot--list-item--content"
+                >
+                  <div
+                    className="iot--list-item--content--values"
+                  >
+                    <div
+                      className="iot--list-item--content--values--main"
+                    >
+                      <div
+                        className="iot--list-item--content--values--value iot--list-item--category"
+                        title="New York Mets"
+                      >
+                        New York Mets
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="iot--list--page"
+      >
+        <div
+          className="iot-simple-pagination-container bx--pagination--md"
+          data-testid="iot-simple-pagination"
+        >
+          <div
+            className="iot-simple-pagination-page-bar"
+          >
+            <span
+              className="iot-simple-pagination-page-label"
+              maxpage={2}
+            >
+              Page 1
+            </span>
+            <div
+              className="bx--pagination__button bx--pagination__button--backward iot-addons-simple-pagination-button-disabled"
+              data-testid="iot-simple-pagination-backward-button"
+              role="button"
+              tabIndex={-1}
+            >
+              <svg
+                aria-label="Prev page"
+                className="iot-simple-pagination-caret-disabled"
+                dir="ltr"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20 24L10 16 20 8z"
+                />
+              </svg>
+            </div>
+            <div
+              className="bx--pagination__button bx--pagination__button--forward iot-addons-simple-pagination-button"
+              data-testid="iot-simple-pagination-forward-button"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                aria-label="Next page"
+                className="iot-simple-pagination-caret"
+                dir="ltr"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                role="img"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 8L22 16 12 24z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/List/HierarchyList With defaultExpandedIds 1`] = `
 <div
   className="storybook-container"
