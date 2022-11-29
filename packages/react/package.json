@@ -282,7 +282,7 @@
     "cypress-real-events": "1.6.0",
     "d3": "7.1.1",
     "deepdash": "^5.1.2",
-    "enzyme": "^3.8.0",
+    "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.11.1",
