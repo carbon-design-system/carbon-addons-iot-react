@@ -1262,7 +1262,7 @@ describe('DateTimePickerV2', () => {
       />
     );
 
-    userEvent.click(screen.getByText('2021-08-01 00:00 to 2021-08-06 00:00'));
+    userEvent.click(screen.getByText('2021-08-01 to 2021-08-06'));
     expect(screen.queryByLabelText('Start time')).toBeNull();
     expect(screen.queryByLabelText('End time')).toBeNull();
   });
@@ -1361,17 +1361,17 @@ describe('DateTimePickerV2', () => {
     );
   });
 
-  it('should fallback to 00:00 for absolute times when none given', () => {
+  it('should fallback to empty for absolute times when none given', () => {
     render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getByText('Custom Range'));
     userEvent.click(screen.getByText('Absolute'));
-    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('00:00');
+    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('');
   });
 
-  it('should fallback to 00:00 for absolute times when none given (new time spinner)', () => {
+  it('should fallback to empty for absolute times when none given (new time spinner)', () => {
     render(<DateTimePicker useNewTimeSpinner {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 

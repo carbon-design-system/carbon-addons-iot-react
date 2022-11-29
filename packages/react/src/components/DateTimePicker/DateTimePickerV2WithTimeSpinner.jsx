@@ -431,8 +431,8 @@ const DateTimePicker = ({
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput ? rangeStartTimeValue : '00:00',
-          endTime: hasTimeInput ? rangeEndTimeValue : '00:00',
+          startTime: hasTimeInput ? rangeStartTimeValue : null,
+          endTime: hasTimeInput ? rangeEndTimeValue : null,
         };
       } else {
         value.single = {

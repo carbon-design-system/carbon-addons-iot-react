@@ -794,16 +794,12 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
-            endTime: '00:00',
+            endTime: null,
             start: Cypress.sinon.match.any,
             startDate: lastMonth.format(`MM/[20]/YYYY`),
-            startTime: '00:00',
-            humanValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
-              'YYYY-MM-[12]'
-            )} 00:00`,
-            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
-              'YYYY-MM-[12]'
-            )} 00:00`,
+            startTime: null,
+            humanValue: `${lastMonth.format('YYYY-MM-[20]')} to ${now.format('YYYY-MM-[12]')}`,
+            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} to ${now.format('YYYY-MM-[12]')}`,
           },
         });
       });
@@ -845,16 +841,12 @@ describe('DateTimePickerV2', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
-            endTime: '00:00',
+            endTime: null,
             start: Cypress.sinon.match.any,
             startDate: lastMonth.format(`MM/[20]/YYYY`),
-            startTime: '00:00',
-            humanValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
-              'YYYY-MM-[12]'
-            )} 00:00`,
-            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} 00:00 to ${now.format(
-              'YYYY-MM-[12]'
-            )} 00:00`,
+            startTime: null,
+            humanValue: `${lastMonth.format('YYYY-MM-[20]')} to ${now.format('YYYY-MM-[12]')}`,
+            tooltipValue: `${lastMonth.format('YYYY-MM-[20]')} to ${now.format('YYYY-MM-[12]')}`,
           },
           timeSingleValue: null,
         });
