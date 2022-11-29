@@ -97,10 +97,6 @@
     background-color: $field-02;
   }
 
-  .#{$iot-prefix}--date-time-picker__box--invalid {
-    outline: 2px solid $danger-01;
-  }
-
   .#{$iot-prefix}--date-time-picker__box--disabled {
     border: none;
   }
@@ -112,6 +108,10 @@
 
 .#{$iot-prefix}--date-time-pickerv2__wrapper--disabled {
   pointer-events: none;
+}
+
+.#{$iot-prefix}--date-time-pickerv2__wrapper--invalid {
+  outline: 2px solid $danger-01;
 }
 
 // open menu content

@@ -845,6 +845,7 @@ const DateTimePicker = ({
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
         className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
           [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
+          [`${iotPrefix}--date-time-pickerv2__wrapper--invalid`]: invalidState,
         })}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
@@ -873,7 +874,6 @@ const DateTimePicker = ({
           className={classnames({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
-            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
             [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
           })}
         >
