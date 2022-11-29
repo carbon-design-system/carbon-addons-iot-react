@@ -55,6 +55,10 @@
       background-color: inherit;
     }
 
+    .#{$iot-prefix}--flyout-menu .#{$prefix}--tooltip__label {
+      outline: none;
+    }
+
     .#{$iot-prefix}--date-time-picker__field {
       padding-left: $spacing-05;
       overflow: hidden;
