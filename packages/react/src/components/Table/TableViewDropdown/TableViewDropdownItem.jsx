@@ -37,7 +37,7 @@ const TableViewDropdownItem = ({
   return (
     <div
       data-testid={testID}
-      title={tooltip || `${text}${showEdited ? editedPostfix : ''}`}
+      title={`${tooltip || text}${showEdited ? editedPostfix : ''}`}
       className={classNames(`${iotPrefix}--view-dropdown__item`, {
         [`${iotPrefix}--view-dropdown__item-link`]: customAction,
       })}
