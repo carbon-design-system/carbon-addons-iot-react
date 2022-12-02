@@ -148,17 +148,16 @@ SelectedAbsolute.storyName = 'Selected absolute';
 export const SingleSelect = () => {
   const dateTimeMask = text('dateTimeMask', 'YYYY-MM-DD HH:mm');
   return (
-    <div style={{ backgroundColor: 'blue' }}>
-      <div
-        style={{
-          height: '20rem',
-          paddingTop: '10rem',
-          paddingBottom: '1000rem',
-          width: 400,
-          backgroundColor: 'red',
-          overflow: 'scroll',
-        }}
-      >
+    <div
+      style={{
+        backgroundColor: 'blue',
+        height: '15rem',
+        paddingTop: '30rem',
+        paddingBottom: '100rem',
+        overflow: 'scroll',
+      }}
+    >
+      <div>
         <DateTimePicker
           id="datetimepicker"
           key={dateTimeMask}
@@ -187,6 +186,7 @@ export const SingleSelect = () => {
           renderInPortal={boolean('renderInPortal', true)}
         />
       </div>
+      <div style={{ height: '10rem' }} />
     </div>
   );
 };

@@ -850,16 +850,17 @@ const DateTimePicker = ({
     );
   };
 
-  const getPosition = () => {
-    setLeft(containerRef.current?.parentNode.scrollLeft);
-    setTop(containerRef.current?.parentNode.scrollTop);
+  const getPosition = (event) => {
+    setLeft(event.target.scrollLeft);
+    setTop(event.target.scrollTop);
   };
 
-  // Re-calculate X and Y when the parent is scrolled by the user
+  // add scroll event listener to parent nodes
   useEffect(() => {
-    const currentNode = containerRef.current?.parentNode;
-    if (currentNode) {
+    let currentNode = containerRef.current?.parentNode;
+    while (currentNode) {
       currentNode.addEventListener('scroll', getPosition);
+      currentNode = currentNode.parentNode;
     }
   }, []);
 

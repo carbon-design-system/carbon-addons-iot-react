@@ -957,21 +957,14 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
     style={
       Object {
         "backgroundColor": "blue",
+        "height": "15rem",
+        "overflow": "scroll",
+        "paddingBottom": "100rem",
+        "paddingTop": "30rem",
       }
     }
   >
-    <div
-      style={
-        Object {
-          "backgroundColor": "red",
-          "height": "20rem",
-          "overflow": "scroll",
-          "paddingBottom": "1000rem",
-          "paddingTop": "10rem",
-          "width": 400,
-        }
-      }
-    >
+    <div>
       <div
         className="iot--date-time-pickerv2"
       >
@@ -1079,6 +1072,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         </div>
       </div>
     </div>
+    <div
+      style={
+        Object {
+          "height": "10rem",
+        }
+      }
+    />
   </div>
 </div>
 `;
