@@ -8,6 +8,7 @@ import {
   sortTableData,
   isEmptyString,
 } from '../../utils/componentUtilityFunctions';
+import { fillArrWithRowIds } from '../../utils/tableReducer';
 import { FILTER_EMPTY_STRING } from '../../constants/Filters';
 
 import {
@@ -526,13 +527,14 @@ export const tableReducer = (state = {}, action) => {
           return oldChildCount === newChildCount;
         }) ?? [];
 
-      const { view, totalItems, hasUserViewManagement } = action.payload;
+      const { view, totalItems, hasUserViewManagement, hasRowSelection } = action.payload;
       const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
 
       const activeBar = view?.toolbar?.activeBar;
       const activeBarFromState = state.view?.toolbar?.activeBar;
       const rowEditMode = activeBarFromState === 'rowEdit';
+      const isMultiSelect = hasRowSelection === 'multi';
 
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
@@ -599,6 +601,13 @@ export const tableReducer = (state = {}, action) => {
         return filter;
       });
 
+      const allRowsId = [];
+      updatedData.forEach((row) => fillArrWithRowIds(row, allRowsId));
+
+      const selectedIds = view ? view.table.selectedIds : [];
+      const isSelectingAll = isMultiSelect && selectedIds?.length === allRowsId.length;
+      const isSelectAllSelected = view ? view.table.isSelectAllSelected || isSelectingAll : false;
+
       return update(state, {
         data: {
           $set: updatedData,
@@ -641,13 +650,13 @@ export const tableReducer = (state = {}, action) => {
             },
             // Reset the selection to the previous values
             selectedIds: {
-              $set: view ? view.table.selectedIds : [],
+              $set: selectedIds,
             },
             isSelectAllIndeterminate: {
               $set: view ? view.table.isSelectAllIndeterminate : false,
             },
             isSelectAllSelected: {
-              $set: view ? view.table.isSelectAllSelected : false,
+              $set: isSelectAllSelected,
             },
             loadingMoreIds: {
               $set: loadingMoreIds,

@@ -47,7 +47,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     id: tableId,
     columns: initialColumns,
-    options: { hasUserViewManagement },
+    options: { hasUserViewManagement, hasRowSelection },
     options,
     view: {
       toolbar: { customToolbarContent },
@@ -84,6 +84,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         view: initialState,
         totalItems: initialTotalItems || initialData.length,
         hasUserViewManagement,
+        hasRowSelection,
       })
     );
   }, [
