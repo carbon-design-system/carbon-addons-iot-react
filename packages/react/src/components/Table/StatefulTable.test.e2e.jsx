@@ -418,7 +418,7 @@ describe('StatefulTable', () => {
     cy.findByText('2 of 2 pages').should('be.visible');
   });
 
-  it('should crate horizontal scrollbar if wrapCellText:expand', () => {
+  it('should create horizontal scrollbar if wrapCellText:expand', () => {
     cy.viewport(1100, 900);
 
     const lastColumnTitle = tableColumns[tableColumns.length - 1].name;
