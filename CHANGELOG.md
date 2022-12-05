@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.10...v2.152.0-next.11) (2022-12-05)
+
+
+### Features
+
+* **card:** hide title tooltips on window scroll ([a42a59d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a42a59daa2a6e2a0bf287e8dd5317ec8dcf8ea70)), closes [#3645](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3645)
+* **tableviewdropdown:** add prop for custom tooltip ([cddf108](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cddf108a5d17b9d61cbc2c5ecb4fe3f5ddab483b)), closes [#3534](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3534)
+
+
+
+
+
 # [2.152.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.9...v2.152.0-next.10) (2022-12-05)
 
 
