@@ -652,6 +652,7 @@ const Table = (props) => {
       options
         ? options.wrapCellText === 'alwaysTruncate' ||
           (options.wrapCellText !== 'always' &&
+            options.wrapCellText !== 'expand' &&
             ((options.hasResize && !options.useAutoTableLayoutForResize) ||
               columns.some((col) => col.hasOwnProperty('width'))))
         : undefined,
