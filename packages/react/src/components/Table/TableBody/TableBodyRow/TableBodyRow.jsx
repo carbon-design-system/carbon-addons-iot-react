@@ -229,9 +229,7 @@ const TableBodyRow = ({
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className={classnames(`${iotPrefix}--table__cell__offset`, {
-            [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
-          })}
+          className={`${iotPrefix}--table__cell__offset`}
           style={{ '--row-nesting-offset': `${nestingOffset}px` }}
         >
           <Checkbox
@@ -251,9 +249,7 @@ const TableBodyRow = ({
         onClick={(e) => e.stopPropagation()}
       >
         <span
-          className={classnames(`${iotPrefix}--table__cell__offset`, {
-            [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
-          })}
+          className={`${iotPrefix}--table__cell__offset`}
           style={{ '--row-nesting-offset': `${nestingOffset}px` }}
         >
           <RadioButton
