@@ -3,6 +3,51 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.12...v2.152.0-next.13) (2022-12-06)
+
+
+### Bug Fixes
+
+* **package:** deprecated package in use ([0fbe220](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0fbe2205486507effe4515688c4f6def9a6796cd))
+
+
+
+
+
+# [2.152.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.11...v2.152.0-next.12) (2022-12-06)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** add styles to center time picker spinner ([d4ca9a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4ca9a9a63df33c61f429eefd2176d43e4cae71e)), closes [#3648](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3648)
+
+
+
+
+
+# [2.152.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.10...v2.152.0-next.11) (2022-12-05)
+
+
+### Features
+
+* **card:** hide title tooltips on window scroll ([a42a59d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a42a59daa2a6e2a0bf287e8dd5317ec8dcf8ea70)), closes [#3645](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3645)
+* **tableviewdropdown:** add prop for custom tooltip ([cddf108](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cddf108a5d17b9d61cbc2c5ecb4fe3f5ddab483b)), closes [#3534](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3534)
+
+
+
+
+
+# [2.152.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.9...v2.152.0-next.10) (2022-12-05)
+
+
+### Bug Fixes
+
+* **tablereducer:** select all on initial render if all rows selected ([dac8eae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dac8eaed496aaf6f9c5d69e614c1b1b23c1c9b38)), closes [#3651](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3651)
+
+
+
+
+
 # [2.152.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.8...v2.152.0-next.9) (2022-11-29)
 
 

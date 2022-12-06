@@ -408,6 +408,76 @@ describe('TableViewDropdown', () => {
     expect(screen.queryByLabelText(i18nDefault.ariaLabel)).not.toBeInTheDocument();
   });
 
+  it('should display custom tooltips', () => {
+    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
+      callback([{ contentRect: { width: 200, height: 400 } }]);
+
+      return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+    });
+
+    const views = [
+      {
+        id: 'view-1',
+        text: 'View 1',
+        tooltip: 'Custom tooltip: View 1',
+      },
+      {
+        id: 'view-2',
+        text: 'View 2',
+        tooltip: 'Custom tooltip: View 2',
+      },
+    ];
+
+    const i18nDefault = TableViewDropdown.defaultProps.i18n;
+
+    render(<TableViewDropdown views={views} actions={actions} i18n={i18nDefault} />);
+
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(screen.getByTitle('Custom tooltip: View 1')).toBeInTheDocument();
+    expect(screen.getByTitle('Custom tooltip: View 2')).toBeInTheDocument();
+  });
+
+  it('should add "edited" note to custom tooltip', () => {
+    jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
+      callback([{ contentRect: { width: 200, height: 400 } }]);
+
+      return {
+        observe: jest.fn(),
+        unobserve: jest.fn(),
+        disconnect: jest.fn(),
+      };
+    });
+
+    const views = [
+      {
+        id: 'view-1',
+        text: 'View 1',
+        tooltip: 'Custom tooltip: View 1',
+      },
+    ];
+
+    const i18nDefault = TableViewDropdown.defaultProps.i18n;
+
+    render(
+      <TableViewDropdown
+        views={views}
+        actions={actions}
+        i18n={i18nDefault}
+        selectedViewEdited
+        selectedViewId={views[0].id}
+      />
+    );
+
+    fireEvent.click(screen.getByRole('button'));
+
+    expect(screen.getAllByTitle('Custom tooltip: View 1 - Edited')).toHaveLength(2);
+  });
+
   it('should fix the title for the selected item', async () => {
     jest.useFakeTimers();
     jest.spyOn(global, 'ResizeObserver').mockImplementation((callback) => {
