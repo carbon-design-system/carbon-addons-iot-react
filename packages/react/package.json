@@ -183,7 +183,7 @@
     "carbon-components-react": "7.56.0",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
-    "core-js": "3.6.5",
+    "core-js": "3.26.1",
     "dayjs": "^1.10.4",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
