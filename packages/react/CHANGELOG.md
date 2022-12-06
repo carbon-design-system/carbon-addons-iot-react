@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.12...v2.152.0-next.13) (2022-12-06)
+
+
+### Bug Fixes
+
+* **package:** deprecated package in use ([0fbe220](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0fbe2205486507effe4515688c4f6def9a6796cd))
+
+
+
+
+
 # [2.152.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.11...v2.152.0-next.12) (2022-12-06)
 
 
