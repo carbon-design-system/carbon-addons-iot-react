@@ -78,6 +78,7 @@
     "react-test-renderer": "16.14.0",
     "react-dom": "16.14.0",
     "react": "16.14.0",
-    "webpack": "4"
+    "webpack": "4",
+    "css-what": "2.1.3"
   }
 }
