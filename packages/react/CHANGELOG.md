@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.11...v2.152.0-next.12) (2022-12-06)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** add styles to center time picker spinner ([d4ca9a9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d4ca9a9a63df33c61f429eefd2176d43e4cae71e)), closes [#3648](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3648)
+
+
+
+
+
 # [2.152.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.10...v2.152.0-next.11) (2022-12-05)
 
 
