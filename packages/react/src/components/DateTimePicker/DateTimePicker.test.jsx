@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../constants/Settings';
@@ -983,5 +983,69 @@ describe('DateTimePicker', () => {
         .getByRole('img', { name: /calendar/i })
         .classList.contains(`${iotPrefix}--date-time-picker__icon--disabled`)
     ).toBe(true);
+  });
+
+  it('should close on click outside and restore base value', () => {
+    const expandedClassName = `${iotPrefix}--date-time-picker__menu-expanded`;
+    render(
+      <DateTimePicker
+        id="datetimepicker"
+        {...dateTimePickerProps}
+        dateTimeMask="YYYY-MM-DD HH:mm"
+        i18n={{
+          ...i18n,
+          presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+        }}
+        presets={defaultPresets}
+      />
+    );
+    const dropdown = screen.getByRole('listbox');
+    const dropdownTrigger = screen.getByRole('button', { name: 'Last 30 minutes' });
+
+    userEvent.click(dropdownTrigger);
+    expect(dropdown).toHaveClass(expandedClassName);
+
+    userEvent.click(within(dropdown).getByText('Last 1 hour'));
+    expect(screen.getAllByText('Last 1 hour')).toHaveLength(2); // Value in input and in dropdown
+
+    userEvent.click(document.body);
+    expect(dropdown).not.toHaveClass(expandedClassName);
+
+    // Default value restored
+    expect(dropdownTrigger).toHaveTextContent('Last 30 minutes');
+  });
+
+  it('should close on click outside and restore default value from props', () => {
+    const expandedClassName = `${iotPrefix}--date-time-picker__menu-expanded`;
+    render(
+      <DateTimePicker
+        id="datetimepicker"
+        {...dateTimePickerProps}
+        dateTimeMask="YYYY-MM-DD HH:mm"
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.PRESET,
+          timeRangeValue: PRESET_VALUES[3],
+        }}
+        i18n={{
+          ...i18n,
+          presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+        }}
+        presets={defaultPresets}
+      />
+    );
+    const dropdown = screen.getByRole('listbox');
+    const dropdownTrigger = screen.getByRole('button', { name: 'Last 12 hours' });
+
+    userEvent.click(dropdownTrigger);
+    expect(dropdown).toHaveClass(expandedClassName);
+
+    userEvent.click(within(dropdown).getByText('Last 1 hour'));
+    expect(screen.getAllByText('Last 1 hour')).toHaveLength(2); // Value in input and in dropdown
+
+    userEvent.click(document.body);
+    expect(dropdown).not.toHaveClass(expandedClassName);
+
+    // Default value restored
+    expect(screen.getByTestId('date-time-picker__field')).toHaveTextContent('Last 12 hours');
   });
 });
