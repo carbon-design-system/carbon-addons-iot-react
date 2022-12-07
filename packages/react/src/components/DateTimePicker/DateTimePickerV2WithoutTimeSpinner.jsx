@@ -729,6 +729,7 @@ const DateTimePicker = ({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
             [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
+            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
           })}
         >
           {!hasIconOnly ? (
