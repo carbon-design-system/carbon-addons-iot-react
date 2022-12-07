@@ -677,6 +677,22 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
 };
 
 /**
+ * Hook to validate event and revoke callback
+ * @param {Object} object: an object containing:
+ *   closeDropdownCallback: function that will be called if validation passes
+ *   isEventInside: validation handler
+ * @returns void
+ */
+export const useDateTimePickerClickOutside = ({ closeDropdownCallback, isEventInside }) => (
+  evt
+) => {
+  if (typeof isEventInside === 'function' && isEventInside(evt)) {
+    return;
+  }
+  closeDropdownCallback();
+};
+
+/**
  * Hook to close time picker dropdown and reset default value
  * @param {Object} object: an object containing:
  *   isExpanded: current state of the dropdown
@@ -733,3 +749,27 @@ export const useCloseDropdown = ({
     setCustomRangeKind,
     setIsExpanded,
   ]);
+
+/**
+ * Utility function to detect if event bubbles from child component of DateTimePickerV2
+ * @param {Object} evt React.SyntheticEvent
+ * @returns boolean True if event bubbles from child component, false otherwise
+ */
+export const isEventInside = (evt) => {
+  if (
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`)
+  ) {
+    return true;
+  }
+
+  // Composed path is needed in order to detect if event is bubbled from TimePickerSpinner which is a React Portal
+  if (
+    evt.composed &&
+    evt.composedPath().some((el) => el.classList?.contains(`${iotPrefix}--time-picker-spinner`))
+  ) {
+    return true;
+  }
+
+  return false;
+};

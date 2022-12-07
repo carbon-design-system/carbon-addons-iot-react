@@ -18,6 +18,7 @@ import classnames from 'classnames';
 import { v4 as uuidv4 } from 'uuid';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
+import ClickListener from 'carbon-components-react/es/internal/ClickListener';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import TimePickerDropdown from '../TimePicker/TimePickerDropdown';
@@ -28,6 +29,7 @@ import {
   PRESET_VALUES,
   INTERVAL_VALUES,
   RELATIVE_VALUES,
+  DEFAULT_VALUE_KINDS,
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
@@ -38,6 +40,7 @@ import {
   getIntervalValue,
   invalidEndDate,
   invalidStartDate,
+  isEventInside,
   onDatePickerClose,
   parseValue,
   useAbsoluteDateTimeValue,
@@ -47,6 +50,8 @@ import {
   useDateTimePickerRef,
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
+  useDateTimePickerClickOutside,
+  useCloseDropdown,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -454,7 +459,10 @@ const DateTimePicker = ({
         })
         .pop();
       value.preset = preset;
-      value.kind = PICKER_KINDS.PRESET;
+      value.kind = defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.PRESET;
+      if (defaultValue && defaultValue.timeRangeKind !== PICKER_KINDS.PRESET) {
+        value[DEFAULT_VALUE_KINDS[defaultValue?.timeRangeKind]] = defaultValue.timeRangeValue;
+      }
     }
     setCurrentValue(value);
     const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
@@ -754,10 +762,35 @@ const DateTimePicker = ({
     setIsExpanded(false);
   };
 
+  const closeDropdown = useCloseDropdown({
+    isExpanded,
+    setIsCustomRange,
+    setIsExpanded,
+    parseDefaultValue,
+    defaultValue,
+    setCustomRangeKind,
+    dateTimePickerBaseValue,
+    setCurrentValue,
+    dateTimeMask,
+    toLabel: mergedI18n.toLabel,
+    setHumanValue,
+  });
+
+  const onClickOutside = useDateTimePickerClickOutside({
+    closeDropdownCallback: closeDropdown,
+    isEventInside,
+  });
+
+  const onDropdownFooterBlur = (evt) => {
+    if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
+      closeDropdown();
+    }
+  };
+
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
     return (
-      <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
+      <div className={`${iotPrefix}--date-time-picker__menu-btn-set`} onBlur={onDropdownFooterBlur}>
         {isCustomRange && !isSingleSelect ? (
           <Button
             kind="secondary"
@@ -951,256 +984,258 @@ const DateTimePicker = ({
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
             style={style}
           >
-            <div
-              className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ '--wrapper-width': '20rem' }}
-              role="listbox"
-              onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
-              onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
-              tabIndex="-1"
-            >
-              {!isCustomRange ? (
-                // Catch bubbled Up/Down keys from the preset list and move focus.
-                // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-                <div
-                  ref={presetListRef}
-                  onKeyDown={handleSpecificKeyDown(['ArrowUp', 'ArrowDown'], onNavigatePresets)}
-                >
-                  <OrderedList nested={false}>
-                    {tooltipValue ? (
-                      <ListItem
-                        className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
-                      >
-                        {tooltipValue}
-                      </ListItem>
-                    ) : null}
-                    {showCustomRangeLink ? (
-                      <ListItem
-                        onClick={toggleIsCustomRange}
-                        onKeyDown={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
-                        className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
-                        tabIndex={0}
-                      >
-                        {mergedI18n.customRangeLinkLabel}
-                      </ListItem>
-                    ) : null}
-                    {presets.map((preset, i) => {
-                      return (
+            <ClickListener onClickOutside={onClickOutside}>
+              <div
+                className={`${iotPrefix}--date-time-picker__menu-scroll`}
+                style={{ '--wrapper-width': '20rem' }}
+                role="listbox"
+                onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
+                onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
+                tabIndex="-1"
+              >
+                {!isCustomRange ? (
+                  // Catch bubbled Up/Down keys from the preset list and move focus.
+                  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+                  <div
+                    ref={presetListRef}
+                    onKeyDown={handleSpecificKeyDown(['ArrowUp', 'ArrowDown'], onNavigatePresets)}
+                  >
+                    <OrderedList nested={false}>
+                      {tooltipValue ? (
                         <ListItem
-                          key={i}
-                          onClick={() => onPresetClick(preset)}
-                          onKeyDown={handleSpecificKeyDown(['Enter', ' '], () =>
-                            onPresetClick(preset)
-                          )}
-                          className={classnames(
-                            `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
-                            {
-                              [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
-                                selectedPreset === (preset.id ?? preset.offset),
-                            }
-                          )}
+                          className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--current`}
+                        >
+                          {tooltipValue}
+                        </ListItem>
+                      ) : null}
+                      {showCustomRangeLink ? (
+                        <ListItem
+                          onClick={toggleIsCustomRange}
+                          onKeyDown={handleSpecificKeyDown(['Enter', ' '], toggleIsCustomRange)}
+                          className={`${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset ${iotPrefix}--date-time-picker__listitem--custom`}
                           tabIndex={0}
                         >
-                          {mergedI18n.presetLabels[i] || preset.label}
+                          {mergedI18n.customRangeLinkLabel}
                         </ListItem>
-                      );
-                    })}
-                  </OrderedList>
-                </div>
-              ) : (
-                <div
-                  className={`${iotPrefix}--date-time-picker__custom-wrapper`}
-                  style={{ '--wrapper-width': '20rem' }}
-                >
-                  {showRelativeOption ? (
-                    <FormGroup
-                      legendText={mergedI18n.customRangeLabel}
-                      className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                    >
-                      <RadioButtonGroup
-                        valueSelected={customRangeKind}
-                        onChange={onCustomRangeChange}
-                        name={`${id}-radiogroup`}
-                      >
-                        <RadioButton
-                          value={PICKER_KINDS.RELATIVE}
-                          id={`${id}-relative`}
-                          labelText={mergedI18n.relativeLabel}
-                          onKeyDown={handleSpecificKeyDown(
-                            ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
-                            onNavigateRadioButton
-                          )}
-                        />
-                        <RadioButton
-                          value={PICKER_KINDS.ABSOLUTE}
-                          id={`${id}-absolute`}
-                          labelText={mergedI18n.absoluteLabel}
-                          onKeyDown={handleSpecificKeyDown(
-                            ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
-                            onNavigateRadioButton
-                          )}
-                        />
-                      </RadioButtonGroup>
-                    </FormGroup>
-                  ) : null}
-                  {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
-                    <>
+                      ) : null}
+                      {presets.map((preset, i) => {
+                        return (
+                          <ListItem
+                            key={i}
+                            onClick={() => onPresetClick(preset)}
+                            onKeyDown={handleSpecificKeyDown(['Enter', ' '], () =>
+                              onPresetClick(preset)
+                            )}
+                            className={classnames(
+                              `${iotPrefix}--date-time-picker__listitem ${iotPrefix}--date-time-picker__listitem--preset`,
+                              {
+                                [`${iotPrefix}--date-time-picker__listitem--preset-selected`]:
+                                  selectedPreset === (preset.id ?? preset.offset),
+                              }
+                            )}
+                            tabIndex={0}
+                          >
+                            {mergedI18n.presetLabels[i] || preset.label}
+                          </ListItem>
+                        );
+                      })}
+                    </OrderedList>
+                  </div>
+                ) : (
+                  <div
+                    className={`${iotPrefix}--date-time-picker__custom-wrapper`}
+                    style={{ '--wrapper-width': '20rem' }}
+                  >
+                    {showRelativeOption ? (
                       <FormGroup
-                        legendText={mergedI18n.lastLabel}
+                        legendText={mergedI18n.customRangeLabel}
                         className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                       >
-                        <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
-                          <NumberInput
-                            id={`${id}-last-number`}
-                            invalidText={mergedI18n.invalidNumberLabel}
-                            step={1}
-                            min={0}
-                            value={relativeValue ? relativeValue.lastNumber : 0}
-                            onChange={onRelativeLastNumberChange}
-                            translateWithId={(messageId) =>
-                              messageId === 'increment.number'
-                                ? `${i18n.increment} ${i18n.number}`
-                                : messageId === 'decrement.number'
-                                ? `${i18n.decrement} ${i18n.number}`
-                                : null
-                            }
-                            light
+                        <RadioButtonGroup
+                          valueSelected={customRangeKind}
+                          onChange={onCustomRangeChange}
+                          name={`${id}-radiogroup`}
+                        >
+                          <RadioButton
+                            value={PICKER_KINDS.RELATIVE}
+                            id={`${id}-relative`}
+                            labelText={mergedI18n.relativeLabel}
+                            onKeyDown={handleSpecificKeyDown(
+                              ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                              onNavigateRadioButton
+                            )}
                           />
-                          <Select
-                            {...others}
-                            id={`${id}-last-interval`}
-                            defaultValue={
-                              relativeValue ? relativeValue.lastInterval : INTERVAL_VALUES.MINUTES
-                            }
-                            onChange={onRelativeLastIntervalChange}
-                            hideLabel
-                            light
-                          >
-                            {intervals.map((interval, i) => {
-                              return (
-                                <SelectItem
-                                  key={i}
-                                  value={interval.value}
-                                  text={mergedI18n.intervalLabels[i] || interval.label}
-                                />
-                              );
-                            })}
-                          </Select>
-                        </div>
+                          <RadioButton
+                            value={PICKER_KINDS.ABSOLUTE}
+                            id={`${id}-absolute`}
+                            labelText={mergedI18n.absoluteLabel}
+                            onKeyDown={handleSpecificKeyDown(
+                              ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'],
+                              onNavigateRadioButton
+                            )}
+                          />
+                        </RadioButtonGroup>
                       </FormGroup>
-                      <FormGroup
-                        legendText={mergedI18n.relativeToLabel}
-                        className={`${iotPrefix}--date-time-picker__menu-formgroup`}
-                      >
-                        <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
-                          <Select
-                            {...others}
-                            ref={relativeSelect}
-                            id={`${id}-relative-to-when`}
-                            defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
-                            onChange={onRelativeToWhenChange}
-                            hideLabel
-                            light
-                          >
-                            {relatives.map((relative, i) => {
-                              return (
-                                <SelectItem
-                                  key={i}
-                                  value={relative.value}
-                                  text={mergedI18n.relativeLabels[i] || relative.label}
-                                />
-                              );
-                            })}
-                          </Select>
-                          {hasTimeInput ? (
-                            <TimePickerSpinner
-                              id={`${id}-relative-to-time`}
-                              invalid={relativeToTimeInvalid}
-                              value={relativeValue ? relativeValue.relativeToTime : ''}
-                              i18n={i18n}
-                              onChange={onRelativeToTimeChange}
-                              spinner
-                              autoComplete="off"
+                    ) : null}
+                    {showRelativeOption && customRangeKind === PICKER_KINDS.RELATIVE ? (
+                      <>
+                        <FormGroup
+                          legendText={mergedI18n.lastLabel}
+                          className={`${iotPrefix}--date-time-picker__menu-formgroup`}
+                        >
+                          <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                            <NumberInput
+                              id={`${id}-last-number`}
+                              invalidText={mergedI18n.invalidNumberLabel}
+                              step={1}
+                              min={0}
+                              value={relativeValue ? relativeValue.lastNumber : 0}
+                              onChange={onRelativeLastNumberChange}
+                              translateWithId={(messageId) =>
+                                messageId === 'increment.number'
+                                  ? `${i18n.increment} ${i18n.number}`
+                                  : messageId === 'decrement.number'
+                                  ? `${i18n.decrement} ${i18n.number}`
+                                  : null
+                              }
                               light
                             />
-                          ) : null}
-                        </div>
-                      </FormGroup>
-                    </>
-                  ) : (
-                    <div data-testid={`${testId}-datepicker`}>
-                      <div
-                        id={`${id}-${iotPrefix}--date-time-picker__datepicker`}
-                        className={`${iotPrefix}--date-time-picker__datepicker`}
-                      >
-                        <DatePicker
-                          datePickerType={datePickerType}
-                          dateFormat="m/d/Y"
-                          ref={handleDatePickerRef}
-                          onChange={
-                            datePickerType === 'single'
-                              ? onSingleDatePickerChange
-                              : onDatePickerChange
-                          }
-                          onClose={onDatePickerClose}
-                          value={
-                            absoluteValue && datePickerType === 'range'
-                              ? [absoluteValue.startDate, absoluteValue.endDate]
-                              : singleDateValue && datePickerType === 'single'
-                              ? [singleDateValue.startDate]
-                              : null
-                          }
-                          locale={locale}
+                            <Select
+                              {...others}
+                              id={`${id}-last-interval`}
+                              defaultValue={
+                                relativeValue ? relativeValue.lastInterval : INTERVAL_VALUES.MINUTES
+                              }
+                              onChange={onRelativeLastIntervalChange}
+                              hideLabel
+                              light
+                            >
+                              {intervals.map((interval, i) => {
+                                return (
+                                  <SelectItem
+                                    key={i}
+                                    value={interval.value}
+                                    text={mergedI18n.intervalLabels[i] || interval.label}
+                                  />
+                                );
+                              })}
+                            </Select>
+                          </div>
+                        </FormGroup>
+                        <FormGroup
+                          legendText={mergedI18n.relativeToLabel}
+                          className={`${iotPrefix}--date-time-picker__menu-formgroup`}
                         >
-                          <DatePickerInput
-                            labelText=""
-                            id={`${id}-date-picker-input-start`}
-                            hideLabel
-                          />
-
-                          {datePickerType === 'range' ? (
+                          <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
+                            <Select
+                              {...others}
+                              ref={relativeSelect}
+                              id={`${id}-relative-to-when`}
+                              defaultValue={relativeValue ? relativeValue.relativeToWhen : ''}
+                              onChange={onRelativeToWhenChange}
+                              hideLabel
+                              light
+                            >
+                              {relatives.map((relative, i) => {
+                                return (
+                                  <SelectItem
+                                    key={i}
+                                    value={relative.value}
+                                    text={mergedI18n.relativeLabels[i] || relative.label}
+                                  />
+                                );
+                              })}
+                            </Select>
+                            {hasTimeInput ? (
+                              <TimePickerSpinner
+                                id={`${id}-relative-to-time`}
+                                invalid={relativeToTimeInvalid}
+                                value={relativeValue ? relativeValue.relativeToTime : ''}
+                                i18n={i18n}
+                                onChange={onRelativeToTimeChange}
+                                spinner
+                                autoComplete="off"
+                                light
+                              />
+                            ) : null}
+                          </div>
+                        </FormGroup>
+                      </>
+                    ) : (
+                      <div data-testid={`${testId}-datepicker`}>
+                        <div
+                          id={`${id}-${iotPrefix}--date-time-picker__datepicker`}
+                          className={`${iotPrefix}--date-time-picker__datepicker`}
+                        >
+                          <DatePicker
+                            datePickerType={datePickerType}
+                            dateFormat="m/d/Y"
+                            ref={handleDatePickerRef}
+                            onChange={
+                              datePickerType === 'single'
+                                ? onSingleDatePickerChange
+                                : onDatePickerChange
+                            }
+                            onClose={onDatePickerClose}
+                            value={
+                              absoluteValue && datePickerType === 'range'
+                                ? [absoluteValue.startDate, absoluteValue.endDate]
+                                : singleDateValue && datePickerType === 'single'
+                                ? [singleDateValue.startDate]
+                                : null
+                            }
+                            locale={locale}
+                          >
                             <DatePickerInput
                               labelText=""
-                              id={`${id}-date-picker-input-end`}
+                              id={`${id}-date-picker-input-start`}
                               hideLabel
                             />
-                          ) : null}
-                        </DatePicker>
+
+                            {datePickerType === 'range' ? (
+                              <DatePickerInput
+                                labelText=""
+                                id={`${id}-date-picker-input-end`}
+                                hideLabel
+                              />
+                            ) : null}
+                          </DatePicker>
+                        </div>
+                        {hasTimeInput ? (
+                          <TimePickerDropdown
+                            className={`${iotPrefix}--time-picker-dropdown`}
+                            id={id}
+                            key={defaultSingleDateValue}
+                            value={isSingleSelect ? singleTimeValue : rangeStartTimeValue}
+                            secondaryValue={rangeEndTimeValue}
+                            hideLabel={!mergedI18n.startTimeLabel}
+                            hideSecondaryLabel={!mergedI18n.endTimeLabel}
+                            onChange={(startState, endState) =>
+                              isSingleSelect
+                                ? handleSingleTimeValueChange(startState)
+                                : handleRangeTimeValueChange(startState, endState)
+                            }
+                            type={isSingleSelect ? 'single' : 'range'}
+                            invalid={[invalidRangeStartTime, invalidRangeEndTime]}
+                            i18n={{
+                              labelText: mergedI18n.startTimeLabel,
+                              secondaryLabelText: mergedI18n.endTimeLabel,
+                              invalidText: mergedI18n.timePickerInvalidText,
+                            }}
+                            size="sm"
+                            testId={testId}
+                            style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
+                            is24hours={is24hours}
+                          />
+                        ) : (
+                          <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
+                        )}
                       </div>
-                      {hasTimeInput ? (
-                        <TimePickerDropdown
-                          className={`${iotPrefix}--time-picker-dropdown`}
-                          id={id}
-                          key={defaultSingleDateValue}
-                          value={isSingleSelect ? singleTimeValue : rangeStartTimeValue}
-                          secondaryValue={rangeEndTimeValue}
-                          hideLabel={!mergedI18n.startTimeLabel}
-                          hideSecondaryLabel={!mergedI18n.endTimeLabel}
-                          onChange={(startState, endState) =>
-                            isSingleSelect
-                              ? handleSingleTimeValueChange(startState)
-                              : handleRangeTimeValueChange(startState, endState)
-                          }
-                          type={isSingleSelect ? 'single' : 'range'}
-                          invalid={[invalidRangeStartTime, invalidRangeEndTime]}
-                          i18n={{
-                            labelText: mergedI18n.startTimeLabel,
-                            secondaryLabelText: mergedI18n.endTimeLabel,
-                            invalidText: mergedI18n.timePickerInvalidText,
-                          }}
-                          size="sm"
-                          testId={testId}
-                          style={{ zIndex: (style.zIndex ?? 0) + 6000 }}
-                          is24hours={is24hours}
-                        />
-                      ) : (
-                        <div className={`${iotPrefix}--date-time-picker__no-formgroup`} />
-                      )}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            </ClickListener>
           </FlyoutMenu>
         </div>
       </div>
