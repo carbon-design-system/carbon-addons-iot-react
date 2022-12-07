@@ -1171,7 +1171,7 @@ describe('DashboardGrid-lg-Card', () => {
     const size = CARD_SIZES.SMALLFULL;
 
     mount(
-      <div data-testid="visual-regression-test" style={{ padding: '3rem' }}>
+      <div data-testid="visual-regression-test" style={{ padding: '3rem', height: '700px' }}>
         <Card
           title={`Card - ${size}`}
           id={`card-${size}`}
@@ -1197,11 +1197,7 @@ describe('DashboardGrid-lg-Card', () => {
 
     onlyOn('headless', () => {
       cy.findByTestId('visual-regression-test').compareSnapshot(
-        `DashboardGrid-lg-Card--with-range-picker`,
-        {
-          capture: 'viewport',
-          errorThreshold: 0.0,
-        }
+        `DashboardGrid-lg-Card--with-range-picker`
       );
     });
   });
@@ -1210,7 +1206,7 @@ describe('DashboardGrid-lg-Card', () => {
     const size = CARD_SIZES.MEDIUMTHIN;
 
     mount(
-      <div data-testid="visual-regression-test" style={{ padding: '3rem' }}>
+      <div data-testid="visual-regression-test" style={{ padding: '3rem', height: '700px' }}>
         <Card
           title={`Card - ${size}`}
           id={`card-${size}`}
@@ -1243,11 +1239,7 @@ describe('DashboardGrid-lg-Card', () => {
     cy.findByTestId('date-time-picker-datepicker-flyout-button').click();
     onlyOn('headless', () => {
       cy.findByTestId('visual-regression-test').compareSnapshot(
-        `DashboardGrid-lg-Card--with-datetimerange-picker`,
-        {
-          capture: 'viewport',
-          errorThreshold: 0.0,
-        }
+        `DashboardGrid-lg-Card--with-datetimerange-picker`
       );
     });
   });
