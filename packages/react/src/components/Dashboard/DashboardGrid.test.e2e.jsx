@@ -1158,6 +1158,93 @@ DashboardAllCardsAsResizable.propTypes = {
   type: PropTypes.oneOf(CARD_TYPES).isRequired,
 };
 
+describe('DashboardGrid-lg-Card', () => {
+  beforeEach(() => {
+    MockDate.set(1537538254000);
+    cy.viewport(1024, 900);
+  });
+  afterEach(() => {
+    MockDate.reset();
+  });
+
+  it('Card with range picker', () => {
+    const size = CARD_SIZES.SMALLFULL;
+
+    mount(
+      <div data-testid="visual-regression-test" style={{ padding: '3rem' }}>
+        <Card
+          title={`Card - ${size}`}
+          id={`card-${size}`}
+          isResizable
+          key={`card-${size}`}
+          size={size}
+          isEditable={false}
+          availableActions={{
+            range: true,
+          }}
+          timeRange="last24Hours"
+          breakpoint="lg"
+          timeRangeOptions={undefined}
+          footerContent={undefined}
+        >
+          <p>This is a basic card with CardRangePicker</p>
+        </Card>
+      </div>
+    );
+
+    cy.findByTestId('visual-regression-test').should('be.visible');
+    cy.findByTestId('Card-toolbar-range-picker').click();
+
+    onlyOn('headless', () => {
+      cy.findByTestId('visual-regression-test').compareSnapshot(
+        `DashboardGrid-lg-Card--with-range-picker`
+      );
+    });
+  });
+
+  it('Card with date time range picker', () => {
+    const size = CARD_SIZES.MEDIUMTHIN;
+
+    mount(
+      <div data-testid="visual-regression-test" style={{ padding: '3rem' }}>
+        <Card
+          title={`Card - ${size}`}
+          id={`card-${size}`}
+          isResizable
+          key={`card-${size}`}
+          size={size}
+          isEditable={false}
+          availableActions={{
+            range: 'iconOnly',
+          }}
+          timeRange={undefined}
+          breakpoint="lg"
+          timeRangeOptions={{
+            last48Hours: { label: 'Last 48 Hours', offset: 48 * 60 },
+            last24Hours: { label: 'Last 24 Hours', offset: 24 * 60 },
+            last8Hours: { label: 'Last 8 Hours', offset: 8 * 60 },
+            last4Hours: { label: 'Last 4 Hours', offset: 4 * 60 },
+            last2Hours: { label: 'Last 2 Hours', offset: 2 * 60 },
+            lastHour: { label: 'Last Hour', offset: 60 * 60 },
+          }}
+          footerContent={undefined}
+          tooltip={undefined}
+        >
+          <p>This is a basic card with DateTimeRange picker</p>
+        </Card>
+      </div>
+    );
+
+    cy.findByTestId('visual-regression-test').should('be.visible');
+    cy.findByTestId('date-time-picker-datepicker-flyout-button').click();
+    onlyOn('headless', () => {
+      cy.findByTestId('visual-regression-test').compareSnapshot(
+        `DashboardGrid-lg-Card--with-datetimerange-picker`
+      );
+    });
+  });
+});
+
 describe('DashboardGrid', () => {
   beforeEach(() => {
     MockDate.set(1537538254000);
