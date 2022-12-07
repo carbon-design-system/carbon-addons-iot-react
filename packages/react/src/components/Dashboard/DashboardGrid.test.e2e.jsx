@@ -1221,7 +1221,6 @@ describe('DashboardGrid', () => {
         }
 
         if (type === 'Card') {
-          cy.findByTestId('date-time-picker-datepicker-flyout-button').click();
           cy.findByTestId('Card-toolbar-range-picker').click();
         }
 
