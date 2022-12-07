@@ -861,6 +861,199 @@ describe('DateTimePickerV2', () => {
       });
   });
 
+  it('should close on click outside if relative date was selected', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByTitle('Increment number').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close on click outside if relative date was selected (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" useNewTimeSpinner />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByTitle('Increment number').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close on click outside if absolute date was selected', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close on click outside if absolute date was selected (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" useNewTimeSpinner />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should reset to default absolute value from props when clicked outside', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').click();
+    cy.findByText('Relative').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findAllByRole('button').eq(0).contains('2021-08-01 12:34 to 2021-08-06 10:49');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should reset to default absolute value from props on click outside (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        useNewTimeSpinner
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').click();
+    cy.findByText('Relative').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findAllByRole('button').eq(0).contains('2021-08-01 12:34 to 2021-08-06 10:49');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close appropriate dropdown', () => {
+    const testIdOne = 'picker-test-1';
+    const testIdTwo = 'picker-test-2';
+    mount(
+      <div
+        style={{
+          display: 'flex',
+        }}
+      >
+        <DateTimePicker testId={testIdOne} hasTimeInput />
+        <DateTimePicker testId={testIdTwo} hasTimeInput />
+      </div>
+    );
+
+    cy.findByTestId(`${testIdOne}__field`).click();
+    cy.findAllByRole('dialog').should('have.length', 1);
+
+    cy.findByTestId(`${testIdTwo}__field`).click();
+    cy.findAllByRole('dialog').should('have.length', 1);
+  });
+
+  it('should close appropriate dropdown (new time spinner)', () => {
+    const testIdOne = 'picker-test-1';
+    const testIdTwo = 'picker-test-2';
+    mount(
+      <div
+        style={{
+          display: 'flex',
+        }}
+      >
+        <DateTimePicker testId={testIdOne} hasTimeInput useNewTimeSpinner />
+        <DateTimePicker testId={testIdTwo} hasTimeInput useNewTimeSpinner />
+      </div>
+    );
+
+    cy.findByTestId(`${testIdOne}__field`).click();
+    cy.findAllByRole('dialog').should('have.length', 1);
+
+    cy.findByTestId(`${testIdTwo}__field`).click();
+    cy.findAllByRole('dialog').should('have.length', 1);
+  });
+
+  it('should close dropdown onBlur', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findAllByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible');
+    cy.findAllByRole('button', { name: /Last 30 minutes/ })
+      .focus()
+      .type('{downarrow}', { force: true });
+    cy.findByText('Custom Range').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findAllByText('Last 30 minutes').eq(1).should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 1 hour').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 6 hours').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 12 hours').should('be.focused');
+    cy.focused().type('{downarrow}');
+    cy.findByText('Last 24 hours').should('be.focused');
+    cy.focused().realPress('Tab').realPress('Tab');
+    cy.focused().should('contain.text', 'Apply');
+    cy.focused().realPress('Tab');
+
+    cy.findAllByRole('listbox').should('have.length', 0);
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
   describe('visual regression tests', () => {
     beforeEach(() => {
       MockDate.set(1537538254000);
