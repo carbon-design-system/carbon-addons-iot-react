@@ -69,4 +69,91 @@ describe('Card', () => {
 
     cy.findByRole('button', { name: aShortTitle }).should('not.exist');
   });
+
+  it('should close title tooltip in title if window is scrolled', () => {
+    cy.viewport(1680, 900);
+    const title =
+      'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.';
+
+    mount(
+      <div style={{ height: '1500px' }}>
+        <Card
+          style={{ width: '600px', height: '360px' }}
+          title={title}
+          subtitle="Lorem ipsum"
+          hasTitleWrap
+          id="facilitycard-basic"
+          size={CARD_SIZES.MEDIUM}
+          breakpoint="lg"
+          footerContent={() => <div>Footer Content</div>}
+        />
+      </div>
+    );
+
+    cy.findByRole('button', { name: title }).click();
+    cy.findByTestId('Card-title-tooltip').should('exist');
+    cy.findByTestId('Card-title-tooltip').should('be.visible');
+
+    cy.scrollTo(0, 50);
+
+    cy.findByTestId('Card-title-tooltip').should('not.exist');
+  });
+
+  it('should close subtitle tooltip in title if window is scrolled', () => {
+    cy.viewport(1680, 900);
+    const subtitle =
+      'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.';
+
+    mount(
+      <div style={{ height: '1500px' }}>
+        <Card
+          style={{ width: '600px', height: '360px' }}
+          title="Hello, world!"
+          subtitle={subtitle}
+          hasTitleWrap
+          id="facilitycard-basic"
+          size={CARD_SIZES.MEDIUM}
+          breakpoint="lg"
+          footerContent={() => <div>Footer Content</div>}
+          tooltip={<p>this is the external tooltip content</p>}
+        />
+      </div>
+    );
+
+    cy.findByRole('button', { name: subtitle }).click();
+    cy.findByTestId('Card-subtitle').should('exist');
+    cy.findByTestId('Card-subtitle').should('be.visible');
+
+    cy.scrollTo(0, 50);
+
+    cy.findByTestId('Card-subtitle').should('not.exist');
+  });
+
+  it('should close info icon tooltip in title if window is scrolled', () => {
+    cy.viewport(1680, 900);
+
+    mount(
+      <div style={{ height: '1500px' }}>
+        <Card
+          style={{ width: '600px', height: '360px' }}
+          title="Hello, world!"
+          subtitle="Subtitle"
+          hasTitleWrap
+          id="facilitycard-basic"
+          size={CARD_SIZES.MEDIUM}
+          breakpoint="lg"
+          footerContent={() => <div>Footer Content</div>}
+          tooltip={<p>this is the external tooltip content</p>}
+        />
+      </div>
+    );
+
+    cy.findByRole('button', { name: 'Tooltip info icon' }).click();
+    cy.findByTestId('Card-tooltip').should('exist');
+    cy.findByTestId('Card-tooltip').should('be.visible');
+
+    cy.scrollTo(0, 50);
+
+    cy.findByTestId('Card-tooltip').should('not.exist');
+  });
 });

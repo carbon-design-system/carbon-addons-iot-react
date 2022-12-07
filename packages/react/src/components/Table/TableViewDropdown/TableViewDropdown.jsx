@@ -174,7 +174,7 @@ const TableViewDropdown = ({
         id={`${iotPrefix}--view-dropdown`}
         renderSelectedItem={itemToElement}
         itemToElement={itemToElement}
-        itemToString={(item) => item.text}
+        itemToString={(item) => item.tooltip || item.text}
         items={allItems}
         light={false}
         onChange={onSelectionChange}

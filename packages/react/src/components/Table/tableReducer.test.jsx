@@ -887,6 +887,23 @@ describe('table reducer', () => {
 
       expect(tableWithEmptyStringFilter.view.table.filteredData).toHaveLength(33);
     });
+
+    it('REGISTER_TABLE with all rows selected', () => {
+      const initialState = getInitialState();
+      initialState.data = getTableData().map((row, index) => addChildRows(row, index));
+      const allRowsId = [];
+      initialState.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+
+      const tableWithEmptyStringFilter = tableReducer(
+        initialState,
+        tableRegister({
+          view: { table: { selectedIds: allRowsId } },
+          hasRowSelection: 'multi',
+        })
+      );
+
+      expect(tableWithEmptyStringFilter.view.table.isSelectAllSelected).toBe(true);
+    });
   });
 });
 
