@@ -38,6 +38,7 @@ import { Tooltip } from '../Tooltip';
 
 import {
   getIntervalValue,
+  getTimeValue,
   invalidEndDate,
   invalidStartDate,
   isEventInside,
@@ -461,7 +462,7 @@ const DateTimePicker = ({
       value.preset = preset;
       value.kind = defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.PRESET;
       if (defaultValue && defaultValue.timeRangeKind !== PICKER_KINDS.PRESET) {
-        value[DEFAULT_VALUE_KINDS[defaultValue?.timeRangeKind]] = defaultValue.timeRangeValue;
+        value[DEFAULT_VALUE_KINDS[defaultValue?.timeRangeKind]] = getTimeValue(defaultValue);
       }
     }
     setCurrentValue(value);

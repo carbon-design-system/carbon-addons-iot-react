@@ -53,4 +53,5 @@ export const DEFAULT_VALUE_KINDS = {
   [PICKER_KINDS.PRESET]: 'preset',
   [PICKER_KINDS.RELATIVE]: 'relative',
   [PICKER_KINDS.ABSOLUTE]: 'absolute',
+  [PICKER_KINDS.SINGLE]: 'single',
 };

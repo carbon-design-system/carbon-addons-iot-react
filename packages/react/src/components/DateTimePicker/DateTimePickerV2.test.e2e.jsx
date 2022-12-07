@@ -982,6 +982,35 @@ describe('DateTimePickerV2', () => {
     expect(onCancel).to.be.callCount(0);
   });
 
+  it('should reset to default absolute value from props on click outside (single select)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        useNewTimeSpinner
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34',
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2020-04-01 12:34').click();
+    cy.findByText('Relative').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findAllByRole('button').eq(0).contains('2020-04-01 12:34');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
   it('should close appropriate dropdown', () => {
     const testIdOne = 'picker-test-1';
     const testIdTwo = 'picker-test-2';
