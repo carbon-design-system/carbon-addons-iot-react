@@ -109,6 +109,54 @@ export const WithState = () => {
 WithState.storyName = 'With state';
 WithState.decorators = [createElement];
 
+export const WithCustomTooltips = () => {
+  const myViews = object('Views with tooltips in the list (views)', [
+    {
+      id: 'view-1',
+      text: 'My saved 1',
+      tooltip: 'Custom tooltip: My saved 1',
+    },
+    {
+      id: 'view-2',
+      text: 'My saved 2',
+      tooltip: 'Custom tooltip: My saved 2',
+    },
+    {
+      id: 'view-3',
+      text: 'My saved 3 with a very long name that will get truncated',
+      tooltip: 'Custom tooltip: My saved 3 with a very long name that will get truncated',
+    },
+  ]);
+
+  const [selectedViewId, setSelectedViewId] = useState('view-all');
+
+  return (
+    <div
+      style={{
+        width: select('wrapper width', ['300px', '100px'], '300px'),
+      }}
+    >
+      <TableViewDropdown
+        selectedViewId={selectedViewId}
+        selectedViewEdited={boolean('selectedViewEdited', false)}
+        views={myViews}
+        actions={{
+          onSaveAsNewView: action('onSaveAsNewView'),
+          onSaveChanges: action('onSaveChanges'),
+          onManageViews: action('onManageViews'),
+          onChangeView: (viewItem) => {
+            setSelectedViewId(viewItem.id);
+            action('onChangeView')(viewItem);
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+WithCustomTooltips.storyName = 'With custom tooltips';
+WithCustomTooltips.decorators = [createElement];
+
 export const WithStateEdited = () => {
   const myViews = [
     {

@@ -15,7 +15,7 @@ const DIRECTION_TOP = 'top';
  * @returns {FloatingMenu~offset} The adjustment of the floating menu position, upon the position of the menu arrow.
  * @private
  */
-const getTooltipMenuOffset = (menuBody, menuDirection) => {
+export const getTooltipMenuOffset = (menuBody, menuDirection) => {
   const arrowStyle = menuBody.ownerDocument.defaultView.getComputedStyle(menuBody, ':before');
   const arrowPositionProp = {
     [DIRECTION_LEFT]: 'right',
