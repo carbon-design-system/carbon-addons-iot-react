@@ -25,6 +25,7 @@ import {
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
+import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import { OverflowMenu } from '../../OverflowMenu';
 import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
@@ -71,7 +72,7 @@ const propTypes = {
         hasSingleNestedHierarchy: PropTypes.bool,
       }),
     ]),
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+    wrapCellText: WrapCellTextPropTypes.isRequired,
     truncateCellText: PropTypes.bool.isRequired,
     hasMultiSort: PropTypes.bool,
     useAutoTableLayoutForResize: PropTypes.bool,
