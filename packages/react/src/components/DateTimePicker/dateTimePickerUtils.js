@@ -3,7 +3,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { settings } from '../../constants/Settings';
-import { PICKER_KINDS, INTERVAL_VALUES, RELATIVE_VALUES } from '../../constants/DateConstants';
+import {
+  PICKER_KINDS,
+  INTERVAL_VALUES,
+  RELATIVE_VALUES,
+  DEFAULT_VALUE_KINDS,
+} from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
@@ -670,3 +675,61 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
 
   return [isTooltipOpen, toggleTooltip];
 };
+
+/**
+ * Hook to close time picker dropdown and reset default value
+ * @param {Object} object: an object containing:
+ *   isExpanded: current state of the dropdown
+ *   setIsExpanded: useState callback
+ *   setIsCustomRange: useState callback
+ *   defaultValue: props value for time picker
+ *   parseDefaultValue: parses value from string to time picker format
+ *   setCustomRangeKind: useState callback
+ *   dateTimePickerBaseValue: base value for time picker
+ *   setCurrentValue: useState callback
+ *   toLabel: label string
+ *   setHumanValue: parses time picker value to readable format
+ * @returns void
+ */
+export const useCloseDropdown = ({
+  isExpanded,
+  setIsExpanded,
+  setIsCustomRange,
+  defaultValue,
+  parseDefaultValue,
+  setCustomRangeKind,
+  dateTimePickerBaseValue,
+  setCurrentValue,
+  dateTimeMask,
+  toLabel,
+  setHumanValue,
+}) =>
+  useCallback(() => {
+    if (!isExpanded) {
+      return;
+    }
+
+    setIsCustomRange(false);
+    setIsExpanded(false);
+    parseDefaultValue(defaultValue);
+    setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+
+    const value = {
+      ...dateTimePickerBaseValue,
+      ...(defaultValue && {
+        kind: defaultValue.timeRangeKind,
+        [DEFAULT_VALUE_KINDS[defaultValue.timeRangeKind]]: defaultValue.timeRangeValue,
+      }),
+    };
+    setCurrentValue(value);
+    const parsedValue = parseValue(value, dateTimeMask, toLabel);
+    setHumanValue(parsedValue.readableValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    dateTimeMask,
+    dateTimePickerBaseValue,
+    defaultValue,
+    isExpanded,
+    setCustomRangeKind,
+    setIsExpanded,
+  ]);

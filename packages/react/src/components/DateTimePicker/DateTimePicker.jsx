@@ -20,8 +20,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
+import { DEFAULT_VALUE_KINDS } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
-import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { handleSpecificKeyDown, useOnClickOutside } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
 
 import {
@@ -37,6 +38,7 @@ import {
   useDateTimePickerRef,
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
+  useCloseDropdown,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -346,6 +348,7 @@ const DateTimePicker = ({
   const [invalidState, setInvalidState] = useState(invalid);
 
   const relativeSelect = useRef(null);
+  const wrapperRef = useRef(null);
   const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
@@ -426,8 +429,12 @@ const DateTimePicker = ({
         })
         .pop();
       value.preset = preset;
-      value.kind = PICKER_KINDS.PRESET;
+      value.kind = defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.PRESET;
+      if (defaultValue && defaultValue.timeRangeKind !== PICKER_KINDS.PRESET) {
+        value[DEFAULT_VALUE_KINDS[defaultValue?.timeRangeKind]] = defaultValue.timeRangeValue;
+      }
     }
+
     setCurrentValue(value);
     const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
     setHumanValue(parsedValue.readableValue);
@@ -556,6 +563,37 @@ const DateTimePicker = ({
     }
   };
 
+  const closeDropdown = useCloseDropdown({
+    isExpanded,
+    setIsCustomRange,
+    setIsExpanded,
+    parseDefaultValue,
+    defaultValue,
+    setCustomRangeKind,
+    dateTimePickerBaseValue,
+    setCurrentValue,
+    dateTimeMask,
+    toLabel: mergedI18n.toLabel,
+    setHumanValue,
+  });
+
+  useOnClickOutside(wrapperRef, closeDropdown);
+
+  // Close dropdown by keyboard events
+  const onDropdownBlur = (evt) => {
+    if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
+      closeDropdown();
+      toggleTooltip();
+    }
+  };
+
+  // Close tooltip if dropdown was closed by click outside
+  const onFieldBlur = (evt) => {
+    if (evt.target !== evt.currentTarget) {
+      toggleTooltip();
+    }
+  };
+
   const toggleIsCustomRange = () => {
     setIsCustomRange(!isCustomRange);
 
@@ -650,6 +688,7 @@ const DateTimePicker = ({
         [`${iotPrefix}--date-time-picker__wrapper--disabled`]: disabled,
       })}
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
+      ref={wrapperRef}
     >
       <div
         className={classnames(`${iotPrefix}--date-time-picker__box`, {
@@ -668,7 +707,7 @@ const DateTimePicker = ({
           /* using on onKeyUp b/c something is preventing onKeyDown from firing with 'Enter' when the calendar is displayed */
           onKeyUp={handleSpecificKeyDown(['Enter', ' ', 'Escape', 'ArrowDown'], onFieldInteraction)}
           onFocus={toggleTooltip}
-          onBlur={toggleTooltip}
+          onBlur={onFieldBlur}
           onMouseEnter={toggleTooltip}
           onMouseLeave={toggleTooltip}
           tabIndex={0}
@@ -727,6 +766,7 @@ const DateTimePicker = ({
           })}
           style={{ ...updatedStyle }}
           role="listbox"
+          onBlur={onDropdownBlur}
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
