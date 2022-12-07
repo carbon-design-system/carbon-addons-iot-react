@@ -1200,6 +1200,7 @@ describe('DashboardGrid-lg-Card', () => {
         `DashboardGrid-lg-Card--with-range-picker`,
         {
           capture: 'viewport',
+          errorThreshold: 0.0,
         }
       );
     });
@@ -1245,6 +1246,7 @@ describe('DashboardGrid-lg-Card', () => {
         `DashboardGrid-lg-Card--with-datetimerange-picker`,
         {
           capture: 'viewport',
+          errorThreshold: 0.0,
         }
       );
     });
