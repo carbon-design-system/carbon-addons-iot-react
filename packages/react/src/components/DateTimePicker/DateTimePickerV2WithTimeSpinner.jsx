@@ -850,6 +850,11 @@ const DateTimePicker = ({
     );
   };
 
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
+  const flyoutMenuHeight = 482;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+
   const getPosition = (event) => {
     setLeft(event.target.scrollLeft);
     setTop(event.target.scrollTop);
@@ -966,7 +971,7 @@ const DateTimePicker = ({
               left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={FlyoutMenuDirection.BottomEnd}
+            direction={offBottom ? FlyoutMenuDirection.TopEnd : FlyoutMenuDirection.BottomEnd}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
