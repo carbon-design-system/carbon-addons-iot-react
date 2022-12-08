@@ -73,6 +73,30 @@ export const CodeExmple = () => {
 };
 ```
 
+#### TableViewDropdown custom tooltips
+
+To provide tooltips that are different from the dropdown item `text` see the code example below. The additional `tooltip` field will display its content as a tooltip both in open and closed states. Note that `tooltip` field will override `text` field as a tooltip content.
+
+```js
+const myViews = [
+  {
+    id: 'view-1',
+    text: 'My saved 1',
+    tooltip: 'Custom tooltip: My saved 1',
+  },
+  {
+    id: 'view-2',
+    text: 'My saved 2',
+    tooltip: 'Custom tooltip: My saved 2',
+  },
+  {
+    id: 'view-3',
+    text: 'My saved 3',
+    tooltip: 'Custom tooltip: My saved 3',
+  },
+];
+```
+
 #### TableViewDropdown props
 
 | Name                    | Type                           | Default             | Description                                                                   |

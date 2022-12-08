@@ -1,12 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'carbon-components-react';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
+import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
+import { getTooltipMenuOffset } from '../Tooltip';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
+
+const isEngagingEventType = (type) => type === 'click' || type === 'keydown';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -53,16 +57,89 @@ export const CardTitle = (
   const hasInfoIconTooltip = infoIconTooltip && !hasExternalTitleTextTooltip;
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
 
+  const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
+    direction: 'bottom',
+    menuOffset: getTooltipMenuOffset,
+    useAutoPositioning: true,
+    isOverflowMenu: true, // Needed to preserve default direction (bottom)
+  });
+
+  const [tooltipsState, setTooltipsState] = useState({
+    title: false,
+    subtitle: false,
+    info: false,
+  });
+
+  const handleTitleTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        title: open,
+      }));
+    }
+  }, []);
+
+  const handleSubtitleTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        subtitle: open,
+      }));
+    }
+  }, []);
+
+  const handleInfoTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        info: open,
+      }));
+    }
+  }, []);
+
+  // ignore due to window event listeners
+  /* istanbul ignore next */
+  useEffect(() => {
+    const handleScroll = () => {
+      const isSomeTooltipOpen = Object.values(tooltipsState).some((isOpen) => isOpen);
+
+      /* istanbul ignore else */
+      if (isSomeTooltipOpen) {
+        setTooltipsState((prevState) =>
+          Object.keys(prevState).reduce(
+            (attrs, key) => ({
+              ...attrs,
+              [key]: false,
+            }),
+            {}
+          )
+        );
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [tooltipsState]);
+
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
       <Tooltip
-        autoOrientation
+        align="center"
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
         ref={titleRef}
         showIcon={false}
         triggerClassName={classnames(
           `${iotPrefix}--card--title--text__overflow`,
           `${iotPrefix}--card--title--text`,
+          `${iotPrefix}--card-heading-clickable`,
           {
             [`${iotPrefix}--card--title--text--wrapped`]:
               hasTitleWrap && !subtitle && !hasExternalTitleTextTooltip,
@@ -70,6 +147,8 @@ export const CardTitle = (
           }
         )}
         triggerText={title}
+        open={tooltipsState.title}
+        onChange={handleTitleTooltipState}
       >
         {hasExternalTitleTextTooltip ? (
           <>
@@ -110,10 +189,16 @@ export const CardTitle = (
         data-testid={`${testId}-subtitle`}
         ref={subTitleRef}
         showIcon={false}
-        triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-          [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
-        })}
+        triggerClassName={classnames(
+          `${iotPrefix}--card--subtitle--text`,
+          `${iotPrefix}--card-heading-clickable`,
+          {
+            [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
+          }
+        )}
         triggerText={subtitle}
+        open={tooltipsState.subtitle}
+        onChange={handleSubtitleTooltipState}
       >
         {subtitle}
       </Tooltip>
@@ -145,6 +230,8 @@ export const CardTitle = (
           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
           triggerText=""
           iconDescription={titleTooltipIconDescription}
+          open={tooltipsState.info}
+          onChange={handleInfoTooltipState}
         >
           {infoIconTooltip}
         </Tooltip>

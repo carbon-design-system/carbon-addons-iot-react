@@ -55,6 +55,10 @@
       background-color: inherit;
     }
 
+    .#{$iot-prefix}--flyout-menu .#{$prefix}--tooltip__label {
+      outline: none;
+    }
+
     .#{$iot-prefix}--date-time-picker__field {
       padding-left: $spacing-05;
       overflow: hidden;
@@ -286,8 +290,8 @@
   fill: $disabled-02;
 }
 
-// allow the bottom border from the field to become visible (but not in the iconOnly case)
 .#{$iot-prefix}--date-time-picker--tooltip {
+  // allow the bottom border from the field to become visible (but not in the iconOnly case)
   &.#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-start
     .#{$prefix}--tooltip__content::after,
   &.#{$iot-prefix}--date-time-picker--tooltip.#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__bottom-end
@@ -297,6 +301,11 @@
   &.#{$iot-prefix}--date-time-picker--tooltip.#{$iot-prefix}--flyout-menu--body.#{$iot-prefix}--flyout-menu--body__top-end
     .#{$prefix}--tooltip__content::after {
     background-color: unset;
+  }
+
+  // Preserve center alignment for the time picker spinner
+  & .#{$prefix}--tooltip__content {
+    text-align: unset;
   }
 }
 

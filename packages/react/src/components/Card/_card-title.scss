@@ -83,3 +83,7 @@ p.#{$iot-prefix}--card-title__title-text-tooltip-full-title {
     margin-right: unset;
   }
 }
+
+.#{$iot-prefix}--card-heading-clickable {
+  cursor: pointer;
+}

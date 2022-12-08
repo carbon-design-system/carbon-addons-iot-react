@@ -10224,6 +10224,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "tooltip": Object {
+                  "type": "string",
+                },
               },
             ],
             "type": "shape",
