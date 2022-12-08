@@ -634,7 +634,8 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid ||
       absoluteEndTimeInvalid ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
+      (absoluteValue.startDate === '' && absoluteValue.endDate === '') ||
+      (hasTimeInput ? !absoluteValue.startTime || !absoluteValue.endTime : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 

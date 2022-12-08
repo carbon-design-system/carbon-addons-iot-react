@@ -328,7 +328,7 @@ const DateTimePicker = ({
 
   const is24hours = useMemo(() => {
     const [, time] = dateTimeMask.split(' ');
-    const hoursMask = time.split(':')[0];
+    const hoursMask = time?.split(':')[0];
     return hoursMask === 'HH';
   }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
@@ -387,8 +387,8 @@ const DateTimePicker = ({
 
   const [singleDateValue, setSingleDateValue] = useState(null);
   const [singleTimeValue, setSingleTimeValue] = useState(null);
-  const [rangeStartTimeValue, setRangeStartTimeValue] = useState('');
-  const [rangeEndTimeValue, setRangeEndTimeValue] = useState('');
+  const [rangeStartTimeValue, setRangeStartTimeValue] = useState(null);
+  const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
 
@@ -623,7 +623,7 @@ const DateTimePicker = ({
             : dayjs(single.start).format('hh:mm A')
           : null;
         setSingleDateValue(single);
-        setSingleTimeValue(single.startTime ?? '');
+        setSingleTimeValue(single.startTime);
       }
     } else {
       resetAbsoluteValue();
@@ -682,12 +682,15 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (invalidRangeStartTime ||
       invalidRangeEndTime ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
+      (absoluteValue?.startDate === '' && absoluteValue?.endDate === '') ||
+      (hasTimeInput ? !rangeStartTimeValue || !rangeEndTimeValue : false));
 
   const disableSingleApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.SINGLE &&
-    (invalidRangeStartTime || singleTimeValue === '');
+    (invalidRangeStartTime ||
+      (!singleDateValue.start && !singleDateValue.startDate) ||
+      (hasTimeInput ? !singleTimeValue : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
 
@@ -749,7 +752,7 @@ const DateTimePicker = ({
 
   const onClearClick = () => {
     setSingleDateValue({ start: null, startDate: null });
-    setSingleTimeValue('');
+    setSingleTimeValue(null);
     SetDefaultSingleDateValue(true);
     setIsExpanded(false);
   };
