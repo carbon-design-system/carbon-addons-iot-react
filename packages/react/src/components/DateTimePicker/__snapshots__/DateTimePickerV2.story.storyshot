@@ -959,8 +959,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         "backgroundColor": "blue",
         "height": "15rem",
         "overflow": "scroll",
-        "paddingBottom": "100rem",
-        "paddingTop": "30rem",
+        "paddingBottom": "50rem",
+        "paddingTop": "15rem",
       }
     }
   >

@@ -971,7 +971,11 @@ const DateTimePicker = ({
               left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={offBottom ? FlyoutMenuDirection.TopEnd : FlyoutMenuDirection.BottomEnd}
+            direction={
+              useAutoPositioning && offBottom
+                ? FlyoutMenuDirection.TopEnd
+                : FlyoutMenuDirection.BottomEnd
+            }
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}

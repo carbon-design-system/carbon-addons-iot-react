@@ -152,8 +152,8 @@ export const SingleSelect = () => {
       style={{
         backgroundColor: 'blue',
         height: '15rem',
-        paddingTop: '30rem',
-        paddingBottom: '100rem',
+        paddingTop: '15rem',
+        paddingBottom: '50rem',
         overflow: 'scroll',
       }}
     >
