@@ -497,6 +497,7 @@ const DashboardEditor = ({
         )
       );
     }
+    // this should only execute when dashboardJson is updated; imagesToUpload is not needed as dependency
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dashboardJson]);
 
