@@ -578,12 +578,14 @@ export const WithRowNesting = () => {
     hasRowNesting,
     shouldExpandOnRowClick,
     demoHasLoadMore,
+    wrapCellText,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
       'hasRowNesting',
       'shouldExpandOnRowClick',
       'demoHasLoadMore',
+      'wrapCellText',
     ],
     getDefaultValue: () => true,
   });
@@ -642,6 +644,7 @@ export const WithRowNesting = () => {
       options={{
         hasRowNesting,
         shouldExpandOnRowClick,
+        wrapCellText,
       }}
       view={{
         table: {

@@ -9,6 +9,7 @@ import {
   RowActionsStatePropTypes,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
+import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import { findRow, tableTraverser } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
@@ -52,7 +53,7 @@ const propTypes = {
     }),
   ]),
   hasRowActions: PropTypes.bool,
-  wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+  wrapCellText: WrapCellTextPropTypes.isRequired,
   truncateCellText: PropTypes.bool.isRequired,
   /** the current state of the row actions */
   rowActionsState: RowActionsStatePropTypes,

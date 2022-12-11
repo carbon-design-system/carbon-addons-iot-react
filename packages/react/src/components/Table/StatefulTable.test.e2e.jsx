@@ -5,6 +5,7 @@ import { settings } from '../../constants/Settings';
 
 import StatefulTable from './StatefulTable';
 import {
+  addChildRows,
   getAdvancedFilters,
   getInitialState,
   getTableColumns as getStoryTableColumns,
@@ -415,5 +416,85 @@ describe('StatefulTable', () => {
 
     cy.findByTestId('row-edit-button').click();
     cy.findByText('2 of 2 pages').should('be.visible');
+  });
+
+  it('should create horizontal scrollbar if wrapCellText:expand', () => {
+    cy.viewport(1100, 900);
+
+    const lastColumnTitle = tableColumns[tableColumns.length - 1].name;
+    const initialData = tableData.slice(0, 10).map((row, index) => {
+      return addChildRows(row, index, true);
+    });
+
+    mount(
+      <StatefulTable
+        id="scrollbar-table"
+        columns={tableColumns}
+        data={initialData}
+        options={{
+          hasRowNesting: true,
+          shouldExpandOnRowClick: true,
+          wrapCellText: 'expand',
+          hasPagination: true,
+          hasSearch: true,
+        }}
+      />
+    );
+
+    // Last column is visible
+    cy.findByText(lastColumnTitle).should('be.visible');
+
+    cy.findByTestId('expand-icon-button-row-4').click();
+    cy.findByTestId('expand-icon-button-row-4_B').click();
+    cy.findByTestId('expand-icon-button-row-4_B-2').click();
+
+    cy.findByText('can pinocchio whiteboard 4B').should('be.visible');
+    cy.findByText('can pinocchio whiteboard 4B-2').should('be.visible');
+    cy.findByText('can pinocchio whiteboard 4B-2-A').should('be.visible');
+
+    // Last column is hidden by scrollbar due to expanded rows
+    cy.findByText(lastColumnTitle).should('not.be.visible');
+
+    // Scrollbar is created within table content
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByText(lastColumnTitle).should('be.visible');
+  });
+
+  it('should wrap cell text if wrapCellText:always', () => {
+    cy.viewport(1100, 900);
+
+    const lastColumnTitle = tableColumns[tableColumns.length - 1].name;
+    const initialData = tableData.slice(0, 10).map((row, index) => {
+      return addChildRows(row, index, true);
+    });
+
+    mount(
+      <StatefulTable
+        id="scrollbar-table"
+        columns={tableColumns}
+        data={initialData}
+        options={{
+          hasRowNesting: true,
+          shouldExpandOnRowClick: true,
+          wrapCellText: 'always',
+          hasPagination: true,
+          hasSearch: true,
+        }}
+      />
+    );
+
+    // Last column is visible
+    cy.findByText(lastColumnTitle).should('be.visible');
+
+    cy.findByTestId('expand-icon-button-row-4').click();
+    cy.findByTestId('expand-icon-button-row-4_B').click();
+    cy.findByTestId('expand-icon-button-row-4_B-2').click();
+
+    cy.findByText('can pinocchio whiteboard 4B').should('be.visible');
+    cy.findByText('can pinocchio whiteboard 4B-2').should('be.visible');
+    cy.findByText('can pinocchio whiteboard 4B-2-A').should('be.visible');
+
+    // Last column is still visible
+    cy.findByText(lastColumnTitle).should('be.visible');
   });
 });
