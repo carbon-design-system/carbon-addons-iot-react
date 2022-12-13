@@ -533,6 +533,82 @@ describe('editorUtils', () => {
         },
       });
     });
+    it('handleDataSeriesChange should correctly update dataSource groupBy', () => {
+      const selectedItems = [
+        {
+          dataItemId: 'manufacturer',
+          dataSourceId: 'manufacturer',
+          label: 'Manufacturer',
+          dataItemType: 'DIMENSION',
+        },
+      ];
+      const mockedGroupedbyTableCard = {
+        ...mockTableCard,
+        content: {
+          columns: [
+            {
+              columnType: 'TIMESTAMP',
+              dataItemId: 'timestamp',
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+              sort: 'DESC',
+            },
+            {
+              dataItemId: 'manufacturer',
+              dataSourceId: 'manufacturer',
+              label: 'Manufacturer',
+              dataItemType: 'DIMENSION',
+            },
+            {
+              dataItemId: 'firmware',
+              dataSourceId: 'firmware',
+              label: 'Firmware',
+              dataItemType: 'DIMENSION',
+              destination: 'groupBy',
+            },
+          ],
+        },
+      };
+      const newCard = handleDataSeriesChange(
+        selectedItems,
+        mockedGroupedbyTableCard,
+        () => {},
+        null,
+        true
+      );
+      expect(newCard).toEqual({
+        ...mockTableCard,
+        content: {
+          columns: [
+            {
+              columnType: 'TIMESTAMP',
+              dataItemId: 'timestamp',
+              dataSourceId: 'timestamp',
+              label: 'Timestamp',
+              type: 'TIMESTAMP',
+              sort: 'DESC',
+            },
+            {
+              dataItemId: 'manufacturer',
+              dataSourceId: 'manufacturer',
+              label: 'Manufacturer',
+              dataItemType: 'DIMENSION',
+              destination: 'groupBy',
+            },
+            {
+              dataItemId: 'firmware',
+              dataSourceId: 'firmware',
+              label: 'Firmware',
+              dataItemType: 'DIMENSION',
+            },
+          ],
+        },
+        dataSource: {
+          groupBy: ['manufacturer'],
+        },
+      });
+    });
     it('handleDataSeriesChange existing card should correctly add the columns for new table card dimensions', () => {
       const selectedItems = [
         { id: 'manufacturer', text: 'Manufacturer', dataItemType: 'DIMENSION' },
