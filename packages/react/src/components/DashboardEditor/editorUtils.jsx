@@ -527,12 +527,30 @@ export const handleDataSeriesChange = (
         content: { ...cardConfig.content, series },
       };
     case CARD_TYPES.TABLE: {
-      // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
-      const existingAttributeColumns = Array.isArray(content?.columns)
-        ? content.columns.filter(
-            (col) => col.dataItemType !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
-          )
+      const columns = Array.isArray(content?.columns)
+        ? content.columns.map((column) => {
+            // find if the column is grouped by
+            const groupByColumn = selectedItems.find(
+              (el) => el.dataSourceId === column.dataSourceId
+            );
+            // if data item is already added to table but no destination: groupby, add it
+            if (groupByColumn && column.destination !== 'groupBy') {
+              return { ...column, destination: 'groupBy' };
+            }
+            // if data item is not selected but has destination: groupBy, remove it
+            if (!groupByColumn && column.destination === 'groupBy') {
+              const { destination: _, ...rest } = column;
+              return { ...rest };
+            }
+            // else, nothing to change
+            return column;
+          })
         : [];
+
+      // in certain cases (for groupBy updates) the full set of attribute columns isn't passed
+      const existingAttributeColumns = columns.filter(
+        (col) => col.dataItemType !== 'DIMENSION' && col.dataSourceId !== 'timestamp'
+      );
 
       // find the new attributes to add because we're adding dimensions later
       const attributeColumns = selectedItems.filter(
@@ -540,21 +558,16 @@ export const handleDataSeriesChange = (
       );
 
       // start off with a default timestamp column if we don't already have one
-      const timestampColumn =
-        Array.isArray(content?.columns) &&
-        content.columns.find((col) => col.dataSourceId === 'timestamp')
-          ? content.columns.filter((col) => col.dataSourceId === 'timestamp')[0]
-          : {
-              dataSourceId: 'timestamp',
-              dataItemId: 'timestamp',
-              label: 'Timestamp',
-              type: 'TIMESTAMP',
-              columnType: 'TIMESTAMP',
-              sort: 'DESC',
-            };
-      const existingDimensionColumns = Array.isArray(content?.columns)
-        ? content.columns.filter((col) => col.dataItemType === 'DIMENSION')
-        : [];
+      const timestampColumn = columns.find((col) => col.dataSourceId === 'timestamp') || {
+        dataSourceId: 'timestamp',
+        dataItemId: 'timestamp',
+        label: 'Timestamp',
+        type: 'TIMESTAMP',
+        columnType: 'TIMESTAMP',
+        sort: 'DESC',
+      };
+
+      const existingDimensionColumns = columns.filter((col) => col.dataItemType === 'DIMENSION');
 
       // new dimension columns should go right after the timestamp column
       const dimensionColumns = selectedItems.filter((col) => col.dataItemType === 'DIMENSION');
