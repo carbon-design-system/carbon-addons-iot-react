@@ -36773,6 +36773,45 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
       data-testid="null-table-toolbar"
     >
       <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
         className="bx--toolbar-content iot--table-toolbar-content"
         data-testid="null-table-toolbar-content"
       >
@@ -36865,6 +36904,41 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             onMouseUp={null}
           >
             <tr>
+              <th
+                className="iot--table-header-checkbox"
+                data-testid="null-table-head-row-selection-column"
+                scope="col"
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="table-32-head"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="table-32-head"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select all items
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </th>
               <th
                 align="start"
                 className="table-header-label-start iot--table-head--table-header"
@@ -37098,9 +37172,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             data-testid="null-table-body"
           >
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-0"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-0"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -37331,9 +37444,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-1"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-1"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -37571,9 +37723,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-2"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-2"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -37811,9 +38002,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-3"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-3"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -38044,9 +38274,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-4"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-4"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -38284,9 +38553,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-5"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-5"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -38524,9 +38832,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-6"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-6"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -38757,9 +39104,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-7"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-7"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -38997,9 +39383,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-8"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-8"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
@@ -39237,9 +39662,48 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </td>
             </tr>
             <tr
-              className="iot--table__row iot--table__row--unselectable"
+              className="iot--table__row iot--table__row--selectable"
               onClick={[Function]}
             >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-32-row-9"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-32-row-9"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
               <td
                 align="start"
                 className="data-table-start"
