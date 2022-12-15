@@ -1274,7 +1274,6 @@ export const WithPinnedColumn = () => {
     hasRowSelection,
     selectionCheckboxEnabled,
     useRadioButtonSingleSelect,
-    demoToolbarActions,
     pinColumn,
   } = getTableKnobs({
     knobsToCreate: [
@@ -1285,7 +1284,7 @@ export const WithPinnedColumn = () => {
       'demoToolbarActions',
       'pinColumn',
     ],
-    getDefaultValue: (name) => (name === 'pinColumn' ? PIN_COLUMN.FIRST : __DEV__),
+    getDefaultValue: (name) => (name === 'pinColumn' ? PIN_COLUMN.FIRST : true),
   });
 
   const isStateful = selectedTableType === 'StatefulTable';
@@ -1298,7 +1297,6 @@ export const WithPinnedColumn = () => {
 
   return (
     <MyTable
-      key={demoToolbarActions}
       actions={getTableActions()}
       columns={columns}
       data={data}
@@ -1306,7 +1304,6 @@ export const WithPinnedColumn = () => {
         hasRowSelection,
         useRadioButtonSingleSelect,
         hasSearch: true,
-        hasBatchActionToolbar: demoToolbarActions,
         pinColumn,
       }}
       view={{}}
