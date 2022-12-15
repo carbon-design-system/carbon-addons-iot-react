@@ -1,16 +1,18 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody as CarbonTableBody } from 'carbon-components-react';
+import classNames from 'classnames';
 
 import {
   ExpandedRowsPropTypes,
   TableRowsPropTypes,
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
+  PinColumnPropTypes,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
-import { findRow, tableTraverser } from '../tableUtilities';
+import { findRow, tableTraverser, pinnedColumnClassNames, PIN_COLUMN } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
 
@@ -99,6 +101,8 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  /** column to pin in the table */
+  pinColumn: PinColumnPropTypes,
 };
 
 const defaultProps = {
@@ -134,6 +138,7 @@ const defaultProps = {
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
   size: undefined,
+  pinColumn: PIN_COLUMN.NONE,
 };
 
 const TableBody = ({
@@ -176,6 +181,7 @@ const TableBody = ({
   showExpanderColumn,
   preserveCellWhiteSpace,
   size,
+  pinColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -260,7 +266,12 @@ const TableBody = ({
   };
 
   return (
-    <CarbonTableBody data-testid={testID || testId}>
+    <CarbonTableBody
+      data-testid={testID || testId}
+      className={classNames(
+        pinnedColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+      )}
+    >
       {rows.map((row) => (
         <TableBodyRowRenderer
           key={row.id}

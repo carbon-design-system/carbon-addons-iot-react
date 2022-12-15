@@ -29,6 +29,7 @@ import {
   TableFiltersPropType,
   TableToolbarActionsPropType,
   TableRowsPropTypes,
+  PinColumnPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -40,6 +41,7 @@ import TableFoot from './TableFoot/TableFoot';
 import TableMultiSortModal from './TableMultiSortModal/TableMultiSortModal';
 import { useShowExpanderColumn } from './expanderColumnHook';
 import ErrorTable from './ErrorTable/ErrorTable';
+import { PIN_COLUMN } from './tableUtilities';
 
 const { iotPrefix } = settings;
 
@@ -143,6 +145,8 @@ const propTypes = {
     wrapCellText: WrapCellTextPropTypes,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
+    /** column to pin in the table */
+    pinColumn: PinColumnPropTypes,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -401,6 +405,7 @@ export const defaultProps = (baseProps) => ({
     shouldExpandOnRowClick: false,
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
+    pinColumn: PIN_COLUMN.NONE,
   },
   size: undefined,
   view: {
@@ -1013,7 +1018,8 @@ const Table = (props) => {
                   'useRadioButtonSingleSelect',
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
-                  'preserveColumnWidths'
+                  'preserveColumnWidths',
+                  'pinColumn'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
@@ -1133,6 +1139,7 @@ const Table = (props) => {
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
                 size={size}
+                pinColumn={options.pinColumn}
               />
             ) : (
               <EmptyTable

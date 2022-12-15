@@ -4,6 +4,8 @@ import { SvgPropType } from '../../constants/SharedPropTypes';
 import deprecate from '../../internal/deprecate';
 import { bundledIconNames } from '../../utils/bundledIcons';
 
+import { PIN_COLUMN } from './tableUtilities';
+
 export const RowActionPropTypes = PropTypes.arrayOf(
   PropTypes.shape({
     /** Unique id of the action */
@@ -392,3 +394,5 @@ export const TableToolbarActionsPropType = PropTypes.oneOfType([
     })
   ),
 ]);
+
+export const PinColumnPropTypes = PropTypes.oneOf(Object.values(PIN_COLUMN));

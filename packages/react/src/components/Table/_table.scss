@@ -340,3 +340,69 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     font-weight: bold;
   }
 }
+
+.#{$iot-prefix}--pin-first-col {
+  @include pin-column(1) {
+    @include set-pinned-content(3, 0);
+  }
+
+  &.#{$iot-prefix}--table-head--with-column-groups .#{$iot-prefix}--table-header__column-row th {
+    position: sticky;
+  }
+
+  // Resetting for group row
+  tr.#{$iot-prefix}--table-header__group-row th {
+    position: relative;
+    left: unset;
+  }
+}
+
+.#{$iot-prefix}--pin-first-col-with-select {
+  @include pin-column(2) {
+    @include set-pinned-content(1, 52px);
+  }
+
+  @include disable-pinned-col-border(1);
+}
+
+.#{$iot-prefix}--pin-first-col-with-expand {
+  @include pin-column(2) {
+    @include set-pinned-content(2, 40px);
+  }
+
+  @include disable-pinned-col-border(1);
+
+  .#{$iot-prefix}--expandable-tablerow--expanded td:nth-of-type(1),
+  .#{$iot-prefix}--expandable-tablerow--indented td:nth-of-type(1) {
+    left: var(--row-nesting-offset); // Resetting for expanded rows
+  }
+}
+
+.#{$iot-prefix}--pin-first-col-with-select.#{$iot-prefix}--pin-first-col-with-expand {
+  @include pin-column(3) {
+    @include set-pinned-content(1, 92px);
+  }
+
+  @include disable-pinned-col-border(1);
+  @include disable-pinned-col-border(2);
+}
+
+.#{$iot-prefix}--pin-last-col {
+  td:last-of-type,
+  th:last-of-type {
+    position: sticky;
+    z-index: 1;
+    right: 0;
+    box-shadow: inset 1px 0 $active-ui;
+
+    [dir='rtl'] & {
+      right: unset;
+      left: 0;
+      box-shadow: inset -1px 0 $active-ui;
+    }
+  }
+
+  &.#{$iot-prefix}--table-head--with-column-groups .iot--table-header__column-row th:last-of-type {
+    position: sticky;
+  }
+}
