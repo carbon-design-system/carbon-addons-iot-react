@@ -31,7 +31,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="58-search"
+              aria-labelledby="60-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -56,8 +56,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="58"
-                id="58-search"
+                htmlFor="60"
+                id="60-search"
               >
                 Filter table
               </label>
@@ -65,7 +65,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="58"
+                id="60"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -377,7 +377,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="59-search"
+              aria-labelledby="61-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -402,8 +402,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="59"
-                id="59-search"
+                htmlFor="61"
+                id="61-search"
               >
                 Filter table
               </label>
@@ -411,7 +411,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="59"
+                id="61"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -626,7 +626,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="61-search"
+              aria-labelledby="63-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -651,8 +651,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="61"
-                id="61-search"
+                htmlFor="63"
+                id="63-search"
               >
                 Filter table
               </label>
@@ -660,7 +660,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="61"
+                id="63"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -824,7 +824,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="60-search"
+              aria-labelledby="62-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -849,8 +849,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="60"
-                id="60-search"
+                htmlFor="62"
+                id="62-search"
               >
                 Filter table
               </label>
@@ -858,7 +858,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="60"
+                id="62"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -1025,7 +1025,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="64-search"
+              aria-labelledby="66-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -1050,8 +1050,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="64"
-                id="64-search"
+                htmlFor="66"
+                id="66-search"
               >
                 Filter table
               </label>
@@ -1059,7 +1059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="64"
+                id="66"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -1485,7 +1485,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="62-search"
+              aria-labelledby="64-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -1510,8 +1510,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="62"
-                id="62-search"
+                htmlFor="64"
+                id="64-search"
               >
                 Filter table
               </label>
@@ -1519,7 +1519,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="62"
+                id="64"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
@@ -2070,7 +2070,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               Product name
             </div>
             <div
-              aria-labelledby="63-search"
+              aria-labelledby="65-search"
               className="bx--search bx--search--xl iot--tile-catalog--tile-canvas--header--search bx--toolbar-search-container-expandable"
               role="search"
             >
@@ -2095,8 +2095,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </div>
               <label
                 className="bx--label"
-                htmlFor="63"
-                id="63-search"
+                htmlFor="65"
+                id="65-search"
               >
                 Filter table
               </label>
@@ -2104,7 +2104,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 autoComplete="off"
                 className="bx--search-input"
                 data-testid="tile-catalog-new-search-input"
-                id="63"
+                id="65"
                 onBlur={[Function]}
                 onChange={[Function]}
                 onFocus={[Function]}
