@@ -90,23 +90,27 @@ describe('DataSeriesFormSettings', () => {
   });
 
   it('should set empty value for undefined or null', () => {
-    const {rerender} = render(<DataSeriesFormSettings cardConfig={timeSeriesConfig} onChange={mockOnChange} />);
+    const { rerender } = render(
+      <DataSeriesFormSettings cardConfig={timeSeriesConfig} onChange={mockOnChange} />
+    );
 
-    let input = screen.getByRole('textbox', {name: 'Y-axis label'});
+    let input = screen.getByRole('textbox', { name: 'Y-axis label' });
     expect(input).toHaveValue('Temperature (˚F)');
 
     const modifiedTimeSeriesConfig = {
       ...timeSeriesConfig,
       content: {
-        ...timeSeriesConfig.content
-      }
-    }
+        ...timeSeriesConfig.content,
+      },
+    };
     delete modifiedTimeSeriesConfig.content.yLabel;
 
     // re-render the same component with different props
-    rerender(<DataSeriesFormSettings cardConfig={modifiedTimeSeriesConfig} onChange={mockOnChange} />);
+    rerender(
+      <DataSeriesFormSettings cardConfig={modifiedTimeSeriesConfig} onChange={mockOnChange} />
+    );
 
-    input = screen.getByRole('textbox', {name: 'Y-axis label'});
+    input = screen.getByRole('textbox', { name: 'Y-axis label' });
     expect(input).toHaveValue('');
   });
 });
