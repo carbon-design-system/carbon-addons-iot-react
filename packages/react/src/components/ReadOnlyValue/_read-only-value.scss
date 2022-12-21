@@ -51,4 +51,18 @@
       }
     }
   }
+
+  &--loading {
+    label {
+      width: 100%;
+    }
+  }
+
+  .#{$prefix}--skeleton__text {
+    margin-bottom: $spacing-02;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
