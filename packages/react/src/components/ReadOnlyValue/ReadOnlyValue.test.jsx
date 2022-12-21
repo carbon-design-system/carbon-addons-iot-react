@@ -5,7 +5,7 @@ import { settings } from '../../constants/Settings';
 
 import ReadOnlyValue from './ReadOnlyValue';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('ReadOnlyValue', () => {
   it('should be able to be selected by testId', () => {
@@ -50,5 +50,31 @@ describe('ReadOnlyValue', () => {
     expect(container.querySelector(`.${iotPrefix}--read-only-value`)).toBeDefined();
     expect(container.querySelector(`.${iotPrefix}--read-only-value__stacked`)).toBeNull();
     expect(container.querySelector('mycustom-class')).toBeDefined();
+  });
+
+  it('should display skeleton loader', () => {
+    const [label, value] = ['label-test01', 'some testing value'];
+    const { container } = render(<ReadOnlyValue label={label} value={value} isLoading />);
+
+    expect(screen.queryByText(label)).toBeNull();
+    expect(screen.queryByText(value)).toBeNull();
+    expect(container.querySelector(`.${prefix}--skeleton__text`)).toBeInTheDocument();
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)).toHaveLength(2);
+  });
+
+  it('should pass prop to skeleton loaders', () => {
+    const [label, value] = ['label-test01', 'some testing value'];
+    const { container } = render(
+      <ReadOnlyValue
+        label={label}
+        value={value}
+        isLoading
+        skeletonLoadingLabel={{ className: 'test-class-1' }}
+        skeletonLoadingValue={{ className: 'test-class-2' }}
+      />
+    );
+
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)[0]).toHaveClass('test-class-1');
+    expect(container.querySelectorAll(`.${prefix}--skeleton__text`)[1]).toHaveClass('test-class-2');
   });
 });
