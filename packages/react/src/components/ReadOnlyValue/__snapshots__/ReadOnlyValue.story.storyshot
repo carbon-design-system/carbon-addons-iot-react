@@ -533,3 +533,71 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/R
   </div>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/ReadOnlyValue with async data load 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    style={
+      Object {
+        "height": "calc(100vh - 100px)",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="iot--read-only-value iot--read-only-value--loading"
+      data-testid="read-only-value"
+    >
+      <label
+        data-testid="read-only-value--label"
+        htmlFor="readonly-null"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </label>
+    </div>
+    <div
+      className="iot--read-only-value iot--read-only-value--loading"
+      data-testid="read-only-value"
+    >
+      <label
+        data-testid="read-only-value--label"
+        htmlFor="readonly-null"
+      >
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+        <p
+          className="bx--skeleton__text"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </label>
+    </div>
+  </div>
+</div>
+`;
