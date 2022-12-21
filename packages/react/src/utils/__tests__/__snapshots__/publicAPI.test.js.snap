@@ -13042,14 +13042,76 @@ Map {
   },
   "ReadOnlyValue" => Object {
     "defaultProps": Object {
+      "isLoading": false,
       "label": "",
+      "skeletonLoadingLabel": Object {
+        "className": "",
+        "heading": false,
+        "lineCount": 0,
+        "paragraph": false,
+        "width": "100%",
+      },
+      "skeletonLoadingValue": Object {
+        "className": "",
+        "heading": false,
+        "lineCount": 0,
+        "paragraph": false,
+        "width": "100%",
+      },
       "testId": "read-only-value",
       "type": "stacked",
       "value": "",
     },
     "propTypes": Object {
+      "isLoading": Object {
+        "type": "bool",
+      },
       "label": Object {
         "type": "string",
+      },
+      "skeletonLoadingLabel": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+            "heading": Object {
+              "type": "bool",
+            },
+            "lineCount": Object {
+              "type": "number",
+            },
+            "paragraph": Object {
+              "type": "bool",
+            },
+            "width": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "skeletonLoadingValue": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+            "heading": Object {
+              "type": "bool",
+            },
+            "lineCount": Object {
+              "type": "number",
+            },
+            "paragraph": Object {
+              "type": "bool",
+            },
+            "width": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "testId": Object {
         "type": "string",
