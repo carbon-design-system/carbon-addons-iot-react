@@ -82,7 +82,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, xLabel: evt.target.value },
             })
           }
-          value={content?.xLabel}
+          value={content?.xLabel ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -96,7 +96,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, yLabel: evt.target.value },
             })
           }
-          value={content?.yLabel}
+          value={content?.yLabel ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -110,7 +110,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, unit: evt.target.value },
             })
           }
-          value={content?.unit}
+          value={content?.unit ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -127,7 +127,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               },
             })
           }
-          value={content?.decimalPrecision}
+          value={content?.decimalPrecision ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -144,7 +144,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, maximumDataPoints },
             });
           }}
-          value={content?.maximumDataPoints}
+          value={content?.maximumDataPoints ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
