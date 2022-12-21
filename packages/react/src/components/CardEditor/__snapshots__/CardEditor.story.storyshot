@@ -5064,6 +5064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5095,6 +5096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5126,6 +5128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5157,6 +5160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5188,6 +5192,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="number"
+                      value=""
                     />
                   </div>
                 </div>
@@ -7713,6 +7718,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -7744,6 +7750,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="number"
+                      value=""
                     />
                   </div>
                 </div>
@@ -8688,6 +8695,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -8719,6 +8727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="number"
+                      value=""
                     />
                   </div>
                 </div>
