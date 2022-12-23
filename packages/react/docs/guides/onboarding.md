@@ -3,6 +3,28 @@
 The purpose of this document is to help new developers quickly and easily onboard to this project and
 pick up the styles and practices we use to make this a coherent code base.
 
+## Tech stack
+
+#### Programming language and frameworks
+
+The main programming language in this repository is **JavaScript** (ES6). As regards of quick introduction source, there is a set of tutorials from [javascript.info](https://javascript.info/). The scope of these tutorials would be enough for quick glance and overview. For further reading and deep dive - one of the greatest book is [JavaScript: The Definite Guide by D. Flanagan](https://www.oreilly.com/library/view/javascript-the-definitive/9781449393854/).
+
+Next important part of this repository is **React** framework (version 16.14.0 as of December 2022). The official documentation includes [detailed tutorials](https://reactjs.org/tutorial/tutorial.html) to learn basic concepts and patterns.
+
+For the CSS styling the main tool is **Sass** and its [official documentation](https://sass-lang.com/documentation/) is one of the best resource to learn it.
+
+#### QA practices
+
+For the documentation about visual testing of components refer to [Storybook](https://storybook.js.org/). It has expressive set of [tutorials](https://storybook.js.org/tutorials/) that covers all the necessary information about setup and developing. As regards unit testing, the main tool is [Jest](https://jestjs.io/). Introduction material for this testing framework can be found [here](https://www.softwaretestinghelp.com/jest-testing-tutorial/). Also, there is a [quick overview](https://github.com/goldbergyoni/javascript-testing-best-practices#section-3%EF%B8%8F%E2%83%A3-frontend-testing) of some testing best practices and techniques. End-to-end testing framework is [Cypress](https://docs.cypress.io/). Official website has several introductory [guides](https://docs.cypress.io/guides/overview/why-cypress#What-you-ll-learn).
+
+### Package and repo management
+
+All of the node packages are managed through Yarn. Reviewing official [getting started](https://yarnpkg.com/getting-started) guide would be enough to start contributing since it covers most of the commands. Note: this is a mono-repository that includes packages from `packages` folder. Refer to `scripts` in `package.json` for information about available commands for particular package. [Lerna](https://lerna.js.org/) is used to run commands in the root folder.
+
+### Version control system
+
+This repository is using [Git](https://git-scm.com/) as a version control system. There are many guides available for Git, but for quick overview you can find interactive tutorials in [https://ohmygit.org/](https://ohmygit.org/). **Important** part of releases and workflow is Semantic Versioning, [official website](https://semver.org/) describes main ideas and concepts.
+
 ## Coding practices
 
 Below you will find major items we strive to provide in all of our code and try to check for in all
