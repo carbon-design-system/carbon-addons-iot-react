@@ -9,6 +9,7 @@ import SuiteHeaderI18N from '../i18n';
 import IdleLogoutConfirmationModal from './IdleLogoutConfirmationModal';
 
 const commonProps = {
+  appId: 'someapp',
   routes: {
     logout: 'https://www.ibm.com/logout',
     logoutInactivity: 'https://www.ibm.com/inactivity',
@@ -20,13 +21,14 @@ const commonProps = {
 const TIME_INTERVAL = 1000;
 
 describe('IdleLogoutConfirmationModal', () => {
+  const appId = 'someapp';
   const originHref = 'https://ibm.com';
   const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
-  )}`;
+  )}&originAppId=${appId}`;
   const expectedLogoutInactivityRoute = `${
     commonProps.routes.logoutInactivity
-  }?originHref=${encodeURIComponent(originHref)}`;
+  }?originHref=${encodeURIComponent(originHref)}&originAppId=${appId}`;
 
   let originalWindowLocation;
   let originalWindowDocumentCookie;
@@ -133,9 +135,15 @@ describe('IdleLogoutConfirmationModal', () => {
     await userEvent.click(modalLogoutButton);
     expect(window.location.href).toBe(expectedLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (no originHref)', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    render(
+      <IdleLogoutConfirmationModal
+        {...commonProps}
+        appId={undefined}
+        onRouteChange={async () => true}
+      />
+    );
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -180,9 +188,15 @@ describe('IdleLogoutConfirmationModal', () => {
     });
     await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref)', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
+    render(
+      <IdleLogoutConfirmationModal
+        {...commonProps}
+        appId={undefined}
+        onRouteChange={async () => true}
+      />
+    );
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,

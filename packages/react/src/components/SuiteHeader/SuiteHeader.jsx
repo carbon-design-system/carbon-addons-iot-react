@@ -38,6 +38,7 @@ import { SUITE_HEADER_ROUTE_TYPES } from './suiteHeaderConstants';
 
 const defaultProps = {
   className: null,
+  appId: null,
   appName: null,
   extraContent: null,
   userDisplayName: null,
@@ -70,6 +71,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Name of suite (maps to appName in Header) */
   suiteName: PropTypes.string.isRequired,
+  /** Application ID in suite */
+  appId: PropTypes.string,
   /** Application name in suite (maps to subtitle in Header) */
   appName: PropTypes.string,
   /** Extra content (a Tag, for example) */
@@ -126,6 +129,7 @@ const propTypes = {
 const SuiteHeader = ({
   className,
   suiteName,
+  appId,
   appName,
   extraContent,
   userDisplayName,
@@ -192,14 +196,17 @@ const SuiteHeader = ({
 
   const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
-  // Append originHref query parameter to the logout route
+  // Append originHref query parameter (and, optionally, originAppId) to the logout route
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
   }
@@ -280,6 +287,7 @@ const SuiteHeader = ({
       ) : null}
       {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
+          appId={appId}
           idleTimeoutData={idleTimeoutData}
           routes={routes}
           onRouteChange={onRouteChange}

@@ -33,6 +33,7 @@ export const IdleLogoutConfirmationModalI18NPropTypes = {
 };
 
 const defaultProps = {
+  appId: null,
   className: null,
   idleTimeoutData: {
     timeout: 1800, // 30 minutes
@@ -52,6 +53,8 @@ const defaultProps = {
 };
 
 const propTypes = {
+  /** Application ID in suite */
+  appId: PropTypes.string,
   /** Add class name to the rendered Modal component */
   className: PropTypes.string,
   /** User inactivity timeout data */
@@ -67,6 +70,7 @@ const propTypes = {
 };
 
 const IdleLogoutConfirmationModal = ({
+  appId,
   className,
   idleTimeoutData,
   routes,
@@ -82,14 +86,17 @@ const IdleLogoutConfirmationModal = ({
     []
   );
 
-  // Append originHref query parameter to the logout routes
+  // Append originHref query parameter (and, optionally, originAppId) to the logout routes
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
   }
@@ -99,8 +106,11 @@ const IdleLogoutConfirmationModal = ({
     const url = new URL(routes.logoutInactivity);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutInactivityRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    logoutInactivityRoute = url.href;
   } catch (e) {
     logoutInactivityRoute = routes?.logoutInactivity;
   }

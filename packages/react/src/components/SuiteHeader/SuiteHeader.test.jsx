@@ -14,6 +14,7 @@ const { prefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
+  appId: 'someapp',
   appName: 'Application Name',
   userDisplayName: 'Admin User',
   username: 'adminuser',
@@ -55,13 +56,14 @@ const idleTimeoutDataProp = {
 };
 
 describe('SuiteHeader', () => {
+  const appId = 'someapp';
   const originHref = 'https://ibm.com';
   const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
-  )}`;
+  )}&originAppId=${appId}`;
   const expectedLogoutInactivityRoute = `${
     commonProps.routes.logoutInactivity
-  }?originHref=${encodeURIComponent(originHref)}`;
+  }?originHref=${encodeURIComponent(originHref)}&originAppId=${appId}`;
   let originalWindowLocation;
   let originalWindowDocumentCookie;
   beforeEach(() => {
@@ -162,9 +164,9 @@ describe('SuiteHeader', () => {
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(expectedLogoutRoute);
   });
-  it('clicks logout link (no originHref)', async () => {
+  it('clicks logout link (no originHref and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<SuiteHeader {...commonProps} />);
+    render(<SuiteHeader {...commonProps} appId={undefined} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
@@ -386,9 +388,11 @@ describe('SuiteHeader', () => {
     await userEvent.click(modalLogoutButton);
     expect(window.location.href).toBe(expectedLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (no originHref)', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(
+      <SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} appId={undefined} />
+    );
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -439,9 +443,11 @@ describe('SuiteHeader', () => {
     });
     await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref)', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    render(
+      <SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} appId={undefined} />
+    );
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
