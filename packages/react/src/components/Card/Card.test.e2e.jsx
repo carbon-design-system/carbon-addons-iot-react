@@ -1,13 +1,17 @@
 import React from 'react';
 import { mount } from '@cypress/react';
 
+import { getCardMinSize } from '../../utils/componentUtilityFunctions';
 import { CARD_SIZES } from '../../constants/LayoutConstants';
 
 import Card from './Card';
 
 describe('Card', () => {
-  it('should lazy-load content when isLazyLoading:true', () => {
+  beforeEach(() => {
     cy.viewport(1680, 900);
+  });
+
+  it('should lazy-load content when isLazyLoading:true', () => {
     const ManyCards = () =>
       Array(8)
         .fill()
@@ -39,7 +43,6 @@ describe('Card', () => {
   });
 
   it('should render tooltip if the text is too long', () => {
-    cy.viewport(1680, 900);
     const aLongTitle =
       'A very very long title which will almost certainly overflow and require a tooltip and we must test these things, you know.';
     mount(
@@ -55,7 +58,6 @@ describe('Card', () => {
   });
 
   it('should not render tooltip if the text is not too long', () => {
-    cy.viewport(1680, 900);
     const aShortTitle = 'A short title';
     mount(
       <Card
@@ -71,7 +73,6 @@ describe('Card', () => {
   });
 
   it('should close title tooltip in title if window is scrolled', () => {
-    cy.viewport(1680, 900);
     const title =
       'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.';
 
@@ -100,7 +101,6 @@ describe('Card', () => {
   });
 
   it('should close subtitle tooltip in title if window is scrolled', () => {
-    cy.viewport(1680, 900);
     const subtitle =
       'Card Title that should be truncated and presented in a tooltip while the cards also has an external tooltip.';
 
@@ -130,8 +130,6 @@ describe('Card', () => {
   });
 
   it('should close info icon tooltip in title if window is scrolled', () => {
-    cy.viewport(1680, 900);
-
     mount(
       <div style={{ height: '1500px' }}>
         <Card
@@ -155,5 +153,188 @@ describe('Card', () => {
     cy.scrollTo(0, 50);
 
     cy.findByTestId('Card-tooltip').should('not.exist');
+  });
+
+  describe('Card title tooltips', () => {
+    const title =
+      'Title Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate lectus id nulla euismod hendrerit. Integer enim arcu, volutpat non erat vitae, ullamcorper tincidunt enim. Sed porttitor fringilla sapien sit amet finibus.';
+    const subtitle =
+      'Subtitle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate lectus id nulla euismod hendrerit. Integer enim arcu, volutpat non erat vitae, ullamcorper tincidunt enim. Sed porttitor fringilla sapien sit amet finibus.';
+    const breakpoint = 'lg';
+    const size = CARD_SIZES.SMALL;
+
+    it('should auto adjust tooltip alignment', () => {
+      mount(
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Card
+            testId="start"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+          <Card
+            testId="center"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+          <Card
+            testId="end"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+        </div>
+      );
+
+      const windowWidth = Cypress.$(cy.state('window')).width();
+
+      // Left card
+      cy.findAllByRole('button', { name: title }).eq(0).click();
+      cy.findByTestId('start-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(0).click();
+      cy.findByTestId('start-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+      });
+
+      // Middle card
+      cy.findAllByRole('button', { name: title }).eq(1).click();
+      cy.findByTestId('center-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(1).click();
+      cy.findByTestId('center-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+      });
+
+      // Right card
+      cy.findAllByRole('button', { name: title }).eq(2).click();
+      cy.findByTestId('end-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(2).click();
+      cy.findByTestId('end-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+      });
+    });
+
+    it('should auto adjust tooltip direction and alignment', () => {
+      mount(
+        <div
+          style={{
+            height: '900px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'end',
+          }}
+        >
+          <Card
+            testId="start"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+          <Card
+            testId="center"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+          <Card
+            testId="end"
+            style={{ width: `${getCardMinSize(breakpoint, size).x}px` }}
+            title={title}
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={size}
+            breakpoint={breakpoint}
+          />
+        </div>
+      );
+
+      const windowWidth = Cypress.$(cy.state('window')).width();
+      const windowHeight = Cypress.$(cy.state('window')).height();
+
+      // Left card
+      cy.findAllByRole('button', { name: title }).eq(0).click();
+      cy.findByTestId('start-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(0).click();
+      cy.findByTestId('start-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+
+      // Middle card
+      cy.findAllByRole('button', { name: title }).eq(1).click();
+      cy.findByTestId('center-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(1).click();
+      cy.findByTestId('center-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.left).to.be.greaterThan(0);
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+
+      // Right card
+      cy.findAllByRole('button', { name: title }).eq(2).click();
+      cy.findByTestId('end-title-tooltip').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+
+      cy.findAllByRole('button', { name: subtitle }).eq(2).click();
+      cy.findByTestId('end-subtitle').then(($el) => {
+        const rect = $el[0].getBoundingClientRect();
+        expect(rect.right).not.to.be.greaterThan(windowWidth);
+        expect(rect.bottom).not.to.be.greaterThan(windowHeight);
+      });
+    });
   });
 });
