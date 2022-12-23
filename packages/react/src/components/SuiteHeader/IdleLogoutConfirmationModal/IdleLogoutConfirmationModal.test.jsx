@@ -8,8 +8,12 @@ import SuiteHeaderI18N from '../i18n';
 
 import IdleLogoutConfirmationModal from './IdleLogoutConfirmationModal';
 
+const appId = 'someapp';
+const workspaceId = 'someworkspace';
+
 const commonProps = {
-  appId: 'someapp',
+  appId,
+  workspaceId,
   routes: {
     logout: 'https://www.ibm.com/logout',
     logoutInactivity: 'https://www.ibm.com/inactivity',
@@ -21,14 +25,15 @@ const commonProps = {
 const TIME_INTERVAL = 1000;
 
 describe('IdleLogoutConfirmationModal', () => {
-  const appId = 'someapp';
   const originHref = 'https://ibm.com';
   const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
-  )}&originAppId=${appId}`;
+  )}&originAppId=${appId}&originWorkspaceId=${workspaceId}`;
   const expectedLogoutInactivityRoute = `${
     commonProps.routes.logoutInactivity
-  }?originHref=${encodeURIComponent(originHref)}&originAppId=${appId}`;
+  }?originHref=${encodeURIComponent(
+    originHref
+  )}&originAppId=${appId}&originWorkspaceId=${workspaceId}`;
 
   let originalWindowLocation;
   let originalWindowDocumentCookie;
@@ -135,12 +140,13 @@ describe('IdleLogoutConfirmationModal', () => {
     await userEvent.click(modalLogoutButton);
     expect(window.location.href).toBe(expectedLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (no originHref and no originAppId)', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref, no originAppId and no workspaceId)', async () => {
     window.location = { href: '' };
     render(
       <IdleLogoutConfirmationModal
         {...commonProps}
         appId={undefined}
+        workspaceId={undefined}
         onRouteChange={async () => true}
       />
     );
@@ -188,12 +194,13 @@ describe('IdleLogoutConfirmationModal', () => {
     });
     await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref and no originAppId)', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref, no originAppId and no workspaceId)', async () => {
     window.location = { href: '' };
     render(
       <IdleLogoutConfirmationModal
         {...commonProps}
         appId={undefined}
+        workspaceId={undefined}
         onRouteChange={async () => true}
       />
     );

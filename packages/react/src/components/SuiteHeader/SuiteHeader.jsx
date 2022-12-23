@@ -206,6 +206,9 @@ const SuiteHeader = ({
     if (appId) {
       url.searchParams.append('originAppId', appId);
     }
+    if (currentWorkspace?.id) {
+      url.searchParams.append('originWorkspaceId', currentWorkspace.id);
+    }
     logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
@@ -288,6 +291,7 @@ const SuiteHeader = ({
       {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
           appId={appId}
+          workspaceId={currentWorkspace?.id}
           idleTimeoutData={idleTimeoutData}
           routes={routes}
           onRouteChange={onRouteChange}

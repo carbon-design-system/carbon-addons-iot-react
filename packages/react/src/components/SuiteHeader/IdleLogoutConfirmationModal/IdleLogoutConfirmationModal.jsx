@@ -34,6 +34,7 @@ export const IdleLogoutConfirmationModalI18NPropTypes = {
 
 const defaultProps = {
   appId: null,
+  workspaceId: null,
   className: null,
   idleTimeoutData: {
     timeout: 1800, // 30 minutes
@@ -55,6 +56,8 @@ const defaultProps = {
 const propTypes = {
   /** Application ID in suite */
   appId: PropTypes.string,
+  /** Workspace ID in suite */
+  workspaceId: PropTypes.string,
   /** Add class name to the rendered Modal component */
   className: PropTypes.string,
   /** User inactivity timeout data */
@@ -71,6 +74,7 @@ const propTypes = {
 
 const IdleLogoutConfirmationModal = ({
   appId,
+  workspaceId,
   className,
   idleTimeoutData,
   routes,
@@ -96,6 +100,9 @@ const IdleLogoutConfirmationModal = ({
     if (appId) {
       url.searchParams.append('originAppId', appId);
     }
+    if (workspaceId) {
+      url.searchParams.append('originWorkspaceId', workspaceId);
+    }
     logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
@@ -109,6 +116,9 @@ const IdleLogoutConfirmationModal = ({
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);
+    }
+    if (workspaceId) {
+      url.searchParams.append('originWorkspaceId', workspaceId);
     }
     logoutInactivityRoute = url.href;
   } catch (e) {

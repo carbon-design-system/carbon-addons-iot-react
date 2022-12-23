@@ -11614,6 +11614,7 @@ Map {
       "SURVEY": "SURVEY",
     },
     "defaultProps": Object {
+      "appId": null,
       "appName": null,
       "applications": null,
       "className": null,
@@ -11680,6 +11681,9 @@ Map {
       "workspaces": null,
     },
     "propTypes": Object {
+      "appId": Object {
+        "type": "string",
+      },
       "appName": Object {
         "type": "string",
       },
@@ -12900,6 +12904,7 @@ Map {
   },
   "IdleLogoutConfirmationModal" => Object {
     "defaultProps": Object {
+      "appId": null,
       "className": null,
       "i18n": Object {
         "closeButtonLabel": "Close",
@@ -12916,8 +12921,12 @@ Map {
       "onRouteChange": [Function],
       "onStayLoggedIn": [Function],
       "routes": null,
+      "workspaceId": null,
     },
     "propTypes": Object {
+      "appId": Object {
+        "type": "string",
+      },
       "className": Object {
         "type": "string",
       },
@@ -12977,6 +12986,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "workspaceId": Object {
+        "type": "string",
       },
     },
   },
