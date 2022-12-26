@@ -24,6 +24,7 @@ const getUiResourcesData = async ({
   baseApiUrl,
   lang = 'en',
   surveyId = null,
+  appId = null,
   workspaceId = null,
   fetchApi = defaultFetchApi,
   isTest = false,
@@ -39,8 +40,12 @@ const getUiResourcesData = async ({
 
   const langParam = `&lang=${lang}`;
   const surveyIdParam = surveyId ? `&surveyId=${surveyId}` : '';
+  const appIdParam = appId ? `&appId=${appId}` : '';
   const workspaceIdParam = workspaceId ? `&workspaceId=${workspaceId}` : '';
-  return api('GET', `/uiresources?id=masthead${langParam}${surveyIdParam}${workspaceIdParam}`);
+  return api(
+    'GET',
+    `/uiresources?id=masthead${langParam}${surveyIdParam}${appIdParam}${workspaceIdParam}`
+  );
 };
 
 export default getUiResourcesData;

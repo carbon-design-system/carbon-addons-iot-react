@@ -33,6 +33,7 @@ export const IdleLogoutConfirmationModalI18NPropTypes = {
 };
 
 const defaultProps = {
+  isAdminView: null,
   appId: null,
   workspaceId: null,
   className: null,
@@ -54,6 +55,8 @@ const defaultProps = {
 };
 
 const propTypes = {
+  /** If true, includes the originIsAdmin query param in the logout URL */
+  isAdminView: PropTypes.bool,
   /** Application ID in suite */
   appId: PropTypes.string,
   /** Workspace ID in suite */
@@ -73,6 +76,7 @@ const propTypes = {
 };
 
 const IdleLogoutConfirmationModal = ({
+  isAdminView,
   appId,
   workspaceId,
   className,
@@ -103,6 +107,9 @@ const IdleLogoutConfirmationModal = ({
     if (workspaceId) {
       url.searchParams.append('originWorkspaceId', workspaceId);
     }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
+    }
     logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
@@ -119,6 +126,9 @@ const IdleLogoutConfirmationModal = ({
     }
     if (workspaceId) {
       url.searchParams.append('originWorkspaceId', workspaceId);
+    }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
     }
     logoutInactivityRoute = url.href;
   } catch (e) {

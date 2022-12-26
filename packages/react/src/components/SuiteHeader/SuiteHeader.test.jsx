@@ -14,7 +14,6 @@ const { prefix } = settings;
 
 const commonProps = {
   suiteName: 'Application Suite',
-  appId: 'someapp',
   appName: 'Application Name',
   userDisplayName: 'Admin User',
   username: 'adminuser',
@@ -49,6 +48,18 @@ const commonProps = {
   ],
 };
 
+const appId = 'monitor';
+
+const nonAdminCommonProps = {
+  ...commonProps,
+  isAdminView: false,
+};
+
+const appPageCommonProps = {
+  ...nonAdminCommonProps,
+  applications: commonProps.applications.map((a) => ({ ...a, isCurrent: a.id === appId })),
+};
+
 const idleTimeoutDataProp = {
   countdown: 10,
   timeout: 10,
@@ -56,14 +67,19 @@ const idleTimeoutDataProp = {
 };
 
 describe('SuiteHeader', () => {
-  const appId = 'someapp';
   const originHref = 'https://ibm.com';
-  const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
+  const expectedAppPageLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}`;
-  const expectedLogoutInactivityRoute = `${
+  const expectedAdminPageLogoutRoute = `${
+    commonProps.routes.logout
+  }?originHref=${encodeURIComponent(originHref)}&originIsAdmin=true`;
+  const expectedAppPageLogoutInactivityRoute = `${
     commonProps.routes.logoutInactivity
   }?originHref=${encodeURIComponent(originHref)}&originAppId=${appId}`;
+  const expectedAdminPageLogoutInactivityRoute = `${
+    commonProps.routes.logoutInactivity
+  }?originHref=${encodeURIComponent(originHref)}&originIsAdmin=true`;
   let originalWindowLocation;
   let originalWindowDocumentCookie;
   beforeEach(() => {
@@ -159,21 +175,26 @@ describe('SuiteHeader', () => {
     userEvent.click(screen.getByRole('button', { name: 'Close' }));
     expect(screen.getByRole('presentation')).not.toHaveClass('is-visible');
   });
-  it('clicks logout link', async () => {
+  it('clicks logout link (admin page)', async () => {
     render(<SuiteHeader {...commonProps} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
-    expect(window.location.href).toBe(expectedLogoutRoute);
+    expect(window.location.href).toBe(expectedAdminPageLogoutRoute);
   });
-  it('clicks logout link (no originHref and no originAppId)', async () => {
+  it('clicks logout link (app page)', async () => {
+    render(<SuiteHeader {...appPageCommonProps} />);
+    await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
+    expect(window.location.href).toBe(expectedAppPageLogoutRoute);
+  });
+  it('clicks logout link (no originHref, no originIsAdmin and no originAppId)', async () => {
     window.location = { href: '' };
-    render(<SuiteHeader {...commonProps} appId={undefined} />);
+    render(<SuiteHeader {...nonAdminCommonProps} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
     expect(window.location.href).toBe(commonProps.routes.logout);
   });
   it('clicks logout link (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} />);
+    render(<SuiteHeader {...appPageCommonProps} onRouteChange={async () => false} />);
     await userEvent.click(screen.getAllByRole('button', { name: 'Log out' })[0]);
-    expect(window.location.href).not.toBe(expectedLogoutRoute);
+    expect(window.location.href).not.toBe(expectedAppPageLogoutRoute);
   });
   it('admin link from admin view takes you to navigator route', async () => {
     render(<SuiteHeader {...commonProps} isAdminView />);
@@ -186,12 +207,12 @@ describe('SuiteHeader', () => {
     expect(window.location.href).not.toBe(commonProps.routes.navigator);
   });
   it('admin link from non-admin view takes you to admin route', async () => {
-    render(<SuiteHeader {...commonProps} isAdminView={false} />);
+    render(<SuiteHeader {...nonAdminCommonProps} />);
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).toBe(commonProps.routes.admin);
   });
   it('admin link from non-admin view takes you to admin route (but no redirect)', async () => {
-    render(<SuiteHeader {...commonProps} onRouteChange={async () => false} isAdminView={false} />);
+    render(<SuiteHeader {...nonAdminCommonProps} onRouteChange={async () => false} />);
     await userEvent.click(screen.getByTestId('admin-icon'));
     expect(window.location.href).not.toBe(commonProps.routes.admin);
   });
@@ -372,7 +393,7 @@ describe('SuiteHeader', () => {
     userEvent.click(modalStayLoggedInButton);
     expect(mockOnStayLoggedIn).toHaveBeenCalled();
   });
-  it('user clicks Log Out on the idle logout confirmation dialog', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (admin page)', async () => {
     render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
@@ -386,13 +407,27 @@ describe('SuiteHeader', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).toBe(expectedLogoutRoute);
+    expect(window.location.href).toBe(expectedAdminPageLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (no originHref and no originAppId)', async () => {
-    window.location = { href: '' };
-    render(
-      <SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} appId={undefined} />
+  it('user clicks Log Out on the idle logout confirmation dialog (app page)', async () => {
+    render(<SuiteHeader {...appPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
+    await userEvent.click(modalLogoutButton);
+    expect(window.location.href).toBe(expectedAppPageLogoutRoute);
+  });
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref, no originIsAdmin and no originAppId)', async () => {
+    window.location = { href: '' };
+    render(<SuiteHeader {...nonAdminCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -410,7 +445,7 @@ describe('SuiteHeader', () => {
   it('user clicks Log Out on the idle logout confirmation dialog (but no redirect)', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...appPageCommonProps}
         onRouteChange={async () => false}
         idleTimeoutData={idleTimeoutDataProp}
       />
@@ -427,9 +462,9 @@ describe('SuiteHeader', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).not.toBe(expectedLogoutRoute);
+    expect(window.location.href).not.toBe(expectedAppPageLogoutRoute);
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (admin page)', async () => {
     render(<SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
@@ -441,13 +476,25 @@ describe('SuiteHeader', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
+    await waitFor(() => expect(window.location.href).toBe(expectedAdminPageLogoutInactivityRoute));
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref and no originAppId)', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (app page)', async () => {
+    render(<SuiteHeader {...appPageCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${idleTimeoutDataProp.cookieName}=${Date.now() - 1000}`,
+    });
+    // Go to the future by a little more than idleTimeoutDataProp.countdown seconds
+    MockDate.set(Date.now() + (idleTimeoutDataProp.countdown + 1) * 1000);
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    await waitFor(() => expect(window.location.href).toBe(expectedAppPageLogoutInactivityRoute));
+  });
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref, no originIsAdmin and no originAppId)', async () => {
     window.location = { href: '' };
-    render(
-      <SuiteHeader {...commonProps} idleTimeoutData={idleTimeoutDataProp} appId={undefined} />
-    );
+    render(<SuiteHeader {...nonAdminCommonProps} idleTimeoutData={idleTimeoutDataProp} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
       writable: true,
@@ -463,7 +510,7 @@ describe('SuiteHeader', () => {
   it('idle user waits for the logout confirmation dialog countdown to finish (but no redirect)', async () => {
     render(
       <SuiteHeader
-        {...commonProps}
+        {...appPageCommonProps}
         onRouteChange={async () => false}
         idleTimeoutData={idleTimeoutDataProp}
       />
@@ -478,7 +525,9 @@ describe('SuiteHeader', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).not.toBe(expectedLogoutInactivityRoute));
+    await waitFor(() =>
+      expect(window.location.href).not.toBe(expectedAppPageLogoutInactivityRoute)
+    );
   });
   it('renders Walkme', async () => {
     render(<SuiteHeader {...commonProps} walkmePath="/some/test/path" walkmeLang="en" />);

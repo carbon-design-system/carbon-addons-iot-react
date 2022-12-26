@@ -38,7 +38,6 @@ import { SUITE_HEADER_ROUTE_TYPES } from './suiteHeaderConstants';
 
 const defaultProps = {
   className: null,
-  appId: null,
   appName: null,
   extraContent: null,
   userDisplayName: null,
@@ -71,8 +70,6 @@ const propTypes = {
   className: PropTypes.string,
   /** Name of suite (maps to appName in Header) */
   suiteName: PropTypes.string.isRequired,
-  /** Application ID in suite */
-  appId: PropTypes.string,
   /** Application name in suite (maps to subtitle in Header) */
   appName: PropTypes.string,
   /** Extra content (a Tag, for example) */
@@ -129,7 +126,6 @@ const propTypes = {
 const SuiteHeader = ({
   className,
   suiteName,
-  appId,
   appName,
   extraContent,
   userDisplayName,
@@ -175,6 +171,9 @@ const SuiteHeader = ({
 
   const isMultiWorkspace = workspaces?.length > 0;
   const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
+  const appId =
+    currentWorkspace?.applications?.find((a) => a.isCurrent)?.id ??
+    applications?.find((a) => a.isCurrent)?.id;
   // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
   const currentWorkspaceComponent =
     !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
@@ -208,6 +207,9 @@ const SuiteHeader = ({
     }
     if (currentWorkspace?.id) {
       url.searchParams.append('originWorkspaceId', currentWorkspace.id);
+    }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
     }
     logoutRoute = url.href;
   } catch (e) {
@@ -290,6 +292,7 @@ const SuiteHeader = ({
       ) : null}
       {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
+          isAdminView={isAdminView}
           appId={appId}
           workspaceId={currentWorkspace?.id}
           idleTimeoutData={idleTimeoutData}

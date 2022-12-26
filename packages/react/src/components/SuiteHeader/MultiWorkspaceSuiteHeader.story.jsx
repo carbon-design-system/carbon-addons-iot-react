@@ -126,6 +126,10 @@ const nonWorkspaceBasedPageWorkspaces = [...adminPageWorkspaces];
 const workspaceBasedPageWorkspaces = adminPageWorkspaces.map((wo) => ({
   ...wo,
   isCurrent: wo.id === 'workspace3',
+  applications: wo.applications?.map((a) => ({
+    ...a,
+    isCurrent: wo.id === 'workspace3' && a.id === 'manage',
+  })),
 }));
 
 const globalApplications = [

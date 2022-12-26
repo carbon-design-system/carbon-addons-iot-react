@@ -26,14 +26,22 @@ const TIME_INTERVAL = 1000;
 
 describe('IdleLogoutConfirmationModal', () => {
   const originHref = 'https://ibm.com';
-  const expectedLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
+  const expectedWorkspaceBasedPageLogoutRoute = `${
+    commonProps.routes.logout
+  }?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}&originWorkspaceId=${workspaceId}`;
-  const expectedLogoutInactivityRoute = `${
+  const expectedWorkspaceBasedPageLogoutInactivityRoute = `${
     commonProps.routes.logoutInactivity
   }?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}&originWorkspaceId=${workspaceId}`;
+  const expectedAdminPageLogoutRoute = `${
+    commonProps.routes.logout
+  }?originHref=${encodeURIComponent(originHref)}&originIsAdmin=true`;
+  const expectedAdminPageLogoutInactivityRoute = `${
+    commonProps.routes.logoutInactivity
+  }?originHref=${encodeURIComponent(originHref)}&originIsAdmin=true`;
 
   let originalWindowLocation;
   let originalWindowDocumentCookie;
@@ -124,7 +132,31 @@ describe('IdleLogoutConfirmationModal', () => {
     userEvent.click(modalStayLoggedInButton);
     expect(mockOnStayLoggedIn).toHaveBeenCalled();
   });
-  it('user clicks Log Out on the idle logout confirmation dialog', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (admin page)', async () => {
+    render(
+      <IdleLogoutConfirmationModal
+        {...commonProps}
+        isAdminView
+        appId={undefined}
+        workspaceId={undefined}
+        onRouteChange={async () => true}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
+    });
+    act(() => {
+      jest.runOnlyPendingTimers();
+    });
+    const modalLogoutButton = within(screen.getByTestId('idle-logout-confirmation')).getByText(
+      SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
+    );
+    await userEvent.click(modalLogoutButton);
+    expect(window.location.href).toBe(expectedAdminPageLogoutRoute);
+  });
+  it('user clicks Log Out on the idle logout confirmation dialog (workspac-based page)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
@@ -138,9 +170,9 @@ describe('IdleLogoutConfirmationModal', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).toBe(expectedLogoutRoute);
+    expect(window.location.href).toBe(expectedWorkspaceBasedPageLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (no originHref, no originAppId and no workspaceId)', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (no originHref, no originIsAdmin, no originAppId and no workspaceId)', async () => {
     window.location = { href: '' };
     render(
       <IdleLogoutConfirmationModal
@@ -178,9 +210,9 @@ describe('IdleLogoutConfirmationModal', () => {
       SuiteHeaderI18N.en.sessionTimeoutModalLogoutButton
     );
     await userEvent.click(modalLogoutButton);
-    expect(window.location.href).not.toBe(commonProps.routes.logout);
+    expect(window.location.href).not.toBe(expectedWorkspaceBasedPageLogoutRoute);
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (workspace-based page)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {
@@ -192,9 +224,33 @@ describe('IdleLogoutConfirmationModal', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).toBe(expectedLogoutInactivityRoute));
+    await waitFor(() =>
+      expect(window.location.href).toBe(expectedWorkspaceBasedPageLogoutInactivityRoute)
+    );
   });
-  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref, no originAppId and no workspaceId)', async () => {
+  it('idle user waits for the logout confirmation dialog countdown to finish (admin page)', async () => {
+    render(
+      <IdleLogoutConfirmationModal
+        {...commonProps}
+        isAdminView
+        appId={undefined}
+        workspaceId={undefined}
+        onRouteChange={async () => true}
+      />
+    );
+    // Simulate a timestamp cookie that is in the past
+    Object.defineProperty(window.document, 'cookie', {
+      writable: true,
+      value: `${commonProps.idleTimeoutData.cookieName}=${Date.now() - TIME_INTERVAL}`,
+    });
+    // Go to the future by a little more than commonProps.idleTimeoutData.countdown seconds
+    MockDate.set(Date.now() + (commonProps.idleTimeoutData.countdown + 1) * TIME_INTERVAL);
+    await act(async () => {
+      await jest.runOnlyPendingTimers();
+    });
+    await waitFor(() => expect(window.location.href).toBe(expectedAdminPageLogoutInactivityRoute));
+  });
+  it('idle user waits for the logout confirmation dialog countdown to finish (no originHref, no originIsAdmin, no originAppId and no workspaceId)', async () => {
     window.location = { href: '' };
     render(
       <IdleLogoutConfirmationModal
@@ -228,7 +284,9 @@ describe('IdleLogoutConfirmationModal', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    await waitFor(() => expect(window.location.href).not.toBe(commonProps.routes.logoutInactivity));
+    await waitFor(() =>
+      expect(window.location.href).not.toBe(expectedWorkspaceBasedPageLogoutInactivityRoute)
+    );
   });
   it('user has logged out in another tab', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
@@ -240,7 +298,7 @@ describe('IdleLogoutConfirmationModal', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).toBe(expectedLogoutRoute);
+    expect(window.location.href).toBe(expectedWorkspaceBasedPageLogoutRoute);
   });
   it('user has logged out in another tab (but no redirect)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => false} />);
@@ -252,7 +310,7 @@ describe('IdleLogoutConfirmationModal', () => {
     await act(async () => {
       await jest.runOnlyPendingTimers();
     });
-    expect(window.location.href).not.toBe(commonProps.routes.logout);
+    expect(window.location.href).not.toBe(expectedWorkspaceBasedPageLogoutInactivityRoute);
   });
 
   it("user clicks 'Stay logged in' on the idle logout confirmation dialog", async () => {

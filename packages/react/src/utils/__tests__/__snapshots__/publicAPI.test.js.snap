@@ -11614,7 +11614,6 @@ Map {
       "SURVEY": "SURVEY",
     },
     "defaultProps": Object {
-      "appId": null,
       "appName": null,
       "applications": null,
       "className": null,
@@ -11681,9 +11680,6 @@ Map {
       "workspaces": null,
     },
     "propTypes": Object {
-      "appId": Object {
-        "type": "string",
-      },
       "appName": Object {
         "type": "string",
       },
@@ -12918,6 +12914,7 @@ Map {
         "countdown": 30,
         "timeout": 1800,
       },
+      "isAdminView": null,
       "onRouteChange": [Function],
       "onStayLoggedIn": [Function],
       "routes": null,
@@ -12964,6 +12961,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "isAdminView": Object {
+        "type": "bool",
       },
       "onRouteChange": Object {
         "type": "func",
