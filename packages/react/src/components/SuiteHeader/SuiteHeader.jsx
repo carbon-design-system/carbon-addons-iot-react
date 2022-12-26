@@ -195,7 +195,7 @@ const SuiteHeader = ({
 
   const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
-  // Append originHref query parameter (and, optionally, originAppId) to the logout route
+  // Append originHref query parameter (and, optionally, originIsAdmin, originWorkspaceId and originAppId) to the logout route
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);

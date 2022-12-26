@@ -94,7 +94,7 @@ const IdleLogoutConfirmationModal = ({
     []
   );
 
-  // Append originHref query parameter (and, optionally, originAppId) to the logout routes
+  // Append originHref query parameter (and, optionally, originIsAdmin, originWorkspaceId and originAppId) to the logout routes
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
