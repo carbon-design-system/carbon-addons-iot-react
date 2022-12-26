@@ -156,7 +156,7 @@ describe('IdleLogoutConfirmationModal', () => {
     await userEvent.click(modalLogoutButton);
     expect(window.location.href).toBe(expectedAdminPageLogoutRoute);
   });
-  it('user clicks Log Out on the idle logout confirmation dialog (workspac-based page)', async () => {
+  it('user clicks Log Out on the idle logout confirmation dialog (workspace-based page)', async () => {
     render(<IdleLogoutConfirmationModal {...commonProps} onRouteChange={async () => true} />);
     // Simulate a timestamp cookie that is in the past
     Object.defineProperty(window.document, 'cookie', {

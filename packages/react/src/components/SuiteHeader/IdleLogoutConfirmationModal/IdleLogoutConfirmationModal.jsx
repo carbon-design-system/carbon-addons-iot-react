@@ -55,7 +55,7 @@ const defaultProps = {
 };
 
 const propTypes = {
-  /** If true, includes the originIsAdmin query param in the logout URL */
+  /** If true, include the originIsAdmin query param in the logout URL */
   isAdminView: PropTypes.bool,
   /** Application ID in suite */
   appId: PropTypes.string,
