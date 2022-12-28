@@ -6,7 +6,7 @@ import { settings } from '../../constants/Settings';
 
 import DateTimePicker, { INTERVAL_VALUES, PICKER_KINDS } from './DateTimePicker';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('DateTimePicker', () => {
   beforeEach(() => {
@@ -516,5 +516,29 @@ describe('DateTimePicker', () => {
     cy.findByText('Custom range').should('not.exist');
     expect(onApply).to.be.callCount(0);
     expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close tooltip when dropdown is closed by click outside', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+    cy.findByRole('button', { name: 'Last 30 minutes' }).as('dropdownTrigger');
+
+    cy.get('@dropdownTrigger').trigger('mouseover');
+    cy.findByRole('dialog').should('have.class', `${prefix}--tooltip__content`).and('be.visible');
+    cy.get('@dropdownTrigger').trigger('mouseout');
+
+    cy.get('@dropdownTrigger').click();
+    cy.get('body').click();
+
+    cy.findByRole('dialog').should('not.exist');
+  });
+
+  it('should close tooltip on Apply click', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+
+    cy.findByRole('dialog').should('not.exist');
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByRole('button', { name: 'Apply' }).click();
+
+    cy.findByRole('dialog').should('not.exist');
   });
 });
