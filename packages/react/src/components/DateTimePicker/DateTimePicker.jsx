@@ -376,7 +376,7 @@ const DateTimePicker = ({
     defaultInterval: intervals[0].value,
     defaultRelativeTo: relatives[0].value,
   });
-  const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
+  const [isTooltipOpen, toggleTooltip, setIsTooltipOpen] = useDateTimePickerTooltip({ isExpanded });
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -587,18 +587,18 @@ const DateTimePicker = ({
 
   useOnClickOutside(wrapperRef, closeDropdown);
 
-  // Close dropdown by keyboard events
+  // Close dropdown when focus leaves Apply button
   const onDropdownBlur = (evt) => {
     if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
       closeDropdown();
-      toggleTooltip();
+      setIsTooltipOpen(false);
     }
   };
 
   // Close tooltip if dropdown was closed by click outside
   const onFieldBlur = (evt) => {
     if (evt.target !== evt.currentTarget) {
-      toggleTooltip();
+      setIsTooltipOpen(false);
     }
   };
 

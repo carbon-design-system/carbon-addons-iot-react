@@ -673,7 +673,7 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
     }
   };
 
-  return [isTooltipOpen, toggleTooltip];
+  return [isTooltipOpen, toggleTooltip, setIsTooltipOpen];
 };
 
 /**
