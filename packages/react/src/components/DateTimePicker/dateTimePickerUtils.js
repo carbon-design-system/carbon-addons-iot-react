@@ -689,17 +689,25 @@ export const getTimeValue = (value) => {
 
 /**
  * Hook to validate event and revoke callback
- * @param {Object} object: an object containing:
- *   closeDropdownCallback: function that will be called if validation passes
- *   isEventInside: validation handler
+ * @param {function} closeDropdownCallback: function that will be called if validation passes
  * @returns void
  */
-export const useDateTimePickerClickOutside = ({ closeDropdownCallback, isEventInside }) => (
-  evt
-) => {
-  if (typeof isEventInside === 'function' && isEventInside(evt)) {
+export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) => {
+  if (
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`)
+  ) {
     return;
   }
+
+  // Composed path is needed in order to detect if event is bubbled from TimePickerSpinner which is a React Portal
+  if (
+    evt.composed &&
+    evt.composedPath().some((el) => el.classList?.contains(`${iotPrefix}--time-picker-spinner`))
+  ) {
+    return;
+  }
+
   closeDropdownCallback();
 };
 
@@ -760,27 +768,3 @@ export const useCloseDropdown = ({
     setCustomRangeKind,
     setIsExpanded,
   ]);
-
-/**
- * Utility function to detect if event bubbles from child component of DateTimePickerV2
- * @param {Object} evt React.SyntheticEvent
- * @returns boolean True if event bubbles from child component, false otherwise
- */
-export const isEventInside = (evt) => {
-  if (
-    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
-    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`)
-  ) {
-    return true;
-  }
-
-  // Composed path is needed in order to detect if event is bubbled from TimePickerSpinner which is a React Portal
-  if (
-    evt.composed &&
-    evt.composedPath().some((el) => el.classList?.contains(`${iotPrefix}--time-picker-spinner`))
-  ) {
-    return true;
-  }
-
-  return false;
-};

@@ -40,7 +40,6 @@ import {
   getTimeValue,
   invalidEndDate,
   invalidStartDate,
-  isEventInside,
   onDatePickerClose,
   parseValue,
   useAbsoluteDateTimeValue,
@@ -785,10 +784,7 @@ const DateTimePicker = ({
     setHumanValue,
   });
 
-  const onClickOutside = useDateTimePickerClickOutside({
-    closeDropdownCallback: closeDropdown,
-    isEventInside,
-  });
+  const onClickOutside = useDateTimePickerClickOutside(closeDropdown);
 
   const onDropdownFooterBlur = (evt) => {
     if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
