@@ -20,7 +20,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import TimePickerSpinner from '../TimePickerSpinner/TimePickerSpinner';
 import { settings } from '../../constants/Settings';
-import { DEFAULT_VALUE_KINDS } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
 import { handleSpecificKeyDown, useOnClickOutside } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
@@ -405,10 +404,13 @@ const DateTimePicker = ({
    * @param {Object} [preset] clicked preset
    * @param {string} preset.label preset label
    * @param {number} preset.offset preset offset in minutes
+   * @param {boolean} isApplyClicked if user clicked on apply button. Needed to apply selected preset.
    * @returns {Object} the augmented value itself and the human readable value
    */
-  const renderValue = (clickedPreset = null) => {
+  const renderValue = (clickedPreset = null, isApplyClicked = false) => {
     const value = { ...dateTimePickerBaseValue };
+    const defaultValueKind = defaultValue?.timeRangeKind;
+
     if (isCustomRange) {
       if (customRangeKind === PICKER_KINDS.RELATIVE) {
         value.relative = relativeValue;
@@ -429,9 +431,15 @@ const DateTimePicker = ({
         })
         .pop();
       value.preset = preset;
-      value.kind = defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.PRESET;
-      if (defaultValue && defaultValue.timeRangeKind !== PICKER_KINDS.PRESET) {
-        value[DEFAULT_VALUE_KINDS[defaultValue?.timeRangeKind]] = defaultValue.timeRangeValue;
+      value.kind =
+        clickedPreset || isApplyClicked
+          ? PICKER_KINDS.PRESET
+          : defaultValue
+          ? defaultValueKind
+          : PICKER_KINDS.PRESET;
+
+      if (defaultValue && defaultValueKind !== PICKER_KINDS.PRESET) {
+        value[defaultValueKind.toLowerCase()] = defaultValue.timeRangeValue;
       }
     }
 
@@ -635,7 +643,7 @@ const DateTimePicker = ({
 
   const onApplyClick = () => {
     setIsExpanded(false);
-    const value = renderValue();
+    const value = renderValue(null, true);
     setLastAppliedValue(value);
     const returnValue = {
       timeRangeKind: value.kind,
