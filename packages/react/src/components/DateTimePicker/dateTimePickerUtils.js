@@ -3,12 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
 import { settings } from '../../constants/Settings';
-import {
-  PICKER_KINDS,
-  INTERVAL_VALUES,
-  RELATIVE_VALUES,
-  DEFAULT_VALUE_KINDS,
-} from '../../constants/DateConstants';
+import { PICKER_KINDS, INTERVAL_VALUES, RELATIVE_VALUES } from '../../constants/DateConstants';
 import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
@@ -750,7 +745,7 @@ export const useCloseDropdown = ({
       ...dateTimePickerBaseValue,
       ...(defaultValue && {
         kind: defaultValue.timeRangeKind,
-        [DEFAULT_VALUE_KINDS[defaultValue.timeRangeKind]]: getTimeValue(defaultValue),
+        [defaultValue?.timeRangeKind.toLowerCase()]: getTimeValue(defaultValue),
       }),
     };
     setCurrentValue(value);
