@@ -57,8 +57,9 @@ export const CardTitle = (
   const hasInfoIconTooltip = infoIconTooltip && !hasExternalTitleTextTooltip;
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
 
-  const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
+  const [calculateMenuOffset, { adjustedDirection, adjustedAlignment }] = usePopoverPositioning({
     direction: 'bottom',
+    defaultAlignment: 'center',
     menuOffset: getTooltipMenuOffset,
     useAutoPositioning: true,
     isOverflowMenu: true, // Needed to preserve default direction (bottom)
@@ -130,7 +131,7 @@ export const CardTitle = (
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
       <Tooltip
-        align="center"
+        align={adjustedAlignment}
         menuOffset={calculateMenuOffset}
         direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
@@ -186,6 +187,9 @@ export const CardTitle = (
   const renderSubTitle = () =>
     !subtitle ? null : hasSubTitleTooltip ? (
       <Tooltip
+        align={adjustedAlignment}
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-subtitle`}
         ref={subTitleRef}
         showIcon={false}
