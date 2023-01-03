@@ -956,11 +956,10 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   <div
     style={
       Object {
-        "backgroundColor": "blue",
         "height": "15rem",
         "overflow": "scroll",
         "paddingBottom": "50rem",
-        "paddingTop": "15rem",
+        "paddingTop": "25rem",
       }
     }
   >
