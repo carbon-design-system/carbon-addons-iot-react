@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.13...v2.152.0-next.14) (2023-01-03)
+
+
+### Bug Fixes
+
+* **card:** auto alignment for title tooltips ([9264d2d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9264d2d75d3a120f50afc984f1afb5a9ec4ddda0)), closes [#3682](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3682)
+* **datetimepickerv2:** focus not working in firefox ([b0bd6b6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b0bd6b630a4090af412bbeafb92bbf488b627574))
+* **datetimepickerv2:** put invalid class back to box container ([64af1a6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/64af1a61a3387e8c036b89014a578b5420603fc2))
+
+
+### Features
+
+* **table:** add prop to enable horizontal scrollbar in table body ([6a6bb95](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6a6bb957e6eea23ddc43bb92a15f8603dbbc671f)), closes [#3653](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3653)
+
+
+
+
+
 # [2.152.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.12...v2.152.0-next.13) (2022-12-06)
 
 

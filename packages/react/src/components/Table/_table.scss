@@ -195,6 +195,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     left: unset;
     right: var(--row-nesting-offset);
   }
+
+  &__expand {
+    left: unset;
+    margin-left: var(--row-nesting-offset);
+  }
 }
 
 .#{$iot-prefix}--expanded-tablerow {
