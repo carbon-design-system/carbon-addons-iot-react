@@ -118,6 +118,11 @@
   pointer-events: none;
 }
 
+.#{$iot-prefix}--date-time-picker__datepicker {
+  //placeholder height
+  height: 334px;
+}
+
 // open menu content
 .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
   --zIndex: 0;

@@ -280,6 +280,11 @@
   cursor: not-allowed;
 }
 
+.#{$iot-prefix}--date-time-picker__datepicker {
+  //placeholder height
+  height: 334px;
+}
+
 html[dir='rtl'] {
   .#{$iot-prefix}--date-time-picker__wrapper {
     .#{$prefix}--number {
