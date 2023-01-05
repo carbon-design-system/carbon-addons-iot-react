@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.14...v2.152.0-next.15) (2023-01-05)
+
+
+### Bug Fixes
+
+* **barchartutils:** condition check for categorydatasourceid ([9613635](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9613635553b9fa1353b6377aebf8b0ee5d68f2df))
+* **barchartutils:** updated conditon for grouped ([5cdeec5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5cdeec5b22e673a2f165523faf71f9026a7c0ce7))
+* **suiteheader:** Including `appId` as a parameter in `useUiResources` hook. ([7287e8f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7287e8f03d28951e5681be7eea8a6456090f3016))
+* **suiteheader:** Including `originWorkspaceId` in the logout url, and updating snapshots. ([9a897f9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9a897f973efc4a9f5536a1128be3e3580903c1ba))
+* **suiteheader:** Including an optional `appId` property to `SuiteHeader` so that an `originAppId` query param can be added to the logout URL. ([ffe5395](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ffe53959e80380d4e94a3717158b095eda51321a))
+* **suiteheader:** Removing `appId` as `SuiteHeader` property and including it as a query parameter to the `uiresources` API handler. ([158e7e5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/158e7e5392169238c9fdbf313d22a9d338fae7ed))
+
+
+
+
+
 # [2.152.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.13...v2.152.0-next.14) (2023-01-03)
 
 
