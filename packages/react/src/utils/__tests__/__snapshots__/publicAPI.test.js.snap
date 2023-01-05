@@ -12900,6 +12900,7 @@ Map {
   },
   "IdleLogoutConfirmationModal" => Object {
     "defaultProps": Object {
+      "appId": null,
       "className": null,
       "i18n": Object {
         "closeButtonLabel": "Close",
@@ -12913,11 +12914,16 @@ Map {
         "countdown": 30,
         "timeout": 1800,
       },
+      "isAdminView": null,
       "onRouteChange": [Function],
       "onStayLoggedIn": [Function],
       "routes": null,
+      "workspaceId": null,
     },
     "propTypes": Object {
+      "appId": Object {
+        "type": "string",
+      },
       "className": Object {
         "type": "string",
       },
@@ -12956,6 +12962,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isAdminView": Object {
+        "type": "bool",
+      },
       "onRouteChange": Object {
         "type": "func",
       },
@@ -12977,6 +12986,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "workspaceId": Object {
+        "type": "string",
       },
     },
   },
