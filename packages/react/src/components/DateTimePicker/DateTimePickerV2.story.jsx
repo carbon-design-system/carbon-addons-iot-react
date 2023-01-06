@@ -121,25 +121,39 @@ SelectedRelative.storyName = 'Selected relative';
 
 export const SelectedAbsolute = () => {
   return (
-    <DateTimePicker
-      id="datetimepicker"
-      useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
-      defaultValue={defaultAbsoluteValue}
-      dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
-      hasTimeInput={boolean('hasTimeInput', true)}
-      onApply={action('onApply')}
-      onCancel={action('onCancel')}
-      hasIconOnly={boolean('hasIconOnly', false)}
-      invalid={boolean('invalid', false)}
-      disabled={boolean('disabled', false)}
-      style={{ zIndex: number('zIndex', 0) }}
-      i18n={object('i18n', {
-        startTimeLabel: 'Start',
-        endTimeLabel: 'End',
-        invalidText: 'The date time entered is invalid',
-      })}
-      renderInPortal={boolean('renderInPortal', true)}
-    />
+    <div
+      style={{
+        height: '15rem',
+        paddingTop: '25rem',
+        paddingBottom: '50rem',
+        paddingLeft: '1rem',
+        overflow: 'scroll',
+      }}
+    >
+      <div>
+        <DateTimePicker
+          id="datetimepicker"
+          useNewTimeSpinner={boolean('useNewTimeSpinner', false)}
+          useAutoPositioning={boolean('useAutoPositioning', true)}
+          defaultValue={defaultAbsoluteValue}
+          dateTimeMask={text('dateTimeMask', 'YYYY-MM-DD HH:mm')}
+          hasTimeInput={boolean('hasTimeInput', true)}
+          onApply={action('onApply')}
+          onCancel={action('onCancel')}
+          hasIconOnly={boolean('hasIconOnly', false)}
+          invalid={boolean('invalid', false)}
+          disabled={boolean('disabled', false)}
+          style={{ zIndex: number('zIndex', 0) }}
+          i18n={object('i18n', {
+            startTimeLabel: 'Start',
+            endTimeLabel: 'End',
+            invalidText: 'The date time entered is invalid',
+          })}
+          renderInPortal={boolean('renderInPortal', true)}
+        />
+      </div>
+      <div style={{ height: '10rem' }} />
+    </div>
   );
 };
 
@@ -153,6 +167,7 @@ export const SingleSelect = () => {
         height: '15rem',
         paddingTop: '25rem',
         paddingBottom: '50rem',
+        paddingLeft: '1rem',
         overflow: 'scroll',
       }}
     >

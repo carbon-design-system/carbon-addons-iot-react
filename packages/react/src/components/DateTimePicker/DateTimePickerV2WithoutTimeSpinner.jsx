@@ -702,17 +702,29 @@ const DateTimePicker = ({
     : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
-  const getPosition = () => {
-    setLeft(containerRef.current?.parentNode.scrollLeft);
-    setTop(containerRef.current?.parentNode.scrollTop);
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
+  const flyoutMenuHeight = 482;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+
+  const getPosition = (event) => {
+    setLeft(event.target.scrollLeft);
+    setTop(event.target.scrollTop);
   };
 
-  // Re-calculate X and Y when the parent is scroll by the user
+  // Re-calculate X and Y when parents scrolled
   useEffect(() => {
-    const currentNode = containerRef.current?.parentNode;
-    if (currentNode) {
+    let currentNode = containerRef.current?.parentNode;
+    const parentNodes = [];
+    while (currentNode) {
+      parentNodes.push(currentNode);
       currentNode.addEventListener('scroll', getPosition);
+      currentNode = currentNode.parentNode;
     }
+
+    return () => {
+      parentNodes.map((node) => node.removeEventListener('scroll', getPosition));
+    };
   }, []);
 
   return (
@@ -817,7 +829,11 @@ const DateTimePicker = ({
               left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={FlyoutMenuDirection.BottomEnd}
+            direction={
+              useAutoPositioning && offBottom
+                ? FlyoutMenuDirection.TopEnd
+                : FlyoutMenuDirection.BottomEnd
+            }
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
