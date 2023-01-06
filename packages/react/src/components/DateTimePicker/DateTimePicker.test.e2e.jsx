@@ -400,10 +400,10 @@ describe('DateTimePicker', () => {
           timeRangeValue: {
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
-            endTime: '00:00',
+            endTime: null,
             start: Cypress.sinon.match.any,
             startDate: lastMonth.format(`MM/[20]/YYYY`),
-            startTime: '00:00',
+            startTime: null,
           },
         });
       });

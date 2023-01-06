@@ -114,6 +114,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
 
       returnValue.absolute.start = new Date(startDate.valueOf());
 
+      const startTimeValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
+
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
@@ -122,14 +126,15 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         }
+
+        const endTimeValue = value.endTime
+          ? `${dayjs(endDate).format(dateTimeMask)}`
+          : `${dayjs(endDate).format(dateTimeMask)}`.split(' ')[0];
+
         returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          endDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${endTimeValue}`;
       } else {
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          startDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${startTimeValue}`;
       }
       break;
     }
@@ -149,7 +154,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
       returnValue.single.start = new Date(startDate.valueOf());
-      readableValue = `${dayjs(startDate).format(dateTimeMask)}`;
+      readableValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
       break;
     }
     default:
@@ -366,9 +373,9 @@ export const useAbsoluteDateTimeValue = () => {
   const resetAbsoluteValue = () => {
     setAbsoluteValue({
       startDate: '',
-      startTime: '00:00',
+      startTime: null,
       endDate: '',
-      endTime: '00:00',
+      endTime: null,
     });
   };
 
