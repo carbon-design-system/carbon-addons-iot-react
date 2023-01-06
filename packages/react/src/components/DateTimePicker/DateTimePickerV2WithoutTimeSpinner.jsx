@@ -174,7 +174,7 @@ const propTypes = {
   renderInPortal: PropTypes.bool,
   /** Auto reposition if flyout menu offscreen */
   useAutoPositioning: PropTypes.bool,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 const defaultProps = {
@@ -307,8 +307,6 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
-  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
-
   // initialize the dayjs locale
   useEffect(() => {
     dayjs.locale(locale);
@@ -324,9 +322,21 @@ const DateTimePicker = ({
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
   const [invalidState, setInvalidState] = useState(invalid);
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const containerRef = useRef();
+  const updatedStyle = useMemo(
+    () => ({
+      ...style,
+      '--zIndex': style.zIndex ?? 0,
+      scrollTop: top,
+      scrollLeft: left,
+    }),
+    [style, top, left]
+  );
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -693,8 +703,33 @@ const DateTimePicker = ({
     : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
+  const flyoutMenuHeight = 482;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+
+  const getPosition = (event) => {
+    setLeft(event.target.scrollLeft);
+    setTop(event.target.scrollTop);
+  };
+
+  // Re-calculate X and Y when parents scrolled
+  useEffect(() => {
+    let currentNode = containerRef.current?.parentNode;
+    const parentNodes = [];
+    while (currentNode) {
+      parentNodes.push(currentNode);
+      currentNode.addEventListener('scroll', getPosition);
+      currentNode = currentNode.parentNode;
+    }
+
+    return () => {
+      parentNodes.map((node) => node.removeEventListener('scroll', getPosition));
+    };
+  }, []);
+
   return (
-    <div className={`${iotPrefix}--date-time-pickerv2`}>
+    <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
@@ -795,7 +830,11 @@ const DateTimePicker = ({
               left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={FlyoutMenuDirection.BottomEnd}
+            direction={
+              useAutoPositioning && offBottom
+                ? FlyoutMenuDirection.TopEnd
+                : FlyoutMenuDirection.BottomEnd
+            }
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
@@ -804,10 +843,11 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
+            style={updatedStyle}
           >
             <div
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
+              style={{ '--wrapper-width': '20rem' }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

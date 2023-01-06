@@ -121,8 +121,12 @@
 // open menu content
 .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
   --zIndex: 0;
+  --top: 0;
+  --left: 0;
   padding: 0;
   z-index: var(--zIndex);
+
+  transform: translate(var(--left), var(--top));
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
@@ -303,6 +307,11 @@
   & .#{$prefix}--tooltip__content {
     text-align: unset;
   }
+}
+
+.#{$iot-prefix}--date-time-picker__datepicker {
+  //placeholder height, there is an issue in carbon that calender is rendered after the height calculation
+  min-height: 20.875rem;
 }
 
 html[dir='rtl'] {

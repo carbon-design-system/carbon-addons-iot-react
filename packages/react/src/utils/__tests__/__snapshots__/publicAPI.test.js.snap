@@ -8960,7 +8960,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",
@@ -10023,7 +10033,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",
@@ -31007,7 +31027,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",

@@ -12,8 +12,296 @@ import DateTimePicker from './DateTimePickerV2';
 const { iotPrefix } = settings;
 
 describe('DateTimePickerV2', () => {
+  const getRect = ($el) => $el[0].getBoundingClientRect();
+
   beforeEach(() => {
     cy.viewport(1680, 900);
+  });
+
+  it('should re-position the flyout when scrolling parent to bottom', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousDateTimeInputTop;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        previousDateTimeInputTop = rect.top;
+      });
+
+    let previousFlyoutMenuTop;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousFlyoutMenuTop = rect.top;
+      });
+
+    expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
+
+    cy.get('#parent').scrollTo('top', { duration: 1000 });
+
+    let newDateTimeInputTop;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        newDateTimeInputTop = rect.top;
+      });
+
+    let newFlyoutMenuTop;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        newFlyoutMenuTop = rect.top;
+      });
+
+    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+  });
+
+  it('should re-position the flyout when scrolling parent to the right', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousDateTimeInputLeft;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        previousDateTimeInputLeft = rect.left;
+      });
+
+    let previousFlyoutMenuLeft;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousFlyoutMenuLeft = rect.left;
+      });
+
+    expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
+
+    cy.get('#parent').scrollTo('left', { duration: 1000 });
+
+    let newDateTimeInputLeft;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        newDateTimeInputLeft = rect.left;
+      });
+
+    let newFlyoutMenuLeft;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        newFlyoutMenuLeft = rect.left;
+      });
+
+    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
+  });
+
+  it('should re-position the flyout when scrolling parent to bottom (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            useNewTimeSpinner
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousDateTimeInputTop;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        previousDateTimeInputTop = rect.top;
+      });
+
+    let previousFlyoutMenuTop;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousFlyoutMenuTop = rect.top;
+      });
+
+    expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
+
+    cy.get('#parent').scrollTo('top', { duration: 1000 });
+
+    let newDateTimeInputTop;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        newDateTimeInputTop = rect.top;
+      });
+
+    let newFlyoutMenuTop;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        newFlyoutMenuTop = rect.top;
+      });
+
+    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+  });
+
+  it('should re-position the flyout when scrolling parent to the right (new time spinner)', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <div style={{ backgroundColor: 'blue' }}>
+        <div
+          id="parent"
+          style={{
+            height: '20rem',
+            paddingTop: '10rem',
+            paddingBottom: '1000rem',
+            paddingLeft: '1rem',
+            width: 300,
+            backgroundColor: 'red',
+            overflow: 'scroll',
+          }}
+        >
+          <DateTimePicker
+            onApply={onApply}
+            onCancel={onCancel}
+            id="picker-test"
+            hasTimeInput
+            useNewTimeSpinner
+            defaultValue={{
+              timeRangeKind: PICKER_KINDS.ABSOLUTE,
+              timeRangeValue: {
+                start: new Date(2021, 7, 1, 12, 34, 0),
+                end: new Date(2021, 7, 6, 10, 49, 0),
+              },
+            }}
+          />
+        </div>
+      </div>
+    );
+
+    cy.findAllByLabelText('Calendar').eq(0).click();
+
+    let previousDateTimeInputLeft;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        previousDateTimeInputLeft = rect.left;
+      });
+
+    let previousFlyoutMenuLeft;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        previousFlyoutMenuLeft = rect.left;
+      });
+
+    expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
+
+    cy.get('#parent').scrollTo('left', { duration: 1000 });
+
+    let newDateTimeInputLeft;
+    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
+      .then(getRect)
+      .then((rect) => {
+        newDateTimeInputLeft = rect.left;
+      });
+
+    let newFlyoutMenuLeft;
+    cy.get('#flyout-tooltip')
+      .then(getRect)
+      .then((rect) => {
+        newFlyoutMenuLeft = rect.left;
+      });
+
+    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
   });
 
   it('should pick a new absolute ranges', () => {

@@ -280,6 +280,11 @@
   cursor: not-allowed;
 }
 
+.#{$iot-prefix}--date-time-picker__datepicker {
+  //placeholder height, there is an issue in carbon that calender is rendered after the height calculation
+  min-height: 20.875rem;
+}
+
 html[dir='rtl'] {
   .#{$iot-prefix}--date-time-picker__wrapper {
     .#{$prefix}--number {
