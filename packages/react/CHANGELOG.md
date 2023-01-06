@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.16...v2.152.0-next.17) (2023-01-06)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add min-height ([ea0b4aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ea0b4aa67d76c95b66dd0c7544de0c17dbbe156d))
+* **datetimepicker:** add placeholder height ([85de1ef](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/85de1ef738199fa1e0958d27c3c4b97853eb2691))
+* **datetimepickerv2:** add event listener to all parents ([123d51b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/123d51b972d867b5af46a26b6e71acd209df9bef))
+* **datetimepickerv2:** add tests ([5d49c17](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5d49c171b59264d149a8999e505f367a206a87fd))
+* **datetimepickerv2:** adding conditions ([d0cdba2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d0cdba2724ef83bb3bbe4a44320b965a59232d60))
+* **datetimepickerv2:** flip direction if offscreen on bottom ([ad87f34](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ad87f3448fbc4d8120b9f54063d64b6a4f1e48e0))
+* **datetimepickerv2:** make sure to remove event listner ([457d00f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/457d00f2946a88a839bf1502a5594160b431692e))
+* **datetimepickerv2:** update e2e tests ([707472d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/707472db54d9956a4214edb880e7036cf9d212fd))
+* **datetimepickerv2:** update story for testing scrolling ([6d41ab4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d41ab478916eb1148029396e7c2ce34d18d9502))
+* **datetimepickerv2:** update tests ([132895e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/132895ec257cea61e513876071c54879b69f87b4))
+* **flyoutmenu:** flyout menu position ([578f035](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/578f035b2f291b67a330dfea4544ca6fb5e9890c))
+
+
+
+
+
 # [2.152.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.15...v2.152.0-next.16) (2023-01-06)
 
 
