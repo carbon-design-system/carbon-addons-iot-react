@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.15...v2.152.0-next.16) (2023-01-06)
+
+
+### Bug Fixes
+
+* **datetimepicker:** change absolute starttime default to null ([786e7e5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/786e7e58ed10ec28c9f8f3abca10e75a2615997e))
+* **datetimepickerv2:** disable apply button when time value is null ([0f8649b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0f8649b97ba14d65c6319b8084b556e30d2a368b))
+* **datetimepickerv2:** remove defalut time value from humanvalue ([9bb706a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9bb706abc9aa147038a667369471e42c6065165d))
+
+
+
+
+
 # [2.152.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.14...v2.152.0-next.15) (2023-01-05)
 
 
