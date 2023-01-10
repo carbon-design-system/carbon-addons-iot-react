@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'carbon-components-react';
+import throttle from 'lodash-es/throttle';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
@@ -10,6 +11,11 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
+const SCROLL_THROTTLE_TIMEOUT = 10;
+const SCROLL_THROTTLE_OPTIONS = {
+  leading: false,
+  trailing: false,
+};
 const isEngagingEventType = (type) => type === 'click' || type === 'keydown';
 
 const propTypes = {
@@ -101,32 +107,78 @@ export const CardTitle = (
     }
   }, []);
 
+  const handleTitleScroll = useCallback(
+    throttle(
+      () => {
+        setTooltipsState((prevState) => ({
+          ...prevState,
+          title: false,
+        }));
+      },
+      SCROLL_THROTTLE_TIMEOUT,
+      SCROLL_THROTTLE_OPTIONS
+    ),
+    []
+  );
+
+  const handleSubtitleScroll = useCallback(
+    throttle(
+      () => {
+        setTooltipsState((prevState) => ({
+          ...prevState,
+          subtitle: false,
+        }));
+      },
+      SCROLL_THROTTLE_TIMEOUT,
+      SCROLL_THROTTLE_OPTIONS
+    ),
+    []
+  );
+
+  const handleInfoScroll = useCallback(
+    throttle(
+      () => {
+        setTooltipsState((prevState) => ({
+          ...prevState,
+          info: false,
+        }));
+      },
+      SCROLL_THROTTLE_TIMEOUT,
+      SCROLL_THROTTLE_OPTIONS
+    ),
+    []
+  );
+
   // ignore due to window event listeners
   /* istanbul ignore next */
   useEffect(() => {
-    const handleScroll = () => {
-      const isSomeTooltipOpen = Object.values(tooltipsState).some((isOpen) => isOpen);
+    if (tooltipsState.title) {
+      window.addEventListener('scroll', handleTitleScroll);
+    } else {
+      window.removeEventListener('scroll', handleTitleScroll);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.title]);
 
-      /* istanbul ignore else */
-      if (isSomeTooltipOpen) {
-        setTooltipsState((prevState) =>
-          Object.keys(prevState).reduce(
-            (attrs, key) => ({
-              ...attrs,
-              [key]: false,
-            }),
-            {}
-          )
-        );
-      }
-    };
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.subtitle) {
+      window.addEventListener('scroll', handleSubtitleScroll);
+    } else {
+      window.removeEventListener('scroll', handleSubtitleScroll);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.subtitle]);
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [tooltipsState]);
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.info) {
+      window.addEventListener('scroll', handleInfoScroll);
+    } else {
+      window.removeEventListener('scroll', handleInfoScroll);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.info]);
 
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
