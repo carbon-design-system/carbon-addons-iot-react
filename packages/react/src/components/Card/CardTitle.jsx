@@ -107,6 +107,8 @@ export const CardTitle = (
     }
   }, []);
 
+  // below statements are ignored due to window event listeners (tested in cypress)
+  /* istanbul ignore next */
   const handleTitleScroll = useCallback(
     throttle(
       () => {
@@ -121,6 +123,7 @@ export const CardTitle = (
     []
   );
 
+  /* istanbul ignore next */
   const handleSubtitleScroll = useCallback(
     throttle(
       () => {
@@ -135,6 +138,7 @@ export const CardTitle = (
     []
   );
 
+  /* istanbul ignore next */
   const handleInfoScroll = useCallback(
     throttle(
       () => {
@@ -149,7 +153,6 @@ export const CardTitle = (
     []
   );
 
-  // ignore due to window event listeners
   /* istanbul ignore next */
   useEffect(() => {
     if (tooltipsState.title) {
