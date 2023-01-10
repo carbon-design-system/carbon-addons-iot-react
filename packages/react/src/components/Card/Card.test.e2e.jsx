@@ -95,7 +95,10 @@ describe('Card', () => {
     cy.findByTestId('Card-title-tooltip').should('exist');
     cy.findByTestId('Card-title-tooltip').should('be.visible');
 
-    cy.scrollTo(0, 500, {
+    cy.scrollTo('bottom', {
+      duration: 500,
+    });
+    cy.scrollTo('top', {
       duration: 500,
     });
 
@@ -126,7 +129,10 @@ describe('Card', () => {
     cy.findByTestId('Card-subtitle').should('exist');
     cy.findByTestId('Card-subtitle').should('be.visible');
 
-    cy.scrollTo(0, 500, {
+    cy.scrollTo('bottom', {
+      duration: 500,
+    });
+    cy.scrollTo('top', {
       duration: 500,
     });
 
@@ -154,7 +160,10 @@ describe('Card', () => {
     cy.findByTestId('Card-tooltip').should('exist');
     cy.findByTestId('Card-tooltip').should('be.visible');
 
-    cy.scrollTo(0, 500, {
+    cy.scrollTo('bottom', {
+      duration: 500,
+    });
+    cy.scrollTo('top', {
       duration: 500,
     });
 
