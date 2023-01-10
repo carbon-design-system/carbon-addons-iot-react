@@ -5796,7 +5796,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </div>
           </div>
           <div
-            className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
+            className="bx--pagination iot--pagination bx--pagination--lg"
             data-testid="null-table-pagination"
             style={
               Object {

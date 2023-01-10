@@ -1938,7 +1938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                 </div>
               </div>
               <div
-                className="bx--pagination iot--pagination iot--pagination--hide-page bx--pagination--lg"
+                className="bx--pagination iot--pagination bx--pagination--lg"
                 data-testid="BarChartCard-table-table-pagination"
                 style={
                   Object {
