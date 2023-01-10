@@ -95,7 +95,9 @@ describe('Card', () => {
     cy.findByTestId('Card-title-tooltip').should('exist');
     cy.findByTestId('Card-title-tooltip').should('be.visible');
 
-    cy.scrollTo(0, 50);
+    cy.scrollTo(0, 250, {
+      duration: 300,
+    });
 
     cy.findByTestId('Card-title-tooltip').should('not.exist');
   });
@@ -124,7 +126,9 @@ describe('Card', () => {
     cy.findByTestId('Card-subtitle').should('exist');
     cy.findByTestId('Card-subtitle').should('be.visible');
 
-    cy.scrollTo(0, 50);
+    cy.scrollTo(0, 250, {
+      duration: 300,
+    });
 
     cy.findByTestId('Card-subtitle').should('not.exist');
   });
@@ -150,7 +154,9 @@ describe('Card', () => {
     cy.findByTestId('Card-tooltip').should('exist');
     cy.findByTestId('Card-tooltip').should('be.visible');
 
-    cy.scrollTo(0, 50);
+    cy.scrollTo(0, 250, {
+      duration: 300,
+    });
 
     cy.findByTestId('Card-tooltip').should('not.exist');
   });
