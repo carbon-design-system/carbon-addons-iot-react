@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'carbon-components-react';
-import throttle from 'lodash-es/throttle';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
@@ -11,11 +10,7 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
-const SCROLL_THROTTLE_TIMEOUT = 10;
-const SCROLL_THROTTLE_OPTIONS = {
-  leading: false,
-  trailing: false,
-};
+const SCROLL_EVENT_TIMEOUT = 50;
 const isEngagingEventType = (type) => type === 'click' || type === 'keydown';
 
 const propTypes = {
@@ -57,6 +52,9 @@ export const CardTitle = (
 ) => {
   const titleRef = useRef();
   const subTitleRef = useRef();
+  const titleTimeoutRef = useRef();
+  const subtitleTimeoutRef = useRef();
+  const infoTimeoutRef = useRef();
   const truncatesTitle = useHasTextOverflow(titleRef, title);
   const hasExternalTitleTextTooltip = titleTextTooltip;
   const hasTitleTooltipFromTruncation = truncatesTitle && !titleTextTooltip;
@@ -109,77 +107,76 @@ export const CardTitle = (
 
   // below statements are ignored due to window event listeners (tested in cypress)
   /* istanbul ignore next */
-  const handleTitleScroll = useCallback(
-    throttle(
-      () => {
-        setTooltipsState((prevState) => ({
-          ...prevState,
-          title: false,
-        }));
-      },
-      SCROLL_THROTTLE_TIMEOUT,
-      SCROLL_THROTTLE_OPTIONS
-    ),
-    []
-  );
+  const handleTitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      title: false,
+    }));
+  }, []);
 
   /* istanbul ignore next */
-  const handleSubtitleScroll = useCallback(
-    throttle(
-      () => {
-        setTooltipsState((prevState) => ({
-          ...prevState,
-          subtitle: false,
-        }));
-      },
-      SCROLL_THROTTLE_TIMEOUT,
-      SCROLL_THROTTLE_OPTIONS
-    ),
-    []
-  );
+  const handleSubtitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      subtitle: false,
+    }));
+  }, []);
 
   /* istanbul ignore next */
-  const handleInfoScroll = useCallback(
-    throttle(
-      () => {
-        setTooltipsState((prevState) => ({
-          ...prevState,
-          info: false,
-        }));
-      },
-      SCROLL_THROTTLE_TIMEOUT,
-      SCROLL_THROTTLE_OPTIONS
-    ),
-    []
-  );
+  const handleInfoScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      info: false,
+    }));
+  }, []);
 
   /* istanbul ignore next */
   useEffect(() => {
     if (tooltipsState.title) {
-      window.addEventListener('scroll', handleTitleScroll);
+      titleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleTitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
     } else {
       window.removeEventListener('scroll', handleTitleScroll);
     }
+    return () => {
+      window.removeEventListener('scroll', handleTitleScroll);
+      clearTimeout(titleTimeoutRef.current);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tooltipsState.title]);
 
   /* istanbul ignore next */
   useEffect(() => {
     if (tooltipsState.subtitle) {
-      window.addEventListener('scroll', handleSubtitleScroll);
+      subtitleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleSubtitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
     } else {
       window.removeEventListener('scroll', handleSubtitleScroll);
     }
+
+    return () => {
+      window.removeEventListener('scroll', handleSubtitleScroll);
+      clearTimeout(subtitleTimeoutRef.current);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tooltipsState.subtitle]);
 
   /* istanbul ignore next */
   useEffect(() => {
     if (tooltipsState.info) {
-      window.addEventListener('scroll', handleInfoScroll);
+      infoTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleInfoScroll);
+      }, SCROLL_EVENT_TIMEOUT);
     } else {
       window.removeEventListener('scroll', handleInfoScroll);
     }
+
+    return () => {
+      window.removeEventListener('scroll', handleInfoScroll);
+      clearTimeout(infoTimeoutRef.current);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tooltipsState.info]);
 
