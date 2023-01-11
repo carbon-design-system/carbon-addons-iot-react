@@ -680,7 +680,8 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid ||
       absoluteEndTimeInvalid ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
+      (absoluteValue.startDate === '' && absoluteValue.endDate === '') ||
+      (hasTimeInput ? !absoluteValue.startTime || !absoluteValue.endTime : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
@@ -996,7 +997,7 @@ const DateTimePicker = ({
                             id={`${id}-start-time`}
                             invalid={absoluteStartTimeInvalid}
                             labelText={mergedI18n.startTimeLabel}
-                            value={absoluteValue ? absoluteValue.startTime : '00:00'}
+                            value={absoluteValue ? absoluteValue.startTime : null}
                             i18n={i18n}
                             onChange={onAbsoluteStartTimeChange}
                             spinner
@@ -1007,7 +1008,7 @@ const DateTimePicker = ({
                             id={`${id}-end-time`}
                             invalid={absoluteEndTimeInvalid}
                             labelText={mergedI18n.endTimeLabel}
-                            value={absoluteValue ? absoluteValue.endTime : '00:00'}
+                            value={absoluteValue ? absoluteValue.endTime : null}
                             i18n={i18n}
                             onChange={onAbsoluteEndTimeChange}
                             spinner

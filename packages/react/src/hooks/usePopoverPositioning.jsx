@@ -24,7 +24,6 @@ const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */
 
   const windowWidth = window.innerWidth || document.documentElement.clientWidth;
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
   const offTop = buttonRect.top - tooltipRect.height < 0;
   const offLeft = buttonRect.left - tooltipRect.width < 0;
   const offRight = buttonRect.right + tooltipRect.width > windowWidth;
@@ -35,6 +34,34 @@ const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */
   const L = offLeft ? 'left' : '';
 
   return [T, R, B, L].filter(Boolean).join('-');
+};
+
+/**
+ * This is used as the callback for menuOffset ONLY on Tooltips. It's needed due to
+ * truncation that might happen on Tooltip trigger, therefore we need to consider
+ * right position of the trigger as well. This function is used as an enhancement for
+ * the isOffscreen method.
+ *
+ * @param {HTMLElement} menuBody The underlying carbon FloatingMenu element
+ * @param {string} menuDirection The direction prop
+ * @param {HTMLElement} menuButton The button triggering the menu
+ * @returns {string} 'start', 'center' or 'end'
+ */
+const getTooltipAlignment = (menuBody, menuDirection, menuButton) => {
+  const buttonRect = menuButton.getBoundingClientRect();
+  const tooltipRect = menuBody.getBoundingClientRect();
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+  const triggerCenter = (buttonRect.left + buttonRect.right) / 2;
+  const tooltipCenter = tooltipRect.width / 2;
+  if (triggerCenter - tooltipCenter < 0) {
+    return 'start';
+  }
+  if (triggerCenter + tooltipCenter > windowWidth) {
+    return 'end';
+  }
+
+  return 'center';
 };
 
 /**
@@ -72,8 +99,15 @@ export const usePopoverPositioning = ({
    * adjustments.
    */
   useAutoPositioning = true,
+
+  /**
+   * The alignment pass to the original Tooltip, OverflowMenu, or FlyoutMenu components.
+   * Could be 'start', 'center' or 'end'
+   */
+  defaultAlignment = 'center',
 }) => {
   const [adjustedDirection, setAdjustedDirection] = React.useState();
+  const [adjustedAlignment, setAdjustedAlignment] = React.useState(defaultAlignment);
   const [adjustedFlipped, setAdjustedFlipped] = React.useState();
   const [{ flyoutAlignment }, setDirections] = React.useState({});
   const previousDirection = React.useRef();
@@ -180,8 +214,11 @@ export const usePopoverPositioning = ({
    * be adjusted to `right-start`.
    */
   const fixOverflow = React.useCallback(
-    (overflow, menuOffsetArgs) => {
+    (overflow, menuOffsetArgs, alignment) => {
       const [tooltipElement] = menuOffsetArgs;
+
+      setAdjustedAlignment(alignment);
+
       switch (overflow) {
         case 'top':
           if (flyoutAlignment) {
@@ -297,6 +334,9 @@ export const usePopoverPositioning = ({
       // determine if the element is off-screen.
       const overflow = isOffscreen(...args, defaultOffset);
 
+      // determine if the element has new alignment
+      const alignment = getTooltipAlignment(...args);
+
       // if it's offscreen in a direction we can fix, do so
       // otherwise leave it be. ie. 'top-left' is fixable, but
       // a large element with 'top-right-left' wouldn't be.
@@ -309,7 +349,7 @@ export const usePopoverPositioning = ({
         case 'right':
         case 'bottom':
         case 'left':
-          return fixOverflow(overflow, [...args]);
+          return fixOverflow(overflow, [...args], alignment);
         default:
           return defaultOffset;
       }
@@ -322,5 +362,5 @@ export const usePopoverPositioning = ({
    * to the tooltip, overflow menu, or flyout menu instead of the original given direction if the
    * element overflows.
    */
-  return [calculateMenuOffset, { adjustedDirection, adjustedFlipped }];
+  return [calculateMenuOffset, { adjustedDirection, adjustedFlipped, adjustedAlignment }];
 };

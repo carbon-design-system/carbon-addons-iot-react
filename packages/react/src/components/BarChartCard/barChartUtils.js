@@ -241,7 +241,12 @@ export const formatChartData = (
         group.forEach((value) => {
           series.forEach((dataset) => {
             // if value is null, don't add it to the formatted chartData
-            if (!isNil(value[dataset.dataSourceId])) {
+            if (
+              (!isNil(value[categoryDataSourceId]) || !isNil(dataset.label)) &&
+              (timeDataSourceId && type !== BAR_CHART_TYPES.GROUPED
+                ? !isNil(value[timeDataSourceId])
+                : !isNil(value[categoryDataSourceId]))
+            ) {
               data.push({
                 // if there's a dataset label, use it
                 group: dataset.label ? dataset.label : value[categoryDataSourceId], // bar this data belongs to
@@ -268,7 +273,7 @@ export const formatChartData = (
       labeledData.forEach((dataset) => {
         dataset.forEach((value) => {
           // if value is null, don't add it to the formatted chartData
-          if (!isNil(value[series[0].dataSourceId])) {
+          if (!isNil(value[series[0].dataSourceId] && value[categoryDataSourceId])) {
             data.push({
               group: value[categoryDataSourceId], // bar this data belongs to
               value: value[series[0].dataSourceId], // there should only be one series here because its a simple bar

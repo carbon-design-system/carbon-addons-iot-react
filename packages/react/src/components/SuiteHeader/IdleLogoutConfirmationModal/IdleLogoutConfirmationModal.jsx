@@ -33,6 +33,9 @@ export const IdleLogoutConfirmationModalI18NPropTypes = {
 };
 
 const defaultProps = {
+  isAdminView: null,
+  appId: null,
+  workspaceId: null,
   className: null,
   idleTimeoutData: {
     timeout: 1800, // 30 minutes
@@ -52,6 +55,12 @@ const defaultProps = {
 };
 
 const propTypes = {
+  /** If true, include the originIsAdmin query param in the logout URL */
+  isAdminView: PropTypes.bool,
+  /** Application ID in suite */
+  appId: PropTypes.string,
+  /** Workspace ID in suite */
+  workspaceId: PropTypes.string,
   /** Add class name to the rendered Modal component */
   className: PropTypes.string,
   /** User inactivity timeout data */
@@ -67,6 +76,9 @@ const propTypes = {
 };
 
 const IdleLogoutConfirmationModal = ({
+  isAdminView,
+  appId,
+  workspaceId,
   className,
   idleTimeoutData,
   routes,
@@ -82,14 +94,23 @@ const IdleLogoutConfirmationModal = ({
     []
   );
 
-  // Append originHref query parameter to the logout routes
+  // Append originHref query parameter (and, optionally, originIsAdmin, originWorkspaceId and originAppId) to the logout routes
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    if (workspaceId) {
+      url.searchParams.append('originWorkspaceId', workspaceId);
+    }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
+    }
+    logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
   }
@@ -99,8 +120,17 @@ const IdleLogoutConfirmationModal = ({
     const url = new URL(routes.logoutInactivity);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutInactivityRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    if (workspaceId) {
+      url.searchParams.append('originWorkspaceId', workspaceId);
+    }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
+    }
+    logoutInactivityRoute = url.href;
   } catch (e) {
     logoutInactivityRoute = routes?.logoutInactivity;
   }

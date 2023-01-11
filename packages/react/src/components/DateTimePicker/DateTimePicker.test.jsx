@@ -596,14 +596,14 @@ describe('DateTimePicker', () => {
       1
     );
   });
-  it('should fallback to 00:00 for absolute times when none given', () => {
+  it('should fallback to empty for absolute times when none given', () => {
     render(<DateTimePicker {...dateTimePickerProps} id="picker-test" />);
     jest.runAllTimers();
 
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getByText('Custom Range'));
     userEvent.click(screen.getByText('Absolute'));
-    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('00:00');
+    expect(screen.getAllByTestId('time-picker-spinner')[0]).toHaveValue('');
   });
   it('should not show the Custom Range link when showCustomRangeLink:false', () => {
     render(

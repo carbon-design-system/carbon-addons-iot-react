@@ -192,7 +192,7 @@ export const propTypes = {
   renderInPortal: PropTypes.bool,
   /** Auto reposition if flyout menu offscreen */
   useAutoPositioning: PropTypes.bool,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 export const defaultProps = {
@@ -332,7 +332,7 @@ const DateTimePicker = ({
 
   const is24hours = useMemo(() => {
     const [, time] = dateTimeMask.split(' ');
-    const hoursMask = time.split(':')[0];
+    const hoursMask = time?.split(':')[0];
     return hoursMask === 'HH';
   }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
@@ -353,9 +353,21 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
   const [defaultSingleDateValue, SetDefaultSingleDateValue] = useState(false);
   const [invalidState, setInvalidState] = useState(invalid);
+  const [top, setTop] = useState(0);
+  const [left, setLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const containerRef = useRef();
+  const updatedStyle = useMemo(
+    () => ({
+      ...style,
+      '--zIndex': style.zIndex ?? 0,
+      scrollTop: top,
+      scrollLeft: left,
+    }),
+    [style, top, left]
+  );
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -391,8 +403,8 @@ const DateTimePicker = ({
 
   const [singleDateValue, setSingleDateValue] = useState(null);
   const [singleTimeValue, setSingleTimeValue] = useState(null);
-  const [rangeStartTimeValue, setRangeStartTimeValue] = useState('');
-  const [rangeEndTimeValue, setRangeEndTimeValue] = useState('');
+  const [rangeStartTimeValue, setRangeStartTimeValue] = useState(null);
+  const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
 
@@ -438,8 +450,8 @@ const DateTimePicker = ({
       } else if (customRangeKind === PICKER_KINDS.ABSOLUTE) {
         value.absolute = {
           ...absoluteValue,
-          startTime: hasTimeInput ? rangeStartTimeValue : '00:00',
-          endTime: hasTimeInput ? rangeEndTimeValue : '00:00',
+          startTime: hasTimeInput ? rangeStartTimeValue : null,
+          endTime: hasTimeInput ? rangeEndTimeValue : null,
         };
       } else {
         value.single = {
@@ -639,7 +651,7 @@ const DateTimePicker = ({
             : dayjs(single.start).format('hh:mm A')
           : null;
         setSingleDateValue(single);
-        setSingleTimeValue(single.startTime ?? '');
+        setSingleTimeValue(single.startTime);
       }
     } else {
       resetAbsoluteValue();
@@ -698,12 +710,15 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (invalidRangeStartTime ||
       invalidRangeEndTime ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
+      (absoluteValue?.startDate === '' && absoluteValue?.endDate === '') ||
+      (hasTimeInput ? !rangeStartTimeValue || !rangeEndTimeValue : false));
 
   const disableSingleApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.SINGLE &&
-    (invalidRangeStartTime || singleTimeValue === '');
+    (invalidRangeStartTime ||
+      (!singleDateValue.start && !singleDateValue.startDate) ||
+      (hasTimeInput ? !singleTimeValue : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply || disableSingleApply;
 
@@ -765,7 +780,7 @@ const DateTimePicker = ({
 
   const onClearClick = () => {
     setSingleDateValue({ start: null, startDate: null });
-    setSingleTimeValue('');
+    setSingleTimeValue(null);
     SetDefaultSingleDateValue(true);
     setIsExpanded(false);
   };
@@ -876,8 +891,33 @@ const DateTimePicker = ({
     );
   };
 
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
+  const flyoutMenuHeight = 482;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+
+  const getPosition = (event) => {
+    setLeft(event.target.scrollLeft);
+    setTop(event.target.scrollTop);
+  };
+
+  // Re-calculate X and Y when parents scrolled
+  useEffect(() => {
+    let currentNode = containerRef.current?.parentNode;
+    const parentNodes = [];
+    while (currentNode) {
+      parentNodes.push(currentNode);
+      currentNode.addEventListener('scroll', getPosition);
+      currentNode = currentNode.parentNode;
+    }
+
+    return () => {
+      parentNodes.map((node) => node.removeEventListener('scroll', getPosition));
+    };
+  }, []);
+
   return (
-    <div className={`${iotPrefix}--date-time-pickerv2`}>
+    <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
@@ -979,7 +1019,11 @@ const DateTimePicker = ({
               left: menuOffsetLeft,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={FlyoutMenuDirection.BottomEnd}
+            direction={
+              useAutoPositioning && offBottom
+                ? FlyoutMenuDirection.TopEnd
+                : FlyoutMenuDirection.BottomEnd
+            }
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
@@ -988,7 +1032,7 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
-            style={style}
+            style={updatedStyle}
           >
             <ClickListener onClickOutside={onClickOutside}>
               <div
