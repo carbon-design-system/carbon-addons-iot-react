@@ -727,10 +727,6 @@ export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) =>
  *   defaultValue: props value for time picker
  *   parseDefaultValue: parses value from string to time picker format
  *   setCustomRangeKind: useState callback
- *   dateTimePickerBaseValue: base value for time picker
- *   setCurrentValue: useState callback
- *   toLabel: label string
- *   setHumanValue: parses time picker value to readable format
  * @returns void
  */
 export const useCloseDropdown = ({
@@ -740,11 +736,6 @@ export const useCloseDropdown = ({
   defaultValue,
   parseDefaultValue,
   setCustomRangeKind,
-  dateTimePickerBaseValue,
-  setCurrentValue,
-  dateTimeMask,
-  toLabel,
-  setHumanValue,
 }) =>
   useCallback(() => {
     if (!isExpanded) {
@@ -755,23 +746,5 @@ export const useCloseDropdown = ({
     setIsExpanded(false);
     parseDefaultValue(defaultValue);
     setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
-
-    const value = {
-      ...dateTimePickerBaseValue,
-      ...(defaultValue && {
-        kind: defaultValue.timeRangeKind,
-        [defaultValue?.timeRangeKind.toLowerCase()]: getTimeValue(defaultValue),
-      }),
-    };
-    setCurrentValue(value);
-    const parsedValue = parseValue(value, dateTimeMask, toLabel);
-    setHumanValue(parsedValue.readableValue);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    dateTimeMask,
-    dateTimePickerBaseValue,
-    defaultValue,
-    isExpanded,
-    setCustomRangeKind,
-    setIsExpanded,
-  ]);
+  }, [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded]);

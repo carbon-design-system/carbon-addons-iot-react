@@ -578,11 +578,6 @@ const DateTimePicker = ({
     parseDefaultValue,
     defaultValue,
     setCustomRangeKind,
-    dateTimePickerBaseValue,
-    setCurrentValue,
-    dateTimeMask,
-    toLabel: mergedI18n.toLabel,
-    setHumanValue,
   });
 
   useOnClickOutside(wrapperRef, closeDropdown);
