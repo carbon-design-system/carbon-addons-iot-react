@@ -723,28 +723,48 @@ export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) =>
  * @param {Object} object: an object containing:
  *   isExpanded: current state of the dropdown
  *   setIsExpanded: useState callback
+ *   isCustomRange: if dropdown was opened in custom range
  *   setIsCustomRange: useState callback
  *   defaultValue: props value for time picker
  *   parseDefaultValue: parses value from string to time picker format
  *   setCustomRangeKind: useState callback
+ *   lastAppliedValue: last saved value
  * @returns void
  */
 export const useCloseDropdown = ({
   isExpanded,
   setIsExpanded,
+  isCustomRange,
   setIsCustomRange,
   defaultValue,
   parseDefaultValue,
   setCustomRangeKind,
+  lastAppliedValue,
 }) =>
   useCallback(() => {
     if (!isExpanded) {
       return;
     }
 
-    setIsCustomRange(false);
     setIsExpanded(false);
-    parseDefaultValue(defaultValue);
-    setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+
+    // memoized value at the time when dropdown was opened
+    if (!isCustomRange) {
+      setIsCustomRange(false);
+    }
+
+    if (lastAppliedValue) {
+      setCustomRangeKind(lastAppliedValue.kind || lastAppliedValue.timeRangeKind);
+      parseDefaultValue({
+        ...lastAppliedValue,
+        ...(!lastAppliedValue.timeRangeKind && {
+          timeRangeKind: lastAppliedValue?.kind,
+          timeRangeValue: lastAppliedValue[lastAppliedValue?.kind.toLowerCase()],
+        }),
+      });
+    } else {
+      setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+      parseDefaultValue(defaultValue);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded]);
+  }, [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]);
