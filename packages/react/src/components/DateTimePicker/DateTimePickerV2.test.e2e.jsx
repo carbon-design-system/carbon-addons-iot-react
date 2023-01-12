@@ -1333,34 +1333,116 @@ describe('DateTimePickerV2', () => {
     cy.findAllByRole('dialog').should('have.length', 1);
   });
 
-  it('should close dropdown onBlur', () => {
-    const onApply = cy.stub();
-    const onCancel = cy.stub();
-    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+  describe('should reset to last saved value if closed by click outside', () => {
+    it('with default relative value', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.RELATIVE,
+            timeRangeValue: {
+              relativeToWhen: INTERVAL_VALUES.MINUTES,
+              relativeToTime: '',
+            },
+          }}
+        />
+      );
 
-    cy.findAllByRole('button', { name: 'Last 30 minutes' }).click();
-    cy.findByText('Custom Range').should('be.visible');
-    cy.findAllByRole('button', { name: /Last 30 minutes/ })
-      .focus()
-      .type('{downarrow}', { force: true });
-    cy.findByText('Custom Range').should('be.focused');
-    cy.focused().type('{downarrow}');
-    cy.findAllByText('Last 30 minutes').eq(1).should('be.focused');
-    cy.focused().type('{downarrow}');
-    cy.findByText('Last 1 hour').should('be.focused');
-    cy.focused().type('{downarrow}');
-    cy.findByText('Last 6 hours').should('be.focused');
-    cy.focused().type('{downarrow}');
-    cy.findByText('Last 12 hours').should('be.focused');
-    cy.focused().type('{downarrow}');
-    cy.findByText('Last 24 hours').should('be.focused');
-    cy.focused().realPress('Tab').realPress('Tab');
-    cy.focused().should('contain.text', 'Apply');
-    cy.focused().realPress('Tab');
+      // Select some date in relative range
+      cy.findAllByLabelText('Calendar').eq(0).click();
+      cy.findByLabelText('Increment number').click();
+      cy.findByPlaceholderText('hh:mm').type('13:30');
+      cy.findByText('Apply').click();
 
-    cy.findAllByRole('listbox').should('have.length', 0);
-    expect(onApply).to.be.callCount(0);
-    expect(onCancel).to.be.callCount(0);
+      // Unsaved changes in relative range
+      cy.findAllByLabelText('Calendar').eq(0).click();
+      cy.findByLabelText('Increment number').click();
+      cy.findByText('Absolute').should('be.visible').click();
+
+      // Unsaved changes in absolute range
+      cy.findByText('25').should('be.visible').click();
+      cy.findByText('26').should('be.visible').click();
+      cy.findByLabelText('Start time').type('13:30');
+      cy.findByLabelText('End time').type('13:30');
+
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByRole('button', { name: /13:30/i }).should('be.visible');
+    });
+
+    it('with default absolute value', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      );
+      // Select some date in absolute range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByLabelText('Start time').focus().clear();
+      cy.findByLabelText('Start time').type('11:11');
+      cy.findByText('Apply').click();
+
+      // Unsaved changes in relative range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByText('Relative').should('be.visible').click();
+      cy.findByPlaceholderText('hh:mm').type('13:30');
+
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByTestId('date-time-picker__field').should(
+        'have.text',
+        '2021-08-01 11:11 to 2021-08-06 10:49'
+      );
+    });
+
+    it('with default absolute value (new time spinner)', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          useNewTimeSpinner
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      );
+      // Select some date in absolute range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByLabelText('Start time').focus();
+      cy.findByText('35').click().type('{enter}');
+      cy.findByText('Apply').click();
+
+      // Unsaved changes in relative range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByText('Relative').should('be.visible').click();
+      cy.findByPlaceholderText('hh:mm').type('13:30');
+
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByTestId('date-time-picker__field').should(
+        'have.text',
+        '2021-08-01 12:35 to 2021-08-06 10:49'
+      );
+    });
   });
 
   describe('visual regression tests', () => {

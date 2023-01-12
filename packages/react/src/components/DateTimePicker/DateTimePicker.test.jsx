@@ -1048,4 +1048,168 @@ describe('DateTimePicker', () => {
     // Default value restored
     expect(screen.getByTestId('date-time-picker__field')).toHaveTextContent('Last 12 hours');
   });
+
+  describe('preserves custom range kind from props on cancel click', () => {
+    it('relative range', () => {
+      const onCancel = jest.fn();
+      render(
+        <DateTimePicker
+          onApply={jest.fn()}
+          onCancel={onCancel}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.RELATIVE,
+            timeRangeValue: {
+              lastNumber: 20,
+              lastInterval: INTERVAL_VALUES.MINUTES,
+              relativeToWhen: RELATIVE_VALUES.TODAY,
+              relativeToTime: '13:30',
+            },
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByRole('button', { name: 'Back' }));
+
+      // Populates default value from preset to the field
+      expect(dropdownTrigger).toHaveTextContent('Last 30 minutes');
+
+      userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+      userEvent.click(dropdownTrigger);
+      expect(screen.getByLabelText('Relative')).toBeChecked();
+      expect(onCancel).toHaveBeenCalledTimes(1);
+    });
+
+    it('absolute range', () => {
+      const onCancel = jest.fn();
+      render(
+        <DateTimePicker
+          onApply={jest.fn()}
+          onCancel={onCancel}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByRole('button', { name: 'Back' }));
+
+      // Populates default value from preset to the field
+      expect(dropdownTrigger).toHaveTextContent('Last 30 minutes');
+
+      userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+      userEvent.click(dropdownTrigger);
+      expect(screen.getByLabelText('Absolute')).toBeChecked();
+      expect(onCancel).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('should discard to last saved value if closed by click outside', () => {
+    it('without default value', () => {
+      const onApply = jest.fn();
+      render(<DateTimePicker onApply={onApply} />);
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByText('Last 1 hour'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply' }));
+
+      userEvent.click(dropdownTrigger);
+      userEvent.click(document.body);
+      expect(dropdownTrigger).toHaveTextContent('Last 1 hour');
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with selected preset', () => {
+      const onApply = jest.fn();
+      render(
+        <DateTimePicker
+          onApply={onApply}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.PRESET,
+            timeRangeValue: PRESET_VALUES[3],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByText('Last 1 hour'));
+      userEvent.click(screen.getByRole('button', { name: 'Apply' }));
+
+      userEvent.click(dropdownTrigger);
+      userEvent.click(document.body);
+      expect(dropdownTrigger).toHaveTextContent('Last 1 hour');
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with default relative value', () => {
+      const onApply = jest.fn();
+      render(
+        <DateTimePicker
+          onApply={onApply}
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.RELATIVE,
+            timeRangeValue: {
+              relativeToWhen: INTERVAL_VALUES.MINUTES,
+              relativeToTime: '',
+            },
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      // Save some date
+      userEvent.click(dropdownTrigger);
+      fireEvent.change(screen.getByPlaceholderText('hh:mm'), { target: { value: '13:30' } });
+      userEvent.click(screen.getByRole('button', { name: 'Apply' }));
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByRole('button', { name: 'Back' }));
+      userEvent.click(screen.getByText('Last 1 hour'));
+      userEvent.click(document.body);
+      // Preserves saved changes
+      expect(dropdownTrigger).toHaveTextContent(/13:30/i);
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with default absolute value', () => {
+      const onApply = jest.fn();
+      render(
+        <DateTimePicker
+          onApply={onApply}
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      // Save some date
+      userEvent.click(dropdownTrigger);
+      fireEvent.change(screen.getByLabelText('Start time'), {
+        target: { value: '13:30' },
+      });
+      userEvent.click(screen.getByRole('button', { name: 'Apply' }));
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      userEvent.click(screen.getByRole('button', { name: 'Back' }));
+      userEvent.click(screen.getByText('Last 1 hour'));
+      userEvent.click(document.body);
+      // Preserves saved changes
+      expect(dropdownTrigger).toHaveTextContent('2021-08-01 13:30 to 2021-08-06 10:49');
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+  });
 });

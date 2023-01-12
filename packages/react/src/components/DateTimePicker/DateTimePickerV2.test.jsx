@@ -2618,4 +2618,203 @@ describe('DateTimePickerV2', () => {
     userEvent.click(dropdownTrigger);
     expect(dropdownTrigger).toHaveTextContent('Last 30 minutes'); // Default value restored
   });
+
+  describe('should discard to last saved value if closed by click outside', () => {
+    it('without default value', () => {
+      const onApply = jest.fn();
+      const { baseElement } = render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          presets={defaultPresets}
+          onApply={onApply}
+          i18n={{
+            ...i18n,
+            presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+
+      userEvent.click(dropdownTrigger);
+      const dropdown = baseElement.querySelector('[role="dialog"]');
+
+      // Save some preset
+      userEvent.click(within(dropdown).getByText('Last 1 hour'));
+      userEvent.click(within(dropdown).getByText('Apply'));
+
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      userEvent.click(within(dropdown).getByText('Last 6 hours'));
+      userEvent.click(document.body);
+
+      // Preserves saved changes
+      expect(dropdownTrigger).toHaveTextContent('Last 1 hour');
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with selected preset', () => {
+      const onApply = jest.fn();
+      const { baseElement } = render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          presets={defaultPresets}
+          onApply={onApply}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.PRESET,
+            timeRangeValue: PRESET_VALUES[3],
+          }}
+          i18n={{
+            ...i18n,
+            presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      const dropdown = baseElement.querySelector('[role="dialog"]');
+
+      // Save some preset
+      userEvent.click(within(dropdown).getByText('Last 1 hour'));
+      userEvent.click(within(dropdown).getByText('Apply'));
+
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      userEvent.click(within(dropdown).getByText('Last 6 hours'));
+      userEvent.click(document.body);
+
+      // Preserves saved changes
+      expect(dropdownTrigger).toHaveTextContent('Last 1 hour');
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with default relative value', () => {
+      const onApply = jest.fn();
+      const { baseElement } = render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          presets={defaultPresets}
+          onApply={onApply}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.RELATIVE,
+            timeRangeValue: {
+              relativeToWhen: INTERVAL_VALUES.MINUTES,
+              relativeToTime: '',
+            },
+          }}
+          i18n={{
+            ...i18n,
+            presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      const dropdown = baseElement.querySelector('[role="dialog"]');
+
+      // Save some date
+      fireEvent.change(within(dropdown).getByPlaceholderText('hh:mm'), {
+        target: { value: '13:30' },
+      });
+      userEvent.click(within(dropdown).getByText('Apply'));
+
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      const dropdownRerendered = baseElement.querySelector('[role="dialog"]');
+      userEvent.click(within(dropdownRerendered).getByText('Back'));
+      userEvent.click(within(dropdownRerendered).getByText('Last 1 hour'));
+      userEvent.click(document.body);
+
+      // Preserves saved changes
+      expect(dropdownTrigger).toHaveTextContent(/13:30/i);
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with default absolute value', () => {
+      const onApply = jest.fn();
+      const { baseElement } = render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          presets={defaultPresets}
+          onApply={onApply}
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+          i18n={{
+            ...i18n,
+            presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      const dropdown = baseElement.querySelector('[role="dialog"]');
+
+      // Save some date
+      fireEvent.change(within(dropdown).getByLabelText('Start time'), {
+        target: { value: '13:30' },
+      });
+      userEvent.click(within(dropdown).getByText('Apply'));
+
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      const dropdownRerendered = baseElement.querySelector('[role="dialog"]');
+      userEvent.click(within(dropdownRerendered).getByText('Back'));
+      userEvent.click(within(dropdownRerendered).getByText('Last 1 hour'));
+      userEvent.click(document.body);
+
+      // Preserves saved changes
+      expect(screen.getAllByRole('button')[0]).toHaveTextContent(
+        '2021-08-01 13:30 to 2021-08-06 10:49'
+      );
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+
+    it('with default absolute value (new time spinner)', () => {
+      const onApply = jest.fn();
+      const { baseElement } = render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          presets={defaultPresets}
+          onApply={onApply}
+          useNewTimeSpinner
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+          i18n={{
+            ...i18n,
+            presetLabels: ['Last 30 minutes', 'Last 1 hour'],
+          }}
+        />
+      );
+      const dropdownTrigger = screen.getAllByRole('button')[0];
+      userEvent.click(dropdownTrigger);
+      const dropdown = baseElement.querySelector('[role="dialog"]');
+
+      // Save some date
+      within(dropdown).getByLabelText('Start time').focus();
+      userEvent.click(baseElement.querySelector('[aria-label="Previous item"]'));
+      userEvent.click(within(dropdown).getByText('Apply'));
+
+      // Unsaved changes
+      userEvent.click(dropdownTrigger);
+      const dropdownRerendered = baseElement.querySelector('[role="dialog"]');
+      userEvent.click(within(dropdownRerendered).getByText('Back'));
+      userEvent.click(within(dropdownRerendered).getByText('Last 1 hour'));
+      userEvent.click(document.body);
+
+      // Preserves saved changes
+      expect(screen.getAllByRole('button')[0]).toHaveTextContent(
+        /2021-08-01 12:34 to 2021-08-06 10:49/i
+      );
+      expect(onApply).toHaveBeenCalledTimes(1);
+    });
+  });
 });

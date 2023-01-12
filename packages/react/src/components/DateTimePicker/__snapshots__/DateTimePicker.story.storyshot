@@ -74,7 +74,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -265,7 +264,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -439,7 +437,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -937,7 +934,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -1451,7 +1447,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -1625,7 +1620,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -2189,7 +2183,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
@@ -2371,7 +2364,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
         </div>
         <div
           className="iot--date-time-picker__menu"
-          onBlur={[Function]}
           role="listbox"
           style={
             Object {
