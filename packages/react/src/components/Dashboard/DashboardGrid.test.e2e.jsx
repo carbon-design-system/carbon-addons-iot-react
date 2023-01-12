@@ -1167,7 +1167,7 @@ describe('DashboardGrid-lg-Card', () => {
     MockDate.reset();
   });
 
-  it('Card with range picker', () => {
+  it('Renders a card with date range picker', () => {
     const size = CARD_SIZES.SMALLFULL;
 
     mount(
