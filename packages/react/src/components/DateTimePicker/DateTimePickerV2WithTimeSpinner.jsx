@@ -796,16 +796,10 @@ const DateTimePicker = ({
 
   const onClickOutside = useDateTimePickerClickOutside(closeDropdown);
 
-  const onDropdownFooterBlur = (evt) => {
-    if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
-      closeDropdown();
-    }
-  };
-
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
     return (
-      <div className={`${iotPrefix}--date-time-picker__menu-btn-set`} onBlur={onDropdownFooterBlur}>
+      <div className={`${iotPrefix}--date-time-picker__menu-btn-set`}>
         {isCustomRange && !isSingleSelect ? (
           <Button
             kind="secondary"

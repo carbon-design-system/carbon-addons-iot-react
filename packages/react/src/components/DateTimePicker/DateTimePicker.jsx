@@ -582,14 +582,6 @@ const DateTimePicker = ({
 
   useOnClickOutside(wrapperRef, closeDropdown);
 
-  // Close dropdown when focus leaves Apply button
-  const onDropdownBlur = (evt) => {
-    if (evt?.target?.textContent === mergedI18n.applyBtnLabel) {
-      closeDropdown();
-      setIsTooltipOpen(false);
-    }
-  };
-
   // Close tooltip if dropdown was closed by click outside
   const onFieldBlur = (evt) => {
     if (evt.target !== evt.currentTarget) {
@@ -770,7 +762,6 @@ const DateTimePicker = ({
           })}
           style={{ ...updatedStyle }}
           role="listbox"
-          onBlur={onDropdownBlur}
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
