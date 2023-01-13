@@ -365,6 +365,7 @@ export const tableReducer = (state = {}, action) => {
         action
       );
     case TABLE_SEARCH_APPLY: {
+      // console.log(state.data.length)
       // Quick search should search within the filtered and sorted data
       const data = filterSearchAndSort(
         state.data,
@@ -506,12 +507,10 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ROW_SELECT: {
-      const data = state.view.table.filteredData || state.data;
-      return baseTableReducer({ ...state, data }, action);
+      return baseTableReducer(state, action);
     }
     case TABLE_ROW_SELECT_ALL: {
-      const data = state.view.table.filteredData || state.data;
-      return baseTableReducer({ ...state, data }, action);
+      return baseTableReducer(state, action);
     }
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
