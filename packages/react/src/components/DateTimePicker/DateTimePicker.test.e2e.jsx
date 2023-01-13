@@ -534,21 +534,14 @@ describe('DateTimePicker', () => {
 
       // Select some date in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
-      cy.findByLabelText('Increment number').click();
       cy.findByPlaceholderText('hh:mm').type('13:30');
       cy.findByText('Apply').click();
-
-      // Unsaved changes in relative range
+      // Unsaved changes
       cy.findAllByLabelText('Calendar').eq(0).click();
-      cy.findByLabelText('Increment number').click();
       cy.findByText('Absolute').should('be.visible').click();
-
-      // Unsaved changes in absolute range
       cy.findByText('25').should('be.visible').click();
       cy.findByText('26').should('be.visible').click();
-      cy.findByLabelText('Start time').type('13:30');
-      cy.findByLabelText('End time').type('13:30');
-
+      cy.findByLabelText('Start time').type('11:30');
       cy.get('body').click();
       // Preserves only saved changes
       cy.findByRole('button', { name: /13:30/i }).should('be.visible');
@@ -575,12 +568,10 @@ describe('DateTimePicker', () => {
       cy.findByLabelText('Start time').focus().clear();
       cy.findByLabelText('Start time').type('11:11');
       cy.findByText('Apply').click();
-
       // Unsaved changes in relative range
       cy.findByTestId('date-time-picker__field').click();
       cy.findByText('Relative').should('be.visible').click();
       cy.findByPlaceholderText('hh:mm').type('13:30');
-
       cy.get('body').click();
       // Preserves only saved changes
       cy.findByTestId('date-time-picker__field').should(

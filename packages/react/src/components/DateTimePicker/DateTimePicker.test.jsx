@@ -1113,7 +1113,7 @@ describe('DateTimePicker', () => {
     });
   });
 
-  describe('should discard to last saved value if closed by click outside', () => {
+  describe('should restore last saved value if closed by click outside', () => {
     it('without default value', () => {
       const onApply = jest.fn();
       render(<DateTimePicker onApply={onApply} />);

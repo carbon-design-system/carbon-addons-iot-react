@@ -1353,20 +1353,14 @@ describe('DateTimePickerV2', () => {
 
       // Select some date in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
-      cy.findByLabelText('Increment number').click();
       cy.findByPlaceholderText('hh:mm').type('13:30');
       cy.findByText('Apply').click();
-
       // Unsaved changes in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
-      cy.findByLabelText('Increment number').click();
       cy.findByText('Absolute').should('be.visible').click();
-
-      // Unsaved changes in absolute range
       cy.findByText('25').should('be.visible').click();
       cy.findByText('26').should('be.visible').click();
-      cy.findByLabelText('Start time').type('13:30');
-      cy.findByLabelText('End time').type('13:30');
+      cy.findByLabelText('Start time').type('14:30');
 
       cy.get('body').click();
       // Preserves only saved changes
