@@ -718,6 +718,22 @@ export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) =>
   closeDropdownCallback();
 };
 
+// add assertions that after outside click on apply sends correct value
+
+/**
+ * Utility function to get time picker kind key
+ * @param {Object} object: an object containing:
+ *   kind: time picker kind
+ *   timeRangeKind: time range kind
+ * @returns
+ */
+const getTimeRangeKindKey = ({ kind, timeRangeKind }) => {
+  if (kind === PICKER_KINDS.SINGLE || timeRangeKind === PICKER_KINDS.SINGLE) {
+    return 'timeSingleValue';
+  }
+  return 'timeRangeValue';
+};
+
 /**
  * Hook to close time picker dropdown and reset default value
  * @param {Object} object: an object containing:
@@ -759,7 +775,9 @@ export const useCloseDropdown = ({
         ...lastAppliedValue,
         ...(!lastAppliedValue.timeRangeKind && {
           timeRangeKind: lastAppliedValue?.kind,
-          timeRangeValue: lastAppliedValue[lastAppliedValue?.kind.toLowerCase()],
+          [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
+            lastAppliedValue?.kind.toLowerCase()
+          ],
         }),
       });
     } else {

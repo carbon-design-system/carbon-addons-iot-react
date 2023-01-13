@@ -1402,6 +1402,38 @@ describe('DateTimePickerV2', () => {
       );
     });
 
+    it('single select with value', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          useNewTimeSpinner
+          datePickerType="single"
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.SINGLE,
+            timeSingleValue: {
+              startDate: '2020-04-01',
+              startTime: '12:34',
+            },
+          }}
+        />
+      );
+      // Select some date in absolute range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByLabelText('Start time').focus().clear();
+      cy.findByLabelText('Start time').type('11:11{enter}');
+      cy.findByText('Apply').click();
+
+      // Unsaved changes in relative range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByLabelText('Start time').focus().clear();
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByTestId('date-time-picker__field').should('have.text', '2020-04-01 11:11');
+    });
+
     it('with default absolute value (new time spinner)', () => {
       mount(
         <DateTimePicker
