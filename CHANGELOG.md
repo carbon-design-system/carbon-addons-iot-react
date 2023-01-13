@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.18...v2.152.0-next.19) (2023-01-13)
+
+
+### Bug Fixes
+
+* **card:** add throttle to close tooltip on scroll ([808e929](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/808e929c1066176043dcfd6b35348062e6e60232))
+* **card:** change throttle to setTimeout for scroll event ([deddd60](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/deddd60de1a3ca3873245b8f3ffe9d87818a97d6))
+* **table:** change adaptive styling in pagination ([25d9a99](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/25d9a99160190241011b8aad08875ebb09d94f0a))
+* **table:** change tooltip direction in toolbar ([38a0c23](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/38a0c2365917e78b1fb3b89ea115cb627c229ad0))
+* **tableheader:** update images ([86844b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/86844b8bd1418862b443636b217a2c2729991978))
+* **tableheader:** use arrowup 16px ([7d13f50](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7d13f50171753c2417731bca4fde165baf352088))
+* **tablereducer:** reset filter after sorting ([74ca400](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/74ca4006e9cc8731e0c7787202607440551b331a)), closes [#3686](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3686)
+
+
+
+
+
 # [2.152.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.17...v2.152.0-next.18) (2023-01-13)
 
 **Note:** Version bump only for package ibm-ai-applications
