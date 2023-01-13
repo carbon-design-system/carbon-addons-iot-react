@@ -288,6 +288,7 @@ const TableToolbarAdvancedFilterFlyout = ({
           }
         ),
         onClick: onToggleAdvancedFilter,
+        tooltipPosition: 'bottom',
       }}
       i18n={{
         applyButtonText,

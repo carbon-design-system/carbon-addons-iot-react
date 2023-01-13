@@ -60,3 +60,13 @@
     }
   }
 }
+
+@mixin hide-tooltip() {
+  .#{$prefix}--assistive-text {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+  }
+}
