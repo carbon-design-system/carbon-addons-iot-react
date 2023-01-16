@@ -699,11 +699,19 @@ export const getTimeValue = (value) => {
  * @param {function} closeDropdownCallback: function that will be called if validation passes
  * @returns void
  */
-export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) => {
+export const useDateTimePickerClickOutside = (closeDropdownCallback, containerRef) => (evt) => {
   if (
     evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
-    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`)
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-reset`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-cancel`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`)
   ) {
+    return;
+  }
+
+  if (containerRef.current?.firstChild.contains(evt.target)) {
+    closeDropdownCallback({ isEventOnField: true });
     return;
   }
 
@@ -715,10 +723,8 @@ export const useDateTimePickerClickOutside = (closeDropdownCallback) => (evt) =>
     return;
   }
 
-  closeDropdownCallback();
+  closeDropdownCallback({ isEventOnField: false });
 };
-
-// add assertions that after outside click on apply sends correct value
 
 /**
  * Utility function to get time picker kind key
@@ -745,7 +751,7 @@ const getTimeRangeKindKey = ({ kind, timeRangeKind }) => {
  *   parseDefaultValue: parses value from string to time picker format
  *   setCustomRangeKind: useState callback
  *   lastAppliedValue: last saved value
- * @returns void
+ * @returns {function}
  */
 export const useCloseDropdown = ({
   isExpanded,
@@ -756,33 +762,51 @@ export const useCloseDropdown = ({
   parseDefaultValue,
   setCustomRangeKind,
   lastAppliedValue,
+  singleTimeValue,
+  setSingleDateValue,
+  setSingleTimeValue,
 }) =>
-  useCallback(() => {
-    if (!isExpanded) {
-      return;
-    }
+  useCallback(
+    ({ isEventOnField }) => {
+      if (!isExpanded) {
+        return;
+      }
 
-    setIsExpanded(false);
+      if (!isEventOnField) {
+        setIsExpanded(false);
+      }
 
-    // memoized value at the time when dropdown was opened
-    if (!isCustomRange) {
-      setIsCustomRange(false);
-    }
+      // memoized value at the time when dropdown was opened
+      if (!isCustomRange) {
+        setIsCustomRange(false);
+      }
 
-    if (lastAppliedValue) {
-      setCustomRangeKind(lastAppliedValue.kind || lastAppliedValue.timeRangeKind);
-      parseDefaultValue({
-        ...lastAppliedValue,
-        ...(!lastAppliedValue.timeRangeKind && {
-          timeRangeKind: lastAppliedValue?.kind,
-          [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
-            lastAppliedValue?.kind.toLowerCase()
-          ],
-        }),
-      });
-    } else {
-      setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
-      parseDefaultValue(defaultValue);
-    }
+      if (
+        (lastAppliedValue?.timeRangeKind === PICKER_KINDS.SINGLE ||
+          lastAppliedValue?.kind === PICKER_KINDS.SINGLE) &&
+        !singleTimeValue
+      ) {
+        setSingleDateValue({ start: null, startDate: null });
+        setSingleTimeValue(null);
+        return;
+      }
+
+      if (lastAppliedValue) {
+        setCustomRangeKind(lastAppliedValue.kind || lastAppliedValue.timeRangeKind);
+        parseDefaultValue({
+          ...lastAppliedValue,
+          ...(!lastAppliedValue.timeRangeKind && {
+            timeRangeKind: lastAppliedValue?.kind,
+            [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
+              lastAppliedValue?.kind.toLowerCase()
+            ],
+          }),
+        });
+      } else {
+        setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+        parseDefaultValue(defaultValue);
+      }
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]);
+    [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]
+  );

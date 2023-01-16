@@ -38,6 +38,7 @@ import {
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
   useCloseDropdown,
+  useDateTimePickerClickOutside,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -347,7 +348,8 @@ const DateTimePicker = ({
   const [invalidState, setInvalidState] = useState(invalid);
 
   const relativeSelect = useRef(null);
-  const wrapperRef = useRef(null);
+  const dropdownRef = useRef(null);
+  const fieldRef = useRef(null);
   const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
   const [datePickerElem, pickerRefCallback] = useDateTimePickerRef({ id });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
@@ -570,7 +572,9 @@ const DateTimePicker = ({
     lastAppliedValue,
   });
 
-  useOnClickOutside(wrapperRef, closeDropdown);
+  const onClickOutside = useDateTimePickerClickOutside(closeDropdown, fieldRef);
+
+  useOnClickOutside(dropdownRef, onClickOutside);
 
   // Close tooltip if dropdown was closed by click outside
   const onFieldBlur = (evt) => {
@@ -674,7 +678,7 @@ const DateTimePicker = ({
         [`${iotPrefix}--date-time-picker__wrapper--disabled`]: disabled,
       })}
       onKeyDown={handleSpecificKeyDown(['Escape'], () => setIsExpanded(false))}
-      ref={wrapperRef}
+      ref={fieldRef}
     >
       <div
         className={classnames(`${iotPrefix}--date-time-picker__box`, {
@@ -752,6 +756,7 @@ const DateTimePicker = ({
           })}
           style={{ ...updatedStyle }}
           role="listbox"
+          ref={dropdownRef}
         >
           <div className={`${iotPrefix}--date-time-picker__menu-scroll`}>
             {!isCustomRange ? (
