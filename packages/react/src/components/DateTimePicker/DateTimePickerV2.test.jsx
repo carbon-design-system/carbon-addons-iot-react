@@ -995,8 +995,8 @@ describe('DateTimePickerV2', () => {
     // Select absolute
     expect(screen.getByText(/Absolute/)).toBeInTheDocument();
     userEvent.click(screen.getByText(/Absolute/i));
-    userEvent.click(screen.getByLabelText('April 10, 2020'));
-    userEvent.click(screen.getByLabelText('April 11, 2020'));
+    fireEvent.click(screen.getByLabelText('April 10, 2020'));
+    fireEvent.click(screen.getByLabelText('April 11, 2020'));
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
@@ -1019,8 +1019,8 @@ describe('DateTimePickerV2', () => {
     // Select absolute
     expect(screen.getByText(/Absolute/)).toBeInTheDocument();
     userEvent.click(screen.getByText(/Absolute/i));
-    userEvent.click(screen.getByLabelText('April 10, 2020'));
-    userEvent.click(screen.getByLabelText('April 11, 2020'));
+    fireEvent.click(screen.getByLabelText('April 10, 2020'));
+    fireEvent.click(screen.getByLabelText('April 11, 2020'));
     expect(screen.getByTitle('2020-04-10 12:34 to 2020-04-11 10:49')).toBeVisible();
     userEvent.click(screen.getByText('Apply'));
     // This should be displayed
