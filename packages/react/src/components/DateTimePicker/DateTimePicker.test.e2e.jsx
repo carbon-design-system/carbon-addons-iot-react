@@ -441,6 +441,18 @@ describe('DateTimePicker', () => {
     expect(onCancel).to.be.callCount(0);
   });
 
+  it('should close dropdown on field click', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+    cy.findByLabelText('Calendar').click();
+    cy.findByRole('listbox').should('be.visible');
+    // unsaved changes
+    cy.findByText('Last 1 hour').click();
+    // close dropdown on clicking the field icon
+    cy.findByLabelText('Calendar').click();
+    cy.findByRole('listbox').should('not.exist');
+    cy.findAllByRole('button').eq(0).contains('Last 30 minutes');
+  });
+
   it('should reset to default value from props when clicked outside', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();

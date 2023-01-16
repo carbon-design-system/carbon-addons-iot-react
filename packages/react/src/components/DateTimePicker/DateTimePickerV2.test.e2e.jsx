@@ -1156,6 +1156,32 @@ describe('DateTimePickerV2', () => {
     expect(onCancel).to.be.callCount(0);
   });
 
+  it('should close dropdown on field click', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByRole('dialog').should('be.visible');
+    // unsaved changes
+    cy.findByText('Last 1 hour').click();
+    // closing dropdown by clicking on field icon
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByRole('dialog').should('not.exist');
+  });
+
+  it('should close dropdown on field click (new time spinner)', () => {
+    mount(
+      <DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" useNewTimeSpinner />
+    );
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByRole('dialog').should('be.visible');
+    // unsaved changes
+    cy.findByText('Last 1 hour').click();
+    // closing dropdown by clicking on field icon
+    cy.findAllByLabelText('Calendar').eq(0).click();
+    cy.findByRole('dialog').should('not.exist');
+  });
+
   it('should close on click outside if relative date was selected (new time spinner)', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
@@ -1469,6 +1495,38 @@ describe('DateTimePickerV2', () => {
         '2021-08-01 12:35 to 2021-08-06 10:49'
       );
     });
+  });
+
+  it('single select should preserve empty value', () => {
+    mount(
+      <DateTimePicker
+        onApply={cy.stub()}
+        onCancel={cy.stub()}
+        id="picker-test"
+        hasTimeInput
+        useNewTimeSpinner
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD HH:mm"
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34',
+          },
+        }}
+      />
+    );
+    // Clear value
+    cy.findByTestId('date-time-picker__field').click();
+    cy.findByText('Clear').click();
+    cy.findByTestId('date-time-picker__field').should('have.text', 'YYYY-MM-DD HH:mm');
+    // Unsaved changes
+    cy.findByTestId('date-time-picker__field').click();
+    cy.findByText('28').click();
+    cy.findByLabelText('Start time').type('11:11{enter}');
+    cy.get('body').click();
+    // Empty value preserved
+    cy.findByTestId('date-time-picker__field').should('have.text', 'YYYY-MM-DD HH:mm');
   });
 
   describe('visual regression tests', () => {
