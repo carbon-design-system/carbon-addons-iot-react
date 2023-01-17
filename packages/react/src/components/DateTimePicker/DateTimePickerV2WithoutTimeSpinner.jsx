@@ -443,7 +443,7 @@ const DateTimePicker = ({
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [absoluteValue, relativeValue]
+    [absoluteValue, relativeValue, isCustomRange, customRangeKind]
   );
 
   const onDatePickerChange = ([start, end], _, flatpickr) => {
@@ -816,7 +816,7 @@ const DateTimePicker = ({
               tooltipPosition: 'top',
               tabIndex: -1,
               className: classnames(`${iotPrefix}--date-time-picker--trigger-button`, {
-                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalid,
+                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalidState,
                 [`${iotPrefix}--date-time-picker--trigger-button--disabled`]: disabled,
               }),
             }}
@@ -1058,7 +1058,7 @@ const DateTimePicker = ({
                           <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                             <TimePickerSpinner
                               id={`${id}-start-time`}
-                              invalid={absoluteStartTimeInvalid}
+                              invalid={!absoluteValue?.startTime ?? absoluteStartTimeInvalid}
                               labelText={mergedI18n.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : null}
                               i18n={i18n}
@@ -1069,7 +1069,7 @@ const DateTimePicker = ({
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
-                              invalid={absoluteEndTimeInvalid}
+                              invalid={!absoluteValue?.endTime ?? absoluteEndTimeInvalid}
                               labelText={mergedI18n.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : null}
                               i18n={i18n}

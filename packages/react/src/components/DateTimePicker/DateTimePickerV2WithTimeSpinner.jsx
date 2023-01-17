@@ -967,7 +967,7 @@ const DateTimePicker = ({
               tooltipPosition: 'top',
               tabIndex: -1,
               className: classnames(`${iotPrefix}--date-time-picker--trigger-button`, {
-                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalid,
+                [`${iotPrefix}--date-time-picker--trigger-button--invalid`]: invalidState,
                 [`${iotPrefix}--date-time-picker--trigger-button--disabled`]: disabled,
               }),
             }}
@@ -1227,7 +1227,10 @@ const DateTimePicker = ({
                               : handleRangeTimeValueChange(startState, endState)
                           }
                           type={isSingleSelect ? 'single' : 'range'}
-                          invalid={[invalidRangeStartTime, invalidRangeEndTime]}
+                          invalid={[
+                            !rangeStartTimeValue ?? invalidRangeStartTime,
+                            !rangeEndTimeValue ?? invalidRangeEndTime,
+                          ]}
                           i18n={{
                             labelText: mergedI18n.startTimeLabel,
                             secondaryLabelText: mergedI18n.endTimeLabel,
