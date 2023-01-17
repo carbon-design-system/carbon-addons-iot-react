@@ -624,7 +624,7 @@ const DateTimePicker = ({
 
   const onApplyClick = () => {
     setIsExpanded(false);
-    const value = renderValue(null);
+    const value = renderValue();
     setLastAppliedValue(value);
     const returnValue = {
       timeRangeKind: value.kind,

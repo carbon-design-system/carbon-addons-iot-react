@@ -679,23 +679,7 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
 };
 
 /**
- * Utility to extract time value
- * @param {Object} value: an object containing at least:
- *   timeRangeKind: see PICKER_KINDS
- *   timeSingleValue: time value for single time picker
- *   timeRangeValue: time value for range time picker
- * @returns string single or range time value from a given object
- */
-export const getTimeValue = (value) => {
-  if (value.timeRangeKind === PICKER_KINDS.SINGLE) {
-    return value.timeSingleValue;
-  }
-
-  return value.timeRangeValue;
-};
-
-/**
- * Hook to validate event and revoke callback
+ * Hook to validate event and invoke callback
  * @param {function} closeDropdownCallback: function that will be called if validation passes
  * @returns void
  */
