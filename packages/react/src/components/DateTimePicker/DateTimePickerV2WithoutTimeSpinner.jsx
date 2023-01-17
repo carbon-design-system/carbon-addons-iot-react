@@ -1058,7 +1058,7 @@ const DateTimePicker = ({
                           <div className={`${iotPrefix}--date-time-picker__fields-wrapper`}>
                             <TimePickerSpinner
                               id={`${id}-start-time`}
-                              invalid={!absoluteValue?.startTime ?? absoluteStartTimeInvalid}
+                              invalid={!absoluteValue?.startTime || absoluteStartTimeInvalid}
                               labelText={mergedI18n.startTimeLabel}
                               value={absoluteValue ? absoluteValue.startTime : null}
                               i18n={i18n}
@@ -1069,7 +1069,7 @@ const DateTimePicker = ({
                             />
                             <TimePickerSpinner
                               id={`${id}-end-time`}
-                              invalid={!absoluteValue?.endTime ?? absoluteEndTimeInvalid}
+                              invalid={!absoluteValue?.endTime || absoluteEndTimeInvalid}
                               labelText={mergedI18n.endTimeLabel}
                               value={absoluteValue ? absoluteValue.endTime : null}
                               i18n={i18n}

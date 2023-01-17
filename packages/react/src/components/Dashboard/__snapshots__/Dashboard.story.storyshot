@@ -1727,7 +1727,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -1764,7 +1764,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -1897,15 +1897,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -1913,11 +1913,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -1962,15 +1962,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -1978,11 +1978,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -2027,15 +2027,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -2043,11 +2043,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -4629,7 +4629,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -4666,7 +4666,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -4799,15 +4799,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -4815,11 +4815,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -4864,15 +4864,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -4880,11 +4880,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -4929,15 +4929,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -4945,11 +4945,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -7566,7 +7566,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -7603,7 +7603,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -7736,15 +7736,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -7752,11 +7752,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -7801,15 +7801,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -7817,11 +7817,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -7866,15 +7866,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -7882,11 +7882,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -9585,7 +9585,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -9622,7 +9622,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -9718,15 +9718,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -9734,11 +9734,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -9783,15 +9783,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -9799,11 +9799,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -9848,15 +9848,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -9864,11 +9864,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -9913,15 +9913,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -9929,11 +9929,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -9978,15 +9978,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -9994,11 +9994,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -12931,7 +12931,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -12968,7 +12968,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -13101,15 +13101,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -13117,11 +13117,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -13166,15 +13166,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -13182,11 +13182,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -13231,15 +13231,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -13247,11 +13247,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -30573,7 +30573,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </div>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="download-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -30610,7 +30610,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                       </button>
                       <button
                         aria-describedby={null}
-                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--top bx--tooltip--align-center"
+                        className="bx--btn--icon-only iot--tooltip-svg-wrapper iot--btn iot--btn-icon-selection bx--btn bx--btn--ghost bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
                         data-testid="filter-button"
                         disabled={false}
                         onBlur={[Function]}
@@ -30743,15 +30743,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -30759,11 +30759,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -30808,15 +30808,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -30824,11 +30824,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
@@ -30873,15 +30873,15 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
-                                  viewBox="0 0 32 32"
-                                  width={20}
+                                  viewBox="0 0 16 16"
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path
-                                    d="M16 4L6 14 7.41 15.41 15 7.83 15 28 17 28 17 7.83 24.59 15.41 26 14 16 4z"
+                                    d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
                                   />
                                 </svg>
                                 <svg
@@ -30889,11 +30889,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                                   className="bx--table-sort__icon-unsorted"
                                   fill="currentColor"
                                   focusable="false"
-                                  height={20}
+                                  height={16}
                                   preserveAspectRatio="xMidYMid meet"
                                   role="img"
                                   viewBox="0 0 32 32"
-                                  width={20}
+                                  width={16}
                                   xmlns="http://www.w3.org/2000/svg"
                                 >
                                   <path

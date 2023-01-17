@@ -8,11 +8,10 @@ import useSizeObserver from '../../hooks/useSizeObserver';
 
 const { iotPrefix } = settings;
 
-const PAGINATION_MIN_WIDTH_LG_BREAKPOINT = 625;
-
 /**
  * This pagination component hides the items per page selection dropdown if the isItemsPerPageHidden bit is true.
- * It also hides the Items per page and x of x items text if the total width of the pagination bar is less than 500 px
+ * It also hides the Items per page and x of x items text if the total width of the pagination bar is less than 500 px.
+ * In addition, it narrows padding between 608px and 500px due to overflow issue.
  */
 const SizedPagination = ({
   isItemPerPageHidden,
@@ -24,7 +23,6 @@ const SizedPagination = ({
   ...rest
 }) => {
   const [{ width }, paginationRef] = useSizeObserver({ initialWidth: 500 });
-  const isCompact = width < 500;
 
   return (
     <>
@@ -35,13 +33,13 @@ const SizedPagination = ({
         data-testid={testId}
         disabled={preventInteraction || disabled}
         className={classnames(className, `${iotPrefix}--pagination`, {
-          [`${iotPrefix}--pagination--hide-page`]:
-            isItemPerPageHidden || width < PAGINATION_MIN_WIDTH_LG_BREAKPOINT,
+          [`${iotPrefix}--pagination--hide-page`]: isItemPerPageHidden,
           [`${iotPrefix}--pagination--hide-select`]: preventInteraction,
-          [`${iotPrefix}--pagination--compact`]: isCompact,
+          [`${iotPrefix}--pagination--narrow`]: width > 500 && width < 608,
+          [`${iotPrefix}--pagination--compact`]: width < 500,
         })}
         style={{
-          '--pagination-text-display': isCompact ? 'none' : 'flex',
+          '--pagination-text-display': width < 500 ? 'none' : 'flex',
         }}
       />
     </>

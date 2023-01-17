@@ -401,6 +401,7 @@ const DateTimePicker = ({
   const [singleTimeValue, setSingleTimeValue] = useState(null);
   const [rangeStartTimeValue, setRangeStartTimeValue] = useState(null);
   const [rangeEndTimeValue, setRangeEndTimeValue] = useState(null);
+  const [invalidSingleTimeValue, setInvalidSingleTimeValue] = useState(false);
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
 
@@ -848,7 +849,7 @@ const DateTimePicker = ({
 
   const handleSingleTimeValueChange = (startState) => {
     setSingleTimeValue(startState);
-    setInvalidRangeStartTime(
+    setInvalidSingleTimeValue(
       is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
     );
   };
@@ -1228,8 +1229,10 @@ const DateTimePicker = ({
                           }
                           type={isSingleSelect ? 'single' : 'range'}
                           invalid={[
-                            !rangeStartTimeValue ?? invalidRangeStartTime,
-                            !rangeEndTimeValue ?? invalidRangeEndTime,
+                            isSingleSelect
+                              ? !singleTimeValue || invalidSingleTimeValue
+                              : !rangeStartTimeValue || invalidRangeStartTime,
+                            !rangeEndTimeValue || invalidRangeEndTime,
                           ]}
                           i18n={{
                             labelText: mergedI18n.startTimeLabel,

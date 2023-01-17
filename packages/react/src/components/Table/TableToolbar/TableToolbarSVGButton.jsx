@@ -25,7 +25,7 @@ const defaultProps = {
   isActive: false,
   disabled: false,
   tooltipAlignment: 'center',
-  tooltipPosition: 'top',
+  tooltipPosition: 'bottom',
   langDir: 'ltr',
 };
 

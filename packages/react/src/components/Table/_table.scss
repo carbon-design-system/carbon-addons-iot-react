@@ -6,6 +6,7 @@
 @import 'TableDetailWizard/table-detail-wizard';
 @import 'TableMultiSortModal/table-multi-sort-modal';
 @import '../../globals/vars';
+@import '../../globals/mixins';
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
@@ -105,6 +106,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   &.#{$iot-prefix}--table-toolbar-button-active {
     @include box-shadow;
   }
+}
+
+.#{$iot-prefix}--table-toolbar__advanced-filters-button.#{$iot-prefix}--table-toolbar-button-active.#{$iot-prefix}--flyout-menu--trigger-button {
+  @include hide-tooltip();
 }
 
 // regression fix for tiny expand chrevron on some expandable table rows
