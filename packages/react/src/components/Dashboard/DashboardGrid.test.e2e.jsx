@@ -1167,7 +1167,7 @@ describe('DashboardGrid-lg-Card', () => {
     MockDate.reset();
   });
 
-  it('Renders a card with date range picker', () => {
+  it('Renders default date range picker in a card', () => {
     const size = CARD_SIZES.SMALLFULL;
 
     mount(
@@ -1202,7 +1202,7 @@ describe('DashboardGrid-lg-Card', () => {
     });
   });
 
-  it('Card with date time range picker', () => {
+  it('Renders date range picker with presets in a card', () => {
     const size = CARD_SIZES.MEDIUMTHIN;
 
     mount(
