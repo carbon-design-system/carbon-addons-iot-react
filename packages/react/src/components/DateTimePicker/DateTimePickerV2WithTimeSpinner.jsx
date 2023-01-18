@@ -31,7 +31,7 @@ import {
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
-import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { handleSpecificKeyDown, useOnClickOutside } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
 
 import {
@@ -47,6 +47,8 @@ import {
   useDateTimePickerRef,
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
+  useDateTimePickerClickOutside,
+  useCloseDropdown,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -355,6 +357,7 @@ const DateTimePicker = ({
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
   const containerRef = useRef();
+  const dropdownRef = useRef();
   const updatedStyle = useMemo(
     () => ({
       ...style,
@@ -395,7 +398,7 @@ const DateTimePicker = ({
     onNavigateRadioButton,
     onNavigatePresets,
   } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
-  const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
+  const [isTooltipOpen, toggleTooltip, setIsTooltipOpen] = useDateTimePickerTooltip({ isExpanded });
 
   const [singleDateValue, setSingleDateValue] = useState(null);
   const [singleTimeValue, setSingleTimeValue] = useState(null);
@@ -769,6 +772,31 @@ const DateTimePicker = ({
     setIsExpanded(false);
   };
 
+  // Close tooltip if dropdown was closed by click outside
+  const onFieldBlur = (evt) => {
+    if (evt.target !== evt.currentTarget) {
+      setIsTooltipOpen(false);
+    }
+  };
+
+  const closeDropdown = useCloseDropdown({
+    isExpanded,
+    isCustomRange,
+    setIsCustomRange,
+    setIsExpanded,
+    parseDefaultValue,
+    defaultValue,
+    setCustomRangeKind,
+    lastAppliedValue,
+    singleTimeValue,
+    setSingleDateValue,
+    setSingleTimeValue,
+  });
+
+  const onClickOutside = useDateTimePickerClickOutside(closeDropdown, containerRef);
+
+  useOnClickOutside(dropdownRef, onClickOutside);
+
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
     return (
@@ -905,7 +933,7 @@ const DateTimePicker = ({
           onFieldInteraction(event);
         })}
         onFocus={toggleTooltip}
-        onBlur={toggleTooltip}
+        onBlur={onFieldBlur}
         onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
@@ -997,6 +1025,7 @@ const DateTimePicker = ({
             style={updatedStyle}
           >
             <div
+              ref={dropdownRef}
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
               style={{ '--wrapper-width': '20rem' }}
               role="listbox"

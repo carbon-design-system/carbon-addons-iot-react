@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { delay, isNil } from 'lodash-es';
 import { sortStates } from 'carbon-components-react/es/components/DataTable/state/sorting';
 import fileDownload from 'js-file-download';
@@ -553,4 +554,29 @@ export const getMultiSelectItems = (column, filterValue) => {
   }
 
   return [];
+};
+
+/**
+ * Hook to detect clicks outside of a specified element
+ * @param {node} ref Upon interaction with this DOM node handler won't be invoked
+ * @param {function} handler Callback for interaction event
+ */
+export const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = (event) => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref.current, handler]);
 };
