@@ -24,6 +24,7 @@ import {
 import { settings } from '../../../../constants/Settings';
 import { FILTER_EMPTY_STRING } from '../../../../constants/Filters';
 import ComboBox from '../../../ComboBox/ComboBox';
+import TableToolbarSVGButton from '../../TableToolbar/TableToolbarSVGButton';
 
 const { iotPrefix, prefix } = settings;
 
@@ -94,6 +95,7 @@ class FilterHeaderRow extends Component {
       hasRowNesting: PropTypes.bool,
       hasRowActions: PropTypes.bool,
       useRadioButtonSingleSelect: PropTypes.bool,
+      hasFilterRowIcon: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
@@ -117,6 +119,16 @@ class FilterHeaderRow extends Component {
         );
       }
     },
+    /** language direction for current table */
+    langDir: PropTypes.oneOf(['rtl', 'ltr']),
+    /** indicator if columns have grouping */
+    showColumnGroups: PropTypes.bool,
+    /** icon element for filter row icon */
+    filterRowIcon: PropTypes.node,
+    /** tooltip text for filter row icon button */
+    filterRowIconDescription: PropTypes.string,
+    /** call back function for when icon button in filter row is clicked  (evt) => {} */
+    onFilterRowIconClick: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -134,6 +146,10 @@ class FilterHeaderRow extends Component {
     hasFastFilter: true,
     testId: '',
     size: undefined,
+    langDir: 'ltr',
+    showColumnGroups: false,
+    filterRowIcon: null,
+    filterRowIconDescription: 'Edit filters',
   };
 
   state = {
@@ -145,6 +161,7 @@ class FilterHeaderRow extends Component {
       }),
       {}
     ),
+    filterIconTopOffset: 96,
   };
 
   // TODO: we should really do this through a useEffect hook when we refactor to functional component
@@ -173,11 +190,13 @@ class FilterHeaderRow extends Component {
 
     this.rowRef = React.createRef();
     this.firstFilterableRef = React.createRef();
+    this.filterCellRef = React.createRef();
   }
 
   componentDidMount() {
     this.updateDropdownHeight();
     this.updateFocus();
+    this.updateFilterIconPosition();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -202,6 +221,27 @@ class FilterHeaderRow extends Component {
           dropdownMaxHeight: `${height}px`,
         });
       }
+    }
+  };
+
+  updateFilterIconPosition = () => {
+    /* istanbul ignore else */
+    if (!this.props.tableOptions.hasFilterRowIcon) {
+      return;
+    }
+
+    /* istanbul ignore next */
+    if (this.filterCellRef.current) {
+      const siblingTopOffset = this.filterCellRef.current
+        .querySelector('input')
+        .getBoundingClientRect().top;
+      const tableTopOffset = this.filterCellRef.current
+        .closest(`.${iotPrefix}--table-container`)
+        .getBoundingClientRect().top;
+      this.setState((prevState) => ({
+        ...prevState,
+        filterIconTopOffset: siblingTopOffset - tableTopOffset,
+      }));
     }
   };
 
@@ -271,6 +311,7 @@ class FilterHeaderRow extends Component {
         hasRowNesting,
         hasRowActions,
         useRadioButtonSingleSelect,
+        hasFilterRowIcon,
       },
       isVisible,
       lightweight,
@@ -278,8 +319,13 @@ class FilterHeaderRow extends Component {
       hasFastFilter,
       testId,
       showExpanderColumn,
+      langDir,
+      showColumnGroups,
+      filterRowIcon,
+      filterRowIconDescription,
+      onFilterRowIconClick,
     } = this.props;
-    const { dropdownMaxHeight, filterValues } = this.state;
+    const { dropdownMaxHeight, filterValues, filterIconTopOffset } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
     return isVisible ? (
       <TableRow
@@ -307,6 +353,7 @@ class FilterHeaderRow extends Component {
           const memoizeColumnOptions = memoize(filterColumnOptions); // TODO: this memoize isn't really working, should refactor to a higher column level
           const isLastColumn = visibleColumns.length - 1 === i;
           const lastVisibleColumn = visibleColumns.slice(-1)[0];
+          const isLastVisibleColumn = column.id === lastVisibleColumn.columnId;
           // undefined check has the effect of making isFilterable default to true
           // if unspecified
           const headerContent =
@@ -446,15 +493,49 @@ class FilterHeaderRow extends Component {
                   // This "header-width" class does not make sense for undefined column widths and the corresponding
                   // CSS has been removed. Class is kept only for backwards compatibilty in the DOM.
                   [`${iotPrefix}--filter-header-row--header-width`]: column.width === undefined,
-                  [`${iotPrefix}--filter-header-row--last-column`]:
-                    column.id === lastVisibleColumn.columnId,
+                  [`${iotPrefix}--filter-header-row--last-column`]: isLastVisibleColumn,
+                  [`${iotPrefix}--filter-header-row--with-icon`]:
+                    isLastVisibleColumn && hasFilterRowIcon,
+                  [`${iotPrefix}--filter-header-row--with-margin`]:
+                    isLastVisibleColumn &&
+                    hasFilterRowIcon &&
+                    (!showColumnGroups || !hasRowActions),
                 }
               )}
               data-column={column.id}
               key={`FilterHeader${column.id}`}
               width={column.width}
+              ref={isLastVisibleColumn ? this.filterCellRef : undefined}
             >
               {headerContent}
+              {hasFilterRowIcon && isLastVisibleColumn ? (
+                <>
+                  <TableToolbarSVGButton
+                    testId="filter-row-icon"
+                    className={classnames(`${iotPrefix}--filter-header-icon`, {
+                      [`${iotPrefix}--filter-header-icon--with-border`]:
+                        showColumnGroups && !hasRowActions,
+                      [`${iotPrefix}--filter-header-icon--with-margin`]: hasRowActions,
+                    })}
+                    description={filterRowIconDescription}
+                    onClick={onFilterRowIconClick}
+                    renderIcon={filterRowIcon}
+                    size="field"
+                    style={{
+                      top: `${filterIconTopOffset}px`,
+                    }}
+                    tooltipAlignment={langDir === 'ltr' ? 'end' : 'start'}
+                  />
+                  {hasRowActions ? (
+                    <div
+                      className={`${iotPrefix}--filter-header-row--icon-support`}
+                      style={{
+                        top: `${filterIconTopOffset}px`,
+                      }}
+                    />
+                  ) : null}
+                </>
+              ) : null}
             </TableHeader>
           );
         })}

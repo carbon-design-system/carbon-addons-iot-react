@@ -12,6 +12,7 @@ import { isNil, isEmpty, isEqual, debounce } from 'lodash-es';
 import classnames from 'classnames';
 import warning from 'warning';
 import { useLangDirection } from 'use-lang-direction';
+import { FilterEdit16 } from '@carbon/icons-react';
 
 import {
   TableColumnsPropTypes,
@@ -78,6 +79,7 @@ const propTypes = {
     useAutoTableLayoutForResize: PropTypes.bool,
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
+    hasFilterRowIcon: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -127,6 +129,7 @@ const propTypes = {
     onApplyFilter: PropTypes.func,
     onColumnResize: PropTypes.func,
     onOverflowItemClicked: PropTypes.func,
+    onFilterRowIconClick: PropTypes.func,
   }).isRequired,
   /** lightweight  */
   lightweight: PropTypes.bool,
@@ -153,6 +156,8 @@ const propTypes = {
       );
     }
   },
+  filterRowIcon: PropTypes.node,
+  filterRowIconDescription: PropTypes.string,
 };
 
 const defaultProps = {
@@ -172,6 +177,8 @@ const defaultProps = {
   testId: '',
   showExpanderColumn: false,
   size: undefined,
+  filterRowIcon: FilterEdit16,
+  filterRowIconDescription: 'Edit filters',
 };
 
 const generateOrderedColumnRefs = (ordering) =>
@@ -217,6 +224,7 @@ const TableHead = ({
     onColumnSelectionConfig,
     onColumnResize,
     onOverflowItemClicked,
+    onFilterRowIconClick,
   },
   selectAllText,
   clearFilterText,
@@ -229,6 +237,8 @@ const TableHead = ({
   hasFastFilter,
   showExpanderColumn,
   size,
+  filterRowIcon,
+  filterRowIconDescription,
 }) => {
   const filterBarActive = activeBar === 'filter';
   const initialColumnWidths = {};
@@ -674,6 +684,11 @@ const TableHead = ({
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
           size={size}
+          langDir={langDir}
+          showColumnGroups={showColumnGroups}
+          filterRowIcon={filterRowIcon}
+          filterRowIconDescription={filterRowIconDescription}
+          onFilterRowIconClick={onFilterRowIconClick}
         />
       )}
       {activeBar === 'column' && (

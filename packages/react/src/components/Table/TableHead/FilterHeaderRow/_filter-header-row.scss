@@ -49,6 +49,70 @@ $grouped-columns-filter-border-width: 2px;
       }
     }
   }
+
+  &.#{$iot-prefix}--filter-header-row--with-icon {
+    position: unset;
+  }
+
+  &.#{$iot-prefix}--filter-header-row--with-margin {
+    .#{$prefix}--table-header-label {
+      min-width: rem(80px);
+      margin-right: rem(52px);
+
+      [dir='rtl'] & {
+        margin-right: unset;
+        margin-left: rem(52px);
+      }
+    }
+  }
+
+  .#{$iot-prefix}--filter-header-icon {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    background-color: $ui-03;
+
+    &:hover {
+      background-color: $hover-light-ui;
+    }
+
+    [dir='rtl'] & {
+      right: unset;
+      left: 0;
+    }
+
+    &.#{$iot-prefix}--filter-header-icon--with-border {
+      border-right: $spacing-01 solid $ui-background;
+
+      [dir='rtl'] & {
+        border-right: none;
+        border-left: $spacing-01 solid $ui-background;
+      }
+    }
+
+    &.#{$iot-prefix}--filter-header-icon--with-margin {
+      right: $spacing-03;
+
+      [dir='rtl'] & {
+        right: unset;
+        left: rem(22px);
+      }
+    }
+  }
+
+  .#{$iot-prefix}--filter-header-row--icon-support {
+    position: absolute;
+    right: 0;
+    width: $spacing-03;
+    height: $spacing-08;
+    background-color: $ui-03;
+
+    [dir='rtl'] & {
+      right: unset;
+      left: 0;
+      width: rem(22px);
+    }
+  }
 }
 
 .#{$prefix}--data-table--xl th.#{$iot-prefix}--filter-header-row--header {
