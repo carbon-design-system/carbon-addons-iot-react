@@ -962,4 +962,76 @@ describe('FilterHeaderRow', () => {
       [columnIdOne]: [FILTER_EMPTY_STRING, 'Two'],
     });
   });
+
+  describe('filter row icon button', () => {
+    const originalClosest = HTMLTableCellElement.prototype.closest;
+
+    beforeEach(() => {
+      HTMLTableCellElement.prototype.closest = jest.fn(() => {
+        const getBoundingClientRect = () => ({
+          top: 10,
+        });
+        return {
+          getBoundingClientRect,
+        };
+      });
+    });
+
+    afterEach(() => {
+      HTMLTableCellElement.prototype.closest = originalClosest;
+    });
+
+    it('renders without crashing', () => {
+      render(
+        <FilterHeaderRow
+          {...commonFilterProps}
+          ordering={[{ columnId: 'col1' }]}
+          columns={[{ id: 'col1' }]}
+          tableOptions={{
+            hasFilterRowIcon: true,
+          }}
+        />
+      );
+
+      expect(screen.getByTestId('filter-row-icon')).toBeVisible();
+    });
+
+    it('should display additional classes', () => {
+      const { container } = render(
+        <FilterHeaderRow
+          {...commonFilterProps}
+          ordering={[{ columnId: 'col1' }]}
+          columns={[{ id: 'col1' }]}
+          tableOptions={{
+            hasFilterRowIcon: true,
+          }}
+          showColumnGroups
+          hasRowActions
+        />
+      );
+
+      expect(container.querySelector('th')).toHaveClass(
+        `${iotPrefix}--filter-header-row--with-icon`
+      );
+      expect(container.querySelector('th')).toHaveClass(
+        `${iotPrefix}--filter-header-row--with-margin`
+      );
+    });
+
+    it('should display icon button only on last table cell', () => {
+      render(
+        <FilterHeaderRow
+          {...commonFilterProps}
+          ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+          columns={[{ id: 'col1' }, { id: 'col2' }]}
+          tableOptions={{
+            hasFilterRowIcon: true,
+          }}
+        />
+      );
+
+      expect(screen.getAllByRole('button')).toHaveLength(1);
+      expect(screen.getByTestId('filter-row-icon')).toBeVisible();
+    });
+  });
 });
