@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.20...v2.152.0-next.21) (2023-01-19)
+
+
+### Features
+
+* **table:** add icon button to filter row ([9cad7c1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9cad7c1467227d339ef7b784c0308fce2f6cbb6c)), closes [#3688](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3688)
+
+
+
+
+
 # [2.152.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.19...v2.152.0-next.20) (2023-01-18)
 
 
