@@ -6,7 +6,7 @@ import { settings } from '../../constants/Settings';
 
 import DateTimePicker, { INTERVAL_VALUES, PICKER_KINDS } from './DateTimePicker';
 
-const { iotPrefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('DateTimePicker', () => {
   beforeEach(() => {
@@ -407,5 +407,189 @@ describe('DateTimePicker', () => {
           },
         });
       });
+  });
+
+  it('should close on click outside if relative date was selected', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByTitle('Increment number').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    cy.findAllByRole('button').eq(0).contains('Last 30 minutes');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close on click outside if absolute date was selected', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(<DateTimePicker onApply={onApply} onCancel={onCancel} id="picker-test" />);
+
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByText('Custom Range').should('be.visible').click();
+    cy.findByText('Absolute').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByText('Custom range').should('not.exist');
+    cy.findAllByRole('button').eq(0).contains('Last 30 minutes');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close dropdown on field click', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+    cy.findByLabelText('Calendar').click();
+    cy.findByRole('listbox').should('be.visible');
+    // unsaved changes
+    cy.findByText('Last 1 hour').click();
+    // close dropdown on clicking the field icon
+    cy.findByLabelText('Calendar').click();
+    cy.findByRole('listbox').should('not.exist');
+    cy.findAllByRole('button').eq(0).contains('Last 30 minutes');
+  });
+
+  it('should reset to default value from props when clicked outside', () => {
+    const onApply = cy.stub();
+    const onCancel = cy.stub();
+    mount(
+      <DateTimePicker
+        onApply={onApply}
+        onCancel={onCancel}
+        id="picker-test"
+        hasTimeInput
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.ABSOLUTE,
+          timeRangeValue: {
+            start: new Date(2021, 7, 1, 12, 34, 0),
+            end: new Date(2021, 7, 6, 10, 49, 0),
+          },
+        }}
+      />
+    );
+
+    cy.findByText('2021-08-01 12:34 to 2021-08-06 10:49').click();
+    cy.findByText('Relative').should('be.visible').click();
+    cy.get('body').click();
+
+    cy.findByRole('button').contains('2021-08-01 12:34 to 2021-08-06 10:49');
+    expect(onApply).to.be.callCount(0);
+    expect(onCancel).to.be.callCount(0);
+  });
+
+  it('should close appropriate dropdown on click outside', () => {
+    const testIdOne = 'picker-test-1';
+    const testIdTwo = 'picker-test-2';
+    mount(
+      <div
+        style={{
+          display: 'flex',
+        }}
+      >
+        <DateTimePicker testId={testIdOne} hasTimeInput />
+        <DateTimePicker testId={testIdTwo} hasTimeInput />
+      </div>
+    );
+
+    cy.findByTestId(`${testIdOne}__field`).click();
+    cy.findAllByRole('listbox').should('have.length', 1);
+
+    cy.findByTestId(`${testIdTwo}__field`).click();
+    cy.findAllByRole('listbox').should('have.length', 1);
+  });
+
+  it('should close tooltip when dropdown is closed by click outside', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+    cy.findByRole('button', { name: 'Last 30 minutes' }).as('dropdownTrigger');
+
+    cy.get('@dropdownTrigger').trigger('mouseover');
+    cy.findByRole('dialog').should('have.class', `${prefix}--tooltip__content`).and('be.visible');
+    cy.get('@dropdownTrigger').trigger('mouseout');
+
+    cy.get('@dropdownTrigger').click();
+    cy.get('body').click();
+
+    cy.findByRole('dialog').should('not.exist');
+  });
+
+  it('should close tooltip on Apply click', () => {
+    mount(<DateTimePicker onApply={cy.stub()} onCancel={cy.stub()} id="picker-test" />);
+
+    cy.findByRole('dialog').should('not.exist');
+    cy.findByRole('button', { name: 'Last 30 minutes' }).click();
+    cy.findByRole('button', { name: 'Apply' }).click();
+
+    cy.findByRole('dialog').should('not.exist');
+  });
+
+  describe('should reset to last saved value if closed by click outside', () => {
+    it('with default relative value', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.RELATIVE,
+            timeRangeValue: {
+              relativeToWhen: INTERVAL_VALUES.MINUTES,
+              relativeToTime: '',
+            },
+          }}
+        />
+      );
+
+      // Select some date in relative range
+      cy.findAllByLabelText('Calendar').eq(0).click();
+      cy.findByPlaceholderText('hh:mm').type('13:30');
+      cy.findByText('Apply').click();
+      // Unsaved changes
+      cy.findAllByLabelText('Calendar').eq(0).click();
+      cy.findByText('Absolute').should('be.visible').click();
+      cy.findByText('25').should('be.visible').click();
+      cy.findByText('26').should('be.visible').click();
+      cy.findByLabelText('Start time').type('11:30');
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByRole('button', { name: /13:30/i }).should('be.visible');
+    });
+
+    it('with default absolute value', () => {
+      mount(
+        <DateTimePicker
+          onApply={cy.stub()}
+          onCancel={cy.stub()}
+          id="picker-test"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: new Date(2021, 7, 1, 12, 34, 0),
+              end: new Date(2021, 7, 6, 10, 49, 0),
+            },
+          }}
+        />
+      );
+      // Select some date in absolute range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByLabelText('Start time').focus().clear();
+      cy.findByLabelText('Start time').type('11:11');
+      cy.findByText('Apply').click();
+      // Unsaved changes in relative range
+      cy.findByTestId('date-time-picker__field').click();
+      cy.findByText('Relative').should('be.visible').click();
+      cy.findByPlaceholderText('hh:mm').type('13:30');
+      cy.get('body').click();
+      // Preserves only saved changes
+      cy.findByTestId('date-time-picker__field').should(
+        'have.text',
+        '2021-08-01 11:11 to 2021-08-06 10:49'
+      );
+    });
   });
 });

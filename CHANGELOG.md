@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.19...v2.152.0-next.20) (2023-01-18)
+
+
+### Bug Fixes
+
+* **datetimepicker:** close tooltip on apply click ([e35ebcd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e35ebcdeb13261b8fdd9583beb077177802639c6))
+* **datetimepicker:** restore saved value in single mode ([f1f6a6a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f1f6a6aead34d9d23d0d7ad77aa0e877af5f2563))
+* **datetimepicker:** select preset if default is relative ([5a1a4d8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5a1a4d8a712a9e60010977fbf697d2e2768ca984))
+* **datetimepickerv2:** select preset if default is relative ([a5239d2](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a5239d2bb3c624b0d8f38f9aa9ee6507b7df933b))
+* **editorutils:** add test for group by changes ([5bc90aa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5bc90aacdcb41e10576d9bde94841a440b772b0a))
+* **editorutils:** update colums destination attr on group by changes ([0105f0f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0105f0fd9e0f6e6dc608faae36e23a5bea16e84c))
+
+
+### Features
+
+* **datetimepicker:** close dropdown on click outside ([bf242cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bf242cfa316ab84e45a2fb10a92bce4349f930c2)), closes [#3642](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3642)
+* **datetimepickerv2:** close dropdown on click outside ([05efbc1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/05efbc12d4deb1ae644ff63b64a26fdbc70a58cb)), closes [#3642](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3642)
+
+
+
+
+
 # [2.152.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.18...v2.152.0-next.19) (2023-01-13)
 
 
