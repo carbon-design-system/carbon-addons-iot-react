@@ -56,12 +56,12 @@ $grouped-columns-filter-border-width: 2px;
 
   &.#{$iot-prefix}--filter-header-row--with-margin {
     .#{$prefix}--table-header-label {
-      min-width: rem(80px);
-      margin-right: rem(52px);
+      min-width: rem(120px);
+      padding-right: rem(42px);
 
       [dir='rtl'] & {
-        margin-right: unset;
-        margin-left: rem(52px);
+        padding-right: unset;
+        padding-left: $spacing-09;
       }
     }
   }
