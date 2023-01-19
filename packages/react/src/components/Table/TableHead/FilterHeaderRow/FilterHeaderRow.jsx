@@ -96,6 +96,7 @@ class FilterHeaderRow extends Component {
       hasRowActions: PropTypes.bool,
       useRadioButtonSingleSelect: PropTypes.bool,
       hasFilterRowIcon: PropTypes.bool,
+      hasResize: PropTypes.bool,
     }),
     /** filter can be hidden by the user but filters will still apply to the table */
     isVisible: PropTypes.bool,
@@ -312,6 +313,7 @@ class FilterHeaderRow extends Component {
         hasRowActions,
         useRadioButtonSingleSelect,
         hasFilterRowIcon,
+        hasResize,
       },
       isVisible,
       lightweight,
@@ -514,7 +516,7 @@ class FilterHeaderRow extends Component {
                     testId="filter-row-icon"
                     className={classnames(`${iotPrefix}--filter-header-icon`, {
                       [`${iotPrefix}--filter-header-icon--with-border`]:
-                        showColumnGroups && !hasRowActions,
+                        hasResize && !hasRowActions,
                       [`${iotPrefix}--filter-header-icon--with-margin`]: hasRowActions,
                     })}
                     description={filterRowIconDescription}
