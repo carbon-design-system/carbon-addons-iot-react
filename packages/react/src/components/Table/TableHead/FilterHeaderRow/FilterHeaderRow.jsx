@@ -516,7 +516,7 @@ class FilterHeaderRow extends Component {
                     testId="filter-row-icon"
                     className={classnames(`${iotPrefix}--filter-header-icon`, {
                       [`${iotPrefix}--filter-header-icon--with-border`]:
-                        hasResize && !hasRowActions,
+                        hasResize && showColumnGroups && !hasRowActions,
                       [`${iotPrefix}--filter-header-icon--with-margin`]: hasRowActions,
                     })}
                     description={filterRowIconDescription}
