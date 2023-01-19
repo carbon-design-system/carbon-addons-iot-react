@@ -11,7 +11,13 @@ import {
   getTableColumns as getStoryTableColumns,
   getTableData as getStoryTableData,
 } from './Table.story.helpers';
-import { getSelectData, getTableColumns, getTableData, getWords } from './Table.test.helpers';
+import {
+  addRowActions,
+  getSelectData,
+  getTableColumns,
+  getTableData,
+  getWords,
+} from './Table.test.helpers';
 
 const { prefix } = settings;
 
@@ -496,5 +502,128 @@ describe('StatefulTable', () => {
 
     // Last column is still visible
     cy.findByText(lastColumnTitle).should('be.visible');
+  });
+
+  it('filter row icon button is always visible', () => {
+    const filterRowIconCallback = cy.stub();
+    const data = addRowActions(getTableData(5, words, selectData));
+    const columns = getTableColumns(selectData);
+
+    mount(
+      <div style={{ width: '700px' }}>
+        <StatefulTable
+          id="table"
+          columns={columns}
+          data={data}
+          actions={{
+            table: {
+              onFilterRowIconClick: filterRowIconCallback,
+            },
+          }}
+          options={{
+            hasSearch: true,
+            hasFilterRowIcon: true,
+          }}
+          view={{
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+          i18n={{
+            filterRowIconDescription: 'Filter row icon',
+          }}
+        />
+      </div>
+    );
+
+    cy.findByText('Filter row icon').should('be.visible');
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByText('Filter row icon').should('be.visible');
+
+    cy.findByTestId('filter-row-icon')
+      .click({ force: true })
+      .should(() => {
+        expect(filterRowIconCallback).to.have.been.callCount(1);
+      });
+  });
+
+  it('filter row icon button is visible with column grouping and actions', () => {
+    const filterRowIconCallback = cy.stub();
+    const data = addRowActions(getTableData(5, words, selectData));
+    const columns = getTableColumns(selectData);
+
+    mount(
+      <div style={{ width: '700px' }}>
+        <StatefulTable
+          id="table"
+          columns={columns}
+          columnGroups={[
+            { id: 'groupA', name: 'Group A' },
+            { id: 'groupB', name: 'Group B' },
+          ]}
+          data={data}
+          actions={{
+            table: {
+              onFilterRowIconClick: filterRowIconCallback,
+            },
+          }}
+          options={{
+            hasSearch: true,
+            hasFilterRowIcon: true,
+            hasRowActions: true,
+          }}
+          view={{
+            table: {
+              ordering: [
+                {
+                  columnId: 'string',
+                  columnGroupId: 'groupA',
+                },
+                {
+                  columnId: 'node',
+                  columnGroupId: 'groupA',
+                },
+                {
+                  columnId: 'date',
+                },
+                {
+                  columnId: 'select',
+                },
+                {
+                  columnId: 'number',
+                  columnGroupId: 'groupB',
+                },
+                {
+                  columnId: 'boolean',
+                  columnGroupId: 'groupB',
+                },
+                {
+                  columnId: 'secretField',
+                },
+                {
+                  columnId: 'object',
+                },
+              ],
+            },
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+          i18n={{
+            filterRowIconDescription: 'Filter row icon',
+          }}
+        />
+      </div>
+    );
+
+    cy.findByText('Filter row icon').should('be.visible');
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByText('Filter row icon').should('be.visible');
+
+    cy.findByTestId('filter-row-icon')
+      .click({ force: true })
+      .should(() => {
+        expect(filterRowIconCallback).to.have.been.callCount(1);
+      });
   });
 });

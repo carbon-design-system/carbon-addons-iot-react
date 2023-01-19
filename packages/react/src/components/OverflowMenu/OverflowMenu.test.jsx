@@ -292,7 +292,6 @@ describe('IotOverflowMenu', () => {
     userEvent.click(trigger);
 
     expect(baseElement.querySelector('[role="menu"]')).toBeDefined();
-    console.log(baseElement.querySelector('[role="menu"]'));
 
     userEvent.click(document.body);
     expect(baseElement.querySelector('[role="menu"]')).toBeNull();

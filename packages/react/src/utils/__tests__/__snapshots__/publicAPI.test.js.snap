@@ -621,6 +621,7 @@ Map {
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
           "onErrorStateAction": null,
+          "onFilterRowIconClick": [Function],
           "onOverflowItemClicked": [Function],
           "onRemoveMultiSortColumn": [Function],
           "onRowClicked": [Function],
@@ -669,6 +670,7 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
+        "filterRowIconDescription": "Edit filters",
         "inProgressText": "In progress",
         "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
@@ -718,6 +720,7 @@ Map {
         "hasColumnSelectionConfig": false,
         "hasFastSearch": true,
         "hasFilter": false,
+        "hasFilterRowIcon": false,
         "hasOnlyPageData": false,
         "hasPagination": false,
         "hasResize": false,
@@ -764,6 +767,10 @@ Map {
         "selectedAdvancedFilterIds": Array [],
         "table": Object {
           "expandedIds": Array [],
+          "filterRowIcon": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
           "isSelectAllSelected": undefined,
           "loadingMoreIds": Array [],
           "loadingState": Object {
@@ -834,6 +841,9 @@ Map {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
+                    "type": "func",
+                  },
+                  "onFilterRowIconClick": Object {
                     "type": "func",
                   },
                   "onOverflowItemClicked": Object {
@@ -1319,6 +1329,9 @@ Map {
             "filterNone": Object {
               "type": "string",
             },
+            "filterRowIconDescription": Object {
+              "type": "string",
+            },
             "inProgressText": Object {
               "type": "string",
             },
@@ -1501,6 +1514,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "hasFilterRowIcon": Object {
+              "type": "bool",
             },
             "hasMultiSort": Object {
               "type": "bool",
@@ -1924,6 +1940,9 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "filterRowIcon": Object {
+                    "type": "node",
+                  },
                   "isSelectAllIndeterminate": Object {
                     "type": "bool",
                   },
@@ -2310,6 +2329,11 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "columnGroups": Array [],
+      "filterRowIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "filterRowIconDescription": "Edit filters",
       "filterText": "Filter",
       "hasFastFilter": true,
       "i18n": Object {
@@ -2398,6 +2422,9 @@ Map {
               "type": "func",
             },
             "onColumnSelectionConfig": Object {
+              "type": "func",
+            },
+            "onFilterRowIconClick": Object {
               "type": "func",
             },
             "onOverflowItemClicked": Object {
@@ -2582,6 +2609,12 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "filterRowIcon": Object {
+        "type": "node",
+      },
+      "filterRowIconDescription": Object {
+        "type": "string",
+      },
       "filterText": Object {
         "type": "string",
       },
@@ -2643,6 +2676,9 @@ Map {
               "type": "string",
             },
             "filterNone": Object {
+              "type": "string",
+            },
+            "filterRowIconDescription": Object {
               "type": "string",
             },
             "inProgressText": Object {
@@ -2792,6 +2828,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasFilterRowIcon": Object {
+              "type": "bool",
+            },
             "hasMultiSort": Object {
               "type": "bool",
             },

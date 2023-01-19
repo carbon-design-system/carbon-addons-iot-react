@@ -152,6 +152,7 @@ export const getTableActions = () => ({
     onCancelMultiSortColumns: action('onCancelMultiSortColumns'),
     onAddMultiSortColumn: action('onAddMultiSortColumn'),
     onRemoveMultiSortColumn: action('onRemoveMultiSortColumn'),
+    onFilterRowIconClick: action('onFilterRowIconClick'),
   },
 });
 
@@ -1097,6 +1098,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Allow multi-select in Select filter',
           getDefaultValue('hasMultiSelectFilter'),
+          SORT_FILTER_GROUP
+        )
+      : null,
+    hasFilterRowIcon: shouldCreate('hasFilterRowIcon')
+      ? boolean(
+          'Display icon button in filter row',
+          getDefaultValue('hasFilterRowIcon'),
           SORT_FILTER_GROUP
         )
       : null,
