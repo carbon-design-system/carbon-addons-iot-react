@@ -20,6 +20,7 @@
       color: $text-01;
       border: 0;
       background: none;
+      padding-top: 0;
       padding-left: 0;
       resize: none;
     }
@@ -41,6 +42,13 @@
       }
     }
   }
+
+  &__inline#{&}--loading {
+    label {
+      align-items: flex-start;
+    }
+  }
+
   &__inline_small {
     > label {
       @include type-style('label-01');
@@ -48,6 +56,20 @@
       div {
         @include type-style('label-01');
       }
+    }
+  }
+
+  &--loading {
+    label {
+      width: 100%;
+    }
+  }
+
+  .#{$prefix}--skeleton__text {
+    margin-bottom: $spacing-02;
+
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
