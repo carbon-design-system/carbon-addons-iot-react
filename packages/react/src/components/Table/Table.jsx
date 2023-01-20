@@ -283,7 +283,7 @@ const propTypes = {
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
       /** icon element for filter row icon */
-      filterRowIcon: PropTypes.node,
+      filterRowIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */

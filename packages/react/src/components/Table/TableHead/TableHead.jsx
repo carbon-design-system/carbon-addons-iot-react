@@ -156,7 +156,7 @@ const propTypes = {
       );
     }
   },
-  filterRowIcon: PropTypes.node,
+  filterRowIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   filterRowIconDescription: PropTypes.string,
 };
 

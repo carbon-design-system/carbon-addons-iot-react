@@ -1941,7 +1941,17 @@ Map {
                     "type": "arrayOf",
                   },
                   "filterRowIcon": Object {
-                    "type": "node",
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "type": "object",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
                   },
                   "isSelectAllIndeterminate": Object {
                     "type": "bool",
@@ -2610,7 +2620,17 @@ Map {
         "type": "arrayOf",
       },
       "filterRowIcon": Object {
-        "type": "node",
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "filterRowIconDescription": Object {
         "type": "string",
