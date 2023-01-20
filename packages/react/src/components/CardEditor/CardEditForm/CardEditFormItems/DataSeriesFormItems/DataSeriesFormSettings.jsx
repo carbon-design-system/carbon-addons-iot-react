@@ -116,8 +116,10 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
       <div className={`${baseClassName}--input`}>
         <TextInput
           id={`${id}_decimal-precision`}
+          key={content?.decimalPrecision}
           labelText={mergedI18n.decimalPrecisionLabel}
           light
+          type="number"
           onChange={(evt) =>
             onChange({
               ...cardConfig,
@@ -127,12 +129,13 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               },
             })
           }
-          value={content?.decimalPrecision ?? ''}
+          value={content?.decimalPrecision}
         />
       </div>
       <div className={`${baseClassName}--input`}>
         <TextInput
           id={`${id}_maximum_data_points`}
+          key={content?.maximumDataPoints}
           labelText={mergedI18n.maximumDataPoints}
           light
           type="number"
@@ -144,7 +147,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, maximumDataPoints },
             });
           }}
-          value={content?.maximumDataPoints ?? ''}
+          value={content?.maximumDataPoints}
         />
       </div>
       <div className={`${baseClassName}--input--toggle-field ${baseClassName}--input`}>
