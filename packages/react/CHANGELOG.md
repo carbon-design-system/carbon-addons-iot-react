@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.22...v2.152.0-next.23) (2023-01-20)
+
+
+### Bug Fixes
+
+* **dataseriesformsettings:** add key for number ([d419628](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d419628d55a1b5bac18ad7fe5713478dc298621f))
+* **dataseriesformsettings:** set empty values ([4c98ca1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4c98ca1bb619ee9a6ba842da8171014b86ec0dc3))
+* **readonlyvalue:** reset padding top ([40b40c6](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/40b40c660a24dcb884e55cdb37b593f91f53fc85)), closes [#3655](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3655)
+
+
+### Features
+
+* **readonlyvalue:** add loading state ([0ea2787](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0ea278799ead3a05cbc492d5402a950dde61472c)), closes [#3655](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3655)
+
+
+
+
+
 # [2.152.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.21...v2.152.0-next.22) (2023-01-20)
 
 
