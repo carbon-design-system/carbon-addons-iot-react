@@ -125,7 +125,7 @@ class FilterHeaderRow extends Component {
     /** indicator if columns have grouping */
     showColumnGroups: PropTypes.bool,
     /** icon element for filter row icon */
-    filterRowIcon: PropTypes.node,
+    filterRowIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     /** tooltip text for filter row icon button */
     filterRowIconDescription: PropTypes.string,
     /** call back function for when icon button in filter row is clicked  (evt) => {} */
