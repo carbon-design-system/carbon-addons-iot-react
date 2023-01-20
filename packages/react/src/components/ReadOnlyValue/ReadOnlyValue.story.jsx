@@ -16,9 +16,29 @@ export default {
   },
 };
 
+const loadingKnobsLabel = () => ({
+  heading: boolean('If content is heading', false, 'Loading (label)'),
+  paragraph: boolean('If content is paragraph', true, 'Loading (label)'),
+  lineCount: text('Line count', 1, 'Loading (label)'),
+  width: text('Width of the loader', '100%', 'Loading (label)'),
+});
+
+const loadingKnobsValue = () => ({
+  heading: boolean('If content is heading', false, 'Loading (value)'),
+  paragraph: boolean('If content is paragraph', true, 'Loading (value)'),
+  lineCount: text('Line count', 1, 'Loading (value)'),
+  width: text('Width of the loader', '100%', 'Loading (value)'),
+});
+
 export const Basic = () => (
   <div style={{ width: '100%', heigh: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue label="Label" value="input value" />
+    <ReadOnlyValue
+      label="Label"
+      value="input value"
+      isLoading={boolean('Loading state (isLoading)', false)}
+      skeletonLoadingLabel={loadingKnobsLabel()}
+      skeletonLoadingValue={loadingKnobsValue()}
+    />
   </div>
 );
 
@@ -33,24 +53,32 @@ export const MultipleValuesStacked = () => {
         value={text('label text', 'input value 01')}
         isLoading={isLoading}
         type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
         label={text('label text', 'Label 02')}
         value={text('label text', 'input value 02')}
         isLoading={isLoading}
         type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
         label={text('label text', 'Label 03')}
         value={text('label text', 'input value 03')}
         isLoading={isLoading}
         type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
       />
       <ReadOnlyValue
         label={text('label text', 'Label 04')}
         value={text('label text', 'input value 04')}
         isLoading={isLoading}
         type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
       />
     </div>
   );
@@ -90,7 +118,14 @@ export const BasicStackedWithCustomValue = () => (
 BasicStackedWithCustomValue.storyName = 'basic stacked with custom value';
 export const BasicInline = () => (
   <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue label="Label" value="input value" type="inline" />
+    <ReadOnlyValue
+      label="Label"
+      value="input value"
+      type="inline"
+      isLoading={boolean('Loading state (isLoading)', false)}
+      skeletonLoadingLabel={loadingKnobsLabel()}
+      skeletonLoadingValue={loadingKnobsValue()}
+    />
   </div>
 );
 
@@ -100,10 +135,38 @@ export const MultipleValuesInline = () => {
   const isLoading = boolean('Loading state (isLoading)', false);
   return (
     <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
-      <ReadOnlyValue label="Label 01" value="input value 01" type="inline" isLoading={isLoading} />
-      <ReadOnlyValue label="Label 02" value="input value 02" type="inline" isLoading={isLoading} />
-      <ReadOnlyValue label="Label 03" value="input value 03" type="inline" isLoading={isLoading} />
-      <ReadOnlyValue label="Label 04" value="input value 04" type="inline" isLoading={isLoading} />
+      <ReadOnlyValue
+        label="Label 01"
+        value="input value 01"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 02"
+        value="input value 02"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 03"
+        value="input value 03"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 04"
+        value="input value 04"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
     </div>
   );
 };
