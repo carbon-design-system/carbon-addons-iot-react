@@ -26,6 +26,7 @@ const getUiResourcesData = async ({
   surveyId = null,
   appId = null,
   workspaceId = null,
+  useCache = false,
   fetchApi = defaultFetchApi,
   isTest = false,
 }) => {
@@ -42,9 +43,10 @@ const getUiResourcesData = async ({
   const surveyIdParam = surveyId ? `&surveyId=${surveyId}` : '';
   const appIdParam = appId ? `&appId=${appId}` : '';
   const workspaceIdParam = workspaceId ? `&workspaceId=${workspaceId}` : '';
+  const cacheParam = useCache ? `&cache=${true}` : '';
   return api(
     'GET',
-    `/uiresources?id=masthead${langParam}${surveyIdParam}${appIdParam}${workspaceIdParam}`
+    `/uiresources?id=masthead${langParam}${surveyIdParam}${appIdParam}${workspaceIdParam}${cacheParam}`
   );
 };
 

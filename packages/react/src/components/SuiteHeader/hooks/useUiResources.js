@@ -11,6 +11,7 @@ const useUiResources = ({
   workspaceId = null,
   fetchApi = defaultFetchApi,
   isTest = false,
+  useCache = true,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
@@ -27,24 +28,32 @@ const useUiResources = ({
   });
 
   const refreshData = useCallback(async () => {
+    const options = {
+      baseApiUrl,
+      lang,
+      surveyId,
+      appId,
+      workspaceId,
+      fetchApi,
+      isTest,
+    };
     try {
       setIsLoading(true);
-      const uiResourcesData = await getUiResourcesData({
-        baseApiUrl,
-        lang,
-        surveyId,
-        appId,
-        workspaceId,
-        fetchApi,
-        isTest,
-      });
+      if (useCache) {
+        // Set cached data
+        const cachedUIResourcesData = await getUiResourcesData({ ...options, useCache });
+        setData(cachedUIResourcesData);
+        setIsLoading(false);
+      }
+      // Refresh data
+      const uiResourcesData = await getUiResourcesData({ ...options });
       setData(uiResourcesData);
     } catch (err) {
       setError(err);
     } finally {
       setIsLoading(false);
     }
-  }, [baseApiUrl, lang, surveyId, appId, workspaceId, isTest, setIsLoading]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [baseApiUrl, lang, surveyId, appId, workspaceId, isTest, setIsLoading, useCache]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     // load actual data
