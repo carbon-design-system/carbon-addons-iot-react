@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 // eslint-disable-next-line import/extensions
 import getUiResourcesData, { defaultFetchApi } from '../util/uiresources';
+import getCachedUiResourcesData from '../util/cacheduiresources';
 
 const useUiResources = ({
   baseApiUrl,
@@ -41,13 +42,15 @@ const useUiResources = ({
       setIsLoading(true);
       if (useCache) {
         // Set cached data
-        const cachedUIResourcesData = await getUiResourcesData({ ...options, useCache });
-        setData(cachedUIResourcesData);
-        setIsLoading(false);
+        getCachedUiResourcesData({ ...options }, (cachedData) => {
+          setData(cachedData);
+          setIsLoading(false);
+        });
+      } else {
+        // Refresh data
+        const uiResourcesData = await getUiResourcesData({ ...options });
+        setData(uiResourcesData);
       }
-      // Refresh data
-      const uiResourcesData = await getUiResourcesData({ ...options });
-      setData(uiResourcesData);
     } catch (err) {
       setError(err);
     } finally {
