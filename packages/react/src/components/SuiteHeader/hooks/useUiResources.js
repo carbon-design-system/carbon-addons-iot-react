@@ -42,10 +42,17 @@ const useUiResources = ({
       setIsLoading(true);
       if (useCache) {
         // Set cached data
-        getCachedUiResourcesData({ ...options }, (cachedData) => {
-          setData(cachedData);
-          setIsLoading(false);
-        });
+        getCachedUiResourcesData(
+          { ...options },
+          (cachedData) => {
+            setData(cachedData);
+            setIsLoading(false);
+          },
+          (err) => {
+            console.log('ERRORRRR');
+            setError(err);
+          }
+        );
       } else {
         // Refresh data
         const uiResourcesData = await getUiResourcesData({ ...options });
