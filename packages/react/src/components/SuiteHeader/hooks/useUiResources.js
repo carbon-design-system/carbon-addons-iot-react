@@ -49,7 +49,6 @@ const useUiResources = ({
             setIsLoading(false);
           },
           (err) => {
-            console.log('ERRORRRR');
             setError(err);
           }
         );

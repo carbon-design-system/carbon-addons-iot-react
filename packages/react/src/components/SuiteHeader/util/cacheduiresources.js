@@ -7,7 +7,6 @@ const getCachedUiResourcesData = async (options, cb, errCb) => {
     cb(cachedUIResourcesData);
     const nonCachedUIResourcesData = await getUiResourcesData({ ...options });
     cb(nonCachedUIResourcesData);
-    const x = y;
   } catch (err) {
     errCb(err);
   }
