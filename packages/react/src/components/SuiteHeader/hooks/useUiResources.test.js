@@ -33,13 +33,7 @@ describe('useUiResources', () => {
         json: () => Promise.resolve(testApiData['/uiresources']),
       })
     );
-    const { result, waitForNextUpdate } = renderHook(() =>
-      useUiResources({
-        lang: 'en',
-        surveyId: 'test',
-        workspaceId: 'mockedworkspace',
-      })
-    );
+    const { result, waitForNextUpdate } = renderHook(() => useUiResources({}));
     await waitForNextUpdate();
     const [data, loading, error] = result.current;
     // After data has been fetched, make sure that data is populated, loading is false and error is undefined
@@ -62,6 +56,7 @@ describe('useUiResources', () => {
         lang: 'en',
         surveyId: 'test',
         workspaceId: 'mockedworkspace',
+        appId: 'monitor',
         useCache: false,
       })
     );
@@ -84,9 +79,6 @@ describe('useUiResources', () => {
     );
     const { result, waitForNextUpdate } = renderHook(() =>
       useUiResources({
-        lang: 'en',
-        surveyId: 'test',
-        workspaceId: 'mockedworkspace',
         useCache: false,
       })
     );

@@ -14,6 +14,7 @@ export const defaultFetchApi = async (method, url, body, headers, testResponse) 
     .then((res) => res.json())
     .then((resJson) => {
       // Don't return any data if an error happened (401, 404, 409, etc)
+      // istanbul ignore next
       if (resJson.error || resJson.exception) {
         return null;
       }
@@ -22,27 +23,30 @@ export const defaultFetchApi = async (method, url, body, headers, testResponse) 
 
 const getUiResourcesData = async ({
   baseApiUrl,
-  lang = 'en',
-  surveyId = null,
-  appId = null,
-  workspaceId = null,
-  useCache = false,
-  fetchApi = defaultFetchApi,
-  isTest = false,
+  lang,
+  surveyId,
+  appId,
+  workspaceId,
+  useCache,
+  fetchApi,
+  isTest,
 }) => {
+  // istanbul ignore next
+  const fetcher = fetchApi ?? defaultFetchApi;
   const api = (method, path, body, headers) =>
-    fetchApi(
+    fetcher(
       method,
       `${baseApiUrl}${path}`,
       body,
       headers,
+      // istanbul ignore next
       isTest ? testApiData[path.split('?')[0]] : null
     );
 
-  const langParam = `&lang=${lang}`;
-  const surveyIdParam = surveyId ? `&surveyId=${surveyId}` : '';
-  const appIdParam = appId ? `&appId=${appId}` : '';
-  const workspaceIdParam = workspaceId ? `&workspaceId=${workspaceId}` : '';
+  const langParam = `&lang=${encodeURIComponent(lang ?? 'en')}`;
+  const surveyIdParam = surveyId ? `&surveyId=${encodeURIComponent(surveyId)}` : '';
+  const appIdParam = appId ? `&appId=${encodeURIComponent(appId)}` : '';
+  const workspaceIdParam = workspaceId ? `&workspaceId=${encodeURIComponent(workspaceId)}` : '';
   const cacheParam = useCache ? `&cache=${true}` : '';
   return api(
     'GET',

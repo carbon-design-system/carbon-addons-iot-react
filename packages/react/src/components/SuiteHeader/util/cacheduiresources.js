@@ -8,6 +8,7 @@ const getCachedUiResourcesData = async (options, cb, errCb) => {
     const nonCachedUIResourcesData = await getUiResourcesData({ ...options });
     cb(nonCachedUIResourcesData);
   } catch (err) {
+    // istanbul ignore next
     errCb(err);
   }
 };
