@@ -41,7 +41,7 @@ const useUiResources = ({
     try {
       setIsLoading(true);
       if (useCache) {
-        // Set cached data
+        // Set cached and then non-cached data
         getCachedUiResourcesData(
           { ...options },
           (cachedData) => {
@@ -53,7 +53,7 @@ const useUiResources = ({
           }
         );
       } else {
-        // Refresh data
+        // Set non-cached data only
         const uiResourcesData = await getUiResourcesData({ ...options });
         setData(uiResourcesData);
       }

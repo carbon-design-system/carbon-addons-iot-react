@@ -27,6 +27,7 @@ describe('useUiResources', () => {
     global.fetch = undefined;
   });
   it('success state (cached and non-cached api requests)', async () => {
+    // Mock fetch calls
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve(testApiData['/uiresources']),
@@ -50,6 +51,7 @@ describe('useUiResources', () => {
     global.fetch = undefined;
   });
   it('Success state (non-cached api request only)', async () => {
+    // Mock fetch call
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.resolve(testApiData['/uiresources']),
@@ -74,6 +76,7 @@ describe('useUiResources', () => {
     global.fetch = undefined;
   });
   it('Error state', async () => {
+    // Mock fetch call
     global.fetch = jest.fn(() =>
       Promise.resolve({
         json: () => Promise.reject(new Error('Boom!!!')),
