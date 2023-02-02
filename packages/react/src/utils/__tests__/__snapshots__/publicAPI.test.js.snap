@@ -13117,6 +13117,7 @@ Map {
   "suiteHeaderData" => Object {},
   "useUiResources" => Object {},
   "uiresources" => Object {},
+  "cacheduiresources" => Object {},
   "Walkme" => Object {
     "defaultProps": Object {
       "lang": "en",
