@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.24...v2.152.0-next.25) (2023-02-02)
+
+
+### Bug Fixes
+
+* **suiteheader:** Adding an error callback to cacheduiresources. ([ccbf799](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/ccbf7990373310da446b0cddc36de34058d0fa97))
+* **suiteheader:** Adding another vanilla js level between uiresources.js and useUiResources.js so that it is possible to consume the logic that calls the uiresources API twice without depending on react to do so. ([76ae24b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/76ae24b93895ef6e5646b55a12a68c1eeb22d1b8))
+* **suiteheader:** Adding support for `useCache` parameter in the `useUiResources` hook. This parameter is true by default, but it can be overridden to false, if necessary. The aim of this change is to make the first call to the uiresources API with the cache parameter set to true, so a quick response can be set to the state, and then make another call to the uiresources API (without the cache parameter) in background to update the state with the most recent data returned by the API. This is necessary because the uiresources API is slow and we need to improve user experience when accessing the UI. ([2760baa](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2760baa86bfaabf49056957ace6d979d38319b45))
+* **suiteheader:** Adding the export line for cacheduiresources.js ([a18da25](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a18da254c729cc7999b95d1ebbe28c71dc05691c))
+* **suiteheader:** Removing debug code. ([6d407a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6d407a0c1a2cbe6535a0440d6799c5b331e18d27))
+* **suiteheader:** Updating storyshot. ([2f39a6d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2f39a6d81fec6ce3384f99e676bb3eb0d89a1299))
+
+
+
+
+
+# [2.152.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.23...v2.152.0-next.24) (2023-02-01)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** fix flyout menu open direction ([75a721b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/75a721b6c77549b4450e4c3faf0fe7f7bb08b92a))
+
+
+
+
+
 # [2.152.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.22...v2.152.0-next.23) (2023-01-20)
 
 

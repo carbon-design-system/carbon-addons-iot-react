@@ -69,6 +69,7 @@ export { default as useSuiteHeaderData } from './components/SuiteHeader/hooks/us
 export { default as suiteHeaderData } from './components/SuiteHeader/util/suiteHeaderData';
 export { default as useUiResources } from './components/SuiteHeader/hooks/useUiResources';
 export { default as uiresources } from './components/SuiteHeader/util/uiresources';
+export { default as cacheduiresources } from './components/SuiteHeader/util/cacheduiresources';
 export { default as Walkme } from './components/Walkme/Walkme';
 export { default as ReadOnlyValue } from './components/ReadOnlyValue/ReadOnlyValue';
 

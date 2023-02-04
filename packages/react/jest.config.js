@@ -4,7 +4,6 @@ module.exports = {
     '!src/**/*.story.js?(x)',
     '!src/**/hooks/*.js',
     '!src/components/SuiteHeader/util/suiteHeaderData.js',
-    '!src/components/SuiteHeader/util/uiresources.js',
     '!src/components/FileUploader/stories/*.jsx',
     '!src/components/Table/AsyncTable/*.js?(x)',
     '!src/components/WizardInline/**/*.js?(x)',
