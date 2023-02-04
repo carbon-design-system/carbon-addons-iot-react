@@ -34,6 +34,10 @@ describe('useUiResources', () => {
       })
     );
     const { result, waitForNextUpdate } = renderHook(() => useUiResources({}));
+    const [initialData, initialLoading, initialError] = result.current;
+    expect(initialData.username).toEqual(null);
+    expect(initialLoading).toEqual(true);
+    expect(initialError).toEqual(undefined);
     await waitForNextUpdate();
     const [data, loading, error] = result.current;
     // After data has been fetched, make sure that data is populated, loading is false and error is undefined
@@ -60,6 +64,10 @@ describe('useUiResources', () => {
         useCache: false,
       })
     );
+    const [initialData, initialLoading, initialError] = result.current;
+    expect(initialData.username).toEqual(null);
+    expect(initialLoading).toEqual(true);
+    expect(initialError).toEqual(undefined);
     await waitForNextUpdate();
     // After data has been fetched, make sure that data is populated, loading is false and error is undefined
     const [data, loading, error] = result.current;
@@ -70,7 +78,33 @@ describe('useUiResources', () => {
     expect(global.fetch).toHaveBeenCalledTimes(1);
     global.fetch = undefined;
   });
-  it('Error state', async () => {
+  it('Error state (cached and non-cached api requests)', async () => {
+    // Mock fetch call
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.reject(new Error('Boom!!!')),
+      })
+    );
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useUiResources({
+        useCache: true,
+      })
+    );
+    const [initialData, initialLoading, initialError] = result.current;
+    expect(initialData.username).toEqual(null);
+    expect(initialLoading).toEqual(true);
+    expect(initialError).toEqual(undefined);
+    await waitForNextUpdate();
+    // After data fetching has errored out, make sure that data still null, loading is false and error is defined
+    const [data, loading, error] = result.current;
+    expect(data.username).toEqual(null);
+    expect(loading).toEqual(false);
+    expect(error.message).toEqual('Boom!!!');
+    // Also, make sure that fetch has been called only once
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    global.fetch = undefined;
+  });
+  it('Error state (non-cached api request only)', async () => {
     // Mock fetch call
     global.fetch = jest.fn(() =>
       Promise.resolve({
@@ -82,6 +116,10 @@ describe('useUiResources', () => {
         useCache: false,
       })
     );
+    const [initialData, initialLoading, initialError] = result.current;
+    expect(initialData.username).toEqual(null);
+    expect(initialLoading).toEqual(true);
+    expect(initialError).toEqual(undefined);
     await waitForNextUpdate();
     // After data fetching has errored out, make sure that data still null, loading is false and error is defined
     const [data, loading, error] = result.current;
