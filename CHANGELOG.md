@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.25...v2.152.0-next.26) (2023-02-06)
+
+
+### Bug Fixes
+
+* **suiteheader:** Fixing the useUiResources promise flow (it was missing an await in the cached flow) ([c1c2f8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c1c2f8a01021d73126e77046af0fffebc10b3f7c))
+
+
+
+
+
 # [2.152.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.24...v2.152.0-next.25) (2023-02-02)
 
 
