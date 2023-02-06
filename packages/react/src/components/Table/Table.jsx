@@ -561,6 +561,7 @@ export const defaultProps = (baseProps) => ({
     actionFailedText: 'Action failed',
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
+    filterTagsOverflowMenuText: '+{n}',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -954,6 +955,9 @@ const Table = (props) => {
           <FilterTags
             // TODO: remove id in V3.
             testId={`${id || testId}-filter-tags`}
+            i18n={{
+              filterTagsOverflowMenuText: i18n.filterTagsOverflowMenuText,
+            }}
           >
             {view.advancedFilters
               .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))
