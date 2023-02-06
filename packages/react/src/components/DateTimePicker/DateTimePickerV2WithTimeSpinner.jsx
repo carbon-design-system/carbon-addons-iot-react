@@ -49,6 +49,7 @@ import {
   useRelativeDateTimeValue,
   useDateTimePickerClickOutside,
   useCloseDropdown,
+  useCustomHeight,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -881,12 +882,7 @@ const DateTimePicker = ({
     );
   };
 
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
-  const inputTop = containerRef.current?.getBoundingClientRect().top;
-  const flyoutMenuHeight = 482;
-  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
-  const offTop = inputTop < flyoutMenuHeight;
+  const [offTop, offBottom, customHeight] = useCustomHeight(containerRef);
 
   const getPosition = (event) => {
     setLeft(event.target.scrollLeft);
@@ -1031,7 +1027,10 @@ const DateTimePicker = ({
             <div
               ref={dropdownRef}
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ '--wrapper-width': '20rem' }}
+              style={{
+                '--wrapper-width': '20rem',
+                height: customHeight,
+              }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

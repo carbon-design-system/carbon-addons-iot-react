@@ -794,3 +794,28 @@ export const useCloseDropdown = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]
   );
+
+/**
+ * A hook handling the height of the drop down menu
+ *
+ * @param {object} containerRef (Object): the ref to the container div of the drop down menu
+ * @returns Object An object containing:
+ *    offTop (boolean): if the menu is off top
+ *    offBottom (boolean): if the menu is off bottom
+ *    customHeight (string): the adjusted height of the drop down menu if both offTop and offBottom are true
+ */
+export const useCustomHeight = (containerRef) => {
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
+  const inputTop = containerRef.current?.getBoundingClientRect().top;
+  const flyoutMenuHeight = 540;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+  const offTop = inputTop < flyoutMenuHeight;
+  const topGap = inputTop;
+  const bottomGap = windowHeight - inputBottom;
+  const footerHeight = 40;
+  const customHeight =
+    offBottom && offTop ? (topGap > bottomGap ? topGap : bottomGap) - footerHeight : undefined;
+
+  return [offTop, offBottom, customHeight];
+};
