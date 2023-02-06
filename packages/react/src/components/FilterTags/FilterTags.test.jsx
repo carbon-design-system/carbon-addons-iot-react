@@ -210,4 +210,58 @@ describe('Filtertags', () => {
     userEvent.click(screen.getByText('Hello Daughter'));
     expect(mockOnClose).toHaveBeenCalledWith('tag-four');
   });
+
+  it('will render custom overflow menu text from i18n prop', () => {
+    const mockOnClose = jest.fn();
+    render(
+      <FilterTags
+        i18n={{
+          filterTagsOverflowMenuText: 'Hidden items: {anyPlaceholder}',
+        }}
+      >
+        {tagData.map((tag) => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+            onClose={() => mockOnClose(tag.id)}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    );
+    const moreButton = screen.queryByText(/Hidden items:*/);
+    userEvent.click(moreButton);
+    expect(screen.getByText('Hello Daughter')).toBeTruthy();
+    userEvent.click(screen.getByText('Hello Daughter'));
+    expect(mockOnClose).toHaveBeenCalledWith('tag-four');
+  });
+
+  it('will render text without count substitution if {} is not provided', () => {
+    const mockOnClose = jest.fn();
+    render(
+      <FilterTags
+        i18n={{
+          filterTagsOverflowMenuText: 'Hidden items',
+        }}
+      >
+        {tagData.map((tag) => (
+          <Tag
+            key={`tag-${tag.id}`}
+            filter
+            type={tag.type}
+            title="Clear Filter"
+            style={{ marginRight: '1rem' }}
+            onClose={() => mockOnClose(tag.id)}
+          >
+            {tag.text}
+          </Tag>
+        ))}
+      </FilterTags>
+    );
+    expect(screen.getByText('Hidden items')).toBeVisible();
+  });
 });
