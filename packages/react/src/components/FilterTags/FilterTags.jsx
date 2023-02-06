@@ -7,7 +7,6 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import { useResize } from '../../internal/UseResizeObserver';
 
-const OVERFLOW_REGEXP = /{(.*)}/;
 const DEFAULT_OVERFLOW_TEXT = 'More: {n}';
 
 const { prefix, iotPrefix } = settings;
@@ -92,7 +91,7 @@ const FilterTags = ({
   );
 
   const filterTagsOverflowMenuTextText = filterTagsOverflowMenuText.replace(
-    OVERFLOW_REGEXP,
+    '{n}',
     overflowItems.length
   );
 

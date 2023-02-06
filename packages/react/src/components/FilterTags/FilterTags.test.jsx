@@ -216,7 +216,7 @@ describe('Filtertags', () => {
     render(
       <FilterTags
         i18n={{
-          filterTagsOverflowMenuText: 'Hidden items: {anyPlaceholder}',
+          filterTagsOverflowMenuText: 'Hidden items: {n}',
         }}
       >
         {tagData.map((tag) => (
