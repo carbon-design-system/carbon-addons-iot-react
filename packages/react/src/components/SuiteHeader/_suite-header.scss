@@ -325,14 +325,13 @@
       align-items: center;
     }
 
-    .#{$prefix}--header-action-btn.#{$prefix}--btn--primary {
-      background-color: unset;
-    }
+    .#{$prefix}--header-action-btn {
+      .#{$prefix}--btn--primary {
+        background-color: unset;
+      }
 
-    & > *:nth-last-child(2),
-    & > *:nth-last-child(3) {
-      .#{$prefix}--header__menu-title {
-        padding-top: $spacing-02;
+      .#{$prefix}--header__menu-item span {
+        display: flex;
       }
     }
   }
