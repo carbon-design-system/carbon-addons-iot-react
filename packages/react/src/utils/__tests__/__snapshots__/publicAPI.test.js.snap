@@ -671,7 +671,7 @@ Map {
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
         "filterRowIconDescription": "Edit filters",
-        "filterTagsOverflowMenuText": [Function],
+        "filterTagsOverflowMenuText": "+{n}",
         "inProgressText": "In progress",
         "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
@@ -1334,7 +1334,17 @@ Map {
               "type": "string",
             },
             "filterTagsOverflowMenuText": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "inProgressText": Object {
               "type": "string",
@@ -2706,7 +2716,17 @@ Map {
               "type": "string",
             },
             "filterTagsOverflowMenuText": Object {
-              "type": "func",
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "inProgressText": Object {
               "type": "string",
@@ -31201,7 +31221,7 @@ Map {
     "defaultProps": Object {
       "hasOverflow": true,
       "i18n": Object {
-        "filterTagsOverflowMenuText": [Function],
+        "filterTagsOverflowMenuText": "More: {n}",
       },
       "id": "filter-tag-container",
       "onChange": null,
