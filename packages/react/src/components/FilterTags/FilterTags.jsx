@@ -7,7 +7,7 @@ import classnames from 'classnames';
 import { settings } from '../../constants/Settings';
 import { useResize } from '../../internal/UseResizeObserver';
 
-const DEFAULT_OVERFLOW_TEXT = 'More: {n}';
+const DEFAULT_OVERFLOW_TEXT_CALLBACK = (filterCount) => `More: ${filterCount}`;
 
 const { prefix, iotPrefix } = settings;
 /* eslint-disable-next-line react/prop-types */
@@ -42,7 +42,7 @@ const FilterTags = ({
   const [overflowItems, setOverflowItems] = useState([]);
   const [visibleItems, setVisibleItems] = useState(childrenItems);
 
-  const { filterTagsOverflowMenuText = DEFAULT_OVERFLOW_TEXT, ...i18n } = i18nProps;
+  const { filterTagsOverflowMenuText = DEFAULT_OVERFLOW_TEXT_CALLBACK, ...i18n } = i18nProps;
 
   useEffect(
     () => {
@@ -90,11 +90,6 @@ const FilterTags = ({
     /* eslint-enable react-hooks/exhaustive-deps */
   );
 
-  const filterTagsOverflowMenuTextText = filterTagsOverflowMenuText.replace(
-    '{n}',
-    overflowItems.length
-  );
-
   return (
     <TagContainer
       key={`${hasOverflow}-Tag-Container`}
@@ -114,7 +109,9 @@ const FilterTags = ({
           data-floating-menu-container
           className={`${iotPrefix}--filtertags-overflow-menu`}
           renderIcon={() => (
-            <div className={`${prefix}--tag`}>{filterTagsOverflowMenuTextText}</div>
+            <div className={`${prefix}--tag`}>
+              {filterTagsOverflowMenuText(overflowItems.length)}
+            </div>
           )}
           menuOptionsClass={`${iotPrefix}--filtertags-overflow-items`}
           menuOffset={{
@@ -177,7 +174,7 @@ const defaultProps = {
   tagContainer: null,
   onChange: null,
   i18n: {
-    filterTagsOverflowMenuText: DEFAULT_OVERFLOW_TEXT,
+    filterTagsOverflowMenuText: DEFAULT_OVERFLOW_TEXT_CALLBACK,
   },
   testId: 'filter-tags',
 };

@@ -561,7 +561,7 @@ export const defaultProps = (baseProps) => ({
     actionFailedText: 'Action failed',
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
-    filterTagsOverflowMenuText: '+{n}',
+    filterTagsOverflowMenuText: (filterCount) => `+${filterCount}`,
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was

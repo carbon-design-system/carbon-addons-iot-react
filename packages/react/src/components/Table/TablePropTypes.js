@@ -225,8 +225,8 @@ export const I18NPropTypes = PropTypes.shape({
   toolbarTooltipLabel: PropTypes.string,
   /** tooltip text for filter row icon button */
   filterRowIconDescription: PropTypes.string,
-  /** overflow menu text for truncated filter tags */
-  filterTagsOverflowMenuText: PropTypes.string,
+  /** overflow menu text callback for truncated filter tags */
+  filterTagsOverflowMenuText: PropTypes.func,
 });
 
 export const defaultI18NPropTypes = {

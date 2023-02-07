@@ -216,7 +216,7 @@ describe('Filtertags', () => {
     render(
       <FilterTags
         i18n={{
-          filterTagsOverflowMenuText: 'Hidden items: {n}',
+          filterTagsOverflowMenuText: (itemCount) => `Hidden items: ${itemCount}`,
         }}
       >
         {tagData.map((tag) => (
@@ -240,12 +240,12 @@ describe('Filtertags', () => {
     expect(mockOnClose).toHaveBeenCalledWith('tag-four');
   });
 
-  it('will render text without count substitution if {} is not provided', () => {
+  it('will render text without count substitution if callback parameter is not provided', () => {
     const mockOnClose = jest.fn();
     render(
       <FilterTags
         i18n={{
-          filterTagsOverflowMenuText: 'Hidden items',
+          filterTagsOverflowMenuText: () => 'Hidden items',
         }}
       >
         {tagData.map((tag) => (
