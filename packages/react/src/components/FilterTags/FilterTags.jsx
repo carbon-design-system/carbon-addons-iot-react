@@ -28,9 +28,10 @@ const DefaultWrapper = React.forwardRef(({ children, i18n, ...props }, ref) => {
 });
 /* eslint-disable-next-line react/prop-types */
 const OverflowTag = ({ children }) => (
-  <span>
-    {children} <Close16 />
-  </span>
+  <div className={`${iotPrefix}--filtertags-overflow-item__wrapper`}>
+    <span>{children}</span>
+    <Close16 />
+  </div>
 );
 
 const FilterTags = ({

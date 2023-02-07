@@ -36,9 +36,15 @@
   }
 }
 
-.#{$iot-prefix}--filtertags-overflow-item span {
+.#{$iot-prefix}--filtertags-overflow-item__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  span {
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
