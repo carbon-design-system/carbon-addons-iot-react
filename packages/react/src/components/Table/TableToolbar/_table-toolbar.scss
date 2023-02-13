@@ -149,6 +149,10 @@ html[dir='rtl'] {
     & + .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
       opacity: 0;
     }
+
+    &.#{$iot-prefix}--overflow-menu-icon svg.#{$prefix}--btn__icon {
+      fill: $ui-01;
+    }
   }
 }
 
