@@ -12,8 +12,16 @@ button.#{$iot-prefix}--overflow-menu-icon {
     height: initial;
   }
 
-  &.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger svg {
-    margin-left: 0;
+  &.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+    & svg {
+      fill: $ui-05;
+      margin-left: 0;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: $ui-05;
+    }
   }
 }
 

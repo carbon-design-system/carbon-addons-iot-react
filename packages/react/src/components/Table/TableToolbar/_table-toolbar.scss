@@ -139,7 +139,8 @@ html[dir='rtl'] {
     outline-offset: -($spacing-01);
   }
 
-  > svg {
+  &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
+    svg.#{$prefix}--btn__icon {
     fill: $ui-01;
   }
 
@@ -150,7 +151,8 @@ html[dir='rtl'] {
       opacity: 0;
     }
 
-    &.#{$iot-prefix}--overflow-menu-icon svg.#{$prefix}--btn__icon {
+    &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
+      svg.#{$prefix}--btn__icon {
       fill: $ui-01;
     }
   }
