@@ -184,6 +184,11 @@ class IotOverflowMenu extends Component {
      * Language direction
      */
     langDir: PropTypes.oneOf(['ltr', 'rtl']),
+
+    /**
+     * Label for the overflow menu button
+     */
+    buttonLabel: PropTypes.string,
   };
 
   // eslint-disable-next-line react/sort-comp
@@ -208,6 +213,7 @@ class IotOverflowMenu extends Component {
     tooltipPosition: 'top',
     size: 'md',
     langDir: 'ltr',
+    buttonLabel: '',
   };
 
   /**
@@ -488,6 +494,7 @@ class IotOverflowMenu extends Component {
       tooltipPosition,
       className,
       langDir, // Not to pollute DOM
+      buttonLabel,
       ...other
     } = this.props;
 
@@ -497,6 +504,7 @@ class IotOverflowMenu extends Component {
       [`${prefix}--overflow-menu--open`]: open,
       [`${prefix}--overflow-menu--light`]: light,
       [`${prefix}--overflow-menu--${size}`]: size,
+      [`${iotPrefix}--overflow-menu--with-label`]: buttonLabel,
     });
 
     const overflowMenuOptionsClasses = classNames(
@@ -560,7 +568,7 @@ class IotOverflowMenu extends Component {
               [`${iotPrefix}--table-toolbar-button-active`]: false, // https://github.com/carbon-design-system/carbon/issues/6160
             }
           )}
-          kind="icon-selection"
+          kind={buttonLabel ? 'primary' : 'icon-selection'}
           iconDescription={ariaLabel}
           onKeyDown={this.handleKeyPress}
           onClick={this.handleClick}
@@ -571,6 +579,7 @@ class IotOverflowMenu extends Component {
           aria-haspopup
           aria-expanded={open}
         >
+          {buttonLabel || null}
           {open && wrappedMenuBody}
         </Button>
       </ClickListener>
@@ -585,6 +594,7 @@ export const OverflowMenu = ({
   flipped,
   testId,
   withCarbonTooltip,
+  buttonLabel,
   ...props
 }) => {
   const [calculateMenuOffset, { adjustedDirection, adjustedFlipped }] = usePopoverPositioning({
@@ -607,6 +617,7 @@ export const OverflowMenu = ({
         menuOffset={calculateMenuOffset}
         menuOffsetFlip={calculateMenuOffset}
         langDir={langDir}
+        buttonLabel={buttonLabel}
       />
     );
   }
@@ -628,6 +639,7 @@ OverflowMenu.propTypes = {
   useAutoPositioning: PropTypes.bool,
   testId: PropTypes.string,
   withCarbonTooltip: PropTypes.bool,
+  buttonLabel: PropTypes.string,
 };
 
 OverflowMenu.defaultProps = {
@@ -635,6 +647,7 @@ OverflowMenu.defaultProps = {
   useAutoPositioning: false,
   testId: 'overflow-menu',
   withCarbonTooltip: false,
+  buttonLabel: '',
 };
 
 export default OverflowMenu;
