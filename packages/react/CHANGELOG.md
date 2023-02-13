@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.27...v2.152.0-next.28) (2023-02-07)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.152.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.26...v2.152.0-next.27) (2023-02-07)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** added comment for dependency exclusion ([a2f661b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a2f661b79335b9ea018529e586cac13dd528a969))
+* **dashboardeditor:** fixed issue when removing image from image card ([b1164c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b1164c7deb001ae4a0c55cc0ab3e221d29776455))
+
+
+
+
+
 # [2.152.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.25...v2.152.0-next.26) (2023-02-06)
 
 

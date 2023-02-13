@@ -482,6 +482,25 @@ const DashboardEditor = ({
       : LAYOUTS.FIT_TO_SCREEN.breakpoint
   );
 
+  // update imagesToUpload whenever images are removed from dashboardJson cards
+  useEffect(() => {
+    const dashboardJsonImages = dashboardJson?.cards
+      ?.filter((card) => card?.type === CARD_TYPES.IMAGE)
+      .map((card) => ({ id: card?.content?.id, src: card?.content?.src }));
+
+    if (imagesToUpload?.length) {
+      setImagesToUpload((prevImagesToUpload) =>
+        prevImagesToUpload.filter((image) =>
+          dashboardJsonImages.some(
+            (dashboardImage) => dashboardImage.id === image?.id && dashboardImage.src === image?.src
+          )
+        )
+      );
+    }
+    // this should only execute when dashboardJson is updated; imagesToUpload is not needed as dependency
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dashboardJson]);
+
   useEffect(() => {
     // if the loaded template changes, we need to update the state
     setDashboardJson(initialValue);
