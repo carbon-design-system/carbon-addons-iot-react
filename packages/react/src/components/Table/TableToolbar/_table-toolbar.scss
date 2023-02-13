@@ -139,8 +139,7 @@ html[dir='rtl'] {
     outline-offset: -($spacing-01);
   }
 
-  &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
-    svg.#{$prefix}--btn__icon {
+  &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper .#{$prefix}--btn__icon {
     fill: $ui-01;
   }
 
