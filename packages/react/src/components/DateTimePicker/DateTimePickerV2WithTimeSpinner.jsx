@@ -184,7 +184,12 @@ export const propTypes = {
   /** Optionally renders only an icon rather than displaying the current selected time */
   hasIconOnly: PropTypes.bool,
   /** Allow repositioning the flyout menu */
-  menuOffset: PropTypes.shape({ left: PropTypes.number, top: PropTypes.number }),
+  menuOffset: PropTypes.shape({
+    left: PropTypes.number,
+    top: PropTypes.number,
+    inputTop: PropTypes.number,
+    inputBottom: PropTypes.number,
+  }),
   /** Date picker types are single and range, default is range */
   datePickerType: PropTypes.string,
   /** If set to true it will render outside of the current DOM in a portal, otherwise render as a child */
@@ -352,8 +357,8 @@ const DateTimePicker = ({
   const [humanValue, setHumanValue] = useState(null);
   const [defaultSingleDateValue, SetDefaultSingleDateValue] = useState(false);
   const [invalidState, setInvalidState] = useState(invalid);
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
+  const [scrollTop, setScrollTop] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
@@ -363,10 +368,10 @@ const DateTimePicker = ({
     () => ({
       ...style,
       '--zIndex': style.zIndex ?? 0,
-      scrollTop: top,
-      scrollLeft: left,
+      scrollTop,
+      scrollLeft,
     }),
-    [style, top, left]
+    [style, scrollTop, scrollLeft]
   );
   const {
     absoluteValue,
@@ -853,15 +858,6 @@ const DateTimePicker = ({
     );
   };
 
-  const menuOffsetLeft = menuOffset?.left
-    ? menuOffset.left
-    : langDir === 'ltr'
-    ? 0
-    : hasIconOnly
-    ? -15
-    : 288;
-  const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
-
   const handleRangeTimeValueChange = (startState, endState) => {
     setRangeStartTimeValue(startState);
     setRangeEndTimeValue(endState);
@@ -882,27 +878,31 @@ const DateTimePicker = ({
     );
   };
 
-  const [offTop, offBottom, customHeight] = useCustomHeight(containerRef);
+  const menuOffsetLeft = menuOffset?.left
+    ? menuOffset.left
+    : langDir === 'ltr'
+    ? 0
+    : hasIconOnly
+    ? -15
+    : 288;
 
-  const getPosition = (event) => {
-    setLeft(event.target.scrollLeft);
-    setTop(event.target.scrollTop);
-  };
+  const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
-  // Re-calculate X and Y when parents scrolled
-  useEffect(() => {
-    let currentNode = containerRef.current?.parentNode;
-    const parentNodes = [];
-    while (currentNode) {
-      parentNodes.push(currentNode);
-      currentNode.addEventListener('scroll', getPosition);
-      currentNode = currentNode.parentNode;
-    }
+  const [offTop, , inputTop, inputBottom, customHeight, maxHeight] = useCustomHeight({
+    containerRef,
+    isSingleSelect,
+    isCustomRange,
+    showRelativeOption,
+    customRangeKind,
+    setScrollLeft,
+    setScrollTop,
+  });
 
-    return () => {
-      parentNodes.map((node) => node.removeEventListener('scroll', getPosition));
-    };
-  }, []);
+  const direction = useAutoPositioning
+    ? offTop
+      ? FlyoutMenuDirection.BottomEnd
+      : FlyoutMenuDirection.TopEnd
+    : FlyoutMenuDirection.BottomEnd;
 
   return (
     <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
@@ -1005,15 +1005,11 @@ const DateTimePicker = ({
             menuOffset={{
               top: menuOffsetTop,
               left: menuOffsetLeft,
+              inputTop,
+              inputBottom,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={
-              useAutoPositioning
-                ? offBottom && !offTop
-                  ? FlyoutMenuDirection.TopEnd
-                  : FlyoutMenuDirection.BottomEnd
-                : FlyoutMenuDirection.BottomEnd
-            }
+            direction={direction}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
@@ -1030,6 +1026,7 @@ const DateTimePicker = ({
               style={{
                 '--wrapper-width': '20rem',
                 height: customHeight,
+                maxHeight,
               }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu

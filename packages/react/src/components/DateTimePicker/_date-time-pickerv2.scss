@@ -130,6 +130,7 @@
 
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
+    overflow-x: hidden;
     width: var(--wrapper-width);
 
     .#{$prefix}--list__item:before {

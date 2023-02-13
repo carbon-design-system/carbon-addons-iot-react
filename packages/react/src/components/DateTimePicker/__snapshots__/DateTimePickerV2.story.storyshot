@@ -977,11 +977,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
   <div
     style={
       Object {
-        "height": "15rem",
+        "height": "20rem",
         "overflow": "scroll",
-        "paddingBottom": "50rem",
+        "paddingBottom": "40rem",
         "paddingLeft": "1rem",
-        "paddingTop": "25rem",
+        "paddingTop": "35rem",
       }
     }
   >

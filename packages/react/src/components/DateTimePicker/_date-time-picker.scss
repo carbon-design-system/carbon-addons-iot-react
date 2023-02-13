@@ -167,6 +167,7 @@
 
       .#{$iot-prefix}--date-time-picker__menu-scroll {
         overflow-y: auto;
+        overflow-x: hidden;
 
         .#{$prefix}--fieldset {
           margin-bottom: $spacing-lg;

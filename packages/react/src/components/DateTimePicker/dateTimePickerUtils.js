@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash-es';
+import { cloneDeep, debounce } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
@@ -798,24 +798,98 @@ export const useCloseDropdown = ({
 /**
  * A hook handling the height of the drop down menu
  *
- * @param {object} containerRef (Object): the ref to the container div of the drop down menu
+ * @param {object} containerRef the ref to the container div of the drop down menu
+ * @param {boolean} isSingleSelect if it is single select calendar
+ * @param {boolean} isCustomRange if dropdown was opened in custom range
+ * @param {boolean} showRelativeOption are the relative options shown by default
+ * @param {string} customRangeKind custom range kind is either relative or absolute
+ * @param {function} setLeft set scrollLeft
+ * @param {function} setTop set scrollTop
  * @returns Object An object containing:
  *    offTop (boolean): if the menu is off top
  *    offBottom (boolean): if the menu is off bottom
+ *    inputTop (string) : the top position of the date time input
+ *    inputBottom (string): the bottom position of the date time input
  *    customHeight (string): the adjusted height of the drop down menu if both offTop and offBottom are true
+ *    maxHeight (string) : maximum height of the drop down menu
  */
-export const useCustomHeight = (containerRef) => {
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
-  const inputTop = containerRef.current?.getBoundingClientRect().top;
-  const flyoutMenuHeight = 540;
+export const useCustomHeight = ({
+  containerRef,
+  isSingleSelect,
+  isCustomRange,
+  showRelativeOption,
+  customRangeKind,
+  setScrollLeft,
+  setScrollTop,
+}) => {
+  // calculate max height for varies dropdown
+  const presetMaxHeight = 315;
+  const relativeMaxHeight = 269;
+  const withoutRelativeOptionMaxHeight = 446;
+  const absoluteMaxHeight = 588;
+  const singleMaxHeight = 442;
+  const footerHeight = 40;
+  const maxHeight = isCustomRange
+    ? showRelativeOption
+      ? isSingleSelect
+        ? singleMaxHeight
+        : customRangeKind === PICKER_KINDS.ABSOLUTE
+        ? absoluteMaxHeight
+        : relativeMaxHeight
+      : withoutRelativeOptionMaxHeight
+    : presetMaxHeight;
+
+  // get new scroll top and scroll left when scrolling the input
+  const getPosition = (event) => {
+    setScrollTop(event.target.scrollTop);
+    setScrollLeft(event.target.scrollLeft);
+  };
+
+  const debouncedPosition = debounce(getPosition, 150, {
+    leading: false,
+    trailing: true,
+  });
+
+  // add event listener on the scroll events of the parents
+  useEffect(() => {
+    let currentNode = containerRef?.current?.parentNode;
+    const parentNodes = [];
+    while (currentNode) {
+      parentNodes.push(currentNode);
+      currentNode.addEventListener('scroll', debouncedPosition);
+      currentNode = currentNode.parentNode;
+    }
+    return () => {
+      parentNodes.map((node) => node.removeEventListener('scroll', debouncedPosition));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // re-calculate window height when resize
+  const [windowHeight, setWindowHeight] = useState(
+    window.innerHeight || document.documentElement.clientHeight
+  );
+
+  const handleWindowResize = debounce(() => {
+    setWindowHeight(window.innerHeight || document.documentElement.clientHeight);
+  }, 100);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [handleWindowResize]);
+
+  // calculate if flyout menu will be off top or bottom of the screen
+  const inputBottom = containerRef?.current?.getBoundingClientRect().bottom;
+  const inputTop = containerRef?.current?.getBoundingClientRect().top;
+  const flyoutMenuHeight = maxHeight + footerHeight;
   const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
   const offTop = inputTop < flyoutMenuHeight;
   const topGap = inputTop;
   const bottomGap = windowHeight - inputBottom;
-  const footerHeight = 40;
+
   const customHeight =
     offBottom && offTop ? (topGap > bottomGap ? topGap : bottomGap) - footerHeight : undefined;
 
-  return [offTop, offBottom, customHeight];
+  return [offTop, offBottom, inputTop, inputBottom, customHeight, maxHeight];
 };
