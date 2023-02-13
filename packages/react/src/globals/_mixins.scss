@@ -67,6 +67,7 @@
     @content;
     position: sticky;
     box-shadow: inset -1px 0 $active-ui;
+    overflow: hidden;
 
     [dir='rtl'] & {
       box-shadow: inset 1px 0 $active-ui;
@@ -88,5 +89,6 @@
   td:nth-of-type(#{$order}),
   th:nth-of-type(#{$order}) {
     box-shadow: none !important; // important to overwrite RTL
+    overflow: unset;
   }
 }
