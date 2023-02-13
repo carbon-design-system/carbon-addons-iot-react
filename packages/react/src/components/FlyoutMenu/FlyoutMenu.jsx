@@ -111,7 +111,15 @@ const FlyoutMenu = ({
   const [isControlledOpen, setIsOpen] = useState(defaultOpen);
   const [tooltipDirection, setTooltipDirection] = useState(getTooltipDirection(direction));
   const buttonRef = useRef(null);
-  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
+  const updatedStyle = useMemo(
+    () => ({
+      ...style,
+      '--zIndex': style.zIndex ?? 0,
+      '--top': style.scrollTop,
+      '--left': style.scrollLeft,
+    }),
+    [style]
+  );
 
   const getFlyoutMenuOffset = React.useCallback(
     (tooltipElement, flyoutDirection, tooltipButtonElement, flipped) => {
@@ -437,7 +445,7 @@ const propTypes = {
   /** by default the flyout menu will render as a child, if you set this to true it will render outside of the current DOM in a portal */
   renderInPortal: PropTypes.bool,
 
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 const defaultProps = {

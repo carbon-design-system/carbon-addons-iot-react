@@ -225,6 +225,8 @@ export const I18NPropTypes = PropTypes.shape({
   loadMoreText: PropTypes.string,
   /** aria-label applied to the tooltip in the toolbar (if given) */
   toolbarTooltipLabel: PropTypes.string,
+  /** tooltip text for filter row icon button */
+  filterRowIconDescription: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {

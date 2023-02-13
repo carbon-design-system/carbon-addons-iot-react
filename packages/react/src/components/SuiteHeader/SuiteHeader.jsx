@@ -171,6 +171,9 @@ const SuiteHeader = ({
 
   const isMultiWorkspace = workspaces?.length > 0;
   const currentWorkspace = workspaces?.find((wo) => wo.isCurrent);
+  const appId =
+    currentWorkspace?.applications?.find((a) => a.isCurrent)?.id ??
+    applications?.find((a) => a.isCurrent)?.id;
   // Include the current workspace label only if we are not in an admin page and multi workspace is supported and more than one workspace is available
   const currentWorkspaceComponent =
     !isAdminView && isMultiWorkspace && workspaces?.length > 1 && currentWorkspace ? (
@@ -192,14 +195,23 @@ const SuiteHeader = ({
 
   const navigatorRoute = currentWorkspace?.href || routes?.navigator || 'javascript:void(0)';
   const adminRoute = routes?.admin || 'javascript:void(0)';
-  // Append originHref query parameter to the logout route
+  // Append originHref query parameter (and, optionally, originIsAdmin, originWorkspaceId and originAppId) to the logout route
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
       url.searchParams.append('originHref', window.location.href);
-      logoutRoute = url.href;
     }
+    if (appId) {
+      url.searchParams.append('originAppId', appId);
+    }
+    if (currentWorkspace?.id) {
+      url.searchParams.append('originWorkspaceId', currentWorkspace.id);
+    }
+    if (isAdminView) {
+      url.searchParams.append('originIsAdmin', isAdminView);
+    }
+    logoutRoute = url.href;
   } catch (e) {
     logoutRoute = routes?.logout;
   }
@@ -280,6 +292,9 @@ const SuiteHeader = ({
       ) : null}
       {idleTimeoutData && routes?.domain !== null && routes?.domain !== undefined ? (
         <IdleLogoutConfirmationModal
+          isAdminView={isAdminView}
+          appId={appId}
+          workspaceId={currentWorkspace?.id}
           idleTimeoutData={idleTimeoutData}
           routes={routes}
           onRouteChange={onRouteChange}

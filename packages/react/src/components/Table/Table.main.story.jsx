@@ -162,6 +162,7 @@ export const Playground = () => {
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
     hasMultiSelectFilter,
+    hasFilterRowIcon,
     pinColumn,
   } = getTableKnobs({
     getDefaultValue: (name) =>
@@ -190,6 +191,7 @@ export const Playground = () => {
         'hideClearAllFiltersButton',
         'hasEmptyFilterOption',
         'hasMultiSelectFilter',
+        'hasFilterRowIcon',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -367,6 +369,7 @@ export const Playground = () => {
           hasRowEdit,
           hasSingleRowEdit,
           useRadioButtonSingleSelect,
+          hasFilterRowIcon,
           pinColumn,
         }}
         view={{
@@ -726,6 +729,7 @@ export const WithFiltering = () => {
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
     hasMultiSelectFilter,
+    hasFilterRowIcon,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
@@ -734,6 +738,7 @@ export const WithFiltering = () => {
       'hideClearAllFiltersButton',
       'hasEmptyFilterOption',
       'hasMultiSelectFilter',
+      'hasFilterRowIcon',
     ],
     getDefaultValue: (knobName) => {
       if (knobName === 'hasAdvancedFilter') {
@@ -749,6 +754,10 @@ export const WithFiltering = () => {
       }
 
       if (knobName === 'hasMultiSelectFilter') {
+        return false;
+      }
+
+      if (knobName === 'hasFilterRowIcon') {
         return false;
       }
 
@@ -853,6 +862,7 @@ export const WithFiltering = () => {
         options={{
           hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
           hasAdvancedFilter,
+          hasFilterRowIcon,
         }}
         view={{
           advancedFilters,

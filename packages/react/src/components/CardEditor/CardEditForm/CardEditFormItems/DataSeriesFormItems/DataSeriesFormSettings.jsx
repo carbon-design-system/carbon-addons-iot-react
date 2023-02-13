@@ -82,7 +82,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, xLabel: evt.target.value },
             })
           }
-          value={content?.xLabel}
+          value={content?.xLabel ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -96,7 +96,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, yLabel: evt.target.value },
             })
           }
-          value={content?.yLabel}
+          value={content?.yLabel ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
@@ -110,14 +110,16 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
               content: { ...cardConfig.content, unit: evt.target.value },
             })
           }
-          value={content?.unit}
+          value={content?.unit ?? ''}
         />
       </div>
       <div className={`${baseClassName}--input`}>
         <TextInput
           id={`${id}_decimal-precision`}
+          key={content?.decimalPrecision}
           labelText={mergedI18n.decimalPrecisionLabel}
           light
+          type="number"
           onChange={(evt) =>
             onChange({
               ...cardConfig,
@@ -133,6 +135,7 @@ const DataSeriesFormSettings = ({ cardConfig, onChange, i18n }) => {
       <div className={`${baseClassName}--input`}>
         <TextInput
           id={`${id}_maximum_data_points`}
+          key={content?.maximumDataPoints}
           labelText={mergedI18n.maximumDataPoints}
           light
           type="number"

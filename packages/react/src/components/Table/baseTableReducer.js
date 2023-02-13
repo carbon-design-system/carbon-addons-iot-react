@@ -265,7 +265,8 @@ export const baseTableReducer = (state = {}, action) => {
       const isClearing = isMultiSelect && selectedIds.length === 0;
 
       const allRowsId = [];
-      state.data.forEach((row) => fillArrWithRowIds(row, allRowsId));
+      const iterables = state.view.table.filteredData || state.data;
+      iterables.forEach((row) => fillArrWithRowIds(row, allRowsId));
       const isSelectingAll = isMultiSelect && selectedIds.length === allRowsId.length;
 
       return update(state, {
@@ -289,7 +290,8 @@ export const baseTableReducer = (state = {}, action) => {
 
       const selectedIds = [];
       if (isSelected) {
-        state.data.forEach((row) => fillArrWithRowIds(row, selectedIds));
+        const iterables = state.view.table.filteredData || state.data;
+        iterables.forEach((row) => fillArrWithRowIds(row, selectedIds));
       }
 
       return update(state, {

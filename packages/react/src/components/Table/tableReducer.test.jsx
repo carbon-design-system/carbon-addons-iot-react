@@ -521,6 +521,34 @@ describe('table reducer', () => {
       expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(false);
     });
 
+    it('TABLE_ROW_SELECT with filtered data', () => {
+      // Init with filtering
+      const filteredTable = tableReducer(initialState, tableRegister({ data: initialState.data }));
+      expect(filteredTable.view.table.filteredData).toHaveLength(14);
+      expect(filteredTable.data).toHaveLength(initialState.data.length);
+
+      // Select a row
+      const tableWithSelectedRow = tableReducer(filteredTable, tableRowSelect(['row-1'], 'multi'));
+      expect(tableWithSelectedRow.view.table.selectedIds).toEqual(['row-1']);
+      expect(tableWithSelectedRow.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithSelectedRow.view.table.isSelectAllIndeterminate).toEqual(true);
+
+      // Unselect the row
+      const tableWithUnSelectedRow = tableReducer(
+        tableWithSelectedRow,
+        tableRowSelect([], 'multi')
+      );
+      expect(tableWithUnSelectedRow.view.table.selectedIds).toEqual([]);
+      expect(tableWithUnSelectedRow.view.table.isSelectAllSelected).toEqual(false);
+      expect(tableWithUnSelectedRow.view.table.isSelectAllIndeterminate).toEqual(false);
+
+      // Reset filter
+      const tableFilteredReset = tableReducer(tableWithUnSelectedRow, tableFilterApply({}));
+      expect(tableFilteredReset.view.filters).toEqual([]);
+      expect(tableFilteredReset.view.table.filteredData).toHaveLength(initialState.data.length);
+      expect(tableFilteredReset.data).toHaveLength(initialState.data.length);
+    });
+
     it('TABLE_ROW_SELECT_ALL', () => {
       expect(initialState.view.table.selectedIds).toEqual([]);
       // Select all
@@ -555,6 +583,29 @@ describe('table reducer', () => {
       expect(tableWithUnSelectedAll.view.table.selectedIds.length).toEqual(0);
       expect(tableWithUnSelectedAll.view.table.isSelectAllIndeterminate).toEqual(false);
       expect(tableWithUnSelectedAll.view.table.isSelectAllSelected).toEqual(false);
+    });
+
+    it('TABLE_ROW_SELECT_ALL with filtered data', () => {
+      // Init with filtering
+      const filteredTable = tableReducer(initialState, tableRegister({ data: initialState.data }));
+      expect(filteredTable.view.table.filteredData).toHaveLength(14);
+      expect(filteredTable.data).toHaveLength(initialState.data.length);
+
+      // Select all
+      const tableWithSelectedAll = tableReducer(filteredTable, tableRowSelectAll(true));
+      expect(tableWithSelectedAll.view.table.filteredData).toHaveLength(14);
+      expect(tableWithSelectedAll.view.table.selectedIds).toHaveLength(14);
+
+      // Unselect all
+      const tableWithUnSelectedAll = tableReducer(tableWithSelectedAll, tableRowSelectAll(false));
+      expect(tableWithSelectedAll.view.table.filteredData).toHaveLength(14);
+      expect(tableWithUnSelectedAll.view.table.selectedIds.length).toEqual(0);
+
+      // Reset filter
+      const tableFilteredReset = tableReducer(tableWithUnSelectedAll, tableFilterApply({}));
+      expect(tableFilteredReset.view.filters).toEqual([]);
+      expect(tableFilteredReset.view.table.filteredData).toHaveLength(initialState.data.length);
+      expect(tableFilteredReset.data).toHaveLength(initialState.data.length);
     });
 
     it('TABLE_ROW_SELECT_ALL with nested rows should skip non selectable rows', () => {

@@ -446,49 +446,7 @@ const DataSeriesFormItemModal = ({
           )}
         </div>
 
-        {type === CARD_TYPES.IMAGE && (
-          <div className={`${baseClassName}--input-group`}>
-            <div className={`${baseClassName}--input-group--item`}>
-              <TextInput
-                id={`${id}_attribute-unit`}
-                labelText={mergedI18n.dataItemEditorDataItemUnit}
-                light
-                placeholder={`${mergedI18n.example}: %`}
-                onChange={(evt) =>
-                  setEditDataItem({
-                    ...editDataItem,
-                    unit: evt.target.value,
-                  })
-                }
-                value={editDataItem.unit}
-              />
-            </div>
-            <div className={`${baseClassName}--input-group--item-end`}>
-              <Dropdown
-                id={`${id}_value-card-decimal-place`}
-                titleText={mergedI18n.decimalPlacesLabel}
-                direction="bottom"
-                label=""
-                items={[mergedI18n.notSet, '0', '1', '2', '3', '4']}
-                light
-                selectedItem={editDataItem.precision?.toString() || mergedI18n.notSet}
-                onChange={({ selectedItem }) => {
-                  const isSet = selectedItem !== mergedI18n.notSet;
-                  if (isSet) {
-                    setEditDataItem({
-                      ...editDataItem,
-                      precision: Number(selectedItem),
-                    });
-                  } else {
-                    setEditDataItem(omit(editDataItem, 'precision'));
-                  }
-                }}
-              />
-            </div>
-          </div>
-        )}
-
-        {type === CARD_TYPES.VALUE && (
+        {(type === CARD_TYPES.VALUE || type === CARD_TYPES.IMAGE) && (
           <div className={`${baseClassName}--input-group`}>
             <div className={`${baseClassName}--input-group--item`}>
               <TextInput

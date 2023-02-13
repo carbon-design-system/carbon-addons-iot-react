@@ -621,6 +621,7 @@ Map {
           "onColumnSelectionConfig": [Function],
           "onEmptyStateAction": null,
           "onErrorStateAction": null,
+          "onFilterRowIconClick": [Function],
           "onOverflowItemClicked": [Function],
           "onRemoveMultiSortColumn": [Function],
           "onRowClicked": [Function],
@@ -669,6 +670,7 @@ Map {
         "filterButtonAria": "Filters",
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
+        "filterRowIconDescription": "Edit filters",
         "inProgressText": "In progress",
         "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
@@ -718,6 +720,7 @@ Map {
         "hasColumnSelectionConfig": false,
         "hasFastSearch": true,
         "hasFilter": false,
+        "hasFilterRowIcon": false,
         "hasOnlyPageData": false,
         "hasPagination": false,
         "hasResize": false,
@@ -765,6 +768,10 @@ Map {
         "selectedAdvancedFilterIds": Array [],
         "table": Object {
           "expandedIds": Array [],
+          "filterRowIcon": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
           "isSelectAllSelected": undefined,
           "loadingMoreIds": Array [],
           "loadingState": Object {
@@ -835,6 +842,9 @@ Map {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
+                    "type": "func",
+                  },
+                  "onFilterRowIconClick": Object {
                     "type": "func",
                   },
                   "onOverflowItemClicked": Object {
@@ -1320,6 +1330,9 @@ Map {
             "filterNone": Object {
               "type": "string",
             },
+            "filterRowIconDescription": Object {
+              "type": "string",
+            },
             "inProgressText": Object {
               "type": "string",
             },
@@ -1502,6 +1515,9 @@ Map {
                 ],
               ],
               "type": "oneOfType",
+            },
+            "hasFilterRowIcon": Object {
+              "type": "bool",
             },
             "hasMultiSort": Object {
               "type": "bool",
@@ -1935,6 +1951,19 @@ Map {
                     ],
                     "type": "arrayOf",
                   },
+                  "filterRowIcon": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "func",
+                        },
+                        Object {
+                          "type": "object",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
                   "isSelectAllIndeterminate": Object {
                     "type": "bool",
                   },
@@ -2321,6 +2350,11 @@ Map {
       "clearSelectionText": "Clear selection",
       "closeMenuText": "Close menu",
       "columnGroups": Array [],
+      "filterRowIcon": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      },
+      "filterRowIconDescription": "Edit filters",
       "filterText": "Filter",
       "hasFastFilter": true,
       "i18n": Object {
@@ -2409,6 +2443,9 @@ Map {
               "type": "func",
             },
             "onColumnSelectionConfig": Object {
+              "type": "func",
+            },
+            "onFilterRowIconClick": Object {
               "type": "func",
             },
             "onOverflowItemClicked": Object {
@@ -2593,6 +2630,22 @@ Map {
         "isRequired": true,
         "type": "arrayOf",
       },
+      "filterRowIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
+      },
+      "filterRowIconDescription": Object {
+        "type": "string",
+      },
       "filterText": Object {
         "type": "string",
       },
@@ -2654,6 +2707,9 @@ Map {
               "type": "string",
             },
             "filterNone": Object {
+              "type": "string",
+            },
+            "filterRowIconDescription": Object {
               "type": "string",
             },
             "inProgressText": Object {
@@ -2803,6 +2859,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasFilterRowIcon": Object {
+              "type": "bool",
+            },
             "hasMultiSort": Object {
               "type": "bool",
             },
@@ -8992,7 +9051,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",
@@ -10055,7 +10124,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",
@@ -12932,6 +13011,7 @@ Map {
   },
   "IdleLogoutConfirmationModal" => Object {
     "defaultProps": Object {
+      "appId": null,
       "className": null,
       "i18n": Object {
         "closeButtonLabel": "Close",
@@ -12945,11 +13025,16 @@ Map {
         "countdown": 30,
         "timeout": 1800,
       },
+      "isAdminView": null,
       "onRouteChange": [Function],
       "onStayLoggedIn": [Function],
       "routes": null,
+      "workspaceId": null,
     },
     "propTypes": Object {
+      "appId": Object {
+        "type": "string",
+      },
       "className": Object {
         "type": "string",
       },
@@ -12988,6 +13073,9 @@ Map {
         ],
         "type": "shape",
       },
+      "isAdminView": Object {
+        "type": "bool",
+      },
       "onRouteChange": Object {
         "type": "func",
       },
@@ -13009,6 +13097,9 @@ Map {
           },
         ],
         "type": "shape",
+      },
+      "workspaceId": Object {
+        "type": "string",
       },
     },
   },
@@ -13058,6 +13149,7 @@ Map {
   "suiteHeaderData" => Object {},
   "useUiResources" => Object {},
   "uiresources" => Object {},
+  "cacheduiresources" => Object {},
   "Walkme" => Object {
     "defaultProps": Object {
       "lang": "en",
@@ -13074,14 +13166,76 @@ Map {
   },
   "ReadOnlyValue" => Object {
     "defaultProps": Object {
+      "isLoading": false,
       "label": "",
+      "skeletonLoadingLabel": Object {
+        "className": "",
+        "heading": false,
+        "lineCount": 0,
+        "paragraph": false,
+        "width": "100%",
+      },
+      "skeletonLoadingValue": Object {
+        "className": "",
+        "heading": false,
+        "lineCount": 0,
+        "paragraph": false,
+        "width": "100%",
+      },
       "testId": "read-only-value",
       "type": "stacked",
       "value": "",
     },
     "propTypes": Object {
+      "isLoading": Object {
+        "type": "bool",
+      },
       "label": Object {
         "type": "string",
+      },
+      "skeletonLoadingLabel": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+            "heading": Object {
+              "type": "bool",
+            },
+            "lineCount": Object {
+              "type": "number",
+            },
+            "paragraph": Object {
+              "type": "bool",
+            },
+            "width": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
+      },
+      "skeletonLoadingValue": Object {
+        "args": Array [
+          Object {
+            "className": Object {
+              "type": "string",
+            },
+            "heading": Object {
+              "type": "bool",
+            },
+            "lineCount": Object {
+              "type": "number",
+            },
+            "paragraph": Object {
+              "type": "bool",
+            },
+            "width": Object {
+              "type": "string",
+            },
+          },
+        ],
+        "type": "shape",
       },
       "testId": Object {
         "type": "string",
@@ -31027,7 +31181,17 @@ Map {
       "style": Object {
         "args": Array [
           Object {
-            "type": "string",
+            "args": Array [
+              Array [
+                Object {
+                  "type": "string",
+                },
+                Object {
+                  "type": "number",
+                },
+              ],
+            ],
+            "type": "oneOfType",
           },
         ],
         "type": "objectOf",

@@ -114,6 +114,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
 
       returnValue.absolute.start = new Date(startDate.valueOf());
 
+      const startTimeValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
+
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
@@ -122,14 +126,15 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         }
+
+        const endTimeValue = value.endTime
+          ? `${dayjs(endDate).format(dateTimeMask)}`
+          : `${dayjs(endDate).format(dateTimeMask)}`.split(' ')[0];
+
         returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          endDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${endTimeValue}`;
       } else {
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          startDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${startTimeValue}`;
       }
       break;
     }
@@ -149,7 +154,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
       returnValue.single.start = new Date(startDate.valueOf());
-      readableValue = `${dayjs(startDate).format(dateTimeMask)}`;
+      readableValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
       break;
     }
     default:
@@ -366,9 +373,9 @@ export const useAbsoluteDateTimeValue = () => {
   const resetAbsoluteValue = () => {
     setAbsoluteValue({
       startDate: '',
-      startTime: '00:00',
+      startTime: null,
       endDate: '',
-      endTime: '00:00',
+      endTime: null,
     });
   };
 
@@ -668,5 +675,122 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
     }
   };
 
-  return [isTooltipOpen, toggleTooltip];
+  return [isTooltipOpen, toggleTooltip, setIsTooltipOpen];
 };
+
+/**
+ * Hook to validate event and invoke callback
+ * @param {function} closeDropdownCallback: function that will be called if validation passes
+ * @returns void
+ */
+export const useDateTimePickerClickOutside = (closeDropdownCallback, containerRef) => (evt) => {
+  if (
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-reset`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-cancel`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`)
+  ) {
+    return;
+  }
+
+  if (containerRef.current?.firstChild.contains(evt.target)) {
+    closeDropdownCallback({ isEventOnField: true });
+    return;
+  }
+
+  // Composed path is needed in order to detect if event is bubbled from TimePickerSpinner which is a React Portal
+  if (
+    evt.composed &&
+    evt.composedPath().some((el) => el.classList?.contains(`${iotPrefix}--time-picker-spinner`))
+  ) {
+    return;
+  }
+
+  closeDropdownCallback({ isEventOnField: false });
+};
+
+/**
+ * Utility function to get time picker kind key
+ * @param {Object} object: an object containing:
+ *   kind: time picker kind
+ *   timeRangeKind: time range kind
+ * @returns
+ */
+const getTimeRangeKindKey = ({ kind, timeRangeKind }) => {
+  if (kind === PICKER_KINDS.SINGLE || timeRangeKind === PICKER_KINDS.SINGLE) {
+    return 'timeSingleValue';
+  }
+  return 'timeRangeValue';
+};
+
+/**
+ * Hook to close time picker dropdown and reset default value
+ * @param {Object} object: an object containing:
+ *   isExpanded: current state of the dropdown
+ *   setIsExpanded: useState callback
+ *   isCustomRange: if dropdown was opened in custom range
+ *   setIsCustomRange: useState callback
+ *   defaultValue: props value for time picker
+ *   parseDefaultValue: parses value from string to time picker format
+ *   setCustomRangeKind: useState callback
+ *   lastAppliedValue: last saved value
+ * @returns {function}
+ */
+export const useCloseDropdown = ({
+  isExpanded,
+  setIsExpanded,
+  isCustomRange,
+  setIsCustomRange,
+  defaultValue,
+  parseDefaultValue,
+  setCustomRangeKind,
+  lastAppliedValue,
+  singleTimeValue,
+  setSingleDateValue,
+  setSingleTimeValue,
+}) =>
+  useCallback(
+    ({ isEventOnField }) => {
+      if (!isExpanded) {
+        return;
+      }
+
+      if (!isEventOnField) {
+        setIsExpanded(false);
+      }
+
+      // memoized value at the time when dropdown was opened
+      if (!isCustomRange) {
+        setIsCustomRange(false);
+      }
+
+      if (
+        (lastAppliedValue?.timeRangeKind === PICKER_KINDS.SINGLE ||
+          lastAppliedValue?.kind === PICKER_KINDS.SINGLE) &&
+        !singleTimeValue
+      ) {
+        setSingleDateValue({ start: null, startDate: null });
+        setSingleTimeValue(null);
+        return;
+      }
+
+      if (lastAppliedValue) {
+        setCustomRangeKind(lastAppliedValue.kind || lastAppliedValue.timeRangeKind);
+        parseDefaultValue({
+          ...lastAppliedValue,
+          ...(!lastAppliedValue.timeRangeKind && {
+            timeRangeKind: lastAppliedValue?.kind,
+            [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
+              lastAppliedValue?.kind.toLowerCase()
+            ],
+          }),
+        });
+      } else {
+        setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+        parseDefaultValue(defaultValue);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]
+  );

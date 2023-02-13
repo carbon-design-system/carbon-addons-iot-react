@@ -10,6 +10,7 @@ import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
 
+const SCROLL_EVENT_TIMEOUT = 50;
 const isEngagingEventType = (type) => type === 'click' || type === 'keydown';
 
 const propTypes = {
@@ -51,14 +52,18 @@ export const CardTitle = (
 ) => {
   const titleRef = useRef();
   const subTitleRef = useRef();
+  const titleTimeoutRef = useRef();
+  const subtitleTimeoutRef = useRef();
+  const infoTimeoutRef = useRef();
   const truncatesTitle = useHasTextOverflow(titleRef, title);
   const hasExternalTitleTextTooltip = titleTextTooltip;
   const hasTitleTooltipFromTruncation = truncatesTitle && !titleTextTooltip;
   const hasInfoIconTooltip = infoIconTooltip && !hasExternalTitleTextTooltip;
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
 
-  const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
+  const [calculateMenuOffset, { adjustedDirection, adjustedAlignment }] = usePopoverPositioning({
     direction: 'bottom',
+    defaultAlignment: 'center',
     menuOffset: getTooltipMenuOffset,
     useAutoPositioning: true,
     isOverflowMenu: true, // Needed to preserve default direction (bottom)
@@ -100,37 +105,85 @@ export const CardTitle = (
     }
   }, []);
 
-  // ignore due to window event listeners
+  // below statements are ignored due to window event listeners (tested in cypress)
+  /* istanbul ignore next */
+  const handleTitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      title: false,
+    }));
+  }, []);
+
+  /* istanbul ignore next */
+  const handleSubtitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      subtitle: false,
+    }));
+  }, []);
+
+  /* istanbul ignore next */
+  const handleInfoScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      info: false,
+    }));
+  }, []);
+
   /* istanbul ignore next */
   useEffect(() => {
-    const handleScroll = () => {
-      const isSomeTooltipOpen = Object.values(tooltipsState).some((isOpen) => isOpen);
-
-      /* istanbul ignore else */
-      if (isSomeTooltipOpen) {
-        setTooltipsState((prevState) =>
-          Object.keys(prevState).reduce(
-            (attrs, key) => ({
-              ...attrs,
-              [key]: false,
-            }),
-            {}
-          )
-        );
-      }
+    if (tooltipsState.title) {
+      titleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleTitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleTitleScroll);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleTitleScroll);
+      clearTimeout(titleTimeoutRef.current);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.title]);
 
-    window.addEventListener('scroll', handleScroll);
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.subtitle) {
+      subtitleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleSubtitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleSubtitleScroll);
+    }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleSubtitleScroll);
+      clearTimeout(subtitleTimeoutRef.current);
     };
-  }, [tooltipsState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.subtitle]);
+
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.info) {
+      infoTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleInfoScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleInfoScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleInfoScroll);
+      clearTimeout(infoTimeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.info]);
 
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
       <Tooltip
-        align="center"
+        align={adjustedAlignment}
         menuOffset={calculateMenuOffset}
         direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
@@ -186,6 +239,9 @@ export const CardTitle = (
   const renderSubTitle = () =>
     !subtitle ? null : hasSubTitleTooltip ? (
       <Tooltip
+        align={adjustedAlignment}
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-subtitle`}
         ref={subTitleRef}
         showIcon={false}

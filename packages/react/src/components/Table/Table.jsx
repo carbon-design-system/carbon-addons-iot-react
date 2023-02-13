@@ -6,6 +6,7 @@ import { Table as CarbonTable, TableContainer, Tag } from 'carbon-components-rea
 import classnames from 'classnames';
 import { useLangDirection } from 'use-lang-direction';
 import warning from 'warning';
+import { FilterEdit16 } from '@carbon/icons-react';
 
 import { defaultFunction } from '../../utils/componentUtilityFunctions';
 import { settings } from '../../constants/Settings';
@@ -145,6 +146,8 @@ const propTypes = {
     wrapCellText: WrapCellTextPropTypes,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
+    /** display icon button in filter row */
+    hasFilterRowIcon: PropTypes.bool,
     /** column to pin in the table */
     pinColumn: PinColumnPropTypes,
   }),
@@ -283,6 +286,8 @@ const propTypes = {
       }),
       /** Array with rowIds that are with loading active */
       loadingMoreIds: PropTypes.arrayOf(PropTypes.string),
+      /** icon element for filter row icon */
+      filterRowIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
     }),
   }),
   /** Callbacks for actions of the table, can be used to update state in wrapper component to update `view` props */
@@ -358,6 +363,8 @@ const propTypes = {
 
       /** call back function for when load more row is clicked  (rowId) => {} */
       onRowLoadMore: PropTypes.func,
+      /** call back function for when icon button in filter row is clicked  (evt) => {} */
+      onFilterRowIconClick: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -405,6 +412,7 @@ export const defaultProps = (baseProps) => ({
     shouldExpandOnRowClick: false,
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
+    hasFilterRowIcon: false,
     pinColumn: PIN_COLUMN.NONE,
   },
   size: undefined,
@@ -443,6 +451,7 @@ export const defaultProps = (baseProps) => ({
       loadingMoreIds: [],
       showMultiSortModal: false,
       multiSortModal: undefined,
+      filterRowIcon: FilterEdit16,
     },
   },
   actions: {
@@ -483,6 +492,7 @@ export const defaultProps = (baseProps) => ({
       onCancelMultiSortColumns: defaultFunction('actions.table.onCancelMultiSortColumns'),
       onAddMultiSortColumn: defaultFunction('actions.table.onAddMultiSortColumn'),
       onRemoveMultiSortColumn: defaultFunction('actions.table.onRemoveMultiSortColumn'),
+      onFilterRowIconClick: defaultFunction('actions.table.onFilterRowIconClick'),
     },
     onUserViewModified: null,
   },
@@ -555,6 +565,7 @@ export const defaultProps = (baseProps) => ({
     dismissText: 'Dismiss',
     actionFailedText: 'Action failed',
     toolbarTooltipLabel: 'Toolbar tooltip',
+    filterRowIconDescription: 'Edit filters',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -1019,6 +1030,7 @@ const Table = (props) => {
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths',
+                  'hasFilterRowIcon',
                   'pinColumn'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
@@ -1036,7 +1048,8 @@ const Table = (props) => {
                   'onChangeSort',
                   'onChangeOrdering',
                   'onColumnSelectionConfig',
-                  'onOverflowItemClicked'
+                  'onOverflowItemClicked',
+                  'onFilterRowIconClick'
                 ),
                 onColumnResize: handleOnColumnResize,
               }}
@@ -1058,6 +1071,8 @@ const Table = (props) => {
               // TODO: remove id in v3
               testId={`${id || testId}-table-head`}
               showExpanderColumn={showExpanderColumn}
+              filterRowIcon={view.table.filterRowIcon}
+              filterRowIconDescription={i18n.filterRowIconDescription}
             />
           ) : null}
 

@@ -61,6 +61,16 @@
   }
 }
 
+@mixin hide-tooltip() {
+  .#{$prefix}--assistive-text {
+    display: none;
+  }
+
+  &::before {
+    content: '';
+  }
+}
+
 @mixin pin-column($order) {
   td:nth-of-type(#{$order}),
   th:nth-of-type(#{$order}) {

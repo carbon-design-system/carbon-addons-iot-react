@@ -1,5 +1,6 @@
 import React from 'react';
-import { text } from '@storybook/addon-knobs';
+import { boolean, text } from '@storybook/addon-knobs';
+import { useEffect, useState } from '@storybook/addons';
 import { Link, UnorderedList, ListItem } from 'carbon-components-react';
 
 import ReadOnlyValueREADME from './ReadOnlyValue.mdx';
@@ -15,38 +16,73 @@ export default {
   },
 };
 
+const loadingKnobsLabel = () => ({
+  heading: boolean('If content is heading', false, 'Loading (label)'),
+  paragraph: boolean('If content is paragraph', true, 'Loading (label)'),
+  lineCount: text('Line count', 1, 'Loading (label)'),
+  width: text('Width of the loader', '100%', 'Loading (label)'),
+});
+
+const loadingKnobsValue = () => ({
+  heading: boolean('If content is heading', false, 'Loading (value)'),
+  paragraph: boolean('If content is paragraph', true, 'Loading (value)'),
+  lineCount: text('Line count', 1, 'Loading (value)'),
+  width: text('Width of the loader', '100%', 'Loading (value)'),
+});
+
 export const Basic = () => (
   <div style={{ width: '100%', heigh: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue label="Label" value="input value" />
+    <ReadOnlyValue
+      label="Label"
+      value="input value"
+      isLoading={boolean('Loading state (isLoading)', false)}
+      skeletonLoadingLabel={loadingKnobsLabel()}
+      skeletonLoadingValue={loadingKnobsValue()}
+    />
   </div>
 );
 
 Basic.storyName = 'basic stacked';
 
-export const MultipleValuesStacked = () => (
-  <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue
-      label={text('label text', 'Label 01')}
-      value={text('label text', 'input value 01')}
-      type="stacked"
-    />
-    <ReadOnlyValue
-      label={text('label text', 'Label 02')}
-      value={text('label text', 'input value 02')}
-      type="stacked"
-    />
-    <ReadOnlyValue
-      label={text('label text', 'Label 03')}
-      value={text('label text', 'input value 03')}
-      type="stacked"
-    />
-    <ReadOnlyValue
-      label={text('label text', 'Label 04')}
-      value={text('label text', 'input value 04')}
-      type="stacked"
-    />
-  </div>
-);
+export const MultipleValuesStacked = () => {
+  const isLoading = boolean('Loading state (isLoading)', false);
+  return (
+    <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
+      <ReadOnlyValue
+        label={text('label text', 'Label 01')}
+        value={text('label text', 'input value 01')}
+        isLoading={isLoading}
+        type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label={text('label text', 'Label 02')}
+        value={text('label text', 'input value 02')}
+        isLoading={isLoading}
+        type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label={text('label text', 'Label 03')}
+        value={text('label text', 'input value 03')}
+        isLoading={isLoading}
+        type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label={text('label text', 'Label 04')}
+        value={text('label text', 'input value 04')}
+        isLoading={isLoading}
+        type="stacked"
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+    </div>
+  );
+};
 
 MultipleValuesStacked.storyName = 'multiple values - stacked';
 
@@ -82,20 +118,58 @@ export const BasicStackedWithCustomValue = () => (
 BasicStackedWithCustomValue.storyName = 'basic stacked with custom value';
 export const BasicInline = () => (
   <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue label="Label" value="input value" type="inline" />
+    <ReadOnlyValue
+      label="Label"
+      value="input value"
+      type="inline"
+      isLoading={boolean('Loading state (isLoading)', false)}
+      skeletonLoadingLabel={loadingKnobsLabel()}
+      skeletonLoadingValue={loadingKnobsValue()}
+    />
   </div>
 );
 
 BasicInline.storyName = 'basic inline';
 
-export const MultipleValuesInline = () => (
-  <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
-    <ReadOnlyValue label="Label 01" value="input value 01" type="inline" />
-    <ReadOnlyValue label="Label 02" value="input value 02" type="inline" />
-    <ReadOnlyValue label="Label 03" value="input value 03" type="inline" />
-    <ReadOnlyValue label="Label 04" value="input value 04" type="inline" />
-  </div>
-);
+export const MultipleValuesInline = () => {
+  const isLoading = boolean('Loading state (isLoading)', false);
+  return (
+    <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
+      <ReadOnlyValue
+        label="Label 01"
+        value="input value 01"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 02"
+        value="input value 02"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 03"
+        value="input value 03"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+      <ReadOnlyValue
+        label="Label 04"
+        value="input value 04"
+        type="inline"
+        isLoading={isLoading}
+        skeletonLoadingLabel={loadingKnobsLabel()}
+        skeletonLoadingValue={loadingKnobsValue()}
+      />
+    </div>
+  );
+};
 
 MultipleValuesInline.storyName = 'multiple values - inline';
 
@@ -136,3 +210,61 @@ export const MultipleValuesSmallInline = () => (
 );
 
 MultipleValuesSmallInline.storyName = 'multiple values - inline small';
+
+export const WithAsyncDataLoad = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [values, setValues] = useState([
+    {
+      label: null,
+      value: null,
+    },
+    {
+      label: null,
+      value: null,
+    },
+  ]);
+
+  useEffect(() => {
+    let currentTimeout = null;
+    const displayMoreItems = () => {
+      setValues(() => [
+        {
+          label: 'Label 01',
+          value: 'Input value 01',
+        },
+        {
+          label: 'Label 02',
+          value: 'Input value 02',
+        },
+      ]);
+      setIsLoading(false);
+    };
+    currentTimeout = setTimeout(() => {
+      displayMoreItems();
+    }, 2000);
+    return () => {
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
+      }
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '100%', height: 'calc(100vh - 100px)' }}>
+      <ReadOnlyValue
+        label={values[0].label}
+        value={values[0].value}
+        isLoading={isLoading}
+        type="stacked"
+      />
+      <ReadOnlyValue
+        label={values[1].label}
+        value={values[1].value}
+        isLoading={isLoading}
+        type="stacked"
+      />
+    </div>
+  );
+};
+
+WithAsyncDataLoad.storyName = 'with async data load';

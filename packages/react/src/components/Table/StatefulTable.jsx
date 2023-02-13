@@ -165,6 +165,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onClearMultiSortColumns,
     onAddMultiSortColumn,
     onRemoveMultiSortColumn,
+    onFilterRowIconClick,
   } = table || {};
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
@@ -328,6 +329,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onRemoveMultiSortColumn: (index) => {
         dispatch(tableRemoveMultiSortColumn(index));
         callbackParent(onRemoveMultiSortColumn, index);
+      },
+      onFilterRowIconClick: (evt) => {
+        callbackParent(onFilterRowIconClick, evt);
       },
     },
     onUserViewModified: (viewConfiguration) => {

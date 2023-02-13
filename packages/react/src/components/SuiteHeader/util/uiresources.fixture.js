@@ -26,9 +26,33 @@ const fixture = {
       },
       {
         id: 'Health',
-        name: 'Manage',
+        name: 'Health',
         href: 'https://mockedworkspace.health.mydomain.com/',
         isExternal: false,
+      },
+    ],
+    workspaces: [
+      {
+        id: 'mockedworkspace',
+        name: 'Mocked Workspace',
+        href: 'https://mockedworkspace.home.my-domain',
+        isCurrent: true,
+        applications: [
+          {
+            id: 'manage',
+            name: 'Manage',
+            href: 'https://mockedworkspace.manage.mydomain.com/',
+            isExternal: false,
+            isCurrent: false,
+          },
+          {
+            id: 'Health',
+            name: 'Health',
+            href: 'https://mockedworkspace.health.mydomain.com/',
+            isExternal: false,
+            isCurrent: false,
+          },
+        ],
       },
     ],
     i18n: {

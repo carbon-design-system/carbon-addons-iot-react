@@ -5064,6 +5064,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5095,6 +5096,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5126,6 +5128,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       onChange={[Function]}
                       onClick={[Function]}
                       type="text"
+                      value=""
                     />
                   </div>
                 </div>
@@ -5156,7 +5159,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="calculated_decimal-precision"
                       onChange={[Function]}
                       onClick={[Function]}
-                      type="text"
+                      type="number"
                     />
                   </div>
                 </div>
@@ -7712,7 +7715,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="timeseries_decimal-precision"
                       onChange={[Function]}
                       onClick={[Function]}
-                      type="text"
+                      type="number"
                     />
                   </div>
                 </div>
@@ -8687,7 +8690,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                       id="timeseries_decimal-precision"
                       onChange={[Function]}
                       onClick={[Function]}
-                      type="text"
+                      type="number"
                     />
                   </div>
                 </div>
