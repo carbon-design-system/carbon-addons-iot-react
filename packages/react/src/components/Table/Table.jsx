@@ -561,6 +561,7 @@ export const defaultProps = (baseProps) => ({
     actionFailedText: 'Action failed',
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
+    batchActionsOverflowMenuText: '',
     filterTagsOverflowMenuText: '+{n}',
   },
   error: null,
@@ -877,6 +878,7 @@ const Table = (props) => {
               toggleAggregations: i18n.toggleAggregations,
               toolbarLabelAria: i18n.toolbarLabelAria,
               toolbarTooltipLabel: i18n.toolbarTooltipLabel,
+              batchActionsOverflowMenuText: i18n.batchActionsOverflowMenuText,
             }}
             actions={{
               ...pick(

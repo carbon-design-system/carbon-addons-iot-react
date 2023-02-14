@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.28...v2.152.0-next.29) (2023-02-14)
+
+
+### Bug Fixes
+
+* **table:** decrease css selector spec in overflow menu ([1cb6533](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1cb6533eea555b39f44962bc89b485a9c1a02184))
+* **tabletoolbar:** overflow menu icon color ([a4d6cae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4d6caee721770c4be2ea0797cba271bd5dcc6d8))
+
+
+### Features
+
+* **overflowmenu:** add support for button label ([7f2fe4b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f2fe4b6d4060d040483b56aea1b9d0edcbaa9c5)), closes [#3714](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3714)
+
+
+
+
+
+# [2.152.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.27...v2.152.0-next.28) (2023-02-07)
+
+**Note:** Version bump only for package carbon-addons-iot-react
+
+
+
+
+
+# [2.152.0-next.27](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.26...v2.152.0-next.27) (2023-02-07)
+
+
+### Bug Fixes
+
+* **dashboardeditor:** added comment for dependency exclusion ([a2f661b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a2f661b79335b9ea018529e586cac13dd528a969))
+* **dashboardeditor:** fixed issue when removing image from image card ([b1164c7](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b1164c7deb001ae4a0c55cc0ab3e221d29776455))
+
+
+
+
+
+# [2.152.0-next.26](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.25...v2.152.0-next.26) (2023-02-06)
+
+
+### Bug Fixes
+
+* **suiteheader:** Fixing the useUiResources promise flow (it was missing an await in the cached flow) ([c1c2f8a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c1c2f8a01021d73126e77046af0fffebc10b3f7c))
+
+
+
+
+
 # [2.152.0-next.25](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.24...v2.152.0-next.25) (2023-02-02)
 
 

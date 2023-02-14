@@ -1658,6 +1658,7 @@ export const getI18nKnobs = (useGroup = true) => {
     multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
     multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
     toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+    batchActionsOverflowMenuText: text('i18n.batchActionsOverflowMenuText', '', I18N_GROUP),
   };
 };
 
