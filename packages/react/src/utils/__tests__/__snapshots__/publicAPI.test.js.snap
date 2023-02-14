@@ -647,6 +647,7 @@ Map {
       "error": null,
       "i18n": Object {
         "actionFailedText": "Action failed",
+        "batchActionsOverflowMenuText": "",
         "batchCancel": "Cancel",
         "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
@@ -1276,6 +1277,9 @@ Map {
         "args": Array [
           Object {
             "actionFailedText": Object {
+              "type": "string",
+            },
+            "batchActionsOverflowMenuText": Object {
               "type": "string",
             },
             "batchCancel": Object {
@@ -2645,6 +2649,9 @@ Map {
         "args": Array [
           Object {
             "actionFailedText": Object {
+              "type": "string",
+            },
+            "batchActionsOverflowMenuText": Object {
               "type": "string",
             },
             "batchCancel": Object {
@@ -4554,6 +4561,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "batchActionsOverflowMenuText": Object {
+              "type": "string",
+            },
             "batchCancel": Object {
               "type": "string",
             },

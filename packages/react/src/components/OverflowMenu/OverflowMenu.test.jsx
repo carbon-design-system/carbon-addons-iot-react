@@ -388,4 +388,14 @@ describe('IotOverflowMenu', () => {
     userEvent.type(baseElement, '{escape}');
     expect(baseElement.querySelector('ul')).toBeNull();
   });
+
+  it('should render button with label', () => {
+    render(
+      <OverflowMenu testId={testId} withCarbonTooltip buttonLabel="More">
+        <OverflowMenuItem itemText="Option 1" />
+      </OverflowMenu>
+    );
+
+    expect(screen.getByRole('button')).toHaveTextContent('More');
+  });
 });
