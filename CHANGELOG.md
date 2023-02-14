@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.28...v2.152.0-next.29) (2023-02-14)
+
+
+### Bug Fixes
+
+* **table:** decrease css selector spec in overflow menu ([1cb6533](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1cb6533eea555b39f44962bc89b485a9c1a02184))
+* **tabletoolbar:** overflow menu icon color ([a4d6cae](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4d6caee721770c4be2ea0797cba271bd5dcc6d8))
+
+
+### Features
+
+* **overflowmenu:** add support for button label ([7f2fe4b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7f2fe4b6d4060d040483b56aea1b9d0edcbaa9c5)), closes [#3714](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3714)
+
+
+
+
+
 # [2.152.0-next.28](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.27...v2.152.0-next.28) (2023-02-07)
 
 **Note:** Version bump only for package ibm-ai-applications
