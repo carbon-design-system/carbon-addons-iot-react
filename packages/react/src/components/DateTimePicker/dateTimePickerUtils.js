@@ -845,7 +845,7 @@ export const useCustomHeight = ({
     setScrollLeft(event.target.scrollLeft);
   };
 
-  const debouncedPosition = debounce(getPosition, 150, {
+  const debouncedPosition = debounce(getPosition, 10, {
     leading: false,
     trailing: true,
   });
@@ -872,7 +872,7 @@ export const useCustomHeight = ({
 
   const handleWindowResize = debounce(() => {
     setWindowHeight(window.innerHeight || document.documentElement.clientHeight);
-  }, 100);
+  }, 50);
 
   useEffect(() => {
     window.addEventListener('resize', handleWindowResize);
