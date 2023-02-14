@@ -100,6 +100,8 @@ const propTypes = {
     downloadIconDescription: PropTypes.string,
     /** aria-label applied to the tooltip in the toolbar (if given) */
     toolbarTooltipLabel: PropTypes.string,
+    /** button label for batch action overflow menu */
+    batchActionsOverflowMenuText: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -365,6 +367,7 @@ const TableToolbar = ({
               menuOptionsClass={`${iotPrefix}--table-overflow-batch-actions__menu`}
               withCarbonTooltip
               tooltipPosition="bottom"
+              buttonLabel={i18n.batchActionsOverflowMenuText}
             >
               {visibleOverflowBatchActions.map(
                 ({

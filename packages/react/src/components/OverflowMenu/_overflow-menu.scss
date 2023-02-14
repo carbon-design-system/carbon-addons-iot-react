@@ -13,10 +13,19 @@ button.#{$iot-prefix}--overflow-menu-icon {
   }
 
   &.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
-    & svg,
+    & svg {
+      fill: $ui-05;
+      margin-left: 0;
+    }
+
     &:hover svg,
     &:focus svg {
       fill: $ui-05;
     }
   }
+}
+
+.#{$iot-prefix}--overflow-menu--with-label {
+  width: unset;
+  font-size: 0.875rem;
 }

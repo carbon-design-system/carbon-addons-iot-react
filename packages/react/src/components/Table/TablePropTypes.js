@@ -225,6 +225,8 @@ export const I18NPropTypes = PropTypes.shape({
   toolbarTooltipLabel: PropTypes.string,
   /** tooltip text for filter row icon button */
   filterRowIconDescription: PropTypes.string,
+  /** button label for batch action overflow menu */
+  batchActionsOverflowMenuText: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {

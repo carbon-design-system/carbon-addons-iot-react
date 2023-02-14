@@ -259,7 +259,7 @@
     "@testing-library/react": "^10.4.8",
     "@testing-library/react-hooks": "^5.1.2",
     "@testing-library/user-event": "12.8.3",
-    "accessibility-checker": "^3.0.6",
+    "accessibility-checker": "3.1.38",
     "autoprefixer": "^9.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
