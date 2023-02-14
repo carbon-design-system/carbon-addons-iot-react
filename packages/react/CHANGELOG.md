@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.29...v2.152.0-next.30) (2023-02-14)
+
+
+### Bug Fixes
+
+* **suiteheader:** icon vertical alignment ([e9324b8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e9324b8713ad7c45f231df1cb7056b4a37ac3f2a)), closes [#3694](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3694)
+
+
+
+
+
 # [2.152.0-next.29](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.28...v2.152.0-next.29) (2023-02-14)
 
 
