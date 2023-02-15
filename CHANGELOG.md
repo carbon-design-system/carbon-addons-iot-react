@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.152.0-next.31](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.30...v2.152.0-next.31) (2023-02-15)
+
+
+### Features
+
+* **filtertags:** add prop for text in overflow tag ([3f3d221](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3f3d2210652630450587aff7a5af2eadf8b3fe1d)), closes [#3710](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3710)
+
+
+
+
+
 # [2.152.0-next.30](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.0-next.29...v2.152.0-next.30) (2023-02-14)
 
 
