@@ -18,7 +18,7 @@ describe('DateTimePickerV2', () => {
     cy.viewport(1680, 900);
   });
 
-  it('should re-position the flyout when scrolling parent to bottom', () => {
+  it('should clsoe the flyout when scrolling parent to bottom', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -71,25 +71,10 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
-
-    let newDateTimeInputTop;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputTop = rect.top;
-      });
-
-    let newFlyoutMenuTop;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuTop = rect.top;
-      });
-
-    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
-  it('should re-position the flyout when scrolling parent to the right', () => {
+  it('should close the flyout when scrolling parent to the right', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -142,22 +127,7 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
-
-    let newDateTimeInputLeft;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputLeft = rect.left;
-      });
-
-    let newFlyoutMenuLeft;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuLeft = rect.left;
-      });
-
-    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
   it('should re-position the flyout when scrolling parent to bottom (new time spinner)', () => {
@@ -214,25 +184,10 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
-
-    let newDateTimeInputTop;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputTop = rect.top;
-      });
-
-    let newFlyoutMenuTop;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuTop = rect.top;
-      });
-
-    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
-  it('should re-position the flyout when scrolling parent to the right (new time spinner)', () => {
+  it('should close the flyout when scrolling parent to the right (new time spinner)', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -286,22 +241,7 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
-
-    let newDateTimeInputLeft;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputLeft = rect.left;
-      });
-
-    let newFlyoutMenuLeft;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuLeft = rect.left;
-      });
-
-    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
   it('should pick a new absolute ranges', () => {

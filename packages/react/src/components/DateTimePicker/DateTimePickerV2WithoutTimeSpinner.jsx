@@ -325,8 +325,6 @@ const DateTimePicker = ({
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
   const [invalidState, setInvalidState] = useState(invalid);
-  const [scrollTop, setScrollTop] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
@@ -336,10 +334,8 @@ const DateTimePicker = ({
     () => ({
       ...style,
       '--zIndex': style.zIndex ?? 0,
-      scrollTop,
-      scrollLeft,
     }),
-    [style, scrollTop, scrollLeft]
+    [style]
   );
   const {
     absoluteValue,
@@ -734,8 +730,7 @@ const DateTimePicker = ({
     isCustomRange,
     showRelativeOption,
     customRangeKind,
-    setScrollLeft,
-    setScrollTop,
+    setIsExpanded,
   });
 
   const direction = useAutoPositioning

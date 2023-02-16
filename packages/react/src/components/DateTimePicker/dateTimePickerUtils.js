@@ -796,6 +796,36 @@ export const useCloseDropdown = ({
   );
 
 /**
+ * For a given element, walk up the dom to find scroll container.
+ * Only gets first as modals should prevent scrolling in elements above.
+ * @param{element} element
+ */
+export const getScrollParent = (element) => {
+  try {
+    /* istanbul ignore next */
+    if (
+      element.scrollHeight > parseInt(element.clientHeight, 10) + 10 ||
+      element.scrollWidth > parseInt(element.clientWidth, 10) + 10
+    ) {
+      const computedStyle = window.getComputedStyle(element);
+      if (
+        ['scroll', 'auto'].includes(computedStyle.overflowY) ||
+        ['scroll', 'auto'].includes(computedStyle.overflow)
+      ) {
+        return element;
+      }
+    }
+    if (element.parentElement) {
+      return getScrollParent(element.parentElement);
+    }
+    return document.scrollingElement;
+  } catch (error) {
+    /* istanbul ignore next */
+    return window;
+  }
+};
+
+/**
  * A hook handling the height of the drop down menu
  *
  * @param {object} containerRef the ref to the container div of the drop down menu
@@ -803,8 +833,7 @@ export const useCloseDropdown = ({
  * @param {boolean} isCustomRange if dropdown was opened in custom range
  * @param {boolean} showRelativeOption are the relative options shown by default
  * @param {string} customRangeKind custom range kind is either relative or absolute
- * @param {function} setLeft set scrollLeft
- * @param {function} setTop set scrollTop
+ * @param {function} setIsExpanded set the isExpanded state
  * @returns Object An object containing:
  *    offTop (boolean): if the menu is off top
  *    offBottom (boolean): if the menu is off bottom
@@ -819,8 +848,7 @@ export const useCustomHeight = ({
   isCustomRange,
   showRelativeOption,
   customRangeKind,
-  setScrollLeft,
-  setScrollTop,
+  setIsExpanded,
 }) => {
   // calculate max height for varies dropdown
   const presetMaxHeight = 315;
@@ -839,28 +867,21 @@ export const useCustomHeight = ({
       : withoutRelativeOptionMaxHeight
     : presetMaxHeight;
 
-  // get new scroll top and scroll left when scrolling the input
-  const getPosition = (event) => {
-    setScrollTop(event.target.scrollTop);
-    setScrollLeft(event.target.scrollLeft);
+  const closeDropDown = () => {
+    setIsExpanded(false);
   };
 
-  const debouncedPosition = debounce(getPosition, 10, {
-    leading: false,
-    trailing: true,
-  });
-
-  // add event listener on the scroll events of the parents
   useEffect(() => {
-    let currentNode = containerRef?.current?.parentNode;
-    const parentNodes = [];
-    while (currentNode) {
-      parentNodes.push(currentNode);
-      currentNode.addEventListener('scroll', debouncedPosition);
-      currentNode = currentNode.parentNode;
+    const firstScrollableParent = getScrollParent(containerRef.current);
+    if (firstScrollableParent) {
+      firstScrollableParent.addEventListener('scroll', closeDropDown);
     }
+    window.addEventListener('scroll', closeDropDown);
     return () => {
-      parentNodes.map((node) => node.removeEventListener('scroll', debouncedPosition));
+      if (firstScrollableParent) {
+        firstScrollableParent.removeEventListener('scroll', closeDropDown);
+      }
+      window.removeEventListener('scroll', closeDropDown);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
