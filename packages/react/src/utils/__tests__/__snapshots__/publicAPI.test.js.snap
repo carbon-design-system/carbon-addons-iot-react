@@ -10059,6 +10059,12 @@ Map {
       "menuOffset": Object {
         "args": Array [
           Object {
+            "inputBottom": Object {
+              "type": "number",
+            },
+            "inputTop": Object {
+              "type": "number",
+            },
             "left": Object {
               "type": "number",
             },
@@ -31040,6 +31046,8 @@ Map {
       "isOpen": null,
       "light": true,
       "menuOffset": Object {
+        "inputBottom": null,
+        "inputTop": null,
         "left": 0,
         "top": 0,
       },
@@ -31138,6 +31146,12 @@ Map {
             Object {
               "args": Array [
                 Object {
+                  "inputBottom": Object {
+                    "type": "number",
+                  },
+                  "inputTop": Object {
+                    "type": "number",
+                  },
                   "left": Object {
                     "type": "number",
                   },

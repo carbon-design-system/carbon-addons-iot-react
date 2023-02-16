@@ -201,11 +201,8 @@ const FlyoutMenu = ({
       ) {
         const { top = 0, left = 0 } = menuOffset;
 
-        // set menuOffset only when it is not repositioned, when repositioned the menuOffset does not apply to the new direction anymore
-        if (flyoutDirection === direction) {
-          propTop = top;
-          propLeft = left;
-        }
+        propTop = top;
+        propLeft = left;
       }
 
       return {
@@ -213,18 +210,24 @@ const FlyoutMenu = ({
         left: leftOffset + propLeft,
       };
     },
-    [direction, menuOffset]
+    [menuOffset]
   );
 
   const [calculateMenuOffset, { adjustedDirection }] = usePopoverPositioning({
     direction,
     menuOffset: getFlyoutMenuOffset,
     useAutoPositioning,
+    parenElementTop: menuOffset?.inputTop,
+    parentElementBottom: menuOffset?.inputBottom,
   });
 
   useEffect(() => {
-    setTooltipDirection(getTooltipDirection(adjustedDirection));
-  }, [adjustedDirection]);
+    if (useAutoPositioning) {
+      setTooltipDirection(getTooltipDirection(adjustedDirection));
+    } else {
+      setTooltipDirection(getTooltipDirection(direction));
+    }
+  }, [adjustedDirection, direction, useAutoPositioning]);
 
   const Footer = CustomFooter ? (
     <CustomFooter setIsOpen={setIsOpen} isOpen={isControlledOpen} />
@@ -274,7 +277,9 @@ const FlyoutMenu = ({
             className={classnames(
               tooltipClassName,
               `${iotPrefix}--flyout-menu--body`,
-              `${iotPrefix}--flyout-menu--body__${adjustedDirection}`,
+              `${iotPrefix}--flyout-menu--body__${
+                useAutoPositioning ? adjustedDirection : direction
+              }`,
               {
                 [`${iotPrefix}--flyout-menu--body__light`]: light,
                 [`${iotPrefix}--flyout-menu--body__open`]:
@@ -366,6 +371,8 @@ const propTypes = {
     PropTypes.shape({
       top: PropTypes.number,
       left: PropTypes.number,
+      inputTop: PropTypes.number,
+      inputBottom: PropTypes.number,
     }),
     PropTypes.func,
   ]),
@@ -468,6 +475,8 @@ const defaultProps = {
   menuOffset: {
     top: 0,
     left: 0,
+    inputTop: null,
+    inputBottom: null,
   },
   i18n: {
     cancelButtonText: 'Cancel',

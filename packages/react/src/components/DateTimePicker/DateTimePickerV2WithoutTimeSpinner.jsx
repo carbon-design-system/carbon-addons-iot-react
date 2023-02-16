@@ -48,6 +48,7 @@ import {
   useRelativeDateTimeValue,
   useDateTimePickerClickOutside,
   useCloseDropdown,
+  useCustomHeight,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -324,8 +325,6 @@ const DateTimePicker = ({
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
   const [invalidState, setInvalidState] = useState(invalid);
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
@@ -335,10 +334,8 @@ const DateTimePicker = ({
     () => ({
       ...style,
       '--zIndex': style.zIndex ?? 0,
-      scrollTop: top,
-      scrollLeft: left,
     }),
-    [style, top, left]
+    [style]
   );
   const {
     absoluteValue,
@@ -728,32 +725,19 @@ const DateTimePicker = ({
     : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const inputBottom = containerRef.current?.getBoundingClientRect().bottom;
-  const inputTop = containerRef.current?.getBoundingClientRect().top;
-  const flyoutMenuHeight = 482;
-  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
-  const offTop = inputTop < flyoutMenuHeight;
+  const [offTop, , inputTop, inputBottom, customHeight, maxHeight] = useCustomHeight({
+    containerRef,
+    isCustomRange,
+    showRelativeOption,
+    customRangeKind,
+    setIsExpanded,
+  });
 
-  const getPosition = (event) => {
-    setLeft(event.target.scrollLeft);
-    setTop(event.target.scrollTop);
-  };
-
-  // Re-calculate X and Y when parents scrolled
-  useEffect(() => {
-    let currentNode = containerRef.current?.parentNode;
-    const parentNodes = [];
-    while (currentNode) {
-      parentNodes.push(currentNode);
-      currentNode.addEventListener('scroll', getPosition);
-      currentNode = currentNode.parentNode;
-    }
-
-    return () => {
-      parentNodes.map((node) => node.removeEventListener('scroll', getPosition));
-    };
-  }, []);
+  const direction = useAutoPositioning
+    ? offTop
+      ? FlyoutMenuDirection.BottomEnd
+      : FlyoutMenuDirection.TopEnd
+    : FlyoutMenuDirection.BottomEnd;
 
   return (
     <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
@@ -855,15 +839,11 @@ const DateTimePicker = ({
             menuOffset={{
               top: menuOffsetTop,
               left: menuOffsetLeft,
+              inputTop,
+              inputBottom,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={
-              useAutoPositioning
-                ? offBottom && !offTop
-                  ? FlyoutMenuDirection.TopEnd
-                  : FlyoutMenuDirection.BottomEnd
-                : FlyoutMenuDirection.BottomEnd
-            }
+            direction={direction}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
@@ -877,7 +857,11 @@ const DateTimePicker = ({
             <div
               ref={dropdownRef}
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ '--wrapper-width': '20rem' }}
+              style={{
+                '--wrapper-width': '20rem',
+                height: customHeight,
+                maxHeight,
+              }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
