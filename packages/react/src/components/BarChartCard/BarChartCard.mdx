@@ -50,6 +50,7 @@ import { BarChartCard } from 'carbon-addon-iot-react';
   size="MEDIUMWIDE"
   title="Particles by city"
   tooltipDateFormatPattern="L HH:mm:ss"
+  defaultDateFormatPattern="L HH:mm:ss"
   values={[
     {
       city: 'Amsterdam',
@@ -121,6 +122,7 @@ import { BarChartCard } from 'carbon-addon-iot-react';
   size="MEDIUMWIDE"
   title="Particles and temperature in cities"
   tooltipDateFormatPattern="L HH:mm:ss"
+  defaultDateFormatPattern="L HH:mm:ss"
   values={[
     {
       city: 'Amsterdam',
@@ -260,7 +262,8 @@ import { BarChartCard } from 'carbon-addon-iot-react';
 | i18n.overflowMenuDescription          | string                                                                                                                    | 'Open and close list of options'                                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                  |
 | domainRange                           | arrayOf(oneOfType([number, Date]))                                                                                        | null                                                                                                                                                                           | optional domain to graph from. First value is the beginning of the range. Second value is the end of the range can be date instance or timestamp                                                                                                                                                                                                 |
 | showTimeInGMT                         | bool                                                                                                                      | false                                                                                                                                                                          | Show timestamp in browser local time or GMT                                                                                                                                                                                                                                                                                                      |
-| tooltipDateFormatPattern              | string                                                                                                                    | 'L HH:mm:ss'                                                                                                                                                                   | tooltip format pattern that follows the dayjs formatting patterns                                                                                                                                                                                                                                                                                |
+| tooltipDateFormatPattern              | String                                                                                                                    | 'L HH:mm:ss'                                                                                                                                                                   | tooltip format pattern that follows the dayjs formatting patterns
+| defaultDateFormatPattern              | String                                                                                                                    | 'L HH:mm:ss'                                                                                                                                                                   | default date format pattern that follows the dayjs formatting patterns                                                                                                                                                                                                                                                                                |
 
 ### cardDimensions Prop
 

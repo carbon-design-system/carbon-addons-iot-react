@@ -7588,6 +7588,7 @@ Map {
         },
         "type": "SIMPLE",
       },
+      "defaultDateFormatPattern": "L HH:mm:ss",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "Filter",
@@ -19448,6 +19449,7 @@ Map {
           "type": "end_line",
         },
       },
+      "defaultDateFormatPattern": "L HH:mm:ss",
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
@@ -21958,6 +21960,7 @@ Map {
   },
   "TableCard" => Object {
     "defaultProps": Object {
+      "defaultDateFormatPattern": "L HH:mm:ss",
       "filters": Array [],
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -32081,6 +32084,7 @@ Map {
         "includeZeroOnYaxis": false,
         "showLegend": true,
       },
+      "defaultDateFormatPattern": "L HH:mm:ss",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "type and hit enter to apply",

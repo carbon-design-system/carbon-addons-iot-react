@@ -61,6 +61,7 @@ const defaultProps = {
   showTimeInGMT: false,
   tooltipDateFormatPattern: 'L HH:mm:ss',
   values: null,
+  defaultDateFormatPattern: 'L HH:mm:ss',
 };
 
 const BarChartCard = ({
@@ -87,6 +88,7 @@ const BarChartCard = ({
   // TODO: remove deprecated testID in v3.
   testID,
   testId,
+  defaultDateFormatPattern,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -244,8 +246,16 @@ const BarChartCard = ({
   ]);
 
   const tableData = useMemo(
-    () => formatTableData(timeDataSourceId, categoryDataSourceId, type, values, chartData),
-    [categoryDataSourceId, chartData, timeDataSourceId, type, values]
+    () =>
+      formatTableData(
+        timeDataSourceId,
+        categoryDataSourceId,
+        type,
+        values,
+        chartData,
+        defaultDateFormatPattern
+      ),
+    [categoryDataSourceId, chartData, defaultDateFormatPattern, timeDataSourceId, type, values]
   );
 
   const previousTick = useRef();

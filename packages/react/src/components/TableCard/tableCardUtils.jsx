@@ -23,7 +23,10 @@ export const determinePrecisionAndValue = (precision = 0, value, locale) => {
  * @param {Array<Object>} columns - Array of TableCard columns
  * @return {array} array of columns with formatted links and updated variable values
  */
-export const createColumnsWithFormattedLinks = (columns) => {
+export const createColumnsWithFormattedLinks = (
+  columns,
+  defaultDateFormatPattern = 'L HH:mm:ss'
+) => {
   return columns.map((column) => {
     const { linkTemplate } = column;
     if (linkTemplate) {
@@ -44,7 +47,7 @@ export const createColumnsWithFormattedLinks = (columns) => {
               const variableValue =
                 // format the TIMESTAMP type columns
                 matchingColumn?.type === 'TIMESTAMP'
-                  ? dayjs(row[variable]).format('L HH:mm')
+                  ? dayjs(row[variable]).format(defaultDateFormatPattern)
                   : row[variable];
               // encode value so the URL can be valid
               const encodedValue =
@@ -116,25 +119,25 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
 };
 
 /**
- * Support filtering on partial strings in timestamp columns
- * @param {*} cellValue
- * @param {*} filterValue
- * @returns
- */
-export const timeStampFilterFunction = (cellValue, filterValue) => {
-  const dateString = dayjs(cellValue).format('L HH:mm');
-  return dateString.includes(filterValue);
-};
-
-/**
  *
  * @param {*} column
  * @param {*} defaultFilterStringPlaceholdText
  * @returns  what the filter object should be
  */
-export const determineFilterFunction = (column, defaultFilterStringPlaceholdText) => {
+export const determineFilterFunction = (
+  column,
+  defaultFilterStringPlaceholdText,
+  defaultDateFormatPattern = 'L HH:mm:ss'
+) => {
   return {
-    ...(column.type === 'TIMESTAMP' ? { filterFunction: timeStampFilterFunction } : {}), // only add custom filter for timestamps
+    ...(column.type === 'TIMESTAMP'
+      ? {
+          filterFunction: (cellValue, filterValue) => {
+            const dateString = dayjs(cellValue).format(defaultDateFormatPattern);
+            return dateString.includes(filterValue);
+          },
+        }
+      : {}), // only add custom filter for timestamps
     placeholderText: defaultFilterStringPlaceholdText,
     ...(column.filter ? column.filter : {}), // preserve their custom filter fields too
   };
