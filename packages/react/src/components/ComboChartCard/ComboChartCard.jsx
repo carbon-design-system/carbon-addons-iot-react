@@ -43,6 +43,7 @@ const defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
+  defaultDateFormatPattern: 'L HH:mm:ss',
 };
 
 const ComboChartCard = ({
@@ -69,6 +70,7 @@ const ComboChartCard = ({
   // TODO: remove deprecated testID in v3.
   testID,
   testId,
+  defaultDateFormatPattern,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -92,6 +94,7 @@ const ComboChartCard = ({
     isLoading,
     showTimeInGMT,
     tooltipDateFormatPattern,
+    defaultDateFormatPattern,
     chartTitle: content.title,
     values,
     i18n: mergedI18n,

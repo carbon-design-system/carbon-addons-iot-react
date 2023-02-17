@@ -70,6 +70,7 @@ const defaultProps = {
   },
   renderDateDropdownInPortal: true,
   withToolbarTooltips: false,
+  defaultDateFormatPattern: 'L HH:mm:ss',
 };
 
 const TableCard = ({
@@ -96,6 +97,7 @@ const TableCard = ({
   className,
   renderDateDropdownInPortal,
   withToolbarTooltips,
+  defaultDateFormatPattern,
   ...others
 }) => {
   const mergedI18n = { ...defaultProps.i18n, ...i18n };
@@ -214,7 +216,10 @@ const TableCard = ({
 
   // If a column has a linkTemplate, format the column to render a link,
   // we need a special case here because this is the only card where we examine the actual data to replace variables in each
-  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(columns);
+  const columnsWithFormattedLinks = createColumnsWithFormattedLinks(
+    columns,
+    defaultDateFormatPattern
+  );
 
   // filter to get the indexes for each one
   const columnsUpdated = cloneDeep(columnsWithFormattedLinks);
@@ -304,7 +309,11 @@ const TableCard = ({
           name: i.label ? i.label : i.dataSourceId || '', // don't force label to be required
           isSortable: true,
           width: i.width ? `${i.width}px` : newSize === CARD_SIZES.LARGETHIN ? '150px' : '', // force the text wrap
-          filter: determineFilterFunction(i, mergedI18n.defaultFilterStringPlaceholdText),
+          filter: determineFilterFunction(
+            i,
+            mergedI18n.defaultFilterStringPlaceholdText,
+            defaultDateFormatPattern
+          ),
           renderDataFunction: i.renderDataFunction // use the default render function of the column
             ? i.renderDataFunction
             : (
@@ -312,7 +321,7 @@ const TableCard = ({
               ) =>
                 // if it's a timestamp column type make sure to format it
                 filteredTimestampColumns.includes(i.dataSourceId) && !isEditable
-                  ? dayjs(value).format('L HH:mm')
+                  ? dayjs(value).format(defaultDateFormatPattern)
                   : isNil(value)
                   ? ''
                   : value.toString(),
@@ -320,6 +329,7 @@ const TableCard = ({
         .concat(hasActionColumn ? actionColumn : []),
     [
       actionColumn,
+      defaultDateFormatPattern,
       filteredTimestampColumns,
       hasActionColumn,
       isEditable,
@@ -481,7 +491,7 @@ const TableCard = ({
                             <span key={`${item.id}-value`}>
                               {item
                                 ? item.type === 'TIMESTAMP'
-                                  ? dayjs(dataItem.values[item.id]).format('L HH:mm')
+                                  ? dayjs(dataItem.values[item.id]).format(defaultDateFormatPattern)
                                   : dataItem.values[item.id]
                                 : null}
                             </span>
@@ -503,7 +513,7 @@ const TableCard = ({
             };
           })
         : [],
-    [expandedRows, others.cardVariables, tableData]
+    [defaultDateFormatPattern, expandedRows, others.cardVariables, tableData]
   );
 
   // is columns recieved is different from the columnsToRender show card expand

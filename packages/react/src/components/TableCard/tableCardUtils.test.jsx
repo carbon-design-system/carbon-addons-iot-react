@@ -169,18 +169,27 @@ describe('determineFilterFunction', () => {
         },
       },
     ];
-    const timestampColumnHasNoFilter = determineFilterFunction(mockColumns[0], mockPlaceholderText);
-    expect(timestampColumnHasNoFilter).toEqual({
-      filterFunction: timeStampFilterFunction,
-      placeholderText: mockPlaceholderText,
-    });
+
+    const timestampColumnHasNoFilter = determineFilterFunction(
+      mockColumns[0],
+      mockPlaceholderText,
+      'L HH:mm:ss'
+    );
+    expect(JSON.stringify(timestampColumnHasNoFilter)).toEqual(
+      JSON.stringify({
+        filterFunction: timeStampFilterFunction,
+        placeholderText: mockPlaceholderText,
+      })
+    );
 
     const timestampColumnHasFilter = determineFilterFunction(mockColumns[1], mockPlaceholderText);
-    expect(timestampColumnHasFilter).toEqual({
-      filterFunction: timeStampFilterFunction,
-      name: 'my existing filter',
-      placeholderText: mockPlaceholderText,
-    });
+    expect(JSON.stringify(timestampColumnHasFilter)).toEqual(
+      JSON.stringify({
+        filterFunction: timeStampFilterFunction,
+        placeholderText: mockPlaceholderText,
+        name: 'my existing filter',
+      })
+    );
     const literalColumnHasNoFilter = determineFilterFunction(mockColumns[2], mockPlaceholderText);
     expect(literalColumnHasNoFilter).toEqual({
       placeholderText: mockPlaceholderText,
