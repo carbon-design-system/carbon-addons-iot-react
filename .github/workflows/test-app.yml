@@ -77,6 +77,12 @@ jobs:
           filters: |
             react:
               - 'packages/react/**'
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        if: steps.changes.outputs.react == 'true'
+        with:
+          node-version: '16.x'
 
       - name: Run cli command to create test app
         if: steps.changes.outputs.react == 'true'
