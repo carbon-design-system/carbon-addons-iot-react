@@ -27,7 +27,7 @@ const timeUtils = {
       ? selectedTime.substring(0, 2)
       : currentTime.substring(0, 2),
   get24Hours: (selectedTime, currentTime) =>
-    /(0[1-9]|1[0-9]|2[0-3])/.test(selectedTime.substring(0, 2))
+    /^(2[0-3]|[01]?[0-9])$/.test(selectedTime.substring(0, 2))
       ? selectedTime.substring(0, 2)
       : currentTime.substring(2, 4),
   getMinutes: (selectedTime, currentTime) =>
@@ -81,7 +81,7 @@ const propTypes = {
   /** Optional handler that is called whenever <input> is updated - will be called with new value as an argument */
   onChange: PropTypes.func,
   testId: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
   is24hours: PropTypes.bool,
 };
 

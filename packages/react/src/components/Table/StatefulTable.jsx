@@ -47,7 +47,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
   const {
     id: tableId,
     columns: initialColumns,
-    options: { hasUserViewManagement },
+    options: { hasUserViewManagement, hasRowSelection },
     options,
     view: {
       toolbar: { customToolbarContent },
@@ -84,6 +84,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
         view: initialState,
         totalItems: initialTotalItems || initialData.length,
         hasUserViewManagement,
+        hasRowSelection,
       })
     );
   }, [
@@ -164,6 +165,7 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
     onClearMultiSortColumns,
     onAddMultiSortColumn,
     onRemoveMultiSortColumn,
+    onFilterRowIconClick,
   } = table || {};
 
   // In addition to updating the store, I always callback to the parent in case they want to do something
@@ -327,6 +329,9 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onRemoveMultiSortColumn: (index) => {
         dispatch(tableRemoveMultiSortColumn(index));
         callbackParent(onRemoveMultiSortColumn, index);
+      },
+      onFilterRowIconClick: (evt) => {
+        callbackParent(onFilterRowIconClick, evt);
       },
     },
     onUserViewModified: (viewConfiguration) => {

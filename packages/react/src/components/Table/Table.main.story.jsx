@@ -42,6 +42,7 @@ import {
   getEditDataFunction,
   getRowActionStates,
   getAdvancedFilters,
+  getMoreAdvancedFilters,
   getTableKnobs,
   getI18nKnobs,
   getBatchActions,
@@ -160,6 +161,7 @@ export const Playground = () => {
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
     hasMultiSelectFilter,
+    hasFilterRowIcon,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -187,6 +189,7 @@ export const Playground = () => {
         'hideClearAllFiltersButton',
         'hasEmptyFilterOption',
         'hasMultiSelectFilter',
+        'hasFilterRowIcon',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -362,6 +365,7 @@ export const Playground = () => {
           hasRowEdit,
           hasSingleRowEdit,
           useRadioButtonSingleSelect,
+          hasFilterRowIcon,
         }}
         view={{
           advancedFilters,
@@ -578,12 +582,14 @@ export const WithRowNesting = () => {
     hasRowNesting,
     shouldExpandOnRowClick,
     demoHasLoadMore,
+    wrapCellText,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
       'hasRowNesting',
       'shouldExpandOnRowClick',
       'demoHasLoadMore',
+      'wrapCellText',
     ],
     getDefaultValue: () => true,
   });
@@ -642,6 +648,7 @@ export const WithRowNesting = () => {
       options={{
         hasRowNesting,
         shouldExpandOnRowClick,
+        wrapCellText,
       }}
       view={{
         table: {
@@ -717,6 +724,7 @@ export const WithFiltering = () => {
     hideClearAllFiltersButton,
     hasEmptyFilterOption,
     hasMultiSelectFilter,
+    hasFilterRowIcon,
   } = getTableKnobs({
     knobsToCreate: [
       'selectedTableType',
@@ -725,6 +733,7 @@ export const WithFiltering = () => {
       'hideClearAllFiltersButton',
       'hasEmptyFilterOption',
       'hasMultiSelectFilter',
+      'hasFilterRowIcon',
     ],
     getDefaultValue: (knobName) => {
       if (knobName === 'hasAdvancedFilter') {
@@ -740,6 +749,10 @@ export const WithFiltering = () => {
       }
 
       if (knobName === 'hasMultiSelectFilter') {
+        return false;
+      }
+
+      if (knobName === 'hasFilterRowIcon') {
         return false;
       }
 
@@ -788,12 +801,18 @@ export const WithFiltering = () => {
   }
 
   // Advanced filter settings
+  let displayOverflowFilterTags;
   const [showBuilder, setShowBuilder] = useStoryState(false);
   const [advancedFilters, setAdvancedFilters] = useStoryState(
     hasAdvancedFilter ? getAdvancedFilters() : undefined
   );
   const selectedAdvancedFilterIds = hasAdvancedFilter
-    ? object('Active advanced filters (view.selectedAdvancedFilterIds) ☢️', ['story-filter'])
+    ? object(
+        'Active advanced filters (view.selectedAdvancedFilterIds) ☢️',
+        displayOverflowFilterTags
+          ? ['story-filter']
+          : ['story-filter', 'story-filter1', 'story-filter2']
+      )
     : undefined;
   const advancedFilterFlyoutOpen = hasAdvancedFilter
     ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
@@ -804,6 +823,14 @@ export const WithFiltering = () => {
   const storyNotice = hasAdvancedFilter ? (
     <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
   ) : null;
+
+  if (hasAdvancedFilter) {
+    displayOverflowFilterTags = boolean(
+      'Enable overflow menu in filter tags for advanced filters  ☢️',
+      false
+    );
+  }
+
   const operands = {
     CONTAINS: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -832,6 +859,10 @@ export const WithFiltering = () => {
         })
       : data;
 
+  if (displayOverflowFilterTags) {
+    setAdvancedFilters((prevFilters) => [...prevFilters, ...getMoreAdvancedFilters()]);
+  }
+
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (
     <>
@@ -844,6 +875,7 @@ export const WithFiltering = () => {
         options={{
           hasFilter: hasFilter && !hasAdvancedFilter ? hasFilter : false,
           hasAdvancedFilter,
+          hasFilterRowIcon,
         }}
         view={{
           advancedFilters,
@@ -1200,6 +1232,7 @@ export const WithToolbar = () => {
       buttonProps={{ size: 'default', renderIcon: SettingsAdjust16 }}
       onApply={action('Flyout Menu Apply Clicked')}
       onCancel={action('Flyout Menu Cancel Clicked')}
+      hideTooltip={false}
     >
       Example of custom toolbar content inserting a FlyoutMenu
     </FlyoutMenu>

@@ -3,3 +3,29 @@
 button.#{$prefix}--overflow-menu {
   background: none;
 }
+
+button.#{$iot-prefix}--overflow-menu-icon {
+  justify-content: center;
+
+  .#{$prefix}--btn__icon {
+    width: initial;
+    height: initial;
+  }
+
+  &.#{$prefix}--btn--icon-only.#{$prefix}--tooltip__trigger {
+    & svg {
+      fill: $ui-05;
+      margin-left: 0;
+    }
+
+    &:hover svg,
+    &:focus svg {
+      fill: $ui-05;
+    }
+  }
+}
+
+.#{$iot-prefix}--overflow-menu--with-label {
+  width: unset;
+  font-size: 0.875rem;
+}

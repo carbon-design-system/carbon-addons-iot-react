@@ -1,12 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Tooltip } from 'carbon-components-react';
 
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
+import { usePopoverPositioning } from '../../hooks/usePopoverPositioning';
+import { getTooltipMenuOffset } from '../Tooltip';
 import { settings } from '../../constants/Settings';
 
 const { iotPrefix } = settings;
+
+const SCROLL_EVENT_TIMEOUT = 50;
+const isEngagingEventType = (type) => type === 'click' || type === 'keydown';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
@@ -47,22 +52,147 @@ export const CardTitle = (
 ) => {
   const titleRef = useRef();
   const subTitleRef = useRef();
+  const titleTimeoutRef = useRef();
+  const subtitleTimeoutRef = useRef();
+  const infoTimeoutRef = useRef();
   const truncatesTitle = useHasTextOverflow(titleRef, title);
   const hasExternalTitleTextTooltip = titleTextTooltip;
   const hasTitleTooltipFromTruncation = truncatesTitle && !titleTextTooltip;
   const hasInfoIconTooltip = infoIconTooltip && !hasExternalTitleTextTooltip;
   const hasSubTitleTooltip = useHasTextOverflow(subTitleRef, subtitle);
 
+  const [calculateMenuOffset, { adjustedDirection, adjustedAlignment }] = usePopoverPositioning({
+    direction: 'bottom',
+    defaultAlignment: 'center',
+    menuOffset: getTooltipMenuOffset,
+    useAutoPositioning: true,
+    isOverflowMenu: true, // Needed to preserve default direction (bottom)
+  });
+
+  const [tooltipsState, setTooltipsState] = useState({
+    title: false,
+    subtitle: false,
+    info: false,
+  });
+
+  const handleTitleTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        title: open,
+      }));
+    }
+  }, []);
+
+  const handleSubtitleTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        subtitle: open,
+      }));
+    }
+  }, []);
+
+  const handleInfoTooltipState = useCallback((evt, { open }) => {
+    /* istanbul ignore else */
+    if (isEngagingEventType(evt.type)) {
+      setTooltipsState((prevState) => ({
+        ...prevState,
+        info: open,
+      }));
+    }
+  }, []);
+
+  // below statements are ignored due to window event listeners (tested in cypress)
+  /* istanbul ignore next */
+  const handleTitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      title: false,
+    }));
+  }, []);
+
+  /* istanbul ignore next */
+  const handleSubtitleScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      subtitle: false,
+    }));
+  }, []);
+
+  /* istanbul ignore next */
+  const handleInfoScroll = useCallback(() => {
+    setTooltipsState((prevState) => ({
+      ...prevState,
+      info: false,
+    }));
+  }, []);
+
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.title) {
+      titleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleTitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleTitleScroll);
+    }
+    return () => {
+      window.removeEventListener('scroll', handleTitleScroll);
+      clearTimeout(titleTimeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.title]);
+
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.subtitle) {
+      subtitleTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleSubtitleScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleSubtitleScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleSubtitleScroll);
+      clearTimeout(subtitleTimeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.subtitle]);
+
+  /* istanbul ignore next */
+  useEffect(() => {
+    if (tooltipsState.info) {
+      infoTimeoutRef.current = setTimeout(() => {
+        window.addEventListener('scroll', handleInfoScroll);
+      }, SCROLL_EVENT_TIMEOUT);
+    } else {
+      window.removeEventListener('scroll', handleInfoScroll);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleInfoScroll);
+      clearTimeout(infoTimeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tooltipsState.info]);
+
   const renderMainTitle = () =>
     hasTitleTooltipFromTruncation || hasExternalTitleTextTooltip ? (
       <Tooltip
-        autoOrientation
+        align={adjustedAlignment}
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-title-tooltip`}
         ref={titleRef}
         showIcon={false}
         triggerClassName={classnames(
           `${iotPrefix}--card--title--text__overflow`,
           `${iotPrefix}--card--title--text`,
+          `${iotPrefix}--card-heading-clickable`,
           {
             [`${iotPrefix}--card--title--text--wrapped`]:
               hasTitleWrap && !subtitle && !hasExternalTitleTextTooltip,
@@ -70,6 +200,8 @@ export const CardTitle = (
           }
         )}
         triggerText={title}
+        open={tooltipsState.title}
+        onChange={handleTitleTooltipState}
       >
         {hasExternalTitleTextTooltip ? (
           <>
@@ -107,13 +239,22 @@ export const CardTitle = (
   const renderSubTitle = () =>
     !subtitle ? null : hasSubTitleTooltip ? (
       <Tooltip
+        align={adjustedAlignment}
+        menuOffset={calculateMenuOffset}
+        direction={adjustedDirection}
         data-testid={`${testId}-subtitle`}
         ref={subTitleRef}
         showIcon={false}
-        triggerClassName={classnames(`${iotPrefix}--card--subtitle--text`, {
-          [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
-        })}
+        triggerClassName={classnames(
+          `${iotPrefix}--card--subtitle--text`,
+          `${iotPrefix}--card-heading-clickable`,
+          {
+            [`${iotPrefix}--card--subtitle--text--padded`]: hasInfoIconTooltip,
+          }
+        )}
         triggerText={subtitle}
+        open={tooltipsState.subtitle}
+        onChange={handleSubtitleTooltipState}
       >
         {subtitle}
       </Tooltip>
@@ -145,6 +286,8 @@ export const CardTitle = (
           id={`card-tooltip-${id}`} // https://github.com/carbon-design-system/carbon/pull/6744
           triggerText=""
           iconDescription={titleTooltipIconDescription}
+          open={tooltipsState.info}
+          onChange={handleInfoTooltipState}
         >
           {infoIconTooltip}
         </Tooltip>

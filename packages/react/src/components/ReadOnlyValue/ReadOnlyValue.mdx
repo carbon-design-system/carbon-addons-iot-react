@@ -3,12 +3,19 @@
 ## Table of Contents
 
 - [Getting started](#getting-started)
+  - [Loading state](#loading-state)
 - [Props](#props)
 - [External links](#external-links)
   - [Source Code](#source-code)
   - [Feedback](#feedback)
 
 ## Getting Started
+
+className: '',
+  heading: false,
+  lineCount: 0,
+  paragraph: false,
+  width: '100%',
 
 The `ReadOnlyValue` is a component for information that is static and cannot be manipulated by users.
 
@@ -19,15 +26,37 @@ import { ReadOnlyValue } from 'carbon-addons-iot-react';
 <ReadOnlyValue label="Label 02" value="input value 02" type="stacked" />
 ```
 
+### Loading state
+
+Passing `isLoading` prop would display skeleton loader instead of a content. Both label and value loaders are customizable via props.
+
+```jsx
+import { ReadOnlyValue } from 'carbon-addons-iot-react';
+
+<ReadOnlyValue label={null} value={null} type="stacked" isLoading />
+```
+
 ## Props
 
-| Name      | Type                                                        | Default   | Description                                     |
-| :-------- | :---------------------------------------------------------- | :-------- | :---------------------------------------------- | ----------------------------------- |
-| label     | string                                                      | ''        | read only label text                            |
-| value     | string, node                                                | string    | ''                                              | read only value text or custom node |
-| type      | enum: <br/>'stacked'<br/>'inline'<br/> 'inline_small' <br/> | stacked   | Type of how should be the read only be rendered |
-| testId    | string                                                      | 'testId'  | Test id for selecting the element               |
-| className | string                                                      | undefined | Custom class for component                      |
+| Name                           | Type                                                        | Default   | Description                                     |
+| :--------                      | :---------------------------------------------------------- | :-------- | :---------------------------------------------- | ----------------------------------- |
+| label                          | string                                                      | ''        | read only label text                            |
+| value                          | string, node                                                | string    | ''                                              | read only value text or custom node |
+| type                           | enum: <br/>'stacked'<br/>'inline'<br/> 'inline_small' <br/> | stacked   | Type of how should be the read only be rendered |
+| testId                         | string                                                      | 'testId'  | Test id for selecting the element               |
+| className                      | string                                                      | undefined | Custom class for component                      |
+| skeletonLoadingLabel           | object                                                      |           | Configuration for label loader                  |
+| skeletonLoadingLabel.className | string                                                      | ''        | Class name applied to loader                    |
+| skeletonLoadingLabel.heading   | bool                                                        | false     | Loading text is heading (large size)            |
+| skeletonLoadingLabel.lineCount | number                                                      | 0         | Number of lines in paragraph                    |
+| skeletonLoadingLabel.paragraph | bool                                                        | false     | Loading text is paragraph (multiple lines)      |
+| skeletonLoadingLabel.width     | string                                                      | '100%'    | Width of the loader                             |
+| skeletonLoadingValue           | object                                                      |           | Configuration for value loader                  |
+| skeletonLoadingValue.className | string                                                      | ''        | Class name applied to loader                    |
+| skeletonLoadingValue.heading   | bool                                                        | false     | Loading text is heading (large size)            |
+| skeletonLoadingValue.lineCount | number                                                      | 0         | Number of lines in paragraph                    |
+| skeletonLoadingValue.paragraph | bool                                                        | false     | Loading text is paragraph (multiple lines)      |
+| skeletonLoadingValue.width     | string                                                      | '100%'    | Width of the loader                             |
 
 ## External Links
 

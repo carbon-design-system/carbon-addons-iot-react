@@ -1,6 +1,40 @@
 @import '../../globals/vars';
 
 .#{$iot-prefix}--pagination {
+  overflow-x: hidden;
+
+  &--compact {
+    .#{$prefix}--pagination__right {
+      width: 100%;
+    }
+
+    .#{$prefix}--select-input {
+      border-right: 1px solid $ui-03;
+    }
+
+    .#{$prefix}--select__page-number .#{$prefix}--select-input {
+      border-left: none;
+    }
+
+    .#{$prefix}--pagination__control-buttons {
+      margin-left: auto;
+    }
+  }
+
+  &--narrow {
+    .#{$prefix}--pagination__left {
+      padding: 0 $spacing-03 0 $spacing-05;
+    }
+
+    .#{$prefix}--pagination__items-count {
+      margin-left: $spacing-03;
+    }
+
+    .#{$prefix}--pagination__right .#{$prefix}--pagination__text {
+      margin-right: $spacing-03;
+    }
+  }
+
   .#{$prefix}--pagination__left {
     margin: auto auto auto 0;
 
@@ -73,5 +107,10 @@ html[dir='rtl'] {
         left: $spacing-05;
       }
     }
+  }
+
+  // Hide vertical scrollbar in RTL
+  .#{$iot-prefix}--pagination {
+    overflow-y: hidden;
   }
 }

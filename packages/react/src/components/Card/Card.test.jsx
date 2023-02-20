@@ -376,6 +376,25 @@ describe('Card', () => {
   });
 
   describe('tooltips', () => {
+    const originalGetBoundingClientRect = HTMLDivElement.prototype.getBoundingClientRect;
+
+    beforeEach(() => {
+      HTMLDivElement.prototype.getBoundingClientRect = jest.fn(() => ({
+        bottom: 76,
+        height: 68,
+        left: 122,
+        right: 410,
+        top: 8,
+        width: 288,
+        x: 122,
+        y: 8,
+      }));
+    });
+
+    afterEach(() => {
+      HTMLDivElement.prototype.getBoundingClientRect = originalGetBoundingClientRect;
+    });
+
     it('should warn on combining tooltip and titleTextTooltip', () => {
       const { __DEV__ } = global;
       global.__DEV__ = true;
@@ -563,6 +582,86 @@ describe('Card', () => {
         userEvent.click(tooltipButton);
         expect(screen.getByTestId('Card-subtitle')).toBeVisible();
         expect(tooltipButton).toHaveAttribute('aria-expanded', 'true');
+      });
+
+      it('should display tooltip on card title click', () => {
+        const title =
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+        const testId = 'Card-title-tooltip';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title={title}
+            subtitle="Lorem ipsum"
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: title }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
+      });
+
+      it('should display tooltip on card subtitle click', () => {
+        const testId = 'Card-subtitle';
+        const subtitle =
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title="Lorem ipsum"
+            subtitle={subtitle}
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: subtitle }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
+      });
+
+      it('should display tooltip on card info icon click', () => {
+        const testId = 'Card-tooltip';
+
+        render(
+          <Card
+            style={{ width: '600px', height: '360px' }}
+            title="Lorem ipsum"
+            subtitle="Lorem ipsum dolor"
+            hasTitleWrap
+            id="facilitycard-basic"
+            size={CARD_SIZES.MEDIUM}
+            breakpoint="lg"
+            tooltip={<p>this is the external tooltip content</p>}
+          />
+        );
+
+        expect(screen.queryByTestId(testId)).toBeNull();
+
+        userEvent.click(screen.getByRole('button', { name: 'Tooltip info icon' }));
+        expect(screen.getByTestId(testId)).toBeDefined();
+        expect(screen.getByTestId(testId)).toBeInTheDocument();
+
+        userEvent.click(document.body);
+        expect(screen.queryByTestId(testId)).toBeNull();
       });
     });
   });

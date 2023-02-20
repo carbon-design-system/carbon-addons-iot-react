@@ -6,6 +6,7 @@
 @import 'TableDetailWizard/table-detail-wizard';
 @import 'TableMultiSortModal/table-multi-sort-modal';
 @import '../../globals/vars';
+@import '../../globals/mixins';
 
 table.#{$prefix}--side-nav--data-table {
   white-space: nowrap;
@@ -107,6 +108,10 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   }
 }
 
+.#{$iot-prefix}--table-toolbar__advanced-filters-button.#{$iot-prefix}--table-toolbar-button-active.#{$iot-prefix}--flyout-menu--trigger-button {
+  @include hide-tooltip();
+}
+
 // regression fix for tiny expand chrevron on some expandable table rows
 .#{$prefix}--data-table thead th.#{$prefix}--table-expand,
 .#{$prefix}--data-table tbody td.#{$prefix}--table-expand {
@@ -194,6 +199,11 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
   [dir='rtl'] & {
     left: unset;
     right: var(--row-nesting-offset);
+  }
+
+  &__expand {
+    left: unset;
+    margin-left: var(--row-nesting-offset);
   }
 }
 
@@ -325,10 +335,8 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
 }
 
 .#{$iot-prefix}--expandable-tablerow--childless {
-  td {
-    > button.#{$prefix}--table-expand__button {
-      display: none;
-    }
+  & .#{$prefix}--table-expand button.#{$iot-prefix}--table-expand__button {
+    display: none;
   }
 }
 

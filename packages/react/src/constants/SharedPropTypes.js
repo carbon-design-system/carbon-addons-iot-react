@@ -141,3 +141,11 @@ export const HtmlElementRefProp = PropTypes.oneOfType([
   PropTypes.func,
   PropTypes.shape({ current: PropTypes.oneOfType([PropTypes.object]) }),
 ]);
+
+export const WrapCellTextPropTypes = PropTypes.oneOf([
+  'always',
+  'never',
+  'auto',
+  'alwaysTruncate',
+  'expand',
+]);

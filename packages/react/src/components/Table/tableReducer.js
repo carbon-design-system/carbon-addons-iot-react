@@ -8,6 +8,7 @@ import {
   sortTableData,
   isEmptyString,
 } from '../../utils/componentUtilityFunctions';
+import { fillArrWithRowIds } from '../../utils/tableReducer';
 import { FILTER_EMPTY_STRING } from '../../constants/Filters';
 
 import {
@@ -364,6 +365,7 @@ export const tableReducer = (state = {}, action) => {
         action
       );
     case TABLE_SEARCH_APPLY: {
+      // console.log(state.data.length)
       // Quick search should search within the filtered and sorted data
       const data = filterSearchAndSort(
         state.data,
@@ -482,7 +484,13 @@ export const tableReducer = (state = {}, action) => {
                   nextSortDir,
                   isTimestampColumn
                 )
-            : filterData(state.data, state.view.filters, state.columns); // reset to original filters
+            : filterSearchAndSort(
+                state.data,
+                null,
+                { value: state.view.toolbar.search?.defaultValue },
+                get(state, 'view.filters'),
+                get(state, 'columns')
+              );
       }
       return baseTableReducer(
         update(state, {
@@ -499,12 +507,10 @@ export const tableReducer = (state = {}, action) => {
     }
 
     case TABLE_ROW_SELECT: {
-      const data = state.view.table.filteredData || state.data;
-      return baseTableReducer({ ...state, data }, action);
+      return baseTableReducer(state, action);
     }
     case TABLE_ROW_SELECT_ALL: {
-      const data = state.view.table.filteredData || state.data;
-      return baseTableReducer({ ...state, data }, action);
+      return baseTableReducer(state, action);
     }
     // By default we need to setup our sorted and filteredData and turn off the loading state
     case TABLE_REGISTER: {
@@ -520,9 +526,15 @@ export const tableReducer = (state = {}, action) => {
           return oldChildCount === newChildCount;
         }) ?? [];
 
-      const { view, totalItems, hasUserViewManagement } = action.payload;
+      const { view, totalItems, hasUserViewManagement, hasRowSelection } = action.payload;
       const { pageSize, pageSizes, page } = get(view, 'pagination') || {};
       const paginationFromState = get(state, 'view.pagination');
+
+      const activeBar = view?.toolbar?.activeBar;
+      const activeBarFromState = state.view?.toolbar?.activeBar;
+      const rowEditMode = activeBarFromState === 'rowEdit';
+      const isMultiSelect = hasRowSelection === 'multi';
+
       const initialDefaultSearch =
         get(view, 'toolbar.search.defaultValue') || get(view, 'toolbar.search.value');
       // update the column ordering if I'm passed new columns
@@ -541,7 +553,7 @@ export const tableReducer = (state = {}, action) => {
 
       const nextPageSize = paginationFromState.pageSize || pageSize;
       const nextTotalItems = totalItems || updatedData.length;
-      const nextPage = page || 1;
+      const nextPage = rowEditMode ? paginationFromState.page : page || 1;
       const pagination = get(state, 'view.pagination')
         ? {
             totalItems: { $set: nextTotalItems },
@@ -588,7 +600,13 @@ export const tableReducer = (state = {}, action) => {
         return filter;
       });
 
-      const activeBar = view?.toolbar?.activeBar;
+      const allRowsId = [];
+      updatedData.forEach((row) => fillArrWithRowIds(row, allRowsId));
+
+      const selectedIds = view ? view.table.selectedIds : [];
+      const isSelectingAll = isMultiSelect && selectedIds?.length === allRowsId.length;
+      const isSelectAllSelected = view ? view.table.isSelectAllSelected || isSelectingAll : false;
+
       return update(state, {
         data: {
           $set: updatedData,
@@ -631,13 +649,13 @@ export const tableReducer = (state = {}, action) => {
             },
             // Reset the selection to the previous values
             selectedIds: {
-              $set: view ? view.table.selectedIds : [],
+              $set: selectedIds,
             },
             isSelectAllIndeterminate: {
               $set: view ? view.table.isSelectAllIndeterminate : false,
             },
             isSelectAllSelected: {
-              $set: view ? view.table.isSelectAllSelected : false,
+              $set: isSelectAllSelected,
             },
             loadingMoreIds: {
               $set: loadingMoreIds,

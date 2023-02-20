@@ -30,7 +30,7 @@ import {
 } from '../../constants/DateConstants';
 import Button from '../Button/Button';
 import FlyoutMenu, { FlyoutMenuDirection } from '../FlyoutMenu/FlyoutMenu';
-import { handleSpecificKeyDown } from '../../utils/componentUtilityFunctions';
+import { handleSpecificKeyDown, useOnClickOutside } from '../../utils/componentUtilityFunctions';
 import { Tooltip } from '../Tooltip';
 
 import {
@@ -46,6 +46,9 @@ import {
   useDateTimePickerRef,
   useDateTimePickerTooltip,
   useRelativeDateTimeValue,
+  useDateTimePickerClickOutside,
+  useCloseDropdown,
+  useCustomHeight,
 } from './dateTimePickerUtils';
 
 const { iotPrefix, prefix } = settings;
@@ -174,7 +177,7 @@ const propTypes = {
   renderInPortal: PropTypes.bool,
   /** Auto reposition if flyout menu offscreen */
   useAutoPositioning: PropTypes.bool,
-  style: PropTypes.objectOf(PropTypes.string),
+  style: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.number])),
 };
 
 const defaultProps = {
@@ -307,8 +310,6 @@ const DateTimePicker = ({
     }),
     [i18n]
   );
-  const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
-
   // initialize the dayjs locale
   useEffect(() => {
     dayjs.locale(locale);
@@ -327,6 +328,15 @@ const DateTimePicker = ({
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
   const relativeSelect = useRef(null);
+  const containerRef = useRef();
+  const dropdownRef = useRef();
+  const updatedStyle = useMemo(
+    () => ({
+      ...style,
+      '--zIndex': style.zIndex ?? 0,
+    }),
+    [style]
+  );
   const {
     absoluteValue,
     setAbsoluteValue,
@@ -362,7 +372,7 @@ const DateTimePicker = ({
     onNavigateRadioButton,
     onNavigatePresets,
   } = useDateTimePickerKeyboardInteraction({ expanded, setCustomRangeKind });
-  const [isTooltipOpen, toggleTooltip] = useDateTimePickerTooltip({ isExpanded });
+  const [isTooltipOpen, toggleTooltip, setIsTooltipOpen] = useDateTimePickerTooltip({ isExpanded });
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -589,7 +599,8 @@ const DateTimePicker = ({
     customRangeKind === PICKER_KINDS.ABSOLUTE &&
     (absoluteStartTimeInvalid ||
       absoluteEndTimeInvalid ||
-      (absoluteValue.startDate === '' && absoluteValue.endDate === ''));
+      (absoluteValue.startDate === '' && absoluteValue.endDate === '') ||
+      (hasTimeInput ? !absoluteValue.startTime || !absoluteValue.endTime : false));
 
   const disableApply = disableRelativeApply || disableAbsoluteApply;
 
@@ -640,6 +651,28 @@ const DateTimePicker = ({
       onCancel();
     }
   };
+
+  // Close tooltip if dropdown was closed by click outside
+  const onFieldBlur = (evt) => {
+    if (evt.target !== evt.currentTarget) {
+      setIsTooltipOpen(false);
+    }
+  };
+
+  const closeDropdown = useCloseDropdown({
+    isExpanded,
+    isCustomRange,
+    setIsCustomRange,
+    setIsExpanded,
+    parseDefaultValue,
+    defaultValue,
+    setCustomRangeKind,
+    lastAppliedValue,
+  });
+
+  const onClickOutside = useDateTimePickerClickOutside(closeDropdown, containerRef);
+
+  useOnClickOutside(dropdownRef, onClickOutside);
 
   // eslint-disable-next-line react/prop-types
   const CustomFooter = () => {
@@ -692,13 +725,28 @@ const DateTimePicker = ({
     : 288;
   const menuOffsetTop = menuOffset?.top ? menuOffset.top : 0;
 
+  const [offTop, , inputTop, inputBottom, customHeight, maxHeight] = useCustomHeight({
+    containerRef,
+    isCustomRange,
+    showRelativeOption,
+    customRangeKind,
+    setIsExpanded,
+  });
+
+  const direction = useAutoPositioning
+    ? offTop
+      ? FlyoutMenuDirection.BottomEnd
+      : FlyoutMenuDirection.TopEnd
+    : FlyoutMenuDirection.BottomEnd;
+
   return (
-    <div className={`${iotPrefix}--date-time-pickerv2`}>
+    <div className={`${iotPrefix}--date-time-pickerv2`} ref={containerRef}>
       <div
         data-testid={testId}
         id={`${id}-${iotPrefix}--date-time-pickerv2__wrapper`}
         className={classnames(`${iotPrefix}--date-time-pickerv2__wrapper`, {
           [`${iotPrefix}--date-time-pickerv2__wrapper--disabled`]: disabled,
+          [`${iotPrefix}--date-time-pickerv2__wrapper--invalid`]: invalidState,
         })}
         style={{ '--wrapper-width': hasIconOnly ? '3rem' : '20rem' }}
         role="button"
@@ -718,7 +766,7 @@ const DateTimePicker = ({
           onFieldInteraction(event);
         })}
         onFocus={toggleTooltip}
-        onBlur={toggleTooltip}
+        onBlur={onFieldBlur}
         onMouseEnter={toggleTooltip}
         onMouseLeave={toggleTooltip}
         tabIndex={0}
@@ -727,8 +775,8 @@ const DateTimePicker = ({
           className={classnames({
             [`${iotPrefix}--date-time-picker__box--full`]: !hasIconOnly,
             [`${iotPrefix}--date-time-picker__box--light`]: light,
-            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
             [`${iotPrefix}--date-time-picker__box--disabled`]: disabled,
+            [`${iotPrefix}--date-time-picker__box--invalid`]: invalidState,
           })}
         >
           {!hasIconOnly ? (
@@ -791,9 +839,11 @@ const DateTimePicker = ({
             menuOffset={{
               top: menuOffsetTop,
               left: menuOffsetLeft,
+              inputTop,
+              inputBottom,
             }}
             testId={`${testId}-datepicker-flyout`}
-            direction={FlyoutMenuDirection.BottomEnd}
+            direction={direction}
             customFooter={CustomFooter}
             tooltipFocusTrap={false}
             renderInPortal={renderInPortal}
@@ -802,10 +852,16 @@ const DateTimePicker = ({
               [`${iotPrefix}--date-time-picker--tooltip--icon`]: hasIconOnly,
             })}
             tooltipContentClassName={`${iotPrefix}--date-time-picker--menu`}
+            style={updatedStyle}
           >
             <div
+              ref={dropdownRef}
               className={`${iotPrefix}--date-time-picker__menu-scroll`}
-              style={{ ...updatedStyle, '--wrapper-width': '20rem' }}
+              style={{
+                '--wrapper-width': '20rem',
+                height: customHeight,
+                maxHeight,
+              }}
               role="listbox"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
@@ -1018,7 +1074,7 @@ const DateTimePicker = ({
                               id={`${id}-start-time`}
                               invalid={absoluteStartTimeInvalid}
                               labelText={mergedI18n.startTimeLabel}
-                              value={absoluteValue ? absoluteValue.startTime : '00:00'}
+                              value={absoluteValue ? absoluteValue.startTime : null}
                               i18n={i18n}
                               onChange={onAbsoluteStartTimeChange}
                               spinner
@@ -1029,7 +1085,7 @@ const DateTimePicker = ({
                               id={`${id}-end-time`}
                               invalid={absoluteEndTimeInvalid}
                               labelText={mergedI18n.endTimeLabel}
-                              value={absoluteValue ? absoluteValue.endTime : '00:00'}
+                              value={absoluteValue ? absoluteValue.endTime : null}
                               i18n={i18n}
                               onChange={onAbsoluteEndTimeChange}
                               spinner

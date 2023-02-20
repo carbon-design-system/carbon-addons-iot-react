@@ -40,10 +40,11 @@ export const tableRegister = ({
   view,
   totalItems,
   hasUserViewManagement,
+  hasRowSelection,
   instanceId = null,
 }) => ({
   type: TABLE_REGISTER,
-  payload: { data, view, isLoading, totalItems, hasUserViewManagement },
+  payload: { data, view, isLoading, totalItems, hasUserViewManagement, hasRowSelection },
   instanceId,
 });
 

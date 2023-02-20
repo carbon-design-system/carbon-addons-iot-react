@@ -2860,6 +2860,16 @@ describe('Table', () => {
   });
 
   it('should throw a prop-type warning if float used for maxPages', () => {
+    jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+      bottom: 34,
+      height: 24,
+      left: 1140,
+      right: 1213,
+      top: 10,
+      width: 72,
+      x: 1140,
+      y: 10,
+    }));
     const { __DEV__ } = global;
     global.__DEV__ = true;
     jest.spyOn(console, 'error').mockImplementation(() => {});
@@ -2916,6 +2926,16 @@ describe('Table', () => {
     });
 
     it('should render only visible rows when shouldLazyRender:true', () => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        bottom: 34,
+        height: 24,
+        left: 1140,
+        right: 1213,
+        top: 10,
+        width: 72,
+        x: 1140,
+        y: 10,
+      }));
       let isIntersecting = true;
       const observer = {
         observe: jest.fn().mockImplementation(() => {
@@ -2958,6 +2978,16 @@ describe('Table', () => {
     });
 
     it('should match the correct number of columns when lazy rendering', () => {
+      jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({
+        bottom: 34,
+        height: 24,
+        left: 1140,
+        right: 1213,
+        top: 10,
+        width: 72,
+        x: 1140,
+        y: 10,
+      }));
       let isIntersecting = true;
       const observer = {
         observe: jest.fn().mockImplementation(() => {
@@ -3215,8 +3245,13 @@ describe('Table', () => {
     });
 
     it('should render icons given various renderIcon types', async () => {
+      const tableId = '123456';
+      const viewOffActionId = 'off-in-toolbar';
+      const arrowRightActionId = 'arrow-right-in-toolbar';
+
       render(
         <Table
+          id={tableId}
           testId="icon-render"
           columns={tableColumns}
           data={[tableData[0]]}
@@ -3255,12 +3290,12 @@ describe('Table', () => {
                   isOverflow: true,
                 },
                 {
-                  id: 'off-in-toolbar',
+                  id: viewOffActionId,
                   renderIcon: () => <ViewOff16 aria-label="View off toolbar" />,
                   labelText: 'View off toolbar',
                 },
                 {
-                  id: 'arrow-right-in-toolbar',
+                  id: arrowRightActionId,
                   renderIcon: ArrowRight16,
                   labelText: 'Arrow right toolbar',
                 },
@@ -3270,18 +3305,19 @@ describe('Table', () => {
         />
       );
 
-      expect(screen.getByTitle('View off toolbar')).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').firstChild).toBeVisible();
-      expect(screen.getByTitle('View off toolbar').firstChild).toHaveAttribute(
-        'aria-label',
-        'View off toolbar'
+      const viewOffIconButton = screen.getByTestId(
+        `${tableId}-toolbar-actions-button-${viewOffActionId}`
       );
-      expect(screen.getByTitle('Arrow right toolbar')).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').firstChild).toBeVisible();
-      expect(screen.getByTitle('Arrow right toolbar').firstChild).toHaveAttribute(
-        'aria-label',
-        'Arrow right toolbar'
+      expect(viewOffIconButton).toBeVisible();
+      expect(viewOffIconButton.lastChild).toBeVisible();
+      expect(viewOffIconButton.lastChild).toHaveAttribute('aria-label', 'View off toolbar');
+
+      const arrowRightIconButton = screen.getByTestId(
+        `${tableId}-toolbar-actions-button-${arrowRightActionId}`
       );
+      expect(arrowRightIconButton).toBeVisible();
+      expect(arrowRightIconButton.lastChild).toBeVisible();
+      expect(arrowRightIconButton.lastChild).toHaveAttribute('aria-label', 'Arrow right toolbar');
 
       userEvent.click(screen.getByRole('button', { name: OVERFLOW_BUTTON_LABEL }));
       expect(screen.getByRole('menuitem', { name: /a-warning-label/ })).toBeVisible();

@@ -1,4 +1,5 @@
 @import '../../../globals/vars';
+@import '../../../globals/mixins';
 @import './table-toolbar-svg-button';
 @import './advanced-filter-flyout';
 
@@ -34,6 +35,14 @@ div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
 
   .#{$prefix}--toolbar-search-container-active .#{$prefix}--search-input {
     border-bottom: 0;
+  }
+
+  .#{$iot-prefix}--table-overflow-batch-actions.#{$prefix}--overflow-menu--open {
+    @include hide-tooltip();
+  }
+
+  .#{$iot-prefix}--table-toolbar-aggregations__overflow-menu.#{$prefix}--overflow-menu--open {
+    @include hide-tooltip();
   }
 }
 
@@ -130,7 +139,7 @@ html[dir='rtl'] {
     outline-offset: -($spacing-01);
   }
 
-  > svg {
+  &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper .#{$prefix}--btn__icon {
     fill: $ui-01;
   }
 
@@ -139,6 +148,11 @@ html[dir='rtl'] {
   &:focus {
     & + .#{$prefix}--btn--primary.#{$prefix}--batch-summary__cancel::before {
       opacity: 0;
+    }
+
+    &.#{$iot-prefix}--overflow-menu-icon.#{$iot-prefix}--tooltip-svg-wrapper
+      svg.#{$prefix}--btn__icon {
+      fill: $ui-01;
     }
   }
 }

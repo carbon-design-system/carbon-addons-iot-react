@@ -1,15 +1,10 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import {
-  TableRow,
-  TableExpandRow,
-  TableCell,
-  Checkbox,
-  RadioButton,
-} from 'carbon-components-react';
+import { TableRow, TableCell, Checkbox, RadioButton } from 'carbon-components-react';
 import classnames from 'classnames';
 
 import { settings } from '../../../../constants/Settings';
+import { WrapCellTextPropTypes } from '../../../../constants/SharedPropTypes';
 import RowActionsCell from '../RowActionsCell/RowActionsCell';
 import TableCellRenderer from '../../TableCellRenderer/TableCellRenderer';
 import {
@@ -18,6 +13,8 @@ import {
   TableColumnsPropTypes,
 } from '../../TablePropTypes';
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
+
+import TableExpandRow from './TableExpandRow';
 
 const { prefix, iotPrefix } = settings;
 
@@ -61,7 +58,7 @@ const propTypes = {
     ]),
     hasRowActions: PropTypes.bool,
     shouldExpandOnRowClick: PropTypes.bool,
-    wrapCellText: PropTypes.oneOf(['always', 'never', 'auto', 'alwaysTruncate']).isRequired,
+    wrapCellText: WrapCellTextPropTypes.isRequired,
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
@@ -300,7 +297,9 @@ const TableBodyRow = ({
             width={initialColumnWidth}
           >
             <span
-              className={`${iotPrefix}--table__cell__offset`}
+              className={classnames(`${iotPrefix}--table__cell__offset`, {
+                [`${iotPrefix}--table__cell__offset__expand`]: wrapCellText === 'expand',
+              })}
               style={{ '--row-nesting-offset': `${offset}px` }}
             >
               {col.editDataFunction && isEditMode ? (
@@ -363,7 +362,7 @@ const TableBodyRow = ({
     isExpanded ? (
       <Fragment key={id}>
         <TableExpandRow
-          expandHeader={`${tableId}-expand`}
+          expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
           })}
@@ -392,6 +391,8 @@ const TableBodyRow = ({
           style={{
             '--row-nesting-offset': `${nestingOffset}px`,
           }}
+          rowId={id}
+          langDir={langDir}
         >
           {tableCells}
         </TableExpandRow>
@@ -409,7 +410,7 @@ const TableBodyRow = ({
     ) : (
       <TableExpandRow
         key={id}
-        expandHeader={`${tableId}-expand`}
+        expandHeaderId={`${tableId}-expand`}
         className={classnames(`${iotPrefix}--expandable-tablerow`, {
           [`${iotPrefix}--expandable-tablerow--parent`]:
             hasRowNesting && hasRowNesting?.hasSingleNestedHierarchy && nestingChildCount > 0,
@@ -444,6 +445,8 @@ const TableBodyRow = ({
         style={{
           '--row-nesting-offset': `${nestingOffset}px`,
         }}
+        rowId={id}
+        langDir={langDir}
       >
         {tableCells}
       </TableExpandRow>

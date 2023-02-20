@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash-es';
+import { cloneDeep, debounce } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
@@ -114,6 +114,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
 
       returnValue.absolute.start = new Date(startDate.valueOf());
 
+      const startTimeValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
+
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
@@ -122,14 +126,15 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         }
+
+        const endTimeValue = value.endTime
+          ? `${dayjs(endDate).format(dateTimeMask)}`
+          : `${dayjs(endDate).format(dateTimeMask)}`.split(' ')[0];
+
         returnValue.absolute.end = new Date(endDate.valueOf());
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          endDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${endTimeValue}`;
       } else {
-        readableValue = `${dayjs(startDate).format(dateTimeMask)} ${toLabel} ${dayjs(
-          startDate
-        ).format(dateTimeMask)}`;
+        readableValue = `${startTimeValue} ${toLabel} ${startTimeValue}`;
       }
       break;
     }
@@ -149,7 +154,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
       returnValue.single.start = new Date(startDate.valueOf());
-      readableValue = `${dayjs(startDate).format(dateTimeMask)}`;
+      readableValue = value.startTime
+        ? `${dayjs(startDate).format(dateTimeMask)}`
+        : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
       break;
     }
     default:
@@ -366,9 +373,9 @@ export const useAbsoluteDateTimeValue = () => {
   const resetAbsoluteValue = () => {
     setAbsoluteValue({
       startDate: '',
-      startTime: '00:00',
+      startTime: null,
       endDate: '',
-      endTime: '00:00',
+      endTime: null,
     });
   };
 
@@ -668,5 +675,242 @@ export const useDateTimePickerTooltip = ({ isExpanded }) => {
     }
   };
 
-  return [isTooltipOpen, toggleTooltip];
+  return [isTooltipOpen, toggleTooltip, setIsTooltipOpen];
+};
+
+/**
+ * Hook to validate event and invoke callback
+ * @param {function} closeDropdownCallback: function that will be called if validation passes
+ * @returns void
+ */
+export const useDateTimePickerClickOutside = (closeDropdownCallback, containerRef) => (evt) => {
+  if (
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__listitem--custom`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-back`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-reset`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-cancel`) ||
+    evt?.target.classList?.contains(`${iotPrefix}--date-time-picker__menu-btn-apply`)
+  ) {
+    return;
+  }
+
+  if (containerRef.current?.firstChild.contains(evt.target)) {
+    closeDropdownCallback({ isEventOnField: true });
+    return;
+  }
+
+  // Composed path is needed in order to detect if event is bubbled from TimePickerSpinner which is a React Portal
+  if (
+    evt.composed &&
+    evt.composedPath().some((el) => el.classList?.contains(`${iotPrefix}--time-picker-spinner`))
+  ) {
+    return;
+  }
+
+  closeDropdownCallback({ isEventOnField: false });
+};
+
+/**
+ * Utility function to get time picker kind key
+ * @param {Object} object: an object containing:
+ *   kind: time picker kind
+ *   timeRangeKind: time range kind
+ * @returns
+ */
+const getTimeRangeKindKey = ({ kind, timeRangeKind }) => {
+  if (kind === PICKER_KINDS.SINGLE || timeRangeKind === PICKER_KINDS.SINGLE) {
+    return 'timeSingleValue';
+  }
+  return 'timeRangeValue';
+};
+
+/**
+ * Hook to close time picker dropdown and reset default value
+ * @param {Object} object: an object containing:
+ *   isExpanded: current state of the dropdown
+ *   setIsExpanded: useState callback
+ *   isCustomRange: if dropdown was opened in custom range
+ *   setIsCustomRange: useState callback
+ *   defaultValue: props value for time picker
+ *   parseDefaultValue: parses value from string to time picker format
+ *   setCustomRangeKind: useState callback
+ *   lastAppliedValue: last saved value
+ * @returns {function}
+ */
+export const useCloseDropdown = ({
+  isExpanded,
+  setIsExpanded,
+  isCustomRange,
+  setIsCustomRange,
+  defaultValue,
+  parseDefaultValue,
+  setCustomRangeKind,
+  lastAppliedValue,
+  singleTimeValue,
+  setSingleDateValue,
+  setSingleTimeValue,
+}) =>
+  useCallback(
+    ({ isEventOnField }) => {
+      if (!isExpanded) {
+        return;
+      }
+
+      if (!isEventOnField) {
+        setIsExpanded(false);
+      }
+
+      // memoized value at the time when dropdown was opened
+      if (!isCustomRange) {
+        setIsCustomRange(false);
+      }
+
+      if (
+        (lastAppliedValue?.timeRangeKind === PICKER_KINDS.SINGLE ||
+          lastAppliedValue?.kind === PICKER_KINDS.SINGLE) &&
+        !singleTimeValue
+      ) {
+        setSingleDateValue({ start: null, startDate: null });
+        setSingleTimeValue(null);
+        return;
+      }
+
+      if (lastAppliedValue) {
+        setCustomRangeKind(lastAppliedValue.kind || lastAppliedValue.timeRangeKind);
+        parseDefaultValue({
+          ...lastAppliedValue,
+          ...(!lastAppliedValue.timeRangeKind && {
+            timeRangeKind: lastAppliedValue?.kind,
+            [getTimeRangeKindKey(lastAppliedValue)]: lastAppliedValue[
+              lastAppliedValue?.kind.toLowerCase()
+            ],
+          }),
+        });
+      } else {
+        setCustomRangeKind(defaultValue ? defaultValue.timeRangeKind : PICKER_KINDS.RELATIVE);
+        parseDefaultValue(defaultValue);
+      }
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]
+  );
+
+/**
+ * For a given element, walk up the dom to find scroll container.
+ * Only gets first as modals should prevent scrolling in elements above.
+ * @param{element} element
+ */
+export const getScrollParent = (element) => {
+  try {
+    /* istanbul ignore next */
+    if (
+      element.scrollHeight > parseInt(element.clientHeight, 10) + 10 ||
+      element.scrollWidth > parseInt(element.clientWidth, 10) + 10
+    ) {
+      const computedStyle = window.getComputedStyle(element);
+      if (
+        ['scroll', 'auto'].includes(computedStyle.overflowY) ||
+        ['scroll', 'auto'].includes(computedStyle.overflow)
+      ) {
+        return element;
+      }
+    }
+    if (element.parentElement) {
+      return getScrollParent(element.parentElement);
+    }
+    return document.scrollingElement;
+  } catch (error) {
+    /* istanbul ignore next */
+    return window;
+  }
+};
+
+/**
+ * A hook handling the height of the drop down menu
+ *
+ * @param {object} containerRef the ref to the container div of the drop down menu
+ * @param {boolean} isSingleSelect if it is single select calendar
+ * @param {boolean} isCustomRange if dropdown was opened in custom range
+ * @param {boolean} showRelativeOption are the relative options shown by default
+ * @param {string} customRangeKind custom range kind is either relative or absolute
+ * @param {function} setIsExpanded set the isExpanded state
+ * @returns Object An object containing:
+ *    offTop (boolean): if the menu is off top
+ *    offBottom (boolean): if the menu is off bottom
+ *    inputTop (string) : the top position of the date time input
+ *    inputBottom (string): the bottom position of the date time input
+ *    customHeight (string): the adjusted height of the drop down menu if both offTop and offBottom are true
+ *    maxHeight (string) : maximum height of the drop down menu
+ */
+export const useCustomHeight = ({
+  containerRef,
+  isSingleSelect,
+  isCustomRange,
+  showRelativeOption,
+  customRangeKind,
+  setIsExpanded,
+}) => {
+  // calculate max height for varies dropdown
+  const presetMaxHeight = 315;
+  const relativeMaxHeight = 269;
+  const withoutRelativeOptionMaxHeight = 446;
+  const absoluteMaxHeight = 555;
+  const singleMaxHeight = 442;
+  const footerHeight = 40;
+  const maxHeight = isCustomRange
+    ? showRelativeOption
+      ? isSingleSelect
+        ? singleMaxHeight
+        : customRangeKind === PICKER_KINDS.ABSOLUTE
+        ? absoluteMaxHeight
+        : relativeMaxHeight
+      : withoutRelativeOptionMaxHeight
+    : presetMaxHeight;
+
+  const closeDropDown = () => {
+    setIsExpanded(false);
+  };
+
+  useEffect(() => {
+    const firstScrollableParent = getScrollParent(containerRef.current);
+    if (firstScrollableParent) {
+      firstScrollableParent.addEventListener('scroll', closeDropDown);
+    }
+    window.addEventListener('scroll', closeDropDown);
+    return () => {
+      if (firstScrollableParent) {
+        firstScrollableParent.removeEventListener('scroll', closeDropDown);
+      }
+      window.removeEventListener('scroll', closeDropDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // re-calculate window height when resize
+  const [windowHeight, setWindowHeight] = useState(
+    window.innerHeight || document.documentElement.clientHeight
+  );
+
+  const handleWindowResize = debounce(() => {
+    setWindowHeight(window.innerHeight || document.documentElement.clientHeight);
+  }, 50);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [handleWindowResize]);
+
+  // calculate if flyout menu will be off top or bottom of the screen
+  const inputBottom = containerRef?.current?.getBoundingClientRect().bottom;
+  const inputTop = containerRef?.current?.getBoundingClientRect().top;
+  const flyoutMenuHeight = maxHeight + footerHeight;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+  const offTop = inputTop < flyoutMenuHeight;
+  const topGap = inputTop;
+  const bottomGap = windowHeight - inputBottom;
+
+  const customHeight =
+    offBottom && offTop ? (topGap > bottomGap ? topGap : bottomGap) - footerHeight : undefined;
+
+  return [offTop, offBottom, inputTop, inputBottom, customHeight, maxHeight];
 };

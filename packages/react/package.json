@@ -183,7 +183,7 @@
     "carbon-components-react": "7.56.0",
     "carbon-icons": "^7.0.7",
     "classnames": "^2.2.5",
-    "core-js": "3.6.5",
+    "core-js": "3.26.1",
     "dayjs": "^1.10.4",
     "immutability-helper": "^2.9.0",
     "js-file-download": "^0.4.7",
@@ -259,7 +259,7 @@
     "@testing-library/react": "^10.4.8",
     "@testing-library/react-hooks": "^5.1.2",
     "@testing-library/user-event": "12.8.3",
-    "accessibility-checker": "^3.0.6",
+    "accessibility-checker": "3.1.38",
     "autoprefixer": "^9.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
@@ -340,9 +340,10 @@
     "whatwg-fetch": "^3.0.0"
   },
   "sideEffects": false,
-  "version": "2.151.1",
+  "version": "2.152.0-next.32",
   "resolutions": {
     "chokidar": "3.3.1",
-    "react-grid-layout": "1.2.2"
+    "react-grid-layout": "1.2.2",
+    "got": "11.8.5"
   }
 }

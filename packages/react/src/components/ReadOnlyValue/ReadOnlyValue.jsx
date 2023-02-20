@@ -1,53 +1,59 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { SkeletonText } from 'carbon-components-react';
 
 import { settings } from '../../constants/Settings';
 
+import { ReadOnlyValuePropTypes, ReadOnlyValueDefaultProps } from './ReadOnlyValuePropTypes';
+
 const { iotPrefix } = settings;
 
-const propTypes = {
-  type: PropTypes.oneOf(['stacked', 'inline', 'inline_small']),
-  label: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  testId: PropTypes.string,
-};
+const ReadOnlyValue = ({
+  type,
+  label,
+  value,
+  className,
+  testId,
+  isLoading,
+  skeletonLoadingLabel,
+  skeletonLoadingValue,
+}) => (
+  <div
+    data-testid={testId}
+    className={classnames(className, `${iotPrefix}--read-only-value`, {
+      [`${iotPrefix}--read-only-value--loading`]: isLoading,
+      [`${iotPrefix}--read-only-value__inline`]: type === 'inline' || type === 'inline_small',
+      [`${iotPrefix}--read-only-value__inline_small`]: type === 'inline_small',
+    })}
+  >
+    {/* eslint-disable-next-line jsx-a11y/label-has-for */}
+    <label data-testid={`${testId}--label`} htmlFor={`readonly-${label}`}>
+      {isLoading ? (
+        <>
+          <SkeletonText {...skeletonLoadingLabel} />
+          <SkeletonText {...skeletonLoadingValue} />
+        </>
+      ) : (
+        <>
+          {label}
+          {typeof value === 'string' ? (
+            <textarea
+              data-testid={`${testId}--value`}
+              type="text"
+              id={`readonly-${label}`}
+              name={value}
+              value={value}
+              readOnly
+            />
+          ) : (
+            <div id={`readonly-${label}`}>{value}</div>
+          )}
+        </>
+      )}
+    </label>
+  </div>
+);
 
-const defaultProps = {
-  type: 'stacked',
-  label: '',
-  value: '',
-  testId: 'read-only-value',
-};
-const ReadOnlyValue = ({ type, label, value, className, testId }) => {
-  return (
-    <div
-      data-testid={testId}
-      className={classnames(className, `${iotPrefix}--read-only-value`, {
-        [`${iotPrefix}--read-only-value__inline`]: type === 'inline' || type === 'inline_small',
-        [`${iotPrefix}--read-only-value__inline_small`]: type === 'inline_small',
-      })}
-    >
-      {/* eslint-disable-next-line jsx-a11y/label-has-for */}
-      <label data-testid={`${testId}--label`} htmlFor={`readonly-${label}`}>
-        {label}
-        {typeof value === 'string' ? (
-          <textarea
-            data-testid={`${testId}--value`}
-            type="text"
-            id={`readonly-${label}`}
-            name={value}
-            value={value}
-            readOnly
-          />
-        ) : (
-          <div id={`readonly-${label}`}>{value}</div>
-        )}
-      </label>
-    </div>
-  );
-};
-
-ReadOnlyValue.propTypes = propTypes;
-ReadOnlyValue.defaultProps = defaultProps;
+ReadOnlyValue.propTypes = ReadOnlyValuePropTypes;
+ReadOnlyValue.defaultProps = ReadOnlyValueDefaultProps;
 export default ReadOnlyValue;

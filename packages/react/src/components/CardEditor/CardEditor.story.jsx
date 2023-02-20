@@ -301,6 +301,13 @@ export const WithTooltipLink = () => (
       onAddCard={action('onAddCard')}
       dataSeriesItemLinks={{ value: 'www.ibm.com' }}
       actions={commonActions}
+      dataItems={[
+        {
+          dataItemId: 'discharge_flow_rate',
+          dataSourceId: 'discharge_flow_rate',
+          label: 'discharge_flow_rate',
+        },
+      ]}
     />
   </div>
 );

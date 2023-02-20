@@ -33,7 +33,12 @@ const ContentFormItemTitle = ({ title, tooltip }) => {
             tooltipId={`card-edit-form-${title}`}
           >
             <p>
-              {tooltipText} {href && linkText ? <Link href={href}>{linkText}</Link> : null}
+              {tooltipText}{' '}
+              {href && linkText ? (
+                <Link href={href} target="_blank" rel="noopener noreferrer">
+                  {linkText}
+                </Link>
+              ) : null}
             </p>
           </Tooltip>
         ) : null}
