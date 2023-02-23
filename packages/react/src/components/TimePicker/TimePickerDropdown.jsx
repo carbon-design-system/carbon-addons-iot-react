@@ -34,8 +34,8 @@ const timeUtils = {
     /[0-5][0-9]/.test(selectedTime.substring(3, 5))
       ? selectedTime.substring(3, 5)
       : currentTime.substring(4, 6),
-  getMeridiem: (selectedTime, currentTime) =>
-    /AM|PM/.test(selectedTime.substring(selectedTime.length - 2))
+  getMeridiem: (selectedTime, currentTime, amString, pmString) =>
+    new RegExp(`${amString}|${pmString}`).test(selectedTime.substring(selectedTime.length - 2))
       ? selectedTime.substring(selectedTime.length - 2)
       : currentTime.substring(6),
 };
@@ -65,6 +65,8 @@ const propTypes = {
     timeIconText: PropTypes.string,
     placeholderText: PropTypes.string,
     placeholderText24h: PropTypes.string,
+    amString: PropTypes.string,
+    pmString: PropTypes.string,
   }),
   /** Size of input */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
@@ -100,6 +102,8 @@ const defaultProps = {
     placeholderText: 'hh:mm XM',
     placeholderText24h: 'HH:mm',
     readOnlyBtnText: 'Read only',
+    amString: 'AM',
+    pmString: 'PM',
   },
   size: 'md',
   disabled: false,
@@ -113,11 +117,17 @@ const defaultProps = {
   is24hours: false,
 };
 
-const validate = (newValue, is24hours) => {
+const validate = (newValue, is24hours, amString, pmString) => {
   if (is24hours) {
     return /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/.test(newValue) || newValue === '';
   }
-  return /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9] (AM|PM)$/.test(newValue) || newValue === '';
+  const timeRegEx = /^((0[1-9])?|(1[0-2])?)*:[0-5][0-9]/;
+  const meridianRegEx = new RegExp(`${amString}|${pmString}`);
+
+  return (
+    (timeRegEx.test(newValue.split(' ')[0]) && meridianRegEx.test(newValue.split(' ')[1])) ||
+    newValue === ''
+  );
 };
 
 const TimePickerDropdown = ({
@@ -254,21 +264,27 @@ const TimePickerDropdown = ({
     if (typeof e === 'object') {
       val = e.target.value;
     }
-    const isValid = /[0-9: APM]/.test(val.substring(val.length - 1));
+    const isValid = /[0-9: APM]/.test(val.substring(val.length - 2));
     // @TODO: detect the length and run validation for as many as we can
     // This value is pasted in or autocompleted
     // istanbul ignore else
+
+    const newVal = !is24hours
+      ? val.split(' ')[1] === 'AM' || val.split(' ')[1] === i18n.amString
+        ? `${val.split(' ')[0]} ${i18n.amString}`
+        : `${val.split(' ')[0]} ${i18n.pmString}`
+      : val;
     if (val.length > 1) {
       if (focusedInput === 0) {
-        setValueState(val);
+        setValueState(newVal);
       } else {
-        setSecondaryValueState(val);
+        setSecondaryValueState(newVal);
       }
     } else if (isValid || val === '') {
       if (focusedInput === 0) {
-        setValueState(val);
+        setValueState(newVal);
       } else {
-        setSecondaryValueState(val);
+        setSecondaryValueState(newVal);
       }
     }
   };
@@ -283,10 +299,12 @@ const TimePickerDropdown = ({
     if (!contained) {
       // close dropdown and validate
       setOpenState(false);
-      setInvalidState(!validate(inputRef.current.value, is24hours));
+      setInvalidState(!validate(inputRef.current.value, is24hours, i18n.amString, i18n.pmString));
       /* istanbul ignore else */
       if (secondaryInputRef.current) {
-        setSecondaryInvalidState(!validate(secondaryInputRef.current.value, is24hours));
+        setSecondaryInvalidState(
+          !validate(secondaryInputRef.current.value, is24hours, i18n.amString, i18n.pmString)
+        );
       }
     }
   };
@@ -546,6 +564,8 @@ const TimePickerDropdown = ({
           ref={dropDownRef}
           style={style}
           is24hours={is24hours}
+          amString={i18n.amString}
+          pmString={i18n.pmString}
         />
       ) : null}
     </div>
@@ -564,9 +584,9 @@ const listItemsForVerticalMinutes = Array.from(Array(60)).map((el, i) => {
   return { id: index, value: index };
 });
 
-const listItemsForVerticalMeridiem = [
-  { id: 'AM', value: 'AM' },
-  { id: 'PM', value: 'PM' },
+const listItemsForVerticalMeridiem = (amString, pmString) => [
+  { id: 'AM', value: amString },
+  { id: 'PM', value: pmString },
 ];
 
 const spinnerPropTypes = {
@@ -576,6 +596,8 @@ const spinnerPropTypes = {
   testId: PropTypes.string,
   style: PropTypes.objectOf(PropTypes.string),
   is24hours: PropTypes.bool,
+  amString: PropTypes.string,
+  pmString: PropTypes.string,
 };
 
 /* istanbul ignore next */
@@ -585,10 +607,12 @@ const defaultSpinnerProps = {
   onChange: () => {},
   style: {},
   is24hours: false,
+  amString: 'AM',
+  pmString: 'PM',
 };
 
 export const TimePickerSpinner = React.forwardRef(
-  ({ onChange, position, value, testId, style, is24hours }, ref) => {
+  ({ onChange, position, value, testId, style, is24hours, amString, pmString }, ref) => {
     const currentTime = dayjs().format(AVAILABLE_FORMATS);
 
     const updatedStyle = useMemo(() => ({ ...style, '--zIndex': style.zIndex ?? 0 }), [style]);
@@ -600,11 +624,10 @@ export const TimePickerSpinner = React.forwardRef(
       [value, is24hours, currentTime]
     );
     const secondVal = useMemo(() => timeUtils.getMinutes(value, currentTime), [value, currentTime]);
-    const thirdVal = useMemo(() => (is24hours ? '' : timeUtils.getMeridiem(value, currentTime)), [
-      is24hours,
-      value,
-      currentTime,
-    ]);
+    const thirdVal = useMemo(
+      () => (is24hours ? '' : timeUtils.getMeridiem(value, currentTime, amString, pmString)),
+      [is24hours, value, currentTime, amString, pmString]
+    );
     const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
     const [callbackValue, setCallbackValue] = useState(value);
     const [, setFocusedSpinner] = useState(0);
@@ -709,10 +732,10 @@ export const TimePickerSpinner = React.forwardRef(
             testId={`${testId}-list-spinner-3`}
             ref={thirdSpinnerRef}
             className={classnames(`${iotPrefix}--time-picker-spinner-last-list-spinner`, {
-              [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === 'PM',
+              [`${iotPrefix}--time-picker-spinner-last-list-spinner--PM`]: selected[2] === pmString,
             })}
             onClick={(e) => handleOnClick(e, 2)}
-            list={listItemsForVerticalMeridiem}
+            list={listItemsForVerticalMeridiem(amString, pmString)}
             defaultSelectedId={selected[2]}
             onRightArrowClick={handleRightArrowClick}
             onLeftArrowClick={handleLeftArrowClick}

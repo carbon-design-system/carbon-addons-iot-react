@@ -8942,9 +8942,11 @@ Map {
       "hideLabel": false,
       "hideSecondaryLabel": false,
       "i18n": Object {
+        "amString": "AM",
         "invalidText": "The time entered is invalid",
         "placeholderText": "hh:mm XM",
         "placeholderText24h": "HH:mm",
+        "pmString": "PM",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,
@@ -8984,6 +8986,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "amString": Object {
+              "type": "string",
+            },
             "helperText": Object {
               "type": "string",
             },
@@ -8998,6 +9003,9 @@ Map {
               "type": "string",
             },
             "placeholderText24h": Object {
+              "type": "string",
+            },
+            "pmString": Object {
               "type": "string",
             },
             "secondaryHelperText": Object {
@@ -9596,6 +9604,7 @@ Map {
       "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
+        "amString": "AM",
         "applyBtnLabel": "Apply",
         "backBtnLabel": "Back",
         "calendarLabel": "Calendar",
@@ -9612,6 +9621,7 @@ Map {
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
+        "pmString": "PM",
         "presetLabels": Array [],
         "relativeLabel": "Relative",
         "relativeLabels": Array [],
@@ -9932,6 +9942,9 @@ Map {
             "absoluteLabel": Object {
               "type": "string",
             },
+            "amString": Object {
+              "type": "string",
+            },
             "applyBtnLabel": Object {
               "type": "string",
             },
@@ -9983,6 +9996,9 @@ Map {
               "type": "string",
             },
             "number": Object {
+              "type": "string",
+            },
+            "pmString": Object {
               "type": "string",
             },
             "presetLabels": Object {

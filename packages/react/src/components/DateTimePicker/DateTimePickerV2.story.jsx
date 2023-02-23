@@ -194,6 +194,8 @@ export const SingleSelect = () => {
         i18n={object('i18n', {
           timePickerInvalidText: 'A valid value is required',
           invalidText: 'The date time entered is invalid',
+          amString: '午前',
+          pmString: '午后',
         })}
         style={{ zIndex: number('zIndex', 0) }}
         renderInPortal={boolean('renderInPortal', true)}

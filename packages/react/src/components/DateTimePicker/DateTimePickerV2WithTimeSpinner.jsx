@@ -174,6 +174,8 @@ export const propTypes = {
     number: PropTypes.string,
     timePickerInvalidText: PropTypes.string,
     invalidText: PropTypes.string,
+    amString: PropTypes.string,
+    pmString: PropTypes.string,
   }),
   /** Light version  */
   light: PropTypes.bool,
@@ -276,6 +278,8 @@ export const defaultProps = {
     number: 'number',
     timePickerInvalidText: undefined,
     invalidText: 'The date time entered is invalid',
+    amString: 'AM',
+    pmString: 'PM',
   },
   light: false,
   locale: 'en',
@@ -433,6 +437,31 @@ const DateTimePicker = ({
       startTime: null,
     },
   };
+
+  const translatedMeridian = {
+    AM: mergedI18n.amString,
+    am: mergedI18n.amString,
+    PM: mergedI18n.pmString,
+    pm: mergedI18n.pmString,
+  };
+
+  const getLocalizedTimeValue = (timeValue) => {
+    return is24hours
+      ? timeValue
+      : timeValue?.replace(/am|AM|pm|PM/g, (matched) => translatedMeridian[matched]);
+  };
+
+  const getTranslatedTimeValue = (timeValue) => {
+    const localizedMeridian = {
+      [mergedI18n.amString]: 'AM',
+      [mergedI18n.pmString]: 'PM',
+    };
+    const time = timeValue.split(' ')[0];
+    const meridian = localizedMeridian[timeValue.split(' ')[1]];
+
+    return is24hours ? timeValue : `${time} ${meridian}`;
+  };
+
   /**
    * Transforms a default or selected value into a full blown returnable object
    * @param {Object} [preset] clicked preset
@@ -475,7 +504,7 @@ const DateTimePicker = ({
     }
     setCurrentValue(value);
     const parsedValue = parseValue(value, dateTimeMask, mergedI18n.toLabel);
-    setHumanValue(parsedValue.readableValue);
+    setHumanValue(getLocalizedTimeValue(parsedValue.readableValue));
 
     return {
       ...value,
@@ -722,19 +751,26 @@ const DateTimePicker = ({
       timeRangeValue: null,
       timeSingleValue: null,
     };
+
     switch (value.kind) {
       case PICKER_KINDS.ABSOLUTE:
+        value.absolute.startTime = getLocalizedTimeValue(value.absolute.startTime);
+        value.absolute.endTime = getLocalizedTimeValue(value.absolute.endTime);
         returnValue.timeRangeValue = {
           ...value.absolute,
           humanValue,
           tooltipValue,
+          ISOStart: new Date(value.absolute.start).toISOString(),
+          ISOEnd: new Date(value.absolute.end).toISOString(),
         };
         break;
       case PICKER_KINDS.SINGLE:
+        value.single.startTime = getLocalizedTimeValue(value.single.startTime);
         returnValue.timeSingleValue = {
           ...value.single,
           humanValue,
           tooltipValue,
+          ISOStart: new Date(value.single.start).toISOString(),
         };
         break;
       case PICKER_KINDS.RELATIVE:
@@ -855,22 +891,31 @@ const DateTimePicker = ({
   };
 
   const handleRangeTimeValueChange = (startState, endState) => {
-    setRangeStartTimeValue(startState);
-    setRangeEndTimeValue(endState);
+    const translatedStartTimeValue = getTranslatedTimeValue(startState);
+    const translatedEndTimeValue = getTranslatedTimeValue(endState);
+    setRangeStartTimeValue(translatedStartTimeValue);
+    setRangeEndTimeValue(translatedEndTimeValue);
     setInvalidRangeStartTime(
-      (absoluteValue && invalidStartDate(startState, endState, absoluteValue)) ||
-        (is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState))
+      (absoluteValue &&
+        invalidStartDate(translatedStartTimeValue, translatedEndTimeValue, absoluteValue)) ||
+        (is24hours
+          ? !isValid24HourTime(translatedStartTimeValue)
+          : !isValid12HourTime(translatedStartTimeValue))
     );
     setInvalidRangeEndTime(
-      (absoluteValue && invalidEndDate(startState, endState, absoluteValue)) ||
-        (is24hours ? !isValid24HourTime(endState) : !isValid12HourTime(endState))
+      (absoluteValue &&
+        invalidEndDate(translatedStartTimeValue, translatedEndTimeValue, absoluteValue)) ||
+        (is24hours
+          ? !isValid24HourTime(translatedEndTimeValue)
+          : !isValid12HourTime(translatedEndTimeValue))
     );
   };
 
   const handleSingleTimeValueChange = (startState) => {
-    setSingleTimeValue(startState);
+    const translatedTimeValue = getTranslatedTimeValue(startState);
+    setSingleTimeValue(translatedTimeValue);
     setInvalidRangeStartTime(
-      is24hours ? !isValid24HourTime(startState) : !isValid12HourTime(startState)
+      is24hours ? !isValid24HourTime(translatedTimeValue) : !isValid12HourTime(translatedTimeValue)
     );
   };
 
@@ -1241,8 +1286,12 @@ const DateTimePicker = ({
                           className={`${iotPrefix}--time-picker-dropdown`}
                           id={id}
                           key={defaultSingleDateValue}
-                          value={isSingleSelect ? singleTimeValue : rangeStartTimeValue}
-                          secondaryValue={rangeEndTimeValue}
+                          value={
+                            isSingleSelect
+                              ? getLocalizedTimeValue(singleTimeValue)
+                              : getLocalizedTimeValue(rangeStartTimeValue)
+                          }
+                          secondaryValue={getLocalizedTimeValue(rangeEndTimeValue)}
                           hideLabel={!mergedI18n.startTimeLabel}
                           hideSecondaryLabel={!mergedI18n.endTimeLabel}
                           onChange={(startState, endState) =>
@@ -1256,6 +1305,8 @@ const DateTimePicker = ({
                             labelText: mergedI18n.startTimeLabel,
                             secondaryLabelText: mergedI18n.endTimeLabel,
                             invalidText: mergedI18n.timePickerInvalidText,
+                            amString: mergedI18n.amString,
+                            pmString: mergedI18n.pmString,
                           }}
                           size="sm"
                           testId={testId}
