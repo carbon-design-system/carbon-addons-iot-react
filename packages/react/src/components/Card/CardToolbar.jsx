@@ -191,6 +191,7 @@ const CardToolbar = ({
                 itemText={child.itemText}
                 disabled={child.disabled}
                 onClick={() => (child.callback ? child.callback(child) : null)}
+                requireTitle
               />
             ) : null
           )}
