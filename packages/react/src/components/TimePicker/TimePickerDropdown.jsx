@@ -35,7 +35,7 @@ const timeUtils = {
       ? selectedTime.substring(3, 5)
       : currentTime.substring(4, 6),
   getMeridiem: (selectedTime, currentTime, amString, pmString) =>
-    new RegExp(`${amString}|${pmString}`).test(selectedTime.substring(selectedTime.length - 2))
+    new RegExp(`[${amString}|${pmString}]`).test(selectedTime.substring(selectedTime.length - 2))
       ? selectedTime.substring(selectedTime.length - 2)
       : currentTime.substring(6),
 };
@@ -283,7 +283,8 @@ const TimePickerDropdown = ({
 
     // match any of the full string of tranlated AM or PM
     const meridianRegEx = new RegExp(
-      `${amString}|${pmString}|${defaultProps.i18n.amString}|${defaultProps.i18n.amString}`
+      `${amString}|${pmString}|${defaultProps.i18n.amString}|${defaultProps.i18n.pmString}`,
+      'g'
     );
     const newVal =
       val && meridianRegEx.test(val) && !is24hours
@@ -291,7 +292,6 @@ const TimePickerDropdown = ({
           ? `${val.split(' ')[0]} ${amString}`
           : `${val.split(' ')[0]} ${pmString}`
         : val;
-
     if (val.length > 1) {
       if (focusedInput === 0) {
         setValueState(newVal);
