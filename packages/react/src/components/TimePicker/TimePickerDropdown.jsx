@@ -272,6 +272,7 @@ const TimePickerDropdown = ({
       val = e.target.value;
     }
 
+    // match all the words combined provided by amString and pmString
     const isValidMeridian = new RegExp(`[${amString}${pmString}]`).test(
       val.substring(val.length - 1)
     );
@@ -279,6 +280,8 @@ const TimePickerDropdown = ({
     // @TODO: detect the length and run validation for as many as we can
     // This value is pasted in or autocompleted
     // istanbul ignore else
+
+    // match any of the full string of tranlated AM or PM
     const meridianRegEx = new RegExp(
       `${amString}|${pmString}|${defaultProps.i18n.amString}|${defaultProps.i18n.amString}`
     );
@@ -640,9 +643,15 @@ export const TimePickerSpinner = React.forwardRef(
     );
     const secondVal = useMemo(() => timeUtils.getMinutes(value, currentTime), [value, currentTime]);
     const thirdVal = useMemo(
-      () => (is24hours ? '' : timeUtils.getMeridiem(value, currentTime, amString, pmString)),
+      () =>
+        is24hours
+          ? ''
+          : timeUtils.getMeridiem(value, currentTime, amString, pmString) === amString
+          ? 'AM'
+          : 'PM',
       [is24hours, value, currentTime, amString, pmString]
     );
+
     const [selected, setSelected] = useState([firstVal, secondVal, thirdVal]);
     const [callbackValue, setCallbackValue] = useState(value);
     const [, setFocusedSpinner] = useState(0);
