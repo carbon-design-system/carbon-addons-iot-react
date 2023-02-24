@@ -280,7 +280,7 @@ const TimePickerDropdown = ({
     // This value is pasted in or autocompleted
     // istanbul ignore else
     const meridianRegEx = new RegExp(
-      `${amString} | ${pmString} | ${defaultProps.i18n.amString} | ${defaultProps.i18n.amString}`
+      `${amString}|${pmString}|${defaultProps.i18n.amString}|${defaultProps.i18n.amString}`
     );
     const newVal =
       val && meridianRegEx.test(val) && !is24hours
