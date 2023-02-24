@@ -388,6 +388,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOEnd: '2021-08-08T17:34:00.000Z',
+            ISOStart: '2021-08-06T18:34:00.000Z',
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34',
@@ -449,6 +451,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOEnd: '2021-08-08T17:34:00.000Z',
+            ISOStart: '2021-08-06T18:34:00.000Z',
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34 PM',
@@ -855,6 +859,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOEnd: '2021-08-13T17:49:00.000Z',
+            ISOStart: '2021-08-06T07:34:00.000Z',
             end: Cypress.sinon.match.any,
             endDate: '08/13/2021',
             endTime: '12:49',
@@ -1067,6 +1073,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOEnd: '2023-02-12T06:00:00.000Z',
+            ISOStart: '2023-01-20T06:00:00.000Z',
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
             endTime: null,

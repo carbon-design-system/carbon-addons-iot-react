@@ -445,13 +445,15 @@ const DateTimePicker = ({
     pm: mergedI18n.pmString,
   };
 
-  const getLocalizedTimeValue = (timeValue) => {
-    return is24hours
-      ? timeValue
-      : timeValue?.replace(/am|AM|pm|PM/g, (matched) => translatedMeridian[matched]);
-  };
+  const getLocalizedTimeValue = (timeValue) =>
+    !is24hours && timeValue
+      ? timeValue?.replace(/am|AM|pm|PM/g, (matched) => translatedMeridian[matched])
+      : timeValue;
 
   const getTranslatedTimeValue = (timeValue) => {
+    if (!timeValue) {
+      return timeValue;
+    }
     const localizedMeridian = {
       [mergedI18n.amString]: 'AM',
       [mergedI18n.pmString]: 'PM',

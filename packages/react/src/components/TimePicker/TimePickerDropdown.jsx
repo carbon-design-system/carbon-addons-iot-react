@@ -167,7 +167,6 @@ const TimePickerDropdown = ({
   const [secondaryValueState, setSecondaryValueState] = useState(secondaryValue || '');
   const [invalidState, setInvalidState] = useState(invalidProp);
   const [secondaryInvalidState, setSecondaryInvalidState] = useState(secondaryInvalidProp);
-
   useEffect(() => {
     if (init.current) {
       onChange(valueState, secondaryValueState);
@@ -198,6 +197,8 @@ const TimePickerDropdown = ({
     placeholderText,
     placeholderText24h,
     readOnlyBtnText,
+    amString,
+    pmString,
   } = useMerged(defaultProps.i18n, i18n);
 
   useEffect(() => {
@@ -229,15 +230,21 @@ const TimePickerDropdown = ({
     if (!readOnly) {
       handleOpenDropdown(index);
 
-      const currentTimeFormat = is24hours ? '24' : '12';
+      const current12HourTime = dayjs().format(TIME_FORMAT[12]).split(' ')[0];
+      const current12HourMeridian =
+        dayjs().format(TIME_FORMAT[12]).split(' ')[1] === 'AM' ? amString : pmString;
+      const currentTime = is24hours
+        ? dayjs().format(TIME_FORMAT[24])
+        : `${current12HourTime} ${current12HourMeridian}`;
+
       if (index === 0 && !value) {
-        setValueState((prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat]));
+        setValueState((prevValue) => {
+          return prevValue || currentTime;
+        });
       }
 
       if (index === 1 && !secondaryValue) {
-        setSecondaryValueState(
-          (prevValue) => prevValue || dayjs().format(TIME_FORMAT[currentTimeFormat])
-        );
+        setSecondaryValueState((prevValue) => prevValue || currentTime);
       }
     }
   };
@@ -264,23 +271,28 @@ const TimePickerDropdown = ({
     if (typeof e === 'object') {
       val = e.target.value;
     }
-    const isValid = /[0-9: APM]/.test(val.substring(val.length - 2));
+
+    const isValidMeridian = new RegExp(`[${amString}${pmString}]`).test(
+      val.substring(val.length - 1)
+    );
+    const isValidTime = new RegExp(`[/[0-9: ]`).test(val.substring(val.length - 1));
     // @TODO: detect the length and run validation for as many as we can
     // This value is pasted in or autocompleted
     // istanbul ignore else
+    const newVal =
+      val.includes(amString || pmString) && !is24hours
+        ? val.split(' ')[1] === 'AM' || val.split(' ')[1] === amString
+          ? `${val.split(' ')[0]} ${amString}`
+          : `${val.split(' ')[0]} ${pmString}`
+        : val;
 
-    const newVal = !is24hours
-      ? val.split(' ')[1] === 'AM' || val.split(' ')[1] === i18n.amString
-        ? `${val.split(' ')[0]} ${i18n.amString}`
-        : `${val.split(' ')[0]} ${i18n.pmString}`
-      : val;
     if (val.length > 1) {
       if (focusedInput === 0) {
         setValueState(newVal);
       } else {
         setSecondaryValueState(newVal);
       }
-    } else if (isValid || val === '') {
+    } else if (isValidMeridian || isValidTime || val === '') {
       if (focusedInput === 0) {
         setValueState(newVal);
       } else {
@@ -299,11 +311,11 @@ const TimePickerDropdown = ({
     if (!contained) {
       // close dropdown and validate
       setOpenState(false);
-      setInvalidState(!validate(inputRef.current.value, is24hours, i18n.amString, i18n.pmString));
+      setInvalidState(!validate(inputRef.current.value, is24hours, amString, pmString));
       /* istanbul ignore else */
       if (secondaryInputRef.current) {
         setSecondaryInvalidState(
-          !validate(secondaryInputRef.current.value, is24hours, i18n.amString, i18n.pmString)
+          !validate(secondaryInputRef.current.value, is24hours, amString, pmString)
         );
       }
     }
@@ -564,8 +576,8 @@ const TimePickerDropdown = ({
           ref={dropDownRef}
           style={style}
           is24hours={is24hours}
-          amString={i18n.amString}
-          pmString={i18n.pmString}
+          amString={amString}
+          pmString={pmString}
         />
       ) : null}
     </div>
