@@ -275,12 +275,15 @@ const TimePickerDropdown = ({
     const isValidMeridian = new RegExp(`[${amString}${pmString}]`).test(
       val.substring(val.length - 1)
     );
-    const isValidTime = new RegExp(`[/[0-9: ]`).test(val.substring(val.length - 1));
+    const isValidTime = /[0-9: ]/.test(val.substring(val.length - 1));
     // @TODO: detect the length and run validation for as many as we can
     // This value is pasted in or autocompleted
     // istanbul ignore else
+    const meridianRegEx = new RegExp(
+      `${amString} | ${pmString} | ${defaultProps.i18n.amString} | ${defaultProps.i18n.amString}`
+    );
     const newVal =
-      val.includes(amString || pmString) && !is24hours
+      val && meridianRegEx.test(val) && !is24hours
         ? val.split(' ')[1] === 'AM' || val.split(' ')[1] === amString
           ? `${val.split(' ')[0]} ${amString}`
           : `${val.split(' ')[0]} ${pmString}`
