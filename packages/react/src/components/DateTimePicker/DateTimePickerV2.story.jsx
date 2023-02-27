@@ -124,7 +124,7 @@ export const SelectedAbsolute = () => {
     <div
       style={{
         height: '15rem',
-        paddingTop: '25rem',
+        paddingTop: '5rem',
         paddingBottom: '50rem',
         paddingLeft: '1rem',
         overflow: 'scroll',
@@ -165,7 +165,7 @@ export const SingleSelect = () => {
     <div
       style={{
         height: '20rem',
-        paddingTop: '35rem',
+        paddingTop: '5rem',
         paddingBottom: '40rem',
         paddingLeft: '1rem',
         overflow: 'scroll',
@@ -194,6 +194,8 @@ export const SingleSelect = () => {
         i18n={object('i18n', {
           timePickerInvalidText: 'A valid value is required',
           invalidText: 'The date time entered is invalid',
+          amString: '上午',
+          pmString: '下午',
         })}
         style={{ zIndex: number('zIndex', 0) }}
         renderInPortal={boolean('renderInPortal', true)}
@@ -221,7 +223,7 @@ export const SelectedAbsoluteWithNewTimeSpinner = () => {
       style={{ zIndex: number('zIndex', 0) }}
       i18n={object('i18n', {
         startTimeLabel: 'Start',
-        endTimeLabel: 'end',
+        endTimeLabel: 'End',
         invalidText: 'The date time entered is invalid',
       })}
       invalid={boolean('invalid', false)}
