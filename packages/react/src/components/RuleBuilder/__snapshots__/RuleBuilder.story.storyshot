@@ -947,8 +947,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
                               placeholder="Search"
                               role="searchbox"
                               tabIndex="0"
@@ -1471,8 +1469,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
                               placeholder="Search"
                               role="searchbox"
                               tabIndex="0"
@@ -6607,8 +6603,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
                               placeholder="Search"
                               role="searchbox"
                               tabIndex="0"
@@ -6905,8 +6899,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
                               placeholder="Search"
                               role="searchbox"
                               tabIndex="0"

@@ -2211,8 +2211,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         onChange={[Function]}
                         onFocus={[Function]}
                         onKeyDown={[Function]}
-                        onMouseEnter={[Function]}
-                        onMouseLeave={[Function]}
                         placeholder="Search"
                         role="searchbox"
                         tabIndex="0"
