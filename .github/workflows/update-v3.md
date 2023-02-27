@@ -1,21 +1,23 @@
 name: update v3 branch on next changes
+
 on:
-  push:
-    branches:
-      - next
+push:
+branches: - next
+
 jobs:
-  update-v3:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: v3
-          fetch-depth: 0
+update-v3:
+runs-on: ubuntu-latest
+steps: - uses: actions/checkout@v2
+with:
+ref: v3
+fetch-depth: 0
+
       - name: set user, merge origin/next into v3
         run: |
           git config user.name "carbon-bot"
           git config user.email "carbon@us.ibm.com"
           git merge origin/next
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:

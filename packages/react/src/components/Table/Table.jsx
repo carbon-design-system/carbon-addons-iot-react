@@ -562,6 +562,7 @@ export const defaultProps = (baseProps) => ({
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
     batchActionsOverflowMenuText: '',
+    filterTagsOverflowMenuText: '+{n}',
     toolbarSearchIconDescription: 'Search',
   },
   error: null,
@@ -958,6 +959,9 @@ const Table = (props) => {
           <FilterTags
             // TODO: remove id in V3.
             testId={`${id || testId}-filter-tags`}
+            i18n={{
+              filterTagsOverflowMenuText: i18n.filterTagsOverflowMenuText,
+            }}
           >
             {view.advancedFilters
               .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))

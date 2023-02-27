@@ -6,7 +6,7 @@
 
     .#{$prefix}--overflow-menu {
       width: auto;
-      min-width: 4.5rem;
+      height: unset;
     }
   }
 
@@ -36,9 +36,15 @@
   }
 }
 
-.#{$iot-prefix}--filtertags-overflow-item span {
+.#{$iot-prefix}--filtertags-overflow-item__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  span {
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
