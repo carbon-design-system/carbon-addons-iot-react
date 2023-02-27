@@ -562,6 +562,7 @@ export const defaultProps = (baseProps) => ({
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
     batchActionsOverflowMenuText: '',
+    toolbarSearchIconDescription: 'Search',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -878,6 +879,7 @@ const Table = (props) => {
               toolbarLabelAria: i18n.toolbarLabelAria,
               toolbarTooltipLabel: i18n.toolbarTooltipLabel,
               batchActionsOverflowMenuText: i18n.batchActionsOverflowMenuText,
+              toolbarSearchIconDescription: i18n.toolbarSearchIconDescription,
             }}
             actions={{
               ...pick(

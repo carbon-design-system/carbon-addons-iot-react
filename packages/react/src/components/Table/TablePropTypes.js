@@ -227,6 +227,8 @@ export const I18NPropTypes = PropTypes.shape({
   filterRowIconDescription: PropTypes.string,
   /** button label for batch action overflow menu */
   batchActionsOverflowMenuText: PropTypes.string,
+  /** I18N label for search icon in toolbar */
+  toolbarSearchIconDescription: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {
