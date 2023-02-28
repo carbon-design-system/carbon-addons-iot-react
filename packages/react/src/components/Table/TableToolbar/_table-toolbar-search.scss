@@ -8,7 +8,7 @@
     position: relative;
   }
 
-  &__button-tooltip {
+  &__search-tooltip {
     @include tooltip--content(); // Carbon mixin
 
     position: absolute;
