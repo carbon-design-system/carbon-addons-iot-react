@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { TableToolbarSearch as CarbonTableToolbarSearch } from 'carbon-components-react';
+import classNames from 'classnames';
 
 import { settings } from '../../../constants/Settings';
 import {
@@ -82,6 +83,8 @@ const TableToolbarSearch = ({
   actions: { onApplySearch, onSearchExpand },
   tableState: { search: searchProp, isDisabled },
   testId,
+  langDir,
+  tooltipAlignment,
 }) => {
   /* istanbul ignore next */
   const { isExpanded: searchIsExpanded, onExpand, ...search } = searchProp ?? {};
@@ -91,6 +94,8 @@ const TableToolbarSearch = ({
    * Reference: https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
    */
   const [forceRenderCount, setForceRenderCount] = useState(0);
+  const [showSearchTooltip, setShowSearchTooltip] = useState(false);
+  const [adjustedTooltipAlignment, setAdjustedTooltipAlignment] = useState(tooltipAlignment);
 
   useEffect(() => {
     /* istanbul ignore else */
@@ -101,10 +106,22 @@ const TableToolbarSearch = ({
     setForceRenderCount((prevValue) => prevValue + 1);
   }, [search.defaultValue]);
 
+  /* istanbul ignore next */
+  const handleSearchMouseEnter = useCallback(() => {
+    setShowSearchTooltip(true);
+  }, []);
+
+  /* istanbul ignore next */
+  const handleSearchMouseLeave = useCallback(() => {
+    setShowSearchTooltip(false);
+  }, []);
+
   return (
     <div className={`${iotPrefix}--table-toolbar__search-wrapper`}>
       <CarbonTableToolbarSearch
         {...search}
+        onPointerEnter={handleSearchMouseEnter}
+        onPointerLeave={handleSearchMouseLeave}
         key={
           // If hasUserViewManagement is active the whole table is regenerated when a new
           // view is loaded so we probably don't need this key-gen fix to preset a search text.
@@ -153,6 +170,36 @@ const TableToolbarSearch = ({
           if (onSearchExpand) onSearchExpand(args);
         }}
       />
+      <div
+        className={classNames(
+          `${iotPrefix}--table-toolbar__button-tooltip`,
+          `${iotPrefix}--table-toolbar__button-tooltip--${adjustedTooltipAlignment}`,
+          {
+            [`${iotPrefix}--table-toolbar__button-tooltip--hide`]: !showSearchTooltip,
+          }
+        )}
+        ref={(node) => {
+          /* istanbul ignore if */
+          if (node && node.parentNode) {
+            const tooltipRect = node.getBoundingClientRect();
+            const toolbarRect = node.parentNode.parentNode.getBoundingClientRect();
+            /* istanbul ignore else */
+            if (
+              langDir === 'ltr' &&
+              tooltipRect.left + tooltipRect.width > toolbarRect.left + toolbarRect.width
+            ) {
+              setAdjustedTooltipAlignment('end');
+              return;
+            }
+            /* istanbul ignore if */
+            if (langDir === 'rtl' && tooltipRect.left < toolbarRect.left) {
+              setAdjustedTooltipAlignment('start');
+            }
+          }
+        }}
+      >
+        {i18n.toolbarSearchIconDescription}
+      </div>
     </div>
   );
 };

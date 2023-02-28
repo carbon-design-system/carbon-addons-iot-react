@@ -37,6 +37,11 @@
       transform: translateX(-50%);
     }
 
+    &--hide {
+      display: none;
+      visibility: hidden;
+    }
+
     &--center {
       right: $spacing-06;
       transform: translate(50%, 100%);
