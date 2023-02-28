@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.152.1-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.1-next.1...v2.152.1-next.2) (2023-02-27)
+
+
+### Bug Fixes
+
+* **datatimepickerv2:** update images ([feafa14](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/feafa1457708e55ae918643547a90956cacb0476))
+* **datetimepickerv2:** fix tests ([5083514](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5083514b22678344b145e24a121c2642dff4e278))
+* **datetimepickerv2:** support i18n ampm strings ([daf2d89](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/daf2d89e0f6332008d4b6363cc74028c0b8e91d4))
+* **timepickerdropdown:** fix handleonchange ([a42f511](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a42f511104badaa2b7f45bbcd195ec7b148814e2))
+* **timepickerdropdown:** fix regex ([8bb4152](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8bb41521edc340d63b47409f112457e22e5d9352))
+* **timepickerdropdown:** update regex ([81ecf8b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/81ecf8b79bde492f39371c72fec16f417de08f9d))
+* **timepickerdropdown:** update validations and tests ([1154f31](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1154f316726c0b0580ea470721207cec4e012aa0))
+
+
+
+
+
 ## [2.152.1-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.1-next.0...v2.152.1-next.1) (2023-02-22)
 
 **Note:** Version bump only for package ibm-ai-applications

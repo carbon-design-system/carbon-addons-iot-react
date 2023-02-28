@@ -605,7 +605,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         "overflow": "scroll",
         "paddingBottom": "50rem",
         "paddingLeft": "1rem",
-        "paddingTop": "25rem",
+        "paddingTop": "5rem",
       }
     }
   >
@@ -981,7 +981,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
         "overflow": "scroll",
         "paddingBottom": "40rem",
         "paddingLeft": "1rem",
-        "paddingTop": "35rem",
+        "paddingTop": "5rem",
       }
     }
   >
