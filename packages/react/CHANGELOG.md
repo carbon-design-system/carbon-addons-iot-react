@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.152.4-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.4-next.0...v2.152.4-next.1) (2023-02-28)
+
+
+### Bug Fixes
+
+* **cardutilityfunctions:** add null handler ([6dbd234](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6dbd23427f7498d27ed3a910df1f5bac4e34a984))
+
+
+
+
+
 ## [2.152.4-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.3...v2.152.4-next.0) (2023-02-28)
 
 **Note:** Version bump only for package carbon-addons-iot-react
