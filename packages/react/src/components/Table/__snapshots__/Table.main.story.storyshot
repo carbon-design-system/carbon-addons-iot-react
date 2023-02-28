@@ -43842,6 +43842,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onPointerEnter={[Function]}
+              onPointerLeave={[Function]}
               placeholder="Search"
               role="searchbox"
               tabIndex="0"
@@ -43869,6 +43871,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 />
               </svg>
             </button>
+          </div>
+          <div
+            className="iot--table-toolbar__search-tooltip iot--table-toolbar__search-tooltip--center iot--table-toolbar__search-tooltip--hide"
+          >
+            Search
           </div>
         </div>
       </div>
@@ -46771,6 +46778,8 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
+              onPointerEnter={[Function]}
+              onPointerLeave={[Function]}
               placeholder="Search"
               role="searchbox"
               tabIndex="0"
@@ -46798,6 +46807,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                 />
               </svg>
             </button>
+          </div>
+          <div
+            className="iot--table-toolbar__search-tooltip iot--table-toolbar__search-tooltip--center iot--table-toolbar__search-tooltip--hide"
+          >
+            Search
           </div>
         </div>
       </div>
