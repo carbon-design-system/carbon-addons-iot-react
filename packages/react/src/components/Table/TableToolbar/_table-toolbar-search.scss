@@ -74,6 +74,6 @@
 }
 
 // Hides tooltip when search is expanded
-.#{$prefix}--toolbar-search-container-active + .#{$iot-prefix}--table-toolbar__button-tooltip {
+.#{$prefix}--toolbar-search-container-active + .#{$iot-prefix}--table-toolbar__search-tooltip {
   display: none;
 }

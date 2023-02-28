@@ -655,7 +655,7 @@ describe('StatefulTable', () => {
     cy.findByRole('searchbox').realHover();
     cy.findByText(searchTooltip)
       .should('be.visible')
-      .and('have.class', `${iotPrefix}--table-toolbar__button-tooltip--end`);
+      .and('have.class', `${iotPrefix}--table-toolbar__search-tooltip--end`);
 
     cy.findByRole('searchbox')
       .type('Ia2eQMSi8i')
