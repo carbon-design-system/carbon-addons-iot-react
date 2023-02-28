@@ -172,10 +172,10 @@ const TableToolbarSearch = ({
       />
       <div
         className={classNames(
-          `${iotPrefix}--table-toolbar__button-tooltip`,
-          `${iotPrefix}--table-toolbar__button-tooltip--${adjustedTooltipAlignment}`,
+          `${iotPrefix}--table-toolbar__search-tooltip`,
+          `${iotPrefix}--table-toolbar__search-tooltip--${adjustedTooltipAlignment}`,
           {
-            [`${iotPrefix}--table-toolbar__button-tooltip--hide`]: !showSearchTooltip,
+            [`${iotPrefix}--table-toolbar__search-tooltip--hide`]: !showSearchTooltip,
           }
         )}
         ref={(node) => {
