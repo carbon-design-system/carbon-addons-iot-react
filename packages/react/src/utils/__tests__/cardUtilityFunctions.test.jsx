@@ -1512,6 +1512,10 @@ describe('cardUtilityFunctions', () => {
       );
       expect(zeroMatchingThreshold2).toHaveLength(0);
     });
+    it('no item', () => {
+      const noMatchingThreshold = findMatchingThresholds(thresholds, null, 'airflow_status');
+      expect(noMatchingThreshold).toHaveLength(0);
+    });
   });
 
   describe('findMatchingAlertRange', () => {
