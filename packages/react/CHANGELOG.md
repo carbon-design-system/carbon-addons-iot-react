@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.152.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.3...v2.152.4) (2023-03-03)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** fix locale issue ([cc20d6e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/cc20d6e0cd1ac133b1e78b38e572878ff6c9561b))
+* **datetimepickerv2:** update flaky tests ([1d8a754](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1d8a754d67bd039744ab1657b79b32bafa808e18))
+
+
+
+
+
 ## [2.152.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.1-next.2...v2.152.3) (2023-02-28)
 
 
