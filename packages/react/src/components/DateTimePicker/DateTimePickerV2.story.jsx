@@ -199,6 +199,7 @@ export const SingleSelect = () => {
         })}
         style={{ zIndex: number('zIndex', 0) }}
         renderInPortal={boolean('renderInPortal', true)}
+        locale={text('locale', 'en')}
       />
       <div style={{ height: '10rem' }} />
     </div>
