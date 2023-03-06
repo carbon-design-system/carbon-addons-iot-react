@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.152.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.4...v2.152.5) (2023-03-06)
+
+
+### Bug Fixes
+
+* **datetimepicker:** add check for mask value ([266cce9](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/266cce9309cc661cab1200b046124b22467e45aa))
+* **header:** rtl mode had menu rendering off screen ([d86cb01](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d86cb01b0e944457608a94fcbf72795ef44f6aaf))
+
+
+
+
+
 ## [2.152.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.3...v2.152.4) (2023-03-03)
 
 
