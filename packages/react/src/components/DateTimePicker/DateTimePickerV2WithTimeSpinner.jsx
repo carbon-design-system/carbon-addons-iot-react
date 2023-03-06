@@ -341,7 +341,7 @@ const DateTimePicker = ({
   const is24hours = useMemo(() => {
     const [, time] = dateTimeMask.split(' ');
     const hoursMask = time?.split(':')[0];
-    return hoursMask.includes('H');
+    return hoursMask ? hoursMask.includes('H') : false;
   }, [dateTimeMask]);
   const isSingleSelect = useMemo(() => datePickerType === 'single', [datePickerType]);
 

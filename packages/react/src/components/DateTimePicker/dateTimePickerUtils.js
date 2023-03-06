@@ -16,7 +16,7 @@ const { iotPrefix } = settings;
 const is24hours = (dateTimeMask) => {
   const [, time] = dateTimeMask.split(' ');
   const hoursMask = time?.split(':')[0];
-  return hoursMask.includes('H');
+  return hoursMask ? hoursMask.includes('H') : false;
 };
 
 /** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
