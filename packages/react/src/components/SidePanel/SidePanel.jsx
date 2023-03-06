@@ -197,7 +197,7 @@ const SidePanel = ({
         />
       ) : null}
       <header className={`${baseClass}__header`}>
-        {title && truncatesTitle ? (
+        {title && truncatesTitle && isOpen ? (
           <Tooltip
             data-testid={`${testId}-title`}
             ref={titleRef}
