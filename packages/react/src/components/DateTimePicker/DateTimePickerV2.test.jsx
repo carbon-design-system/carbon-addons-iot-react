@@ -2818,7 +2818,7 @@ describe('DateTimePickerV2', () => {
     });
   });
 
-  it('should render without a time picker', () => {
+  it('should render without a time picker and a mask that does not include time', () => {
     render(
       <DateTimePicker
         {...dateTimePickerProps}
