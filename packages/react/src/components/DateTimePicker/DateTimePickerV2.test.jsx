@@ -2817,4 +2817,16 @@ describe('DateTimePickerV2', () => {
       expect(onApply).toHaveBeenCalledTimes(1);
     });
   });
+
+  it('should render without a time picker and a mask that does not include time', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        i18n={i18n}
+        dateTimeMask="MM/DD/YYYY"
+        hasTimeInput={false}
+      />
+    );
+    expect(screen.getByText(PRESET_VALUES[0].label)).toBeVisible();
+  });
 });
