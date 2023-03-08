@@ -72,9 +72,9 @@ export class AIListItemWrapperComponent {
 
   @Output() dragEnterAbove = new EventEmitter<any>();
 
-  @Output() dragEnterBelow = new EventEmitter<any>();
-
   @Output() dragOverAbove = new EventEmitter<any>();
+
+  @Output() dragEnterBelow = new EventEmitter<any>();
 
   @Output() dragOverBelow = new EventEmitter<any>();
 
