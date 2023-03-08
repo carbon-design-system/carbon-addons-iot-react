@@ -388,6 +388,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34',
@@ -449,6 +451,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34 PM',
@@ -855,6 +859,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/13/2021',
             endTime: '12:49',
@@ -1067,6 +1073,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
             endTime: null,
@@ -1324,8 +1332,8 @@ describe('DateTimePickerV2', () => {
       // Unsaved changes in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
       cy.findByText('Absolute').should('be.visible').click();
-      cy.findByText('25').should('be.visible').click();
-      cy.findByText('26').should('be.visible').click();
+      cy.findAllByText('25').click({ multiple: true, force: true });
+      cy.findAllByText('26').click({ multiple: true, force: true });
       cy.findByLabelText('Start time').type('14:30');
 
       cy.get('body').click();
@@ -1462,7 +1470,7 @@ describe('DateTimePickerV2', () => {
     cy.findByTestId('date-time-picker__field').should('have.text', 'YYYY-MM-DD HH:mm');
     // Unsaved changes
     cy.findByTestId('date-time-picker__field').click();
-    cy.findByText('28').click();
+    cy.findAllByText('28').click({ multiple: true, force: true });
     cy.findByLabelText('Start time').type('11:11{enter}');
     cy.get('body').click();
     // Empty value preserved
