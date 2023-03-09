@@ -98,8 +98,11 @@ const IdleLogoutConfirmationModal = ({
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
-    if (window.location.href) {
-      url.searchParams.append('originHref', window.location.href);
+    if (window.location) {
+      url.searchParams.append(
+        'originHref',
+        [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+      );
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);
@@ -118,8 +121,11 @@ const IdleLogoutConfirmationModal = ({
   let logoutInactivityRoute = routes?.logoutInactivity;
   try {
     const url = new URL(routes.logoutInactivity);
-    if (window.location.href) {
-      url.searchParams.append('originHref', window.location.href);
+    if (window.location) {
+      url.searchParams.append(
+        'originHref',
+        [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+      );
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);
@@ -179,6 +185,7 @@ const IdleLogoutConfirmationModal = ({
       });
 
       return () => {
+        setLogoutConfirmationCountdown(0);
         timer.cleanUp();
       };
     }
