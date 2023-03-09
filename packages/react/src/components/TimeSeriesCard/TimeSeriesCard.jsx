@@ -203,7 +203,7 @@ const defaultProps = {
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
   tooltipShowTotals: true,
-  defaultDateFormatPattern: 'L HH:mm:ss',
+  defaultDateFormatPattern: 'L HH:mm',
 };
 
 const TimeSeriesCard = ({

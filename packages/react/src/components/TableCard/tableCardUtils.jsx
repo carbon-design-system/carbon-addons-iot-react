@@ -25,7 +25,7 @@ export const determinePrecisionAndValue = (precision = 0, value, locale) => {
  */
 export const createColumnsWithFormattedLinks = (
   columns,
-  defaultDateFormatPattern = 'L HH:mm:ss'
+  defaultDateFormatPattern = 'L HH:mm'
 ) => {
   return columns.map((column) => {
     const { linkTemplate } = column;
@@ -127,7 +127,7 @@ export const handleExpandedItemLinks = (row, expandedRow, cardVariables) => {
 export const determineFilterFunction = (
   column,
   defaultFilterStringPlaceholdText,
-  defaultDateFormatPattern = 'L HH:mm:ss'
+  defaultDateFormatPattern = 'L HH:mm'
 ) => {
   return {
     ...(column.type === 'TIMESTAMP'

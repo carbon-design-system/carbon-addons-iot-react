@@ -425,7 +425,7 @@ export const handleTooltip = (
   defaultTooltip,
   timeDataSourceId,
   showTimeInGMT,
-  tooltipDateFormatPattern = 'L HH:mm:ss',
+  tooltipDateFormatPattern = 'L HH:mm',
   locale
 ) => {
   dayjs.locale(locale);
@@ -527,7 +527,7 @@ export const formatTableData = (
   type,
   values,
   chartData,
-  defaultDateFormatPattern = 'L HH:mm:ss'
+  defaultDateFormatPattern = 'L HH:mm'
 ) => {
   const tableData = [];
   if (!isNil(values) && !isNil(chartData)) {

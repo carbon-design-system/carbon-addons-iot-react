@@ -43,7 +43,7 @@ const defaultProps = {
   showTimeInGMT: false,
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
-  defaultDateFormatPattern: 'L HH:mm:ss',
+  defaultDateFormatPattern: 'L HH:mm',
 };
 
 const ComboChartCard = ({

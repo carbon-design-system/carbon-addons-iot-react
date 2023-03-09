@@ -70,7 +70,7 @@ const defaultProps = {
   },
   renderDateDropdownInPortal: true,
   withToolbarTooltips: false,
-  defaultDateFormatPattern: 'L HH:mm:ss',
+  defaultDateFormatPattern: 'L HH:mm',
 };
 
 const TableCard = ({

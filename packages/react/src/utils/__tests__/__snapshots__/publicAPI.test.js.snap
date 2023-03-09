@@ -7588,7 +7588,7 @@ Map {
         },
         "type": "SIMPLE",
       },
-      "defaultDateFormatPattern": "L HH:mm:ss",
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "Filter",
@@ -8269,6 +8269,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "domainRange": Object {
@@ -19465,7 +19468,7 @@ Map {
           "type": "end_line",
         },
       },
-      "defaultDateFormatPattern": "L HH:mm:ss",
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
@@ -20252,6 +20255,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "domainRange": Object {
@@ -21976,7 +21982,7 @@ Map {
   },
   "TableCard" => Object {
     "defaultProps": Object {
-      "defaultDateFormatPattern": "L HH:mm:ss",
+      "defaultDateFormatPattern": "L HH:mm",
       "filters": Array [],
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -22746,6 +22752,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "extraActions": Object {
@@ -32100,7 +32109,7 @@ Map {
         "includeZeroOnYaxis": false,
         "showLegend": true,
       },
-      "defaultDateFormatPattern": "L HH:mm:ss",
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "type and hit enter to apply",
@@ -32808,6 +32817,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "extraActions": Object {

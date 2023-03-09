@@ -141,7 +141,7 @@ export const TableCardPropTypes = {
         priority: PropTypes.number,
         /** See the renderDataFunction for TablePropTypes */
         renderDataFunction: PropTypes.func,
-        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm:ss' */
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
         type: PropTypes.string,
         /** optional custom link */
         linkTemplate: PropTypes.shape({
@@ -160,7 +160,7 @@ export const TableCardPropTypes = {
           href: PropTypes.string,
           target: PropTypes.string,
         }),
-        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm:ss' */
+        /** optional type. If "TIMESTAMP", it will format to 'L HH:mm' */
         type: PropTypes.string,
       })
     ),

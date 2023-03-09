@@ -61,7 +61,7 @@ const defaultProps = {
   showTimeInGMT: false,
   tooltipDateFormatPattern: 'L HH:mm:ss',
   values: null,
-  defaultDateFormatPattern: 'L HH:mm:ss',
+  defaultDateFormatPattern: 'L HH:mm',
 };
 
 const BarChartCard = ({
