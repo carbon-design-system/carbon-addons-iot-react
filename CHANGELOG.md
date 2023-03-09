@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.152.6-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.6-next.0...v2.152.6-next.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **walkme:** Defining the required Walkme global variable and function in a useEffect hook because they were not being set inside the script tag for some reason. ([d8bb98d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d8bb98d06729dbfa9145757270fcdf9331ded757))
+* **walkme:** Running yarn format ([f2f9436](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f2f943612e985e135dc61d042c2b140cc8d826bc))
+
+
+
+
+
 ## [2.152.6-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.5...v2.152.6-next.0) (2023-03-07)
 
 
