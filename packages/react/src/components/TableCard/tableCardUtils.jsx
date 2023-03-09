@@ -23,10 +23,7 @@ export const determinePrecisionAndValue = (precision = 0, value, locale) => {
  * @param {Array<Object>} columns - Array of TableCard columns
  * @return {array} array of columns with formatted links and updated variable values
  */
-export const createColumnsWithFormattedLinks = (
-  columns,
-  defaultDateFormatPattern = 'L HH:mm'
-) => {
+export const createColumnsWithFormattedLinks = (columns, defaultDateFormatPattern = 'L HH:mm') => {
   return columns.map((column) => {
     const { linkTemplate } = column;
     if (linkTemplate) {
