@@ -570,7 +570,7 @@ export const WithCustomFilters = () => {
           filter: {
             ...column.filter,
             filterFunction: (cellValue, filterValue) => {
-              const dateString = dayjs(cellValue).format('L HH:mm:ss');
+              const dateString = dayjs(cellValue).format('L HH:mm');
               return dateString.includes(filterValue);
             },
           },

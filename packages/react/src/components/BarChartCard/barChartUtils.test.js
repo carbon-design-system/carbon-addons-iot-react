@@ -812,7 +812,7 @@ describe('barChartUtils', () => {
     ).toEqual(
       `<ul class="multi-tooltip"><li class="datapoint-tooltip">
             <p class="label">
-              02/11/2020 10:23</p>
+              02/11/2020 10:23:45</p>
           </li><li>
     <div class="datapoint-tooltip ">
       <p class="label">Total </p>

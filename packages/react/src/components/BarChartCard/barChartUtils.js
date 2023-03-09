@@ -425,7 +425,7 @@ export const handleTooltip = (
   defaultTooltip,
   timeDataSourceId,
   showTimeInGMT,
-  tooltipDateFormatPattern = 'L HH:mm',
+  tooltipDateFormatPattern = 'L HH:mm:ss',
   locale
 ) => {
   dayjs.locale(locale);
