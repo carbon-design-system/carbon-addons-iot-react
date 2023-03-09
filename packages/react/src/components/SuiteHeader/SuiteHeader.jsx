@@ -200,7 +200,10 @@ const SuiteHeader = ({
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
-      url.searchParams.append('originHref', window.location.href);
+      url.searchParams.append(
+        'originHref',
+        [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+      );
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);

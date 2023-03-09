@@ -98,7 +98,7 @@ const IdleLogoutConfirmationModal = ({
   let logoutRoute = routes?.logout;
   try {
     const url = new URL(routes.logout);
-    if (window.location) {
+    if (window.location.href) {
       url.searchParams.append(
         'originHref',
         [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
@@ -121,7 +121,7 @@ const IdleLogoutConfirmationModal = ({
   let logoutInactivityRoute = routes?.logoutInactivity;
   try {
     const url = new URL(routes.logoutInactivity);
-    if (window.location) {
+    if (window.location.href) {
       url.searchParams.append(
         'originHref',
         [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
