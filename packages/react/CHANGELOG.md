@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.0...v2.153.0-next.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **header:** handle server-side rendering  [#3742](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3742) ([e15989f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e15989f656cf71bd3095453ce7d4c2dcfe4a6b65))
+
+
+
+
+
 # [2.153.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.6-next.1...v2.153.0-next.0) (2023-03-09)
 
 
