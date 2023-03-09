@@ -25,7 +25,7 @@ const Walkme = ({ path, lang }) => {
   useEffect(() => {
     window.walkme_get_language = function () {
       return lang === 'en' ? '' : lang;
-    }
+    };
   }, [lang]);
 
   return (
