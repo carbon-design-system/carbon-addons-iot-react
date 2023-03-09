@@ -170,6 +170,8 @@ const TimeSeriesCardPropTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** default date format pattern that follows the dayjs formatting patterns */
+  defaultDateFormatPattern: PropTypes.string,
 };
 
 const defaultProps = {

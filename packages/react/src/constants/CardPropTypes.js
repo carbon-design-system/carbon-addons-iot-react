@@ -230,6 +230,8 @@ export const TableCardPropTypes = {
   cardVariables: PropTypes.objectOf(
     PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.number, PropTypes.bool])
   ),
+  /** default date format pattern that follows the dayjs formatting patterns */
+  defaultDateFormatPattern: PropTypes.string,
 };
 
 /** carbon charts legend truncation options */
@@ -387,6 +389,8 @@ export const BarChartCardPropTypes = {
   showTimeInGMT: PropTypes.bool,
   /** tooltip format pattern that follows the dayjs formatting patterns */
   tooltipDateFormatPattern: PropTypes.string,
+  /** default date format pattern that follows the dayjs formatting patterns */
+  defaultDateFormatPattern: PropTypes.string,
 };
 
 export const PieCardPropTypes = {
@@ -685,6 +689,8 @@ export const ComboChartPropTypes = {
       })
     ),
   }),
+  /** default date format pattern that follows the dayjs formatting patterns */
+  defaultDateFormatPattern: PropTypes.string,
 };
 
 /** These props all comes from the Button component */
