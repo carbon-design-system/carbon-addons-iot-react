@@ -647,6 +647,7 @@ Map {
       "error": null,
       "i18n": Object {
         "actionFailedText": "Action failed",
+        "batchActionsOverflowMenuText": "",
         "batchCancel": "Cancel",
         "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
@@ -671,6 +672,7 @@ Map {
         "filterDescending": "Sort rows by this header in descending order",
         "filterNone": "Unsort rows by this header",
         "filterRowIconDescription": "Edit filters",
+        "filterTagsOverflowMenuText": "+{n}",
         "inProgressText": "In progress",
         "itemSelected": [Function],
         "itemsPerPage": "Items per page:",
@@ -1279,6 +1281,9 @@ Map {
             "actionFailedText": Object {
               "type": "string",
             },
+            "batchActionsOverflowMenuText": Object {
+              "type": "string",
+            },
             "batchCancel": Object {
               "type": "string",
             },
@@ -1332,6 +1337,19 @@ Map {
             },
             "filterRowIconDescription": Object {
               "type": "string",
+            },
+            "filterTagsOverflowMenuText": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "inProgressText": Object {
               "type": "string",
@@ -2658,6 +2676,9 @@ Map {
             "actionFailedText": Object {
               "type": "string",
             },
+            "batchActionsOverflowMenuText": Object {
+              "type": "string",
+            },
             "batchCancel": Object {
               "type": "string",
             },
@@ -2711,6 +2732,19 @@ Map {
             },
             "filterRowIconDescription": Object {
               "type": "string",
+            },
+            "filterTagsOverflowMenuText": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
             },
             "inProgressText": Object {
               "type": "string",
@@ -4586,6 +4620,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "batchActionsOverflowMenuText": Object {
+              "type": "string",
+            },
             "batchCancel": Object {
               "type": "string",
             },
@@ -7583,6 +7620,7 @@ Map {
         },
         "type": "SIMPLE",
       },
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "Filter",
@@ -8265,6 +8303,9 @@ Map {
       "dateTimeMask": Object {
         "type": "string",
       },
+      "defaultDateFormatPattern": Object {
+        "type": "string",
+      },
       "domainRange": Object {
         "args": Array [
           Object {
@@ -8937,9 +8978,11 @@ Map {
       "hideLabel": false,
       "hideSecondaryLabel": false,
       "i18n": Object {
+        "amString": "AM",
         "invalidText": "The time entered is invalid",
         "placeholderText": "hh:mm XM",
         "placeholderText24h": "HH:mm",
+        "pmString": "PM",
         "readOnlyBtnText": "Read only",
         "timeIconText": "Open time picker",
         "warnText": undefined,
@@ -8979,6 +9022,9 @@ Map {
       "i18n": Object {
         "args": Array [
           Object {
+            "amString": Object {
+              "type": "string",
+            },
             "helperText": Object {
               "type": "string",
             },
@@ -8993,6 +9039,9 @@ Map {
               "type": "string",
             },
             "placeholderText24h": Object {
+              "type": "string",
+            },
+            "pmString": Object {
               "type": "string",
             },
             "secondaryHelperText": Object {
@@ -9591,6 +9640,7 @@ Map {
       "hasTimeInput": true,
       "i18n": Object {
         "absoluteLabel": "Absolute",
+        "amString": "AM",
         "applyBtnLabel": "Apply",
         "backBtnLabel": "Back",
         "calendarLabel": "Calendar",
@@ -9607,6 +9657,7 @@ Map {
         "lastLabel": "Last",
         "minutes": "minutes",
         "number": "number",
+        "pmString": "PM",
         "presetLabels": Array [],
         "relativeLabel": "Relative",
         "relativeLabels": Array [],
@@ -9927,6 +9978,9 @@ Map {
             "absoluteLabel": Object {
               "type": "string",
             },
+            "amString": Object {
+              "type": "string",
+            },
             "applyBtnLabel": Object {
               "type": "string",
             },
@@ -9978,6 +10032,9 @@ Map {
               "type": "string",
             },
             "number": Object {
+              "type": "string",
+            },
+            "pmString": Object {
               "type": "string",
             },
             "presetLabels": Object {
@@ -10054,6 +10111,12 @@ Map {
       "menuOffset": Object {
         "args": Array [
           Object {
+            "inputBottom": Object {
+              "type": "number",
+            },
+            "inputTop": Object {
+              "type": "number",
+            },
             "left": Object {
               "type": "number",
             },
@@ -19437,6 +19500,7 @@ Map {
           "type": "end_line",
         },
       },
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "alertDetected": "Alert detected:",
@@ -20223,6 +20287,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "domainRange": Object {
@@ -21947,6 +22014,7 @@ Map {
   },
   "TableCard" => Object {
     "defaultProps": Object {
+      "defaultDateFormatPattern": "L HH:mm",
       "filters": Array [],
       "i18n": Object {
         "cloneCardLabel": "Clone card",
@@ -22716,6 +22784,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "extraActions": Object {
@@ -31035,6 +31106,8 @@ Map {
       "isOpen": null,
       "light": true,
       "menuOffset": Object {
+        "inputBottom": null,
+        "inputTop": null,
         "left": 0,
         "top": 0,
       },
@@ -31133,6 +31206,12 @@ Map {
             Object {
               "args": Array [
                 Object {
+                  "inputBottom": Object {
+                    "type": "number",
+                  },
+                  "inputTop": Object {
+                    "type": "number",
+                  },
                   "left": Object {
                     "type": "number",
                   },
@@ -31225,7 +31304,9 @@ Map {
   "FilterTags" => Object {
     "defaultProps": Object {
       "hasOverflow": true,
-      "i18n": Object {},
+      "i18n": Object {
+        "filterTagsOverflowMenuText": "More: {n}",
+      },
       "id": "filter-tag-container",
       "onChange": null,
       "tagContainer": null,
@@ -32060,6 +32141,7 @@ Map {
         "includeZeroOnYaxis": false,
         "showLegend": true,
       },
+      "defaultDateFormatPattern": "L HH:mm",
       "domainRange": null,
       "i18n": Object {
         "defaultFilterStringPlaceholdText": "type and hit enter to apply",
@@ -32767,6 +32849,9 @@ Map {
         "type": "shape",
       },
       "dateTimeMask": Object {
+        "type": "string",
+      },
+      "defaultDateFormatPattern": Object {
         "type": "string",
       },
       "extraActions": Object {

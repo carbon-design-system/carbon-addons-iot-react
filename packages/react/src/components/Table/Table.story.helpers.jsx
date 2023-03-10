@@ -917,6 +917,54 @@ export const getAdvancedFilters = () => [
   },
 ];
 
+export const getMoreAdvancedFilters = () => [
+  {
+    filterId: 'story-filter1',
+    /** Text for main tilte of page */
+    filterTitleText:
+      'string CONTAINS toyota Some really long text to enable overflow menu to display Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac leo augue. Vivamus id orci arcu.',
+    /**
+     * the rules passed into the component. The RuleBuilder is a controlled component, so
+     * this works the same as passing defaultValue to a controlled input component.
+     */
+    filterRules: {
+      id: 'kmnhf092gub',
+      groupLogic: 'ALL',
+      rules: [
+        {
+          id: 'asdadguen87',
+          columnId: 'string',
+          operand: 'CONTAINS',
+          value: 'toyota',
+        },
+      ],
+    },
+    filterColumns: getTableColumns(),
+  },
+  {
+    filterId: 'story-filter2',
+    /** Text for main tilte of page */
+    filterTitleText: 'select=option-A',
+    /**
+     * the rules passed into the component. The RuleBuilder is a controlled component, so
+     * this works the same as passing defaultValue to a controlled input component.
+     */
+    filterRules: {
+      id: '9jf87klobuf',
+      groupLogic: 'ALL',
+      rules: [
+        {
+          id: 'iijn109fmwhd',
+          columnId: 'select',
+          operand: 'CONTAINS',
+          value: 'option-A',
+        },
+      ],
+    },
+    filterColumns: getTableColumns(),
+  },
+];
+
 const getParsedIntOrUndefined = (value) => {
   const parsedValue = Number.parseInt(value, 10);
   return Number.isNaN(parsedValue) ? undefined : parsedValue;
@@ -1620,6 +1668,7 @@ export const getI18nKnobs = (useGroup = true) => {
     multiSortCloseMenu: text('i18n.multiSortCloseMenu', 'Close menu', I18N_GROUP),
     multiSortDragHandle: text('i18n.multiSortDragHandle', 'Drag handle', I18N_GROUP),
     toolbarTooltipLabel: text('i18n.toolbarTooltipLabel', 'Toolbar tooltip', I18N_GROUP),
+    batchActionsOverflowMenuText: text('i18n.batchActionsOverflowMenuText', '', I18N_GROUP),
   };
 };
 

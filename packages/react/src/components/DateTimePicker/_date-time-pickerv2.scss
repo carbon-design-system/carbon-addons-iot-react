@@ -121,15 +121,12 @@
 // open menu content
 .#{$iot-prefix}--flyout-menu--content.#{$iot-prefix}--date-time-picker--menu {
   --zIndex: 0;
-  --top: 0;
-  --left: 0;
   padding: 0;
   z-index: var(--zIndex);
 
-  transform: translate(var(--left), var(--top));
-
   .#{$iot-prefix}--date-time-picker__menu-scroll {
     overflow-y: auto;
+    overflow-x: hidden;
     width: var(--wrapper-width);
 
     .#{$prefix}--list__item:before {

@@ -43,6 +43,7 @@ import {
   getEditDataFunction,
   getRowActionStates,
   getAdvancedFilters,
+  getMoreAdvancedFilters,
   getTableKnobs,
   getI18nKnobs,
   getBatchActions,
@@ -806,12 +807,18 @@ export const WithFiltering = () => {
   }
 
   // Advanced filter settings
+  let displayOverflowFilterTags;
   const [showBuilder, setShowBuilder] = useStoryState(false);
   const [advancedFilters, setAdvancedFilters] = useStoryState(
     hasAdvancedFilter ? getAdvancedFilters() : undefined
   );
   const selectedAdvancedFilterIds = hasAdvancedFilter
-    ? object('Active advanced filters (view.selectedAdvancedFilterIds) ☢️', ['story-filter'])
+    ? object(
+        'Active advanced filters (view.selectedAdvancedFilterIds) ☢️',
+        displayOverflowFilterTags
+          ? ['story-filter']
+          : ['story-filter', 'story-filter1', 'story-filter2']
+      )
     : undefined;
   const advancedFilterFlyoutOpen = hasAdvancedFilter
     ? boolean('Show advanced filter flyout (view.toolbar.advancedFilterFlyoutOpen) ☢️', true)
@@ -822,6 +829,14 @@ export const WithFiltering = () => {
   const storyNotice = hasAdvancedFilter ? (
     <StoryNotice experimental componentName="StatefulTable with advancedFilters" />
   ) : null;
+
+  if (hasAdvancedFilter) {
+    displayOverflowFilterTags = boolean(
+      'Enable overflow menu in filter tags for advanced filters  ☢️',
+      false
+    );
+  }
+
   const operands = {
     CONTAINS: (a, b) => a.includes(b),
     NEQ: (a, b) => a !== b,
@@ -849,6 +864,10 @@ export const WithFiltering = () => {
           );
         })
       : data;
+
+  if (displayOverflowFilterTags) {
+    setAdvancedFilters((prevFilters) => [...prevFilters, ...getMoreAdvancedFilters()]);
+  }
 
   const knobRegeneratedKey = `${JSON.stringify(activeFilters)}`;
   return (

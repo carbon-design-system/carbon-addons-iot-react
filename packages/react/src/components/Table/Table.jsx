@@ -566,6 +566,8 @@ export const defaultProps = (baseProps) => ({
     actionFailedText: 'Action failed',
     toolbarTooltipLabel: 'Toolbar tooltip',
     filterRowIconDescription: 'Edit filters',
+    batchActionsOverflowMenuText: '',
+    filterTagsOverflowMenuText: '+{n}',
   },
   error: null,
   // TODO: set default in v3. Leaving null for backwards compat. to match 'id' which was
@@ -881,6 +883,7 @@ const Table = (props) => {
               toggleAggregations: i18n.toggleAggregations,
               toolbarLabelAria: i18n.toolbarLabelAria,
               toolbarTooltipLabel: i18n.toolbarTooltipLabel,
+              batchActionsOverflowMenuText: i18n.batchActionsOverflowMenuText,
             }}
             actions={{
               ...pick(
@@ -959,6 +962,9 @@ const Table = (props) => {
           <FilterTags
             // TODO: remove id in V3.
             testId={`${id || testId}-filter-tags`}
+            i18n={{
+              filterTagsOverflowMenuText: i18n.filterTagsOverflowMenuText,
+            }}
           >
             {view.advancedFilters
               .filter((advFilter) => view.selectedAdvancedFilterIds.includes(advFilter.filterId))

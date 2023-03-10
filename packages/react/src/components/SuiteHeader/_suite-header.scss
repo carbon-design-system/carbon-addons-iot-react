@@ -324,6 +324,16 @@
       display: flex;
       align-items: center;
     }
+
+    .#{$prefix}--header-action-btn {
+      .#{$prefix}--btn--primary {
+        background-color: unset;
+      }
+
+      .#{$prefix}--header__menu-item span {
+        display: flex;
+      }
+    }
   }
 
   .#{$iot-prefix}--header__subtitle {

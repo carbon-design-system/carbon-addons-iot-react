@@ -406,6 +406,9 @@ export const fetchDataURL = (url, callback) =>
  * @returns {Array} matching thresholds
  */
 export const findMatchingThresholds = (thresholds, item, columnId) => {
+  if (!item) {
+    return [];
+  }
   return thresholds
     .filter((t) => {
       const { comparison, value, dataSourceId } = t;

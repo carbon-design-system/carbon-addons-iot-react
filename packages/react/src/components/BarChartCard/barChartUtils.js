@@ -526,7 +526,8 @@ export const formatTableData = (
   categoryDataSourceId,
   type,
   values,
-  chartData
+  chartData,
+  defaultDateFormatPattern = 'L HH:mm'
 ) => {
   const tableData = [];
   if (!isNil(values) && !isNil(chartData)) {
@@ -548,7 +549,7 @@ export const formatTableData = (
           values: {
             ...barTimeValue,
             // format the date locally
-            [timeDataSourceId]: dayjs(timestamp).format('L HH:mm'),
+            [timeDataSourceId]: dayjs(timestamp).format(defaultDateFormatPattern),
           },
           isSelectable: false,
         });

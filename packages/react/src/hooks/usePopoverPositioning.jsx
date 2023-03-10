@@ -18,16 +18,28 @@ const RTL_OFFSET_FIX = 15;
  * @param {string} menuDirection The direction prop
  * @param {HTMLElement} menuButton The button triggering the menu
  */
-const isOffscreen = (menuBody, menuDirection, menuButton /* , flipped, offset */) => {
+const isOffscreen = (
+  parentElementTop,
+  parentElementBottom,
+  menuBody,
+  menuDirection,
+  menuButton /* , flipped, offset */
+) => {
   const buttonRect = menuButton.getBoundingClientRect();
   const tooltipRect = menuBody.getBoundingClientRect();
 
+  const inputTopAndTriggerButtonTopGap = parentElementTop ? buttonRect.top - parentElementTop : 0;
+  const inputBottomAndTriggerButtonBottomGap = parentElementBottom
+    ? parentElementBottom - buttonRect.bottom
+    : 0;
+
   const windowWidth = window.innerWidth || document.documentElement.clientWidth;
   const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-  const offTop = buttonRect.top - tooltipRect.height < 0;
+  const offTop = buttonRect.top - tooltipRect.height - inputTopAndTriggerButtonTopGap < 0;
   const offLeft = buttonRect.left - tooltipRect.width < 0;
   const offRight = buttonRect.right + tooltipRect.width > windowWidth;
-  const offBottom = buttonRect.bottom + tooltipRect.height > windowHeight;
+  const offBottom =
+    buttonRect.bottom + tooltipRect.height + inputBottomAndTriggerButtonBottomGap > windowHeight;
   const T = offTop ? 'top' : '';
   const R = offRight ? 'right' : '';
   const B = offBottom ? 'bottom' : '';
@@ -105,6 +117,16 @@ export const usePopoverPositioning = ({
    * Could be 'start', 'center' or 'end'
    */
   defaultAlignment = 'center',
+
+  /**
+   * The top of the parent element
+   */
+  parentElementTop,
+
+  /**
+   * The bottom of the parent element
+   */
+  parentElementBottom,
 }) => {
   const [adjustedDirection, setAdjustedDirection] = React.useState();
   const [adjustedAlignment, setAdjustedAlignment] = React.useState(defaultAlignment);
@@ -230,6 +252,9 @@ export const usePopoverPositioning = ({
           break;
         case 'right':
         case 'top-right':
+          if (direction === 'bottom-end') {
+            break;
+          }
           if (flyoutAlignment) {
             // fixes an edge case where if the flyout is right-end,
             // and causes an overflow to the top-right, then we need to
@@ -294,6 +319,14 @@ export const usePopoverPositioning = ({
             setAdjustedDirection('right');
           }
           break;
+        case 'top-bottom':
+          if (flyoutAlignment) {
+            setAdjustedDirection(`bottom-${flyoutAlignment}`);
+            tooltipElement.setAttribute('data-floating-menu-direction', 'bottom');
+          } else {
+            setAdjustedDirection('bottom');
+          }
+          break;
         default:
           break;
       }
@@ -310,7 +343,7 @@ export const usePopoverPositioning = ({
         left: newOffset.left + adjustedOffset.left,
       };
     },
-    [adjustedDirection, flyoutAlignment, getAdjustedOffset, getOffset, isOverflowMenu]
+    [adjustedDirection, direction, flyoutAlignment, getAdjustedOffset, getOffset, isOverflowMenu]
   );
 
   /**
@@ -332,7 +365,7 @@ export const usePopoverPositioning = ({
       }
 
       // determine if the element is off-screen.
-      const overflow = isOffscreen(...args, defaultOffset);
+      const overflow = isOffscreen(parentElementTop, parentElementBottom, ...args, defaultOffset);
 
       // determine if the element has new alignment
       const alignment = getTooltipAlignment(...args);
@@ -348,13 +381,23 @@ export const usePopoverPositioning = ({
         case 'top':
         case 'right':
         case 'bottom':
+        case 'top-bottom':
+          return fixOverflow(overflow, [...args], alignment);
         case 'left':
           return fixOverflow(overflow, [...args], alignment);
         default:
           return defaultOffset;
       }
     },
-    [fixOverflow, getOffset, isOverflowMenu, langDir, useAutoPositioning]
+    [
+      fixOverflow,
+      getOffset,
+      isOverflowMenu,
+      langDir,
+      parentElementBottom,
+      parentElementTop,
+      useAutoPositioning,
+    ]
   );
 
   /**

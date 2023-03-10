@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash-es';
+import { cloneDeep, debounce } from 'lodash-es';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 
@@ -8,8 +8,18 @@ import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
 
+/** check if current time is 24 hours
+ *
+ * @param {string} dateTimeMask like YYYY-MM-DD HH:MM
+ * @returns true or false
+ */
+const is24hours = (dateTimeMask) => {
+  const [, time] = dateTimeMask.split(' ');
+  const hoursMask = time?.split(':')[0];
+  return hoursMask ? hoursMask.includes('H') : false;
+};
+
 /** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
- * *
  * @param {Object} object hh:mm A time oject
  * @returns HH:mm time object
  */
@@ -101,10 +111,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
     case PICKER_KINDS.ABSOLUTE: {
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
-        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
-        const formatedStartTime = is12hour
-          ? format12hourTo24hour(value.startTime)
-          : value.startTime;
+        const formatedStartTime = is24hours(dateTimeMask)
+          ? value.startTime
+          : format12hourTo24hour(value.startTime);
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
@@ -121,8 +130,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
-          const is12hour = dayjs(value.endTime, 'hh:mm A', true).isValid();
-          const formatedEndTime = is12hour ? format12hourTo24hour(value.endTime) : value.endTime;
+          const formatedEndTime = is24hours(dateTimeMask)
+            ? value.endTime
+            : format12hourTo24hour(value.endTime);
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         }
@@ -146,10 +156,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       }
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
-        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
-        const formatedStartTime = is12hour
-          ? format12hourTo24hour(value.startTime)
-          : value.startTime;
+        const formatedStartTime = is24hours(dateTimeMask)
+          ? value.startTime
+          : format12hourTo24hour(value.startTime);
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       }
@@ -794,3 +803,123 @@ export const useCloseDropdown = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [defaultValue, isExpanded, setCustomRangeKind, setIsExpanded, lastAppliedValue]
   );
+
+/**
+ * For a given element, walk up the dom to find scroll container.
+ * Only gets first as modals should prevent scrolling in elements above.
+ * @param{element} element
+ */
+export const getScrollParent = (element) => {
+  try {
+    /* istanbul ignore next */
+    if (
+      element.scrollHeight > parseInt(element.clientHeight, 10) + 10 ||
+      element.scrollWidth > parseInt(element.clientWidth, 10) + 10
+    ) {
+      const computedStyle = window.getComputedStyle(element);
+      if (
+        ['scroll', 'auto'].includes(computedStyle.overflowY) ||
+        ['scroll', 'auto'].includes(computedStyle.overflow)
+      ) {
+        return element;
+      }
+    }
+    if (element.parentElement) {
+      return getScrollParent(element.parentElement);
+    }
+    return document.scrollingElement;
+  } catch (error) {
+    /* istanbul ignore next */
+    return window;
+  }
+};
+
+/**
+ * A hook handling the height of the drop down menu
+ *
+ * @param {object} containerRef the ref to the container div of the drop down menu
+ * @param {boolean} isSingleSelect if it is single select calendar
+ * @param {boolean} isCustomRange if dropdown was opened in custom range
+ * @param {boolean} showRelativeOption are the relative options shown by default
+ * @param {string} customRangeKind custom range kind is either relative or absolute
+ * @param {function} setIsExpanded set the isExpanded state
+ * @returns Object An object containing:
+ *    offTop (boolean): if the menu is off top
+ *    offBottom (boolean): if the menu is off bottom
+ *    inputTop (string) : the top position of the date time input
+ *    inputBottom (string): the bottom position of the date time input
+ *    customHeight (string): the adjusted height of the drop down menu if both offTop and offBottom are true
+ *    maxHeight (string) : maximum height of the drop down menu
+ */
+export const useCustomHeight = ({
+  containerRef,
+  isSingleSelect,
+  isCustomRange,
+  showRelativeOption,
+  customRangeKind,
+  setIsExpanded,
+}) => {
+  // calculate max height for varies dropdown
+  const presetMaxHeight = 315;
+  const relativeMaxHeight = 269;
+  const withoutRelativeOptionMaxHeight = 446;
+  const absoluteMaxHeight = 555;
+  const singleMaxHeight = 442;
+  const footerHeight = 40;
+  const maxHeight = isCustomRange
+    ? showRelativeOption
+      ? isSingleSelect
+        ? singleMaxHeight
+        : customRangeKind === PICKER_KINDS.ABSOLUTE
+        ? absoluteMaxHeight
+        : relativeMaxHeight
+      : withoutRelativeOptionMaxHeight
+    : presetMaxHeight;
+
+  const closeDropDown = () => {
+    setIsExpanded(false);
+  };
+
+  useEffect(() => {
+    const firstScrollableParent = getScrollParent(containerRef.current);
+    if (firstScrollableParent) {
+      firstScrollableParent.addEventListener('scroll', closeDropDown);
+    }
+    window.addEventListener('scroll', closeDropDown);
+    return () => {
+      if (firstScrollableParent) {
+        firstScrollableParent.removeEventListener('scroll', closeDropDown);
+      }
+      window.removeEventListener('scroll', closeDropDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // re-calculate window height when resize
+  const [windowHeight, setWindowHeight] = useState(
+    window.innerHeight || document.documentElement.clientHeight
+  );
+
+  const handleWindowResize = debounce(() => {
+    setWindowHeight(window.innerHeight || document.documentElement.clientHeight);
+  }, 50);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowResize);
+    return () => window.removeEventListener('resize', handleWindowResize);
+  }, [handleWindowResize]);
+
+  // calculate if flyout menu will be off top or bottom of the screen
+  const inputBottom = containerRef?.current?.getBoundingClientRect().bottom;
+  const inputTop = containerRef?.current?.getBoundingClientRect().top;
+  const flyoutMenuHeight = maxHeight + footerHeight;
+  const offBottom = windowHeight - inputBottom < flyoutMenuHeight;
+  const offTop = inputTop < flyoutMenuHeight;
+  const topGap = inputTop;
+  const bottomGap = windowHeight - inputBottom;
+
+  const customHeight =
+    offBottom && offTop ? (topGap > bottomGap ? topGap : bottomGap) - footerHeight : undefined;
+
+  return [offTop, offBottom, inputTop, inputBottom, customHeight, maxHeight];
+};

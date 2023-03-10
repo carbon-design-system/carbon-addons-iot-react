@@ -18,7 +18,7 @@ describe('DateTimePickerV2', () => {
     cy.viewport(1680, 900);
   });
 
-  it('should re-position the flyout when scrolling parent to bottom', () => {
+  it('should clsoe the flyout when scrolling parent to bottom', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -71,25 +71,10 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
-
-    let newDateTimeInputTop;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputTop = rect.top;
-      });
-
-    let newFlyoutMenuTop;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuTop = rect.top;
-      });
-
-    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
-  it('should re-position the flyout when scrolling parent to the right', () => {
+  it('should close the flyout when scrolling parent to the right', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -142,22 +127,7 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
-
-    let newDateTimeInputLeft;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputLeft = rect.left;
-      });
-
-    let newFlyoutMenuLeft;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuLeft = rect.left;
-      });
-
-    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
   it('should re-position the flyout when scrolling parent to bottom (new time spinner)', () => {
@@ -214,25 +184,10 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuTop).equal(previousDateTimeInputTop);
 
     cy.get('#parent').scrollTo('top', { duration: 1000 });
-
-    let newDateTimeInputTop;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputTop = rect.top;
-      });
-
-    let newFlyoutMenuTop;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuTop = rect.top;
-      });
-
-    expect(newFlyoutMenuTop).equal(newDateTimeInputTop);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
-  it('should re-position the flyout when scrolling parent to the right (new time spinner)', () => {
+  it('should close the flyout when scrolling parent to the right (new time spinner)', () => {
     const onApply = cy.stub();
     const onCancel = cy.stub();
     mount(
@@ -286,22 +241,7 @@ describe('DateTimePickerV2', () => {
     expect(previousFlyoutMenuLeft).equal(previousDateTimeInputLeft);
 
     cy.get('#parent').scrollTo('left', { duration: 1000 });
-
-    let newDateTimeInputLeft;
-    cy.get('#picker-test-iot--date-time-pickerv2__wrapper')
-      .then(getRect)
-      .then((rect) => {
-        newDateTimeInputLeft = rect.left;
-      });
-
-    let newFlyoutMenuLeft;
-    cy.get('#flyout-tooltip')
-      .then(getRect)
-      .then((rect) => {
-        newFlyoutMenuLeft = rect.left;
-      });
-
-    expect(newFlyoutMenuLeft).equal(newDateTimeInputLeft);
+    cy.get('#flyout-tooltip').should('not.exist');
   });
 
   it('should pick a new absolute ranges', () => {
@@ -448,6 +388,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34',
@@ -509,6 +451,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/08/2021',
             endTime: '12:34 PM',
@@ -915,6 +859,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: '08/13/2021',
             endTime: '12:49',
@@ -1127,6 +1073,8 @@ describe('DateTimePickerV2', () => {
         expect(onApply).to.be.calledWith({
           timeRangeKind: 'ABSOLUTE',
           timeRangeValue: {
+            ISOStart: Cypress.sinon.match.any,
+            ISOEnd: Cypress.sinon.match.any,
             end: Cypress.sinon.match.any,
             endDate: now.format(`MM/[12]/YYYY`),
             endTime: null,
@@ -1384,8 +1332,8 @@ describe('DateTimePickerV2', () => {
       // Unsaved changes in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
       cy.findByText('Absolute').should('be.visible').click();
-      cy.findByText('25').should('be.visible').click();
-      cy.findByText('26').should('be.visible').click();
+      cy.findAllByText('25').click({ multiple: true, force: true });
+      cy.findAllByText('26').click({ multiple: true, force: true });
       cy.findByLabelText('Start time').type('14:30');
 
       cy.get('body').click();
@@ -1522,7 +1470,7 @@ describe('DateTimePickerV2', () => {
     cy.findByTestId('date-time-picker__field').should('have.text', 'YYYY-MM-DD HH:mm');
     // Unsaved changes
     cy.findByTestId('date-time-picker__field').click();
-    cy.findByText('28').click();
+    cy.findAllByText('28').click({ multiple: true, force: true });
     cy.findByLabelText('Start time').type('11:11{enter}');
     cy.get('body').click();
     // Empty value preserved

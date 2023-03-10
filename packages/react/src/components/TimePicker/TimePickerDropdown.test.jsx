@@ -372,14 +372,14 @@ describe('TimePickerDropdown', () => {
   });
 
   it('should display invalid state if typed characters outside of 24h format', async () => {
-    render(<TimePickerDropdown {...timePickerProps} />);
+    render(<TimePickerDropdown {...timePickerProps} is24hours />);
     const input = screen.getByTestId('time-picker-test-input');
-    userEvent.type(input, 'fdsfsdfsdf');
-    expect(input.value).toEqual('11:30 PMfdsfsdfsdf');
-    userEvent.click(document.body);
-    await waitFor(() => {
-      expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
-    });
+    fireEvent.change(input, { target: { value: '11:30 fdsfsdfsdf' } });
+    expect(input.value).toEqual('11:30 fdsfsdfsdf');
+    fireEvent.blur(input);
+
+    expect(screen.getByText('The time entered is invalid')).toBeInTheDocument();
+    expect(input).toBeInvalid();
   });
 
   it('should move focus in spinner if left or right arrows pressed', () => {
