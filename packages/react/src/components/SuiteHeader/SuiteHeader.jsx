@@ -250,7 +250,7 @@ const SuiteHeader = ({
   return (
     <>
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
-      {showToast ? (
+      {showToast && surveyData ? (
         <ToastNotification
           data-testid={`${testId}-notification`}
           className={`${settings.iotPrefix}--suite-header-survey-toast`}
