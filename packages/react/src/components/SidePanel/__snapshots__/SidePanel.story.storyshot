@@ -46,6 +46,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       </svg>
     </button>
     <header
+      aria-hidden={false}
       className="iot--sidepanel__header"
     >
       <h2
@@ -55,6 +56,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet
       </h2>
       <div
+        aria-hidden={false}
         className="iot--sidepanel__action-bar"
         data-testid="side-panel-action-bar"
       >
@@ -175,6 +177,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       </div>
     </header>
     <section
+      aria-hidden={false}
       className="iot--sidepanel__content"
       data-testid="side-panel-content"
       onScroll={[Function]}
@@ -188,6 +191,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
       </div>
     </section>
     <div
+      aria-hidden={false}
       className="iot--sidepanel__footer"
       data-testid="side-panel-footer"
     >
@@ -302,6 +306,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </svg>
       </button>
       <header
+        aria-hidden={false}
         className="iot--sidepanel__header"
       >
         <h2
@@ -311,6 +316,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
           My title, volutpat ac enim. Etiam id magna vel dolor condimentum imperdiet
         </h2>
         <div
+          aria-hidden={false}
           className="iot--sidepanel__action-bar"
           data-testid="side-panel-action-bar"
         >
@@ -431,6 +437,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
       </header>
       <section
+        aria-hidden={false}
         className="iot--sidepanel__content"
         data-testid="side-panel-content"
         onScroll={[Function]}
@@ -444,6 +451,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/S
         </div>
       </section>
       <div
+        aria-hidden={false}
         className="iot--sidepanel__footer"
         data-testid="side-panel-footer"
       >
