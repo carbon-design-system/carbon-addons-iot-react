@@ -141,10 +141,11 @@ const SidePanel = ({
             renderIcon={e.buttonIcon}
             onClick={e.buttonCallback}
             size="small"
+            tabIndex={isOpen ? 0 : -1}
           />
         ))) ||
         actionItems),
-    [actionItems, testId]
+    [actionItems, testId, isOpen]
   );
   // Since subtitle is dynamic we set a css variable with the height value to animate in condensed mode
   const [subtitleHeight, setSubtitleHeight] = useState('100%');
@@ -196,14 +197,15 @@ const SidePanel = ({
           disabled={toggleIcon.disabled}
         />
       ) : null}
-      <header className={`${baseClass}__header`}>
-        {title && truncatesTitle && isOpen ? (
+      <header className={`${baseClass}__header`} aria-hidden={!isOpen}>
+        {title && truncatesTitle ? (
           <Tooltip
             data-testid={`${testId}-title`}
             ref={titleRef}
             showIcon={false}
             triggerClassName={`${baseClass}__title`}
             triggerText={title}
+            tabIndex={isOpen ? 0 : -1}
           >
             {title}
           </Tooltip>
@@ -223,7 +225,11 @@ const SidePanel = ({
           </p>
         ) : null}
         {actionIconBtns ? (
-          <div data-testid={`${testId}-action-bar`} className={`${baseClass}__action-bar`}>
+          <div
+            data-testid={`${testId}-action-bar`}
+            className={`${baseClass}__action-bar`}
+            aria-hidden={!isOpen}
+          >
             {actionIconBtns}
           </div>
         ) : null}
@@ -233,11 +239,16 @@ const SidePanel = ({
         ref={contentRef}
         className={`${baseClass}__content`}
         onScroll={() => setIsScrolling((prev) => !prev)}
+        aria-hidden={!isOpen}
       >
         {children}
       </section>
       {onSecondaryButtonClick || onPrimaryButtonClick ? (
-        <div className={`${baseClass}__footer`} data-testid={`${testId}-footer`}>
+        <div
+          className={`${baseClass}__footer`}
+          data-testid={`${testId}-footer`}
+          aria-hidden={!isOpen}
+        >
           {onSecondaryButtonClick ? (
             <Button
               testId={`${testId}-secondary-button`}
@@ -246,6 +257,7 @@ const SidePanel = ({
               tooltipPosition={toggleIcon.tooltipPostion}
               kind="secondary"
               disabled={isBusy}
+              tabIndex={isOpen ? 0 : -1}
             >
               {mergedI18n.secondaryButtonLabel}
             </Button>
@@ -258,6 +270,7 @@ const SidePanel = ({
               onClick={onPrimaryButtonClick}
               loading={isBusy}
               disabled={isPrimaryButtonDisabled}
+              tabIndex={isOpen ? 0 : -1}
             >
               {mergedI18n.primaryButtonLabel}
             </Button>
