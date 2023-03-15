@@ -3,6 +3,69 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.1...v2.153.0-next.2) (2023-03-10)
+
+
+### Bug Fixes
+
+* **proptypes:** adding defaultDateFormatPattern to the PropType ([8ff6102](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8ff6102ab991b534a9bbcbf211f16f0a63981f30))
+* **tablecard:** update images ([49c1f52](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/49c1f524a5ef44b8d0164eca717a3a805c0dc110))
+* **tablecardutils:** formatting the file ([943f361](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/943f3612e852d98ff1541e91637158c7d6f54cc2))
+
+
+### Features
+
+* adding default date format pattern for table, timeseriesbar and combochart cards ([dc399ff](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/dc399ffa2981e1bc7b2d762f1b328ada79f849dc))
+
+
+### Reverts
+
+* **barchartutils:** reverting the tooltipDateFormatPattern format ([d9fa261](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d9fa261ea78dcb55c97ad4c86cc2d06c551a7ec5))
+* revert the defaultDateFormatPattern to old format ([30b537f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/30b537ffa5685ec39bdcd8e8797a45454384a082))
+
+
+
+
+
+# [2.153.0-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.0...v2.153.0-next.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **header:** handle server-side rendering  [#3742](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3742) ([e15989f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e15989f656cf71bd3095453ce7d4c2dcfe4a6b65))
+
+
+
+
+
+# [2.153.0-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.6-next.1...v2.153.0-next.0) (2023-03-09)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** fix autoposition ([b4a47f1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b4a47f1fad871e020a5a6068965a8018b7b9149d))
+
+
+### Features
+
+* **card:** add support for browser tooltip in extra actions ([8d51c03](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/8d51c038334d93a6a51ef8a9e1464535c73564af))
+
+
+
+
+
+## [2.152.6-next.1](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.6-next.0...v2.152.6-next.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* **walkme:** Defining the required Walkme global variable and function in a useEffect hook because they were not being set inside the script tag for some reason. ([d8bb98d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d8bb98d06729dbfa9145757270fcdf9331ded757))
+* **walkme:** Running yarn format ([f2f9436](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f2f943612e985e135dc61d042c2b140cc8d826bc))
+
+
+
+
+
 ## [2.152.6-next.0](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.152.5...v2.152.6-next.0) (2023-03-07)
 
 

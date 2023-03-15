@@ -188,6 +188,7 @@ export const useChartOptions = (content) => {
       size,
       timeDataSourceId,
       tooltipDateFormatPattern,
+      defaultDateFormatPattern,
       unit,
       values,
     } = content;
@@ -220,6 +221,7 @@ export const useChartOptions = (content) => {
       toolbar: {
         enabled: false,
       },
+      defaultDateFormatPattern,
     };
 
     options.data = merge(options.data, { loading: isLoading });
@@ -228,7 +230,7 @@ export const useChartOptions = (content) => {
 };
 
 const extractDataAndColumnNames = (values, chartOptions) => {
-  const { timeDataSourceId, showTimeInGMT } = chartOptions;
+  const { timeDataSourceId, showTimeInGMT, defaultDateFormatPattern } = chartOptions;
   let maxColumnNames = [];
 
   const tableValues = values.map((value, index) => {
@@ -242,7 +244,7 @@ const extractDataAndColumnNames = (values, chartOptions) => {
         [timeDataSourceId]: (showTimeInGMT
           ? dayjs.utc(value[timeDataSourceId])
           : dayjs(value[timeDataSourceId])
-        ).format('L HH:mm'),
+        ).format(defaultDateFormatPattern),
       },
       isSelectable: false,
     };

@@ -2078,7 +2078,7 @@ describe('DateTimePickerV2', () => {
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
 
-  it('when flyout offscreen top right render direction to LeftStart', () => {
+  it('when flyout offscreen top right render direction to bottomEnd', () => {
     const originalGetBoundingClientRect = Element.prototype.getBoundingClientRect;
     const mockGetBoundingClientRect = jest.fn(
       generateBoundingClientRect({
@@ -2123,7 +2123,7 @@ describe('DateTimePickerV2', () => {
     const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
 
     expect(
-      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftStart}`)
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
     ).toBe(true);
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
@@ -2323,7 +2323,7 @@ describe('DateTimePickerV2', () => {
     const menu = screen.getByTestId(`${testId}-datepicker-flyout`);
 
     expect(
-      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.LeftEnd}`)
+      menu.classList.contains(`${iotPrefix}--flyout-menu--body__${FlyoutMenuDirection.BottomEnd}`)
     ).toBe(true);
     Element.prototype.getBoundingClientRect = originalGetBoundingClientRect;
   });
