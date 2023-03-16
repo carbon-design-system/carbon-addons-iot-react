@@ -273,3 +273,52 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/B
   </div>
 </div>
 `;
+
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Breadcrumb with truncation 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="breadcrumb--container breadcrumb--container__overflowfull"
+    data-testid="overflow"
+  >
+    <nav
+      aria-label="Breadcrumb"
+      className={null}
+      data-testid="breadcrumb"
+    >
+      <ol
+        className="bx--breadcrumb bx--breadcrumb--no-trailing-slash"
+      >
+        <li
+          className="bx--breadcrumb-item"
+          style={
+            Object {
+              "flexShrink": 0,
+            }
+          }
+        >
+          <a
+            className="bx--link"
+            href="#"
+            rel={null}
+          >
+            Breadcrumb 1
+          </a>
+        </li>
+        <li
+          className="bx--breadcrumb-item"
+        >
+          <a
+            className="bx--link"
+            href="#"
+            rel={null}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim.
+          </a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+`;
