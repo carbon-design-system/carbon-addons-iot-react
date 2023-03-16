@@ -35,6 +35,11 @@ const propTypes = {
    */
   hasOverflow: PropTypes.bool,
 
+  /**
+   * Disable truncation on the first or last breadcrumb item.
+   */
+  disableTruncation: PropTypes.oneOf(['first', 'last', '']),
+
   testId: PropTypes.string,
 };
 
@@ -45,10 +50,26 @@ const defaultProps = {
   hasOverflow: false,
   'aria-label': null,
   testId: 'breadcrumb',
+  disableTruncation: '',
 };
 
-const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
-  const childrenItems = Children.map(children, (child) => child);
+const Breadcrumb = ({ children, className, hasOverflow, testId, disableTruncation, ...other }) => {
+  const childrenItems = Children.map(children, (child, index) => {
+    if (disableTruncation === 'first' && index === 0) {
+      return React.cloneElement(child, {
+        style: { ...child.props.style, flexShrink: 0 },
+      });
+    }
+
+    if (disableTruncation === 'last' && index === children.length - 1) {
+      return React.cloneElement(child, {
+        style: { ...child.props.style, flexShrink: 0 },
+      });
+    }
+
+    return child;
+  });
+
   const breakingWidth = useRef([]);
 
   const [overflowItems, setOverflowItems] = useState([]);
@@ -134,7 +155,7 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
         </CarbonBreadcrumb>
       ) : (
         <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
-          {children}
+          {childrenItems}
         </CarbonBreadcrumb>
       )}
     </div>
