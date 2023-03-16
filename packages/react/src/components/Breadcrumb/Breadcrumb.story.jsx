@@ -19,6 +19,7 @@ const props = () => ({
   className: 'some-class',
   noTrailingSlash: boolean('No trailing slash (noTrailingSlash)', false),
   onClick: action('onClick'),
+  disableTruncation: text('Disable truncation (first, last)', ''),
 });
 
 const PolyfillWarning = () => (
@@ -142,3 +143,22 @@ HasOverflow.parameters = {
     `,
   },
 };
+
+export const WithTruncation = () => {
+  return (
+    <Breadcrumb
+      noTrailingSlash
+      disableTruncation={text('Disable truncation (first, last)', 'first')}
+    >
+      <BreadcrumbItem href="#">{text('Breadcrumb 1 text', 'Breadcrumb 1')}</BreadcrumbItem>
+      <BreadcrumbItem href="#">
+        {text(
+          'Breadcrumb 2 text',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi finibus tortor vel nisl suscipit, ac commodo lorem lobortis. Aenean at sem porta, rutrum nisi ut, lobortis enim.'
+        )}
+      </BreadcrumbItem>
+    </Breadcrumb>
+  );
+};
+
+WithTruncation.storyName = 'with truncation';
