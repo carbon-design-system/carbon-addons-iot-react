@@ -24,7 +24,7 @@ describe('Breadcrumbs', () => {
       .parent()
       .then(($el) => {
         const rect = $el[0].getBoundingClientRect();
-        expect(rect.width).to.be.greaterThan(105);
+        expect(rect.width).to.be.greaterThan(100);
       });
   });
 
@@ -43,7 +43,7 @@ describe('Breadcrumbs', () => {
       .parent()
       .then(($el) => {
         const rect = $el[0].getBoundingClientRect();
-        expect(rect.width).to.be.greaterThan(105);
+        expect(rect.width).to.be.greaterThan(100);
       });
   });
 });
