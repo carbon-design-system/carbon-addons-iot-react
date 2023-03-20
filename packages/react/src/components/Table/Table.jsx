@@ -146,6 +146,13 @@ const propTypes = {
     preserveCellWhiteSpace: PropTypes.bool,
     /** display icon button in filter row */
     hasFilterRowIcon: PropTypes.bool,
+    /**
+     * If rows can be dragged and dropped on top of each other. When this is true there will always
+     * be space reserved for a drag handle at the start of the row. Each rows data must indicate if
+     * that row can be dragged by setting `isDraggable: true` on their row data. The table also needs
+     * `actions.table.onDrag` and `actions.table.onDrop` callback props.
+     */
+    hasDragAndDrop: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -361,6 +368,23 @@ const propTypes = {
       onRowLoadMore: PropTypes.func,
       /** call back function for when icon button in filter row is clicked  (evt) => {} */
       onFilterRowIconClick: PropTypes.func,
+      /**
+       * Required callback to support drag and drop. This gets the row ID being dragged and the
+       * values for that row. It must return an object of the row IDs that can be dropped on, and a
+       * node use as the preview of what' being dragged (typically the name of the row, possibly
+       * with an icon).
+       *
+       * @type {(rowId: string, values: any[]) => {dropIds: string[], preview: React.Node}}
+       */
+      onDrag: PropTypes.func,
+      /**
+       * Required callback to support drag and drop. This is called after a successful drop and is
+       * passed the ID of the row that was dragged and the ID of the row that was dropped on. It's
+       * up to the caller to decide what to do with that--the table does not update itself.
+       *
+       * @type {(dragRowId: string, dropRowId) => void}
+       */
+      onDrop: PropTypes.func,
     }).isRequired,
     /** callback for actions relevant for view management */
     onUserViewModified: PropTypes.func,
@@ -409,6 +433,7 @@ export const defaultProps = (baseProps) => ({
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
     hasFilterRowIcon: false,
+    hasDragAndDrop: false,
   },
   size: undefined,
   view: {
@@ -782,7 +807,8 @@ const Table = (props) => {
     (hasMultiSelect ? 1 : 0) +
     (options.hasRowExpansion || options.hasRowNesting ? 1 : 0) +
     (options.hasRowActions ? 1 : 0) +
-    (showExpanderColumn ? 1 : 0);
+    (showExpanderColumn ? 1 : 0) +
+    (options.hasDragAndDrop ? 1 : 0);
 
   const isFiltered =
     view.filters.length > 0 ||
@@ -1031,7 +1057,8 @@ const Table = (props) => {
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths',
-                  'hasFilterRowIcon'
+                  'hasFilterRowIcon',
+                  'hasDragAndDrop'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
@@ -1084,6 +1111,7 @@ const Table = (props) => {
                 {...pick(options, 'hasRowSelection', 'hasRowActions')}
                 hasRowExpansion={!!options.hasRowExpansion}
                 hasRowNesting={!!options.hasRowNesting}
+                hasDragAndDrop={!!options.hasDragAndDrop}
                 rowCount={view.table.loadingState.rowCount}
                 columnCount={view.table.loadingState.columnCount}
                 // TODO: remove 'id' in v3.
@@ -1134,7 +1162,8 @@ const Table = (props) => {
                   'shouldExpandOnRowClick',
                   'shouldLazyRender',
                   'preserveCellWhiteSpace',
-                  'useRadioButtonSingleSelect'
+                  'useRadioButtonSingleSelect',
+                  'hasDragAndDrop'
                 )}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
@@ -1148,7 +1177,9 @@ const Table = (props) => {
                   'onClearRowError',
                   'onRowExpanded',
                   'onRowClicked',
-                  'onRowLoadMore'
+                  'onRowLoadMore',
+                  'onDrag',
+                  'onDrop'
                 )}
                 // TODO: remove 'id' in v3.
                 testId={`${id || testId}-table-body`}
@@ -1189,7 +1220,13 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(options, 'hasRowSelection', 'hasRowActions', 'hasRowNesting'),
+                ...pick(
+                  options,
+                  'hasRowSelection',
+                  'hasRowActions',
+                  'hasRowNesting',
+                  'hasDragAndDrop'
+                ),
                 hasRowExpansion: !!options.hasRowExpansion,
               }}
               tableState={{

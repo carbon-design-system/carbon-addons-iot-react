@@ -1,0 +1,61 @@
+View the full Table documentation [here](/docs/1-watson-iot-table--playground)
+
+## Drag and Drop
+
+To support drag and drop in the table set the `hasDragAndDrop` property to true. This will reserve
+space in the table for a drag handle at the start of rows. Each draggable row needs to set
+`isDraggable` to true in the data array if if can be dragged. Finally, the table will need to supply
+callbacks for `onDrag` and `onDrop`.
+
+`onDrag` is called once a drag begins. It receives the the row ID being dragged (and that row's
+values for convenience). It must return an object with both an array of row IDs that can accept a
+drop of this row, and a `React.Node` to be used as the drag preview. The table will show that
+preview near the cursor during the drag, so it should summarize the dragged row in a compact form.
+The table will add a border and shadow to this, so just return the row icon and name or something
+similar.
+
+`onDrop` is called when a drop succeeds. It receives the dragged row ID and the dropped on row ID.
+The caller must decide what to do at that point--the table doesn't change the data on drop. There is
+no callback if the drop is canceled.
+
+Note that drag and drop does not work with `StatefulTable` at this time. Use with the standard `Table`.
+
+```js
+const columns = [
+  {
+    id: 'row-0',
+    values: {
+      name: 'A file',
+    }
+    isDraggable: true
+  },
+  {
+    id: 'row-1',
+    values: {
+      name: 'A folder'
+    }
+  }
+]
+
+
+<Table
+  columns={columns}
+  data={data}
+  options={{ hasDragAndDrop: true }}
+  actions={{
+    table: {
+      onDrag: (rowId, values) => {
+        return {
+          dropIds: ['row-1'],
+          preview: <>values.name</>
+        };
+      },
+      onDrop: (dragRowId, dropRowId) => {
+        console.info(`Dropped ${dragRowId} onto ${dropRowId}`);
+      }
+    },
+  }}
+/>
+
+];
+```

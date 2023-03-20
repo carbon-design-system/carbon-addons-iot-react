@@ -1,0 +1,87 @@
+@import '../../../globals/vars';
+@import '../../../globals/spacing';
+
+// The 6-dots grable handle area on a row that can be dragged. This is really that the parent of
+// that picture so the draggable area is a larger, square.
+.#{$iot-prefix}--table-drag-handle {
+  height: 2rem;
+  padding-inline: 1rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  cursor: grab;
+  user-select: none;
+}
+
+.bx--data-table td.#{$iot-prefix}--table-grab-handle-cell {
+  // remove padding so that the handle can fill the whole cell. Visually it's smaller, but the
+  // draggable region will be large.
+  padding-inline: 0;
+}
+
+// When hovering over a row. Draws a border around the row using an extra overlay element positioned
+// over it since CSS alone can add the require border around the row.
+.#{$iot-prefix}--table-drop-row-overlay {
+  // Abs positioned, but JavaScript will set its rect
+  position: absolute;
+  border: dashed 2px $carbon--blue-60;
+  pointer-events: none;
+  // This probably doesn't need to be very high, as long as it's higher than the table.
+  z-index: 1000;
+}
+
+// The shadowed tile shown while dragging a row. The caller supplies the text or icon inside this
+// through a callback, otherwise it just a white square.
+.#{$iot-prefix}--table-drag-avatar {
+  font-size: 0.875rem; // to match table default
+  // Abs positioned, but JavaScript will set its rect
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: solid 1px $carbon--blue-60;
+  // background-color: $carbon--gray-10;
+  background-color: white;
+  pointer-events: none;
+  padding: $spacing-05;
+  padding-inline-start: 2rem; // extra space at the start
+  // Above the row overlay
+  z-index: 1001;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+// When dragging and dropping onto a row, the row background itself needs to change color to a
+// Carbon blue.
+body.#{$iot-prefix}--is-dragging {
+  // We don't want the cursor to ever change while dragging.
+  * {
+    cursor: grabbing !important;
+  }
+
+  .#{$prefix}--data-table tbody {
+    // We don't want gray hover rows during drag. Only the rows accepting a drop should change
+    // color, and not to gray.
+    tr:hover,
+    tr:hover td {
+      background-color: white;
+    }
+
+    // Use light blues background if we can drop here.
+    tr.#{$iot-prefix}--table__row--dropping td {
+      background-color: $carbon--blue-10;
+      border-color: transparent;
+    }
+
+    // Dim the row in the table that's being dragged.
+    tr.#{$iot-prefix}--table__row--dragging td {
+      opacity: 0.4;
+    }
+  }
+
+  // During a DnD we want responsive feeling dragging, so disable transitions to let the background
+  // color change happen instantly as we drag over rows.
+  .#{$prefix}--data-table tbody tr,
+  .#{$prefix}--data-table tbody tr td {
+    transition: none;
+  }
+}

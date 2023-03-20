@@ -102,6 +102,12 @@ const propTypes = {
   rows: TableRowsPropTypes,
   /** True if this row is the last child of a nested group */
   isLastChild: PropTypes.bool,
+  hasDragAndDrop: PropTypes.bool,
+  onStartDrag: PropTypes.func,
+  onDragEnterRow: PropTypes.func,
+  onDragLeaveRow: PropTypes.func,
+  isDragRow: PropTypes.bool,
+  isDropRow: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -141,6 +147,12 @@ const defaultProps = {
   testId: '',
   totalColumns: 0,
   isLastChild: false,
+  hasDragAndDrop: false,
+  onStartDrag: null,
+  onDragEnterRow: null,
+  onDragLeaveRow: null,
+  isDragRow: false,
+  isDropRow: false,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -186,6 +198,12 @@ const TableBodyRowRenderer = (props) => {
     truncateCellText,
     wrapCellText,
     isLastChild,
+    hasDragAndDrop,
+    onStartDrag,
+    onDragLeaveRow,
+    onDragEnterRow,
+    isDragRow,
+    isDropRow,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -217,6 +235,10 @@ const TableBodyRowRenderer = (props) => {
 
   const rowElement = !row.isLoadMoreRow ? (
     <TableBodyRow
+      hasDragAndDrop={hasDragAndDrop}
+      onStartDrag={onStartDrag}
+      onDragEnterRow={onDragEnterRow}
+      onDragLeaveRow={onDragLeaveRow}
       langDir={langDir}
       key={row.id}
       isExpanded={isRowExpanded}
@@ -245,6 +267,8 @@ const TableBodyRowRenderer = (props) => {
       columns={columns}
       tableId={tableId}
       id={row.id}
+      isDragRow={isDragRow}
+      isDropRow={isDropRow}
       locale={locale}
       totalColumns={totalColumns}
       options={{
@@ -272,6 +296,7 @@ const TableBodyRowRenderer = (props) => {
       }}
       rowActions={row.rowActions}
       values={row.values}
+      isDraggable={row.isDraggable}
       showExpanderColumn={showExpanderColumn}
       size={size}
       isLastChild={isLastChild}

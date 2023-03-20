@@ -15,6 +15,7 @@ import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
+import DragAndDropREADME from './mdx/DragAndDrop.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
 import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
@@ -415,6 +416,104 @@ export const Playground = () => {
   );
 };
 Playground.storyName = 'Playground';
+
+export function WithDragAndDrop() {
+  /**
+   * Creates some initial data to show. Adds in types for folders and files to give a drag and drop
+   * example. This story actually changes the data when dropping, but this can be used to get the
+   * original data back.
+   * @returns Array of rows.
+   */
+  function getInitialData() {
+    const initialData = getTableData()
+      .slice(0, 10)
+      .map((row, i) => {
+        const newRow = Object.assign({}, row);
+        const isFolder = i % 3 === 0;
+        newRow.values.type = isFolder ? '📁' : '📄';
+        newRow.values.count = 0;
+        newRow.values.name = newRow.values.string;
+        newRow.isDraggable = !isFolder;
+        return newRow;
+      });
+
+    return initialData;
+  }
+
+  const [data, setData] = useStoryState(getInitialData());
+
+  const columns = [
+    {
+      id: 'type',
+      name: 'Type',
+      width: '75px',
+    },
+    {
+      id: 'name',
+      name: 'Name (w/ count)',
+    },
+    {
+      id: 'date',
+      name: 'Date',
+    },
+  ];
+
+  function isFolder(row) {
+    return row.values.type === '📁';
+  }
+
+  function reset() {
+    setData(getInitialData());
+  }
+
+  return (
+    <>
+      <p>
+        Demos drag and drop with some draggable rows (files) and only some that can be dropped on
+        (folders).
+      </p>
+
+      <button type="button" style={{ marginBottom: '1rem' }} onClick={reset}>
+        Reset test data
+      </button>
+
+      <Table
+        columns={columns}
+        data={data}
+        options={{ hasDragAndDrop: true, hasResize: true }}
+        actions={{
+          table: {
+            onDrag: (rowId, values) => {
+              action('onDrag')(rowId);
+
+              return {
+                dropIds: data.filter(isFolder).map((row) => row.id),
+                preview: <>{`${values.type} ${values.string}`}</>,
+              };
+            },
+            onDrop: (dragRowId, dropRowId) => {
+              action('onDrop')(dropRowId);
+
+              const newData = data.filter((row) => row.id !== dragRowId);
+              const folderRow = newData.find((row) => dropRowId === row.id);
+              folderRow.values.count += 1;
+              folderRow.values.name = `${folderRow.values.string} (${folderRow.values.count} inside)`;
+              setData(newData);
+            },
+          },
+        }}
+      />
+    </>
+  );
+}
+
+WithDragAndDrop.storyName = 'With drag and drop rows';
+WithDragAndDrop.parameters = {
+  component: Table,
+  docs: {
+    page: DragAndDropREADME,
+  },
+};
 
 export const WithSorting = () => {
   const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({

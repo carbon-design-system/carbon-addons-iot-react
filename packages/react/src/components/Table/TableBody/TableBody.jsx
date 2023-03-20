@@ -13,6 +13,7 @@ import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import { findRow, tableTraverser } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
+import { useTableDnd } from './useTableDnd';
 
 const propTypes = {
   /** The unique id of the table */
@@ -67,6 +68,8 @@ const propTypes = {
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
     onRowLoadMore: PropTypes.func,
+    onDrag: PropTypes.func,
+    onDrop: PropTypes.func,
   }).isRequired,
   /** What column ordering is currently applied to the table */
   ordering: PropTypes.arrayOf(
@@ -99,6 +102,7 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  hasDragAndDrop: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -134,6 +138,7 @@ const defaultProps = {
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
   size: undefined,
+  hasDragAndDrop: false,
 };
 
 const TableBody = ({
@@ -176,6 +181,7 @@ const TableBody = ({
   showExpanderColumn,
   preserveCellWhiteSpace,
   size,
+  hasDragAndDrop,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -259,56 +265,76 @@ const TableBody = ({
     return result;
   };
 
+  const {
+    isDragging,
+    dragPreview,
+    dragRowId,
+    canDropRowIds,
+    activeDropRowId,
+    handleStartPossibleDrag,
+    handleEnterRow,
+    handleLeaveRow,
+  } = useTableDnd(rows, actions.onDrag, actions.onDrop);
+
   return (
-    <CarbonTableBody data-testid={testID || testId}>
-      {rows.map((row) => (
-        <TableBodyRowRenderer
-          key={row.id}
-          actionFailedText={actionFailedText}
-          actions={{
-            ...actions,
-            onRowSelected,
-          }}
-          clickToCollapseAria={clickToCollapseAria}
-          clickToExpandAria={clickToExpandAria}
-          columns={columns}
-          dismissText={dismissText}
-          expandedIds={expandedIds}
-          expandedRows={expandedRows}
-          hasRowActions={hasRowActions}
-          hasRowExpansion={hasRowExpansion}
-          hasRowNesting={hasRowNesting}
-          hasRowSelection={hasRowSelection}
-          useRadioButtonSingleSelect={useRadioButtonSingleSelect}
-          indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
-          inProgressText={inProgressText}
-          langDir={langDir}
-          learnMoreText={learnMoreText}
-          loadingMoreIds={loadingMoreIds}
-          loadMoreText={loadMoreText}
-          locale={locale}
-          ordering={orderingMap}
-          overflowMenuAria={overflowMenuAria}
-          preserveCellWhiteSpace={preserveCellWhiteSpace}
-          row={row}
-          rowActionsState={rowActionsState}
-          rowEditMode={rowEditMode}
-          selectedIds={selectedIds}
-          selectRowAria={selectRowAria}
-          shouldExpandOnRowClick={shouldExpandOnRowClick}
-          shouldLazyRender={shouldLazyRender}
-          showExpanderColumn={showExpanderColumn}
-          singleRowEditButtons={singleRowEditButtons}
-          size={size}
-          someRowHasSingleRowEditMode={rowActionsState.some((rowAction) => rowAction.isEditMode)}
-          tableId={tableId}
-          testId={testID || testId}
-          totalColumns={totalColumns}
-          truncateCellText={truncateCellText}
-          wrapCellText={wrapCellText}
-        />
-      ))}
-    </CarbonTableBody>
+    <>
+      <CarbonTableBody data-testid={testID || testId}>
+        {rows.map((row) => (
+          <TableBodyRowRenderer
+            key={row.id}
+            actionFailedText={actionFailedText}
+            actions={{
+              ...actions,
+              onRowSelected,
+            }}
+            clickToCollapseAria={clickToCollapseAria}
+            clickToExpandAria={clickToExpandAria}
+            columns={columns}
+            dismissText={dismissText}
+            expandedIds={expandedIds}
+            expandedRows={expandedRows}
+            hasRowActions={hasRowActions}
+            hasRowExpansion={hasRowExpansion}
+            hasRowNesting={hasRowNesting}
+            hasRowSelection={hasRowSelection}
+            useRadioButtonSingleSelect={useRadioButtonSingleSelect}
+            indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
+            inProgressText={inProgressText}
+            langDir={langDir}
+            learnMoreText={learnMoreText}
+            loadingMoreIds={loadingMoreIds}
+            loadMoreText={loadMoreText}
+            locale={locale}
+            ordering={orderingMap}
+            overflowMenuAria={overflowMenuAria}
+            preserveCellWhiteSpace={preserveCellWhiteSpace}
+            row={row}
+            rowActionsState={rowActionsState}
+            rowEditMode={rowEditMode}
+            selectedIds={selectedIds}
+            selectRowAria={selectRowAria}
+            shouldExpandOnRowClick={shouldExpandOnRowClick}
+            shouldLazyRender={shouldLazyRender}
+            showExpanderColumn={showExpanderColumn}
+            singleRowEditButtons={singleRowEditButtons}
+            size={size}
+            someRowHasSingleRowEditMode={rowActionsState.some((rowAction) => rowAction.isEditMode)}
+            tableId={tableId}
+            testId={testID || testId}
+            totalColumns={totalColumns}
+            truncateCellText={truncateCellText}
+            wrapCellText={wrapCellText}
+            hasDragAndDrop={hasDragAndDrop}
+            onStartDrag={handleStartPossibleDrag}
+            onDragEnterRow={isDragging && canDropRowIds.has(row.id) ? handleEnterRow : null}
+            onDragLeaveRow={isDragging && canDropRowIds.has(row.id) ? handleLeaveRow : null}
+            isDragRow={dragRowId === row.id}
+            isDropRow={activeDropRowId === row.id}
+          />
+        ))}
+      </CarbonTableBody>
+      {dragPreview}
+    </>
   );
 };
 

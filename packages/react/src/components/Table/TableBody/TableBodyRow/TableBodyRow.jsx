@@ -15,6 +15,7 @@ import {
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 import TableExpandRow from './TableExpandRow';
+import { TableDragHandle } from './TableDragHandle';
 
 const { prefix, iotPrefix } = settings;
 
@@ -62,8 +63,9 @@ const propTypes = {
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
-    /** use raidon button on single selection */
+    /** use radio button on single selection */
     useRadioButtonSingleSelect: PropTypes.bool,
+    hasDragAndDrop: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -131,6 +133,20 @@ const propTypes = {
 
   /** True if this is the last child of a nested group */
   isLastChild: PropTypes.bool,
+  /** If this row supports drag and drop. Add space for a drag handle. */
+  hasDragAndDrop: PropTypes.bool,
+  /** Callback when a drag of this  row starts. */
+  onStartDrag: PropTypes.func,
+  /** Callback when the mouse enters this row during a drag. */
+  onDragEnterRow: PropTypes.func,
+  /** Callback when the mouse leaves this row during a drag. */
+  onDragLeaveRow: PropTypes.func,
+  /** If this row can be dragged. Shows a drag handle. */
+  isDraggable: PropTypes.bool,
+  /** If this row is being dropped onto. */
+  isDropRow: PropTypes.bool,
+  /** If this row is being dragged. */
+  isDragRow: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -161,6 +177,13 @@ const defaultProps = {
   isSelectable: undefined,
   size: undefined,
   isLastChild: false,
+  hasDragAndDrop: false,
+  onStartDrag: null,
+  onDragEnterRow: null,
+  onDragLeaveRow: null,
+  isDraggable: false,
+  isDropRow: false,
+  isDragRow: false,
 };
 
 const TableBodyRow = ({
@@ -208,6 +231,13 @@ const TableBodyRow = ({
   showExpanderColumn,
   size,
   isLastChild,
+  onStartDrag,
+  onDragEnterRow,
+  onDragLeaveRow,
+  isDropRow,
+  isDragRow,
+  isDraggable,
+  hasDragAndDrop,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -265,9 +295,16 @@ const TableBodyRow = ({
       </TableCell>
     ) : null;
 
+  const dragHandleCell = !hasDragAndDrop ? null : (
+    <TableCell className={`${iotPrefix}--table-grab-handle-cell`}>
+      {!isDraggable ? null : <TableDragHandle onStartDrag={onStartDrag} rowId={id} />}
+    </TableCell>
+  );
+
   const firstVisibleColIndex = ordering.findIndex((col) => !col.isHidden);
   const tableCells = (
     <Fragment key={`${tableId}-${id}`}>
+      {dragHandleCell}
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find((column) => column.id === col.columnId);
@@ -401,6 +438,8 @@ const TableBodyRow = ({
             className={classnames(`${iotPrefix}--expanded-tablerow`, {
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
+              [`${iotPrefix}--table__row--dropping`]: isDropRow,
+              [`${iotPrefix}--table__row--dragging`]: isDragRow,
             })}
           >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
@@ -476,8 +515,26 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
+        [`${iotPrefix}--table__row--dropping`]: isDropRow,
+        [`${iotPrefix}--table__row--dragging`]: isDragRow,
       })}
       key={id}
+      onMouseEnter={
+        // Add these conditionally since I _assume_ they're relatively expensive. This is only set
+        // during a drag and drop.
+        !onDragEnterRow
+          ? undefined
+          : (e) => {
+              onDragEnterRow(id, e.currentTarget);
+            }
+      }
+      onMouseLeave={
+        !onDragLeaveRow
+          ? undefined
+          : () => {
+              onDragLeaveRow(id);
+            }
+      }
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
