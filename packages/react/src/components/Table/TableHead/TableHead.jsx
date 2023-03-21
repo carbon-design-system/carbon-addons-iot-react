@@ -32,7 +32,7 @@ import { OverflowMenu } from '../../OverflowMenu';
 import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
-import { pinnedColumnClassNames } from '../tableUtilities';
+import { pinColumnClassNames } from '../tableUtilities';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -440,7 +440,7 @@ const TableHead = ({
           lightweight,
           [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
         },
-        pinnedColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+        pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
       )}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}

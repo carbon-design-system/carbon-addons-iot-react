@@ -71,34 +71,24 @@
   }
 }
 
-@mixin pin-column($order) {
-  td:nth-of-type(#{$order}),
-  th:nth-of-type(#{$order}) {
+@mixin pin-nth-column($order) {
+  tr:not(.#{$iot-prefix}--table-header__group-row) td:nth-of-type(#{$order}),
+  tr:not(.#{$iot-prefix}--table-header__group-row) th:nth-of-type(#{$order}) {
     @content;
     position: sticky;
-    box-shadow: inset -1px 0 $active-ui;
     overflow: hidden;
-
+    filter: drop-shadow(1px 0 0 $active-ui);
+    
     [dir='rtl'] & {
-      box-shadow: inset 1px 0 $active-ui;
+      filter: drop-shadow(-1px 0 0 $active-ui);
     }
   }
 }
 
-@mixin set-pinned-content($z-index, $offset) {
-  z-index: $z-index;
-  left: $offset;
-
-  [dir='rtl'] & {
-    left: unset;
-    right: $offset;
-  }
-}
-
-@mixin disable-pinned-col-border($order) {
-  td:nth-of-type(#{$order}),
-  th:nth-of-type(#{$order}) {
-    box-shadow: none !important; // important to overwrite RTL
+@mixin disable-nth-col-border($order) {
+  tr:not(.#{$iot-prefix}--table-header__group-row) td:nth-of-type(#{$order}),
+  tr:not(.#{$iot-prefix}--table-header__group-row) th:nth-of-type(#{$order}) {
+    filter: unset !important; // important to overwrite RTL
     overflow: unset;
   }
 }

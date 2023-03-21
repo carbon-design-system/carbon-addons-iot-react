@@ -106,7 +106,7 @@ export const PIN_COLUMN = {
  *  hasRowNesting flag defining row nesting option
  * @returns {String} class names for pinned column
  */
-export const pinnedColumnClassNames = ({
+export const pinColumnClassNames = ({
   pinColumn,
   hasRowSelection,
   hasRowExpansion,
@@ -121,16 +121,15 @@ export const pinnedColumnClassNames = ({
   }
 
   const pinClassNames = [];
-  const hasExpandOffset = hasRowExpansion || hasRowNesting;
 
   pinClassNames.push(`${iotPrefix}--pin-first-col`);
 
-  if (hasExpandOffset) {
-    pinClassNames.push(`${iotPrefix}--pin-first-col-with-expand`);
+  if (hasRowExpansion || hasRowNesting) {
+    pinClassNames.push(`${iotPrefix}--pin-first-col--expand`);
   }
 
   if (hasRowSelection) {
-    pinClassNames.push(`${iotPrefix}--pin-first-col-with-select`);
+    pinClassNames.push(`${iotPrefix}--pin-first-col--select`);
   }
 
   return pinClassNames.join(' ');

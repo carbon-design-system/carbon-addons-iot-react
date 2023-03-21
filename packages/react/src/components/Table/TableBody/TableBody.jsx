@@ -12,7 +12,7 @@ import {
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
-import { findRow, tableTraverser, pinnedColumnClassNames, PIN_COLUMN } from '../tableUtilities';
+import { findRow, tableTraverser, pinColumnClassNames, PIN_COLUMN } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
 
@@ -269,7 +269,7 @@ const TableBody = ({
     <CarbonTableBody
       data-testid={testID || testId}
       className={classNames(
-        pinnedColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+        pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
       )}
     >
       {rows.map((row) => (
