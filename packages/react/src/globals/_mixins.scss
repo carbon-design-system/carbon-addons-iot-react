@@ -78,7 +78,7 @@
     position: sticky;
     overflow: hidden;
     filter: drop-shadow(1px 0 0 $active-ui);
-    
+
     [dir='rtl'] & {
       filter: drop-shadow(-1px 0 0 $active-ui);
     }
