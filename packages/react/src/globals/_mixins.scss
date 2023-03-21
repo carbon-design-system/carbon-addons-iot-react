@@ -72,7 +72,7 @@
 }
 
 @mixin pin-nth-column($order) {
-  tr:not(.#{$iot-prefix}--table-header__group-row) td:nth-of-type(#{$order}),
+  td:nth-of-type(#{$order}),
   tr:not(.#{$iot-prefix}--table-header__group-row) th:nth-of-type(#{$order}) {
     @content;
     position: sticky;
@@ -86,7 +86,7 @@
 }
 
 @mixin disable-nth-col-border($order) {
-  tr:not(.#{$iot-prefix}--table-header__group-row) td:nth-of-type(#{$order}),
+  td:nth-of-type(#{$order}),
   tr:not(.#{$iot-prefix}--table-header__group-row) th:nth-of-type(#{$order}) {
     filter: unset !important; // important to overwrite RTL
     overflow: unset;
