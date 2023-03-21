@@ -7,18 +7,23 @@ space in the table for a drag handle at the start of rows. Each draggable row ne
 `isDraggable` to true in the data array if if can be dragged. Finally, the table will need to supply
 callbacks for `onDrag` and `onDrop`.
 
-`onDrag` is called once a drag begins. It receives the the row ID being dragged (and that row's
-values for convenience). It must return an object with both an array of row IDs that can accept a
-drop of this row, and a `React.Node` to be used as the drag preview. The table will show that
-preview near the cursor during the drag, so it should summarize the dragged row in a compact form.
-The table will add a border and shadow to this, so just return the row icon and name or something
-similar.
+`onDrag` is called once a drag begins. It receives the the rows being dragged (the row elements from
+`data`). It must return an object with both an array of row IDs that can accept a drop of this row,
+and a `React.Node` to be used as the drag preview. The table will show that preview near the cursor
+during the drag, so it should summarize the dragged row in a compact form. The table will add a
+border and shadow to this, so just return the row icon and name or something similar.
+
+Multiple row can be dragged at once. If the dragged row is not part of the selected rows, then only
+that one row is dragged. If it is part of a selection, then all the rows in the selection are
+dragged. If a row is selected that is not draggable, all drag handles are hidden and the user cannot
+initiate a drag. When multiple rows are being dragged you should create a preview the shows a
+summary or count of the rows. Be prepared to handle any selection size and produce a reasonably
+sized preview. (Note that the Storybook example just previews all selected rows as a trivial
+example, but a real implementations need to be smarter.)
 
 `onDrop` is called when a drop succeeds. It receives the dragged row ID and the dropped on row ID.
 The caller must decide what to do at that point--the table doesn't change the data on drop. There is
 no callback if the drop is canceled.
-
-Note that drag and drop does not work with `StatefulTable` at this time. Use with the standard `Table`.
 
 ```js
 const columns = [
@@ -38,20 +43,21 @@ const columns = [
 ]
 
 
-<Table
+<StatefulTable
   columns={columns}
   data={data}
   options={{ hasDragAndDrop: true }}
   actions={{
     table: {
-      onDrag: (rowId, values) => {
+      onDrag: (rows) => {
         return {
+          // this assume we can only drop the first row on the second.
           dropIds: ['row-1'],
-          preview: <>values.name</>
+          preview: <>rows[0].values.name</>
         };
       },
-      onDrop: (dragRowId, dropRowId) => {
-        console.info(`Dropped ${dragRowId} onto ${dropRowId}`);
+      onDrop: (dragRowIds, dropRowId) => {
+        console.info(`Dropped ${dragRowIds} onto ${dropRowId}`);
       }
     },
   }}

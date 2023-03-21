@@ -102,7 +102,10 @@ const propTypes = {
   rows: TableRowsPropTypes,
   /** True if this row is the last child of a nested group */
   isLastChild: PropTypes.bool,
+  /** If room is reserved for drag handles at the start of the row.. */
   hasDragAndDrop: PropTypes.bool,
+  /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
+  hideDragHandles: PropTypes.bool,
   onStartDrag: PropTypes.func,
   onDragEnterRow: PropTypes.func,
   onDragLeaveRow: PropTypes.func,
@@ -148,6 +151,7 @@ const defaultProps = {
   totalColumns: 0,
   isLastChild: false,
   hasDragAndDrop: false,
+  hideDragHandles: false,
   onStartDrag: null,
   onDragEnterRow: null,
   onDragLeaveRow: null,
@@ -199,6 +203,7 @@ const TableBodyRowRenderer = (props) => {
     wrapCellText,
     isLastChild,
     hasDragAndDrop,
+    hideDragHandles,
     onStartDrag,
     onDragLeaveRow,
     onDragEnterRow,
@@ -236,6 +241,7 @@ const TableBodyRowRenderer = (props) => {
   const rowElement = !row.isLoadMoreRow ? (
     <TableBodyRow
       hasDragAndDrop={hasDragAndDrop}
+      hideDragHandles={hideDragHandles}
       onStartDrag={onStartDrag}
       onDragEnterRow={onDragEnterRow}
       onDragLeaveRow={onDragLeaveRow}

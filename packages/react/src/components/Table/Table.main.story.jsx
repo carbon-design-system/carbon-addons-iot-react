@@ -418,6 +418,22 @@ export const Playground = () => {
 Playground.storyName = 'Playground';
 
 export function WithDragAndDrop() {
+  const columns = [
+    {
+      id: 'type',
+      name: 'Type',
+      width: '75px',
+    },
+    {
+      id: 'name',
+      name: 'Name (w/ count)',
+    },
+    {
+      id: 'date',
+      name: 'Date',
+    },
+  ];
+
   /**
    * Creates some initial data to show. Adds in types for folders and files to give a drag and drop
    * example. This story actually changes the data when dropping, but this can be used to get the
@@ -442,22 +458,6 @@ export function WithDragAndDrop() {
 
   const [data, setData] = useStoryState(getInitialData());
 
-  const columns = [
-    {
-      id: 'type',
-      name: 'Type',
-      width: '75px',
-    },
-    {
-      id: 'name',
-      name: 'Name (w/ count)',
-    },
-    {
-      id: 'date',
-      name: 'Date',
-    },
-  ];
-
   function isFolder(row) {
     return row.values.type === '📁';
   }
@@ -466,37 +466,46 @@ export function WithDragAndDrop() {
     setData(getInitialData());
   }
 
+  function NaiveMultiRowPreview({ rows }) {
+    return (
+      <>
+        {rows.map((row) => (
+          <div>{`${row.values.type} ${row.values.name}`}</div>
+        ))}
+      </>
+    );
+  }
+
   return (
     <>
       <p>
         Demos drag and drop with some draggable rows (files) and only some that can be dropped on
         (folders).
       </p>
-
       <button type="button" style={{ marginBottom: '1rem' }} onClick={reset}>
-        Reset test data
+        Reset Rows
       </button>
-
-      <Table
+      <StatefulTable
+        secondaryTitle="Table"
         columns={columns}
         data={data}
-        options={{ hasDragAndDrop: true, hasResize: true }}
+        options={{ hasDragAndDrop: true, hasResize: true, hasRowSelection: 'multi' }}
         actions={{
           table: {
-            onDrag: (rowId, values) => {
-              action('onDrag')(rowId);
+            onDrag: (rows) => {
+              action('onDrag')(rows.map((r) => r.id));
 
               return {
                 dropIds: data.filter(isFolder).map((row) => row.id),
-                preview: <>{`${values.type} ${values.string}`}</>,
+                preview: <NaiveMultiRowPreview rows={rows} />,
               };
             },
-            onDrop: (dragRowId, dropRowId) => {
-              action('onDrop')(dropRowId);
+            onDrop: (dragRowIds, dropRowId) => {
+              action('onDrop')(dragRowIds, dropRowId);
 
-              const newData = data.filter((row) => row.id !== dragRowId);
+              const newData = data.filter((row) => !dragRowIds.includes(row.id));
               const folderRow = newData.find((row) => dropRowId === row.id);
-              folderRow.values.count += 1;
+              folderRow.values.count += dragRowIds.length;
               folderRow.values.name = `${folderRow.values.string} (${folderRow.values.count} inside)`;
               setData(newData);
             },

@@ -66,6 +66,7 @@ function useRefAndState(initialValue) {
  * only makes sense using it there.
  *
  * @param {object[]} rows The rows of the table we're dragging in.
+ * @param {string[]} selectedIds The currently selected row IDs or empty array.
  * @param {(string, object) -> [ReactNode, string[]])} onDrag Callback fires when a drag actually
  * start. This passes the caller the ID of the row being dragged and the values for that row. It
  * must return a tuple of a ReactNode to show as the drag image and a list of row IDs that can
@@ -74,7 +75,7 @@ function useRefAndState(initialValue) {
  * being dragged and the ID of the row being dropped on.
  * @returns {UseTableDndResult} Values to mix into the table.
  */
-function useTableDnd(rows, onDrag, onDrop) {
+function useTableDnd(rows, selectedIds, onDrag, onDrop) {
   // These are related. When the user "mousedown"s on a drag handle, we consider it a "possible"
   // drag. At this point we add all the event listeners to track the drag. Put only after they move
   // past some threshold do we actually set `isDragging`. At that point the drag is "real" and we'll
@@ -83,7 +84,7 @@ function useTableDnd(rows, onDrag, onDrop) {
   const [isDraggingRef, isDragging, setIsDragging] = useRefAndState(false);
 
   // The row being dragged
-  const [dragRowIdRef, dragRowId, setDragRowId] = useRefAndState(null);
+  const [dragRowIdsRef, dragRowIds, setDragRowIds] = useRefAndState([]);
 
   // The rows that CAN be dropped on, but we're not necessarily over them right now. The caller
   // provides these from the onDrag callback.
@@ -130,11 +131,11 @@ function useTableDnd(rows, onDrag, onDrop) {
       } else {
         setDragPreview(null);
         // Notify of success. Protect from caller errors.
-        if (onDrop) onDrop(dragRowId, activeDropRowIdRef.current);
+        if (onDrop) onDrop(dragRowIds, activeDropRowIdRef.current);
       }
       setIsPossibleDrag(false);
     },
-    [activeDropRowIdRef, onDrop, dragRowId]
+    [activeDropRowIdRef, onDrop, dragRowIds]
   );
 
   const handleDragMove = useCallback(
@@ -162,10 +163,10 @@ function useTableDnd(rows, onDrag, onDrop) {
         return;
       }
       if (!isDraggingRef.current) {
-        const draggedRow = rows.find((row) => row.id === dragRowIdRef.current);
-        if (draggedRow) {
+        const draggedRows = rows.filter((row) => dragRowIdsRef.current.includes(row.id));
+        if (draggedRows.length) {
           // Notify of a drag starting and get the details about what this row does.
-          const { preview, dropIds } = onDrag(draggedRow.id, draggedRow.values);
+          const { preview, dropIds } = onDrag(draggedRows);
           setDragPreview(preview);
           setCanDropRowIds(new Set(dropIds));
         }
@@ -186,7 +187,7 @@ function useTableDnd(rows, onDrag, onDrop) {
         });
       }
     },
-    [isDraggingRef, setIsDragging, rows, dragRowIdRef, onDrag]
+    [isDraggingRef, setIsDragging, rows, dragRowIdsRef, onDrag]
   );
 
   const cancel = useCallback(
@@ -260,14 +261,22 @@ function useTableDnd(rows, onDrag, onDrop) {
 
         document.body.classList.remove(`${iotPrefix}--is-dragging`);
 
+        setDragRowIds([]);
         setActiveDropRowId(null);
         setActiveDropRowOverlayStyle(null);
-        // setDragPreview(null);
         setCanDropRowIds(new Set());
         setIsDragging(false);
       };
     },
-    [isPossibleDrag, handleDragMove, handleDrop, cancel, setActiveDropRowId, setIsDragging]
+    [
+      isPossibleDrag,
+      handleDragMove,
+      handleDrop,
+      cancel,
+      setActiveDropRowId,
+      setIsDragging,
+      setDragRowIds,
+    ]
   );
 
   const handleStartPossibleDrag = useCallback(
@@ -282,10 +291,18 @@ function useTableDnd(rows, onDrag, onDrop) {
         startX: e.clientX,
         startY: e.clientY,
       };
-      setDragRowId(rowId);
+
+      if (selectedIds.includes(rowId)) {
+        // we're in the selected set, so drag all selected rows.
+        setDragRowIds(selectedIds);
+      } else {
+        // just drag this one
+        setDragRowIds([rowId]);
+      }
+
       setIsPossibleDrag(true);
     },
-    [setDragRowId]
+    [setDragRowIds, selectedIds]
   );
 
   const handleEnterRow = useCallback(
@@ -353,8 +370,7 @@ function useTableDnd(rows, onDrag, onDrop) {
     dragPreview: dragPreviewAndOverlay,
     activeDropRowId,
     canDropRowIds,
-    dragRowId,
-
+    dragRowIds,
     handleEnterRow,
     handleLeaveRow,
     handleStartPossibleDrag,

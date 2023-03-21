@@ -802,6 +802,22 @@ const Table = (props) => {
     columns,
   });
 
+  // Checks if any selected rows are not draggable. If not, disables drag and drop, which hides all
+  // the drag handles. This is so we don't try to drag a selection that include an undraggable row.
+  const hideDragHandles = useMemo(() => {
+    if (!options.hasDragAndDrop) return true;
+
+    if (view.table.selectedIds.length === 0) return false;
+
+    const selectedSet = new Set(view.table.selectedIds);
+
+    const areAnySelectedUndraggable = data.some(
+      (row) => selectedSet.has(row.id) && !row.isDraggable
+    );
+
+    return areAnySelectedUndraggable;
+  }, [options.hasDragAndDrop, view.table.selectedIds, data]);
+
   const totalColumns =
     visibleColumns.length +
     (hasMultiSelect ? 1 : 0) +
@@ -1165,6 +1181,7 @@ const Table = (props) => {
                   'useRadioButtonSingleSelect',
                   'hasDragAndDrop'
                 )}
+                hideDragHandles={hideDragHandles}
                 hasRowExpansion={!!options.hasRowExpansion}
                 wrapCellText={options.wrapCellText}
                 truncateCellText={useCellTextTruncate}
@@ -1220,13 +1237,7 @@ const Table = (props) => {
           {options.hasAggregations && !aggregationsAreHidden ? (
             <TableFoot
               options={{
-                ...pick(
-                  options,
-                  'hasRowSelection',
-                  'hasRowActions',
-                  'hasRowNesting',
-                  'hasDragAndDrop'
-                ),
+                ...pick(options, 'hasRowSelection', 'hasRowActions', 'hasRowNesting'),
                 hasRowExpansion: !!options.hasRowExpansion,
               }}
               tableState={{

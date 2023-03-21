@@ -102,7 +102,10 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  /** If room is reserved for drag handles at the start of rows. */
   hasDragAndDrop: PropTypes.bool,
+  /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
+  hideDragHandles: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -139,6 +142,7 @@ const defaultProps = {
   actionFailedText: 'Action failed',
   size: undefined,
   hasDragAndDrop: false,
+  hideDragHandles: false,
 };
 
 const TableBody = ({
@@ -182,6 +186,7 @@ const TableBody = ({
   preserveCellWhiteSpace,
   size,
   hasDragAndDrop,
+  hideDragHandles,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -274,7 +279,7 @@ const TableBody = ({
     handleStartPossibleDrag,
     handleEnterRow,
     handleLeaveRow,
-  } = useTableDnd(rows, actions.onDrag, actions.onDrop);
+  } = useTableDnd(rows, selectedIds, actions.onDrag, actions.onDrop);
 
   return (
     <>
@@ -325,6 +330,7 @@ const TableBody = ({
             truncateCellText={truncateCellText}
             wrapCellText={wrapCellText}
             hasDragAndDrop={hasDragAndDrop}
+            hideDragHandles={hideDragHandles}
             onStartDrag={handleStartPossibleDrag}
             onDragEnterRow={isDragging && canDropRowIds.has(row.id) ? handleEnterRow : null}
             onDragLeaveRow={isDragging && canDropRowIds.has(row.id) ? handleLeaveRow : null}
