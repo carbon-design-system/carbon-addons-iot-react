@@ -36898,7 +36898,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           title={null}
         >
           <thead
-            className="iot--pin-first-col iot--pin-first-col-with-select"
+            className="iot--pin-first-col iot--pin-first-col--select"
             data-testid="null-table-head"
             onMouseMove={null}
             onMouseUp={null}
@@ -37168,7 +37168,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className="iot--pin-first-col iot--pin-first-col-with-select"
+            className="iot--pin-first-col iot--pin-first-col--select"
             data-testid="null-table-body"
           >
             <tr
