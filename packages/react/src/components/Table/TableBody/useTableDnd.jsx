@@ -325,16 +325,13 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       // The table can scroll in it container. In that case, the row overlay should not span the
       // entire row width, only as wide as the container.
       const scrollContainer = rowEl.closest(`.${prefix}--data-table-content`);
-      const maxWidth = scrollContainer.getBoundingClientRect().width;
-
-      const rect = rowEl.getBoundingClientRect();
-
+      const contentRect = scrollContainer.getBoundingClientRect();
+      const rowRect = rowEl.getBoundingClientRect();
       const style = {
-        top: `${rect.top + document.documentElement.scrollTop}px`,
-        left: `${rect.left + document.documentElement.scrollLeft + scrollContainer.scrollLeft}px`,
-        width: `${rect.width}px`,
-        height: `${rect.height}px`,
-        maxWidth: `${maxWidth}px`,
+        top: `${rowRect.top + document.documentElement.scrollTop}px`,
+        left: `${contentRect.left + document.documentElement.scrollLeft}px`,
+        width: `${contentRect.width}px`,
+        height: `${rowRect.height}px`,
       };
 
       setActiveDropRowOverlayStyle(style);
