@@ -734,6 +734,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "pinHeaderAndFooter": false,
         "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
         "shouldExpandOnRowClick": false,
@@ -1614,6 +1615,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveCellWhiteSpace": Object {
@@ -2928,6 +2932,9 @@ Map {
               "type": "oneOf",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
