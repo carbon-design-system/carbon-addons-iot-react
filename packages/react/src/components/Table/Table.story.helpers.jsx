@@ -1046,6 +1046,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           TABLE_GROUP
         )
       : null,
+    pinHeaderAndFooter: shouldCreate('pinHeaderAndFooter')
+      ? boolean(
+          'Pin header and footer (options.pinHeaderAndFooter)',
+          getDefaultValue('pinHeaderAndFooter'),
+          TABLE_GROUP
+        )
+      : null,
 
     // TITLE_TOOLBAR_GROUP
     secondaryTitle: shouldCreate('secondaryTitle')
