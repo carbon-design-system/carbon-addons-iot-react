@@ -10,7 +10,7 @@ const propTypes = {
   /**
    * Any children to show in the avatar while dragging. Usually the row name and icon or similar.
    */
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 /**

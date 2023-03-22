@@ -147,8 +147,6 @@ const propTypes = {
   isDropRow: PropTypes.bool,
   /** If this row is being dragged. */
   isDragRow: PropTypes.bool,
-  /** The selected row IDs. Required for DnD. */
-  selectedIds: PropTypes.arrayOf(PropTypes.string).isRequired,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
 };
@@ -244,7 +242,6 @@ const TableBodyRow = ({
   isDraggable,
   hasDragAndDrop,
   hideDragHandles,
-  selectedIds,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -305,7 +302,7 @@ const TableBodyRow = ({
   const dragHandleCell = !hasDragAndDrop ? null : (
     <TableCell className={`${iotPrefix}--table-grab-handle-cell`}>
       {!isDraggable || hideDragHandles ? null : (
-        <TableDragHandle onStartDrag={onStartDrag} rowId={id} selectedIds={selectedIds} />
+        <TableDragHandle onStartDrag={onStartDrag} rowId={id} />
       )}
     </TableCell>
   );

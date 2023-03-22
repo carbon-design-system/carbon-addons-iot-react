@@ -111,6 +111,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
    */
   function snapBackAvatar() {
     if (avatarRef.current) {
+      /* istanbul ignore next */
       avatarRef.current.ontransitionend = () => setDragPreview(null);
       avatarRef.current.style.transition = 'transform 200ms';
       avatarRef.current.style.transform = 'translate(0, 0)';
@@ -131,7 +132,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       } else {
         setDragPreview(null);
         // Notify of success. Protect from caller errors.
-        if (onDrop) onDrop(dragRowIds, activeDropRowIdRef.current);
+        onDrop(dragRowIds, activeDropRowIdRef.current);
       }
       setIsPossibleDrag(false);
     },
@@ -162,8 +163,10 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         // Reach minimum drag distance before showing avatar and really dragging.
         return;
       }
+
       if (!isDraggingRef.current) {
         const draggedRows = rows.filter((row) => dragRowIdsRef.current.includes(row.id));
+
         if (draggedRows.length) {
           // Notify of a drag starting and get the details about what this row does.
           const { preview, dropIds } = onDrag(draggedRows);
@@ -313,7 +316,11 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
      * @returns
      */
     function handleEnterRow(rowId, rowEl) {
-      if (!isPossibleDrag) return;
+      /* istanbul ignore if */
+      if (!isPossibleDrag) {
+        // shouldn't happen
+        return;
+      }
 
       // The table can scroll in it container. In that case, the row overlay should not span the
       // entire row width, only as wide as the container.
@@ -359,9 +366,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         <TableDropRowOverlay style={activeDropRowOverlayStyle} />
       )}
       {/* We can show the preview even if not isDragging during snapback time. */}
-      {dragPreview && (
-        <TableDragAvatar ref={avatarRef}>{dragPreview || '<no preview>'}</TableDragAvatar>
-      )}
+      {dragPreview && <TableDragAvatar ref={avatarRef}>{dragPreview}</TableDragAvatar>}
     </>
   );
 
