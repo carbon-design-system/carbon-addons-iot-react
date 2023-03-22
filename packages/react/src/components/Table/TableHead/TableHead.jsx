@@ -80,6 +80,8 @@ const propTypes = {
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
     hasFilterRowIcon: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -205,6 +207,7 @@ const TableHead = ({
     useAutoTableLayoutForResize,
     preserveColumnWidths,
     useRadioButtonSingleSelect,
+    pinHeaderAndFooter,
   },
   columns,
   columnGroups,
@@ -689,6 +692,7 @@ const TableHead = ({
           filterRowIcon={filterRowIcon}
           filterRowIconDescription={filterRowIconDescription}
           onFilterRowIconClick={onFilterRowIconClick}
+          pinHeaderAndFooter={pinHeaderAndFooter}
         />
       )}
       {activeBar === 'column' && (

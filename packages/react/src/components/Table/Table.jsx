@@ -146,6 +146,8 @@ const propTypes = {
     preserveCellWhiteSpace: PropTypes.bool,
     /** display icon button in filter row */
     hasFilterRowIcon: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -409,6 +411,7 @@ export const defaultProps = (baseProps) => ({
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
     hasFilterRowIcon: false,
+    pinHeaderAndFooter: false,
   },
   size: undefined,
   view: {
@@ -840,7 +843,9 @@ const Table = (props) => {
     <TableContainer
       style={style}
       data-testid={`${id || testId}-table-container`}
-      className={classnames(className, `${iotPrefix}--table-container`)}
+      className={classnames(className, `${iotPrefix}--table-container`, {
+        [`${iotPrefix}--table-container--pin-header-and-footer`]: options.pinHeaderAndFooter,
+      })}
     >
       {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
@@ -1031,7 +1036,8 @@ const Table = (props) => {
                   'useAutoTableLayoutForResize',
                   'hasMultiSort',
                   'preserveColumnWidths',
-                  'hasFilterRowIcon'
+                  'hasFilterRowIcon',
+                  'pinHeaderAndFooter'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
