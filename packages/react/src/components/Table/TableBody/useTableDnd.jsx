@@ -152,6 +152,8 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
     [activeDropRowIdRef, onDrop, dragRowIds]
   );
 
+  const badMoveCountRef = useRef(0);
+
   const handleDragMove = useCallback(
     /**
      * Event handler when the mouse moves during a drag. This actually starts the real drag once the
@@ -162,14 +164,16 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
      */
     function handleDragMove(e) {
       if (e.buttons === 0) {
-        // Must have had mouseup outside the window.
-        setTimeout(() => {
-          // delay one tick. Safari can fire mousemove this with buttons:0 before mouseup fires when
-          // releasing the mouse button, which can cancel the drop even if it's valid. This gives
-          // the mouseup (handleDrop) function a chance to run first. Maybe we could
+        badMoveCountRef.current += 1;
+        if (badMoveCountRef.current >= 10) {
+          // If the mouse goes outside the window and releases the button then the mouseup is missed
+          // and the drag is stuck. If we see a few moves without a mouse button down then that's
+          // probably the case. We don't do this on the first bad move since Safari and Firefox on
+          // macOS can fire a mousemove without buttons BEFORE a mouse up sometimes, which would
+          // cancel the drop too early. Waiting a few means this really is stuck, not just an
+          // unexpected event order.
           setIsPossibleDrag(false);
-        });
-        return;
+        }
       }
 
       const { startX, startY } = dragStartCoordsRef.current;
@@ -266,6 +270,8 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         return undefined;
       }
 
+      badMoveCountRef.current = 0;
+
       function handleEscapeKey(e) {
         if (e.key === 'Escape') {
           cancel(e);
@@ -275,10 +281,6 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       document.body.addEventListener('mouseup', handleDrop);
       document.body.addEventListener('mousemove', handleDragMove);
       document.body.addEventListener('keydown', handleEscapeKey);
-
-      // Normally a mouseup ends this, but of the cursor goes outside the window then the mouseup
-      // may never fire. In that case, click can be used to end the drag.
-      document.body.addEventListener('click', cancel);
 
       // If the user goes to another window, cancel the dnd.
       window.addEventListener('blur', cancel);
