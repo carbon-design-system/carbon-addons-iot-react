@@ -31,8 +31,8 @@ function useRefAndState(initialValue) {
   const ref = useRef(initialValue);
 
   const setter = useCallback((newValue) => {
-    setValue(newValue);
     ref.current = newValue;
+    setValue(newValue);
   }, []);
 
   return [ref, value, setter];
@@ -130,9 +130,9 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       if (activeDropRowIdRef.current == null) {
         snapBackAvatar();
       } else {
-        setDragPreview(null);
         // Notify of success. Protect from caller errors.
         onDrop(dragRowIds, activeDropRowIdRef.current);
+        setDragPreview(null);
       }
       setIsPossibleDrag(false);
     },

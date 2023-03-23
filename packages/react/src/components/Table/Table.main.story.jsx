@@ -469,8 +469,8 @@ export function WithDragAndDrop() {
   function NaiveMultiRowPreview({ rows }) {
     return (
       <>
-        {rows.map((row) => (
-          <div>{`${row.values.type} ${row.values.name}`}</div>
+        {rows.map((row, i) => (
+          <div key={i}>{`${row.values.type} ${row.values.name}`}</div>
         ))}
       </>
     );
