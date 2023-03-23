@@ -470,7 +470,10 @@ export function WithDragAndDrop() {
     return (
       <>
         {rows.map((row, i) => (
-          <div key={i}>{`${row.values.type} ${row.values.name}`}</div>
+          <div
+            key={i}
+            style={i > 0 ? { marginTop: '1rem' } : null}
+          >{`${row.values.type} ${row.values.name}`}</div>
         ))}
       </>
     );

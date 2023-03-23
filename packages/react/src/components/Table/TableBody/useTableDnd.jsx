@@ -37,6 +37,20 @@ function useRefAndState(initialValue) {
 
   return [ref, value, setter];
 }
+/**
+ * If there is a vertical scroll bar on the document and in RTL mode then this returns its width.
+ * Otherwise, returns 0.
+ *
+ * In RTL `getBoundingClientRect` is relative to the window edge, but pos:abs elements are relative
+ * to the left-side, vertical scrollbar (if there is one). That means the positioned elements might
+ * be shifted over by the vertical scrollbar width. This gets the width if relevant so it can be
+ * subtracted out in some values.
+ */
+
+function getRtlVerticalScrollbarWidth() {
+  /* istanbul ignore next */ // ignore rlt
+  return document.dir === 'rtl' ? window.innerWidth - document.documentElement.clientWidth : 0;
+}
 
 /**
  * Event handlers to mix into the table and state variables about the current drag and drop
@@ -166,6 +180,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       if (!isDraggingRef.current) {
         const draggedRows = rows.filter((row) => dragRowIdsRef.current.includes(row.id));
 
+        /* istanbul igore else */
         if (draggedRows.length) {
           // Notify of a drag starting and get the details about what this row does.
           const { preview, dropIds } = onDrag(draggedRows);
@@ -178,13 +193,31 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       // add onenter listeners to rows.
       setIsDragging(true);
 
+      // clientX is *always* relative to the top, left, so we can't just use logical properties. In
+      // RTL mode we want to position relative to the right side explicitly, which means the
+      // difference between the right vieport edge (doc width) and clientX.
+      /* istanbul ignore next */
+      const { left, right } =
+        document.dir === 'rtl'
+          ? {
+              right: `calc(${
+                document.documentElement.offsetWidth - startX + getRtlVerticalScrollbarWidth()
+              }px - 1.5rem)`,
+              left: 'auto',
+            }
+          : {
+              left: `calc(${startX}px - 1.5rem)`,
+              right: 'auto',
+            };
+
       if (avatarRef.current) {
         // Update the style directly on the DOM node (not via React) since this is so much faster and
         // we're doing this very frequently.
         Object.assign(avatarRef.current.style, {
           display: '',
           top: `calc(${startY}px - 1.4rem)`, // nudge over a bit, so the cursor is on the tile, not in the very corner.
-          left: `calc(${startX}px - 1.5rem)`,
+          left,
+          right,
           transform: `translate(${diffX}px, ${diffY}px)`,
         });
       }
@@ -328,7 +361,9 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       const rowRect = rowEl.getBoundingClientRect();
       const style = {
         top: `${rowRect.top + document.documentElement.scrollTop}px`,
-        left: `${contentRect.left + document.documentElement.scrollLeft}px`,
+        left: `${
+          contentRect.left + document.documentElement.scrollLeft - getRtlVerticalScrollbarWidth()
+        }px`,
         width: `${contentRect.width}px`,
         height: `${rowRect.height}px`,
       };
@@ -346,6 +381,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
      * @param {string} rowId A row we are no longer over.
      */
     function handleLeaveRow(rowId) {
+      /* istanbul ignore else */
       if (activeDropRowId === rowId) {
         setActiveDropRowOverlayStyle(null);
         setActiveDropRowId(null);

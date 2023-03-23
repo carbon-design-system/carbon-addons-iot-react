@@ -140,7 +140,7 @@ describe('stateful table with real reducer', () => {
       expect(lastDropRowId).toBe('2');
     });
 
-    it('can cancel on escape or mouse out of window', () => {
+    it('does not drop if canceled or wrong row', () => {
       const data = [
         {
           id: '0',
@@ -199,15 +199,21 @@ describe('stateful table with real reducer', () => {
 
       //
       // mouse out of window with mouse up during a drag (implicit cancel)
-
       fireEvent.mouseDown(dragHandles[0]);
       fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
       fireEvent.mouseMove(dragHandles[1], { buttons: 1, clientX: 10, clientY: 10 });
       // Simulate mouse going up without a mouseup (pointer was out of the window when it happened)
       fireEvent.mouseMove(dragHandles[1], { buttons: 0, clientX: 10, clientY: 10 });
 
+      //
+      // drop not on a drop row
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 10, clientY: 10 });
+      fireEvent.mouseUp(dragHandles[0], { buttons: 0, clientX: 20, clientY: 20 });
+
       // Make sure we started the drags
-      expect(handleDrag).toHaveBeenCalledTimes(2);
+      expect(handleDrag).toHaveBeenCalledTimes(3);
     });
   });
 
