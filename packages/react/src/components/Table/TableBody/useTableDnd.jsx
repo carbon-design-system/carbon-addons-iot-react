@@ -163,7 +163,12 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
     function handleDragMove(e) {
       if (e.buttons === 0) {
         // Must have had mouseup outside the window.
-        setIsPossibleDrag(false);
+        setTimeout(() => {
+          // delay one tick. Safari can fire mousemove this with buttons:0 before mouseup fires when
+          // releasing the mouse button, which can cancel the drop even if it's valid. This gives
+          // the mouseup (handleDrop) function a chance to run first. Maybe we could
+          setIsPossibleDrag(false);
+        });
         return;
       }
 
@@ -267,8 +272,8 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         }
       }
 
-      document.body.addEventListener('mousemove', handleDragMove);
       document.body.addEventListener('mouseup', handleDrop);
+      document.body.addEventListener('mousemove', handleDragMove);
       document.body.addEventListener('keydown', handleEscapeKey);
 
       // Normally a mouseup ends this, but of the cursor goes outside the window then the mouseup
@@ -286,8 +291,8 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
 
       return function tearDown() {
         // console.debug('Clean up table DnD');
-        document.body.removeEventListener('mousemove', handleDragMove);
         document.body.removeEventListener('mouseup', handleDrop);
+        document.body.removeEventListener('mousemove', handleDragMove);
         document.body.removeEventListener('keydown', handleEscapeKey);
 
         document.body.removeEventListener('click', cancel);

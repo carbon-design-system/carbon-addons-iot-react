@@ -204,6 +204,7 @@ describe('stateful table with real reducer', () => {
       fireEvent.mouseMove(dragHandles[1], { buttons: 1, clientX: 10, clientY: 10 });
       // Simulate mouse going up without a mouseup (pointer was out of the window when it happened)
       fireEvent.mouseMove(dragHandles[1], { buttons: 0, clientX: 10, clientY: 10 });
+      fireEvent.mouseUp(dragHandles[1]);
 
       //
       // drop not on a drop row
