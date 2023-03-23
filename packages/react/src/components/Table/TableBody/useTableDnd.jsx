@@ -49,8 +49,7 @@ function useRefAndState(initialValue) {
  * @property {string} activeDropRowId The row a drag is hovering over and might drop on.
  * @property {string[]} canDropRowIds The row IDs that can be dropped on. These were given by the
  * caller from the `onDrag` callback.
- * @property {string} dragRowId The row that's being dragger.
- *
+ * @property {string[]} dragRowIds The rows that are being dragged.
  * @property {(MouseEvent) => void} handleEnterRow - Event handler that must be added as a
  * "mouseenter" listener to the table rows.
  * @property {(MouseEvent) => void} handleLeaveRow Event handler that must be added as a
