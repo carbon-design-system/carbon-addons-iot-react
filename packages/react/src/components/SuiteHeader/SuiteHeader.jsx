@@ -200,7 +200,10 @@ const SuiteHeader = ({
   try {
     const url = new URL(routes.logout);
     if (window.location.href) {
-      url.searchParams.append('originHref', window.location.href);
+      url.searchParams.append(
+        'originHref',
+        [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+      );
     }
     if (appId) {
       url.searchParams.append('originAppId', appId);
@@ -247,7 +250,7 @@ const SuiteHeader = ({
   return (
     <>
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
-      {showToast ? (
+      {showToast && surveyData ? (
         <ToastNotification
           data-testid={`${testId}-notification`}
           className={`${settings.iotPrefix}--suite-header-survey-toast`}

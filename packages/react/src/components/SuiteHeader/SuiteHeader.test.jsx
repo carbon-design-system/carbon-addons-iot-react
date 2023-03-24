@@ -67,7 +67,7 @@ const idleTimeoutDataProp = {
 };
 
 describe('SuiteHeader', () => {
-  const originHref = 'https://ibm.com';
+  const originHref = 'https://ibm.com/';
   const expectedAppPageLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}`;
@@ -87,7 +87,12 @@ describe('SuiteHeader', () => {
     originalWindowLocation = { ...window.location };
     originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
-    window.location = { href: originHref };
+    window.location = {
+      href: 'https://ibm.com/',
+      protocol: 'https:',
+      host: 'ibm.com',
+      pathname: '/',
+    };
     window.open = jest.fn();
   });
 
