@@ -106,11 +106,24 @@ const propTypes = {
   hasDragAndDrop: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
+
+  /**
+   * The rows being dragged.
+   */
+  dragRowIds: PropTypes.arrayOf(PropTypes.string),
+  /**
+   * The rows that can accept a dropped row at this time. Since rows can be nested, this needs to be
+   * passed all the way down so each row can decide if it accepts a drop or not.
+   */
+  canDropRowIds: PropTypes.instanceOf(Set),
+  /** The row we're currently over and can accept a drop. Its style will change to show this. */
+  activeDropRowId: PropTypes.string,
+  /** Callback for when a drag handle is clicked. */
   onStartDrag: PropTypes.func,
+  /** Callback for when a row is entered during a drag. This is null when there is not drag. */
   onDragEnterRow: PropTypes.func,
+  /** Callback for when a row is left during a drag. This is null when there is not drag. */
   onDragLeaveRow: PropTypes.func,
-  isDragRow: PropTypes.bool,
-  isDropRow: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -155,8 +168,9 @@ const defaultProps = {
   onStartDrag: null,
   onDragEnterRow: null,
   onDragLeaveRow: null,
-  isDragRow: false,
-  isDropRow: false,
+  dragRowIds: [],
+  canDropRowIds: [],
+  activeDropRowId: null,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -207,8 +221,9 @@ const TableBodyRowRenderer = (props) => {
     onStartDrag,
     onDragLeaveRow,
     onDragEnterRow,
-    isDragRow,
-    isDropRow,
+    canDropRowIds,
+    dragRowIds,
+    activeDropRowId,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -238,13 +253,17 @@ const TableBodyRowRenderer = (props) => {
     );
   }
 
+  const canDrop = canDropRowIds.has(row.id);
+
   const rowElement = !row.isLoadMoreRow ? (
     <TableBodyRow
       hasDragAndDrop={hasDragAndDrop}
       hideDragHandles={hideDragHandles}
       onStartDrag={onStartDrag}
-      onDragEnterRow={onDragEnterRow}
-      onDragLeaveRow={onDragLeaveRow}
+      onDragEnterRow={canDrop ? onDragEnterRow : null}
+      onDragLeaveRow={canDrop ? onDragLeaveRow : null}
+      isDragRow={dragRowIds.indexOf(row.id) !== -1}
+      isDropRow={row.id === activeDropRowId}
       langDir={langDir}
       key={row.id}
       isExpanded={isRowExpanded}
@@ -273,8 +292,6 @@ const TableBodyRowRenderer = (props) => {
       columns={columns}
       tableId={tableId}
       id={row.id}
-      isDragRow={isDragRow}
-      isDropRow={isDropRow}
       locale={locale}
       totalColumns={totalColumns}
       options={{
@@ -337,6 +354,14 @@ const TableBodyRowRenderer = (props) => {
               row={childRow}
               nestingLevel={nestingLevel + 1}
               isLastChild={i === row.children.length - 1}
+              hasDragAndDrop={hasDragAndDrop}
+              hideDragHandles={hideDragHandles}
+              onStartDrag={onStartDrag}
+              onDragLeaveRow={onDragLeaveRow}
+              onDragEnterRow={onDragEnterRow}
+              canDropRowIds={canDropRowIds}
+              dragRowIds={dragRowIds}
+              activeDropRowId={activeDropRowId}
             />
           ))
         )
@@ -347,6 +372,10 @@ const TableBodyRowRenderer = (props) => {
               key={`load-more-row-${row.id}`}
               row={{ id: row.id, isLoadMoreRow: true }}
               nestingLevel={nestingLevel}
+              onStartDrag={onStartDrag}
+              onDragLeaveRow={onDragLeaveRow}
+              onDragEnterRow={onDragEnterRow}
+              canDropRowIds={canDropRowIds}
             />
           ) : (
             []

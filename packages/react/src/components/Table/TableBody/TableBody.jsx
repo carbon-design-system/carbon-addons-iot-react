@@ -273,7 +273,7 @@ const TableBody = ({
   const {
     isDragging,
     dragPreview,
-    dragRowId,
+    dragRowIds,
     canDropRowIds,
     activeDropRowId,
     handleStartPossibleDrag,
@@ -332,10 +332,11 @@ const TableBody = ({
             hasDragAndDrop={hasDragAndDrop}
             hideDragHandles={hideDragHandles}
             onStartDrag={handleStartPossibleDrag}
-            onDragEnterRow={isDragging && canDropRowIds.has(row.id) ? handleEnterRow : null}
-            onDragLeaveRow={isDragging && canDropRowIds.has(row.id) ? handleLeaveRow : null}
-            isDragRow={dragRowId === row.id}
-            isDropRow={activeDropRowId === row.id}
+            onDragEnterRow={isDragging ? handleEnterRow : null}
+            onDragLeaveRow={isDragging ? handleLeaveRow : null}
+            activeDropRowId={activeDropRowId}
+            dragRowIds={dragRowIds}
+            canDropRowIds={canDropRowIds}
           />
         ))}
       </CarbonTableBody>

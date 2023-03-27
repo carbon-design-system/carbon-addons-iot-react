@@ -401,6 +401,20 @@ const TableBodyRow = ({
       ) : undefined}
     </Fragment>
   );
+
+  const dragEnterLeaveHandlers = {
+    onMouseEnter: !onDragEnterRow
+      ? undefined
+      : (e) => {
+          onDragEnterRow(id, e.currentTarget);
+        },
+    onMouseLeave: !onDragLeaveRow
+      ? undefined
+      : () => {
+          onDragLeaveRow(id);
+        },
+  };
+
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
@@ -408,6 +422,8 @@ const TableBodyRow = ({
           expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+            [`${iotPrefix}--table__row--dropping`]: isDropRow,
+            [`${iotPrefix}--table__row--dragging`]: isDragRow,
           })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -436,6 +452,7 @@ const TableBodyRow = ({
           }}
           rowId={id}
           langDir={langDir}
+          {...dragEnterLeaveHandlers}
         >
           {tableCells}
         </TableExpandRow>
@@ -447,6 +464,7 @@ const TableBodyRow = ({
               [`${iotPrefix}--table__row--dropping`]: isDropRow,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
             })}
+            {...dragEnterLeaveHandlers}
           >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </TableRow>
@@ -465,6 +483,8 @@ const TableBodyRow = ({
           [`${iotPrefix}--expandable-tablerow--singly-selected`]:
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
+          [`${iotPrefix}--table__row--dropping`]: isDropRow,
+          [`${iotPrefix}--table__row--dragging`]: isDragRow,
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -492,6 +512,7 @@ const TableBodyRow = ({
         }}
         rowId={id}
         langDir={langDir}
+        {...dragEnterLeaveHandlers}
       >
         {tableCells}
       </TableExpandRow>
@@ -511,6 +532,7 @@ const TableBodyRow = ({
           }
         }
       }}
+      {...dragEnterLeaveHandlers}
     >
       {tableCells}
     </TableRow>
@@ -525,22 +547,6 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
       })}
       key={id}
-      onMouseEnter={
-        // Add these conditionally since I _assume_ they're relatively expensive. This is only set
-        // during a drag and drop.
-        !onDragEnterRow
-          ? undefined
-          : (e) => {
-              onDragEnterRow(id, e.currentTarget);
-            }
-      }
-      onMouseLeave={
-        !onDragLeaveRow
-          ? undefined
-          : () => {
-              onDragLeaveRow(id);
-            }
-      }
       onClick={() => {
         if (isSelectable !== false) {
           if (hasRowSelection === 'single' && !useRadioButtonSingleSelect) {
@@ -549,6 +555,7 @@ const TableBodyRow = ({
           onRowClicked(id);
         }
       }}
+      {...dragEnterLeaveHandlers}
     >
       {tableCells}
     </TableRow>

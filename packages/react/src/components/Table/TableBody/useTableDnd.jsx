@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 
 import { settings } from '../../../constants/Settings';
+import { tableTraverser } from '../tableUtilities';
 
 import { TableDropRowOverlay } from './TableBodyRow/TableDropRowOverlay';
 import { TableDragAvatar } from './TableDragAvatar';
@@ -61,7 +62,7 @@ function getRtlVerticalScrollbarWidth() {
  * @property {ReactNode} dragPreview A element that must be rendered as a child of the page body.
  * This is the image that's shown during a drag and follows the mouse.
  * @property {string} activeDropRowId The row a drag is hovering over and might drop on.
- * @property {string[]} canDropRowIds The row IDs that can be dropped on. These were given by the
+ * @property {Set<string>} canDropRowIds The row IDs that can be dropped on. These were given by the
  * caller from the `onDrag` callback.
  * @property {string[]} dragRowIds The rows that are being dragged.
  * @property {(MouseEvent) => void} handleEnterRow - Event handler that must be added as a
@@ -127,7 +128,7 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       /* istanbul ignore next */
       avatarRef.current.ontransitionend = () => setDragPreview(null);
       avatarRef.current.style.transition = 'transform 200ms';
-      avatarRef.current.style.transform = 'translate(0, 0)';
+      avatarRef.current.style.transform = `translate(${document.documentElement.scrollLeft}px, ${document.documentElement.scrollTop}px)`;
     }
   }
 
@@ -137,7 +138,6 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
      * row that can be dropped on.
      */
     function handleDrop(e) {
-      // stop so row click handler will not be invoked
       e.stopPropagation();
 
       if (activeDropRowIdRef.current == null) {
@@ -187,7 +187,13 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
       }
 
       if (!isDraggingRef.current) {
-        const draggedRows = rows.filter((row) => dragRowIdsRef.current.includes(row.id));
+        // Convert from IDs to the real rows, even children
+        const draggedRows = [];
+        tableTraverser(rows, (rowOrChildRow) => {
+          if (dragRowIdsRef.current.includes(rowOrChildRow.id)) {
+            draggedRows.push(rowOrChildRow);
+          }
+        });
 
         /* istanbul igore else */
         if (draggedRows.length) {
@@ -278,6 +284,19 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         }
       }
 
+      /**
+       * Stops an event. This is used to stop click event during drag and drop, otherwise the
+       * mouseup can trigger a click on the row and the row click handler will be invoked. For
+       * expandable rows, this might expand or collapse the row. We add this to the event capture
+       * phase to intercept the click before the row can see it.
+       * @param {event} e DOM event.
+       */
+      function stopEvent(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      document.body.addEventListener('click', stopEvent, true);
       document.body.addEventListener('mouseup', handleDrop);
       document.body.addEventListener('mousemove', handleDragMove);
       document.body.addEventListener('keydown', handleEscapeKey);
@@ -293,11 +312,10 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
 
       return function tearDown() {
         // console.debug('Clean up table DnD');
+        document.body.removeEventListener('click', stopEvent, true);
         document.body.removeEventListener('mouseup', handleDrop);
         document.body.removeEventListener('mousemove', handleDragMove);
         document.body.removeEventListener('keydown', handleEscapeKey);
-
-        document.body.removeEventListener('click', cancel);
 
         window.removeEventListener('blur', cancel);
 

@@ -12,6 +12,9 @@
 
   cursor: grab;
   user-select: none;
+
+  position: relative;
+  inset-inline-start: var(--row-nesting-offset);
 }
 
 .bx--data-table td.#{$iot-prefix}--table-grab-handle-cell {
@@ -67,9 +70,13 @@ body.#{$iot-prefix}--is-dragging {
     }
 
     // Use light blues background if we can drop here.
-    tr.#{$iot-prefix}--table__row--dropping td {
-      background-color: $carbon--blue-10;
-      border-color: transparent;
+    tr.#{$iot-prefix}--table__row--dropping td,
+    tr.#{$iot-prefix}--expandable-tablerow--indented.#{$iot-prefix}--table__row--dropping
+      td:first-of-type:before {
+      // There are quite a few rules for tables cells (zebra, hover, etc) so just use !important
+      // to override them all during a drag.
+      background-color: $carbon--blue-10 !important;
+      border-color: transparent !important;
     }
 
     // Dim the row in the table that's being dragged.

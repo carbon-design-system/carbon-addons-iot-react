@@ -163,6 +163,7 @@ export const Playground = () => {
     hasEmptyFilterOption,
     hasMultiSelectFilter,
     hasFilterRowIcon,
+    hasDragAndDrop,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -299,8 +300,85 @@ export const Playground = () => {
     demoColumnGroupAssignments ? addColumnGroupIds(col, index) : col
   );
 
+  /**
+   * Simple way to move rows into other rows. The moved rows are removed from the root data array or
+   * their parent rows. They are appended to the target rows. This does NOT update the expanded
+   * state on any rows. This is a simple example implementation that may not cover all cases.
+   *
+   * @param {string[]} fromRowIds The IDs to of the rows to move.
+   * @param {string} toRowId The ID of the row to accept the moved rows.
+   */
+  function moveRows(fromRowIds, toRowId) {
+    const fromIdSet = new Set(fromRowIds);
+    const fromRows = [];
+    let toRow;
+
+    function recurse(rows) {
+      for (let i = rows.length - 1; i >= 0; i -= 1) {
+        const row = rows[i];
+
+        if (toRowId === row.id) {
+          toRow = row;
+        }
+
+        if (row.children) {
+          recurse(row.children);
+        }
+
+        if (fromIdSet.has(row.id)) {
+          fromRows.push(row);
+          rows.splice(i, 1);
+        }
+      }
+    }
+
+    recurse(data);
+
+    if (!toRow.children) {
+      toRow.children = fromRows;
+    } else {
+      toRow.children = toRow.children.concat(fromRows);
+    }
+
+    setData(data);
+  }
+
   const myTableActions = merge(getTableActions(), {
-    table: { onRowLoadMore },
+    table: {
+      onDrag: (draggedRows) => {
+        const dragIdSet = new Set(draggedRows.map((r) => r.id));
+        const dropIds = [];
+
+        /**
+         * Picks all the IDs of the rows we can drop on. Excludes the dragged row and all children.
+         */
+        function gatherDropIds(rows) {
+          for (let i = 0; i < rows.length; i += 1) {
+            const row = rows[i];
+
+            // eslint-disable-next-line no-continue
+            if (dragIdSet.has(row.id)) continue;
+            // Skip a dragged row and its children.
+
+            dropIds.push(row.id);
+
+            if (row.children) gatherDropIds(row.children);
+          }
+        }
+
+        gatherDropIds(data);
+
+        return {
+          preview: <NaiveMultiRowDragPreview rows={draggedRows} />,
+          dropIds,
+        };
+      },
+      onDrop: (dragRowIds, dropRowId) => {
+        console.info(`>>> Dropped ${dragRowIds} onto ${dropRowId}`);
+        moveRows(dragRowIds, dropRowId);
+      },
+      onRowLoadMore,
+    },
     toolbar: {
       onShowRowEdit: () => {
         action('onShowRowEdit')();
@@ -367,6 +445,7 @@ export const Playground = () => {
           hasSingleRowEdit,
           useRadioButtonSingleSelect,
           hasFilterRowIcon,
+          hasDragAndDrop,
         }}
         view={{
           advancedFilters,
@@ -417,6 +496,20 @@ export const Playground = () => {
 };
 Playground.storyName = 'Playground';
 
+function NaiveMultiRowDragPreview({ rows }) {
+  return (
+    <>
+      {rows.map((row, i) => {
+        return (
+          <div key={i} style={i > 0 ? { marginTop: '1rem' } : null}>
+            {row.values.type ? `${row.values.type} ${row.values.name}` : row.values.string}
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
 export function WithDragAndDrop() {
   const columns = [
     {
@@ -466,19 +559,6 @@ export function WithDragAndDrop() {
     setData(getInitialData());
   }
 
-  function NaiveMultiRowPreview({ rows }) {
-    return (
-      <>
-        {rows.map((row, i) => (
-          <div
-            key={i}
-            style={i > 0 ? { marginTop: '1rem' } : null}
-          >{`${row.values.type} ${row.values.name}`}</div>
-        ))}
-      </>
-    );
-  }
-
   return (
     <>
       <p>
@@ -500,7 +580,7 @@ export function WithDragAndDrop() {
 
               return {
                 dropIds: data.filter(isFolder).map((row) => row.id),
-                preview: <NaiveMultiRowPreview rows={rows} />,
+                preview: <NaiveMultiRowDragPreview rows={rows} />,
               };
             },
             onDrop: (dragRowIds, dropRowId) => {
