@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.2...v2.153.0-next.3) (2023-03-22)
+
+
+### Bug Fixes
+
+* **idlelogoutconfirmationmodal:** Assembling the `originHref` with the current url excluding the query parameters to fix an issue where query parameters may be added to the page without a page reload, which would cause the `useEffect` to restart because it has the logout and inactivityLogout URLs as dependencies. ([29bf567](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29bf567eb688ffdd2e9242d2e8d3c31906c735af))
+* **suiteheader:** Adding a null check in `surveyData` to avoid runtime errors if `surveyData` becomes null after in subsequent component re-renders ([9b73ede](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b73ede86b4e2b755677b5b778abbe582d0724e0))
+
+
+
+
+
 # [2.153.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.1...v2.153.0-next.2) (2023-03-10)
 
 
