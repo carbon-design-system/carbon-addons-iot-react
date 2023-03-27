@@ -3,6 +3,8 @@ import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
 
+import Button from '../Button';
+
 import SidePanel from './SidePanel';
 import SidePanelReadMe from './SidePanel.mdx';
 
@@ -45,6 +47,7 @@ const Content = ({ style }) => (
       nulla tempor vulputate et vel ligula. Curabitur egestas lorem ut mi vestibulum porttitor.
       Fusce eleifend vehicula semper. Donec luctus neque quam, et blandit eros accumsan at.
     </p>
+    <Button kind="ghost"> Inline Button </Button>
   </div>
 );
 

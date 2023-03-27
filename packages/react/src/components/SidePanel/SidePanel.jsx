@@ -12,6 +12,7 @@ import {
 import { settings } from '../../constants/Settings';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import Button from '../Button';
+import { getKeyboardFoucusableElements } from '../../utils/a11yUtils';
 
 const { iotPrefix } = settings;
 
@@ -147,6 +148,22 @@ const SidePanel = ({
         actionItems),
     [actionItems, testId, isOpen]
   );
+
+  useEffect(() => {
+    const currentElement = document.querySelector(`.${baseClass}__content`);
+    const keyboardfocusableElements = getKeyboardFoucusableElements(currentElement);
+
+    if (isOpen) {
+      [...keyboardfocusableElements].forEach((e) => {
+        e.setAttribute('tabindex', 0);
+      });
+    } else {
+      [...keyboardfocusableElements].forEach((e) => {
+        e.setAttribute('tabindex', -1);
+      });
+    }
+  }, [isOpen]);
+
   // Since subtitle is dynamic we set a css variable with the height value to animate in condensed mode
   const [subtitleHeight, setSubtitleHeight] = useState('100%');
   // Triggerd when the content is scrolled in either direction
