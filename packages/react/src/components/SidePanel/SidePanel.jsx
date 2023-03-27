@@ -151,7 +151,7 @@ const SidePanel = ({
 
   useEffect(() => {
     const currentElement = document.querySelector(`.${baseClass}__content`);
-    const keyboardfocusableElements = getKeyboardFoucusableElements(currentElement);
+    const keyboardfocusableElements = getKeyboardFoucusableElements(currentElement ?? document);
 
     if (isOpen) {
       [...keyboardfocusableElements].forEach((e) => {

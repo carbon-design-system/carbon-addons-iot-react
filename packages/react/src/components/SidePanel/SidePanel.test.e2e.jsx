@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from '@cypress/react';
+import { Edit16, Information16, SendAlt16 } from '@carbon/icons-react';
 
 import Button from '../Button';
 
@@ -36,6 +37,21 @@ describe('SidePanel', () => {
       </Button>
     </div>
   );
+
+  const actionItemButtons = [
+    {
+      buttonLabel: 'Edit',
+      buttonIcon: Edit16,
+    },
+    {
+      buttonLabel: 'Info',
+      buttonIcon: Information16,
+    },
+    {
+      buttonLabel: 'Send',
+      buttonIcon: SendAlt16,
+    },
+  ];
   it('should go into condensed mode when content is scrolled', () => {
     cy.viewport(1680, 900);
     mount(
@@ -80,7 +96,7 @@ describe('SidePanel', () => {
   it('should have non focusable element when renders slide-over panel', () => {
     cy.viewport(1680, 900);
     mount(
-      <SidePanel {...commonProps} type="over">
+      <SidePanel {...commonProps} actionItems={actionItemButtons} type="over">
         <Content />
       </SidePanel>
     );
@@ -93,7 +109,7 @@ describe('SidePanel', () => {
   it('should have only one focusable element when render inline panel', () => {
     cy.viewport(1680, 900);
     mount(
-      <SidePanel {...commonProps} type="inline">
+      <SidePanel {...commonProps} actionItems={actionItemButtons} type="inline">
         <Content />
       </SidePanel>
     );
@@ -104,10 +120,16 @@ describe('SidePanel', () => {
     });
   });
 
-  it('should have onl when render inline panel', () => {
+  it('should have tabindex 0 when render content with button ', () => {
     cy.viewport(1680, 900);
     mount(
-      <SidePanel {...commonProps} type="inline" isOpen>
+      <SidePanel
+        {...commonProps}
+        type="inline"
+        actionItems={actionItemButtons}
+        isOpen
+        directrion="left"
+      >
         <Content />
       </SidePanel>
     );
