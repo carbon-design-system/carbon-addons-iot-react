@@ -1450,6 +1450,7 @@ describe('DateTimePickerV2', () => {
       <DateTimePicker
         onApply={cy.stub()}
         onCancel={cy.stub()}
+        onClear={cy.stub()}
         id="picker-test"
         hasTimeInput
         useNewTimeSpinner

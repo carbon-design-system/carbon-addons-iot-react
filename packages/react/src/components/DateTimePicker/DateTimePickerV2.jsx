@@ -21,6 +21,7 @@ const DateTimePicker = ({
   renderPresetTooltipText,
   onCancel,
   onApply,
+  onClear,
   i18n,
   light,
   locale,
@@ -50,6 +51,7 @@ const DateTimePicker = ({
       renderPresetTooltipText={renderPresetTooltipText}
       onCancel={onCancel}
       onApply={onApply}
+      onClear={onClear}
       i18n={i18n}
       light={light}
       locale={locale}

@@ -146,6 +146,8 @@ export const propTypes = {
   onCancel: PropTypes.func,
   /** triggered on apply with returning object with similar signature to defaultValue */
   onApply: PropTypes.func,
+  /** call back function for clear values in single select */
+  onClear: PropTypes.func,
   /** All the labels that need translation */
   i18n: PropTypes.shape({
     toLabel: PropTypes.string,
@@ -251,6 +253,7 @@ export const defaultProps = {
   renderPresetTooltipText: null,
   onCancel: null,
   onApply: null,
+  onClear: null,
   i18n: {
     toLabel: 'to',
     toNowLabel: 'to Now',
@@ -308,6 +311,7 @@ const DateTimePicker = ({
   renderPresetTooltipText,
   onCancel,
   onApply,
+  onClear,
   i18n,
   light,
   locale,
@@ -810,6 +814,22 @@ const DateTimePicker = ({
     setSingleTimeValue(null);
     SetDefaultSingleDateValue(true);
     setIsExpanded(false);
+    const returnValue = {
+      timeRangeKind: PICKER_KINDS.SINGLE,
+      timeRangeValue: null,
+      timeSingleValue: null,
+    };
+
+    returnValue.timeSingleValue = {
+      ISOStart: null,
+      humanValue: dateTimeMask,
+      start: null,
+      startDate: null,
+      startTime: null,
+      tooltipValue: dateTimeMask,
+    };
+
+    onClear(returnValue);
   };
 
   // Close tooltip if dropdown was closed by click outside

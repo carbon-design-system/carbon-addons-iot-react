@@ -612,11 +612,13 @@ describe('DateTimePickerV2', () => {
   });
 
   it('should clear date and time fields when click clear button in single select', () => {
+    const mockOnClear = jest.fn();
     render(
       <DateTimePicker
         {...dateTimePickerProps}
         useNewTimeSpinner
         onApply={jest.fn()}
+        onClear={mockOnClear}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
         hasTimeInput
@@ -641,6 +643,18 @@ describe('DateTimePickerV2', () => {
 
     expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
     expect(screen.queryByRole('dialog')).toBeNull();
+    expect(mockOnClear).toHaveBeenCalledWith({
+      timeRangeKind: 'SINGLE',
+      timeRangeValue: null,
+      timeSingleValue: {
+        ISOStart: null,
+        start: null,
+        startDate: null,
+        startTime: null,
+        humanValue: 'YYYY-MM-DD hh:mm A',
+        tooltipValue: 'YYYY-MM-DD hh:mm A',
+      },
+    });
   });
 
   it('should disable button when clear time picker input in single select', () => {
