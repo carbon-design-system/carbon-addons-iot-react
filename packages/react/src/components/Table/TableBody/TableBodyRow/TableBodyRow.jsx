@@ -422,6 +422,8 @@ const TableBodyRow = ({
           expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+            [`${iotPrefix}--expandable-tablerow--childless`]:
+              hasRowNesting && nestingChildCount === 0,
             [`${iotPrefix}--table__row--dropping`]: isDropRow,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
           })}
