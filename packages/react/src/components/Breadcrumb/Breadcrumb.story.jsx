@@ -9,7 +9,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, boolean, text } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text, select } from '@storybook/addon-knobs';
 import { BreadcrumbSkeleton, BreadcrumbItem } from 'carbon-components-react';
 import { layout05, spacing05 } from '@carbon/layout';
 
@@ -19,7 +19,6 @@ const props = () => ({
   className: 'some-class',
   noTrailingSlash: boolean('No trailing slash (noTrailingSlash)', false),
   onClick: action('onClick'),
-  disableTruncation: text('Disable truncation (first, last)', ''),
 });
 
 const PolyfillWarning = () => (
@@ -148,7 +147,7 @@ export const WithTruncation = () => {
   return (
     <Breadcrumb
       noTrailingSlash
-      disableTruncation={text('Disable truncation (first, last)', 'first')}
+      disableTruncation={select('Disable truncation', ['first', 'last'], 'first')}
     >
       <BreadcrumbItem href="#">{text('Breadcrumb 1 text', 'Breadcrumb 1')}</BreadcrumbItem>
       <BreadcrumbItem href="#">
