@@ -369,12 +369,11 @@ const propTypes = {
       /** call back function for when icon button in filter row is clicked  (evt) => {} */
       onFilterRowIconClick: PropTypes.func,
       /**
-       * Required callback to support drag and drop. This gets the row ID being dragged and the
-       * values for that row. It must return an object of the row IDs that can be dropped on, and a
-       * node use as the preview of what' being dragged (typically the name of the row, possibly
-       * with an icon).
+       * Required callback to support drag and drop. This gets the rows values being dragged. It
+       * must return an object of the row IDs that can be dropped on, and a node use as the preview
+       * of what's being dragged (typically the name of the row, possibly with an icon).
        *
-       * @type {(rowId: string, values: any[]) => {dropIds: string[], preview: React.Node}}
+       * @type {(rows: object[]) => {dropIds: string[], preview: React.Node}}
        */
       onDrag: PropTypes.func,
       /**
@@ -382,7 +381,7 @@ const propTypes = {
        * passed the ID of the row that was dragged and the ID of the row that was dropped on. It's
        * up to the caller to decide what to do with that--the table does not update itself.
        *
-       * @type {(dragRowId: string, dropRowId) => void}
+       * @type {(dragRowIds: string[], dropRowId) => void}
        */
       onDrop: PropTypes.func,
     }).isRequired,

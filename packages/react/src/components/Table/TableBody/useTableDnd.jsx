@@ -81,7 +81,7 @@ function getRtlVerticalScrollbarWidth() {
  *
  * @param {object[]} rows The rows of the table we're dragging in.
  * @param {string[]} selectedIds The currently selected row IDs or empty array.
- * @param {(object[]) -> [ReactNode, string[]])} onDrag Callback fires when a drag actually start.
+ * @param {(object[]) -> {preview: ReactNode, dropIds: string[]}} onDrag Callback fires when a drag actually start.
  * This passes the the table rows being dragged. It must return a tuple of a ReactNode to show as
  * the drag image and a list of row IDs that can accept a drop from the given dragged row ID.
  * @param {(string[], string) => void} onDrop Callback when a drop succeeds. Passes the IDs of the
