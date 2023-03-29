@@ -244,8 +244,12 @@ const StatefulTable = ({ data: initialData, expandedData, ...other }) => {
       onDownloadCSV,
     },
     table: {
-      onDrag,
-      onDrop,
+      onDrag: (rows) => {
+        return callbackParent(onDrag, rows);
+      },
+      onDrop: (dragRowIds, dropRowId) => {
+        callbackParent(onDrop, dragRowIds, dropRowId);
+      },
       onChangeSort: (column) => {
         const sortDirection = sort ? sort.direction : undefined;
         dispatch(tableColumnSort(column, columns));

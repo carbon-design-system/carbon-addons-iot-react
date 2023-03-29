@@ -17,7 +17,7 @@
   inset-inline-start: var(--row-nesting-offset);
 }
 
-.bx--data-table td.#{$iot-prefix}--table-grab-handle-cell {
+.#{$prefix}--data-table .#{$iot-prefix}--table-grab-handle-cell {
   // remove padding so that the handle can fill the whole cell. Visually it's smaller, but the
   // draggable region will be large.
   padding-inline: 0;
