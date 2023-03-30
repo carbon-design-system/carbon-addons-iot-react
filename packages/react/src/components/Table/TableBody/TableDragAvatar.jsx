@@ -11,6 +11,9 @@ const propTypes = {
    * Any children to show in the avatar while dragging. Usually the row name and icon or similar.
    */
   children: PropTypes.node.isRequired,
+
+  /** CSS z-index for the avatar. */
+  zIndex: PropTypes.number.isRequired,
 };
 
 /**
@@ -22,9 +25,9 @@ const propTypes = {
  * @param {ref} ref React ref to connect to the root dom node.
  *
  */
-const TableDragAvatar = forwardRef(function TableDragAvatar({ children }, ref) {
+const TableDragAvatar = forwardRef(function TableDragAvatar({ zIndex, children }, ref) {
   return createPortal(
-    <div className={`${iotPrefix}--table-drag-avatar`} ref={ref}>
+    <div className={`${iotPrefix}--table-drag-avatar`} ref={ref} style={{ zIndex }}>
       {children}
     </div>,
     document.body

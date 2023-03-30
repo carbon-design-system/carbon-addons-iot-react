@@ -795,6 +795,7 @@ Map {
           "search": Object {},
         },
       },
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actions": Object {
@@ -2362,6 +2363,9 @@ Map {
         ],
         "type": "shape",
       },
+      "zIndex": Object {
+        "type": "number",
+      },
     },
   },
   "TableHead" => Object {
@@ -3181,6 +3185,7 @@ Map {
       "testId": "",
       "totalColumns": 0,
       "useRadioButtonSingleSelect": false,
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3743,6 +3748,9 @@ Map {
         ],
         "isRequired": true,
         "type": "oneOf",
+      },
+      "zIndex": Object {
+        "type": "number",
       },
     },
   },

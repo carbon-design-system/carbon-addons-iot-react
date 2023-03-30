@@ -65,7 +65,13 @@ const propTypes = {
   data: TableRowsPropTypes.isRequired,
   /** Expanded data for the table details */
   expandedData: ExpandedRowsPropTypes,
-
+  /**
+   * Optional base z-index for the table. Used with drag and drop to ensure the drag image is "over"
+   * other elements on the page. This is generally only needed if the table is in a modal dialog
+   * with z-index of its own. In that case, set this z-index to be higher than the modal to be sure
+   * any drags are seen above the modal.
+   */
+  zIndex: PropTypes.number,
   /** Experimental: Turns on the carbon sticky-header feature. */
   stickyHeader: experimental('stickyHeader'),
   /** Optional properties to customize how the table should be rendered */
@@ -406,6 +412,7 @@ export const defaultProps = (baseProps) => ({
   title: null,
   tooltip: null,
   secondaryTitle: null,
+  zIndex: 0,
   options: {
     hasAggregations: false,
     hasPagination: false,
@@ -616,6 +623,7 @@ const Table = (props) => {
     error,
     testId,
     size,
+    zIndex,
     ...others
   } = merge({}, defaultProps(props), props);
 
@@ -1156,6 +1164,7 @@ const Table = (props) => {
                 expandedIds={view.table.expandedIds}
                 selectedIds={view.table.selectedIds}
                 loadingMoreIds={view.table.loadingMoreIds}
+                zIndex={zIndex}
                 {...pick(
                   i18n,
                   'overflowMenuAria',

@@ -81,14 +81,17 @@ function getRtlVerticalScrollbarWidth() {
  *
  * @param {object[]} rows The rows of the table we're dragging in.
  * @param {string[]} selectedIds The currently selected row IDs or empty array.
- * @param {(object[]) -> {preview: ReactNode, dropIds: string[]}} onDrag Callback fires when a drag actually start.
- * This passes the the table rows being dragged. It must return a tuple of a ReactNode to show as
- * the drag image and a list of row IDs that can accept a drop from the given dragged row ID.
+ * @param {number | undefined} Optional minimum z-index for the drag image. Required if the table is
+ * in a modal with a >0 z-index.
+ * @param {(object[]) -> {preview: ReactNode, dropIds: string[]}} onDrag Callback fires when a drag
+ * actually start. This passes the the table rows being dragged. It must return a tuple of a
+ * ReactNode to show as the drag image and a list of row IDs that can accept a drop from the given
+ * dragged row ID.
  * @param {(string[], string) => void} onDrop Callback when a drop succeeds. Passes the IDs of the
  * rows being dragged and the ID of the row being dropped on.
  * @returns {UseTableDndResult} Values to mix into the table.
  */
-function useTableDnd(rows, selectedIds, onDrag, onDrop) {
+function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
   // These are related. When the user "mousedown"s on a drag handle, we consider it a "possible"
   // drag. At this point we add all the event listeners to track the drag. Put only after they move
   // past some threshold do we actually set `isDragging`. At that point the drag is "real" and we'll
@@ -390,12 +393,13 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         }px`,
         width: `${contentRect.width}px`,
         height: `${rowRect.height}px`,
+        zIndex: zIndex + 1000,
       };
 
       setActiveDropRowOverlayStyle(style);
       setActiveDropRowId(rowId);
     },
-    [isPossibleDrag, setActiveDropRowId]
+    [isPossibleDrag, setActiveDropRowId, zIndex]
   );
 
   const handleLeaveRow = useCallback(
@@ -422,7 +426,11 @@ function useTableDnd(rows, selectedIds, onDrag, onDrop) {
         <TableDropRowOverlay style={activeDropRowOverlayStyle} />
       )}
       {/* We can show the preview even if not isDragging during snapback time. */}
-      {dragPreview && <TableDragAvatar ref={avatarRef}>{dragPreview}</TableDragAvatar>}
+      {dragPreview && (
+        <TableDragAvatar zIndex={zIndex + 1001} ref={avatarRef}>
+          {dragPreview}
+        </TableDragAvatar>
+      )}
     </>
   );
 

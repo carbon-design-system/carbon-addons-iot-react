@@ -30,8 +30,6 @@
   position: absolute;
   border: dashed 2px $carbon--blue-60;
   pointer-events: none;
-  // This probably doesn't need to be very high, as long as it's higher than the table.
-  z-index: 1000;
 }
 
 // The shadowed tile shown while dragging a row. The caller supplies the text or icon inside this
@@ -48,8 +46,6 @@
   pointer-events: none;
   padding: $spacing-05;
   padding-inline-start: 2rem; // extra space at the start
-  // Above the row overlay
-  z-index: 1001;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 

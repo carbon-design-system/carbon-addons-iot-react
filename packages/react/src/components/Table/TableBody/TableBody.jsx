@@ -106,6 +106,8 @@ const propTypes = {
   hasDragAndDrop: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
   hideDragHandles: PropTypes.bool,
+  /** Optional base z-index for the drag image. See details on Table component. */
+  zIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -143,6 +145,7 @@ const defaultProps = {
   size: undefined,
   hasDragAndDrop: false,
   hideDragHandles: false,
+  zIndex: 0,
 };
 
 const TableBody = ({
@@ -187,6 +190,7 @@ const TableBody = ({
   size,
   hasDragAndDrop,
   hideDragHandles,
+  zIndex,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -279,7 +283,7 @@ const TableBody = ({
     handleStartPossibleDrag,
     handleEnterRow,
     handleLeaveRow,
-  } = useTableDnd(rows, selectedIds, actions.onDrag, actions.onDrop);
+  } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop);
 
   return (
     <>
