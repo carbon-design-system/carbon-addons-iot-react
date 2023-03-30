@@ -1224,6 +1224,17 @@ describe('SuiteHeader', () => {
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
     });
 
+    it('should close action panel if clicked outside of panel (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+
+      userEvent.click(document.body);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+    });
+
     it('should close action dropdown if panel opened (safari)', () => {
       render(<SuiteHeader {...commonProps} />);
       const headerPanel = screen.getByLabelText('Header Panel');
