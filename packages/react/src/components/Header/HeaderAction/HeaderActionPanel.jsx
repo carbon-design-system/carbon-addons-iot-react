@@ -73,26 +73,25 @@ const HeaderActionPanel = ({
       return;
     }
 
-    const handleActionClick = (event) => {
-      if (panelRef.current && panelRef.current.contains(event.target)) {
+    const handleOutsidePanelClick = (event) => {
+      if (
+        (panelRef.current && panelRef.current.contains(event.target)) ||
+        (focusRef.current && focusRef.current.contains(event.target))
+      ) {
         return;
       }
 
-      /* istanbul ignore next */
-      if (isExpanded && !focusRef.current.contains(event.target)) {
+      if (isExpanded) {
         onToggleExpansion();
       }
     };
 
-    const panelTriggerRef = focusRef?.current;
-    if (panelTriggerRef) {
-      panelTriggerRef.parentNode.parentNode.addEventListener('click', handleActionClick);
-    }
+    document.addEventListener('click', handleOutsidePanelClick, { capture: true });
 
     // eslint-disable-next-line consistent-return
-    return () =>
-      panelTriggerRef.parentNode.parentNode.removeEventListener('click', handleActionClick);
-  }, [isExpanded]); // eslint-disable-line react-hooks/exhaustive-deps
+    return () => document.removeEventListener('click', handleOutsidePanelClick, { capture: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpanded, onToggleExpansion]);
 
   return (
     <>
