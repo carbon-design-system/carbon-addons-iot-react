@@ -143,8 +143,6 @@ const propTypes = {
   onDragLeaveRow: PropTypes.func,
   /** If this row can be dragged. Shows a drag handle. */
   isDraggable: PropTypes.bool,
-  /** If this row is being dropped onto. */
-  isDropRow: PropTypes.bool,
   /** If this row is being dragged. */
   isDragRow: PropTypes.bool,
   /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
@@ -185,7 +183,6 @@ const defaultProps = {
   onDragEnterRow: null,
   onDragLeaveRow: null,
   isDraggable: false,
-  isDropRow: false,
   isDragRow: false,
 };
 
@@ -237,7 +234,6 @@ const TableBodyRow = ({
   onStartDrag,
   onDragEnterRow,
   onDragLeaveRow,
-  isDropRow,
   isDragRow,
   isDraggable,
   hasDragAndDrop,
@@ -410,8 +406,8 @@ const TableBodyRow = ({
         },
     onMouseLeave: !onDragLeaveRow
       ? undefined
-      : () => {
-          onDragLeaveRow(id);
+      : (e) => {
+          onDragLeaveRow(id, e.currentTarget);
         },
   };
 
@@ -424,7 +420,6 @@ const TableBodyRow = ({
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
             [`${iotPrefix}--expandable-tablerow--childless`]:
               hasRowNesting && nestingChildCount === 0,
-            [`${iotPrefix}--table__row--dropping`]: isDropRow,
             [`${iotPrefix}--table__row--dragging`]: isDragRow,
           })}
           ariaLabel={clickToCollapseAria}
@@ -463,7 +458,6 @@ const TableBodyRow = ({
             className={classnames(`${iotPrefix}--expanded-tablerow`, {
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
-              [`${iotPrefix}--table__row--dropping`]: isDropRow,
               [`${iotPrefix}--table__row--dragging`]: isDragRow,
             })}
             {...dragEnterLeaveHandlers}
@@ -485,7 +479,6 @@ const TableBodyRow = ({
           [`${iotPrefix}--expandable-tablerow--singly-selected`]:
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
-          [`${iotPrefix}--table__row--dropping`]: isDropRow,
           [`${iotPrefix}--table__row--dragging`]: isDragRow,
         })}
         data-row-nesting={hasRowNesting}
@@ -545,7 +538,6 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
-        [`${iotPrefix}--table__row--dropping`]: isDropRow,
         [`${iotPrefix}--table__row--dragging`]: isDragRow,
       })}
       key={id}

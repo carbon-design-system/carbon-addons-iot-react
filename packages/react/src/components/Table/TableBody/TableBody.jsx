@@ -279,7 +279,6 @@ const TableBody = ({
     dragPreview,
     dragRowIds,
     canDropRowIds,
-    activeDropRowId,
     handleStartPossibleDrag,
     handleEnterRow,
     handleLeaveRow,
@@ -338,7 +337,6 @@ const TableBody = ({
             onStartDrag={handleStartPossibleDrag}
             onDragEnterRow={isDragging ? handleEnterRow : null}
             onDragLeaveRow={isDragging ? handleLeaveRow : null}
-            activeDropRowId={activeDropRowId}
             dragRowIds={dragRowIds}
             canDropRowIds={canDropRowIds}
           />

@@ -116,8 +116,6 @@ const propTypes = {
    * passed all the way down so each row can decide if it accepts a drop or not.
    */
   canDropRowIds: PropTypes.instanceOf(Set),
-  /** The row we're currently over and can accept a drop. Its style will change to show this. */
-  activeDropRowId: PropTypes.string,
   /** Callback for when a drag handle is clicked. */
   onStartDrag: PropTypes.func,
   /** Callback for when a row is entered during a drag. This is null when there is not drag. */
@@ -170,7 +168,6 @@ const defaultProps = {
   onDragLeaveRow: null,
   dragRowIds: [],
   canDropRowIds: [],
-  activeDropRowId: null,
 };
 
 const TableBodyRowRenderer = (props) => {
@@ -223,7 +220,6 @@ const TableBodyRowRenderer = (props) => {
     onDragEnterRow,
     canDropRowIds,
     dragRowIds,
-    activeDropRowId,
   } = props;
   const isRowExpanded = expandedIds.includes(row.id);
   const shouldShowChildren =
@@ -263,7 +259,6 @@ const TableBodyRowRenderer = (props) => {
       onDragEnterRow={canDrop ? onDragEnterRow : null}
       onDragLeaveRow={canDrop ? onDragLeaveRow : null}
       isDragRow={dragRowIds.indexOf(row.id) !== -1}
-      isDropRow={row.id === activeDropRowId}
       langDir={langDir}
       key={row.id}
       isExpanded={isRowExpanded}
@@ -361,7 +356,6 @@ const TableBodyRowRenderer = (props) => {
               onDragEnterRow={onDragEnterRow}
               canDropRowIds={canDropRowIds}
               dragRowIds={dragRowIds}
-              activeDropRowId={activeDropRowId}
             />
           ))
         )

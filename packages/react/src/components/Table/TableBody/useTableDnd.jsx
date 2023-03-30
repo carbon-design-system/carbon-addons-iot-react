@@ -113,10 +113,7 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
 
   // The row ID we're hovering over during a drag. Only if it accepts a drop. Note there is a state
   // and ref for the same value. See setActiveDropRowId.
-  const [activeDropRowIdRef, activeDropRowId, setActiveDropRowId] = useRefAndState(null);
-
-  // Used to set the abs position of the drop overlay.
-  const [activeDropRowOverlayStyle, setActiveDropRowOverlayStyle] = useState(null);
+  const activeDropRowIdRef = useRef(null);
 
   //  The coords where a DnD starts from. Not a state change, just used later in response to mousemove.
   const dragStartCoordsRef = useRef();
@@ -324,21 +321,12 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
         document.body.classList.remove(`${iotPrefix}--is-dragging`);
 
         setDragRowIds([]);
-        setActiveDropRowId(null);
-        setActiveDropRowOverlayStyle(null);
+        activeDropRowIdRef.current = null;
         setCanDropRowIds(new Set());
         setIsDragging(false);
       };
     },
-    [
-      isPossibleDrag,
-      handleDragMove,
-      handleDrop,
-      cancel,
-      setActiveDropRowId,
-      setIsDragging,
-      setDragRowIds,
-    ]
+    [isPossibleDrag, handleDragMove, handleDrop, cancel, setIsDragging, setDragRowIds]
   );
 
   const handleStartPossibleDrag = useCallback(
@@ -367,6 +355,9 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
     [setDragRowIds, selectedIds]
   );
 
+  /** Ref to the root DOM element of the row overlay. Used to directly update its style. */
+  const overlayRef = useRef(null);
+
   const handleEnterRow = useCallback(
     /**
      *  Callback when the mouse enters a table row. The table needs to add this as an onmouseenter
@@ -387,6 +378,7 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       const contentRect = scrollContainer.getBoundingClientRect();
       const rowRect = rowEl.getBoundingClientRect();
       const style = {
+        display: '',
         top: `${rowRect.top + document.documentElement.scrollTop}px`,
         left: `${
           contentRect.left + document.documentElement.scrollLeft - getRtlVerticalScrollbarWidth()
@@ -396,10 +388,13 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
         zIndex: zIndex + 1000,
       };
 
-      setActiveDropRowOverlayStyle(style);
-      setActiveDropRowId(rowId);
+      // istanbul ignore else
+      if (overlayRef.current) Object.assign(overlayRef.current.style, style);
+      rowEl.classList.add(`${iotPrefix}--table__row--dropping`);
+
+      activeDropRowIdRef.current = rowId;
     },
-    [isPossibleDrag, setActiveDropRowId, zIndex]
+    [isPossibleDrag, zIndex]
   );
 
   const handleLeaveRow = useCallback(
@@ -408,23 +403,23 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
      *  handler.
      * @param {string} rowId A row we are no longer over.
      */
-    function handleLeaveRow(rowId) {
+    function handleLeaveRow(rowId, rowEl) {
       /* istanbul ignore else */
-      if (activeDropRowId === rowId) {
-        setActiveDropRowOverlayStyle(null);
-        setActiveDropRowId(null);
+      if (activeDropRowIdRef.current === rowId) {
+        activeDropRowIdRef.current = null;
+        // istanbul ignore else
+        if (overlayRef.current) overlayRef.current.style.display = 'none';
+        rowEl.classList.remove(`${iotPrefix}--table__row--dropping`);
       }
     },
-    [activeDropRowId, setActiveDropRowId]
+    []
   );
 
   // During a drag we show an avatar near the cursor and an overlay over the hovered row, if there
   // is one. These needs to be added to the body element by the caller.
   const dragPreviewAndOverlay = (
     <>
-      {isDragging && activeDropRowOverlayStyle && (
-        <TableDropRowOverlay style={activeDropRowOverlayStyle} />
-      )}
+      {isDragging && <TableDropRowOverlay ref={overlayRef} />}
       {/* We can show the preview even if not isDragging during snapback time. */}
       {dragPreview && (
         <TableDragAvatar zIndex={zIndex + 1001} ref={avatarRef}>
@@ -437,7 +432,6 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
   return {
     isDragging,
     dragPreview: dragPreviewAndOverlay,
-    activeDropRowId,
     canDropRowIds,
     dragRowIds,
     handleEnterRow,

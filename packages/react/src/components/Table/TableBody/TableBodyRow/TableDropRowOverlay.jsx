@@ -1,23 +1,9 @@
+import React, { forwardRef } from 'react';
 import { createPortal } from 'react-dom';
-import PropTypes from 'prop-types';
-import React from 'react';
 
 import { settings } from '../../../../constants/Settings';
 
 const { iotPrefix } = settings;
-
-const propTypes = {
-  /**
-   * Any CSS style rules. This is to set the top, left, and possibly transform, to position this
-   * overlay.
-   */
-  style: PropTypes.objectOf(PropTypes.string),
-
-  /**
-   * The ID of the table row this handle is it. This is the row that will be dragged by this handle.
-   */
-  rowId: PropTypes.string,
-};
 
 /**
  * During a drag and drop we want a border around the row we're about to drop on. We can't add a CSS
@@ -27,13 +13,11 @@ const propTypes = {
  *
  * @param {object} props
  */
-function TableDropRowOverlay({ style }) {
+const TableDropRowOverlay = forwardRef(function TableDropRowOverlay(_, ref) {
   return createPortal(
-    <div style={style} className={`${iotPrefix}--table-drop-row-overlay`} />,
+    <div className={`${iotPrefix}--table-drop-row-overlay`} ref={ref} />,
     document.body
   );
-}
-
-TableDropRowOverlay.propTypes = propTypes;
+});
 
 export { TableDropRowOverlay };

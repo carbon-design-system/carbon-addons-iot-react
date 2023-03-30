@@ -129,6 +129,8 @@ describe('stateful table with real reducer', () => {
       userEvent.click(checkboxes[2]);
 
       fireEvent.mouseDown(dragHandles[0]);
+      // click should be stopped and ignored
+      fireEvent.click(dragHandles[0]);
       fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
       fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 10, clientY: 10 });
       fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 10, clientY: 10 });
