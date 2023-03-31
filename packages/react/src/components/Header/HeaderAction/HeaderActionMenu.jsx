@@ -7,6 +7,7 @@ import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import Button from '../../Button/Button';
 
 const { prefix } = settings;
 
@@ -129,21 +130,22 @@ class HeaderActionMenu extends React.Component {
     return (
       // TODO: CAN WE REMOVE THIS DIV WRAPPER AND ATTACH THE CLASS DIRECTLY
       <div className={className}>
-        <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
-          aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
+        <Button
+          hasIconOnly
+          iconDescription={ariaLabel}
+          tooltipPosition="bottom"
+          aria-haspopup="menu"
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          href="#"
           onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
           onClick={handleDefaultClick}
           ref={focusRef}
-          data-testid="menuitem"
-          tabIndex={0}
+          testId="menuitem"
           aria-label={ariaLabel}
           role="menuitem"
         >
           <MenuContent ariaLabel={ariaLabel} />
-        </a>
+        </Button>
         <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
           {childContent.map((childItem, index) => {
             const { isOverflowing } = this.state;
