@@ -1,4 +1,5 @@
 @import '~carbon-components/scss/components/breadcrumb/breadcrumb';
+@import '../../globals/vars';
 
 .#{$prefix}--breadcrumb {
   display: flex;
@@ -92,5 +93,15 @@ html[dir='rtl'] .breadcrumb--container {
   .#{$prefix}--breadcrumb-item:last-child::after {
     margin-left: auto;
     margin-right: $spacing-03;
+  }
+}
+
+.#{$iot-prefix}--breadcrumb-expand {
+  &--first .#{$prefix}--breadcrumb-item:first-of-type {
+    flex-shrink: 0;
+  }
+
+  &--last .#{$prefix}--breadcrumb-item:last-of-type {
+    flex-shrink: 0;
   }
 }

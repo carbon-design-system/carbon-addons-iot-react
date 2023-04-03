@@ -147,7 +147,7 @@ export const WithTruncation = () => {
   return (
     <Breadcrumb
       noTrailingSlash
-      disableTruncation={select('Disable truncation', ['first', 'last'], 'first')}
+      disableTruncation={select('Disable truncation', ['first', 'last', 'none'], 'first')}
     >
       <BreadcrumbItem href="#">{text('Breadcrumb 1 text', 'Breadcrumb 1')}</BreadcrumbItem>
       <BreadcrumbItem href="#">

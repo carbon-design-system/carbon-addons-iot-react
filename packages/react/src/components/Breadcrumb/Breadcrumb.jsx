@@ -7,6 +7,9 @@ import { Breadcrumb as CarbonBreadcrumb } from 'carbon-components-react';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { useResize } from '../../internal/UseResizeObserver';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /**
@@ -38,7 +41,7 @@ const propTypes = {
   /**
    * Disable truncation on the first or last breadcrumb item.
    */
-  disableTruncation: PropTypes.oneOf(['first', 'last', '']),
+  disableTruncation: PropTypes.oneOf(['first', 'last', 'none']),
 
   testId: PropTypes.string,
 };
@@ -50,25 +53,11 @@ const defaultProps = {
   hasOverflow: false,
   'aria-label': null,
   testId: 'breadcrumb',
-  disableTruncation: '',
+  disableTruncation: 'none',
 };
 
 const Breadcrumb = ({ children, className, hasOverflow, testId, disableTruncation, ...other }) => {
-  const childrenItems = Children.map(children, (child, index) => {
-    if (disableTruncation === 'first' && index === 0) {
-      return React.cloneElement(child, {
-        style: { ...child.props.style, flexShrink: 0 },
-      });
-    }
-
-    if (disableTruncation === 'last' && index === children.length - 1) {
-      return React.cloneElement(child, {
-        style: { ...child.props.style, flexShrink: 0 },
-      });
-    }
-
-    return child;
-  });
+  const childrenItems = Children.map(children, (child) => child);
 
   const breakingWidth = useRef([]);
 
@@ -124,6 +113,7 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, disableTruncatio
     <div
       className={classnames('breadcrumb--container', {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
+        [`${iotPrefix}--breadcrumb-expand--${disableTruncation}`]: disableTruncation !== 'none',
       })}
       ref={breadcrumbRef}
       // TODO: fix in v3
@@ -155,7 +145,7 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, disableTruncatio
         </CarbonBreadcrumb>
       ) : (
         <CarbonBreadcrumb data-testid={testId} className={className} {...other}>
-          {childrenItems}
+          {children}
         </CarbonBreadcrumb>
       )}
     </div>
