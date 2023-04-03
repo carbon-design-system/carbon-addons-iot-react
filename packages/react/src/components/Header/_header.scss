@@ -255,6 +255,7 @@ button.#{$prefix}--header__menu-item {
   &:focus {
     border-color: $ui-01;
     box-shadow: none;
+    border-width: 1px;
   }
 
   &:hover {
