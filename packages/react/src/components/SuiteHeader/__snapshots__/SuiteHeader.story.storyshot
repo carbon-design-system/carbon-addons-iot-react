@@ -259,7 +259,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -461,7 +460,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -1159,7 +1157,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -1342,7 +1339,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -1619,7 +1615,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -2265,7 +2260,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -2467,7 +2461,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -3103,7 +3096,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -3305,7 +3297,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -3865,7 +3856,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -4067,7 +4057,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -5141,7 +5130,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -5343,7 +5331,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -5862,7 +5849,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -6000,7 +5986,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -6483,7 +6468,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -6685,7 +6669,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -7216,7 +7199,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
@@ -7418,7 +7400,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onBlur={[Function]}
               onClick={[Function]}
               onFocus={[Function]}
-              onKeyDown={[Function]}
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               role="menuitem"
