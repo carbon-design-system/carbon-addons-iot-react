@@ -112,20 +112,12 @@ class HeaderActionMenu extends React.Component {
 
     const className = classnames(`${prefix}--header__submenu`, customClassName);
 
-    // Prevents the a element from navigating to it's href target
-    const handleDefaultClick = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      onToggleExpansion();
-    };
-
     // Notes on eslint comments and based on the examples in:
     // https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#
     // - The focus is handled by the <a> menuitem, onMouseOver is for mouse
     // users
     // - aria-haspopup can definitely have the value "menu"
     // - aria-expanded is on their example node with role="menuitem"
-    // - href can be set to javascript:void(0), ideally this will be a button
 
     return (
       // TODO: CAN WE REMOVE THIS DIV WRAPPER AND ATTACH THE CLASS DIRECTLY
@@ -137,8 +129,7 @@ class HeaderActionMenu extends React.Component {
           aria-haspopup="menu"
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
-          onClick={handleDefaultClick}
+          onClick={onToggleExpansion}
           ref={focusRef}
           testId="menuitem"
           aria-label={ariaLabel}
