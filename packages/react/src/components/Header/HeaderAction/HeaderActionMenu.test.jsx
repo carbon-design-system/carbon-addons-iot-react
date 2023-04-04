@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { settings } from '../../../constants/Settings';
 
@@ -84,7 +85,8 @@ describe('HeaderActionMenu', () => {
 
   it('should display tooltip on hover', () => {
     render(<HeaderActionMenu {...mockProps} />);
-    fireEvent.mouseEnter(screen.getByTestId('menuitem'));
-    expect(screen.getByTestId('menuitem')).not.toHaveClass(`${prefix}--tooltip--hidden`);
+    const actionMenu = screen.getByTestId('menuitem');
+    userEvent.hover(actionMenu);
+    expect(actionMenu).not.toHaveClass(`${prefix}--tooltip--hidden`);
   });
 });
