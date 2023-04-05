@@ -60,6 +60,7 @@ class FilterHeaderRow extends Component {
         ),
         /** if isMultiselect and isFilterable are true, the table is filtered based on a multiselect */
         isMultiselect: PropTypes.bool,
+        customInput: PropTypes.element,
       })
     ).isRequired,
     /** internationalized string */
@@ -361,6 +362,8 @@ class FilterHeaderRow extends Component {
           const headerContent =
             column.isFilterable !== undefined && !column.isFilterable ? (
               <div />
+            ) : column.customInput !== undefined ? (
+              <>{column.customInput}</>
             ) : column.options ? (
               column.isMultiselect ? (
                 <FilterableMultiSelect
