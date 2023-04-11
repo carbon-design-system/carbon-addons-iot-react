@@ -43,7 +43,7 @@ export const format12hourTo24hour = (time12hour) => {
  * @param {Object} value - the absolute time selection
  * @returns {Object} a human readable value and a furtherly augmented value object
  */
-export const parseValue = (timeRange, dateTimeMask, toLabel) => {
+export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
   let readableValue = '';
 
   if (!timeRange) {
@@ -99,6 +99,12 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
       break;
     }
     case PICKER_KINDS.ABSOLUTE: {
+      if (!value.start && !value.startDate) {
+        readableValue = dateTimeMask;
+        returnValue.absolute.start = null;
+        break;
+      }
+
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
         const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
@@ -107,6 +113,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           : value.startTime;
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
+      } else if (hasTimeInput) {
+        returnValue.absolute.startTime = null;
+        readableValue = dateTimeMask;
+        break;
       }
       if (!returnValue.absolute) {
         returnValue.absolute = {};
@@ -118,13 +128,21 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
         ? `${dayjs(startDate).format(dateTimeMask)}`
         : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
 
-      if (value.end ?? value.endDate) {
+      if (!value.end && !value.endDate) {
+        readableValue = dateTimeMask;
+        returnValue.absolute.end = null;
+        break;
+      } else if (value.end || value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
           const is12hour = dayjs(value.endTime, 'hh:mm A', true).isValid();
           const formatedEndTime = is12hour ? format12hourTo24hour(value.endTime) : value.endTime;
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
+        } else if (hasTimeInput) {
+          returnValue.absolute.endTime = null;
+          readableValue = dateTimeMask;
+          break;
         }
 
         const endTimeValue = value.endTime
@@ -152,6 +170,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel) => {
           : value.startTime;
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
+      } else if (hasTimeInput) {
+        returnValue.absolute.startTime = null;
+        readableValue = dateTimeMask;
+        break;
       }
       returnValue.single.start = new Date(startDate.valueOf());
       readableValue = value.startTime
@@ -559,6 +581,10 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
     }
   };
 
+  const onFieldClick = (e) => {
+    if (e.target.innerText !== 'Apply') setIsExpanded(!isExpanded);
+  };
+
   /**
    * Moves up the preset list to the previous focusable element or wraps around to the bottom
    * if already at the top.
@@ -627,6 +653,7 @@ export const useDateTimePickerKeyboardInteraction = ({ expanded, setCustomRangeK
     onFieldInteraction,
     onNavigateRadioButton,
     onNavigatePresets,
+    onFieldClick,
   };
 };
 
@@ -852,19 +879,19 @@ export const useCustomHeight = ({
 }) => {
   // calculate max height for varies dropdown
   const presetMaxHeight = 315;
-  const relativeMaxHeight = 269;
-  const withoutRelativeOptionMaxHeight = 446;
-  const absoluteMaxHeight = 555;
+  const relativeMaxHeight = 200;
+  const absoluteMaxHeight = 446;
   const singleMaxHeight = 442;
   const footerHeight = 40;
-  const maxHeight = isCustomRange
-    ? showRelativeOption
-      ? isSingleSelect
-        ? singleMaxHeight
-        : customRangeKind === PICKER_KINDS.ABSOLUTE
-        ? absoluteMaxHeight
-        : relativeMaxHeight
-      : withoutRelativeOptionMaxHeight
+  const invalidDateWarningHeight = 38;
+  const invalidTimeWarningHeight = 22;
+  const relativeOptionHeight = 69;
+  const timeInputHeight = 64;
+  const maxHeight = isSingleSelect
+    ? singleMaxHeight
+    : isCustomRange
+    ? (customRangeKind === PICKER_KINDS.ABSOLUTE ? absoluteMaxHeight : relativeMaxHeight) +
+      (showRelativeOption ? relativeOptionHeight : 0)
     : presetMaxHeight;
 
   const closeDropDown = () => {
@@ -912,5 +939,15 @@ export const useCustomHeight = ({
   const customHeight =
     offBottom && offTop ? (topGap > bottomGap ? topGap : bottomGap) - footerHeight : undefined;
 
-  return [offTop, offBottom, inputTop, inputBottom, customHeight, maxHeight];
+  return [
+    offTop,
+    offBottom,
+    inputTop,
+    inputBottom,
+    customHeight,
+    maxHeight,
+    invalidDateWarningHeight,
+    invalidTimeWarningHeight,
+    timeInputHeight,
+  ];
 };

@@ -6,7 +6,8 @@
   position: relative;
 
   &--24h {
-    width: 13.125rem;
+    max-width: 16.125rem;
+    width: 100%;
   }
 
   input {
