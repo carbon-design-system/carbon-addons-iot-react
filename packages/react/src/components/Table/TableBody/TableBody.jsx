@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody as CarbonTableBody } from 'carbon-components-react';
-import classNames from 'classnames';
+import classnames from 'classnames';
 
 import {
   ExpandedRowsPropTypes,
@@ -294,7 +294,7 @@ const TableBody = ({
     <>
       <CarbonTableBody
         data-testid={testID || testId}
-        className={classNames(
+        className={classnames(
           pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
         )}
       >
