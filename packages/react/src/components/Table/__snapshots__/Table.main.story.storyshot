@@ -441,7 +441,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="table-table-body"
           >
             <tr
@@ -22173,7 +22172,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -25479,7 +25477,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
             </thead>
             <tbody
               aria-live="polite"
-              className=""
               data-testid="table-table-body"
             >
               <tr
@@ -28828,7 +28825,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -30965,7 +30961,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -32203,7 +32198,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -35691,7 +35685,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -41827,7 +41820,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -45020,7 +45012,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -48928,7 +48919,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -51889,7 +51879,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -55291,7 +55280,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr
@@ -67746,7 +67734,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
           </thead>
           <tbody
             aria-live="polite"
-            className=""
             data-testid="null-table-body"
           >
             <tr

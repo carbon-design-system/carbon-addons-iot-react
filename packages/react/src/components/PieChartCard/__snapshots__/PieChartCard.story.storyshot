@@ -430,7 +430,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                     </thead>
                     <tbody
                       aria-live="polite"
-                      className=""
                       data-testid="basicCardStory-table-table-body"
                     >
                       <tr

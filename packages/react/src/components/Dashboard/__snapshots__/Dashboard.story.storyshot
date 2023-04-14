@@ -10011,7 +10011,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                         </thead>
                         <tbody
                           aria-live="polite"
-                          className=""
                           data-testid="table-for-card-expandedcard-table-body"
                         >
                           <tr

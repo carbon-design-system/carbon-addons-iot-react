@@ -1346,7 +1346,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </thead>
                       <tbody
                         aria-live="polite"
-                        className=""
                         data-testid="null-table-body"
                       >
                         <tr
@@ -3593,7 +3592,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                       </thead>
                       <tbody
                         aria-live="polite"
-                        className=""
                         data-testid="null-table-body"
                       >
                         <tr

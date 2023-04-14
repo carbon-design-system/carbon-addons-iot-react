@@ -681,7 +681,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                     </thead>
                     <tbody
                       aria-live="polite"
-                      className=""
                       data-testid="BarChartCard-table-table-body"
                     >
                       <tr

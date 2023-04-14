@@ -570,7 +570,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -2408,7 +2407,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -3906,7 +3904,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -5329,7 +5326,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -6898,7 +6894,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-undefined-table-body"
                 >
                   <tr
@@ -7728,7 +7723,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -9060,7 +9054,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -11363,7 +11356,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -13365,7 +13357,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -15166,7 +15157,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
@@ -17181,7 +17171,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                 </thead>
                 <tbody
                   aria-live="polite"
-                  className=""
                   data-testid="table-for-card-table-list-table-body"
                 >
                   <tr
