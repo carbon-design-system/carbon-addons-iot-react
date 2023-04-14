@@ -233,6 +233,8 @@ export const I18NPropTypes = PropTypes.shape({
   batchActionsOverflowMenuText: PropTypes.string,
   /** overflow menu text callback for truncated filter tags */
   filterTagsOverflowMenuText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  /** I18N label for search icon in toolbar */
+  toolbarSearchIconDescription: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {

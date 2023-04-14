@@ -19,7 +19,7 @@ import {
   getWords,
 } from './Table.test.helpers';
 
-const { prefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 describe('StatefulTable', () => {
   const words = getWords();
@@ -625,6 +625,46 @@ describe('StatefulTable', () => {
       .should(() => {
         expect(filterRowIconCallback).to.have.been.callCount(1);
       });
+  });
+
+  it('should display search tooltip in table toolbar', () => {
+    const onApplySearch = cy.stub();
+    const searchTooltip = 'Search tooltip';
+    mount(
+      <StatefulTable
+        id="search-table"
+        columns={tableColumns}
+        data={tableData}
+        options={{
+          hasSearch: true,
+          hasPagination: false,
+        }}
+        actions={{
+          toolbar: {
+            onApplySearch,
+          },
+        }}
+        i18n={{
+          toolbarSearchIconDescription: searchTooltip,
+        }}
+      />
+    );
+    // 100 rows plus the header
+    cy.get('tr').should('have.length', 101);
+
+    cy.findByRole('searchbox').realHover();
+    cy.findByText(searchTooltip)
+      .should('be.visible')
+      .and('have.class', `${iotPrefix}--table-toolbar__search-tooltip--end`);
+
+    cy.findByRole('searchbox')
+      .type('Ia2eQMSi8i')
+      .should(() => {
+        expect(onApplySearch).to.have.been.callCount(10);
+        expect(onApplySearch).to.have.been.calledWith('Ia2eQMSi8i');
+      });
+    cy.findByText(searchTooltip).should('not.be.visible');
+    cy.get('tr').should('have.length', 5);
   });
 
   it('should pin first column with filtering and selection', () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import {
   Column20,
@@ -10,7 +10,6 @@ import {
 import {
   TableToolbar as CarbonTableToolbar,
   TableToolbarContent,
-  TableToolbarSearch,
   TableBatchActions,
   TableBatchAction,
   Tooltip,
@@ -35,10 +34,7 @@ import {
   TableSharedOverflowMenuPropTypes,
   TableSharedActionPropTypes,
 } from '../TablePropTypes';
-import {
-  handleSpecificKeyDown,
-  tableTranslateWithId,
-} from '../../../utils/componentUtilityFunctions';
+import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
 import { settings } from '../../../constants/Settings';
 import { RuleGroupPropType } from '../../RuleBuilder/RuleBuilderPropTypes';
 import useDynamicOverflowMenuItems from '../../../hooks/useDynamicOverflowMenuItems';
@@ -46,6 +42,7 @@ import { renderTableOverflowItemText } from '../tableUtilities';
 
 import TableToolbarAdvancedFilterFlyout from './TableToolbarAdvancedFilterFlyout';
 import TableToolbarSVGButton from './TableToolbarSVGButton';
+import TableToolbarSearch from './TableToolbarSearch';
 
 const { iotPrefix } = settings;
 
@@ -102,6 +99,8 @@ const propTypes = {
     toolbarTooltipLabel: PropTypes.string,
     /** button label for batch action overflow menu */
     batchActionsOverflowMenuText: PropTypes.string,
+    /** I18N label for search icon in toolbar */
+    toolbarSearchIconDescription: PropTypes.string,
   }),
   /**
    * Action callbacks to update tableState
@@ -262,21 +261,6 @@ const TableToolbar = ({
 }) => {
   const shouldShowBatchActions = hasRowSelection === 'multi' && totalSelected > 0;
   const langDir = useLangDirection();
-  const { isExpanded: searchIsExpanded, onExpand, ...search } = searchProp ?? {};
-
-  /**
-   * Needed to force update component if search input is cleared from outside of TableToolbar
-   * Reference: https://reactjs.org/docs/hooks-faq.html#is-there-something-like-forceupdate
-   */
-  const [forceRenderCount, setForceRenderCount] = useState(0);
-
-  useEffect(() => {
-    if (document.activeElement?.tagName === 'INPUT') {
-      return;
-    }
-
-    setForceRenderCount((prevValue) => prevValue + 1);
-  }, [search.defaultValue]);
 
   const [isOpen, setIsOpen, renderToolbarOverflowActions] = useDynamicOverflowMenuItems({
     actions: toolbarActions,
@@ -437,51 +421,22 @@ const TableToolbar = ({
         >
           {hasSearch ? (
             <TableToolbarSearch
-              {...search}
-              key={
-                // If hasUserViewManagement is active the whole table is regenerated when a new
-                // view is loaded so we probably don't need this key-gen fix to preset a search text.
-                // The userViewManagement also needs to be able to set the search.defaultValue
-                // while typing without loosing input focus.
-                hasUserViewManagement
-                  ? `table-toolbar-search-${forceRenderCount}`
-                  : `table-toolbar-search-user-view-${forceRenderCount}`
-              }
-              defaultValue={search.defaultValue || search.value}
-              className="table-toolbar-search"
-              translateWithId={(...args) => tableTranslateWithId(i18n, ...args)}
-              id={`${tableId}-toolbar-search`}
-              onChange={(event, defaultValue) => {
-                const value = event?.target?.value || (defaultValue ?? '');
-                if (hasFastSearch) {
-                  onApplySearch(value);
-                }
+              tableId={tableId}
+              i18n={i18n}
+              options={{
+                hasFastSearch,
+                hasUserViewManagement,
               }}
-              onKeyDown={
-                hasFastSearch
-                  ? undefined
-                  : handleSpecificKeyDown(['Enter'], (e) => onApplySearch(e.target.value))
-              }
-              onClear={() => onApplySearch('')}
-              onBlur={
-                !hasFastSearch
-                  ? (e, handleExpand) => {
-                      const { value } = e.target;
-                      onApplySearch(value);
-                      if (!value) {
-                        handleExpand(e, false);
-                      }
-                    }
-                  : undefined
-              }
-              disabled={isDisabled}
-              // TODO: remove deprecated 'testID' in v3
-              data-testid={`${testID || testId}-search`}
-              expanded={searchIsExpanded || undefined}
-              onExpand={(...args) => {
-                if (onExpand) onExpand(args); // Deprecated callback
-                if (onSearchExpand) onSearchExpand(args);
+              actions={{
+                onApplySearch,
+                onSearchExpand,
               }}
+              tableState={{
+                search: searchProp,
+                isDisabled,
+              }}
+              testId={testID || testId}
+              langDir={langDir}
             />
           ) : null}
           {totalFilters > 0 && !hideClearAllFiltersButton ? (

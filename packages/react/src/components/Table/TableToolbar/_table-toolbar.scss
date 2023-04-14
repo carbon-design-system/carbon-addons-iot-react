@@ -2,6 +2,7 @@
 @import '../../../globals/mixins';
 @import './table-toolbar-svg-button';
 @import './advanced-filter-flyout';
+@import './table-toolbar-search';
 
 div.#{$prefix}--toolbar-action.#{$prefix}--toolbar-search-container-expandable {
   > div.#{$prefix}--search.#{$prefix}--search--sm.table-toolbar-search {
