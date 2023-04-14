@@ -40,6 +40,186 @@ describe('stateful table with real reducer', () => {
     jest.clearAllMocks();
   });
 
+  describe('row drag and drop', () => {
+    it('can drop single and multi on a accepting row', () => {
+      const data = [
+        {
+          id: '0',
+          values: {
+            string: 'row 0',
+          },
+          isDraggable: true,
+        },
+        {
+          id: '1',
+          values: {
+            string: 'row 1',
+          },
+          isDraggable: true,
+        },
+        {
+          id: '2',
+          values: {
+            string: 'row 2',
+          },
+          isDraggable: true,
+        },
+      ];
+
+      let lastDragRowIds;
+      let lastDropRowId;
+
+      const { container } = render(
+        <StatefulTable
+          id="dndTable"
+          columns={tableColumns}
+          data={data}
+          options={{ hasDragAndDrop: true, hasRowSelection: 'multi' }}
+          actions={{
+            table: {
+              onDrag() {
+                return {
+                  dropIds: ['2'],
+                  preview: 'mock preview',
+                };
+              },
+              onDrop(dragRowIds, dropRowId) {
+                lastDragRowIds = dragRowIds;
+                lastDropRowId = dropRowId;
+              },
+            },
+          }}
+        />
+      );
+
+      const dragHandles = container.querySelectorAll(`.${iotPrefix}--table-drag-handle`);
+      expect(dragHandles.length).toBe(3);
+
+      const checkboxes = screen.getAllByRole('checkbox');
+      expect(checkboxes.length).toBe(3 + 1); // include the checkbox in the header
+
+      //
+      // Drag row 0 to row 2
+
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 1, clientY: 1 });
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 20, clientY: 20 });
+      fireEvent.mouseEnter(dragHandles[0]);
+      fireEvent.mouseLeave(dragHandles[0]);
+
+      fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 10, clientY: 10 }); // Testing mouse move less that and more than required threshold to start drag
+      fireEvent.mouseEnter(dragHandles[2]);
+      fireEvent.mouseLeave(dragHandles[2]);
+
+      fireEvent.mouseMove(dragHandles[1], { buttons: 1, clientX: 1, clientY: 1 });
+      fireEvent.mouseEnter(dragHandles[1]);
+      fireEvent.mouseLeave(dragHandles[1]);
+
+      fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 100, clientY: 100 }); // Testing mouse move less that and more than required threshold to start drag
+      fireEvent.mouseEnter(dragHandles[2]);
+      fireEvent.mouseUp(dragHandles[2]);
+
+      expect(lastDragRowIds).toEqual(['0']);
+      expect(lastDropRowId).toBe('2');
+
+      //
+      // Select two rows (0 and 1) and drag both to row 2
+      userEvent.click(checkboxes[1]);
+      userEvent.click(checkboxes[2]);
+
+      fireEvent.mouseDown(dragHandles[0]);
+      // click should be stopped and ignored
+      fireEvent.click(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 10, clientY: 10 });
+      fireEvent.mouseMove(dragHandles[2], { buttons: 1, clientX: 10, clientY: 10 });
+      fireEvent.mouseEnter(dragHandles[2]);
+      fireEvent.mouseEnter(dragHandles[2]);
+      fireEvent.mouseUp(dragHandles[2]);
+
+      expect(lastDragRowIds).toEqual(['0', '1']);
+      expect(lastDropRowId).toBe('2');
+    });
+
+    it('does not drop if canceled or wrong row', () => {
+      const data = [
+        {
+          id: '0',
+          values: {
+            string: 'row 0',
+          },
+          isDraggable: true,
+        },
+        {
+          id: '1',
+          values: {
+            string: 'row 1',
+          },
+          isDraggable: true,
+        },
+      ];
+
+      const handleDrag = jest.fn();
+
+      const { container } = render(
+        <StatefulTable
+          id="dndTable"
+          columns={tableColumns}
+          data={data}
+          options={{ hasDragAndDrop: true }}
+          actions={{
+            table: {
+              onDrag() {
+                handleDrag();
+                return {
+                  dropIds: ['1'],
+                  preview: 'mock preview',
+                };
+              },
+              onDrop() {
+                throw new Error('should not drop after Esc key');
+              },
+            },
+          }}
+        />
+      );
+
+      const dragHandles = container.querySelectorAll(`.${iotPrefix}--table-drag-handle`);
+      expect(dragHandles.length).toBe(2);
+
+      //
+      // Press escape during a drag
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(dragHandles[1], { buttons: 1, clientX: 10, clientY: 10 });
+      fireEvent.mouseEnter(dragHandles[1]);
+      // This should stop the drag and onDrop never fires
+      fireEvent.keyDown(container, { key: 'a' }); // this is ignored, but needed for code coverage
+      fireEvent.keyDown(container, { key: 'Escape' });
+      fireEvent.mouseUp(dragHandles[1]);
+
+      //
+      // mouse out of window with mouse up during a drag (implicit cancel)
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(dragHandles[1], { buttons: 1, clientX: 10, clientY: 10 });
+      // Simulate mouse going up without a mouseup (pointer was out of the window when it happened)
+      fireEvent.mouseMove(dragHandles[1], { buttons: 0, clientX: 10, clientY: 10 });
+      fireEvent.mouseUp(dragHandles[1]);
+
+      //
+      // drop not on a drop row
+      fireEvent.mouseDown(dragHandles[0]);
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 0, clientY: 0 });
+      fireEvent.mouseMove(dragHandles[0], { buttons: 1, clientX: 10, clientY: 10 });
+      fireEvent.mouseUp(dragHandles[0], { buttons: 0, clientX: 20, clientY: 20 });
+
+      // Make sure we started the drags
+      expect(handleDrag).toHaveBeenCalledTimes(3);
+    });
+  });
+
   it('should clear filters', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
     render(<StatefulTable {...initialState} actions={mockActions} />);
