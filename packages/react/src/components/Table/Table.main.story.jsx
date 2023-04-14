@@ -15,6 +15,7 @@ import { csvDownloadHandler } from '../../utils/componentUtilityFunctions';
 
 import TableREADME from './mdx/Table.mdx';
 import SortingREADME from './mdx/Sorting.mdx';
+import DragAndDropREADME from './mdx/DragAndDrop.mdx';
 import RowExpansionREADME from './mdx/RowExpansion.mdx';
 import SelectionAndBatchActionsREADME from './mdx/SelectionAndBatchActions.mdx';
 import InlineActionsREADME from './mdx/InlineActions.mdx';
@@ -162,6 +163,7 @@ export const Playground = () => {
     hasEmptyFilterOption,
     hasMultiSelectFilter,
     hasFilterRowIcon,
+    hasDragAndDrop,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -298,8 +300,85 @@ export const Playground = () => {
     demoColumnGroupAssignments ? addColumnGroupIds(col, index) : col
   );
 
+  /**
+   * Simple way to move rows into other rows. The moved rows are removed from the root data array or
+   * their parent rows. They are appended to the target rows. This does NOT update the expanded
+   * state on any rows. This is a simple example implementation that may not cover all cases.
+   *
+   * @param {string[]} fromRowIds The IDs to of the rows to move.
+   * @param {string} toRowId The ID of the row to accept the moved rows.
+   */
+  function moveRows(fromRowIds, toRowId) {
+    const fromIdSet = new Set(fromRowIds);
+    const fromRows = [];
+    let toRow;
+
+    function recurse(rows) {
+      for (let i = rows.length - 1; i >= 0; i -= 1) {
+        const row = rows[i];
+
+        if (toRowId === row.id) {
+          toRow = row;
+        }
+
+        if (row.children) {
+          recurse(row.children);
+        }
+
+        if (fromIdSet.has(row.id)) {
+          fromRows.push(row);
+          rows.splice(i, 1);
+        }
+      }
+    }
+
+    recurse(data);
+
+    if (!toRow.children) {
+      toRow.children = fromRows;
+    } else {
+      toRow.children = toRow.children.concat(fromRows);
+    }
+
+    setData(data);
+  }
+
   const myTableActions = merge(getTableActions(), {
-    table: { onRowLoadMore },
+    table: {
+      onDrag: (draggedRows) => {
+        const dragIdSet = new Set(draggedRows.map((r) => r.id));
+        const dropIds = [];
+
+        /**
+         * Picks all the IDs of the rows we can drop on. Excludes the dragged row and all children.
+         */
+        function gatherDropIds(rows) {
+          for (let i = 0; i < rows.length; i += 1) {
+            const row = rows[i];
+
+            // eslint-disable-next-line no-continue
+            if (dragIdSet.has(row.id)) continue;
+            // Skip a dragged row and its children.
+
+            dropIds.push(row.id);
+
+            if (row.children) gatherDropIds(row.children);
+          }
+        }
+
+        gatherDropIds(data);
+
+        return {
+          preview: <NaiveMultiRowDragPreview rows={draggedRows} />,
+          dropIds,
+        };
+      },
+      onDrop: (dragRowIds, dropRowId) => {
+        console.info(`>>> Dropped ${dragRowIds} onto ${dropRowId}`);
+        moveRows(dragRowIds, dropRowId);
+      },
+      onRowLoadMore,
+    },
     toolbar: {
       onShowRowEdit: () => {
         action('onShowRowEdit')();
@@ -366,6 +445,7 @@ export const Playground = () => {
           hasSingleRowEdit,
           useRadioButtonSingleSelect,
           hasFilterRowIcon,
+          hasDragAndDrop,
         }}
         view={{
           advancedFilters,
@@ -415,6 +495,117 @@ export const Playground = () => {
   );
 };
 Playground.storyName = 'Playground';
+
+function NaiveMultiRowDragPreview({ rows }) {
+  return (
+    <>
+      {rows.map((row, i) => {
+        return (
+          <div key={i} style={i > 0 ? { marginTop: '1rem' } : null}>
+            {row.values.type ? `${row.values.type} ${row.values.name}` : row.values.string}
+          </div>
+        );
+      })}
+    </>
+  );
+}
+
+export function WithDragAndDrop() {
+  const columns = [
+    {
+      id: 'type',
+      name: 'Type',
+      width: '75px',
+    },
+    {
+      id: 'name',
+      name: 'Name (w/ count)',
+    },
+    {
+      id: 'date',
+      name: 'Date',
+    },
+  ];
+
+  /**
+   * Creates some initial data to show. Adds in types for folders and files to give a drag and drop
+   * example. This story actually changes the data when dropping, but this can be used to get the
+   * original data back.
+   * @returns Array of rows.
+   */
+  function getInitialData() {
+    const initialData = getTableData()
+      .slice(0, 10)
+      .map((row, i) => {
+        const newRow = Object.assign({}, row);
+        const isFolder = i % 3 === 0;
+        newRow.values.type = isFolder ? '📁' : '📄';
+        newRow.values.count = 0;
+        newRow.values.name = newRow.values.string;
+        newRow.isDraggable = !isFolder;
+        return newRow;
+      });
+
+    return initialData;
+  }
+
+  const [data, setData] = useStoryState(getInitialData());
+
+  function isFolder(row) {
+    return row.values.type === '📁';
+  }
+
+  function reset() {
+    setData(getInitialData());
+  }
+
+  return (
+    <>
+      <p>
+        Demos drag and drop with some draggable rows (files) and only some that can be dropped on
+        (folders).
+      </p>
+      <button type="button" style={{ marginBottom: '1rem' }} onClick={reset}>
+        Reset Rows
+      </button>
+      <StatefulTable
+        secondaryTitle="Table"
+        columns={columns}
+        data={data}
+        options={{ hasDragAndDrop: true, hasResize: true, hasRowSelection: 'multi' }}
+        actions={{
+          table: {
+            onDrag: (rows) => {
+              action('onDrag')(rows.map((r) => r.id));
+
+              return {
+                dropIds: data.filter(isFolder).map((row) => row.id),
+                preview: <NaiveMultiRowDragPreview rows={rows} />,
+              };
+            },
+            onDrop: (dragRowIds, dropRowId) => {
+              action('onDrop')(dragRowIds, dropRowId);
+
+              const newData = data.filter((row) => !dragRowIds.includes(row.id));
+              const folderRow = newData.find((row) => dropRowId === row.id);
+              folderRow.values.count += dragRowIds.length;
+              folderRow.values.name = `${folderRow.values.string} (${folderRow.values.count} inside)`;
+              setData(newData);
+            },
+          },
+        }}
+      />
+    </>
+  );
+}
+
+WithDragAndDrop.storyName = 'With drag and drop rows';
+WithDragAndDrop.parameters = {
+  component: Table,
+  docs: {
+    page: DragAndDropREADME,
+  },
+};
 
 export const WithSorting = () => {
   const { selectedTableType, demoSingleSort, hasMultiSort } = getTableKnobs({
