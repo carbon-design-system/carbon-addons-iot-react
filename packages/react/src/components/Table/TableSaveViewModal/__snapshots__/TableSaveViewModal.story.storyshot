@@ -333,11 +333,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-<<<<<<< HEAD
-                aria-controls="accordion-item-1518"
-=======
-                aria-controls="accordion-item-1520"
->>>>>>> next
+                aria-controls="accordion-item-1521"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -368,11 +364,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-<<<<<<< HEAD
-                id="accordion-item-1518"
-=======
-                id="accordion-item-1520"
->>>>>>> next
+                id="accordion-item-1521"
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -384,11 +376,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
-<<<<<<< HEAD
-                aria-controls="accordion-item-1519"
-=======
-                aria-controls="accordion-item-1521"
->>>>>>> next
+                aria-controls="accordion-item-1522"
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -419,11 +407,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
-<<<<<<< HEAD
-                id="accordion-item-1519"
-=======
-                id="accordion-item-1521"
->>>>>>> next
+                id="accordion-item-1522"
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
