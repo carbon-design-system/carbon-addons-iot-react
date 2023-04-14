@@ -1087,7 +1087,7 @@ const Table = (props) => {
                   'preserveColumnWidths',
                   'hasFilterRowIcon',
                   'pinColumn',
-                  'hasDragAndDrop',
+                  'hasDragAndDrop'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,

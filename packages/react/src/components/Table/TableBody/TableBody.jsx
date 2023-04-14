@@ -293,11 +293,11 @@ const TableBody = ({
   return (
     <>
       <CarbonTableBody
-      data-testid={testID || testId}
-      className={classNames(
-        pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
-      )}
-    >
+        data-testid={testID || testId}
+        className={classNames(
+          pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+        )}
+      >
         {rows.map((row) => (
           <TableBodyRowRenderer
             key={row.id}
