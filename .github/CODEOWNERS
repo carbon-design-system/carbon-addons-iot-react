@@ -17,30 +17,30 @@
 # These users own any files in the following directory at the root of
 # the repository and any of its subdirectories.
 
-* @davidicus @jessieyan
+* @davidicus @jessieyan @sls-ca
 
 #####
 # Core admin team should be notified of changes to build/test/deploy
 
 # Core dependencies
-/package.json  @davidicus
-/yarn.lock     @davidicus
+/package.json  @davidicus @jessieyan @sls-ca
+/yarn.lock     @davidicus @jessieyan @sls-ca
 
 # Configuration files
-**/*.config.js  @davidicus
-**/config/      @davidicus
-/.nvmrc         @davidicus
+**/*.config.js  @davidicus @jessieyan @sls-ca
+**/config/      @davidicus @jessieyan @sls-ca
+/.nvmrc         @davidicus @jessieyan @sls-ca
 
 # Deploy configuration
-**/.storybook/       @davidicus
-/.github/workflows/  @davidicus
-/netlify.toml        @davidicus
+**/.storybook/       @davidicus @jessieyan @sls-ca
+/.github/workflows/  @davidicus @jessieyan @sls-ca
+/netlify.toml        @davidicus @jessieyan @sls-ca
 
 #####
 # Release team should be notified of Public API changes in the system
 
-**/publicAPI.test.js       @davidicus
-**/publicAPI.test.js.snap  @davidicus
+**/publicAPI.test.js       @davidicus @jessieyan @sls-ca
+**/publicAPI.test.js.snap  @davidicus @jessieyan @sls-ca
 
 # Angular team should be required for Angular changes
 /packages/angular/ @carbon-design-system/angular-maintainers
