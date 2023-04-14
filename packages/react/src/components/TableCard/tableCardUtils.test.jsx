@@ -5,7 +5,6 @@ import {
   determinePrecisionAndValue,
   handleExpandedItemLinks,
   determineFilterFunction,
-  timeStampFilterFunction,
 } from './tableCardUtils';
 
 describe('tableCardUtils', () => {
@@ -169,17 +168,26 @@ describe('determineFilterFunction', () => {
         },
       },
     ];
-    const timestampColumnHasNoFilter = determineFilterFunction(mockColumns[0], mockPlaceholderText);
+
+    const timestampColumnHasNoFilter = determineFilterFunction(
+      mockColumns[0],
+      mockPlaceholderText,
+      'L HH:mm:ss'
+    );
     expect(timestampColumnHasNoFilter).toEqual({
-      filterFunction: timeStampFilterFunction,
+      filterFunction: expect.any(Function),
       placeholderText: mockPlaceholderText,
     });
 
-    const timestampColumnHasFilter = determineFilterFunction(mockColumns[1], mockPlaceholderText);
+    const timestampColumnHasFilter = determineFilterFunction(
+      mockColumns[1],
+      mockPlaceholderText,
+      'L HH:mm:ss'
+    );
     expect(timestampColumnHasFilter).toEqual({
-      filterFunction: timeStampFilterFunction,
-      name: 'my existing filter',
+      filterFunction: expect.any(Function),
       placeholderText: mockPlaceholderText,
+      name: 'my existing filter',
     });
     const literalColumnHasNoFilter = determineFilterFunction(mockColumns[2], mockPlaceholderText);
     expect(literalColumnHasNoFilter).toEqual({

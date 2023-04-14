@@ -551,8 +551,8 @@ describe('DateTimePicker', () => {
       // Unsaved changes
       cy.findAllByLabelText('Calendar').eq(0).click();
       cy.findByText('Absolute').should('be.visible').click();
-      cy.findByText('25').should('be.visible').click();
-      cy.findByText('26').should('be.visible').click();
+      cy.findAllByText('25').click({ multiple: true, force: true });
+      cy.findAllByText('26').click({ multiple: true, force: true });
       cy.findByLabelText('Start time').type('11:30');
       cy.get('body').click();
       // Preserves only saved changes

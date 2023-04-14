@@ -15,6 +15,7 @@ import {
 import { stopPropagationAndCallback } from '../../../../utils/componentUtilityFunctions';
 
 import TableExpandRow from './TableExpandRow';
+import { TableDragHandle } from './TableDragHandle';
 
 const { prefix, iotPrefix } = settings;
 
@@ -62,8 +63,9 @@ const propTypes = {
     truncateCellText: PropTypes.bool.isRequired,
     /** use white-space: pre; css when true */
     preserveCellWhiteSpace: PropTypes.bool,
-    /** use raidon button on single selection */
+    /** use radio button on single selection */
     useRadioButtonSingleSelect: PropTypes.bool,
+    hasDragAndDrop: PropTypes.bool,
   }),
 
   /** The unique row id */
@@ -131,6 +133,20 @@ const propTypes = {
 
   /** True if this is the last child of a nested group */
   isLastChild: PropTypes.bool,
+  /** If this row supports drag and drop. Add space for a drag handle. */
+  hasDragAndDrop: PropTypes.bool,
+  /** Callback when a drag of this  row starts. */
+  onStartDrag: PropTypes.func,
+  /** Callback when the mouse enters this row during a drag. */
+  onDragEnterRow: PropTypes.func,
+  /** Callback when the mouse leaves this row during a drag. */
+  onDragLeaveRow: PropTypes.func,
+  /** If this row can be dragged. Shows a drag handle. */
+  isDraggable: PropTypes.bool,
+  /** If this row is being dragged. */
+  isDragRow: PropTypes.bool,
+  /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
+  hideDragHandles: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -161,6 +177,13 @@ const defaultProps = {
   isSelectable: undefined,
   size: undefined,
   isLastChild: false,
+  hasDragAndDrop: false,
+  hideDragHandles: false,
+  onStartDrag: null,
+  onDragEnterRow: null,
+  onDragLeaveRow: null,
+  isDraggable: false,
+  isDragRow: false,
 };
 
 const TableBodyRow = ({
@@ -208,6 +231,13 @@ const TableBodyRow = ({
   showExpanderColumn,
   size,
   isLastChild,
+  onStartDrag,
+  onDragEnterRow,
+  onDragLeaveRow,
+  isDragRow,
+  isDraggable,
+  hasDragAndDrop,
+  hideDragHandles,
 }) => {
   const isEditMode = rowEditMode || singleRowEditMode;
   const singleSelectionIndicatorWidth = hasRowSelection === 'single' ? 0 : 5;
@@ -265,9 +295,18 @@ const TableBodyRow = ({
       </TableCell>
     ) : null;
 
+  const dragHandleCell = !hasDragAndDrop ? null : (
+    <TableCell className={`${iotPrefix}--table-grab-handle-cell`}>
+      {!isDraggable || hideDragHandles ? null : (
+        <TableDragHandle onStartDrag={onStartDrag} rowId={id} />
+      )}
+    </TableCell>
+  );
+
   const firstVisibleColIndex = ordering.findIndex((col) => !col.isHidden);
   const tableCells = (
     <Fragment key={`${tableId}-${id}`}>
+      {dragHandleCell}
       {rowSelectionCell}
       {ordering.map((col, idx) => {
         const matchingColumnMeta = columns && columns.find((column) => column.id === col.columnId);
@@ -358,6 +397,20 @@ const TableBodyRow = ({
       ) : undefined}
     </Fragment>
   );
+
+  const dragEnterLeaveHandlers = {
+    onMouseEnter: !onDragEnterRow
+      ? undefined
+      : (e) => {
+          onDragEnterRow(id, e.currentTarget);
+        },
+    onMouseLeave: !onDragLeaveRow
+      ? undefined
+      : (e) => {
+          onDragLeaveRow(id, e.currentTarget);
+        },
+  };
+
   return hasRowExpansion || hasRowNesting ? (
     isExpanded ? (
       <Fragment key={id}>
@@ -365,6 +418,9 @@ const TableBodyRow = ({
           expandHeaderId={`${tableId}-expand`}
           className={classnames(`${iotPrefix}--expandable-tablerow--expanded`, {
             [`${iotPrefix}--expandable-tablerow--indented`]: parseInt(nestingOffset, 10) > 0,
+            [`${iotPrefix}--expandable-tablerow--childless`]:
+              hasRowNesting && nestingChildCount === 0,
+            [`${iotPrefix}--table__row--dragging`]: isDragRow,
           })}
           ariaLabel={clickToCollapseAria}
           expandIconDescription={clickToCollapseAria}
@@ -393,6 +449,7 @@ const TableBodyRow = ({
           }}
           rowId={id}
           langDir={langDir}
+          {...dragEnterLeaveHandlers}
         >
           {tableCells}
         </TableExpandRow>
@@ -401,7 +458,9 @@ const TableBodyRow = ({
             className={classnames(`${iotPrefix}--expanded-tablerow`, {
               [`${iotPrefix}--expanded-tablerow--singly-selected`]:
                 hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
+              [`${iotPrefix}--table__row--dragging`]: isDragRow,
             })}
+            {...dragEnterLeaveHandlers}
           >
             <TableCell colSpan={totalColumns}>{rowDetails}</TableCell>
           </TableRow>
@@ -420,6 +479,7 @@ const TableBodyRow = ({
           [`${iotPrefix}--expandable-tablerow--singly-selected`]:
             hasRowSelection === 'single' && isSelected && !useRadioButtonSingleSelect,
           [`${iotPrefix}--expandable-tablerow--last-child`]: isLastChild,
+          [`${iotPrefix}--table__row--dragging`]: isDragRow,
         })}
         data-row-nesting={hasRowNesting}
         data-child-count={nestingChildCount}
@@ -447,6 +507,7 @@ const TableBodyRow = ({
         }}
         rowId={id}
         langDir={langDir}
+        {...dragEnterLeaveHandlers}
       >
         {tableCells}
       </TableExpandRow>
@@ -466,6 +527,7 @@ const TableBodyRow = ({
           }
         }
       }}
+      {...dragEnterLeaveHandlers}
     >
       {tableCells}
     </TableRow>
@@ -476,6 +538,7 @@ const TableBodyRow = ({
         [`${iotPrefix}--table__row--selectable`]: isSelectable !== false,
         [`${iotPrefix}--table__row--editing`]: isEditMode,
         [`${iotPrefix}--table__row--selected`]: isSelected,
+        [`${iotPrefix}--table__row--dragging`]: isDragRow,
       })}
       key={id}
       onClick={() => {
@@ -486,6 +549,7 @@ const TableBodyRow = ({
           onRowClicked(id);
         }
       }}
+      {...dragEnterLeaveHandlers}
     >
       {tableCells}
     </TableRow>

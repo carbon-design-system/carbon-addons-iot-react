@@ -156,11 +156,11 @@ describe('comboChartHelpers', () => {
         ...getChartOptionsParams(),
         locale: 'fr',
         showTimeInGMT: true,
-        tooltipDateFormatPattern: 'L HH:mm',
+        tooltipDateFormatPattern: 'L HH:mm:ss',
       };
       wrappedResult = renderHook(() => useChartOptions(params));
       wrappedResult.result.current.tooltip.customHTML(dateValue);
-      expect(handleTooltip).toHaveBeenCalledWith(dateValue, 'date-id', true, 'L HH:mm', 'fr');
+      expect(handleTooltip).toHaveBeenCalledWith(dateValue, 'date-id', true, 'L HH:mm:ss', 'fr');
     });
   });
   describe('useChartData', () => {
