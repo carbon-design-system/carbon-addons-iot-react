@@ -290,13 +290,15 @@ const TableBody = ({
     handleLeaveRow,
   } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop);
 
+  const tableBodyClassNames = classnames(
+    pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+  );
+
   return (
     <>
       <CarbonTableBody
         data-testid={testID || testId}
-        className={classnames(
-          pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
-        )}
+        {...{ className: tableBodyClassNames || undefined }}
       >
         {rows.map((row) => (
           <TableBodyRowRenderer
