@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.4...v2.153.0-next.5) (2023-04-14)
+
+
+### Bug Fixes
+
+* **filterheaderrow:** display filter icon without input ([f25ae20](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f25ae2003c61a076408433ab7b0e18720a0f45fc))
+* **table:** add tooltip to search icon in toolbar ([71de817](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71de817ee8bb08e988f8aff5f8b23479129ec1f5))
+
+
+
+
+
 # [2.153.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.3...v2.153.0-next.4) (2023-04-13)
 
 
