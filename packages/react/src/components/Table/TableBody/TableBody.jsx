@@ -15,6 +15,7 @@ import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
 import { findRow, tableTraverser, pinColumnClassNames, PIN_COLUMN } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
+import { useTableDnd } from './useTableDnd';
 
 const propTypes = {
   /** The unique id of the table */
@@ -69,6 +70,8 @@ const propTypes = {
     onApplyRowActions: PropTypes.func,
     onRowExpanded: PropTypes.func,
     onRowLoadMore: PropTypes.func,
+    onDrag: PropTypes.func,
+    onDrop: PropTypes.func,
   }).isRequired,
   /** What column ordering is currently applied to the table */
   ordering: PropTypes.arrayOf(
@@ -101,6 +104,12 @@ const propTypes = {
    * the size passed to the table to set row height
    */
   size: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  /** If room is reserved for drag handles at the start of rows. */
+  hasDragAndDrop: PropTypes.bool,
+  /** If all drag handles should be hidden. This happens when an undraggable row is in the selection. */
+  hideDragHandles: PropTypes.bool,
+  /** Optional base z-index for the drag image. See details on Table component. */
+  zIndex: PropTypes.number,
   /** column to pin in the table */
   pinColumn: PinColumnPropTypes,
 };
@@ -138,6 +147,9 @@ const defaultProps = {
   dismissText: 'Dismiss',
   actionFailedText: 'Action failed',
   size: undefined,
+  hasDragAndDrop: false,
+  hideDragHandles: false,
+  zIndex: 0,
   pinColumn: PIN_COLUMN.NONE,
 };
 
@@ -181,6 +193,9 @@ const TableBody = ({
   showExpanderColumn,
   preserveCellWhiteSpace,
   size,
+  hasDragAndDrop,
+  hideDragHandles,
+  zIndex,
   pinColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
@@ -265,61 +280,81 @@ const TableBody = ({
     return result;
   };
 
+  const {
+    isDragging,
+    dragPreview,
+    dragRowIds,
+    canDropRowIds,
+    handleStartPossibleDrag,
+    handleEnterRow,
+    handleLeaveRow,
+  } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop);
+
   return (
-    <CarbonTableBody
+    <>
+      <CarbonTableBody
       data-testid={testID || testId}
       className={classNames(
         pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
       )}
     >
-      {rows.map((row) => (
-        <TableBodyRowRenderer
-          key={row.id}
-          actionFailedText={actionFailedText}
-          actions={{
-            ...actions,
-            onRowSelected,
-          }}
-          clickToCollapseAria={clickToCollapseAria}
-          clickToExpandAria={clickToExpandAria}
-          columns={columns}
-          dismissText={dismissText}
-          expandedIds={expandedIds}
-          expandedRows={expandedRows}
-          hasRowActions={hasRowActions}
-          hasRowExpansion={hasRowExpansion}
-          hasRowNesting={hasRowNesting}
-          hasRowSelection={hasRowSelection}
-          useRadioButtonSingleSelect={useRadioButtonSingleSelect}
-          indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
-          inProgressText={inProgressText}
-          langDir={langDir}
-          learnMoreText={learnMoreText}
-          loadingMoreIds={loadingMoreIds}
-          loadMoreText={loadMoreText}
-          locale={locale}
-          ordering={orderingMap}
-          overflowMenuAria={overflowMenuAria}
-          preserveCellWhiteSpace={preserveCellWhiteSpace}
-          row={row}
-          rowActionsState={rowActionsState}
-          rowEditMode={rowEditMode}
-          selectedIds={selectedIds}
-          selectRowAria={selectRowAria}
-          shouldExpandOnRowClick={shouldExpandOnRowClick}
-          shouldLazyRender={shouldLazyRender}
-          showExpanderColumn={showExpanderColumn}
-          singleRowEditButtons={singleRowEditButtons}
-          size={size}
-          someRowHasSingleRowEditMode={rowActionsState.some((rowAction) => rowAction.isEditMode)}
-          tableId={tableId}
-          testId={testID || testId}
-          totalColumns={totalColumns}
-          truncateCellText={truncateCellText}
-          wrapCellText={wrapCellText}
-        />
-      ))}
-    </CarbonTableBody>
+        {rows.map((row) => (
+          <TableBodyRowRenderer
+            key={row.id}
+            actionFailedText={actionFailedText}
+            actions={{
+              ...actions,
+              onRowSelected,
+            }}
+            clickToCollapseAria={clickToCollapseAria}
+            clickToExpandAria={clickToExpandAria}
+            columns={columns}
+            dismissText={dismissText}
+            expandedIds={expandedIds}
+            expandedRows={expandedRows}
+            hasRowActions={hasRowActions}
+            hasRowExpansion={hasRowExpansion}
+            hasRowNesting={hasRowNesting}
+            hasRowSelection={hasRowSelection}
+            useRadioButtonSingleSelect={useRadioButtonSingleSelect}
+            indeterminateSelectionIds={getIndeterminateRowSelectionIds(rows, selectedIds)}
+            inProgressText={inProgressText}
+            langDir={langDir}
+            learnMoreText={learnMoreText}
+            loadingMoreIds={loadingMoreIds}
+            loadMoreText={loadMoreText}
+            locale={locale}
+            ordering={orderingMap}
+            overflowMenuAria={overflowMenuAria}
+            preserveCellWhiteSpace={preserveCellWhiteSpace}
+            row={row}
+            rowActionsState={rowActionsState}
+            rowEditMode={rowEditMode}
+            selectedIds={selectedIds}
+            selectRowAria={selectRowAria}
+            shouldExpandOnRowClick={shouldExpandOnRowClick}
+            shouldLazyRender={shouldLazyRender}
+            showExpanderColumn={showExpanderColumn}
+            singleRowEditButtons={singleRowEditButtons}
+            size={size}
+            someRowHasSingleRowEditMode={rowActionsState.some((rowAction) => rowAction.isEditMode)}
+            tableId={tableId}
+            testId={testID || testId}
+            totalColumns={totalColumns}
+            truncateCellText={truncateCellText}
+            wrapCellText={wrapCellText}
+            hasDragAndDrop={hasDragAndDrop}
+            hideDragHandles={hideDragHandles}
+            onStartDrag={handleStartPossibleDrag}
+            onDragEnterRow={isDragging ? handleEnterRow : null}
+            onDragLeaveRow={isDragging ? handleLeaveRow : null}
+            dragRowIds={dragRowIds}
+            canDropRowIds={canDropRowIds}
+          />
+        ))}
+      </CarbonTableBody>
+      {dragPreview}
+    </>
   );
 };
 

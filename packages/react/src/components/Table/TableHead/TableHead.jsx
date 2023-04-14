@@ -82,6 +82,7 @@ const propTypes = {
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
     hasFilterRowIcon: PropTypes.bool,
+    hasDragAndDrop: PropTypes.bool,
     /** column to pin in the table */
     pinColumn: PinColumnPropTypes,
   }),
@@ -209,6 +210,7 @@ const TableHead = ({
     useAutoTableLayoutForResize,
     preserveColumnWidths,
     useRadioButtonSingleSelect,
+    hasDragAndDrop,
     pinColumn,
   },
   columns,
@@ -453,6 +455,12 @@ const TableHead = ({
           [`${iotPrefix}--table-header__column-row--prevent-small-sizes`]: showColumnGroups,
         })}
       >
+        {hasDragAndDrop && (
+          <TableHeader width="2rem" initialWidth="2rem">
+            {/* This just takes up space, but is unlabeled. */}
+          </TableHeader>
+        )}
+
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             id={`${tableId}-expand`}

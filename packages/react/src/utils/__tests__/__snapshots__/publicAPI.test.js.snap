@@ -720,6 +720,7 @@ Map {
         "hasBatchActionToolbar": true,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
+        "hasDragAndDrop": false,
         "hasFastSearch": true,
         "hasFilter": false,
         "hasFilterRowIcon": false,
@@ -795,6 +796,7 @@ Map {
           "search": Object {},
         },
       },
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actions": Object {
@@ -841,6 +843,12 @@ Map {
                     "type": "func",
                   },
                   "onColumnSelectionConfig": Object {
+                    "type": "func",
+                  },
+                  "onDrag": Object {
+                    "type": "func",
+                  },
+                  "onDrop": Object {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
@@ -1129,6 +1137,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -1510,6 +1521,9 @@ Map {
               "type": "bool",
             },
             "hasColumnSelectionConfig": Object {
+              "type": "bool",
+            },
+            "hasDragAndDrop": Object {
               "type": "bool",
             },
             "hasFastSearch": Object {
@@ -2360,6 +2374,9 @@ Map {
         ],
         "type": "shape",
       },
+      "zIndex": Object {
+        "type": "number",
+      },
     },
   },
   "TableHead" => Object {
@@ -2893,6 +2910,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasDragAndDrop": Object {
+              "type": "bool",
+            },
             "hasFilterRowIcon": Object {
               "type": "bool",
             },
@@ -3159,10 +3179,12 @@ Map {
       "dismissText": "Dismiss",
       "expandedIds": Array [],
       "expandedRows": Array [],
+      "hasDragAndDrop": false,
       "hasRowActions": false,
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "hideDragHandles": false,
       "inProgressText": "In progress",
       "langDir": "ltr",
       "learnMoreText": "Learn more",
@@ -3185,6 +3207,7 @@ Map {
       "testId": "",
       "totalColumns": 0,
       "useRadioButtonSingleSelect": false,
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3194,6 +3217,12 @@ Map {
         "args": Array [
           Object {
             "onApplyRowActions": Object {
+              "type": "func",
+            },
+            "onDrag": Object {
+              "type": "func",
+            },
+            "onDrop": Object {
               "type": "func",
             },
             "onRowClicked": Object {
@@ -3391,6 +3420,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasDragAndDrop": Object {
+        "type": "bool",
+      },
       "hasRowActions": Object {
         "type": "bool",
       },
@@ -3426,6 +3458,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hideDragHandles": Object {
+        "type": "bool",
       },
       "inProgressText": Object {
         "type": "string",
@@ -3553,6 +3588,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -3742,6 +3780,9 @@ Map {
         ],
         "isRequired": true,
         "type": "oneOf",
+      },
+      "zIndex": Object {
+        "type": "number",
       },
     },
   },
@@ -4492,6 +4533,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
