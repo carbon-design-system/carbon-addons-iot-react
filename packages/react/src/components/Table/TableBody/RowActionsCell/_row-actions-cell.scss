@@ -38,7 +38,11 @@
   @include backgroundGradient($hover-ui);
 }
 
-.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background {
+body:not(.#{$iot-prefix}--is-dragging)
+  .#{$prefix}--data-table
+  tbody
+  tr:hover
+  .#{$iot-prefix}--row-actions-container__background {
   background: linear-gradient(90deg, rgba(229, 229, 229, 0) 0, #{$hover-ui} $spacing-05);
 }
 
@@ -62,7 +66,11 @@
   transition: opacity $duration--fast-02 motion(entrance, productive);
 }
 
-.#{$prefix}--data-table tbody tr:hover .#{$iot-prefix}--row-actions-container__background,
+body:not(.#{$iot-prefix}--is-dragging)
+  .#{$prefix}--data-table
+  tbody
+  tr:hover
+  .#{$iot-prefix}--row-actions-container__background,
 .#{$iot-prefix}--row-actions-container__background--overflow-menu-open {
   opacity: 1;
   transition: opacity $duration--fast-02 motion(entrance, productive);

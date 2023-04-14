@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.4](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.3...v2.153.0-next.4) (2023-04-13)
+
+
+### Features
+
+* **table:** add multi row dragging ([58867a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/58867a18d16c63de8a4d83f0637077cbcde27988))
+* **table:** add table drag and drop tests ([9577bfd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9577bfde250edf173e00f7e1d8bd804cafff6899))
+* **table:** align row overlay in rtl ([3df09dc](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3df09dc7bff40b4a5f29026ae4ada7e0fda55abb))
+* **table:** correct docs about dragging multiple rows ([0fea363](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0fea363e4c0a746e03209487d9b462c0e814247f))
+* **table:** correct hook return value docs ([b03d245](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b03d2452fdc148ab5f8171c5024043d12a41e5e7))
+* **table:** DnD can fail on macOS ([671318b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/671318be3dfe63cb70bc14490fd942ca63f7415c))
+* **table:** drag and drop with expandable rows ([6c8961d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6c8961d885464da9e23c0db29026772a68954454))
+* **table:** fix position of avatar, row overlay in rtl ([f4f8cfd](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f4f8cfdec69970d1af1f3451e423a84dc1b02856))
+* **table:** handle event order problems on macOS ([bd2d621](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/bd2d621aeb8c5230f5a8a685ec250901e3837da3))
+* **table:** hide row expando when no children ([458b534](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/458b5341fa617e2bb3dbecc42437033c1ed36f5d))
+* **table:** improve drag and drop performance ([b6e7f03](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b6e7f030de64acd0e04fcc474c2d0822cb19382a))
+* **table:** initial table drag and drop [#3751](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3751) ([110a857](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/110a857e6d1769e0518bc73fb5c983f22e90c158))
+* **table:** review fixes 1 ([6b64739](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6b64739e2fe40fb3b414cf2e7868c399e8a1a333))
+* **table:** safari misses drop sometimes ([1213ac4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1213ac4281344de2d4ef1c99394f550501b4e5d7))
+* **table:** support z-index on table for DnD, Graphite ([6e20bf8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/6e20bf81ae41a1f4b7db2016c0fc8c4d7e7a7bbc))
+
+
+
+
+
+# [2.153.0-next.3](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.2...v2.153.0-next.3) (2023-03-22)
+
+
+### Bug Fixes
+
+* **idlelogoutconfirmationmodal:** Assembling the `originHref` with the current url excluding the query parameters to fix an issue where query parameters may be added to the page without a page reload, which would cause the `useEffect` to restart because it has the logout and inactivityLogout URLs as dependencies. ([29bf567](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/29bf567eb688ffdd2e9242d2e8d3c31906c735af))
+* **suiteheader:** Adding a null check in `surveyData` to avoid runtime errors if `surveyData` becomes null after in subsequent component re-renders ([9b73ede](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/9b73ede86b4e2b755677b5b778abbe582d0724e0))
+
+
+
+
+
 # [2.153.0-next.2](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.1...v2.153.0-next.2) (2023-03-10)
 
 
