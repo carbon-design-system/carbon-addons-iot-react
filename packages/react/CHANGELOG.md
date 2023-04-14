@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.6](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.5...v2.153.0-next.6) (2023-04-14)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** show no tooltip when closed inline ([d00ee46](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/d00ee467d4c34b64daa5ce1b256e3bb5aec74f66))
+* **sidepanel:** add tabindex and aria-hidden ([02e166d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/02e166dde1efd5f97fabc2243cdca1d5eee562de))
+* **sidepanel:** add tabindex and aria-hidden ([7815bc5](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7815bc522af9902d68d75f97f3bf7e5046e7cb1c))
+* **sidepanel:** add tabindex for content elements ([f420787](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/f420787a9bb05fc36eb879d835411cbd8fb30255))
+* **sidepanel:** update snapshots ([c582656](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c582656fa2ff95234e0db1e00a6e6df51dd3e70c))
+
+
+
+
+
 # [2.153.0-next.5](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.4...v2.153.0-next.5) (2023-04-14)
 
 
