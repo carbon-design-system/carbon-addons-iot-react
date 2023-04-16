@@ -201,11 +201,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   onAnimationEnd={[Function]}
                 >
                   <button
-<<<<<<< HEAD
-                    aria-controls="accordion-item-1668"
-=======
-                    aria-controls="accordion-item-1665"
->>>>>>> next
+                    aria-controls="accordion-item-1671"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -236,11 +232,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   </button>
                   <div
                     className="bx--accordion__content"
-<<<<<<< HEAD
-                    id="accordion-item-1668"
-=======
-                    id="accordion-item-1665"
->>>>>>> next
+                    id="accordion-item-1671"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -632,11 +624,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   onAnimationEnd={[Function]}
                 >
                   <button
-<<<<<<< HEAD
-                    aria-controls="accordion-item-1669"
-=======
-                    aria-controls="accordion-item-1666"
->>>>>>> next
+                    aria-controls="accordion-item-1672"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -667,11 +655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   </button>
                   <div
                     className="bx--accordion__content"
-<<<<<<< HEAD
-                    id="accordion-item-1669"
-=======
-                    id="accordion-item-1666"
->>>>>>> next
+                    id="accordion-item-1672"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1510,11 +1494,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   onAnimationEnd={[Function]}
                 >
                   <button
-<<<<<<< HEAD
-                    aria-controls="accordion-item-1675"
-=======
-                    aria-controls="accordion-item-1672"
->>>>>>> next
+                    aria-controls="accordion-item-1678"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1545,11 +1525,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                   </button>
                   <div
                     className="bx--accordion__content"
-<<<<<<< HEAD
-                    id="accordion-item-1675"
-=======
-                    id="accordion-item-1672"
->>>>>>> next
+                    id="accordion-item-1678"
                   >
                     <div
                       className="tile-gallery--section--items"
@@ -1718,11 +1694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             onAnimationEnd={[Function]}
           >
             <button
-<<<<<<< HEAD
-              aria-controls="accordion-item-1672"
-=======
-              aria-controls="accordion-item-1669"
->>>>>>> next
+              aria-controls="accordion-item-1675"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -1753,11 +1725,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
             <div
               className="bx--accordion__content"
-<<<<<<< HEAD
-              id="accordion-item-1672"
-=======
-              id="accordion-item-1669"
->>>>>>> next
+              id="accordion-item-1675"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2174,11 +2142,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             onAnimationEnd={[Function]}
           >
             <button
-<<<<<<< HEAD
-              aria-controls="accordion-item-1673"
-=======
-              aria-controls="accordion-item-1670"
->>>>>>> next
+              aria-controls="accordion-item-1676"
               aria-expanded={true}
               className="bx--accordion__heading"
               onClick={[Function]}
@@ -2209,11 +2173,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
             </button>
             <div
               className="bx--accordion__content"
-<<<<<<< HEAD
-              id="accordion-item-1673"
-=======
-              id="accordion-item-1670"
->>>>>>> next
+              id="accordion-item-1676"
             >
               <div
                 className="tile-gallery--section--items"
@@ -2469,11 +2429,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               onAnimationEnd={[Function]}
             >
               <button
-<<<<<<< HEAD
-                aria-controls="accordion-item-1670"
-=======
-                aria-controls="accordion-item-1667"
->>>>>>> next
+                aria-controls="accordion-item-1673"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2504,11 +2460,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <div
                 className="bx--accordion__content"
-<<<<<<< HEAD
-                id="accordion-item-1670"
-=======
-                id="accordion-item-1667"
->>>>>>> next
+                id="accordion-item-1673"
               >
                 <div
                   className="tile-gallery--section--items"
@@ -2925,11 +2877,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               onAnimationEnd={[Function]}
             >
               <button
-<<<<<<< HEAD
-                aria-controls="accordion-item-1671"
-=======
-                aria-controls="accordion-item-1668"
->>>>>>> next
+                aria-controls="accordion-item-1674"
                 aria-expanded={true}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -2960,11 +2908,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
               </button>
               <div
                 className="bx--accordion__content"
-<<<<<<< HEAD
-                id="accordion-item-1671"
-=======
-                id="accordion-item-1668"
->>>>>>> next
+                id="accordion-item-1674"
               >
                 <div
                   className="tile-gallery--section--items"
