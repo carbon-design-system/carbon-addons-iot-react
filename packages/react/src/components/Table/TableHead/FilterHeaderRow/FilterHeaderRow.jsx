@@ -236,9 +236,7 @@ class FilterHeaderRow extends Component {
 
     /* istanbul ignore next */
     if (this.filterCellRef.current) {
-      const siblingTopOffset = this.filterCellRef.current
-        .querySelector('input')
-        .getBoundingClientRect().top;
+      const siblingTopOffset = this.filterCellRef.current.getBoundingClientRect().top;
       const tableTopOffset = this.filterCellRef.current
         .closest(`.${iotPrefix}--table-container`)
         .getBoundingClientRect().top;

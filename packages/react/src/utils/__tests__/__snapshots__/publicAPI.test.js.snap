@@ -709,6 +709,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarSearchIconDescription": "Search",
         "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
@@ -1491,6 +1492,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarSearchIconDescription": Object {
               "type": "string",
             },
             "toolbarTooltipLabel": Object {
@@ -2885,6 +2889,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarSearchIconDescription": Object {
               "type": "string",
             },
             "toolbarTooltipLabel": Object {
@@ -4708,6 +4715,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarSearchIconDescription": Object {
               "type": "string",
             },
             "toolbarTooltipLabel": Object {

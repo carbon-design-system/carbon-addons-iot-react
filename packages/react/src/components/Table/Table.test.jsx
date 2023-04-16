@@ -1354,7 +1354,8 @@ describe('Table', () => {
     expect(screen.queryByLabelText(i18nDefault.columnSelectionButtonAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.filterButtonAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.editButtonAria)).not.toBeInTheDocument();
-    expect(screen.queryByText(i18nDefault.searchLabel)).not.toBeInTheDocument();
+    // Search tooltip is present
+    expect(screen.queryAllByText(i18nDefault.searchLabel)).toHaveLength(1);
     expect(screen.queryByPlaceholderText(i18nDefault.searchPlaceholder)).not.toBeInTheDocument();
     expect(screen.queryByTitle(i18nDefault.clearFilterAria)).not.toBeInTheDocument();
     expect(screen.queryByLabelText(i18nDefault.filterAria)).not.toBeInTheDocument();
