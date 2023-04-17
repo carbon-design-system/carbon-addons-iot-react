@@ -10,6 +10,8 @@ import {
   getInitialState,
   getTableColumns as getStoryTableColumns,
   getTableData as getStoryTableData,
+  addColumnGroupIds,
+  getDefaultOrdering,
 } from './Table.story.helpers';
 import {
   addRowActions,
@@ -665,5 +667,50 @@ describe('StatefulTable', () => {
       });
     cy.findByText(searchTooltip).should('not.be.visible');
     cy.get('tr').should('have.length', 5);
+  });
+
+  it('should pin header and footer', () => {
+    const columnGroup = [
+      {
+        id: 'groupA',
+        name: 'Group A that has a very long name that should be truncated',
+      },
+      { id: 'groupB', name: 'Group B' },
+    ];
+    const ordering = getDefaultOrdering(tableColumns).map((col, index) =>
+      addColumnGroupIds(col, index)
+    );
+
+    mount(
+      <div style={{ height: '400px' }}>
+        <StatefulTable
+          columns={tableColumns}
+          columnGroups={columnGroup}
+          data={tableData}
+          options={{
+            pinHeaderAndFooter: true,
+            hasPagination: true,
+            hasFilter: true,
+            hasRowSelection: true,
+          }}
+          view={{
+            table: {
+              ordering,
+            },
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+        />
+      </div>
+    );
+    cy.get(`.${prefix}--data-table-content`).scrollTo('bottom');
+    cy.findByText(tableColumns[0].name).should('be.visible');
+    cy.findByText(columnGroup[0].name).should('be.visible');
+
+    cy.get(`.${prefix}--data-table-content`).scrollTo('top');
+    cy.findByText('Items per page:').should('be.visible');
+    cy.findByTestId('filter-button').focus();
+    cy.findByText('Filters').should('be.visible');
   });
 });
