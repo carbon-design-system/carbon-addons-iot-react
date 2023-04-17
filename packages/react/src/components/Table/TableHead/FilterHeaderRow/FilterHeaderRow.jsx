@@ -130,6 +130,8 @@ class FilterHeaderRow extends Component {
     filterRowIconDescription: PropTypes.string,
     /** call back function for when icon button in filter row is clicked  (evt) => {} */
     onFilterRowIconClick: PropTypes.func.isRequired,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -151,6 +153,7 @@ class FilterHeaderRow extends Component {
     showColumnGroups: false,
     filterRowIcon: null,
     filterRowIconDescription: 'Edit filters',
+    pinHeaderAndFooter: false,
   };
 
   state = {
@@ -237,10 +240,20 @@ class FilterHeaderRow extends Component {
       const tableTopOffset = this.filterCellRef.current
         .closest(`.${iotPrefix}--table-container`)
         .getBoundingClientRect().top;
-      this.setState((prevState) => ({
-        ...prevState,
-        filterIconTopOffset: siblingTopOffset - tableTopOffset,
-      }));
+      this.setState((prevState) => {
+        if (this.props.pinHeaderAndFooter) {
+          // Subtract 48px of toolbar height
+          return {
+            ...prevState,
+            filterIconTopOffset: siblingTopOffset - tableTopOffset - 48,
+          };
+        }
+
+        return {
+          ...prevState,
+          filterIconTopOffset: siblingTopOffset - tableTopOffset,
+        };
+      });
     }
   };
 

@@ -736,6 +736,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "pinHeaderAndFooter": false,
         "pinColumn": "none",
         "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
@@ -1633,6 +1634,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "pinColumn": Object {
@@ -2967,16 +2971,6 @@ Map {
             },
             "hasSingleRowEdit": Object {
               "type": "bool",
-            },
-            "pinColumn": Object {
-              "args": Array [
-                Array [
-                  "none",
-                  "first",
-                  "last",
-                ],
-              ],
-              "type": "oneOf",
             },
             "preserveColumnWidths": Object {
               "type": "bool",

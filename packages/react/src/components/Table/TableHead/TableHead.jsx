@@ -83,6 +83,8 @@ const propTypes = {
     preserveColumnWidths: PropTypes.bool,
     hasFilterRowIcon: PropTypes.bool,
     hasDragAndDrop: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
     /** column to pin in the table */
     pinColumn: PinColumnPropTypes,
   }),
@@ -211,6 +213,7 @@ const TableHead = ({
     preserveColumnWidths,
     useRadioButtonSingleSelect,
     hasDragAndDrop,
+    pinHeaderAndFooter,
     pinColumn,
   },
   columns,
@@ -705,6 +708,7 @@ const TableHead = ({
           filterRowIcon={filterRowIcon}
           filterRowIconDescription={filterRowIconDescription}
           onFilterRowIconClick={onFilterRowIconClick}
+          pinHeaderAndFooter={pinHeaderAndFooter}
         />
       )}
       {activeBar === 'column' && (

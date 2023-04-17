@@ -43,6 +43,25 @@ td.#{$iot-prefix}--table__cell--sortable {
   .addons-iot-table-container {
     overflow-x: auto;
   }
+
+  &--pin-header-and-footer {
+    height: 100%;
+
+    .addons-iot-table-container,
+    .#{$prefix}--data-table-content {
+      height: inherit;
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+    }
+
+    .#{$prefix}--table-toolbar {
+      z-index: 5;
+    }
+  }
 }
 
 .#{$iot-prefix}-table-container--dropdown-height-fix {

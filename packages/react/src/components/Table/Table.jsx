@@ -163,6 +163,8 @@ const propTypes = {
      * `actions.table.onDrag` and `actions.table.onDrop` callback props.
      */
     hasDragAndDrop: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   }),
 
   /** Size prop from Carbon to shrink row height (and header height in some instances) */
@@ -445,6 +447,7 @@ export const defaultProps = (baseProps) => ({
     hasFilterRowIcon: false,
     pinColumn: PIN_COLUMN.NONE,
     hasDragAndDrop: false,
+    pinHeaderAndFooter: false,
   },
   size: undefined,
   view: {
@@ -895,7 +898,9 @@ const Table = (props) => {
     <TableContainer
       style={style}
       data-testid={`${id || testId}-table-container`}
-      className={classnames(className, `${iotPrefix}--table-container`)}
+      className={classnames(className, `${iotPrefix}--table-container`, {
+        [`${iotPrefix}--table-container--pin-header-and-footer`]: options.pinHeaderAndFooter,
+      })}
     >
       {
         /* If there is no items being rendered in the toolbar, don't render the toolbar */
@@ -1089,7 +1094,8 @@ const Table = (props) => {
                   'preserveColumnWidths',
                   'hasFilterRowIcon',
                   'pinColumn',
-                  'hasDragAndDrop'
+                  'hasDragAndDrop',
+                  'pinHeaderAndFooter'
                 ),
                 hasRowExpansion: !!options.hasRowExpansion,
                 wrapCellText: options.wrapCellText,
