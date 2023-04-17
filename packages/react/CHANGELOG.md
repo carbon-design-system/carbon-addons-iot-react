@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.8...v2.153.0-next.9) (2023-04-17)
+
+
+### Bug Fixes
+
+* **header:** add tooltip to action menus ([3df34fe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3df34fe51ed806bf0a33a318c94173bb1975b5bb)), closes [#3763](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3763)
+* **header:** decrease border width for menu button focus ([71f8227](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71f82273fe146b45b5ca517b17e5968b3a107b24))
+
+
+
+
+
 # [2.153.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.7...v2.153.0-next.8) (2023-04-17)
 
 
