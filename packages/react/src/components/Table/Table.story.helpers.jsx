@@ -344,6 +344,7 @@ export const getNewRow = (idx, suffix = '', withActions = false) => ({
     node: <Add20 />,
     object: { id: getString(idx, 5) },
   },
+  isDraggable: true,
   rowActions: withActions
     ? [
         {
@@ -1014,6 +1015,7 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
   const NESTING_EXPANSION_GROUP = useGroups ? 'Nesting & expansion' : undefined;
   const SELECTIONS_ACTIONS_GROUP = useGroups ? 'Selections & actions' : undefined;
   const STATES_GROUP = useGroups ? 'Main view states' : undefined;
+  const DND_GROUP = useGroups ? 'Drag & drop' : undefined;
 
   const shouldCreate = (name) => !knobsToCreate || knobsToCreate.includes(name);
 
@@ -1043,6 +1045,13 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Enables table to handle creating/saving/loading of user views (options.hasUserViewManagement)',
           getDefaultValue('hasUserViewManagement'),
+          TABLE_GROUP
+        )
+      : null,
+    pinHeaderAndFooter: shouldCreate('pinHeaderAndFooter')
+      ? boolean(
+          'Pin header and footer (options.pinHeaderAndFooter)',
+          getDefaultValue('pinHeaderAndFooter'),
           TABLE_GROUP
         )
       : null,
@@ -1548,6 +1557,11 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
           getDefaultValue('demoCustomErrorState'),
           STATES_GROUP
         )
+      : null,
+
+    // DND_GROUP
+    hasDragAndDrop: shouldCreate('hasDragAndDrop')
+      ? boolean('Drag and drop (hasDragAndDrop)', getDefaultValue('hasDragAndDrop'), DND_GROUP)
       : null,
   };
 };

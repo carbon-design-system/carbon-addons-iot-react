@@ -54,6 +54,7 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [Improving the data edit UX](#improving-the-data-edit-ux)
 - [Column customization](#column-customization)
   <TableColumnCustomizationTOC />
+- [Pinned header and footer](#pinned-header-and-footer)
 - [User view management](#user-view-management)
   <TableUserViewManagementTOC />
 - [Props](#props)
@@ -411,6 +412,12 @@ import TableColumnCustomizationModalContent from '../TableColumnCustomizationMod
 
 <TableColumnCustomizationModalContent />
 
+## Pinned header and footer
+
+import PinnedHeaderAndFooter from './PinnedHeaderAndFooter.mdx';
+
+<PinnedHeaderAndFooter />
+
 ## User view management
 
 import TableUserViewManagementContent from './TableUserViewManagementContent.mdx';
@@ -544,6 +551,7 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | hasMultiSort                | bool                                                     |          | If true, the sortable columns in the table will be able to be sorted by multiple dimensions                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | preserveCellWhiteSpace      | bool                                                     | false    | If true, use white-space: pre; css                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | hasFilterRowIcon            | bool                                                     | false    | If true, displays custom icon button in filter row                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| pinHeaderAndFooter          | bool                                                     | false    | If true, freezes table header and footer                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 ### View Prop
 
@@ -747,6 +755,7 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | filterRowIconDescription         | string       | 'Edit filters'           |                                                        |
 | batchActionsOverflowMenuText     | string       |                          | Batch action overflow menu label                       |
 | filterTagsOverflowMenuText       | string, func | '+{n}'                   | {n} is number of hidden filters              |
+| toolbarSearchIconDescription     | string       | 'Search'                 | Search tooltip label displayed on hover                |
 
 ## Source Code
 

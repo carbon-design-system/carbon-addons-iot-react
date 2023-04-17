@@ -142,9 +142,8 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
     iconDescription: 'Add',
     callback: action('extra single action icon clicked.'),
   };
-  const multiExtraAction = {
+  const multiExtraAction = object('Multiple extra action', {
     id: 'extramultiaction',
-    icon: Tree16,
     iconDescription: 'Settings',
     children: [
       {
@@ -170,7 +169,7 @@ export const WithEllipsedTitleTooltipExternalTooltip = () => {
         callback: action('extra three dot action item4 clicked.'),
       },
     ],
-  };
+  });
   const demoTitleTextTooltip = boolean('demo title text tooltip (titleTextTooltip)', false);
   const demoIconTooltip = boolean('demo info icon tooltip (tooltip)', true);
   const hasTitleWrap = demoTitleTextTooltip ? false : boolean('wrap title', true);

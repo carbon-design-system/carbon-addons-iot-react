@@ -12,6 +12,7 @@ import {
 import { settings } from '../../constants/Settings';
 import useHasTextOverflow from '../../hooks/useHasTextOverflow';
 import Button from '../Button';
+import { getKeyboardFoucusableElements } from '../../utils/a11yUtils';
 
 const { iotPrefix } = settings;
 
@@ -141,11 +142,28 @@ const SidePanel = ({
             renderIcon={e.buttonIcon}
             onClick={e.buttonCallback}
             size="small"
+            tabIndex={isOpen ? 0 : -1}
           />
         ))) ||
         actionItems),
-    [actionItems, testId]
+    [actionItems, testId, isOpen]
   );
+
+  useEffect(() => {
+    const currentElement = document.querySelector(`.${baseClass}__content`);
+    const keyboardfocusableElements = getKeyboardFoucusableElements(currentElement ?? document);
+
+    if (isOpen) {
+      [...keyboardfocusableElements].forEach((e) => {
+        e.setAttribute('tabindex', 0);
+      });
+    } else {
+      [...keyboardfocusableElements].forEach((e) => {
+        e.setAttribute('tabindex', -1);
+      });
+    }
+  }, [isOpen]);
+
   // Since subtitle is dynamic we set a css variable with the height value to animate in condensed mode
   const [subtitleHeight, setSubtitleHeight] = useState('100%');
   // Triggerd when the content is scrolled in either direction
@@ -196,7 +214,7 @@ const SidePanel = ({
           disabled={toggleIcon.disabled}
         />
       ) : null}
-      <header className={`${baseClass}__header`}>
+      <header className={`${baseClass}__header`} aria-hidden={!isOpen}>
         {title && truncatesTitle ? (
           <Tooltip
             data-testid={`${testId}-title`}
@@ -204,6 +222,7 @@ const SidePanel = ({
             showIcon={false}
             triggerClassName={`${baseClass}__title`}
             triggerText={title}
+            tabIndex={isOpen ? 0 : -1}
           >
             {title}
           </Tooltip>
@@ -223,7 +242,11 @@ const SidePanel = ({
           </p>
         ) : null}
         {actionIconBtns ? (
-          <div data-testid={`${testId}-action-bar`} className={`${baseClass}__action-bar`}>
+          <div
+            data-testid={`${testId}-action-bar`}
+            className={`${baseClass}__action-bar`}
+            aria-hidden={!isOpen}
+          >
             {actionIconBtns}
           </div>
         ) : null}
@@ -233,11 +256,16 @@ const SidePanel = ({
         ref={contentRef}
         className={`${baseClass}__content`}
         onScroll={() => setIsScrolling((prev) => !prev)}
+        aria-hidden={!isOpen}
       >
         {children}
       </section>
       {onSecondaryButtonClick || onPrimaryButtonClick ? (
-        <div className={`${baseClass}__footer`} data-testid={`${testId}-footer`}>
+        <div
+          className={`${baseClass}__footer`}
+          data-testid={`${testId}-footer`}
+          aria-hidden={!isOpen}
+        >
           {onSecondaryButtonClick ? (
             <Button
               testId={`${testId}-secondary-button`}
@@ -246,6 +274,7 @@ const SidePanel = ({
               tooltipPosition={toggleIcon.tooltipPostion}
               kind="secondary"
               disabled={isBusy}
+              tabIndex={isOpen ? 0 : -1}
             >
               {mergedI18n.secondaryButtonLabel}
             </Button>
@@ -258,6 +287,7 @@ const SidePanel = ({
               onClick={onPrimaryButtonClick}
               loading={isBusy}
               disabled={isPrimaryButtonDisabled}
+              tabIndex={isOpen ? 0 : -1}
             >
               {mergedI18n.primaryButtonLabel}
             </Button>

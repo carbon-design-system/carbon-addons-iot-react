@@ -87,6 +87,8 @@ export const TableRowPropTypes = PropTypes.shape({
   isSelectable: PropTypes.bool,
   /** boolean to define load more row */
   hasLoadMore: PropTypes.bool,
+  /** If this row can be dragged. The table must be set to use `hasDragAndDrop`. */
+  isDraggable: PropTypes.bool,
 });
 
 export const TableRowsPropTypes = PropTypes.arrayOf(TableRowPropTypes);
@@ -229,6 +231,8 @@ export const I18NPropTypes = PropTypes.shape({
   batchActionsOverflowMenuText: PropTypes.string,
   /** overflow menu text callback for truncated filter tags */
   filterTagsOverflowMenuText: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+  /** I18N label for search icon in toolbar */
+  toolbarSearchIconDescription: PropTypes.string,
 });
 
 export const defaultI18NPropTypes = {

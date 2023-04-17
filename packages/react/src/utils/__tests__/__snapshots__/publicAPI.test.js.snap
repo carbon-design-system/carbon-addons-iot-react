@@ -709,6 +709,7 @@ Map {
         "tableErrorStateTitle": "Unable to load the page",
         "toggleAggregations": "Toggle aggregations",
         "toolbarLabelAria": undefined,
+        "toolbarSearchIconDescription": "Search",
         "toolbarTooltipLabel": "Toolbar tooltip",
       },
       "id": null,
@@ -720,6 +721,7 @@ Map {
         "hasBatchActionToolbar": true,
         "hasColumnSelection": false,
         "hasColumnSelectionConfig": false,
+        "hasDragAndDrop": false,
         "hasFastSearch": true,
         "hasFilter": false,
         "hasFilterRowIcon": false,
@@ -734,6 +736,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "pinHeaderAndFooter": false,
         "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
         "shouldExpandOnRowClick": false,
@@ -794,6 +797,7 @@ Map {
           "search": Object {},
         },
       },
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actions": Object {
@@ -840,6 +844,12 @@ Map {
                     "type": "func",
                   },
                   "onColumnSelectionConfig": Object {
+                    "type": "func",
+                  },
+                  "onDrag": Object {
+                    "type": "func",
+                  },
+                  "onDrop": Object {
                     "type": "func",
                   },
                   "onEmptyStateAction": Object {
@@ -1128,6 +1138,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -1481,6 +1494,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarSearchIconDescription": Object {
+              "type": "string",
+            },
             "toolbarTooltipLabel": Object {
               "type": "string",
             },
@@ -1509,6 +1525,9 @@ Map {
               "type": "bool",
             },
             "hasColumnSelectionConfig": Object {
+              "type": "bool",
+            },
+            "hasDragAndDrop": Object {
               "type": "bool",
             },
             "hasFastSearch": Object {
@@ -1614,6 +1633,9 @@ Map {
               "type": "bool",
             },
             "hasUserViewManagement": Object {
+              "type": "bool",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveCellWhiteSpace": Object {
@@ -2349,6 +2371,9 @@ Map {
         ],
         "type": "shape",
       },
+      "zIndex": Object {
+        "type": "number",
+      },
     },
   },
   "TableHead" => Object {
@@ -2866,6 +2891,9 @@ Map {
             "toolbarLabelAria": Object {
               "type": "string",
             },
+            "toolbarSearchIconDescription": Object {
+              "type": "string",
+            },
             "toolbarTooltipLabel": Object {
               "type": "string",
             },
@@ -2882,6 +2910,9 @@ Map {
       "options": Object {
         "args": Array [
           Object {
+            "hasDragAndDrop": Object {
+              "type": "bool",
+            },
             "hasFilterRowIcon": Object {
               "type": "bool",
             },
@@ -2928,6 +2959,9 @@ Map {
               "type": "oneOf",
             },
             "hasSingleRowEdit": Object {
+              "type": "bool",
+            },
+            "pinHeaderAndFooter": Object {
               "type": "bool",
             },
             "preserveColumnWidths": Object {
@@ -3138,10 +3172,12 @@ Map {
       "dismissText": "Dismiss",
       "expandedIds": Array [],
       "expandedRows": Array [],
+      "hasDragAndDrop": false,
       "hasRowActions": false,
       "hasRowExpansion": false,
       "hasRowNesting": false,
       "hasRowSelection": false,
+      "hideDragHandles": false,
       "inProgressText": "In progress",
       "langDir": "ltr",
       "learnMoreText": "Learn more",
@@ -3163,6 +3199,7 @@ Map {
       "testId": "",
       "totalColumns": 0,
       "useRadioButtonSingleSelect": false,
+      "zIndex": 0,
     },
     "propTypes": Object {
       "actionFailedText": Object {
@@ -3172,6 +3209,12 @@ Map {
         "args": Array [
           Object {
             "onApplyRowActions": Object {
+              "type": "func",
+            },
+            "onDrag": Object {
+              "type": "func",
+            },
+            "onDrop": Object {
               "type": "func",
             },
             "onRowClicked": Object {
@@ -3369,6 +3412,9 @@ Map {
         ],
         "type": "arrayOf",
       },
+      "hasDragAndDrop": Object {
+        "type": "bool",
+      },
       "hasRowActions": Object {
         "type": "bool",
       },
@@ -3404,6 +3450,9 @@ Map {
           ],
         ],
         "type": "oneOf",
+      },
+      "hideDragHandles": Object {
+        "type": "bool",
       },
       "inProgressText": Object {
         "type": "string",
@@ -3521,6 +3570,9 @@ Map {
                 "id": Object {
                   "isRequired": true,
                   "type": "string",
+                },
+                "isDraggable": Object {
+                  "type": "bool",
                 },
                 "isSelectable": Object {
                   "type": "bool",
@@ -3710,6 +3762,9 @@ Map {
         ],
         "isRequired": true,
         "type": "oneOf",
+      },
+      "zIndex": Object {
+        "type": "number",
       },
     },
   },
@@ -4461,6 +4516,9 @@ Map {
                   "isRequired": true,
                   "type": "string",
                 },
+                "isDraggable": Object {
+                  "type": "bool",
+                },
                 "isSelectable": Object {
                   "type": "bool",
                 },
@@ -4657,6 +4715,9 @@ Map {
               "type": "string",
             },
             "toolbarLabelAria": Object {
+              "type": "string",
+            },
+            "toolbarSearchIconDescription": Object {
               "type": "string",
             },
             "toolbarTooltipLabel": Object {
