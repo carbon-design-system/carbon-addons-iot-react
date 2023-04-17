@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.8...v2.153.0-next.9) (2023-04-17)
+
+
+### Bug Fixes
+
+* **header:** add tooltip to action menus ([3df34fe](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3df34fe51ed806bf0a33a318c94173bb1975b5bb)), closes [#3763](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3763)
+* **header:** decrease border width for menu button focus ([71f8227](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/71f82273fe146b45b5ca517b17e5968b3a107b24))
+
+
+
+
+
+# [2.153.0-next.8](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.7...v2.153.0-next.8) (2023-04-17)
+
+
+### Bug Fixes
+
+* **headeraction:** close panel on click outside ([e8411e3](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/e8411e3e214323e59310237d3633c0f094292920))
+* **headeraction:** close panel on other action click ([4753ec1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4753ec15061aad029170341d921d6f26604d9768)), closes [#3755](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3755)
+
+
+### Features
+
+* **cardtoolbar:** add max width to extra action overflow menu ([aaaba9e](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/aaaba9e3a223e18c008917b8ade9271dfc9d33f9)), closes [#3733](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3733)
+
+
+
+
+
 # [2.153.0-next.7](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.6...v2.153.0-next.7) (2023-04-17)
 
 

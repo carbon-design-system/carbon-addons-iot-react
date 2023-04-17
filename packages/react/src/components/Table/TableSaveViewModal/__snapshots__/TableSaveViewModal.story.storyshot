@@ -333,7 +333,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
+<<<<<<< HEAD
                 aria-controls="accordion-item-1530"
+=======
+                aria-controls="accordion-item-1581"
+>>>>>>> next
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -364,7 +368,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
+<<<<<<< HEAD
                 id="accordion-item-1530"
+=======
+                id="accordion-item-1581"
+>>>>>>> next
               >
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -376,7 +384,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               onAnimationEnd={[Function]}
             >
               <button
+<<<<<<< HEAD
                 aria-controls="accordion-item-1531"
+=======
+                aria-controls="accordion-item-1582"
+>>>>>>> next
                 aria-expanded={false}
                 className="bx--accordion__heading"
                 onClick={[Function]}
@@ -407,7 +419,11 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
               </button>
               <div
                 className="bx--accordion__content"
+<<<<<<< HEAD
                 id="accordion-item-1531"
+=======
+                id="accordion-item-1582"
+>>>>>>> next
               >
                 <p>
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
