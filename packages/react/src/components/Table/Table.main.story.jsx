@@ -27,6 +27,7 @@ import StatesREADME from './mdx/States.mdx';
 import PaginationREADME from './mdx/Pagination.mdx';
 import ToolbarREADME from './mdx/Toolbar.mdx';
 import EditDataREADME from './mdx/EditData.mdx';
+import PinnedHeaderAndFooterREADME from './mdx/PinnedHeaderAndFooter.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -164,6 +165,7 @@ export const Playground = () => {
     hasMultiSelectFilter,
     hasFilterRowIcon,
     hasDragAndDrop,
+    pinHeaderAndFooter,
   } = getTableKnobs({
     getDefaultValue: (name) =>
       // For this story always disable the following knobs by default
@@ -192,6 +194,7 @@ export const Playground = () => {
         'hasEmptyFilterOption',
         'hasMultiSelectFilter',
         'hasFilterRowIcon',
+        'pinHeaderAndFooter',
       ].includes(name)
         ? false
         : // For this story always enable the following knobs by default
@@ -446,6 +449,7 @@ export const Playground = () => {
           useRadioButtonSingleSelect,
           hasFilterRowIcon,
           hasDragAndDrop,
+          pinHeaderAndFooter,
         }}
         view={{
           advancedFilters,
@@ -1254,6 +1258,79 @@ WithInlineActions.parameters = {
   component: Table,
   docs: {
     page: InlineActionsREADME,
+  },
+};
+
+export const WithPinnedHeaderAndFooter = () => {
+  const {
+    selectedTableType,
+    demoSingleSort,
+    pinHeaderAndFooter,
+    hasFilter,
+    columnGroups,
+    demoColumnGroupAssignments,
+    hasRowSelection,
+    hasPagination,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'demoSingleSort',
+      'pinHeaderAndFooter',
+      'hasFilter',
+      'columnGroups',
+      'demoColumnGroupAssignments',
+      'hasRowSelection',
+      'hasPagination',
+    ],
+    getDefaultValue: (name) => name !== 'hasMultiSort',
+  });
+
+  const MyTable = selectedTableType === 'StatefulTable' ? StatefulTable : Table;
+  const data = getTableData().slice(0, 50);
+  const columns = getTableColumns().map((column) => ({
+    ...column,
+    isSortable: demoSingleSort,
+    tooltip:
+      column.id === 'object'
+        ? `This column has a custom sort function based on the object id property`
+        : column.id === 'status'
+        ? `This column has a custom sort function that orders on BROKEN, RUNNING and then NOT_RUNNING`
+        : undefined,
+  }));
+
+  const ordering = getDefaultOrdering(columns).map((col, index) =>
+    demoColumnGroupAssignments ? addColumnGroupIds(col, index) : col
+  );
+
+  return (
+    <div style={{ height: '400px' }}>
+      <MyTable
+        actions={getTableActions()}
+        columns={columns}
+        columnGroups={columnGroups}
+        data={data}
+        options={{
+          pinHeaderAndFooter,
+          hasResize: true,
+          hasPagination,
+          hasFilter,
+          hasRowSelection,
+        }}
+        view={{
+          table: {
+            ordering,
+          },
+        }}
+      />
+    </div>
+  );
+};
+
+WithPinnedHeaderAndFooter.storyName = 'With pinned header and footer';
+WithPinnedHeaderAndFooter.parameters = {
+  component: Table,
+  docs: {
+    page: PinnedHeaderAndFooterREADME,
   },
 };
 

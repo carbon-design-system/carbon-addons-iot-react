@@ -11,6 +11,16 @@
     font-size: 0.875rem;
     font-weight: normal;
   }
+
+  &__overflow-menu {
+    min-width: 10rem;
+    width: unset;
+    max-width: rem(350px); // 350px mobile screen width
+
+    & .#{$prefix}--overflow-menu-options__btn {
+      max-width: unset;
+    }
+  }
 }
 
 .#{$iot-prefix}--card--toolbar-action {
