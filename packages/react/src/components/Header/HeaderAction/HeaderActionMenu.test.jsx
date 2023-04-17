@@ -1,7 +1,12 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+import { settings } from '../../../constants/Settings';
 
 import HeaderActionMenu from './HeaderActionMenu';
+
+const { prefix } = settings;
 
 describe('HeaderActionMenu', () => {
   const mockProps = {
@@ -53,15 +58,14 @@ describe('HeaderActionMenu', () => {
   it('should render aria-label', () => {
     render(<HeaderActionMenu {...mockProps} />);
 
-    expect(screen.getByText('Accessibility label')).toBeInTheDocument();
+    expect(screen.getByTestId('menuitem')).toHaveAttribute('aria-label', 'Accessibility label');
   });
 
   it('should render content prop', () => {
     const menuContent = () => <p>Some other text</p>;
     render(<HeaderActionMenu renderMenuContent={menuContent} {...mockProps} />);
 
-    expect(screen.queryByText('Accessibility label')).not.toBeInTheDocument();
-    expect(screen.getByText('Some other text')).toBeInTheDocument();
+    expect(screen.getByTestId('menuitem')).toHaveTextContent('Some other text');
   });
 
   it("should add a title to long items that truncate if they don't have one.", () => {
@@ -77,5 +81,12 @@ describe('HeaderActionMenu', () => {
     );
 
     jest.clearAllMocks();
+  });
+
+  it('should display tooltip on hover', () => {
+    render(<HeaderActionMenu {...mockProps} />);
+    const actionMenu = screen.getByTestId('menuitem');
+    userEvent.hover(actionMenu);
+    expect(actionMenu).not.toHaveClass(`${prefix}--tooltip--hidden`);
   });
 });
