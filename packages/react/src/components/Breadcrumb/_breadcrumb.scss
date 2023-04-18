@@ -97,11 +97,23 @@ html[dir='rtl'] .breadcrumb--container {
 }
 
 .#{$iot-prefix}--breadcrumb-expand {
-  &--first .#{$prefix}--breadcrumb-item:first-of-type {
-    flex-shrink: 0;
+  &--first {
+    .#{$prefix}--breadcrumb-item:first-of-type {
+      flex-shrink: 0;
+    }
+
+    .#{$prefix}--breadcrumb-item:last-of-type {
+      min-width: $spacing-09;
+    }
   }
 
-  &--last .#{$prefix}--breadcrumb-item:last-of-type {
-    flex-shrink: 0;
+  &--last {
+    .#{$prefix}--breadcrumb-item:last-of-type {
+      flex-shrink: 0;
+    }
+
+    .#{$prefix}--breadcrumb-item:first-of-type {
+      min-width: $spacing-09;
+    }
   }
 }
