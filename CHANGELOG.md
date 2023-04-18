@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.9...v2.153.0-next.10) (2023-04-18)
+
+
+### Features
+
+* **barchartcard:** add maximum data points input field ([31bba56](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/31bba56ea0295cbfc2d4e03765fb5a900b07c299))
+
+
+
+
+
 # [2.153.0-next.9](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.8...v2.153.0-next.9) (2023-04-17)
 
 
