@@ -680,6 +680,7 @@ const TableHead = ({
             isFilterable: !isNil(column.filter),
             isMultiselect: column.filter?.isMultiselect,
             width: column.width,
+            customInput: column?.customInput,
           }))}
           hasFastFilter={hasFastFilter}
           clearFilterText={clearFilterText}

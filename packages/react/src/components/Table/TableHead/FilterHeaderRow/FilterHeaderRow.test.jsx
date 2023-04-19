@@ -1050,4 +1050,16 @@ describe('FilterHeaderRow', () => {
       expect(screen.getByTestId('filter-row-icon')).toBeVisible();
     });
   });
+
+  it('should display custom input when not undefined', () => {
+    render(
+      <FilterHeaderRow
+        {...commonFilterProps}
+        ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
+        columns={[{ id: 'col1', customInput: 'customInput' }, { id: 'col2' }]}
+      />
+    );
+
+    expect(screen.getAllByText('customInput')[0]).toBeInTheDocument();
+  });
 });
