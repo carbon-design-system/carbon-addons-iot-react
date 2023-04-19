@@ -85,4 +85,23 @@ describe('BarChartCardFormSettings', () => {
       type: 'BAR',
     });
   });
+  it('handles maximum data points onChange', async () => {
+    render(<BarChartCardFormSettings cardConfig={{ ...barChartConfig }} onChange={mockOnChange} />);
+
+    await userEvent.type(screen.getByText('Maximum data points'), '200');
+
+    expect(mockOnChange).toHaveBeenCalledWith({
+      content: {
+        series: [{ color: 'red', dataSourceId: 'temperature', label: 'Temperature' }],
+        type: 'SIMPLE',
+        xLabel: 'Time',
+        yLabel: 'Temperature (˚F)',
+        maximumDataPoints: 200,
+      },
+      id: 'BarChart',
+      size: 'MEDIUM',
+      title: 'BarChartCard',
+      type: 'BAR',
+    });
+  });
 });

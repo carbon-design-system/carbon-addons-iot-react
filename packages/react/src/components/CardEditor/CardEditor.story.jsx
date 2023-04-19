@@ -589,3 +589,49 @@ export const ForV2TimeSeries = () => (
 ForV2TimeSeries.storyName = 'for V2 TimeSeries';
 
 ForV2TimeSeries.storyName = 'for V2 TimeSeries';
+
+export const ForBarChart = () => (
+  <div style={{ position: 'absolute', right: 0, height: 'calc(100vh - 6rem)' }}>
+    <CardEditor
+      cardConfig={object('cardConfig', {
+        id: 'bar-chart',
+        title: 'bar-chart-card',
+        size: 'MEDIUMWIDE',
+        type: 'BAR',
+        content: {
+          series: [
+            {
+              dataSourceId: 'torque max',
+              label: 'Torque Max',
+              color: '#6929c4',
+            },
+            {
+              dataSourceId: 'torque mean',
+              label: 'Torque Mean',
+              color: '#1192e8',
+            },
+          ],
+          layout: 'VERTICAL',
+          xLabel: 'Time',
+          yLabel: 'Temperature',
+          timeDataSourceId: 'timestamp',
+        },
+        interval: 'day',
+      })}
+      errors={{}}
+      onShowGallery={action('onShowGallery')}
+      onChange={action('onChange')}
+      actions={commonActions}
+      dataItems={[
+        { dataItemId: 'torque', dataSourceId: 'torque_max', label: 'Torque Max' },
+        { dataItemId: 'torque', dataSourceId: 'torque_min', label: 'Torque Min' },
+        { dataItemId: 'torque', dataSourceId: 'torque_mean', label: 'Torque Mean' },
+        { dataItemId: 'temperature', dataSourceId: 'temperature', label: 'Temperature' },
+        { dataItemId: 'pressure', dataSourceId: 'pressure', label: 'Pressure' },
+      ]}
+      onAddCard={action('onAddCard')}
+    />
+  </div>
+);
+
+ForBarChart.storyName = 'for BarChart';

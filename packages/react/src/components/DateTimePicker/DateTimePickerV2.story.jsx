@@ -187,6 +187,7 @@ export const SingleSelect = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        onClear={action('onClear')}
         datePickerType="single"
         showRelativeOption={boolean('show relative option', false)}
         invalid={boolean('invalid', false)}
