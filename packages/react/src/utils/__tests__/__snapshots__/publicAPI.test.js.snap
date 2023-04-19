@@ -9741,6 +9741,7 @@ Map {
       "menuOffset": undefined,
       "onApply": null,
       "onCancel": null,
+      "onClear": null,
       "presets": Array [
         Object {
           "id": "item-01",
@@ -10171,6 +10172,9 @@ Map {
         "type": "func",
       },
       "onCancel": Object {
+        "type": "func",
+      },
+      "onClear": Object {
         "type": "func",
       },
       "presets": Object {
