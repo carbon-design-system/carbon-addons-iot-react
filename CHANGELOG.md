@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.10...v2.153.0-next.11) (2023-04-19)
+
+
+### Bug Fixes
+
+* **breadcrumb:** add min width to item ([0039d04](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/0039d04819b3fd7fb8cc9be8728322729684bd28))
+* **datetimepickerv2:** add onClear callback ([7e13f1d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/7e13f1da3508e4f2c295695ca6cacee4b1c467db))
+
+
+### Features
+
+* **breadcrumb:** add option to disable truncation ([23b74e8](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/23b74e8a58694c9b83ccebb39a763877131316d6))
+
+
+
+
+
 # [2.153.0-next.10](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.9...v2.153.0-next.10) (2023-04-18)
 
 
