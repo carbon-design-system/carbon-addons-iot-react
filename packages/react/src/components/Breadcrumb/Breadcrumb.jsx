@@ -7,6 +7,9 @@ import { Breadcrumb as CarbonBreadcrumb } from 'carbon-components-react';
 import { OverflowMenu } from '../OverflowMenu';
 import { OverflowMenuItem } from '../OverflowMenuItem';
 import { useResize } from '../../internal/UseResizeObserver';
+import { settings } from '../../constants/Settings';
+
+const { iotPrefix } = settings;
 
 const propTypes = {
   /**
@@ -35,6 +38,11 @@ const propTypes = {
    */
   hasOverflow: PropTypes.bool,
 
+  /**
+   * Disable truncation on the first or last breadcrumb item.
+   */
+  disableTruncation: PropTypes.oneOf(['first', 'last', 'none']),
+
   testId: PropTypes.string,
 };
 
@@ -45,10 +53,12 @@ const defaultProps = {
   hasOverflow: false,
   'aria-label': null,
   testId: 'breadcrumb',
+  disableTruncation: 'none',
 };
 
-const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
+const Breadcrumb = ({ children, className, hasOverflow, testId, disableTruncation, ...other }) => {
   const childrenItems = Children.map(children, (child) => child);
+
   const breakingWidth = useRef([]);
 
   const [overflowItems, setOverflowItems] = useState([]);
@@ -103,6 +113,7 @@ const Breadcrumb = ({ children, className, hasOverflow, testId, ...other }) => {
     <div
       className={classnames('breadcrumb--container', {
         'breadcrumb--container__overflowfull': afterOverflowItems.length === 1,
+        [`${iotPrefix}--breadcrumb-expand--${disableTruncation}`]: disableTruncation !== 'none',
       })}
       ref={breadcrumbRef}
       // TODO: fix in v3
