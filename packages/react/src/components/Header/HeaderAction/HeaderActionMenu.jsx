@@ -8,6 +8,7 @@ import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
 import Button from '../../Button/Button';
+import { isSafari } from '../../SuiteHeader/suiteHeaderUtils';
 
 const { prefix } = settings;
 
@@ -63,6 +64,8 @@ class HeaderActionMenu extends React.Component {
   constructor(props) {
     super(props);
     this.menuItemRefs = props.childContent.map(() => React.createRef(null));
+    this.menuRef = React.createRef(null);
+    this.handleOutsideMenuClick = this.handleOutsideMenuClick.bind(this);
   }
 
   componentDidMount() {
@@ -70,12 +73,33 @@ class HeaderActionMenu extends React.Component {
     if (isExpanded) {
       this.checkForOverflows();
     }
+
+    document.addEventListener('click', this.handleOutsideMenuClick, { capture: true });
   }
 
   componentDidUpdate(prevProps) {
     const { isExpanded } = this.props;
     if (isExpanded && !prevProps.isExpanded) {
       this.checkForOverflows();
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideMenuClick, { capture: true });
+  }
+
+  handleOutsideMenuClick(evt) {
+    if (!isSafari()) {
+      return;
+    }
+
+    const { isExpanded, onToggleExpansion } = this.props;
+    if (this.menuRef.current && this.menuRef.current.contains(evt.target)) {
+      return;
+    }
+
+    if (isExpanded) {
+      onToggleExpansion();
     }
   }
 
@@ -137,7 +161,12 @@ class HeaderActionMenu extends React.Component {
         >
           <MenuContent ariaLabel={ariaLabel} />
         </Button>
-        <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
+        <ul
+          {...accessibilityLabel}
+          ref={this.menuRef}
+          className={`${prefix}--header__menu`}
+          role="menu"
+        >
           {childContent.map((childItem, index) => {
             const { isOverflowing } = this.state;
             const childIsOverflowing = isOverflowing[index];
