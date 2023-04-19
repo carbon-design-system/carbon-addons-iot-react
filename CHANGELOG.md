@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.12](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.11...v2.153.0-next.12) (2023-04-19)
+
+
+### Bug Fixes
+
+* **headeraction:** handle click outside safari ([2e678a0](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2e678a02ba4a17e892076bf9583cc6c5e7c061bd))
+
+
+
+
+
 # [2.153.0-next.11](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.10...v2.153.0-next.11) (2023-04-19)
 
 
