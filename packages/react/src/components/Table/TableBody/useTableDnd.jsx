@@ -378,7 +378,7 @@ function useTableDnd(rows, selectedIds, zIndex, onDrag, onDrop) {
       const contentRect = scrollContainer.getBoundingClientRect();
       const rowRect = rowEl.getBoundingClientRect();
       const style = {
-        display: '',
+        display: 'block',
         top: `${rowRect.top + document.documentElement.scrollTop}px`,
         left: `${
           contentRect.left + document.documentElement.scrollLeft - getRtlVerticalScrollbarWidth()

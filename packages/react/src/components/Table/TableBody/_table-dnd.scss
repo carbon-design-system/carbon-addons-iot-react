@@ -4,7 +4,6 @@
 // The 6-dots grable handle area on a row that can be dragged. This is really that the parent of
 // that picture so the draggable area is a larger, square.
 .#{$iot-prefix}--table-drag-handle {
-  height: 2rem;
   padding-inline: 1rem;
   display: grid;
   align-items: center;
@@ -28,6 +27,9 @@
 .#{$iot-prefix}--table-drop-row-overlay {
   // Abs positioned, but JavaScript will set its rect
   position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
   border: dashed 2px $carbon--blue-60;
   pointer-events: none;
 }
