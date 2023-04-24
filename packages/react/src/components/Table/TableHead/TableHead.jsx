@@ -80,6 +80,9 @@ const propTypes = {
     /** Preserves the widths of existing columns when one or more columns are added, removed, hidden, shown or resized. */
     preserveColumnWidths: PropTypes.bool,
     hasFilterRowIcon: PropTypes.bool,
+    hasDragAndDrop: PropTypes.bool,
+    /** Freezes table header and footer */
+    pinHeaderAndFooter: PropTypes.bool,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -205,6 +208,8 @@ const TableHead = ({
     useAutoTableLayoutForResize,
     preserveColumnWidths,
     useRadioButtonSingleSelect,
+    hasDragAndDrop,
+    pinHeaderAndFooter,
   },
   columns,
   columnGroups,
@@ -445,6 +450,12 @@ const TableHead = ({
           [`${iotPrefix}--table-header__column-row--prevent-small-sizes`]: showColumnGroups,
         })}
       >
+        {hasDragAndDrop && (
+          <TableHeader width="2rem" initialWidth="2rem">
+            {/* This just takes up space, but is unlabeled. */}
+          </TableHeader>
+        )}
+
         {hasRowExpansion || hasRowNesting ? (
           <TableExpandHeader
             id={`${tableId}-expand`}
@@ -689,6 +700,7 @@ const TableHead = ({
           filterRowIcon={filterRowIcon}
           filterRowIconDescription={filterRowIconDescription}
           onFilterRowIconClick={onFilterRowIconClick}
+          pinHeaderAndFooter={pinHeaderAndFooter}
         />
       )}
       {activeBar === 'column' && (

@@ -67,7 +67,7 @@ const idleTimeoutDataProp = {
 };
 
 describe('SuiteHeader', () => {
-  const originHref = 'https://ibm.com';
+  const originHref = 'https://ibm.com/';
   const expectedAppPageLogoutRoute = `${commonProps.routes.logout}?originHref=${encodeURIComponent(
     originHref
   )}&originAppId=${appId}`;
@@ -87,7 +87,12 @@ describe('SuiteHeader', () => {
     originalWindowLocation = { ...window.location };
     originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
-    window.location = { href: originHref };
+    window.location = {
+      href: 'https://ibm.com/',
+      protocol: 'https:',
+      host: 'ibm.com',
+      pathname: '/',
+    };
     window.open = jest.fn();
   });
 
@@ -1189,5 +1194,102 @@ describe('SuiteHeader', () => {
     userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
     // Expect skeletons
     expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
+  });
+
+  describe('header action and panel (safari)', () => {
+    beforeAll(() => {
+      const userAgentGetter = jest.spyOn(window, 'navigator', 'get');
+      userAgentGetter.mockReturnValue({
+        userAgent:
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 00_00_0) AppleWebKit/000.0.00 (KHTML, like Gecko) Version/00.0 Safari/000.0.00',
+      });
+    });
+
+    afterAll(() => {
+      jest.clearAllMocks();
+      jest.restoreAllMocks();
+    });
+
+    it('should close action panel if other action clicked (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+      const profileActionButton = screen.getByRole('menuitem', { name: 'user' });
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+
+      userEvent.click(profileActionButton);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+    });
+
+    it('should close action panel if clicked outside of panel (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+
+      userEvent.click(document.body);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+    });
+
+    it('should close action dropdown if panel opened (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+      const profileActionButton = screen.getByRole('menuitem', { name: 'user' });
+
+      userEvent.click(profileActionButton);
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should NOT close panel if clicked inside panel', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+
+      userEvent.click(screen.getByText('My applications'));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+    });
+
+    it('should close action menu if clicked outside (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const headerPanel = screen.getByLabelText('Header Panel');
+      const profileActionButton = screen.getByRole('menuitem', { name: 'user' });
+
+      expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+
+      userEvent.click(profileActionButton);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+
+    it('should close action menu if clicked on other action (safari)', () => {
+      render(<SuiteHeader {...commonProps} />);
+      const profileActionButton = screen.getByRole('menuitem', { name: 'user' });
+      const helpActionButton = screen.getByRole('menuitem', { name: 'Help' });
+
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
+      userEvent.click(helpActionButton);
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'true');
+
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
+      userEvent.click(profileActionButton);
+      expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
+      expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
+    });
+    it.todo('should NOT close action menu if clicked inside dropdown');
   });
 });

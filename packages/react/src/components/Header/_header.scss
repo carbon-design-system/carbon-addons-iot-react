@@ -49,6 +49,10 @@ $hoverBgColor: #2c2c2c;
   &__menu-title[role='menuitem'][aria-expanded='true'] + &__menu {
     left: auto;
     right: 0;
+    [dir='rtl'] & {
+      left: 0;
+      right: auto;
+    }
   }
 
   &__menu {
@@ -242,5 +246,19 @@ button.#{$prefix}--header__menu-item {
     border-color: $inverse-focus-ui;
     color: $ui-02;
     outline: none;
+  }
+}
+
+.#{$prefix}--header__menu-title.#{$iot-prefix}--btn.#{$prefix}--btn--primary {
+  color: $ui-01;
+
+  &:focus {
+    border-color: $ui-01;
+    box-shadow: none;
+    border-width: 1px;
+  }
+
+  &:hover {
+    background-color: unset;
   }
 }

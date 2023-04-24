@@ -25,7 +25,7 @@ const commonProps = {
 const TIME_INTERVAL = 1000;
 
 describe('IdleLogoutConfirmationModal', () => {
-  const originHref = 'https://ibm.com';
+  const originHref = 'https://ibm.com/';
   const expectedWorkspaceBasedPageLogoutRoute = `${
     commonProps.routes.logout
   }?originHref=${encodeURIComponent(
@@ -50,7 +50,12 @@ describe('IdleLogoutConfirmationModal', () => {
     originalWindowLocation = { ...window.location };
     originalWindowDocumentCookie = window.document.cookie;
     delete window.location;
-    window.location = { href: 'https://ibm.com' };
+    window.location = {
+      href: 'https://ibm.com/',
+      protocol: 'https:',
+      host: 'ibm.com',
+      pathname: '/',
+    };
     window.open = jest.fn();
   });
 

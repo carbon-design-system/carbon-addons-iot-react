@@ -8,8 +8,18 @@ import dayjs from '../../utils/dayjs';
 
 const { iotPrefix } = settings;
 
+/** check if current time is 24 hours
+ *
+ * @param {string} dateTimeMask like YYYY-MM-DD HH:MM
+ * @returns true or false
+ */
+const is24hours = (dateTimeMask) => {
+  const [, time] = dateTimeMask.split(' ');
+  const hoursMask = time?.split(':')[0];
+  return hoursMask ? hoursMask.includes('H') : false;
+};
+
 /** convert time from 12 hours to 24 hours, if time12hour is 24 hours format, return immediately
- * *
  * @param {Object} object hh:mm A time oject
  * @returns HH:mm time object
  */
@@ -107,10 +117,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
 
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
-        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
-        const formatedStartTime = is12hour
-          ? format12hourTo24hour(value.startTime)
-          : value.startTime;
+        const formatedStartTime = is24hours(dateTimeMask)
+          ? value.startTime
+          : format12hourTo24hour(value.startTime);
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       } else if (hasTimeInput) {
@@ -135,8 +144,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
       } else if (value.end || value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
-          const is12hour = dayjs(value.endTime, 'hh:mm A', true).isValid();
-          const formatedEndTime = is12hour ? format12hourTo24hour(value.endTime) : value.endTime;
+          const formatedEndTime = is24hours(dateTimeMask)
+            ? value.endTime
+            : format12hourTo24hour(value.endTime);
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
         } else if (hasTimeInput) {
@@ -164,10 +174,9 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
       }
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
-        const is12hour = dayjs(value.startTime, 'hh:mm A', true).isValid();
-        const formatedStartTime = is12hour
-          ? format12hourTo24hour(value.startTime)
-          : value.startTime;
+        const formatedStartTime = is24hours(dateTimeMask)
+          ? value.startTime
+          : format12hourTo24hour(value.startTime);
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       } else if (hasTimeInput) {

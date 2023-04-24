@@ -1907,7 +1907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-188"
+                    aria-controls="accordion-item-194"
                     aria-expanded={true}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -1938,7 +1938,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-188"
+                    id="accordion-item-194"
                   >
                     <div
                       className="toggle-group"
@@ -1986,7 +1986,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-189"
+                    aria-controls="accordion-item-195"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2017,7 +2017,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-189"
+                    id="accordion-item-195"
                   >
                     More Map settings
                   </div>
@@ -2028,7 +2028,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   onClick={[Function]}
                 >
                   <button
-                    aria-controls="accordion-item-190"
+                    aria-controls="accordion-item-196"
                     aria-expanded={false}
                     className="bx--accordion__heading"
                     onClick={[Function]}
@@ -2059,7 +2059,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   </button>
                   <div
                     className="bx--accordion__content"
-                    id="accordion-item-190"
+                    id="accordion-item-196"
                   >
                     Even more settings
                   </div>
@@ -2169,72 +2169,83 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/D
                   data-testid="table-for-card-tableCard-table-toolbar-content"
                 >
                   <div
-                    aria-labelledby="table-for-card-tableCard-toolbar-search-search"
-                    className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
-                    role="search"
+                    className="iot--table-toolbar__search-wrapper"
                   >
                     <div
-                      className="bx--search-magnifier"
+                      aria-labelledby="table-for-card-tableCard-toolbar-search-search"
+                      className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+                      role="search"
                     >
-                      <svg
-                        aria-hidden={true}
-                        className="bx--search-magnifier-icon"
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 16 16"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
+                      <div
+                        className="bx--search-magnifier"
                       >
-                        <path
-                          d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
-                        />
-                      </svg>
+                        <svg
+                          aria-hidden={true}
+                          className="bx--search-magnifier-icon"
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 16 16"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                          />
+                        </svg>
+                      </div>
+                      <label
+                        className="bx--label"
+                        htmlFor="table-for-card-tableCard-toolbar-search"
+                        id="table-for-card-tableCard-toolbar-search-search"
+                      >
+                        Search
+                      </label>
+                      <input
+                        autoComplete="off"
+                        className="bx--search-input"
+                        data-testid="table-for-card-tableCard-table-toolbar-search"
+                        id="table-for-card-tableCard-toolbar-search"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
+                        onPointerEnter={[Function]}
+                        onPointerLeave={[Function]}
+                        placeholder="Search"
+                        role="searchbox"
+                        tabIndex="0"
+                        type="text"
+                        value=""
+                      />
+                      <button
+                        aria-label="Clear search input"
+                        className="bx--search-close bx--search-close--hidden"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <svg
+                          aria-hidden={true}
+                          fill="currentColor"
+                          focusable="false"
+                          height={16}
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 32 32"
+                          width={16}
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                          />
+                        </svg>
+                      </button>
                     </div>
-                    <label
-                      className="bx--label"
-                      htmlFor="table-for-card-tableCard-toolbar-search"
-                      id="table-for-card-tableCard-toolbar-search-search"
+                    <div
+                      className="iot--table-toolbar__search-tooltip iot--table-toolbar__search-tooltip--center iot--table-toolbar__search-tooltip--hide"
                     >
                       Search
-                    </label>
-                    <input
-                      autoComplete="off"
-                      className="bx--search-input"
-                      data-testid="table-for-card-tableCard-table-toolbar-search"
-                      id="table-for-card-tableCard-toolbar-search"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      onKeyDown={[Function]}
-                      placeholder="Search"
-                      role="searchbox"
-                      tabIndex="0"
-                      type="text"
-                      value=""
-                    />
-                    <button
-                      aria-label="Clear search input"
-                      className="bx--search-close bx--search-close--hidden"
-                      onClick={[Function]}
-                      type="button"
-                    >
-                      <svg
-                        aria-hidden={true}
-                        fill="currentColor"
-                        focusable="false"
-                        height={16}
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 32 32"
-                        width={16}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
-                        />
-                      </svg>
-                    </button>
+                    </div>
                   </div>
                   <button
                     aria-describedby={null}

@@ -7,6 +7,8 @@ import { HeaderMenuItem } from 'carbon-components-react/es/components/UIShell';
 
 import { ChildContentPropTypes } from '../HeaderPropTypes';
 import { handleSpecificKeyDown } from '../../../utils/componentUtilityFunctions';
+import Button from '../../Button/Button';
+import { isSafari } from '../../SuiteHeader/suiteHeaderUtils';
 
 const { prefix } = settings;
 
@@ -62,6 +64,8 @@ class HeaderActionMenu extends React.Component {
   constructor(props) {
     super(props);
     this.menuItemRefs = props.childContent.map(() => React.createRef(null));
+    this.menuRef = React.createRef(null);
+    this.handleOutsideMenuClick = this.handleOutsideMenuClick.bind(this);
   }
 
   componentDidMount() {
@@ -69,12 +73,33 @@ class HeaderActionMenu extends React.Component {
     if (isExpanded) {
       this.checkForOverflows();
     }
+
+    document.addEventListener('click', this.handleOutsideMenuClick, { capture: true });
   }
 
   componentDidUpdate(prevProps) {
     const { isExpanded } = this.props;
     if (isExpanded && !prevProps.isExpanded) {
       this.checkForOverflows();
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideMenuClick, { capture: true });
+  }
+
+  handleOutsideMenuClick(evt) {
+    if (!isSafari()) {
+      return;
+    }
+
+    const { isExpanded, onToggleExpansion } = this.props;
+    if (this.menuRef.current && this.menuRef.current.contains(evt.target)) {
+      return;
+    }
+
+    if (isExpanded) {
+      onToggleExpansion();
     }
   }
 
@@ -111,40 +136,37 @@ class HeaderActionMenu extends React.Component {
 
     const className = classnames(`${prefix}--header__submenu`, customClassName);
 
-    // Prevents the a element from navigating to it's href target
-    const handleDefaultClick = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      onToggleExpansion();
-    };
-
     // Notes on eslint comments and based on the examples in:
     // https://www.w3.org/TR/wai-aria-practices/examples/menubar/menubar-1/menubar-1.html#
     // - The focus is handled by the <a> menuitem, onMouseOver is for mouse
     // users
     // - aria-haspopup can definitely have the value "menu"
     // - aria-expanded is on their example node with role="menuitem"
-    // - href can be set to javascript:void(0), ideally this will be a button
 
     return (
       // TODO: CAN WE REMOVE THIS DIV WRAPPER AND ATTACH THE CLASS DIRECTLY
       <div className={className}>
-        <a // eslint-disable-line jsx-a11y/role-supports-aria-props,jsx-a11y/anchor-is-valid
-          aria-haspopup="menu" // eslint-disable-line jsx-a11y/aria-proptypes
+        <Button
+          hasIconOnly
+          iconDescription={ariaLabel}
+          tooltipPosition="bottom"
+          aria-haspopup="menu"
           aria-expanded={isExpanded}
           className={classnames(`${prefix}--header__menu-item`, `${prefix}--header__menu-title`)}
-          href="#"
-          onKeyDown={handleSpecificKeyDown(['Enter', 'Space', 'Escape'], handleDefaultClick)}
-          onClick={handleDefaultClick}
+          onClick={onToggleExpansion}
           ref={focusRef}
-          data-testid="menuitem"
-          tabIndex={0}
+          testId="menuitem"
           aria-label={ariaLabel}
           role="menuitem"
         >
           <MenuContent ariaLabel={ariaLabel} />
-        </a>
-        <ul {...accessibilityLabel} className={`${prefix}--header__menu`} role="menu">
+        </Button>
+        <ul
+          {...accessibilityLabel}
+          ref={this.menuRef}
+          className={`${prefix}--header__menu`}
+          role="menu"
+        >
           {childContent.map((childItem, index) => {
             const { isOverflowing } = this.state;
             const childIsOverflowing = isOverflowing[index];

@@ -178,6 +178,7 @@ const CardToolbar = ({
     extraActions && Object.keys(extraActions).length !== 0 ? (
       extraActions.children && extraActions.children.length ? (
         <OverflowMenu
+          menuOptionsClass={`${iotPrefix}--card--toolbar__overflow-menu`}
           flipped={overflowMenuPosition}
           title={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
           iconDescription={extraActions.iconDescription || mergedI18n.overflowMenuDescription}
@@ -191,6 +192,7 @@ const CardToolbar = ({
                 itemText={child.itemText}
                 disabled={child.disabled}
                 onClick={() => (child.callback ? child.callback(child) : null)}
+                requireTitle
               />
             ) : null
           )}

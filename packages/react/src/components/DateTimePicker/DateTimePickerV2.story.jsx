@@ -187,6 +187,7 @@ export const SingleSelect = () => {
         hasTimeInput={boolean('hasTimeInput', true)}
         onApply={action('onApply')}
         onCancel={action('onCancel')}
+        onClear={action('onClear')}
         datePickerType="single"
         showRelativeOption={boolean('show relative option', false)}
         invalid={boolean('invalid', false)}
@@ -200,6 +201,7 @@ export const SingleSelect = () => {
         })}
         style={{ zIndex: number('zIndex', 0) }}
         renderInPortal={boolean('renderInPortal', true)}
+        locale={text('locale', 'en')}
       />
       <div style={{ height: '10rem' }} />
     </div>

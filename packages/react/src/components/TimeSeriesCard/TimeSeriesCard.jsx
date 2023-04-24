@@ -170,6 +170,8 @@ const TimeSeriesCardPropTypes = {
     `The 'testID' prop has been deprecated. Please use 'testId' instead.`
   ),
   testId: PropTypes.string,
+  /** default date format pattern that follows the dayjs formatting patterns */
+  defaultDateFormatPattern: PropTypes.string,
 };
 
 const defaultProps = {
@@ -201,6 +203,7 @@ const defaultProps = {
   domainRange: null,
   tooltipDateFormatPattern: 'L HH:mm:ss',
   tooltipShowTotals: true,
+  defaultDateFormatPattern: 'L HH:mm',
 };
 
 const TimeSeriesCard = ({
@@ -225,6 +228,7 @@ const TimeSeriesCard = ({
   // TODO: remove deprecated 'testID' in v3
   testID,
   testId,
+  defaultDateFormatPattern,
   ...others
 }) => {
   // need to deep merge the nested content default props as default props only uses a shallow merge natively
@@ -368,13 +372,13 @@ const TimeSeriesCard = ({
         id: `dataindex-${index}`,
         values: {
           ...omit(value, timeDataSourceId), // skip the timestamp so we can format it locally
-          [timeDataSourceId]: dayjs(value[timeDataSourceId]).format('L HH:mm'),
+          [timeDataSourceId]: dayjs(value[timeDataSourceId]).format(defaultDateFormatPattern),
         },
         isSelectable: false,
       };
     });
     return { tableData: tableValues, columnNames: maxColumnNames };
-  }, [timeDataSourceId, valueSort]);
+  }, [defaultDateFormatPattern, timeDataSourceId, valueSort]);
 
   // In expanded mode we show the data underneath the linechart in a table so need to build the columns
   const tableColumns = useMemo(() => {
