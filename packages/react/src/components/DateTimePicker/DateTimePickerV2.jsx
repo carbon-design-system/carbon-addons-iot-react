@@ -34,6 +34,8 @@ const DateTimePicker = ({
   style,
   ...others
 }) => {
+  // make sure locale is 2 letters
+  const newLocale = locale?.length === 2 ? locale : locale.slice(0, 2);
   return useNewTimeSpinner ? (
     <DateTimePickerNew
       testId={testId}
@@ -54,7 +56,7 @@ const DateTimePicker = ({
       onClear={onClear}
       i18n={i18n}
       light={light}
-      locale={locale}
+      locale={newLocale}
       id={id}
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
@@ -83,7 +85,7 @@ const DateTimePicker = ({
       onApply={onApply}
       i18n={i18n}
       light={light}
-      locale={locale}
+      locale={newLocale}
       id={id}
       hasIconOnly={hasIconOnly}
       menuOffset={menuOffset}
