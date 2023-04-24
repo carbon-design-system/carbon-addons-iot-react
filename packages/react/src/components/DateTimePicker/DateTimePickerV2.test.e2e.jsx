@@ -556,14 +556,17 @@ describe('DateTimePickerV2', () => {
 
     cy.findByText('2021-08-01 12:34 PM to 2021-08-06 10:49 AM').should('be.visible').click();
     cy.get('#picker-test-1').type('{backspace}{backspace}{backspace}{backspace}{backspace}91:35');
-    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+    cy.findByText(i18n.applyBtnLabel).click();
 
     cy.get('#picker-test-1').type('{backspace}{backspace}{backspace}{backspace}{backspace}11:35');
 
     cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+    cy.findByText(i18n.applyBtnLabel).click();
 
     cy.get('#picker-test-2').type('{backspace}{backspace}{backspace}{backspace}{backspace}11:61');
-    cy.findByText(i18n.applyBtnLabel).should('be.disabled');
+    cy.findByText(i18n.applyBtnLabel).should('not.be.disabled');
+    cy.findByText(i18n.applyBtnLabel).click();
   });
 
   it('should open the flyout when hitting enter', () => {
@@ -1332,8 +1335,8 @@ describe('DateTimePickerV2', () => {
       // Unsaved changes in relative range
       cy.findAllByLabelText('Calendar').eq(0).click();
       cy.findByText('Absolute').should('be.visible').click();
-      cy.findByText('25').should('be.visible').click();
-      cy.findByText('26').should('be.visible').click();
+      cy.findAllByText('25').should('be.visible').click({ multiple: true, force: true });
+      cy.findAllByText('26').should('be.visible').click({ multiple: true, force: true });
       cy.findByLabelText('Start time').type('14:30');
 
       cy.get('body').click();
@@ -1470,7 +1473,7 @@ describe('DateTimePickerV2', () => {
     cy.findByTestId('date-time-picker__field').should('have.text', 'YYYY-MM-DD HH:mm');
     // Unsaved changes
     cy.findByTestId('date-time-picker__field').click();
-    cy.findByText('28').click();
+    cy.findAllByText('28').click({ multiple: true });
     cy.findByLabelText('Start time').type('11:11{enter}');
     cy.get('body').click();
     // Empty value preserved

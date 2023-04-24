@@ -506,7 +506,7 @@ describe('DateTimePicker', () => {
     const times = screen.getAllByTestId('time-picker-spinner');
     fireEvent.change(times[1], { target: { value: '03:00' } });
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
-    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
+    expect(screen.getAllByText(DateTimePicker.defaultProps.dateTimeMask)[0]).toBeInTheDocument();
 
     expect(
       screen.queryByTitle(new RegExp(`.*\\s${i18nDefault.toLabel}\\s.*`))

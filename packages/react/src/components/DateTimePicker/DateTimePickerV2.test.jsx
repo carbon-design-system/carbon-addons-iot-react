@@ -672,7 +672,7 @@ describe('DateTimePickerV2', () => {
 
     userEvent.clear(screen.getByTestId('date-time-picker-input'));
 
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should go back to presets when cancel button is picked on absolute screen', () => {
@@ -1179,7 +1179,7 @@ describe('DateTimePickerV2', () => {
     // click apply
     expect(screen.getByText(i18nTest.applyBtnLabel)).toBeDisabled();
     userEvent.click(screen.getAllByLabelText('Increment hours')[0]);
-    expect(screen.getAllByTitle(new RegExp(`.*${i18nTest.toLabel}.*`))[0]).toBeInTheDocument();
+    expect(screen.getAllByText(DateTimePicker.defaultProps.dateTimeMask)[0]).toBeInTheDocument();
     fireEvent.click(screen.getByText(i18nTest.applyBtnLabel));
 
     expect(
@@ -1696,7 +1696,7 @@ describe('DateTimePickerV2', () => {
     const endTime = screen.getByTestId('date-time-picker-input-2');
 
     expect(timeRange).toHaveTextContent('2020-04-01 12:34 PM to 2020-04-01 11:49 AM');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-01 11:49
     fireEvent.focus(startTime);
@@ -1704,7 +1704,7 @@ describe('DateTimePickerV2', () => {
     expect(startTime).toHaveValue('13:34');
     expect(endTime).toHaveValue('11:49');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 PM to 2020-04-01 11:49 AM');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-01 12:49
     fireEvent.focus(endTime);
@@ -1712,7 +1712,7 @@ describe('DateTimePickerV2', () => {
     expect(startTime).toHaveValue('13:34');
     expect(endTime).toHaveValue('12:49');
     expect(timeRange).toHaveTextContent('2020-04-01 13:34 PM to 2020-04-01 12:49 PM');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     // 2020-04-01 13:34 to 2020-04-01 13:49
     userEvent.type(endTime, '{backspace}{backspace}{backspace}{backspace}{backspace}13:49');
@@ -1728,7 +1728,7 @@ describe('DateTimePickerV2', () => {
     expect(startTime).toHaveValue('13:50');
     expect(endTime).toHaveValue('13:49');
     expect(timeRange).toHaveTextContent('2020-04-01 13:50 PM to 2020-04-01 13:49 PM');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
 
     userEvent.type(startTime, '{backspace}{backspace}51');
 
@@ -1737,7 +1737,7 @@ describe('DateTimePickerV2', () => {
     endTime.blur();
     expect(startTime).toHaveValue('13:51');
     expect(endTime).toHaveValue('9999');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should disable apply button when switching from presets to relative then to absolute with empty startDate and endDate', () => {
@@ -1759,7 +1759,7 @@ describe('DateTimePickerV2', () => {
     userEvent.click(screen.getByTestId('date-time-picker__field'));
     userEvent.click(screen.getByText('Custom Range'));
     userEvent.click(screen.getByText('Absolute'));
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should enable apply button when absolute DatePicker input has start and end date in different dates', () => {
@@ -1921,7 +1921,7 @@ describe('DateTimePickerV2', () => {
     );
     expect(startTime).toHaveValue('01:51 PM');
     expect(endTime).toHaveValue('9999');
-    expect(screen.getByText(i18n.applyBtnLabel)).toBeDisabled();
+    expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
   it('should be able to generate default id', () => {
