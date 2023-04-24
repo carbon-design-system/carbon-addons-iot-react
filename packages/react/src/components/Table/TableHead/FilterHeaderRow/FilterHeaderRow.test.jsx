@@ -1040,7 +1040,7 @@ describe('FilterHeaderRow', () => {
       <FilterHeaderRow
         {...commonFilterProps}
         ordering={[{ columnId: 'col1' }, { columnId: 'col2' }]}
-        columns={[{ id: 'col1', customInput: 'customInput' }, { id: 'col2' }]}
+        columns={[{ id: 'col1', customInput: <div>customInput</div> }, { id: 'col2' }]}
       />
     );
 

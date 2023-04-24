@@ -915,6 +915,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </button>
                           </th>
                           <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="null-table-head-column-customInput"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="customInput"
+                              data-floating-menu-container={true}
+                              id="column-customInput"
+                              onClick={[Function]}
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="Custom Input"
+                                >
+                                  Custom Input
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
                             className="iot--table-header-row-action-column"
                             data-testid="null-table-head-row-actions-column"
                             scope="col"
@@ -1293,7 +1356,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </div>
                           </th>
                           <th
-                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                             data-column="object"
                             scope="col"
                           >
@@ -1336,6 +1399,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   </div>
                                 </div>
                               </div>
+                            </div>
+                          </th>
+                          <th
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
+                            data-column="customInput"
+                            scope="col"
+                          >
+                            <div
+                              className="bx--table-header-label"
+                            >
+                              <div />
                             </div>
                           </th>
                           <th
@@ -1655,6 +1729,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 OewGc
                               </span>
                             </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="customInput"
+                            data-offset={0}
+                            id="cell-table-12-row-1-customInput"
+                            offset={0}
+                          >
+                            <span
+                              className="iot--table__cell__offset"
+                              style={
+                                Object {
+                                  "--row-nesting-offset": "0px",
+                                }
+                              }
+                            />
                           </td>
                           <td
                             className="iot--row-actions-cell--table-cell"
@@ -2056,6 +2147,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 46GYy
                               </span>
                             </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="customInput"
+                            data-offset={0}
+                            id="cell-table-12-row-4-customInput"
+                            offset={0}
+                          >
+                            <span
+                              className="iot--table__cell__offset"
+                              style={
+                                Object {
+                                  "--row-nesting-offset": "0px",
+                                }
+                              }
+                            />
                           </td>
                           <td
                             className="iot--row-actions-cell--table-cell"
@@ -3161,6 +3269,69 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </button>
                           </th>
                           <th
+                            aria-sort="none"
+                            className="table-header-label-start iot--table-head--table-header table-header-sortable"
+                            data-testid="null-table-head-column-customInput"
+                            scope="col"
+                            style={
+                              Object {
+                                "width": undefined,
+                              }
+                            }
+                          >
+                            <button
+                              align="start"
+                              className="table-header-label-start iot--table-head--table-header table-header-sortable bx--table-sort"
+                              data-column="customInput"
+                              data-floating-menu-container={true}
+                              id="column-customInput"
+                              onClick={[Function]}
+                            >
+                              <span
+                                className="bx--table-header-label"
+                              >
+                                <span
+                                  className=""
+                                  title="Custom Input"
+                                >
+                                  Custom Input
+                                </span>
+                              </span>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 16 16"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.7 6.7L7.5 2.9 7.5 15 8.5 15 8.5 2.9 12.3 6.7 13 6 8 1 3 6z"
+                                />
+                              </svg>
+                              <svg
+                                aria-label="Sort rows by this header in ascending order"
+                                className="bx--table-sort__icon-unsorted"
+                                fill="currentColor"
+                                focusable="false"
+                                height={16}
+                                preserveAspectRatio="xMidYMid meet"
+                                role="img"
+                                viewBox="0 0 32 32"
+                                width={16}
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M27.6 20.6L24 24.2 24 4 22 4 22 24.2 18.4 20.6 17 22 23 28 29 22zM9 4L3 10 4.4 11.4 8 7.8 8 28 10 28 10 7.8 13.6 11.4 15 10z"
+                                />
+                              </svg>
+                            </button>
+                          </th>
+                          <th
                             className="iot--table-header-row-action-column"
                             data-testid="null-table-head-row-actions-column"
                             scope="col"
@@ -3539,7 +3710,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                             </div>
                           </th>
                           <th
-                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width"
                             data-column="object"
                             scope="col"
                           >
@@ -3582,6 +3753,17 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                   </div>
                                 </div>
                               </div>
+                            </div>
+                          </th>
+                          <th
+                            className="iot--tableheader-filter iot--filter-header-row--header iot--filter-header-row--header-width iot--filter-header-row--last-column"
+                            data-column="customInput"
+                            scope="col"
+                          >
+                            <div
+                              className="bx--table-header-label"
+                            >
+                              <div />
                             </div>
                           </th>
                           <th
@@ -3901,6 +4083,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 OewGc
                               </span>
                             </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="customInput"
+                            data-offset={0}
+                            id="cell-table-13-row-1-customInput"
+                            offset={0}
+                          >
+                            <span
+                              className="iot--table__cell__offset"
+                              style={
+                                Object {
+                                  "--row-nesting-offset": "0px",
+                                }
+                              }
+                            />
                           </td>
                           <td
                             className="iot--row-actions-cell--table-cell"
@@ -4302,6 +4501,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/P
                                 46GYy
                               </span>
                             </span>
+                          </td>
+                          <td
+                            align="start"
+                            className="data-table-start"
+                            data-column="customInput"
+                            data-offset={0}
+                            id="cell-table-13-row-4-customInput"
+                            offset={0}
+                          >
+                            <span
+                              className="iot--table__cell__offset"
+                              style={
+                                Object {
+                                  "--row-nesting-offset": "0px",
+                                }
+                              }
+                            />
                           </td>
                           <td
                             className="iot--row-actions-cell--table-cell"

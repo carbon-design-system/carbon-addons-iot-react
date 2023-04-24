@@ -363,7 +363,7 @@ class FilterHeaderRow extends Component {
             column.isFilterable !== undefined && !column.isFilterable ? (
               <div />
             ) : column.customInput !== undefined ? (
-              <>{column.customInput}</>
+              column.customInput
             ) : column.options ? (
               column.isMultiselect ? (
                 <FilterableMultiSelect

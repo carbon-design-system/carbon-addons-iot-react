@@ -3831,6 +3831,31 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="customInput"
+                data-floating-menu-container={true}
+                data-testid="table-table-head-column-customInput"
+                id="column-customInput"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Custom Input"
+                  >
+                    Custom Input
+                  </span>
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody
@@ -4068,6 +4093,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     AAAAA
                   </span>
                 </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-0-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
               </td>
             </tr>
             <tr
@@ -4309,6 +4351,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-1-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -4549,6 +4608,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-2-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -4781,6 +4857,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     qcUSW
                   </span>
                 </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-3-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
               </td>
             </tr>
             <tr
@@ -5022,6 +5115,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-4-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -5262,6 +5372,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-5-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -5494,6 +5621,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     W4oks
                   </span>
                 </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-6-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
               </td>
             </tr>
             <tr
@@ -5735,6 +5879,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-7-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -5975,6 +6136,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                   </span>
                 </span>
               </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-8-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
             </tr>
             <tr
               className="iot--table__row iot--table__row--selectable"
@@ -6207,6 +6385,23 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
                     CW82E
                   </span>
                 </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="customInput"
+                data-offset={0}
+                id="cell-table-row-9-customInput"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
               </td>
             </tr>
           </tbody>

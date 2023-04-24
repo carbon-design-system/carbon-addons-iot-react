@@ -286,6 +286,11 @@ export const getTableColumns = () => [
       },
     },
   },
+  {
+    id: 'customInput',
+    name: 'Custom Input',
+    customInput: <div>customInput</div>,
+  },
 ];
 
 export const getTableToolbarActions = () => [
