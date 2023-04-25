@@ -1211,5 +1211,43 @@ describe('DateTimePicker', () => {
       expect(dropdownTrigger).toHaveTextContent('2021-08-01 13:30 to 2021-08-06 10:49');
       expect(onApply).toHaveBeenCalledTimes(1);
     });
+
+    it('should render with locale that is 2 letters', () => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          locale="en"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: '2021-08-01 12:34',
+              end: '2021-08-06 10:49',
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49')).toBeVisible();
+    });
+
+    it('should render with locale that is not 2 letters', () => {
+      render(
+        <DateTimePicker
+          {...dateTimePickerProps}
+          locale="en-us"
+          hasTimeInput
+          defaultValue={{
+            timeRangeKind: PICKER_KINDS.ABSOLUTE,
+            timeRangeValue: {
+              start: '2021-08-01 12:34',
+              end: '2021-08-06 10:49',
+            },
+          }}
+        />
+      );
+
+      expect(screen.getByText('2021-08-01 12:34 to 2021-08-06 10:49')).toBeVisible();
+    });
   });
 });

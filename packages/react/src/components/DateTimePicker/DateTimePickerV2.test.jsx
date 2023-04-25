@@ -2843,4 +2843,54 @@ describe('DateTimePickerV2', () => {
     );
     expect(screen.getByText(PRESET_VALUES[0].label)).toBeVisible();
   });
+
+  it('should render with locale that is 2 letters', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        locale="en"
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+  });
+
+  it('should render with locale that is not 2 letters', () => {
+    render(
+      <DateTimePicker
+        {...dateTimePickerProps}
+        locale="en-us"
+        useNewTimeSpinner
+        onApply={jest.fn()}
+        datePickerType="single"
+        dateTimeMask="YYYY-MM-DD hh:mm A"
+        hasTimeInput
+        showRelativeOption={false}
+        defaultValue={{
+          timeRangeKind: PICKER_KINDS.SINGLE,
+          timeSingleValue: {
+            startDate: '2020-04-01',
+            startTime: '12:34 AM',
+          },
+        }}
+      />
+    );
+
+    // default value is 2020-04-01 12:34 AM
+    expect(screen.getByText('2020-04-01 12:34 AM')).toBeVisible();
+  });
 });
