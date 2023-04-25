@@ -657,13 +657,14 @@ describe('DateTimePickerV2', () => {
     });
   });
 
-  it('should disable button when clear time picker input in single select', () => {
+  it('should not disable apply button when clear time picker input in single select', () => {
     const { i18n } = DateTimePicker.defaultProps;
     render(
       <DateTimePicker
         {...dateTimePickerProps}
         useNewTimeSpinner
         onApply={jest.fn()}
+        onClear={jest.fn()}
         datePickerType="single"
         dateTimeMask="YYYY-MM-DD hh:mm A"
         hasTimeInput
@@ -683,9 +684,11 @@ describe('DateTimePickerV2', () => {
 
     // first open the menu
     userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
+    userEvent.click(screen.getByText(i18n.resetBtnLabel));
+    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
 
-    userEvent.clear(screen.getByTestId('date-time-picker-input'));
-
+    // open the calendar again
+    userEvent.click(screen.getAllByLabelText('Calendar')[0]);
     expect(screen.getByText(i18n.applyBtnLabel)).toBeEnabled();
   });
 
