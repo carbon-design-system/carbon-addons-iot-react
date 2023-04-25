@@ -109,12 +109,6 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
       break;
     }
     case PICKER_KINDS.ABSOLUTE: {
-      if (!value.start && !value.startDate) {
-        readableValue = dateTimeMask;
-        returnValue.absolute.start = null;
-        break;
-      }
-
       let startDate = dayjs(value.start ?? value.startDate);
       if (value.startTime) {
         const formatedStartTime = is24hours(dateTimeMask)
@@ -122,10 +116,6 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
           : format12hourTo24hour(value.startTime);
         startDate = startDate.hours(formatedStartTime.split(':')[0]);
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
-      } else if (hasTimeInput) {
-        returnValue.absolute.startTime = null;
-        readableValue = dateTimeMask;
-        break;
       }
       if (!returnValue.absolute) {
         returnValue.absolute = {};
@@ -136,12 +126,7 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
       const startTimeValue = value.startTime
         ? `${dayjs(startDate).format(dateTimeMask)}`
         : `${dayjs(startDate).format(dateTimeMask)}`.split(' ')[0];
-
-      if (!value.end && !value.endDate) {
-        readableValue = dateTimeMask;
-        returnValue.absolute.end = null;
-        break;
-      } else if (value.end || value.endDate) {
+      if (value.end ?? value.endDate) {
         let endDate = dayjs(value.end ?? value.endDate);
         if (value.endTime) {
           const formatedEndTime = is24hours(dateTimeMask)
@@ -149,10 +134,6 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
             : format12hourTo24hour(value.endTime);
           endDate = endDate.hours(formatedEndTime.split(':')[0]);
           endDate = endDate.minutes(formatedEndTime.split(':')[1]);
-        } else if (hasTimeInput) {
-          returnValue.absolute.endTime = null;
-          readableValue = dateTimeMask;
-          break;
         }
 
         const endTimeValue = value.endTime

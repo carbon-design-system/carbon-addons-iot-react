@@ -419,7 +419,6 @@ const DateTimePicker = ({
   const [invalidRangeStartTime, setInvalidRangeStartTime] = useState(false);
   const [invalidRangeEndTime, setInvalidRangeEndTime] = useState(false);
   const [invalidRangeStartDate, setInvalidRangeStartDate] = useState(false);
-  const [invalidRangeEndDate, setInvalidRangeEndDate] = useState(false);
 
   const dateTimePickerBaseValue = {
     kind: '',
@@ -595,8 +594,6 @@ const DateTimePicker = ({
     }
 
     setAbsoluteValue(newAbsolute);
-    setInvalidRangeStartDate(!newAbsolute.startDate);
-    setInvalidRangeEndDate(!newAbsolute.endDate);
     setInvalidRangeStartTime(
       invalidStartDate(newAbsolute.startTime, newAbsolute.endTime, newAbsolute)
     );
@@ -731,12 +728,20 @@ const DateTimePicker = ({
     ? humanValue
     : dateTimeMask;
 
+  const disableAbsoluteApply =
+    isCustomRange &&
+    customRangeKind === PICKER_KINDS.ABSOLUTE &&
+    (invalidRangeStartTime ||
+      invalidRangeEndTime ||
+      (absoluteValue?.startDate === '' && absoluteValue?.endDate === '') ||
+      (hasTimeInput ? !rangeStartTimeValue || !rangeEndTimeValue : false));
+
   const disableRelativeApply =
     isCustomRange &&
     customRangeKind === PICKER_KINDS.RELATIVE &&
     (relativeLastNumberInvalid || relativeToTimeInvalid);
 
-  // const disableApply = disableRelativeApply
+  const disableApply = disableRelativeApply || disableAbsoluteApply;
 
   useEffect(() => setInvalidState(invalid), [invalid]);
 
@@ -761,23 +766,6 @@ const DateTimePicker = ({
           ISOStart: value.absolute.start?.toISOString(),
           ISOEnd: value.absolute.end?.toISOString(),
         };
-
-        isValid =
-          value.absolute.startDate &&
-          value.absolute.endDate &&
-          !invalidRangeStartDate &&
-          !invalidRangeEndDate &&
-          (hasTimeInput
-            ? !invalidRangeStartTime &&
-              !invalidRangeEndTime &&
-              value.absolute.startTime &&
-              value.absolute.endTime
-            : true);
-        setInvalidRangeStartDate(!value.absolute.startDate);
-        setInvalidRangeEndDate(!value.absolute.endDate);
-        setInvalidRangeStartTime(hasTimeInput ? !value.absolute.startTime : false);
-        setInvalidRangeEndTime(hasTimeInput ? !value.absolute.endTime : false);
-
         break;
       case PICKER_KINDS.SINGLE:
         isValid =
@@ -795,6 +783,7 @@ const DateTimePicker = ({
           tooltipValue,
           ISOStart: new Date(value.single.start).toISOString(),
         };
+        SetDefaultTimeValueUpdate(!defaultTimeValueUpdate);
         break;
 
       case PICKER_KINDS.RELATIVE:
@@ -811,7 +800,6 @@ const DateTimePicker = ({
         };
         break;
     }
-    SetDefaultTimeValueUpdate(!defaultTimeValueUpdate);
 
     if (onApply && isValid) {
       setIsExpanded(false);
@@ -924,7 +912,7 @@ const DateTimePicker = ({
           onKeyUp={handleSpecificKeyDown(['Enter', ' '], onApplyClick)}
           onMouseDown={(e) => e.preventDefault()}
           size="field"
-          disabled={customRangeKind === PICKER_KINDS.RELATIVE ? disableRelativeApply : false}
+          disabled={customRangeKind === PICKER_KINDS.SINGLE ? false : disableApply}
         >
           {mergedI18n.applyBtnLabel}
         </Button>
@@ -1047,13 +1035,7 @@ const DateTimePicker = ({
                     [`${iotPrefix}--date-time-picker__disabled`]:
                       disabled ||
                       (isSingleSelect &&
-                        (!singleDateValue.startDate ||
-                          (hasTimeInput ? !singleTimeValue : false))) ||
-                      (!isSingleSelect &&
-                        customRangeKind === PICKER_KINDS.ABSOLUTE &&
-                        (!absoluteValue.startDate ||
-                          !absoluteValue.endDate ||
-                          (hasTimeInput ? !rangeStartTimeValue || !rangeEndTimeValue : false))),
+                        (!singleDateValue.startDate || (hasTimeInput ? !singleTimeValue : false))),
                   })}
                   title={humanValue}
                 >
@@ -1129,7 +1111,7 @@ const DateTimePicker = ({
                 maxHeight:
                   maxHeight +
                   (invalidRangeStartTime || invalidRangeEndTime ? invalidTimeWarningHeight : 0) +
-                  (invalidRangeStartDate || invalidRangeEndDate ? invalidDateWarningHeight : 0) -
+                  (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
                   (!hasTimeInput ? timeInputHeight : 0),
               }}
               role="listbox"
@@ -1344,7 +1326,7 @@ const DateTimePicker = ({
                             />
                           ) : null}
                         </DatePicker>
-                        {invalidRangeStartDate || invalidRangeEndDate ? (
+                        {invalidRangeStartDate ? (
                           <div
                             className={classnames(
                               `${iotPrefix}--date-time-picker__datepicker--invalid`
