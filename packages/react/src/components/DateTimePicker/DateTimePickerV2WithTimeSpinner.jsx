@@ -364,7 +364,7 @@ const DateTimePicker = ({
   const [currentValue, setCurrentValue] = useState(null);
   const [lastAppliedValue, setLastAppliedValue] = useState(null);
   const [humanValue, setHumanValue] = useState(null);
-  const [defaultTimeValueUpdate, SetDefaultTimeValueUpdate] = useState(false);
+  const [defaultTimeValueUpdate, setDefaultTimeValueUpdate] = useState(false);
   const [invalidState, setInvalidState] = useState(invalid);
   const [datePickerElem, handleDatePickerRef] = useDateTimePickerRef({ id, v2: true });
   const [focusOnFirstField, setFocusOnFirstField] = useDateTimePickerFocus(datePickerElem);
@@ -783,7 +783,7 @@ const DateTimePicker = ({
           tooltipValue,
           ISOStart: new Date(value.single.start).toISOString(),
         };
-        SetDefaultTimeValueUpdate(!defaultTimeValueUpdate);
+        setDefaultTimeValueUpdate(!defaultTimeValueUpdate);
         break;
 
       case PICKER_KINDS.RELATIVE:
@@ -820,7 +820,8 @@ const DateTimePicker = ({
   const onClearClick = () => {
     setSingleDateValue({ start: null, startDate: null });
     setSingleTimeValue(null);
-    SetDefaultTimeValueUpdate(!defaultTimeValueUpdate);
+    setDefaultTimeValueUpdate(!defaultTimeValueUpdate);
+    setInvalidRangeStartDate(false);
     setIsExpanded(false);
     const returnValue = {
       timeRangeKind: PICKER_KINDS.SINGLE,
