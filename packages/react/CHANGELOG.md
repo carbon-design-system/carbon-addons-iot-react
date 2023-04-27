@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.15...v2.153.0-next.16) (2023-04-27)
+
+
+### Bug Fixes
+
+* **table:** scrollbar shows when drag and drop starts ([b150715](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b1507150a85bc32ef141220247b6e1dfbb62e843))
+
+
+
+
+
 # [2.153.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.14...v2.153.0-next.15) (2023-04-27)
 
 
