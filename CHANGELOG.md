@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.15](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.14...v2.153.0-next.15) (2023-04-27)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** fix typos ([4b95c0d](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/4b95c0d236772b2182ff7a61453341aabc03bad5))
+* **datetimepickerv2:** make sure changes only apply to single select ([33fb495](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/33fb495cf364ff3e4d76f01f040b168d9078dd4e))
+* **datetimepickerv2:** new error message ([46113cf](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/46113cfe9e07ff56e6c2c9ed620b57be050b92cc))
+* **datetimepickerv2:** update snashots ([1b9fd80](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b9fd80e2383b5fd80625d739a06e545db7ba3f3))
+* **datetimepickerv2:** update tests ([80da413](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/80da413c572ccc8c122aa31e4f3d59cb9984deb6))
+* **datetimepickerv2:** update tests ([5ff592f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/5ff592fc48178d1760171cbf8fcaca123cf866e0))
+
+
+
+
+
 # [2.153.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.13...v2.153.0-next.14) (2023-04-27)
 
 
