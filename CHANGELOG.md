@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.14](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.13...v2.153.0-next.14) (2023-04-27)
+
+
+### Features
+
+* **table:** add option to pin column ([2cf4197](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/2cf4197fb744ef4f38f2153e8144441ba798f6dc)), closes [#3636](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3636)
+
+
+
+
+
 # [2.153.0-next.13](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.12...v2.153.0-next.13) (2023-04-25)
 
 
