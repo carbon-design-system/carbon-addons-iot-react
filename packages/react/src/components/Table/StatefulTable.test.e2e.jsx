@@ -713,4 +713,103 @@ describe('StatefulTable', () => {
     cy.findByTestId('filter-button').focus();
     cy.findByText('Filters').should('be.visible');
   });
+
+  it('should pin first column with filtering and selection', () => {
+    const tableId = 'pin-column-table';
+    const firstColumn = tableData[0];
+    const firstColumnFilterId = tableColumns[0].id;
+    mount(
+      <div
+        style={{
+          width: '700px',
+        }}
+      >
+        <StatefulTable
+          id={tableId}
+          columns={tableColumns}
+          data={tableData}
+          options={{
+            hasFilter: true,
+            hasAdvancedFilter: false,
+            pinColumn: 'first',
+            hasRowSelection: 'multi',
+          }}
+          view={{
+            toolbar: {
+              activeBar: 'filter',
+            },
+          }}
+        />
+      </div>
+    );
+
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByText(firstColumn.values.string).should('be.visible');
+    cy.get(`#${firstColumnFilterId}`).should('be.visible');
+    cy.get(`.${prefix}--checkbox-wrapper`).eq(0).should('be.visible');
+
+    cy.findByText(firstColumn.values.date).should('not.be.visible');
+    cy.get(`.${prefix}--data-table-content`).scrollTo('left');
+    cy.findByText(firstColumn.values.date).should('be.visible');
+  });
+
+  it('should pin first column with row nesting', () => {
+    const tableId = 'pin-column-table';
+    const initialData = tableData.slice(0, 10).map((row, index) => {
+      return addChildRows(row, index);
+    });
+    const secondRow = initialData[1];
+    mount(
+      <div
+        style={{
+          width: '700px',
+        }}
+      >
+        <StatefulTable
+          id={tableId}
+          columns={tableColumns}
+          data={initialData}
+          options={{
+            pinColumn: 'first',
+            hasRowNesting: true,
+            shouldExpandOnRowClick: true,
+          }}
+          view={{}}
+        />
+      </div>
+    );
+
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByTestId(`expand-icon-button-${secondRow.id}`).should('be.visible').click();
+    cy.findByText(secondRow.children[0].values.string).should('be.visible');
+  });
+
+  it('should pin last column', () => {
+    const tableId = 'pin-column-table';
+    const firstColumn = tableData[0];
+    mount(
+      <div
+        style={{
+          width: '700px',
+        }}
+      >
+        <StatefulTable
+          id={tableId}
+          columns={tableColumns}
+          data={tableData.slice(0, 10)}
+          options={{
+            pinColumn: 'last',
+          }}
+          view={{}}
+        />
+      </div>
+    );
+
+    cy.findByText(firstColumn.values.string).should('be.visible');
+    cy.findByText(firstColumn.values.object.id).should('be.visible');
+
+    cy.get(`.${prefix}--data-table-content`).scrollTo('right');
+    cy.findByText(firstColumn.values.string).should('not.be.visible');
+    cy.findByText(firstColumn.values.object.id).should('be.visible');
+  });
 });

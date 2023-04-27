@@ -44,6 +44,7 @@ import TableUserViewManagementTOC from './TableUserViewManagementTOC.mdx';
   - [Data download](#data-download)
   - [Custom toolbar content](#custom-toolbar-content)
   - [Toolbar actions](#toolbar-actions)
+- [Pinned column](#pinned-column)
 - [Aggregations](#aggregations)
   - [Aggregations column settings](#aggregations-column-settings)
   - [Handling the onToggleAggregations event](#handling-the-ontoggleaggregations-event)
@@ -392,6 +393,10 @@ import Toolbar from './Toolbar.mdx';
 
 <Toolbar />
 
+import PinnedColumn from './PinnedColumn.mdx';
+
+<PinnedColumn />
+
 import Aggregations from './Aggregations.mdx';
 
 <Aggregations />
@@ -533,6 +538,7 @@ import TableViewDropdownContent from '../TableViewDropdown/TableViewDropdownCont
 | hasOnlyPageData             | bool                                                     |          | if true, the data prop will be assumed to only represent the currently visible page                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | hasSearch                   | bool                                                     |          | if true, simple search capability is enabled                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | hasFastSearch               | bool                                                     | true     | If false, the onApplySearch callback will only be triggered when hitting 'Enter' or if the 'Clear search input' 'x' is clicked.                                                                                                                                                                                                                                                                                                                                                                                   |
+| pinColumn                   | 'none', 'first', 'last' .                                | 'none'   | Can freeze the 'first' or 'last' column regardless of horizontal scroll position. Default is 'none'.                                                                                                                                                                                                                                                                                                                                                                                                              |
 | hasColumnSelection          | bool                                                     |          |
 | hasColumnSelectionConfig    | bool                                                     |          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | shouldLazyRender            | bool                                                     |          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |

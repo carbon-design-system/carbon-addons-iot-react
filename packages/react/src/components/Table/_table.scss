@@ -364,3 +364,92 @@ button.#{$prefix}--btn.#{$iot-prefix}--tooltip-svg-wrapper.#{$prefix}--btn--ghos
     font-weight: bold;
   }
 }
+
+.#{$iot-prefix}--pin-first-col {
+  @include pin-nth-column(1) {
+    z-index: 3;
+    left: 0;
+    [dir='rtl'] & {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  /*
+   * Table with row selection
+   */
+  &--select {
+    @include pin-nth-column(2) {
+      z-index: 1;
+      left: rem(52px);
+      [dir='rtl'] & {
+        left: unset;
+        right: rem(52px);
+      }
+    }
+    @include disable-nth-col-border(1);
+  }
+
+  /*
+   * Table with nested rows
+   */
+  &--expand {
+    @include pin-nth-column(2) {
+      z-index: 2;
+      left: rem(40px);
+      [dir='rtl'] & {
+        left: unset;
+        right: rem(40px);
+      }
+    }
+    @include disable-nth-col-border(1);
+
+    .#{$iot-prefix}--expandable-tablerow--expanded td:nth-of-type(1),
+    .#{$iot-prefix}--expandable-tablerow--indented td:nth-of-type(1) {
+      left: var(--row-nesting-offset); // Resetting for expanded rows
+    }
+  }
+
+  /*
+   * Table with nesting and selection
+   */
+  &--select#{&}--expand {
+    @include pin-nth-column(3) {
+      z-index: 1;
+      left: rem(92px);
+      [dir='rtl'] & {
+        left: unset;
+        right: rem(92px);
+      }
+    }
+    @include disable-nth-col-border(1);
+    @include disable-nth-col-border(2);
+  }
+}
+
+.#{$iot-prefix}--pin-last-col {
+  td:last-of-type,
+  th:last-of-type {
+    position: sticky;
+    z-index: 1;
+    right: 0;
+    filter: drop-shadow(-1px 0 0 $active-ui);
+
+    [dir='rtl'] & {
+      right: unset;
+      left: 0;
+      filter: drop-shadow(1px 0 0 $active-ui);
+    }
+  }
+
+  &.#{$iot-prefix}--table-head--with-column-groups
+    .#{$iot-prefix}--table-header__column-row
+    th:last-of-type {
+    position: sticky;
+  }
+
+  th.#{$iot-prefix}--filter-header-row--header.#{$iot-prefix}--tableheader-filter
+    .#{$iot-prefix}--filter-header-icon {
+    z-index: 2;
+  }
+}

@@ -28,6 +28,7 @@ import PaginationREADME from './mdx/Pagination.mdx';
 import ToolbarREADME from './mdx/Toolbar.mdx';
 import EditDataREADME from './mdx/EditData.mdx';
 import PinnedHeaderAndFooterREADME from './mdx/PinnedHeaderAndFooter.mdx';
+import PinnedColumnREADME from './mdx/PinnedColumn.mdx';
 import Table from './Table';
 import StatefulTable from './StatefulTable';
 import {
@@ -65,6 +66,7 @@ import {
 } from './Table.story.helpers';
 import MockApiClient from './AsyncTable/MockApiClient';
 import AsyncTable from './AsyncTable/AsyncTable';
+import { PIN_COLUMN } from './tableUtilities';
 
 // Dataset used to speed up stories using row edit
 const storyTableData = getTableData();
@@ -164,7 +166,7 @@ export const Playground = () => {
     hasEmptyFilterOption,
     hasMultiSelectFilter,
     hasFilterRowIcon,
-    hasDragAndDrop,
+    pinColumn,
     pinHeaderAndFooter,
   } = getTableKnobs({
     getDefaultValue: (name) =>
@@ -202,6 +204,8 @@ export const Playground = () => {
         ? true
         : name === 'secondaryTitle'
         ? 'Table playground'
+        : name === 'pinColumn'
+        ? false
         : // For this story enable the other knobs by defaults if we are in dev environment
           __DEV__,
     useGroups: true,
@@ -448,7 +452,7 @@ export const Playground = () => {
           hasSingleRowEdit,
           useRadioButtonSingleSelect,
           hasFilterRowIcon,
-          hasDragAndDrop,
+          pinColumn,
           pinHeaderAndFooter,
         }}
         view={{
@@ -1556,6 +1560,56 @@ WithToolbar.parameters = {
   component: Table,
   docs: {
     page: ToolbarREADME,
+  },
+};
+
+export const WithPinnedColumn = () => {
+  const {
+    selectedTableType,
+    hasRowSelection,
+    selectionCheckboxEnabled,
+    useRadioButtonSingleSelect,
+    pinColumn,
+  } = getTableKnobs({
+    knobsToCreate: [
+      'selectedTableType',
+      'hasRowSelection',
+      'selectionCheckboxEnabled',
+      'useRadioButtonSingleSelect',
+      'demoToolbarActions',
+      'pinColumn',
+    ],
+    getDefaultValue: (name) => (name === 'pinColumn' ? PIN_COLUMN.FIRST : true),
+  });
+
+  const isStateful = selectedTableType === 'StatefulTable';
+  const MyTable = isStateful ? StatefulTable : Table;
+
+  const data = getTableData()
+    .slice(0, 10)
+    .map((row) => (!selectionCheckboxEnabled ? { ...row, isSelectable: false } : row));
+  const columns = getTableColumns();
+
+  return (
+    <MyTable
+      actions={getTableActions()}
+      columns={columns}
+      data={data}
+      options={{
+        hasRowSelection,
+        useRadioButtonSingleSelect,
+        hasSearch: true,
+        pinColumn,
+      }}
+      view={{}}
+    />
+  );
+};
+WithPinnedColumn.storyName = 'With pinned column';
+WithPinnedColumn.parameters = {
+  component: Table,
+  docs: {
+    page: PinnedColumnREADME,
   },
 };
 

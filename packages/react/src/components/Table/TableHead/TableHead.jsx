@@ -22,6 +22,7 @@ import {
   TableSortPropType,
   TableColumnGroupPropType,
   TableOrderingPropType,
+  PinColumnPropTypes,
 } from '../TablePropTypes';
 import TableCellRenderer from '../TableCellRenderer/TableCellRenderer';
 import { tableTranslateWithId } from '../../../utils/componentUtilityFunctions';
@@ -31,6 +32,7 @@ import { OverflowMenu } from '../../OverflowMenu';
 import { OverflowMenuItem } from '../../OverflowMenuItem';
 import { usePrevious } from '../../../hooks/usePrevious';
 import deprecate from '../../../internal/deprecate';
+import { pinColumnClassNames } from '../tableUtilities';
 
 import ColumnHeaderRow from './ColumnHeaderRow/ColumnHeaderRow';
 import FilterHeaderRow from './FilterHeaderRow/FilterHeaderRow';
@@ -83,6 +85,8 @@ const propTypes = {
     hasDragAndDrop: PropTypes.bool,
     /** Freezes table header and footer */
     pinHeaderAndFooter: PropTypes.bool,
+    /** column to pin in the table */
+    pinColumn: PinColumnPropTypes,
   }),
   /** List of columns */
   columns: TableColumnsPropTypes.isRequired,
@@ -210,6 +214,7 @@ const TableHead = ({
     useRadioButtonSingleSelect,
     hasDragAndDrop,
     pinHeaderAndFooter,
+    pinColumn,
   },
   columns,
   columnGroups,
@@ -435,10 +440,13 @@ const TableHead = ({
 
   return (
     <CarbonTableHead
-      className={classnames({
-        lightweight,
-        [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
-      })}
+      className={classnames(
+        {
+          lightweight,
+          [`${iotPrefix}--table-head--with-column-groups`]: showColumnGroups,
+        },
+        pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+      )}
       onMouseMove={hasResize ? forwardMouseEvent : null}
       onMouseUp={hasResize ? forwardMouseEvent : null}
       // TODO: remove deprecated 'testID' in v3

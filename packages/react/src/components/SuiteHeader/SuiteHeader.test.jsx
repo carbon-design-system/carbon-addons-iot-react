@@ -1290,6 +1290,5 @@ describe('SuiteHeader', () => {
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
       expect(helpActionButton).toHaveAttribute('aria-expanded', 'false');
     });
-    it.todo('should NOT close action menu if clicked inside dropdown');
   });
 });

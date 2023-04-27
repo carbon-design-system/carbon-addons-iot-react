@@ -30,6 +30,7 @@ import {
   TableFiltersPropType,
   TableToolbarActionsPropType,
   TableRowsPropTypes,
+  PinColumnPropTypes,
 } from './TablePropTypes';
 import TableHead from './TableHead/TableHead';
 import TableToolbar from './TableToolbar/TableToolbar';
@@ -41,6 +42,7 @@ import TableFoot from './TableFoot/TableFoot';
 import TableMultiSortModal from './TableMultiSortModal/TableMultiSortModal';
 import { useShowExpanderColumn } from './expanderColumnHook';
 import ErrorTable from './ErrorTable/ErrorTable';
+import { PIN_COLUMN } from './tableUtilities';
 
 const { iotPrefix } = settings;
 
@@ -152,6 +154,8 @@ const propTypes = {
     preserveCellWhiteSpace: PropTypes.bool,
     /** display icon button in filter row */
     hasFilterRowIcon: PropTypes.bool,
+    /** column to pin in the table */
+    pinColumn: PinColumnPropTypes,
     /**
      * If rows can be dragged and dropped on top of each other. When this is true there will always
      * be space reserved for a drag handle at the start of the row. Each rows data must indicate if
@@ -441,6 +445,7 @@ export const defaultProps = (baseProps) => ({
     wrapCellText: 'always',
     preserveCellWhiteSpace: false,
     hasFilterRowIcon: false,
+    pinColumn: PIN_COLUMN.NONE,
     hasDragAndDrop: false,
     pinHeaderAndFooter: false,
   },
@@ -1088,6 +1093,7 @@ const Table = (props) => {
                   'hasMultiSort',
                   'preserveColumnWidths',
                   'hasFilterRowIcon',
+                  'pinColumn',
                   'hasDragAndDrop',
                   'pinHeaderAndFooter'
                 ),
@@ -1218,6 +1224,7 @@ const Table = (props) => {
                 testId={`${id || testId}-table-body`}
                 showExpanderColumn={showExpanderColumn}
                 size={size}
+                pinColumn={options.pinColumn}
               />
             ) : (
               <EmptyTable

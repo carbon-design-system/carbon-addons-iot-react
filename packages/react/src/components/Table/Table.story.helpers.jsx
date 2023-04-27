@@ -15,6 +15,8 @@ import EmptyState from '../EmptyState';
 import Dropdown from '../Dropdown/Dropdown';
 import { EMPTY_STRING_DISPLAY_VALUE } from '../../constants/Filters';
 
+import { PIN_COLUMN } from './tableUtilities';
+
 const STATUS = {
   RUNNING: 'RUNNING',
   NOT_RUNNING: 'NOT_RUNNING',
@@ -1346,6 +1348,14 @@ export const getTableKnobs = ({ knobsToCreate, getDefaultValue, useGroups = fals
       ? boolean(
           'Demo column overflow menu (columns[i].overflowMenuItems)',
           getDefaultValue('demoColumnOverflowMenuItems'),
+          COLUMN_GROUP
+        )
+      : null,
+    pinColumn: shouldCreate('pinColumn')
+      ? select(
+          'Column position to pin (options.pinColumn)',
+          Object.values(PIN_COLUMN),
+          getDefaultValue('pinColumn') ? PIN_COLUMN.FIRST : PIN_COLUMN.NONE,
           COLUMN_GROUP
         )
       : null,

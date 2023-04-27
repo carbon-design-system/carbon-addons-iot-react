@@ -3,7 +3,7 @@ import React from 'react';
 import { settings } from '../../constants/Settings';
 import icons from '../../utils/bundledIcons';
 
-const { prefix } = settings;
+const { iotPrefix, prefix } = settings;
 
 /**
  * Use this function to traverse the tree structure of a set of table rows using Depth-first search (DFS)
@@ -86,4 +86,51 @@ export const renderTableOverflowItemText = ({ action, className }) => {
   ) : (
     action.labelText
   );
+};
+
+/**
+ * Values for pinned column options
+ */
+export const PIN_COLUMN = {
+  NONE: 'none',
+  FIRST: 'first',
+  LAST: 'last',
+};
+
+/**
+ * Returns string of class names for pinned column
+ * @param {Object} object: an object containing:
+ *  pinColumn position of column to pin
+ *  hasRowSelection flag defining row selection option
+ *  hasRowExpansion flag defining row expansion option
+ *  hasRowNesting flag defining row nesting option
+ * @returns {String} class names for pinned column
+ */
+export const pinColumnClassNames = ({
+  pinColumn,
+  hasRowSelection,
+  hasRowExpansion,
+  hasRowNesting,
+}) => {
+  if (pinColumn === PIN_COLUMN.NONE) {
+    return null;
+  }
+
+  if (pinColumn === PIN_COLUMN.LAST) {
+    return `${iotPrefix}--pin-last-col`;
+  }
+
+  const pinClassNames = [];
+
+  pinClassNames.push(`${iotPrefix}--pin-first-col`);
+
+  if (hasRowExpansion || hasRowNesting) {
+    pinClassNames.push(`${iotPrefix}--pin-first-col--expand`);
+  }
+
+  if (hasRowSelection) {
+    pinClassNames.push(`${iotPrefix}--pin-first-col--select`);
+  }
+
+  return pinClassNames.join(' ');
 };

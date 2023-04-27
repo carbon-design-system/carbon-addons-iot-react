@@ -38374,6 +38374,3199 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/T
 </div>
 `;
 
+exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With pinned column 1`] = `
+<div
+  className="storybook-container"
+>
+  <div
+    className="iot--table-container bx--data-table-container"
+    data-testid="null-table-container"
+  >
+    <section
+      aria-label="data table toolbar"
+      className="bx--table-toolbar"
+      data-testid="null-table-toolbar"
+    >
+      <div
+        aria-hidden={true}
+        className="bx--batch-actions iot--table-batch-actions"
+        data-testid="null-table-toolbar-batch-actions"
+        onScroll={[Function]}
+      >
+        <div
+          className="bx--batch-summary"
+        >
+          <p
+            className="bx--batch-summary__para"
+          >
+            <span
+              dir="auto"
+            >
+              0 items selected
+            </span>
+          </p>
+        </div>
+        <div
+          className="bx--action-list"
+        >
+          <button
+            aria-describedby={null}
+            aria-pressed={null}
+            className="bx--batch-summary__cancel bx--btn bx--btn--primary"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            tabIndex={-1}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div
+        className="bx--toolbar-content iot--table-toolbar-content"
+        data-testid="null-table-toolbar-content"
+      >
+        <div
+          className="iot--table-toolbar__search-wrapper"
+        >
+          <div
+            aria-labelledby="table-34-toolbar-search-search"
+            className="bx--search bx--search--xl table-toolbar-search bx--toolbar-search-container-expandable"
+            role="search"
+          >
+            <div
+              className="bx--search-magnifier"
+            >
+              <svg
+                aria-hidden={true}
+                className="bx--search-magnifier-icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15,14.3L10.7,10c1.9-2.3,1.6-5.8-0.7-7.7S4.2,0.7,2.3,3S0.7,8.8,3,10.7c2,1.7,5,1.7,7,0l4.3,4.3L15,14.3z M2,6.5	C2,4,4,2,6.5,2S11,4,11,6.5S9,11,6.5,11S2,9,2,6.5z"
+                />
+              </svg>
+            </div>
+            <label
+              className="bx--label"
+              htmlFor="table-34-toolbar-search"
+              id="table-34-toolbar-search-search"
+            >
+              Search
+            </label>
+            <input
+              autoComplete="off"
+              className="bx--search-input"
+              data-testid="null-table-toolbar-search"
+              id="table-34-toolbar-search"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onPointerEnter={[Function]}
+              onPointerLeave={[Function]}
+              placeholder="Search"
+              role="searchbox"
+              tabIndex="0"
+              type="text"
+              value=""
+            />
+            <button
+              aria-label="Clear search input"
+              className="bx--search-close bx--search-close--hidden"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 32 32"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 9.4L22.6 8 16 14.6 9.4 8 8 9.4 14.6 16 8 22.6 9.4 24 16 17.4 22.6 24 24 22.6 17.4 16 24 9.4z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            className="iot--table-toolbar__search-tooltip iot--table-toolbar__search-tooltip--center iot--table-toolbar__search-tooltip--hide"
+          >
+            Search
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      className="addons-iot-table-container"
+    >
+      <div
+        className="bx--data-table-content"
+      >
+        <table
+          className="bx--data-table bx--data-table--no-border"
+          data-testid={null}
+          id={null}
+          title={null}
+        >
+          <thead
+            className="iot--pin-first-col iot--pin-first-col--select"
+            data-testid="null-table-head"
+            onMouseMove={null}
+            onMouseUp={null}
+          >
+            <tr>
+              <th
+                className="iot--table-header-checkbox"
+                data-testid="null-table-head-row-selection-column"
+                scope="col"
+                style={Object {}}
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="table-34-head"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="table-34-head"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select all items
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="string"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-string"
+                id="column-string"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="String"
+                  >
+                    String
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="date"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-date"
+                id="column-date"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Date"
+                  >
+                    Date
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="select"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-select"
+                id="column-select"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Select"
+                  >
+                    Select
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="secretField"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-secretField"
+                id="column-secretField"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Secret Information"
+                  >
+                    Secret Information
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="status"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-status"
+                id="column-status"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Status"
+                  >
+                    Status
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="number"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-number"
+                id="column-number"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Number"
+                  >
+                    Number
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="boolean"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-boolean"
+                id="column-boolean"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Boolean"
+                  >
+                    Boolean
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="node"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-node"
+                id="column-node"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="React Node"
+                  >
+                    React Node
+                  </span>
+                </span>
+              </th>
+              <th
+                align="start"
+                className="table-header-label-start iot--table-head--table-header"
+                data-column="object"
+                data-floating-menu-container={true}
+                data-testid="null-table-head-column-object"
+                id="column-object"
+                scope="col"
+                style={
+                  Object {
+                    "width": undefined,
+                  }
+                }
+              >
+                <span
+                  className="bx--table-header-label"
+                >
+                  <span
+                    className=""
+                    title="Object Id"
+                  >
+                    Object Id
+                  </span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            aria-live="polite"
+            className="iot--pin-first-col iot--pin-first-col--select"
+            data-testid="null-table-body"
+          >
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-0"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-0"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-0-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="toyota toyota toyota 0"
+                  >
+                    toyota toyota toyota 0
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-0-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-03-03"
+                  >
+                    1973-03-03
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-0-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-0-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="AAAAAAAAAA"
+                  >
+                    AAAAAAAAAA
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-0-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-0-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-0-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-0-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-0-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="AAAAA"
+                  >
+                    AAAAA
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-1"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-1"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-1-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="helping whiteboard as 1"
+                  >
+                    helping whiteboard as 1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-1-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-03-14"
+                  >
+                    1973-03-14
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-1-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-1-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="OewGc0QsMs"
+                  >
+                    OewGc0QsMs
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-1-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-1-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={1}
+                  >
+                    1
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-1-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-1-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-1-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="OewGc"
+                  >
+                    OewGc
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-2"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-2"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-2-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="whiteboard can eat 2"
+                  >
+                    whiteboard can eat 2
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-2-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-04-18"
+                  >
+                    1973-04-18
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-2-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-C"
+                  >
+                    option-C
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-2-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="c8iM4qgaYa"
+                  >
+                    c8iM4qgaYa
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-2-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="red"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-2-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={4}
+                  >
+                    4
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-2-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-2-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-2-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="c8iM4"
+                  >
+                    c8iM4
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-3"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-3"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-3-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="as eat scott 3"
+                  >
+                    as eat scott 3
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-3-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-06-15"
+                  >
+                    1973-06-15
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-3-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-3-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="qcUSWgwIkI"
+                  >
+                    qcUSWgwIkI
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-3-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-3-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-3-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-3-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-3-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="qcUSW"
+                  >
+                    qcUSW
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-4"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-4"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-4-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="can pinocchio whiteboard 4"
+                  >
+                    can pinocchio whiteboard 4
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-4-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-09-04"
+                  >
+                    1973-09-04
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-4-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-4-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="46GYyWC0w0"
+                  >
+                    46GYyWC0w0
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-4-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-4-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={16}
+                  >
+                    16
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-4-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-4-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-4-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="46GYy"
+                  >
+                    46GYy
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-5"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-5"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-5-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="bottle toyota bottle 5"
+                  >
+                    bottle toyota bottle 5
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-5-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1973-12-17"
+                  >
+                    1973-12-17
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-5-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-C"
+                  >
+                    option-C
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-5-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="Ia2eQMSi8i"
+                  >
+                    Ia2eQMSi8i
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-5-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="red"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-5-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={25}
+                  >
+                    25
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-5-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-5-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-5-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="Ia2eQ"
+                  >
+                    Ia2eQ
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-6"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-6"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-6-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="eat whiteboard pinocchio 6"
+                  >
+                    eat whiteboard pinocchio 6
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-6-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1974-04-24"
+                  >
+                    1974-04-24
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-6-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-6-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="W4oksCiQKQ"
+                  >
+                    W4oksCiQKQ
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-6-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-6-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-6-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-6-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-6-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="W4oks"
+                  >
+                    W4oks
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-7"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-7"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-7-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="chocolate can helping 7"
+                  >
+                    chocolate can helping 7
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-7-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1974-09-21"
+                  >
+                    1974-09-21
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-7-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-B"
+                  >
+                    option-B
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-7-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="kYaqK2y8W8"
+                  >
+                    kYaqK2y8W8
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-7-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="gray"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-7-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={49}
+                  >
+                    49
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-7-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-7-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-7-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="kYaqK"
+                  >
+                    kYaqK
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-8"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-8"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-8-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="pinocchio eat can 8"
+                  >
+                    pinocchio eat can 8
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-8-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1975-03-14"
+                  >
+                    1975-03-14
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-8-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-C"
+                  >
+                    option-C
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-8-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="y2MwmsEqiq"
+                  >
+                    y2MwmsEqiq
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-8-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="red"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-8-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title={64}
+                  >
+                    64
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-8-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="true"
+                  >
+                    true
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-8-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-8-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="y2Mwm"
+                  >
+                    y2Mwm
+                  </span>
+                </span>
+              </td>
+            </tr>
+            <tr
+              className="iot--table__row iot--table__row--selectable"
+              onClick={[Function]}
+            >
+              <td
+                className="bx--checkbox-table-cell"
+                onChange={[Function]}
+                onClick={[Function]}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <div
+                    className="bx--form-item bx--checkbox-wrapper"
+                  >
+                    <input
+                      checked={false}
+                      className="bx--checkbox"
+                      disabled={false}
+                      id="select-row-table-34-row-9"
+                      onChange={[Function]}
+                      type="checkbox"
+                    />
+                    <label
+                      className="bx--checkbox-label"
+                      htmlFor="select-row-table-34-row-9"
+                      title={null}
+                    >
+                      <span
+                        className="bx--checkbox-label-text bx--visually-hidden"
+                        dir="auto"
+                      >
+                        Select row
+                      </span>
+                    </label>
+                  </div>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="string"
+                data-offset={0}
+                id="cell-table-34-row-9-string"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="scott pinocchio chocolate 9"
+                  >
+                    scott pinocchio chocolate 9
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="date"
+                data-offset={0}
+                id="cell-table-34-row-9-date"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="1975-09-26"
+                  >
+                    1975-09-26
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="select"
+                data-offset={0}
+                id="cell-table-34-row-9-select"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="option-A"
+                  >
+                    option-A
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="secretField"
+                data-offset={0}
+                id="cell-table-34-row-9-secretField"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="CW82EiUYuY"
+                  >
+                    CW82EiUYuY
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="status"
+                data-offset={0}
+                id="cell-table-34-row-9-status"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                  >
+                    <svg
+                      height="10"
+                      width="10"
+                    >
+                      <circle
+                        cx="5"
+                        cy="5"
+                        fill="green"
+                        r="3"
+                        stroke="none"
+                        strokeWidth="1"
+                      />
+                    </svg>
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="number"
+                data-offset={0}
+                id="cell-table-34-row-9-number"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                />
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="boolean"
+                data-offset={0}
+                id="cell-table-34-row-9-boolean"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="false"
+                  >
+                    false
+                  </span>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="node"
+                data-offset={0}
+                id="cell-table-34-row-9-node"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <svg
+                    aria-hidden={true}
+                    fill="currentColor"
+                    focusable="false"
+                    height={20}
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 32 32"
+                    width={20}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17 15L17 8 15 8 15 15 8 15 8 17 15 17 15 24 17 24 17 17 24 17 24 15z"
+                    />
+                  </svg>
+                </span>
+              </td>
+              <td
+                align="start"
+                className="data-table-start"
+                data-column="object"
+                data-offset={0}
+                id="cell-table-34-row-9-object"
+                offset={0}
+              >
+                <span
+                  className="iot--table__cell__offset"
+                  style={
+                    Object {
+                      "--row-nesting-offset": "0px",
+                    }
+                  }
+                >
+                  <span
+                    className=""
+                    title="CW82E"
+                  >
+                    CW82E
+                  </span>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/Table With pinned header and footer 1`] = `
 <div
   className="storybook-container"

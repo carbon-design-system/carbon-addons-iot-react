@@ -1,16 +1,18 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { TableBody as CarbonTableBody } from 'carbon-components-react';
+import classnames from 'classnames';
 
 import {
   ExpandedRowsPropTypes,
   TableRowsPropTypes,
   TableColumnsPropTypes,
   RowActionsStatePropTypes,
+  PinColumnPropTypes,
 } from '../TablePropTypes';
 import deprecate from '../../../internal/deprecate';
 import { WrapCellTextPropTypes } from '../../../constants/SharedPropTypes';
-import { findRow, tableTraverser } from '../tableUtilities';
+import { findRow, tableTraverser, pinColumnClassNames, PIN_COLUMN } from '../tableUtilities';
 
 import TableBodyRowRenderer from './TableBodyRowRenderer';
 import { useTableDnd } from './useTableDnd';
@@ -108,6 +110,8 @@ const propTypes = {
   hideDragHandles: PropTypes.bool,
   /** Optional base z-index for the drag image. See details on Table component. */
   zIndex: PropTypes.number,
+  /** column to pin in the table */
+  pinColumn: PinColumnPropTypes,
 };
 
 const defaultProps = {
@@ -146,6 +150,7 @@ const defaultProps = {
   hasDragAndDrop: false,
   hideDragHandles: false,
   zIndex: 0,
+  pinColumn: PIN_COLUMN.NONE,
 };
 
 const TableBody = ({
@@ -191,6 +196,7 @@ const TableBody = ({
   hasDragAndDrop,
   hideDragHandles,
   zIndex,
+  pinColumn,
 }) => {
   // Need to merge the ordering and the columns since the columns have the renderer function
   const orderingMap = useMemo(
@@ -284,9 +290,16 @@ const TableBody = ({
     handleLeaveRow,
   } = useTableDnd(rows, selectedIds, zIndex, actions.onDrag, actions.onDrop);
 
+  const tableBodyClassNames = classnames(
+    pinColumnClassNames({ pinColumn, hasRowSelection, hasRowExpansion, hasRowNesting })
+  );
+
   return (
     <>
-      <CarbonTableBody data-testid={testID || testId}>
+      <CarbonTableBody
+        data-testid={testID || testId}
+        {...{ className: tableBodyClassNames || undefined }}
+      >
         {rows.map((row) => (
           <TableBodyRowRenderer
             key={row.id}

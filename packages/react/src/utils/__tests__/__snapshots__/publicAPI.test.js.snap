@@ -747,6 +747,7 @@ Map {
         "hasSearch": false,
         "hasSingleRowEdit": false,
         "hasUserViewManagement": false,
+        "pinColumn": "none",
         "pinHeaderAndFooter": false,
         "preserveCellWhiteSpace": false,
         "preserveColumnWidths": false,
@@ -1645,6 +1646,16 @@ Map {
             },
             "hasUserViewManagement": Object {
               "type": "bool",
+            },
+            "pinColumn": Object {
+              "args": Array [
+                Array [
+                  "none",
+                  "first",
+                  "last",
+                ],
+              ],
+              "type": "oneOf",
             },
             "pinHeaderAndFooter": Object {
               "type": "bool",
@@ -2972,6 +2983,16 @@ Map {
             "hasSingleRowEdit": Object {
               "type": "bool",
             },
+            "pinColumn": Object {
+              "args": Array [
+                Array [
+                  "none",
+                  "first",
+                  "last",
+                ],
+              ],
+              "type": "oneOf",
+            },
             "pinHeaderAndFooter": Object {
               "type": "bool",
             },
@@ -3196,6 +3217,7 @@ Map {
       "loadingMoreIds": Array [],
       "locale": null,
       "overflowMenuAria": "More actions",
+      "pinColumn": "none",
       "preserveCellWhiteSpace": false,
       "rowActionsState": Array [],
       "rowEditMode": false,
@@ -3516,6 +3538,16 @@ Map {
       },
       "overflowMenuAria": Object {
         "type": "string",
+      },
+      "pinColumn": Object {
+        "args": Array [
+          Array [
+            "none",
+            "first",
+            "last",
+          ],
+        ],
+        "type": "oneOf",
       },
       "preserveCellWhiteSpace": Object {
         "type": "bool",
