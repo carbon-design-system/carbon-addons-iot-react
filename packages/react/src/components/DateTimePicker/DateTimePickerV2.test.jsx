@@ -607,8 +607,8 @@ describe('DateTimePickerV2', () => {
         }}
       />
     );
-    // default value is YYYY-MM-DD hh:mm A
-    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    // default value is YYYY-MM-DD hh:mm XM
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
   });
 
   it('should clear date and time fields when click clear button in single select', () => {
@@ -641,7 +641,7 @@ describe('DateTimePickerV2', () => {
 
     userEvent.click(screen.getByText(/clear/i));
 
-    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(mockOnClear).toHaveBeenCalledWith({
       timeRangeKind: 'SINGLE',
@@ -685,7 +685,7 @@ describe('DateTimePickerV2', () => {
     // first open the menu
     userEvent.click(screen.getAllByText(/2020-04-01 12:34 AM/i)[0]);
     userEvent.click(screen.getByText(i18n.resetBtnLabel));
-    expect(screen.getByText('YYYY-MM-DD hh:mm A')).toBeVisible();
+    expect(screen.getByText('YYYY-MM-DD hh:mm XM')).toBeVisible();
 
     // open the calendar again
     userEvent.click(screen.getAllByLabelText('Calendar')[0]);
