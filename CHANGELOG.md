@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.16...v2.153.0-next.17) (2023-05-04)
+
+
+### Bug Fixes
+
+* **datetimepickerv2:** update placeholder text ([#3778](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3778)) ([48bfe9f](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/48bfe9fb7462d97dc520e02add5b3f02ebda37a6))
+
+
+
+
+
 # [2.153.0-next.16](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.15...v2.153.0-next.16) (2023-04-27)
 
 
