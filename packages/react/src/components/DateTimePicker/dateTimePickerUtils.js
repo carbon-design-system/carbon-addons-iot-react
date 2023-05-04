@@ -148,8 +148,10 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
       break;
     }
     case PICKER_KINDS.SINGLE: {
+      // replace 'a' or 'A' in dateTimeMask to be consistent with time picker placeholder text
+      const updatedDateTimeMask = dateTimeMask.replace(/a|A/, 'XM');
       if (!value.start && !value.startDate) {
-        readableValue = dateTimeMask;
+        readableValue = updatedDateTimeMask;
         returnValue.single.start = null;
         break;
       }
@@ -162,7 +164,7 @@ export const parseValue = (timeRange, dateTimeMask, toLabel, hasTimeInput) => {
         startDate = startDate.minutes(formatedStartTime.split(':')[1]);
       } else if (hasTimeInput) {
         returnValue.absolute.startTime = null;
-        readableValue = dateTimeMask;
+        readableValue = updatedDateTimeMask;
         break;
       }
       returnValue.single.start = new Date(startDate.valueOf());
