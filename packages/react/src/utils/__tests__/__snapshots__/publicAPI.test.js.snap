@@ -659,7 +659,7 @@ Map {
       "i18n": Object {
         "actionFailedText": "Action failed",
         "batchActionsOverflowMenuText": "",
-        "batchCancel": "Cancel",
+        "batchCancel": "Clear selections",
         "buttonLabelOnTableError": "Refresh the page",
         "clearAllFilters": "Clear all filters",
         "clearFilterAria": "Clear filter",
