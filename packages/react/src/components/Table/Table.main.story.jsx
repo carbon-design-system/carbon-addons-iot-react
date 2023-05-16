@@ -528,10 +528,12 @@ export function WithDragAndDrop() {
     {
       id: 'name',
       name: 'Name (w/ count)',
+      filter: { placeholderText: 'enter a string' },
     },
     {
       id: 'date',
       name: 'Date',
+      filter: { placeholderText: 'enter a string' },
     },
   ];
 
@@ -580,7 +582,13 @@ export function WithDragAndDrop() {
         secondaryTitle="Table"
         columns={columns}
         data={data}
-        options={{ hasDragAndDrop: true, hasResize: true, hasRowSelection: 'multi' }}
+        options={{
+          hasDragAndDrop: true,
+          hasResize: true,
+          hasRowSelection: 'multi',
+          hasFilter: true,
+          hasColumnSelection: true,
+        }}
         actions={{
           table: {
             onDrag: (rows) => {

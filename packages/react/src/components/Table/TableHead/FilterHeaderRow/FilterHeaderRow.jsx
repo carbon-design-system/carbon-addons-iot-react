@@ -132,6 +132,9 @@ class FilterHeaderRow extends Component {
     onFilterRowIconClick: PropTypes.func.isRequired,
     /** Freezes table header and footer */
     pinHeaderAndFooter: PropTypes.bool,
+    /** Set to true if the table support drag and drop. Inserts a cell in the "drag handle" column
+     * for spacing. */
+    hasDragAndDrop: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -154,6 +157,7 @@ class FilterHeaderRow extends Component {
     filterRowIcon: null,
     filterRowIconDescription: 'Edit filters',
     pinHeaderAndFooter: false,
+    hasDragAndDrop: true,
   };
 
   state = {
@@ -337,6 +341,7 @@ class FilterHeaderRow extends Component {
       filterRowIcon,
       filterRowIconDescription,
       onFilterRowIconClick,
+      hasDragAndDrop,
     } = this.props;
     const { dropdownMaxHeight, filterValues, filterIconTopOffset } = this.state;
     const visibleColumns = ordering.filter((c) => !c.isHidden);
@@ -347,6 +352,7 @@ class FilterHeaderRow extends Component {
           '--filter-header-dropdown-max-height': dropdownMaxHeight,
         }}
       >
+        {hasDragAndDrop && <TableHeader className={`${iotPrefix}--filter-header-row--header`} />}
         {hasRowSelection === 'multi' ||
         (hasRowSelection === 'single' && useRadioButtonSingleSelect) ? (
           <TableHeader className={`${iotPrefix}--filter-header-row--header`} ref={this.rowRef} />
