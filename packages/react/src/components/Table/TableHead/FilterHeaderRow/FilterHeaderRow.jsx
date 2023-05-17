@@ -157,7 +157,7 @@ class FilterHeaderRow extends Component {
     filterRowIcon: null,
     filterRowIconDescription: 'Edit filters',
     pinHeaderAndFooter: false,
-    hasDragAndDrop: true,
+    hasDragAndDrop: false,
   };
 
   state = {
