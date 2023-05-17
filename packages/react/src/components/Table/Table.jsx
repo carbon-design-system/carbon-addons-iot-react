@@ -558,7 +558,7 @@ export const defaultProps = (baseProps) => ({
     openMenuAria: 'Open menu',
     closeMenuAria: 'Close menu',
     clearSelectionAria: 'Clear selection',
-    batchCancel: 'Cancel',
+    batchCancel: 'Clear selections',
     itemsSelected: (selectedCount) => `${selectedCount} items selected`,
     itemSelected: (selectedCount) => `${selectedCount} item selected`,
     rowCountInHeader: (totalRowCount) => `Results: ${totalRowCount}`,

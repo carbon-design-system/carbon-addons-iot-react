@@ -1605,7 +1605,7 @@ export const getI18nKnobs = (useGroup = true) => {
     openMenuAria: text('i18n.openMenuAria', 'Open menu', I18N_GROUP),
     closeMenuAria: text('i18n.closeMenuAria', 'Close menu', I18N_GROUP),
     clearSelectionAria: text('i18n.clearSelectionAria', 'Clear selection', I18N_GROUP),
-    batchCancel: text('i18n.batchCancel', 'Cancel', I18N_GROUP),
+    batchCancel: text('i18n.batchCancel', 'Clear selections', I18N_GROUP),
     applyButtonText: text('i18n.applyButtonText', 'Apply filters', I18N_GROUP),
     cancelButtonText: text('i18n.cancelButtonText', 'Cancel', I18N_GROUP),
     advancedFilterLabelText: text(

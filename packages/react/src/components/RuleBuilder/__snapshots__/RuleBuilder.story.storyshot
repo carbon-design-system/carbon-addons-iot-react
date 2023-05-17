@@ -891,7 +891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             tabIndex={-1}
                             type="button"
                           >
-                            Cancel
+                            Clear selections
                           </button>
                         </div>
                       </div>
@@ -1420,7 +1420,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             tabIndex={-1}
                             type="button"
                           >
-                            Cancel
+                            Clear selections
                           </button>
                         </div>
                       </div>
@@ -6561,7 +6561,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             tabIndex={-1}
                             type="button"
                           >
-                            Cancel
+                            Clear selections
                           </button>
                         </div>
                       </div>
@@ -6864,7 +6864,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 2 - Watson IoT E
                             tabIndex={-1}
                             type="button"
                           >
-                            Cancel
+                            Clear selections
                           </button>
                         </div>
                       </div>
