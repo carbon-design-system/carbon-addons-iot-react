@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.17...v2.153.0-next.18) (2023-05-17)
+
+
+### Features
+
+* **table:** update batch cancel button label ([#3780](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3780)) ([b68c672](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/b68c6722fbbf763f724fbd3deb6b6893f1a143e6)), closes [#3737](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3737)
+
+
+
+
+
 # [2.153.0-next.17](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.16...v2.153.0-next.17) (2023-05-04)
 
 
