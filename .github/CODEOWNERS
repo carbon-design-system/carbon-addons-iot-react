@@ -44,3 +44,6 @@
 
 # Angular team should be required for Angular changes
 /packages/angular/ @carbon-design-system/angular-maintainers
+
+# Monitor still has use for this component
+/packages/react/src/components/DashboardEditor/ @davidicus @jessieyan @sls-ca @herleraja
