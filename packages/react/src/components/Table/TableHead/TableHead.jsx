@@ -709,6 +709,7 @@ const TableHead = ({
           filterRowIconDescription={filterRowIconDescription}
           onFilterRowIconClick={onFilterRowIconClick}
           pinHeaderAndFooter={pinHeaderAndFooter}
+          hasDragAndDrop={hasDragAndDrop}
         />
       )}
       {activeBar === 'column' && (
@@ -728,6 +729,7 @@ const TableHead = ({
           columnSelectionConfigText={i18n.columnSelectionConfig}
           isDisabled={isDisabled}
           showExpanderColumn={showExpanderColumn}
+          hasDragAndDrop={hasDragAndDrop}
         />
       )}
     </CarbonTableHead>
