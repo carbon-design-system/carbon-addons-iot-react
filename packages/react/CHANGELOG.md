@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.19](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.18...v2.153.0-next.19) (2023-05-18)
+
+
+### Bug Fixes
+
+* **table:** add column for DnD in the filter/manage columns headers ([#3782](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3782)) ([a46f2a4](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a46f2a419172c56fd60302b7372cdea91f3c0414))
+
+
+
+
+
 # [2.153.0-next.18](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.17...v2.153.0-next.18) (2023-05-17)
 
 
