@@ -272,7 +272,7 @@ const PageTitleBar = ({
   const titleActions = useMemo(
     () => (
       <>
-        {description && (collapsed || titleBarContent) ? (
+        {description && collapsed ? (
           <Tooltip
             tabIndex={0}
             triggerText=""
@@ -303,16 +303,7 @@ const PageTitleBar = ({
         ) : null}
       </>
     ),
-    [
-      description,
-      collapsed,
-      titleBarContent,
-      tooltipIconDescription,
-      editable,
-      editIconDescription,
-      onEdit,
-      testId,
-    ]
+    [description, collapsed, tooltipIconDescription, editable, editIconDescription, onEdit, testId]
   );
 
   const headerOffsetCssVar =
@@ -393,7 +384,7 @@ const PageTitleBar = ({
                 {titleActions}
               </div>
             </div>
-            {description && !collapsed && !titleBarContent ? (
+            {description && !collapsed ? (
               <p className="page-title-bar-description">{description}</p>
             ) : null}
             <div className="page-title-bar-header-right">{extraContent || rightContent}</div>
