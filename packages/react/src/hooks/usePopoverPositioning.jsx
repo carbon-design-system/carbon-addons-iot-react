@@ -320,6 +320,9 @@ export const usePopoverPositioning = ({
           }
           break;
         case 'top-bottom':
+          if (direction === 'bottom-end') {
+            break;
+          }
           if (flyoutAlignment) {
             setAdjustedDirection(`bottom-${flyoutAlignment}`);
             tooltipElement.setAttribute('data-floating-menu-direction', 'bottom');
