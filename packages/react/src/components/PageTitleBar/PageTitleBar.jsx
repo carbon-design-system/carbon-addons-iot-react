@@ -380,17 +380,19 @@ const PageTitleBar = ({
                     >
                       <>
                         {title}
-                        <Tooltip
-                          tabIndex={0}
-                          triggerText=""
-                          triggerId="tooltip"
-                          tooltipId="tooltip"
-                          renderIcon={Information16}
-                          iconDescription={tooltipIconDescription}
-                          data-testid={`${testId}-tooltip`}
-                        >
-                          {typeof description === 'string' ? <p>{description}</p> : description}
-                        </Tooltip>
+                        {description ? (
+                          <Tooltip
+                            tabIndex={0}
+                            triggerText=""
+                            triggerId="tooltip"
+                            tooltipId="tooltip"
+                            renderIcon={Information16}
+                            iconDescription={tooltipIconDescription}
+                            data-testid={`${testId}-tooltip`}
+                          >
+                            {typeof description === 'string' ? <p>{description}</p> : description}
+                          </Tooltip>
+                        ) : null}
                       </>
                     </BreadcrumbItem>
                   ) : null}
