@@ -6,6 +6,7 @@ import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 
 import { settings } from '../../constants/Settings';
+import { APP_SWITCHER } from '../Header/headerConstants';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
@@ -754,7 +755,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -801,7 +802,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -847,7 +848,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -894,7 +895,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -1141,7 +1142,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -1172,7 +1173,7 @@ describe('SuiteHeader', () => {
       const onRouteChange = jest.fn().mockImplementation(() => true);
       fakeUserAgent = 'Mac';
       render(<SuiteHeader {...workspaceBasedPageCommonProps} onRouteChange={onRouteChange} />);
-      await userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('All applications'), { metaKey: true });
       const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
       expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', currentWorkspace.href, {
@@ -1189,7 +1190,7 @@ describe('SuiteHeader', () => {
       const onRouteChange = jest.fn().mockImplementation(() => true);
       fakeUserAgent = 'Win';
       render(<SuiteHeader {...workspaceBasedPageCommonProps} onRouteChange={onRouteChange} />);
-      await userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      await userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       const currentWorkspace = workspaceBasedPageCommonProps.workspaces.find((wo) => wo.isCurrent);
       expect(onRouteChange).toHaveBeenCalledWith('NAVIGATOR', currentWorkspace.href, {
@@ -1221,7 +1222,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(3);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         currentWorkspace.href,
@@ -1230,7 +1231,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(4);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         currentWorkspace.applications[0].href,
@@ -1239,7 +1240,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(5);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Manage'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         currentWorkspace.applications[1].href,
@@ -1248,7 +1249,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(6);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Workspace administration'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         currentWorkspace.adminHref,
@@ -1279,7 +1280,7 @@ describe('SuiteHeader', () => {
       '-1'
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
     expect(screen.getByTestId('action-btn__panel')).toHaveClass(
       `${prefix}--header-panel--expanded`
     );

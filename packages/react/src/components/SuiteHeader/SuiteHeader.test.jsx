@@ -6,6 +6,7 @@ import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 
 import { settings } from '../../constants/Settings';
+import { APP_SWITCHER } from '../Header/headerConstants';
 
 import SuiteHeader from './SuiteHeader';
 import SuiteHeaderI18N from './i18n';
@@ -665,7 +666,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -712,7 +713,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -758,7 +759,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLButtonElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -805,7 +806,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -1052,7 +1053,7 @@ describe('SuiteHeader', () => {
       />
     );
 
-    userEvent.type(screen.getByTitle('chip'), '{enter}', { skipClick: true });
+    userEvent.type(screen.getByRole('button', { name: 'chip' }), '{enter}', { skipClick: true });
     expect(screen.getByText('this is my message to you')).toBeVisible();
     jest.spyOn(HTMLAnchorElement.prototype, 'click');
     fireEvent.keyDown(screen.getByTitle('this is a title'), { key: 'Enter' });
@@ -1124,7 +1125,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(3);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('All applications'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.routes.navigator,
@@ -1133,7 +1134,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(4);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Monitor'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.applications[0].href,
@@ -1142,7 +1143,7 @@ describe('SuiteHeader', () => {
       );
       expect(window.open).toHaveBeenCalledTimes(5);
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       await userEvent.click(screen.getByText('Health'), { ctrlKey: true });
       expect(window.open).toHaveBeenLastCalledWith(
         commonProps.applications[1].href,
@@ -1170,7 +1171,7 @@ describe('SuiteHeader', () => {
       '-1'
     );
 
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
     expect(screen.getByTestId('action-btn__panel')).toHaveClass(
       `${prefix}--header-panel--expanded`
     );
@@ -1191,7 +1192,7 @@ describe('SuiteHeader', () => {
 
   it('shows loading state', async () => {
     render(<SuiteHeader suiteName="Application Suite" />);
-    userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+    userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
     // Expect skeletons
     expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
   });
@@ -1215,7 +1216,7 @@ describe('SuiteHeader', () => {
       const headerPanel = screen.getByLabelText('Header Panel');
       const profileActionButton = screen.getByRole('menuitem', { name: 'user' });
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
 
@@ -1228,7 +1229,7 @@ describe('SuiteHeader', () => {
       render(<SuiteHeader {...commonProps} />);
       const headerPanel = screen.getByLabelText('Header Panel');
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
 
       userEvent.click(document.body);
@@ -1244,7 +1245,7 @@ describe('SuiteHeader', () => {
       expect(headerPanel).not.toHaveClass(`${prefix}--header-panel--expanded`);
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
     });
@@ -1253,7 +1254,7 @@ describe('SuiteHeader', () => {
       render(<SuiteHeader {...commonProps} />);
       const headerPanel = screen.getByLabelText('Header Panel');
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
 
       userEvent.click(screen.getByText('My applications'));
@@ -1271,7 +1272,7 @@ describe('SuiteHeader', () => {
       userEvent.click(profileActionButton);
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'true');
 
-      userEvent.click(screen.getByRole('button', { name: 'AppSwitcher' }));
+      userEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
       expect(headerPanel).toHaveClass(`${prefix}--header-panel--expanded`);
       expect(profileActionButton).toHaveAttribute('aria-expanded', 'false');
     });

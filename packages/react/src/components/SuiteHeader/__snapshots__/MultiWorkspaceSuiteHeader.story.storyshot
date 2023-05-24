@@ -584,7 +584,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -594,14 +594,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -626,7 +625,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -1388,7 +1387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -1398,14 +1397,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -1430,7 +1428,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -2251,7 +2249,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -2261,14 +2259,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -2293,7 +2290,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -2825,7 +2822,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="bee"
             type="button"
           >
             <div
@@ -3618,7 +3614,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -3628,14 +3624,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -3660,7 +3655,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -4584,7 +4579,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -4594,14 +4589,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -4626,7 +4620,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -5573,7 +5567,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -5583,14 +5577,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -5615,7 +5608,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -6481,7 +6474,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -6491,14 +6484,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -6523,7 +6515,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -7870,7 +7862,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -7880,14 +7872,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -7912,7 +7903,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -8662,7 +8653,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -8672,14 +8663,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -8704,7 +8694,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -9356,7 +9346,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -9366,14 +9356,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -9398,7 +9387,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -10235,7 +10224,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -10245,14 +10234,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -10277,7 +10265,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -11039,7 +11027,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -11049,14 +11037,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -11081,7 +11068,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -11879,7 +11866,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -11889,14 +11876,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -11921,7 +11907,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
@@ -12758,7 +12744,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             aria-describedby={null}
             aria-expanded={false}
             aria-haspopup="menu"
-            aria-label="AppSwitcher"
+            aria-label="App Switcher"
             aria-pressed={null}
             className="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             disabled={false}
@@ -12768,14 +12754,13 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             tabIndex={0}
-            title="AppSwitcher"
             type="button"
           >
             <div
               className="bx--assistive-text"
               onMouseEnter={[Function]}
             >
-              AppSwitcher
+              App Switcher
             </div>
             <svg
               aria-hidden={true}
@@ -12800,7 +12785,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             tabIndex="-1"
           >
             <ul
-              aria-label="AppSwitcher"
+              aria-label="App Switcher"
             >
               <li
                 className="action-btn__headerpanel-li"
