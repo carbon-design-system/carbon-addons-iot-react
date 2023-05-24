@@ -98,7 +98,6 @@ const HeaderActionPanel = ({
       <HeaderGlobalAction
         className={`${carbonPrefix}--header-action-btn action-btn__trigger`}
         key={`menu-item-${item.label}-global`}
-        title={item.label}
         aria-label={item.label}
         aria-haspopup="menu"
         aria-expanded={isExpanded}

@@ -132,7 +132,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="help"
               type="button"
             >
               <div
@@ -355,7 +354,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="AppSwitcher"
               type="button"
             >
               <div
@@ -382,7 +380,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
             </button>
             <div
               aria-label="Header Panel"
-              className="bx--header-panel bx--app-switcher bx--app-switcher header-panel"
+              className="bx--header-panel action-btn__headerpanel action-btn__headerpanel--closed"
               data-testid="action-btn__panel"
               tabIndex="-1"
             >
@@ -1510,7 +1508,6 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
               tabIndex={0}
-              title="help"
               type="button"
             >
               <div
