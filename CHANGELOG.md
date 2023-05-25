@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.20...v2.153.0-next.21) (2023-05-25)
+
+
+### Bug Fixes
+
+* adding record false flag ([3c9123b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/3c9123b2384ccc7ba0b547ecce984551bb574628))
+* allowing description outside tooltip when content is provided ([c1ed461](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/c1ed461fcee35d87357d5f2d2fb8738d7fe39216))
+* removing record flag ([1b52776](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/1b527767712d01377c3ce9d10328b0f16a120fa9))
+
+
+### Features
+
+* added desc tooltip to current breadcrumb item for condensed header ([870ac5b](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/870ac5bd4f2e2a34d6c3fab9f2c2b2ffcf55f696))
+
+
+
+
+
 # [2.153.0-next.20](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.19...v2.153.0-next.20) (2023-05-24)
 
 
