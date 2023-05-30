@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.21...v2.153.0-next.22) (2023-05-30)
+
+
+### Bug Fixes
+
+* **suiteheader:** app switcher icon title ([#3788](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3788)) ([a602f3c](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a602f3cceb2441778caefb00b1261a218a17c84c))
+
+
+
+
+
 # [2.153.0-next.21](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.20...v2.153.0-next.21) (2023-05-25)
 
 
