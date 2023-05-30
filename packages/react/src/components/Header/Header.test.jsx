@@ -145,34 +145,34 @@ describe('Header', () => {
 
   it('clicking trigger button should expand the header panel', () => {
     render(<Header {...HeaderProps} />);
-    fireEvent.click(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
-    fireEvent.click(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
   it('closes when focus leaves panel', () => {
     render(<Header {...HeaderProps} />);
-    fireEvent.click(screen.getByTitle('help'));
+    fireEvent.click(screen.getByRole('button', { name: 'help' }));
     fireEvent.focus(screen.getByText('This is a link'));
     fireEvent.blur(screen.getByText('This is a link'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
 
   it('closes when focus leaves trigger', () => {
     render(<Header {...HeaderProps} />);
-    fireEvent.click(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
-    fireEvent.blur(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.blur(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
@@ -180,13 +180,13 @@ describe('Header', () => {
   it('closes when focus leaves the current action', () => {
     render(<Header {...HeaderProps} />);
 
-    fireEvent.click(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel ${prefix}--header-panel--expanded action-btn__headerpanel`
     );
     // focus leaves the first button
-    fireEvent.blur(screen.getByTitle('help'));
-    expect(screen.getByTitle('help').parentNode.lastChild.className).toContain(
+    fireEvent.blur(screen.getByRole('button', { name: 'help' }));
+    expect(screen.getByRole('button', { name: 'help' }).parentNode.lastChild.className).toContain(
       `${prefix}--header-panel action-btn__headerpanel action-btn__headerpanel--closed`
     );
   });
@@ -204,15 +204,17 @@ describe('Header', () => {
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
 
-    fireEvent.click(screen.getByTitle(APP_SWITCHER));
-    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
+    fireEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+    expect(
+      screen.getByRole('button', { name: APP_SWITCHER }).parentNode.lastChild.className
+    ).toContain(
       `${prefix}--header-panel ${prefix}--header-panel--expanded ${prefix}--app-switcher`
     );
 
-    fireEvent.click(screen.getByTitle(APP_SWITCHER));
-    expect(screen.getByTitle(APP_SWITCHER).parentNode.lastChild.className).toContain(
-      `${prefix}--header-panel ${prefix}--app-switcher`
-    );
+    fireEvent.click(screen.getByRole('button', { name: APP_SWITCHER }));
+    expect(
+      screen.getByRole('button', { name: APP_SWITCHER }).parentNode.lastChild.className
+    ).toContain(`${prefix}--header-panel ${prefix}--app-switcher`);
   });
 
   it('onClick expands', () => {
@@ -264,7 +266,7 @@ describe('Header', () => {
       )),
     };
     render(<Header {...HeaderProps} headerPanel={headerPanel} />);
-    const menuTrigger = screen.getByTitle('help');
+    const menuTrigger = screen.getByRole('button', { name: 'help' });
     fireEvent.keyDown(menuTrigger, { key: keyboardKeys.SPACE });
     expect(menuTrigger.getAttribute('aria-expanded')).toBe('true');
     fireEvent.keyDown(menuTrigger, { key: keyboardKeys.ENTER });

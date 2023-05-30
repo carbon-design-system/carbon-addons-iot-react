@@ -73,7 +73,6 @@ exports[`Header should render 1`] = `
             aria-label="help"
             class="bx--header-action-btn action-btn__trigger bx--header__action bx--btn bx--btn--primary bx--tooltip--hidden bx--btn--icon-only bx--tooltip__trigger bx--tooltip--a11y bx--btn--icon-only--bottom bx--tooltip--align-center"
             tabindex="0"
-            title="help"
             type="button"
           >
             <div
