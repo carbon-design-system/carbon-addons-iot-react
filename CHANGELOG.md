@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.22...v2.153.0-next.23) (2023-06-08)
+
+
+### Features
+
+* **repo:** allow node 18 for consumers ([#3792](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3792)) ([a4701a1](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/a4701a15a2aeeaff886e4873612285a8f9b80b0c))
+
+
+
+
+
 # [2.153.0-next.22](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.21...v2.153.0-next.22) (2023-05-30)
 
 
