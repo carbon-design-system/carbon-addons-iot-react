@@ -2,6 +2,8 @@ import { act, render, screen, waitFor, within, fireEvent } from '@testing-librar
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
+import NotificationOn from '@carbon/icons-react/es/notification/24';
+import { ScreenOff16 } from '@carbon/icons-react';
 import Chip from '@carbon/icons-react/es/chip/24';
 import MockDate from 'mockdate';
 
@@ -1328,5 +1330,40 @@ describe('SuiteHeader', () => {
   it('should not show current workspace in the main header bar for admin page with more than one workspace available', async () => {
     render(<SuiteHeader {...adminPageCommonProps} />);
     expect(screen.queryByTestId('suite-header--current-workspace')).not.toBeInTheDocument();
+  });
+
+  it('should assign unique id to action items', () => {
+    const firstActionLabel = 'Label one';
+    const secondActionLabel = 'Label two';
+    const { container } = render(
+      <SuiteHeader
+        {...adminPageCommonProps}
+        customActionItems={[
+          {
+            label: firstActionLabel,
+            btnContent: (
+              <ScreenOff16 id="hidden-button" fill="white" description="hidden-button-icon" />
+            ),
+          },
+          {
+            label: secondActionLabel,
+            btnContent: (
+              <span id="bell-icon">
+                <NotificationOn id="notification-button" fill="white" description="Icon" />
+              </span>
+            ),
+          },
+        ]}
+      />
+    );
+
+    expect(container.querySelectorAll('#menu-item-global-action-0')).toHaveLength(1);
+    expect(container.querySelectorAll('#menu-item-global-action-1')).toHaveLength(1);
+    expect(container.querySelector('#menu-item-global-action-0')).toHaveTextContent(
+      firstActionLabel
+    );
+    expect(container.querySelector('#menu-item-global-action-1')).toHaveTextContent(
+      secondActionLabel
+    );
   });
 });
