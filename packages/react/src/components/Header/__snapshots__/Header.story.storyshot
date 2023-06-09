@@ -51,6 +51,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -457,6 +458,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="header-name"
       href="http://localhost:8989"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -578,6 +580,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -772,6 +775,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -971,6 +975,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"
@@ -1197,6 +1202,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
         className="bx--header__name"
         data-testid="header-name"
         href="http://localhost:8989"
+        onClick={[Function]}
       >
         <span
           className="bx--header__name--prefix"

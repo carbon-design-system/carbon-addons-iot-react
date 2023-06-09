@@ -160,6 +160,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -890,6 +891,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -2142,6 +2144,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -2993,6 +2996,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -3752,6 +3756,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -5025,6 +5030,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -5743,6 +5749,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="javascript:void(0)"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -6361,6 +6368,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
@@ -7091,6 +7099,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/U
       className="bx--header__name"
       data-testid="suite-header-name"
       href="https://www.ibm.com"
+      onClick={[Function]}
     >
       <span
         className="bx--header__name--prefix"
