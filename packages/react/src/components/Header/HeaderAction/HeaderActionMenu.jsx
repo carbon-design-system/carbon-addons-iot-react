@@ -49,6 +49,8 @@ class HeaderActionMenu extends React.Component {
     label: PropTypes.string.isRequired,
     /** MenuItem's to be rendered as children */
     childContent: PropTypes.arrayOf(PropTypes.shape(ChildContentPropTypes)).isRequired,
+    /** Unique id for action menu */
+    id: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -127,6 +129,7 @@ class HeaderActionMenu extends React.Component {
       label,
       focusRef,
       isExpanded,
+      id,
     } = this.props;
 
     const accessibilityLabel = {
@@ -158,6 +161,7 @@ class HeaderActionMenu extends React.Component {
           testId="menuitem"
           aria-label={ariaLabel}
           role="menuitem"
+          id={id}
         >
           <MenuContent ariaLabel={ariaLabel} />
         </Button>
