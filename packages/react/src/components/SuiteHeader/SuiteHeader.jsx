@@ -63,6 +63,7 @@ const defaultProps = {
   walkmeLang: 'en',
   testId: 'suite-header',
   isActionItemVisible: () => true,
+  handleHeaderNameClick: null,
 };
 
 const propTypes = {
@@ -117,6 +118,8 @@ const propTypes = {
   /** Walkme language code */
   walkmeLang: PropTypes.string,
   testId: PropTypes.string,
+  /** Optional callback when user clicks on header name */
+  handleHeaderNameClick: PropTypes.oneOfType([PropTypes.func, PropTypes.any]),
 
   /** a function that will be passed the actionItem object and returns a boolean to determine if that item should be shown */
   // eslint-disable-next-line react/forbid-foreign-prop-types
@@ -150,6 +153,7 @@ const SuiteHeader = ({
   walkmePath,
   walkmeLang,
   testId,
+  handleHeaderNameClick: handleHeaderNameClickProps,
   ...otherHeaderProps
 }) => {
   const mergedI18N = { ...defaultProps.i18n, ...i18n };
@@ -247,6 +251,15 @@ const SuiteHeader = ({
     }
   };
 
+  const handleHeaderNameClick = useCallback(
+    (evt) => {
+      if (handleHeaderNameClickProps) {
+        handleHeaderNameClickProps(evt, navigatorRoute);
+      }
+    },
+    [handleHeaderNameClickProps, navigatorRoute]
+  );
+
   return (
     <>
       {walkmePath ? <Walkme path={walkmePath} lang={walkmeLang} /> : null}
@@ -340,6 +353,7 @@ const SuiteHeader = ({
               testId={testId}
               className={classnames(`${settings.iotPrefix}--suite-header`, className)}
               url={navigatorRoute}
+              handleHeaderNameClick={handleHeaderNameClick}
               hasSideNav={hasSideNav || sideNavProps !== null}
               onClickSideNavExpand={(evt) => {
                 onSideNavToggled(evt);
