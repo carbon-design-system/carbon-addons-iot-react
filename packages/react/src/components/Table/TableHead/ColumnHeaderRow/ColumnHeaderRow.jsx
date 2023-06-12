@@ -91,10 +91,9 @@ class ColumnHeaderRow extends Component {
     return (
       <DragAndDrop>
         <TableRow data-testid={testId} className={`${iotPrefix}--column-header-row--table-row`}>
-          {' '}
-          {hasDragAndDrop && (
+          {hasDragAndDrop ? (
             <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
-          )}
+          ) : null}
           {hasRowSelection === 'multi' ? (
             <TableHeader className={`${iotPrefix}--column-header-row--table-header`} />
           ) : null}
