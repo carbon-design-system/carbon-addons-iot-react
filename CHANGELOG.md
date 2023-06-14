@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.153.0-next.24](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.23...v2.153.0-next.24) (2023-06-14)
+
+
+### Bug Fixes
+
+* **table:** remove unnecessary space ([#3797](https://github.com/carbon-design-system/carbon-addons-iot-react/issues/3797)) ([eee549a](https://github.com/carbon-design-system/carbon-addons-iot-react/commit/eee549a22550281868aa74a954a051473c3ff016))
+
+
+
+
+
 # [2.153.0-next.23](https://github.com/carbon-design-system/carbon-addons-iot-react/compare/v2.153.0-next.22...v2.153.0-next.23) (2023-06-08)
 
 
