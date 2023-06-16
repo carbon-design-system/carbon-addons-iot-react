@@ -5426,7 +5426,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       aria-expanded={false}
                       aria-label="Calendar"
                       className="bx--tooltip__label"
-                      id="test-trigger-id-2"
+                      id="test-trigger-Card-toolbar"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
@@ -5586,7 +5586,7 @@ exports[`Storybook Snapshot tests and console checks Storyshots 1 - Watson IoT/C
                       aria-expanded={false}
                       aria-label="Calendar"
                       className="bx--tooltip__label"
-                      id="test-trigger-id-2"
+                      id="test-trigger-Card-toolbar"
                       onBlur={[Function]}
                       onClick={[Function]}
                       onContextMenu={[Function]}
