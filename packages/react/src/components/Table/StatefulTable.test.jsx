@@ -1552,4 +1552,24 @@ describe('stateful table with real reducer', () => {
       });
     });
   });
+
+  it('should set select all checkbox to indeterminate state', () => {
+    const rows = tableData.slice(0, 5);
+    const selectedIds = rows.map((row) => row.id);
+    const selectionThatWouldCauseAnIndeterminateState = selectedIds.slice(1, 5);
+    render(
+      <StatefulTable
+        id="tableid4"
+        columns={tableColumns}
+        data={rows}
+        options={{ hasRowSelection: 'multi' }}
+        view={{
+          table: {
+            selectedIds: selectionThatWouldCauseAnIndeterminateState,
+          },
+        }}
+      />
+    );
+    expect(screen.getByLabelText('Select all items')).toHaveProperty('indeterminate', true);
+  });
 });
