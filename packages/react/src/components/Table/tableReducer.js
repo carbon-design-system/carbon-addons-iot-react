@@ -605,7 +605,11 @@ export const tableReducer = (state = {}, action) => {
 
       const selectedIds = view ? view.table.selectedIds : [];
       const isSelectingAll = isMultiSelect && selectedIds?.length === allRowsId.length;
-      const isSelectAllSelected = view ? view.table.isSelectAllSelected || isSelectingAll : false;
+      const isSelectAllSelected = isSelectingAll
+        ? true
+        : view
+        ? view.table.isSelectAllSelected
+        : false;
 
       return update(state, {
         data: {
