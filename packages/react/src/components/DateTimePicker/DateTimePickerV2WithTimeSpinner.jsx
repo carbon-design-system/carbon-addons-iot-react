@@ -269,6 +269,8 @@ export const defaultProps = {
     relativeToLabel: 'Relative to',
     absoluteLabel: 'Absolute',
     startTimeLabel: 'Start time',
+    startAriaLabel: 'Date time start',
+    endAriaLabel: 'Date time end',
     endTimeLabel: 'End time',
     applyBtnLabel: 'Apply',
     cancelBtnLabel: 'Cancel',
@@ -1083,7 +1085,7 @@ const DateTimePicker = ({
             hideTooltip
             iconDescription={mergedI18n.calendarLabel}
             passive={false}
-            triggerId="test-trigger-id-2"
+            triggerId={`test-trigger-${id}`}
             light={light}
             menuOffset={{
               top: menuOffsetTop,
@@ -1115,7 +1117,7 @@ const DateTimePicker = ({
                   (invalidRangeStartDate ? invalidDateWarningHeight : 0) -
                   (!hasTimeInput ? timeInputHeight : 0),
               }}
-              role="listbox"
+              role="presentation"
               onClick={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               onKeyDown={(event) => event.stopPropagation()} // need to stop the event so that it will not close the menu
               tabIndex="-1"
@@ -1315,6 +1317,7 @@ const DateTimePicker = ({
                         >
                           <DatePickerInput
                             labelText=""
+                            aria-label={mergedI18n.startAriaLabel}
                             id={`${id}-date-picker-input-start`}
                             hideLabel
                           />
@@ -1322,6 +1325,7 @@ const DateTimePicker = ({
                           {datePickerType === 'range' ? (
                             <DatePickerInput
                               labelText=""
+                              aria-label={mergedI18n.endAriaLabel}
                               id={`${id}-date-picker-input-end`}
                               hideLabel
                             />
