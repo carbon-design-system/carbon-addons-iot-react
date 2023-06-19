@@ -11276,6 +11276,7 @@ Map {
     "defaultProps": Object {
       "appSwitcherLabel": "App Switcher",
       "className": "main-header",
+      "handleHeaderNameClick": [Function],
       "hasSideNav": true,
       "headerPanel": null,
       "i18n": Object {
@@ -11361,6 +11362,9 @@ Map {
       },
       "className": Object {
         "type": "string",
+      },
+      "handleHeaderNameClick": Object {
+        "type": "func",
       },
       "hasSideNav": Object {
         "type": "bool",
@@ -11876,6 +11880,7 @@ Map {
       "customProfileLinks": Array [],
       "extraContent": null,
       "globalApplications": Array [],
+      "handleHeaderNameClick": null,
       "hasSideNav": false,
       "i18n": Object {
         "about": "About",
@@ -12138,6 +12143,19 @@ Map {
           },
         ],
         "type": "arrayOf",
+      },
+      "handleHeaderNameClick": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "any",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "hasSideNav": Object {
         "type": "bool",

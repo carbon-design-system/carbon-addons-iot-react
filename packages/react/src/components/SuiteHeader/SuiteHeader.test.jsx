@@ -1197,6 +1197,17 @@ describe('SuiteHeader', () => {
     expect(screen.getByTestId('suite-header-app-switcher--loading')).toBeVisible();
   });
 
+  it('should invoke application name click callback', async () => {
+    const headerNameClickCallback = jest.fn();
+    render(<SuiteHeader {...commonProps} handleHeaderNameClick={headerNameClickCallback} />);
+    await userEvent.click(screen.getByTestId('suite-header-name'));
+    expect(headerNameClickCallback).toHaveBeenCalledTimes(1);
+    expect(headerNameClickCallback).toHaveBeenCalledWith(
+      expect.any(Object),
+      commonProps.routes.navigator
+    );
+  });
+
   describe('header action and panel (safari)', () => {
     beforeAll(() => {
       const userAgentGetter = jest.spyOn(window, 'navigator', 'get');

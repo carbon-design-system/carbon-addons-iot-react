@@ -837,3 +837,24 @@ export const HeaderWithIdleLogoutConfirmation = () => (
 );
 
 HeaderWithIdleLogoutConfirmation.storyName = 'Header with idle user detection';
+
+export const HeaderWithApplicationLinkInterceptor = () => {
+  const actionWithPreventDefault = (name) => (evt, route) => {
+    evt.preventDefault();
+    action(name)(evt, route);
+  };
+
+  return (
+    <SuiteHeader
+      suiteName="Application Suite"
+      appName="Application Name"
+      userDisplayName="Admin User"
+      username="adminuser"
+      routes={routes}
+      workspaces={workspaceBasedPageWorkspaces}
+      handleHeaderNameClick={actionWithPreventDefault('Application name click')}
+    />
+  );
+};
+
+HeaderWithApplicationLinkInterceptor.storyName = 'Header with application link interceptor';
